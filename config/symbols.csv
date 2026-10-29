@@ -975,10 +975,10 @@ address,size,name,symbol
 0x0044b5d0,196,S_ReloadLevelGraphics,_S_ReloadLevelGraphics
 0x0044b6a0,198,Read_Strings,_Read_Strings
 0x0044b770,1745,S_LoadGameFlow,_S_LoadGameFlow
-0x0044be50,116,PlayFMV,_PlayFMV
+0x0044be50,116,FMV_Play,?FMV_Play@@YAHPAD@Z
 0x0044bed0,736,WinPlayFMV,_WinPlayFMV
 0x0044c1b0,72,WinStopFMV,_WinStopFMV
-0x0044c200,149,IntroFMV,_IntroFMV
+0x0044c200,149,FMV_PlayIntro,?FMV_PlayIntro@@YAHPAD0@Z
 0x0044c2a0,35,S_COLOUR,_S_COLOUR
 0x0044c2d0,53,S_DrawScreenLine,_S_DrawScreenLine
 0x0044c310,278,S_DrawScreenBox,_S_DrawScreenBox
@@ -1502,7 +1502,7 @@ address,size,name,symbol
 0x00465620,,LoadGameRequester,_LoadGameRequester
 0x00465838,,SaveGameRequester,_SaveGameRequester
 0x00465a50,2,InventoryChosen,_InventoryChosen
-0x00465a54,,InventoryMode,_InventoryMode
+0x00465a54,,Inventory_Mode,_Inventory_Mode
 0x00465a5c,2,SoundVolume,_SoundVolume
 0x00465a60,2,MusicVolume,_MusicVolume
 0x00465ae0,,Weapons,_Weapons
