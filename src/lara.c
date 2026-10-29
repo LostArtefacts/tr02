@@ -29,6 +29,11 @@ void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
     lara_col_turn_r(item, coll);
 }
 
+void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara_col_stop(item, coll);
+}
+
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }
