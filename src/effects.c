@@ -69,6 +69,14 @@ void RubbleFX(ITEM_INFO *item)
     flipeffect = -1;
 }
 
+void ChandelierFX(ITEM_INFO *item)
+{
+    SoundEffect(278, NULL, 0);
+    fliptimer++;
+    if (fliptimer > 30)
+        flipeffect = -1;
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
