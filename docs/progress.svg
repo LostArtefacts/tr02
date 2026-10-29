@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.05% (38)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.95% (1209)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.13% (39)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.87% (1208)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="22.76" height="6" x="0" y="0" class="named"/>
-<rect width="724.24" height="6" x="22.76" y="0" class="todo"/>
+<rect width="23.36" height="6" x="0" y="0" class="named"/>
+<rect width="723.64" height="6" x="23.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1193,7 +1193,7 @@
 <rect width="12" height="12" x="345" y="330" class="todo"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="330" class="todo"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="330" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="330" class="todo"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="330" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="todo"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.71%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.15" height="6" x="0" y="0" class="named"/>
-<rect width="744.85" height="6" x="2.15" y="0" class="todo"/>
+<rect width="2.20" height="6" x="0" y="0" class="named"/>
+<rect width="744.80" height="6" x="2.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2448,7 +2448,7 @@
 <rect width="1.51" height="1.27" x="740.97" y="340.72" class="todo"><title>0x00440680 Func440680 (23 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="745.49" y="340.72" class="todo"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
 <rect width="1.47" height="1.31" x="712.91" y="344.99" class="todo"><title>0x00453750 Func453750 (23 bytes)</title></rect>
-<rect width="1.47" height="1.31" x="712.91" y="349.30" class="todo"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
+<rect width="1.47" height="1.31" x="712.91" y="349.30" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="353.62" class="named"><title>0x0041cf30 turn180_effect (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="357.74" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="361.87" class="todo"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
