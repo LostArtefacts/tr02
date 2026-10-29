@@ -917,8 +917,8 @@ address,size,name,symbol
 0x00447f40,57,WinSndGetFreeChannelIndex,_WinSndGetFreeChannelIndex
 0x00447f80,44,WinSndAdjustVolumeAndPan,_WinSndAdjustVolumeAndPan
 0x00447fb0,49,WinSndAdjustPitch,_WinSndAdjustPitch
-0x00447ff0,47,WinSndStopSample,_WinSndStopSample
-0x00448020,45,Func448020,
+0x00447ff0,47,DS_StopSample,?DS_StopSample@@YAXH@Z
+0x00448020,45,DS_StopAllSamples,?DS_StopAllSamples@@YAXXZ
 0x00448050,5,Func448050,
 0x00448060,156,WinSndInit,_WinSndInit
 0x00448100,26,DSoundEnumerate,_DSoundEnumerate
@@ -1788,7 +1788,7 @@ address,size,name,symbol
 0x0051bcf0,1,IsSetupDialogCentered,_IsSetupDialogCentered
 0x0051bd10,128,StringToShow,_StringToShow
 0x0051bd90,4,IsTitleLoaded,_IsTitleLoaded
-0x0051bd98,4,S_MasterVolume,_S_MasterVolume
+0x0051bd98,4,LnMasterVolume,_LnMasterVolume
 0x0051bd9c,,MciDeviceID,_MciDeviceID
 0x0051bda0,4,CD_LoopTrack,_CD_LoopTrack
 0x0051bda4,4,CD_LoopCounter,_CD_LoopCounter
@@ -1801,7 +1801,7 @@ address,size,name,symbol
 0x0051d6a0,2,TextStringCount,_TextStringCount
 0x0051d6c0,,TheStrings,_TheStrings
 0x0051e6c0,4,SampleInfoCount,_SampleInfoCount
-0x0051e6c4,4,SoundIsActive,_SoundIsActive
+0x0051e6c4,4,sound_active,_sound_active
 0x0051e6e0,740,SampleLut,_SampleLut
 0x0051e9c4,4,SampleInfos,_SampleInfos
 0x0051e9c8,4,SG_Point,_SG_Point

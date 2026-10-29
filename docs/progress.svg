@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.97% (37)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.03% (1210)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.05% (38)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.95% (1209)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="22.16" height="6" x="0" y="0" class="named"/>
-<rect width="724.84" height="6" x="22.16" y="0" class="todo"/>
+<rect width="22.76" height="6" x="0" y="0" class="named"/>
+<rect width="724.24" height="6" x="22.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -985,8 +985,8 @@
 <rect width="12" height="12" x="225" y="270" class="todo"><title>0x00447f40 WinSndGetFreeChannelIndex (57 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="270" class="todo"><title>0x00447f80 WinSndAdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="270" class="todo"><title>0x00447fb0 WinSndAdjustPitch (49 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="270" class="todo"><title>0x00447ff0 WinSndStopSample (47 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="270" class="todo"><title>0x00448020 Func448020 (45 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="270" class="todo"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="270" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="270" class="todo"><title>0x00448050 Func448050 (5 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="270" class="todo"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="270" class="todo"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
@@ -1192,7 +1192,7 @@
 <rect width="12" height="12" x="330" y="330" class="todo"><title>0x00455460 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="330" class="todo"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="330" class="todo"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="330" class="todo"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="330" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="todo"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="todo"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.71%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.13" height="6" x="0" y="0" class="named"/>
-<rect width="744.87" height="6" x="2.13" y="0" class="todo"/>
+<rect width="2.15" height="6" x="0" y="0" class="named"/>
+<rect width="744.85" height="6" x="2.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2307,14 +2307,14 @@
 <rect width="3.22" height="3.33" x="712.93" y="302.90" class="todo"><title>0x00425330 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="719.15" y="302.90" class="todo"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="725.37" y="302.90" class="todo"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
-<rect width="3.22" height="3.33" x="731.60" y="302.90" class="todo"><title>0x00447ff0 WinSndStopSample (47 bytes)</title></rect>
+<rect width="3.22" height="3.33" x="731.60" y="302.90" class="todo"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
 <rect width="3.09" height="3.33" x="737.82" y="302.90" class="todo"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="3.09" height="3.33" x="743.91" y="302.90" class="todo"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
 <rect width="2.97" height="3.46" x="675.19" y="309.23" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="2.97" height="3.32" x="675.19" y="315.69" class="todo"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="2.97" height="3.32" x="675.19" y="322" class="todo"><title>0x00421980 FlashIt (45 bytes)</title></rect>
 <rect width="2.97" height="3.32" x="675.19" y="328.32" class="todo"><title>0x00447860 WinInStart (45 bytes)</title></rect>
-<rect width="2.97" height="3.32" x="675.19" y="334.63" class="todo"><title>0x00448020 Func448020 (45 bytes)</title></rect>
+<rect width="2.97" height="3.32" x="675.19" y="334.63" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="2.97" height="3.18" x="675.19" y="340.95" class="named"><title>0x0041d110 ChandelierFX (44 bytes)</title></rect>
 <rect width="2.97" height="3.18" x="675.19" y="347.12" class="todo"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
 <rect width="2.97" height="3.18" x="675.19" y="353.30" class="todo"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
@@ -2517,7 +2517,7 @@
 <rect width="0.10" height="0.10" x="731.53" y="371.98" class="named"><title>0x0044ca90 SeedRandomDraw (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="731.53" y="374.99" class="todo"><title>0x004541c0 Func4541c0 (10 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="734.32" y="359.94" class="todo"><title>0x004544c0 Func4544c0 (10 bytes)</title></rect>
-<rect width="0.20" height="0.10" x="737.52" y="359.94" class="todo"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
+<rect width="0.20" height="0.10" x="737.52" y="359.94" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="740.72" y="359.94" class="todo"><title>0x004558d7 Func4558d7 (10 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="743.92" y="359.94" class="todo"><title>0x00456650 CleanupTextures (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.12" y="359.94" class="named"><title>0x0041d9a0 invisibility_on (9 bytes)</title></rect>
