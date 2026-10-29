@@ -8,4 +8,6 @@ typedef signed short sint16;
 typedef unsigned long uint32;
 typedef signed long sint32;
 
+#define CODE_BITS 0x3e00
+
 #endif

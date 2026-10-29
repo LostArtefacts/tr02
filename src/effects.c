@@ -108,6 +108,18 @@ void SetChangeFX(ITEM_INFO *item)
     flipeffect = -1;
 }
 
+void ControlDingDong(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if ((item->flags & CODE_BITS) == CODE_BITS)
+    {
+        SoundEffect(334, &item->pos, 0);
+        item->flags -= CODE_BITS;
+    }
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;

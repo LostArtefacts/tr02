@@ -29,6 +29,7 @@ void PistonFX(ITEM_INFO *item);
 void CurtainFX(ITEM_INFO *item);
 void StatueFX(ITEM_INFO *item);
 void SetChangeFX(ITEM_INFO *item);
+void ControlDingDong(sint16 item_number);
 void lara_hands_free(ITEM_INFO *item);
 
 #endif

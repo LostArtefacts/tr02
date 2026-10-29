@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.12% (14)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.88% (1233)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.20% (15)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.80% (1232)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="8.39" height="6" x="0" y="0" class="named"/>
-<rect width="738.61" height="6" x="8.39" y="0" class="todo"/>
+<rect width="8.99" height="6" x="0" y="0" class="named"/>
+<rect width="738.01" height="6" x="8.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -338,7 +338,7 @@
 <rect width="12" height="12" x="270" y="75" class="named"><title>0x0041d190 CurtainFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="75" class="named"><title>0x0041d1b0 StatueFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="75" class="named"><title>0x0041d1d0 SetChangeFX (28 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="75" class="todo"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="75" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="75" class="todo"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="75" class="todo"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.19%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.81%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.79%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.44" height="6" x="0" y="0" class="named"/>
-<rect width="745.56" height="6" x="1.44" y="0" class="todo"/>
+<rect width="1.58" height="6" x="0" y="0" class="named"/>
+<rect width="745.42" height="6" x="1.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2183,7 +2183,7 @@
 <rect width="4.46" height="4.19" x="648.59" y="269.17" class="todo"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="656.05" y="269.17" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="663.51" y="269.17" class="todo"><title>0x00456680 UpdateTicks (64 bytes)</title></rect>
-<rect width="4.34" height="4.19" x="670.97" y="269.17" class="todo"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
+<rect width="4.34" height="4.19" x="670.97" y="269.17" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="678.31" y="269.17" class="todo"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="685.66" y="269.17" class="todo"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="692.88" y="269.17" class="todo"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>

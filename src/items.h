@@ -3,6 +3,11 @@
 
 #include "3dglodef.h"
 
+#define NOT_ACTIVE 0
+#define ACTIVE 1
+#define DEACTIVATED 2
+#define INVISIBLE 3
+
 typedef struct item_info {
     sint32 floor;
     uint32 touch_bits;
@@ -27,6 +32,18 @@ typedef struct item_info {
     sint16 carried_item;
     void *data;
     PHD_3DPOS pos;
+    uint16 active:1;
+    uint16 status:2;
+    uint16 gravity_status:1;
+    uint16 hit_status:1;
+    uint16 collidable:1;
+    uint16 looked_at:1;
+    uint16 dynamic_light:1;
+    uint16 clear_body:1;
 } ITEM_INFO;
+
+extern ITEM_INFO *items;
+
+void RemoveActiveItem(sint16 item_num);
 
 #endif

@@ -1895,7 +1895,7 @@ address,size,name,symbol
 0x00526240,4,FlipStatus,_FlipStatus
 0x00526260,40,FlipMaps,_FlipMaps
 0x00526288,4,TriggerPtr,_TriggerPtr
-0x005262f0,4,Items,_Items
+0x005262f0,4,items,_items
 0x005262f4,2,IsCinematicLoaded,_IsCinematicLoaded
 0x005262f6,2,CineFramesCount,_CineFramesCount
 0x005262f8,4,CineFrames,_CineFrames
