@@ -15,6 +15,7 @@
 #include "cinema.h"
 #include "title.h"
 #include "invdata.h"
+#include "input.h"
 #include "specific/specific.h"
 #include "specific/global.h"
 

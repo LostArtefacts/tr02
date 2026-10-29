@@ -12,6 +12,14 @@ typedef struct {
 } GAME_VECTOR;
 
 typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 data;
+    sint16 flags;
+} OBJECT_VECTOR;
+
+typedef struct {
     sint16 *frame_ptr;
     sint16 interpolation;
     sint16 current_anim_state;

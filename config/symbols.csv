@@ -1757,7 +1757,7 @@ address,size,name,symbol
 0x0051a0bc,4,malloc_buffer,_malloc_buffer
 0x0051a0c0,56,ConflictLayout,_ConflictLayout
 0x0051a0f8,256,DIKeys,_DIKeys
-0x0051a1f8,4,InputStatus,_InputStatus
+0x0051a1f8,4,input,_input
 0x0051a1fc,1,IsVidModeLock,_IsVidModeLock
 0x0051a200,4,JoyKeys,_JoyKeys
 0x0051a228,4,GameModule,_GameModule
