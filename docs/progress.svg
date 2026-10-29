@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.82% (85)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.18% (1162)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.90% (86)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.10% (1161)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="50.92" height="6" x="0" y="0" class="named"/>
-<rect width="696.08" height="6" x="50.92" y="0" class="todo"/>
+<rect width="51.52" height="6" x="0" y="0" class="named"/>
+<rect width="695.48" height="6" x="51.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -374,7 +374,7 @@
 <rect width="12" height="12" x="60" y="90" class="todo"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="90" class="todo"><title>0x0041f650 WarriorControl (954 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="90" class="todo"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="90" class="todo"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="90" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="90" class="todo"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="90" class="todo"><title>0x0041fcc0 GF_InterpretSequence (1148 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="90" class="todo"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.26%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.74%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.27%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.73%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="9.44" height="6" x="0" y="0" class="named"/>
-<rect width="737.56" height="6" x="9.44" y="0" class="todo"/>
+<rect width="9.51" height="6" x="0" y="0" class="named"/>
+<rect width="737.49" height="6" x="9.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2392,7 +2392,7 @@
 <rect width="2.19" height="2.16" x="698.18" y="347.66" class="todo"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="2.19" height="2.16" x="698.18" y="352.82" class="todo"><title>0x00456060 SafeFreeTexturePage (32 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.18" y="357.99" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
-<rect width="2.19" height="2" x="698.18" y="362.99" class="todo"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
+<rect width="2.19" height="2" x="698.18" y="362.99" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.18" y="367.99" class="todo"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.18" y="373" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="2.30" height="1.91" x="703.37" y="326.19" class="todo"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
