@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.49% (56)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.51% (1191)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.57% (57)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.43% (1190)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="33.55" height="6" x="0" y="0" class="named"/>
-<rect width="713.45" height="6" x="33.55" y="0" class="todo"/>
+<rect width="34.15" height="6" x="0" y="0" class="named"/>
+<rect width="712.85" height="6" x="34.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -474,7 +474,7 @@
 <rect width="12" height="12" x="60" y="120" class="named"><title>0x00427ed0 lara_as_reach (28 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="120" class="named"><title>0x00427ef0 lara_as_splat (10 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="120" class="todo"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="120" class="todo"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="120" class="named"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="120" class="named"><title>0x004280a0 lara_as_null (11 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="120" class="todo"><title>0x004280b0 lara_as_fastturn (75 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="120" class="todo"><title>0x00428100 lara_as_stepright (124 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.50%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.50%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="3.76" height="6" x="0" y="0" class="named"/>
-<rect width="743.24" height="6" x="3.76" y="0" class="todo"/>
+<rect width="4.05" height="6" x="0" y="0" class="named"/>
+<rect width="742.95" height="6" x="4.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1929,7 +1929,7 @@
 <rect width="7.46" height="7.65" x="697.92" y="197.25" class="todo"><title>0x0040c300 S_DrawPickup (133 bytes)</title></rect>
 <rect width="7.46" height="7.65" x="708.38" y="197.25" class="todo"><title>0x004323b0 lara_as_tread (133 bytes)</title></rect>
 <rect width="7.46" height="7.65" x="718.84" y="197.25" class="todo"><title>0x00435eb0 Targetable (133 bytes)</title></rect>
-<rect width="7.39" height="7.65" x="729.31" y="197.25" class="todo"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
+<rect width="7.39" height="7.65" x="729.31" y="197.25" class="named"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
 <rect width="7.31" height="7.65" x="739.69" y="197.25" class="todo"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
 <rect width="7.14" height="7.82" x="569.75" y="207.90" class="todo"><title>0x00429ad0 lara_col_fallback (131 bytes)</title></rect>
 <rect width="7.14" height="7.82" x="569.75" y="218.72" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>

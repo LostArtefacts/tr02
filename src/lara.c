@@ -100,6 +100,31 @@ void lara_as_splat(ITEM_INFO *item, COLL_INFO *coll)
     lara.look = 0;
 }
 
+void lara_as_back(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+    if (!(input & IN_BACK) || (!(input & IN_SLOW) && lara.water_status != LARA_WADE))
+        item->goal_anim_state = AS_STOP;
+    else
+        item->goal_anim_state = AS_BACK;
+    if (input & IN_LEFT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_SLOW_TURN)
+            lara.turn_rate = -LARA_SLOW_TURN;
+    }
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_SLOW_TURN)
+            lara.turn_rate = LARA_SLOW_TURN;
+    }
+}
+
 void lara_as_null(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->enable_spaz = 0;
