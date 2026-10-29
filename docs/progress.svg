@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.17% (27)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.83% (1220)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.25% (28)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.75% (1219)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="16.17" height="6" x="0" y="0" class="named"/>
-<rect width="730.83" height="6" x="16.17" y="0" class="todo"/>
+<rect width="16.77" height="6" x="0" y="0" class="named"/>
+<rect width="730.23" height="6" x="16.77" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -202,7 +202,7 @@
 <rect width="12" height="12" x="480" y="30" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="todo"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="todo"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="30" class="todo"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="30" class="named"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="30" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="30" class="todo"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="30" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.25%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.75%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.83" height="6" x="0" y="0" class="named"/>
-<rect width="745.17" height="6" x="1.83" y="0" class="todo"/>
+<rect width="1.86" height="6" x="0" y="0" class="named"/>
+<rect width="745.14" height="6" x="1.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2510,7 +2510,7 @@
 <rect width="0.10" height="0.10" x="728.47" y="368.97" class="named"><title>0x004324c0 lara_as_waterroll (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="728.47" y="371.98" class="todo"><title>0x0044d6a0 Func44d6a0 (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="728.47" y="374.99" class="todo"><title>0x00450cf0 S_ClearScreen (11 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="731.53" y="359.94" class="todo"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="731.53" y="359.94" class="named"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="731.53" y="362.95" class="named"><title>0x0041d760 lara_hands_free (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="731.53" y="365.96" class="named"><title>0x00427ef0 lara_as_splat (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="731.53" y="368.97" class="named"><title>0x0044ca60 SeedRandomControl (10 bytes)</title></rect>

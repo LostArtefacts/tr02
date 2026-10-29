@@ -2,5 +2,6 @@
 #define CINEMA_H
 
 extern int cutscene_track;
+void SetCutsceneTrack(int track);
 
 #endif
