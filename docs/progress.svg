@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.53% (69)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">94.47% (1178)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.61% (70)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">94.39% (1177)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="41.33" height="6" x="0" y="0" class="named"/>
-<rect width="705.67" height="6" x="41.33" y="0" class="todo"/>
+<rect width="41.93" height="6" x="0" y="0" class="named"/>
+<rect width="705.07" height="6" x="41.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -504,7 +504,7 @@
 <rect width="12" height="12" x="510" y="120" class="todo"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="120" class="todo"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="120" class="named"><title>0x004288d0 extra_as_airlock (19 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="120" class="todo"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="120" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="120" class="todo"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="120" class="todo"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="120" class="todo"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="5.67" height="6" x="0" y="0" class="named"/>
-<rect width="741.33" height="6" x="5.67" y="0" class="todo"/>
+<rect width="5.74" height="6" x="0" y="0" class="named"/>
+<rect width="741.26" height="6" x="5.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2409,7 +2409,7 @@
 <rect width="2.32" height="1.73" x="714.01" y="331.10" class="todo"><title>0x00456b80 SetRegistryDwordValue (30 bytes)</title></rect>
 <rect width="2.32" height="1.73" x="719.33" y="331.10" class="todo"><title>0x00457510 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="2.14" height="1.73" x="724.64" y="331.10" class="named"><title>0x00428550 lara_as_special (29 bytes)</title></rect>
-<rect width="2.14" height="1.73" x="729.79" y="331.10" class="todo"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
+<rect width="2.14" height="1.73" x="729.79" y="331.10" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
 <rect width="2.14" height="1.73" x="734.93" y="331.10" class="todo"><title>0x00455905 Func455905 (29 bytes)</title></rect>
 <rect width="1.96" height="1.73" x="740.07" y="331.10" class="named"><title>0x0041d030 BoilerFX (28 bytes)</title></rect>
 <rect width="1.96" height="1.73" x="745.04" y="331.10" class="named"><title>0x0041d170 PistonFX (28 bytes)</title></rect>
