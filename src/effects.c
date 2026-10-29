@@ -139,3 +139,8 @@ void invisibility_off(ITEM_INFO *item)
 {
     item->status = ACTIVE;
 }
+
+void dynamic_light_on(ITEM_INFO *item)
+{
+    item->dynamic_light = 1;
+}
