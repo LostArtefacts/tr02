@@ -5,6 +5,7 @@
 extern "C" {
 #endif
 
+void ScreenDump(void);
 void S_ClearScreen();
 
 #ifdef __cplusplus

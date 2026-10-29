@@ -939,7 +939,7 @@ address,size,name,symbol
 0x00448a80,112,CreatePictureBuffer,_CreatePictureBuffer
 0x00448af0,420,ClearBuffers,_ClearBuffers
 0x00448ca0,316,RestoreLostBuffers,_RestoreLostBuffers
-0x00448de0,207,UpdateFrame,_UpdateFrame
+0x00448de0,207,DX_UpdateFrame,_DX_UpdateFrame
 0x00448eb0,59,WaitPrimaryBufferFlip,_WaitPrimaryBufferFlip
 0x00448ef0,3,RenderInit,_RenderInit
 0x00448f00,933,RenderStart,_RenderStart
@@ -1771,7 +1771,7 @@ address,size,name,symbol
 0x0051b2f8,,WaterPalette,_WaterPalette
 0x0051b5f8,,PicPalette,_PicPalette
 0x0051b8f8,16,RoomLightShades,_RoomLightShades
-0x0051b908,,PhdWinRect,_PhdWinRect
+0x0051b908,,GrcDumpWindow,_GrcDumpWindow
 0x0051b918,4,HiRes,_HiRes
 0x0051b91c,4,AnimatedTextureRanges,_AnimatedTextureRanges
 0x0051b920,,GamePalette8,_GamePalette8

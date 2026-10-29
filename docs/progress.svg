@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.81% (35)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.19% (1212)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.89% (36)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.11% (1211)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="20.97" height="6" x="0" y="0" class="named"/>
-<rect width="726.03" height="6" x="20.97" y="0" class="todo"/>
+<rect width="21.57" height="6" x="0" y="0" class="named"/>
+<rect width="725.43" height="6" x="21.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1007,7 +1007,7 @@
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="todo"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="270" class="todo"><title>0x00448de0 UpdateFrame (207 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="270" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="270" class="todo"><title>0x00448eb0 WaitPrimaryBufferFlip (59 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="270" class="todo"><title>0x00448f00 RenderStart (933 bytes)</title></rect>
@@ -1142,7 +1142,7 @@
 <rect width="12" height="12" x="330" y="315" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="315" class="todo"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="315" class="todo"><title>0x00452030 S_DontDisplayPicture (15 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="315" class="todo"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="315" class="named"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x00452050 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="315" class="todo"><title>0x00452060 FadeToPal (457 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="315" class="todo"><title>0x00452230 ScreenClear (38 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.72%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.06" height="6" x="0" y="0" class="named"/>
-<rect width="744.94" height="6" x="2.06" y="0" class="todo"/>
+<rect width="2.09" height="6" x="0" y="0" class="named"/>
+<rect width="744.91" height="6" x="2.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1750,7 +1750,7 @@
 <rect width="10.41" height="10.12" x="618.09" y="137.61" class="todo"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="10.41" height="10.12" x="631.49" y="137.61" class="todo"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>
 <rect width="10.41" height="10.12" x="644.90" y="137.61" class="todo"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>
-<rect width="10.22" height="10.12" x="658.31" y="137.61" class="todo"><title>0x00448de0 UpdateFrame (207 bytes)</title></rect>
+<rect width="10.22" height="10.12" x="658.31" y="137.61" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="10.15" height="10.12" x="671.53" y="137.61" class="todo"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
 <rect width="10.15" height="10.12" x="684.68" y="137.61" class="todo"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
 <rect width="10.15" height="10.12" x="697.83" y="137.61" class="todo"><title>0x0043c830 GetCarriedItems (206 bytes)</title></rect>
@@ -2500,7 +2500,7 @@
 <rect width="0.35" height="0.50" x="728.47" y="356.43" class="todo"><title>0x00454ae0 Func454ae0 (14 bytes)</title></rect>
 <rect width="0.11" height="0.50" x="731.82" y="356.43" class="todo"><title>0x00444560 Func444560 (13 bytes)</title></rect>
 <rect width="0.11" height="0.50" x="734.93" y="356.43" class="todo"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
-<rect width="0.11" height="0.50" x="738.04" y="356.43" class="todo"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
+<rect width="0.11" height="0.50" x="738.04" y="356.43" class="named"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
 <rect width="0.11" height="0.50" x="741.15" y="356.43" class="todo"><title>0x00456b70 CloseRegistryKey (13 bytes)</title></rect>
 <rect width="0.10" height="0.50" x="744.26" y="356.43" class="todo"><title>0x00449970 DecodeErrorMessage (12 bytes)</title></rect>
 <rect width="0.10" height="0.50" x="747.13" y="356.43" class="todo"><title>0x0044d3d0 Func44d3d0 (12 bytes)</title></rect>
