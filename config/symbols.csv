@@ -1445,7 +1445,7 @@ address,size,name,symbol
 0x00462d40,6,RtlUnwind,
 0x00464060,4,PerspectiveDistance,_PerspectiveDistance
 0x0046408c,4,RhwFactor,_RhwFactor
-0x004640b0,4,CineTrackID,_CineTrackID
+0x004640b0,4,cutscene_track,_cutscene_track
 0x004640b8,4,CineTickRate,_CineTickRate
 0x004640bc,2,CD_TrackID,_CD_TrackID
 0x004640c4,4,flipeffect,_flipeffect
@@ -1513,8 +1513,8 @@ address,size,name,symbol
 0x00466494,4,FadeLimit,_FadeLimit
 0x00466498,4,FadeAdder,_FadeAdder
 0x00466b80,32,SaveSlotFlags,_SaveSlotFlags
-0x00466bb0,4,RandomControl,_RandomControl
-0x00466bb4,4,RandomDraw,_RandomDraw
+0x00466bb0,4,rand_1,_rand_1
+0x00466bb4,4,rand_2,_rand_2
 0x00466bdc,4,PaletteIndex,_PaletteIndex
 0x00466be4,2,DumpX,_DumpX
 0x00466be6,2,DumpY,_DumpY
