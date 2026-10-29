@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.24% (3)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">99.76% (1244)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.32% (4)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">99.68% (1243)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.80" height="6" x="0" y="0" class="named"/>
-<rect width="745.20" height="6" x="1.80" y="0" class="todo"/>
+<rect width="2.40" height="6" x="0" y="0" class="named"/>
+<rect width="744.60" height="6" x="2.40" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -327,7 +327,7 @@
 <rect width="12" height="12" x="105" y="75" class="todo"><title>0x0041cde0 WaterFall (317 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="75" class="named"><title>0x0041cf20 finish_level_effect (11 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="75" class="named"><title>0x0041cf30 turn180_effect (22 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="75" class="todo"><title>0x0041cf50 floor_shake_effect (150 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="75" class="named"><title>0x0041cf50 floor_shake_effect (150 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="75" class="todo"><title>0x0041cff0 lara_normal_effect (64 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="75" class="todo"><title>0x0041d030 BoilerFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="75" class="todo"><title>0x0041d050 FloodFX (143 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="0.10" height="6" x="0" y="0" class="named"/>
-<rect width="746.91" height="6" x="0.09" y="0" class="todo"/>
+<rect width="0.43" height="6" x="0" y="0" class="named"/>
+<rect width="746.57" height="6" x="0.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1876,7 +1876,7 @@
 <rect width="8.14" height="8.28" x="671.99" y="175.01" class="todo"><title>0x0040c4f0 S_DrawScreenSprite2d (150 bytes)</title></rect>
 <rect width="8.14" height="8.28" x="683.13" y="175.01" class="todo"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
 <rect width="8.14" height="8.28" x="694.28" y="175.01" class="todo"><title>0x004166d0 RemoveRoomFlipItems (150 bytes)</title></rect>
-<rect width="8.14" height="8.28" x="705.42" y="175.01" class="todo"><title>0x0041cf50 floor_shake_effect (150 bytes)</title></rect>
+<rect width="8.14" height="8.28" x="705.42" y="175.01" class="named"><title>0x0041cf50 floor_shake_effect (150 bytes)</title></rect>
 <rect width="8.14" height="8.28" x="716.57" y="175.01" class="todo"><title>0x004286f0 lara_as_deathslide (150 bytes)</title></rect>
 <rect width="8.14" height="8.28" x="727.71" y="175.01" class="todo"><title>0x00429640 lara_col_compress (150 bytes)</title></rect>
 <rect width="8.14" height="8.28" x="738.86" y="175.01" class="todo"><title>0x0042f6e0 HitTarget (150 bytes)</title></rect>

@@ -1901,7 +1901,7 @@ address,size,name,symbol
 0x005262f8,4,CineFrames,_CineFrames
 0x00526312,2,CineLevelID,_CineLevelID
 0x00526314,2,CineFrameIdx,_CineFrameIdx
-0x00526320,,Camera,_Camera
+0x00526320,,camera,_camera
 0x005263a0,32,GroundZones,_GroundZones
 0x005263c0,8,FlyZones,_FlyZones
 0x005263c8,4,Overlaps,_Overlaps
