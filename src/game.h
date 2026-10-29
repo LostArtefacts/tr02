@@ -14,6 +14,7 @@
 #include "larafunc.h"
 #include "cinema.h"
 #include "title.h"
+#include "invdata.h"
 #include "specific/specific.h"
 #include "specific/global.h"
 

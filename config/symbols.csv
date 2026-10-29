@@ -1533,7 +1533,7 @@ address,size,name,symbol
 0x0047030c,4,FltWinBottom,_FltWinBottom
 0x00470310,4,FltResZBuf,_FltResZBuf
 0x00470314,4,FltResZ,_FltResZ
-0x0047031c,4,PhdWinHeight,_PhdWinHeight
+0x0047031c,4,phd_winheight,_phd_winheight
 0x00470320,4,PhdWinCenterX,_PhdWinCenterX
 0x00470324,4,PhdWinCenterY,_PhdWinCenterY
 0x00470328,2,PhdLsYaw,_PhdLsYaw
@@ -1565,7 +1565,7 @@ address,size,name,symbol
 0x004b2aa8,4,FltPersp,_FltPersp
 0x004b2ab0,,MatrixW2V,_MatrixW2V
 0x004b2ae0,4,Info3dPtr,_Info3dPtr
-0x004b2ae4,4,PhdWinWidth,_PhdWinWidth
+0x004b2ae4,4,phd_winwidth,_phd_winwidth
 0x004b2af0,,PhdTextureInfo,_PhdTextureInfo
 0x004bcaf0,4,PhdViewDistance,_PhdViewDistance
 0x004bcaf4,2,PhdLsPitch,_PhdLsPitch
