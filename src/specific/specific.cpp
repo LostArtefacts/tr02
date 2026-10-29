@@ -14,3 +14,10 @@ void S_SoundStopSample(sint32 handle)
         return;
     DS_StopSample(handle);
 }
+
+void S_SoundStopAllSamples(void)
+{
+    if (!sound_active)
+        return;
+    DS_StopAllSamples();
+}

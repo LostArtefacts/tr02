@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.13% (39)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.87% (1208)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.21% (40)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.79% (1207)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="23.36" height="6" x="0" y="0" class="named"/>
-<rect width="723.64" height="6" x="23.36" y="0" class="todo"/>
+<rect width="23.96" height="6" x="0" y="0" class="named"/>
+<rect width="723.04" height="6" x="23.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1194,7 +1194,7 @@
 <rect width="12" height="12" x="360" y="330" class="todo"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="330" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="330" class="todo"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="330" class="named"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.71%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.20" height="6" x="0" y="0" class="named"/>
-<rect width="744.80" height="6" x="2.20" y="0" class="todo"/>
+<rect width="2.23" height="6" x="0" y="0" class="named"/>
+<rect width="744.77" height="6" x="2.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2488,7 +2488,7 @@
 <rect width="0.54" height="0.55" x="728.99" y="352.88" class="todo"><title>0x00447890 WinInFinish (15 bytes)</title></rect>
 <rect width="0.54" height="0.55" x="732.53" y="352.88" class="todo"><title>0x0044c460 S_FinishInventory (15 bytes)</title></rect>
 <rect width="0.54" height="0.55" x="736.07" y="352.88" class="todo"><title>0x00452030 S_DontDisplayPicture (15 bytes)</title></rect>
-<rect width="0.54" height="0.55" x="739.61" y="352.88" class="todo"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
+<rect width="0.54" height="0.55" x="739.61" y="352.88" class="named"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="0.54" height="0.55" x="743.15" y="352.88" class="todo"><title>0x00456b60 IsNewRegistryKeyCreated (15 bytes)</title></rect>
 <rect width="0.31" height="0.55" x="746.69" y="352.88" class="todo"><title>0x00444a70 Func444a70 (14 bytes)</title></rect>
 <rect width="0.26" height="0.59" x="725.21" y="356.43" class="todo"><title>0x00444bc0 Func444bc0 (14 bytes)</title></rect>
