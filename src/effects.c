@@ -62,6 +62,13 @@ void FloodFX(ITEM_INFO *item)
     fliptimer++;
 }
 
+void RubbleFX(ITEM_INFO *item)
+{
+    SoundEffect(24, NULL, 0);
+    camera.bounce = -350;
+    flipeffect = -1;
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
