@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.06% (88)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.94% (1159)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.14% (89)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.86% (1158)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.72" height="6" x="0" y="0" class="named"/>
-<rect width="694.28" height="6" x="52.72" y="0" class="todo"/>
+<rect width="53.31" height="6" x="0" y="0" class="named"/>
+<rect width="693.69" height="6" x="53.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -380,7 +380,7 @@
 <rect width="12" height="12" x="150" y="90" class="todo"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x00420e80 InitialiseHair (116 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="90" class="todo"><title>0x00420f00 HairControl (2533 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="90" class="todo"><title>0x00421900 DrawHair (118 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="90" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="90" class="todo"><title>0x00421980 FlashIt (45 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="90" class="todo"><title>0x004219b0 DrawAssaultTimer (325 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="todo"><title>0x00421b00 DrawGameInfo (69 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.34%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.66%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="9.99" height="6" x="0" y="0" class="named"/>
-<rect width="737.01" height="6" x="9.99" y="0" class="todo"/>
+<rect width="10.25" height="6" x="0" y="0" class="named"/>
+<rect width="736.75" height="6" x="10.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1973,7 +1973,7 @@
 <rect width="7" height="6.97" x="650.89" y="207.90" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="7" height="6.97" x="660.89" y="207.90" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="670.89" y="207.90" class="todo"><title>0x0041db30 Knife (118 bytes)</title></rect>
-<rect width="6.92" height="6.97" x="680.81" y="207.90" class="todo"><title>0x00421900 DrawHair (118 bytes)</title></rect>
+<rect width="6.92" height="6.97" x="680.81" y="207.90" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="690.73" y="207.90" class="named"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="700.65" y="207.90" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="710.57" y="207.90" class="todo"><title>0x00456d20 GetRegistryBoolValue (118 bytes)</title></rect>
