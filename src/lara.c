@@ -34,6 +34,11 @@ void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll)
     lara_col_stop(item, coll);
 }
 
+void lara_col_stepleft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara_col_stepright(item, coll);
+}
+
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }
