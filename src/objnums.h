@@ -4,7 +4,14 @@
 enum object_types {
     LARA,
     PISTOLS,
-    HAIR
+    HAIR,
+    SHOTGUN,
+    MAGNUM,
+    UZI,
+    M16,
+    GRENADE_GUN,
+    HARPOON_GUN,
+    FLARE
 };
 
 #endif

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.14% (89)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.86% (1158)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.22% (90)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.78% (1157)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="53.31" height="6" x="0" y="0" class="named"/>
-<rect width="693.69" height="6" x="53.31" y="0" class="todo"/>
+<rect width="53.91" height="6" x="0" y="0" class="named"/>
+<rect width="693.09" height="6" x="53.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -568,7 +568,7 @@
 <rect width="12" height="12" x="720" y="135" class="todo"><title>0x0042b5e0 GetLaraJointAbsPosition (911 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0042b970 GetLJAInt (794 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="150" class="todo"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="150" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="todo"><title>0x0042bd00 ready_shotgun (112 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="150" class="todo"><title>0x0042bd70 RifleHandler (245 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0042be70 FireShotgun (242 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.63%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.39%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.61%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.25" height="6" x="0" y="0" class="named"/>
-<rect width="736.75" height="6" x="10.25" y="0" class="todo"/>
+<rect width="10.35" height="6" x="0" y="0" class="named"/>
+<rect width="736.65" height="6" x="10.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2327,7 +2327,7 @@
 <rect width="2.81" height="3.34" x="681.16" y="328.26" class="todo"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="334.61" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="340.95" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
-<rect width="2.81" height="3.20" x="681.16" y="347.15" class="todo"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
+<rect width="2.81" height="3.20" x="681.16" y="347.15" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="353.35" class="todo"><title>0x004406a0 Func4406a0 (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="359.55" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="365.75" class="todo"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>

@@ -18,6 +18,8 @@
 #include "input.h"
 #include "objnums.h"
 #include "gameflow.h"
+#include "laraflar.h"
+#include "lara1gun.h"
 #include "specific/specific.h"
 #include "specific/global.h"
 
