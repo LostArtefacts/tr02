@@ -57,6 +57,14 @@ The headers and import libraries, from the SDK's download,
 just dxsdk idx5sdk.exe   # installs C:\dx5\include and C:\dx5\lib
 ```
 
+## MASM
+
+3DSYSTEM's hand-written assembly is assembled with MASM 6.11, as Core
+did (`ml /c /coff`); 6.11d refuses Core's `GROUP` with `/coff`. From
+the MASM 6.11 disks, `DISK1/BIN/ML.EX$` and `ML.ER$` are KWAJ-compressed,
+which libmspack expands. Put them in the prefix as
+`C:\masm611\bin\ML.EXE` and `ML.ERR`.
+
 ## Running
 
 `just run` starts the game under Wine on a fresh Xvfb display. On its
