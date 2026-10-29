@@ -8,3 +8,8 @@ void S_FinishInventory(void)
     if (Inventory_Mode != INV_TITLE_MODE)
         TempVideoRemove();
 }
+
+int S_PlayFMV(char *fname, int sequence)
+{
+    return FMV_Play(fname);
+}
