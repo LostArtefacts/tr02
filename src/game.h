@@ -36,5 +36,6 @@ void flip_map_effect(ITEM_INFO *item);
 void invisibility_on(ITEM_INFO *item);
 void invisibility_off(ITEM_INFO *item);
 void dynamic_light_on(ITEM_INFO *item);
+void dynamic_light_off(ITEM_INFO *item);
 
 #endif

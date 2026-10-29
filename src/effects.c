@@ -144,3 +144,8 @@ void dynamic_light_on(ITEM_INFO *item)
 {
     item->dynamic_light = 1;
 }
+
+void dynamic_light_off(ITEM_INFO *item)
+{
+    item->dynamic_light = 0;
+}
