@@ -134,3 +134,8 @@ void invisibility_on(ITEM_INFO *item)
 {
     item->status = INVISIBLE;
 }
+
+void invisibility_off(ITEM_INFO *item)
+{
+    item->status = ACTIVE;
+}

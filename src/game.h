@@ -34,5 +34,6 @@ void ControlDingDong(sint16 item_number);
 void lara_hands_free(ITEM_INFO *item);
 void flip_map_effect(ITEM_INFO *item);
 void invisibility_on(ITEM_INFO *item);
+void invisibility_off(ITEM_INFO *item);
 
 #endif

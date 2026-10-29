@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.36% (17)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.64% (1230)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.44% (18)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.56% (1229)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.18" height="6" x="0" y="0" class="named"/>
-<rect width="736.82" height="6" x="10.18" y="0" class="todo"/>
+<rect width="10.78" height="6" x="0" y="0" class="named"/>
+<rect width="736.22" height="6" x="10.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -355,7 +355,7 @@
 <rect width="12" height="12" x="525" y="75" class="todo"><title>0x0041d890 swap_meshes_with_meshswap2 (99 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="75" class="todo"><title>0x0041d900 swap_meshes_with_meshswap3 (154 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="75" class="named"><title>0x0041d9a0 invisibility_on (9 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="75" class="todo"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="75" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="75" class="todo"><title>0x0041d9d0 dynamic_light_on (9 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="75" class="todo"><title>0x0041d9e0 dynamic_light_off (11 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="75" class="todo"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.61" height="6" x="0" y="0" class="named"/>
-<rect width="745.39" height="6" x="1.61" y="0" class="todo"/>
+<rect width="1.66" height="6" x="0" y="0" class="named"/>
+<rect width="745.34" height="6" x="1.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2450,7 +2450,7 @@
 <rect width="1.47" height="1.31" x="712.91" y="344.99" class="todo"><title>0x00453750 Func453750 (23 bytes)</title></rect>
 <rect width="1.47" height="1.31" x="712.91" y="349.30" class="todo"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="353.62" class="named"><title>0x0041cf30 turn180_effect (22 bytes)</title></rect>
-<rect width="1.47" height="1.13" x="712.91" y="357.74" class="todo"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
+<rect width="1.47" height="1.13" x="712.91" y="357.74" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="361.87" class="todo"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="366" class="todo"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
 <rect width="1.47" height="0.94" x="712.91" y="370.12" class="todo"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
