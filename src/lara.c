@@ -219,6 +219,15 @@ void lara_as_backjump(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_TWIST;
 }
 
+void lara_as_rightjump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.look = 0;
+    if (item->fallspeed > LARA_FASTFALL_SPEED)
+        item->goal_anim_state = AS_FASTFALL;
+    else if (input & IN_LEFT && item->goal_anim_state != AS_STOP)
+        item->goal_anim_state = AS_TWIST;
+}
+
 void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->fallspeed > LARA_FASTFALL_SPEED)
