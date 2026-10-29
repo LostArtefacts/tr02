@@ -24,6 +24,11 @@ void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_FASTFALL;
 }
 
+void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara_col_turn_r(item, coll);
+}
+
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }
