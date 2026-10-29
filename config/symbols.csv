@@ -1739,7 +1739,7 @@ address,size,name,symbol
 0x004d9ea8,4,FmvSoundContext,_FmvSoundContext
 0x004d9eac,4,SavedGamesCount,_SavedGamesCount
 0x004d9eb0,4,CurrentLevel,_CurrentLevel
-0x004d9eb4,4,IsLevelComplete,_IsLevelComplete
+0x004d9eb4,4,level_complete,_level_complete
 0x004d9eb8,4,SaveCounter,_SaveCounter
 0x004d9ec8,,HWR_VertexBuffer,_HWR_VertexBuffer
 0x00519ec8,,CurrentTexSource,_CurrentTexSource
