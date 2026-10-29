@@ -57,8 +57,9 @@ just manifest   # names its rows from TRX's manifest
 
 Visual C++ 5.0 with the DirectX 5 SDK:
 
-- The executable has no Rich header, and its linker version is 5.02,
-  that of Visual C++ 5.0 (Visual Studio 97).
+- The executable has no Rich header, and its linker version is 5.02:
+  Visual C++ 5.0 (Visual Studio 97), whose own linker is 5.00, after
+  an update. The compiler, `cl` 11.00.7022, matches the game's code.
 - Core's `TOMBRAID.DSP` is a Developer Studio 5.00 project.
 - The DirectX 5 SDK is from July 1997. The game uses `IDirect3D2` and
   `IDirectDrawSurface3`, which DirectX 5 introduced.

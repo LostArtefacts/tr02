@@ -28,12 +28,25 @@ the one TRX's manifest names.
 
 ## Compiler
 
-Visual C++ 5.0, which is not redistributable. Disc 1 of Visual Studio
-97 Professional holds only Visual Basic and Visual FoxPro; Visual C++
-is on another disc. Copy its `VC\BIN`, `VC\INCLUDE` and `VC\LIB` into
-the Wine prefix as `C:\msvc5\bin`, `include` and `lib`, with the DLLs
-`cl.exe` and `link.exe` load (`MSPDB50.DLL`, from `SharedIDE\BIN`) next
-to them in `bin`.
+Visual C++ 5.0, which is not redistributable: `cl` 11.00.7022 and
+`link` 5.00.7022. It is on disc 3 of Visual Studio 97 Enterprise
+(`VS97ENT3.iso`), under `DEVSTUDIO`, uncompressed. Copy `VC\BIN`,
+`VC\INCLUDE` and `VC\LIB` into the Wine prefix as `C:\msvc5\bin`,
+`include` and `lib`, and next to them in `bin` the DLLs the linker
+loads: `MSPDB50.DLL` and `MSDIS100.DLL` from `SHAREDIDE\BIN`, and
+`MSVCP50.DLL` from `VC\REDIST`:
+
+```sh
+7z x -oiso VS97ENT3.iso DEVSTUDIO/VC/BIN DEVSTUDIO/VC/INCLUDE DEVSTUDIO/VC/LIB \
+    DEVSTUDIO/SHAREDIDE/BIN DEVSTUDIO/VC/REDIST/MSVCP50.DLL
+WINEPREFIX=$PWD/.wine wineboot -i
+mkdir -p .wine/drive_c/msvc5
+cp -r iso/DEVSTUDIO/VC/BIN .wine/drive_c/msvc5/bin
+cp -r iso/DEVSTUDIO/VC/INCLUDE .wine/drive_c/msvc5/include
+cp -r iso/DEVSTUDIO/VC/LIB .wine/drive_c/msvc5/lib
+cp iso/DEVSTUDIO/SHAREDIDE/BIN/MSPDB50.DLL iso/DEVSTUDIO/SHAREDIDE/BIN/MSDIS100.DLL \
+    iso/DEVSTUDIO/VC/REDIST/MSVCP50.DLL .wine/drive_c/msvc5/bin/
+```
 
 ## DirectX 5 SDK
 
@@ -42,4 +55,14 @@ The headers and import libraries, from the SDK's download,
 
 ```sh
 just dxsdk idx5sdk.exe   # installs C:\dx5\include and C:\dx5\lib
+```
+
+## Running
+
+`just run` starts the game under Wine on a fresh Xvfb display. On its
+first start, without settings in the prefix's registry, the game shows
+its setup dialog; `key:Return` accepts it:
+
+```sh
+just run wait:10 key:Return wait:20 shot:title
 ```
