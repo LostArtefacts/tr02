@@ -28,3 +28,17 @@ void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 roo
     GetNewRoom(x + r, y - h, z - r, room_number);
     GetNewRoom(x - r, y - h, z - r, room_number);
 }
+
+void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number)
+{
+    int i;
+
+    GetFloor(x, y, z, &room_number);
+    for (i = 0; i < number_draw_rooms; i++)
+    {
+        if (draw_rooms[i] == room_number)
+            break;
+    }
+    if (i == number_draw_rooms)
+        draw_rooms[number_draw_rooms++] = room_number;
+}
