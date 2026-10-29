@@ -5,6 +5,7 @@
 #include "items.h"
 
 #define ONE_DEGREE 182
+#define FASTFALL_SPEED 128
 
 enum lara_gun_states {
     LG_ARMLESS,

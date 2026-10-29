@@ -18,6 +18,12 @@ void lara_as_null(ITEM_INFO *item, COLL_INFO *coll)
     coll->enable_baddie_push = 0;
 }
 
+void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->fallspeed > LARA_FASTFALL_SPEED)
+        item->goal_anim_state = AS_FASTFALL;
+}
+
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }

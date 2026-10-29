@@ -16,8 +16,17 @@ enum lara_meshes {
 enum lara_states {
     AS_WALK = 0,
     AS_RUN,
-    AS_STOP
+    AS_STOP,
+    AS_FORWARDJUMP,
+    AS_POSE,
+    AS_FASTBACK,
+    AS_TURN_R,
+    AS_TURN_L,
+    AS_DEATH,
+    AS_FASTFALL
 };
+
+#define LARA_FASTFALL_SPEED (FASTFALL_SPEED + 3)
 
 #define GF(a, b) (anims[a].frame_base + b)
 
