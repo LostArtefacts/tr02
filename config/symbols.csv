@@ -1754,7 +1754,7 @@ address,size,name,symbol
 0x00519ff4,4,GameAllocMemPointer,_GameAllocMemPointer
 0x00519ff8,4,GameAllocMemUsed,_GameAllocMemUsed
 0x00519ffc,4,GameAllocMemFree,_GameAllocMemFree
-0x0051a0bc,4,GameMemoryPointer,_GameMemoryPointer
+0x0051a0bc,4,malloc_buffer,_malloc_buffer
 0x0051a0c0,56,ConflictLayout,_ConflictLayout
 0x0051a0f8,256,DIKeys,_DIKeys
 0x0051a1f8,4,InputStatus,_InputStatus

@@ -18,6 +18,7 @@ bool DX_UpdateFrame(bool tSpinMessageLoop = true, RECT *prcWindow = 0);
 #endif
 
 extern int sound_active;
+extern char *malloc_buffer;
 
 sint32 GetRandomDraw(void);
 void SeedRandomDraw(sint32 seed);
