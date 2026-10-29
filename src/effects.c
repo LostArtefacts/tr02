@@ -211,3 +211,10 @@ void reset_hair(ITEM_INFO *item)
 {
     InitialiseHair();
 }
+
+void AssaultStop(ITEM_INFO *item)
+{
+    assault_timer_active = 0;
+    assault_timer_display = 1;
+    flipeffect = -1;
+}
