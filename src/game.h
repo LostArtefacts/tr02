@@ -12,10 +12,10 @@
 #include "laraanim.h"
 #include "collide.h"
 #include "larafunc.h"
-#include "control.h"
 #include "cinema.h"
 #include "title.h"
 #include "specific/specific.h"
+#include "specific/global.h"
 
 extern int level_complete;
 extern int flipeffect, fliptimer;
