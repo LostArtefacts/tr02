@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.22% (90)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.78% (1157)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.30% (91)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.70% (1156)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="53.91" height="6" x="0" y="0" class="named"/>
-<rect width="693.09" height="6" x="53.91" y="0" class="todo"/>
+<rect width="54.51" height="6" x="0" y="0" class="named"/>
+<rect width="692.49" height="6" x="54.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -620,7 +620,7 @@
 <rect width="12" height="12" x="0" y="165" class="todo"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="165" class="todo"><title>0x0042f9c0 DrawFlareInAir (248 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="165" class="todo"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="165" class="todo"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="165" class="named"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="165" class="todo"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="165" class="todo"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="165" class="todo"><title>0x00430090 draw_flare_meshes (24 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.39%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.61%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.41%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.59%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.35" height="6" x="0" y="0" class="named"/>
-<rect width="736.65" height="6" x="10.35" y="0" class="todo"/>
+<rect width="10.51" height="6" x="0" y="0" class="named"/>
+<rect width="736.49" height="6" x="10.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2124,7 +2124,7 @@
 <rect width="4.97" height="5" x="633.35" y="253.83" class="todo"><title>0x0044caf0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="4.86" height="5" x="641.31" y="253.83" class="todo"><title>0x0040d270 DoBoatDynamics (75 bytes)</title></rect>
 <rect width="4.86" height="5" x="649.17" y="253.83" class="named"><title>0x004280b0 lara_as_fastturn (75 bytes)</title></rect>
-<rect width="4.86" height="5" x="657.04" y="253.83" class="todo"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
+<rect width="4.86" height="5" x="657.04" y="253.83" class="named"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
 <rect width="4.86" height="5" x="664.90" y="253.83" class="todo"><title>0x00442b90 DartEffectControl (75 bytes)</title></rect>
 <rect width="4.86" height="5" x="672.76" y="253.83" class="todo"><title>0x004548d0 Func4548d0 (75 bytes)</title></rect>
 <rect width="4.76" height="5" x="680.62" y="253.83" class="named"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
