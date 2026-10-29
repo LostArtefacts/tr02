@@ -1,0 +1,16 @@
+# Game files are never committed. Bring your own copy.
+/orig/*
+!/orig/README.md
+!/orig/*.sha1
+
+# Links to the reference sources, see README.md
+/refs/
+
+/build/
+/.wine/
+__pycache__/
+
+*.iso
+*.ISO
+*.zip
+*.7z
