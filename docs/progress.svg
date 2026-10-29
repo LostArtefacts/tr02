@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.46% (93)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.54% (1154)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.54% (94)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.46% (1153)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="55.71" height="6" x="0" y="0" class="named"/>
-<rect width="691.29" height="6" x="55.71" y="0" class="todo"/>
+<rect width="56.31" height="6" x="0" y="0" class="named"/>
+<rect width="690.69" height="6" x="56.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -625,7 +625,7 @@
 <rect width="12" height="12" x="75" y="165" class="todo"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="165" class="named"><title>0x00430090 draw_flare_meshes (24 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="165" class="named"><title>0x004300b0 undraw_flare_meshes (24 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="165" class="todo"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="165" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="165" class="todo"><title>0x00430110 FlareControl (622 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="165" class="todo"><title>0x00430380 LaraControl (1640 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="165" class="todo"><title>0x00430a10 AnimateLara (717 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.44%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.56%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.62" height="6" x="0" y="0" class="named"/>
-<rect width="736.38" height="6" x="10.62" y="0" class="todo"/>
+<rect width="10.76" height="6" x="0" y="0" class="named"/>
+<rect width="736.24" height="6" x="10.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2185,7 +2185,7 @@
 <rect width="4.46" height="4.19" x="663.51" y="269.17" class="todo"><title>0x00456680 UpdateTicks (64 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="670.97" y="269.17" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="678.31" y="269.17" class="todo"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
-<rect width="4.23" height="4.19" x="685.66" y="269.17" class="todo"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
+<rect width="4.23" height="4.19" x="685.66" y="269.17" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="692.88" y="269.17" class="todo"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="700.11" y="269.17" class="todo"><title>0x0044ec40 EncodePutPCX (62 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="707.34" y="269.17" class="todo"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
