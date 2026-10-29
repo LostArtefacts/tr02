@@ -24,6 +24,17 @@ void SoundEffects(void)
     SOUND_EndScene();
 }
 
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num, int number)
+{
+    for (; number > 0; number--)
+    {
+        DoBloodSplat(x + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000),
+                     y + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000),
+                     z + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000),
+                     speed, direction, room_num);
+    }
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.09% (76)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.91% (1171)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.17% (77)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.83% (1170)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="45.53" height="6" x="0" y="0" class="named"/>
-<rect width="701.47" height="6" x="45.53" y="0" class="todo"/>
+<rect width="46.13" height="6" x="0" y="0" class="named"/>
+<rect width="700.87" height="6" x="46.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -311,7 +311,7 @@
 <rect width="12" height="12" x="615" y="60" class="todo"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x0041c540 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="60" class="todo"><title>0x0041c5b0 DoBloodSplat (89 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="60" class="todo"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="60" class="named"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="60" class="todo"><title>0x0041c6c0 ControlBlood1 (130 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="60" class="todo"><title>0x0041c750 ControlExplosion1 (127 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="60" class="todo"><title>0x0041c7d0 Richochet (114 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.07%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="6.98" height="6" x="0" y="0" class="named"/>
-<rect width="740.02" height="6" x="6.98" y="0" class="todo"/>
+<rect width="7.34" height="6" x="0" y="0" class="named"/>
+<rect width="739.66" height="6" x="7.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1842,7 +1842,7 @@
 <rect width="8.96" height="8.70" x="679.31" y="163.31" class="todo"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
 <rect width="8.82" height="8.70" x="691.27" y="163.31" class="todo"><title>0x00428a80 extra_as_starthouse (165 bytes)</title></rect>
 <rect width="8.75" height="8.70" x="703.09" y="163.31" class="todo"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
-<rect width="8.75" height="8.70" x="714.83" y="163.31" class="todo"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
+<rect width="8.75" height="8.70" x="714.83" y="163.31" class="named"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="8.75" height="8.70" x="726.58" y="163.31" class="todo"><title>0x00452d70 Func452d70 (164 bytes)</title></rect>
 <rect width="8.67" height="8.70" x="738.33" y="163.31" class="todo"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
 <rect width="8.79" height="8.58" x="546.89" y="175.01" class="todo"><title>0x00428b30 extra_as_finalanim (163 bytes)</title></rect>
