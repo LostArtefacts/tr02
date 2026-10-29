@@ -15,6 +15,7 @@ extern int level_complete;
 extern int flipeffect, fliptimer;
 
 int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
+void FlipMap(void);
 
 void finish_level_effect(ITEM_INFO *item);
 void turn180_effect(ITEM_INFO *item);
@@ -31,5 +32,6 @@ void StatueFX(ITEM_INFO *item);
 void SetChangeFX(ITEM_INFO *item);
 void ControlDingDong(sint16 item_number);
 void lara_hands_free(ITEM_INFO *item);
+void flip_map_effect(ITEM_INFO *item);
 
 #endif

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.20% (15)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.80% (1232)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.28% (16)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.72% (1231)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="8.99" height="6" x="0" y="0" class="named"/>
-<rect width="738.01" height="6" x="8.99" y="0" class="todo"/>
+<rect width="9.58" height="6" x="0" y="0" class="named"/>
+<rect width="737.42" height="6" x="9.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -348,7 +348,7 @@
 <rect width="12" height="12" x="420" y="75" class="todo"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="75" class="todo"><title>0x0041d630 DrawSphereOfDoom (301 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="75" class="named"><title>0x0041d760 lara_hands_free (10 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="75" class="todo"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="75" class="named"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="75" class="todo"><title>0x0041d780 draw_right_gun (67 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="75" class="todo"><title>0x0041d7d0 draw_left_gun (67 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="75" class="todo"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.79%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.58" height="6" x="0" y="0" class="named"/>
-<rect width="745.42" height="6" x="1.58" y="0" class="todo"/>
+<rect width="1.59" height="6" x="0" y="0" class="named"/>
+<rect width="745.41" height="6" x="1.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2561,7 +2561,7 @@
 <rect width="0.10" height="0.10" x="745.72" y="369.39" class="todo"><title>0x0045901a Func45901a (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.86" y="369.39" class="todo"><title>0x00459020 Func459020 (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.58" y="371.74" class="todo"><title>0x00459026 Func459026 (6 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="743.58" y="374.08" class="todo"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="743.58" y="374.08" class="named"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.58" y="376.04" class="todo"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.72" y="371.74" class="todo"><title>0x004239c0 DoInventoryPicture (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.86" y="371.74" class="todo"><title>0x00447450 Func447450 (5 bytes)</title></rect>
