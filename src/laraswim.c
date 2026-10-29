@@ -82,3 +82,8 @@ void lara_as_waterroll(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->fallspeed = 0;
 }
+
+void lara_col_swim(ITEM_INFO *item, COLL_INFO *coll)
+{
+    LaraSwimCollision(item, coll);
+}
