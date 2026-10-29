@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 void ScreenDump(void);
+void ScreenPartialDump();
 void S_ClearScreen();
 
 #ifdef __cplusplus

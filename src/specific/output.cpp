@@ -10,3 +10,8 @@ void ScreenDump(void)
 {
     DX_UpdateFrame(true, 0);
 }
+
+void ScreenPartialDump(void)
+{
+    DX_UpdateFrame(true, &GrcDumpWindow);
+}
