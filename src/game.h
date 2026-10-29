@@ -16,16 +16,26 @@
 #include "title.h"
 #include "invdata.h"
 #include "input.h"
+#include "objnums.h"
 #include "specific/specific.h"
 #include "specific/global.h"
 
 extern int level_complete;
 extern int flipeffect, fliptimer;
+extern int flip_status;
+extern int number_sound_effects;
+extern OBJECT_VECTOR *sound_effects;
+extern void (*effect_routines[])(ITEM_INFO *item);
+extern int assault_timer_display, assault_timer_active;
 
 int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
+void SOUND_EndScene(void);
 void FlipMap(void);
 void InitialiseHair(void);
 
+void SoundEffects(void);
+void DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num, int number);
 void finish_level_effect(ITEM_INFO *item);
 void turn180_effect(ITEM_INFO *item);
 void floor_shake_effect(ITEM_INFO *item);
@@ -42,11 +52,14 @@ void SetChangeFX(ITEM_INFO *item);
 void ControlDingDong(sint16 item_number);
 void lara_hands_free(ITEM_INFO *item);
 void flip_map_effect(ITEM_INFO *item);
+void draw_right_gun(ITEM_INFO *item);
+void draw_left_gun(ITEM_INFO *item);
 void invisibility_on(ITEM_INFO *item);
 void invisibility_off(ITEM_INFO *item);
 void dynamic_light_on(ITEM_INFO *item);
 void dynamic_light_off(ITEM_INFO *item);
 void reset_hair(ITEM_INFO *item);
 void DoInventoryPicture(void);
+void AssaultStop(ITEM_INFO *item);
 
 #endif

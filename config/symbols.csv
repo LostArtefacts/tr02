@@ -1450,6 +1450,7 @@ address,size,name,symbol
 0x004640bc,2,CD_TrackID,_CD_TrackID
 0x004640c4,4,flipeffect,_flipeffect
 0x004641f0,4,AssaultBestTime,_AssaultBestTime
+0x004641f8,,effect_routines,_effect_routines
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets
 0x004642f0,32,TrackIDs,_TrackIDs
 0x00464310,2,CineTargetAngle,_CineTargetAngle
@@ -1598,8 +1599,8 @@ address,size,name,symbol
 0x004d77a0,4,IsDemoLoaded,_IsDemoLoaded
 0x004d77b0,4,BoundStart,_BoundStart
 0x004d77b4,4,BoundEnd,_BoundEnd
-0x004d77d0,4,IsAssaultTimerDisplay,_IsAssaultTimerDisplay
-0x004d77d4,4,IsAssaultTimerActive,_IsAssaultTimerActive
+0x004d77d0,4,assault_timer_display,_assault_timer_display
+0x004d77d4,4,assault_timer_active,_assault_timer_active
 0x004d77d8,4,IsMonkAngry,_IsMonkAngry
 0x004d77e0,4,GF_LaraStartAnim,_GF_LaraStartAnim
 0x004d77e4,,GF_SunsetEnabled,_GF_SunsetEnabled
@@ -1864,12 +1865,12 @@ address,size,name,symbol
 0x00521f9c,4,GF_Key3StringBuffer,_GF_Key3StringBuffer
 0x00521fa0,27,GF_SecretInvItems,_GF_SecretInvItems
 0x00521fc0,27,GF_Add2InvItems,_GF_Add2InvItems
-0x00521fdc,4,SoundFxCount,_SoundFxCount
-0x00521fe0,4,SoundFx,_SoundFx
-0x00522000,,Objects,_Objects
+0x00521fdc,4,number_sound_effects,_number_sound_effects
+0x00521fe0,4,sound_effects,_sound_effects
+0x00522000,,objects,_objects
 0x005251b0,4,AnimFrames,_AnimFrames
 0x005251c0,,DynamicLights,_DynamicLights
-0x005252b0,4,MeshPtr,_MeshPtr
+0x005252b0,4,meshes,_meshes
 0x005252b4,4,OutsideCamera,_OutsideCamera
 0x005252b8,4,DrawRoomsCount,_DrawRoomsCount
 0x005258f4,4,anims,_anims
@@ -1892,7 +1893,7 @@ address,size,name,symbol
 0x005261b0,4,DemoPtr,_DemoPtr
 0x005261b4,4,DemoCount,_DemoCount
 0x005261c0,128,CD_Flags,_CD_Flags
-0x00526240,4,FlipStatus,_FlipStatus
+0x00526240,4,flip_status,_flip_status
 0x00526260,40,FlipMaps,_FlipMaps
 0x00526288,4,TriggerPtr,_TriggerPtr
 0x005262f0,4,items,_items
