@@ -5,6 +5,12 @@
 
 #define ABS(x) (((x)<0) ? (-(x)):(x))
 
+typedef struct phd_vector {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+} PHD_VECTOR;
+
 typedef sint16 PHD_ANGLE;
 
 typedef struct phd_3dpos {

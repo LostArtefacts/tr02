@@ -10,6 +10,8 @@
 #include "camera.h"
 #include "room.h"
 #include "laraanim.h"
+#include "collide.h"
+#include "larafunc.h"
 
 extern int level_complete;
 extern int flipeffect, fliptimer;
