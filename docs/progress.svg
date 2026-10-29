@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.25% (53)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.75% (1194)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.33% (54)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.67% (1193)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="31.75" height="6" x="0" y="0" class="named"/>
-<rect width="715.25" height="6" x="31.75" y="0" class="todo"/>
+<rect width="32.35" height="6" x="0" y="0" class="named"/>
+<rect width="714.65" height="6" x="32.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -464,7 +464,7 @@
 <rect width="12" height="12" x="660" y="105" class="named"><title>0x00427880 lara_as_walk (139 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="105" class="todo"><title>0x00427910 lara_as_run (323 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="105" class="todo"><title>0x00427a60 lara_as_stop (328 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="105" class="todo"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="105" class="named"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="105" class="todo"><title>0x00427c90 lara_as_fastback (87 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="105" class="todo"><title>0x00427cf0 lara_as_turn_r (138 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="120" class="todo"><title>0x00427d80 lara_as_turn_l (137 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.41%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.59%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.53%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="3.04" height="6" x="0" y="0" class="named"/>
-<rect width="743.96" height="6" x="3.04" y="0" class="todo"/>
+<rect width="3.51" height="6" x="0" y="0" class="named"/>
+<rect width="743.49" height="6" x="3.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1744,7 +1744,7 @@
 <rect width="10.60" height="10.12" x="537.06" y="137.61" class="todo"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
 <rect width="10.54" height="10.12" x="550.66" y="137.61" class="todo"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
 <rect width="10.47" height="10.12" x="564.20" y="137.61" class="todo"><title>0x004084a0 InsertTransQuad (211 bytes)</title></rect>
-<rect width="10.47" height="10.12" x="577.67" y="137.61" class="todo"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
+<rect width="10.47" height="10.12" x="577.67" y="137.61" class="named"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="10.47" height="10.12" x="591.14" y="137.61" class="todo"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
 <rect width="10.47" height="10.12" x="604.61" y="137.61" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="10.41" height="10.12" x="618.09" y="137.61" class="todo"><title>0x00402c40 xgen_x (210 bytes)</title></rect>

@@ -16,5 +16,23 @@ void lara_col_stop(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_stepright(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_stepleft(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_reach(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_back(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_fastturn(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_stepright(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_stepleft(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_slide(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_backjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_rightjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_leftjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_fallback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_slideback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_special(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_gongbong(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll);
 
 #endif
