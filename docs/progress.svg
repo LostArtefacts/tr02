@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.81% (60)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.19% (1187)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.89% (61)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.11% (1186)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="35.94" height="6" x="0" y="0" class="named"/>
-<rect width="711.06" height="6" x="35.94" y="0" class="todo"/>
+<rect width="36.54" height="6" x="0" y="0" class="named"/>
+<rect width="710.46" height="6" x="36.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -479,7 +479,7 @@
 <rect width="12" height="12" x="135" y="120" class="named"><title>0x004280b0 lara_as_fastturn (75 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="120" class="named"><title>0x00428100 lara_as_stepright (124 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="120" class="named"><title>0x00428180 lara_as_stepleft (124 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="120" class="todo"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="120" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="120" class="todo"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="120" class="todo"><title>0x00428280 lara_as_rightjump (51 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="120" class="todo"><title>0x004282c0 lara_as_leftjump (51 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.35%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="4.77" height="6" x="0" y="0" class="named"/>
-<rect width="742.23" height="6" x="4.77" y="0" class="todo"/>
+<rect width="4.86" height="6" x="0" y="0" class="named"/>
+<rect width="742.14" height="6" x="4.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2326,7 +2326,7 @@
 <rect width="2.81" height="3.34" x="681.16" y="321.92" class="todo"><title>0x00447f80 WinSndAdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="328.26" class="todo"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="334.61" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
-<rect width="2.81" height="3.20" x="681.16" y="340.95" class="todo"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
+<rect width="2.81" height="3.20" x="681.16" y="340.95" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="347.15" class="todo"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="353.35" class="todo"><title>0x004406a0 Func4406a0 (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="359.55" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
