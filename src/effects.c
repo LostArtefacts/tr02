@@ -129,3 +129,8 @@ void flip_map_effect(ITEM_INFO *item)
 {
     FlipMap();
 }
+
+void invisibility_on(ITEM_INFO *item)
+{
+    item->status = INVISIBLE;
+}
