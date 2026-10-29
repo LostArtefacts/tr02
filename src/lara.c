@@ -88,6 +88,13 @@ void lara_as_death(ITEM_INFO *item, COLL_INFO *coll)
     coll->enable_baddie_push = 0;
 }
 
+void lara_as_reach(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_angle = 85 * ONE_DEGREE;
+    if (item->fallspeed > LARA_FASTFALL_SPEED)
+        item->goal_anim_state = AS_FASTFALL;
+}
+
 void lara_as_splat(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
