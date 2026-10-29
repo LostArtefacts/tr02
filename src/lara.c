@@ -64,6 +64,23 @@ void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->goal_anim_state = AS_STOP;
+    if (input & IN_LEFT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_MED_TURN)
+            lara.turn_rate = -LARA_MED_TURN;
+    }
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_MED_TURN)
+            lara.turn_rate = LARA_MED_TURN;
+    }
+}
+
 void lara_as_death(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
