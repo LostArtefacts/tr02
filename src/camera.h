@@ -3,6 +3,8 @@
 
 #include "anim.h"
 
+#define GAME_FOV 80
+
 typedef enum camera_type {
     CHASE_CAMERA,
     FIXED_CAMERA,

@@ -16,4 +16,6 @@ typedef struct phd_3dpos {
     PHD_ANGLE z_rot;
 } PHD_3DPOS;
 
+void AlterFOV(PHD_ANGLE fov);
+
 #endif

@@ -27,6 +27,16 @@ void floor_shake_effect(ITEM_INFO *item)
     }
 }
 
+void lara_normal_effect(ITEM_INFO *item)
+{
+    item->current_anim_state = AS_STOP;
+    item->goal_anim_state = AS_STOP;
+    item->frame_number = STOP_F;
+    item->anim_number = STOP_A;
+    camera.type = CHASE_CAMERA;
+    AlterFOV(GAME_FOV * ONE_DEGREE);
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;

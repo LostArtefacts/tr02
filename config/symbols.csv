@@ -1872,7 +1872,7 @@ address,size,name,symbol
 0x005252b0,4,MeshPtr,_MeshPtr
 0x005252b4,4,OutsideCamera,_OutsideCamera
 0x005252b8,4,DrawRoomsCount,_DrawRoomsCount
-0x005258f4,4,Anims,_Anims
+0x005258f4,4,anims,_anims
 0x00525900,512,BoundRooms,_BoundRooms
 0x00525b00,4,OutsideBottom,_OutsideBottom
 0x00525b04,4,AnimRanges,_AnimRanges

@@ -1,6 +1,10 @@
 #ifndef LARA_H
 #define LARA_H
 
+#include "types.h"
+
+#define ONE_DEGREE 182
+
 enum lara_gun_states {
     LG_ARMLESS,
     LG_HANDSBUSY,
