@@ -20,6 +20,12 @@ void SeedRandomControl(sint32 seed)
     rand_1 = seed;
 }
 
+sint32 GetRandomDraw(void)
+{
+    rand_2 = rand_2 * 0x41c64e6d + 0x3039;
+    return (rand_2 >> 10) & 0x7fff;
+}
+
 void SeedRandomDraw(sint32 seed)
 {
     rand_2 = seed;
