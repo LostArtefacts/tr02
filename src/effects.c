@@ -37,6 +37,12 @@ void lara_normal_effect(ITEM_INFO *item)
     AlterFOV(GAME_FOV * ONE_DEGREE);
 }
 
+void BoilerFX(ITEM_INFO *item)
+{
+    SoundEffect(338, NULL, 0);
+    flipeffect = -1;
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;

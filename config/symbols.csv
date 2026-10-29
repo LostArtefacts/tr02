@@ -725,7 +725,7 @@ address,size,name,symbol
 0x0043f280,281,SkidmanPush,_SkidmanPush
 0x0043f3a0,129,SkidmanCollision,_SkidmanCollision
 0x0043f430,49,GetRealTrack,_GetRealTrack
-0x0043f470,1156,PlaySoundEffect,_PlaySoundEffect
+0x0043f470,1156,SoundEffect,_SoundEffect
 0x0043f910,94,StopSoundEffect,_StopSoundEffect
 0x0043f970,134,SOUND_EndScene,_SOUND_EndScene
 0x0043fa00,36,SOUND_Stop,_SOUND_Stop
@@ -1448,7 +1448,7 @@ address,size,name,symbol
 0x004640b0,4,CineTrackID,_CineTrackID
 0x004640b8,4,CineTickRate,_CineTickRate
 0x004640bc,2,CD_TrackID,_CD_TrackID
-0x004640c4,4,FlipEffect,_FlipEffect
+0x004640c4,4,flipeffect,_flipeffect
 0x004641f0,4,AssaultBestTime,_AssaultBestTime
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets
 0x004642f0,32,TrackIDs,_TrackIDs
@@ -1592,7 +1592,7 @@ address,size,name,symbol
 0x004d777c,4,IsChunkyCamera,_IsChunkyCamera
 0x004d7784,4,NoInputCounter,_NoInputCounter
 0x004d7788,4,IsResetFlag,_IsResetFlag
-0x004d778c,4,FlipTimer,_FlipTimer
+0x004d778c,4,fliptimer,_fliptimer
 0x004d7794,4,StopInventory,_StopInventory
 0x004d779c,4,IsDemoLevelType,_IsDemoLevelType
 0x004d77a0,4,IsDemoLoaded,_IsDemoLoaded
