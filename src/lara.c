@@ -275,6 +275,12 @@ void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
     lara.extra_anim = 0;
 }
 
+void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_angle = 80 * ONE_DEGREE;
+    camera.target_elevation = -25 * ONE_DEGREE;
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);
