@@ -2,6 +2,7 @@
 #define LARA_H
 
 #include "types.h"
+#include "items.h"
 
 #define ONE_DEGREE 182
 
@@ -20,5 +21,6 @@ typedef struct lara_info {
 } LARA_INFO;
 
 extern LARA_INFO lara;
+extern ITEM_INFO *lara_item;
 
 #endif
