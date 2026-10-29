@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.77% (72)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">94.23% (1175)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.85% (73)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">94.15% (1174)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="43.13" height="6" x="0" y="0" class="named"/>
-<rect width="703.87" height="6" x="43.13" y="0" class="todo"/>
+<rect width="43.73" height="6" x="0" y="0" class="named"/>
+<rect width="703.27" height="6" x="43.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -653,7 +653,7 @@
 <rect width="12" height="12" x="495" y="165" class="todo"><title>0x00432000 LaraUnderWater (547 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="165" class="todo"><title>0x00432230 SwimTurn (134 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="165" class="named"><title>0x004322c0 lara_as_swim (107 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="165" class="todo"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="165" class="named"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="165" class="todo"><title>0x004323b0 lara_as_tread (133 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="165" class="todo"><title>0x00432440 lara_as_dive (20 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="165" class="todo"><title>0x00432460 lara_as_uwdeath (83 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.82%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.18%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.86%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.14%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="6.15" height="6" x="0" y="0" class="named"/>
-<rect width="740.85" height="6" x="6.15" y="0" class="todo"/>
+<rect width="6.41" height="6" x="0" y="0" class="named"/>
+<rect width="740.59" height="6" x="6.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1974,7 +1974,7 @@
 <rect width="7" height="6.97" x="660.89" y="207.90" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="670.89" y="207.90" class="todo"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="680.81" y="207.90" class="todo"><title>0x00421900 DrawHair (118 bytes)</title></rect>
-<rect width="6.92" height="6.97" x="690.73" y="207.90" class="todo"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
+<rect width="6.92" height="6.97" x="690.73" y="207.90" class="named"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="700.65" y="207.90" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="710.57" y="207.90" class="todo"><title>0x00456d20 GetRegistryBoolValue (118 bytes)</title></rect>
 <rect width="6.84" height="6.97" x="720.49" y="207.90" class="todo"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
