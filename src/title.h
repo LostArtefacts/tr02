@@ -20,6 +20,8 @@ typedef enum title_options {
     TITLE_DESELECT = 9 << 8
 } TITLE_OPTIONS;
 
+extern int title_loaded;
+
 sint32 LevelCompleteSequence(int level_number);
 
 #ifdef __cplusplus

@@ -3,7 +3,8 @@
 
 enum object_types {
     LARA,
-    PISTOLS
+    PISTOLS,
+    HAIR
 };
 
 #endif

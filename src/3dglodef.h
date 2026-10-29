@@ -9,6 +9,8 @@ extern "C" {
 
 #define ABS(x) (((x)<0) ? (-(x)):(x))
 
+#define phd_PopMatrix() phd_mxptr -= 12
+
 typedef struct phd_vector {
     sint32 x;
     sint32 y;
@@ -26,10 +28,17 @@ typedef struct phd_3dpos {
     PHD_ANGLE z_rot;
 } PHD_3DPOS;
 
+extern sint32 *phd_mxptr;
 extern sint32 phd_winwidth;
 extern sint32 phd_winheight;
 
 void AlterFOV(PHD_ANGLE fov);
+
+void phd_RotX(PHD_ANGLE rx);
+void phd_RotY(PHD_ANGLE ry);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void phd_PutPolygons(sint16 *objptr, int clipstatus);
+void __cdecl phd_PushMatrix(void);
 
 sint32 __fastcall phd_cos(sint32 angle);
 sint32 __fastcall phd_sin(sint32 angle);

@@ -17,6 +17,7 @@
 #include "invdata.h"
 #include "input.h"
 #include "objnums.h"
+#include "gameflow.h"
 #include "specific/specific.h"
 #include "specific/global.h"
 
@@ -35,6 +36,8 @@ void SOUND_EndScene(void);
 void FlipMap(void);
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
 void InitialiseHair(void);
+void DrawHair(void);
+sint32 DoDemoSequence(int level_number);
 
 void SoundEffects(void);
 void DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);

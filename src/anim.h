@@ -66,5 +66,6 @@ typedef struct object_info {
 extern ANIM_STRUCT *anims;
 extern OBJECT_INFO objects[];
 extern sint16 **meshes;
+extern sint32 *bones;
 
 #endif
