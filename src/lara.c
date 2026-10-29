@@ -208,6 +208,17 @@ void lara_as_slide(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_FORWARDJUMP;
 }
 
+void lara_as_backjump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_angle = ONE_DEGREE * 135;
+    if (item->fallspeed > LARA_FASTFALL_SPEED)
+        item->goal_anim_state = AS_FASTFALL;
+    else if (item->goal_anim_state == AS_RUN)
+        item->goal_anim_state = AS_STOP;
+    else if ((input & IN_FORWARD || input & IN_ROLL) && item->goal_anim_state != AS_STOP)
+        item->goal_anim_state = AS_TWIST;
+}
+
 void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->fallspeed > LARA_FASTFALL_SPEED)

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.89% (61)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.11% (1186)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.97% (62)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.03% (1185)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="36.54" height="6" x="0" y="0" class="named"/>
-<rect width="710.46" height="6" x="36.54" y="0" class="todo"/>
+<rect width="37.14" height="6" x="0" y="0" class="named"/>
+<rect width="709.86" height="6" x="37.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -480,7 +480,7 @@
 <rect width="12" height="12" x="150" y="120" class="named"><title>0x00428100 lara_as_stepright (124 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="120" class="named"><title>0x00428180 lara_as_stepleft (124 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="120" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="120" class="todo"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="120" class="named"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="120" class="todo"><title>0x00428280 lara_as_rightjump (51 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="120" class="todo"><title>0x004282c0 lara_as_leftjump (51 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="120" class="named"><title>0x00428300 lara_as_upjump (19 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.33%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="4.86" height="6" x="0" y="0" class="named"/>
-<rect width="742.14" height="6" x="4.86" y="0" class="todo"/>
+<rect width="5.03" height="6" x="0" y="0" class="named"/>
+<rect width="741.97" height="6" x="5.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2127,7 +2127,7 @@
 <rect width="4.86" height="5" x="657.04" y="253.83" class="todo"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
 <rect width="4.86" height="5" x="664.90" y="253.83" class="todo"><title>0x00442b90 DartEffectControl (75 bytes)</title></rect>
 <rect width="4.86" height="5" x="672.76" y="253.83" class="todo"><title>0x004548d0 Func4548d0 (75 bytes)</title></rect>
-<rect width="4.76" height="5" x="680.62" y="253.83" class="todo"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
+<rect width="4.76" height="5" x="680.62" y="253.83" class="named"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
 <rect width="4.76" height="5" x="688.37" y="253.83" class="todo"><title>0x00447110 InsertDisplayModeInListTail (74 bytes)</title></rect>
 <rect width="4.76" height="5" x="696.13" y="253.83" class="todo"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
 <rect width="4.76" height="5" x="703.88" y="253.83" class="todo"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
