@@ -71,4 +71,6 @@ typedef struct lara_info {
 extern LARA_INFO lara;
 extern ITEM_INFO *lara_item;
 
+void LookUpDown(void);
+
 #endif

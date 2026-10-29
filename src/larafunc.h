@@ -34,5 +34,9 @@ void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll);
 void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll);
 void extra_as_gongbong(ITEM_INFO *item, COLL_INFO *coll);
 void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_swim(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_glide(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_tread(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_swim(ITEM_INFO *item, COLL_INFO *coll);
 
 #endif

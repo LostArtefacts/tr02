@@ -110,5 +110,7 @@ enum lara_states {
 #define STOP_F GF(STOP_A, 0)
 #define BREATH_A 103
 #define BREATH_F GF(BREATH_A, 0)
+#define WATERROLL_A 203
+#define WATERROLL_F GF(WATERROLL_A, 0)
 
 #endif
