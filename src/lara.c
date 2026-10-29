@@ -176,6 +176,30 @@ void lara_as_stepright(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_as_stepleft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.look = 0;
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+    if (!(input & IN_STEPL))
+        item->goal_anim_state = AS_STOP;
+    if (input & IN_LEFT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_SLOW_TURN)
+            lara.turn_rate = -LARA_SLOW_TURN;
+    }
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_SLOW_TURN)
+            lara.turn_rate = LARA_SLOW_TURN;
+    }
+}
+
 void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->fallspeed > LARA_FASTFALL_SPEED)
