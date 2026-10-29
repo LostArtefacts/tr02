@@ -22,6 +22,8 @@
 
 extern int level_complete;
 extern int flipeffect, fliptimer;
+extern int number_draw_rooms;
+extern sint16 draw_rooms[];
 extern int flip_status;
 extern int number_sound_effects;
 extern OBJECT_VECTOR *sound_effects;
@@ -31,6 +33,7 @@ extern int assault_timer_display, assault_timer_active;
 int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
 void SOUND_EndScene(void);
 void FlipMap(void);
+FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
 void InitialiseHair(void);
 
 void SoundEffects(void);

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.42% (80)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.58% (1167)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.50% (81)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.50% (1166)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="47.92" height="6" x="0" y="0" class="named"/>
-<rect width="699.08" height="6" x="47.92" y="0" class="todo"/>
+<rect width="48.52" height="6" x="0" y="0" class="named"/>
+<rect width="698.48" height="6" x="48.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -214,7 +214,7 @@
 <rect width="12" height="12" x="660" y="30" class="todo"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="30" class="todo"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="30" class="todo"><title>0x004128d0 GetCollisionInfo (1660 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="30" class="todo"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="30" class="named"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="30" class="todo"><title>0x00412fc0 CollideStaticObjects (978 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="30" class="todo"><title>0x004133b0 GetNearByRooms (200 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="45" class="todo"><title>0x00413480 GetNewRoom (85 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.03%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.97%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.05%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.95%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="7.71" height="6" x="0" y="0" class="named"/>
-<rect width="739.29" height="6" x="7.71" y="0" class="todo"/>
+<rect width="7.81" height="6" x="0" y="0" class="named"/>
+<rect width="739.19" height="6" x="7.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2302,7 +2302,7 @@
 <rect width="3.36" height="3.33" x="681.55" y="302.90" class="todo"><title>0x00455760 S_CDStop (48 bytes)</title></rect>
 <rect width="3.36" height="3.33" x="687.90" y="302.90" class="todo"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="694.26" y="302.90" class="todo"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
-<rect width="3.22" height="3.33" x="700.48" y="302.90" class="todo"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
+<rect width="3.22" height="3.33" x="700.48" y="302.90" class="named"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="706.70" y="302.90" class="todo"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="712.93" y="302.90" class="todo"><title>0x00425330 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="719.15" y="302.90" class="todo"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>

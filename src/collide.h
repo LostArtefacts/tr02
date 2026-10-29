@@ -38,4 +38,9 @@ typedef struct {
     uint16 enable_spaz:1;
 } COLL_INFO;
 
+sint32 FindGridShift(sint32 src, sint32 dst);
+void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
+void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number);
+int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd);
+
 #endif

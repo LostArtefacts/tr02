@@ -1212,9 +1212,9 @@ address,size,name,symbol
 0x00457b5c,833,wgtmapA,@wgtmapA@12
 0x00457ea0,72,phd_atan,@phd_atan@8
 0x00457ee8,6,phd_cos,@phd_cos@4
-0x00457eee,27,phd_sin,_phd_sin
+0x00457eee,27,phd_sin,@phd_sin@4
 0x00457f09,26,Func457f09,
-0x00457f23,44,phd_sqrt,_phd_sqrt
+0x00457f23,44,phd_sqrt,@phd_sqrt@4
 0x00457f50,6,Func457f50,
 0x00458f78,6,Func458f78,
 0x00458f7e,6,Func458f7e,
@@ -1872,13 +1872,13 @@ address,size,name,symbol
 0x005251c0,,DynamicLights,_DynamicLights
 0x005252b0,4,meshes,_meshes
 0x005252b4,4,OutsideCamera,_OutsideCamera
-0x005252b8,4,DrawRoomsCount,_DrawRoomsCount
+0x005252b8,4,number_draw_rooms,_number_draw_rooms
 0x005258f4,4,anims,_anims
 0x00525900,512,BoundRooms,_BoundRooms
 0x00525b00,4,OutsideBottom,_OutsideBottom
 0x00525b04,4,AnimRanges,_AnimRanges
 0x00525b08,4,AnimCommands,_AnimCommands
-0x00525b20,200,DrawRoomsArray,_DrawRoomsArray
+0x00525b20,200,draw_rooms,_draw_rooms
 0x00525be8,4,AnimBones,_AnimBones
 0x00525bec,4,DynamicLightCount,_DynamicLightCount
 0x00525c00,,StaticObjects,_StaticObjects
