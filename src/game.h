@@ -24,6 +24,7 @@ void BoilerFX(ITEM_INFO *item);
 void FloodFX(ITEM_INFO *item);
 void RubbleFX(ITEM_INFO *item);
 void ChandelierFX(ITEM_INFO *item);
+void ExplosionFX(ITEM_INFO *item);
 void lara_hands_free(ITEM_INFO *item);
 
 #endif

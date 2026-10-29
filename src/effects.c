@@ -77,6 +77,13 @@ void ChandelierFX(ITEM_INFO *item)
         flipeffect = -1;
 }
 
+void ExplosionFX(ITEM_INFO *item)
+{
+    SoundEffect(105, NULL, 0);
+    camera.bounce = -75;
+    flipeffect = -1;
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
