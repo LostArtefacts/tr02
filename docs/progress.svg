@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.90% (86)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.10% (1161)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.98% (87)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.02% (1160)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.52" height="6" x="0" y="0" class="named"/>
-<rect width="695.48" height="6" x="51.52" y="0" class="todo"/>
+<rect width="52.12" height="6" x="0" y="0" class="named"/>
+<rect width="694.88" height="6" x="52.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -375,7 +375,7 @@
 <rect width="12" height="12" x="75" y="90" class="todo"><title>0x0041f650 WarriorControl (954 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="90" class="todo"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="90" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="90" class="todo"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="90" class="named"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="90" class="todo"><title>0x0041fcc0 GF_InterpretSequence (1148 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="90" class="todo"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="todo"><title>0x00420e80 InitialiseHair (116 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.27%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.73%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="9.51" height="6" x="0" y="0" class="named"/>
-<rect width="737.49" height="6" x="9.51" y="0" class="todo"/>
+<rect width="9.74" height="6" x="0" y="0" class="named"/>
+<rect width="737.26" height="6" x="9.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2018,7 +2018,7 @@
 <rect width="6.54" height="6.05" x="628.71" y="227.40" class="todo"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
 <rect width="6.54" height="6.05" x="638.25" y="227.40" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="6.54" height="6.05" x="647.78" y="227.40" class="todo"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
-<rect width="6.44" height="6.05" x="657.32" y="227.40" class="todo"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
+<rect width="6.44" height="6.05" x="657.32" y="227.40" class="named"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="6.44" height="6.05" x="666.76" y="227.40" class="todo"><title>0x00427700 LookUpDown (102 bytes)</title></rect>
 <rect width="6.44" height="6.05" x="676.21" y="227.40" class="todo"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="6.26" height="6.05" x="685.65" y="227.40" class="todo"><title>0x0041c880 CreateBubble (100 bytes)</title></rect>
