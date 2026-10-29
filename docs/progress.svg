@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.66% (83)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.34% (1164)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.74% (84)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.26% (1163)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="49.72" height="6" x="0" y="0" class="named"/>
-<rect width="697.28" height="6" x="49.72" y="0" class="todo"/>
+<rect width="50.32" height="6" x="0" y="0" class="named"/>
+<rect width="696.68" height="6" x="50.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -232,7 +232,7 @@
 <rect width="12" height="12" x="180" y="45" class="todo"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="todo"><title>0x00413f30 AlignLaraPosition (315 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="45" class="todo"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="45" class="todo"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="45" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="45" class="todo"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="todo"><title>0x004146c0 AnimateItem (824 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="45" class="todo"><title>0x00414a30 GetChange (171 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.87%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="8.44" height="6" x="0" y="0" class="named"/>
-<rect width="738.56" height="6" x="8.44" y="0" class="todo"/>
+<rect width="9.25" height="6" x="0" y="0" class="named"/>
+<rect width="737.75" height="6" x="9.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1577,7 +1577,7 @@
 <rect width="14.94" height="14.19" x="431.49" y="309.42" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
 <rect width="14.94" height="14.14" x="431.49" y="326.61" class="todo"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
 <rect width="14.94" height="14.14" x="431.49" y="343.76" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
-<rect width="14.94" height="14.10" x="431.49" y="360.90" class="todo"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
+<rect width="14.94" height="14.10" x="431.49" y="360.90" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="15.16" height="13.84" x="449.42" y="60.67" class="todo"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="15.11" height="13.84" x="467.59" y="60.67" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
 <rect width="14.96" height="13.84" x="485.70" y="60.67" class="todo"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
