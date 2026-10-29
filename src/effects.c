@@ -163,6 +163,18 @@ void flip_map_effect(ITEM_INFO *item)
     FlipMap();
 }
 
+void draw_right_gun(ITEM_INFO *item)
+{
+    sint16 *temp;
+
+    temp = lara.mesh_ptrs[THIGH_R];
+    lara.mesh_ptrs[THIGH_R] = meshes[objects[PISTOLS].mesh_index + THIGH_R];
+    meshes[objects[PISTOLS].mesh_index + THIGH_R] = temp;
+    temp = lara.mesh_ptrs[HAND_R];
+    lara.mesh_ptrs[HAND_R] = meshes[objects[PISTOLS].mesh_index + HAND_R];
+    meshes[objects[PISTOLS].mesh_index + HAND_R] = temp;
+}
+
 void invisibility_on(ITEM_INFO *item)
 {
     item->status = INVISIBLE;
