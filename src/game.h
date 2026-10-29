@@ -14,6 +14,7 @@
 #include "larafunc.h"
 #include "control.h"
 #include "cinema.h"
+#include "specific/specific.h"
 
 extern int level_complete;
 extern int flipeffect, fliptimer;
@@ -43,5 +44,6 @@ void invisibility_off(ITEM_INFO *item);
 void dynamic_light_on(ITEM_INFO *item);
 void dynamic_light_off(ITEM_INFO *item);
 void reset_hair(ITEM_INFO *item);
+void DoInventoryPicture(void);
 
 #endif
