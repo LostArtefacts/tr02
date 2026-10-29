@@ -952,7 +952,7 @@ address,size,name,symbol
 0x00449980,73,ReadFileSync,_ReadFileSync
 0x004499d0,392,LoadTexturePages,_LoadTexturePages
 0x00449b60,928,LoadRooms,_LoadRooms
-0x00449f00,151,AdjustTextureUVs,_AdjustTextureUVs
+0x00449f00,151,AdjustTextureUVs,?AdjustTextureUVs@@YAX_N@Z
 0x00449fa0,1406,LoadObjects,_LoadObjects
 0x0044a520,309,LoadSprites,_LoadSprites
 0x0044a660,470,LoadItems,_LoadItems
@@ -1730,7 +1730,7 @@ address,size,name,symbol
 0x004d9d80,4,Meshes,_Meshes
 0x004d9d84,4,FloorData,_FloorData
 0x004d9d88,256,LevelFileName,_LevelFileName
-0x004d9e88,4,TextureInfoCount,_TextureInfoCount
+0x004d9e88,4,LnTextureInfos,_LnTextureInfos
 0x004d9e8c,4,LevelFileDepthQOffset,_LevelFileDepthQOffset
 0x004d9e98,1,DriveLetter,_DriveLetter
 0x004d9e9c,4,IsFmvPlaying,_IsFmvPlaying
