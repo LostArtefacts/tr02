@@ -175,6 +175,18 @@ void draw_right_gun(ITEM_INFO *item)
     meshes[objects[PISTOLS].mesh_index + HAND_R] = temp;
 }
 
+void draw_left_gun(ITEM_INFO *item)
+{
+    sint16 *temp;
+
+    temp = lara.mesh_ptrs[THIGH_L];
+    lara.mesh_ptrs[THIGH_L] = meshes[objects[PISTOLS].mesh_index + THIGH_L];
+    meshes[objects[PISTOLS].mesh_index + THIGH_L] = temp;
+    temp = lara.mesh_ptrs[HAND_L];
+    lara.mesh_ptrs[HAND_L] = meshes[objects[PISTOLS].mesh_index + HAND_L];
+    meshes[objects[PISTOLS].mesh_index + HAND_L] = temp;
+}
+
 void invisibility_on(ITEM_INFO *item)
 {
     item->status = INVISIBLE;
