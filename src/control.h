@@ -5,5 +5,6 @@
 
 extern sint32 rand_1, rand_2;
 void SeedRandomControl(sint32 seed);
+void SeedRandomDraw(sint32 seed);
 
 #endif
