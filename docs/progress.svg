@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.60% (20)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.40% (1227)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.68% (21)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.32% (1226)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="11.98" height="6" x="0" y="0" class="named"/>
-<rect width="735.02" height="6" x="11.98" y="0" class="todo"/>
+<rect width="12.58" height="6" x="0" y="0" class="named"/>
+<rect width="734.42" height="6" x="12.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -358,7 +358,7 @@
 <rect width="12" height="12" x="570" y="75" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="75" class="named"><title>0x0041d9d0 dynamic_light_on (9 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="75" class="named"><title>0x0041d9e0 dynamic_light_off (11 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="75" class="todo"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="75" class="named"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="75" class="todo"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="75" class="todo"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="75" class="todo"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.71" height="6" x="0" y="0" class="named"/>
-<rect width="745.29" height="6" x="1.71" y="0" class="todo"/>
+<rect width="1.72" height="6" x="0" y="0" class="named"/>
+<rect width="745.28" height="6" x="1.72" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2562,7 +2562,7 @@
 <rect width="0.10" height="0.10" x="747.86" y="369.39" class="todo"><title>0x00459020 Func459020 (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.58" y="371.74" class="todo"><title>0x00459026 Func459026 (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.58" y="374.08" class="named"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="743.58" y="376.04" class="todo"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="743.58" y="376.04" class="named"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.72" y="371.74" class="todo"><title>0x004239c0 DoInventoryPicture (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.86" y="371.74" class="todo"><title>0x00447450 Func447450 (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.72" y="373.69" class="todo"><title>0x00448050 Func448050 (5 bytes)</title></rect>
