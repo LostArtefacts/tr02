@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.33% (29)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.67% (1218)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.41% (30)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.59% (1217)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="17.37" height="6" x="0" y="0" class="named"/>
-<rect width="729.63" height="6" x="17.37" y="0" class="todo"/>
+<rect width="17.97" height="6" x="0" y="0" class="named"/>
+<rect width="729.03" height="6" x="17.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1058,7 +1058,7 @@
 <rect width="12" height="12" x="570" y="285" class="todo"><title>0x0044c530 S_IntroFMV (19 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="285" class="todo"><title>0x0044c550 StartGame (324 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="285" class="todo"><title>0x0044c6a0 GameLoop (154 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="285" class="todo"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="285" class="named"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="285" class="todo"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="285" class="todo"><title>0x0044c920 GameStats (275 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="285" class="todo"><title>0x0044ca40 GetRandomControl (30 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.25%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.75%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.87" height="6" x="0" y="0" class="named"/>
-<rect width="745.13" height="6" x="1.87" y="0" class="todo"/>
+<rect width="1.88" height="6" x="0" y="0" class="named"/>
+<rect width="745.12" height="6" x="1.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2526,7 +2526,7 @@
 <rect width="0.10" height="0.10" x="734.32" y="368.66" class="todo"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.32" y="371.54" class="todo"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.32" y="373.69" class="todo"><title>0x004484b0 WinSndIsSoundEnabled (6 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="734.32" y="375.85" class="todo"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="734.32" y="375.85" class="named"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="736.65" y="362.56" class="todo"><title>0x00450ba0 GetRenderHeight (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="738.88" y="362.56" class="todo"><title>0x00450bb0 GetRenderWidth (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="741.10" y="362.56" class="todo"><title>0x00457ee8 phd_cos (6 bytes)</title></rect>

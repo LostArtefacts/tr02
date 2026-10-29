@@ -14,6 +14,7 @@
 #include "larafunc.h"
 #include "control.h"
 #include "cinema.h"
+#include "title.h"
 #include "specific/specific.h"
 
 extern int level_complete;
