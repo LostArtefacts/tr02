@@ -264,6 +264,17 @@ void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = -25 * ONE_DEGREE;
 }
 
+void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->anim_number = BREATH_A;
+    item->frame_number = BREATH_F;
+    item->current_anim_state = item->goal_anim_state = AS_STOP;
+    lara.gun_status = LG_ARMLESS;
+    camera.type = CHASE_CAMERA;
+    AlterFOV(GAME_FOV * ONE_DEGREE);
+    lara.extra_anim = 0;
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);
