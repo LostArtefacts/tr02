@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.92% (24)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.08% (1223)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2% (25)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98% (1222)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="14.38" height="6" x="0" y="0" class="named"/>
-<rect width="732.62" height="6" x="14.38" y="0" class="todo"/>
+<rect width="14.98" height="6" x="0" y="0" class="named"/>
+<rect width="732.02" height="6" x="14.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -546,7 +546,7 @@
 <rect width="12" height="12" x="390" y="135" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="135" class="todo"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="135" class="todo"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="135" class="todo"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="135" class="named"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="135" class="todo"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="135" class="todo"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="135" class="todo"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
@@ -2570,7 +2570,7 @@
 <rect width="0.10" height="0.10" x="745.72" y="375.65" class="todo"><title>0x00452e30 Func452e30 (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.50" y="375.65" class="todo"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.50" y="376.83" class="todo"><title>0x00452bb0 Func452bb0 (3 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="749.64" y="375.65" class="todo"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="749.64" y="375.65" class="named"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
 </g>
 </g>
 </svg>
