@@ -108,3 +108,28 @@ other Tomb Raider games; after a clone, `just tools-init hooks`.
    matches yet or not. Steps drive it and take screenshots, e.g.
    `just run wait:10 key:Return wait:2 shot:menu` writes
    `build/shots/menu.png`.
+
+## Rules
+
+The git hooks enforce them (`just hooks` turns them on after a clone):
+
+- **Byte parity.** Every function in `src/` matches the original byte
+  for byte at every commit: `just compare` reports no `DIFF`. A
+  function that doesn't match yet stays out of the tree.
+- **One function per commit.** A commit makes at most one more
+  function match, and its subject is then `Decompile NAME (0xADDRESS)`,
+  with the name and address from `config/symbols.csv`, such as
+  `Decompile lara_hands_free (0x41d760)`. Headers, names and tools go
+  in commits of their own, whose subjects don't start with
+  `Decompile `.
+- **Progress in every commit.** The pre-commit hook redraws
+  `docs/progress.svg` and adds it, so the image always shows the
+  commit's own state.
+- **Messages.** A subject of at most 50 characters and body lines of
+  at most 72, a plain imperative subject without a `type:` prefix, and
+  no trailers.
+
+`src/` and `config/` may have no unstaged changes when committing, as
+the hook builds and compares the working tree. `git commit --no-verify`
+skips the hooks, which is only for fixing history, not for adding a
+function that doesn't match.
