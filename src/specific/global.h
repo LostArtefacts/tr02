@@ -14,6 +14,8 @@ extern "C" {
 #ifdef __cplusplus
 extern RECT GrcDumpWindow;
 
+void DX_DoFlipWait();
+
 bool DX_UpdateFrame(bool tSpinMessageLoop = true, RECT *prcWindow = 0);
 #endif
 

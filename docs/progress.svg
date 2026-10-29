@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.69% (46)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.31% (1201)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.77% (47)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.23% (1200)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="27.56" height="6" x="0" y="0" class="named"/>
-<rect width="719.44" height="6" x="27.56" y="0" class="todo"/>
+<rect width="28.15" height="6" x="0" y="0" class="named"/>
+<rect width="718.85" height="6" x="28.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1008,7 +1008,7 @@
 <rect width="12" height="12" x="570" y="270" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="todo"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="270" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="270" class="todo"><title>0x00448eb0 WaitPrimaryBufferFlip (59 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="270" class="todo"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="270" class="todo"><title>0x00448f00 RenderStart (933 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="270" class="todo"><title>0x004492b0 RenderFinish (230 bytes)</title></rect>
@@ -1078,12 +1078,12 @@
 <rect width="12" height="12" x="120" y="300" class="todo"><title>0x0044d2a0 HWR_TexSource (36 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="300" class="todo"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="300" class="todo"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="300" class="todo"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="300" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="300" class="todo"><title>0x0044d3d0 Func44d3d0 (12 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="300" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="300" class="todo"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="todo"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="300" class="todo"><title>0x0044d640 HWR_GetPageHandles (53 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="300" class="todo"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="300" class="todo"><title>0x0044d680 HWR_VertexBufferFull (25 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="300" class="todo"><title>0x0044d6a0 Func44d6a0 (11 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="300" class="todo"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.67%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.34%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.66%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.48" height="6" x="0" y="0" class="named"/>
-<rect width="744.52" height="6" x="2.48" y="0" class="todo"/>
+<rect width="2.52" height="6" x="0" y="0" class="named"/>
+<rect width="744.48" height="6" x="2.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2205,7 +2205,7 @@
 <rect width="4.19" height="3.88" x="706.85" y="276.36" class="todo"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="714.04" y="276.36" class="todo"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="721.23" y="276.36" class="todo"><title>0x00435f40 ControlGlow (59 bytes)</title></rect>
-<rect width="4.19" height="3.88" x="728.43" y="276.36" class="todo"><title>0x00448eb0 WaitPrimaryBufferFlip (59 bytes)</title></rect>
+<rect width="4.19" height="3.88" x="728.43" y="276.36" class="todo"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="735.62" y="276.36" class="todo"><title>0x00450b60 S_RemoveCtrlText (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="742.81" y="276.36" class="todo"><title>0x004560c0 TexturePageReleaseVidMemSurface (59 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.59" y="283.23" class="todo"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
@@ -2261,7 +2261,7 @@
 <rect width="3.74" height="3.58" x="723.02" y="290.09" class="todo"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="729.77" y="290.09" class="todo"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="736.51" y="290.09" class="todo"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
-<rect width="3.74" height="3.58" x="743.26" y="290.09" class="todo"><title>0x0044d640 HWR_GetPageHandles (53 bytes)</title></rect>
+<rect width="3.74" height="3.58" x="743.26" y="290.09" class="todo"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
 <rect width="3.38" height="3.96" x="662.32" y="296.68" class="todo"><title>0x004561e0 ReloadTextures (53 bytes)</title></rect>
 <rect width="3.38" height="3.83" x="662.32" y="303.64" class="todo"><title>0x0041b6f0 InitInterpolate (52 bytes)</title></rect>
 <rect width="3.38" height="3.83" x="662.32" y="310.47" class="todo"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
@@ -2452,7 +2452,7 @@
 <rect width="1.47" height="1.13" x="712.91" y="353.62" class="named"><title>0x0041cf30 turn180_effect (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="357.74" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="361.87" class="todo"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
-<rect width="1.47" height="1.13" x="712.91" y="366" class="todo"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
+<rect width="1.47" height="1.13" x="712.91" y="366" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
 <rect width="1.47" height="0.94" x="712.91" y="370.12" class="todo"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="1.47" height="0.94" x="712.91" y="374.06" class="todo"><title>0x00428600 lara_as_waterout (21 bytes)</title></rect>
 <rect width="1.28" height="1.11" x="717.38" y="344.99" class="todo"><title>0x0043a280 ResetSG (21 bytes)</title></rect>

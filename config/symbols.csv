@@ -940,7 +940,7 @@ address,size,name,symbol
 0x00448af0,420,ClearBuffers,_ClearBuffers
 0x00448ca0,316,RestoreLostBuffers,_RestoreLostBuffers
 0x00448de0,207,DX_UpdateFrame,_DX_UpdateFrame
-0x00448eb0,59,WaitPrimaryBufferFlip,_WaitPrimaryBufferFlip
+0x00448eb0,59,DX_DoFlipWait,_DX_DoFlipWait
 0x00448ef0,3,RenderInit,_RenderInit
 0x00448f00,933,RenderStart,_RenderStart
 0x004492b0,230,RenderFinish,_RenderFinish
@@ -1010,12 +1010,12 @@ address,size,name,symbol
 0x0044d2a0,36,HWR_TexSource,_HWR_TexSource
 0x0044d2d0,74,HWR_EnableColorKey,_HWR_EnableColorKey
 0x0044d320,130,HWR_EnableZBuffer,_HWR_EnableZBuffer
-0x0044d3b0,22,HWR_BeginScene,_HWR_BeginScene
+0x0044d3b0,22,HWR_BeginScene,?HWR_BeginScene@@YAXXZ
 0x0044d3d0,12,Func44d3d0,
 0x0044d3e0,364,HWR_DrawPolyList,_HWR_DrawPolyList
 0x0044d560,142,HWR_LoadTexturePages,_HWR_LoadTexturePages
 0x0044d5f0,74,HWR_FreeTexturePages,_HWR_FreeTexturePages
-0x0044d640,53,HWR_GetPageHandles,_HWR_GetPageHandles
+0x0044d640,53,HWR_GetAllTextureHandles,?HWR_GetAllTextureHandles@@YAXXZ
 0x0044d680,25,HWR_VertexBufferFull,_HWR_VertexBufferFull
 0x0044d6a0,11,Func44d6a0,
 0x0044d6b0,34,HWR_Init,_HWR_Init
@@ -1639,7 +1639,7 @@ address,size,name,symbol
 0x004d7e78,1,BGND_PictureIsReady,_BGND_PictureIsReady
 0x004d7e80,20,BGND_TexturePageIndexes,_BGND_TexturePageIndexes
 0x004d7e98,,BGND_PageHandles,_BGND_PageHandles
-0x004d7eac,,D3DDev,_D3DDev
+0x004d7eac,,G_Direct3DDevice,?G_Direct3DDevice@@3PAUIDirect3DDevice2@@A
 0x004d7eb0,,D3D,_D3D
 0x004d7eb4,,D3DView,_D3DView
 0x004d7eb8,,D3DMaterial,_D3DMaterial
