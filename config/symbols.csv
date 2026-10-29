@@ -968,7 +968,7 @@ address,size,name,symbol
 0x0044af50,613,LoadSamples,_LoadSamples
 0x0044b1c0,54,ChangeFileNameExtension,_ChangeFileNameExtension
 0x0044b200,38,GetFullPath,_GetFullPath
-0x0044b310,586,LoadLevel,_LoadLevel
+0x0044b310,586,LoadLevel,?LoadLevel@@YAHPADH@Z
 0x0044b560,24,S_LoadLevelFile,_S_LoadLevelFile
 0x0044b580,42,S_UnloadLevelFile,_S_UnloadLevelFile
 0x0044b5b0,20,S_AdjustTexelCoordinates,_S_AdjustTexelCoordinates

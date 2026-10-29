@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.61% (45)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.39% (1202)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.69% (46)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.31% (1201)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="26.96" height="6" x="0" y="0" class="named"/>
-<rect width="720.04" height="6" x="26.96" y="0" class="todo"/>
+<rect width="27.56" height="6" x="0" y="0" class="named"/>
+<rect width="719.44" height="6" x="27.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1037,7 +1037,7 @@
 <rect width="12" height="12" x="255" y="285" class="todo"><title>0x0044b1c0 ChangeFileNameExtension (54 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="285" class="todo"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="285" class="todo"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="285" class="todo"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="285" class="named"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="285" class="todo"><title>0x0044b580 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="285" class="named"><title>0x0044b5b0 S_AdjustTexelCoordinates (20 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="285" class="todo"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.68%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.42" height="6" x="0" y="0" class="named"/>
-<rect width="744.58" height="6" x="2.42" y="0" class="todo"/>
+<rect width="2.48" height="6" x="0" y="0" class="named"/>
+<rect width="744.52" height="6" x="2.48" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2441,7 +2441,7 @@
 <rect width="1.54" height="1.43" x="708.37" y="373.57" class="todo"><title>0x004283d0 lara_as_slideback (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="712.91" y="340.72" class="todo"><title>0x00430090 draw_flare_meshes (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="717.62" y="340.72" class="todo"><title>0x004300b0 undraw_flare_meshes (24 bytes)</title></rect>
-<rect width="1.71" height="1.27" x="722.33" y="340.72" class="todo"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
+<rect width="1.71" height="1.27" x="722.33" y="340.72" class="named"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="727.04" y="340.72" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="731.75" y="340.72" class="todo"><title>0x00456910 UT_MessageBox (24 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="736.46" y="340.72" class="todo"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
