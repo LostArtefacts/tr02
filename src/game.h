@@ -28,6 +28,7 @@ void ExplosionFX(ITEM_INFO *item);
 void PistonFX(ITEM_INFO *item);
 void CurtainFX(ITEM_INFO *item);
 void StatueFX(ITEM_INFO *item);
+void SetChangeFX(ITEM_INFO *item);
 void lara_hands_free(ITEM_INFO *item);
 
 #endif

@@ -102,6 +102,12 @@ void StatueFX(ITEM_INFO *item)
     flipeffect = -1;
 }
 
+void SetChangeFX(ITEM_INFO *item)
+{
+    SoundEffect(330, NULL, 0);
+    flipeffect = -1;
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
