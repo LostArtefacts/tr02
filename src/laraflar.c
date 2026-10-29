@@ -17,3 +17,8 @@ void set_flare_arm(int frame)
         lara.left_arm.anim_number = anim_base + 4;
     lara.left_arm.frame_base = anims[lara.left_arm.anim_number].frame_ptr;
 }
+
+void draw_flare_meshes(void)
+{
+    lara.mesh_ptrs[HAND_L] = meshes[objects[FLARE].mesh_index + HAND_L];
+}
