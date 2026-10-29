@@ -288,6 +288,16 @@ void extra_as_gongbong(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_distance = WALL_L * 3;
 }
 
+void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.flags = FOLLOW_CENTRE;
+    camera.target_angle = 170 * ONE_DEGREE;
+    camera.target_elevation = -25 * ONE_DEGREE;
+    lara.hit_direction = -1;
+    if (item->frame_number < anims[item->anim_number].frame_end - 30)
+        lara.death_count = 1;
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);

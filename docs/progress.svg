@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.61% (70)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">94.39% (1177)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.69% (71)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">94.31% (1176)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="41.93" height="6" x="0" y="0" class="named"/>
-<rect width="705.07" height="6" x="41.93" y="0" class="todo"/>
+<rect width="42.53" height="6" x="0" y="0" class="named"/>
+<rect width="704.47" height="6" x="42.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -505,7 +505,7 @@
 <rect width="12" height="12" x="525" y="120" class="todo"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="120" class="named"><title>0x004288d0 extra_as_airlock (19 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="120" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="120" class="todo"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="120" class="named"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="120" class="todo"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="120" class="todo"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="120" class="todo"><title>0x00428a80 extra_as_starthouse (165 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">0.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="5.74" height="6" x="0" y="0" class="named"/>
-<rect width="741.26" height="6" x="5.74" y="0" class="todo"/>
+<rect width="5.92" height="6" x="0" y="0" class="named"/>
+<rect width="741.08" height="6" x="5.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2093,7 +2093,7 @@
 <rect width="5.11" height="5.58" x="741.89" y="245.25" class="todo"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
 <rect width="5.15" height="5.53" x="617.36" y="253.83" class="todo"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
 <rect width="5.15" height="5.43" x="617.36" y="262.36" class="todo"><title>0x00426cd0 InitialiseItemArray (82 bytes)</title></rect>
-<rect width="5.15" height="5.33" x="617.36" y="270.79" class="todo"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
+<rect width="5.15" height="5.33" x="617.36" y="270.79" class="named"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="5.15" height="5.33" x="617.36" y="279.11" class="todo"><title>0x00428be0 LaraFallen (81 bytes)</title></rect>
 <rect width="5.15" height="5.33" x="617.36" y="287.44" class="todo"><title>0x0042f780 SmashItem (81 bytes)</title></rect>
 <rect width="5.15" height="5.33" x="617.36" y="295.77" class="todo"><title>0x00451d50 S_SetupBelowWater (81 bytes)</title></rect>
