@@ -65,3 +65,15 @@ void UT_ErrorBox(int nID, HWND hWndOwner)
     if (LoadString(GhInstance, nID, buffer, sizeof buffer))
         UT_ErrorBox(buffer, hWndOwner);
 }
+
+void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
+{
+    pDest += (nDX + nDY * nDStride);
+    pSrc += (nSX + nSY * nSStride);
+    while (nDH--)
+    {
+        memcpy(pDest, pSrc, nDW);
+        pDest += nDStride;
+        pSrc += nSStride;
+    }
+}
