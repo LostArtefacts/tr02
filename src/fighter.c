@@ -746,3 +746,25 @@ void InitialiseXianLord(sint16 item_number)
     item->status = NOT_ACTIVE;
     item->mesh_bits = 0;
 }
+
+#define TWINKLE 239
+
+void WarriorSparkleTrail(ITEM_INFO *item)
+{
+    sint32 fx_number;
+    FX_INFO *fx;
+
+    fx_number = CreateEffect(item->room_number);
+    if (fx_number != NO_ITEM)
+    {
+        fx = &effects[fx_number];
+        fx->object_number = TWINKLE;
+        fx->pos.x_pos = item->pos.x_pos + (GetRandomDraw() << 8 >> 15) - 128;
+        fx->pos.y_pos = item->pos.y_pos + (GetRandomDraw() << 8 >> 15) - 256;
+        fx->pos.z_pos = item->pos.z_pos + (GetRandomDraw() << 8 >> 15) - 128;
+        fx->room_number = item->room_number;
+        fx->counter = -30;
+        fx->frame_number = 0;
+    }
+    SoundEffect(312, &item->pos, 0);
+}

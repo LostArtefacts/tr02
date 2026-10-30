@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">64.07% (799)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">35.69% (445)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">64.15% (800)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">35.61% (444)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="478.63" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="478.63" y="0" class="decompiled"/>
-<rect width="266.57" height="6" x="480.43" y="0" class="todo"/>
+<rect width="479.23" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="479.23" y="0" class="decompiled"/>
+<rect width="265.97" height="6" x="481.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -372,7 +372,7 @@
 <rect width="12" height="12" x="15" y="90" class="named"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="90" class="named"><title>0x0041ef70 InitialiseXianLord (88 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="90" class="todo"><title>0x0041efd0 XianLordControl (1424 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="90" class="todo"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="90" class="named"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="90" class="todo"><title>0x0041f650 WarriorControl (954 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="90" class="named"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="90" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.52%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">52.48%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.56%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">52.43%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="354.94" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="354.94" y="0" class="decompiled"/>
-<rect width="392.01" height="6" x="354.99" y="0" class="todo"/>
+<rect width="355.27" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="355.27" y="0" class="decompiled"/>
+<rect width="391.68" height="6" x="355.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.09" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1870,7 +1870,7 @@
 <rect width="8.24" height="8.32" x="547.57" y="221.40" class="named"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="8.24" height="8.32" x="547.57" y="232.72" class="named"><title>0x00413580 GetTiltType (153 bytes)</title></rect>
 <rect width="8.24" height="8.32" x="547.57" y="244.03" class="named"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
-<rect width="8.24" height="8.24" x="547.57" y="255.35" class="todo"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
+<rect width="8.24" height="8.24" x="547.57" y="255.35" class="named"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
 <rect width="8.24" height="8.24" x="547.57" y="266.60" class="todo"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="8.24" height="8.24" x="547.57" y="277.84" class="todo"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
 <rect width="8.24" height="8.17" x="547.57" y="289.08" class="named"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
