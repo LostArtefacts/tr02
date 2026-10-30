@@ -236,3 +236,35 @@ sint32 GetWaterDepth(sint32 x, sint32 y, sint32 z, sint16 room_number)
     }
 }
 
+void LaraTestWaterDepth(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int wd;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+
+    wd = GetWaterDepth(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, room_number);
+    if (wd == NO_HEIGHT)
+    {
+        item->pos.x_pos = coll->old.x;
+        item->pos.y_pos = coll->old.y;
+        item->pos.z_pos = coll->old.z;
+        item->fallspeed = 0;
+    }
+    else if (wd <= STEP_L * 2)
+    {
+        item->anim_number = SWIM2QSTND_A;
+        item->frame_number = SWIM2QSTND_F;
+        item->current_anim_state = AS_WATEROUT;
+        item->goal_anim_state = AS_STOP;
+        item->pos.x_rot = item->pos.z_rot = 0;
+        item->gravity_status = 0;
+        item->speed = 0;
+        item->fallspeed = 0;
+        lara.water_status = LARA_WADE;
+
+        item->pos.y_pos = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    }
+}

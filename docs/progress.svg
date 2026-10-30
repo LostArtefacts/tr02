@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.08% (637)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.92% (610)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.16% (638)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.84% (609)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="381.59" height="6" x="0" y="0" class="named"/>
-<rect width="365.41" height="6" x="381.59" y="0" class="todo"/>
+<rect width="382.19" height="6" x="0" y="0" class="named"/>
+<rect width="364.81" height="6" x="382.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -661,7 +661,7 @@
 <rect width="12" height="12" x="615" y="165" class="named"><title>0x004324d0 lara_col_swim (19 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="165" class="named"><title>0x004324f0 lara_col_uwdeath (91 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="165" class="named"><title>0x00432550 GetWaterDepth (402 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="165" class="todo"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="165" class="named"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="165" class="todo"><title>0x004327c0 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="165" class="todo"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="165" class="named"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="232.92" height="6" x="0" y="0" class="named"/>
-<rect width="514.08" height="6" x="232.92" y="0" class="todo"/>
+<rect width="233.37" height="6" x="0" y="0" class="named"/>
+<rect width="513.63" height="6" x="233.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1754,7 +1754,7 @@
 <rect width="10.16" height="10.30" x="509.88" y="299.47" class="todo"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>
 <rect width="10.16" height="10.11" x="509.88" y="312.77" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="10.16" height="10.05" x="509.88" y="325.88" class="todo"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
-<rect width="10.16" height="10.05" x="509.88" y="338.93" class="todo"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
+<rect width="10.16" height="10.05" x="509.88" y="338.93" class="named"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
 <rect width="10.16" height="10.05" x="509.88" y="351.97" class="named"><title>0x0043c830 GetCarriedItems (206 bytes)</title></rect>
 <rect width="10.16" height="9.98" x="509.88" y="365.02" class="todo"><title>0x00416af0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="9.93" height="10.15" x="523.04" y="138.11" class="named"><title>0x0042e330 LaraTestClimbPos (204 bytes)</title></rect>
