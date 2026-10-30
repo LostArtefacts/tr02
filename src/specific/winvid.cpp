@@ -42,3 +42,13 @@ extern "C" void WinVidClearMinWindowSize(void)
     IsMinWindowSizeSet = false;
 }
 
+extern "C" void WinVidSetMaxWindowSize(int width, int height)
+{
+    MaxWindowClientWidth = width;
+    MaxWindowClientHeight = height;
+    GameWindowCalculateSizeFromClient(&width, &height);
+    MaxWindowWidth = width;
+    MaxWindowHeight = height;
+    IsMaxWindowSizeSet = true;
+}
+
