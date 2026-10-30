@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.81% (272)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.19% (975)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.89% (273)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.11% (974)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="162.94" height="6" x="0" y="0" class="named"/>
-<rect width="584.06" height="6" x="162.94" y="0" class="todo"/>
+<rect width="163.54" height="6" x="0" y="0" class="named"/>
+<rect width="583.46" height="6" x="163.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -747,7 +747,7 @@
 <rect width="12" height="12" x="405" y="195" class="todo"><title>0x00438b30 PuzzleHoleCollision (561 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="195" class="todo"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="195" class="todo"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="195" class="named"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="195" class="todo"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="todo"><title>0x00438fa0 MouseControl (476 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.83%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.17%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="50.88" height="6" x="0" y="0" class="named"/>
-<rect width="696.12" height="6" x="50.88" y="0" class="todo"/>
+<rect width="51.02" height="6" x="0" y="0" class="named"/>
+<rect width="695.98" height="6" x="51.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2191,7 +2191,7 @@
 <rect width="4.19" height="4.22" x="707.30" y="269.14" class="todo"><title>0x0044ec40 EncodePutPCX (62 bytes)</title></rect>
 <rect width="4.19" height="4.22" x="714.49" y="269.14" class="todo"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
 <rect width="4.08" height="4.22" x="721.69" y="269.14" class="todo"><title>0x0041b940 phd_RotYXZsuperpack_I (61 bytes)</title></rect>
-<rect width="4.08" height="4.22" x="728.77" y="269.14" class="todo"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
+<rect width="4.08" height="4.22" x="728.77" y="269.14" class="named"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
 <rect width="4.08" height="4.22" x="735.84" y="269.14" class="todo"><title>0x00445470 WinVidBufferLock (61 bytes)</title></rect>
 <rect width="4.08" height="4.22" x="742.92" y="269.14" class="todo"><title>0x00452e40 Func452e40 (61 bytes)</title></rect>
 <rect width="4.30" height="3.88" x="648.58" y="276.36" class="named"><title>0x00402bc0 draw_poly_gtmap (60 bytes)</title></rect>
