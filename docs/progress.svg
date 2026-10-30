@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.24% (763)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.76% (483)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.32% (764)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.68% (482)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="457.43" height="6" x="0" y="0" class="named"/>
-<rect width="289.57" height="6" x="457.43" y="0" class="todo"/>
+<rect width="458.03" height="6" x="0" y="0" class="named"/>
+<rect width="288.97" height="6" x="458.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -900,7 +900,7 @@
 <rect width="12" height="12" x="450" y="240" class="named"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="named"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="named"><title>0x00445080 WinVidSpinMessageLoop (226 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="240" class="todo"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="240" class="named"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="todo"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="todo"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="todo"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.92%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.08%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.06%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="342.99" height="6" x="0" y="0" class="named"/>
-<rect width="404.01" height="6" x="342.99" y="0" class="todo"/>
+<rect width="343.14" height="6" x="0" y="0" class="named"/>
+<rect width="403.86" height="6" x="343.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2163,7 +2163,7 @@
 <rect width="4.59" height="4.34" x="727.22" y="262.23" class="named"><title>0x0041d780 draw_right_gun (67 bytes)</title></rect>
 <rect width="4.59" height="4.34" x="734.82" y="262.23" class="named"><title>0x0041d7d0 draw_left_gun (67 bytes)</title></rect>
 <rect width="4.59" height="4.34" x="742.41" y="262.23" class="named"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
-<rect width="4.52" height="4.41" x="641.45" y="269.57" class="todo"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
+<rect width="4.52" height="4.41" x="641.45" y="269.57" class="named"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
 <rect width="4.52" height="4.41" x="641.45" y="276.98" class="named"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
 <rect width="4.52" height="4.30" x="641.45" y="284.39" class="todo"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="4.52" height="4.30" x="641.45" y="291.69" class="named"><title>0x00435100 ShutThatDoor (66 bytes)</title></rect>

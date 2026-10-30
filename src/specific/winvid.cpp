@@ -187,3 +187,15 @@ extern "C" bool WinVidSpinMessageLoop(bool needWait)
     return true;
 }
 
+extern "C" void WinVidShowGameWindow(int nCmdShow)
+{
+    if (nCmdShow != SW_SHOW || !IsGameWindowShow)
+    {
+        IsGameWindowUpdating = true;
+        ShowWindow(HGameWindow, nCmdShow);
+        UpdateWindow(HGameWindow);
+        IsGameWindowUpdating = false;
+        IsGameWindowShow = true;
+    }
+}
+
