@@ -37,3 +37,22 @@ int GetRealTrack(int track)
     }
     return real;
 }
+
+void StopSoundEffect(int nSFX)
+{
+    int nSlot;
+    int nStartSampleInfo, nEndSampleInfo;
+
+    if (!sound_active)
+        return;
+    nStartSampleInfo = sample_lut[nSFX];
+    nEndSampleInfo = nStartSampleInfo + ((sample_infos[nStartSampleInfo].flags >> 2) & 15);
+    for (nSlot = 0; nSlot < ArraySize(LaSlot); nSlot++)
+    {
+        if (LaSlot[nSlot].nSampleInfo >= nStartSampleInfo && LaSlot[nSlot].nSampleInfo < nEndSampleInfo)
+        {
+            S_SoundStopSample(nSlot);
+            LaSlot[nSlot].nSampleInfo = -1;
+        }
+    }
+}
