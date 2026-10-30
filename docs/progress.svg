@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.85% (235)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.15% (1012)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.93% (236)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.07% (1011)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="140.77" height="6" x="0" y="0" class="named"/>
-<rect width="606.23" height="6" x="140.77" y="0" class="todo"/>
+<rect width="141.37" height="6" x="0" y="0" class="named"/>
+<rect width="605.63" height="6" x="141.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -308,7 +308,7 @@
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="60" class="todo"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="60" class="todo"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="60" class="todo"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="60" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x0041c540 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="60" class="todo"><title>0x0041c5b0 DoBloodSplat (89 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="60" class="named"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.82%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.18%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.86%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.14%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="43.45" height="6" x="0" y="0" class="named"/>
-<rect width="703.55" height="6" x="43.45" y="0" class="todo"/>
+<rect width="43.76" height="6" x="0" y="0" class="named"/>
+<rect width="703.24" height="6" x="43.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1904,7 +1904,7 @@
 <rect width="8.07" height="7.75" x="558.68" y="240.69" class="todo"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="8.07" height="7.67" x="558.68" y="251.44" class="todo"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="262.11" class="todo"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
-<rect width="8.07" height="7.60" x="558.68" y="272.71" class="todo"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
+<rect width="8.07" height="7.60" x="558.68" y="272.71" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="283.31" class="todo"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="293.91" class="todo"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="304.50" class="todo"><title>0x00445740 WinVidGetDisplayMode (140 bytes)</title></rect>

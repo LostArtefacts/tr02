@@ -45,6 +45,7 @@ void DrawUnclippedItem(ITEM_INFO *item);
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
 void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
 sint32 DoDemoSequence(int level_number);
+sint16 *GetBoundsAccurate(ITEM_INFO *item);
 
 void SoundEffects(void);
 void DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);
