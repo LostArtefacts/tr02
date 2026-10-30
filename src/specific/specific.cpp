@@ -15,6 +15,12 @@ sint32 S_SoundPlaySample(int nSample, uint16 wVol, int nPitch, sint16 wPan)
     return DS_StartSample(nSample, CalcVolume(wVol), nPitch, CalcPan(wPan), 0);
 }
 
+int CalcVolume(int nGameVolume)
+{
+    nGameVolume *= LnMasterVolume;
+    return int(5000.0 * (double(nGameVolume) / 2097152.0 - 1.0));
+}
+
 sint32 S_SoundPlaySampleLooped(int nSample, uint16 wVol, int nPitch, sint16 wPan)
 {
     if (!sound_active)
