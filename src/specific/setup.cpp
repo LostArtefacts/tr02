@@ -127,5 +127,10 @@ extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick)
 
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
 
+extern "C" void SE_AdvancedDlgInit(HWND hwndDlg)
+{
+    SE_AdvancedDlgUpdate(hwndDlg);
+}
+
 extern "C" char SetupDialogName[];
 
