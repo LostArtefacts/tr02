@@ -511,7 +511,7 @@ address,size,name,symbol
 0x0042c5c0,1030,ControlRocket,_ControlRocket
 0x0042c9d0,358,draw_shotgun,_draw_shotgun
 0x0042cb40,260,undraw_shotgun,_undraw_shotgun
-0x0042cc50,894,AnimateShotgun,_AnimateShotgun
+0x0042cc50,932,AnimateShotgun,_AnimateShotgun
 0x0042d000,79,set_pistol_arm,_set_pistol_arm
 0x0042d050,124,draw_pistols,_draw_pistols
 0x0042d0d0,549,undraw_pistols,_undraw_pistols
@@ -1683,6 +1683,8 @@ address,size,name,symbol
 0x004d7c18,4,finishes,_finishes
 0x004d7c28,4,level_items,_level_items
 0x004d7c2c,4,HealthBarTimer,_HealthBarTimer
+0x004d7c30,4,m16_firing,_m16_firing
+0x004d7c34,4,harpoon_fired,_harpoon_fired
 0x004d7c40,4,slots_used,_slots_used
 0x004d7c64,4,number_cameras,_number_cameras
 0x004d7c68,,LaSlot,_LaSlot

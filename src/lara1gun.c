@@ -255,3 +255,126 @@ void undraw_shotgun(int weapon_type)
     lara.left_arm.frame_number = lara.right_arm.frame_number = item->frame_number - anims[item->anim_number].frame_base;
     lara.left_arm.anim_number = lara.right_arm.anim_number = item->anim_number;
 }
+
+void FireShotgun(void);
+
+static int m16_firing;
+static int harpoon_fired;
+
+void AnimateShotgun(int weapon_type)
+{
+    ITEM_INFO *item;
+    int running;
+
+    item = &items[lara.weapon_item];
+    if (weapon_type == LG_M16 && lara_item->speed != 0)
+        running = 1;
+    else
+        running = 0;
+
+    switch (item->current_anim_state)
+    {
+    case W_AIM:
+        m16_firing = 0;
+        if (harpoon_fired)
+        {
+            item->goal_anim_state = W_RELOAD;
+            harpoon_fired = 0;
+        }
+        else if (lara.water_status == LARA_UNDERWATER || running)
+            item->goal_anim_state = W_UAIM;
+        else if (((input & IN_ACTION) && !lara.target) || lara.left_arm.lock)
+            item->goal_anim_state = W_RECOIL;
+        else
+            item->goal_anim_state = W_UNAIM;
+        break;
+
+    case W_UAIM:
+        m16_firing = 0;
+        if (harpoon_fired)
+        {
+            item->goal_anim_state = W_RELOAD;
+            harpoon_fired = 0;
+        }
+        else if (lara.water_status != LARA_UNDERWATER && !running)
+            item->goal_anim_state = W_AIM;
+        else if (((input & IN_ACTION) && !lara.target) || lara.left_arm.lock)
+            item->goal_anim_state = W_URECOIL;
+        else
+            item->goal_anim_state = W_UUNAIM;
+        break;
+
+    case W_RECOIL:
+        if (item->frame_number - anims[item->anim_number].frame_base == 0)
+        {
+            item->goal_anim_state = W_UNAIM;
+            if (lara.water_status != LARA_UNDERWATER && !running && !harpoon_fired)
+            {
+                if ((input & IN_ACTION) && (!lara.target || lara.left_arm.lock))
+                {
+                    if (weapon_type == LG_HARPOON)
+                    {
+                        FireHarpoon();
+                        if (!(lara.harpoon.ammo & 3))
+                            harpoon_fired = 1;
+                    }
+                    else if (weapon_type == LG_GRENADE)
+                        FireRocket();
+                    else if (weapon_type == LG_M16)
+                    {
+                        FireM16(0);
+                        SoundEffect(78, &lara_item->pos, 0);
+                        m16_firing = 1;
+                    }
+                    else
+                        FireShotgun();
+                    item->goal_anim_state = W_RECOIL;
+                }
+                else if (lara.left_arm.lock)
+                    item->goal_anim_state = W_AIM;
+            }
+            if (item->goal_anim_state != W_RECOIL && m16_firing)
+            {
+                SoundEffect(104, &lara_item->pos, 0);
+                m16_firing = 0;
+            }
+        }
+        else if (m16_firing)
+            SoundEffect(78, &lara_item->pos, 0);
+        else if (weapon_type == LG_SHOTGUN && !(input & IN_ACTION) && !lara.left_arm.lock)
+            item->goal_anim_state = W_UNAIM;
+        break;
+
+    case W_URECOIL:
+        if (item->frame_number - anims[item->anim_number].frame_base == 0)
+        {
+            item->goal_anim_state = W_UUNAIM;
+            if ((lara.water_status == LARA_UNDERWATER || running) && !harpoon_fired)
+            {
+                if ((input & IN_ACTION) && (!lara.target || lara.left_arm.lock))
+                {
+                    if (weapon_type == LG_HARPOON)
+                    {
+                        FireHarpoon();
+                        if (!(lara.harpoon.ammo & 3))
+                            harpoon_fired = 1;
+                    }
+                    else
+                        FireM16(1);
+                    item->goal_anim_state = W_URECOIL;
+                }
+                else if (lara.left_arm.lock)
+                    item->goal_anim_state = W_UAIM;
+            }
+        }
+        if (weapon_type == LG_M16 && item->goal_anim_state == W_URECOIL)
+            SoundEffect(78, &lara_item->pos, 0);
+        break;
+    }
+
+    AnimateItem(item);
+
+    lara.left_arm.frame_base = lara.right_arm.frame_base = anims[item->anim_number].frame_ptr;
+    lara.left_arm.frame_number = lara.right_arm.frame_number = item->frame_number - anims[item->anim_number].frame_base;
+    lara.left_arm.anim_number = lara.right_arm.anim_number = item->anim_number;
+}
