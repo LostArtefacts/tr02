@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.15% (139)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.85% (1108)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.23% (140)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.77% (1107)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="83.27" height="6" x="0" y="0" class="named"/>
-<rect width="663.73" height="6" x="83.27" y="0" class="todo"/>
+<rect width="83.87" height="6" x="0" y="0" class="named"/>
+<rect width="663.13" height="6" x="83.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1068,7 +1068,7 @@
 <rect width="12" height="12" x="720" y="285" class="named"><title>0x0044caa0 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="285" class="named"><title>0x0044caf0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="300" class="todo"><title>0x0044cb40 DisplayCredits (563 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="300" class="todo"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="300" class="named"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="300" class="todo"><title>0x0044cef0 S_SaveGame (276 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="300" class="todo"><title>0x0044d010 S_LoadGame (150 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="300" class="todo"><title>0x0044d0b0 HWR_InitState (296 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="19.74" height="6" x="0" y="0" class="named"/>
-<rect width="727.26" height="6" x="19.74" y="0" class="todo"/>
+<rect width="20.53" height="6" x="0" y="0" class="named"/>
+<rect width="726.47" height="6" x="20.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1586,7 +1586,7 @@
 <rect width="14.86" height="13.84" x="539.53" y="60.67" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
 <rect width="14.86" height="13.84" x="557.39" y="60.67" class="todo"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
 <rect width="14.81" height="13.84" x="575.26" y="60.67" class="todo"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
-<rect width="14.76" height="13.84" x="593.07" y="60.67" class="todo"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
+<rect width="14.76" height="13.84" x="593.07" y="60.67" class="named"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="14.71" height="13.84" x="610.83" y="60.67" class="todo"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
 <rect width="14.61" height="13.84" x="628.55" y="60.67" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="14.51" height="13.84" x="646.16" y="60.67" class="todo"><title>0x004576ff gourA (352 bytes)</title></rect>

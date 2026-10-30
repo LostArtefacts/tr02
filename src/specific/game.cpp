@@ -58,3 +58,46 @@ void GetSavedGamesList(REQUEST_INFO *req)
     memcpy(RequesterFlags1, SaveGameReqFlags1, MAXIMUM_LEVELS * sizeof(uint32));
     memcpy(RequesterFlags2, SaveGameReqFlags2, MAXIMUM_LEVELS * sizeof(uint32));
 }
+
+int S_FrontEndCheck(void *data, int size)
+{
+    int i;
+    REQUEST_INFO *req;
+    int count;
+    HANDLE file;
+    char filename[80], count_str[16];
+    DWORD read;
+
+    req = &Load_Game_Requester;
+    Init_Requester(req);
+    SavedGames = 0;
+    for (i = 0; i < 16; i++)
+    {
+        wsprintf(filename, "savegame.%d", i);
+        file = CreateFile(filename, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        if (file != INVALID_HANDLE_VALUE)
+        {
+            ReadFile(file, filename, 75, &read, NULL);
+            ReadFile(file, &count, sizeof(sint32), &read, NULL);
+            CloseHandle(file);
+            wsprintf(count_str, "%d", count);
+            AddRequesterItem(req, filename, R_LEFTALIGN, count_str, R_RIGHTALIGN);
+            if (count > save_counter)
+            {
+                save_counter = count;
+                req->selected = i;
+            }
+            saved_levels[i] = 1;
+            SavedGames++;
+        }
+        else
+        {
+            AddRequesterItem(req, GF_PCStrings[PCSTR_SAVESLOT], R_CENTRE, 0, 0);
+            saved_levels[i] = 0;
+        }
+    }
+    save_counter++;
+    memcpy(SaveGameReqFlags1, RequesterFlags1, MAXIMUM_LEVELS * sizeof(uint32));
+    memcpy(SaveGameReqFlags2, RequesterFlags2, MAXIMUM_LEVELS * sizeof(uint32));
+    return 1;
+}
