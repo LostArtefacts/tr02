@@ -632,3 +632,189 @@ void Worker1Control(sint16 item_number)
     CreatureNeck(item, neck);
     CreatureAnimation(item_number, angle, 0);
 }
+
+
+#define WORKER2 31
+#define WORKER4 34
+#define WORK2_SHOT_DAMAGE 30
+#define WORK2_WALK_TURN (ONE_DEGREE * 3)
+#define WORK2_RUN_TURN (ONE_DEGREE * 5)
+#define WORK2_RUN_RANGE SQUARE(WALL_L * 2)
+#define WORK2_SHOOT1_RANGE SQUARE(WALL_L * 3)
+#define WORK2_DIE_ANIM 19
+
+enum work2_anims {
+    WORK2_EMPTY,
+    WORK2_STOP,
+    WORK2_WALK,
+    WORK2_RUN,
+    WORK2_WAIT,
+    WORK2_SHOOT1,
+    WORK2_SHOOT2,
+    WORK2_DEATH,
+    WORK2_AIM1,
+    WORK2_AIM2,
+    WORK2_AIM3,
+    WORK2_SHOOT3
+};
+
+extern BITE_INFO work2_gun;
+
+sint16 DragonFire(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number);
+
+void Worker2Control(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *worker;
+    sint16 angle, head, neck, tilt;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    worker = (CREATURE_INFO *)item->data;
+    head = neck = angle = tilt = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != WORK2_DEATH)
+        {
+            item->anim_number = objects[item->object_number].anim_index + WORK2_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = WORK2_DEATH;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        CreatureMood(item, &info, 0);
+        angle = CreatureTurn(item, worker->maximum_turn);
+
+        switch (item->current_anim_state)
+        {
+        case WORK2_STOP:
+            if (info.ahead)
+                neck = info.angle;
+            worker->flags = 0;
+            worker->maximum_turn = 0;
+            if (worker->mood == ESCAPE_MOOD)
+                item->goal_anim_state = WORK2_RUN;
+            else if (Targetable(item, &info))
+            {
+                if (info.distance < WORK2_SHOOT1_RANGE || info.zone_number != info.enemy_zone)
+                {
+                    if (item->object_number == WORKER4 || GetRandomControl() < 0x4000)
+                        item->goal_anim_state = WORK2_AIM1;
+                    else
+                        item->goal_anim_state = WORK2_AIM3;
+                }
+                else
+                    item->goal_anim_state = WORK2_WALK;
+            }
+            else if (worker->mood == BORED_MOOD && info.ahead)
+                item->goal_anim_state = WORK2_WAIT;
+            else if (info.distance > WORK2_RUN_RANGE)
+                item->goal_anim_state = WORK2_RUN;
+            else
+                item->goal_anim_state = WORK2_WALK;
+            break;
+
+        case WORK2_WAIT:
+            if (info.ahead)
+                neck = info.angle;
+            if (Targetable(item, &info))
+                item->goal_anim_state = WORK2_SHOOT1;
+            else if (worker->mood != BORED_MOOD || !info.ahead)
+                item->goal_anim_state = WORK2_STOP;
+            break;
+
+        case WORK2_WALK:
+            if (info.ahead)
+                neck = info.angle;
+            worker->flags = 0;
+            worker->maximum_turn = WORK2_WALK_TURN;
+            if (worker->mood == ESCAPE_MOOD)
+                item->goal_anim_state = WORK2_RUN;
+            else if (Targetable(item, &info))
+            {
+                if (info.distance < WORK2_SHOOT1_RANGE || info.zone_number != info.enemy_zone)
+                    item->goal_anim_state = WORK2_STOP;
+                else
+                    item->goal_anim_state = WORK2_AIM2;
+            }
+            else if (worker->mood == BORED_MOOD && info.ahead)
+                item->goal_anim_state = WORK2_STOP;
+            else if (info.distance > WORK2_RUN_RANGE)
+                item->goal_anim_state = WORK2_RUN;
+            break;
+
+        case WORK2_RUN:
+            if (info.ahead)
+                neck = info.angle;
+            worker->maximum_turn = WORK2_RUN_TURN;
+            tilt = angle / 2;
+            if (worker->mood == ESCAPE_MOOD)
+                break;
+            else if (Targetable(item, &info))
+                item->goal_anim_state = WORK2_WALK;
+            else if (worker->mood == BORED_MOOD || worker->mood == STALK_MOOD)
+                item->goal_anim_state = WORK2_WALK;
+            break;
+
+        case WORK2_AIM1:
+        case WORK2_AIM3:
+            worker->flags = 0;
+            if (info.ahead)
+            {
+                head = info.angle;
+                if (Targetable(item, &info))
+                    item->goal_anim_state = (item->current_anim_state == WORK2_AIM1) ? WORK2_SHOOT1 : WORK2_SHOOT3;
+                else
+                    item->goal_anim_state = WORK2_STOP;
+            }
+            break;
+
+        case WORK2_AIM2:
+            worker->flags = 0;
+            if (info.ahead)
+            {
+                head = info.angle;
+                if (Targetable(item, &info))
+                    item->goal_anim_state = WORK2_SHOOT2;
+                else
+                    item->goal_anim_state = WORK2_WALK;
+            }
+            break;
+
+        case WORK2_SHOOT3:
+            if (item->goal_anim_state != WORK2_STOP)
+            {
+                if (worker->mood == ESCAPE_MOOD || info.distance > WORK2_SHOOT1_RANGE || !Targetable(item, &info))
+                    item->goal_anim_state = WORK2_STOP;
+            }
+        case WORK2_SHOOT2:
+        case WORK2_SHOOT1:
+            if (info.ahead)
+                head = info.angle;
+            if (item->object_number == WORKER2)
+            {
+                if (!worker->flags)
+                {
+                    ShotLara(item, &info, &work2_gun, head, WORK2_SHOT_DAMAGE);
+                    worker->flags = 5;
+                }
+                else
+                    worker->flags--;
+            }
+            else
+                CreatureEffect(item, &work2_gun, DragonFire);
+            break;
+        }
+    }
+
+    CreatureTilt(item, tilt);
+    CreatureHead(item, head);
+    CreatureNeck(item, neck);
+    CreatureAnimation(item_number, angle, 0);
+}
