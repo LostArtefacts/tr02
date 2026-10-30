@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.13% (463)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.87% (784)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.21% (464)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.79% (783)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="277.35" height="6" x="0" y="0" class="named"/>
-<rect width="469.65" height="6" x="277.35" y="0" class="todo"/>
+<rect width="277.95" height="6" x="0" y="0" class="named"/>
+<rect width="469.05" height="6" x="277.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -564,7 +564,7 @@
 <rect width="12" height="12" x="660" y="135" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="135" class="todo"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="135" class="todo"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="135" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="todo"><title>0x0042b5e0 GetLaraJointAbsPosition (911 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0042b970 GetLJAInt (794 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="named"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="127.01" height="6" x="0" y="0" class="named"/>
-<rect width="619.99" height="6" x="127.01" y="0" class="todo"/>
+<rect width="127.42" height="6" x="0" y="0" class="named"/>
+<rect width="619.58" height="6" x="127.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.51" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1793,7 +1793,7 @@
 <rect width="9.50" height="9.59" x="712.50" y="150.69" class="todo"><title>0x0042e330 LaraTestClimbPos (188 bytes)</title></rect>
 <rect width="9.50" height="9.59" x="725" y="150.69" class="todo"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
 <rect width="9.50" height="9.59" x="737.50" y="150.69" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
-<rect width="9.07" height="9.97" x="522.82" y="163.28" class="todo"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
+<rect width="9.07" height="9.97" x="522.82" y="163.28" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
 <rect width="9.07" height="9.97" x="522.82" y="176.25" class="todo"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
 <rect width="9.07" height="9.90" x="522.82" y="189.22" class="named"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="9.07" height="9.83" x="522.82" y="202.12" class="named"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
