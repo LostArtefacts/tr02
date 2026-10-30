@@ -280,3 +280,16 @@ void draw_border(sint32 xpos, sint32 ypos, sint32 zpos, sint32 width, sint32 hei
     S_DrawScreenSprite2d(xpos, ypos + height, zpos, width * 0x2000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 6), 16 << 8, 0);
     S_DrawScreenSprite2d(xpos, ypos, zpos, 0x10000, height * 0x2000, (sint16)(objects[BORDERS].mesh_index + 7), 16 << 8, 0);
 }
+
+uint32 GetTextScaleH(uint32 scaleH)
+{
+    uint32 scale;
+    int width;
+
+    width = GetRenderWidth();
+    if (width < 640)
+        width = 640;
+    scale = (width << 16) / 640;
+    scaleH = (scaleH >> 8) * (scale >> 8);
+    return scaleH;
+}
