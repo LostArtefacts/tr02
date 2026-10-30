@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.15% (376)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.85% (871)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.23% (377)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.77% (870)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="225.24" height="6" x="0" y="0" class="named"/>
-<rect width="521.76" height="6" x="225.24" y="0" class="todo"/>
+<rect width="225.84" height="6" x="0" y="0" class="named"/>
+<rect width="521.16" height="6" x="225.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -450,7 +450,7 @@
 <rect width="12" height="12" x="450" y="105" class="named"><title>0x00427050 RemoveActiveItem (138 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="105" class="named"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="105" class="named"><title>0x00427150 AddActiveItem (90 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="105" class="todo"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="105" class="named"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="105" class="todo"><title>0x00427250 GlobalItemReplace (124 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="105" class="named"><title>0x004272d0 InitialiseFXArray (48 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="105" class="named"><title>0x00427300 CreateEffect (108 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">88.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="81.88" height="6" x="0" y="0" class="named"/>
-<rect width="665.12" height="6" x="81.88" y="0" class="todo"/>
+<rect width="82.23" height="6" x="0" y="0" class="named"/>
+<rect width="664.77" height="6" x="82.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1859,7 +1859,7 @@
 <rect width="8.79" height="8.16" x="546.88" y="300.39" class="todo"><title>0x0042f840 DoFlareLight (157 bytes)</title></rect>
 <rect width="8.79" height="8.16" x="546.88" y="311.55" class="todo"><title>0x004343e0 InitialiseFinalLevel (157 bytes)</title></rect>
 <rect width="8.79" height="8.16" x="546.88" y="322.70" class="todo"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
-<rect width="8.79" height="8.09" x="546.88" y="333.86" class="todo"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
+<rect width="8.79" height="8.09" x="546.88" y="333.86" class="named"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
 <rect width="8.79" height="8.09" x="546.88" y="344.95" class="todo"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="8.79" height="8.02" x="546.88" y="356.04" class="todo"><title>0x00428c40 LaraCollideStop (155 bytes)</title></rect>
 <rect width="8.79" height="7.95" x="546.88" y="367.05" class="todo"><title>0x0041d900 swap_meshes_with_meshswap3 (154 bytes)</title></rect>

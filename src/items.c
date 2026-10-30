@@ -106,6 +106,39 @@ void AddActiveItem(sint16 item_num)
     next_item_active = item_num;
 }
 
+void ItemNewRoom(sint16 item_num, sint16 room_number)
+{
+    ROOM_INFO *r;
+    ITEM_INFO *item;
+    sint16 linknum;
+
+    item = &items[item_num];
+    if (item->room_number != NO_ROOM)
+    {
+        r = &room[item->room_number];
+
+        linknum = r->item_number;
+        if (linknum == item_num)
+            r->item_number = item->next_item;
+        else
+        {
+            for (; linknum != NO_ITEM; linknum = items[linknum].next_item)
+            {
+                if (items[linknum].next_item == item_num)
+                {
+                    items[linknum].next_item = item->next_item;
+                    break;
+                }
+            }
+        }
+    }
+
+    item->room_number = room_number;
+    r = &room[room_number];
+    item->next_item = r->item_number;
+    r->item_number = item_num;
+}
+
 void InitialiseFXArray(void)
 {
     int i;
