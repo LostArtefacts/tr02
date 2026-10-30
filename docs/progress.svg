@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.47% (143)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.53% (1104)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.55% (144)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.45% (1103)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="85.66" height="6" x="0" y="0" class="named"/>
-<rect width="661.34" height="6" x="85.66" y="0" class="todo"/>
+<rect width="86.26" height="6" x="0" y="0" class="named"/>
+<rect width="660.74" height="6" x="86.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1114,7 +1114,7 @@
 <rect width="12" height="12" x="660" y="300" class="todo"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="todo"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="300" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="300" class="todo"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="300" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="300" class="todo"><title>0x0044fee0 do_control_option (1780 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="300" class="todo"><title>0x004505f0 S_ShowControls (1232 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="315" class="todo"><title>0x00450ac0 S_ChangeCtrlText (150 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="22.11" height="6" x="0" y="0" class="named"/>
-<rect width="724.89" height="6" x="22.11" y="0" class="todo"/>
+<rect width="22.25" height="6" x="0" y="0" class="named"/>
+<rect width="724.75" height="6" x="22.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2180,7 +2180,7 @@
 <rect width="4.52" height="4.13" x="641.07" y="356.61" class="todo"><title>0x00427e30 lara_as_fastfall (64 bytes)</title></rect>
 <rect width="4.52" height="4.13" x="641.07" y="363.74" class="todo"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
 <rect width="4.52" height="4.13" x="641.07" y="370.87" class="todo"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
-<rect width="4.46" height="4.19" x="648.59" y="269.17" class="todo"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
+<rect width="4.46" height="4.19" x="648.59" y="269.17" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="656.05" y="269.17" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="663.51" y="269.17" class="todo"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="670.97" y="269.17" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
