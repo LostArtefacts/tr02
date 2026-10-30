@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.57% (668)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.43% (579)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.65% (669)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.35% (578)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="400.16" height="6" x="0" y="0" class="named"/>
-<rect width="346.84" height="6" x="400.16" y="0" class="todo"/>
+<rect width="400.76" height="6" x="0" y="0" class="named"/>
+<rect width="346.24" height="6" x="400.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -538,7 +538,7 @@
 <rect width="12" height="12" x="270" y="135" class="named"><title>0x00429b60 lara_col_hangleft (51 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="135" class="named"><title>0x00429ba0 lara_col_hangright (51 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="135" class="named"><title>0x00429be0 lara_col_slideback (35 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="135" class="todo"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="135" class="named"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="135" class="todo"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="135" class="named"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="135" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.46%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.54%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="264.57" height="6" x="0" y="0" class="named"/>
-<rect width="482.43" height="6" x="264.57" y="0" class="todo"/>
+<rect width="264.92" height="6" x="0" y="0" class="named"/>
+<rect width="482.08" height="6" x="264.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1855,7 +1855,7 @@
 <rect width="8.82" height="8.36" x="547.40" y="255.63" class="todo"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
 <rect width="8.82" height="8.29" x="547.40" y="266.98" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
 <rect width="8.82" height="8.21" x="547.40" y="278.27" class="todo"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
-<rect width="8.82" height="8.21" x="547.40" y="289.48" class="todo"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
+<rect width="8.82" height="8.21" x="547.40" y="289.48" class="named"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
 <rect width="8.82" height="8.21" x="547.40" y="300.70" class="todo"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
 <rect width="8.82" height="8.07" x="547.40" y="311.91" class="todo"><title>0x0040c590 S_DrawScreenSprite (157 bytes)</title></rect>
 <rect width="8.82" height="8.07" x="547.40" y="322.99" class="named"><title>0x0042f840 DoFlareLight (157 bytes)</title></rect>
