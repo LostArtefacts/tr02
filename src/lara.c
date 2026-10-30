@@ -1,6 +1,9 @@
 #include "game.h"
 
 #define DAMAGE_START 140
+#define STEPUP_HEIGHT ((STEP_L * 3) / 2)
+#define FALLDOWN_A 34
+#define FALLDOWN_F GF(FALLDOWN_A, 0)
 #define DAMAGE_LENGTH 14
 #define FASTFALL_FRICTION item->speed = (item->speed * 95) / 100
 
@@ -394,6 +397,21 @@ void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll)
     lara.hit_direction = -1;
     if (item->frame_number < anims[item->anim_number].frame_end - 30)
         lara.death_count = 1;
+}
+
+int LaraFallen(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (coll->mid_floor > STEPUP_HEIGHT && lara.water_status != LARA_WADE)
+    {
+        item->anim_number = FALLDOWN_A;
+        item->frame_number = FALLDOWN_F;
+        item->current_anim_state = AS_FORWARDJUMP;
+        item->goal_anim_state = AS_FORWARDJUMP;
+        item->fallspeed = 0;
+        item->gravity_status = 1;
+        return 1;
+    }
+    return 0;
 }
 
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
