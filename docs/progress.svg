@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.37% (279)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.63% (968)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.45% (280)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.55% (967)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="167.13" height="6" x="0" y="0" class="named"/>
-<rect width="579.87" height="6" x="167.13" y="0" class="todo"/>
+<rect width="167.73" height="6" x="0" y="0" class="named"/>
+<rect width="579.27" height="6" x="167.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -842,7 +842,7 @@
 <rect width="12" height="12" x="330" y="225" class="todo"><title>0x00441c20 RollingBallControl (839 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="225" class="todo"><title>0x00441f70 RollingBallCollision (586 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="225" class="todo"><title>0x004421c0 SpikeCollision (341 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="225" class="todo"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="225" class="named"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="225" class="named"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="225" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.95%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.05%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.95" height="6" x="0" y="0" class="named"/>
-<rect width="695.05" height="6" x="51.95" y="0" class="todo"/>
+<rect width="52.12" height="6" x="0" y="0" class="named"/>
+<rect width="694.88" height="6" x="52.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2106,7 +2106,7 @@
 <rect width="5.17" height="5.20" x="617.28" y="353.60" class="todo"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
 <rect width="5.17" height="5.10" x="617.28" y="361.80" class="todo"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
 <rect width="5.17" height="5.10" x="617.28" y="369.90" class="todo"><title>0x00432b70 DisableBaddieAI (79 bytes)</title></rect>
-<rect width="4.85" height="5.43" x="625.45" y="253.76" class="todo"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
+<rect width="4.85" height="5.43" x="625.45" y="253.76" class="named"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="262.19" class="todo"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="270.52" class="todo"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="278.84" class="todo"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>

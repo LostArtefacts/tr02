@@ -22,6 +22,26 @@ void InitialiseBlade(sint16 item_number)
     item->current_anim_state = BLADE_STOP;
 }
 
+void TrapDoorControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    if (TriggerActive(item))
+    {
+        if (item->current_anim_state == DOOR_CLOSED)
+            item->goal_anim_state = DOOR_OPEN;
+    }
+    else
+    {
+        if (item->current_anim_state == DOOR_OPEN)
+            item->goal_anim_state = DOOR_CLOSED;
+    }
+
+    AnimateItem(item);
+}
+
 void TrapDoorFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     if (!OnTrapDoor(item, x, z))

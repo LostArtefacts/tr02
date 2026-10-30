@@ -2,8 +2,6 @@
 
 enum switch_states { SS_OFF, SS_ON };
 
-int TriggerActive(ITEM_INFO *item);
-
 void SwitchControl(sint16 item_number)
 {
     ITEM_INFO *item;

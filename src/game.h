@@ -50,6 +50,7 @@ sint16 *GetBoundsAccurate(ITEM_INFO *item);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void TestTriggers(sint16 *data, int heavy);
 void AnimateItem(ITEM_INFO *item);
+int TriggerActive(ITEM_INFO *item);
 
 void SoundEffects(void);
 void DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);
