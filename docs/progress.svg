@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.15% (737)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.85% (509)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.23% (738)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.77% (508)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="441.85" height="6" x="0" y="0" class="named"/>
-<rect width="305.15" height="6" x="441.85" y="0" class="todo"/>
+<rect width="442.44" height="6" x="0" y="0" class="named"/>
+<rect width="304.56" height="6" x="442.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -621,7 +621,7 @@
 <rect width="12" height="12" x="15" y="165" class="named"><title>0x0042f9c0 DrawFlareInAir (248 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="165" class="named"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="165" class="named"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="165" class="todo"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="165" class="named"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="165" class="todo"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="165" class="named"><title>0x00430090 draw_flare_meshes (24 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="165" class="named"><title>0x004300b0 undraw_flare_meshes (24 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.51%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.49%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="317.58" height="6" x="0" y="0" class="named"/>
-<rect width="429.42" height="6" x="317.58" y="0" class="todo"/>
+<rect width="318.37" height="6" x="0" y="0" class="named"/>
+<rect width="428.63" height="6" x="318.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1584,7 +1584,7 @@
 <rect width="14.87" height="13.99" x="521.52" y="60.82" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="14.82" height="13.99" x="539.39" y="60.82" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
 <rect width="14.68" height="13.99" x="557.22" y="60.82" class="named"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
-<rect width="14.68" height="13.99" x="574.89" y="60.82" class="todo"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
+<rect width="14.68" height="13.99" x="574.89" y="60.82" class="named"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
 <rect width="14.63" height="13.99" x="592.57" y="60.82" class="todo"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
 <rect width="14.63" height="13.99" x="610.20" y="60.82" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="14.58" height="13.99" x="627.83" y="60.82" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
