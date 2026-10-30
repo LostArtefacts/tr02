@@ -1530,6 +1530,7 @@ address,size,name,symbol
 0x00465a5c,2,Option_SoundFX_Volume,_Option_SoundFX_Volume
 0x00465a60,2,Option_Music_Volume,_Option_Music_Volume
 0x00465a64,4,bz,_bz
+0x00465ac4,15,TimeFormat,_TimeFormat
 0x00465ad4,4,jump_ok,_jump_ok
 0x00465ad8,2,old_ang,_old_ang
 0x00465ae0,,weapons,_weapons

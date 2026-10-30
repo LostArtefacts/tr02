@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.12% (925)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.32% (316)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.20% (926)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.24% (315)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="553.67" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="553.67" y="0" class="decompiled"/>
-<rect width="189.14" height="6" x="557.86" y="0" class="todo"/>
+<rect width="554.26" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="554.26" y="0" class="decompiled"/>
+<rect width="188.55" height="6" x="558.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1059,7 +1059,7 @@
 <rect width="12" height="12" x="570" y="285" class="named"><title>0x0044c550 StartGame (324 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="285" class="named"><title>0x0044c6a0 GameLoop (154 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="285" class="named"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="285" class="todo"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="285" class="named"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="285" class="named"><title>0x0044c920 GameStats (275 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="285" class="named"><title>0x0044ca40 GetRandomControl (30 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="285" class="named"><title>0x0044ca60 SeedRandomControl (10 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.72%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.20%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.85%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.07%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="408.75" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="408.75" y="0" class="decompiled"/>
-<rect width="337.65" height="6" x="409.35" y="0" class="todo"/>
+<rect width="409.73" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="409.73" y="0" class="decompiled"/>
+<rect width="336.66" height="6" x="410.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1530,7 +1530,7 @@
 <rect width="16.19" height="16.70" x="730.81" y="21.73" class="todo"><title>0x00452f80 Func452f80 (456 bytes)</title></rect>
 <rect width="16.42" height="16.38" x="412.98" y="41.43" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
 <rect width="16.42" height="16.30" x="412.98" y="60.82" class="named"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
-<rect width="16.42" height="16.21" x="412.98" y="80.12" class="todo"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
+<rect width="16.42" height="16.21" x="412.98" y="80.12" class="named"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
 <rect width="16.42" height="16.17" x="412.98" y="99.33" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="16.42" height="16.13" x="412.98" y="118.50" class="todo"><title>0x00446870 WinVidResizeGameWindow (448 bytes)</title></rect>
 <rect width="16.42" height="16.04" x="412.98" y="137.63" class="todo"><title>0x00445ff0 EnumDisplayAdaptersCallback (446 bytes)</title></rect>

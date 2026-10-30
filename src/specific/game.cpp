@@ -1,4 +1,5 @@
 #include "global.h"
+#include <stdio.h>
 #include "../title.h"
 #include "../invdata.h"
 #include "../savegame.h"
@@ -128,6 +129,62 @@ extern "C" void ShowEndStatsText(void);
 extern "C" void S_OutputPolyList(void);
 extern "C" int S_DumpScreen(void);
 extern "C" void S_DontDisplayPicture(void);
+
+extern "C" char TimeFormat[];
+extern "C" int HiRes;
+extern "C" void S_CDPlay(sint16 track, int mode);
+extern "C" void TempVideoAdjust(int hires, double sizer);
+extern "C" void TempVideoRemove(void);
+extern "C" void FadeToPal(int nframes, uint8 *pal);
+extern "C" void S_CopyScreenToBuffer(void);
+extern "C" void CreateStartInfo(int level_number);
+extern "C" void ShowStatsText(char *time_str, int type);
+
+extern "C" int LevelStats(int level_number)
+{
+    char string[100];
+    int h, m, s;
+
+    savegame.start[level_number].timer = savegame.timer;
+    savegame.start[level_number].ammo_used = savegame.ammo_used;
+    savegame.start[level_number].ammo_hit = savegame.ammo_hit;
+    savegame.start[level_number].distance_travelled = savegame.distance_travelled;
+    savegame.start[level_number].kills = savegame.kills;
+    savegame.start[level_number].secrets_found = savegame.secrets;
+    savegame.start[level_number].health_used = savegame.health_used;
+    s = savegame.timer / 30;
+    h = s / 3600;
+    m = (s / 60) % 60;
+    s = s % 60;
+    sprintf(string, TimeFormat, h, m, s);
+    S_CDPlay(gameflow.stats_track, 0);
+    TempVideoAdjust(HiRes, 1.0);
+    FadeToPal(30, game_palette);
+    T_InitPrint();
+    S_CopyScreenToBuffer();
+    while (input & IN_SELECT)
+        S_UpdateInput();
+    for (;;) {
+        S_InitialisePolyList(0);
+        S_CopyBufferToScreen();
+        S_UpdateInput();
+        if (IsResetFlag)
+            input = IN_SELECT;
+        inputDB = GetDebouncedInput(input);
+        ShowStatsText(string, 0);
+        T_DrawText();
+        S_OutputPolyList();
+        S_DumpScreen();
+        if (input & IN_SELECT)
+            break;
+    }
+    CreateStartInfo(level_number + 1);
+    savegame.current_level = level_number + 1;
+    savegame.start[CurrentLevel].available = 0;
+    S_FadeToBlack();
+    TempVideoRemove();
+    return 0;
+}
 
 extern "C" int GameStats(int level_number)
 {
