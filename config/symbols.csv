@@ -1199,7 +1199,8 @@ address,size,name,symbol
 0x004570d0,100,Func4570d0,
 0x00457140,28,Func457140,
 0x00457160,87,Func457160,
-0x004571c0,97,Func4571c0,
+0x004571c0,97,SE_RegisterSetupWindowClass,_SE_RegisterSetupWindowClass
+0x00457230,570,SE_SetupWindowProc,_SE_SetupWindowProc@16
 0x00457470,38,Func457470,_Func457470
 0x004574a0,110,UT_MemBlt,?UT_MemBlt@@YAXPAEHHHHH0HHH@Z
 0x00457510,30,phd_PushMatrix,_phd_PushMatrix
@@ -1597,6 +1598,7 @@ address,size,name,symbol
 0x004677d8,36,RegistryKeyName,_RegistryKeyName
 0x00467808,15,SetupDialogName,_SetupDialogName
 0x00467b18,6,RegistryKeyFormat,_RegistryKeyFormat
+0x00467d50,29,DialogClassName,_DialogClassName
 0x0046c2f0,4,MidSort,_MidSort
 0x0046c2f4,4,LfAspectCorrection,?LfAspectCorrection@@3MA
 0x0046c2f8,4,xgen_ymin,_xgen_ymin

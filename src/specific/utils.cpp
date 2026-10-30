@@ -304,3 +304,20 @@ extern "C" void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam)
     if (uMsg == WM_PALETTECHANGED || uMsg == WM_QUERYNEWPALETTE)
         SendMessage(hWnd, uMsg, wParam, 0);
 }
+
+extern "C" char DialogClassName[];
+extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+extern "C" bool SE_RegisterSetupWindowClass(void)
+{
+    WNDCLASS wc;
+
+    memset(&wc, 0, sizeof(wc));
+    wc.style = CS_HREDRAW | CS_VREDRAW;
+    wc.lpfnWndProc = SE_SetupWindowProc;
+    wc.hInstance = GhInstance;
+    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wc.lpszClassName = DialogClassName;
+    wc.cbWndExtra = 12;
+    return RegisterClass(&wc) ? true : false;
+}
