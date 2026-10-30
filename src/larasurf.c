@@ -7,3 +7,9 @@ void lara_col_surfback(ITEM_INFO *item, COLL_INFO *coll)
     lara.move_angle = item->pos.y_rot - 32768;
     LaraSurfaceCollision(item, coll);
 }
+
+void lara_col_surfleft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot - 16384;
+    LaraSurfaceCollision(item, coll);
+}
