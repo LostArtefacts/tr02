@@ -82,6 +82,21 @@ void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
     ls_vector_view.z = (*(mptr + M20) * ls_world.x + *(mptr + M21) * ls_world.y + *(mptr + M22) * ls_world.z) >> W2V_SHIFT;
 }
 
+extern "C" void do_quickysorty(int left, int right);
+
+extern "C" void phd_SortPolyList(void)
+{
+    sint32 i;
+
+    if (surfacenum)
+    {
+        for (i = 0; i < surfacenum; i++)
+            sort3d_buffer[i][1] += i;
+
+        do_quickysorty(0, surfacenum - 1);
+    }
+}
+
 void phd_PrintPolyList(void *ptr)
 {
     int i;
