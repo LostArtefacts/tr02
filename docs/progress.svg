@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.40% (941)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.04% (300)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.48% (942)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.96% (299)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="563.24" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="563.24" y="0" class="decompiled"/>
-<rect width="179.57" height="6" x="567.43" y="0" class="todo"/>
+<rect width="563.84" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="563.84" y="0" class="decompiled"/>
+<rect width="178.97" height="6" x="568.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -873,7 +873,7 @@
 <rect width="12" height="12" x="30" y="240" class="todo"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="240" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="240" class="decompiled"><title>0x00444560 Func444560 (13 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="240" class="todo"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="240" class="named"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="240" class="todo"><title>0x004445c0 BGND_Init (48 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="240" class="named"><title>0x004445f0 Enumerate3DDevices (36 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="240" class="named"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.38%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.54%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.40%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.52%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="413.67" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="413.67" y="0" class="decompiled"/>
-<rect width="332.72" height="6" x="414.28" y="0" class="todo"/>
+<rect width="413.84" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="413.84" y="0" class="decompiled"/>
+<rect width="332.55" height="6" x="414.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2120,7 +2120,7 @@
 <rect width="5.27" height="4.82" x="692.67" y="253.99" class="named"><title>0x00452480 OpenGameRegistryKey (78 bytes)</title></rect>
 <rect width="5.27" height="4.82" x="700.93" y="253.99" class="named"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="5.16" height="4.82" x="709.20" y="253.99" class="named"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
-<rect width="5.16" height="4.82" x="717.36" y="253.99" class="todo"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
+<rect width="5.16" height="4.82" x="717.36" y="253.99" class="named"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
 <rect width="5.16" height="4.82" x="725.52" y="253.99" class="named"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
 <rect width="5.16" height="4.82" x="733.68" y="253.99" class="named"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>
 <rect width="5.16" height="4.82" x="741.84" y="253.99" class="named"><title>0x00452310 S_CopyBufferToScreen (77 bytes)</title></rect>

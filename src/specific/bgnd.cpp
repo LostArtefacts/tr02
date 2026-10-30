@@ -41,3 +41,24 @@ extern "C" void Func444560(void)
     BGND_Free();
     BGND_PictureIsReady = false;
 }
+
+extern "C" int BGND_PaletteIndex;
+extern "C" void SafeFreeTexturePage(int pageIndex);
+extern "C" void SafeFreePalette(int palIndex);
+
+extern "C" void BGND_Free(void)
+{
+    DWORD i;
+
+    for (i = 0; i < 5; i++) {
+        if (BGND_TexturePageIndexes[i] >= 0) {
+            SafeFreeTexturePage(BGND_TexturePageIndexes[i]);
+            BGND_TexturePageIndexes[i] = -1;
+        }
+        BGND_PageHandles[i] = 0;
+    }
+    if (BGND_PaletteIndex >= 0) {
+        SafeFreePalette(BGND_PaletteIndex);
+        BGND_PaletteIndex = -1;
+    }
+}
