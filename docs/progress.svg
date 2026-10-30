@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.41% (903)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.02% (337)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.49% (904)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.94% (336)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="540.93" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="540.93" y="0" class="decompiled"/>
-<rect width="201.88" height="6" x="545.12" y="0" class="todo"/>
+<rect width="541.53" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="541.53" y="0" class="decompiled"/>
+<rect width="201.28" height="6" x="545.72" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1234,7 +1234,7 @@
 <rect width="12" height="12" x="195" y="345" class="todo"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="345" class="named"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="345" class="named"><title>0x00456650 CleanupTextures (10 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="345" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="345" class="named"><title>0x00456660 InitTextures (31 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="345" class="named"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="345" class="named"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="345" class="named"><title>0x00456720 Sync (86 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.70%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.22%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.71%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.12" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="401.12" y="0" class="decompiled"/>
-<rect width="345.27" height="6" x="401.73" y="0" class="todo"/>
+<rect width="401.19" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.19" y="0" class="decompiled"/>
+<rect width="345.20" height="6" x="401.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2398,7 +2398,7 @@
 <rect width="2.02" height="2.13" x="739.96" y="326.45" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="2.02" height="2.13" x="744.98" y="326.45" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="1.87" height="2.29" x="698.53" y="331.58" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
-<rect width="1.87" height="2.29" x="698.53" y="336.87" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
+<rect width="1.87" height="2.29" x="698.53" y="336.87" class="named"><title>0x00456660 InitTextures (31 bytes)</title></rect>
 <rect width="1.87" height="2.12" x="698.53" y="342.16" class="named"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
 <rect width="1.87" height="2.12" x="698.53" y="347.28" class="named"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
 <rect width="1.87" height="2.12" x="698.53" y="352.40" class="named"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>

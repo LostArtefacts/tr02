@@ -205,3 +205,10 @@ extern "C" void CleanupTextures(void)
     FreeTexturePages();
     Func455d50();
 }
+
+extern "C" bool InitTextures(void)
+{
+    memset(TexturePages, 0, sizeof(TexturePages));
+    memset(TexturePalettes, 0, sizeof(TexturePalettes));
+    return true;
+}
