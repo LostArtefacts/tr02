@@ -326,6 +326,16 @@ extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDES
     return rc;
 }
 
+extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc)
+{
+    HRESULT rc;
+
+    rc = surface->Unlock(desc->lpSurface);
+    if (!DX_TRY(rc))
+        LockedBufferCount--;
+    return rc;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
