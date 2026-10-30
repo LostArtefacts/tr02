@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61% (760)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39% (486)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.08% (761)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.92% (485)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="455.63" height="6" x="0" y="0" class="named"/>
-<rect width="291.37" height="6" x="455.63" y="0" class="todo"/>
+<rect width="456.23" height="6" x="0" y="0" class="named"/>
+<rect width="290.77" height="6" x="456.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -897,7 +897,7 @@
 <rect width="12" height="12" x="405" y="240" class="named"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="240" class="named"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="240" class="named"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="240" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="240" class="named"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00445080 WinVidSpinMessageLoop (226 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="todo"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="341.89" height="6" x="0" y="0" class="named"/>
-<rect width="405.11" height="6" x="341.89" y="0" class="todo"/>
+<rect width="342.46" height="6" x="0" y="0" class="named"/>
+<rect width="404.54" height="6" x="342.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1681,7 +1681,7 @@
 <rect width="11.80" height="11.67" x="676.57" y="109.49" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="11.74" height="11.67" x="691.37" y="109.49" class="named"><title>0x0042a5c0 TestWall (260 bytes)</title></rect>
 <rect width="11.74" height="11.67" x="706.11" y="109.49" class="named"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
-<rect width="11.74" height="11.67" x="720.85" y="109.49" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
+<rect width="11.74" height="11.67" x="720.85" y="109.49" class="named"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="11.40" height="11.67" x="735.60" y="109.49" class="named"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
 <rect width="11.57" height="11.44" x="481.84" y="124.16" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
 <rect width="11.57" height="11.38" x="481.84" y="138.59" class="named"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>

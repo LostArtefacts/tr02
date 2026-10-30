@@ -81,3 +81,47 @@ extern "C" int CalculateWindowHeight(int width, int height)
     return height;
 }
 
+extern "C" bool WinVidGetMinMaxInfo(LPMINMAXINFO info)
+{
+    int width, height;
+
+    if (!IsGameWindowCreated)
+        return false;
+
+    if (IsGameFullScreen)
+    {
+        info->ptMaxTrackSize.x = FullScreenWidth;
+        info->ptMaxTrackSize.y = FullScreenHeight;
+        info->ptMinTrackSize.x = FullScreenWidth;
+        info->ptMinTrackSize.y = FullScreenHeight;
+        info->ptMaxSize.x = FullScreenWidth;
+        info->ptMaxSize.y = FullScreenHeight;
+        return true;
+    }
+
+    if (IsMinWindowSizeSet)
+    {
+        info->ptMinTrackSize.x = MinWindowWidth;
+        info->ptMinTrackSize.y = MinWindowHeight;
+    }
+
+    if (IsMinMaxInfoSpecial)
+    {
+        width = GameWindowWidth;
+        height = GameWindowHeight;
+        GameWindowCalculateSizeFromClient(&width, &height);
+        info->ptMaxSize.x = width;
+        info->ptMaxTrackSize.x = width;
+        info->ptMaxSize.y = height;
+        info->ptMaxTrackSize.y = height;
+    }
+    else if (IsMaxWindowSizeSet)
+    {
+        info->ptMaxTrackSize.x = MaxWindowWidth;
+        info->ptMaxTrackSize.y = MaxWindowHeight;
+        info->ptMaxSize.x = MaxWindowWidth;
+        info->ptMaxSize.y = MaxWindowHeight;
+    }
+
+    return IsMinWindowSizeSet || IsMaxWindowSizeSet;
+}
