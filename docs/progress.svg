@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.17% (476)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.83% (771)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.25% (477)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.75% (770)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="285.14" height="6" x="0" y="0" class="named"/>
-<rect width="461.86" height="6" x="285.14" y="0" class="todo"/>
+<rect width="285.74" height="6" x="0" y="0" class="named"/>
+<rect width="461.26" height="6" x="285.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -307,7 +307,7 @@
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="named"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="60" class="named"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="60" class="todo"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="60" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="60" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x0041c540 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="60" class="named"><title>0x0041c5b0 DoBloodSplat (89 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.58%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="136.51" height="6" x="0" y="0" class="named"/>
-<rect width="610.49" height="6" x="136.51" y="0" class="todo"/>
+<rect width="137.57" height="6" x="0" y="0" class="named"/>
+<rect width="609.43" height="6" x="137.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.49" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1508,7 +1508,7 @@
 <rect width="17.12" height="17.33" x="393.45" y="317.38" class="todo"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
 <rect width="17.12" height="17.25" x="393.45" y="337.71" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="17.12" height="17.04" x="393.45" y="357.96" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
-<rect width="17.45" height="16.68" x="413.57" y="21.76" class="todo"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
+<rect width="17.45" height="16.68" x="413.57" y="21.76" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="17.24" height="16.68" x="434.02" y="21.76" class="todo"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="17.24" height="16.68" x="454.25" y="21.76" class="todo"><title>0x00438fa0 MouseControl (476 bytes)</title></rect>
 <rect width="17.24" height="16.68" x="474.49" y="21.76" class="todo"><title>0x00453560 Func453560 (476 bytes)</title></rect>
