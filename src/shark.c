@@ -18,6 +18,66 @@ void CreatureUnderwater(ITEM_INFO *item, sint32 depth);
 
 #define SQUARE(A) ((A) * (A))
 
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+void DisableBaddieAI(sint16 item_number);
+
+#define JELLY_MOVE 1
+#define JELLY_STOP 2
+#define JELLY_TURN (ONE_DEGREE * 90)
+#define JELLY_STING 5
+
+void JellyControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *jelly;
+    sint16 angle;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    jelly = (CREATURE_INFO *)items[item_number].data;
+    item = &items[item_number];
+
+    if (item->hit_points <= 0)
+    {
+        if (ExplodingDeath(item_number, -1, 0))
+        {
+            DisableBaddieAI(item_number);
+            KillItem(item_number);
+            item->status = DEACTIVATED;
+        }
+        return;
+    }
+
+    CreatureAIInfo(&items[item_number], &info);
+    CreatureMood(item, &info, 0);
+    angle = CreatureTurn(item, JELLY_TURN);
+
+    switch (item->current_anim_state)
+    {
+    case JELLY_STOP:
+        if (jelly->mood != BORED_MOOD)
+            item->goal_anim_state = JELLY_MOVE;
+        break;
+
+    case JELLY_MOVE:
+        if (jelly->mood == BORED_MOOD || item->touch_bits)
+            item->goal_anim_state = JELLY_STOP;
+        break;
+    }
+
+    if (item->touch_bits)
+    {
+        lara_item->hit_status = 1;
+        lara_item->hit_points -= JELLY_STING;
+    }
+
+    CreatureHead(item, 0);
+    CreatureAnimation(item_number, angle, 0);
+    CreatureUnderwater(item, 0);
+}
+
 #define BARACUDDA 28
 #define BARA_BITE 100
 #define BARA_EMPTY 0
