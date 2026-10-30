@@ -96,6 +96,35 @@ int InitialiseLevel(int level_number, int type)
     return 1;
 }
 
+#define MAX_FLIPMAPS 10
+#define MAX_CD_TRACKS 64
+
+extern int flipmap[];
+extern sint16 cd_flags[];
+extern int SunsetTimer;
+extern TEXTSTRING *AmmoTextInfo;
+extern sint32 detonate_all_mines;
+extern int monks_attack_lara;
+
+void InitialiseGameFlags(void)
+{
+    int i;
+
+    flip_status = 0;
+    for (i = 0; i < MAX_FLIPMAPS; i++)
+        flipmap[i] = 0;
+    for (i = 0; i < MAX_CD_TRACKS; i++)
+        cd_flags[i] = 0;
+    for (i = 0; i < NUMBER_OBJECTS; i++)
+        objects[i].loaded = 0;
+    SunsetTimer = 0;
+    AmmoTextInfo = NULL;
+    level_complete = 0;
+    flipeffect = -1;
+    detonate_all_mines = 0;
+    monks_attack_lara = 0;
+}
+
 void InitialiseLevelFlags(void)
 {
     savegame.secrets = 0;
