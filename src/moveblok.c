@@ -1,5 +1,17 @@
 #include "game.h"
 
+void AlterFloorHeight(ITEM_INFO *item, int height);
+
+void InitialiseMovingBlock(sint16 item_num)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+
+    if (item->status != INVISIBLE)
+        AlterFloorHeight(item, -1024);
+}
+
 void DrawMovableBlock(ITEM_INFO *item)
 {
     if (item->status != ACTIVE)
