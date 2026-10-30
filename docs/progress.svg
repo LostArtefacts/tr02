@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.91% (348)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.09% (899)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.99% (349)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.01% (898)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="208.47" height="6" x="0" y="0" class="named"/>
-<rect width="538.53" height="6" x="208.47" y="0" class="todo"/>
+<rect width="209.06" height="6" x="0" y="0" class="named"/>
+<rect width="537.94" height="6" x="209.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -850,7 +850,7 @@
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x004425b0 FallingBlock (261 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="225" class="named"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="225" class="named"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="225" class="todo"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="225" class="named"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="225" class="todo"><title>0x00442810 FallingCeiling (224 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="225" class="todo"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="225" class="todo"><title>0x00442a30 DartsControl (341 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.27%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.73%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="69.27" height="6" x="0" y="0" class="named"/>
-<rect width="677.73" height="6" x="69.27" y="0" class="todo"/>
+<rect width="69.68" height="6" x="0" y="0" class="named"/>
+<rect width="677.32" height="6" x="69.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1785,7 +1785,7 @@
 <rect width="9.65" height="9.58" x="611.91" y="150.66" class="todo"><title>0x004542f0 Func4542f0 (190 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="624.56" y="150.66" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="637.15" y="150.66" class="todo"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
-<rect width="9.58" height="9.58" x="649.73" y="150.66" class="todo"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
+<rect width="9.58" height="9.58" x="649.73" y="150.66" class="named"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="662.31" y="150.66" class="todo"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="674.90" y="150.66" class="todo"><title>0x00454540 Func454540 (189 bytes)</title></rect>
 <rect width="9.52" height="9.58" x="687.48" y="150.66" class="todo"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>

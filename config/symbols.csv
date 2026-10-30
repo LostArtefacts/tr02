@@ -1511,6 +1511,12 @@ address,size,name,symbol
 0x00465f58,24,DeathSlideBounds,_DeathSlideBounds
 0x00465f70,12,DeathSlidePosition,_DeathSlidePosition
 0x00466278,,tracksRemoved,_tracksRemoved
+0x00466360,16,teeth1a,_teeth1a
+0x00466370,16,teeth1b,_teeth1b
+0x00466380,16,teeth2a,_teeth2a
+0x00466390,16,teeth2b,_teeth2b
+0x004663a0,16,teeth3a,_teeth3a
+0x004663b0,16,teeth3b,_teeth3b
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
 0x00466480,8,screen_sizer,_screen_sizer
 0x00466488,8,game_sizer,_game_sizer
