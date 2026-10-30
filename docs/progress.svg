@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.30% (727)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">41.70% (520)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.38% (728)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">41.62% (519)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="435.50" height="6" x="0" y="0" class="named"/>
-<rect width="311.50" height="6" x="435.50" y="0" class="todo"/>
+<rect width="436.10" height="6" x="0" y="0" class="named"/>
+<rect width="310.90" height="6" x="436.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -560,7 +560,7 @@
 <rect width="12" height="12" x="600" y="135" class="named"><title>0x0042ac00 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="135" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="135" class="named"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="135" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="135" class="named"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="135" class="named"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="135" class="named"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.71%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="308.06" height="6" x="0" y="0" class="named"/>
-<rect width="438.94" height="6" x="308.06" y="0" class="todo"/>
+<rect width="308.45" height="6" x="0" y="0" class="named"/>
+<rect width="438.55" height="6" x="308.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1809,7 +1809,7 @@
 <rect width="9.07" height="9.34" x="523.51" y="328.92" class="named"><title>0x00429190 lara_col_fastback (179 bytes)</title></rect>
 <rect width="9.07" height="9.27" x="523.51" y="341.26" class="named"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
 <rect width="9.07" height="9.27" x="523.51" y="353.53" class="named"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
-<rect width="9.07" height="9.20" x="523.51" y="365.80" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
+<rect width="9.07" height="9.20" x="523.51" y="365.80" class="named"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="9.08" height="9.19" x="535.58" y="163.83" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
 <rect width="9.08" height="9.19" x="535.58" y="176.01" class="todo"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
 <rect width="9.08" height="9.12" x="535.58" y="188.20" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>

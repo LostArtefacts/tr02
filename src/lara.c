@@ -2531,6 +2531,42 @@ int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll)
 #define VAULT34_A 42
 #define VAULT34_F GF(VAULT34_A, 0)
 
+int TestHangSwingIn(ITEM_INFO *item, PHD_ANGLE angle)
+{
+    int x, y, z;
+    int h, c;
+    FLOOR_INFO *floor;
+    sint16 room_num;
+
+    x = item->pos.x_pos;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos;
+    room_num = item->room_number;
+    switch (angle) {
+    case 0:
+        z += 256;
+        break;
+    case 16384:
+        x += 256;
+        break;
+    case -16384:
+        x -= 256;
+        break;
+    case -32768:
+        z -= 256;
+        break;
+    }
+
+    floor = GetFloor(x, y, z, &room_num);
+    h = GetHeight(floor, x, y, z);
+    c = GetCeiling(floor, x, y, z);
+    if (h != NO_HEIGHT) {
+        if ((h - y) > 0 && (c - y) < -400)
+            return 1;
+    }
+    return 0;
+}
+
 int TestLaraVault(ITEM_INFO *item, COLL_INFO *coll)
 {
     int hdif, slope;
