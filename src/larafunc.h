@@ -10,6 +10,7 @@ void lara_as_null(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_jumper(ITEM_INFO *item, COLL_INFO *coll);
 void lara_slide_slope(ITEM_INFO *item, COLL_INFO *coll);
+void LaraHangTest(ITEM_INFO *item, COLL_INFO *coll);
 void lara_as_death(ITEM_INFO *item, COLL_INFO *coll);
 void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_turn_r(ITEM_INFO *item, COLL_INFO *coll);
