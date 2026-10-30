@@ -1449,6 +1449,7 @@ address,size,name,symbol
 0x004630d8,21,GuidFormat,_GuidFormat
 0x004630f0,17,HexDigits,_HexDigits
 0x00463120,16,IID_IDirect3D2,_IID_IDirect3D2
+0x00463130,16,IID_IDirect3DHALDevice,_IID_IDirect3DHALDevice
 0x00463140,16,IID_IDirectDraw2,_IID_IDirectDraw2
 0x00463150,16,IID_IDirectDrawSurface3,_IID_IDirectDrawSurface3
 0x00463160,16,GUID_SysKeyboard,_GUID_SysKeyboard

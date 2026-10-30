@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.64% (983)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">20.80% (260)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.72% (984)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">20.72% (259)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="587.44" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="587.44" y="0" class="decompiled"/>
-<rect width="155.38" height="6" x="591.62" y="0" class="todo"/>
+<rect width="588.04" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="588.04" y="0" class="decompiled"/>
+<rect width="154.78" height="6" x="592.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -881,7 +881,7 @@
 <rect width="12" height="12" x="150" y="240" class="named"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="240" class="named"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="named"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="240" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="240" class="named"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="named"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="240" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="todo"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.80%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.12%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.93%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">40.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="439.22" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="439.22" y="0" class="decompiled"/>
-<rect width="307.18" height="6" x="439.82" y="0" class="todo"/>
+<rect width="440.18" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="440.18" y="0" class="decompiled"/>
+<rect width="306.22" height="6" x="440.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1539,7 +1539,7 @@
 <rect width="16.38" height="15.92" x="412.46" y="156.59" class="named"><title>0x00430d10 UseItem (443 bytes)</title></rect>
 <rect width="16.38" height="15.79" x="412.46" y="175.51" class="named"><title>0x00440340 BigSpiderControl (440 bytes)</title></rect>
 <rect width="16.38" height="15.79" x="412.46" y="194.30" class="todo"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
-<rect width="16.38" height="15.79" x="412.46" y="213.09" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
+<rect width="16.38" height="15.79" x="412.46" y="213.09" class="named"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="16.38" height="15.71" x="412.46" y="231.89" class="named"><title>0x0043dd20 SkidooUserControl (438 bytes)</title></rect>
 <rect width="16.38" height="15.58" x="412.46" y="250.59" class="named"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
 <rect width="16.38" height="15.45" x="412.46" y="269.17" class="named"><title>0x00416940 StartDemo (432 bytes)</title></rect>
