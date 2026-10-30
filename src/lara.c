@@ -6,6 +6,7 @@
 #define FALLDOWN_F GF(FALLDOWN_A, 0)
 #define DAMAGE_LENGTH 14
 #define FASTFALL_FRICTION item->speed = (item->speed * 95) / 100
+#define SLOPE_DIF 60
 
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -475,4 +476,34 @@ void lara_col_slideback(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
+}
+
+int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
+{
+    int hdif;
+    sint16 *bounds;
+
+    bounds = GetBoundsAccurate(item);
+    hdif = coll->front_floor - bounds[2];
+
+    if ((hdif < 0 && hdif + item->fallspeed < 0) || (hdif > 0 && hdif + item->fallspeed > 0))
+    {
+        hdif = item->pos.y_pos + bounds[2];
+
+        if ((hdif >> (WALL_SHIFT - 2)) != ((hdif + item->fallspeed) >> (WALL_SHIFT - 2)))
+        {
+            if (item->fallspeed > 0)
+                *edge = (hdif + item->fallspeed) & ~(STEP_L - 1);
+            else
+                *edge = hdif & ~(STEP_L - 1);
+
+            return -1;
+        }
+        return 0;
+    }
+
+    if (ABS(coll->left_floor - coll->right_floor) >= SLOPE_DIF)
+        return 0;
+
+    return 1;
 }
