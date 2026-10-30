@@ -238,6 +238,22 @@ void Splash(ITEM_INFO *item)
     }
 }
 
+void ControlSplash1(sint16 fx_num)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_num];
+    fx->frame_number--;
+    if (fx->frame_number <= objects[fx->object_number].nmeshes)
+    {
+        KillEffect(fx_num);
+        return;
+    }
+
+    fx->pos.z_pos += (phd_cos(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+    fx->pos.x_pos += (phd_sin(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

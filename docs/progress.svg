@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.51% (368)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.49% (879)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.59% (369)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.41% (878)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="220.45" height="6" x="0" y="0" class="named"/>
-<rect width="526.55" height="6" x="220.45" y="0" class="todo"/>
+<rect width="221.04" height="6" x="0" y="0" class="named"/>
+<rect width="525.96" height="6" x="221.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -320,7 +320,7 @@
 <rect width="12" height="12" x="0" y="75" class="todo"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="75" class="named"><title>0x0041c970 ControlBubble1 (243 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="75" class="named"><title>0x0041ca70 Splash (194 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="75" class="todo"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="75" class="named"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="75" class="todo"><title>0x0041cbc0 ControlWaterSprite (174 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="75" class="todo"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="75" class="todo"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.57%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.43%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.40%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="78.94" height="6" x="0" y="0" class="named"/>
-<rect width="668.06" height="6" x="78.94" y="0" class="todo"/>
+<rect width="79.19" height="6" x="0" y="0" class="named"/>
+<rect width="667.81" height="6" x="79.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1988,7 +1988,7 @@
 <rect width="6.53" height="7.02" x="589.83" y="268.83" class="named"><title>0x0041c7d0 Richochet (114 bytes)</title></rect>
 <rect width="6.53" height="7.02" x="589.83" y="278.85" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
 <rect width="6.53" height="7.02" x="589.83" y="288.87" class="todo"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
-<rect width="6.53" height="6.93" x="589.83" y="298.89" class="todo"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
+<rect width="6.53" height="6.93" x="589.83" y="298.89" class="named"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
 <rect width="6.53" height="6.93" x="589.83" y="308.82" class="todo"><title>0x00445600 WinVidGetColorBitMasks (113 bytes)</title></rect>
 <rect width="6.53" height="6.93" x="589.83" y="318.75" class="todo"><title>0x0044a9d0 LoadPalettes (113 bytes)</title></rect>
 <rect width="6.53" height="6.93" x="589.83" y="328.69" class="todo"><title>0x00456e00 GetRegistryBinaryValue (113 bytes)</title></rect>
