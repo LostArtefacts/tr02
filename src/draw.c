@@ -32,6 +32,18 @@ int DrawPhaseCinematic(void)
     return camera.number_frames;
 }
 
+void DrawGameInfo(int timed);
+
+int DrawPhaseGame(void)
+{
+    DrawRooms(camera.pos.room_number);
+    DrawGameInfo(1);
+    S_OutputPolyList();
+    camera.number_frames = S_DumpScreen();
+    S_AnimateTextures(camera.number_frames);
+    return camera.number_frames;
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;
