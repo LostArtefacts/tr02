@@ -178,6 +178,33 @@ int EscapeBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
     return 1;
 }
 
+int ValidBox(ITEM_INFO *item, sint16 zone_number, sint16 box_number)
+{
+    BOX_INFO *box;
+    CREATURE_INFO *creature;
+    sint16 *zone;
+
+    creature = (CREATURE_INFO *)item->data;
+
+    if (creature->LOT.fly == NO_FLYING)
+        zone = ground_zone[ZONE(creature->LOT.step)][flip_status];
+    else
+        zone = fly_zone[flip_status];
+
+    if (zone[box_number] != zone_number)
+        return 0;
+
+    box = &boxes[box_number];
+    if (box->overlap_index & creature->LOT.block_mask)
+        return 0;
+
+    if (item->pos.z_pos > ((sint32)box->left << WALL_SHIFT) && item->pos.z_pos < ((sint32)box->right << WALL_SHIFT) &&
+        item->pos.x_pos > ((sint32)box->top << WALL_SHIFT) && item->pos.x_pos < ((sint32)box->bottom << WALL_SHIFT))
+        return 0;
+
+    return 1;
+}
+
 int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height, sint16 room_number, LOT_INFO *LOT)
 {
     sint32 height;
