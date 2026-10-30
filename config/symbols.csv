@@ -1596,6 +1596,7 @@ address,size,name,symbol
 0x00466b80,32,saved_levels,_saved_levels
 0x00466bb0,4,rand_1,_rand_1
 0x00466bb4,4,rand_2,_rand_2
+0x00466bb8,18,CreditsFileName,_CreditsFileName
 0x00466bdc,4,PaletteIndex,_PaletteIndex
 0x00466be4,2,DumpX,_DumpX
 0x00466be6,2,DumpY,_DumpY
