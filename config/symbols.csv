@@ -126,7 +126,7 @@ address,size,name,symbol
 0x00410630,882,MoveCamera,_MoveCamera
 0x004109b0,215,ClipCamera,_ClipCamera
 0x00410a90,340,ShiftCamera,_ShiftCamera
-0x00410bf0,80,BadPosition,_BadPosition
+0x00410bf0,80,GoodPosition,_GoodPosition
 0x00410c40,1921,SmartShift,_SmartShift
 0x004113d0,237,ChaseCamera,_ChaseCamera
 0x004114c0,414,ShiftClamp,_ShiftClamp

@@ -91,6 +91,16 @@ void ShiftCamera(sint32 *x, sint32 *y, sint32 *h, sint32 target_x, sint32 target
     }
 }
 
+FLOOR_INFO *GoodPosition(sint32 x, sint32 y, sint32 z, sint16 room_number)
+{
+    FLOOR_INFO *floor;
+
+    floor = GetFloor(x, y, z, &room_number);
+    if (y <= GetHeight(floor, x, y, z) && y >= GetCeiling(floor, x, y, z))
+        return floor;
+    return NULL;
+}
+
 #define MAX_ELEVATION (ONE_DEGREE * 85)
 
 void MoveCamera(GAME_VECTOR *ideal, int speed);

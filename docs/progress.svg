@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.52% (630)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.48% (617)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.60% (631)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.40% (616)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="377.39" height="6" x="0" y="0" class="named"/>
-<rect width="369.61" height="6" x="377.39" y="0" class="todo"/>
+<rect width="377.99" height="6" x="0" y="0" class="named"/>
+<rect width="369.01" height="6" x="377.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -194,7 +194,7 @@
 <rect width="12" height="12" x="360" y="30" class="todo"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="30" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="30" class="named"><title>0x00410a90 ShiftCamera (340 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="30" class="todo"><title>0x00410bf0 BadPosition (80 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="30" class="named"><title>0x00410bf0 GoodPosition (80 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="30" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="todo"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.52%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.48%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="227.99" height="6" x="0" y="0" class="named"/>
-<rect width="519.01" height="6" x="227.99" y="0" class="todo"/>
+<rect width="228.16" height="6" x="0" y="0" class="named"/>
+<rect width="518.84" height="6" x="228.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2101,7 +2101,7 @@
 <rect width="5.28" height="5.16" x="684.59" y="245.59" class="named"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
 <rect width="5.28" height="5.16" x="692.87" y="245.59" class="todo"><title>0x00456a20 GuidBinaryToString (81 bytes)</title></rect>
 <rect width="5.18" height="5.16" x="701.14" y="245.59" class="named"><title>0x00410040 CreatureUnderwater (80 bytes)</title></rect>
-<rect width="5.18" height="5.16" x="709.32" y="245.59" class="todo"><title>0x00410bf0 BadPosition (80 bytes)</title></rect>
+<rect width="5.18" height="5.16" x="709.32" y="245.59" class="named"><title>0x00410bf0 GoodPosition (80 bytes)</title></rect>
 <rect width="5.18" height="5.16" x="717.50" y="245.59" class="named"><title>0x00436800 InitialiseCult3 (80 bytes)</title></rect>
 <rect width="5.18" height="5.16" x="725.67" y="245.59" class="todo"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
 <rect width="5.07" height="5.16" x="733.85" y="245.59" class="todo"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
