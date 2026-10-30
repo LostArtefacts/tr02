@@ -163,3 +163,13 @@ void DS_StopAllSamples()
         }
     }
 }
+
+extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext);
+
+extern "C" bool DSoundEnumerate(LPVOID lpContext)
+{
+    if (DX_TRY(DirectSoundEnumerate(DSoundEnumCallback, lpContext)))
+        return false;
+    return true;
+}
+
