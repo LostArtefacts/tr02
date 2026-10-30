@@ -463,6 +463,17 @@ extern "C" bool WinVidGetDisplayModes(void)
     return true;
 }
 
+extern "C" void WinVidExitMessage(void)
+{
+    if (HGameWindow && IsWindow(HGameWindow))
+    {
+        PostMessage(HGameWindow, WM_CLOSE, 0, 0);
+        while (WinVidSpinMessageLoop(false))
+            ;
+        HGameWindow = NULL;
+    }
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
