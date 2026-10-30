@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.57% (481)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.43% (766)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.65% (482)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.35% (765)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="288.14" height="6" x="0" y="0" class="named"/>
-<rect width="458.86" height="6" x="288.14" y="0" class="todo"/>
+<rect width="288.74" height="6" x="0" y="0" class="named"/>
+<rect width="458.26" height="6" x="288.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -363,7 +363,7 @@
 <rect width="12" height="12" x="645" y="75" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="75" class="named"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="75" class="todo"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="75" class="todo"><title>0x0041db30 Knife (118 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="75" class="named"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="75" class="todo"><title>0x0041dbb0 Cult2Control (1035 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="75" class="todo"><title>0x0041dfe0 MonkControl (1185 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="75" class="todo"><title>0x0041e4b0 Worker3Control (1469 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="139.99" height="6" x="0" y="0" class="named"/>
-<rect width="607.01" height="6" x="139.99" y="0" class="todo"/>
+<rect width="140.25" height="6" x="0" y="0" class="named"/>
+<rect width="606.75" height="6" x="140.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.49" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1972,7 +1972,7 @@
 <rect width="6.95" height="7" x="580.01" y="268.89" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
 <rect width="6.95" height="7" x="580.01" y="278.89" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="6.95" height="7" x="580.01" y="288.89" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
-<rect width="6.95" height="6.92" x="580.01" y="298.90" class="todo"><title>0x0041db30 Knife (118 bytes)</title></rect>
+<rect width="6.95" height="6.92" x="580.01" y="298.90" class="named"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="6.95" height="6.92" x="580.01" y="308.82" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
 <rect width="6.95" height="6.92" x="580.01" y="318.74" class="named"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
 <rect width="6.95" height="6.92" x="580.01" y="328.65" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
