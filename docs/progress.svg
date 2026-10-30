@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.51% (156)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.49% (1091)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.59% (157)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.41% (1090)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="93.45" height="6" x="0" y="0" class="named"/>
-<rect width="653.55" height="6" x="93.45" y="0" class="todo"/>
+<rect width="94.05" height="6" x="0" y="0" class="named"/>
+<rect width="652.95" height="6" x="94.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -99,7 +99,7 @@
 <rect width="12" height="12" x="435" y="0" class="named"><title>0x00402b40 draw_poly_trans (53 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="0" class="named"><title>0x00402b80 draw_poly_gouraud (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402bc0 draw_poly_gtmap (60 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="0" class="todo"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="0" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="todo"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="29.74" height="6" x="0" y="0" class="named"/>
-<rect width="717.26" height="6" x="29.74" y="0" class="todo"/>
+<rect width="29.88" height="6" x="0" y="0" class="named"/>
+<rect width="717.12" height="6" x="29.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2194,7 +2194,7 @@
 <rect width="4.11" height="4.19" x="728.79" y="269.17" class="todo"><title>0x00445470 WinVidBufferLock (61 bytes)</title></rect>
 <rect width="4.11" height="4.19" x="735.90" y="269.17" class="todo"><title>0x00452e40 Func452e40 (61 bytes)</title></rect>
 <rect width="3.99" height="4.19" x="743.01" y="269.17" class="named"><title>0x00402bc0 draw_poly_gtmap (60 bytes)</title></rect>
-<rect width="4.31" height="3.88" x="648.59" y="276.36" class="todo"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
+<rect width="4.31" height="3.88" x="648.59" y="276.36" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="4.31" height="3.88" x="655.90" y="276.36" class="todo"><title>0x0040cb10 InitialiseBoat (60 bytes)</title></rect>
 <rect width="4.31" height="3.88" x="663.22" y="276.36" class="todo"><title>0x004343a0 ControlCutShotgun (60 bytes)</title></rect>
 <rect width="4.31" height="3.88" x="670.53" y="276.36" class="todo"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
