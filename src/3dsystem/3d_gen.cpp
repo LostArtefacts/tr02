@@ -165,3 +165,25 @@ void phd_PrintPolyList(void *ptr)
         sptr += 2;
     }
 }
+
+extern "C" float FltNearZ;
+extern "C" float FltFarZ;
+extern "C" float FltResZ;
+extern "C" float FltResZORhw;
+extern "C" float FltResZBuf;
+extern "C" float RhwFactor;
+
+extern "C" float FltRhwONearZ;
+extern "C" float FltPerspONearZ;
+extern "C" float FltPersp;
+
+extern "C" void Func402620(void);
+
+extern "C" void phd_SetNearZ(sint32 z)
+{
+    phd_znear = z;
+    FltNearZ = (float)z;
+    FltRhwONearZ = RhwFactor / FltNearZ;
+    FltPerspONearZ = FltPersp / FltNearZ;
+    Func402620();
+}
