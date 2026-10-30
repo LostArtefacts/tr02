@@ -1262,6 +1262,43 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int shift, result;
+    sint16 *bounds;
+
+    if (!lara.climb_status || item->fallspeed < 0)
+        return 0;
+
+    switch ((uint16)(item->pos.y_rot + 0x2000) / 0x4000)
+    {
+    case 0:
+    case 2:
+        item->pos.z_pos += coll->shift.z;
+        break;
+    case 1:
+    case 3:
+        item->pos.x_pos += coll->shift.x;
+        break;
+    }
+
+    bounds = GetBoundsAccurate(item);
+
+    if (!LaraTestClimbPos(item, coll->radius, coll->radius, bounds[2], bounds[3] - bounds[2], &shift)
+        || !LaraTestClimbPos(item, coll->radius, -coll->radius, bounds[2], bounds[3] - bounds[2], &shift))
+        return 0;
+
+    result = LaraTestClimbPos(item, coll->radius, 0, bounds[2], bounds[3] - bounds[2], &shift);
+    if (!result)
+        return 0;
+    else if (result == 1)
+        return 1;
+
+    item->pos.y_pos += shift;
+
+    return 1;
+}
+
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
     int result_r, result_l, shift_l, shift_r;
