@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.56% (618)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.44% (629)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.64% (619)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.36% (628)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="370.21" height="6" x="0" y="0" class="named"/>
-<rect width="376.79" height="6" x="370.21" y="0" class="todo"/>
+<rect width="370.80" height="6" x="0" y="0" class="named"/>
+<rect width="376.20" height="6" x="370.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -573,7 +573,7 @@
 <rect width="12" height="12" x="45" y="150" class="todo"><title>0x0042bd70 RifleHandler (245 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0042be70 FireShotgun (242 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="150" class="named"><title>0x0042bf70 FireM16 (123 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="150" class="todo"><title>0x0042bff0 FireHarpoon (391 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="150" class="named"><title>0x0042bff0 FireHarpoon (391 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="150" class="todo"><title>0x0042c180 ControlHarpoonBolt (836 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="150" class="todo"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="150" class="todo"><title>0x0042c5c0 ControlRocket (1030 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.27%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="222.06" height="6" x="0" y="0" class="named"/>
-<rect width="524.94" height="6" x="222.06" y="0" class="todo"/>
+<rect width="222.92" height="6" x="0" y="0" class="named"/>
+<rect width="524.08" height="6" x="222.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1562,7 +1562,7 @@
 <rect width="15.20" height="14.96" x="731.80" y="41.82" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>
 <rect width="15.19" height="14.92" x="432.83" y="59.78" class="named"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
 <rect width="15.19" height="14.92" x="451.02" y="59.78" class="todo"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
-<rect width="15.19" height="14.92" x="469.21" y="59.78" class="todo"><title>0x0042bff0 FireHarpoon (391 bytes)</title></rect>
+<rect width="15.19" height="14.92" x="469.21" y="59.78" class="named"><title>0x0042bff0 FireHarpoon (391 bytes)</title></rect>
 <rect width="15.19" height="14.92" x="487.40" y="59.78" class="todo"><title>0x0044e5e0 WinMain (391 bytes)</title></rect>
 <rect width="14.82" height="14.92" x="505.59" y="59.78" class="todo"><title>0x0040b9f0 InsertFlatRect_Sorted (383 bytes)</title></rect>
 <rect width="14.82" height="14.92" x="523.41" y="59.78" class="todo"><title>0x00417780 ControlTwinkle (383 bytes)</title></rect>

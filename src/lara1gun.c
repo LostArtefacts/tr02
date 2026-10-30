@@ -1,4 +1,5 @@
 #include "game.h"
+#include "savegame.h"
 
 void draw_shotgun_meshes(int weapon_type)
 {
@@ -69,6 +70,70 @@ void FireM16(int running)
         lara.right_arm.flash_gun = weapons[LG_M16].flash_time;
 }
 
+#define HARPOON_BOLT 249
+#define HARPOON_SPEED 150
+#define SQUARE(A) ((A) * (A))
+
+sint16 CreateItem(void);
+void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint);
+void InitialiseItem(sint16 item_num);
+void find_target_point(ITEM_INFO *item, GAME_VECTOR *target);
+
+void FireHarpoon(void)
+{
+    sint16 item_number;
+    ITEM_INFO *item;
+    GAME_VECTOR pos;
+    int distance;
+
+    if (lara.harpoon.ammo <= 0)
+        return;
+
+    item_number = CreateItem();
+    if (item_number != NO_ITEM)
+    {
+        item = &items[item_number];
+
+        item->object_number = HARPOON_BOLT;
+        item->room_number = lara_item->room_number;
+        pos.x = -2;
+        pos.y = 273 + 100;
+        pos.z = 77;
+        GetLaraJointAbsPosition((PHD_VECTOR *)&pos, 10);
+        item->pos.x_pos = pos.x;
+        item->pos.y_pos = pos.y;
+        item->pos.z_pos = pos.z;
+
+        InitialiseItem(item_number);
+
+        if (lara.target)
+        {
+            find_target_point(lara.target, &pos);
+
+            item->pos.y_rot = phd_atan(pos.z - item->pos.z_pos, pos.x - item->pos.x_pos);
+            distance = phd_sqrt(SQUARE(pos.z - item->pos.z_pos) + SQUARE(pos.x - item->pos.x_pos));
+            item->pos.x_rot = -phd_atan(distance, pos.y - item->pos.y_pos);
+        }
+        else
+        {
+            item->pos.x_rot = lara_item->pos.x_rot + lara.left_arm.x_rot;
+            item->pos.y_rot = lara_item->pos.y_rot + lara.left_arm.y_rot;
+        }
+        item->pos.z_rot = 0;
+
+        item->fallspeed = (sint16)(-HARPOON_SPEED * phd_sin(item->pos.x_rot) >> W2V_SHIFT);
+        item->speed = (sint16)(HARPOON_SPEED * phd_cos(item->pos.x_rot) >> W2V_SHIFT);
+
+        AddActiveItem(item_number);
+
+        if (!savegame.bonus_flag)
+            lara.harpoon.ammo--;
+        savegame.ammo_used++;
+    }
+}
+
+#define ROCKET 248
+
 enum weapon_anim {
     W_AIM,
     W_DRAW,
@@ -85,8 +150,6 @@ enum weapon_anim {
 #define ROCKET_DRAW_ANIM 0
 #define HARPOON_DRAW_ANIM 1
 #define NO_ROOM 0xff
-
-sint16 CreateItem(void);
 
 void draw_shotgun(int weapon_type)
 {
