@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.38% (304)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.62% (943)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.46% (305)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.54% (942)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="182.11" height="6" x="0" y="0" class="named"/>
-<rect width="564.89" height="6" x="182.11" y="0" class="todo"/>
+<rect width="182.71" height="6" x="0" y="0" class="named"/>
+<rect width="564.29" height="6" x="182.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -341,7 +341,7 @@
 <rect width="12" height="12" x="315" y="75" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="75" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="75" class="todo"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="75" class="named"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="75" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="75" class="named"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="75" class="todo"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.33%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="57.11" height="6" x="0" y="0" class="named"/>
-<rect width="689.89" height="6" x="57.11" y="0" class="todo"/>
+<rect width="57.31" height="6" x="0" y="0" class="named"/>
+<rect width="689.69" height="6" x="57.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2048,7 +2048,7 @@
 <rect width="5.96" height="5.79" x="617.84" y="236.38" class="named"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>
 <rect width="5.96" height="5.79" x="626.80" y="236.38" class="todo"><title>0x00456cc0 GetRegistryDwordValue (94 bytes)</title></rect>
 <rect width="5.87" height="5.79" x="635.77" y="236.38" class="named"><title>0x00413520 UpdateLaraRoom (93 bytes)</title></rect>
-<rect width="5.87" height="5.79" x="644.64" y="236.38" class="todo"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
+<rect width="5.87" height="5.79" x="644.64" y="236.38" class="named"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
 <rect width="5.87" height="5.79" x="653.50" y="236.38" class="todo"><title>0x004254b0 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="5.87" height="5.79" x="662.37" y="236.38" class="named"><title>0x0042da50 lara_col_climbleft (93 bytes)</title></rect>
 <rect width="5.87" height="5.79" x="671.24" y="236.38" class="named"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>

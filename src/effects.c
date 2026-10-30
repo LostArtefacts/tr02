@@ -8,6 +8,7 @@
 #define UNFLIPFLAG 128
 #define MESHSWAP1 97
 #define MESHSWAP2 98
+#define BIRD_TWEETER 215
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
 {
@@ -186,6 +187,20 @@ void ControlLaraAlarm(sint16 item_number)
     item = &items[item_number];
     if ((item->flags & CODE_BITS) == CODE_BITS)
         SoundEffect(335, &item->pos, 0);
+}
+
+void ControlBirdTweeter(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->object_number == BIRD_TWEETER)
+    {
+        if (GetRandomDraw() < 0x400)
+            SoundEffect(316, &item->pos, 0);
+    }
+    else if (GetRandomDraw() < 0x100)
+        SoundEffect(329, &item->pos, 0);
 }
 
 void DoChimeSound(ITEM_INFO *item)
