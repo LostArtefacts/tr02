@@ -1,5 +1,6 @@
 #include "../specific/include.h"
 #include "../3dglodef.h"
+#include "../specific/winmain.h"
 
 typedef struct {
     float xv, yv, zv, ooz, xs, ys;
@@ -14,6 +15,9 @@ typedef struct {
 } RGB888;
 
 extern "C" D3DTLVERTEX *HWR_VertexPtr;
+extern "C" float RhwFactor;
+extern "C" float FltResZBuf;
+extern "C" float FltResZORhw;
 extern "C" RGB888 game_palette[];
 extern "C" sint32 *sort3dptr;
 extern "C" sint16 *info3dptr;
@@ -134,6 +138,34 @@ extern "C" void InsertFlatRect_Sorted(int x1, int y1, int x2, int y2, int z, int
     v[1].sx = v[2].sx = (float)x2;
     v[3].sy = v[2].sy = (float)y2;
     v[0].color = v[1].color = v[2].color = v[3].color = ShadeColor(rgb[0], rgb[1], rgb[2]);
+    HWR_VertexPtr = v + 4;
+    surfacenum++;
+}
+
+extern "C" void InsertTransQuad_Sorted(int x, int y, int width, int height, int z)
+{
+    D3DTLVERTEX *v;
+    float rhw, sz;
+
+    sort3dptr[0] = (sint32)info3dptr;
+    sort3dptr[1] = z;
+    sort3dptr += 2;
+    info3dptr[0] = 13;
+    info3dptr[1] = 4;
+    v = HWR_VertexPtr;
+    *(D3DTLVERTEX **)(info3dptr + 2) = v;
+    info3dptr += 4;
+    v[0].sx = v[3].sx = (float)x;
+    v[0].sy = v[1].sy = (float)y;
+    v[1].sx = v[2].sx = (float)(x + width);
+    v[3].sy = v[2].sy = (float)(y + height);
+    v[0].color = v[1].color = v[2].color = v[3].color = 0x80000000;
+    if (SavedAppSettings.ZBuffer) {
+        rhw = RhwFactor / (float)z;
+        v[0].rhw = v[1].rhw = v[2].rhw = v[3].rhw = rhw;
+        sz = FltResZBuf - rhw * FltResZORhw;
+        v[0].sz = v[1].sz = v[2].sz = v[3].sz = sz;
+    }
     HWR_VertexPtr = v + 4;
     surfacenum++;
 }
