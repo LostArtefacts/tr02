@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.99% (137)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.01% (1110)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.07% (138)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.93% (1109)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="82.07" height="6" x="0" y="0" class="named"/>
-<rect width="664.93" height="6" x="82.07" y="0" class="todo"/>
+<rect width="82.67" height="6" x="0" y="0" class="named"/>
+<rect width="664.33" height="6" x="82.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1065,7 +1065,7 @@
 <rect width="12" height="12" x="675" y="285" class="named"><title>0x0044ca60 SeedRandomControl (10 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="285" class="named"><title>0x0044ca70 GetRandomDraw (30 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="285" class="named"><title>0x0044ca90 SeedRandomDraw (10 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="285" class="todo"><title>0x0044caa0 GetValidLevelsList (68 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="285" class="named"><title>0x0044caa0 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="285" class="todo"><title>0x0044caf0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="300" class="todo"><title>0x0044cb40 DisplayCredits (563 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="300" class="todo"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.40%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="19.43" height="6" x="0" y="0" class="named"/>
-<rect width="727.57" height="6" x="19.43" y="0" class="todo"/>
+<rect width="19.58" height="6" x="0" y="0" class="named"/>
+<rect width="727.42" height="6" x="19.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2160,7 +2160,7 @@
 <rect width="4.76" height="4.35" x="688.40" y="261.82" class="todo"><title>0x00445380 DDrawSurfaceCreate (68 bytes)</title></rect>
 <rect width="4.76" height="4.35" x="696.16" y="261.82" class="todo"><title>0x00445680 BitMaskGetNumberOfBits (68 bytes)</title></rect>
 <rect width="4.76" height="4.35" x="703.92" y="261.82" class="todo"><title>0x004495b0 FmvBackToGame (68 bytes)</title></rect>
-<rect width="4.76" height="4.35" x="711.67" y="261.82" class="todo"><title>0x0044caa0 GetValidLevelsList (68 bytes)</title></rect>
+<rect width="4.76" height="4.35" x="711.67" y="261.82" class="named"><title>0x0044caa0 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="4.64" height="4.35" x="719.43" y="261.82" class="named"><title>0x0041d780 draw_right_gun (67 bytes)</title></rect>
 <rect width="4.64" height="4.35" x="727.07" y="261.82" class="named"><title>0x0041d7d0 draw_left_gun (67 bytes)</title></rect>
 <rect width="4.64" height="4.35" x="734.72" y="261.82" class="todo"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>

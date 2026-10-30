@@ -7,6 +7,27 @@ extern "C" {
 
 #include "types.h"
 
+#define MAXIMUM_LEVELS 24
+
+enum pc_string_ids {
+    PCSTR_DETAILLEVEL = 0,
+    PCSTR_DEMOMODE,
+    PCSTR_SOUND,
+    PCSTR_CONTROLS,
+    PCSTR_GAMMA,
+    PCSTR_SETVOLUME,
+    PCSTR_USERKEYS,
+    PCSTR_SAVEMESS1,
+    PCSTR_SAVEMESS2,
+    PCSTR_SAVEMESS3,
+    PCSTR_SAVEMESS4,
+    PCSTR_SAVEMESS5,
+    PCSTR_SAVEMESS6,
+    PCSTR_SAVEMESS7,
+    PCSTR_SAVEMESS8,
+    PCSTR_SAVESLOT
+};
+
 enum level_types {
     IL_TITLE,
     IL_NORMAL,
@@ -58,6 +79,8 @@ typedef struct gameflow_info {
 } GAMEFLOW_INFO;
 
 extern GAMEFLOW_INFO gameflow;
+extern char **GF_Level_Names;
+extern char **GF_PCStrings;
 extern sint16 *GF_frontendSequence;
 extern sint16 *GF_level_sequence_list[];
 extern sint16 GF_valid_demos[];
