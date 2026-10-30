@@ -250,6 +250,23 @@ void swap_meshes_with_meshswap1(ITEM_INFO *item)
     }
 }
 
+void swap_meshes_with_meshswap2(ITEM_INFO *item)
+{
+    int i;
+    sint16 nmeshes;
+    sint16 *temp;
+    OBJECT_INFO *obj;
+
+    obj = &objects[item->object_number];
+    nmeshes = obj->nmeshes;
+    for (i = 0; i < obj->nmeshes; i++)
+    {
+        temp = meshes[obj->mesh_index + i];
+        meshes[obj->mesh_index + i] = meshes[objects[MESHSWAP2].mesh_index + i];
+        meshes[objects[MESHSWAP2].mesh_index + i] = temp;
+    }
+}
+
 void invisibility_on(ITEM_INFO *item)
 {
     item->status = INVISIBLE;
