@@ -124,6 +124,46 @@ void S_SetupAboveWater(int underwater)
     bBlueEffect = bool(underwater);
 }
 
+extern "C" char *GetFullPath(char *path);
+extern "C" void init_game_malloc(void);
+extern "C" void *game_malloc(int size, int type);
+extern "C" void game_free(int size, int type);
+extern "C" int DecompPCX(uint8 *pcx, int pcx_size, uint8 *bitmap, uint8 *palette);
+struct IDirectDrawSurface;
+extern "C" void WinVidCopyBitmapToBuffer(IDirectDrawSurface *surface, uint8 *bitmap);
+extern "C" void BGND_Make640x480(uint8 *bitmap, uint8 *palette);
+extern "C" void CopyBitmapPalette(uint8 *src_palette, uint8 *bitmap, int size, uint8 *dst_palette);
+extern "C" IDirectDrawSurface *PictureBufferSurface;
+extern "C" uint8 PicPalette[];
+
+extern "C" void S_DisplayPicture(char *file_name, int is_title)
+{
+    char name[100];
+    HANDLE file;
+    DWORD size, read;
+    uint8 *pcx, *bitmap;
+
+    lstrcpy(name, file_name);
+    file = CreateFile(GetFullPath(name), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file == INVALID_HANDLE_VALUE)
+        return;
+    if (!is_title)
+        init_game_malloc();
+    size = GetFileSize(file, NULL);
+    pcx = (uint8 *)game_malloc(size, 40);
+    ReadFile(file, pcx, 640 * 480, &read, NULL);
+    CloseHandle(file);
+    bitmap = (uint8 *)game_malloc(640 * 480, 40);
+    DecompPCX(pcx, size, bitmap, PicPalette);
+    if (SavedAppSettings.RenderMode == RM_Software)
+        WinVidCopyBitmapToBuffer(PictureBufferSurface, bitmap);
+    else
+        BGND_Make640x480(bitmap, PicPalette);
+    if (!is_title)
+        CopyBitmapPalette(PicPalette, bitmap, 640 * 480, game_palette);
+    game_free(size + 640 * 480, 40);
+}
+
 #define WIBBLE_SIZE 32
 #define SUNSET_TIME (20 * 60 * 60)
 

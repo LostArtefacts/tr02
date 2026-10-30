@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.96% (923)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.48% (318)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.04% (924)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.40% (317)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="552.47" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="552.47" y="0" class="decompiled"/>
-<rect width="190.34" height="6" x="556.66" y="0" class="todo"/>
+<rect width="553.07" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="553.07" y="0" class="decompiled"/>
+<rect width="189.74" height="6" x="557.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1139,7 +1139,7 @@
 <rect width="12" height="12" x="270" y="315" class="named"><title>0x00451d50 S_SetupBelowWater (81 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="315" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="315" class="named"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="315" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="315" class="named"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="315" class="named"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="315" class="named"><title>0x00452030 S_DontDisplayPicture (15 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="315" class="named"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.56%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.64%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.28%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="407.58" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="407.58" y="0" class="decompiled"/>
-<rect width="338.82" height="6" x="408.18" y="0" class="todo"/>
+<rect width="408.15" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="408.15" y="0" class="decompiled"/>
+<rect width="338.25" height="6" x="408.75" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1684,7 +1684,7 @@
 <rect width="11.67" height="11.81" x="481.54" y="274.84" class="todo"><title>0x004543b0 Func4543b0 (262 bytes)</title></rect>
 <rect width="11.67" height="11.75" x="481.54" y="289.65" class="named"><title>0x00440530 T_Print (261 bytes)</title></rect>
 <rect width="11.67" height="11.75" x="481.54" y="304.40" class="named"><title>0x004425b0 FallingBlock (261 bytes)</title></rect>
-<rect width="11.67" height="11.75" x="481.54" y="319.16" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
+<rect width="11.67" height="11.75" x="481.54" y="319.16" class="named"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="11.67" height="11.70" x="481.54" y="333.91" class="named"><title>0x0042a5c0 TestWall (260 bytes)</title></rect>
 <rect width="11.67" height="11.70" x="481.54" y="348.61" class="named"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
 <rect width="11.67" height="11.70" x="481.54" y="363.30" class="named"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
