@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.21% (252)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.79% (995)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.29% (253)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.71% (994)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="150.96" height="6" x="0" y="0" class="named"/>
-<rect width="596.04" height="6" x="150.96" y="0" class="todo"/>
+<rect width="151.56" height="6" x="0" y="0" class="named"/>
+<rect width="595.44" height="6" x="151.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -567,7 +567,7 @@
 <rect width="12" height="12" x="705" y="135" class="todo"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="todo"><title>0x0042b5e0 GetLaraJointAbsPosition (911 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0042b970 GetLJAInt (794 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="150" class="todo"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="150" class="named"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="150" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0042bd00 ready_shotgun (112 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="150" class="todo"><title>0x0042bd70 RifleHandler (245 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.69%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="47.13" height="6" x="0" y="0" class="named"/>
-<rect width="699.87" height="6" x="47.13" y="0" class="todo"/>
+<rect width="47.25" height="6" x="0" y="0" class="named"/>
+<rect width="699.75" height="6" x="47.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2274,7 +2274,7 @@
 <rect width="3.38" height="3.70" x="662.31" y="357.90" class="named"><title>0x004282c0 lara_as_leftjump (51 bytes)</title></rect>
 <rect width="3.38" height="3.70" x="662.31" y="364.60" class="named"><title>0x00429b60 lara_col_hangleft (51 bytes)</title></rect>
 <rect width="3.38" height="3.70" x="662.31" y="371.30" class="named"><title>0x00429ba0 lara_col_hangright (51 bytes)</title></rect>
-<rect width="3.87" height="3.22" x="668.69" y="296.69" class="todo"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
+<rect width="3.87" height="3.22" x="668.69" y="296.69" class="named"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
 <rect width="3.87" height="3.22" x="675.56" y="296.69" class="todo"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
 <rect width="3.87" height="3.22" x="682.42" y="296.69" class="todo"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="3.87" height="3.22" x="689.29" y="296.69" class="todo"><title>0x0045752e phd_PushUnitMatrix (51 bytes)</title></rect>
