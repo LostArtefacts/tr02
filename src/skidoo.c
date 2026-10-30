@@ -117,6 +117,50 @@ int SkidooCheckGeton(sint16 item_number, COLL_INFO *coll)
     return geton;
 }
 
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *);
+void undraw_flare_meshes(void);
+
+void SkidooCollision(sint16 item_number, ITEM_INFO *litem, COLL_INFO *coll)
+{
+    int geton;
+    ITEM_INFO *skidoo;
+
+    if (litem->hit_points < 0 || lara.skidoo != NO_ITEM)
+        return;
+
+    geton = SkidooCheckGeton(item_number, coll);
+    if (!geton)
+    {
+        ObjectCollision(item_number, litem, coll);
+        return;
+    }
+
+    lara.skidoo = item_number;
+
+    if (lara.gun_type == LG_FLARE)
+    {
+        CreateFlare(0);
+        undraw_flare_meshes();
+        lara.flare_control_left = 0;
+        lara.request_gun_type = lara.gun_type = LG_ARMLESS;
+    }
+
+    if (geton == 1)
+        litem->anim_number = objects[SKIDOO_ANIM].anim_index + SKIDOO_GETON_ANIM;
+    else
+        litem->anim_number = objects[SKIDOO_ANIM].anim_index + SKIDOO_GETONL_ANIM;
+    litem->frame_number = anims[litem->anim_number].frame_base;
+    litem->current_anim_state = SKID_GETON;
+    lara.gun_status = LG_HANDSBUSY;
+
+    skidoo = &items[item_number];
+    litem->pos.y_rot = skidoo->pos.y_rot;
+    litem->pos.x_pos = skidoo->pos.x_pos;
+    litem->pos.y_pos = skidoo->pos.y_pos;
+    litem->pos.z_pos = skidoo->pos.z_pos;
+    skidoo->hit_points = 1;
+}
+
 void SkidmanPush(ITEM_INFO *item, ITEM_INFO *laraitem, int radius);
 
 void SkidooBaddieCollision(ITEM_INFO *skidoo)
