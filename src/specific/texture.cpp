@@ -74,3 +74,13 @@ extern "C" int Func455d80(int width, int height, LPDIRECTDRAWPALETTE palette)
     TexturePageInit(page);
     return pageIndex;
 }
+
+extern "C" int GetFreeTexturePageIndex(void)
+{
+    for (DWORD i = 0; i < MAX_TEXTURE_PAGES; i++)
+    {
+        if (!(TexturePages[i].status & 1))
+            return i;
+    }
+    return -1;
+}

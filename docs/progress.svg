@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.24% (826)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">33.36% (416)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.32% (827)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">33.28% (415)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="494.81" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="494.81" y="0" class="decompiled"/>
-<rect width="249.20" height="6" x="497.80" y="0" class="todo"/>
+<rect width="495.40" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="495.40" y="0" class="decompiled"/>
+<rect width="248.60" height="6" x="498.40" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1218,7 +1218,7 @@
 <rect width="12" height="12" x="705" y="330" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="330" class="decompiled"><title>0x00455d50 Func455d50 (38 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="330" class="decompiled"><title>0x00455d80 Func455d80 (106 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="345" class="todo"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="345" class="named"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="345" class="todo"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="345" class="todo"><title>0x00455eb0 TexturePageInit (372 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="345" class="todo"><title>0x00456030 Create3DTexture (37 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.77%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.77%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.18%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="364.28" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="364.28" y="0" class="decompiled"/>
-<rect width="382.36" height="6" x="364.64" y="0" class="todo"/>
+<rect width="364.34" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="364.34" y="0" class="decompiled"/>
+<rect width="382.30" height="6" x="364.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2422,7 +2422,7 @@
 <rect width="1.99" height="1.66" x="703.58" y="354.70" class="named"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
 <rect width="1.99" height="1.66" x="703.58" y="359.36" class="named"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="1.99" height="1.66" x="703.58" y="364.02" class="named"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
-<rect width="1.99" height="1.66" x="703.58" y="368.68" class="todo"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
+<rect width="1.99" height="1.66" x="703.58" y="368.68" class="named"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
 <rect width="1.99" height="1.66" x="703.58" y="373.34" class="todo"><title>0x00457140 Func457140 (28 bytes)</title></rect>
 <rect width="1.64" height="1.83" x="708.58" y="336.06" class="named"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="1.64" height="1.83" x="713.22" y="336.06" class="named"><title>0x004256c0 ReqItemCentreAlign (27 bytes)</title></rect>
