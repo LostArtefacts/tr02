@@ -239,3 +239,9 @@ extern "C" void DDrawRelease(void)
     }
 }
 
+extern "C" void WinVidFinish(void)
+{
+    if (IsDDrawGameWindowShow)
+        HideDDrawGameWindow();
+    DDrawRelease();
+}

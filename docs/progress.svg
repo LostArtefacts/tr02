@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.56% (767)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.44% (479)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.64% (768)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.36% (478)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="459.83" height="6" x="0" y="0" class="named"/>
-<rect width="287.17" height="6" x="459.83" y="0" class="todo"/>
+<rect width="460.43" height="6" x="0" y="0" class="named"/>
+<rect width="286.57" height="6" x="460.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -939,7 +939,7 @@
 <rect width="12" height="12" x="285" y="255" class="todo"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="255" class="todo"><title>0x00446c60 WinVidGetDisplayAdapter (72 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="255" class="todo"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="255" class="named"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="todo"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="255" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="todo"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.99%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.01%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="343.49" height="6" x="0" y="0" class="named"/>
-<rect width="403.51" height="6" x="343.49" y="0" class="todo"/>
+<rect width="343.54" height="6" x="0" y="0" class="named"/>
+<rect width="403.46" height="6" x="343.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2469,7 +2469,7 @@
 <rect width="1.11" height="0.84" x="741.77" y="345.51" class="named"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
 <rect width="1.11" height="0.84" x="745.89" y="345.51" class="named"><title>0x004324d0 lara_col_swim (19 bytes)</title></rect>
 <rect width="0.77" height="1.19" x="721.21" y="349.35" class="todo"><title>0x00445fb0 FlaggedStringDelete (19 bytes)</title></rect>
-<rect width="0.77" height="1.19" x="721.21" y="353.54" class="todo"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
+<rect width="0.77" height="1.19" x="721.21" y="353.54" class="named"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
 <rect width="0.77" height="1.19" x="721.21" y="357.72" class="named"><title>0x0044c530 S_IntroFMV (19 bytes)</title></rect>
 <rect width="0.77" height="1.19" x="721.21" y="361.91" class="todo"><title>0x00456ca0 DeleteRegistryValue (19 bytes)</title></rect>
 <rect width="0.77" height="0.97" x="721.21" y="366.10" class="todo"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
