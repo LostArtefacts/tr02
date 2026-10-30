@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.03% (150)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.97% (1097)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.11% (151)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.89% (1096)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="89.86" height="6" x="0" y="0" class="named"/>
-<rect width="657.14" height="6" x="89.86" y="0" class="todo"/>
+<rect width="90.45" height="6" x="0" y="0" class="named"/>
+<rect width="656.55" height="6" x="90.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -84,7 +84,7 @@
 <rect width="12" height="12" x="210" y="0" class="todo"><title>0x00401d50 calc_object_vertices (469 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="0" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="0" class="todo"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="0" class="todo"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="0" class="named"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="todo"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="0" class="todo"><title>0x00402420 phd_SortPolyList (51 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="0" class="todo"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.16%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.10%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="28.70" height="6" x="0" y="0" class="named"/>
-<rect width="718.30" height="6" x="28.70" y="0" class="todo"/>
+<rect width="29.14" height="6" x="0" y="0" class="named"/>
+<rect width="717.86" height="6" x="29.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1762,7 +1762,7 @@
 <rect width="10.08" height="9.81" x="509.73" y="176.55" class="named"><title>0x004133b0 GetNearByRooms (200 bytes)</title></rect>
 <rect width="10.08" height="9.81" x="509.73" y="189.36" class="todo"><title>0x00435570 DoorControl (200 bytes)</title></rect>
 <rect width="10.08" height="9.81" x="509.73" y="202.17" class="todo"><title>0x00455ad0 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
-<rect width="10.08" height="9.75" x="509.73" y="214.98" class="todo"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
+<rect width="10.08" height="9.75" x="509.73" y="214.98" class="named"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="10.08" height="9.68" x="509.73" y="227.73" class="todo"><title>0x00446b10 WinVidCreateGameWindow (198 bytes)</title></rect>
 <rect width="10.08" height="9.68" x="509.73" y="240.41" class="named"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
 <rect width="10.08" height="9.62" x="509.73" y="253.09" class="todo"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>

@@ -63,3 +63,21 @@ void S_InsertRoom(sint16 *objptr, int outside)
     objptr = InsertObjectGT3(objptr + 1, *(objptr), FAR_SORT);
     objptr = ins_room_sprite(objptr + 1, *(objptr));
 }
+
+void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
+{
+    PHD_VECTOR ls_world;
+    sint32 *mptr;
+    sint32 cx;
+
+    phd_ls_yaw = yaw;
+    phd_ls_pitch = pitch;
+    cx = (sint32)phd_cos(pitch);
+    ls_world.x = TRIGMULT2(cx, (sint32)phd_sin(yaw));
+    ls_world.y = -phd_sin(pitch);
+    ls_world.z = TRIGMULT2(cx, (sint32)phd_cos(yaw));
+    mptr = w2v_matrix;
+    ls_vector_view.x = (*(mptr + M00) * ls_world.x + *(mptr + M01) * ls_world.y + *(mptr + M02) * ls_world.z) >> W2V_SHIFT;
+    ls_vector_view.y = (*(mptr + M10) * ls_world.x + *(mptr + M11) * ls_world.y + *(mptr + M12) * ls_world.z) >> W2V_SHIFT;
+    ls_vector_view.z = (*(mptr + M20) * ls_world.x + *(mptr + M21) * ls_world.y + *(mptr + M22) * ls_world.z) >> W2V_SHIFT;
+}
