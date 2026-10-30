@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.24% (851)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.36% (391)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.32% (852)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.28% (390)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="509.78" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="509.78" y="0" class="decompiled"/>
-<rect width="234.22" height="6" x="512.78" y="0" class="todo"/>
+<rect width="510.38" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="510.38" y="0" class="decompiled"/>
+<rect width="233.62" height="6" x="513.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -905,7 +905,7 @@
 <rect width="12" height="12" x="510" y="240" class="named"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="named"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="named"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="240" class="todo"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="240" class="named"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="named"><title>0x00445380 DDrawSurfaceCreate (68 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="240" class="named"><title>0x004453d0 DDrawSurfaceRestoreLost (70 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="240" class="named"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.32%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.63%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.36%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.59%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="368.43" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="368.43" y="0" class="decompiled"/>
-<rect width="378.21" height="6" x="368.79" y="0" class="todo"/>
+<rect width="368.72" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="368.72" y="0" class="decompiled"/>
+<rect width="377.91" height="6" x="369.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1924,7 +1924,7 @@
 <rect width="7.63" height="7.63" x="569.65" y="262.52" class="named"><title>0x00445570 GetRenderBitDepth (136 bytes)</title></rect>
 <rect width="7.63" height="7.63" x="569.65" y="273.15" class="todo"><title>0x004457d0 WinVidGoFullScreen (136 bytes)</title></rect>
 <rect width="7.63" height="7.55" x="569.65" y="283.77" class="named"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
-<rect width="7.63" height="7.55" x="569.65" y="294.32" class="todo"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
+<rect width="7.63" height="7.55" x="569.65" y="294.32" class="named"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
 <rect width="7.63" height="7.55" x="569.65" y="304.87" class="todo"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
 <rect width="7.63" height="7.47" x="569.65" y="315.42" class="named"><title>0x00432230 SwimTurn (134 bytes)</title></rect>
 <rect width="7.63" height="7.47" x="569.65" y="325.89" class="named"><title>0x0043f970 SOUND_EndScene (134 bytes)</title></rect>

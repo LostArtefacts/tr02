@@ -433,6 +433,26 @@ extern "C" DWORD CalculateCompatibleColor(COLOR_BIT_MASKS *mask, int red, int gr
     return (red >> (8 - mask->dwRBitDepth) << mask->dwRBitOffset) | (green >> (8 - mask->dwGBitDepth) << mask->dwGBitOffset) | (blue >> (8 - mask->dwBBitDepth) << mask->dwBBitOffset) | (alpha >> (8 - mask->dwRGBAlphaBitDepth) << mask->dwRGBAlphaBitOffset);
 }
 
+extern "C" bool HideDDrawGameWindow(void)
+{
+    if (!HGameWindow || !DDraw)
+        return false;
+    if (IsDDrawGameWindowShow)
+    {
+        WinVidHideGameWindow();
+        IsGameWindowUpdating = true;
+        if (DX_TRY(DDraw->SetCooperativeLevel(HGameWindow, DDSCL_NORMAL)))
+        {
+            IsGameWindowUpdating = false;
+            return false;
+        }
+        IsDDrawGameWindowShow = false;
+        SetWindowPos(HGameWindow, NULL, GameWindow_X, GameWindow_Y, 0, 0, SWP_NOCOPYBITS | SWP_NOACTIVATE | SWP_NOZORDER | SWP_NOSIZE);
+        IsGameWindowUpdating = false;
+    }
+    return true;
+}
+
 typedef struct {
     LPTSTR lpString;
     bool isPresented;
