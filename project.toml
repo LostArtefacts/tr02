@@ -36,3 +36,13 @@ progress = true  # every commit redraws docs/progress.svg
 compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
 no_comments = true  # no comments, tabs or CRs in src/
+
+[reference]
+source = "refs/core"  # Core's 1997 tree
+prefer = ["BACKUP"]  # closer to TR2 than GAME/, which drifts toward TR3
+skip = ["GAME/GAMEBAK", "GAME/GAMEBAK2"]
+layout = { GAME = "", BACKUP = "", SPECIFIC = "specific", 3DSYSTEM = "3dsystem" }
+dsp = "TOMBRAID.DSP"
+dsp_config = "TombRaid - Win32 Release"
+defines = ["/DCODER=0"]
+probe = "build/core_probe.csv"
