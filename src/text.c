@@ -166,3 +166,9 @@ void T_AddOutline(TEXTSTRING *textString, sint16 ok, sint16 colour, SG_COL *gour
         textString->outlflags = flags;
     }
 }
+
+void T_RemoveOutline(TEXTSTRING *textString)
+{
+    if (textString)
+        textString->flags &= ~T_ADDOUTLINE;
+}
