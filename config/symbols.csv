@@ -1532,6 +1532,10 @@ address,size,name,symbol
 0x00465fc0,16,work2_gun,_work2_gun
 0x00465fd0,16,bandit_gun,_bandit_gun
 0x00465fe0,16,bandit2_gun,_bandit2_gun
+0x00466058,24,Switch1Bounds,_Switch1Bounds
+0x00466070,12,SmallSwitchPosition,_SmallSwitchPosition
+0x00466080,12,PushSwitchPosition,_PushSwitchPosition
+0x00466090,12,AirlockPosition,_AirlockPosition
 0x004660a0,24,Switch2Bounds,_Switch2Bounds
 0x004660b8,12,Switch2Position,_Switch2Position
 0x00466210,16,bara_bite,_bara_bite

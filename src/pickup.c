@@ -7,6 +7,88 @@ void AnimateLara(ITEM_INFO *item);
 extern sint16 Switch2Bounds[];
 extern PHD_VECTOR Switch2Position;
 
+#define SMALL_SWITCH 93
+#define PUSH_SWITCH 103
+#define AIRLOCK_SWITCH 92
+#define LARA_EXTRA 12
+#define EXTRA_BREATH 0
+#define EXTRA_AIRLOCK 4
+
+extern sint16 Switch1Bounds[];
+extern PHD_VECTOR SmallSwitchPosition;
+extern PHD_VECTOR PushSwitchPosition;
+extern PHD_VECTOR AirlockPosition;
+
+void SwitchCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!(input & IN_ACTION) || item->status != NOT_ACTIVE || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
+        return;
+
+    if (laraitem->current_anim_state == AS_STOP)
+    {
+        if (!TestLaraPosition(Switch1Bounds, item, laraitem))
+            return;
+        laraitem->pos.y_rot = item->pos.y_rot;
+
+        if (item->object_number == SMALL_SWITCH)
+            AlignLaraPosition(&SmallSwitchPosition, item, laraitem);
+        else if (item->object_number == PUSH_SWITCH)
+            AlignLaraPosition(&PushSwitchPosition, item, laraitem);
+        else if (item->object_number == AIRLOCK_SWITCH)
+        {
+            if (item->current_anim_state == SS_ON)
+                return;
+            AlignLaraPosition(&AirlockPosition, item, laraitem);
+        }
+
+        if (item->current_anim_state == SS_ON)
+        {
+            if (item->object_number == SMALL_SWITCH)
+                laraitem->anim_number = objects[LARA].anim_index + 195;
+            else if (item->object_number == PUSH_SWITCH)
+                laraitem->anim_number = objects[LARA].anim_index + 197;
+            else
+                laraitem->anim_number = objects[LARA].anim_index + 63;
+            laraitem->current_anim_state = AS_SWITCHON;
+            item->goal_anim_state = SS_OFF;
+        }
+        else
+        {
+            laraitem->current_anim_state = AS_SWITCHOFF;
+            if (item->object_number == SMALL_SWITCH)
+                laraitem->anim_number = objects[LARA].anim_index + 196;
+            else if (item->object_number == PUSH_SWITCH)
+                laraitem->anim_number = objects[LARA].anim_index + 197;
+            else if (item->object_number == AIRLOCK_SWITCH)
+            {
+                laraitem->anim_number = objects[LARA_EXTRA].anim_index;
+                laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+                laraitem->current_anim_state = EXTRA_BREATH;
+                laraitem->goal_anim_state = EXTRA_AIRLOCK;
+                AnimateItem(laraitem);
+                lara.extra_anim = 1;
+            }
+            else
+                laraitem->anim_number = objects[LARA].anim_index + 64;
+            item->goal_anim_state = SS_ON;
+        }
+
+        if (!lara.extra_anim)
+        {
+            laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+            laraitem->goal_anim_state = AS_STOP;
+        }
+        lara.gun_status = LG_HANDSBUSY;
+
+        item->status = ACTIVE;
+        AddActiveItem(item_num);
+        AnimateItem(item);
+    }
+}
+
 void SwitchCollision2(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;
@@ -60,8 +142,6 @@ void SwitchControl(sint16 item_number)
 
     AnimateItem(item);
 }
-
-#define AIRLOCK_SWITCH 92
 
 int SwitchTrigger(sint16 item_num, sint16 timer)
 {

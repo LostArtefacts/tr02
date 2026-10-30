@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.79% (745)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.21% (501)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.87% (746)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.13% (500)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="446.64" height="6" x="0" y="0" class="named"/>
-<rect width="300.36" height="6" x="446.64" y="0" class="todo"/>
+<rect width="447.24" height="6" x="0" y="0" class="named"/>
+<rect width="299.76" height="6" x="447.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -739,7 +739,7 @@
 <rect width="12" height="12" x="285" y="195" class="named"><title>0x00437960 Bandit2Control (1084 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="195" class="named"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="195" class="todo"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="195" class="todo"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="195" class="named"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="195" class="named"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="195" class="todo"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="195" class="todo"><title>0x004388f0 KeyHoleCollision (547 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.70%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.30%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.86%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.14%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="326.45" height="6" x="0" y="0" class="named"/>
-<rect width="420.55" height="6" x="326.45" y="0" class="todo"/>
+<rect width="327.60" height="6" x="0" y="0" class="named"/>
+<rect width="419.40" height="6" x="327.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1492,7 +1492,7 @@
 <rect width="17.19" height="18.71" x="729.81" y="0" class="named"><title>0x00432d70 InitialiseSlot (527 bytes)</title></rect>
 <rect width="17.12" height="18.78" x="393.47" y="21.71" class="named"><title>0x004344b0 FinalLevelCounter (527 bytes)</title></rect>
 <rect width="17.12" height="18.70" x="393.47" y="43.49" class="named"><title>0x0042db10 lara_col_climbstnc (525 bytes)</title></rect>
-<rect width="17.12" height="18.58" x="393.47" y="65.19" class="todo"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
+<rect width="17.12" height="18.58" x="393.47" y="65.19" class="named"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
 <rect width="17.12" height="18.45" x="393.47" y="86.77" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
 <rect width="17.12" height="18.41" x="393.47" y="108.22" class="todo"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
 <rect width="17.12" height="18.20" x="393.47" y="129.63" class="named"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
