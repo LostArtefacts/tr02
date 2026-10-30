@@ -24,6 +24,28 @@ void set_pistol_arm(LARA_ARM *arm, int frame)
 void ready_pistols(int weapon_type);
 void draw_pistol_meshes(int weapon_type);
 
+void draw_pistols(int weapon_type)
+{
+    sint16 ani;
+
+    ani = lara.left_arm.frame_number;
+    ani++;
+    if (ani < DRAW1_F || ani > RECOIL_F - 1)
+        ani = DRAW1_F;
+    else if (ani == DRAW2_F)
+    {
+        draw_pistol_meshes(weapon_type);
+        SoundEffect(6, &lara_item->pos, 0);
+    }
+    else if (ani == RECOIL_F - 1)
+    {
+        ready_pistols(weapon_type);
+        ani = 0;
+    }
+    set_pistol_arm(&lara.right_arm, ani);
+    set_pistol_arm(&lara.left_arm, ani);
+}
+
 void undraw_pistol_mesh_left(int weapon_type);
 void undraw_pistol_mesh_right(int weapon_type);
 
