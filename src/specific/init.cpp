@@ -29,7 +29,7 @@ void *game_malloc(int size, int type)
     return NULL;
 }
 
-void game_free(int size, int type);
+extern "C" void game_free(int size);
 
 extern "C" sint16 DumpX, DumpY, DumpWidth, DumpHeight;
 extern "C" int GameVidWidth, GameVidHeight;
@@ -59,7 +59,7 @@ void init_game_malloc(void)
     malloc_used = 0;
 }
 
-void game_free(int size, int type)
+extern "C" void game_free(int size)
 {
     size = (size + 3) & ~3;
     malloc_ptr -= size;
