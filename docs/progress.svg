@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.72% (196)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.28% (1051)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.80% (197)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.20% (1050)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="117.41" height="6" x="0" y="0" class="named"/>
-<rect width="629.59" height="6" x="117.41" y="0" class="todo"/>
+<rect width="118.01" height="6" x="0" y="0" class="named"/>
+<rect width="628.99" height="6" x="118.01" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -637,7 +637,7 @@
 <rect width="12" height="12" x="255" y="165" class="todo"><title>0x004312a0 InitialiseLaraInventory (876 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="165" class="todo"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="165" class="todo"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="165" class="todo"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="165" class="named"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="165" class="todo"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="165" class="todo"><title>0x00431940 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="165" class="todo"><title>0x004319a0 lara_as_surfright (96 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.07%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.04%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="36.79" height="6" x="0" y="0" class="named"/>
-<rect width="710.21" height="6" x="36.79" y="0" class="todo"/>
+<rect width="37.04" height="6" x="0" y="0" class="named"/>
+<rect width="709.96" height="6" x="37.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1993,7 +1993,7 @@
 <rect width="6.93" height="6.54" x="690.78" y="217.87" class="todo"><title>0x0044a9d0 LoadPalettes (113 bytes)</title></rect>
 <rect width="6.93" height="6.54" x="700.71" y="217.87" class="todo"><title>0x00456e00 GetRegistryBinaryValue (113 bytes)</title></rect>
 <rect width="6.84" height="6.54" x="710.64" y="217.87" class="todo"><title>0x0042bd00 ready_shotgun (112 bytes)</title></rect>
-<rect width="6.84" height="6.54" x="720.48" y="217.87" class="todo"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
+<rect width="6.84" height="6.54" x="720.48" y="217.87" class="named"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="6.84" height="6.54" x="730.32" y="217.87" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="6.84" height="6.54" x="740.16" y="217.87" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
 <rect width="6.55" height="6.74" x="590.28" y="227.40" class="todo"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
