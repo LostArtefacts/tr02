@@ -246,7 +246,7 @@ extern "C" {
 extern bool IsDDrawGameWindowShow;
 extern LPDIRECTDRAW DDrawInterface;
 extern LPDIRECTDRAW2 DDraw;
-void HideDDrawGameWindow(void);
+bool HideDDrawGameWindow(void);
 }
 
 extern "C" void DDrawRelease(void)
@@ -267,6 +267,41 @@ inline bool DX_TRY(HRESULT hr)
 {
     if (SUCCEEDED(hr))
         return false;
+    return true;
+}
+
+extern "C" {
+extern int GameWindow_X;
+extern int GameWindow_Y;
+void WinVidShowGameWindow(int nCmdShow);
+void WinVidHideGameWindow(void);
+}
+
+extern "C" bool ShowDDrawGameWindow(bool active)
+{
+    RECT rect;
+    DWORD flags;
+    HRESULT rc;
+
+    if (!HGameWindow || !DDraw)
+        return false;
+    if (!IsDDrawGameWindowShow)
+    {
+        GetWindowRect(HGameWindow, &rect);
+        GameWindow_X = rect.left;
+        GameWindow_Y = rect.top;
+        if (active)
+            WinVidShowGameWindow(SW_SHOW);
+        IsGameWindowUpdating = true;
+        flags = DDSCL_FULLSCREEN | DDSCL_ALLOWREBOOT | DDSCL_EXCLUSIVE | DDSCL_ALLOWMODEX;
+        if (!active)
+            flags = DDSCL_FULLSCREEN | DDSCL_ALLOWREBOOT | DDSCL_NOWINDOWCHANGES | DDSCL_EXCLUSIVE | DDSCL_ALLOWMODEX;
+        rc = DDraw->SetCooperativeLevel(HGameWindow, flags);
+        IsGameWindowUpdating = false;
+        if (DX_TRY(rc))
+            return false;
+        IsDDrawGameWindowShow = true;
+    }
     return true;
 }
 
@@ -428,7 +463,7 @@ typedef struct {
 
 extern "C" {
 extern DISPLAY_ADAPTER_LIST DisplayAdapterList;
-void ShowDDrawGameWindow(bool active);
+bool ShowDDrawGameWindow(bool active);
 HRESULT WINAPI EnumDisplayModesCallback(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext);
 }
 

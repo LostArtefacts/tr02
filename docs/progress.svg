@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.16% (850)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.44% (392)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.24% (851)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.36% (391)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="509.18" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="509.18" y="0" class="decompiled"/>
-<rect width="234.82" height="6" x="512.18" y="0" class="todo"/>
+<rect width="509.78" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="509.78" y="0" class="decompiled"/>
+<rect width="234.22" height="6" x="512.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -904,7 +904,7 @@
 <rect width="12" height="12" x="495" y="240" class="named"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="named"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="named"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="240" class="todo"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="240" class="named"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="240" class="todo"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="named"><title>0x00445380 DDrawSurfaceCreate (68 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="240" class="named"><title>0x004453d0 DDrawSurfaceRestoreLost (70 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.27%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.68%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.32%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="368.06" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="368.06" y="0" class="decompiled"/>
-<rect width="378.57" height="6" x="368.43" y="0" class="todo"/>
+<rect width="368.43" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="368.43" y="0" class="decompiled"/>
+<rect width="378.21" height="6" x="368.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1843,7 +1843,7 @@
 <rect width="8.84" height="8.71" x="679.29" y="163.58" class="named"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="8.84" height="8.71" x="691.13" y="163.58" class="named"><title>0x00433360 ShootAtLara (167 bytes)</title></rect>
 <rect width="8.84" height="8.71" x="702.98" y="163.58" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
-<rect width="8.84" height="8.71" x="714.82" y="163.58" class="todo"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
+<rect width="8.84" height="8.71" x="714.82" y="163.58" class="named"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
 <rect width="8.70" height="8.71" x="726.67" y="163.58" class="named"><title>0x00428a80 extra_as_starthouse (165 bytes)</title></rect>
 <rect width="8.63" height="8.71" x="738.37" y="163.58" class="named"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
 <rect width="8.52" height="8.82" x="547.51" y="175.29" class="named"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
