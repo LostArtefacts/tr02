@@ -608,7 +608,7 @@ address,size,name,symbol
 0x004337a0,512,ControlBodyPart,_ControlBodyPart
 0x004339a0,44,InitialiseMovingBlock,_InitialiseMovingBlock
 0x004339d0,328,MovableBlock,_MovableBlock
-0x00433b20,569,MovableBlockCollision,_MovableBlockCollision
+0x00433b20,604,MovableBlockCollision,_MovableBlockCollision
 0x00433d80,78,TestBlockMovable,_TestBlockMovable
 0x00433dd0,220,TestBlockPush,_TestBlockPush
 0x00433eac,91,Func433eac,
@@ -1523,6 +1523,7 @@ address,size,name,symbol
 0x00465cd0,,lara_control_routines,_lara_control_routines
 0x00465df0,,extra_control_routines,_extra_control_routines
 0x00465e20,,lara_collision_routines,_lara_collision_routines
+0x00465f40,,MovingBlockBounds,_MovingBlockBounds
 0x00465f58,24,DeathSlideBounds,_DeathSlideBounds
 0x00465f70,12,DeathSlidePosition,_DeathSlidePosition
 0x00465f80,16,cult1_gun,_cult1_gun

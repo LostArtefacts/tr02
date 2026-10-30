@@ -60,6 +60,117 @@ void MovableBlock(sint16 item_number)
     }
 }
 
+enum {
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
+};
+
+#define PUSH 2
+#define PULL 3
+#define PPREADY_A 120
+#define PPREADY_F GF(PPREADY_A, 19)
+
+extern sint16 MovingBlockBounds[];
+
+int TestBlockPush(ITEM_INFO *item, int blokhite, uint16 quadrant);
+int TestBlockPull(ITEM_INFO *item, int blokhite, uint16 quadrant);
+void AnimateLara(ITEM_INFO *item);
+
+void MovableBlockCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    uint16 quadrant;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    item = &items[item_num];
+    if (!(input & IN_ACTION) || item->status == ACTIVE || laraitem->gravity_status
+        || laraitem->pos.y_pos != item->pos.y_pos)
+        return;
+
+    quadrant = (uint16)(laraitem->pos.y_rot + 0x2000) / 0x4000;
+    if (laraitem->current_anim_state == AS_STOP) {
+        if (lara.gun_status != LG_ARMLESS)
+            return;
+
+        switch (quadrant) {
+        case NORTH:
+            item->pos.y_rot = 0;
+            break;
+
+        case EAST:
+            item->pos.y_rot = 16384;
+            break;
+
+        case SOUTH:
+            item->pos.y_rot = -32768;
+            break;
+
+        case WEST:
+            item->pos.y_rot = -16384;
+            break;
+        }
+        if (!TestLaraPosition(MovingBlockBounds, item, laraitem))
+            return;
+
+        room_number = laraitem->room_number;
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        if (room_number != item->room_number)
+            return;
+
+        switch (quadrant) {
+        case NORTH:
+            laraitem->pos.z_pos &= -WALL_L;
+            laraitem->pos.z_pos += WALL_L - LARA_RAD;
+            break;
+
+        case SOUTH:
+            laraitem->pos.z_pos &= -WALL_L;
+            laraitem->pos.z_pos += LARA_RAD;
+            break;
+
+        case EAST:
+            laraitem->pos.x_pos &= -WALL_L;
+            laraitem->pos.x_pos += WALL_L - LARA_RAD;
+            break;
+
+        case WEST:
+            laraitem->pos.x_pos &= -WALL_L;
+            laraitem->pos.x_pos += LARA_RAD;
+            break;
+        }
+        laraitem->pos.y_rot = item->pos.y_rot;
+        laraitem->goal_anim_state = AS_PPREADY;
+        AnimateLara(laraitem);
+        if (laraitem->current_anim_state == AS_PPREADY)
+            lara.gun_status = LG_HANDSBUSY;
+    } else if (laraitem->current_anim_state == AS_PPREADY) {
+        if (laraitem->frame_number != PPREADY_F)
+            return;
+        if (!TestLaraPosition(MovingBlockBounds, item, laraitem))
+            return;
+        if (input & IN_FORWARD) {
+            if (!TestBlockPush(item, 1024, quadrant))
+                return;
+            item->goal_anim_state = PUSH;
+            laraitem->goal_anim_state = AS_PUSHBLOCK;
+        } else if (input & IN_BACK) {
+            if (!TestBlockPull(item, 1024, quadrant))
+                return;
+            item->goal_anim_state = PULL;
+            laraitem->goal_anim_state = AS_PULLBLOCK;
+        } else
+            return;
+        AddActiveItem(item_num);
+        AlterFloorHeight(item, 1024);
+        item->status = ACTIVE;
+        AnimateItem(item);
+        AnimateLara(laraitem);
+    }
+}
+
 int TestBlockMovable(ITEM_INFO *item, int blokhite)
 {
     sint16 room_number;
