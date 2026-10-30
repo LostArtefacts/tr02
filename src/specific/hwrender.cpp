@@ -22,6 +22,20 @@ void HWR_ResetColorKey()
         G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_COLORKEYENABLE, false);
 }
 
+void HWR_ResetZBuffer()
+{
+    ZWriteEnableState = false;
+    ZEnableState = false;
+    if (SavedAppSettings.ZBuffer)
+    {
+        if (ZBufferSurface)
+            G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZFUNC, D3DCMP_ALWAYS);
+        else
+            G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZENABLE, false);
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZWRITEENABLE, false);
+    }
+}
+
 void HWR_EnableZBuffer(bool tWrite, bool tCompare)
 {
     if (SavedAppSettings.ZBuffer)

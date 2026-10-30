@@ -1006,7 +1006,7 @@ address,size,name,symbol
 0x0044d0b0,296,HWR_InitState,_HWR_InitState
 0x0044d1e0,41,HWR_ResetTexSource,_HWR_ResetTexSource
 0x0044d210,43,HWR_ResetColorKey,?HWR_ResetColorKey@@YAXXZ
-0x0044d240,89,HWR_ResetZBuffer,_HWR_ResetZBuffer
+0x0044d240,89,HWR_ResetZBuffer,?HWR_ResetZBuffer@@YAXXZ
 0x0044d2a0,36,HWR_TexSource,_HWR_TexSource
 0x0044d2d0,74,HWR_EnableColorKey,_HWR_EnableColorKey
 0x0044d320,130,HWR_EnableZBuffer,?HWR_EnableZBuffer@@YAX_N0@Z
