@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.59% (344)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.41% (903)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.67% (345)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.33% (902)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="206.07" height="6" x="0" y="0" class="named"/>
-<rect width="540.93" height="6" x="206.07" y="0" class="todo"/>
+<rect width="206.67" height="6" x="0" y="0" class="named"/>
+<rect width="540.33" height="6" x="206.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -703,7 +703,7 @@
 <rect width="12" height="12" x="495" y="180" class="named"><title>0x00435100 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="180" class="named"><title>0x00435150 OpenThatDoor (50 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="180" class="todo"><title>0x00435190 InitialiseDoor (988 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="180" class="todo"><title>0x00435570 DoorControl (200 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="180" class="named"><title>0x00435570 DoorControl (200 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="180" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="180" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="180" class="named"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.91%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.85%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="67.89" height="6" x="0" y="0" class="named"/>
-<rect width="679.11" height="6" x="67.89" y="0" class="todo"/>
+<rect width="68.33" height="6" x="0" y="0" class="named"/>
+<rect width="678.67" height="6" x="68.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1761,7 +1761,7 @@
 <rect width="10.12" height="9.90" x="509.65" y="163.63" class="todo"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
 <rect width="10.12" height="9.84" x="509.65" y="176.53" class="todo"><title>0x00447670 DInputKeyboardCreate (201 bytes)</title></rect>
 <rect width="10.12" height="9.78" x="509.65" y="189.37" class="named"><title>0x004133b0 GetNearByRooms (200 bytes)</title></rect>
-<rect width="10.12" height="9.78" x="509.65" y="202.14" class="todo"><title>0x00435570 DoorControl (200 bytes)</title></rect>
+<rect width="10.12" height="9.78" x="509.65" y="202.14" class="named"><title>0x00435570 DoorControl (200 bytes)</title></rect>
 <rect width="10.12" height="9.78" x="509.65" y="214.92" class="todo"><title>0x00455ad0 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="10.12" height="9.71" x="509.65" y="227.70" class="named"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="10.12" height="9.65" x="509.65" y="240.41" class="todo"><title>0x00446b10 WinVidCreateGameWindow (198 bytes)</title></rect>
