@@ -263,6 +263,31 @@ extern "C" void DDrawRelease(void)
     }
 }
 
+inline bool DX_TRY(HRESULT hr)
+{
+    if (SUCCEEDED(hr))
+        return false;
+    return true;
+}
+
+extern "C" {
+extern int LockedBufferCount;
+bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
+}
+
+extern "C" HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface)
+{
+    LPDIRECTDRAWSURFACE subSurface;
+    HRESULT rc;
+
+    rc = DDraw->CreateSurface(dsp, &subSurface, NULL);
+    if (DX_TRY(rc))
+        return rc;
+    rc = subSurface->QueryInterface(IID_IDirectDrawSurface3, (LPVOID *)surface);
+    subSurface->Release();
+    return rc;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
