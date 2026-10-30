@@ -10,7 +10,13 @@ typedef struct {
 
 enum door_anims { DOOR_CLOSED, DOOR_OPEN };
 
+typedef struct {
+    sint32 start_height;
+    sint32 wait_time;
+} LIFT_INFO;
+
 void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void *game_malloc(int size, int type);
 
 #define NO_ROOM 0xff
 
@@ -95,6 +101,16 @@ void DrawBridgeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     item = &items[item_num];
     if (item->current_anim_state == DOOR_CLOSED)
         DoorCollision(item_num, laraitem, coll);
+}
+
+void InitialiseLift(sint16 item_number)
+{
+    LIFT_INFO *lift;
+
+    items[item_number].data = lift = (LIFT_INFO *)game_malloc(sizeof(LIFT_INFO), 0);
+
+    lift->start_height = items[item_number].pos.y_pos;
+    lift->wait_time = 0;
 }
 
 void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
