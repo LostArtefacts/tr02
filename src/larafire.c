@@ -231,6 +231,122 @@ void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm)
 
 #include "box.h"
 #include "savegame.h"
+#include "sphere.h"
+
+int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void SmashItem(sint16 item_number, int weapon_type);
+void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage);
+void Richochet(GAME_VECTOR *pos);
+
+extern WEAPON_INFO weapons[];
+
+int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles)
+{
+    int r, i, nums, bestdist, best;
+    AMMO_INFO *ammo;
+    WEAPON_INFO *winfo;
+    PHD_3DPOS view;
+    SPHERE *sptr, slist[33];
+    GAME_VECTOR vsrc, vdest;
+    sint16 smash_item;
+
+    switch (weapon_type)
+    {
+    default:
+        ammo = &lara.pistols;
+        ammo->ammo = 1000;
+        break;
+
+    case LG_MAGNUMS:
+        ammo = &lara.magnums;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+
+    case LG_UZIS:
+        ammo = &lara.uzis;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+
+    case LG_M16:
+        ammo = &lara.m16;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+
+    case LG_SHOTGUN:
+        ammo = &lara.shotgun;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+    }
+    if (ammo->ammo > 0)
+    {
+        ammo->ammo--;
+        winfo = &weapons[weapon_type];
+        view.x_pos = src->pos.x_pos;
+        view.y_pos = src->pos.y_pos - winfo->gun_height;
+        view.z_pos = src->pos.z_pos;
+        r = (int)((GetRandomControl() - 16384) * winfo->shot_accuracy) / 65536;
+        view.x_rot = *(angles + 1) + (sint16)r;
+        view.y_rot = *(angles + 0) + (sint16)((int)((GetRandomControl() - 16384) * winfo->shot_accuracy) / 65536);
+        view.z_rot = 0;
+        phd_GenerateW2V(&view);
+        nums = GetSpheres(target, slist, 0);
+        sptr = &slist[0];
+        best = -1;
+        bestdist = 0x7fffffff;
+        for (i = 0; i < nums; i++, sptr++)
+        {
+            r = sptr->r;
+            if (ABS(sptr->x) < r && ABS(sptr->y) < r && sptr->z > r &&
+                (sptr->x * sptr->x) + (sptr->y * sptr->y) <= (r * r))
+            {
+                if (sptr->z - r < bestdist)
+                {
+                    bestdist = sptr->z - r;
+                    best = i;
+                }
+            }
+        }
+        savegame.ammo_used++;
+        vsrc.x = view.x_pos;
+        vsrc.y = view.y_pos;
+        vsrc.z = view.z_pos;
+        vsrc.room_number = src->room_number;
+        if (best >= 0)
+        {
+            savegame.ammo_hit++;
+            vdest.x = vsrc.x + ((*(phd_mxptr + M20) * bestdist) >> W2V_SHIFT);
+            vdest.y = vsrc.y + ((*(phd_mxptr + M21) * bestdist) >> W2V_SHIFT);
+            vdest.z = vsrc.z + ((*(phd_mxptr + M22) * bestdist) >> W2V_SHIFT);
+            smash_item = ObjectOnLOS(&vsrc, &vdest);
+            if (smash_item != NO_ITEM)
+                SmashItem(smash_item, weapon_type);
+            HitTarget(target, &vdest, winfo->damage);
+            return 1;
+        }
+        else
+        {
+            vdest.x = vsrc.x + ((*(phd_mxptr + M20) * winfo->target_dist) >> W2V_SHIFT);
+            vdest.y = vsrc.y + ((*(phd_mxptr + M21) * winfo->target_dist) >> W2V_SHIFT);
+            vdest.z = vsrc.z + ((*(phd_mxptr + M22) * winfo->target_dist) >> W2V_SHIFT);
+            best = LOS(&vsrc, &vdest);
+            smash_item = ObjectOnLOS(&vsrc, &vdest);
+            if (smash_item != NO_ITEM)
+                SmashItem(smash_item, weapon_type);
+            else if (!best)
+                Richochet(&vdest);
+            return -1;
+        }
+    }
+    else
+    {
+        ammo->ammo = 0;
+        return 0;
+    }
+}
 
 #define MONK1 53
 #define MONK2 54

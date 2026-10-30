@@ -544,7 +544,7 @@ address,size,name,symbol
 0x0042efd0,540,LaraGetNewTarget,_LaraGetNewTarget
 0x0042f1f0,170,find_target_point,_find_target_point
 0x0042f2a0,193,AimWeapon,_AimWeapon
-0x0042f370,864,FireWeapon,_FireWeapon
+0x0042f370,880,FireWeapon,_FireWeapon
 0x0042f6e0,150,HitTarget,_HitTarget
 0x0042f780,81,SmashItem,_SmashItem
 0x0042f7e0,88,WeaponObject,_WeaponObject
