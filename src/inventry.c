@@ -81,3 +81,47 @@ void DoInventoryPicture(void)
 {
     S_CopyBufferToScreen();
 }
+
+#define MENU_BACKGROUND 223
+
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+void phd_GenerateW2V(PHD_3DPOS *viewpos);
+void phd_RotateLight(sint16 pitch, sint16 yaw);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void S_InsertInvBgnd(sint16 *objptr);
+extern sint32 ls_divider;
+
+static int bz = 12288;
+
+void DoInventoryBackground(void)
+{
+    PHD_ANGLE angles[2];
+    sint16 *frame;
+    PHD_3DPOS viewer;
+
+    S_CopyBufferToScreen();
+    if (!objects[MENU_BACKGROUND].loaded)
+        return;
+
+    phd_GetVectorAngles(0, 0x1000, 0, angles);
+    viewer.x_pos = 0;
+    viewer.y_pos = -0x200;
+    viewer.z_pos = 0;
+    viewer.x_rot = angles[1];
+    viewer.y_rot = angles[0];
+    viewer.z_rot = 0;
+    phd_GenerateW2V(&viewer);
+
+    ls_divider = 0x6000;
+    phd_GetVectorAngles(-0x600, 0x100, 0x400, angles);
+    phd_RotateLight(angles[1], angles[0]);
+
+    phd_PushMatrix();
+    phd_TranslateAbs(0, bz, 0);
+    phd_RotYXZ(0, 0x4000, (sint16)0x8000);
+    frame = anims[objects[MENU_BACKGROUND].anim_index].frame_ptr + 9;
+    phd_RotYXZsuperpack(&frame, 0);
+    phd_RotYXZ((sint16)0x8000, 0, 0);
+    S_InsertInvBgnd(meshes[objects[MENU_BACKGROUND].mesh_index]);
+    phd_PopMatrix();
+}

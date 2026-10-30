@@ -478,7 +478,7 @@ address,size,name,symbol
 0x00429e90,354,lara_col_wade,_lara_col_wade
 0x0042a000,54,lara_default_col,_lara_default_col
 0x0042a040,216,lara_col_jumper,_lara_col_jumper
-0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait
+0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait _S_InsertInvBgnd
 0x0042a130,50,GetLaraCollisionInfo,_GetLaraCollisionInfo
 0x0042a170,226,lara_slide_slope,_lara_slide_slope
 0x0042a260,103,LaraHitCeiling,_LaraHitCeiling
@@ -1515,6 +1515,7 @@ address,size,name,symbol
 0x00465a54,,Inventory_Mode,_Inventory_Mode
 0x00465a5c,2,Option_SoundFX_Volume,_Option_SoundFX_Volume
 0x00465a60,2,Option_Music_Volume,_Option_Music_Volume
+0x00465a64,4,bz,_bz
 0x00465ad8,2,old_ang,_old_ang
 0x00465ae0,,weapons,_weapons
 0x00465f58,24,DeathSlideBounds,_DeathSlideBounds
