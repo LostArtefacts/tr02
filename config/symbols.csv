@@ -856,7 +856,7 @@ address,size,name,symbol
 0x00445b00,945,EnumDisplayModesCallback,_EnumDisplayModesCallback@8
 0x00445ec0,64,WinVidInit,_WinVidInit
 0x00445f00,175,WinVidGetDisplayAdapters,_WinVidGetDisplayAdapters
-0x00445fb0,19,FlaggedStringDelete,
+0x00445fb0,19,FlaggedStringDelete,??1STRING_FLAGGED@@QAE@XZ
 0x00445fd0,26,EnumerateDisplayAdapters,_EnumerateDisplayAdapters
 0x00445ff0,446,EnumDisplayAdaptersCallback,_EnumDisplayAdaptersCallback@16
 0x004461b0,53,FlaggedStringsCreate,
@@ -1257,8 +1257,8 @@ address,size,name,symbol
 0x004591b0,71,_CxxThrowException,__CxxThrowException@8
 0x00459200,126,Func459200,
 0x00459280,21,Func459280,
-0x004592e0,14,Func4592e0,
-0x004592f0,16,Func4592f0,
+0x004592e0,14,operator_delete,??3@YAXPAX@Z
+0x004592f0,16,operator_new,??2@YAPAXI@Z
 0x00459300,45,Func459300,
 0x00459340,7,Func459340,
 0x00459350,86,Func459350,

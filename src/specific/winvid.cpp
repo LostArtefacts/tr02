@@ -454,10 +454,11 @@ extern "C" bool HideDDrawGameWindow(void)
     return true;
 }
 
-typedef struct {
+struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
-} STRING_FLAGGED;
+    ~STRING_FLAGGED();
+};
 
 typedef struct {
     LPGUID lpAdapterGuid;
@@ -620,4 +621,10 @@ void COLOR_BIT_MASKS::WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat)
     BitMaskGetNumberOfBits(dwGBitMask, &dwGBitDepth, &dwGBitOffset);
     BitMaskGetNumberOfBits(dwBBitMask, &dwBBitDepth, &dwBBitOffset);
     BitMaskGetNumberOfBits(dwRGBAlphaBitMask, &dwRGBAlphaBitDepth, &dwRGBAlphaBitOffset);
+}
+
+STRING_FLAGGED::~STRING_FLAGGED()
+{
+    if (isPresented)
+        delete[] lpString;
 }
