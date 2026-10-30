@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.71% (146)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.29% (1101)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.79% (147)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.21% (1100)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="87.46" height="6" x="0" y="0" class="named"/>
-<rect width="659.54" height="6" x="87.46" y="0" class="todo"/>
+<rect width="88.06" height="6" x="0" y="0" class="named"/>
+<rect width="658.94" height="6" x="88.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1111,7 +1111,7 @@
 <rect width="12" height="12" x="615" y="300" class="todo"><title>0x0044ee80 do_inventory_options (127 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="300" class="todo"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="300" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="300" class="todo"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="300" class="named"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="300" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="300" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.25%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.75%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.40%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="24.29" height="6" x="0" y="0" class="named"/>
-<rect width="722.71" height="6" x="24.29" y="0" class="todo"/>
+<rect width="26.89" height="6" x="0" y="0" class="named"/>
+<rect width="720.11" height="6" x="26.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1368,7 +1368,7 @@
 <rect width="28.83" height="28.28" x="178.79" y="162.32" class="todo"><title>0x00407ff0 InsertTrans8 (1188 bytes)</title></rect>
 <rect width="28.83" height="28.20" x="178.79" y="193.59" class="todo"><title>0x0041dfe0 MonkControl (1185 bytes)</title></rect>
 <rect width="28.83" height="28.12" x="178.79" y="224.79" class="todo"><title>0x0043d880 SkidooDynamics (1182 bytes)</title></rect>
-<rect width="28.83" height="28.09" x="178.79" y="255.91" class="todo"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
+<rect width="28.83" height="28.09" x="178.79" y="255.91" class="named"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
 <rect width="28.83" height="27.44" x="178.79" y="287.01" class="todo"><title>0x0043f470 SoundEffect (1156 bytes)</title></rect>
 <rect width="28.83" height="27.33" x="178.79" y="317.44" class="todo"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
 <rect width="28.83" height="27.23" x="178.79" y="347.77" class="todo"><title>0x0041fcc0 GF_InterpretSequence (1148 bytes)</title></rect>

@@ -81,6 +81,126 @@ extern TEXTSTRING *sa_text[4];
 
 #define SAWIDTH 140
 
+void do_sound_option(INVENTORY_ITEM *inv_item)
+{
+    int i;
+    char string[20];
+
+    if (!sa_text[0])
+    {
+        if (Option_Music_Volume > 10)
+            Option_Music_Volume = 10;
+        wsprintf(string, "| %2d", Option_Music_Volume);
+        sa_text[0] = T_Print(0, 0, 0, string);
+        T_AddBackground(sa_text[0], SAWIDTH - 12, 0, 0, 0, 8, C_BLACK, NULL, 0);
+        T_AddOutline(sa_text[0], 1, C_ORANGE, NULL, 0);
+        if (Option_SoundFX_Volume > 10)
+            Option_SoundFX_Volume = 10;
+        wsprintf(string, "} %2d", Option_SoundFX_Volume);
+        sa_text[1] = T_Print(0, 25, 0, string);
+        sa_text[2] = T_Print(0, -32, 0, " ");
+        T_AddBackground(sa_text[2], SAWIDTH, 85, 0, 0, 48, C_BLACK, NULL, 0);
+        T_AddOutline(sa_text[2], 1, C_BLUE, NULL, 0);
+        sa_text[3] = T_Print(0, -30, 0, GF_PCStrings[PCSTR_SETVOLUME]);
+        T_AddBackground(sa_text[3], SAWIDTH - 4, 0, 0, 0, 8, C_BLACK, NULL, 0);
+        T_AddOutline(sa_text[3], 1, C_BLUE, NULL, 0);
+        for (i = 0; i < 4; i++)
+        {
+            T_CentreH(sa_text[i], 1);
+            T_CentreV(sa_text[i], 1);
+        }
+    }
+    if ((inputDB & PREV_HBAR) && item_data > 0)
+    {
+        T_RemoveOutline(sa_text[item_data]);
+        T_RemoveBackground(sa_text[item_data]);
+        item_data--;
+        T_AddBackground(sa_text[item_data], SAWIDTH - 12, 0, 0, 0, 8, C_BLACK, NULL, 0);
+        T_AddOutline(sa_text[item_data], 1, C_ORANGE, NULL, 0);
+    }
+    if ((inputDB & NEXT_HBAR) && item_data < 1)
+    {
+        T_RemoveOutline(sa_text[item_data]);
+        T_RemoveBackground(sa_text[item_data]);
+        item_data++;
+        T_AddBackground(sa_text[item_data], SAWIDTH - 12, 0, 0, 0, 8, C_BLACK, NULL, 0);
+        T_AddOutline(sa_text[item_data], 1, C_ORANGE, NULL, 0);
+    }
+    if (!item_data)
+    {
+        if ((input & DEC_HBAR) && Option_Music_Volume > 0)
+        {
+            idelay = 1;
+            idcount = 10;
+            Option_Music_Volume--;
+            wsprintf(string, "| %2d", Option_Music_Volume);
+            T_ChangeText(sa_text[0], string);
+            if (Option_Music_Volume)
+                S_CDVolume(Option_Music_Volume * 25 + 5);
+            else
+                S_CDVolume(0);
+            SoundEffect(115, NULL, SFX_ALWAYS);
+        }
+        else if ((input & INC_HBAR) && Option_Music_Volume < 10)
+        {
+            idelay = 1;
+            idcount = 10;
+            Option_Music_Volume++;
+            wsprintf(string, "| %2d", Option_Music_Volume);
+            T_ChangeText(sa_text[0], string);
+            if (Option_Music_Volume)
+                S_CDVolume(Option_Music_Volume * 25 + 5);
+            else
+                S_CDVolume(0);
+            SoundEffect(115, NULL, SFX_ALWAYS);
+        }
+    }
+    else
+    {
+        if ((input & DEC_HBAR) && Option_SoundFX_Volume > 0)
+        {
+            idelay = 1;
+            idcount = 10;
+            Option_SoundFX_Volume--;
+            wsprintf(string, "} %2d", Option_SoundFX_Volume);
+            T_ChangeText(sa_text[1], string);
+            if (Option_SoundFX_Volume)
+                S_SoundSetMasterVolume(Option_SoundFX_Volume * 6 + 4);
+            else
+                S_SoundSetMasterVolume(0);
+            SoundEffect(115, NULL, SFX_ALWAYS);
+        }
+        else if ((input & INC_HBAR) && Option_SoundFX_Volume < 10)
+        {
+            idelay = 1;
+            idcount = 10;
+            Option_SoundFX_Volume++;
+            wsprintf(string, "} %2d", Option_SoundFX_Volume);
+            T_ChangeText(sa_text[1], string);
+            if (Option_SoundFX_Volume)
+                S_SoundSetMasterVolume(Option_SoundFX_Volume * 6 + 4);
+            else
+                S_SoundSetMasterVolume(0);
+            SoundEffect(115, NULL, SFX_ALWAYS);
+        }
+    }
+    is_sound_sfxlevel[6].param1 = Option_SoundFX_Volume;
+    is_sound_sfxlevellow[6].param1 = Option_SoundFX_Volume;
+    is_sound_muslevel[6].param1 = Option_Music_Volume;
+    is_sound_muslevellow[6].param1 = Option_Music_Volume;
+    if (inputDB & (DESELECT_ITEM | SELECT_ITEM))
+    {
+        T_RemovePrint(sa_text[0]);
+        sa_text[0] = NULL;
+        T_RemovePrint(sa_text[1]);
+        sa_text[1] = NULL;
+        T_RemovePrint(sa_text[2]);
+        sa_text[2] = NULL;
+        T_RemovePrint(sa_text[3]);
+        sa_text[3] = NULL;
+    }
+}
+
 void do_compass_option(INVENTORY_ITEM *inv_item)
 {
     int h = 0, m = 0, s = 0;
