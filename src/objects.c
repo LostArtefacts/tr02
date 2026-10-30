@@ -39,6 +39,28 @@ void OpenThatDoor(DOORPOS_DATA *d)
     }
 }
 
+int OnDrawBridge(ITEM_INFO *item, sint32 x, sint32 y)
+{
+    int ix, iy;
+
+    ix = item->pos.z_pos >> WALL_SHIFT;
+    iy = item->pos.x_pos >> WALL_SHIFT;
+
+    x >>= WALL_SHIFT;
+    y >>= WALL_SHIFT;
+
+    if (item->pos.y_rot == 0 && y == iy && (x == ix - 1 || x == ix - 2))
+        return (1);
+    else if (item->pos.y_rot == -0x8000 && y == iy && (x == ix + 1 || x == ix + 2))
+        return (1);
+    else if (item->pos.y_rot == 0x4000 && x == ix && (y == iy - 1 || y == iy - 2))
+        return (1);
+    else if (item->pos.y_rot == -0x4000 && x == ix && (y == iy + 1 || y == iy + 2))
+        return (1);
+
+    return (0);
+}
+
 void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 floor, ceiling;
