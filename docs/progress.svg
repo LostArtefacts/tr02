@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.51% (555)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.49% (692)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.59% (556)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.41% (691)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="332.47" height="6" x="0" y="0" class="named"/>
-<rect width="414.53" height="6" x="332.47" y="0" class="todo"/>
+<rect width="333.06" height="6" x="0" y="0" class="named"/>
+<rect width="413.94" height="6" x="333.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -235,7 +235,7 @@
 <rect width="12" height="12" x="225" y="45" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="45" class="todo"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="todo"><title>0x004146c0 AnimateItem (824 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="45" class="todo"><title>0x00414a30 GetChange (171 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="45" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="45" class="todo"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="45" class="todo"><title>0x00414b40 GetFloor (408 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="45" class="todo"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.87%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.82%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="180.26" height="6" x="0" y="0" class="named"/>
-<rect width="566.74" height="6" x="180.26" y="0" class="todo"/>
+<rect width="180.63" height="6" x="0" y="0" class="named"/>
+<rect width="566.37" height="6" x="180.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1822,7 +1822,7 @@
 <rect width="9.10" height="8.85" x="535.24" y="271.93" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="9.10" height="8.85" x="535.24" y="283.79" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
 <rect width="9.10" height="8.79" x="535.24" y="295.64" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
-<rect width="9.10" height="8.79" x="535.24" y="307.43" class="todo"><title>0x00414a30 GetChange (171 bytes)</title></rect>
+<rect width="9.10" height="8.79" x="535.24" y="307.43" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="9.10" height="8.79" x="535.24" y="319.21" class="todo"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="9.10" height="8.79" x="535.24" y="331" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
 <rect width="9.10" height="8.79" x="535.24" y="342.78" class="todo"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>

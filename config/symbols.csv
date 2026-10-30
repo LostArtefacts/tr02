@@ -1942,14 +1942,14 @@ address,size,name,symbol
 0x005258f4,4,anims,_anims
 0x00525900,512,BoundRooms,_BoundRooms
 0x00525b00,4,OutsideBottom,_OutsideBottom
-0x00525b04,4,AnimRanges,_AnimRanges
+0x00525b04,4,ranges,_ranges
 0x00525b08,4,AnimCommands,_AnimCommands
 0x00525b20,200,draw_rooms,_draw_rooms
 0x00525be8,4,bones,_bones
 0x00525bec,4,number_dynamics,_number_dynamics
 0x00525c00,,StaticObjects,_StaticObjects
 0x00526178,4,OutsideLeft,_OutsideLeft
-0x0052617c,4,AnimChanges,_AnimChanges
+0x0052617c,4,changes,_changes
 0x00526180,2,number_rooms,_number_rooms
 0x00526184,4,IM_rate,_IM_rate
 0x00526188,4,IMptr,_IMptr
