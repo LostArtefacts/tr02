@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.93% (872)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.59% (369)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.01% (873)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.51% (368)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="522.36" height="6" x="0" y="0" class="named"/>
-<rect width="3.59" height="6" x="522.36" y="0" class="decompiled"/>
-<rect width="221.04" height="6" x="525.96" y="0" class="todo"/>
+<rect width="522.96" height="6" x="0" y="0" class="named"/>
+<rect width="3.59" height="6" x="522.96" y="0" class="decompiled"/>
+<rect width="220.45" height="6" x="526.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1180,7 +1180,7 @@
 <rect width="12" height="12" x="135" y="330" class="todo"><title>0x004548d0 Func4548d0 (75 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="todo"><title>0x00454a30 SE_AdvancedDlgUpdate (169 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="named"><title>0x00454ae0 SE_AdvancedDlgInit (14 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="330" class="todo"><title>0x00454af0 SE_FindSetupDialog (17 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="330" class="named"><title>0x00454af0 SE_FindSetupDialog (17 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="todo"><title>0x00454b10 GameMain (720 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="330" class="todo"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="330" class="todo"><title>0x00454ef0 CheckCheatMode (813 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.64%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.29%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.65%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.28%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="370.81" height="6" x="0" y="0" class="named"/>
-<rect width="0.53" height="6" x="370.81" y="0" class="decompiled"/>
-<rect width="375.66" height="6" x="371.34" y="0" class="todo"/>
+<rect width="370.85" height="6" x="0" y="0" class="named"/>
+<rect width="0.53" height="6" x="370.85" y="0" class="decompiled"/>
+<rect width="375.62" height="6" x="371.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2483,7 +2483,7 @@
 <rect width="0.78" height="0.96" x="728.79" y="349.35" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
 <rect width="0.57" height="0.96" x="732.57" y="349.35" class="named"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="0.57" height="0.96" x="736.14" y="349.35" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
-<rect width="0.57" height="0.96" x="739.71" y="349.35" class="todo"><title>0x00454af0 SE_FindSetupDialog (17 bytes)</title></rect>
+<rect width="0.57" height="0.96" x="739.71" y="349.35" class="named"><title>0x00454af0 SE_FindSetupDialog (17 bytes)</title></rect>
 <rect width="0.36" height="0.96" x="743.28" y="349.35" class="named"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
 <rect width="0.36" height="0.96" x="746.64" y="349.35" class="named"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="0.53" height="0.76" x="725.01" y="353.30" class="named"><title>0x00452050 ScreenPartialDump (16 bytes)</title></rect>

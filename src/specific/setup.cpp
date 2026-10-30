@@ -134,3 +134,7 @@ extern "C" void SE_AdvancedDlgInit(HWND hwndDlg)
 
 extern "C" char SetupDialogName[];
 
+extern "C" HWND SE_FindSetupDialog(void)
+{
+    return FindWindow(MAKEINTATOM(0x8002), SetupDialogName);
+}
