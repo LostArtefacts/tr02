@@ -1516,7 +1516,7 @@ address,size,name,symbol
 0x00465a5c,2,Option_SoundFX_Volume,_Option_SoundFX_Volume
 0x00465a60,2,Option_Music_Volume,_Option_Music_Volume
 0x00465ad8,2,old_ang,_old_ang
-0x00465ae0,,Weapons,_Weapons
+0x00465ae0,,weapons,_weapons
 0x00465f58,24,DeathSlideBounds,_DeathSlideBounds
 0x00465f70,12,DeathSlidePosition,_DeathSlidePosition
 0x00465f80,16,cult1_gun,_cult1_gun
@@ -1528,6 +1528,8 @@ address,size,name,symbol
 0x00465fe0,16,bandit2_gun,_bandit2_gun
 0x00466210,16,bara_bite,_bara_bite
 0x00466220,16,shark_bite,_shark_bite
+0x00466230,16,left_gun,_left_gun
+0x00466240,16,right_gun,_right_gun
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466280,16,spider_bite,_spider_bite
 0x00466360,16,teeth1a,_teeth1a

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.15% (588)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.85% (659)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.23% (589)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.77% (658)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="352.23" height="6" x="0" y="0" class="named"/>
-<rect width="394.77" height="6" x="352.23" y="0" class="todo"/>
+<rect width="352.83" height="6" x="0" y="0" class="named"/>
+<rect width="394.17" height="6" x="352.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -785,7 +785,7 @@
 <rect width="12" height="12" x="225" y="210" class="named"><title>0x0043dff0 SkidooAnimation (736 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="210" class="named"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="210" class="named"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="210" class="todo"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="210" class="named"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="210" class="todo"><title>0x0043e6b0 SkidooControl (1088 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="210" class="todo"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="210" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.14%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.86%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="210.20" height="6" x="0" y="0" class="named"/>
-<rect width="536.80" height="6" x="210.20" y="0" class="todo"/>
+<rect width="210.83" height="6" x="0" y="0" class="named"/>
+<rect width="536.17" height="6" x="210.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1648,7 +1648,7 @@
 <rect width="12.19" height="12.58" x="689.28" y="94.24" class="todo"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
 <rect width="12.19" height="12.58" x="704.48" y="94.24" class="todo"><title>0x0042ecf0 InitialiseNewWeapon (284 bytes)</title></rect>
 <rect width="12.19" height="12.58" x="719.67" y="94.24" class="todo"><title>0x004493a0 ApplySettings (284 bytes)</title></rect>
-<rect width="12.14" height="12.58" x="734.86" y="94.24" class="todo"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
+<rect width="12.14" height="12.58" x="734.86" y="94.24" class="named"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12.32" height="12.39" x="466.32" y="109.82" class="todo"><title>0x004541d0 Func4541d0 (283 bytes)</title></rect>
 <rect width="12.32" height="12.34" x="466.32" y="125.21" class="todo"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
 <rect width="12.32" height="12.29" x="466.32" y="140.55" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>

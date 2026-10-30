@@ -830,3 +830,56 @@ int SkidooCheckGetOff(void)
 
     return 1;
 }
+
+#define LG_SKIDOO 9
+
+typedef struct {
+    PHD_ANGLE lock_angles[4];
+    PHD_ANGLE left_angles[4];
+    PHD_ANGLE right_angles[4];
+    PHD_ANGLE aim_speed;
+    PHD_ANGLE shot_accuracy;
+    int gun_height;
+    int damage;
+    int target_dist;
+    sint16 recoil_frame;
+    sint16 flash_time;
+    sint16 sample_num;
+} WEAPON_INFO;
+
+extern WEAPON_INFO weapons[];
+extern BITE_INFO left_gun;
+extern BITE_INFO right_gun;
+
+void LaraGetNewTarget(WEAPON_INFO *winfo);
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm);
+int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
+sint16 GunShot(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number);
+
+void SkidooGuns(void)
+{
+    WEAPON_INFO *winfo;
+    PHD_ANGLE angles[2];
+    ITEM_INFO *skidoo;
+
+    winfo = &weapons[LG_SKIDOO];
+
+    LaraGetNewTarget(winfo);
+
+    AimWeapon(winfo, &lara.right_arm);
+
+    if (input & IN_ACTION) {
+        angles[0] = lara.right_arm.y_rot + lara_item->pos.y_rot;
+        angles[1] = lara.right_arm.x_rot;
+        if (FireWeapon(LG_SKIDOO, lara.target, lara_item, angles)) {
+            lara.right_arm.flash_gun = winfo->flash_time;
+            SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+            AddDynamicLight(lara_item->pos.x_pos + (phd_sin(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)), lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos + (phd_cos(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)), 12, 11);
+
+            skidoo = &items[lara.skidoo];
+            CreatureEffect(skidoo, &left_gun, GunShot);
+            CreatureEffect(skidoo, &right_gun, GunShot);
+        }
+    }
+}
