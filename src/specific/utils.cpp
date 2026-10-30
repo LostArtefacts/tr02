@@ -140,6 +140,21 @@ extern "C" bool GetRegistryDwordValue(LPCTSTR lpValueName, DWORD *pValue, DWORD 
     return false;
 }
 
+extern "C" bool GetRegistryBoolValue(LPCTSTR lpValueName, bool *pValue, bool defaultValue)
+{
+    DWORD type;
+    DWORD value;
+    DWORD size = sizeof(DWORD);
+    if (!RegQueryValueEx(HKey, lpValueName, 0, &type, (BYTE *)&value, &size) && type == REG_DWORD && size == sizeof(DWORD))
+    {
+        *pValue = value != 0;
+        return true;
+    }
+    SetRegistryBoolValue(lpValueName, defaultValue);
+    *pValue = defaultValue;
+    return false;
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
