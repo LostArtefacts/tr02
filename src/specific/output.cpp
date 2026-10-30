@@ -265,3 +265,43 @@ extern "C" void S_SyncPictureBufferPalette(void)
     WinVidBufferUnlock(PictureBufferSurface, &desc);
     memcpy(PicPalette, game_palette, 768);
 }
+
+extern "C" void S_DrawHealthBar(int percent)
+{
+    int bar;
+    sint32 z;
+    int x;
+    char colour;
+
+    bar = percent * 100 / 100;
+    bBlueEffect = false;
+    z = phd_znear + 50;
+    colour = inv_colours[C_BLACK];
+    InsertLine(6, 7, 109, 7, z, colour);
+    InsertLine(6, 8, 109, 8, z, colour);
+    InsertLine(6, 9, 109, 9, z, colour);
+    InsertLine(6, 10, 109, 10, z, colour);
+    InsertLine(6, 11, 109, 11, z, colour);
+    InsertLine(6, 12, 109, 12, z, colour);
+    InsertLine(6, 13, 109, 13, z, colour);
+    z = phd_znear + 40;
+    colour = inv_colours[C_GREY];
+    InsertLine(6, 14, 110, 14, z, colour);
+    InsertLine(110, 6, 110, 14, z, colour);
+    z = phd_znear + 30;
+    colour = inv_colours[C_WHITE];
+    InsertLine(6, 6, 110, 6, z, colour);
+    InsertLine(6, 14, 6, 6, z, colour);
+    if (bar)
+    {
+        z = phd_znear + 20;
+        x = bar + 8;
+        colour = inv_colours[C_ORANGE];
+        InsertLine(8, 9, x, 9, z, colour);
+        colour = inv_colours[C_RED];
+        InsertLine(8, 8, x, 8, z, colour);
+        InsertLine(8, 10, x, 10, z, colour);
+        InsertLine(8, 11, x, 11, z, colour);
+        InsertLine(8, 12, x, 12, z, colour);
+    }
+}

@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.56% (943)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.88% (298)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.64% (944)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.80% (297)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="564.44" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="564.44" y="0" class="decompiled"/>
-<rect width="178.37" height="6" x="568.63" y="0" class="todo"/>
+<rect width="565.04" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="565.04" y="0" class="decompiled"/>
+<rect width="177.77" height="6" x="569.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1133,7 +1133,7 @@
 <rect width="12" height="12" x="180" y="315" class="named"><title>0x00451540 S_CalculateStaticLight (49 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="315" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="315" class="todo"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="315" class="todo"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="315" class="named"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="315" class="todo"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="315" class="named"><title>0x00451d50 S_SetupBelowWater (81 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.45%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.47%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.58%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.34%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="414.19" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="414.19" y="0" class="decompiled"/>
-<rect width="332.20" height="6" x="414.80" y="0" class="todo"/>
+<rect width="415.19" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="415.19" y="0" class="decompiled"/>
+<rect width="331.20" height="6" x="415.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1524,7 +1524,7 @@
 <rect width="16.78" height="16.70" x="613.96" y="21.73" class="todo"><title>0x0044a660 LoadItems (470 bytes)</title></rect>
 <rect width="16.74" height="16.70" x="633.73" y="21.73" class="todo"><title>0x00401d50 calc_object_vertices (469 bytes)</title></rect>
 <rect width="16.52" height="16.70" x="653.47" y="21.73" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
-<rect width="16.36" height="16.70" x="672.99" y="21.73" class="todo"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
+<rect width="16.36" height="16.70" x="672.99" y="21.73" class="named"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
 <rect width="16.23" height="16.70" x="692.35" y="21.73" class="named"><title>0x00409bb0 InsertFlatRect_ZBuffered (457 bytes)</title></rect>
 <rect width="16.23" height="16.70" x="711.58" y="21.73" class="todo"><title>0x00452060 FadeToPal (457 bytes)</title></rect>
 <rect width="16.19" height="16.70" x="730.81" y="21.73" class="todo"><title>0x00452f80 Func452f80 (456 bytes)</title></rect>
