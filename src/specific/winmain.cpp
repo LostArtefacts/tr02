@@ -1,3 +1,4 @@
+// cflags: /GX
 #include "include.h"
 #include "global.h"
 #include <stdio.h>
@@ -92,4 +93,22 @@ extern "C" void WinCleanup(void)
     WinCleanupStub5();
     WinVidFreeWindow();
     CD_Cleanup();
+}
+
+void WinVidStart(void);
+void RenderStart(bool reset);
+void WinSndStart(HWND hWnd);
+void WinInStart(void);
+
+extern "C" int WinGameStart(void)
+{
+    try {
+        WinVidStart();
+        RenderStart(true);
+        WinSndStart(NULL);
+        WinInStart();
+    } catch (int error) {
+        return error;
+    }
+    return 0;
 }

@@ -870,7 +870,7 @@ address,size,name,symbol
 0x00446be0,28,WinVidFreeWindow,_WinVidFreeWindow
 0x00446c10,77,WinVidExitMessage,_WinVidExitMessage
 0x00446c60,72,WinVidGetDisplayAdapter,_WinVidGetDisplayAdapter
-0x00446cb0,884,WinVidStart,_WinVidStart ?WinVidStart@@YA_NXZ
+0x00446cb0,884,WinVidStart,_WinVidStart ?WinVidStart@@YA_NXZ ?WinVidStart@@YAXXZ
 0x00447030,19,WinVidFinish,_WinVidFinish
 0x00447050,13,DisplayModeListInit,??0DISPLAY_MODE_LIST@@QAE@XZ
 0x00447060,50,DisplayModeListDelete,?DisplayModeListDelete@DISPLAY_MODE_LIST@@QAEXXZ
@@ -894,7 +894,7 @@ address,size,name,symbol
 0x00447670,201,DInputKeyboardCreate,_DInputKeyboardCreate
 0x00447740,41,DInputKeyboardRelease,_DInputKeyboardRelease
 0x00447770,228,DInputJoystickCreate,_DInputJoystickCreate
-0x00447860,45,WinInStart,_WinInStart
+0x00447860,45,WinInStart,_WinInStart ?WinInStart@@YAXXZ
 0x00447890,15,WinInFinish,_WinInFinish
 0x004478a0,23,WinInRunControlPanel,_WinInRunControlPanel
 0x004478c0,98,IncreaseScreenSize,_IncreaseScreenSize
@@ -1031,7 +1031,7 @@ address,size,name,symbol
 0x0044e5e0,391,WinMain,_WinMain@16
 0x0044e7b0,118,GameInit,_GameInit
 0x0044e830,35,WinCleanup,_WinCleanup
-0x0044e860,88,WinGameStart,_WinGameStart
+0x0044e860,114,WinGameStart,_WinGameStart
 0x0044e8e0,57,WinGameFinish,_WinGameFinish
 0x0044e950,66,S_ExitSystem,_S_ExitSystem
 0x0044e9a0,271,ScreenShotPCX,_ScreenShotPCX
