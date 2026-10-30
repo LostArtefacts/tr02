@@ -18,6 +18,7 @@ typedef struct {
 extern "C" {
 extern TEXPAGE_DESC TexturePages[MAX_TEXTURE_PAGES];
 extern LPDIRECTDRAWPALETTE TexturePalettes[MAX_PALETTES];
+extern DDPIXELFORMAT TextureFormat;
 }
 
 extern "C" int GetFreePaletteIndex(void)
@@ -83,4 +84,30 @@ extern "C" int GetFreeTexturePageIndex(void)
             return i;
     }
     return -1;
+}
+
+extern "C" HRESULT DDrawSurfaceCreate(DDSURFACEDESC *desc, LPDIRECTDRAWSURFACE3 *surface);
+
+inline bool DX_TRY(HRESULT hr)
+{
+    if (SUCCEEDED(hr))
+        return false;
+    return true;
+}
+
+extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page)
+{
+    DDSURFACEDESC desc;
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXELFORMAT;
+    desc.ddsCaps.dwCaps = DDSCAPS_SYSTEMMEMORY | DDSCAPS_TEXTURE;
+    desc.dwWidth = page->width;
+    desc.dwHeight = page->height;
+    desc.ddpfPixelFormat = TextureFormat;
+    if (DX_TRY(DDrawSurfaceCreate(&desc, &page->sysMemSurface)))
+        return false;
+    if (page->palette && DX_TRY(page->sysMemSurface->SetPalette(page->palette)))
+        return false;
+    return true;
 }
