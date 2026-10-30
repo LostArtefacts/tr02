@@ -963,7 +963,7 @@ address,size,name,symbol
 0x0044ab10,545,LoadBoxes,_LoadBoxes
 0x0044ad40,85,LoadAnimatedTextures,_LoadAnimatedTextures
 0x0044ada0,121,LoadCinematic,?LoadCinematic@@YAHPAX@Z
-0x0044ae20,138,LoadDemo,_LoadDemo
+0x0044ae20,138,LoadDemo,?LoadDemo@@YAHPAX@Z
 0x0044aeb0,154,LoadDemoExternal,_LoadDemoExternal
 0x0044af50,613,LoadSamples,_LoadSamples
 0x0044b1c0,54,ChangeFileNameExtension,_ChangeFileNameExtension
@@ -1603,7 +1603,7 @@ address,size,name,symbol
 0x004d778c,4,fliptimer,_fliptimer
 0x004d7794,4,StopInventory,_StopInventory
 0x004d779c,4,IsDemoLevelType,_IsDemoLevelType
-0x004d77a0,4,IsDemoLoaded,_IsDemoLoaded
+0x004d77a0,4,demo_loaded,_demo_loaded
 0x004d77b0,4,BoundStart,_BoundStart
 0x004d77b4,4,BoundEnd,_BoundEnd
 0x004d77d0,4,assault_timer_display,_assault_timer_display

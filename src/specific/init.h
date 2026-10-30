@@ -32,7 +32,8 @@ enum game_malloc_types {
     GROUNDZONE,
     FLYZONE,
     ANIMATING_TEXTURE_RANGES,
-    CINEMATIC_FRAMES
+    CINEMATIC_FRAMES,
+    LOADDEMO_BUFFER
 };
 
 void *game_malloc(int size, int type);

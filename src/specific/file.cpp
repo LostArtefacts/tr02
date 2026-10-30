@@ -8,6 +8,11 @@
 #include "../gameflow.h"
 
 extern "C" int LnTextureInfos;
+extern "C" int democount;
+extern "C" uint32 *demoptr;
+extern "C" int demo_loaded;
+
+#define DEMOCOUNT_MAX (30 * 60 * 5)
 
 void AdjustTextureUVs(bool tNew);
 int LoadLevel(char *filename, int req_level);
@@ -54,6 +59,26 @@ int LoadCinematic(HANDLE file)
     }
     else
         cine_loaded = 0;
+    return 1;
+}
+
+int LoadDemo(HANDLE file)
+{
+    sint16 length;
+    DWORD read;
+
+    democount = 0;
+    demoptr = (uint32 *)game_malloc(DEMOCOUNT_MAX * sizeof(uint32), LOADDEMO_BUFFER);
+
+    MyReadFile(file, &length, sizeof(sint16), &read, NULL);
+    if (length)
+    {
+        MyReadFile(file, demoptr, length, &read, NULL);
+        demo_loaded = 1;
+    }
+    else
+        demo_loaded = 0;
+
     return 1;
 }
 
