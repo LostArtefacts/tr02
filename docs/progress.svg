@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.47% (380)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.53% (867)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.55% (381)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.45% (866)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="227.63" height="6" x="0" y="0" class="named"/>
-<rect width="519.37" height="6" x="227.63" y="0" class="todo"/>
+<rect width="228.23" height="6" x="0" y="0" class="named"/>
+<rect width="518.77" height="6" x="228.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -446,7 +446,7 @@
 <rect width="12" height="12" x="390" y="105" class="named"><title>0x00426cd0 InitialiseItemArray (82 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="105" class="named"><title>0x00426d30 KillItem (286 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="105" class="named"><title>0x00426e50 CreateItem (57 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="105" class="todo"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="105" class="named"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="105" class="named"><title>0x00427050 RemoveActiveItem (138 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="105" class="named"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="105" class="named"><title>0x00427150 AddActiveItem (90 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">88.80%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">88.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="83.63" height="6" x="0" y="0" class="named"/>
-<rect width="663.37" height="6" x="83.63" y="0" class="todo"/>
+<rect width="84.59" height="6" x="0" y="0" class="named"/>
+<rect width="662.41" height="6" x="84.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1531,7 +1531,7 @@
 <rect width="16.21" height="16.19" x="413.39" y="99.99" class="todo"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
 <rect width="16.21" height="16.19" x="413.39" y="119.18" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="16.21" height="16.10" x="413.39" y="138.37" class="todo"><title>0x0043dd20 SkidooUserControl (438 bytes)</title></rect>
-<rect width="16.21" height="15.97" x="413.39" y="157.47" class="todo"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
+<rect width="16.21" height="15.97" x="413.39" y="157.47" class="named"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
 <rect width="16.21" height="15.84" x="413.39" y="176.44" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="16.21" height="15.84" x="413.39" y="195.28" class="todo"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
 <rect width="16.21" height="15.66" x="413.39" y="214.12" class="todo"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
