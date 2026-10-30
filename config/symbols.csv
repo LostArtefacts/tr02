@@ -1619,6 +1619,7 @@ address,size,name,symbol
 0x004b2a04,4,FltPerspONearZ,_FltPerspONearZ
 0x004b2a08,4,FltRhwONearZ,_FltRhwONearZ
 0x004b2a0c,2,phd_winymax,_phd_winymax
+0x004b2a10,4,InsertSprite,_InsertSprite
 0x004b2a14,4,FltNearZ,_FltNearZ
 0x004b2a18,4,phd_mxptr,_phd_mxptr
 0x004b2a1c,,InsertObjectGT3,_InsertObjectGT3
