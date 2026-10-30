@@ -1028,9 +1028,9 @@ address,size,name,symbol
 0x0044d9b0,288,Key,?Key@@YAHH@Z
 0x0044dad0,2766,S_UpdateInput,_S_UpdateInput
 0x0044e5a0,60,RenderErrorBox,_RenderErrorBox
-0x0044e5e0,391,WinMain,_WinMain@16
+0x0044e5e0,448,WinMain,_WinMain@16
 0x0044e7b0,118,GameInit,_GameInit
-0x0044e830,35,WinCleanup,_WinCleanup
+0x0044e830,35,WinCleanup,_WinCleanup ?WinCleanup@@YAXXZ
 0x0044e860,114,WinGameStart,_WinGameStart
 0x0044e8e0,57,WinGameFinish,_WinGameFinish
 0x0044e920,24,Func44e920,_Func44e920
@@ -1083,8 +1083,8 @@ address,size,name,symbol
 0x00452360,248,DecompPCX,_DecompPCX
 0x00452480,78,OpenGameRegistryKey,_OpenGameRegistryKey
 0x004524d0,5,CloseGameRegistryKey,_CloseGameRegistryKey
-0x004524e0,627,Func4524e0,
-0x00452760,859,Func452760,
+0x004524e0,627,Func4524e0,_Func4524e0
+0x00452760,859,Func452760,_Func452760
 0x00452ac0,207,SE_GraphicsTestStart,_SE_GraphicsTestStart
 0x00452b90,20,SE_GraphicsTestFinish,_SE_GraphicsTestFinish
 0x00452bb0,3,SE_GraphicsTestExecute,_SE_GraphicsTestExecute
@@ -1280,13 +1280,14 @@ address,size,name,symbol
 0x00459736,24,Func459736,
 0x00459750,486,localtime,_localtime
 0x00459940,300,time,_time
-0x00459a70,27,_abort,
+0x00459a70,27,_abort,_abort
 0x00459a90,48,Func459a90,
 0x00459ac0,18,exit,_exit
 0x00459ae0,18,__exit,
+0x00459b00,15,_cexit,__cexit
 0x00459b10,164,Func459b10,
 0x00459bc0,32,Func459bc0,
-0x00459be0,16,Func459be0,
+0x00459be0,16,_set_se_translator,?_set_se_translator@@YAP6AXIPAU_EXCEPTION_POINTERS@@@ZP6AXI0@Z@Z
 0x00459bf0,119,Func459bf0,
 0x00459c70,326,Func459c70,
 0x00459dc0,35,Func459dc0,
