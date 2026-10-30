@@ -11,9 +11,7 @@
 
 typedef struct {
     uint16 index;
-    uint16 fx:4;
-    uint16 box:11;
-    uint16 stopper:1;
+    sint16 box;
     unsigned char pit_room;
     signed char floor;
     unsigned char sky_room;
