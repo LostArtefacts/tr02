@@ -19,11 +19,18 @@
 #define BAD_JUMP_CEILING ((STEP_L * 3) / 4)
 #define LANDFAR_A 24
 #define LANDFAR_F GF(LANDFAR_A, 0)
+#define FALLBACK_A 93
+#define FALLBACK_F GF(FALLBACK_A, 0)
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
 void AnimateLara(ITEM_INFO *item);
 int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll);
+int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll);
+int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll);
+void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll);
+int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll);
+int LaraFallen(ITEM_INFO *item, COLL_INFO *coll);
 void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
@@ -720,6 +727,37 @@ void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_fastback(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot - 32768;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraHitCeiling(item, coll))
+        return;
+
+    if (coll->mid_floor > 200)
+    {
+        item->anim_number = FALLBACK_A;
+        item->frame_number = FALLBACK_F;
+        item->current_anim_state = AS_FALLBACK;
+        item->goal_anim_state = AS_FALLBACK;
+        item->fallspeed = 0;
+        item->gravity_status = 1;
+        return;
+    }
+
+    if (LaraDeflectEdge(item, coll))
+        LaraCollideStop(item, coll);
+
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);
@@ -1044,7 +1082,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
