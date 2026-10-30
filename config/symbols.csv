@@ -1892,6 +1892,7 @@ address,size,name,symbol
 0x0051b920,,game_palette,_game_palette
 0x0051bc20,1,WinVidNeedToResetBuffers,_WinVidNeedToResetBuffers
 0x0051bc28,4,wet,_wet
+0x0051bc30,1,Var51bc30,_Var51bc30
 0x0051bc34,,frame_comp,
 0x0051bc38,,RegistryClass,_RegistryClass
 0x0051bc40,,ChangedAppSettings,_ChangedAppSettings

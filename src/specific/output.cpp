@@ -347,3 +347,57 @@ extern "C" void S_DrawAirBar(int percent)
         InsertLine(x0, 12, x0 + bar, 12, z, colour);
     }
 }
+
+extern "C" bool WinVidNeedToResetBuffers;
+extern "C" bool Var51bc30;
+extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
+extern "C" void RestoreLostBuffers(void);
+extern "C" void WinVidSpinMessageLoop(bool blocking);
+extern "C" void DX_DoFlipWait(void);
+extern "C" void phd_InitPolyList(void);
+void HWR_BeginScene(void);
+void HWR_EnableZBuffer(bool zWrite, bool zEnable);
+
+extern "C" void S_InitialisePolyList(BOOL clear_back_buffer)
+{
+    DWORD flags;
+
+    if (WinVidNeedToResetBuffers)
+    {
+        RestoreLostBuffers();
+        WinVidSpinMessageLoop(false);
+        flags = 0;
+        if (*((bool *)&SavedAppSettings + 0x25))
+        {
+            if (SavedAppSettings.RenderMode == RM_Software)
+                flags = 0x10;
+            flags |= 3;
+            if (*((bool *)&SavedAppSettings + 0x24))
+                flags |= 4;
+            DX_DoFlipWait();
+        }
+        else
+        {
+            flags = SavedAppSettings.RenderMode == RM_Hardware ? 0x42 : 0x50;
+        }
+        ClearBuffers(flags, 0);
+        clear_back_buffer = FALSE;
+        WinVidNeedToResetBuffers = false;
+    }
+    if (SavedAppSettings.RenderMode == RM_Software)
+    {
+        ClearBuffers(0x110, 0);
+    }
+    else
+    {
+        flags = 0x100;
+        if (clear_back_buffer || Var51bc30)
+            flags = 0x102;
+        if (SavedAppSettings.ZBuffer && ZBufferSurface)
+            flags |= 8;
+        ClearBuffers(flags, 0);
+        HWR_BeginScene();
+        HWR_EnableZBuffer(true, true);
+    }
+    phd_InitPolyList();
+}
