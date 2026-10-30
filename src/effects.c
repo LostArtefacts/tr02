@@ -151,6 +151,24 @@ void ControlRichochet1(sint16 fx_num)
         KillEffect(fx_num);
 }
 
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number)
+{
+    sint16 fx_num;
+    FX_INFO *fx;
+
+    fx_num = CreateEffect(room_number);
+    if (fx_num != NO_ITEM)
+    {
+        fx = &effects[fx_num];
+        fx->pos.x_pos = pos->x_pos;
+        fx->pos.y_pos = pos->y_pos;
+        fx->pos.z_pos = pos->z_pos;
+        fx->speed = 10 + ((GetRandomDraw() * 6) >> 15);
+        fx->frame_number = -((GetRandomDraw() * 3) >> 15);
+        fx->object_number = BUBBLES1;
+    }
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
