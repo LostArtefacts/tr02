@@ -172,3 +172,35 @@ extern "C" HWND SE_FindSetupDialog(void)
 {
     return FindWindow(MAKEINTATOM(0x8002), SetupDialogName);
 }
+
+void UT_CenterWindow(HWND hWnd);
+
+extern "C" {
+extern bool IsSetupDialogCentered;
+extern HWND OptionsDialogHandle;
+extern HWND OptionsImageHandle;
+void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam);
+void SE_OptionsDlgUpdate(HWND hwndDlg);
+}
+
+extern "C" BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        OptionsDialogHandle = hwndDlg;
+        if (!IsSetupDialogCentered)
+        {
+            UT_CenterWindow(GetParent(hwndDlg));
+            IsSetupDialogCentered = true;
+        }
+        OptionsImageHandle = GetDlgItem(hwndDlg, 1073);
+        return TRUE;
+    case WM_NOTIFY:
+        if (((LPNMHDR)lParam)->code == (UINT)-200)
+            SE_OptionsDlgUpdate(hwndDlg);
+        break;
+    }
+    Func457470(OptionsImageHandle, uMsg, wParam);
+    return FALSE;
+}
