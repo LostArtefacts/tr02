@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.10% (712)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.90% (535)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.18% (713)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.82% (534)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="426.51" height="6" x="0" y="0" class="named"/>
-<rect width="320.49" height="6" x="426.51" y="0" class="todo"/>
+<rect width="427.11" height="6" x="0" y="0" class="named"/>
+<rect width="319.89" height="6" x="427.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -647,7 +647,7 @@
 <rect width="12" height="12" x="405" y="165" class="named"><title>0x00431b30 lara_col_surfleft (35 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="165" class="named"><title>0x00431b60 lara_col_surfright (35 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="165" class="named"><title>0x00431b90 lara_col_surftread (87 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="165" class="todo"><title>0x00431bf0 LaraSurfaceCollision (243 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="165" class="named"><title>0x00431bf0 LaraSurfaceCollision (243 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="165" class="named"><title>0x00431cf0 LaraTestWaterStepOut (231 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="165" class="named"><title>0x00431de0 LaraTestWaterClimbOut (540 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="165" class="todo"><title>0x00432000 LaraUnderWater (547 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="300.55" height="6" x="0" y="0" class="named"/>
-<rect width="446.45" height="6" x="300.55" y="0" class="todo"/>
+<rect width="301.09" height="6" x="0" y="0" class="named"/>
+<rect width="445.91" height="6" x="301.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1698,7 +1698,7 @@
 <rect width="11.52" height="11.04" x="482.11" y="266.79" class="todo"><title>0x00456260 AddTexturePage8 (245 bytes)</title></rect>
 <rect width="11.52" height="10.92" x="482.11" y="280.83" class="todo"><title>0x004019e0 phd_PutPolygons (243 bytes)</title></rect>
 <rect width="11.52" height="10.92" x="482.11" y="294.75" class="named"><title>0x0041c970 ControlBubble1 (243 bytes)</title></rect>
-<rect width="11.52" height="10.92" x="482.11" y="308.67" class="todo"><title>0x00431bf0 LaraSurfaceCollision (243 bytes)</title></rect>
+<rect width="11.52" height="10.92" x="482.11" y="308.67" class="named"><title>0x00431bf0 LaraSurfaceCollision (243 bytes)</title></rect>
 <rect width="11.52" height="10.92" x="482.11" y="322.60" class="todo"><title>0x00447350 WinInReadJoystick (243 bytes)</title></rect>
 <rect width="11.52" height="10.87" x="482.11" y="336.52" class="todo"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
 <rect width="11.52" height="10.87" x="482.11" y="350.38" class="todo"><title>0x0042be70 FireShotgun (242 bytes)</title></rect>
