@@ -42,6 +42,13 @@ void WinVidHideGameWindow(void);
 bool SE_GraphicsTestStart(void);
 }
 
+extern "C" void SE_GraphicsTestFinish(void)
+{
+    RenderFinish(true);
+    WinVidFinish();
+    WinVidHideGameWindow();
+}
+
 #include "ds.h"
 
 extern "C" {

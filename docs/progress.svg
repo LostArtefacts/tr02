@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.13% (862)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.39% (379)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.21% (863)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.31% (378)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="516.37" height="6" x="0" y="0" class="named"/>
-<rect width="3.59" height="6" x="516.37" y="0" class="decompiled"/>
-<rect width="227.04" height="6" x="519.96" y="0" class="todo"/>
+<rect width="516.97" height="6" x="0" y="0" class="named"/>
+<rect width="3.59" height="6" x="516.97" y="0" class="decompiled"/>
+<rect width="226.44" height="6" x="520.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1154,7 +1154,7 @@
 <rect width="12" height="12" x="495" y="315" class="todo"><title>0x004524e0 Func4524e0 (627 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="315" class="todo"><title>0x00452760 Func452760 (859 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="315" class="todo"><title>0x00452ac0 SE_GraphicsTestStart (126 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="315" class="todo"><title>0x00452b90 SE_GraphicsTestFinish (20 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="315" class="named"><title>0x00452b90 SE_GraphicsTestFinish (20 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="315" class="todo"><title>0x00452bb0 SE_GraphicsTestExecute (3 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="315" class="todo"><title>0x00452bc0 SE_GraphicsTest (90 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="315" class="todo"><title>0x00452c20 Func452c20 (323 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.54%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.38%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.55%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="370.10" height="6" x="0" y="0" class="named"/>
-<rect width="0.53" height="6" x="370.10" y="0" class="decompiled"/>
-<rect width="376.37" height="6" x="370.63" y="0" class="todo"/>
+<rect width="370.14" height="6" x="0" y="0" class="named"/>
+<rect width="0.53" height="6" x="370.14" y="0" class="decompiled"/>
+<rect width="376.33" height="6" x="370.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2463,7 +2463,7 @@
 <rect width="1.09" height="1.06" x="717.15" y="357.89" class="named"><title>0x0042da30 lara_as_climbdown (20 bytes)</title></rect>
 <rect width="1.09" height="1.06" x="717.15" y="361.96" class="named"><title>0x00432440 lara_as_dive (20 bytes)</title></rect>
 <rect width="1.09" height="1.06" x="717.15" y="366.02" class="named"><title>0x0044b5b0 S_AdjustTexelCoordinates (20 bytes)</title></rect>
-<rect width="1.09" height="1.06" x="717.15" y="370.08" class="todo"><title>0x00452b90 SE_GraphicsTestFinish (20 bytes)</title></rect>
+<rect width="1.09" height="1.06" x="717.15" y="370.08" class="named"><title>0x00452b90 SE_GraphicsTestFinish (20 bytes)</title></rect>
 <rect width="1.09" height="0.86" x="717.15" y="374.14" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="1.11" height="0.84" x="721.24" y="345.50" class="named"><title>0x00428300 lara_as_upjump (19 bytes)</title></rect>
 <rect width="1.11" height="0.84" x="725.35" y="345.50" class="named"><title>0x004288d0 extra_as_airlock (19 bytes)</title></rect>
