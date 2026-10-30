@@ -98,6 +98,16 @@ void DrawBridgeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         DoorCollision(item_num, laraitem, coll);
 }
 
+void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    sint32 floor, ceiling;
+
+    LiftFloorCeiling(item, x, y, z, &floor, &ceiling);
+
+    if (floor < *height)
+        *height = floor;
+}
+
 void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 floor, ceiling;
