@@ -155,6 +155,19 @@ extern "C" bool GetRegistryBoolValue(LPCTSTR lpValueName, bool *pValue, bool def
     return false;
 }
 
+extern "C" bool GetRegistryBinaryValue(LPCTSTR lpValueName, LPBYTE value, DWORD valueSize, LPBYTE defaultValue)
+{
+    DWORD type;
+    DWORD size = valueSize;
+    if (!RegQueryValueEx(HKey, lpValueName, 0, &type, value, &size) && type == REG_BINARY && valueSize == size)
+        return true;
+    if (defaultValue)
+        SetRegistryBinaryValue(lpValueName, value, valueSize);
+    else
+        RegDeleteValue(HKey, lpValueName);
+    return false;
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
