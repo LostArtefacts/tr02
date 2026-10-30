@@ -194,3 +194,28 @@ extern "C" void phd_SetFarZ(sint32 z)
     FltFarZ = (float)z;
     Func402620();
 }
+
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint16 clip, g, u, v;
+} PHD_VBUF;
+
+extern "C" PHD_VBUF PhdVBuf[];
+
+extern "C" sint16 *calc_background_light(sint16 *objptr)
+{
+    int numvert, i;
+
+    numvert = *(objptr++);
+    if (numvert > 0)
+        objptr += numvert * 3;
+    else if (numvert < 0) {
+        numvert = -numvert;
+        objptr += numvert;
+    }
+
+    for (i = 0; i < numvert; i++)
+        PhdVBuf[i].g = 0xfff;
+
+    return objptr;
+}
