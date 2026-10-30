@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.46% (704)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.54% (543)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.54% (705)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.46% (542)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="421.72" height="6" x="0" y="0" class="named"/>
-<rect width="325.28" height="6" x="421.72" y="0" class="todo"/>
+<rect width="422.32" height="6" x="0" y="0" class="named"/>
+<rect width="324.68" height="6" x="422.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -176,7 +176,7 @@
 <rect width="12" height="12" x="90" y="30" class="named"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="30" class="todo"><title>0x0040e9e0 CreatureMood (1087 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="30" class="todo"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="30" class="todo"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="30" class="named"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="30" class="named"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="30" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.57%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">60.43%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">60.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="295.56" height="6" x="0" y="0" class="named"/>
-<rect width="451.44" height="6" x="295.56" y="0" class="todo"/>
+<rect width="296.10" height="6" x="0" y="0" class="named"/>
+<rect width="450.90" height="6" x="296.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.19" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1689,7 +1689,7 @@
 <rect width="11.54" height="11.38" x="481.71" y="152.66" class="named"><title>0x004296e0 lara_col_back (251 bytes)</title></rect>
 <rect width="11.54" height="11.32" x="481.71" y="167.04" class="todo"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
 <rect width="11.54" height="11.21" x="481.71" y="181.36" class="todo"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
-<rect width="11.54" height="11.21" x="481.71" y="195.56" class="todo"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
+<rect width="11.54" height="11.21" x="481.71" y="195.56" class="named"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
 <rect width="11.54" height="11.21" x="481.71" y="209.77" class="named"><title>0x0042f9c0 DrawFlareInAir (248 bytes)</title></rect>
 <rect width="11.54" height="11.21" x="481.71" y="223.97" class="todo"><title>0x0043d010 SkidooCollision (248 bytes)</title></rect>
 <rect width="11.54" height="11.21" x="481.71" y="238.18" class="todo"><title>0x00452360 DecompPCX (248 bytes)</title></rect>
