@@ -1768,6 +1768,7 @@ address,size,name,symbol
 0x004d7930,2,inv_keys_current,_inv_keys_current
 0x004d7934,,InvOptionCurrent,_InvOptionCurrent
 0x004d7938,8,Inv_itemText,_Inv_itemText
+0x004d7940,4,Inv_levelText,_Inv_levelText
 0x004d7944,4,Inv_ringText,_Inv_ringText
 0x004d7948,4,Inv_tagText,_Inv_tagText
 0x004d794c,4,Inv_upArrow1,_Inv_upArrow1
@@ -1936,6 +1937,7 @@ address,size,name,symbol
 0x0051a248,56,ctext,?ctext@@3PAPAUtextstringinfo@@A
 0x0051a280,56,btext,?btext@@3PAPAUtextstringinfo@@A
 0x0051a2bc,4,PassportTextInfo,_PassportTextInfo
+0x0051a2c0,4,passport_mode,_passport_mode
 0x0051a2c8,,dtext,?dtext@@3PAPAUtextstringinfo@@A
 0x0051a2e0,,sa_text,?sa_text@@3PAPAUtextstringinfo@@A
 0x0051a2f0,8,ControlTextInfo,_ControlTextInfo

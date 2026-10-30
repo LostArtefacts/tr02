@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.12% (1029)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.24% (216)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.20% (1030)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.16% (215)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="613.46" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="613.46" y="0" class="decompiled"/>
-<rect width="128.77" height="6" x="618.23" y="0" class="todo"/>
+<rect width="614.05" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="614.05" y="0" class="decompiled"/>
+<rect width="128.18" height="6" x="618.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1110,7 +1110,7 @@
 <rect width="12" height="12" x="585" y="300" class="todo"><title>0x0044ec40 EncodePutPCX (62 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="300" class="todo"><title>0x0044ec80 ScreenShot (501 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="300" class="named"><title>0x0044ee80 do_inventory_options (269 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="300" class="todo"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="300" class="named"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="300" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="named"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.08%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.83%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.55%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="508.59" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="508.59" y="0" class="decompiled"/>
-<rect width="237.75" height="6" x="509.25" y="0" class="todo"/>
+<rect width="512.08" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="512.08" y="0" class="decompiled"/>
+<rect width="234.27" height="6" x="512.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1356,7 +1356,7 @@
 <rect width="34.39" height="36.48" x="107.63" y="204.60" class="todo"><title>0x004242d0 Inv_AddItem (1726 bytes)</title></rect>
 <rect width="34.39" height="34.97" x="107.63" y="244.08" class="todo"><title>0x004128d0 GetCollisionInfo (1660 bytes)</title></rect>
 <rect width="34.39" height="34.52" x="107.63" y="282.05" class="todo"><title>0x00430380 LaraControl (1640 bytes)</title></rect>
-<rect width="34.39" height="33.78" x="107.63" y="319.57" class="todo"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
+<rect width="34.39" height="33.78" x="107.63" y="319.57" class="named"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
 <rect width="34.39" height="33.65" x="107.63" y="356.35" class="todo"><title>0x00408710 InsertGT3_ZBuffered (1602 bytes)</title></rect>
 <rect width="31.20" height="36.82" x="145.02" y="0" class="named"><title>0x00443400 YetiControl (1592 bytes)</title></rect>
 <rect width="31.20" height="36.47" x="145.02" y="39.82" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
