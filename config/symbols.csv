@@ -1844,8 +1844,8 @@ address,size,name,symbol
 0x0051c260,,LdwInitialTimer,?LdwInitialTimer@@3KA
 0x0051c290,,HKey,_HKey
 0x0051c294,4,RegKeyDisposition,_RegKeyDisposition
-0x0051c820,,TextInfoTable,_TextInfoTable
-0x0051d6a0,2,TextStringCount,_TextStringCount
+0x0051c820,3712,T_textStrings,_T_textStrings
+0x0051d6a0,2,T_numStrings,_T_numStrings
 0x0051d6c0,,TheStrings,_TheStrings
 0x0051e6c0,4,SampleInfoCount,_SampleInfoCount
 0x0051e6c4,4,sound_active,_sound_active
