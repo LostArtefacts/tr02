@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.27% (178)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85.73% (1069)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.35% (179)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85.65% (1068)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="106.63" height="6" x="0" y="0" class="named"/>
-<rect width="640.37" height="6" x="106.63" y="0" class="todo"/>
+<rect width="107.23" height="6" x="0" y="0" class="named"/>
+<rect width="639.77" height="6" x="107.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -717,7 +717,7 @@
 <rect width="12" height="12" x="705" y="180" class="named"><title>0x00435af0 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="180" class="named"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="180" class="todo"><title>0x00435b50 BridgeTilt1Floor (48 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="195" class="todo"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="195" class="named"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="195" class="todo"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="195" class="todo"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="195" class="todo"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.40%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.61%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.39%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="34.35" height="6" x="0" y="0" class="named"/>
-<rect width="712.65" height="6" x="34.35" y="0" class="todo"/>
+<rect width="34.47" height="6" x="0" y="0" class="named"/>
+<rect width="712.53" height="6" x="34.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2255,7 +2255,7 @@
 <rect width="3.74" height="3.58" x="682.55" y="290.09" class="todo"><title>0x004357b0 InitialiseLift (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="689.30" y="290.09" class="todo"><title>0x00435a50 LiftFloor (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="696.04" y="290.09" class="named"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
-<rect width="3.74" height="3.58" x="702.79" y="290.09" class="todo"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
+<rect width="3.74" height="3.58" x="702.79" y="290.09" class="named"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="709.53" y="290.09" class="todo"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="716.28" y="290.09" class="todo"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="723.02" y="290.09" class="todo"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
