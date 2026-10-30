@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.80% (646)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.20% (601)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.88% (647)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.12% (600)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="386.98" height="6" x="0" y="0" class="named"/>
-<rect width="360.02" height="6" x="386.98" y="0" class="todo"/>
+<rect width="387.58" height="6" x="0" y="0" class="named"/>
+<rect width="359.42" height="6" x="387.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -191,7 +191,7 @@
 <rect width="12" height="12" x="315" y="30" class="named"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="30" class="todo"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="30" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="30" class="todo"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="30" class="named"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="30" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="30" class="named"><title>0x00410a90 ShiftCamera (340 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="named"><title>0x00410bf0 GoodPosition (80 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.05%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">67.95%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="237.51" height="6" x="0" y="0" class="named"/>
-<rect width="509.49" height="6" x="237.51" y="0" class="todo"/>
+<rect width="239.44" height="6" x="0" y="0" class="named"/>
+<rect width="507.56" height="6" x="239.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1409,7 +1409,7 @@
 <rect width="24.88" height="23.73" x="269.76" y="219.67" class="todo"><title>0x0042cc50 AnimateShotgun (894 bytes)</title></rect>
 <rect width="24.88" height="23.55" x="269.76" y="246.40" class="todo"><title>0x00419a50 DrawAnimatingItem (888 bytes)</title></rect>
 <rect width="24.88" height="23.43" x="269.76" y="272.95" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
-<rect width="24.88" height="23.37" x="269.76" y="299.37" class="todo"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
+<rect width="24.88" height="23.37" x="269.76" y="299.37" class="named"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
 <rect width="24.88" height="23.19" x="269.76" y="325.74" class="todo"><title>0x004312a0 InitialiseLaraInventory (876 bytes)</title></rect>
 <rect width="24.88" height="23.07" x="269.76" y="351.93" class="named"><title>0x004146c0 AnimateItem (872 bytes)</title></rect>
 <rect width="22.61" height="25.12" x="297.64" y="0" class="todo"><title>0x0042f370 FireWeapon (864 bytes)</title></rect>
