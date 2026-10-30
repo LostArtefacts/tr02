@@ -9,6 +9,7 @@
 #define FASTFALL_SPEED 128
 #define LARA_HITE 762
 #define LARA_RAD 100
+#define NO_BAD_POS (-NO_HEIGHT)
 
 enum lara_gun_states {
     LG_ARMLESS,
