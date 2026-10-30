@@ -9,6 +9,15 @@ void D3DRelease(void);
 HRESULT WINAPI Enum3DDevicesCallback(GUID *lpGuid, LPTSTR lpDeviceDescription, LPTSTR lpDeviceName, LPD3DDEVICEDESC lpD3DHWDeviceDesc, LPD3DDEVICEDESC lpD3DHELDeviceDesc, LPVOID lpContext);
 }
 
+extern "C" void Enumerate3DDevices(void *adapter)
+{
+    if (D3DCreate())
+    {
+        D3D->EnumDevices(Enum3DDevicesCallback, adapter);
+        D3DRelease();
+    }
+}
+
 inline bool DX_TRY(HRESULT hr)
 {
     if (SUCCEEDED(hr))
