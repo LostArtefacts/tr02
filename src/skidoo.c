@@ -62,3 +62,36 @@ void InitialiseSkidoo(sint16 item_number)
     skinfo->track_mesh = 0;
     skinfo->pitch = 0;
 }
+
+int SkidooCheckGeton(sint16 item_number, COLL_INFO *coll)
+{
+    int geton;
+    sint16 rot, room_number;
+    ITEM_INFO *skidoo;
+    FLOOR_INFO *floor;
+
+    if (!(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || lara_item->gravity_status)
+        return 0;
+
+    skidoo = &items[item_number];
+    rot = skidoo->pos.y_rot - lara_item->pos.y_rot;
+    if (rot > 0x2000 && rot < 0x6000)
+        geton = 1;
+    else if (rot > -0x6000 && rot < -0x2000)
+        geton = 2;
+    else
+        return 0;
+
+    if (!TestBoundsCollide(skidoo, lara_item, coll->radius))
+        return 0;
+
+    if (!TestCollision(skidoo, lara_item))
+        return 0;
+
+    room_number = skidoo->room_number;
+    floor = GetFloor(skidoo->pos.x_pos, skidoo->pos.y_pos, skidoo->pos.z_pos, &room_number);
+    if (GetHeight(floor, skidoo->pos.x_pos, skidoo->pos.y_pos, skidoo->pos.z_pos) < -32000)
+        return 0;
+
+    return geton;
+}
