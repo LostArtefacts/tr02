@@ -8,6 +8,7 @@
 
 extern "C" void Func444560(void);
 extern "C" void HWR_InitState(void);
+extern "C" void ClearBuffers(DWORD dwClrFlags, DWORD dwColour);
 
 #define ANIMATED_TEXTURE 10
 
@@ -116,4 +117,12 @@ void ScreenDump(void)
 void ScreenPartialDump(void)
 {
     DX_UpdateFrame(true, &GrcDumpWindow);
+}
+
+void ScreenClear(bool tWindow)
+{
+    DWORD dwFlags = SavedAppSettings.RenderMode == RM_Software ? 0x10 : 2;
+    if (tWindow)
+        dwFlags |= 0x100;
+    ClearBuffers(dwFlags, 0);
 }
