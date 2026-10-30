@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.10% (101)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.90% (1146)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.18% (102)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.82% (1145)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="60.50" height="6" x="0" y="0" class="named"/>
-<rect width="686.50" height="6" x="60.50" y="0" class="todo"/>
+<rect width="61.10" height="6" x="0" y="0" class="named"/>
+<rect width="685.90" height="6" x="61.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -798,7 +798,7 @@
 <rect width="12" height="12" x="420" y="210" class="named"><title>0x0043f970 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="210" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="210" class="named"><title>0x0043fa30 SOUND_Init (42 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="210" class="todo"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="210" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="210" class="todo"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="210" class="todo"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="210" class="todo"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.41%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.32%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="11.89" height="6" x="0" y="0" class="named"/>
-<rect width="735.11" height="6" x="11.89" y="0" class="todo"/>
+<rect width="12.55" height="6" x="0" y="0" class="named"/>
+<rect width="734.45" height="6" x="12.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1638,7 +1638,7 @@
 <rect width="12.58" height="13.08" x="465.90" y="159.50" class="todo"><title>0x0040bb70 InsertLine_Sorted (299 bytes)</title></rect>
 <rect width="12.58" height="12.97" x="465.90" y="175.58" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12.58" height="12.92" x="465.90" y="191.55" class="todo"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
-<rect width="12.58" height="12.92" x="465.90" y="207.47" class="todo"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
+<rect width="12.58" height="12.92" x="465.90" y="207.47" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12.58" height="12.92" x="465.90" y="223.39" class="todo"><title>0x0044d0b0 HWR_InitState (296 bytes)</title></rect>
 <rect width="12.58" height="12.86" x="465.90" y="239.31" class="todo"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
 <rect width="12.58" height="12.70" x="465.90" y="255.17" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
