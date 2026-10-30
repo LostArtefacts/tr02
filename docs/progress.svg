@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.13% (700)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.87% (547)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.21% (701)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.79% (546)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="419.33" height="6" x="0" y="0" class="named"/>
-<rect width="327.67" height="6" x="419.33" y="0" class="todo"/>
+<rect width="419.93" height="6" x="0" y="0" class="named"/>
+<rect width="327.07" height="6" x="419.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -633,7 +633,7 @@
 <rect width="12" height="12" x="195" y="165" class="named"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="165" class="named"><title>0x00430f90 ControlLaraExtra (27 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="165" class="named"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="165" class="todo"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="165" class="named"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="165" class="todo"><title>0x004312a0 InitialiseLaraInventory (876 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="165" class="todo"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="165" class="todo"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">61.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">61.11%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="289" height="6" x="0" y="0" class="named"/>
-<rect width="458" height="6" x="289" y="0" class="todo"/>
+<rect width="290.54" height="6" x="0" y="0" class="named"/>
+<rect width="456.46" height="6" x="290.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.19" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1446,7 +1446,7 @@
 <rect width="20.78" height="22.21" x="347.81" y="50.52" class="todo"><title>0x00433090 ControlMissile (720 bytes)</title></rect>
 <rect width="20.78" height="22.21" x="347.81" y="75.73" class="todo"><title>0x00454b10 GameMain (720 bytes)</title></rect>
 <rect width="20.78" height="21.89" x="347.81" y="100.93" class="todo"><title>0x0040c030 S_DrawSprite (711 bytes)</title></rect>
-<rect width="20.78" height="21.54" x="347.81" y="125.82" class="todo"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
+<rect width="20.78" height="21.54" x="347.81" y="125.82" class="named"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
 <rect width="20.78" height="21.09" x="347.81" y="150.37" class="todo"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
 <rect width="20.78" height="20.53" x="347.81" y="174.45" class="named"><title>0x004174e0 TigerControl (672 bytes)</title></rect>
 <rect width="20.78" height="19.97" x="347.81" y="197.98" class="named"><title>0x0043cc50 SharkControl (656 bytes)</title></rect>
