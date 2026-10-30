@@ -66,6 +66,17 @@ int LoadSoundEffects(HANDLE file)
     return 1;
 }
 
+extern "C" int LoadAnimatedTextures(HANDLE file)
+{
+    int size;
+    DWORD read;
+
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    aranges = (sint16 *)game_malloc(size * sizeof(sint16), ANIMATING_TEXTURE_RANGES);
+    MyReadFile(file, aranges, size * sizeof(sint16), &read, NULL);
+    return 1;
+}
+
 int LoadCinematic(HANDLE file)
 {
     DWORD read;
