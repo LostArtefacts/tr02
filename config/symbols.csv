@@ -319,7 +319,7 @@ address,size,name,symbol
 0x00421b50,171,DrawHealthBar,_DrawHealthBar
 0x00421c00,151,DrawAirBar,_DrawAirBar
 0x00421ca0,40,MakeAmmoString,_MakeAmmoString
-0x00421cd0,306,DrawAmmoInfo,_DrawAmmoInfo
+0x00421cd0,336,DrawAmmoInfo,_DrawAmmoInfo
 0x00421e20,21,InitialisePickUpDisplay,_InitialisePickUpDisplay
 0x00421e40,253,DrawPickups,_DrawPickups
 0x00421f40,108,AddDisplayPickup,_AddDisplayPickup

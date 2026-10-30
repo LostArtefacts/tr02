@@ -1,5 +1,6 @@
 #include "game.h"
 #include "larafire.h"
+#include "savegame.h"
 
 static int flash_state = 0;
 static int flash_count = 0;
@@ -55,6 +56,59 @@ void MakeAmmoString(char *string)
             *c += 12 - 'A';
         else
             *c += 1 - '0';
+    }
+}
+
+__declspec(dllimport) int __cdecl wsprintfA(char *, const char *, ...);
+void T_RightAlign(TEXTSTRING *textString, sint16 ok);
+extern TEXTSTRING *AmmoTextInfo;
+
+void DrawAmmoInfo(void)
+{
+    char ammostring[80];
+
+    ammostring[0] = 0;
+    if (lara.gun_status != LG_READY || OverlayStatus <= 0 || savegame.bonus_flag)
+    {
+        if (AmmoTextInfo)
+        {
+            T_RemovePrint(AmmoTextInfo);
+            AmmoTextInfo = NULL;
+        }
+        return;
+    }
+    switch (lara.gun_type)
+    {
+    case LG_PISTOLS:
+        return;
+    case LG_MAGNUMS:
+        wsprintfA(ammostring, "%5d", lara.magnums.ammo);
+        break;
+    case LG_UZIS:
+        wsprintfA(ammostring, "%5d", lara.uzis.ammo);
+        break;
+    case LG_SHOTGUN:
+        wsprintfA(ammostring, "%5d", lara.shotgun.ammo / 6);
+        break;
+    case LG_HARPOON:
+        wsprintfA(ammostring, "%5d", lara.harpoon.ammo);
+        break;
+    case LG_M16:
+        wsprintfA(ammostring, "%5d", lara.m16.ammo);
+        break;
+    case LG_GRENADE:
+        wsprintfA(ammostring, "%5d", lara.grenade.ammo);
+        break;
+    default:
+        return;
+    }
+    MakeAmmoString(ammostring);
+    if (AmmoTextInfo)
+        T_ChangeText(AmmoTextInfo, ammostring);
+    else
+    {
+        AmmoTextInfo = T_Print(-10, 35, 0, ammostring);
+        T_RightAlign(AmmoTextInfo, 1);
     }
 }
 
