@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.21% (489)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.79% (758)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.29% (490)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.71% (757)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="292.93" height="6" x="0" y="0" class="named"/>
-<rect width="454.07" height="6" x="292.93" y="0" class="todo"/>
+<rect width="293.53" height="6" x="0" y="0" class="named"/>
+<rect width="453.47" height="6" x="293.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -807,7 +807,7 @@
 <rect width="12" height="12" x="555" y="210" class="todo"><title>0x00440340 BigSpiderControl (421 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="210" class="named"><title>0x00440500 T_InitPrint (44 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="210" class="named"><title>0x00440530 T_Print (261 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="210" class="todo"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="210" class="named"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="210" class="todo"><title>0x00440680 T_SetScale (23 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="210" class="todo"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="210" class="todo"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.66%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.34%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="146.76" height="6" x="0" y="0" class="named"/>
-<rect width="600.24" height="6" x="146.76" y="0" class="todo"/>
+<rect width="146.88" height="6" x="0" y="0" class="named"/>
+<rect width="600.12" height="6" x="146.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2229,7 +2229,7 @@
 <rect width="3.72" height="3.85" x="682.84" y="283.36" class="named"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="3.72" height="3.85" x="689.56" y="283.36" class="named"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="3.72" height="3.85" x="696.27" y="283.36" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
-<rect width="3.72" height="3.85" x="702.99" y="283.36" class="todo"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
+<rect width="3.72" height="3.85" x="702.99" y="283.36" class="named"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
 <rect width="3.72" height="3.85" x="709.71" y="283.36" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
 <rect width="3.72" height="3.85" x="716.42" y="283.36" class="todo"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
 <rect width="3.72" height="3.85" x="723.14" y="283.36" class="named"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>

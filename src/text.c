@@ -91,3 +91,16 @@ TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string)
     T_numStrings++;
     return textString;
 }
+
+void T_ChangeText(TEXTSTRING *textString, char *string)
+{
+    if (string == NULL || textString == NULL)
+        return;
+
+    if (textString->flags & T_ACTIVE)
+    {
+        if (T_GetStringLen(string) > MAX_STRING_SIZE)
+            string[MAX_STRING_SIZE - 1] = 0;
+        memcpy(textString->string, string, MAX_STRING_SIZE);
+    }
+}
