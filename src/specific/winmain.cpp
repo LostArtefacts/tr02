@@ -47,3 +47,28 @@ extern "C" void S_ExitSystem(char *message)
     WinCleanup();
     exit(1);
 }
+
+extern "C" {
+bool CD_Init(void);
+bool WinVidInit(void);
+BOOL Direct3DInit(void);
+bool RenderInit(void);
+bool InitTextures(void);
+bool Func448050(void);
+bool Func447450(void);
+bool BGND_Init(void);
+}
+
+void UT_InitAccurateTimer(void);
+bool TIME_Init(void);
+bool HWR_Init(void);
+
+extern "C" int GameInit(bool skipCDInit)
+{
+    if (!skipCDInit && !CD_Init())
+        return 2;
+    UT_InitAccurateTimer();
+    if (WinVidInit() && Direct3DInit() && RenderInit() && InitTextures() && Func448050() && Func447450() && TIME_Init() && HWR_Init() && BGND_Init())
+        return 1;
+    return 0;
+}

@@ -1029,7 +1029,7 @@ address,size,name,symbol
 0x0044dad0,2766,S_UpdateInput,_S_UpdateInput
 0x0044e5a0,60,RenderErrorBox,_RenderErrorBox
 0x0044e5e0,391,WinMain,_WinMain@16
-0x0044e7b0,118,Init,_Init
+0x0044e7b0,118,GameInit,_GameInit
 0x0044e830,35,WinCleanup,_WinCleanup
 0x0044e860,88,WinGameStart,_WinGameStart
 0x0044e8e0,57,WinGameFinish,_WinGameFinish

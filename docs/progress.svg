@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.85% (896)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.59% (344)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.93% (897)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.51% (343)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="536.74" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="536.74" y="0" class="decompiled"/>
-<rect width="206.07" height="6" x="540.93" y="0" class="todo"/>
+<rect width="537.34" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="537.34" y="0" class="decompiled"/>
+<rect width="205.47" height="6" x="541.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1098,7 +1098,7 @@
 <rect width="12" height="12" x="405" y="300" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="300" class="named"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="300" class="todo"><title>0x0044e5e0 WinMain (391 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="300" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="300" class="named"><title>0x0044e7b0 GameInit (118 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="300" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="300" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="300" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.77%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.15%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.81%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.11%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="386.73" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="386.73" y="0" class="decompiled"/>
-<rect width="359.66" height="6" x="387.34" y="0" class="todo"/>
+<rect width="386.99" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="386.99" y="0" class="decompiled"/>
+<rect width="359.40" height="6" x="387.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1978,7 +1978,7 @@
 <rect width="6.95" height="6.85" x="580.28" y="318.98" class="named"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="6.95" height="6.85" x="580.28" y="328.83" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
 <rect width="6.95" height="6.85" x="580.28" y="338.68" class="named"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>
-<rect width="6.95" height="6.85" x="580.28" y="348.53" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
+<rect width="6.95" height="6.85" x="580.28" y="348.53" class="named"><title>0x0044e7b0 GameInit (118 bytes)</title></rect>
 <rect width="6.95" height="6.85" x="580.28" y="358.38" class="named"><title>0x00456d20 GetRegistryBoolValue (118 bytes)</title></rect>
 <rect width="6.95" height="6.77" x="580.28" y="368.23" class="named"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
 <rect width="6.53" height="7.20" x="590.23" y="218.63" class="named"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
