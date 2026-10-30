@@ -32,3 +32,20 @@ void phd_GenerateW2V(PHD_3DPOS *viewpos)
     *(nptr + M11) = *(mptr + M11) = (sint32)(float(*(mptr + M11)) * LfAspectCorrection);
     *(nptr + M12) = *(mptr + M12) = (sint32)(float(*(mptr + M12)) * LfAspectCorrection);
 }
+
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
+{
+    PHD_ANGLE pitch;
+
+    *(dest + 0) = phd_atan(z, x);
+    while ((sint16)x != x || (sint16)y != y || (sint16)z != z)
+    {
+        x >>= 2;
+        y >>= 2;
+        z >>= 2;
+    }
+    pitch = phd_atan(phd_sqrt(x * x + z * z), y);
+    if ((y > 0 && pitch > 0) || (y < 0 && pitch < 0))
+        pitch = -pitch;
+    *(dest + 1) = pitch;
+}

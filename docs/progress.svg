@@ -61,15 +61,15 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.87% (148)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.13% (1099)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.95% (149)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.05% (1098)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="88.66" height="6" x="0" y="0" class="named"/>
-<rect width="658.34" height="6" x="88.66" y="0" class="todo"/>
+<rect width="89.26" height="6" x="0" y="0" class="named"/>
+<rect width="657.74" height="6" x="89.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="todo"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="0" class="todo"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="0" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="27.92" height="6" x="0" y="0" class="named"/>
-<rect width="719.08" height="6" x="27.92" y="0" class="todo"/>
+<rect width="28.18" height="6" x="0" y="0" class="named"/>
+<rect width="718.82" height="6" x="28.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1966,7 +1966,7 @@
 <rect width="7.38" height="6.77" x="579.90" y="368.23" class="todo"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
 <rect width="7.17" height="6.97" x="590.28" y="207.90" class="todo"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
 <rect width="7.17" height="6.97" x="600.45" y="207.90" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
-<rect width="7.09" height="6.97" x="610.62" y="207.90" class="todo"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
+<rect width="7.09" height="6.97" x="610.62" y="207.90" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="7.09" height="6.97" x="620.71" y="207.90" class="todo"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="7.09" height="6.97" x="630.79" y="207.90" class="todo"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
 <rect width="7" height="6.97" x="640.88" y="207.90" class="todo"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
