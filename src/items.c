@@ -6,6 +6,7 @@ extern int level_items;
 extern sint16 number_rooms;
 
 #define NO_ROOM 0xff
+#define KILLED_ITEM 0x8000
 
 void KillItem(sint16 item_number);
 
@@ -24,6 +25,59 @@ void InitialiseItemArray(int numitems)
         item->active = 0;
     }
     item->next_item = NO_ITEM;
+}
+
+void KillItem(sint16 item_num)
+{
+    ITEM_INFO *item;
+    sint16 linknum;
+
+    item = &items[item_num];
+    item->active = 0;
+
+    linknum = next_item_active;
+    if (linknum == item_num)
+        next_item_active = item->next_active;
+    else
+    {
+        for (; linknum != NO_ITEM; linknum = items[linknum].next_active)
+        {
+            if (items[linknum].next_active == item_num)
+            {
+                items[linknum].next_active = item->next_active;
+                break;
+            }
+        }
+    }
+
+    if (item->room_number != NO_ROOM)
+    {
+        linknum = room[item->room_number].item_number;
+        if (linknum == item_num)
+            room[item->room_number].item_number = item->next_item;
+        else
+        {
+            for (; linknum != NO_ITEM; linknum = items[linknum].next_item)
+            {
+                if (items[linknum].next_item == item_num)
+                {
+                    items[linknum].next_item = item->next_item;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (item == lara.target)
+        lara.target = NULL;
+
+    if (item_num < level_items)
+        item->flags |= KILLED_ITEM;
+    else
+    {
+        item->next_item = next_item_free;
+        next_item_free = item_num;
+    }
 }
 
 sint16 CreateItem(void)
