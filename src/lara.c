@@ -22,6 +22,7 @@ int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int heig
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
 void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
+void lara_default_col(ITEM_INFO *item, COLL_INFO *coll);
 
 void LookUpDown(void)
 {
@@ -612,6 +613,11 @@ void lara_col_slideback(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.move_angle = item->pos.y_rot - 32768;
     lara_slide_slope(item, coll);
+}
+
+void lara_col_special(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara_default_col(item, coll);
 }
 
 void lara_col_swandive(ITEM_INFO *item, COLL_INFO *coll)

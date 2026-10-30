@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.53% (281)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.47% (966)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.61% (282)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.39% (965)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="168.33" height="6" x="0" y="0" class="named"/>
-<rect width="578.67" height="6" x="168.33" y="0" class="todo"/>
+<rect width="168.93" height="6" x="0" y="0" class="named"/>
+<rect width="578.07" height="6" x="168.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -540,7 +540,7 @@
 <rect width="12" height="12" x="300" y="135" class="named"><title>0x00429be0 lara_col_slideback (35 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="135" class="todo"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="135" class="todo"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="135" class="todo"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="135" class="named"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="135" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="135" class="named"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="135" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.99%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.01%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.23" height="6" x="0" y="0" class="named"/>
-<rect width="694.77" height="6" x="52.23" y="0" class="todo"/>
+<rect width="52.27" height="6" x="0" y="0" class="named"/>
+<rect width="694.73" height="6" x="52.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2468,7 +2468,7 @@
 <rect width="0.86" height="1.13" x="717.38" y="357.36" class="named"><title>0x004292f0 lara_col_turn_l (19 bytes)</title></rect>
 <rect width="0.86" height="1.13" x="717.38" y="361.49" class="named"><title>0x004297e0 lara_col_fastturn (19 bytes)</title></rect>
 <rect width="0.86" height="1.13" x="717.38" y="365.61" class="named"><title>0x004298c0 lara_col_stepleft (19 bytes)</title></rect>
-<rect width="0.86" height="1.13" x="717.38" y="369.74" class="todo"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
+<rect width="0.86" height="1.13" x="717.38" y="369.74" class="named"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
 <rect width="0.86" height="1.13" x="717.38" y="373.87" class="named"><title>0x004324d0 lara_col_swim (19 bytes)</title></rect>
 <rect width="1.20" height="0.79" x="721.24" y="349.10" class="todo"><title>0x00445fb0 FlaggedStringDelete (19 bytes)</title></rect>
 <rect width="1.20" height="0.79" x="725.44" y="349.10" class="todo"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
