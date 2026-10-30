@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.49% (243)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.51% (1004)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.57% (244)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.43% (1003)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="145.57" height="6" x="0" y="0" class="named"/>
-<rect width="601.43" height="6" x="145.57" y="0" class="todo"/>
+<rect width="146.17" height="6" x="0" y="0" class="named"/>
+<rect width="600.83" height="6" x="146.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -632,7 +632,7 @@
 <rect width="12" height="12" x="180" y="165" class="todo"><title>0x00430d10 UseItem (319 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="165" class="todo"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="165" class="todo"><title>0x00430f90 ControlLaraExtra (27 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="165" class="todo"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="165" class="named"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="165" class="todo"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="165" class="todo"><title>0x004312a0 InitialiseLaraInventory (876 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="165" class="todo"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.12%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.88%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.87%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="45.74" height="6" x="0" y="0" class="named"/>
-<rect width="701.26" height="6" x="45.74" y="0" class="todo"/>
+<rect width="45.81" height="6" x="0" y="0" class="named"/>
+<rect width="701.19" height="6" x="45.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2386,7 +2386,7 @@
 <rect width="2.60" height="2.09" x="692.58" y="367.82" class="named"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.58" y="372.91" class="todo"><title>0x004472a0 DInputCreate (34 bytes)</title></rect>
 <rect width="2.19" height="2.49" x="698.18" y="326.19" class="named"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
-<rect width="2.19" height="2.33" x="698.18" y="331.68" class="todo"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
+<rect width="2.19" height="2.33" x="698.18" y="331.68" class="named"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
 <rect width="2.19" height="2.33" x="698.18" y="337.01" class="todo"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
 <rect width="2.19" height="2.33" x="698.18" y="342.33" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="2.19" height="2.16" x="698.18" y="347.66" class="todo"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
