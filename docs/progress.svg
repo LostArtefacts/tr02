@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.81% (459)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.19% (788)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.89% (460)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.11% (787)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="274.96" height="6" x="0" y="0" class="named"/>
-<rect width="472.04" height="6" x="274.96" y="0" class="todo"/>
+<rect width="275.56" height="6" x="0" y="0" class="named"/>
+<rect width="471.44" height="6" x="275.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -178,7 +178,7 @@
 <rect width="12" height="12" x="120" y="30" class="todo"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="30" class="todo"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="30" class="named"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="30" class="todo"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="30" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="30" class="named"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="30" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.70%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.30%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="124.71" height="6" x="0" y="0" class="named"/>
-<rect width="622.29" height="6" x="124.71" y="0" class="todo"/>
+<rect width="125.12" height="6" x="0" y="0" class="named"/>
+<rect width="621.88" height="6" x="125.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.52" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1799,7 +1799,7 @@
 <rect width="9.03" height="9.87" x="522.89" y="202.13" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="9.03" height="9.87" x="522.89" y="215" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="9.03" height="9.87" x="522.89" y="227.87" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
-<rect width="9.03" height="9.80" x="522.89" y="240.74" class="todo"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
+<rect width="9.03" height="9.80" x="522.89" y="240.74" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="9.03" height="9.80" x="522.89" y="253.54" class="todo"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
 <rect width="9.03" height="9.59" x="522.89" y="266.34" class="todo"><title>0x00408650 InsertLine (181 bytes)</title></rect>
 <rect width="9.03" height="9.45" x="522.89" y="278.93" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>

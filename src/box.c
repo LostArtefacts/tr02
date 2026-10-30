@@ -106,6 +106,49 @@ int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height
 #define FRONT_ARC 0x4000
 #define SQUARE(A) ((A) * (A))
 
+#define DONT_TARGET (-16384)
+
+extern sint16 body_bag;
+
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+void DisableBaddieAI(sint16 item_number);
+
+void CreatureDie(sint16 item_number, int explode)
+{
+    sint16 pickup_number;
+    ITEM_INFO *item, *pickup;
+
+    item = &items[item_number];
+    item->collidable = 0;
+    item->hit_points = DONT_TARGET;
+    if (explode)
+    {
+        ExplodingDeath(item_number, 0xffffffff, 0);
+        KillItem(item_number);
+    }
+    else
+        RemoveActiveItem(item_number);
+
+    DisableBaddieAI(item_number);
+    item->flags |= ONESHOT;
+    if (item->clear_body)
+    {
+        item->next_active = body_bag;
+        body_bag = item_number;
+    }
+
+    pickup_number = item->carried_item;
+    while (pickup_number != NO_ITEM)
+    {
+        pickup = &items[pickup_number];
+        pickup->pos.x_pos = item->pos.x_pos;
+        pickup->pos.y_pos = item->pos.y_pos;
+        pickup->pos.z_pos = item->pos.z_pos;
+        ItemNewRoom(pickup_number, item->room_number);
+        pickup_number = pickup->carried_item;
+    }
+}
+
 sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn)
 {
     sint32 x, z, range;
@@ -197,7 +240,6 @@ void CreatureNeck(ITEM_INFO *item, sint16 required)
         creature->neck_rotation = -HEAD_ARC;
 }
 
-#define DONT_TARGET (-16384)
 #define CREATURE_FLOAT_SPEED 32
 
 void CreatureFloat(sint16 item_number)
