@@ -19,6 +19,24 @@ void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 void *game_malloc(int size, int type);
 
 #define NO_ROOM 0xff
+#define FINAL_COUNTDOWN 150
+
+extern sint16 final_boss_active;
+
+void ControlCutShotgun(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    if (final_boss_active >= FINAL_COUNTDOWN)
+    {
+        item->status = ACTIVE;
+        AnimateItem(item);
+    }
+    else
+        item->status = INVISIBLE;
+}
 
 void ShutThatDoor(DOORPOS_DATA *d)
 {

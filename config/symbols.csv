@@ -1824,6 +1824,7 @@ address,size,name,symbol
 0x0051e9c8,4,SG_Point,_SG_Point
 0x0051e9e0,,savegame,_savegame
 0x005206a4,4,SG_Count,_SG_Count
+0x005206a8,2,final_boss_active,_final_boss_active
 0x005206e0,,lara,_lara
 0x005207bc,4,lara_item,_lara_item
 0x005207c0,4,effects,_effects
