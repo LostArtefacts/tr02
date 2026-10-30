@@ -378,6 +378,25 @@ void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
     lara.extra_anim = 0;
 }
 
+void extra_as_sharkkill(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int wh;
+
+    camera.target_angle = ONE_DEGREE * 160;
+    camera.target_distance = 3 * WALL_L;
+    lara.hit_direction = -1;
+
+    if (item->frame_number == anims[item->anim_number].frame_end)
+    {
+        wh = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+        if (wh != NO_HEIGHT && wh < item->pos.y_pos - 100)
+            item->pos.y_pos -= 5;
+    }
+
+    if (item->frame_number < anims[item->anim_number].frame_end - 30)
+        lara.death_count = 1;
+}
+
 void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll)
 {
     camera.target_angle = 80 * ONE_DEGREE;

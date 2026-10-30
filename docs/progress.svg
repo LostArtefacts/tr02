@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.33% (241)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.67% (1006)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.41% (242)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.59% (1005)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="144.37" height="6" x="0" y="0" class="named"/>
-<rect width="602.63" height="6" x="144.37" y="0" class="todo"/>
+<rect width="144.97" height="6" x="0" y="0" class="named"/>
+<rect width="602.03" height="6" x="144.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -502,7 +502,7 @@
 <rect width="12" height="12" x="480" y="120" class="todo"><title>0x004286f0 lara_as_deathslide (150 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="120" class="named"><title>0x00428790 extra_as_breath (76 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="120" class="todo"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="120" class="todo"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="120" class="named"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="120" class="named"><title>0x004288d0 extra_as_airlock (19 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="120" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="120" class="named"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.05%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.95%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.91%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="45.17" height="6" x="0" y="0" class="named"/>
-<rect width="701.83" height="6" x="45.17" y="0" class="todo"/>
+<rect width="45.49" height="6" x="0" y="0" class="named"/>
+<rect width="701.51" height="6" x="45.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1892,7 +1892,7 @@
 <rect width="8.24" height="7.96" x="661.22" y="186.29" class="todo"><title>0x00427460 EffectNewRoom (147 bytes)</title></rect>
 <rect width="8.16" height="7.96" x="672.46" y="186.29" class="todo"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="683.63" y="186.29" class="todo"><title>0x004092e0 InsertObjectGT4_ZBuffered (145 bytes)</title></rect>
-<rect width="8.09" height="7.96" x="694.71" y="186.29" class="todo"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
+<rect width="8.09" height="7.96" x="694.71" y="186.29" class="named"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="705.80" y="186.29" class="todo"><title>0x00441900 BladeControl (145 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="716.89" y="186.29" class="todo"><title>0x00456f20 GetRegistryGuidValue (145 bytes)</title></rect>
 <rect width="8.01" height="7.96" x="727.98" y="186.29" class="todo"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
