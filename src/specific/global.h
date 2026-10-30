@@ -17,6 +17,8 @@ extern RECT GrcDumpWindow;
 extern HINSTANCE GhInstance;
 extern char *GpCmdLine;
 
+uint8 SWR_FindNearestPaletteEntry(uint8 *pPal, int nR, int nG, int nB, bool tDontUseWindowsColours = false);
+
 void DX_DoFlipWait();
 
 bool DX_UpdateFrame(bool tSpinMessageLoop = true, RECT *prcWindow = 0);

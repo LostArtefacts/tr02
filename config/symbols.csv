@@ -478,7 +478,7 @@ address,size,name,symbol
 0x00429e90,354,lara_col_wade,_lara_col_wade
 0x0042a000,54,lara_default_col,_lara_default_col
 0x0042a040,216,lara_col_jumper,_lara_col_jumper
-0x0042a120,1,lara_col_kick,_lara_col_kick
+0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait
 0x0042a130,50,GetLaraCollisionInfo,_GetLaraCollisionInfo
 0x0042a170,226,lara_slide_slope,_lara_slide_slope
 0x0042a260,103,LaraHitCeiling,_LaraHitCeiling
@@ -1142,7 +1142,7 @@ address,size,name,symbol
 0x00455922,24,Func455922,
 0x00455940,73,Func455940,
 0x00455990,311,CopyBitmapPalette,_CopyBitmapPalette
-0x00455ad0,200,FindNearestPaletteEntry,_FindNearestPaletteEntry
+0x00455ad0,200,SWR_FindNearestPaletteEntry,_SWR_FindNearestPaletteEntry
 0x00455ba0,174,SyncSurfacePalettes,_SyncSurfacePalettes
 0x00455c50,135,CreateTexturePalette,_CreateTexturePalette
 0x00455ce0,28,GetFreePaletteIndex,_GetFreePaletteIndex
@@ -1551,7 +1551,7 @@ address,size,name,symbol
 0x0047805c,,InsertFlatRect,_InsertFlatRect
 0x00478060,240000,Info3dBuffer,_Info3dBuffer
 0x004b29e0,2,phd_winxmax,_phd_winxmax
-0x004b29e4,4,PhdNearZ,_PhdNearZ
+0x004b29e4,4,phd_znear,_phd_znear
 0x004b29e8,4,FltResZORhw,_FltResZORhw
 0x004b29ec,4,FltFarZ,_FltFarZ
 0x004b29f0,4,FltWinCenterX,_FltWinCenterX
@@ -1569,6 +1569,7 @@ address,size,name,symbol
 0x004b2ab0,,MatrixW2V,_MatrixW2V
 0x004b2ae0,4,Info3dPtr,_Info3dPtr
 0x004b2ae4,4,phd_winwidth,_phd_winwidth
+0x004b2ae8,,InsertLine,_InsertLine
 0x004b2af0,,phdtextinfo,_phdtextinfo
 0x004bcaf0,4,PhdViewDistance,_PhdViewDistance
 0x004bcaf4,2,PhdLsPitch,_PhdLsPitch

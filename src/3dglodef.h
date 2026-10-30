@@ -51,6 +51,7 @@ extern sint16 shade_table[];
 extern sint32 *phd_mxptr;
 extern sint16 phd_winxmin;
 extern sint16 phd_winymin;
+extern sint32 phd_znear;
 extern sint32 phd_zfar;
 extern sint32 phd_left;
 extern sint32 phd_right;
@@ -66,6 +67,7 @@ extern PHDTEXTURESTRUCT phdtextinfo[];
 extern bool bBlueEffect;
 #endif
 
+extern void (*InsertLine)(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
 extern void (*InsertFlatRect)(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
 
 void AlterFOV(PHD_ANGLE fov);

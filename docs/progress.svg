@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.26% (128)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.74% (1119)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.34% (129)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.66% (1118)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="76.68" height="6" x="0" y="0" class="named"/>
-<rect width="670.32" height="6" x="76.68" y="0" class="todo"/>
+<rect width="77.28" height="6" x="0" y="0" class="named"/>
+<rect width="669.72" height="6" x="77.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1047,7 +1047,7 @@
 <rect width="12" height="12" x="405" y="285" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="285" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="285" class="todo"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="285" class="todo"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="285" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="285" class="todo"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="285" class="todo"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="285" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
@@ -1210,7 +1210,7 @@
 <rect width="12" height="12" x="600" y="330" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="330" class="todo"><title>0x00455940 Func455940 (73 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="330" class="todo"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="330" class="todo"><title>0x00455ad0 FindNearestPaletteEntry (200 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="330" class="todo"><title>0x00455ad0 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="330" class="todo"><title>0x00455ba0 SyncSurfacePalettes (174 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="todo"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="330" class="todo"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.70%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="17.15" height="6" x="0" y="0" class="named"/>
-<rect width="729.85" height="6" x="17.15" y="0" class="todo"/>
+<rect width="17.23" height="6" x="0" y="0" class="named"/>
+<rect width="729.77" height="6" x="17.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1761,7 +1761,7 @@
 <rect width="10.08" height="9.87" x="509.73" y="163.67" class="todo"><title>0x00447670 DInputKeyboardCreate (201 bytes)</title></rect>
 <rect width="10.08" height="9.81" x="509.73" y="176.55" class="named"><title>0x004133b0 GetNearByRooms (200 bytes)</title></rect>
 <rect width="10.08" height="9.81" x="509.73" y="189.36" class="todo"><title>0x00435570 DoorControl (200 bytes)</title></rect>
-<rect width="10.08" height="9.81" x="509.73" y="202.17" class="todo"><title>0x00455ad0 FindNearestPaletteEntry (200 bytes)</title></rect>
+<rect width="10.08" height="9.81" x="509.73" y="202.17" class="todo"><title>0x00455ad0 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="10.08" height="9.75" x="509.73" y="214.98" class="todo"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="10.08" height="9.68" x="509.73" y="227.73" class="todo"><title>0x00446b10 WinVidCreateGameWindow (198 bytes)</title></rect>
 <rect width="10.08" height="9.68" x="509.73" y="240.41" class="todo"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
@@ -2378,7 +2378,7 @@
 <rect width="2.60" height="2.24" x="692.58" y="326.19" class="todo"><title>0x00431b30 lara_col_surfleft (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.58" y="331.43" class="todo"><title>0x00431b60 lara_col_surfright (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.58" y="336.67" class="todo"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
-<rect width="2.60" height="2.24" x="692.58" y="341.91" class="todo"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
+<rect width="2.60" height="2.24" x="692.58" y="341.91" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.58" y="347.15" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.58" y="352.40" class="todo"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.58" y="357.64" class="todo"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
