@@ -119,3 +119,11 @@ extern "C" LPDIRECT3DTEXTURE2 Create3DTexture(LPDIRECTDRAWSURFACE3 surface)
         return NULL;
     return texture;
 }
+
+extern "C" void FreeTexturePage(int pageIndex);
+
+extern "C" void SafeFreeTexturePage(int pageIndex)
+{
+    if (pageIndex >= 0 && (TexturePages[pageIndex].status & 1))
+        FreeTexturePage(pageIndex);
+}
