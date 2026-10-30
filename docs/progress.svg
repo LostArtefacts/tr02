@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.48% (1006)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.96% (237)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.56% (1007)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.88% (236)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="601.19" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="601.19" y="0" class="decompiled"/>
-<rect width="141.63" height="6" x="605.37" y="0" class="todo"/>
+<rect width="601.78" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="601.78" y="0" class="decompiled"/>
+<rect width="141.03" height="6" x="605.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1099,7 +1099,7 @@
 <rect width="12" height="12" x="420" y="300" class="named"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="300" class="todo"><title>0x0044e5e0 WinMain (391 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="300" class="named"><title>0x0044e7b0 GameInit (118 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="300" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="300" class="named"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="300" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="300" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="300" class="named"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
@@ -1199,7 +1199,7 @@
 <rect width="12" height="12" x="420" y="330" class="named"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="330" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="330" class="todo"><title>0x00455600 CD_Cleanup (31 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="330" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="todo"><title>0x00455760 S_CDStop (48 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.10%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.11%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.81%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="456.38" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="456.38" y="0" class="decompiled"/>
-<rect width="290.01" height="6" x="456.99" y="0" class="todo"/>
+<rect width="456.46" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="456.46" y="0" class="decompiled"/>
+<rect width="289.94" height="6" x="457.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.82" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2386,7 +2386,7 @@
 <rect width="2.53" height="2.24" x="692.48" y="336.55" class="named"><title>0x00431b60 lara_col_surfright (35 bytes)</title></rect>
 <rect width="2.53" height="2.24" x="692.48" y="341.79" class="named"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
 <rect width="2.53" height="2.24" x="692.48" y="347.02" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
-<rect width="2.53" height="2.24" x="692.48" y="352.26" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
+<rect width="2.53" height="2.24" x="692.48" y="352.26" class="named"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="2.53" height="2.24" x="692.48" y="357.50" class="named"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
 <rect width="2.53" height="2.09" x="692.48" y="362.74" class="named"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="2.53" height="2.09" x="692.48" y="367.82" class="named"><title>0x00425430 Inv_RingMotionRotation (34 bytes)</title></rect>
@@ -2403,7 +2403,7 @@
 <rect width="2.16" height="1.97" x="698.01" y="373.03" class="named"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
 <rect width="2.30" height="1.84" x="703.18" y="326.07" class="named"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="2.30" height="1.84" x="708.47" y="326.07" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
-<rect width="2.30" height="1.84" x="713.77" y="326.07" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
+<rect width="2.30" height="1.84" x="713.77" y="326.07" class="todo"><title>0x00455600 CD_Cleanup (31 bytes)</title></rect>
 <rect width="2.30" height="1.84" x="719.07" y="326.07" class="named"><title>0x00456660 InitTextures (31 bytes)</title></rect>
 <rect width="2.13" height="1.84" x="724.37" y="326.07" class="named"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
 <rect width="2.13" height="1.84" x="729.49" y="326.07" class="named"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>

@@ -72,3 +72,24 @@ extern "C" int GameInit(bool skipCDInit)
         return 1;
     return 0;
 }
+
+extern "C" {
+void WinCleanupStub1(void);
+void WinCleanupStub2(void);
+void WinCleanupStub3(void);
+void WinCleanupStub4(void);
+void WinCleanupStub5(void);
+void WinVidFreeWindow(void);
+void CD_Cleanup(void);
+}
+
+extern "C" void WinCleanup(void)
+{
+    WinCleanupStub1();
+    WinCleanupStub2();
+    WinCleanupStub3();
+    WinCleanupStub4();
+    WinCleanupStub5();
+    WinVidFreeWindow();
+    CD_Cleanup();
+}
