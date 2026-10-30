@@ -106,6 +106,25 @@ void ControlBlood1(sint16 fx_num)
     }
 }
 
+void ControlExplosion1(sint16 fx_num)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_num];
+    fx->counter++;
+    if (fx->counter == 2)
+    {
+        fx->counter = 0;
+        fx->frame_number--;
+        if (fx->frame_number <= objects[fx->object_number].nmeshes)
+            KillEffect(fx_num);
+        else
+            AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 13, 11);
+    }
+    else
+        AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 12, 10);
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
