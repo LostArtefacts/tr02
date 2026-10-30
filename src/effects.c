@@ -125,6 +125,25 @@ void ControlExplosion1(sint16 fx_num)
         AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 12, 10);
 }
 
+void Richochet(GAME_VECTOR *pos)
+{
+    sint16 fx_num;
+    FX_INFO *fx;
+
+    fx_num = CreateEffect(pos->room_number);
+    if (fx_num != NO_ITEM)
+    {
+        fx = &effects[fx_num];
+        fx->pos.x_pos = pos->x;
+        fx->pos.y_pos = pos->y;
+        fx->pos.z_pos = pos->z;
+        fx->counter = 4;
+        fx->frame_number = -3 * GetRandomDraw() / 0x8000;
+        fx->object_number = RICOCHET1;
+        SoundEffect(10, &fx->pos, 0);
+    }
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
