@@ -12,6 +12,9 @@ extern "C" bool ZWriteEnableState;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
 extern "C" DWORD HWR_PageHandles[32];
 extern "C" DWORD GetTexturePageHandle(int nHandle);
+extern "C" void SafeFreeTexturePage(int nHandle);
+extern "C" void SafeFreePalette(int nHandle);
+extern "C" int PaletteIndex;
 extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
 extern "C" D3DTEXTUREHANDLE CurrentTexSource;
@@ -85,6 +88,22 @@ void HWR_BeginScene()
     HWR_GetAllTextureHandles();
     DX_DoFlipWait();
     G_Direct3DDevice->BeginScene();
+}
+
+void HWR_FreeTexturePages()
+{
+    for (int nPage = 0; nPage < ArraySize(LanTextureHandle); ++nPage)
+    {
+        int nHandle = LanTextureHandle[nPage];
+        if (nHandle >= 0)
+        {
+            SafeFreeTexturePage(nHandle);
+            LanTextureHandle[nPage] = -1;
+        }
+        HWR_PageHandles[nPage] = 0;
+    }
+    if (PaletteIndex >= 0)
+        SafeFreePalette(PaletteIndex);
 }
 
 void HWR_GetAllTextureHandles()
