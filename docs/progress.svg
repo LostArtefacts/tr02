@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.26% (527)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.74% (720)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.34% (528)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.66% (719)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="315.69" height="6" x="0" y="0" class="named"/>
-<rect width="431.31" height="6" x="315.69" y="0" class="todo"/>
+<rect width="316.29" height="6" x="0" y="0" class="named"/>
+<rect width="430.71" height="6" x="316.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -436,7 +436,7 @@
 <rect width="12" height="12" x="240" y="105" class="todo"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="105" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="105" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="105" class="todo"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="105" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="105" class="todo"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="105" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="105" class="todo"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.48%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.52%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.53%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.47%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="152.96" height="6" x="0" y="0" class="named"/>
-<rect width="594.04" height="6" x="152.96" y="0" class="todo"/>
+<rect width="153.38" height="6" x="0" y="0" class="named"/>
+<rect width="593.62" height="6" x="153.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1776,7 +1776,7 @@
 <rect width="10.10" height="9.32" x="509.83" y="353.35" class="todo"><title>0x00424dc0 Inv_GetItemOption (193 bytes)</title></rect>
 <rect width="10.10" height="9.32" x="509.83" y="365.68" class="todo"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
 <rect width="9.76" height="9.59" x="522.93" y="150.74" class="todo"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
-<rect width="9.76" height="9.59" x="535.68" y="150.74" class="todo"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
+<rect width="9.76" height="9.59" x="535.68" y="150.74" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="9.76" height="9.59" x="548.44" y="150.74" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="9.76" height="9.59" x="561.20" y="150.74" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
 <rect width="9.69" height="9.59" x="573.96" y="150.74" class="named"><title>0x00428c40 LaraCollideStop (191 bytes)</title></rect>
