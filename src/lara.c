@@ -1921,6 +1921,12 @@ void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }
 
+void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->facing = lara.move_angle;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_HITE);
+}
+
 void lara_slide_slope(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->bad_pos = NO_BAD_POS;
@@ -2201,7 +2207,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)

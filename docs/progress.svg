@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.94% (710)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.06% (537)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.02% (711)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.98% (536)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="425.32" height="6" x="0" y="0" class="named"/>
-<rect width="321.68" height="6" x="425.32" y="0" class="todo"/>
+<rect width="425.92" height="6" x="0" y="0" class="named"/>
+<rect width="321.08" height="6" x="425.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -547,7 +547,7 @@
 <rect width="12" height="12" x="405" y="135" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="135" class="named"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="135" class="named"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="135" class="todo"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="135" class="named"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="135" class="named"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="135" class="named"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="135" class="named"><title>0x0042a2d0 LaraDeflectEdge (127 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.19%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.81%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="300.12" height="6" x="0" y="0" class="named"/>
-<rect width="446.88" height="6" x="300.12" y="0" class="todo"/>
+<rect width="300.23" height="6" x="0" y="0" class="named"/>
+<rect width="446.77" height="6" x="300.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2280,7 +2280,7 @@
 <rect width="3.20" height="3.84" x="668.98" y="317.51" class="todo"><title>0x0045752e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="3.20" height="3.71" x="668.98" y="324.35" class="todo"><title>0x00401bd0 calc_background_light (50 bytes)</title></rect>
 <rect width="3.20" height="3.71" x="668.98" y="331.06" class="named"><title>0x00424290 RingActive (50 bytes)</title></rect>
-<rect width="3.20" height="3.71" x="668.98" y="337.77" class="todo"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
+<rect width="3.20" height="3.71" x="668.98" y="337.77" class="named"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="3.20" height="3.71" x="668.98" y="344.47" class="named"><title>0x00431ac0 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="3.20" height="3.71" x="668.98" y="351.18" class="named"><title>0x00435150 OpenThatDoor (50 bytes)</title></rect>
 <rect width="3.20" height="3.71" x="668.98" y="357.88" class="todo"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
