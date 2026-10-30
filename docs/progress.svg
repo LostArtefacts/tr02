@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.75% (757)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39.25% (489)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.83% (758)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39.17% (488)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="453.84" height="6" x="0" y="0" class="named"/>
-<rect width="293.16" height="6" x="453.84" y="0" class="todo"/>
+<rect width="454.43" height="6" x="0" y="0" class="named"/>
+<rect width="292.57" height="6" x="454.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -894,7 +894,7 @@
 <rect width="12" height="12" x="360" y="240" class="named"><title>0x00444e10 WinVidSetMinWindowSize (65 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="240" class="named"><title>0x00444e60 WinVidClearMinWindowSize (8 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="named"><title>0x00444e70 WinVidSetMaxWindowSize (65 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="240" class="todo"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="240" class="named"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="240" class="todo"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="240" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="240" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.27%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="341.63" height="6" x="0" y="0" class="named"/>
-<rect width="405.37" height="6" x="341.63" y="0" class="todo"/>
+<rect width="341.65" height="6" x="0" y="0" class="named"/>
+<rect width="405.35" height="6" x="341.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2521,7 +2521,7 @@
 <rect width="0.10" height="0.10" x="732.01" y="375.13" class="named"><title>0x0041d9a0 invisibility_on (9 bytes)</title></rect>
 <rect width="0.22" height="0.10" x="734.62" y="362.38" class="named"><title>0x0041d9d0 dynamic_light_on (9 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.84" y="362.38" class="named"><title>0x00444e60 WinVidClearMinWindowSize (8 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="740.70" y="362.38" class="todo"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="740.70" y="362.38" class="named"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.56" y="362.38" class="todo"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.71" y="362.38" class="named"><title>0x004484b0 WinSndIsSoundEnabled (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.85" y="362.38" class="named"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>

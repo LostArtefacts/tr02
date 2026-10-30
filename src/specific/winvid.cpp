@@ -52,3 +52,8 @@ extern "C" void WinVidSetMaxWindowSize(int width, int height)
     IsMaxWindowSizeSet = true;
 }
 
+extern "C" void WinVidClearMaxWindowSize(void)
+{
+    IsMaxWindowSizeSet = false;
+}
+
