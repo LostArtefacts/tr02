@@ -1887,9 +1887,11 @@ address,size,name,symbol
 0x0051bd9c,,MciDeviceID,_MciDeviceID
 0x0051bda0,4,CD_LoopTrack,_CD_LoopTrack
 0x0051bda4,4,CD_LoopCounter,_CD_LoopCounter
+0x0051bda8,1024,TexturePages,_TexturePages
 0x0051c1a8,,TextureFormat,_TextureFormat
 0x0051c1fc,1,TexturesAlphaChannel,_TexturesAlphaChannel
 0x0051c1fd,1,TexturesHaveCompatibleMasks,_TexturesHaveCompatibleMasks
+0x0051c200,64,TexturePalettes,_TexturePalettes
 0x0051c240,,LdSync,?LdSync@@3NA
 0x0051c248,,LdFreq,?LdFreq@@3NA
 0x0051c250,,LdPerformanceDivisor,?LdPerformanceDivisor@@3NA
