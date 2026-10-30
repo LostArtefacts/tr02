@@ -7,6 +7,27 @@ sint16 CreateEffect(sint16 room_num);
 
 enum trap_anims { TRAP_SET, TRAP_ACTIVATE, TRAP_WORKING, TRAP_FINISHED };
 
+int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z)
+{
+    int tx, tz;
+
+    x >>= WALL_SHIFT;
+    z >>= WALL_SHIFT;
+    tx = item->pos.x_pos >> WALL_SHIFT;
+    tz = item->pos.z_pos >> WALL_SHIFT;
+
+    if (item->pos.y_rot == 0 && x == tx && (z == tz || z == tz + 1))
+        return (1);
+    else if (item->pos.y_rot == -0x8000 && x == tx && (z == tz || z == tz - 1))
+        return (1);
+    else if (item->pos.y_rot == 0x4000 && z == tz && (x == tx || x == tx + 1))
+        return (1);
+    else if (item->pos.y_rot == -0x4000 && z == tz && (x == tx || x == tx - 1))
+        return (1);
+
+    return (0);
+}
+
 void FallingBlockFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 origin;
