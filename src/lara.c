@@ -330,6 +330,12 @@ void lara_col_slide(ITEM_INFO *item, COLL_INFO *coll)
     lara_slide_slope(item, coll);
 }
 
+void lara_col_backjump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot - 32768;
+    lara_col_jumper(item, coll);
+}
+
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }
