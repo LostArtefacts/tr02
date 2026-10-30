@@ -54,6 +54,26 @@ typedef struct ring_info {
 
 extern TEXTSTRING *Inv_itemText[IT_NUMBEROF];
 
+extern TEXTSTRING *Inv_tagText, *Inv_ringText;
+extern TEXTSTRING *Inv_upArrow1, *Inv_upArrow2;
+extern TEXTSTRING *Inv_downArrow1, *Inv_downArrow2;
+
+void RingIsNotOpen(RING_INFO *ring)
+{
+    T_RemovePrint(Inv_tagText);
+    Inv_tagText = NULL;
+    T_RemovePrint(Inv_ringText);
+    Inv_ringText = NULL;
+    T_RemovePrint(Inv_upArrow1);
+    Inv_upArrow1 = NULL;
+    T_RemovePrint(Inv_upArrow2);
+    Inv_upArrow2 = NULL;
+    T_RemovePrint(Inv_downArrow1);
+    Inv_downArrow1 = NULL;
+    T_RemovePrint(Inv_downArrow2);
+    Inv_downArrow2 = NULL;
+}
+
 void RingActive(void)
 {
     T_RemovePrint(Inv_itemText[IT_NAME]);

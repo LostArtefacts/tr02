@@ -1659,11 +1659,12 @@ address,size,name,symbol
 0x004d7930,2,inv_keys_current,_inv_keys_current
 0x004d7934,,InvOptionCurrent,_InvOptionCurrent
 0x004d7938,8,Inv_itemText,_Inv_itemText
-0x004d7944,4,InvRingText,_InvRingText
-0x004d794c,4,InvUpArrow1,_InvUpArrow1
-0x004d7950,4,InvUpArrow2,_InvUpArrow2
-0x004d7954,4,InvDownArrow1,_InvDownArrow1
-0x004d7958,4,InvDownArrow2,_InvDownArrow2
+0x004d7944,4,Inv_ringText,_Inv_ringText
+0x004d7948,4,Inv_tagText,_Inv_tagText
+0x004d794c,4,Inv_upArrow1,_Inv_upArrow1
+0x004d7950,4,Inv_upArrow2,_Inv_upArrow2
+0x004d7954,4,Inv_downArrow1,_Inv_downArrow1
+0x004d7958,4,Inv_downArrow2,_Inv_downArrow2
 0x004d795c,4,inputDB,_inputDB
 0x004d7968,,IsInventoryActive,_IsInventoryActive
 0x004d7970,32,InventoryExtraData,_InventoryExtraData
