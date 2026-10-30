@@ -174,6 +174,129 @@ void FireRocket(void)
     }
 }
 
+#define SMASH_WINDOW 72
+#define EXPLOSION1 229
+#define DRAGON_FRONT 22
+#define BIG_YETI 46
+#define ROCKET_BLAST_RADIUS 512
+
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+sint16 *GetBestFrame(ITEM_INFO *item);
+void SmashWindow(sint16 item_number);
+void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage);
+void CreatureDie(sint16 item_number, int explode);
+
+void ControlRocket(sint16 item_number)
+{
+    FLOOR_INFO *floor;
+    sint16 *bounds;
+    ITEM_INFO *item, *target;
+    sint16 room_number, target_number;
+    sint16 fx_number;
+    sint32 old_x, old_y, old_z;
+    FX_INFO *fx;
+    sint32 speed, c, s, x, z, rx, rz, ox, oz, sx, sz, explode, radius;
+
+    item = &items[item_number];
+
+    old_x = item->pos.x_pos;
+    old_y = item->pos.y_pos;
+    old_z = item->pos.z_pos;
+
+    if (item->speed-- < 190)
+        item->fallspeed++;
+
+    item->pos.y_pos += item->fallspeed - (item->speed * phd_sin(item->pos.x_rot) >> W2V_SHIFT);
+    speed = item->speed * phd_cos(item->pos.x_rot) >> W2V_SHIFT;
+    item->pos.z_pos += speed * phd_cos(item->pos.y_rot) >> W2V_SHIFT;
+    item->pos.x_pos += speed * phd_sin(item->pos.y_rot) >> W2V_SHIFT;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+
+    if (item->pos.y_pos >= item->floor || item->pos.y_pos <= GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos))
+    {
+        radius = ROCKET_BLAST_RADIUS;
+        explode = 1;
+    }
+    else
+        radius = explode = 0;
+
+    for (target_number = room[item->room_number].item_number; target_number != NO_ITEM; target_number = target->next_item)
+    {
+        target = &items[target_number];
+        if (target == lara_item || !target->collidable)
+            continue;
+
+        if (target->object_number == SMASH_WINDOW
+            || (objects[target->object_number].intelligent && target->status != INVISIBLE && objects[target->object_number].collision))
+        {
+            bounds = GetBestFrame(target);
+            if (item->pos.y_pos + radius < target->pos.y_pos + bounds[2] || item->pos.y_pos - radius > target->pos.y_pos + bounds[3])
+                continue;
+
+            c = phd_cos(target->pos.y_rot);
+            s = phd_sin(target->pos.y_rot);
+
+            x = item->pos.x_pos - target->pos.x_pos;
+            z = item->pos.z_pos - target->pos.z_pos;
+            rx = (c * x - s * z) >> W2V_SHIFT;
+
+            ox = old_x - target->pos.x_pos;
+            oz = old_z - target->pos.z_pos;
+            sx = (c * ox - s * oz) >> W2V_SHIFT;
+
+            if ((rx + radius < bounds[0] && sx + radius < bounds[0]) || (rx - radius > bounds[1] && sx - radius > bounds[1]))
+                continue;
+
+            rz = (c * z + s * x) >> W2V_SHIFT;
+            sz = (c * oz + s * ox) >> W2V_SHIFT;
+
+            if ((rz + radius < bounds[4] && sz + radius < bounds[4]) || (rz - radius > bounds[5] && sz - radius > bounds[5]))
+                continue;
+
+            if (target->object_number == SMASH_WINDOW)
+                SmashWindow(target_number);
+            else if (target->status == ACTIVE)
+            {
+                HitTarget(target, NULL, 30);
+                explode = 1;
+                savegame.ammo_hit++;
+                if (target->hit_points <= 0)
+                {
+                    savegame.kills++;
+                    if (target->object_number != DRAGON_FRONT && target->object_number != BIG_YETI)
+                        CreatureDie(target_number, 1);
+                }
+            }
+            else
+                explode = 1;
+        }
+    }
+
+    if (explode)
+    {
+        fx_number = CreateEffect(item->room_number);
+        if (fx_number != NO_ITEM)
+        {
+            fx = &effects[fx_number];
+            fx->pos.x_pos = old_x;
+            fx->pos.y_pos = old_y;
+            fx->pos.z_pos = old_z;
+            fx->speed = 0;
+            fx->frame_number = 0;
+            fx->counter = 0;
+            fx->object_number = EXPLOSION1;
+        }
+        SoundEffect(105, NULL, 0);
+        KillItem(item_number);
+    }
+}
+
 enum weapon_anim {
     W_AIM,
     W_DRAW,
