@@ -84,7 +84,7 @@ address,size,name,symbol
 0x0040c590,157,S_DrawScreenSprite,_S_DrawScreenSprite
 0x0040c630,547,draw_scaled_spriteC,_draw_scaled_spriteC
 0x0040c860,137,InitialiseEagle,_InitialiseEagle
-0x0040c8f0,512,EagleControl,_EagleControl
+0x0040c8f0,540,EagleControl,_EagleControl
 0x0040cb10,60,InitialiseBoat,_InitialiseBoat
 0x0040cb50,368,BoatCheckGeton,_BoatCheckGeton
 0x0040ccc0,350,BoatCollision,_BoatCollision
@@ -1448,6 +1448,8 @@ address,size,name,symbol
 0x00464060,4,perspective_distance,_perspective_distance
 0x00464068,,poly_draw_routines,_poly_draw_routines
 0x0046408c,4,RhwFactor,_RhwFactor
+0x00464090,16,bird_bite,_bird_bite
+0x004640a0,16,crow_bite,_crow_bite
 0x004640b0,4,cutscene_track,_cutscene_track
 0x004640b8,4,CineTickRate,_CineTickRate
 0x004640bc,2,cdtrack,_cdtrack
