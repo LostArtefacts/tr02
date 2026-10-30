@@ -1184,3 +1184,58 @@ int AddAssaultTime(uint32 time)
     }
     return 0;
 }
+
+extern REQUEST_INFO StatsRequester;
+extern char SaveGameStrings1[][50];
+extern char SaveGameStrings2[][50];
+
+sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds);
+
+static int gym_mode;
+
+void ShowGymStatsText(char *time_str, int type)
+{
+    int select, m, s, h, i;
+    char str[32], str2[32];
+
+    if (gym_mode == 1)
+    {
+        if ((select = Display_Requester(&StatsRequester, 1, 1)))
+            gym_mode = 0;
+        else
+            input = inputDB = 0;
+    }
+    else
+    {
+        StatsRequester.noselector = 1;
+        SetPCRequesterSize(&StatsRequester, 7, -32);
+        StatsRequester.line_height = 18;
+        StatsRequester.items = 0;
+        StatsRequester.selected = 0;
+        StatsRequester.line_offset = 0;
+        StatsRequester.line_oldoffset = 0;
+        StatsRequester.pixwidth = 304;
+        StatsRequester.xpos = 0;
+        StatsRequester.zpos = 0;
+        StatsRequester.itemtexts1 = &SaveGameStrings1[0][0];
+        StatsRequester.itemtexts2 = &SaveGameStrings2[0][0];
+        StatsRequester.itemtextlen = 50;
+        Init_Requester(&StatsRequester);
+        SetRequesterHeading(&StatsRequester, GF_GameStrings[71], R_CENTRE, NULL, 0);
+        for (i = 0; i < NUM_ASS_TIMES; i++)
+        {
+            if (best_assault_times[i] == 0)
+                break;
+            sprintf(str, "%2d: %s %d", i + 1, GF_GameStrings[70], (int)best_assault_finish[i]);
+            s = best_assault_times[i] / 30;
+            h = (best_assault_times[i] % 30) / 3;
+            m = s / 60;
+            s = s % 60;
+            sprintf(str2, "%02d:%02d.%-2d", m, s, h);
+            AddRequesterItem(&StatsRequester, str, R_LEFTALIGN, str2, R_RIGHTALIGN);
+        }
+        if (i == 0)
+            AddRequesterItem(&StatsRequester, GF_GameStrings[72], R_CENTRE, NULL, 0);
+        gym_mode = 1;
+    }
+}
