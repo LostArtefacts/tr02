@@ -1,5 +1,37 @@
 #include "game.h"
 
+#define MAX_FLARE_AGE (60 * 30)
+#define FLARE_YOUNG 30
+#define FLARE_OLD (MAX_FLARE_AGE - 60)
+
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
+
+int DoFlareLight(PHD_VECTOR *pos, int flare_age)
+{
+    int x, y, z, random;
+
+    if (flare_age >= MAX_FLARE_AGE)
+        return 0;
+
+    random = GetRandomDraw();
+    x = pos->x + (random & 0xf);
+    y = pos->y;
+    z = pos->z;
+
+    if (flare_age < FLARE_YOUNG)
+        AddDynamicLight(x, y, z, 12 + ((flare_age - FLARE_YOUNG) * 12) / 60, 11);
+    else if (flare_age < FLARE_OLD)
+        AddDynamicLight(x, y, z, 12, 11);
+    else if (random > 0x2000)
+        AddDynamicLight(x, y, z, 12 - (random & 3), 11);
+    else
+    {
+        AddDynamicLight(x, y, z, 12, 5);
+        return 0;
+    }
+    return 1;
+}
+
 void set_flare_arm(int frame)
 {
     int anim_base;
