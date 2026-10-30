@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.21% (277)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.79% (970)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.29% (278)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.71% (969)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="165.93" height="6" x="0" y="0" class="named"/>
-<rect width="581.07" height="6" x="165.93" y="0" class="todo"/>
+<rect width="166.53" height="6" x="0" y="0" class="named"/>
+<rect width="580.47" height="6" x="166.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -169,7 +169,7 @@
 <rect width="12" height="12" x="735" y="15" class="todo"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="todo"><title>0x0040e210 CreatureAIInfo (578 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="30" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="30" class="todo"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="30" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="30" class="named"><title>0x0040e6e0 TargetBox (149 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="30" class="todo"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="30" class="todo"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.10%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.06%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.57" height="6" x="0" y="0" class="named"/>
-<rect width="695.43" height="6" x="51.57" y="0" class="todo"/>
+<rect width="51.82" height="6" x="0" y="0" class="named"/>
+<rect width="695.18" height="6" x="51.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1996,7 +1996,7 @@
 <rect width="6.84" height="6.53" x="720.47" y="217.80" class="named"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="6.84" height="6.53" x="730.31" y="217.80" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="6.84" height="6.53" x="740.16" y="217.80" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
-<rect width="6.54" height="6.75" x="590.21" y="227.33" class="todo"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
+<rect width="6.54" height="6.75" x="590.21" y="227.33" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
 <rect width="6.54" height="6.75" x="590.21" y="237.08" class="todo"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
 <rect width="6.54" height="6.75" x="590.21" y="246.82" class="named"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="6.54" height="6.66" x="590.21" y="256.57" class="named"><title>0x004574a0 UT_MemBlt (110 bytes)</title></rect>
