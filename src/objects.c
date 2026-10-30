@@ -425,6 +425,32 @@ void WindowControl(sint16 item_number)
     SmashWindow(item_number);
 }
 
+void SmashIceControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    ROOM_INFO *r;
+
+    item = &items[item_number];
+    if (item->flags & ONESHOT)
+        return;
+
+    item->mesh_bits = 0x0fffe;
+    item->collidable = 0;
+
+    r = &room[item->room_number];
+    floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
+    if (boxes[floor->box].overlap_index & BLOCKED)
+        boxes[floor->box].overlap_index -= BLOCKED;
+
+    ExplodingDeath(item_number, 0x0fefe, 0);
+    SoundEffect(348, &item->pos, 0);
+
+    item->flags |= ONESHOT;
+    item->status = DEACTIVATED;
+    RemoveActiveItem(item_number);
+}
+
 void ShutThatDoor(DOORPOS_DATA *d)
 {
     FLOOR_INFO *floor;

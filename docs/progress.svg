@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.84% (397)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.16% (850)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.92% (398)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.08% (849)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="237.82" height="6" x="0" y="0" class="named"/>
-<rect width="509.18" height="6" x="237.82" y="0" class="todo"/>
+<rect width="238.42" height="6" x="0" y="0" class="named"/>
+<rect width="508.58" height="6" x="238.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -699,7 +699,7 @@
 <rect width="12" height="12" x="435" y="180" class="named"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="180" class="named"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="180" class="named"><title>0x00434f80 WindowControl (150 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="180" class="todo"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="180" class="named"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="180" class="named"><title>0x00435100 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="180" class="named"><title>0x00435150 OpenThatDoor (50 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="180" class="todo"><title>0x00435190 InitialiseDoor (988 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.06%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="96.66" height="6" x="0" y="0" class="named"/>
-<rect width="650.34" height="6" x="96.66" y="0" class="todo"/>
+<rect width="97.15" height="6" x="0" y="0" class="named"/>
+<rect width="649.85" height="6" x="97.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1727,7 +1727,7 @@
 <rect width="10.77" height="10.50" x="495.87" y="178.44" class="named"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="191.94" class="todo"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="205.32" class="todo"><title>0x00433dd0 TestBlockPush (220 bytes)</title></rect>
-<rect width="10.77" height="10.38" x="495.87" y="218.70" class="todo"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
+<rect width="10.77" height="10.38" x="495.87" y="218.70" class="named"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="232.08" class="todo"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="245.46" class="named"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="258.78" class="todo"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
