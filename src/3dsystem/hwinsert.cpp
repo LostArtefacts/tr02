@@ -12,6 +12,8 @@ bool HWR_VertexBufferFull();
 
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype);
 
+extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
+
 extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex);
 
 extern "C" sint16 *InsertObjectGT4_ZBuffered(sint16 *objptr, int number, int sorttype)
@@ -32,6 +34,27 @@ extern "C" sint16 *InsertObjectGT4_ZBuffered(sint16 *objptr, int number, int sor
     return objptr;
 }
 
+extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3);
+
+extern "C" sint16 *InsertObjectGT3_ZBuffered(sint16 *objptr, int number, int sorttype)
+{
+    PHD_VBUF *v1, *v2, *v3;
+    PHDTEXTURESTRUCT *tex;
+
+    while (number--) {
+        v1 = &PhdVBuf[objptr[0]];
+        v2 = &PhdVBuf[objptr[1]];
+        v3 = &PhdVBuf[objptr[2]];
+        tex = &phdtextinfo[objptr[3]];
+        if (tex->drawtype)
+            InsertGT3_Sorted(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3, sorttype);
+        else
+            InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
+        objptr += 4;
+    }
+    return objptr;
+}
+
 extern "C" sint16 *InsertObjectGT4_Sorted(sint16 *objptr, int number, int sorttype)
 {
     while (number) {
@@ -43,8 +66,6 @@ extern "C" sint16 *InsertObjectGT4_Sorted(sint16 *objptr, int number, int sortty
     }
     return objptr;
 }
-
-extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
 
 extern "C" sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, int sorttype)
 {
