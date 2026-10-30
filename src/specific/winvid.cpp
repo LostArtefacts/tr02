@@ -144,3 +144,46 @@ extern "C" HWND WinVidFindGameWindow(void)
 {
     return FindWindow(ClassName, WindowName);
 }
+
+extern "C" bool WinVidSpinMessageLoop(bool needWait)
+{
+    MSG msg;
+
+    ++MessageLoopCounter;
+    if (IsMessageLoopClosed)
+    {
+        --MessageLoopCounter;
+        return false;
+    }
+
+    if (needWait)
+        WaitMessage();
+
+    for (;;)
+    {
+        if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+        {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+            if (msg.message == WM_QUIT)
+            {
+                IsMessageLoopClosed = true;
+                AppResultCode = msg.wParam;
+                IsGameToExit = true;
+                --MessageLoopCounter;
+                StopInventory = 1;
+                return false;
+            }
+        }
+        else
+        {
+            if (IsGameWindowActive && !IsGameWindowMinimized)
+                break;
+            WaitMessage();
+        }
+    }
+
+    --MessageLoopCounter;
+    return true;
+}
+

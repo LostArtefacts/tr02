@@ -1758,6 +1758,7 @@ address,size,name,symbol
 0x004d8378,4,MinWindowWidth,_MinWindowWidth
 0x004d837c,4,MinWindowHeight,_MinWindowHeight
 0x004d8380,1,IsGameWindowActive,_IsGameWindowActive
+0x004d8384,4,MessageLoopCounter,_MessageLoopCounter
 0x004d8388,,CurrentJoystick,_CurrentJoystick
 0x004d8540,,JoystickList,_JoystickList
 0x004d854c,,DInput,_DInput
