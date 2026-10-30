@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.52% (206)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.48% (1041)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.60% (207)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.40% (1040)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="123.40" height="6" x="0" y="0" class="named"/>
-<rect width="623.60" height="6" x="123.40" y="0" class="todo"/>
+<rect width="124" height="6" x="0" y="0" class="named"/>
+<rect width="623" height="6" x="124" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -727,7 +727,7 @@
 <rect width="12" height="12" x="105" y="195" class="todo"><title>0x00435f40 ControlGlow (59 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="195" class="todo"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="195" class="todo"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="195" class="todo"><title>0x00436040 GunHit (185 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="195" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="195" class="todo"><title>0x00436100 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="195" class="todo"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="195" class="todo"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="38.71" height="6" x="0" y="0" class="named"/>
-<rect width="708.29" height="6" x="38.71" y="0" class="todo"/>
+<rect width="39.12" height="6" x="0" y="0" class="named"/>
+<rect width="707.88" height="6" x="39.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1795,7 +1795,7 @@
 <rect width="9.47" height="9.57" x="737.53" y="150.74" class="todo"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
 <rect width="9" height="9.99" x="522.81" y="163.31" class="todo"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="9" height="9.92" x="522.81" y="176.29" class="named"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
-<rect width="9" height="9.92" x="522.81" y="189.21" class="todo"><title>0x00436040 GunHit (185 bytes)</title></rect>
+<rect width="9" height="9.92" x="522.81" y="189.21" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="9" height="9.92" x="522.81" y="202.13" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="9" height="9.92" x="522.81" y="215.04" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="9" height="9.85" x="522.81" y="227.96" class="todo"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
