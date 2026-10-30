@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.15% (351)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.85% (896)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.23% (352)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.77% (895)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="210.26" height="6" x="0" y="0" class="named"/>
-<rect width="536.74" height="6" x="210.26" y="0" class="todo"/>
+<rect width="210.86" height="6" x="0" y="0" class="named"/>
+<rect width="536.14" height="6" x="210.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -836,7 +836,7 @@
 <rect width="12" height="12" x="240" y="225" class="named"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="225" class="named"><title>0x00441900 BladeControl (145 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="225" class="named"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="225" class="todo"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="225" class="named"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="225" class="named"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="225" class="named"><title>0x00441be0 InitialiseRollingBall (60 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="225" class="todo"><title>0x00441c20 RollingBallControl (839 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.51%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="70.33" height="6" x="0" y="0" class="named"/>
-<rect width="676.67" height="6" x="70.33" y="0" class="todo"/>
+<rect width="70.92" height="6" x="0" y="0" class="named"/>
+<rect width="676.08" height="6" x="70.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1668,7 +1668,7 @@
 <rect width="12.32" height="11.60" x="466.03" y="348.86" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
 <rect width="12.32" height="11.54" x="466.03" y="363.46" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
 <rect width="11.52" height="12.34" x="481.35" y="109.38" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
-<rect width="11.52" height="12.29" x="481.35" y="124.72" class="todo"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
+<rect width="11.52" height="12.29" x="481.35" y="124.72" class="named"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
 <rect width="11.52" height="12.17" x="481.35" y="140.01" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="11.52" height="12.11" x="481.35" y="155.18" class="todo"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="11.52" height="12.11" x="481.35" y="170.29" class="todo"><title>0x00432d70 InitialiseSlot (262 bytes)</title></rect>

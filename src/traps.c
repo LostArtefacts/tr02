@@ -10,6 +10,8 @@
 #define BIG_FIRE 0
 #define TEETHTRAP_DAMAGE 400
 #define BOARD_OFF 0
+#define STATUE_DAMAGE 20
+#define STATUE_TOUCH 0x80
 #define BOARD_ON 1
 #define FALLDOWN_A 34
 #define FALLDOWN_F GF(FALLDOWN_A, 0)
@@ -24,6 +26,7 @@ extern BITE_INFO teeth1a, teeth1b, teeth2a, teeth2b, teeth3a, teeth3b;
 enum trap_anims { TRAP_SET, TRAP_ACTIVATE, TRAP_WORKING, TRAP_FINISHED };
 enum door_anims { DOOR_CLOSED, DOOR_OPEN };
 enum teeth_anims { TT_NICE, TT_NASTY };
+enum statue_anims { STATUE_EMPTY, STATUE_STOP, STATUE_CUT };
 enum blade_anims { BLADE_EMPTY, BLADE_STOP, BLADE_CUT };
 
 static int clonked = 0;
@@ -91,6 +94,34 @@ void InitialiseKillerStatue(sint16 item_number)
     item->anim_number = objects[item->object_number].anim_index + 3;
     item->frame_number = anims[item->anim_number].frame_base;
     item->current_anim_state = BLADE_STOP;
+}
+
+void KillerStatueControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint32 x, y, z;
+    sint16 d;
+
+    item = &items[item_number];
+
+    if (TriggerActive(item) && item->current_anim_state == STATUE_STOP)
+        item->goal_anim_state = STATUE_CUT;
+    else
+        item->goal_anim_state = STATUE_STOP;
+
+    if ((item->touch_bits & STATUE_TOUCH) && item->current_anim_state == STATUE_CUT)
+    {
+        lara_item->hit_status = 1;
+        lara_item->hit_points -= STATUE_DAMAGE;
+
+        x = lara_item->pos.x_pos + (GetRandomControl() - 16384) / 256;
+        z = lara_item->pos.z_pos + (GetRandomControl() - 16384) / 256;
+        y = lara_item->pos.y_pos - GetRandomControl() / 44;
+        d = (GetRandomControl() - 16384) / 8 + lara_item->pos.y_rot;
+        DoBloodSplat(x, y, z, lara_item->speed, d, lara_item->room_number);
+    }
+
+    AnimateItem(item);
 }
 
 void SpringBoardControl(sint16 item_number)
