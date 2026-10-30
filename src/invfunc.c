@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "game.h"
 #include "invdata.h"
 
@@ -291,4 +292,32 @@ void Inv_RingMotionItemDeselect(RING_INFO *ring, INVENTORY_ITEM *inv_item)
     imo->item_ytrans_rate = 0 - inv_item->ytrans_sel / imo->count;
     imo->item_ztrans_target = 0;
     imo->item_ztrans_rate = 0 - inv_item->ztrans_sel / imo->count;
+}
+
+void Init_Requester(REQUEST_INFO *req)
+{
+    int n;
+
+    req->items = 0;
+    req->heading1text = NULL;
+    req->heading2text = NULL;
+    req->heading1_flags = 0;
+    req->heading2_flags = 0;
+    req->backgroundtext = NULL;
+    req->background_flags = R_USE;
+    req->moreuptext = NULL;
+    req->moreup_flags = R_USE;
+    req->moredowntext = NULL;
+    req->moredown_flags = R_USE;
+    for (n = 0; n < MAX_REQLINES; n++)
+    {
+        req->texts1[n] = NULL;
+        req->texts1_flags[n] = 0;
+        req->texts2[n] = NULL;
+        req->texts2_flags[n] = 0;
+    }
+    req->itemtexts1_flags = RequesterFlags1;
+    req->itemtexts2_flags = RequesterFlags2;
+    req->original_render_width = GetRenderWidth();
+    req->original_render_height = GetRenderHeight();
 }

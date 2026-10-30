@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.70% (520)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">58.30% (727)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.78% (521)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">58.22% (726)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="311.50" height="6" x="0" y="0" class="named"/>
-<rect width="435.50" height="6" x="311.50" y="0" class="todo"/>
+<rect width="312.10" height="6" x="0" y="0" class="named"/>
+<rect width="434.90" height="6" x="312.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -428,7 +428,7 @@
 <rect width="12" height="12" x="120" y="105" class="named"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="105" class="named"><title>0x004254b0 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="105" class="named"><title>0x00425510 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="105" class="todo"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="105" class="named"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="105" class="todo"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="105" class="todo"><title>0x004256c0 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="105" class="todo"><title>0x004256e0 ReqItemLeftAlign (84 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="151.46" height="6" x="0" y="0" class="named"/>
-<rect width="595.54" height="6" x="151.46" y="0" class="todo"/>
+<rect width="151.75" height="6" x="0" y="0" class="named"/>
+<rect width="595.25" height="6" x="151.75" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1934,7 +1934,7 @@
 <rect width="7.82" height="7.13" x="579.94" y="197.91" class="named"><title>0x00429ad0 lara_col_fallback (131 bytes)</title></rect>
 <rect width="7.82" height="7.13" x="590.76" y="197.91" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="7.74" height="7.13" x="601.58" y="197.91" class="named"><title>0x0041c6c0 ControlBlood1 (130 bytes)</title></rect>
-<rect width="7.74" height="7.13" x="612.31" y="197.91" class="todo"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
+<rect width="7.74" height="7.13" x="612.31" y="197.91" class="named"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
 <rect width="7.74" height="7.13" x="623.05" y="197.91" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="7.65" height="7.13" x="633.79" y="197.91" class="todo"><title>0x004234e0 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="7.65" height="7.13" x="644.44" y="197.91" class="todo"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
