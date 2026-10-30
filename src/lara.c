@@ -278,6 +278,15 @@ void lara_as_pushblock(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = -25 * ONE_DEGREE;
 }
 
+void lara_as_ppready(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_angle = 75 * ONE_DEGREE;
+    if (!(input & IN_ACTION))
+        item->goal_anim_state = AS_STOP;
+}
+
 void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
 {
     camera.flags = FOLLOW_CENTRE;

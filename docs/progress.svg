@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.72% (221)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.28% (1026)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.80% (222)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.20% (1025)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="132.39" height="6" x="0" y="0" class="named"/>
-<rect width="614.61" height="6" x="132.39" y="0" class="todo"/>
+<rect width="132.99" height="6" x="0" y="0" class="named"/>
+<rect width="614.01" height="6" x="132.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -489,7 +489,7 @@
 <rect width="12" height="12" x="285" y="120" class="todo"><title>0x00428390 lara_as_hangright (53 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="120" class="named"><title>0x004283d0 lara_as_slideback (24 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="120" class="named"><title>0x004283f0 lara_as_pushblock (48 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="120" class="todo"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="120" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="120" class="todo"><title>0x00428450 lara_as_pickup (48 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="120" class="todo"><title>0x00428480 lara_as_pickupflare (88 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="120" class="todo"><title>0x004284e0 lara_as_switchon (57 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.52%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.48%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="41.26" height="6" x="0" y="0" class="named"/>
-<rect width="705.74" height="6" x="41.26" y="0" class="todo"/>
+<rect width="41.35" height="6" x="0" y="0" class="named"/>
+<rect width="705.65" height="6" x="41.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2342,7 +2342,7 @@
 <rect width="2.61" height="2.97" x="727.82" y="309.23" class="todo"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="2.61" height="2.97" x="733.44" y="309.23" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="2.47" height="2.97" x="739.05" y="309.23" class="todo"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
-<rect width="2.47" height="2.97" x="744.53" y="309.23" class="todo"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
+<rect width="2.47" height="2.97" x="744.53" y="309.23" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
 <rect width="2.60" height="2.83" x="686.97" y="315.20" class="todo"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
 <rect width="2.60" height="2.83" x="686.97" y="321.03" class="todo"><title>0x004409a0 T_GetStringLen (39 bytes)</title></rect>
 <rect width="2.60" height="2.83" x="686.97" y="326.86" class="named"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
