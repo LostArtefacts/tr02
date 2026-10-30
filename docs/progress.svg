@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.49% (480)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.51% (767)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.57% (481)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.43% (766)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="287.54" height="6" x="0" y="0" class="named"/>
-<rect width="459.46" height="6" x="287.54" y="0" class="todo"/>
+<rect width="288.14" height="6" x="0" y="0" class="named"/>
+<rect width="458.86" height="6" x="288.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -260,7 +260,7 @@
 <rect width="12" height="12" x="600" y="45" class="todo"><title>0x00416af0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="45" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="45" class="named"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="45" class="todo"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="45" class="named"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="45" class="todo"><title>0x00416d80 DiverControl (905 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="45" class="named"><title>0x00417130 DogControl (940 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="45" class="named"><title>0x004174e0 TigerControl (672 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.66%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.34%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="139.41" height="6" x="0" y="0" class="named"/>
-<rect width="607.59" height="6" x="139.41" y="0" class="todo"/>
+<rect width="139.99" height="6" x="0" y="0" class="named"/>
+<rect width="607.01" height="6" x="139.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.49" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1670,7 +1670,7 @@
 <rect width="12.34" height="11.51" x="481.51" y="109.47" class="named"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="12.28" height="11.51" x="496.85" y="109.47" class="named"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
 <rect width="12.16" height="11.51" x="512.13" y="109.47" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
-<rect width="12.10" height="11.51" x="527.29" y="109.47" class="todo"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
+<rect width="12.10" height="11.51" x="527.29" y="109.47" class="named"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12.10" height="11.51" x="542.39" y="109.47" class="todo"><title>0x00432d70 InitialiseSlot (262 bytes)</title></rect>
 <rect width="12.10" height="11.51" x="557.50" y="109.47" class="todo"><title>0x0043dee0 SkidooCheckGetOffOK (262 bytes)</title></rect>
 <rect width="12.10" height="11.51" x="572.60" y="109.47" class="todo"><title>0x004543b0 Func4543b0 (262 bytes)</title></rect>

@@ -30,3 +30,38 @@ sint16 Harpoon(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint1
     }
     return fx_number;
 }
+
+#define UNDERWATER 1
+#define NO_ROOM 0xff
+
+sint32 GetWaterSurface(sint32 x, sint32 y, sint32 z, sint16 room_number)
+{
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+
+    r = &room[room_number];
+    floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+
+    if (r->flags & UNDERWATER)
+    {
+        while (floor->sky_room != NO_ROOM)
+        {
+            r = &room[floor->sky_room];
+            if (!(r->flags & UNDERWATER))
+                return floor->ceiling << 8;
+            floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+        }
+        return NO_HEIGHT;
+    }
+    else
+    {
+        while (floor->pit_room != NO_ROOM)
+        {
+            r = &room[floor->pit_room];
+            if (r->flags & UNDERWATER)
+                return floor->floor << 8;
+            floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+        }
+    }
+    return NO_HEIGHT;
+}
