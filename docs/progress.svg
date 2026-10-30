@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.87% (572)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">54.13% (675)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.95% (573)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">54.05% (674)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="342.65" height="6" x="0" y="0" class="named"/>
-<rect width="404.35" height="6" x="342.65" y="0" class="todo"/>
+<rect width="343.25" height="6" x="0" y="0" class="named"/>
+<rect width="403.75" height="6" x="343.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -254,7 +254,7 @@
 <rect width="12" height="12" x="510" y="45" class="named"><title>0x004166d0 RemoveRoomFlipItems (150 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="45" class="named"><title>0x00416770 AddRoomFlipItems (92 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="45" class="named"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="45" class="todo"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="45" class="named"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="45" class="named"><title>0x004168e0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="45" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="45" class="todo"><title>0x00416af0 LoadLaraDemoPos (205 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.71%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="195.92" height="6" x="0" y="0" class="named"/>
-<rect width="551.08" height="6" x="195.92" y="0" class="todo"/>
+<rect width="196.40" height="6" x="0" y="0" class="named"/>
+<rect width="550.60" height="6" x="196.40" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.27" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1735,7 +1735,7 @@
 <rect width="10.77" height="10.26" x="496.34" y="285.67" class="named"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
 <rect width="10.77" height="10.26" x="496.34" y="298.93" class="todo"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="10.77" height="10.20" x="496.34" y="312.19" class="named"><title>0x00416230 ClipTarget (218 bytes)</title></rect>
-<rect width="10.77" height="10.20" x="496.34" y="325.39" class="todo"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
+<rect width="10.77" height="10.20" x="496.34" y="325.39" class="named"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
 <rect width="10.77" height="10.14" x="496.34" y="338.59" class="todo"><title>0x00417900 CreateBartoliLight (217 bytes)</title></rect>
 <rect width="10.77" height="10.14" x="496.34" y="351.73" class="todo"><title>0x00417d80 DragonBones (217 bytes)</title></rect>
 <rect width="10.77" height="10.14" x="496.34" y="364.86" class="named"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>

@@ -1448,7 +1448,7 @@ address,size,name,symbol
 0x0046408c,4,RhwFactor,_RhwFactor
 0x004640b0,4,cutscene_track,_cutscene_track
 0x004640b8,4,CineTickRate,_CineTickRate
-0x004640bc,2,CD_TrackID,_CD_TrackID
+0x004640bc,2,cdtrack,_cdtrack
 0x004640c4,4,flipeffect,_flipeffect
 0x00464120,16,diver_poon,_diver_poon
 0x00464130,16,dog_bite,_dog_bite
@@ -1963,7 +1963,7 @@ address,size,name,symbol
 0x005261ac,4,OutsideTop,_OutsideTop
 0x005261b0,4,demoptr,_demoptr
 0x005261b4,4,democount,_democount
-0x005261c0,128,CD_Flags,_CD_Flags
+0x005261c0,128,cd_flags,_cd_flags
 0x00526240,4,flip_status,_flip_status
 0x00526260,40,flipmap,_flipmap
 0x00526288,4,trigger_index,_trigger_index

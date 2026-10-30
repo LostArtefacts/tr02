@@ -1190,3 +1190,47 @@ void TriggerCDTrack(sint16 value, sint16 flags, sint16 type)
 
     TriggerNormalCDTrack(value, flags, type);
 }
+
+extern sint16 cd_flags[];
+extern sint16 cdtrack;
+void S_CDPlay(sint16 track, int mode);
+
+void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type)
+{
+    int timer, code;
+
+    if (type != SWITCH)
+    {
+        code = flags & CODE_BITS;
+        if (cd_flags[value] & code)
+            return;
+        if (flags & ONESHOT)
+            cd_flags[value] |= code;
+    }
+
+    if (value != cdtrack)
+    {
+        timer = flags & 0xff;
+        if (timer)
+        {
+            cd_flags[value] = (cd_flags[value] & 0xff00) + ((timer * 30) & 0xff);
+            cdtrack = value;
+        }
+        else
+            S_CDPlay(value, 0);
+    }
+    else
+    {
+        timer = cd_flags[value] & 0xff;
+        if (timer)
+        {
+            timer--;
+            if (!timer)
+            {
+                cdtrack = -1;
+                S_CDPlay(value, 0);
+            }
+            cd_flags[value] = (cd_flags[value] & 0xff00) + timer;
+        }
+    }
+}
