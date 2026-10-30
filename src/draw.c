@@ -84,3 +84,23 @@ int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate)
         *rate = anim->frame_end - (second - rat);
     return interp;
 }
+
+extern sint16 interpolated_bounds[6];
+
+sint16 *GetBoundsAccurate(ITEM_INFO *item)
+{
+    int i, frac, rate;
+    sint16 *bptr, *frmptr[2];
+
+    if ((frac = GetFrames(item, frmptr, &rate)) == 0)
+        return frmptr[0];
+    else
+    {
+        bptr = interpolated_bounds;
+
+        for (i = 0; i < 6; i++, bptr++, frmptr[0]++, frmptr[1]++)
+            *(bptr) = *(frmptr[0]) + ((*(frmptr[1]) - *(frmptr[0])) * frac) / rate;
+
+        return interpolated_bounds;
+    }
+}

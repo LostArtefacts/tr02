@@ -1918,6 +1918,7 @@ address,size,name,symbol
 0x0052617c,4,AnimChanges,_AnimChanges
 0x00526180,2,number_rooms,_number_rooms
 0x0052618c,4,room,_room
+0x005261a0,12,interpolated_bounds,_interpolated_bounds
 0x00526190,4,UnderwaterCamera,_UnderwaterCamera
 0x00526194,4,SunsetTimer,_SunsetTimer
 0x00526198,4,OutsideRight,_OutsideRight
