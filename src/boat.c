@@ -235,3 +235,59 @@ int BoatUserControl(ITEM_INFO *boat)
 
     return no_turn;
 }
+
+#define BOAT_ANIM 11
+
+void BoatAnimation(ITEM_INFO *boat, int collide)
+{
+    BOAT_INFO *binfo;
+
+    binfo = (BOAT_INFO *)boat->data;
+
+    if (lara_item->hit_points <= 0) {
+        if (lara_item->current_anim_state != BOAT_DEATH) {
+            lara_item->anim_number = objects[BOAT_ANIM].anim_index + BOAT_DEATH_ANIM;
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = BOAT_DEATH;
+        }
+    } else if (boat->pos.y_pos < binfo->water - STEP_L / 2 && boat->fallspeed > 0) {
+        if (lara_item->current_anim_state != BOAT_FALL) {
+            lara_item->anim_number = objects[BOAT_ANIM].anim_index + BOAT_FALL_ANIM;
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = BOAT_FALL;
+        }
+    } else if (collide) {
+        if (lara_item->current_anim_state != BOAT_HIT) {
+            lara_item->anim_number = (sint16)(objects[BOAT_ANIM].anim_index + collide);
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = BOAT_HIT;
+        }
+    } else {
+        switch (lara_item->current_anim_state) {
+        case BOAT_STILL:
+            if (input & IN_JUMP) {
+                if (input & IN_RIGHT)
+                    lara_item->goal_anim_state = BOAT_JUMPR;
+                else if (input & IN_LEFT)
+                    lara_item->goal_anim_state = BOAT_JUMPL;
+            }
+            if (boat->speed > 0)
+                lara_item->goal_anim_state = BOAT_MOVING;
+            break;
+
+        case BOAT_MOVING:
+            if (input & IN_JUMP) {
+                if (input & IN_RIGHT)
+                    lara_item->goal_anim_state = BOAT_JUMPR;
+                else if (input & IN_LEFT)
+                    lara_item->goal_anim_state = BOAT_JUMPL;
+            } else if (boat->speed <= 0)
+                lara_item->goal_anim_state = BOAT_STILL;
+            break;
+
+        case BOAT_FALL:
+            lara_item->goal_anim_state = BOAT_MOVING;
+            break;
+        }
+    }
+}
