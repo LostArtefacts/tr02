@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.96% (623)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.04% (624)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.04% (624)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.96% (623)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="373.20" height="6" x="0" y="0" class="named"/>
-<rect width="373.80" height="6" x="373.20" y="0" class="todo"/>
+<rect width="373.80" height="6" x="0" y="0" class="named"/>
+<rect width="373.20" height="6" x="373.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -617,7 +617,7 @@
 <rect width="12" height="12" x="705" y="150" class="named"><title>0x0042f780 SmashItem (81 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="150" class="named"><title>0x0042f7e0 WeaponObject (88 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="150" class="named"><title>0x0042f840 DoFlareLight (157 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="165" class="todo"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="165" class="named"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="165" class="todo"><title>0x0042f9c0 DrawFlareInAir (248 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="165" class="todo"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="165" class="named"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.94%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.87%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="224.57" height="6" x="0" y="0" class="named"/>
-<rect width="522.43" height="6" x="224.57" y="0" class="todo"/>
+<rect width="225.03" height="6" x="0" y="0" class="named"/>
+<rect width="521.97" height="6" x="225.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1747,7 +1747,7 @@
 <rect width="10.16" height="10.42" x="509.91" y="206.01" class="named"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
 <rect width="10.16" height="10.36" x="509.91" y="219.43" class="todo"><title>0x004084a0 InsertTransQuad (211 bytes)</title></rect>
 <rect width="10.16" height="10.36" x="509.91" y="232.80" class="named"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
-<rect width="10.16" height="10.36" x="509.91" y="246.16" class="todo"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
+<rect width="10.16" height="10.36" x="509.91" y="246.16" class="named"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
 <rect width="10.16" height="10.36" x="509.91" y="259.52" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="10.16" height="10.30" x="509.91" y="272.88" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="10.16" height="10.30" x="509.91" y="286.18" class="named"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>

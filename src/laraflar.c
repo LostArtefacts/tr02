@@ -32,6 +32,39 @@ int DoFlareLight(PHD_VECTOR *pos, int flare_age)
     return 1;
 }
 
+void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number);
+
+#define UNDERWATER 1
+
+void DoFlareInHand(int flare_age)
+{
+    PHD_VECTOR pos;
+
+    pos.x = 11;
+    pos.y = 32;
+    pos.z = 41;
+    GetLaraJointAbsPosition(&pos, 13);
+
+    lara.left_arm.flash_gun = DoFlareLight(&pos, flare_age);
+
+    if (lara.flare_age < MAX_FLARE_AGE)
+    {
+        lara.flare_age++;
+
+        if (room[lara_item->room_number].flags & UNDERWATER)
+        {
+            SoundEffect(12, &lara_item->pos, UNDERWATER);
+            if (GetRandomDraw() < 0x4000)
+                CreateBubble((PHD_3DPOS *)&pos, lara_item->room_number);
+        }
+        else
+            SoundEffect(12, &lara_item->pos, 0);
+    }
+    else if (lara.gun_status == LG_ARMLESS)
+        lara.gun_status = LG_UNDRAW;
+}
+
 void set_flare_arm(int frame)
 {
     int anim_base;
