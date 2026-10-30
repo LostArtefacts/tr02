@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.18% (526)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.82% (721)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.26% (527)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.74% (720)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="315.09" height="6" x="0" y="0" class="named"/>
-<rect width="431.91" height="6" x="315.09" y="0" class="todo"/>
+<rect width="315.69" height="6" x="0" y="0" class="named"/>
+<rect width="431.31" height="6" x="315.69" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -435,7 +435,7 @@
 <rect width="12" height="12" x="225" y="105" class="named"><title>0x00425740 ReqItemRightAlign (86 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="105" class="todo"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="105" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="105" class="todo"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="105" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="105" class="todo"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="105" class="todo"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="105" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.53%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.48%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.52%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="152.92" height="6" x="0" y="0" class="named"/>
-<rect width="594.08" height="6" x="152.92" y="0" class="todo"/>
+<rect width="152.96" height="6" x="0" y="0" class="named"/>
+<rect width="594.04" height="6" x="152.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2462,7 +2462,7 @@
 <rect width="1.07" height="1.11" x="733.91" y="345.01" class="named"><title>0x00432440 lara_as_dive (20 bytes)</title></rect>
 <rect width="1.07" height="1.11" x="737.99" y="345.01" class="named"><title>0x0044b5b0 S_AdjustTexelCoordinates (20 bytes)</title></rect>
 <rect width="1.07" height="1.11" x="742.06" y="345.01" class="todo"><title>0x00452b90 Func452b90 (20 bytes)</title></rect>
-<rect width="0.87" height="1.11" x="746.13" y="345.01" class="todo"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
+<rect width="0.87" height="1.11" x="746.13" y="345.01" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="0.85" height="1.13" x="717.42" y="349.12" class="named"><title>0x00428300 lara_as_upjump (19 bytes)</title></rect>
 <rect width="0.85" height="1.13" x="717.42" y="353.25" class="named"><title>0x004288d0 extra_as_airlock (19 bytes)</title></rect>
 <rect width="0.85" height="1.13" x="717.42" y="357.37" class="named"><title>0x004292f0 lara_col_turn_l (19 bytes)</title></rect>

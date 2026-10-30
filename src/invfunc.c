@@ -412,3 +412,10 @@ void SetRequesterHeading(REQUEST_INFO *req, char *text1, uint32 flags1, char *te
         req->heading2_flags = 0;
     }
 }
+
+void RemoveAllReqItems(REQUEST_INFO *req)
+{
+    req->items = 0;
+    req->line_offset = 0;
+    req->selected = 0;
+}
