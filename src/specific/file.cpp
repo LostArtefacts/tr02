@@ -41,6 +41,22 @@ int LoadSoundEffects(HANDLE file)
     return 1;
 }
 
+int LoadCinematic(HANDLE file)
+{
+    DWORD read;
+
+    MyReadFile(file, &num_cine_frames, sizeof(sint16), &read, NULL);
+    if (num_cine_frames)
+    {
+        cine = (sint16 *)game_malloc(sizeof(sint16) * 8 * num_cine_frames, CINEMATIC_FRAMES);
+        MyReadFile(file, cine, sizeof(sint16) * 8 * num_cine_frames, &read, NULL);
+        cine_loaded = 1;
+    }
+    else
+        cine_loaded = 0;
+    return 1;
+}
+
 int S_LoadLevelFile(char *fname, int level_number, int type)
 {
     S_UnloadLevelFile();

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.83% (135)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.17% (1112)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.91% (136)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.09% (1111)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="80.87" height="6" x="0" y="0" class="named"/>
-<rect width="666.13" height="6" x="80.87" y="0" class="todo"/>
+<rect width="81.47" height="6" x="0" y="0" class="named"/>
+<rect width="665.53" height="6" x="81.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1030,7 +1030,7 @@
 <rect width="12" height="12" x="150" y="285" class="named"><title>0x0044aab0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="285" class="todo"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="285" class="todo"><title>0x0044ad40 LoadAnimatedTextures (85 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="285" class="todo"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="285" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="285" class="todo"><title>0x0044ae20 LoadDemo (138 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="285" class="todo"><title>0x0044aeb0 LoadDemoExternal (154 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="285" class="todo"><title>0x0044af50 LoadSamples (613 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.51%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.49%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="18.72" height="6" x="0" y="0" class="named"/>
-<rect width="728.28" height="6" x="18.72" y="0" class="todo"/>
+<rect width="18.99" height="6" x="0" y="0" class="named"/>
+<rect width="728.01" height="6" x="18.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1965,7 +1965,7 @@
 <rect width="7.38" height="6.85" x="579.90" y="358.38" class="todo"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="7.38" height="6.77" x="579.90" y="368.23" class="todo"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
 <rect width="7.17" height="6.97" x="590.28" y="207.90" class="todo"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
-<rect width="7.17" height="6.97" x="600.45" y="207.90" class="todo"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
+<rect width="7.17" height="6.97" x="600.45" y="207.90" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="7.09" height="6.97" x="610.62" y="207.90" class="todo"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="7.09" height="6.97" x="620.71" y="207.90" class="todo"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="7.09" height="6.97" x="630.79" y="207.90" class="todo"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
