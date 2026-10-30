@@ -21,6 +21,8 @@
 #define LANDFAR_F GF(LANDFAR_A, 0)
 #define FALLBACK_A 93
 #define FALLBACK_F GF(FALLBACK_A, 0)
+#define FASTFALL_A 32
+#define FASTFALL_F GF(FASTFALL_A, 0)
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
@@ -1043,6 +1045,37 @@ void lara_default_col(ITEM_INFO *item, COLL_INFO *coll)
     coll->slopes_are_pits = 1;
     coll->slopes_are_walls = 1;
     GetLaraCollisionInfo(item, coll);
+}
+
+void lara_col_jumper(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+    GetLaraCollisionInfo(item, coll);
+    LaraDeflectEdgeJump(item, coll);
+    if (item->fallspeed > 0 && coll->mid_floor <= 0)
+    {
+        if (LaraLandedBad(item, coll))
+            item->goal_anim_state = AS_DEATH;
+        else
+            item->goal_anim_state = AS_STOP;
+        item->fallspeed = 0;
+        item->pos.y_pos += coll->mid_floor;
+        item->gravity_status = 0;
+    }
+
+    if (ABS(coll->mid_ceiling - coll->mid_floor) < LARA_HITE)
+    {
+        item->goal_anim_state = AS_FASTFALL;
+        item->current_anim_state = AS_FASTFALL;
+        item->frame_number = FASTFALL_F + 1;
+        item->anim_number = FASTFALL_A;
+        item->speed /= 4;
+        lara.move_angle -= 0x8000;
+        if (item->fallspeed <= 0)
+            item->fallspeed = 1;
+    }
 }
 
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
