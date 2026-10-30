@@ -321,3 +321,31 @@ extern "C" bool SE_RegisterSetupWindowClass(void)
     wc.cbWndExtra = 12;
     return RegisterClass(&wc) ? true : false;
 }
+
+class BITMAP_RESOURCE
+{
+public:
+    LPBITMAPINFO bmpInfo;
+    LPBYTE bmpData;
+    HPALETTE hPalette;
+    DWORD flags;
+
+    void Release(void);
+    void Draw(HDC hdc, int x, int y);
+    void UpdatePalette(HWND hWnd, HWND hSender);
+    void ChangePalette(HWND hWnd);
+};
+
+void BITMAP_RESOURCE::Release(void)
+{
+    if (hPalette)
+    {
+        DeleteObject(hPalette);
+        hPalette = NULL;
+    }
+    if ((flags & 1) && bmpData)
+    {
+        free(bmpData);
+        bmpData = NULL;
+    }
+}

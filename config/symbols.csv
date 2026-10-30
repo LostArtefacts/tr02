@@ -1194,7 +1194,7 @@ address,size,name,symbol
 0x00456e00,113,GetRegistryBinaryValue,_GetRegistryBinaryValue
 0x00456e80,149,GetRegistryStringValue,_GetRegistryStringValue
 0x00456f20,145,GetRegistryGuidValue,_GetRegistryGuidValue
-0x00456fc0,55,Func456fc0,
+0x00456fc0,55,SE_ReleaseBitmapResource,?Release@BITMAP_RESOURCE@@QAEXXZ
 0x00457000,196,Func457000,
 0x004570d0,100,Func4570d0,
 0x00457140,28,Func457140,
@@ -1288,7 +1288,7 @@ address,size,name,symbol
 0x00459df0,21,Func459df0,
 0x00459e10,133,strstr,_strstr
 0x00459e90,87,atof,_atof
-0x00459ef0,74,Func459ef0,
+0x00459ef0,74,free,_free
 0x00459f40,20,Func459f40,
 0x00459f60,68,Func459f60,
 0x00459fb0,56,Func459fb0,

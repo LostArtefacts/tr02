@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.68% (907)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.76% (334)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.76% (908)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.68% (333)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="542.89" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="542.89" y="0" class="decompiled"/>
-<rect width="199.92" height="6" x="547.08" y="0" class="todo"/>
+<rect width="543.49" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="543.49" y="0" class="decompiled"/>
+<rect width="199.32" height="6" x="547.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1263,7 +1263,7 @@
 <rect width="12" height="12" x="630" y="345" class="named"><title>0x00456e00 GetRegistryBinaryValue (113 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="345" class="named"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="345" class="named"><title>0x00456f20 GetRegistryGuidValue (145 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="345" class="todo"><title>0x00456fc0 Func456fc0 (55 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="345" class="named"><title>0x00456fc0 SE_ReleaseBitmapResource (55 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="345" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="345" class="todo"><title>0x004570d0 Func4570d0 (100 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="345" class="todo"><title>0x00457140 Func457140 (28 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.68%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.70%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.02" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="401.02" y="0" class="decompiled"/>
-<rect width="345.38" height="6" x="401.62" y="0" class="todo"/>
+<rect width="401.14" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.14" y="0" class="decompiled"/>
+<rect width="345.26" height="6" x="401.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.95" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2238,7 +2238,7 @@
 <rect width="3.69" height="3.81" x="729.92" y="283.38" class="named"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>
 <rect width="3.69" height="3.81" x="736.61" y="283.38" class="todo"><title>0x004558a0 S_CDVolume (55 bytes)</title></rect>
 <rect width="3.69" height="3.81" x="743.31" y="283.38" class="named"><title>0x00456c10 SetRegistryBinaryValue (55 bytes)</title></rect>
-<rect width="3.59" height="3.92" x="655.79" y="290.20" class="todo"><title>0x00456fc0 Func456fc0 (55 bytes)</title></rect>
+<rect width="3.59" height="3.92" x="655.79" y="290.20" class="named"><title>0x00456fc0 SE_ReleaseBitmapResource (55 bytes)</title></rect>
 <rect width="3.59" height="3.79" x="655.79" y="297.12" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
 <rect width="3.59" height="3.79" x="655.79" y="303.91" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
 <rect width="3.59" height="3.79" x="655.79" y="310.70" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
