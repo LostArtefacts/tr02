@@ -61,15 +61,15 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.60% (1035)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.76% (210)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.68% (1036)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.68% (209)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="617.04" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="617.04" y="0" class="decompiled"/>
-<rect width="125.20" height="6" x="621.80" y="0" class="todo"/>
+<rect width="617.63" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="617.63" y="0" class="decompiled"/>
+<rect width="124.60" height="6" x="622.40" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="0" class="todo"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="0" class="named"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.15%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">30.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.18%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">30.73%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="516.55" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="516.55" y="0" class="decompiled"/>
-<rect width="229.80" height="6" x="517.20" y="0" class="todo"/>
+<rect width="516.80" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="516.80" y="0" class="decompiled"/>
+<rect width="229.55" height="6" x="517.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1998,7 +1998,7 @@
 <rect width="6.97" height="6.96" x="613.23" y="226.18" class="named"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
 <rect width="6.88" height="6.96" x="623.20" y="226.18" class="named"><title>0x00444d20 GameWindowCalculateSizeFromClient (115 bytes)</title></rect>
 <rect width="6.88" height="6.96" x="633.08" y="226.18" class="todo"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
-<rect width="6.79" height="6.96" x="642.96" y="226.18" class="todo"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
+<rect width="6.79" height="6.96" x="642.96" y="226.18" class="named"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="6.79" height="6.96" x="652.75" y="226.18" class="named"><title>0x0041c7d0 Richochet (114 bytes)</title></rect>
 <rect width="6.79" height="6.96" x="662.54" y="226.18" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
 <rect width="6.79" height="6.96" x="672.34" y="226.18" class="named"><title>0x0044d780 game_malloc (114 bytes)</title></rect>

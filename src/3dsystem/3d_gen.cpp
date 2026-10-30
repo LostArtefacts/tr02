@@ -34,6 +34,21 @@ void phd_GenerateW2V(PHD_3DPOS *viewpos)
     *(nptr + M12) = *(mptr + M12) = (sint32)(float(*(mptr + M12)) * LfAspectCorrection);
 }
 
+extern "C" void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, PHD_ANGLE roll)
+{
+    PHD_ANGLE angles[2];
+    PHD_3DPOS viewer;
+
+    phd_GetVectorAngles(xtar - xsrc, ytar - ysrc, ztar - zsrc, angles);
+    viewer.x_pos = xsrc;
+    viewer.y_pos = ysrc;
+    viewer.z_pos = zsrc;
+    viewer.x_rot = angles[1];
+    viewer.y_rot = angles[0];
+    viewer.z_rot = roll;
+    phd_GenerateW2V(&viewer);
+}
+
 void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
 {
     PHD_ANGLE pitch;
@@ -67,9 +82,9 @@ void S_InsertRoom(sint16 *objptr, int outside)
 
 void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
 {
+    sint32 cx;
     PHD_VECTOR ls_world;
     sint32 *mptr;
-    sint32 cx;
 
     phd_ls_yaw = yaw;
     phd_ls_pitch = pitch;
