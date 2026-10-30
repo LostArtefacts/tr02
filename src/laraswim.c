@@ -409,3 +409,85 @@ void LaraSwimCollision(ITEM_INFO *item, COLL_INFO *coll)
     if (lara.water_status != LARA_CHEAT && !lara.extra_anim)
         LaraTestWaterDepth(item, coll);
 }
+
+#include "box.h"
+
+int CalculateTarget(PHD_VECTOR *target, ITEM_INFO *item, LOT_INFO *LOT);
+
+void LaraWaterCurrent(COLL_INFO *coll)
+{
+    PHD_VECTOR target;
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+    ITEM_INFO *item;
+
+    item = lara_item;
+    r = &room[lara_item->room_number];
+    floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
+    item->box_number = floor->box;
+
+    if (!lara.creature)
+    {
+        lara.current_active = 0;
+        return;
+    }
+
+    if (CalculateTarget(&target, item, &lara.creature->LOT) == 0)
+        return;
+
+    target.x -= item->pos.x_pos;
+    if (target.x > lara.current_active)
+        item->pos.x_pos += lara.current_active;
+    else if (target.x < -lara.current_active)
+        item->pos.x_pos -= lara.current_active;
+    else
+        item->pos.x_pos += target.x;
+
+    target.z -= item->pos.z_pos;
+    if (target.z > lara.current_active)
+        item->pos.z_pos += lara.current_active;
+    else if (target.z < -lara.current_active)
+        item->pos.z_pos -= lara.current_active;
+    else
+        item->pos.z_pos += target.z;
+
+    target.y -= item->pos.y_pos;
+    if (target.y > lara.current_active)
+        item->pos.y_pos += lara.current_active;
+    else if (target.y < -lara.current_active)
+        item->pos.y_pos -= lara.current_active;
+    else
+        item->pos.y_pos += target.y;
+
+    lara.current_active = 0;
+
+    coll->facing = phd_atan(item->pos.z_pos - coll->old.z, item->pos.x_pos - coll->old.x);
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos + 200, item->pos.z_pos, item->room_number, 400);
+    if (coll->coll_type == COLL_FRONT)
+    {
+        if (item->pos.x_rot > 35 * ONE_DEGREE)
+            item->pos.x_rot += UW_WALLDEFLECT;
+        else if (item->pos.x_rot < -35 * ONE_DEGREE)
+            item->pos.x_rot -= UW_WALLDEFLECT;
+        else
+            item->fallspeed = 0;
+    }
+    else if (coll->coll_type == COLL_TOP)
+        item->pos.x_rot -= UW_WALLDEFLECT;
+    else if (coll->coll_type == COLL_TOPFRONT)
+        item->fallspeed = 0;
+    else if (coll->coll_type == COLL_LEFT)
+        item->pos.y_rot += 5 * ONE_DEGREE;
+    else if (coll->coll_type == COLL_RIGHT)
+        item->pos.y_rot -= 5 * ONE_DEGREE;
+
+    if (coll->mid_floor < 0)
+    {
+        item->pos.y_pos += coll->mid_floor;
+        item->pos.x_rot += UW_WALLDEFLECT;
+    }
+    ShiftItem(item, coll);
+    coll->old.x = item->pos.x_pos;
+    coll->old.y = item->pos.y_pos;
+    coll->old.z = item->pos.z_pos;
+}

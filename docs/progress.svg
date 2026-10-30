@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.55% (742)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.45% (504)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.63% (743)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.37% (503)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="444.84" height="6" x="0" y="0" class="named"/>
-<rect width="302.16" height="6" x="444.84" y="0" class="todo"/>
+<rect width="445.44" height="6" x="0" y="0" class="named"/>
+<rect width="301.56" height="6" x="445.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -663,7 +663,7 @@
 <rect width="12" height="12" x="645" y="165" class="named"><title>0x00432550 GetWaterDepth (402 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="165" class="named"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="165" class="named"><title>0x004327c0 LaraSwimCollision (348 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="165" class="todo"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="165" class="named"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="165" class="named"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="165" class="named"><title>0x00432b70 DisableBaddieAI (79 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="165" class="named"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="322.88" height="6" x="0" y="0" class="named"/>
-<rect width="424.12" height="6" x="322.88" y="0" class="todo"/>
+<rect width="323.96" height="6" x="0" y="0" class="named"/>
+<rect width="423.04" height="6" x="323.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1504,7 +1504,7 @@
 <rect width="17.12" height="17.67" x="393.47" y="255.49" class="named"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
 <rect width="17.12" height="17.63" x="393.47" y="276.16" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
 <rect width="17.12" height="17.54" x="393.47" y="296.78" class="todo"><title>0x00451040 S_PrintShadow (497 bytes)</title></rect>
-<rect width="17.12" height="17.34" x="393.47" y="317.32" class="todo"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
+<rect width="17.12" height="17.34" x="393.47" y="317.32" class="named"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
 <rect width="17.12" height="17.21" x="393.47" y="337.66" class="todo"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
 <rect width="17.12" height="17.13" x="393.47" y="357.87" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="17.33" height="16.72" x="413.59" y="21.71" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
