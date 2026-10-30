@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.98% (299)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.02% (948)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.06% (300)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.94% (947)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="179.11" height="6" x="0" y="0" class="named"/>
-<rect width="567.89" height="6" x="179.11" y="0" class="todo"/>
+<rect width="179.71" height="6" x="0" y="0" class="named"/>
+<rect width="567.29" height="6" x="179.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -584,7 +584,7 @@
 <rect width="12" height="12" x="210" y="150" class="todo"><title>0x0042d050 draw_pistols (124 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="150" class="todo"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="150" class="named"><title>0x0042d300 ready_pistols (92 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="150" class="todo"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="150" class="named"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="150" class="named"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="150" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="150" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.51%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.51%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.49%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="55.94" height="6" x="0" y="0" class="named"/>
-<rect width="691.06" height="6" x="55.94" y="0" class="todo"/>
+<rect width="56.11" height="6" x="0" y="0" class="named"/>
+<rect width="690.89" height="6" x="56.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2109,7 +2109,7 @@
 <rect width="4.85" height="5.43" x="625.45" y="253.76" class="named"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="262.19" class="todo"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="270.52" class="todo"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
-<rect width="4.85" height="5.33" x="625.45" y="278.84" class="todo"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
+<rect width="4.85" height="5.33" x="625.45" y="278.84" class="named"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="287.17" class="todo"><title>0x00433d80 TestBlockMovable (78 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="295.49" class="todo"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
 <rect width="4.85" height="5.33" x="625.45" y="303.82" class="todo"><title>0x00447620 GetJoystick (78 bytes)</title></rect>
