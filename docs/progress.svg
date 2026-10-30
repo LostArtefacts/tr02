@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.17% (900)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.27% (340)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.25% (901)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.19% (339)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="539.13" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="539.13" y="0" class="decompiled"/>
-<rect width="203.67" height="6" x="543.33" y="0" class="todo"/>
+<rect width="539.73" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="539.73" y="0" class="decompiled"/>
+<rect width="203.07" height="6" x="543.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1228,7 +1228,7 @@
 <rect width="12" height="12" x="105" y="345" class="named"><title>0x00456100 FreeTexturePages (38 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="345" class="todo"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="345" class="named"><title>0x004561e0 ReloadTextures (53 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="345" class="todo"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="345" class="named"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="345" class="todo"><title>0x00456260 AddTexturePage8 (245 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="345" class="todo"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="345" class="todo"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.67%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.25%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.68%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="400.88" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="400.88" y="0" class="decompiled"/>
-<rect width="345.51" height="6" x="401.49" y="0" class="todo"/>
+<rect width="401.02" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.02" y="0" class="decompiled"/>
+<rect width="345.37" height="6" x="401.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2190,7 +2190,7 @@
 <rect width="4.18" height="4.17" x="641.52" y="321.10" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
 <rect width="4.18" height="4.17" x="641.52" y="328.27" class="named"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>
 <rect width="4.18" height="4.17" x="641.52" y="335.44" class="todo"><title>0x0044ec40 EncodePutPCX (62 bytes)</title></rect>
-<rect width="4.18" height="4.17" x="641.52" y="342.61" class="todo"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
+<rect width="4.18" height="4.17" x="641.52" y="342.61" class="named"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
 <rect width="4.18" height="4.05" x="641.52" y="349.78" class="named"><title>0x0041b940 phd_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="4.18" height="4.05" x="641.52" y="356.84" class="named"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
 <rect width="4.18" height="4.05" x="641.52" y="363.89" class="named"><title>0x00445470 WinVidBufferLock (61 bytes)</title></rect>

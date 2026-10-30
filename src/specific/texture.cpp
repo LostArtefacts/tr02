@@ -181,3 +181,13 @@ extern "C" bool ReloadTextures(bool reset)
     }
     return result;
 }
+
+extern "C" D3DTEXTUREHANDLE GetTexturePageHandle(int pageIndex)
+{
+    if (pageIndex < 0)
+        return 0;
+    TEXPAGE_DESC *page = &TexturePages[pageIndex];
+    if (page->vidMemSurface && page->vidMemSurface->IsLost() == DDERR_SURFACELOST)
+        LoadTexturePage(pageIndex, true);
+    return page->texHandle;
+}
