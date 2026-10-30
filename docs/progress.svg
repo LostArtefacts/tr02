@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.45% (866)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.07% (375)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.53% (867)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.99% (374)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="518.77" height="6" x="0" y="0" class="named"/>
-<rect width="3.59" height="6" x="518.77" y="0" class="decompiled"/>
-<rect width="224.64" height="6" x="522.36" y="0" class="todo"/>
+<rect width="519.37" height="6" x="0" y="0" class="named"/>
+<rect width="3.59" height="6" x="519.37" y="0" class="decompiled"/>
+<rect width="224.04" height="6" x="522.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1160,7 +1160,7 @@
 <rect width="12" height="12" x="585" y="315" class="todo"><title>0x00452c20 Func452c20 (323 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="315" class="todo"><title>0x00452d70 SE_SoundTestStart (164 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="named"><title>0x00452e30 SE_SoundTestFinish (5 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="315" class="todo"><title>0x00452e40 SE_SoundTestExecute (61 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="315" class="named"><title>0x00452e40 SE_SoundTestExecute (61 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="315" class="todo"><title>0x00452e80 SE_SoundTest (90 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="315" class="todo"><title>0x00452f20 Func452f20 (93 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="315" class="todo"><title>0x00452f80 Func452f80 (456 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.58%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.60%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.33%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="370.36" height="6" x="0" y="0" class="named"/>
-<rect width="0.53" height="6" x="370.36" y="0" class="decompiled"/>
-<rect width="376.12" height="6" x="370.88" y="0" class="todo"/>
+<rect width="370.49" height="6" x="0" y="0" class="named"/>
+<rect width="0.53" height="6" x="370.49" y="0" class="decompiled"/>
+<rect width="375.98" height="6" x="371.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2194,7 +2194,7 @@
 <rect width="4.18" height="4.05" x="641.52" y="349.78" class="named"><title>0x0041b940 phd_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="4.18" height="4.05" x="641.52" y="356.84" class="named"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
 <rect width="4.18" height="4.05" x="641.52" y="363.89" class="named"><title>0x00445470 WinVidBufferLock (61 bytes)</title></rect>
-<rect width="4.18" height="4.05" x="641.52" y="370.95" class="todo"><title>0x00452e40 SE_SoundTestExecute (61 bytes)</title></rect>
+<rect width="4.18" height="4.05" x="641.52" y="370.95" class="named"><title>0x00452e40 SE_SoundTestExecute (61 bytes)</title></rect>
 <rect width="3.85" height="4.28" x="648.70" y="276.92" class="named"><title>0x00402bc0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="3.85" height="4.28" x="648.70" y="284.20" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="3.85" height="4.28" x="648.70" y="291.48" class="named"><title>0x0040cb10 InitialiseBoat (60 bytes)</title></rect>

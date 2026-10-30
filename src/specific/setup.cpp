@@ -80,6 +80,19 @@ extern "C" void SE_SoundTestFinish(void)
     WinSndFinish();
 }
 
+extern "C" bool SE_SoundTestExecute(void)
+{
+    int handle;
+
+    handle = DS_StartSample(0, -1000, 0x10000, 0, 0);
+    if (handle >= 0)
+    {
+        while (DS_IsChannelPlaying(handle))
+            ;
+    }
+    return false;
+}
+
 extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
 
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
