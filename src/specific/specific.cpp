@@ -22,6 +22,13 @@ sint32 S_SoundPlaySampleLooped(int nSample, uint16 wVol, int nPitch, sint16 wPan
     return DS_StartSample(nSample, CalcVolume(wVol), nPitch, CalcPan(wPan), DSBPLAY_LOOPING);
 }
 
+void S_SoundSetPanAndVolume(sint32 handle, sint16 wPan, uint16 wVolume)
+{
+    if (!sound_active)
+        return;
+    DS_AdjustVolumeAndPan(handle, CalcVolume(wVolume), CalcPan(wPan));
+}
+
 void S_SoundSetMasterVolume(int nVolume)
 {
     LnMasterVolume = nVolume;
