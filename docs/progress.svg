@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.09% (687)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.91% (560)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.17% (688)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.83% (559)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="411.54" height="6" x="0" y="0" class="named"/>
-<rect width="335.46" height="6" x="411.54" y="0" class="todo"/>
+<rect width="412.14" height="6" x="0" y="0" class="named"/>
+<rect width="334.86" height="6" x="412.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -543,7 +543,7 @@
 <rect width="12" height="12" x="345" y="135" class="named"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="135" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="135" class="named"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="135" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="135" class="named"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="135" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="135" class="named"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="135" class="named"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.93%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="276.16" height="6" x="0" y="0" class="named"/>
-<rect width="470.84" height="6" x="276.16" y="0" class="todo"/>
+<rect width="276.94" height="6" x="0" y="0" class="named"/>
+<rect width="470.06" height="6" x="276.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1591,7 +1591,7 @@
 <rect width="13.92" height="14.63" x="432.74" y="255.99" class="named"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
 <rect width="13.92" height="14.58" x="432.74" y="273.62" class="named"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="13.92" height="14.53" x="432.74" y="291.19" class="named"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
-<rect width="13.92" height="14.43" x="432.74" y="308.72" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
+<rect width="13.92" height="14.43" x="432.74" y="308.72" class="named"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="13.92" height="14.33" x="432.74" y="326.15" class="todo"><title>0x004576ff gourA (352 bytes)</title></rect>
 <rect width="13.92" height="14.28" x="432.74" y="343.48" class="named"><title>0x0043a330 InitialiseLevel (351 bytes)</title></rect>
 <rect width="13.92" height="14.23" x="432.74" y="360.77" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
