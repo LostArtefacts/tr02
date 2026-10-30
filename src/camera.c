@@ -67,3 +67,32 @@ void ChaseCamera(ITEM_INFO *item)
 
     MoveCamera(&ideal, camera.speed);
 }
+
+void ShiftClamp(GAME_VECTOR *pos, int clamp);
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+
+void FixedCamera(void)
+{
+    GAME_VECTOR ideal;
+    OBJECT_VECTOR *fixed;
+
+    fixed = &camera.fixed[camera.number];
+    ideal.x = fixed->x;
+    ideal.y = fixed->y;
+    ideal.z = fixed->z;
+    ideal.room_number = fixed->data;
+
+    if (!LOS(&camera.target, &ideal))
+        ShiftClamp(&ideal, STEP_L);
+
+    camera.fixed_camera = 1;
+
+    MoveCamera(&ideal, camera.speed);
+
+    if (camera.timer)
+    {
+        camera.timer--;
+        if (!camera.timer)
+            camera.timer = -1;
+    }
+}
