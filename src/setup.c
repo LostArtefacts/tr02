@@ -46,3 +46,39 @@ void InitialiseObjects(void)
 
     InitialiseHair();
 }
+
+void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void RemoveDrawnItem(sint16 item_num);
+extern int level_items;
+
+void GetCarriedItems(void)
+{
+    int i;
+    sint16 pickup_number;
+    ITEM_INFO *item, *pickup;
+
+    for (i = 0, item = items; i < level_items; i++, item++)
+    {
+        if (objects[item->object_number].intelligent)
+        {
+            item->carried_item = NO_ITEM;
+
+            pickup_number = room[item->room_number].item_number;
+            do
+            {
+                pickup = &items[pickup_number];
+                if (pickup->pos.x_pos == item->pos.x_pos && pickup->pos.y_pos == item->pos.y_pos
+                    && pickup->pos.z_pos == item->pos.z_pos && objects[pickup->object_number].collision == PickUpCollision)
+                {
+                    pickup->carried_item = item->carried_item;
+                    item->carried_item = pickup_number;
+                    RemoveDrawnItem(pickup_number);
+                    pickup->room_number = NO_ROOM;
+                }
+
+                pickup_number = pickup->next_item;
+            }
+            while (pickup_number != NO_ITEM);
+        }
+    }
+}
