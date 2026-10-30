@@ -65,6 +65,46 @@ void DoFlareInHand(int flare_age)
         lara.gun_status = LG_UNDRAW;
 }
 
+#define FLARE_ITEM 152
+#define FLARE_FIRE 235
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void S_CalculateStaticLight(sint16 adder);
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+
+void DrawFlareInAir(ITEM_INFO *item)
+{
+    int clip, rate;
+    sint16 *frmptr[2];
+
+    GetFrames(item, frmptr, &rate);
+
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    if ((clip = S_GetObjectBounds(frmptr[0])))
+    {
+        CalculateObjectLighting(item, frmptr[0]);
+        phd_PutPolygons(meshes[objects[FLARE_ITEM].mesh_index], clip);
+
+        if ((sint32)item->data & 0x8000)
+        {
+            phd_TranslateRel(-6, 6, 80);
+            phd_RotX(-90 * ONE_DEGREE);
+            phd_RotY((sint16)(GetRandomDraw() * 2));
+            S_CalculateStaticLight(8 * 256);
+            phd_PutPolygons(meshes[objects[FLARE_FIRE].mesh_index], clip);
+        }
+    }
+    phd_PopMatrix();
+}
+
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+
 void set_flare_arm(int frame)
 {
     int anim_base;
