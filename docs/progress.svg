@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.67% (557)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.33% (690)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.75% (558)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.25% (689)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="333.66" height="6" x="0" y="0" class="named"/>
-<rect width="413.34" height="6" x="333.66" y="0" class="todo"/>
+<rect width="334.26" height="6" x="0" y="0" class="named"/>
+<rect width="412.74" height="6" x="334.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -242,7 +242,7 @@
 <rect width="12" height="12" x="330" y="45" class="todo"><title>0x00414e50 GetHeight (613 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="45" class="todo"><title>0x004150d0 RefreshCamera (231 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="45" class="todo"><title>0x004151c0 TestTriggers (1680 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="45" class="todo"><title>0x004158a0 TriggerActive (85 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="45" class="named"><title>0x004158a0 TriggerActive (85 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="45" class="todo"><title>0x00415900 GetCeiling (573 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="45" class="todo"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="45" class="todo"><title>0x00415bb0 LOS (160 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.70%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="181.53" height="6" x="0" y="0" class="named"/>
-<rect width="565.47" height="6" x="181.53" y="0" class="todo"/>
+<rect width="181.72" height="6" x="0" y="0" class="named"/>
+<rect width="565.28" height="6" x="181.72" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2083,7 +2083,7 @@
 <rect width="5.36" height="5.58" x="659.75" y="245.52" class="named"><title>0x00456720 Sync (86 bytes)</title></rect>
 <rect width="5.27" height="5.58" x="668.11" y="245.52" class="named"><title>0x00413480 GetNewRoom (85 bytes)</title></rect>
 <rect width="5.27" height="5.58" x="676.38" y="245.52" class="named"><title>0x004138c0 ObjectCollision (85 bytes)</title></rect>
-<rect width="5.27" height="5.58" x="684.64" y="245.52" class="todo"><title>0x004158a0 TriggerActive (85 bytes)</title></rect>
+<rect width="5.27" height="5.58" x="684.64" y="245.52" class="named"><title>0x004158a0 TriggerActive (85 bytes)</title></rect>
 <rect width="5.27" height="5.58" x="692.91" y="245.52" class="todo"><title>0x0044ad40 LoadAnimatedTextures (85 bytes)</title></rect>
 <rect width="5.17" height="5.58" x="701.18" y="245.52" class="named"><title>0x004256e0 ReqItemLeftAlign (84 bytes)</title></rect>
 <rect width="5.17" height="5.58" x="709.35" y="245.52" class="named"><title>0x004285a0 lara_as_fastdive (84 bytes)</title></rect>

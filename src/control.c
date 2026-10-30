@@ -116,3 +116,27 @@ FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number)
     }
     return floor;
 }
+
+#define REVERSE 0x4000
+
+int TriggerActive(ITEM_INFO *item)
+{
+    int ok;
+
+    ok = (item->flags & REVERSE) ? 0 : 1;
+
+    if ((item->flags & CODE_BITS) != CODE_BITS)
+        return !ok;
+
+    if (!item->timer)
+        return ok;
+
+    if (item->timer == -1)
+        return !ok;
+
+    item->timer--;
+    if (!item->timer)
+        item->timer = -1;
+
+    return ok;
+}
