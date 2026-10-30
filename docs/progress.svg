@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.58% (506)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.42% (741)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.66% (507)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.34% (740)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="303.11" height="6" x="0" y="0" class="named"/>
-<rect width="443.89" height="6" x="303.11" y="0" class="todo"/>
+<rect width="303.71" height="6" x="0" y="0" class="named"/>
+<rect width="443.29" height="6" x="303.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -414,7 +414,7 @@
 <rect width="12" height="12" x="660" y="90" class="todo"><title>0x00424dc0 Inv_GetItemOption (193 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="90" class="todo"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="90" class="todo"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="90" class="todo"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="90" class="named"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="90" class="todo"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="90" class="todo"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="105" class="todo"><title>0x004251c0 Inv_RingDoMotions (318 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.95%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.05%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="149.05" height="6" x="0" y="0" class="named"/>
-<rect width="597.95" height="6" x="149.05" y="0" class="todo"/>
+<rect width="149.27" height="6" x="0" y="0" class="named"/>
+<rect width="597.73" height="6" x="149.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2035,7 +2035,7 @@
 <rect width="6.12" height="5.89" x="599.84" y="272.39" class="todo"><title>0x004456d0 CalculateCompatibleColor (97 bytes)</title></rect>
 <rect width="6.12" height="5.89" x="599.84" y="281.28" class="todo"><title>0x004571c0 Func4571c0 (97 bytes)</title></rect>
 <rect width="6.12" height="5.89" x="599.84" y="290.18" class="todo"><title>0x00457564 flatA (97 bytes)</title></rect>
-<rect width="6.12" height="5.80" x="599.84" y="299.07" class="todo"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
+<rect width="6.12" height="5.80" x="599.84" y="299.07" class="named"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="6.12" height="5.80" x="599.84" y="307.87" class="named"><title>0x00431940 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="6.12" height="5.80" x="599.84" y="316.67" class="named"><title>0x004319a0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="6.12" height="5.80" x="599.84" y="325.47" class="named"><title>0x0044aa50 LoadCameras (96 bytes)</title></rect>

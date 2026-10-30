@@ -1606,7 +1606,7 @@ address,size,name,symbol
 0x004bd2c8,,DepthQTable,_DepthQTable
 0x004bf2c8,256,DepthQIndex,_DepthQIndex
 0x004bf3c8,4,phd_scrwidth,_phd_scrwidth
-0x004bf3cc,4,LsDivider,_LsDivider
+0x004bf3cc,4,ls_divider,_ls_divider
 0x004bf3d0,,PhdVBuf,_PhdVBuf
 0x004caf50,48000,xbuffer,_xbuffer
 0x004d6ad0,128,texture_page_ptrs,_texture_page_ptrs
