@@ -228,3 +228,217 @@ void Cult2Control(sint16 item_number)
     CreatureHead(item, head);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#define MONK_DIE_ANIM 20
+#define MONK_WALK_TURN (ONE_DEGREE * 3)
+#define MONK_RUN_TURN (ONE_DEGREE * 4)
+#define MONK_CLOSE_RANGE SQUARE(WALL_L / 2)
+#define MONK_LONG_RANGE SQUARE(WALL_L)
+#define MONK_ATTACK5_RANGE SQUARE(WALL_L * 3)
+#define MONK_WALK_RANGE SQUARE(WALL_L * 2)
+#define MONK_HIT_RANGE (STEP_L * 2)
+#define MONK_BIFF_DAMAGE 150
+#define MONK_BIFF_ENEMY_DAMAGE 5
+#define MONK_TOUCH 0x4000
+
+enum monk_anims {
+    MONK_EMPTY,
+    MONK_WAIT1,
+    MONK_WALK,
+    MONK_RUN,
+    MONK_ATTACK1,
+    MONK_ATTACK2,
+    MONK_ATTACK3,
+    MONK_ATTACK4,
+    MONK_AIM3,
+    MONK_DEATH,
+    MONK_ATTACK5,
+    MONK_WAIT2
+};
+
+extern BITE_INFO monk_hit;
+extern int monks_attack_lara;
+
+void MonkControl(sint16 item_number)
+{
+    ITEM_INFO *item, *enemy;
+    CREATURE_INFO *monk;
+    sint16 angle, head, tilt, random;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    monk = (CREATURE_INFO *)item->data;
+    head = angle = tilt = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != MONK_DEATH)
+        {
+            item->anim_number = objects[item->object_number].anim_index + MONK_DIE_ANIM + (GetRandomControl() / 0x4000);
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = MONK_DEATH;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+
+        CreatureMood(item, &info, 1);
+
+        angle = CreatureTurn(item, monk->maximum_turn);
+
+        if (info.ahead)
+            head = info.angle;
+
+        switch (item->current_anim_state)
+        {
+        case MONK_WAIT1:
+            monk->flags &= 0x0fff;
+            if (!monks_attack_lara && info.ahead && lara.target == item)
+                break;
+            else if (monk->mood == BORED_MOOD)
+                item->goal_anim_state = MONK_WALK;
+            else if (monk->mood == ESCAPE_MOOD)
+                item->goal_anim_state = MONK_RUN;
+            else if (info.ahead && info.distance < MONK_CLOSE_RANGE)
+            {
+                if (GetRandomControl() < 0x7000)
+                    item->goal_anim_state = MONK_ATTACK1;
+                else
+                    item->goal_anim_state = MONK_WAIT2;
+            }
+            else if (info.ahead && info.distance < MONK_LONG_RANGE)
+                item->goal_anim_state = MONK_ATTACK4;
+            else if (info.ahead && info.distance < MONK_WALK_RANGE)
+                item->goal_anim_state = MONK_WALK;
+            else
+                item->goal_anim_state = MONK_RUN;
+            break;
+
+        case MONK_WAIT2:
+            monk->flags &= 0x0fff;
+            if (!monks_attack_lara && info.ahead && lara.target == item)
+                break;
+            else if (monk->mood == BORED_MOOD)
+                item->goal_anim_state = MONK_WALK;
+            else if (monk->mood == ESCAPE_MOOD)
+                item->goal_anim_state = MONK_RUN;
+            else if (info.ahead && info.distance < MONK_CLOSE_RANGE)
+            {
+                random = (sint16)GetRandomControl();
+                if (random < 0x3000)
+                    item->goal_anim_state = MONK_ATTACK2;
+                else if (random < 0x6000)
+                    item->goal_anim_state = MONK_AIM3;
+                else
+                    item->goal_anim_state = MONK_WAIT1;
+            }
+            else if (info.ahead && info.distance < MONK_WALK_RANGE)
+                item->goal_anim_state = MONK_WALK;
+            else
+                item->goal_anim_state = MONK_RUN;
+            break;
+
+        case MONK_WALK:
+            monk->maximum_turn = MONK_WALK_TURN;
+            if (monk->mood == BORED_MOOD)
+            {
+                if (!monks_attack_lara && info.ahead && lara.target == item)
+                {
+                    if (GetRandomControl() < 0x4000)
+                        item->goal_anim_state = MONK_WAIT1;
+                    else
+                        item->goal_anim_state = MONK_WAIT2;
+                }
+            }
+            else if (monk->mood == ESCAPE_MOOD)
+                item->goal_anim_state = MONK_RUN;
+            else if (info.ahead && info.distance < MONK_CLOSE_RANGE)
+            {
+                if (GetRandomControl() < 0x4000)
+                    item->goal_anim_state = MONK_WAIT1;
+                else
+                    item->goal_anim_state = MONK_WAIT2;
+            }
+            else if (!info.ahead || info.distance > MONK_WALK_RANGE)
+                item->goal_anim_state = MONK_RUN;
+            break;
+
+        case MONK_RUN:
+            monk->flags &= 0x0fff;
+            monk->maximum_turn = MONK_RUN_TURN;
+            if (monks_attack_lara)
+                monk->maximum_turn += ONE_DEGREE;
+            tilt = angle >> 2;
+            if (monk->mood == BORED_MOOD)
+                item->goal_anim_state = MONK_WAIT1;
+            else if (monk->mood == ESCAPE_MOOD)
+                break;
+            else if (info.ahead && info.distance < MONK_CLOSE_RANGE)
+            {
+                if (GetRandomControl() < 0x4000)
+                    item->goal_anim_state = MONK_WAIT1;
+                else
+                    item->goal_anim_state = MONK_WAIT2;
+            }
+            else if (info.ahead && info.distance < MONK_ATTACK5_RANGE)
+                item->goal_anim_state = MONK_ATTACK5;
+            else if (info.ahead && info.distance < MONK_WALK_RANGE)
+            {
+                if (GetRandomControl() < 0x4000)
+                    item->goal_anim_state = MONK_WAIT1;
+                else
+                    item->goal_anim_state = MONK_WAIT2;
+            }
+            break;
+
+        case MONK_AIM3:
+            if (!info.ahead || info.distance > MONK_CLOSE_RANGE)
+                item->goal_anim_state = MONK_WAIT2;
+            else
+                item->goal_anim_state = MONK_ATTACK3;
+            break;
+
+        case MONK_ATTACK1:
+        case MONK_ATTACK2:
+        case MONK_ATTACK3:
+        case MONK_ATTACK4:
+        case MONK_ATTACK5:
+            enemy = monk->enemy;
+            if (enemy == lara_item)
+            {
+                if (!(monk->flags & 0xf000) && (item->touch_bits & MONK_TOUCH))
+                {
+                    lara_item->hit_points -= MONK_BIFF_DAMAGE;
+                    lara_item->hit_status = 1;
+                    monk->flags |= 0x1000;
+                    SoundEffect(245, &item->pos, 0);
+                    CreatureEffect(item, &monk_hit, DoBloodSplat);
+                }
+            }
+            else
+            {
+                if (!(monk->flags & 0xf000) && enemy)
+                {
+                    if (ABS(enemy->pos.x_pos - item->pos.x_pos) < MONK_HIT_RANGE
+                        && ABS(enemy->pos.y_pos - item->pos.y_pos) < MONK_HIT_RANGE
+                        && ABS(enemy->pos.z_pos - item->pos.z_pos) < MONK_HIT_RANGE)
+                    {
+                        enemy->hit_points -= MONK_BIFF_ENEMY_DAMAGE;
+                        enemy->hit_status = 1;
+                        monk->flags |= 0x1000;
+                        SoundEffect(245, &item->pos, 0);
+                    }
+                }
+            }
+            break;
+        }
+    }
+
+    CreatureTilt(item, tilt);
+    CreatureHead(item, head);
+    CreatureAnimation(item_number, angle, 0);
+}
