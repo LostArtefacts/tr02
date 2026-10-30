@@ -1262,6 +1262,73 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down)
+{
+    int x, y, z;
+    int h, c;
+    FLOOR_INFO *floor;
+    sint16 room_num;
+    PHD_ANGLE angle;
+
+    x = item->pos.x_pos;
+    y = item->pos.y_pos + down;
+    z = item->pos.z_pos;
+    room_num = item->room_number;
+
+    angle = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+    switch (angle)
+    {
+    case 0:
+        x -= right;
+        break;
+
+    case 3:
+        z += right;
+        break;
+
+    case 2:
+        x += right;
+        break;
+
+    case 1:
+        z -= right;
+        break;
+    }
+
+    floor = GetFloor(x, y, z, &room_num);
+
+    switch (angle)
+    {
+    case 0:
+        z += front;
+        break;
+
+    case 3:
+        x -= front;
+        break;
+
+    case 2:
+        z -= front;
+        break;
+
+    case 1:
+        x += front;
+        break;
+    }
+
+    floor = GetFloor(x, y, z, &room_num);
+
+    h = GetHeight(floor, x, y, z);
+    c = GetCeiling(floor, x, y, z);
+    if (h != NO_HEIGHT)
+    {
+        if ((h - y) > 0 && (c - y) < 0)
+            return 0;
+        return 2;
+    }
+    return 1;
+}
+
 int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 {
     int shift, result;
@@ -1301,7 +1368,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
