@@ -176,6 +176,17 @@ void ControlDingDong(sint16 item_number)
     }
 }
 
+void DoChimeSound(ITEM_INFO *item)
+{
+    PHD_3DPOS pos;
+
+    pos.x_pos = lara_item->pos.x_pos + ((item->pos.x_pos - lara_item->pos.x_pos) >> 6);
+    pos.y_pos = lara_item->pos.y_pos + ((item->pos.y_pos - lara_item->pos.y_pos) >> 6);
+    pos.z_pos = lara_item->pos.z_pos + ((item->pos.z_pos - lara_item->pos.z_pos) >> 6);
+
+    SoundEffect(208, &pos, 0);
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;

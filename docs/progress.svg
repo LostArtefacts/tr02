@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.81% (247)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.19% (1000)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.89% (248)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.11% (999)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.96" height="6" x="0" y="0" class="named"/>
-<rect width="599.04" height="6" x="147.96" y="0" class="todo"/>
+<rect width="148.56" height="6" x="0" y="0" class="named"/>
+<rect width="598.44" height="6" x="148.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -342,7 +342,7 @@
 <rect width="12" height="12" x="330" y="75" class="todo"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="75" class="todo"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="75" class="todo"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="75" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="75" class="todo"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="75" class="todo"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="75" class="todo"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.80%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="46.31" height="6" x="0" y="0" class="named"/>
-<rect width="700.69" height="6" x="46.31" y="0" class="todo"/>
+<rect width="46.51" height="6" x="0" y="0" class="named"/>
+<rect width="700.49" height="6" x="46.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2065,7 +2065,7 @@
 <rect width="5.40" height="5.98" x="608.96" y="263.20" class="todo"><title>0x00452e80 Func452e80 (90 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="272.18" class="named"><title>0x004168e0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="281.05" class="todo"><title>0x0041c5b0 DoBloodSplat (89 bytes)</title></rect>
-<rect width="5.40" height="5.88" x="608.96" y="289.93" class="todo"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
+<rect width="5.40" height="5.88" x="608.96" y="289.93" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="298.81" class="todo"><title>0x004295e0 lara_col_splat (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="307.68" class="named"><title>0x0042dab0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="316.56" class="todo"><title>0x0044d240 HWR_ResetZBuffer (89 bytes)</title></rect>
