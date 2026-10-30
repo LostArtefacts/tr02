@@ -3,6 +3,14 @@
 
 #include "3dglodef.h"
 
+#define COLL_NONE 0
+#define COLL_FRONT 1
+#define COLL_LEFT 2
+#define COLL_RIGHT 4
+#define COLL_TOP 8
+#define COLL_TOPFRONT 16
+#define COLL_CLAMP 32
+
 typedef struct {
     sint32 mid_floor;
     sint32 mid_ceiling;
@@ -41,6 +49,7 @@ typedef struct {
 sint32 FindGridShift(sint32 src, sint32 dst);
 void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
 void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void ShiftItem(ITEM_INFO *item, COLL_INFO *coll);
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd);
 
 #endif

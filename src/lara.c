@@ -7,6 +7,7 @@
 #define DAMAGE_LENGTH 14
 #define FASTFALL_FRICTION item->speed = (item->speed * 95) / 100
 #define SLOPE_DIF 60
+#define LARA_DEF_ADD_EDGE (5 * ONE_DEGREE)
 
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -476,6 +477,31 @@ void lara_col_slideback(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
+}
+
+int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (coll->coll_type == COLL_FRONT || coll->coll_type == COLL_TOPFRONT)
+    {
+        ShiftItem(item, coll);
+
+        item->goal_anim_state = AS_STOP;
+        item->current_anim_state = AS_STOP;
+        item->speed = 0;
+        item->gravity_status = 0;
+        return 1;
+    }
+    else if (coll->coll_type == COLL_LEFT)
+    {
+        ShiftItem(item, coll);
+        item->pos.y_rot += LARA_DEF_ADD_EDGE;
+    }
+    else if (coll->coll_type == COLL_RIGHT)
+    {
+        ShiftItem(item, coll);
+        item->pos.y_rot -= LARA_DEF_ADD_EDGE;
+    }
+    return 0;
 }
 
 int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
