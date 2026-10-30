@@ -1559,6 +1559,7 @@ address,size,name,symbol
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
 0x00466448,32,ClassName,_ClassName
 0x00466468,16,WindowName,_WindowName
+0x00466478,4,JoyNeedCaps,_JoyNeedCaps
 0x00466480,8,screen_sizer,_screen_sizer
 0x00466488,8,game_sizer,_game_sizer
 0x00466490,4,fade_value,?fade_value@@3HA
@@ -1761,6 +1762,7 @@ address,size,name,symbol
 0x004d8380,1,IsGameWindowActive,_IsGameWindowActive
 0x004d8384,4,MessageLoopCounter,_MessageLoopCounter
 0x004d8388,,CurrentJoystick,_CurrentJoystick
+0x004d83a8,404,JoyCaps,_JoyCaps
 0x004d8540,,JoystickList,_JoystickList
 0x004d854c,,DInput,_DInput
 0x004d8550,,IDID_SysKeyboard,_IDID_SysKeyboard
