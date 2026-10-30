@@ -4,10 +4,10 @@
 !/orig/*.sha1
 
 # Links to the reference sources, see README.md
-/refs/
+/refs
 
 /build/
-/.wine/
+/.wine
 __pycache__/
 
 *.iso
