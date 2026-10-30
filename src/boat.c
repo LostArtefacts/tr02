@@ -178,3 +178,60 @@ int DoBoatDynamics(int height, int fallspeed, int *y)
     }
     return fallspeed;
 }
+
+int BoatUserControl(ITEM_INFO *boat)
+{
+    int no_turn = 1, max_speed;
+    BOAT_INFO *binfo;
+
+    binfo = (BOAT_INFO *)boat->data;
+
+    if (boat->pos.y_pos >= binfo->water - STEP_L / 2 && binfo->water != NO_HEIGHT) {
+        if (!(input & IN_JUMP) && !(input & IN_LOOK)) {
+            if (((input & IN_LEFT) && !(input & IN_BACK)) || ((input & IN_RIGHT) && (input & IN_BACK))) {
+                if (binfo->boat_turn > 0)
+                    binfo->boat_turn -= BOAT_UNDO_TURN;
+                else {
+                    binfo->boat_turn -= BOAT_TURN;
+                    if (binfo->boat_turn < -BOAT_MAX_TURN)
+                        binfo->boat_turn = -BOAT_MAX_TURN;
+                }
+                no_turn = 0;
+            } else if (((input & IN_RIGHT) && !(input & IN_BACK)) || ((input & IN_LEFT) && (input & IN_BACK))) {
+                if (binfo->boat_turn < 0)
+                    binfo->boat_turn += BOAT_UNDO_TURN;
+                else {
+                    binfo->boat_turn += BOAT_TURN;
+                    if (binfo->boat_turn > BOAT_MAX_TURN)
+                        binfo->boat_turn = BOAT_MAX_TURN;
+                }
+                no_turn = 0;
+            }
+
+            if (input & IN_BACK) {
+                if (boat->speed > 0)
+                    boat->speed -= BOAT_BRAKE;
+                else if (boat->speed > BOAT_MAX_BACK)
+                    boat->speed += BOAT_REVERSE;
+            } else if (input & IN_FORWARD) {
+                if (input & IN_ACTION)
+                    max_speed = BOAT_FAST_SPEED;
+                else
+                    max_speed = (input & IN_SLOW) ? BOAT_SLOW_SPEED : BOAT_MAX_SPEED;
+
+                if (boat->speed < max_speed)
+                    boat->speed += BOAT_ACCELERATION / 2 + BOAT_ACCELERATION * boat->speed / (2 * max_speed);
+                else if (boat->speed > max_speed + BOAT_SLOWDOWN)
+                    boat->speed -= BOAT_SLOWDOWN;
+            } else if (boat->speed >= 0 && boat->speed < BOAT_MIN_SPEED && (input & (IN_LEFT | IN_RIGHT)))
+                boat->speed = BOAT_MIN_SPEED;
+            else if (boat->speed > BOAT_SLOWDOWN)
+                boat->speed -= BOAT_SLOWDOWN;
+            else
+                boat->speed = 0;
+        } else if ((input & IN_LOOK) && boat->speed == 0)
+            LookUpDown();
+    }
+
+    return no_turn;
+}
