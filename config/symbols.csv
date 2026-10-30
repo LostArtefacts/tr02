@@ -1707,7 +1707,9 @@ address,size,name,symbol
 0x004b2af0,,phdtextinfo,_phdtextinfo
 0x004bcaf0,4,PhdViewDistance,_PhdViewDistance
 0x004bcaf4,2,phd_ls_pitch,_phd_ls_pitch
+0x004bcaf8,4,InsertObjectG4,_InsertObjectG4
 0x004bcb00,64,shade_table,_shade_table
+0x004bcb40,4,InsertObjectG3,_InsertObjectG3
 0x004bcb48,,matrix_stack,_matrix_stack
 0x004bd2c8,,DepthQTable,_DepthQTable
 0x004bf2c8,256,DepthQIndex,_DepthQIndex

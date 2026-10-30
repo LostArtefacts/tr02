@@ -66,6 +66,31 @@ void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
     *(dest + 1) = pitch;
 }
 
+extern "C" sint16 *calc_object_vertices(sint16 *objptr);
+extern "C" sint16 *calc_vertice_light(sint16 *objptr);
+extern "C" sint16 *(*InsertObjectG4)(sint16 *objptr, int number, enum sort_type sort_routine);
+extern "C" sint16 *(*InsertObjectG3)(sint16 *objptr, int number, enum sort_type sort_routine);
+
+extern "C" void phd_PutPolygons(sint16 *objptr, int clipstatus)
+{
+    phd_leftfloat = (float)phd_winxmin;
+    phd_topfloat = (float)phd_winymin;
+    phd_rightfloat = (float)(phd_winxmin + phd_winxmax + 1);
+    phd_bottomfloat = (float)(phd_winymin + phd_winymax + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+    objptr += 4;
+    objptr = calc_object_vertices(objptr);
+    if (objptr)
+    {
+        objptr = calc_vertice_light(objptr);
+        objptr = InsertObjectGT4(objptr + 1, *(objptr), MID_SORT);
+        objptr = InsertObjectGT3(objptr + 1, *(objptr), MID_SORT);
+        objptr = InsertObjectG4(objptr + 1, *(objptr), MID_SORT);
+        objptr = InsertObjectG3(objptr + 1, *(objptr), MID_SORT);
+    }
+}
+
 void S_InsertRoom(sint16 *objptr, int outside)
 {
     phd_leftfloat = (float)(phd_winxmin + phd_left);
