@@ -388,3 +388,139 @@ void InitialiseLara(int type)
     else
         InitialiseLaraInventory(CurrentLevel);
 }
+
+#define MAP_CLOSED 134
+#define FLARE_ITEM 152
+#define SG_AMMO_ITEM 143
+#define MAG_AMMO_ITEM 144
+#define UZI_AMMO_ITEM 145
+#define HARPOON_AMMO_ITEM 146
+#define M16_AMMO_ITEM 147
+#define ROCKET_AMMO_ITEM 148
+#define MAGNUM_AMMO_QTY 40
+#define UZI_AMMO_QTY 80
+#define SHOTGUN_AMMO_QTY 12
+#define ROCKET_AMMO_QTY 2
+#define M16_AMMO_QTY 40
+#define HARPOON_AMMO_QTY 3
+
+extern sint16 GF_RemoveWeapons;
+extern sint16 GF_RemoveAmmo;
+void Inv_RemoveAllItems(void);
+int GlobalItemReplace(int in_objnum, int out_objnum);
+void LaraInitialiseMeshes(int level_number);
+void InitialiseNewWeapon(void);
+
+void InitialiseLaraInventory(int level_number)
+{
+    int i, ammo;
+    START_INFO *start;
+
+    Inv_RemoveAllItems();
+    start = &savegame.start[level_number];
+    if (GF_RemoveWeapons)
+    {
+        start->got_pistols = start->got_magnums = start->got_uzis = start->got_shotgun = start->got_m16 = start->got_rocket = start->got_harpoon = 0;
+        start->gun_type = LG_UNARMED;
+        start->gun_status = LG_ARMLESS;
+        GF_RemoveWeapons = 0;
+    }
+    if (GF_RemoveAmmo)
+    {
+        start->pistol_ammo = start->magnum_ammo = start->uzi_ammo = start->shotgun_ammo = start->harpoon_ammo = start->rocket_ammo = start->m16_ammo = 0;
+        start->num_medis = start->num_big_medis = start->num_flares = 0;
+        GF_RemoveAmmo = 0;
+    }
+    Inv_AddItem(MAP_CLOSED);
+    lara.pistols.ammo = 1000;
+    if (start->got_pistols)
+        Inv_AddItem(GUN_ITEM);
+    if (start->got_magnums)
+    {
+        Inv_AddItem(MAGNUM_ITEM);
+        lara.magnums.ammo = start->magnum_ammo;
+        GlobalItemReplace(MAGNUM_ITEM, MAG_AMMO_ITEM);
+    }
+    else
+    {
+        ammo = start->magnum_ammo / MAGNUM_AMMO_QTY;
+        for (i = 0; i < ammo; i++)
+            Inv_AddItem(MAG_AMMO_ITEM);
+        lara.magnums.ammo = 0;
+    }
+    if (start->got_uzis)
+    {
+        Inv_AddItem(UZI_ITEM);
+        lara.uzis.ammo = start->uzi_ammo;
+        GlobalItemReplace(UZI_ITEM, UZI_AMMO_ITEM);
+    }
+    else
+    {
+        ammo = start->uzi_ammo / UZI_AMMO_QTY;
+        for (i = 0; i < ammo; i++)
+            Inv_AddItem(UZI_AMMO_ITEM);
+        lara.uzis.ammo = 0;
+    }
+    if (start->got_shotgun)
+    {
+        Inv_AddItem(SHOTGUN_ITEM);
+        lara.shotgun.ammo = start->shotgun_ammo;
+        GlobalItemReplace(SHOTGUN_ITEM, SG_AMMO_ITEM);
+    }
+    else
+    {
+        ammo = start->shotgun_ammo / SHOTGUN_AMMO_QTY;
+        for (i = 0; i < ammo; i++)
+            Inv_AddItem(SG_AMMO_ITEM);
+        lara.shotgun.ammo = 0;
+    }
+    if (start->got_rocket)
+    {
+        Inv_AddItem(GRENADE_ITEM);
+        lara.grenade.ammo = start->rocket_ammo;
+        GlobalItemReplace(GRENADE_ITEM, ROCKET_AMMO_ITEM);
+    }
+    else
+    {
+        ammo = start->rocket_ammo / ROCKET_AMMO_QTY;
+        for (i = 0; i < ammo; i++)
+            Inv_AddItem(ROCKET_AMMO_ITEM);
+        lara.grenade.ammo = 0;
+    }
+    if (start->got_m16)
+    {
+        Inv_AddItem(M16_ITEM);
+        lara.m16.ammo = start->m16_ammo;
+        GlobalItemReplace(M16_ITEM, M16_AMMO_ITEM);
+    }
+    else
+    {
+        ammo = start->m16_ammo / M16_AMMO_QTY;
+        for (i = 0; i < ammo; i++)
+            Inv_AddItem(M16_AMMO_ITEM);
+        lara.m16.ammo = 0;
+    }
+    if (start->got_harpoon)
+    {
+        Inv_AddItem(HARPOON_ITEM);
+        lara.harpoon.ammo = start->harpoon_ammo;
+        GlobalItemReplace(HARPOON_ITEM, HARPOON_AMMO_ITEM);
+    }
+    else
+    {
+        ammo = start->harpoon_ammo / HARPOON_AMMO_QTY;
+        for (i = 0; i < ammo; i++)
+            Inv_AddItem(HARPOON_AMMO_ITEM);
+        lara.harpoon.ammo = 0;
+    }
+    for (i = start->num_flares; i > 0; i--)
+        Inv_AddItem(FLARE_ITEM);
+    for (i = start->num_medis; i > 0; i--)
+        Inv_AddItem(MEDI_ITEM);
+    for (i = start->num_big_medis; i > 0; i--)
+        Inv_AddItem(BIGMEDI_ITEM);
+    lara.gun_status = LG_ARMLESS;
+    lara.request_gun_type = lara.gun_type = lara.last_gun_type = start->gun_type;
+    LaraInitialiseMeshes(level_number);
+    InitialiseNewWeapon();
+}
