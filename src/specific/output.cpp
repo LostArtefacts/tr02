@@ -180,3 +180,23 @@ extern "C" void S_CalculateStaticLight(sint16 adder)
     if (depth > 0x3000)
         LsAdder += depth - 0x3000;
 }
+
+inline bool DX_TRY(HRESULT hr)
+{
+    return FAILED(hr);
+}
+
+extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
+extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
+extern "C" void SyncSurfacePalettes(void *srcData, int width, int height, int srcPitch, uint8 *srcPalette, void *dstData, int dstPitch, uint8 *dstPalette, bool preserveBlack);
+
+extern "C" void S_SyncPictureBufferPalette(void)
+{
+    DDSURFACEDESC desc;
+
+    if (PictureBufferSurface == NULL || DX_TRY(WinVidBufferLock(PictureBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+        return;
+    SyncSurfacePalettes(desc.lpSurface, 640, 480, desc.lPitch, PicPalette, desc.lpSurface, desc.lPitch, game_palette, true);
+    WinVidBufferUnlock(PictureBufferSurface, &desc);
+    memcpy(PicPalette, game_palette, 768);
+}

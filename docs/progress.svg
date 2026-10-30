@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.77% (895)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.67% (345)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.85% (896)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.59% (344)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="536.14" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="536.14" y="0" class="decompiled"/>
-<rect width="206.67" height="6" x="540.33" y="0" class="todo"/>
+<rect width="536.74" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="536.74" y="0" class="decompiled"/>
+<rect width="206.07" height="6" x="540.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1140,7 +1140,7 @@
 <rect width="12" height="12" x="285" y="315" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="315" class="todo"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="315" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="315" class="todo"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="315" class="named"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="315" class="named"><title>0x00452030 S_DontDisplayPicture (15 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="315" class="named"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="315" class="named"><title>0x00452050 ScreenPartialDump (16 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.73%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.18%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.77%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.15%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="386.45" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="386.45" y="0" class="decompiled"/>
-<rect width="359.94" height="6" x="387.06" y="0" class="todo"/>
+<rect width="386.73" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="386.73" y="0" class="decompiled"/>
+<rect width="359.66" height="6" x="387.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1952,7 +1952,7 @@
 <rect width="7.18" height="7.37" x="590.46" y="208.27" class="todo"><title>0x0044ee80 do_inventory_options (127 bytes)</title></rect>
 <rect width="7.10" height="7.37" x="600.63" y="208.27" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="7.10" height="7.37" x="610.73" y="208.27" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
-<rect width="7.10" height="7.37" x="620.83" y="208.27" class="todo"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
+<rect width="7.10" height="7.37" x="620.83" y="208.27" class="named"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
 <rect width="7.10" height="7.37" x="630.92" y="208.27" class="todo"><title>0x00452ac0 SE_GraphicsTestStart (126 bytes)</title></rect>
 <rect width="7.02" height="7.37" x="641.02" y="208.27" class="todo"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
 <rect width="6.94" height="7.37" x="651.04" y="208.27" class="named"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
