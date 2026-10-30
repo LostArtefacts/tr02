@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.21% (464)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.79% (783)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.29% (465)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.71% (782)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="277.95" height="6" x="0" y="0" class="named"/>
-<rect width="469.05" height="6" x="277.95" y="0" class="todo"/>
+<rect width="278.55" height="6" x="0" y="0" class="named"/>
+<rect width="468.45" height="6" x="278.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -562,7 +562,7 @@
 <rect width="12" height="12" x="630" y="135" class="todo"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="135" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="135" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="135" class="todo"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="135" class="named"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="todo"><title>0x0042b5e0 GetLaraJointAbsPosition (911 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.94%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.85%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="127.42" height="6" x="0" y="0" class="named"/>
-<rect width="619.58" height="6" x="127.42" y="0" class="todo"/>
+<rect width="128.09" height="6" x="0" y="0" class="named"/>
+<rect width="618.91" height="6" x="128.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.51" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1633,7 +1633,7 @@
 <rect width="12.46" height="13.62" x="734.54" y="77.47" class="todo"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
 <rect width="12.56" height="13.46" x="465.91" y="94.09" class="todo"><title>0x004239d0 DoInventoryBackground (306 bytes)</title></rect>
 <rect width="12.56" height="13.40" x="465.91" y="110.54" class="named"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
-<rect width="12.56" height="13.35" x="465.91" y="126.95" class="todo"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
+<rect width="12.56" height="13.35" x="465.91" y="126.95" class="named"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
 <rect width="12.56" height="13.19" x="465.91" y="143.30" class="named"><title>0x0041d630 DrawSphereOfDoom (301 bytes)</title></rect>
 <rect width="12.56" height="13.08" x="465.91" y="159.48" class="todo"><title>0x0040bb70 InsertLine_Sorted (299 bytes)</title></rect>
 <rect width="12.56" height="12.97" x="465.91" y="175.57" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>

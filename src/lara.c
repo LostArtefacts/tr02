@@ -1275,6 +1275,62 @@ int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
     return 1;
 }
 
+
+#define SLIDE_A 70
+#define SLIDE_F GF(SLIDE_A, 0)
+#define SLIDEBACK_A 104
+#define SLIDEBACK_F GF(SLIDEBACK_A, 0)
+
+static PHD_ANGLE old_ang = 1;
+
+int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll)
+{
+    PHD_ANGLE adif, ang;
+
+    if (ABS(coll->tilt_x) <= 2 && ABS(coll->tilt_z) <= 2)
+        return 0;
+
+    ang = 0;
+    if (coll->tilt_x > 2)
+        ang = -16384;
+    else if (coll->tilt_x < -2)
+        ang = 16384;
+    if (coll->tilt_z > 2 && coll->tilt_z > ABS(coll->tilt_x))
+        ang = -32768;
+    else if (coll->tilt_z < -2 && -coll->tilt_z > ABS(coll->tilt_x))
+        ang = 0;
+
+    adif = ang - item->pos.y_rot;
+    ShiftItem(item, coll);
+    if (adif >= -16384 && adif <= 16384)
+    {
+        if (item->current_anim_state != AS_SLIDE || old_ang != ang)
+        {
+            item->anim_number = SLIDE_A;
+            item->frame_number = SLIDE_F;
+            item->goal_anim_state = AS_SLIDE;
+            item->current_anim_state = AS_SLIDE;
+            item->pos.y_rot = ang;
+            lara.move_angle = ang;
+            old_ang = ang;
+        }
+    }
+    else
+    {
+        if (item->current_anim_state != AS_SLIDEBACK || old_ang != ang)
+        {
+            item->anim_number = SLIDEBACK_A;
+            item->frame_number = SLIDEBACK_F;
+            item->goal_anim_state = AS_SLIDEBACK;
+            item->current_anim_state = AS_SLIDEBACK;
+            item->pos.y_rot = ang - 32768;
+            lara.move_angle = ang;
+            old_ang = ang;
+        }
+    }
+    return 1;
+}
+
 sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist)
 {
     sint16 room;
