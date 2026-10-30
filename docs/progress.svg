@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.36% (416)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.64% (831)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.44% (417)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.56% (830)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="249.20" height="6" x="0" y="0" class="named"/>
-<rect width="497.80" height="6" x="249.20" y="0" class="todo"/>
+<rect width="249.80" height="6" x="0" y="0" class="named"/>
+<rect width="497.20" height="6" x="249.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -290,7 +290,7 @@
 <rect width="12" height="12" x="300" y="60" class="named"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="60" class="named"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="60" class="named"><title>0x0041b790 phd_RotY_I (49 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="60" class="todo"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="60" class="named"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="60" class="todo"><title>0x0041b810 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="60" class="todo"><title>0x0041b850 phd_TranslateRel_I (65 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="60" class="todo"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.71%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.29%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.27%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="102.45" height="6" x="0" y="0" class="named"/>
-<rect width="644.55" height="6" x="102.45" y="0" class="todo"/>
+<rect width="102.55" height="6" x="0" y="0" class="named"/>
+<rect width="644.45" height="6" x="102.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2287,7 +2287,7 @@
 <rect width="3.73" height="3.22" x="736.54" y="296.69" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="3.73" height="3.22" x="743.27" y="296.69" class="todo"><title>0x00456080 FreeTexturePage (50 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.71" y="302.91" class="named"><title>0x0041b790 phd_RotY_I (49 bytes)</title></rect>
-<rect width="3.49" height="3.32" x="668.71" y="309.24" class="todo"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
+<rect width="3.49" height="3.32" x="668.71" y="309.24" class="named"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.71" y="315.56" class="todo"><title>0x0041b810 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.71" y="321.88" class="named"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.71" y="328.20" class="todo"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
