@@ -541,6 +541,21 @@ void lara_col_death(ITEM_INFO *item, COLL_INFO *coll)
     lara.air = -1;
 }
 
+void lara_col_splat(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+    ShiftItem(item, coll);
+
+    if (coll->mid_floor > -STEP_L && coll->mid_floor < STEP_L)
+        item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_stop(item, coll);
@@ -718,7 +733,7 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
