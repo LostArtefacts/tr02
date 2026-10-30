@@ -115,6 +115,56 @@ sint32 LevelCompleteSequence(int level_number)
     return EXIT_TO_TITLE;
 }
 
+extern "C" sint32 input;
+extern "C" sint32 inputDB;
+extern "C" int IsResetFlag;
+extern "C" void T_InitPrint(void);
+extern "C" void T_DrawText(void);
+extern "C" int S_UpdateInput(void);
+extern "C" void S_InitialisePolyList(int clear);
+extern "C" void S_CopyBufferToScreen(void);
+extern "C" sint32 GetDebouncedInput(sint32 in);
+extern "C" void ShowEndStatsText(void);
+extern "C" void S_OutputPolyList(void);
+extern "C" int S_DumpScreen(void);
+extern "C" void S_DontDisplayPicture(void);
+
+extern "C" int GameStats(int level_number)
+{
+    int n;
+
+    savegame.start[CurrentLevel].timer = savegame.timer;
+    savegame.start[CurrentLevel].ammo_used = savegame.ammo_used;
+    savegame.start[CurrentLevel].ammo_hit = savegame.ammo_hit;
+    savegame.start[CurrentLevel].distance_travelled = savegame.distance_travelled;
+    savegame.start[CurrentLevel].kills = savegame.kills;
+    savegame.start[CurrentLevel].secrets_found = savegame.secrets;
+    savegame.start[CurrentLevel].health_used = savegame.health_used;
+    T_InitPrint();
+    while (input & IN_SELECT)
+        S_UpdateInput();
+    for (;;) {
+        S_InitialisePolyList(0);
+        S_CopyBufferToScreen();
+        S_UpdateInput();
+        if (IsResetFlag)
+            input = IN_SELECT;
+        inputDB = GetDebouncedInput(input);
+        ShowEndStatsText();
+        T_DrawText();
+        S_OutputPolyList();
+        S_DumpScreen();
+        if (input & IN_SELECT)
+            break;
+    }
+    savegame.bonus_flag = 1;
+    for (n = LV_FIRSTLEVEL; n <= gameflow.num_levels; n++)
+        ModifyStartInfo(n);
+    savegame.current_level = LV_FIRSTLEVEL;
+    S_DontDisplayPicture();
+    return 0;
+}
+
 sint32 GetRandomControl(void)
 {
     rand_1 = rand_1 * 0x41c64e6d + 0x3039;
