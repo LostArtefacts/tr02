@@ -547,7 +547,7 @@ address,size,name,symbol
 0x0042f370,864,FireWeapon,_FireWeapon
 0x0042f6e0,150,HitTarget,_HitTarget
 0x0042f780,81,SmashItem,_SmashItem
-0x0042f7e0,59,WeaponObject,_WeaponObject
+0x0042f7e0,88,WeaponObject,_WeaponObject
 0x0042f840,157,DoFlareLight,_DoFlareLight
 0x0042f8e0,211,DoFlareInHand,_DoFlareInHand
 0x0042f9c0,248,DrawFlareInAir,_DrawFlareInAir
