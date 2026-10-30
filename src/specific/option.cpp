@@ -18,6 +18,12 @@ extern TEXTSTRING *ctext[];
 extern TEXTSTRING *btext[];
 
 #define NUM_CONTROLS 14
+#define PCSTR_DEFAULTKEYS 19
+
+extern "C" int iconfig;
+extern "C" char *kname[];
+extern "C" char BadKeyString[];
+extern "C" TEXTSTRING *ControlTextInfo[2];
 
 #define DWIDTH 160
 
@@ -244,6 +250,27 @@ void DefaultConflict(void)
                 break;
             }
         }
+    }
+}
+
+extern "C" void S_ChangeCtrlText(void)
+{
+    int i;
+    char str[40];
+
+    if (iconfig)
+    {
+        wsprintf(str, GF_PCStrings[PCSTR_USERKEYS], iconfig);
+        T_ChangeText(ControlTextInfo[0], str);
+    }
+    else
+        T_ChangeText(ControlTextInfo[0], GF_PCStrings[PCSTR_DEFAULTKEYS]);
+    for (i = 0; i < NUM_CONTROLS; i++)
+    {
+        if (kname[layout[iconfig][i]])
+            T_ChangeText(btext[i], kname[layout[iconfig][i]]);
+        else
+            T_ChangeText(btext[i], BadKeyString);
     }
 }
 

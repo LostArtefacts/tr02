@@ -1593,8 +1593,10 @@ address,size,name,symbol
 0x00466bf0,,game_malloc_strings,_game_malloc_strings
 0x00466f34,36,GameMallocOutOfMemory,_GameMallocOutOfMemory
 0x00466f58,,layout,?layout@@3PAY0O@FA
+0x00466f90,,kname,_kname
 0x004676a4,29,RenderInitFailedFormat,_RenderInitFailedFormat
 0x00467724,4,detail_level,_detail_level
+0x0046773c,4,BadKeyString,_BadKeyString
 0x004677d8,36,RegistryKeyName,_RegistryKeyName
 0x00467808,15,SetupDialogName,_SetupDialogName
 0x00467b18,6,RegistryKeyFormat,_RegistryKeyFormat
@@ -1870,6 +1872,7 @@ address,size,name,symbol
 0x0051a228,4,GhInstance,_GhInstance
 0x0051a22c,4,GpCmdLine,_GpCmdLine
 0x0051a238,4,KeyCursor,_KeyCursor
+0x0051a240,4,iconfig,_iconfig
 0x0051a248,56,ctext,?ctext@@3PAPAUtextstringinfo@@A
 0x0051a280,56,btext,?btext@@3PAPAUtextstringinfo@@A
 0x0051a2bc,4,PassportTextInfo,_PassportTextInfo
