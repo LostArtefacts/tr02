@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.72% (959)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.72% (284)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.80% (960)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.64% (283)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="573.10" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="573.10" y="0" class="decompiled"/>
-<rect width="169.72" height="6" x="577.28" y="0" class="todo"/>
+<rect width="573.70" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="573.70" y="0" class="decompiled"/>
+<rect width="169.12" height="6" x="577.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1104,7 +1104,7 @@
 <rect width="12" height="12" x="495" y="300" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="300" class="named"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="todo"><title>0x0044e9a0 ScreenShotPCX (271 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="300" class="todo"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="300" class="named"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="300" class="todo"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="300" class="todo"><title>0x0044ec40 EncodePutPCX (62 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="300" class="todo"><title>0x0044ec80 ScreenShot (501 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.92%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.97%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">42.95%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="425.17" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="425.17" y="0" class="decompiled"/>
-<rect width="321.22" height="6" x="425.78" y="0" class="todo"/>
+<rect width="425.55" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="425.55" y="0" class="decompiled"/>
+<rect width="320.84" height="6" x="426.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1823,7 +1823,7 @@
 <rect width="9.09" height="9.05" x="535.12" y="224.22" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
 <rect width="9.09" height="8.98" x="535.12" y="236.27" class="todo"><title>0x00445f00 WinVidGetDisplayAdapters (175 bytes)</title></rect>
 <rect width="9.09" height="8.91" x="535.12" y="248.25" class="named"><title>0x0041cbc0 ControlWaterSprite (174 bytes)</title></rect>
-<rect width="9.09" height="8.91" x="535.12" y="260.16" class="todo"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
+<rect width="9.09" height="8.91" x="535.12" y="260.16" class="named"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
 <rect width="9.09" height="8.91" x="535.12" y="272.08" class="named"><title>0x00455ba0 SyncSurfacePalettes (174 bytes)</title></rect>
 <rect width="9.09" height="8.85" x="535.12" y="283.99" class="named"><title>0x0042ac00 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="9.09" height="8.78" x="535.12" y="295.84" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
