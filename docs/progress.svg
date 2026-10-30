@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.77% (284)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.23% (963)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.85% (285)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.15% (962)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="170.13" height="6" x="0" y="0" class="named"/>
-<rect width="576.87" height="6" x="170.13" y="0" class="todo"/>
+<rect width="170.73" height="6" x="0" y="0" class="named"/>
+<rect width="576.27" height="6" x="170.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -218,7 +218,7 @@
 <rect width="12" height="12" x="720" y="30" class="todo"><title>0x00412fc0 CollideStaticObjects (978 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="30" class="named"><title>0x004133b0 GetNearByRooms (200 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="45" class="named"><title>0x00413480 GetNewRoom (85 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="45" class="todo"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="45" class="named"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="45" class="named"><title>0x00413520 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="45" class="todo"><title>0x00413580 GetTiltType (153 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="45" class="todo"><title>0x00413620 LaraBaddieCollision (405 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.94%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.93%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.71" height="6" x="0" y="0" class="named"/>
-<rect width="694.29" height="6" x="52.71" y="0" class="todo"/>
+<rect width="52.83" height="6" x="0" y="0" class="named"/>
+<rect width="694.17" height="6" x="52.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2225,7 +2225,7 @@
 <rect width="3.96" height="3.86" x="655.68" y="283.25" class="named"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="662.64" y="283.25" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="669.36" y="283.25" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
-<rect width="3.72" height="3.86" x="676.08" y="283.25" class="todo"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
+<rect width="3.72" height="3.86" x="676.08" y="283.25" class="named"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="682.80" y="283.25" class="todo"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="689.52" y="283.25" class="todo"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="696.24" y="283.25" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
