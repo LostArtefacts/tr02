@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.51% (131)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.49% (1116)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.59% (132)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.41% (1115)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="78.47" height="6" x="0" y="0" class="named"/>
-<rect width="668.53" height="6" x="78.47" y="0" class="todo"/>
+<rect width="79.07" height="6" x="0" y="0" class="named"/>
+<rect width="667.93" height="6" x="79.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1052,7 +1052,7 @@
 <rect width="12" height="12" x="480" y="285" class="named"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="285" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="285" class="named"><title>0x0044c460 S_FinishInventory (15 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="285" class="todo"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="285" class="named"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="285" class="todo"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="285" class="named"><title>0x0044c520 S_PlayFMV (14 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="285" class="named"><title>0x0044c530 S_IntroFMV (19 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.60%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.58%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="17.96" height="6" x="0" y="0" class="named"/>
-<rect width="729.04" height="6" x="17.96" y="0" class="todo"/>
+<rect width="18.11" height="6" x="0" y="0" class="named"/>
+<rect width="728.89" height="6" x="18.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2165,7 +2165,7 @@
 <rect width="4.64" height="4.35" x="727.07" y="261.82" class="named"><title>0x0041d7d0 draw_left_gun (67 bytes)</title></rect>
 <rect width="4.64" height="4.35" x="734.72" y="261.82" class="todo"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
 <rect width="4.64" height="4.35" x="742.36" y="261.82" class="todo"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
-<rect width="4.52" height="4.46" x="641.07" y="269.17" class="todo"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
+<rect width="4.52" height="4.46" x="641.07" y="269.17" class="named"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
 <rect width="4.52" height="4.35" x="641.07" y="276.63" class="todo"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="4.52" height="4.35" x="641.07" y="283.98" class="todo"><title>0x00435100 ShutThatDoor (66 bytes)</title></rect>
 <rect width="4.52" height="4.35" x="641.07" y="291.34" class="todo"><title>0x0044d6e0 S_InitialiseSystem (66 bytes)</title></rect>

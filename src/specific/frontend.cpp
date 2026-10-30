@@ -37,6 +37,21 @@ void S_FinishInventory(void)
         TempVideoRemove();
 }
 
+void S_FadeToBlack(void)
+{
+    int i;
+    uint8 *p;
+
+    for (i = 0, p = game_palette; i < 256 * 3; i++, p++)
+        *p = 0;
+    FadeToPal(10, game_palette);
+    FadeWait();
+    ScreenClear();
+    ScreenDump();
+    ScreenClear();
+    ScreenDump();
+}
+
 int S_PlayFMV(char *fname, int sequence)
 {
     return FMV_Play(fname);
