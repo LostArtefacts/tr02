@@ -569,6 +569,38 @@ extern "C" bool WinVidRegisterGameWindowClass(void)
     return RegisterClassExA(&wndClass) ? true : false;
 }
 
+extern "C" {
+extern bool IsGameWindowMaximized;
+extern bool IsGameWindowChanging;
+}
+
+extern "C" bool WinVidCreateGameWindow(void)
+{
+    RECT rect;
+
+    IsGameWindowActive = true;
+    IsGameWindowShow = true;
+    IsDDrawGameWindowShow = false;
+    IsMessageLoopClosed = false;
+    IsGameWindowUpdating = false;
+    IsGameWindowMinimized = false;
+    IsGameWindowMaximized = false;
+    IsGameWindowCreated = false;
+    IsGameFullScreen = false;
+    IsMinMaxInfoSpecial = false;
+    IsGameWindowChanging = false;
+    WinVidClearMinWindowSize();
+    WinVidClearMaxWindowSize();
+    HGameWindow = CreateWindowExA(WS_EX_APPWINDOW, ClassName, WindowName, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL, GhInstance, NULL);
+    if (!HGameWindow)
+        return false;
+    GetWindowRect(HGameWindow, &rect);
+    GameWindow_X = rect.left;
+    GameWindow_Y = rect.top;
+    WinVidHideGameWindow();
+    return true;
+}
+
 extern "C" bool WinVidInit(void)
 {
     AppResultCode = 0;
