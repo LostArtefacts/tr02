@@ -14,8 +14,30 @@
 #define CLIMB_WIDTHR 120
 #define MAX_HEAD_ROTATION (44 * ONE_DEGREE)
 #define HEAD_TURN (2 * ONE_DEGREE)
+#define MIN_HEAD_TILT (-42 * ONE_DEGREE)
+#define MAX_HEAD_TILT (22 * ONE_DEGREE)
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
+
+void LookUpDown(void)
+{
+    camera.type = LOOK_CAMERA;
+    if (input & IN_FORWARD)
+    {
+        input -= IN_FORWARD;
+        if (lara.head_x_rot > MIN_HEAD_TILT)
+            lara.head_x_rot -= HEAD_TURN;
+    }
+    else if (input & IN_BACK)
+    {
+        input -= IN_BACK;
+        if (lara.head_x_rot < MAX_HEAD_TILT)
+            lara.head_x_rot += HEAD_TURN;
+    }
+
+    if (lara.gun_status != LG_HANDSBUSY)
+        lara.torso_x_rot = lara.head_x_rot;
+}
 
 void LookLeftRight(void)
 {
@@ -584,7 +606,7 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
