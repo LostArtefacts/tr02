@@ -5,13 +5,13 @@
 #define MAX_TEXTURE_PAGES 32
 
 typedef struct {
-    LPDIRECTDRAWSURFACE3 vidMemSurface;
     LPDIRECTDRAWSURFACE3 sysMemSurface;
+    LPDIRECTDRAWSURFACE3 vidMemSurface;
+    LPDIRECTDRAWPALETTE palette;
     LPDIRECT3DTEXTURE2 texture3d;
     D3DTEXTUREHANDLE texHandle;
     int width;
     int height;
-    int palIndex;
     DWORD status;
 } TEXPAGE_DESC;
 
@@ -43,4 +43,13 @@ extern "C" void SafeFreePalette(int palIndex)
 {
     if (palIndex >= 0)
         FreePalette(palIndex);
+}
+
+extern "C" void Func455d50(void)
+{
+    for (DWORD i = 0; i < MAX_PALETTES; i++)
+    {
+        if (TexturePalettes[i])
+            FreePalette(i);
+    }
 }
