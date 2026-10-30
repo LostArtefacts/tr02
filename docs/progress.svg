@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.36% (928)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.08% (313)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.44% (929)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25% (312)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="555.46" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="555.46" y="0" class="decompiled"/>
-<rect width="187.35" height="6" x="559.65" y="0" class="todo"/>
+<rect width="556.06" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="556.06" y="0" class="decompiled"/>
+<rect width="186.75" height="6" x="560.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -913,7 +913,7 @@
 <rect width="12" height="12" x="630" y="240" class="named"><title>0x004454b0 WinVidBufferUnlock (37 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="240" class="todo"><title>0x004454e0 WinVidCopyBitmapToBuffer (144 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="240" class="named"><title>0x00445570 GetRenderBitDepth (136 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="240" class="todo"><title>0x00445600 WinVidGetColorBitMasks (113 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="240" class="named"><title>0x00445600 WinVidGetColorBitMasks (113 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="240" class="named"><title>0x00445680 BitMaskGetNumberOfBits (68 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="240" class="named"><title>0x004456d0 CalculateCompatibleColor (97 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="240" class="todo"><title>0x00445740 WinVidGetDisplayMode (140 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.90%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.93%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="410.11" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="410.11" y="0" class="decompiled"/>
-<rect width="336.29" height="6" x="410.71" y="0" class="todo"/>
+<rect width="410.35" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="410.35" y="0" class="decompiled"/>
+<rect width="336.04" height="6" x="410.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1994,7 +1994,7 @@
 <rect width="6.52" height="6.93" x="590.41" y="299.27" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
 <rect width="6.52" height="6.93" x="590.41" y="309.19" class="named"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
 <rect width="6.52" height="6.84" x="590.41" y="319.12" class="named"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
-<rect width="6.52" height="6.84" x="590.41" y="328.97" class="todo"><title>0x00445600 WinVidGetColorBitMasks (113 bytes)</title></rect>
+<rect width="6.52" height="6.84" x="590.41" y="328.97" class="named"><title>0x00445600 WinVidGetColorBitMasks (113 bytes)</title></rect>
 <rect width="6.52" height="6.84" x="590.41" y="338.81" class="named"><title>0x0044a9d0 LoadPalettes (113 bytes)</title></rect>
 <rect width="6.52" height="6.84" x="590.41" y="348.65" class="named"><title>0x00456e00 GetRegistryBinaryValue (113 bytes)</title></rect>
 <rect width="6.52" height="6.75" x="590.41" y="358.49" class="named"><title>0x0042bd00 ready_shotgun (112 bytes)</title></rect>

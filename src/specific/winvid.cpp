@@ -393,7 +393,7 @@ extern "C" DWORD GetRenderBitDepth(DWORD dwRGBBitCount)
     return 0;
 }
 
-typedef struct {
+struct COLOR_BIT_MASKS {
     DWORD dwRBitMask;
     DWORD dwGBitMask;
     DWORD dwBBitMask;
@@ -406,7 +406,8 @@ typedef struct {
     DWORD dwGBitOffset;
     DWORD dwBBitOffset;
     DWORD dwRGBAlphaBitOffset;
-} COLOR_BIT_MASKS;
+    void WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat);
+};
 
 extern "C" void BitMaskGetNumberOfBits(DWORD bitMask, DWORD *bitDepth, DWORD *bitOffset)
 {
@@ -607,4 +608,16 @@ bool DISPLAY_MODE::CompareVideoModes(DISPLAY_MODE *mode)
         }
     }
     return false;
+}
+
+void COLOR_BIT_MASKS::WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat)
+{
+    dwRBitMask = pixelFormat->dwRBitMask;
+    dwGBitMask = pixelFormat->dwGBitMask;
+    dwBBitMask = pixelFormat->dwBBitMask;
+    dwRGBAlphaBitMask = pixelFormat->dwRGBAlphaBitMask;
+    BitMaskGetNumberOfBits(dwRBitMask, &dwRBitDepth, &dwRBitOffset);
+    BitMaskGetNumberOfBits(dwGBitMask, &dwGBitDepth, &dwGBitOffset);
+    BitMaskGetNumberOfBits(dwBBitMask, &dwBBitDepth, &dwBBitOffset);
+    BitMaskGetNumberOfBits(dwRGBAlphaBitMask, &dwRGBAlphaBitDepth, &dwRGBAlphaBitOffset);
 }
