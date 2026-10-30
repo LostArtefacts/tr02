@@ -275,6 +275,13 @@ void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = -25 * ONE_DEGREE;
 }
 
+void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.flags = FOLLOW_CENTRE;
+}
+
 void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->anim_number = BREATH_A;
