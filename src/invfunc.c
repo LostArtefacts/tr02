@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "game.h"
 #include "invdata.h"
+#include "inventry.h"
 
 #define ROTATE_DURATION 24
 #define CAMERA_YOFFSET -0x60
@@ -54,9 +55,69 @@ typedef struct ring_info {
 
 extern TEXTSTRING *Inv_itemText[IT_NUMBEROF];
 
+#define MAIN_RING 0
+#define OPTION_RING 1
+#define KEYS_RING 2
+
+extern sint16 inv_main_objects, inv_main_current;
+extern sint16 inv_keys_objects, inv_keys_current;
+
 extern TEXTSTRING *Inv_tagText, *Inv_ringText;
 extern TEXTSTRING *Inv_upArrow1, *Inv_upArrow2;
 extern TEXTSTRING *Inv_downArrow1, *Inv_downArrow2;
+
+void RingIsOpen(RING_INFO *ring)
+{
+    if (Inventory_Mode == INV_TITLE_MODE)
+        return;
+
+    if (!Inv_ringText)
+    {
+        switch (ring->type)
+        {
+        case MAIN_RING:
+            Inv_ringText = T_Print(0, 26, 0, GF_GameStrings[GT_MAIN_HEADING]);
+            break;
+
+        case OPTION_RING:
+            if (Inventory_Mode == INV_DEATH_MODE)
+                Inv_ringText = T_Print(0, 26, 0, GF_GameStrings[GT_GAMEOVER_HEADING]);
+            else
+                Inv_ringText = T_Print(0, 26, 0, GF_GameStrings[GT_OPTION_HEADING]);
+            break;
+
+        case KEYS_RING:
+            Inv_ringText = T_Print(0, 26, 0, GF_GameStrings[GT_KEYS_HEADING]);
+            break;
+        }
+        T_CentreH(Inv_ringText, 1);
+    }
+
+    if (Inventory_Mode == INV_KEYS_MODE || Inventory_Mode == INV_DEATH_MODE)
+        return;
+
+    if (!Inv_upArrow1)
+    {
+        if (ring->type == OPTION_RING || (ring->type == MAIN_RING && inv_keys_objects))
+        {
+            Inv_upArrow1 = T_Print(20, 28, 0, "[");
+            Inv_upArrow2 = T_Print(-20, 28, 0, "[");
+            T_RightAlign(Inv_upArrow2, 1);
+        }
+    }
+
+    if (!Inv_downArrow1)
+    {
+        if ((ring->type == MAIN_RING && !gameflow.lockout_optionring) || ring->type == KEYS_RING)
+        {
+            Inv_downArrow1 = T_Print(20, -15, 0, "]");
+            T_BottomAlign(Inv_downArrow1, 1);
+            Inv_downArrow2 = T_Print(-20, -15, 0, "]");
+            T_BottomAlign(Inv_downArrow2, 1);
+            T_RightAlign(Inv_downArrow2, 1);
+        }
+    }
+}
 
 void RingIsNotOpen(RING_INFO *ring)
 {
@@ -81,9 +142,6 @@ void RingActive(void)
     T_RemovePrint(Inv_itemText[IT_QTY]);
     Inv_itemText[IT_QTY] = NULL;
 }
-
-extern sint16 inv_main_objects, inv_main_current;
-extern sint16 inv_keys_objects, inv_keys_current;
 
 extern INVENTORY_ITEM *inv_main_list[];
 extern INVENTORY_ITEM *inv_keys_list[];

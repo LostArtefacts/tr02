@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.87% (547)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">56.13% (700)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.95% (548)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">56.05% (699)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="327.67" height="6" x="0" y="0" class="named"/>
-<rect width="419.33" height="6" x="327.67" y="0" class="todo"/>
+<rect width="328.27" height="6" x="0" y="0" class="named"/>
+<rect width="418.73" height="6" x="328.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -402,7 +402,7 @@
 <rect width="12" height="12" x="480" y="90" class="named"><title>0x004239c0 DoInventoryPicture (5 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="90" class="todo"><title>0x004239d0 DoInventoryBackground (306 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="90" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="90" class="todo"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="90" class="named"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="90" class="named"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="90" class="todo"><title>0x00423e20 RingNotActive (873 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="90" class="named"><title>0x00424290 RingActive (50 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="173.49" height="6" x="0" y="0" class="named"/>
-<rect width="573.51" height="6" x="173.49" y="0" class="todo"/>
+<rect width="174.28" height="6" x="0" y="0" class="named"/>
+<rect width="572.72" height="6" x="174.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.40" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1585,7 +1585,7 @@
 <rect width="14.85" height="13.85" x="521.55" y="60.68" class="todo"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
 <rect width="14.85" height="13.85" x="539.40" y="60.68" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="14.80" height="13.85" x="557.25" y="60.68" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
-<rect width="14.80" height="13.85" x="575.05" y="60.68" class="todo"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
+<rect width="14.80" height="13.85" x="575.05" y="60.68" class="named"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
 <rect width="14.75" height="13.85" x="592.84" y="60.68" class="todo"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
 <rect width="14.70" height="13.85" x="610.59" y="60.68" class="named"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="14.65" height="13.85" x="628.29" y="60.68" class="named"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
