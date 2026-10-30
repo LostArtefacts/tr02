@@ -191,3 +191,50 @@ extern "C" bool WinSndIsSoundEnabled()
 {
     return IsSoundEnabled;
 }
+
+typedef struct {
+    LPGUID lpAdapterGuid;
+    GUID adapterGuid;
+} SOUND_ADAPTER;
+
+typedef struct SOUND_ADAPTER_NODE {
+    struct SOUND_ADAPTER_NODE *next;
+    struct SOUND_ADAPTER_NODE *previous;
+    SOUND_ADAPTER body;
+} SOUND_ADAPTER_NODE;
+
+typedef struct {
+    SOUND_ADAPTER_NODE *head;
+    SOUND_ADAPTER_NODE *tail;
+    DWORD dwCount;
+} SOUND_ADAPTER_LIST;
+
+extern "C" {
+extern SOUND_ADAPTER_LIST SoundAdapterList;
+extern SOUND_ADAPTER_NODE *PrimarySoundAdapter;
+}
+
+extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
+{
+    SOUND_ADAPTER_NODE *node;
+    SOUND_ADAPTER_NODE *result;
+
+    result = NULL;
+    for (node = SoundAdapterList.head; node; node = node->next)
+    {
+        if (lpGuid && !memcmp(&node->body.adapterGuid, lpGuid, sizeof(GUID)))
+        {
+            result = node;
+            break;
+        }
+        if (!node)
+            break;
+    }
+    if (!result)
+    {
+        result = PrimarySoundAdapter;
+        if (!result)
+            result = NULL;
+    }
+    return result;
+}
