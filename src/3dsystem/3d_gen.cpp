@@ -81,3 +81,20 @@ void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
     ls_vector_view.y = (*(mptr + M10) * ls_world.x + *(mptr + M11) * ls_world.y + *(mptr + M12) * ls_world.z) >> W2V_SHIFT;
     ls_vector_view.z = (*(mptr + M20) * ls_world.x + *(mptr + M21) * ls_world.y + *(mptr + M22) * ls_world.z) >> W2V_SHIFT;
 }
+
+void phd_PrintPolyList(void *ptr)
+{
+    int i;
+    sint32 *sptr;
+    sint16 *iptr;
+    sint16 routine;
+
+    phd_winptr = (char *)ptr;
+    sptr = (sint32 *)sort3d_buffer;
+    for (i = surfacenum; i > 0; i--) {
+        iptr = (sint16 *)(*sptr);
+        routine = *(iptr++);
+        (*poly_draw_routines[routine])(iptr);
+        sptr += 2;
+    }
+}
