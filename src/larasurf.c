@@ -132,6 +132,14 @@ void lara_as_surftread(ITEM_INFO *item, COLL_INFO *coll)
         lara.dive_count = 0;
 }
 
+void lara_col_surfswim(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->bad_neg = -STEPUP_HEIGHT;
+    lara.move_angle = item->pos.y_rot;
+    LaraSurfaceCollision(item, coll);
+    LaraTestWaterClimbOut(item, coll);
+}
+
 void lara_col_surfback(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.move_angle = item->pos.y_rot - 32768;
