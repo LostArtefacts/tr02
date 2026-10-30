@@ -61,6 +61,26 @@ extern LPDIRECT3DVIEWPORT2 D3DView;
 extern LPDIRECT3DMATERIAL2 D3DMaterial;
 }
 
+extern "C" void Direct3DRelease(void)
+{
+    if (D3DMaterial)
+    {
+        D3DMaterial->Release();
+        D3DMaterial = NULL;
+    }
+    if (D3DView)
+    {
+        D3DView->Release();
+        D3DView = NULL;
+    }
+    if (G_Direct3DDevice)
+    {
+        G_Direct3DDevice->Release();
+        G_Direct3DDevice = NULL;
+    }
+    D3DRelease();
+}
+
 extern "C" BOOL Direct3DInit(void)
 {
     return TRUE;
