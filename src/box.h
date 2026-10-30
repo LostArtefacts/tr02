@@ -4,6 +4,8 @@
 #include "items.h"
 
 #define BOX_NUMBER 0x7fff
+#define NO_BOX -1
+#define BLOCKED 0x4000
 #define NO_FLYING 0
 
 typedef struct box_info {

@@ -1,4 +1,23 @@
+#include <string.h>
 #include "game.h"
+#include "box.h"
+
+typedef struct {
+    FLOOR_INFO *floor;
+    FLOOR_INFO data;
+    sint16 block;
+} DOORPOS_DATA;
+
+void OpenThatDoor(DOORPOS_DATA *d)
+{
+    if (d->floor)
+    {
+        memcpy(d->floor, &d->data, sizeof(FLOOR_INFO));
+
+        if (d->block != NO_BOX)
+            boxes[d->block].overlap_index &= (~BLOCKED);
+    }
+}
 
 void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
