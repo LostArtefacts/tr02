@@ -28,6 +28,11 @@ enum pc_string_ids {
     PCSTR_SAVESLOT
 };
 
+enum game_levels {
+    LV_GYM = 0,
+    LV_FIRSTLEVEL
+};
+
 enum level_types {
     IL_TITLE,
     IL_NORMAL,

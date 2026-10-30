@@ -34,7 +34,6 @@ extern int flip_status;
 extern void (*effect_routines[])(ITEM_INFO *item);
 extern int assault_timer_display, assault_timer_active;
 
-int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
 void FlipMap(void);
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
 void InitialiseHair(void);

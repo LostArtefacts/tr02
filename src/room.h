@@ -7,6 +7,8 @@
 #define WALL_SHIFT 10
 #define STEP_L (WALL_L / 4)
 
+#define SFX_ALWAYS 2
+
 typedef struct {
     uint16 index;
     uint16 fx:4;

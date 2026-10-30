@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.55% (144)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.45% (1103)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.63% (145)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.37% (1102)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="86.26" height="6" x="0" y="0" class="named"/>
-<rect width="660.74" height="6" x="86.26" y="0" class="todo"/>
+<rect width="86.86" height="6" x="0" y="0" class="named"/>
+<rect width="660.14" height="6" x="86.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1112,7 +1112,7 @@
 <rect width="12" height="12" x="630" y="300" class="todo"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="300" class="todo"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="todo"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="300" class="todo"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="300" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="300" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="300" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="300" class="todo"><title>0x0044fee0 do_control_option (1780 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.04%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.96%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="22.25" height="6" x="0" y="0" class="named"/>
-<rect width="724.75" height="6" x="22.25" y="0" class="todo"/>
+<rect width="22.67" height="6" x="0" y="0" class="named"/>
+<rect width="724.33" height="6" x="22.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1776,7 +1776,7 @@
 <rect width="10.08" height="9.36" x="509.73" y="353.34" class="todo"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
 <rect width="10.08" height="9.30" x="509.73" y="365.70" class="todo"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
 <rect width="9.80" height="9.57" x="522.81" y="150.74" class="todo"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
-<rect width="9.80" height="9.57" x="535.61" y="150.74" class="todo"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
+<rect width="9.80" height="9.57" x="535.61" y="150.74" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="9.80" height="9.57" x="548.41" y="150.74" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
 <rect width="9.73" height="9.57" x="561.21" y="150.74" class="todo"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
 <rect width="9.67" height="9.57" x="573.94" y="150.74" class="todo"><title>0x00429800 lara_col_stepright (190 bytes)</title></rect>

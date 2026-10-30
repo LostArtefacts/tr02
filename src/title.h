@@ -21,6 +21,7 @@ typedef enum title_options {
 } TITLE_OPTIONS;
 
 extern int title_loaded;
+extern uint32 CurrentLevel;
 
 sint32 LevelCompleteSequence(int level_number);
 

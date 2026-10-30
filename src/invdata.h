@@ -6,6 +6,11 @@ extern "C" {
 #endif
 
 #include "text.h"
+#include "3dglodef.h"
+#include "input.h"
+
+#define DESELECT_ITEM IN_DESELECT
+#define SELECT_ITEM IN_SELECT
 
 enum R_flags {
     R_CENTRE = 0,
@@ -57,9 +62,53 @@ typedef struct request_info {
     int original_render_height;
 } REQUEST_INFO;
 
+typedef struct inventory_sprite {
+    sint16 shape;
+    sint16 x;
+    sint16 y;
+    sint16 z;
+    sint32 param1;
+    sint32 param2;
+    SG_COL *grdptr;
+    sint16 sprnum;
+} INVENTORY_SPRITE;
+
+typedef struct inventory_item {
+    char *itemText;
+    sint16 object_number;
+    sint16 frames_total;
+    sint16 current_frame;
+    sint16 goal_frame;
+    sint16 open_frame;
+    sint16 anim_direction;
+    sint16 anim_speed;
+    sint16 anim_count;
+    PHD_ANGLE pt_xrot_sel;
+    PHD_ANGLE pt_xrot;
+    PHD_ANGLE x_rot_sel;
+    PHD_ANGLE x_rot_nosel;
+    PHD_ANGLE x_rot;
+    PHD_ANGLE y_rot_sel;
+    PHD_ANGLE y_rot;
+    sint32 ytrans_sel;
+    sint32 ytrans;
+    sint32 ztrans_sel;
+    sint32 ztrans;
+    uint32 which_meshes;
+    uint32 drawn_meshes;
+    sint16 inv_pos;
+    INVENTORY_SPRITE **sprlist;
+    sint32 misc_data[4];
+} INVENTORY_ITEM;
+
+extern sint32 inputDB;
+
+void ShowStatsText(char *time_str, int type);
+void ShowGymStatsText(char *time_str, int type);
 void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos);
 int GetRenderHeight(void);
 int GetRenderWidth(void);
+void do_compass_option(INVENTORY_ITEM *inv_item);
 
 extern REQUEST_INFO Load_Game_Requester;
 

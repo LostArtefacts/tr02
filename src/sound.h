@@ -1,7 +1,11 @@
 #ifndef SOUND_H
 #define SOUND_H
 
-#include "types.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "3dglodef.h"
 
 typedef struct {
     sint16 number;
@@ -20,5 +24,10 @@ void StopSoundEffect(int nSFX);
 void SOUND_EndScene(void);
 void SOUND_Stop(void);
 void SOUND_Init(void);
+int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

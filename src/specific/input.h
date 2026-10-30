@@ -1,5 +1,5 @@
-#ifndef INPUT_H
-#define INPUT_H
+#ifndef _INPUT_H_
+#define _INPUT_H_
 
 #ifdef __cplusplus
 extern "C" {

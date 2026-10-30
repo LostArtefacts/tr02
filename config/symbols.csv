@@ -1249,7 +1249,7 @@ address,size,name,symbol
 0x00459030,23,__fpmath,
 0x00459050,56,Func459050,
 0x00459090,39,_ftol,__ftol
-0x004590c0,104,Func4590c0,
+0x004590c0,104,sprintf,_sprintf
 0x00459130,56,_strncmp,
 0x00459170,23,Func459170,
 0x00459190,30,Func459190,
@@ -1626,7 +1626,7 @@ address,size,name,symbol
 0x004d7950,4,InvUpArrow2,_InvUpArrow2
 0x004d7954,4,InvDownArrow1,_InvDownArrow1
 0x004d7958,4,InvDownArrow2,_InvDownArrow2
-0x004d795c,4,InputDB,_InputDB
+0x004d795c,4,inputDB,_inputDB
 0x004d7968,,IsInventoryActive,_IsInventoryActive
 0x004d7970,32,InventoryExtraData,_InventoryExtraData
 0x004d7990,4,InvDemoMode,_InvDemoMode
