@@ -2761,3 +2761,116 @@ int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll)
     return 0;
 }
 
+
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2, int frac, int rate);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+
+void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint)
+{
+    int fire_arms;
+    int frac, rate, size;
+    sint16 *frmptr[2];
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation;
+    sint16 *frame;
+    ITEM_INFO *item;
+
+    item = lara_item;
+
+    if (lara.hit_direction < 0 && (frac = GetFrames(item, frmptr, &rate)))
+    {
+        GetLJAInt(item, vec, frmptr[0], frmptr[1], frac, rate);
+        return;
+    }
+
+    object = &objects[item->object_number];
+    if (lara.hit_direction >= 0)
+    {
+        switch (lara.hit_direction)
+        {
+        default:
+        case 0:
+            frame = anims[125].frame_ptr;
+            size = anims[125].interpolation >> 8;
+            break;
+        case 1:
+            frame = anims[127].frame_ptr;
+            size = anims[127].interpolation >> 8;
+            break;
+        case 2:
+            frame = anims[126].frame_ptr;
+            size = anims[126].interpolation >> 8;
+            break;
+        case 3:
+            frame = anims[128].frame_ptr;
+            size = anims[128].interpolation >> 8;
+            break;
+        }
+        frame += (int)(lara.hit_frame * size);
+    }
+    else
+        frame = frmptr[0];
+
+    phd_PushUnitMatrix();
+    *(phd_mxptr + M03) = 0;
+    *(phd_mxptr + M13) = 0;
+    *(phd_mxptr + M23) = 0;
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    bone = bones + object->bone_index;
+    rotation = frame + 9;
+
+    phd_TranslateRel((sint32)*(frame + 6), (sint32)*(frame + 7), (sint32)*(frame + 8));
+    phd_RotYXZsuperpack(&rotation, 0);
+
+    phd_TranslateRel(*(bone + 1 + 24), *(bone + 2 + 24), *(bone + 3 + 24));
+    phd_RotYXZsuperpack(&rotation, 6);
+    phd_RotYXZ(lara.torso_y_rot, lara.torso_x_rot, lara.torso_z_rot);
+
+    fire_arms = LG_UNARMED;
+    if (lara.gun_status == LG_READY || lara.gun_status == LG_SPECIAL || lara.gun_status == LG_DRAW || lara.gun_status == LG_UNDRAW)
+        fire_arms = lara.gun_type;
+
+    if (lara.gun_type == LG_FLARE)
+    {
+        phd_TranslateRel(*(bone + 1 + 40), *(bone + 2 + 40), *(bone + 3 + 40));
+        if (lara.flare_control_left)
+            rotation = lara.left_arm.frame_base + (lara.left_arm.frame_number - anims[lara.left_arm.anim_number].frame_base) * (anims[lara.left_arm.anim_number].interpolation >> 8) + 9;
+        else
+            rotation = frame + 9;
+        phd_RotYXZsuperpack(&rotation, 11);
+
+        phd_TranslateRel(*(bone + 1 + 44), *(bone + 2 + 44), *(bone + 3 + 44));
+        phd_RotYXZsuperpack(&rotation, 0);
+
+        phd_TranslateRel(*(bone + 1 + 48), *(bone + 2 + 48), *(bone + 3 + 48));
+        phd_RotYXZsuperpack(&rotation, 0);
+
+        phd_TranslateRel(vec->x, vec->y, vec->z);
+        vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
+        vec->y = (*(phd_mxptr + M13) >> W2V_SHIFT) + item->pos.y_pos;
+        vec->z = (*(phd_mxptr + M23) >> W2V_SHIFT) + item->pos.z_pos;
+    }
+    else if (fire_arms != LG_UNARMED)
+    {
+        phd_TranslateRel(*(bone + 1 + 28), *(bone + 2 + 28), *(bone + 3 + 28));
+        rotation = lara.right_arm.frame_base + lara.right_arm.frame_number * (anims[lara.right_arm.anim_number].interpolation >> 8) + 9;
+        phd_RotYXZsuperpack(&rotation, 8);
+
+        phd_TranslateRel(*(bone + 1 + 32), *(bone + 2 + 32), *(bone + 3 + 32));
+        phd_RotYXZsuperpack(&rotation, 0);
+
+        phd_TranslateRel(*(bone + 1 + 36), *(bone + 2 + 36), *(bone + 3 + 36));
+        phd_RotYXZsuperpack(&rotation, 0);
+
+        phd_TranslateRel(vec->x, vec->y, vec->z);
+        vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
+        vec->y = (*(phd_mxptr + M13) >> W2V_SHIFT) + item->pos.y_pos;
+        vec->z = (*(phd_mxptr + M23) >> W2V_SHIFT) + item->pos.z_pos;
+    }
+    phd_PopMatrix();
+}
