@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.09% (450)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.91% (797)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.17% (451)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.83% (796)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="269.57" height="6" x="0" y="0" class="named"/>
-<rect width="477.43" height="6" x="269.57" y="0" class="todo"/>
+<rect width="270.17" height="6" x="0" y="0" class="named"/>
+<rect width="476.83" height="6" x="270.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -729,7 +729,7 @@
 <rect width="12" height="12" x="135" y="195" class="named"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="195" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="195" class="todo"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="195" class="named"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="195" class="named"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x004363d0 Cult1Control (1025 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="195" class="named"><title>0x00436800 InitialiseCult3 (80 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.06%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="110.63" height="6" x="0" y="0" class="named"/>
-<rect width="636.37" height="6" x="110.63" y="0" class="todo"/>
+<rect width="111.63" height="6" x="0" y="0" class="named"/>
+<rect width="635.37" height="6" x="111.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.56" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1523,7 +1523,7 @@
 <rect width="16.44" height="16.69" x="653.47" y="21.72" class="todo"><title>0x00452060 FadeToPal (457 bytes)</title></rect>
 <rect width="16.40" height="16.69" x="672.91" y="21.72" class="todo"><title>0x00452f80 Func452f80 (456 bytes)</title></rect>
 <rect width="16.31" height="16.69" x="692.31" y="21.72" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
-<rect width="16.23" height="16.69" x="711.63" y="21.72" class="todo"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
+<rect width="16.23" height="16.69" x="711.63" y="21.72" class="named"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
 <rect width="16.14" height="16.69" x="730.86" y="21.72" class="todo"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
 <rect width="16.21" height="16.58" x="413.32" y="41.41" class="todo"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="16.21" height="16.54" x="413.32" y="60.99" class="todo"><title>0x00446870 WinVidResizeGameWindow (448 bytes)</title></rect>

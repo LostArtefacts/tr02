@@ -126,6 +126,80 @@ sint16 GunMiss(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint1
 
 #define CULT1C 18
 
+#define PEOPLE_HIT_CHANCE 0x2000
+#define PEOPLE_TARGETING_SPEED 300
+
+int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void SmashItem(sint16 item_number, int weapon_type);
+
+int ShotLara(ITEM_INFO *item, AI_INFO *info, BITE_INFO *gun, sint16 extra_rotation, int damage)
+{
+    int hit, targetable, random, distance;
+    sint16 fx_number, smash_item;
+    GAME_VECTOR start, target;
+    CREATURE_INFO *creature;
+    ITEM_INFO *enemy;
+
+    creature = (CREATURE_INFO *)item->data;
+    enemy = creature->enemy;
+
+    if (info->distance > PEOPLE_SHOOT_RANGE || !Targetable(item, info))
+        hit = targetable = 0;
+    else
+    {
+        distance = (phd_sin(info->enemy_facing) * enemy->speed >> W2V_SHIFT) * PEOPLE_SHOOT_RANGE / PEOPLE_TARGETING_SPEED;
+        distance = info->distance + SQUARE(distance);
+        if (distance > PEOPLE_SHOOT_RANGE)
+            hit = 0;
+        else
+        {
+            random = (PEOPLE_SHOOT_RANGE - info->distance) / (PEOPLE_SHOOT_RANGE / 0x5000) + PEOPLE_HIT_CHANCE;
+            hit = (GetRandomControl() < random);
+        }
+        targetable = 1;
+    }
+
+    fx_number = NO_ITEM;
+    if (enemy == lara_item)
+    {
+        if (hit)
+        {
+            fx_number = CreatureEffect(item, gun, GunHit);
+            lara_item->hit_points -= damage;
+            lara_item->hit_status = 1;
+        }
+        else if (targetable)
+            fx_number = CreatureEffect(item, gun, GunMiss);
+    }
+    else
+    {
+        fx_number = CreatureEffect(item, gun, GunShot);
+        if (hit)
+        {
+            enemy->hit_points -= damage / 10;
+            enemy->hit_status = 1;
+        }
+    }
+
+    if (fx_number != NO_ITEM)
+        effects[fx_number].pos.y_rot += extra_rotation;
+
+    start.x = item->pos.x_pos;
+    start.y = item->pos.y_pos - STEP_L * 3;
+    start.z = item->pos.z_pos;
+    start.room_number = item->room_number;
+
+    target.x = enemy->pos.x_pos;
+    target.y = enemy->pos.y_pos - STEP_L * 3;
+    target.z = enemy->pos.z_pos;
+
+    smash_item = ObjectOnLOS(&start, &target);
+    if (smash_item != NO_ITEM)
+        SmashItem(smash_item, 0);
+
+    return targetable;
+}
+
 void InitialiseCult1(sint16 item_number)
 {
     if (GetRandomControl() < 0x4000)
