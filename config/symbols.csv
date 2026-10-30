@@ -1632,6 +1632,7 @@ address,size,name,symbol
 0x004d7784,4,NoInputCounter,_NoInputCounter
 0x004d7788,4,IsResetFlag,_IsResetFlag
 0x004d778c,4,fliptimer,_fliptimer
+0x004d7790,4,number_los_rooms,_number_los_rooms
 0x004d7794,4,StopInventory,_StopInventory
 0x004d779c,4,IsDemoLevelType,_IsDemoLevelType
 0x004d77a0,4,demo_loaded,_demo_loaded
@@ -1965,6 +1966,7 @@ address,size,name,symbol
 0x00526240,4,flip_status,_flip_status
 0x00526260,40,flipmap,_flipmap
 0x00526288,4,trigger_index,_trigger_index
+0x005262a0,80,los_rooms,_los_rooms
 0x005262f0,4,items,_items
 0x005262f4,2,cine_loaded,_cine_loaded
 0x005262f6,2,num_cine_frames,_num_cine_frames

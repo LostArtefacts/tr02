@@ -206,6 +206,86 @@ int LOS(GAME_VECTOR *start, GAME_VECTOR *target)
         return 1;
 }
 
+#define RETURN_TARGET { target->x = x; target->y = y; target->z = z; target->room_number = last_room; return 0; }
+#define RETURN_TARGET2 { target->x = x; target->y = y; target->z = z; target->room_number = room_number; return -1; }
+
+extern int los_rooms[];
+extern int number_los_rooms;
+
+int zLOS(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    sint32 x, y, z;
+    sint32 dx, dy, dz;
+    sint16 room_number, last_room;
+    FLOOR_INFO *floor;
+
+    dz = target->z - start->z;
+    if (dz == 0)
+        return 1;
+
+    dx = ((target->x - start->x) << WALL_SHIFT) / dz;
+    dy = ((target->y - start->y) << WALL_SHIFT) / dz;
+
+    los_rooms[0] = room_number = last_room = start->room_number;
+    number_los_rooms = 1;
+
+    if (dz < 0)
+    {
+        z = start->z & ~(WALL_L - 1);
+        x = start->x + (dx * (z - start->z) >> WALL_SHIFT);
+        y = start->y + (dy * (z - start->z) >> WALL_SHIFT);
+        while (z > target->z)
+        {
+            floor = GetFloor(x, y, z, &room_number);
+            if (y > GetHeight(floor, x, y, z) || y < GetCeiling(floor, x, y, z))
+                RETURN_TARGET2;
+
+            if (room_number != last_room)
+            {
+                los_rooms[number_los_rooms++] = room_number;
+                last_room = room_number;
+            }
+
+            floor = GetFloor(x, y, z - 1, &room_number);
+            if (y > GetHeight(floor, x, y, z - 1) || y < GetCeiling(floor, x, y, z - 1))
+                RETURN_TARGET;
+
+            z -= WALL_L;
+            x -= dx;
+            y -= dy;
+        }
+    }
+    else
+    {
+        z = start->z | (WALL_L - 1);
+        x = start->x + (dx * (z - start->z) >> WALL_SHIFT);
+        y = start->y + (dy * (z - start->z) >> WALL_SHIFT);
+        while (z < target->z)
+        {
+            floor = GetFloor(x, y, z, &room_number);
+            if (y > GetHeight(floor, x, y, z) || y < GetCeiling(floor, x, y, z))
+                RETURN_TARGET2;
+
+            if (room_number != last_room)
+            {
+                los_rooms[number_los_rooms++] = room_number;
+                last_room = room_number;
+            }
+
+            floor = GetFloor(x, y, z + 1, &room_number);
+            if (y > GetHeight(floor, x, y, z + 1) || y < GetCeiling(floor, x, y, z + 1))
+                RETURN_TARGET;
+
+            z += WALL_L;
+            x += dx;
+            y += dy;
+        }
+    }
+
+    target->room_number = room_number;
+    return 1;
+}
+
 int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target, FLOOR_INFO *floor)
 {
     sint32 dx, dy, dz, height;

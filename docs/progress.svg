@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.99% (561)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.01% (686)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.07% (562)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">54.93% (685)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="336.06" height="6" x="0" y="0" class="named"/>
-<rect width="410.94" height="6" x="336.06" y="0" class="todo"/>
+<rect width="336.66" height="6" x="0" y="0" class="named"/>
+<rect width="410.34" height="6" x="336.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -246,7 +246,7 @@
 <rect width="12" height="12" x="390" y="45" class="todo"><title>0x00415900 GetCeiling (573 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="45" class="named"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="45" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="45" class="todo"><title>0x00415c50 zLOS (747 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="45" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="45" class="todo"><title>0x00415f40 xLOS (748 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="45" class="named"><title>0x00416230 ClipTarget (218 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="45" class="todo"><title>0x00416310 ObjectOnLOS (766 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.46%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.54%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.32%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="182.72" height="6" x="0" y="0" class="named"/>
-<rect width="564.28" height="6" x="182.72" y="0" class="todo"/>
+<rect width="184.36" height="6" x="0" y="0" class="named"/>
+<rect width="562.64" height="6" x="184.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1433,7 +1433,7 @@
 <rect width="21.65" height="22.65" x="323.19" y="103.70" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
 <rect width="21.65" height="22.34" x="323.19" y="129.35" class="todo"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
 <rect width="21.65" height="22.31" x="323.19" y="154.69" class="todo"><title>0x00415f40 xLOS (748 bytes)</title></rect>
-<rect width="21.65" height="22.27" x="323.19" y="180" class="todo"><title>0x00415c50 zLOS (747 bytes)</title></rect>
+<rect width="21.65" height="22.27" x="323.19" y="180" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="21.65" height="22.14" x="323.19" y="205.27" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="21.65" height="21.90" x="323.19" y="230.41" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="21.65" height="21.70" x="323.19" y="255.32" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
