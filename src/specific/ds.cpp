@@ -111,3 +111,16 @@ extern "C" int WinSndGetFreeChannelIndex()
     return -1;
 }
 
+void DS_AdjustVolumeAndPan(int nHandle, int nVolume, int nPan)
+{
+    LPDIRECTSOUNDBUFFER pBuffer;
+
+    if (nHandle < 0)
+        return;
+    pBuffer = ChannelBuffers[nHandle];
+    if (pBuffer) {
+        DX_TRY(pBuffer->SetVolume(nVolume));
+        DX_TRY(pBuffer->SetPan(nPan));
+    }
+}
+
