@@ -205,6 +205,24 @@ extern "C" bool GetRegistryStringValue(LPCTSTR lpValueName, LPTSTR value, DWORD 
     return false;
 }
 
+extern "C" bool GuidStringToBinary(LPCTSTR lpString, GUID *lpGuid);
+extern "C" LPCTSTR GuidBinaryToString(GUID *lpGuid);
+
+extern "C" bool GetRegistryGuidValue(LPCTSTR lpValueName, GUID *value, GUID *defaultValue)
+{
+    char buffer[40];
+    if (GetRegistryStringValue(lpValueName, buffer, 38, NULL) && GuidStringToBinary(buffer, value))
+        return true;
+    if (defaultValue)
+    {
+        SetRegistryStringValue(lpValueName, GuidBinaryToString(defaultValue), 37);
+        *value = *defaultValue;
+    }
+    else
+        RegDeleteValue(HKey, lpValueName);
+    return false;
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
