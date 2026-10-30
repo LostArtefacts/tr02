@@ -4,6 +4,7 @@
 #define CAM_E_CLIMBL (-15 * ONE_DEGREE)
 #define CAM_A_CLIMBR (30 * ONE_DEGREE)
 #define CAM_E_CLIMBR (-15 * ONE_DEGREE)
+#define CAM_E_CLIMBS (-20 * ONE_DEGREE)
 #define CAM_E_CLIMBU (30 * ONE_DEGREE)
 #define CAM_E_CLIMBD (-45 * ONE_DEGREE)
 #define CLIMB_HITE (STEP_L * 2)
@@ -32,4 +33,25 @@ void lara_as_climbright(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = CAM_E_CLIMBR;
     if (!(input & IN_RIGHT) && !(input & IN_STEPR))
         item->goal_anim_state = AS_CLIMBSTNC;
+}
+
+void lara_as_climbstnc(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_elevation = CAM_E_CLIMBS;
+
+    if (input & IN_LOOK)
+        LookUpDown();
+
+    if (input & IN_LEFT || input & IN_STEPL)
+        item->goal_anim_state = AS_CLIMBLEFT;
+    else if (input & IN_RIGHT || input & IN_STEPR)
+        item->goal_anim_state = AS_CLIMBRIGHT;
+    else if (input & IN_JUMP)
+    {
+        item->goal_anim_state = AS_BACKJUMP;
+        lara.move_angle = item->pos.y_rot - 32768;
+        lara.gun_status = LG_ARMLESS;
+    }
 }

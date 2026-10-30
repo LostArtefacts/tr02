@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.16% (214)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.84% (1033)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.24% (215)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.76% (1032)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="128.19" height="6" x="0" y="0" class="named"/>
-<rect width="618.81" height="6" x="128.19" y="0" class="todo"/>
+<rect width="128.79" height="6" x="0" y="0" class="named"/>
+<rect width="618.21" height="6" x="128.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -591,7 +591,7 @@
 <rect width="12" height="12" x="315" y="150" class="todo"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="150" class="named"><title>0x0042d8f0 lara_as_climbleft (53 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="150" class="named"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="150" class="todo"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="150" class="named"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="150" class="todo"><title>0x0042d9f0 lara_as_climbing (20 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="150" class="todo"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="150" class="todo"><title>0x0042da30 lara_as_climbdown (20 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.60%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.44%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.56%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="40.34" height="6" x="0" y="0" class="named"/>
-<rect width="706.66" height="6" x="40.34" y="0" class="todo"/>
+<rect width="40.60" height="6" x="0" y="0" class="named"/>
+<rect width="706.40" height="6" x="40.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1978,7 +1978,7 @@
 <rect width="6.92" height="6.97" x="700.65" y="207.90" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
 <rect width="6.92" height="6.97" x="710.57" y="207.90" class="todo"><title>0x00456d20 GetRegistryBoolValue (118 bytes)</title></rect>
 <rect width="6.84" height="6.97" x="720.49" y="207.90" class="todo"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
-<rect width="6.84" height="6.97" x="730.33" y="207.90" class="todo"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
+<rect width="6.84" height="6.97" x="730.33" y="207.90" class="named"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
 <rect width="6.84" height="6.97" x="740.16" y="207.90" class="todo"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
 <rect width="7.19" height="6.54" x="590.28" y="217.87" class="named"><title>0x00420e80 InitialiseHair (116 bytes)</title></rect>
 <rect width="7.19" height="6.54" x="600.47" y="217.87" class="todo"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
