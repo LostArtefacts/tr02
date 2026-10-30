@@ -12,6 +12,7 @@ game_end = 0x459030  # phd_sqrt, the 3DSYSTEM assembly, is last; the CRT follows
 
 [ghidra]
 project = "tomb2"
+search = ["~/data.local/work/ghidra_*"]
 
 [build]
 # TOMBRAID.DSP's release flags, without /Zi /Fr /YX /FD
