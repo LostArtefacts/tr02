@@ -7,6 +7,7 @@
 #include "../effects.h"
 #include "../gameflow.h"
 #include "hwrender.h"
+#include "winmain.h"
 
 extern "C" int LnTextureInfos;
 extern "C" int democount;
@@ -15,17 +16,7 @@ extern "C" int demo_loaded;
 
 #define DEMOCOUNT_MAX (30 * 60 * 5)
 #define MAX_TEXTPAGES 32
-#define RM_Hardware 2
 
-typedef struct {
-    void *PreferredDisplayAdapter;
-    void *PreferredSoundAdapter;
-    void *PreferredJoystick;
-    void *VideoMode;
-    int RenderMode;
-} APP_SETTINGS;
-
-extern "C" APP_SETTINGS SavedAppSettings;
 extern "C" char LevelFileName[];
 extern "C" char *texture_page_ptrs[];
 

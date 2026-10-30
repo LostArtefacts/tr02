@@ -1,6 +1,9 @@
 #include "global.h"
 #include "output.h"
 #include "../inventry.h"
+#include "winmain.h"
+
+extern "C" void Func444560(void);
 
 #define ANIMATED_TEXTURE 10
 
@@ -61,6 +64,12 @@ void S_SetupAboveWater(int underwater)
     water_effect = underwater;
     shade_effect = 0;
     bBlueEffect = bool(underwater);
+}
+
+void S_DontDisplayPicture(void)
+{
+    if (SavedAppSettings.RenderMode == RM_Hardware)
+        Func444560();
 }
 
 void ScreenDump(void)

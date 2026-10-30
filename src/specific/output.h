@@ -16,6 +16,7 @@ void FadeWait(void);
 void S_ClearScreen();
 void S_SetupBelowWater(int underwater);
 void S_SetupAboveWater(int underwater);
+void S_DontDisplayPicture(void);
 
 #ifdef __cplusplus
 void ScreenClear(bool tWindow = false);
