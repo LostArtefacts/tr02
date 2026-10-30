@@ -7,6 +7,20 @@ void SetCutsceneTrack(int track)
 
 extern sint16 number_rooms;
 
+int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
+{
+    int i;
+
+    for (i = 0; i < number_rooms; i++) {
+        if ((x >= room[i].x + WALL_L && x < room[i].x + (room[i].y_size - 1) * WALL_L)
+            && (y >= room[i].maxceiling && y <= room[i].minfloor)
+            && (z >= room[i].z + WALL_L && z < room[i].z + (room[i].x_size - 1) * WALL_L)) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint);
 void AnimateLara(ITEM_INFO *item);
 
