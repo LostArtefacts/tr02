@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.52% (930)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.92% (311)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.60% (931)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.84% (310)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="556.66" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="556.66" y="0" class="decompiled"/>
-<rect width="186.15" height="6" x="560.85" y="0" class="todo"/>
+<rect width="557.26" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="557.26" y="0" class="decompiled"/>
+<rect width="185.55" height="6" x="561.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -928,7 +928,7 @@
 <rect width="12" height="12" x="105" y="255" class="named"><title>0x00445fb0 FlaggedStringDelete (19 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="255" class="named"><title>0x00445fd0 EnumerateDisplayAdapters (26 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="255" class="todo"><title>0x00445ff0 EnumDisplayAdaptersCallback (446 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="255" class="todo"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="255" class="named"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="255" class="todo"><title>0x004461f0 WinVidRegisterGameWindowClass (106 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="255" class="todo"><title>0x00446260 WinVidGameWindowProc (1129 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="255" class="todo"><title>0x00446697 Func446697 (27 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.94%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.98%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.95%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.96%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="410.40" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="410.40" y="0" class="decompiled"/>
-<rect width="336" height="6" x="411" y="0" class="todo"/>
+<rect width="410.51" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="410.51" y="0" class="decompiled"/>
+<rect width="335.88" height="6" x="411.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2261,7 +2261,7 @@
 <rect width="3.54" height="3.72" x="662.46" y="330.97" class="named"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="3.54" height="3.72" x="662.46" y="337.69" class="named"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
 <rect width="3.54" height="3.72" x="662.46" y="344.41" class="named"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
-<rect width="3.54" height="3.72" x="662.46" y="351.13" class="todo"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
+<rect width="3.54" height="3.72" x="662.46" y="351.13" class="named"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
 <rect width="3.54" height="3.72" x="662.46" y="357.84" class="named"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="3.54" height="3.72" x="662.46" y="364.56" class="named"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
 <rect width="3.54" height="3.72" x="662.46" y="371.28" class="named"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>

@@ -457,10 +457,16 @@ extern "C" bool HideDDrawGameWindow(void)
 struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
+    STRING_FLAGGED(DWORD size)
+    {
+        lpString = new char[size];
+        *lpString = 0;
+        isPresented = true;
+    }
     ~STRING_FLAGGED();
 };
 
-typedef struct {
+struct DISPLAY_ADAPTER {
     LPGUID lpAdapterGuid;
     GUID adapterGuid;
     STRING_FLAGGED driverDescription;
@@ -469,7 +475,8 @@ typedef struct {
     DDCAPS helCaps;
     GUID deviceGuid;
     D3DDEVICEDESC D3DHWDeviceDesc;
-} DISPLAY_ADAPTER;
+    DISPLAY_ADAPTER();
+};
 
 typedef struct DISPLAY_ADAPTER_NODE {
     struct DISPLAY_ADAPTER_NODE *next;
@@ -627,4 +634,8 @@ STRING_FLAGGED::~STRING_FLAGGED()
 {
     if (isPresented)
         delete[] lpString;
+}
+
+DISPLAY_ADAPTER::DISPLAY_ADAPTER() : driverDescription(256), driverName(256)
+{
 }
