@@ -61,6 +61,36 @@ extern LPDIRECT3DVIEWPORT2 D3DView;
 extern LPDIRECT3DMATERIAL2 D3DMaterial;
 }
 
+extern "C" {
+extern int GameVidWidth;
+extern int GameVidHeight;
+}
+
+extern "C" bool D3DSetViewport(void)
+{
+    D3DVIEWPORT2 viewPort;
+
+    memset(&viewPort, 0, sizeof(viewPort));
+    viewPort.dwSize = sizeof(viewPort);
+    viewPort.dwX = 0;
+    viewPort.dwY = 0;
+    viewPort.dwWidth = GameVidWidth;
+    viewPort.dwHeight = GameVidHeight;
+    viewPort.dvClipX = 0.0f;
+    viewPort.dvClipY = 0.0f;
+    viewPort.dvClipWidth = (float)GameVidWidth;
+    viewPort.dvClipHeight = (float)GameVidHeight;
+    viewPort.dvMinZ = 0.0f;
+    viewPort.dvMaxZ = 1.0f;
+    if (DX_TRY(D3DView->SetViewport2(&viewPort))) {
+        D3DView->GetViewport2(&viewPort);
+        return false;
+    }
+    if (DX_TRY(G_Direct3DDevice->SetCurrentViewport(D3DView)))
+        return false;
+    return true;
+}
+
 extern "C" void Direct3DRelease(void)
 {
     if (D3DMaterial)

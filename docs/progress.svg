@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.48% (981)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">20.96% (262)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.56% (982)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">20.88% (261)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="586.25" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="586.25" y="0" class="decompiled"/>
-<rect width="156.57" height="6" x="590.43" y="0" class="todo"/>
+<rect width="586.84" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="586.84" y="0" class="decompiled"/>
+<rect width="155.97" height="6" x="591.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -880,7 +880,7 @@
 <rect width="12" height="12" x="135" y="240" class="named"><title>0x00444640 D3DRelease (26 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="240" class="todo"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="240" class="named"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="240" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="240" class="named"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="240" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="named"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="240" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.69%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.74%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.18%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="438.40" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="438.40" y="0" class="decompiled"/>
-<rect width="307.99" height="6" x="439.01" y="0" class="todo"/>
+<rect width="438.80" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="438.80" y="0" class="decompiled"/>
+<rect width="307.59" height="6" x="439.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1808,7 +1808,7 @@
 <rect width="9.11" height="9.64" x="523.03" y="253.22" class="named"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
 <rect width="9.11" height="9.64" x="523.03" y="265.86" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="9.11" height="9.64" x="523.03" y="278.51" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
-<rect width="9.11" height="9.64" x="523.03" y="291.15" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
+<rect width="9.11" height="9.64" x="523.03" y="291.15" class="named"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="9.11" height="9.57" x="523.03" y="303.79" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="9.11" height="9.57" x="523.03" y="316.36" class="named"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
 <rect width="9.11" height="9.37" x="523.03" y="328.94" class="named"><title>0x00408650 ins_line (181 bytes)</title></rect>
