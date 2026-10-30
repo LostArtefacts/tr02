@@ -96,3 +96,18 @@ int DS_StartSample(int nSample, int nVolume, int nPitch, int nPan, DWORD dwFlags
     return nChannel;
 }
 
+extern "C" int WinSndGetFreeChannelIndex()
+{
+    int nChannel;
+
+    for (nChannel = 0; nChannel < ArraySize(ChannelBuffers); ++nChannel) {
+        if (ChannelBuffers[nChannel] == 0)
+            return nChannel;
+    }
+    for (nChannel = 0; nChannel < ArraySize(ChannelBuffers); ++nChannel) {
+        if (!DS_IsChannelPlaying(nChannel))
+            return nChannel;
+    }
+    return -1;
+}
+
