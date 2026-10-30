@@ -1580,6 +1580,7 @@ address,size,name,symbol
 0x00466494,4,fade_limit,?fade_limit@@3HA
 0x00466498,4,fade_adder,?fade_adder@@3HA
 0x004664e8,4,ErrorStringTable,_ErrorStringTable
+0x00466a5c,4,DemoExtension,_DemoExtension
 0x00466b80,32,saved_levels,_saved_levels
 0x00466bb0,4,rand_1,_rand_1
 0x00466bb4,4,rand_2,_rand_2

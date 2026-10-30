@@ -221,3 +221,22 @@ extern "C" int LoadPalettes(HANDLE file)
     MyReadFile(file, GamePalette16, 1024, &read, NULL);
     return 1;
 }
+
+extern "C" char DemoExtension[];
+extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext);
+
+extern "C" void LoadDemoExternal(char *level_name)
+{
+    char file_name[80];
+    HANDLE file;
+    DWORD read;
+
+    strcpy(file_name, level_name);
+    ChangeFileNameExtension(file_name, DemoExtension);
+    file = CreateFileA(file_name, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file != INVALID_HANDLE_VALUE) {
+        MyReadFile(file, demoptr, 36000, &read, NULL);
+        demo_loaded = read > 0;
+        CloseHandle(file);
+    }
+}

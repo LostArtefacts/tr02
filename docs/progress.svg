@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.45% (891)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.99% (349)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.53% (892)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.91% (348)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="533.74" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="533.74" y="0" class="decompiled"/>
-<rect width="209.06" height="6" x="537.94" y="0" class="todo"/>
+<rect width="534.34" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="534.34" y="0" class="decompiled"/>
+<rect width="208.47" height="6" x="538.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1032,7 +1032,7 @@
 <rect width="12" height="12" x="165" y="285" class="named"><title>0x0044ad40 LoadAnimatedTextures (85 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="285" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="285" class="named"><title>0x0044ae20 LoadDemo (138 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="285" class="todo"><title>0x0044aeb0 LoadDemoExternal (154 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="285" class="named"><title>0x0044aeb0 LoadDemoExternal (154 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="285" class="todo"><title>0x0044af50 LoadSamples (613 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="285" class="named"><title>0x0044b1c0 ChangeFileNameExtension (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="285" class="todo"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.58%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.34%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.62%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.29%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="385.29" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="385.29" y="0" class="decompiled"/>
-<rect width="361.10" height="6" x="385.90" y="0" class="todo"/>
+<rect width="385.63" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="385.63" y="0" class="decompiled"/>
+<rect width="360.76" height="6" x="386.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1865,7 +1865,7 @@
 <rect width="7.96" height="8.82" x="728.08" y="175.29" class="named"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
 <rect width="7.96" height="8.82" x="739.04" y="175.29" class="todo"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="8.22" height="8.40" x="547.51" y="187.12" class="named"><title>0x0041d900 swap_meshes_with_meshswap3 (154 bytes)</title></rect>
-<rect width="8.22" height="8.40" x="547.51" y="198.51" class="todo"><title>0x0044aeb0 LoadDemoExternal (154 bytes)</title></rect>
+<rect width="8.22" height="8.40" x="547.51" y="198.51" class="named"><title>0x0044aeb0 LoadDemoExternal (154 bytes)</title></rect>
 <rect width="8.22" height="8.40" x="547.51" y="209.91" class="todo"><title>0x0044c6a0 GameLoop (154 bytes)</title></rect>
 <rect width="8.22" height="8.32" x="547.51" y="221.31" class="named"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="8.22" height="8.32" x="547.51" y="232.63" class="named"><title>0x00413580 GetTiltType (153 bytes)</title></rect>
