@@ -291,3 +291,43 @@ void BoatAnimation(ITEM_INFO *boat, int collide)
         }
     }
 }
+
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+
+#define GONDOLA_FLOATING 1
+#define GONDOLA_CRASH 2
+#define GONDOLA_SINK 3
+#define GONDOLA_LAND 4
+#define GONDOLA_SINK_SPEED 50
+
+void GondolaControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+    switch (item->current_anim_state) {
+    case GONDOLA_FLOATING:
+        if (item->goal_anim_state == GONDOLA_CRASH) {
+            item->mesh_bits = 0xff;
+            ExplodingDeath(item_number, 240, 0);
+        }
+        break;
+
+    case GONDOLA_SINK:
+        item->pos.y_pos += GONDOLA_SINK_SPEED;
+        room_number = item->room_number;
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+        if (item->pos.y_pos >= item->floor) {
+            item->goal_anim_state = GONDOLA_LAND;
+            item->pos.y_pos = item->floor;
+        }
+        break;
+    }
+
+    AnimateItem(item);
+    if (item->status == DEACTIVATED)
+        RemoveActiveItem(item_number);
+}

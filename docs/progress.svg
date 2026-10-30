@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">63.19% (788)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.57% (456)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">63.27% (789)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.49% (455)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="472.04" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="472.04" y="0" class="decompiled"/>
-<rect width="273.16" height="6" x="473.84" y="0" class="todo"/>
+<rect width="472.64" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="472.64" y="0" class="decompiled"/>
+<rect width="272.56" height="6" x="474.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -165,7 +165,7 @@
 <rect width="12" height="12" x="660" y="15" class="named"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="15" class="named"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="15" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="15" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="15" class="named"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="15" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="15" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="named"><title>0x0040e210 CreatureAIInfo (599 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.96%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.02%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">52.98%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="350.82" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="350.82" y="0" class="decompiled"/>
-<rect width="396.13" height="6" x="350.87" y="0" class="todo"/>
+<rect width="351.22" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="351.22" y="0" class="decompiled"/>
+<rect width="395.73" height="6" x="351.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.09" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1806,7 +1806,7 @@
 <rect width="9.09" height="9.65" x="523.39" y="278.87" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="9.09" height="9.65" x="523.39" y="291.52" class="named"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
 <rect width="9.09" height="9.44" x="523.39" y="304.17" class="todo"><title>0x00408650 InsertLine (181 bytes)</title></rect>
-<rect width="9.09" height="9.31" x="523.39" y="316.61" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
+<rect width="9.09" height="9.31" x="523.39" y="316.61" class="named"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
 <rect width="9.09" height="9.31" x="523.39" y="328.91" class="named"><title>0x00416610 FlipMap (179 bytes)</title></rect>
 <rect width="9.09" height="9.31" x="523.39" y="341.22" class="named"><title>0x00429190 lara_col_fastback (179 bytes)</title></rect>
 <rect width="9.09" height="9.24" x="523.39" y="353.53" class="named"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
