@@ -37,6 +37,17 @@ void phd_PushMatrix_I(void)
     IMptr += 12;
 }
 
+void phd_RotY_I(sint16 ang)
+{
+    sint32 *oldm;
+
+    phd_RotY(ang);
+    oldm = phd_mxptr;
+    phd_mxptr = IMptr;
+    phd_RotY(ang);
+    phd_mxptr = oldm;
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;
