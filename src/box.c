@@ -3,6 +3,17 @@
 
 int SearchLOT(LOT_INFO *LOT, int expansion);
 
+void InitialiseCreature(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    item->pos.y_rot += (GetRandomControl() - 0x4000) >> 1;
+    item->collidable = 1;
+    item->data = NULL;
+}
+
 int UpdateLOT(LOT_INFO *LOT, int expansion)
 {
     BOX_NODE *expand;

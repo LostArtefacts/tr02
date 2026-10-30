@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.45% (280)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.55% (967)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.53% (281)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.47% (966)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="167.73" height="6" x="0" y="0" class="named"/>
-<rect width="579.27" height="6" x="167.73" y="0" class="todo"/>
+<rect width="168.33" height="6" x="0" y="0" class="named"/>
+<rect width="578.67" height="6" x="168.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -165,7 +165,7 @@
 <rect width="12" height="12" x="675" y="15" class="todo"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="15" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="15" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="15" class="todo"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="15" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="15" class="todo"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="todo"><title>0x0040e210 CreatureAIInfo (578 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="30" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.99%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.01%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.12" height="6" x="0" y="0" class="named"/>
-<rect width="694.88" height="6" x="52.12" y="0" class="todo"/>
+<rect width="52.23" height="6" x="0" y="0" class="named"/>
+<rect width="694.77" height="6" x="52.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2301,7 +2301,7 @@
 <rect width="3.36" height="3.33" x="675.19" y="302.91" class="todo"><title>0x004445c0 BGND_Init (48 bytes)</title></rect>
 <rect width="3.36" height="3.33" x="681.54" y="302.91" class="todo"><title>0x00455760 S_CDStop (48 bytes)</title></rect>
 <rect width="3.36" height="3.33" x="687.90" y="302.91" class="todo"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
-<rect width="3.22" height="3.33" x="694.25" y="302.91" class="todo"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
+<rect width="3.22" height="3.33" x="694.25" y="302.91" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="700.48" y="302.91" class="named"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="706.70" y="302.91" class="todo"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="712.92" y="302.91" class="todo"><title>0x00425330 Inv_RingRotateRight (47 bytes)</title></rect>
