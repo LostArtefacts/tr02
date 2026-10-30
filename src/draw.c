@@ -15,6 +15,23 @@ extern int IM_rate, IM_frac;
 extern sint32 *IMptr;
 extern sint32 IMstack[];
 
+extern int UnderwaterCamera;
+
+void DrawRooms(sint16 current_room);
+void S_OutputPolyList(void);
+int S_DumpScreen(void);
+void S_AnimateTextures(int nframes);
+
+int DrawPhaseCinematic(void)
+{
+    UnderwaterCamera = 0;
+    DrawRooms(camera.pos.room_number);
+    S_OutputPolyList();
+    camera.number_frames = S_DumpScreen();
+    S_AnimateTextures(camera.number_frames);
+    return camera.number_frames;
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;

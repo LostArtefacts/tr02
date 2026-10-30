@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.08% (425)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.92% (822)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.16% (426)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.84% (821)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="254.59" height="6" x="0" y="0" class="named"/>
-<rect width="492.41" height="6" x="254.59" y="0" class="todo"/>
+<rect width="255.19" height="6" x="0" y="0" class="named"/>
+<rect width="491.81" height="6" x="255.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -273,7 +273,7 @@
 <rect width="12" height="12" x="45" y="60" class="todo"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="60" class="todo"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="todo"><title>0x00418670 DinoControl (647 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="60" class="todo"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="60" class="named"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="todo"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="60" class="todo"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.03%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.97%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.05%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.95%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="104.82" height="6" x="0" y="0" class="named"/>
-<rect width="642.18" height="6" x="104.82" y="0" class="todo"/>
+<rect width="104.94" height="6" x="0" y="0" class="named"/>
+<rect width="642.06" height="6" x="104.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2226,7 +2226,7 @@
 <rect width="3.86" height="3.72" x="655.27" y="290.64" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="3.86" height="3.72" x="655.27" y="297.36" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="3.86" height="3.72" x="655.27" y="304.08" class="named"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
-<rect width="3.86" height="3.72" x="655.27" y="310.80" class="todo"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
+<rect width="3.86" height="3.72" x="655.27" y="310.80" class="named"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="3.86" height="3.72" x="655.27" y="317.52" class="todo"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="3.86" height="3.72" x="655.27" y="324.24" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
 <rect width="3.86" height="3.72" x="655.27" y="330.96" class="todo"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
