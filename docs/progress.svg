@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.64% (768)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.36% (478)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.72% (769)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.28% (477)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="460.43" height="6" x="0" y="0" class="named"/>
-<rect width="286.57" height="6" x="460.43" y="0" class="todo"/>
+<rect width="461.03" height="6" x="0" y="0" class="named"/>
+<rect width="285.97" height="6" x="461.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -882,7 +882,7 @@
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="240" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="todo"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="240" class="todo"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="240" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="todo"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="todo"><title>0x00444a70 Func444a70 (14 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="240" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
@@ -1319,8 +1319,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.99%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.01%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="343.54" height="6" x="0" y="0" class="named"/>
-<rect width="403.46" height="6" x="343.54" y="0" class="todo"/>
+<rect width="343.55" height="6" x="0" y="0" class="named"/>
+<rect width="403.45" height="6" x="343.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2522,7 +2522,7 @@
 <rect width="0.22" height="0.10" x="734.62" y="362.38" class="named"><title>0x0041d9d0 dynamic_light_on (9 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.84" y="362.38" class="named"><title>0x00444e60 WinVidClearMinWindowSize (8 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="740.70" y="362.38" class="named"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="743.56" y="362.38" class="todo"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="743.56" y="362.38" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.71" y="362.38" class="named"><title>0x004484b0 WinSndIsSoundEnabled (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.85" y="362.38" class="named"><title>0x0044c740 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.62" y="364.70" class="named"><title>0x00450ba0 GetRenderHeight (6 bytes)</title></rect>
