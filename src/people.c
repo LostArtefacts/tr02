@@ -1163,3 +1163,70 @@ void Bandit2Control(sint16 item_number)
     CreatureNeck(item, neck);
     CreatureAnimation(item_number, angle, 0);
 }
+
+
+#define WINSTON_STOP 1
+#define WINSTON_WALK 2
+#define WINSTON_STOP_RANGE SQUARE(WALL_L * 3 / 2)
+
+void WinstonControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *winston;
+    sint16 angle;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    winston = (CREATURE_INFO *)item->data;
+
+    CreatureAIInfo(item, &info);
+    CreatureMood(item, &info, 1);
+    angle = CreatureTurn(item, winston->maximum_turn);
+
+    if (item->current_anim_state == WINSTON_STOP)
+    {
+        if (info.distance > WINSTON_STOP_RANGE || !info.ahead)
+        {
+            if (item->goal_anim_state != WINSTON_WALK)
+            {
+                item->goal_anim_state = WINSTON_WALK;
+                SoundEffect(345, &item->pos, 0);
+            }
+        }
+    }
+    else
+    {
+        if (info.distance < WINSTON_STOP_RANGE)
+        {
+            if (info.ahead)
+            {
+                item->goal_anim_state = WINSTON_STOP;
+                if (winston->flags & 1)
+                    winston->flags--;
+            }
+            else if (!(winston->flags & 1))
+            {
+                SoundEffect(344, &item->pos, 0);
+                SoundEffect(347, &item->pos, 0);
+                winston->flags |= 1;
+            }
+        }
+    }
+
+    if (item->touch_bits && !(winston->flags & 2))
+    {
+        SoundEffect(346, &item->pos, 0);
+        SoundEffect(347, &item->pos, 0);
+        winston->flags |= 2;
+    }
+    else if (!item->touch_bits && (winston->flags & 2))
+        winston->flags -= 2;
+
+    if (GetRandomDraw() < 0x100)
+        SoundEffect(347, &item->pos, 0);
+
+    CreatureAnimation(item_number, angle, 0);
+}

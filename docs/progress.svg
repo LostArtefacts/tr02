@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.57% (456)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.43% (791)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.65% (457)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.35% (790)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="273.16" height="6" x="0" y="0" class="named"/>
-<rect width="473.84" height="6" x="273.16" y="0" class="todo"/>
+<rect width="273.76" height="6" x="0" y="0" class="named"/>
+<rect width="473.24" height="6" x="273.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -738,7 +738,7 @@
 <rect width="12" height="12" x="270" y="195" class="named"><title>0x004371c0 Worker2Control (1112 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="195" class="named"><title>0x00437620 BanditControl (826 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="195" class="named"><title>0x00437960 Bandit2Control (1084 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="195" class="todo"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="195" class="named"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="195" class="todo"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="195" class="todo"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="195" class="todo"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.53%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.47%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="123.50" height="6" x="0" y="0" class="named"/>
-<rect width="623.50" height="6" x="123.50" y="0" class="todo"/>
+<rect width="124.31" height="6" x="0" y="0" class="named"/>
+<rect width="622.69" height="6" x="124.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.52" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1573,7 +1573,7 @@
 <rect width="14.92" height="14.43" x="431.51" y="239.93" class="todo"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
 <rect width="14.92" height="14.38" x="431.51" y="257.36" class="todo"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="14.92" height="14.38" x="431.51" y="274.74" class="todo"><title>0x00455eb0 TexturePageInit (372 bytes)</title></rect>
-<rect width="14.92" height="14.29" x="431.51" y="292.12" class="todo"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
+<rect width="14.92" height="14.29" x="431.51" y="292.12" class="named"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
 <rect width="14.92" height="14.19" x="431.51" y="309.41" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
 <rect width="14.92" height="14.15" x="431.51" y="326.61" class="todo"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
 <rect width="14.92" height="14.15" x="431.51" y="343.75" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
