@@ -51,7 +51,7 @@
 #define SKIDOO_MIN_BOUNCE (SKIDOO_MAX_SPEED / 2)
 
 #define GRAVITY 6
-#define SKIDMAN 51
+#define BANDIT3 51
 #define AVALANCHE 83
 #define SNOW_SPRITE 90
 #define TRAP_ACTIVATE 1
@@ -158,7 +158,7 @@ void SkidooBaddieCollision(ITEM_INFO *skidoo)
                     {
                         if (TestBoundsCollide(item, skidoo, SKIDOO_RADIUS))
                         {
-                            if (item->object_number == SKIDMAN)
+                            if (item->object_number == BANDIT3)
                                 SkidmanPush(item, skidoo, SKIDOO_RADIUS);
                             else if (item->object_number == AVALANCHE)
                             {
@@ -882,4 +882,39 @@ void SkidooGuns(void)
             CreatureEffect(skidoo, &right_gun, GunShot);
         }
     }
+}
+
+#define NOT_VISIBLE ONESHOT
+
+extern int level_items;
+
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+void S_ExitSystem(char *message);
+
+void InitialiseSkidman(sint16 item_number)
+{
+    sint16 skidoo_item;
+    ITEM_INFO *item, *skidoo;
+
+    skidoo_item = CreateItem();
+    if (skidoo_item != NO_ITEM) {
+        item = &items[item_number];
+        skidoo = &items[skidoo_item];
+        skidoo->object_number = BANDIT3;
+        skidoo->pos.x_pos = item->pos.x_pos;
+        skidoo->pos.y_pos = item->pos.y_pos;
+        skidoo->pos.z_pos = item->pos.z_pos;
+        skidoo->pos.y_rot = item->pos.y_rot;
+        skidoo->room_number = item->room_number;
+        skidoo->flags = NOT_VISIBLE;
+        skidoo->shade = -1;
+
+        InitialiseItem(skidoo_item);
+
+        item->data = (void *)skidoo_item;
+
+        level_items++;
+    } else
+        S_ExitSystem("FATAL: Cannot create SKIDOO for SKIDMAN");
 }

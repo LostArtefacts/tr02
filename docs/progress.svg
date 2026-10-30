@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.23% (589)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.77% (658)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.31% (590)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.69% (657)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="352.83" height="6" x="0" y="0" class="named"/>
-<rect width="394.17" height="6" x="352.83" y="0" class="todo"/>
+<rect width="353.43" height="6" x="0" y="0" class="named"/>
+<rect width="393.57" height="6" x="353.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -788,7 +788,7 @@
 <rect width="12" height="12" x="270" y="210" class="named"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="210" class="todo"><title>0x0043e6b0 SkidooControl (1088 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="210" class="todo"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="210" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="210" class="named"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="210" class="todo"><title>0x0043ee80 SkidManControl (994 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="210" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="210" class="todo"><title>0x0043f3a0 SkidmanCollision (129 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.26%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.74%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="210.83" height="6" x="0" y="0" class="named"/>
-<rect width="536.17" height="6" x="210.83" y="0" class="todo"/>
+<rect width="211.11" height="6" x="0" y="0" class="named"/>
+<rect width="535.89" height="6" x="211.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1932,7 +1932,7 @@
 <rect width="7.36" height="7.62" x="729.36" y="197.60" class="named"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
 <rect width="7.28" height="7.62" x="739.72" y="197.60" class="named"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
 <rect width="7.11" height="7.80" x="570.22" y="208.22" class="named"><title>0x00429ad0 lara_col_fallback (131 bytes)</title></rect>
-<rect width="7.11" height="7.80" x="570.22" y="219.02" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
+<rect width="7.11" height="7.80" x="570.22" y="219.02" class="named"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="7.11" height="7.72" x="570.22" y="229.82" class="named"><title>0x0041c6c0 ControlBlood1 (130 bytes)</title></rect>
 <rect width="7.11" height="7.72" x="570.22" y="240.54" class="named"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
 <rect width="7.11" height="7.72" x="570.22" y="251.26" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
