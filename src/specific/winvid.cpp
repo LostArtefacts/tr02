@@ -373,6 +373,26 @@ typedef struct {
     DWORD dwRGBAlphaBitOffset;
 } COLOR_BIT_MASKS;
 
+extern "C" void BitMaskGetNumberOfBits(DWORD bitMask, DWORD *bitDepth, DWORD *bitOffset)
+{
+    DWORD i;
+
+    if (bitMask)
+    {
+        for (i = 0; !(bitMask & 1); i++)
+            bitMask >>= 1;
+        *bitOffset = i;
+        for (i = 0; bitMask; i++)
+            bitMask >>= 1;
+        *bitDepth = i;
+    }
+    else
+    {
+        *bitOffset = 0;
+        *bitDepth = 0;
+    }
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
