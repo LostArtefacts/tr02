@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.85% (285)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.15% (962)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.94% (286)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.06% (961)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="170.73" height="6" x="0" y="0" class="named"/>
-<rect width="576.27" height="6" x="170.73" y="0" class="todo"/>
+<rect width="171.32" height="6" x="0" y="0" class="named"/>
+<rect width="575.68" height="6" x="171.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -585,7 +585,7 @@
 <rect width="12" height="12" x="225" y="150" class="todo"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="150" class="named"><title>0x0042d300 ready_pistols (92 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="150" class="todo"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="150" class="todo"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="150" class="named"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="150" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="150" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="150" class="todo"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.93%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.91%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.83" height="6" x="0" y="0" class="named"/>
-<rect width="694.17" height="6" x="52.83" y="0" class="todo"/>
+<rect width="52.96" height="6" x="0" y="0" class="named"/>
+<rect width="694.04" height="6" x="52.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2208,7 +2208,7 @@
 <rect width="4.18" height="3.88" x="728.45" y="276.36" class="todo"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
 <rect width="4.18" height="3.88" x="735.63" y="276.36" class="named"><title>0x00450b60 S_RemoveCtrlText (59 bytes)</title></rect>
 <rect width="4.18" height="3.88" x="742.82" y="276.36" class="todo"><title>0x004560c0 TexturePageReleaseVidMemSurface (59 bytes)</title></rect>
-<rect width="4.09" height="3.85" x="648.58" y="283.25" class="todo"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
+<rect width="4.09" height="3.85" x="648.58" y="283.25" class="named"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.58" y="290.10" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.58" y="296.95" class="named"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.58" y="303.80" class="todo"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
