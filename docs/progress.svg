@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.20% (1030)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.16% (215)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.28% (1031)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.08% (214)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="614.05" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="614.05" y="0" class="decompiled"/>
-<rect width="128.18" height="6" x="618.82" y="0" class="todo"/>
+<rect width="614.65" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="614.65" y="0" class="decompiled"/>
+<rect width="127.58" height="6" x="619.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1147,7 +1147,7 @@
 <rect width="12" height="12" x="390" y="315" class="named"><title>0x00452050 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="315" class="todo"><title>0x00452060 FadeToPal (457 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="315" class="named"><title>0x00452230 ScreenClear (38 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="315" class="todo"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="315" class="named"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="315" class="named"><title>0x00452310 S_CopyBufferToScreen (77 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="315" class="todo"><title>0x00452360 DecompPCX (248 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="315" class="named"><title>0x00452480 OpenGameRegistryKey (78 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.55%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.60%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.31%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="512.08" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="512.08" y="0" class="decompiled"/>
-<rect width="234.27" height="6" x="512.73" y="0" class="todo"/>
+<rect width="512.45" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="512.45" y="0" class="decompiled"/>
+<rect width="233.90" height="6" x="513.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1841,7 +1841,7 @@
 <rect width="9.26" height="8.93" x="725.48" y="170.02" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="9.26" height="8.93" x="737.74" y="170.02" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="9.31" height="8.88" x="537.61" y="181.95" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
-<rect width="9.31" height="8.88" x="537.61" y="193.82" class="todo"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
+<rect width="9.31" height="8.88" x="537.61" y="193.82" class="named"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
 <rect width="9.31" height="8.81" x="537.61" y="205.70" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="9.31" height="8.81" x="537.61" y="217.51" class="named"><title>0x00409380 InsertObjectGT3_ZBuffered (170 bytes)</title></rect>
 <rect width="9.31" height="8.81" x="537.61" y="229.32" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>

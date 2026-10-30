@@ -221,6 +221,41 @@ extern "C" LPDIRECTDRAWSURFACE PictureBufferSurface;
 extern "C" RECT GameVidRect;
 extern "C" void S_SyncPictureBufferPalette(void);
 extern "C" void Func444350(void);
+extern "C" uint8 DepthQIndex[256];
+extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
+extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
+
+inline bool DX_TRY(HRESULT hr)
+{
+    return FAILED(hr);
+}
+
+extern "C" void S_CopyScreenToBuffer(void)
+{
+    DDSURFACEDESC desc;
+    uint8 *ptr;
+    int x, y;
+
+    if (SavedAppSettings.RenderMode == RM_Software)
+    {
+        PictureBufferSurface->Blt(NULL, RenderBufferSurface, &GameVidRect, DDBLT_WAIT, NULL);
+        if (!DX_TRY(WinVidBufferLock(PictureBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+        {
+            ptr = (uint8 *)desc.lpSurface;
+            for (y = 0; y < 480; y++)
+            {
+                for (x = 0; x < 640; x++)
+                {
+                    *ptr = DepthQIndex[*ptr];
+                    ptr++;
+                }
+                ptr += desc.lPitch - 640;
+            }
+            WinVidBufferUnlock(PictureBufferSurface, &desc);
+        }
+        memcpy(PicPalette, game_palette, 0x300);
+    }
+}
 
 extern "C" void S_CopyBufferToScreen(void)
 {
@@ -244,11 +279,6 @@ extern "C" void S_CalculateStaticLight(sint16 adder)
     depth = phd_mxptr[M23] >> W2V_SHIFT;
     if (depth > 0x3000)
         LsAdder += depth - 0x3000;
-}
-
-inline bool DX_TRY(HRESULT hr)
-{
-    return FAILED(hr);
 }
 
 extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
