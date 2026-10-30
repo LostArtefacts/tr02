@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.39% (354)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.61% (893)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.47% (355)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.53% (892)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="212.06" height="6" x="0" y="0" class="named"/>
-<rect width="534.94" height="6" x="212.06" y="0" class="todo"/>
+<rect width="212.66" height="6" x="0" y="0" class="named"/>
+<rect width="534.34" height="6" x="212.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -846,7 +846,7 @@
 <rect width="12" height="12" x="390" y="225" class="named"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="225" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="225" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="225" class="named"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x004425b0 FallingBlock (261 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="225" class="named"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="225" class="named"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.71%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.29%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="71.97" height="6" x="0" y="0" class="named"/>
-<rect width="675.03" height="6" x="71.97" y="0" class="todo"/>
+<rect width="72.56" height="6" x="0" y="0" class="named"/>
+<rect width="674.44" height="6" x="72.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1667,7 +1667,7 @@
 <rect width="12.32" height="11.60" x="466.03" y="334.26" class="todo"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="12.32" height="11.60" x="466.03" y="348.86" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
 <rect width="12.32" height="11.54" x="466.03" y="363.46" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
-<rect width="11.52" height="12.34" x="481.35" y="109.38" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
+<rect width="11.52" height="12.34" x="481.35" y="109.38" class="named"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="11.52" height="12.29" x="481.35" y="124.72" class="named"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
 <rect width="11.52" height="12.17" x="481.35" y="140.01" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="11.52" height="12.11" x="481.35" y="155.18" class="todo"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>

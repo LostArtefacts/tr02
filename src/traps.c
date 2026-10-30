@@ -291,6 +291,32 @@ int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z)
     return (0);
 }
 
+void Pendulum(sint16 item_number)
+{
+    int x, y, z;
+    sint16 d;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+
+    if (item->touch_bits)
+    {
+        lara_item->hit_points -= 50;
+        lara_item->hit_status = 1;
+        x = lara_item->pos.x_pos + (GetRandomControl() - 16384) / 256;
+        z = lara_item->pos.z_pos + (GetRandomControl() - 16384) / 256;
+        y = lara_item->pos.y_pos - GetRandomControl() / 44;
+        d = (GetRandomControl() - 16384) / 8 + lara_item->pos.y_rot;
+        DoBloodSplat(x, y, z, lara_item->speed, d, lara_item->room_number);
+    }
+
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &item->room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    AnimateItem(item);
+}
+
 void FallingBlockFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 origin;
