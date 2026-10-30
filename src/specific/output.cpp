@@ -168,3 +168,15 @@ extern "C" void S_CopyBufferToScreen(void)
     else
         Func444350();
 }
+
+extern "C" sint32 LsAdder;
+
+extern "C" void S_CalculateStaticLight(sint16 adder)
+{
+    sint32 depth;
+
+    LsAdder = adder - 0x1000;
+    depth = phd_mxptr[M23] >> W2V_SHIFT;
+    if (depth > 0x3000)
+        LsAdder += depth - 0x3000;
+}
