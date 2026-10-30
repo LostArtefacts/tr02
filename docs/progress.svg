@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.31% (353)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.69% (894)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.39% (354)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.61% (893)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="211.46" height="6" x="0" y="0" class="named"/>
-<rect width="535.54" height="6" x="211.46" y="0" class="todo"/>
+<rect width="212.06" height="6" x="0" y="0" class="named"/>
+<rect width="534.94" height="6" x="212.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -832,7 +832,7 @@
 <rect width="12" height="12" x="180" y="225" class="named"><title>0x00441420 HookControl (134 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="225" class="todo"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="225" class="todo"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="225" class="todo"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="225" class="named"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="225" class="named"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="225" class="named"><title>0x00441900 BladeControl (145 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="225" class="named"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.56%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.44%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="71.41" height="6" x="0" y="0" class="named"/>
-<rect width="675.59" height="6" x="71.41" y="0" class="todo"/>
+<rect width="71.97" height="6" x="0" y="0" class="named"/>
+<rect width="675.03" height="6" x="71.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1679,7 +1679,7 @@
 <rect width="11.52" height="12.05" x="481.35" y="245.74" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="11.52" height="12" x="481.35" y="260.79" class="todo"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
 <rect width="11.52" height="12" x="481.35" y="275.79" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
-<rect width="11.52" height="11.65" x="481.35" y="290.79" class="todo"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
+<rect width="11.52" height="11.65" x="481.35" y="290.79" class="named"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
 <rect width="11.52" height="11.59" x="481.35" y="305.44" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
 <rect width="11.52" height="11.54" x="481.35" y="320.03" class="todo"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="11.52" height="11.54" x="481.35" y="334.57" class="todo"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>

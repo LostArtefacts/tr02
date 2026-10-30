@@ -12,6 +12,10 @@
 #define BOARD_OFF 0
 #define FALLING_CEILING_DAMAGE 300
 #define STATUE_DAMAGE 20
+#define ICICLE_DAMAGE 200
+#define ICICLE_BREAK 1
+#define ICICLE_FALL 2
+#define ICICLE_LAND 3
 #define STATUE_TOUCH 0x80
 #define BOARD_ON 1
 #define FALLDOWN_A 34
@@ -50,6 +54,61 @@ void HookControl(sint16 item_number)
         clonked = 0;
 
     AnimateItem(item);
+}
+
+void IcicleControl(sint16 item_number)
+{
+    sint16 room_number;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+
+    switch (item->current_anim_state)
+    {
+    case ICICLE_BREAK:
+        item->goal_anim_state = ICICLE_FALL;
+        break;
+
+    case ICICLE_FALL:
+        if (item->gravity_status == 0)
+        {
+            item->fallspeed = 50;
+            item->gravity_status = 1;
+        }
+        if (item->touch_bits)
+        {
+            lara_item->hit_points -= ICICLE_DAMAGE;
+            lara_item->hit_status = 1;
+        }
+        break;
+
+    case ICICLE_LAND:
+        item->gravity_status = 0;
+        break;
+    }
+
+    AnimateItem(item);
+    if (item->status == DEACTIVATED)
+    {
+        RemoveActiveItem(item_number);
+        return;
+    }
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    if (item->current_anim_state == ICICLE_FALL && item->pos.y_pos >= item->floor)
+    {
+        item->gravity_status = 0;
+        item->goal_anim_state = ICICLE_LAND;
+        item->pos.y_pos = item->floor;
+        item->fallspeed = 0;
+        item->mesh_bits = 0x2b;
+    }
 }
 
 void InitialiseBlade(sint16 item_number)
