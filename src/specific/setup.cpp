@@ -368,3 +368,20 @@ extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam,
     Func457470(SoundImageHandle, uMsg, wParam);
     return FALSE;
 }
+
+typedef struct
+{
+    void *head;
+    void *tail;
+    int count;
+} SETUP_JOYSTICK_LIST;
+
+extern "C" SETUP_JOYSTICK_LIST JoystickList;
+
+extern "C" void SE_ControlsDlgUpdate(HWND hwndDlg)
+{
+    int count = JoystickList.count;
+    bool isAvailable = count > 0;
+
+    SE_CheckItem(hwndDlg, 1099, isAvailable, ChangedAppSettings.JoystickEnabled && isAvailable);
+}
