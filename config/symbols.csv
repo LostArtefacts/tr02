@@ -1925,8 +1925,8 @@ address,size,name,symbol
 0x005263a0,32,GroundZones,_GroundZones
 0x005263c0,8,FlyZones,_FlyZones
 0x005263c8,4,Overlaps,_Overlaps
-0x005263cc,4,Boxes,_Boxes
-0x005263d0,4,BoxesCount,_BoxesCount
+0x005263cc,4,boxes,_boxes
+0x005263d0,4,number_boxes,_number_boxes
 0x005283b0,4,RegCreateKeyExA,__imp__RegCreateKeyExA@36
 0x005283b4,4,RegCloseKey,__imp__RegCloseKey@4
 0x005283b8,4,RegSetValueExA,__imp__RegSetValueExA@24
