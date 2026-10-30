@@ -16,6 +16,7 @@ project = "tomb2"
 [build]
 # TOMBRAID.DSP's release flags, without /Zi /Fr /YX /FD
 cflags = ["/G5", "/Zp1", "/W3", "/O2", "/DNDEBUG", "/DWIN32", "/D_WINDOWS"]
+crlf = true  # Core's sources had DOS line endings
 
 [exe]
 defines = ["TR2_EXE=1"]
