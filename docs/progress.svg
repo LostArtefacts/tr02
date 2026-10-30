@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.06% (325)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.94% (922)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.14% (326)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.86% (921)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="194.69" height="6" x="0" y="0" class="named"/>
-<rect width="552.31" height="6" x="194.69" y="0" class="todo"/>
+<rect width="195.29" height="6" x="0" y="0" class="named"/>
+<rect width="551.71" height="6" x="195.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1079,7 +1079,7 @@
 <rect width="12" height="12" x="135" y="300" class="named"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="300" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="300" class="todo"><title>0x0044d3d0 Func44d3d0 (12 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="300" class="named"><title>0x0044d3d0 HWR_EndScene (12 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="300" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="300" class="named"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="named"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="61.36" height="6" x="0" y="0" class="named"/>
-<rect width="685.64" height="6" x="61.36" y="0" class="todo"/>
+<rect width="61.38" height="6" x="0" y="0" class="named"/>
+<rect width="685.62" height="6" x="61.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2503,7 +2503,7 @@
 <rect width="0.11" height="0.50" x="738.04" y="356.44" class="named"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
 <rect width="0.11" height="0.50" x="741.15" y="356.44" class="todo"><title>0x00456b70 CloseRegistryKey (13 bytes)</title></rect>
 <rect width="0.10" height="0.50" x="744.26" y="356.44" class="todo"><title>0x00449970 DecodeErrorMessage (12 bytes)</title></rect>
-<rect width="0.10" height="0.50" x="747.13" y="356.44" class="todo"><title>0x0044d3d0 Func44d3d0 (12 bytes)</title></rect>
+<rect width="0.10" height="0.50" x="747.13" y="356.44" class="named"><title>0x0044d3d0 HWR_EndScene (12 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="728.48" y="359.94" class="named"><title>0x0041cf20 finish_level_effect (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="728.48" y="362.95" class="named"><title>0x0041d9e0 dynamic_light_off (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="728.48" y="365.96" class="named"><title>0x004280a0 lara_as_null (11 bytes)</title></rect>

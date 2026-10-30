@@ -94,6 +94,11 @@ void HWR_BeginScene()
     G_Direct3DDevice->BeginScene();
 }
 
+void HWR_EndScene()
+{
+    G_Direct3DDevice->EndScene();
+}
+
 void HWR_LoadTexturePages(int nPages, uint8 *pImage, uint8 *pPalette)
 {
     HWR_FreeTexturePages();
