@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.80% (197)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.20% (1050)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.88% (198)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.12% (1049)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="118.01" height="6" x="0" y="0" class="named"/>
-<rect width="628.99" height="6" x="118.01" y="0" class="todo"/>
+<rect width="118.61" height="6" x="0" y="0" class="named"/>
+<rect width="628.39" height="6" x="118.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -638,7 +638,7 @@
 <rect width="12" height="12" x="270" y="165" class="todo"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="165" class="todo"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="165" class="named"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="165" class="todo"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="165" class="named"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="165" class="todo"><title>0x00431940 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="165" class="todo"><title>0x004319a0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="165" class="todo"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.99%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.01%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="37.04" height="6" x="0" y="0" class="named"/>
-<rect width="709.96" height="6" x="37.04" y="0" class="todo"/>
+<rect width="37.25" height="6" x="0" y="0" class="named"/>
+<rect width="709.75" height="6" x="37.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2044,7 +2044,7 @@
 <rect width="6.14" height="5.71" x="599.82" y="351.86" class="todo"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
 <rect width="6.14" height="5.71" x="599.82" y="360.57" class="todo"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
 <rect width="6.14" height="5.71" x="599.82" y="369.29" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
-<rect width="5.96" height="5.79" x="608.96" y="236.45" class="todo"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
+<rect width="5.96" height="5.79" x="608.96" y="236.45" class="named"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="5.96" height="5.79" x="617.92" y="236.45" class="named"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>
 <rect width="5.96" height="5.79" x="626.88" y="236.45" class="todo"><title>0x00456cc0 GetRegistryDwordValue (94 bytes)</title></rect>
 <rect width="5.86" height="5.79" x="635.83" y="236.45" class="todo"><title>0x00413520 UpdateLaraRoom (93 bytes)</title></rect>
