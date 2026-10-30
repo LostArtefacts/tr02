@@ -30,6 +30,34 @@ extern "C" void BGND_GetPageHandles(void)
     }
 }
 
+extern "C" float FltRhwONearZ;
+void HWR_TexSource(D3DTEXTUREHANDLE tSource);
+void HWR_EnableColorKey(bool tEnable);
+
+extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR color)
+{
+    D3DTLVERTEX vertex[4];
+    int i;
+
+    vertex[0].sx = sx;
+    vertex[0].sy = sy;
+    vertex[1].sx = sx + width;
+    vertex[1].sy = sy;
+    vertex[2].sx = sx;
+    vertex[2].sy = sy + height;
+    vertex[3].sx = sx + width;
+    vertex[3].sy = sy + height;
+    for (i = 0; i < 4; i++) {
+        vertex[i].sz = 0.0f;
+        vertex[i].rhw = FltRhwONearZ;
+        vertex[i].color = RGBA_SETALPHA(color, 0xFF);
+        vertex[i].specular = 0;
+    }
+    HWR_TexSource(0);
+    HWR_EnableColorKey(false);
+    G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, D3DVT_TLVERTEX, vertex, 4, D3DDP_DONOTUPDATEEXTENTS | D3DDP_DONOTCLIP);
+}
+
 extern "C" void BGND_DrawInGameBlack(void)
 {
     HWR_EnableZBuffer(false, false);
