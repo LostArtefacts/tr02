@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.24% (190)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.76% (1057)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.32% (191)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.68% (1056)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="113.82" height="6" x="0" y="0" class="named"/>
-<rect width="633.18" height="6" x="113.82" y="0" class="todo"/>
+<rect width="114.42" height="6" x="0" y="0" class="named"/>
+<rect width="632.58" height="6" x="114.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -801,7 +801,7 @@
 <rect width="12" height="12" x="465" y="210" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="210" class="todo"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="210" class="todo"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="210" class="todo"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="210" class="named"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="210" class="todo"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="210" class="todo"><title>0x00440120 SpiderControl (518 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="210" class="todo"><title>0x00440340 BigSpiderControl (421 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="35.95" height="6" x="0" y="0" class="named"/>
-<rect width="711.05" height="6" x="35.95" y="0" class="todo"/>
+<rect width="36.15" height="6" x="0" y="0" class="named"/>
+<rect width="710.85" height="6" x="36.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2051,7 +2051,7 @@
 <rect width="5.86" height="5.79" x="644.70" y="236.45" class="todo"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
 <rect width="5.86" height="5.79" x="653.56" y="236.45" class="todo"><title>0x004254b0 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="5.86" height="5.79" x="662.42" y="236.45" class="todo"><title>0x0042da50 lara_col_climbleft (93 bytes)</title></rect>
-<rect width="5.86" height="5.79" x="671.28" y="236.45" class="todo"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
+<rect width="5.86" height="5.79" x="671.28" y="236.45" class="named"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
 <rect width="5.86" height="5.79" x="680.15" y="236.45" class="todo"><title>0x00452f20 Func452f20 (93 bytes)</title></rect>
 <rect width="5.77" height="5.79" x="689.01" y="236.45" class="named"><title>0x00410090 CreatureEffect (92 bytes)</title></rect>
 <rect width="5.77" height="5.79" x="697.78" y="236.45" class="todo"><title>0x00416770 AddRoomFlipItems (92 bytes)</title></rect>
