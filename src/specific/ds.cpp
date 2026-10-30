@@ -180,3 +180,7 @@ extern "C" bool DSoundCreate(LPGUID lpGuid)
     return true;
 }
 
+extern "C" bool WinSndIsSoundEnabled()
+{
+    return IsSoundEnabled;
+}
