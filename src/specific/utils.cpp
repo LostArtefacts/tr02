@@ -21,3 +21,13 @@ void UT_InitAccurateTimer()
         LdwInitialTimer = timeGetTime();
     }
 }
+
+double UT_GetAccurateTimer()
+{
+    LARGE_INTEGER pr;
+
+    if (QueryPerformanceCounter(&pr))
+        return LdPerformanceDivisor * (double(pr.QuadPart) - LdInitialTimer);
+    else
+        return double(timeGetTime() - LdwInitialTimer) / 1000.0;
+}
