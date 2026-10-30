@@ -877,6 +877,34 @@ void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll)
     lara_col_stop(item, coll);
 }
 
+void lara_col_stepright(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->current_anim_state == AS_STEPRIGHT)
+        lara.move_angle = item->pos.y_rot + 16384;
+    else
+        lara.move_angle = item->pos.y_rot - 16384;
+
+    item->gravity_status = item->fallspeed = 0;
+    if (lara.water_status == LARA_WADE)
+        coll->bad_pos = NO_BAD_POS;
+    else
+        coll->bad_pos = STEP_L / 2;
+    coll->bad_neg = -STEP_L / 2;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (LaraDeflectEdge(item, coll))
+        LaraCollideStop(item, coll);
+    if (LaraFallen(item, coll))
+        return;
+    if (TestLaraSlide(item, coll))
+        return;
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_stepleft(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_stepright(item, coll);
@@ -1082,7 +1110,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
