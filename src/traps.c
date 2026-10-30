@@ -9,6 +9,7 @@
 #define FLAME_ONFIRE_DAMAGE 7
 #define FLAME_TOONEAR_DAMAGE 5
 #define HOOK_DAMAGE 50
+#define SPIKEWALL_DAMAGE 20
 #define BLADE_DAMAGE 100
 #define BIG_FIRE 0
 #define TEETHTRAP_DAMAGE 400
@@ -41,6 +42,45 @@ enum statue_anims { STATUE_EMPTY, STATUE_STOP, STATUE_CUT };
 enum blade_anims { BLADE_EMPTY, BLADE_STOP, BLADE_CUT };
 
 static int clonked = 0;
+
+void ControlSpikeWall(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint32 x, z;
+    sint16 room_number;
+
+    item = &items[item_number];
+
+    if (TriggerActive(item) && item->status != DEACTIVATED)
+    {
+        z = item->pos.z_pos + (phd_cos(item->pos.y_rot) >> 10);
+        x = item->pos.x_pos + (phd_sin(item->pos.y_rot) >> 10);
+
+        room_number = item->room_number;
+        floor = GetFloor(x, item->pos.y_pos, z, &room_number);
+        if (GetHeight(floor, x, item->pos.y_pos, z) != item->pos.y_pos)
+            item->status = DEACTIVATED;
+        else
+        {
+            item->pos.z_pos = z;
+            item->pos.x_pos = x;
+            if (room_number != item->room_number)
+                ItemNewRoom(item_number, room_number);
+        }
+
+        SoundEffect(204, &item->pos, 0);
+    }
+
+    if (item->touch_bits)
+    {
+        lara_item->hit_points -= SPIKEWALL_DAMAGE;
+        lara_item->hit_status = 1;
+        DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, 1, item->pos.y_rot, lara_item->room_number, 3);
+        item->touch_bits = 0;
+        SoundEffect(205, &item->pos, 0);
+    }
+}
 
 void HookControl(sint16 item_number)
 {
