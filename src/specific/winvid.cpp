@@ -549,3 +549,9 @@ extern "C" bool WinVidInit(void)
     return WinVidRegisterGameWindowClass() && WinVidCreateGameWindow() && WinVidGetDisplayAdapters() && DisplayAdapterList.dwCount && WinVidGetDisplayModes();
 }
 
+extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterList)
+{
+    if (DX_TRY(DirectDrawEnumerate(EnumDisplayAdaptersCallback, displayAdapterList)))
+        return false;
+    return true;
+}
