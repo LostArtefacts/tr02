@@ -153,6 +153,16 @@ extern "C" void CreateBackBuffer(void)
     WinVidClearBuffer(BackBufferSurface, NULL, 0);
 }
 
+extern "C" void CreateClipper(void)
+{
+    if (DX_TRY(DDraw->CreateClipper(0, &DDrawClipper, NULL)))
+        throw ERR_CreateClipper;
+    if (DX_TRY(DDrawClipper->SetHWnd(0, HGameWindow)))
+        throw ERR_SetClipperHWnd;
+    if (DX_TRY(PrimaryBufferSurface->SetClipper(DDrawClipper)))
+        throw ERR_SetClipper;
+}
+
 extern "C" DWORD GetZBufferDepth(void)
 {
     DWORD bitDepth = CurrentDisplayAdapter.D3DHWDeviceDesc.dwDeviceZBufferBitDepth;

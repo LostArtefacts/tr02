@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78% (975)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.44% (268)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.08% (976)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.36% (267)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="582.66" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="582.66" y="0" class="decompiled"/>
-<rect width="160.16" height="6" x="586.84" y="0" class="todo"/>
+<rect width="583.26" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="583.26" y="0" class="decompiled"/>
+<rect width="159.56" height="6" x="587.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -999,7 +999,7 @@
 <rect width="12" height="12" x="420" y="270" class="todo"><title>0x004484e0 CreateScreenBuffers (315 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="270" class="named"><title>0x00448620 CreatePrimarySurface (148 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="270" class="named"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="270" class="todo"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="270" class="named"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="270" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.40%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.52%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.44%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.48%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="436.23" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="436.23" y="0" class="decompiled"/>
-<rect width="310.17" height="6" x="436.83" y="0" class="todo"/>
+<rect width="436.57" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="436.57" y="0" class="decompiled"/>
+<rect width="309.82" height="6" x="437.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1867,7 +1867,7 @@
 <rect width="8.12" height="8.84" x="705.94" y="175.21" class="named"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
 <rect width="7.98" height="8.84" x="717.06" y="175.21" class="named"><title>0x0040c590 S_DrawScreenSprite (157 bytes)</title></rect>
 <rect width="7.98" height="8.84" x="728.04" y="175.21" class="named"><title>0x0042f840 DoFlareLight (157 bytes)</title></rect>
-<rect width="7.98" height="8.84" x="739.02" y="175.21" class="todo"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
+<rect width="7.98" height="8.84" x="739.02" y="175.21" class="named"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
 <rect width="8.23" height="8.50" x="547.24" y="187.04" class="named"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
 <rect width="8.23" height="8.50" x="547.24" y="198.54" class="todo"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="8.23" height="8.35" x="547.24" y="210.04" class="named"><title>0x0041d900 swap_meshes_with_meshswap3 (154 bytes)</title></rect>
