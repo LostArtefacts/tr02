@@ -105,6 +105,19 @@ void phd_RotYXZ_I(sint16 y, sint16 x, sint16 z)
     phd_mxptr = oldm;
 }
 
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+
+void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip)
+{
+    sint32 *oldm;
+
+    phd_RotYXZsuperpack(pprot1, skip);
+    oldm = phd_mxptr;
+    phd_mxptr = IMptr;
+    phd_RotYXZsuperpack(pprot2, skip);
+    phd_mxptr = oldm;
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;
