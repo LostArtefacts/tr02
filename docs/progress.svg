@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.80% (946)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.64% (295)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.88% (947)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.56% (294)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="566.24" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="566.24" y="0" class="decompiled"/>
-<rect width="176.57" height="6" x="570.43" y="0" class="todo"/>
+<rect width="566.83" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="566.83" y="0" class="decompiled"/>
+<rect width="175.98" height="6" x="571.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1132,7 +1132,7 @@
 <rect width="12" height="12" x="165" y="315" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="315" class="named"><title>0x00451540 S_CalculateStaticLight (49 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="315" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="315" class="todo"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="315" class="named"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="named"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="315" class="named"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.79%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.12%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.95%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.97%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="416.79" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="416.79" y="0" class="decompiled"/>
-<rect width="329.61" height="6" x="417.39" y="0" class="todo"/>
+<rect width="417.92" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="417.92" y="0" class="decompiled"/>
+<rect width="328.47" height="6" x="418.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1500,7 +1500,7 @@
 <rect width="17.21" height="18.54" x="392.77" y="87" class="named"><title>0x0042db10 lara_col_climbstnc (525 bytes)</title></rect>
 <rect width="17.21" height="18.41" x="392.77" y="108.53" class="named"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
 <rect width="17.21" height="18.29" x="392.77" y="129.95" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
-<rect width="17.21" height="18.25" x="392.77" y="151.24" class="todo"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
+<rect width="17.21" height="18.25" x="392.77" y="151.24" class="named"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
 <rect width="17.21" height="18.04" x="392.77" y="172.48" class="named"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
 <rect width="17.21" height="18" x="392.77" y="193.53" class="named"><title>0x004337a0 ControlBodyPart (512 bytes)</title></rect>
 <rect width="17.21" height="17.72" x="392.77" y="214.53" class="named"><title>0x0043d110 SkidooBaddieCollision (505 bytes)</title></rect>

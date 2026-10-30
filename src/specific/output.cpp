@@ -401,3 +401,86 @@ extern "C" void S_InitialisePolyList(BOOL clear_back_buffer)
     }
     phd_InitPolyList();
 }
+
+#include "../room.h"
+
+typedef struct {
+    sint32 x, y, z;
+    sint16 intensity, intensity2;
+    sint32 falloff, falloff2;
+} LIGHT_INFO;
+
+extern "C" sint32 number_dynamics;
+extern "C" LIGHT_INFO dynamic[];
+
+extern "C" void S_LightRoom(ROOM_INFO *r)
+{
+    sint32 i, j;
+    sint32 x, y, z, dlx, dly, dlz, roomx, roomz;
+    sint32 distance, falloff_limit, falloff, intensity, radius;
+    sint16 *objptr;
+    int *wibble;
+    LIGHT_INFO *dl;
+
+    if (r->lighting == 0)
+    {
+        if (r->flags & 0x10)
+        {
+            objptr = r->data;
+            for (i = *(objptr++); i > 0; i--, objptr += 6)
+                objptr[5] = objptr[3];
+            r->flags &= ~0x10;
+        }
+    }
+    else
+    {
+        wibble = wibble_light[RoomLightShades[r->lighting]];
+        objptr = r->data;
+        for (i = *(objptr++); i > 0; i--, objptr += 6)
+            objptr[5] = objptr[3] + wibble[objptr[4] & 0x1f];
+    }
+    if (!number_dynamics)
+        return;
+    roomx = (r->y_size - 1) << WALL_SHIFT;
+    roomz = (r->x_size - 1) << WALL_SHIFT;
+    for (i = 0, dl = dynamic; i < number_dynamics; i++, dl++)
+    {
+        dlx = dl->x - r->x;
+        dlz = dl->z - r->z;
+        radius = 1 << dl->falloff;
+        if (dlx - radius > roomx)
+            continue;
+        if (dlz - radius > roomz)
+            continue;
+        if (dlx + radius < WALL_L)
+            continue;
+        if (dlz + radius < WALL_L)
+            continue;
+        r->flags |= 0x10;
+        dly = dl->y;
+        falloff_limit = 1 << (dl->falloff << 1);
+        falloff = (dl->falloff << 1) - dl->intensity;
+        intensity = 1 << dl->intensity;
+        objptr = r->data;
+        for (j = *(objptr++); j > 0; j--, objptr += 6)
+        {
+            if (objptr[5] == 0)
+                continue;
+            x = objptr[0] - dlx;
+            if (x < -radius || x > radius)
+                continue;
+            y = objptr[1] - dly;
+            if (y < -radius || y > radius)
+                continue;
+            z = objptr[2] - dlz;
+            if (z < -radius || z > radius)
+                continue;
+            distance = x * x + y * y + z * z;
+            if (distance > falloff_limit)
+                continue;
+            objptr[5] -= (sint16)(intensity - (distance >> falloff));
+            if (objptr[5] < 0)
+                objptr[5] = 0;
+        }
+    }
+}
