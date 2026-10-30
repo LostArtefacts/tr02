@@ -746,6 +746,27 @@ void extra_as_starthouse(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+
+void extra_as_finalanim(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int frame;
+
+    item->hit_points = 1000;
+    frame = item->frame_number - anims[item->anim_number].frame_base;
+    if (frame == 1)
+    {
+        lara.back_gun = 0;
+        lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
+        lara.mesh_ptrs[HEAD] = meshes[objects[LARA].mesh_index + HEAD];
+        lara.mesh_ptrs[HIPS] = meshes[objects[LARA_EXTRA].mesh_index + HIPS];
+        StartSyncedAudio(27);
+    }
+    else if (frame == 316)
+        lara.mesh_ptrs[HAND_R] = meshes[objects[SHOTGUN].mesh_index + HAND_R];
+    else if (item->frame_number == anims[item->anim_number].frame_end - 1)
+        level_complete = 1;
+}
+
 int LaraFallen(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->mid_floor > STEPUP_HEIGHT && lara.water_status != LARA_WADE)
@@ -1243,7 +1264,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
