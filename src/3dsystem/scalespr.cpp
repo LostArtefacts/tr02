@@ -14,6 +14,25 @@ typedef struct {
 extern "C" PHDSPRITESTRUCT PhdSpriteInfo[];
 extern "C" void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
 
+extern "C" sint32 *sort3dptr;
+extern "C" sint16 *info3dptr;
+
+extern "C" void insert_sprite(int z, int x1, int y1, int x2, int y2, int sprnum, sint16 shade)
+{
+    sort3dptr[0] = (sint32)info3dptr;
+    sort3dptr[1] = z;
+    sort3dptr += 2;
+    info3dptr[0] = 8;
+    info3dptr[1] = x1;
+    info3dptr[2] = y1;
+    info3dptr[3] = x2;
+    info3dptr[4] = y2;
+    info3dptr[5] = sprnum;
+    info3dptr[6] = shade;
+    info3dptr += 7;
+    surfacenum++;
+}
+
 extern "C" void S_DrawPickup(int sx, int sy, int scale, sint16 sprnum, sint16 shade)
 {
     PHDSPRITESTRUCT *sprite;

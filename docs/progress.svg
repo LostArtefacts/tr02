@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.01% (873)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.43% (367)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.09% (874)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.35% (366)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="522.96" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="522.96" y="0" class="decompiled"/>
-<rect width="219.85" height="6" x="527.15" y="0" class="todo"/>
+<rect width="523.56" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="523.56" y="0" class="decompiled"/>
+<rect width="219.25" height="6" x="527.75" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -145,7 +145,7 @@
 <rect width="12" height="12" x="360" y="15" class="todo"><title>0x0040bb70 InsertLine_Sorted (299 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="15" class="todo"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="15" class="todo"><title>0x0040be40 InsertTransQuad_Sorted (317 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="15" class="todo"><title>0x0040bf80 insert_sprite (167 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="15" class="named"><title>0x0040bf80 insert_sprite (167 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="15" class="todo"><title>0x0040c030 S_DrawSprite (711 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="15" class="named"><title>0x0040c300 S_DrawPickup (133 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="15" class="named"><title>0x0040c390 ins_room_sprite (338 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.65%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.27%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.69%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="370.85" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="370.85" y="0" class="decompiled"/>
-<rect width="375.54" height="6" x="371.46" y="0" class="todo"/>
+<rect width="371.22" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="371.22" y="0" class="decompiled"/>
+<rect width="375.17" height="6" x="371.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1839,7 +1839,7 @@
 <rect width="8.92" height="8.71" x="631.70" y="163.58" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="8.92" height="8.71" x="643.61" y="163.58" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="8.92" height="8.71" x="655.53" y="163.58" class="named"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
-<rect width="8.84" height="8.71" x="667.44" y="163.58" class="todo"><title>0x0040bf80 insert_sprite (167 bytes)</title></rect>
+<rect width="8.84" height="8.71" x="667.44" y="163.58" class="named"><title>0x0040bf80 insert_sprite (167 bytes)</title></rect>
 <rect width="8.84" height="8.71" x="679.29" y="163.58" class="named"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="8.84" height="8.71" x="691.13" y="163.58" class="named"><title>0x00433360 ShootAtLara (167 bytes)</title></rect>
 <rect width="8.84" height="8.71" x="702.98" y="163.58" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
