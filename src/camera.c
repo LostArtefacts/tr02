@@ -190,6 +190,199 @@ FLOOR_INFO *GoodPosition(sint32 x, sint32 y, sint32 z, sint16 room_number)
 void MoveCamera(GAME_VECTOR *ideal, int speed);
 void SmartShift(GAME_VECTOR *ideal, void (*shift)(sint32 *x, sint32 *y, sint32 *h, sint32 target_x, sint32 target_y, sint32 target_h, sint32 left, sint32 top, sint32 right, sint32 bottom));
 
+void SmartShift(GAME_VECTOR *ideal, void (*shift)(sint32 *x, sint32 *y, sint32 *h, sint32 target_x, sint32 target_y, sint32 target_h, sint32 left, sint32 top, sint32 right, sint32 bottom))
+{
+    int noclip, preferA;
+    ROOM_INFO *r;
+    sint16 item_box, camera_box;
+    BOX_INFO *box;
+    int x_floor, y_floor;
+    sint32 left, right, top, bottom, test, edge;
+    FLOOR_INFO *good_left, *good_right, *good_top, *good_bottom;
+    GAME_VECTOR A, B;
+
+    LOS(&camera.target, ideal);
+
+    r = &room[camera.target.room_number];
+    x_floor = (camera.target.z - r->z) >> WALL_SHIFT;
+    y_floor = (camera.target.x - r->x) >> WALL_SHIFT;
+    item_box = r->floor[x_floor + y_floor * r->x_size].box;
+
+    box = &boxes[item_box];
+
+    left = (sint32)box->left << WALL_SHIFT;
+    right = ((sint32)box->right << WALL_SHIFT) - 1;
+    top = (sint32)box->top << WALL_SHIFT;
+    bottom = ((sint32)box->bottom << WALL_SHIFT) - 1;
+
+    r = &room[ideal->room_number];
+    x_floor = (ideal->z - r->z) >> WALL_SHIFT;
+    y_floor = (ideal->x - r->x) >> WALL_SHIFT;
+    camera_box = r->floor[x_floor + y_floor * r->x_size].box;
+
+    if (camera_box != NO_BOX && (ideal->z < left || ideal->z > right || ideal->x < top || ideal->x > bottom))
+    {
+        box = &boxes[camera_box];
+        left = (sint32)box->left << WALL_SHIFT;
+        right = ((sint32)box->right << WALL_SHIFT) - 1;
+        top = (sint32)box->top << WALL_SHIFT;
+        bottom = ((sint32)box->bottom << WALL_SHIFT) - 1;
+    }
+
+    test = (ideal->z - WALL_L) | (WALL_L - 1);
+    good_left = GoodPosition(ideal->x, ideal->y, test, ideal->room_number);
+    if (good_left)
+    {
+        camera_box = good_left->box;
+        edge = (sint32)boxes[camera_box].left << WALL_SHIFT;
+        if (camera_box != NO_ITEM && edge < left)
+            left = edge;
+    }
+    else
+        left = test;
+
+    test = (ideal->z + WALL_L) & ~(WALL_L - 1);
+    good_right = GoodPosition(ideal->x, ideal->y, test, ideal->room_number);
+    if (good_right)
+    {
+        camera_box = good_right->box;
+        edge = ((sint32)boxes[camera_box].right << WALL_SHIFT) - 1;
+        if (camera_box != NO_ITEM && edge > right)
+            right = edge;
+    }
+    else
+        right = test;
+
+    test = (ideal->x - WALL_L) | (WALL_L - 1);
+    good_top = GoodPosition(test, ideal->y, ideal->z, ideal->room_number);
+    if (good_top)
+    {
+        camera_box = good_top->box;
+        edge = (sint32)boxes[camera_box].top << WALL_SHIFT;
+        if (camera_box != NO_ITEM && edge < top)
+            top = edge;
+    }
+    else
+        top = test;
+
+    test = (ideal->x + WALL_L) & ~(WALL_L - 1);
+    good_bottom = GoodPosition(test, ideal->y, ideal->z, ideal->room_number);
+    if (good_bottom)
+    {
+        camera_box = good_bottom->box;
+        edge = ((sint32)boxes[camera_box].bottom << WALL_SHIFT) - 1;
+        if (camera_box != NO_ITEM && edge > bottom)
+            bottom = edge;
+    }
+    else
+        bottom = test;
+
+    left += STEP_L;
+    right -= STEP_L;
+    top += STEP_L;
+    bottom -= STEP_L;
+
+    A.x = B.x = ideal->x;
+    A.y = B.y = ideal->y;
+    A.z = B.z = ideal->z;
+    A.room_number = B.room_number = ideal->room_number;
+
+    noclip = 1;
+    if (ABS(ideal->z - camera.target.z) > ABS(ideal->x - camera.target.x))
+    {
+        if (ideal->z < left && !good_left)
+        {
+            noclip = 0;
+            preferA = (camera.pos.x < camera.target.x);
+            (*shift)(&A.z, &A.x, &A.y, camera.target.z, camera.target.x, camera.target.y, left, top, right, bottom);
+            (*shift)(&B.z, &B.x, &B.y, camera.target.z, camera.target.x, camera.target.y, left, bottom, right, top);
+        }
+        else if (ideal->z > right && !good_right)
+        {
+            noclip = 0;
+            preferA = (camera.pos.x < camera.target.x);
+            (*shift)(&A.z, &A.x, &A.y, camera.target.z, camera.target.x, camera.target.y, right, top, left, bottom);
+            (*shift)(&B.z, &B.x, &B.y, camera.target.z, camera.target.x, camera.target.y, right, bottom, left, top);
+        }
+
+        if (noclip)
+        {
+            if (ideal->x < top && !good_top)
+            {
+                noclip = 0;
+                preferA = (ideal->z < camera.target.z);
+                (*shift)(&A.x, &A.z, &A.y, camera.target.x, camera.target.z, camera.target.y, top, left, bottom, right);
+                (*shift)(&B.x, &B.z, &B.y, camera.target.x, camera.target.z, camera.target.y, top, right, bottom, left);
+            }
+            else if (ideal->x > bottom && !good_bottom)
+            {
+                noclip = 0;
+                preferA = (ideal->z < camera.target.z);
+                (*shift)(&A.x, &A.z, &A.y, camera.target.x, camera.target.z, camera.target.y, bottom, left, top, right);
+                (*shift)(&B.x, &B.z, &B.y, camera.target.x, camera.target.z, camera.target.y, bottom, right, top, left);
+            }
+        }
+    }
+    else
+    {
+        if (ideal->x < top && !good_top)
+        {
+            noclip = 0;
+            preferA = (camera.pos.z < camera.target.z);
+            (*shift)(&A.x, &A.z, &A.y, camera.target.x, camera.target.z, camera.target.y, top, left, bottom, right);
+            (*shift)(&B.x, &B.z, &B.y, camera.target.x, camera.target.z, camera.target.y, top, right, bottom, left);
+        }
+        else if (ideal->x > bottom && !good_bottom)
+        {
+            noclip = 0;
+            preferA = (camera.pos.z < camera.target.z);
+            (*shift)(&A.x, &A.z, &A.y, camera.target.x, camera.target.z, camera.target.y, bottom, left, top, right);
+            (*shift)(&B.x, &B.z, &B.y, camera.target.x, camera.target.z, camera.target.y, bottom, right, top, left);
+        }
+
+        if (noclip)
+        {
+            if (ideal->z < left && !good_left)
+            {
+                noclip = 0;
+                preferA = (ideal->x < camera.target.x);
+                (*shift)(&A.z, &A.x, &A.y, camera.target.z, camera.target.x, camera.target.y, left, top, right, bottom);
+                (*shift)(&B.z, &B.x, &B.y, camera.target.z, camera.target.x, camera.target.y, left, bottom, right, top);
+            }
+            else if (ideal->z > right && !good_right)
+            {
+                noclip = 0;
+                preferA = (ideal->x < camera.target.x);
+                (*shift)(&A.z, &A.x, &A.y, camera.target.z, camera.target.x, camera.target.y, right, top, left, bottom);
+                (*shift)(&B.z, &B.x, &B.y, camera.target.z, camera.target.x, camera.target.y, right, bottom, left, top);
+            }
+        }
+    }
+
+    if (noclip)
+        return;
+
+    if (preferA && !LOS(&camera.target, &A))
+        preferA = 0;
+    else if (!preferA && !LOS(&camera.target, &B))
+        preferA = 1;
+
+    if (preferA)
+    {
+        ideal->x = A.x;
+        ideal->y = A.y;
+        ideal->z = A.z;
+    }
+    else
+    {
+        ideal->x = B.x;
+        ideal->y = B.y;
+        ideal->z = B.z;
+    }
+
+    GetFloor(ideal->x, ideal->y, ideal->z, &ideal->room_number);
+}
+
 void ChaseCamera(ITEM_INFO *item)
 {
     GAME_VECTOR ideal;
