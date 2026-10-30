@@ -126,3 +126,23 @@ int S_SaveGame(void *data, int size, int slot)
     }
     return 0;
 }
+
+int S_LoadGame(void *data, int size, int slot)
+{
+    HANDLE file;
+    char filename[80];
+    sint32 count;
+    DWORD read;
+
+    wsprintf(filename, "savegame.%d", slot);
+    file = CreateFile(filename, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file != INVALID_HANDLE_VALUE)
+    {
+        ReadFile(file, filename, 75, &read, NULL);
+        ReadFile(file, &count, sizeof(sint32), &read, NULL);
+        ReadFile(file, data, size, &read, NULL);
+        CloseHandle(file);
+        return 1;
+    }
+    return 0;
+}
