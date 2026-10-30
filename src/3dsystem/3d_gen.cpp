@@ -97,6 +97,43 @@ extern "C" void phd_SortPolyList(void)
     }
 }
 
+extern "C" void do_quickysorty(int left, int right)
+{
+    sint32 i, j;
+    sint32 compare, swap;
+
+    i = left;
+    j = right;
+    compare = sort3d_buffer[(left + right) / 2][1];
+
+    do
+    {
+        while (sort3d_buffer[i][1] > compare && i < right)
+            ++i;
+        while (compare > sort3d_buffer[j][1] && j > left)
+            --j;
+        if (i <= j)
+        {
+            swap = sort3d_buffer[i][1];
+            sort3d_buffer[i][1] = sort3d_buffer[j][1];
+            sort3d_buffer[j][1] = swap;
+
+            swap = sort3d_buffer[i][0];
+            sort3d_buffer[i][0] = sort3d_buffer[j][0];
+            sort3d_buffer[j][0] = swap;
+
+            i++;
+            j--;
+        }
+    }
+    while (i <= j);
+
+    if (left < j)
+        do_quickysorty(left, j);
+    if (i < right)
+        do_quickysorty(i, right);
+}
+
 void phd_PrintPolyList(void *ptr)
 {
     int i;

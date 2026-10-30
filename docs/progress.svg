@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.74% (321)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.26% (926)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.82% (322)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.18% (925)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="192.29" height="6" x="0" y="0" class="named"/>
-<rect width="554.71" height="6" x="192.29" y="0" class="todo"/>
+<rect width="192.89" height="6" x="0" y="0" class="named"/>
+<rect width="554.11" height="6" x="192.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -87,7 +87,7 @@
 <rect width="12" height="12" x="255" y="0" class="named"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="todo"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="0" class="named"><title>0x00402420 phd_SortPolyList (51 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="0" class="todo"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="0" class="named"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="0" class="todo"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="0" class="todo"><title>0x00402620 Func402620 (83 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.87%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.19%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.81%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="60.71" height="6" x="0" y="0" class="named"/>
-<rect width="686.29" height="6" x="60.71" y="0" class="todo"/>
+<rect width="61.15" height="6" x="0" y="0" class="named"/>
+<rect width="685.85" height="6" x="61.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1766,7 +1766,7 @@
 <rect width="10.12" height="9.71" x="509.65" y="227.70" class="named"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="10.12" height="9.65" x="509.65" y="240.41" class="todo"><title>0x00446b10 WinVidCreateGameWindow (198 bytes)</title></rect>
 <rect width="10.12" height="9.65" x="509.65" y="253.06" class="named"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
-<rect width="10.12" height="9.58" x="509.65" y="265.70" class="todo"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
+<rect width="10.12" height="9.58" x="509.65" y="265.70" class="named"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
 <rect width="10.12" height="9.58" x="509.65" y="278.29" class="todo"><title>0x00442f20 LavaSpray (197 bytes)</title></rect>
 <rect width="10.12" height="9.52" x="509.65" y="290.87" class="todo"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="10.12" height="9.52" x="509.65" y="303.39" class="todo"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
