@@ -1641,6 +1641,7 @@ address,size,name,symbol
 0x004d7bc8,,Assault,_Assault
 0x004d7c28,4,LevelItemCount,_LevelItemCount
 0x004d7c2c,4,HealthBarTimer,_HealthBarTimer
+0x004d7c40,4,slots_used,_slots_used
 0x004d7c64,4,number_cameras,_number_cameras
 0x004d7c68,,LaSlot,_LaSlot
 0x004d7e6c,4,MinesDetonated,_MinesDetonated
@@ -1825,6 +1826,7 @@ address,size,name,symbol
 0x0051e9e0,,savegame,_savegame
 0x005206a4,4,SG_Count,_SG_Count
 0x005206a8,2,final_boss_active,_final_boss_active
+0x005206c0,4,baddie_slots,_baddie_slots
 0x005206e0,,lara,_lara
 0x005207bc,4,lara_item,_lara_item
 0x005207c0,4,effects,_effects

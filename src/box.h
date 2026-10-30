@@ -38,6 +38,25 @@ typedef struct {
     sint32 mesh_num;
 } BITE_INFO;
 
+typedef enum {
+    BORED_MOOD,
+    ATTACK_MOOD,
+    ESCAPE_MOOD,
+    STALK_MOOD
+} MOOD_TYPE;
+
+typedef struct creature_info {
+    sint16 head_rotation;
+    sint16 neck_rotation;
+    sint16 maximum_turn;
+    sint16 flags;
+    sint16 item_num;
+    MOOD_TYPE mood;
+    LOT_INFO LOT;
+    PHD_VECTOR target;
+    ITEM_INFO *enemy;
+} CREATURE_INFO;
+
 extern BOX_INFO *boxes;
 extern int number_boxes;
 
