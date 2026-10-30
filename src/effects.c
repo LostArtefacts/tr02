@@ -638,6 +638,40 @@ void SphereOfDoom(sint16 item_number)
         KillItem(item_number);
 }
 
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+
+void DrawSphereOfDoom(ITEM_INFO *item)
+{
+    int scale, clip;
+    sint16 *frame;
+
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotY(item->pos.y_rot);
+
+    scale = item->timer;
+    *(phd_mxptr + M00) = *(phd_mxptr + M00) * scale >> 8;
+    *(phd_mxptr + M01) = *(phd_mxptr + M01) * scale >> 8;
+    *(phd_mxptr + M02) = *(phd_mxptr + M02) * scale >> 8;
+    *(phd_mxptr + M10) = *(phd_mxptr + M10) * scale >> 8;
+    *(phd_mxptr + M11) = *(phd_mxptr + M11) * scale >> 8;
+    *(phd_mxptr + M12) = *(phd_mxptr + M12) * scale >> 8;
+    *(phd_mxptr + M20) = *(phd_mxptr + M20) * scale >> 8;
+    *(phd_mxptr + M21) = *(phd_mxptr + M21) * scale >> 8;
+    *(phd_mxptr + M22) = *(phd_mxptr + M22) * scale >> 8;
+
+    frame = anims[item->anim_number].frame_ptr;
+    clip = S_GetObjectBounds(frame);
+    if (clip)
+    {
+        CalculateObjectLighting(item, frame);
+        phd_PutPolygons(meshes[objects[item->object_number].mesh_index], clip);
+    }
+
+    phd_PopMatrix();
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
