@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.13% (675)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.87% (572)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.21% (676)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.79% (571)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="404.35" height="6" x="0" y="0" class="named"/>
-<rect width="342.65" height="6" x="404.35" y="0" class="todo"/>
+<rect width="404.95" height="6" x="0" y="0" class="named"/>
+<rect width="342.05" height="6" x="404.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -580,7 +580,7 @@
 <rect width="12" height="12" x="150" y="150" class="named"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="150" class="named"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="150" class="named"><title>0x0042cc50 AnimateShotgun (932 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="150" class="todo"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="150" class="named"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="150" class="todo"><title>0x0042d050 draw_pistols (124 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="150" class="todo"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="150" class="named"><title>0x0042d300 ready_pistols (92 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.87%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.13%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.11%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="267.93" height="6" x="0" y="0" class="named"/>
-<rect width="479.07" height="6" x="267.93" y="0" class="todo"/>
+<rect width="268.11" height="6" x="0" y="0" class="named"/>
+<rect width="478.89" height="6" x="268.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.24" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2104,7 +2104,7 @@
 <rect width="5.18" height="5.15" x="709.33" y="245.62" class="named"><title>0x00410bf0 GoodPosition (80 bytes)</title></rect>
 <rect width="5.18" height="5.15" x="717.50" y="245.62" class="named"><title>0x00436800 InitialiseCult3 (80 bytes)</title></rect>
 <rect width="5.18" height="5.15" x="725.68" y="245.62" class="todo"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
-<rect width="5.07" height="5.15" x="733.85" y="245.62" class="todo"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
+<rect width="5.07" height="5.15" x="733.85" y="245.62" class="named"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
 <rect width="5.07" height="5.15" x="741.93" y="245.62" class="named"><title>0x00432b70 DisableBaddieAI (79 bytes)</title></rect>
 <rect width="5.41" height="4.83" x="626.14" y="253.77" class="named"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
 <rect width="5.30" height="4.83" x="634.55" y="253.77" class="named"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
