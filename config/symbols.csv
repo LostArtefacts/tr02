@@ -1276,7 +1276,7 @@ address,size,name,symbol
 0x00459940,300,time,_time
 0x00459a70,27,_abort,
 0x00459a90,48,Func459a90,
-0x00459ac0,18,Func459ac0,
+0x00459ac0,18,exit,_exit
 0x00459ae0,18,__exit,
 0x00459b10,164,Func459b10,
 0x00459bc0,32,Func459bc0,

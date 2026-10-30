@@ -35,3 +35,15 @@ extern "C" void WinGameFinish(void)
     if (*StringToShow)
         MessageBoxA(NULL, StringToShow, NULL, MB_ICONWARNING);
 }
+
+extern "C" void ShutdownGame(void);
+extern "C" void WinCleanup(void);
+
+extern "C" void S_ExitSystem(char *message)
+{
+    ShutdownGame();
+    strcpy(StringToShow, message);
+    WinGameFinish();
+    WinCleanup();
+    exit(1);
+}

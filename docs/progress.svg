@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.37% (890)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.07% (350)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.45% (891)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.99% (349)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="533.14" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="533.14" y="0" class="decompiled"/>
-<rect width="209.66" height="6" x="537.34" y="0" class="todo"/>
+<rect width="533.74" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="533.74" y="0" class="decompiled"/>
+<rect width="209.06" height="6" x="537.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1102,7 +1102,7 @@
 <rect width="12" height="12" x="465" y="300" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="300" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="300" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="300" class="todo"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="300" class="named"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="todo"><title>0x0044e9a0 ScreenShotPCX (271 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="300" class="todo"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="300" class="todo"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.56%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.58%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.34%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="385.15" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="385.15" y="0" class="decompiled"/>
-<rect width="361.24" height="6" x="385.76" y="0" class="todo"/>
+<rect width="385.29" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="385.29" y="0" class="decompiled"/>
+<rect width="361.10" height="6" x="385.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2171,7 +2171,7 @@
 <rect width="4.31" height="4.50" x="656.35" y="269.42" class="named"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="4.31" height="4.50" x="663.65" y="269.42" class="named"><title>0x00435100 ShutThatDoor (66 bytes)</title></rect>
 <rect width="4.31" height="4.50" x="670.96" y="269.42" class="named"><title>0x0044d6e0 S_InitialiseSystem (66 bytes)</title></rect>
-<rect width="4.31" height="4.50" x="678.27" y="269.42" class="todo"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
+<rect width="4.31" height="4.50" x="678.27" y="269.42" class="named"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
 <rect width="4.31" height="4.50" x="685.57" y="269.42" class="named"><title>0x00456930 UT_ErrorBox (66 bytes)</title></rect>
 <rect width="4.20" height="4.50" x="692.88" y="269.42" class="named"><title>0x0041b850 phd_TranslateRel_I (65 bytes)</title></rect>
 <rect width="4.20" height="4.50" x="700.07" y="269.42" class="named"><title>0x0041b8f0 phd_RotYXZ_I (65 bytes)</title></rect>
