@@ -206,3 +206,18 @@ extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
     *file_name = *file_ext;
     file_name[1] = 0;
 }
+
+extern "C" uint8 GamePalette16[];
+
+extern "C" int LoadPalettes(HANDLE file)
+{
+    DWORD read;
+    int i;
+
+    MyReadFile(file, game_palette, 768, &read, NULL);
+    game_palette[0] = game_palette[1] = game_palette[2] = 0;
+    for (i = 3; i < 768; i++)
+        game_palette[i] <<= 2;
+    MyReadFile(file, GamePalette16, 1024, &read, NULL);
+    return 1;
+}
