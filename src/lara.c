@@ -808,6 +808,26 @@ void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_stop(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (LaraFallen(item, coll))
+        return;
+    if (TestLaraSlide(item, coll))
+        return;
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->speed >= 0)

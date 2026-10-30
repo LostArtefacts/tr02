@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.41% (666)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.59% (581)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.49% (667)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.51% (580)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="398.96" height="6" x="0" y="0" class="named"/>
-<rect width="348.04" height="6" x="398.96" y="0" class="todo"/>
+<rect width="399.56" height="6" x="0" y="0" class="named"/>
+<rect width="347.44" height="6" x="399.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -514,7 +514,7 @@
 <rect width="12" height="12" x="660" y="120" class="named"><title>0x00428c40 LaraCollideStop (191 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="120" class="todo"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="120" class="todo"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="120" class="todo"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="120" class="named"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="120" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="120" class="named"><title>0x00429190 lara_col_fastback (179 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="135" class="todo"><title>0x00429250 lara_col_turn_r (149 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.34%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.66%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="263.96" height="6" x="0" y="0" class="named"/>
-<rect width="483.04" height="6" x="263.96" y="0" class="todo"/>
+<rect width="264.24" height="6" x="0" y="0" class="named"/>
+<rect width="482.76" height="6" x="264.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1939,7 +1939,7 @@
 <rect width="7.11" height="7.64" x="570.25" y="261.99" class="todo"><title>0x004234e0 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="7.11" height="7.64" x="570.25" y="272.63" class="named"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
 <rect width="7.11" height="7.64" x="570.25" y="283.26" class="named"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
-<rect width="7.11" height="7.64" x="570.25" y="293.90" class="todo"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
+<rect width="7.11" height="7.64" x="570.25" y="293.90" class="named"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
 <rect width="7.11" height="7.64" x="570.25" y="304.54" class="named"><title>0x0043f3a0 SkidmanCollision (129 bytes)</title></rect>
 <rect width="7.11" height="7.47" x="570.25" y="315.17" class="todo"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="7.11" height="7.47" x="570.25" y="325.64" class="named"><title>0x0041c750 ControlExplosion1 (127 bytes)</title></rect>
