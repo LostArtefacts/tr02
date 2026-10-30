@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.48% (942)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.96% (299)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.56% (943)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.88% (298)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="563.84" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="563.84" y="0" class="decompiled"/>
-<rect width="178.97" height="6" x="568.03" y="0" class="todo"/>
+<rect width="564.44" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="564.44" y="0" class="decompiled"/>
+<rect width="178.37" height="6" x="568.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -968,7 +968,7 @@
 <rect width="12" height="12" x="705" y="255" class="named"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="255" class="named"><title>0x004478c0 IncreaseScreenSize (98 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="255" class="named"><title>0x00447930 DecreaseScreenSize (98 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="270" class="todo"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="270" class="named"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="270" class="named"><title>0x00447a40 TempVideoAdjust (52 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="named"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="270" class="named"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.40%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.52%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.45%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.47%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="413.84" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="413.84" y="0" class="decompiled"/>
-<rect width="332.55" height="6" x="414.45" y="0" class="todo"/>
+<rect width="414.19" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="414.19" y="0" class="decompiled"/>
+<rect width="332.20" height="6" x="414.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1861,7 +1861,7 @@
 <rect width="8.84" height="8.20" x="547.45" y="289.49" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
 <rect width="8.84" height="8.13" x="547.45" y="300.69" class="named"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
 <rect width="8.84" height="8.13" x="547.45" y="311.82" class="named"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
-<rect width="8.84" height="8.13" x="547.45" y="322.96" class="todo"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
+<rect width="8.84" height="8.13" x="547.45" y="322.96" class="named"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
 <rect width="8.84" height="7.99" x="547.45" y="334.09" class="named"><title>0x0040c590 S_DrawScreenSprite (157 bytes)</title></rect>
 <rect width="8.84" height="7.99" x="547.45" y="345.09" class="named"><title>0x0042f840 DoFlareLight (157 bytes)</title></rect>
 <rect width="8.84" height="7.99" x="547.45" y="356.08" class="todo"><title>0x00448760 CreateClipper (157 bytes)</title></rect>

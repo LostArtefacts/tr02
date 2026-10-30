@@ -29,6 +29,34 @@ void DecreaseScreenSize(void)
     setup_screen_size();
 }
 
+extern "C" sint16 DumpX, DumpY, DumpWidth, DumpHeight;
+extern "C" int GameVidWidth, GameVidHeight, GameVidBufWidth, GameVidBufHeight;
+extern "C" bool WinVidNeedToResetBuffers;
+extern "C" void phd_InitWindow(int x, int y, int width, int height, int nearz, int farz, int view_angle, int scrwidth, int scrheight);
+
+void setup_screen_size(void)
+{
+    int width;
+    int height;
+    int xoff;
+    int yoff;
+
+    width = (int)(GameVidWidth * screen_sizer);
+    height = (int)(GameVidHeight * screen_sizer);
+    if (width > GameVidWidth)
+        width = GameVidWidth;
+    if (height > GameVidHeight)
+        height = GameVidHeight;
+    xoff = (GameVidWidth - width) / 2;
+    yoff = (GameVidHeight - height) / 2;
+    phd_InitWindow(xoff, yoff, width, height, 20, 0x5000, 80, GameVidBufWidth, GameVidBufHeight);
+    DumpX = xoff;
+    DumpY = yoff;
+    DumpWidth = width;
+    DumpHeight = height;
+    WinVidNeedToResetBuffers = true;
+}
+
 void TempVideoAdjust(int hires, double sizer)
 {
     mode_lock = 1;
