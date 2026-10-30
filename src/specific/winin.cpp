@@ -108,3 +108,14 @@ extern "C" bool DInputEnumDevices(void *joystickList)
         return false;
     return true;
 }
+
+extern "C" void DInputKeyboardRelease(void)
+{
+    if (IDID_SysKeyboard) {
+        IDID_SysKeyboard->Unacquire();
+        if (IDID_SysKeyboard) {
+            IDID_SysKeyboard->Release();
+            IDID_SysKeyboard = NULL;
+        }
+    }
+}
