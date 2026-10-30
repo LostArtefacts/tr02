@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32% (399)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68% (848)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.08% (400)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.92% (847)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="239.02" height="6" x="0" y="0" class="named"/>
-<rect width="507.98" height="6" x="239.02" y="0" class="todo"/>
+<rect width="239.62" height="6" x="0" y="0" class="named"/>
+<rect width="507.38" height="6" x="239.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -345,7 +345,7 @@
 <rect width="12" height="12" x="375" y="75" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="75" class="named"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="75" class="named"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="75" class="todo"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="75" class="named"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="75" class="todo"><title>0x0041d630 DrawSphereOfDoom (301 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="75" class="named"><title>0x0041d760 lara_hands_free (10 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="75" class="named"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.91%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.16%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.84%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="97.80" height="6" x="0" y="0" class="named"/>
-<rect width="649.20" height="6" x="97.80" y="0" class="todo"/>
+<rect width="98.33" height="6" x="0" y="0" class="named"/>
+<rect width="648.67" height="6" x="98.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1700,7 +1700,7 @@
 <rect width="11.05" height="11.49" x="666.41" y="109.38" class="todo"><title>0x00447350 WinInReadJoystick (243 bytes)</title></rect>
 <rect width="10.99" height="11.49" x="680.46" y="109.38" class="todo"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
 <rect width="10.99" height="11.49" x="694.45" y="109.38" class="todo"><title>0x0042be70 FireShotgun (242 bytes)</title></rect>
-<rect width="10.87" height="11.49" x="708.44" y="109.38" class="todo"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
+<rect width="10.87" height="11.49" x="708.44" y="109.38" class="named"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="10.87" height="11.49" x="722.31" y="109.38" class="todo"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
 <rect width="10.82" height="11.49" x="736.18" y="109.38" class="todo"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="11.57" height="10.63" x="495.87" y="123.87" class="todo"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>

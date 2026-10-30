@@ -611,6 +611,33 @@ void SphereOfDoomCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *c
     }
 }
 
+void SphereOfDoom(sint16 item_number)
+{
+    ITEM_INFO *item;
+    PHD_3DPOS pos;
+    int dist, x, y, z, radius;
+
+    item = &items[item_number];
+
+    item->timer += 64;
+    item->pos.y_rot += (item->object_number == SPHERE_OF_DOOM2) ? ONE_DEGREE * 10 : -ONE_DEGREE * 10;
+
+    x = item->pos.x_pos - lara_item->pos.x_pos;
+    y = item->pos.y_pos - lara_item->pos.y_pos;
+    z = item->pos.z_pos - lara_item->pos.z_pos;
+
+    radius = item->timer * SPHERE_RADIUS >> 8;
+    dist = phd_sqrt(x * x + y * y + z * z) - radius;
+
+    pos.x_pos = lara_item->pos.x_pos + x * dist / radius;
+    pos.y_pos = lara_item->pos.y_pos + y * dist / radius;
+    pos.z_pos = lara_item->pos.z_pos + z * dist / radius;
+    SoundEffect(341, &pos, 0);
+
+    if (item->timer > (30 << 7))
+        KillItem(item_number);
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
