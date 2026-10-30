@@ -56,6 +56,13 @@ void S_SetupBelowWater(int underwater)
     bBlueEffect = true;
 }
 
+void S_SetupAboveWater(int underwater)
+{
+    water_effect = underwater;
+    shade_effect = 0;
+    bBlueEffect = bool(underwater);
+}
+
 void ScreenDump(void)
 {
     DX_UpdateFrame(true, 0);
