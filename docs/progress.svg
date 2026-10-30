@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.62% (95)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.38% (1152)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.70% (96)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.30% (1151)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="56.91" height="6" x="0" y="0" class="named"/>
-<rect width="690.09" height="6" x="56.91" y="0" class="todo"/>
+<rect width="57.51" height="6" x="0" y="0" class="named"/>
+<rect width="689.49" height="6" x="57.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -712,7 +712,7 @@
 <rect width="12" height="12" x="630" y="180" class="todo"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="180" class="todo"><title>0x004358d0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="180" class="todo"><title>0x00435a50 LiftFloor (53 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="180" class="todo"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="180" class="named"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="180" class="todo"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="180" class="todo"><title>0x00435af0 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="180" class="todo"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.53%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.51%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.99" height="6" x="0" y="0" class="named"/>
-<rect width="736.01" height="6" x="10.99" y="0" class="todo"/>
+<rect width="11.11" height="6" x="0" y="0" class="named"/>
+<rect width="735.89" height="6" x="11.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2254,7 +2254,7 @@
 <rect width="3.74" height="3.58" x="675.81" y="290.09" class="todo"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="682.55" y="290.09" class="todo"><title>0x004357b0 InitialiseLift (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="689.30" y="290.09" class="todo"><title>0x00435a50 LiftFloor (53 bytes)</title></rect>
-<rect width="3.74" height="3.58" x="696.04" y="290.09" class="todo"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
+<rect width="3.74" height="3.58" x="696.04" y="290.09" class="named"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="702.79" y="290.09" class="todo"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="709.53" y="290.09" class="todo"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="716.28" y="290.09" class="todo"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
