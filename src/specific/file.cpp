@@ -418,3 +418,51 @@ extern "C" int LoadBoxes(HANDLE file)
     }
     return 1;
 }
+
+typedef struct {
+    uint8 red;
+    uint8 green;
+    uint8 blue;
+} PAL_RGB;
+
+extern "C" uint8 DepthQTable[32][256];
+extern "C" uint8 DepthQIndex[256];
+extern "C" uint8 GouraudTable[256][32];
+extern "C" uint8 water_palette[];
+extern "C" int wet;
+extern "C" bool GameVid_IsWindowedVga;
+extern "C" void CopyBitmapPalette(uint8 *src_palette, uint8 *bitmap, int size, uint8 *dst_palette);
+extern "C" void SyncSurfacePalettes(uint8 *src, uint32 width, uint32 height, int srcPitch, uint8 *srcPalette, uint8 *dst, int dstPitch, uint8 *dstPalette, bool preserveSysPalette);
+extern "C" uint8 S_COLOUR(int r, int g, int b);
+
+extern "C" int LoadDepthQ(HANDLE file)
+{
+    int i;
+    int j;
+    DWORD read;
+    uint8 palette[768];
+
+    MyReadFile(file, DepthQTable, 32 * 256, &read, NULL);
+    for (i = 0; i < 33; i++)
+        DepthQTable[i][0] = 0;
+    if (GameVid_IsWindowedVga) {
+        CopyBitmapPalette(game_palette, DepthQTable[0], 32 * 256, palette);
+        SyncSurfacePalettes(DepthQTable[0], 256, 32, 256, game_palette, DepthQTable[0], 256, palette, true);
+        memcpy(game_palette, palette, 768);
+        for (i = 0, j = 0; i < 256; i++, j += 3)
+            DepthQIndex[i] = S_COLOUR(game_palette[j] >> 1, game_palette[j + 1] >> 1, game_palette[j + 2] >> 1);
+    } else {
+        memcpy(DepthQIndex, DepthQTable[24], 256);
+    }
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 256; j++)
+            GouraudTable[j][i] = DepthQTable[i][j];
+    }
+    wet = 0;
+    for (i = 0; i < 768; i += 3) {
+        water_palette[i] = (int)(game_palette[i] * 2) / 3;
+        water_palette[i + 1] = (int)(game_palette[i + 1] * 2) / 3;
+        water_palette[i + 2] = game_palette[i + 2];
+    }
+    return 1;
+}
