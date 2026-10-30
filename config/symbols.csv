@@ -536,7 +536,7 @@ address,size,name,symbol
 0x0042e0c0,611,LaraTestClimb,_LaraTestClimb
 0x0042e330,204,LaraTestClimbPos,_LaraTestClimbPos
 0x0042e400,239,LaraDoClimbLeftRight,_LaraDoClimbLeftRight
-0x0042e4f0,564,LaraTestClimbUpPos,_LaraTestClimbUpPos
+0x0042e4f0,584,LaraTestClimbUpPos,_LaraTestClimbUpPos
 0x0042e740,1256,LaraGun,_LaraGun
 0x0042ecb0,59,CheckForHoldingState,_CheckForHoldingState
 0x0042ecf0,284,InitialiseNewWeapon,_InitialiseNewWeapon
