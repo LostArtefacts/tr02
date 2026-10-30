@@ -1759,10 +1759,10 @@ address,size,name,symbol
 0x00519f5c,1,ColorKeyState,_ColorKeyState
 0x00519f60,1,ZWriteEnableState,_ZWriteEnableState
 0x00519f68,128,LanTextureHandle,_LanTextureHandle
-0x00519ff0,4,GameMemorySize,_GameMemorySize
-0x00519ff4,4,GameAllocMemPointer,_GameAllocMemPointer
-0x00519ff8,4,GameAllocMemUsed,_GameAllocMemUsed
-0x00519ffc,4,GameAllocMemFree,_GameAllocMemFree
+0x00519ff0,4,malloc_size,_malloc_size
+0x00519ff4,4,malloc_ptr,_malloc_ptr
+0x00519ff8,4,malloc_used,_malloc_used
+0x00519ffc,4,malloc_free,_malloc_free
 0x0051a0bc,4,malloc_buffer,_malloc_buffer
 0x0051a0c0,56,conflict,?conflict@@3PAHA
 0x0051a0f8,256,keymap,?keymap@@3PAEA

@@ -3,10 +3,22 @@
 #include "output.h"
 #include <time.h>
 
+extern "C" char *malloc_ptr;
+extern "C" int malloc_size;
+extern "C" int malloc_free, malloc_used;
+extern "C" void init_game_malloc(void);
+
 void ShutdownGame(void)
 {
     if (malloc_buffer)
         GlobalFree((HGLOBAL)malloc_buffer);
+}
+
+void init_game_malloc(void)
+{
+    malloc_ptr = malloc_buffer;
+    malloc_free = malloc_size;
+    malloc_used = 0;
 }
 
 void CalculateWibbleTable(void)

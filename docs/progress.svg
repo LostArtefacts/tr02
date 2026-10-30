@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.53% (256)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.47% (991)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.61% (257)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.39% (990)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="153.35" height="6" x="0" y="0" class="named"/>
-<rect width="593.65" height="6" x="153.35" y="0" class="todo"/>
+<rect width="153.95" height="6" x="0" y="0" class="named"/>
+<rect width="593.05" height="6" x="153.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1089,7 +1089,7 @@
 <rect width="12" height="12" x="285" y="300" class="named"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="300" class="todo"><title>0x0044d6e0 S_InitialiseSystem (66 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="300" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="300" class="todo"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="300" class="named"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="300" class="todo"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="todo"><title>0x0044d800 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="300" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.41%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.59%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.58%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="47.90" height="6" x="0" y="0" class="named"/>
-<rect width="699.10" height="6" x="47.90" y="0" class="todo"/>
+<rect width="47.97" height="6" x="0" y="0" class="named"/>
+<rect width="699.03" height="6" x="47.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2387,7 +2387,7 @@
 <rect width="2.60" height="2.09" x="692.58" y="372.91" class="todo"><title>0x004472a0 DInputCreate (34 bytes)</title></rect>
 <rect width="2.19" height="2.49" x="698.17" y="326.20" class="named"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
 <rect width="2.19" height="2.33" x="698.17" y="331.69" class="named"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
-<rect width="2.19" height="2.33" x="698.17" y="337.01" class="todo"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
+<rect width="2.19" height="2.33" x="698.17" y="337.01" class="named"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
 <rect width="2.19" height="2.33" x="698.17" y="342.34" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="2.19" height="2.16" x="698.17" y="347.66" class="todo"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="2.19" height="2.16" x="698.17" y="352.83" class="todo"><title>0x00456060 SafeFreeTexturePage (32 bytes)</title></rect>
