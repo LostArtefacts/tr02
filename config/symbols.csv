@@ -1508,6 +1508,8 @@ address,size,name,symbol
 0x00465a5c,2,Option_SoundFX_Volume,_Option_SoundFX_Volume
 0x00465a60,2,Option_Music_Volume,_Option_Music_Volume
 0x00465ae0,,Weapons,_Weapons
+0x00465f58,24,DeathSlideBounds,_DeathSlideBounds
+0x00465f70,12,DeathSlidePosition,_DeathSlidePosition
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
 0x00466480,8,screen_sizer,_screen_sizer

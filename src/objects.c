@@ -18,6 +18,9 @@ typedef struct {
 void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 void *game_malloc(int size, int type);
 
+extern sint16 DeathSlideBounds[12];
+extern PHD_VECTOR DeathSlidePosition;
+
 #define NO_ROOM 0xff
 #define FINAL_COUNTDOWN 150
 
@@ -36,6 +39,35 @@ void ControlCutShotgun(sint16 item_number)
     }
     else
         item->status = INVISIBLE;
+}
+
+void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    if (!(input & IN_ACTION) || laraitem->gravity_status || lara.gun_status != LG_ARMLESS
+        || laraitem->current_anim_state != AS_STOP)
+        return;
+
+    item = &items[item_number];
+    if (item->status != NOT_ACTIVE)
+        return;
+
+    if (TestLaraPosition(DeathSlideBounds, item, laraitem))
+    {
+        AlignLaraPosition(&DeathSlidePosition, item, laraitem);
+        lara.gun_status = LG_HANDSBUSY;
+
+        laraitem->goal_anim_state = AS_DEATHSLIDE;
+        do
+            AnimateItem(laraitem);
+        while (laraitem->current_anim_state != AS_NULL);
+
+        if (!item->active)
+            AddActiveItem(item_number);
+        item->status = ACTIVE;
+        item->flags |= ONESHOT;
+    }
 }
 
 void InitialiseWindow(sint16 item_number)

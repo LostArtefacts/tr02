@@ -7,6 +7,7 @@
 #define ACTIVE 1
 #define DEACTIVATED 2
 #define INVISIBLE 3
+#define ONESHOT 0x100
 
 typedef struct item_info {
     sint32 floor;
@@ -65,5 +66,6 @@ extern sint16 next_fx_active;
 extern sint16 next_fx_free;
 
 void RemoveActiveItem(sint16 item_num);
+void AddActiveItem(sint16 item_num);
 
 #endif

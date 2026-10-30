@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.86% (335)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.14% (912)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.94% (336)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.06% (911)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="200.68" height="6" x="0" y="0" class="named"/>
-<rect width="546.32" height="6" x="200.68" y="0" class="todo"/>
+<rect width="201.28" height="6" x="0" y="0" class="named"/>
+<rect width="545.72" height="6" x="201.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -692,7 +692,7 @@
 <rect width="12" height="12" x="330" y="180" class="todo"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="180" class="todo"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="todo"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="180" class="todo"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="180" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="180" class="todo"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="todo"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="180" class="todo"><title>0x00434db0 BellControl (126 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.63%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.37%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.31%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="64.46" height="6" x="0" y="0" class="named"/>
-<rect width="682.54" height="6" x="64.46" y="0" class="todo"/>
+<rect width="64.88" height="6" x="0" y="0" class="named"/>
+<rect width="682.12" height="6" x="64.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1779,7 +1779,7 @@
 <rect width="9.78" height="9.58" x="535.55" y="150.66" class="todo"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="9.78" height="9.58" x="548.33" y="150.66" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="9.78" height="9.58" x="561.11" y="150.66" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
-<rect width="9.72" height="9.58" x="573.90" y="150.66" class="todo"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
+<rect width="9.72" height="9.58" x="573.90" y="150.66" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
 <rect width="9.65" height="9.58" x="586.61" y="150.66" class="named"><title>0x00429800 lara_col_stepright (190 bytes)</title></rect>
 <rect width="9.65" height="9.58" x="599.26" y="150.66" class="named"><title>0x0042a7e0 LaraTestClimbStance (190 bytes)</title></rect>
 <rect width="9.65" height="9.58" x="611.91" y="150.66" class="todo"><title>0x004542f0 Func4542f0 (190 bytes)</title></rect>

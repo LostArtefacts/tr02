@@ -53,5 +53,7 @@ void ShiftItem(ITEM_INFO *item, COLL_INFO *coll);
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd);
 void ItemPushLara(ITEM_INFO *item, ITEM_INFO *laraitem, COLL_INFO *coll, int spazon, int bigpush);
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem);
+void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
 
 #endif
