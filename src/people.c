@@ -38,6 +38,22 @@ int Targetable(ITEM_INFO *item, AI_INFO *info)
     return LOS(&start, &target);
 }
 
+void KillEffect(sint16 fx_num);
+
+void ControlGlow(sint16 fx_number)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_number];
+    if (--fx->counter)
+    {
+        fx->shade += fx->speed;
+        fx->frame_number += fx->fallspeed;
+    }
+    else
+        KillEffect(fx_number);
+}
+
 sint16 GunHit(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number)
 {
     PHD_VECTOR pos;
