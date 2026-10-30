@@ -300,3 +300,57 @@ extern "C" void UpdateGameResolution(void)
     sprintf(modeString, ModeInfoFormat, GameVidWidth, GameVidHeight);
     DisplayModeInfo(modeString);
 }
+
+extern "C" {
+extern LPDIRECTDRAWSURFACE3 ThirdBufferSurface;
+extern bool NeedToReloadTextures;
+void Direct3DRelease(void);
+void CleanupTextures(void);
+}
+void HWR_FreeTexturePages(void);
+
+extern "C" void RenderFinish(bool needToClearTextures)
+{
+    if (SavedAppSettings.RenderMode == RM_Hardware) {
+        if (needToClearTextures) {
+            HWR_FreeTexturePages();
+            CleanupTextures();
+        }
+        Direct3DRelease();
+        if (ZBufferSurface) {
+            ZBufferSurface->Release();
+            ZBufferSurface = NULL;
+        }
+    } else {
+        if (needToClearTextures && PictureBufferSurface) {
+            PictureBufferSurface->Release();
+            PictureBufferSurface = NULL;
+        }
+        if (RenderBufferSurface) {
+            RenderBufferSurface->Release();
+            RenderBufferSurface = NULL;
+        }
+    }
+    if (DDrawPalette) {
+        DDrawPalette->Release();
+        DDrawPalette = NULL;
+    }
+    if (DDrawClipper) {
+        DDrawClipper->Release();
+        DDrawClipper = NULL;
+    }
+    if (ThirdBufferSurface) {
+        ThirdBufferSurface->Release();
+        ThirdBufferSurface = NULL;
+    }
+    if (BackBufferSurface) {
+        BackBufferSurface->Release();
+        BackBufferSurface = NULL;
+    }
+    if (PrimaryBufferSurface) {
+        PrimaryBufferSurface->Release();
+        PrimaryBufferSurface = NULL;
+    }
+    if (needToClearTextures)
+        NeedToReloadTextures = false;
+}
