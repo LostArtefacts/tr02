@@ -400,6 +400,66 @@ void RemoveInventoryText(void)
     }
 }
 
+#define OPEN_FRAMES 32
+#define OPEN_ROTATION -0x8000
+#define RING_RADIUS 0x2b0
+#define CAMERA_HEIGHT -0x100
+#define CAMERA_STARTHEIGHT -0x600
+#define RNG_OPENING 0
+#define RNG_OPEN 1
+
+void Inv_RingMotionInit(RING_INFO *ring, sint16 frames, sint16 status, sint16 status_target);
+void Inv_RingMotionRadius(RING_INFO *ring, sint16 target);
+void Inv_RingMotionRotation(RING_INFO *ring, sint16 rotation, sint16 target);
+void Inv_RingMotionCameraPos(RING_INFO *ring, sint16 target);
+
+void Inv_RingInit(RING_INFO *ring, sint16 type, INVENTORY_ITEM **list, sint16 qty, sint16 current, IMOTION_INFO *imo)
+{
+    ring->type = type;
+    ring->radius = 0;
+    ring->list = list;
+    ring->number_of_objects = qty;
+    ring->current_object = current;
+    ring->angle_adder = 0x10000 / qty;
+
+    if (Inventory_Mode != INV_TITLE_MODE)
+        ring->camera_pitch = 0;
+    else
+        ring->camera_pitch = 0x400;
+
+    ring->rotating = 0;
+    ring->rot_count = 0;
+    ring->target_object = 0;
+    ring->rot_adder = 0;
+    ring->rot_adderL = 0;
+    ring->rot_adderR = 0;
+
+    ring->imo = imo;
+
+    ring->camera.x_pos = 0;
+    ring->camera.y_pos = CAMERA_STARTHEIGHT;
+    ring->camera.z_pos = 0x380;
+    ring->camera.x_rot = 0;
+    ring->camera.y_rot = 0;
+    ring->camera.z_rot = 0;
+
+    Inv_RingMotionInit(ring, OPEN_FRAMES, RNG_OPENING, RNG_OPEN);
+    Inv_RingMotionRadius(ring, RING_RADIUS);
+    Inv_RingMotionCameraPos(ring, CAMERA_HEIGHT);
+    Inv_RingMotionRotation(ring, OPEN_ROTATION, (sint16)(0xc000 - (ring->current_object * ring->angle_adder)));
+
+    ring->ringpos.x_pos = 0;
+    ring->ringpos.y_pos = 0;
+    ring->ringpos.z_pos = 0;
+    ring->ringpos.x_rot = 0;
+    ring->ringpos.y_rot = imo->rotate_target - OPEN_ROTATION;
+    ring->ringpos.z_rot = 0;
+
+    ring->light.x = -0x600;
+    ring->light.y = 0x100;
+    ring->light.z = 0x400;
+}
+
 void Inv_RingGetView(RING_INFO *ring, PHD_3DPOS *viewer)
 {
     PHD_ANGLE angles[2];

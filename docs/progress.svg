@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.03% (549)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.97% (698)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.11% (550)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.89% (697)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="328.87" height="6" x="0" y="0" class="named"/>
-<rect width="418.13" height="6" x="328.87" y="0" class="todo"/>
+<rect width="329.47" height="6" x="0" y="0" class="named"/>
+<rect width="417.53" height="6" x="329.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -413,7 +413,7 @@
 <rect width="12" height="12" x="645" y="90" class="todo"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="90" class="todo"><title>0x00424dc0 Inv_GetItemOption (193 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="90" class="named"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="90" class="todo"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="90" class="named"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="90" class="named"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="90" class="named"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="90" class="named"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.27%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="176.63" height="6" x="0" y="0" class="named"/>
-<rect width="570.37" height="6" x="176.63" y="0" class="todo"/>
+<rect width="177.23" height="6" x="0" y="0" class="named"/>
+<rect width="569.77" height="6" x="177.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.35" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1659,7 +1659,7 @@
 <rect width="11.96" height="12.29" x="588.03" y="94.29" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
 <rect width="11.85" height="12.29" x="602.99" y="94.29" class="todo"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="11.85" height="12.29" x="617.85" y="94.29" class="todo"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
-<rect width="11.80" height="12.29" x="632.70" y="94.29" class="todo"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
+<rect width="11.80" height="12.29" x="632.70" y="94.29" class="named"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="11.80" height="12.29" x="647.50" y="94.29" class="todo"><title>0x0044e9a0 ScreenShotPCX (271 bytes)</title></rect>
 <rect width="11.74" height="12.29" x="662.30" y="94.29" class="todo"><title>0x00447cf0 WinSndMakeSample (270 bytes)</title></rect>
 <rect width="11.64" height="12.29" x="677.04" y="94.29" class="named"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
