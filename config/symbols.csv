@@ -1093,7 +1093,7 @@ address,size,name,symbol
 0x00452e30,5,SE_SoundTestFinish,_SE_SoundTestFinish
 0x00452e40,61,SE_SoundTestExecute,_SE_SoundTestExecute
 0x00452e80,90,SE_SoundTest,_SE_SoundTest
-0x00452f20,93,Func452f20,
+0x00452f20,93,SE_NewPropSheetWndProc,_SE_NewPropSheetWndProc@16
 0x00452f80,456,Func452f80,
 0x00453560,476,SE_GraphicsDlgFullScreenModesUpdate,_SE_GraphicsDlgFullScreenModesUpdate
 0x00453750,23,SE_GraphicsAdapterSet,_SE_GraphicsAdapterSet

@@ -107,6 +107,26 @@ extern "C" bool SE_SoundTest(void)
     return result;
 }
 
+extern "C" {
+extern WNDPROC SE_OldPropSheetWndProc;
+extern HWND GraphicsDialogHandle;
+}
+
+extern "C" LRESULT CALLBACK SE_NewPropSheetWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+    case WM_DESTROY:
+        SetWindowLong(hWnd, GWL_WNDPROC, (LONG)SE_OldPropSheetWndProc);
+        break;
+    case WM_DISPLAYCHANGE:
+        if (GraphicsDialogHandle)
+            PostMessage(GraphicsDialogHandle, uMsg, wParam, lParam);
+        break;
+    }
+    return CallWindowProc((FARPROC)SE_OldPropSheetWndProc, hWnd, uMsg, wParam, lParam);
+}
+
 extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
 
 extern "C" void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter)
