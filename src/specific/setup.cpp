@@ -113,8 +113,26 @@ extern "C" bool SE_SoundTest(void)
 
 extern "C" {
 extern WNDPROC SE_OldPropSheetWndProc;
+extern HWND SE_PropSheetWndHandle;
 extern HWND GraphicsDialogHandle;
 extern HWND SoundDialogHandle;
+}
+
+extern "C" LRESULT CALLBACK SE_NewPropSheetWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+extern "C" int CALLBACK SE_PropSheetCallback(HWND hwndDlg, UINT uMsg, LPARAM lParam)
+{
+    if (uMsg == 2)
+    {
+        GraphicsDialogHandle = NULL;
+        return 0;
+    }
+    if (uMsg == 1)
+    {
+        SE_PropSheetWndHandle = hwndDlg;
+        SE_OldPropSheetWndProc = (WNDPROC)SetWindowLong(hwndDlg, GWL_WNDPROC, (LONG)SE_NewPropSheetWndProc);
+    }
+    return 0;
 }
 
 extern "C" LRESULT CALLBACK SE_NewPropSheetWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -264,7 +282,6 @@ extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
 }
 
 extern "C" {
-extern HWND SE_PropSheetWndHandle;
 extern HWND SoundImageHandle;
 void SE_SoundDlgInit(HWND hwndDlg);
 void SE_SoundDlgUpdate(HWND hwndDlg);
