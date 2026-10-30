@@ -54,6 +54,25 @@ void ControlGlow(sint16 fx_number)
         KillEffect(fx_number);
 }
 
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
+
+void ControlGunShot(sint16 fx_number)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_number];
+    fx->counter--;
+
+    if (!fx->counter)
+    {
+        KillEffect(fx_number);
+        return;
+    }
+
+    fx->pos.z_rot = (sint16)GetRandomControl();
+    AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 12, 11);
+}
+
 sint16 GunHit(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number)
 {
     PHD_VECTOR pos;
