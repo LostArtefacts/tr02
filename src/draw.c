@@ -44,6 +44,43 @@ int DrawPhaseGame(void)
     return camera.number_frames;
 }
 
+#define UNDERWATER 1
+#define INSIDE 64
+
+extern int MidSort;
+extern int OutsideCamera;
+
+void S_LightRoom(ROOM_INFO *r);
+void ClipRoom(ROOM_INFO *r);
+
+void PrintRooms(sint16 room_number)
+{
+    ROOM_INFO *r;
+
+    r = &room[room_number];
+    if (r->flags & UNDERWATER)
+        S_SetupBelowWater(UnderwaterCamera);
+    else
+        S_SetupAboveWater(UnderwaterCamera);
+
+    MidSort = (sint16)r->bound_active >> 8;
+
+    phd_TranslateAbs(r->x, r->y, r->z);
+    phd_left = r->left;
+    phd_right = r->right;
+    phd_top = r->top;
+    phd_bottom = r->bottom;
+
+    S_LightRoom(r);
+    if (OutsideCamera > 0 && !(r->flags & INSIDE)) {
+        S_InsertRoom(r->data, 1);
+    } else {
+        if (OutsideCamera >= 0)
+            ClipRoom(r);
+        S_InsertRoom(r->data, 0);
+    }
+}
+
 #define SPRITE_ABS 0x01000000
 #define SPRITE_SEMITRANS 0x02000000
 #define SPRITE_SHADE 0x08000000
@@ -181,8 +218,8 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
 
 void InterpolateMatrix(void)
 {
-    sint32 *mptr, *iptr;
     sint32 frac, rate;
+    sint32 *mptr, *iptr;
 
     mptr = phd_mxptr;
     iptr = IMptr;
