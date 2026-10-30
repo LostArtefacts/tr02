@@ -433,6 +433,126 @@ void InitialiseRollingBall(sint16 item_number)
     old->room_number = item->room_number;
 }
 
+#define ROLLING_BALL 60
+#define OILDRUMS 83
+#define BIG_ROLLING_BALL 101
+#define ROLL_SHAKE_RANGE (WALL_L * 10)
+#define SQUARE(A) ((A) * (A))
+
+void RemoveDrawnItem(sint16 item_num);
+
+void RollingBallControl(sint16 item_number)
+{
+    sint32 x, z, dist, oldx, oldz;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    GAME_VECTOR *old;
+    ROOM_INFO *r;
+    sint16 room_number;
+
+    item = &items[item_number];
+    if (item->status == ACTIVE)
+    {
+        if (item->goal_anim_state == TRAP_WORKING)
+        {
+            AnimateItem(item);
+            return;
+        }
+
+        if (item->pos.y_pos < item->floor)
+        {
+            if (!item->gravity_status)
+            {
+                item->gravity_status = 1;
+                item->fallspeed = -10;
+            }
+        }
+        else if (item->current_anim_state == TRAP_SET)
+            item->goal_anim_state = TRAP_ACTIVATE;
+
+        oldx = item->pos.x_pos;
+        oldz = item->pos.z_pos;
+        AnimateItem(item);
+
+        room_number = item->room_number;
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        if (item->room_number != room_number)
+            ItemNewRoom(item_number, room_number);
+
+        item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+        TestTriggers(trigger_index, 1);
+
+        if (item->pos.y_pos >= item->floor - STEP_L)
+        {
+            item->gravity_status = 0;
+            item->pos.y_pos = item->floor;
+            item->fallspeed = 0;
+            if (item->object_number == OILDRUMS)
+                SoundEffect(222, &item->pos, 0);
+            else if (item->object_number == BIG_ROLLING_BALL)
+                SoundEffect(227, &item->pos, 0);
+            else
+                SoundEffect(147, &item->pos, 0);
+            dist = phd_sqrt(SQUARE(camera.mike_pos.x - item->pos.x_pos) + SQUARE(camera.mike_pos.z - item->pos.z_pos));
+            if (dist < ROLL_SHAKE_RANGE)
+                camera.bounce = (dist - ROLL_SHAKE_RANGE) * 40 / ROLL_SHAKE_RANGE;
+        }
+
+        dist = (item->object_number == ROLLING_BALL) ? 384 : WALL_L;
+
+        x = item->pos.x_pos + (dist * phd_sin(item->pos.y_rot) >> W2V_SHIFT);
+        z = item->pos.z_pos + (dist * phd_cos(item->pos.y_rot) >> W2V_SHIFT);
+
+        floor = GetFloor(x, item->pos.y_pos, z, &room_number);
+        if (GetHeight(floor, x, item->pos.y_pos, z) < item->pos.y_pos)
+        {
+            if (item->object_number == OILDRUMS)
+            {
+                SoundEffect(223, &item->pos, 0);
+                item->goal_anim_state = TRAP_WORKING;
+            }
+            else if (item->object_number == BIG_ROLLING_BALL)
+            {
+                SoundEffect(228, &item->pos, 0);
+                item->goal_anim_state = TRAP_WORKING;
+            }
+            else
+                item->status = DEACTIVATED;
+            item->pos.y_pos = item->floor;
+            item->pos.x_pos = oldx;
+            item->pos.z_pos = oldz;
+            item->speed = item->fallspeed = 0;
+            item->touch_bits = 0;
+        }
+    }
+    else if (item->status == DEACTIVATED)
+    {
+        if (!TriggerActive(item))
+        {
+            item->status = NOT_ACTIVE;
+            old = (GAME_VECTOR *)item->data;
+            item->pos.x_pos = old->x;
+            item->pos.y_pos = old->y;
+            item->pos.z_pos = old->z;
+            if (item->room_number != old->room_number)
+            {
+                RemoveDrawnItem(item_number);
+                r = &room[old->room_number];
+                item->next_item = r->item_number;
+                r->item_number = item_number;
+                item->room_number = old->room_number;
+            }
+            item->current_anim_state = item->goal_anim_state = TRAP_SET;
+            item->anim_number = objects[item->object_number].anim_index;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = item->goal_anim_state = anims[item->anim_number].current_anim_state;
+            item->required_anim_state = 0;
+            RemoveActiveItem(item_number);
+        }
+    }
+}
+
 void RollingBallCollision(sint16 item_num, ITEM_INFO *litem, COLL_INFO *coll)
 {
     ITEM_INFO *item;
