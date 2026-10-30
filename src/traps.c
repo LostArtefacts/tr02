@@ -3,6 +3,7 @@
 #include "box.h"
 
 #define FALLING_PLANK 57
+#define SQUARE(A) ((A) * (A))
 #define BLADE 81
 #define FLAME 252
 #define RICOCHET 238
@@ -63,6 +64,85 @@ enum spin_anims { SPIN_EMPTY, SPIN_STOP, SPIN_SPIN };
 enum dart_anims { DART_OFF, DART_FIRE };
 
 static int clonked = 0;
+
+#define BOAT 14
+#define BOAT_BITS 221
+#define EXPLOSION1 229
+
+extern sint32 detonate_all_mines;
+
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+void Splash(ITEM_INFO *item);
+
+void MineControl(sint16 mine_number)
+{
+    FX_INFO *fx;
+    ITEM_INFO *item, *mine;
+    FLOOR_INFO *floor;
+    sint16 item_number, room_number, fx_number;
+
+    mine = &items[mine_number];
+    if (mine->flags & ONESHOT)
+        return;
+
+    if (!detonate_all_mines)
+    {
+        room_number = mine->room_number;
+        GetFloor(mine->pos.x_pos, mine->pos.y_pos - WALL_L * 2, mine->pos.z_pos, &room_number);
+
+        item_number = room[room_number].item_number;
+        while (item_number != NO_ITEM)
+        {
+            item = &items[item_number];
+            if (item->object_number == BOAT && SQUARE(item->pos.x_pos - mine->pos.x_pos) + SQUARE(item->pos.z_pos - mine->pos.z_pos) < SQUARE(WALL_L / 2))
+                break;
+            item_number = item->next_item;
+        }
+
+        if (item_number == NO_ITEM)
+            return;
+
+        if (lara.skidoo == item_number)
+        {
+            ExplodingDeath(lara.item_number, 0xffffffff, 0);
+            lara_item->hit_points = 0;
+            lara_item->flags |= ONESHOT;
+        }
+
+        item->object_number = BOAT_BITS;
+        ExplodingDeath(item_number, 0xffffffff, 0);
+        KillItem(item_number);
+        item->object_number = BOAT;
+
+        floor = GetFloor(mine->pos.x_pos, mine->pos.y_pos, mine->pos.z_pos, &room_number);
+        GetHeight(floor, mine->pos.x_pos, mine->pos.y_pos, mine->pos.z_pos);
+        TestTriggers(trigger_index, 1);
+
+        detonate_all_mines = 1;
+    }
+    else if (GetRandomControl() < 0x7800)
+        return;
+
+    fx_number = CreateEffect(mine->room_number);
+    if (fx_number != NO_ITEM)
+    {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = mine->pos.x_pos;
+        fx->pos.y_pos = mine->pos.y_pos - WALL_L;
+        fx->pos.z_pos = mine->pos.z_pos;
+        fx->speed = 0;
+        fx->frame_number = 0;
+        fx->counter = 0;
+        fx->object_number = EXPLOSION1;
+    }
+
+    Splash(mine);
+
+    SoundEffect(105, &mine->pos, 0);
+    mine->flags |= ONESHOT;
+    mine->collidable = 0;
+    mine->mesh_bits = 1;
+}
 
 void ControlSpikeWall(sint16 item_number)
 {
@@ -437,7 +517,6 @@ void InitialiseRollingBall(sint16 item_number)
 #define OILDRUMS 83
 #define BIG_ROLLING_BALL 101
 #define ROLL_SHAKE_RANGE (WALL_L * 10)
-#define SQUARE(A) ((A) * (A))
 
 void RemoveDrawnItem(sint16 item_num);
 

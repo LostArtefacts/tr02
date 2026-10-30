@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.76% (396)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.24% (851)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.84% (397)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.16% (850)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="237.22" height="6" x="0" y="0" class="named"/>
-<rect width="509.78" height="6" x="237.22" y="0" class="todo"/>
+<rect width="237.82" height="6" x="0" y="0" class="named"/>
+<rect width="509.18" height="6" x="237.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -826,7 +826,7 @@
 <rect width="12" height="12" x="90" y="225" class="todo"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="225" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="225" class="todo"><title>0x00440f80 GetTextScaleV (57 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="225" class="todo"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="225" class="named"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="225" class="named"><title>0x004411c0 ControlSpikeWall (312 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="225" class="named"><title>0x00441300 ControlCeilingSpikes (277 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="225" class="named"><title>0x00441420 HookControl (134 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.06%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="95.56" height="6" x="0" y="0" class="named"/>
-<rect width="651.44" height="6" x="95.56" y="0" class="todo"/>
+<rect width="96.66" height="6" x="0" y="0" class="named"/>
+<rect width="650.34" height="6" x="96.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1501,7 +1501,7 @@
 <rect width="17.15" height="18" x="393.25" y="172.01" class="todo"><title>0x0043d110 SkidooBaddieCollision (505 bytes)</title></rect>
 <rect width="17.15" height="17.87" x="393.25" y="193" class="todo"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
 <rect width="17.15" height="17.83" x="393.25" y="213.88" class="todo"><title>0x0044ec80 ScreenShot (501 bytes)</title></rect>
-<rect width="17.15" height="17.79" x="393.25" y="234.71" class="todo"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
+<rect width="17.15" height="17.79" x="393.25" y="234.71" class="named"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
 <rect width="17.15" height="17.75" x="393.25" y="255.50" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
 <rect width="17.15" height="17.67" x="393.25" y="276.25" class="todo"><title>0x00451040 S_PrintShadow (497 bytes)</title></rect>
 <rect width="17.15" height="17.46" x="393.25" y="296.92" class="todo"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>

@@ -1652,7 +1652,7 @@ address,size,name,symbol
 0x004d7c40,4,slots_used,_slots_used
 0x004d7c64,4,number_cameras,_number_cameras
 0x004d7c68,,LaSlot,_LaSlot
-0x004d7e6c,4,MinesDetonated,_MinesDetonated
+0x004d7e6c,4,detonate_all_mines,_detonate_all_mines
 0x004d7e70,4,clonked,_clonked
 0x004d7e78,1,BGND_PictureIsReady,_BGND_PictureIsReady
 0x004d7e80,20,BGND_TexturePageIndexes,_BGND_TexturePageIndexes
