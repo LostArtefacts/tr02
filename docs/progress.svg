@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.59% (132)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.41% (1115)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.67% (133)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.33% (1114)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="79.07" height="6" x="0" y="0" class="named"/>
-<rect width="667.93" height="6" x="79.07" y="0" class="todo"/>
+<rect width="79.67" height="6" x="0" y="0" class="named"/>
+<rect width="667.33" height="6" x="79.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1053,7 +1053,7 @@
 <rect width="12" height="12" x="495" y="285" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="285" class="named"><title>0x0044c460 S_FinishInventory (15 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="285" class="named"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="285" class="todo"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="285" class="named"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="285" class="named"><title>0x0044c520 S_PlayFMV (14 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="285" class="named"><title>0x0044c530 S_IntroFMV (19 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="285" class="todo"><title>0x0044c550 StartGame (324 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.45%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.55%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="18.11" height="6" x="0" y="0" class="named"/>
-<rect width="728.89" height="6" x="18.11" y="0" class="todo"/>
+<rect width="18.30" height="6" x="0" y="0" class="named"/>
+<rect width="728.70" height="6" x="18.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2076,7 +2076,7 @@
 <rect width="5.40" height="5.78" x="608.96" y="360.55" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
 <rect width="5.40" height="5.68" x="608.96" y="369.32" class="named"><title>0x00427c90 lara_as_fastback (87 bytes)</title></rect>
 <rect width="5.50" height="5.58" x="617.36" y="245.25" class="todo"><title>0x00431b90 lara_col_surftread (87 bytes)</title></rect>
-<rect width="5.50" height="5.58" x="625.86" y="245.25" class="todo"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
+<rect width="5.50" height="5.58" x="625.86" y="245.25" class="named"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
 <rect width="5.50" height="5.58" x="634.36" y="245.25" class="todo"><title>0x00457160 Func457160 (87 bytes)</title></rect>
 <rect width="5.40" height="5.58" x="642.85" y="245.25" class="todo"><title>0x00425740 ReqItemRightAlign (86 bytes)</title></rect>
 <rect width="5.40" height="5.58" x="651.25" y="245.25" class="named"><title>0x00456720 Sync (86 bytes)</title></rect>

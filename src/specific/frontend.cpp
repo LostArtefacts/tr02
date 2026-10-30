@@ -52,6 +52,35 @@ void S_FadeToBlack(void)
     ScreenDump();
 }
 
+void S_Wait(int frames, int anykey)
+{
+    int npassed;
+
+    if (anykey)
+    {
+        while (frames > 0)
+        {
+            if (!input)
+                break;
+            S_UpdateInput();
+            do
+                npassed = Sync();
+            while (!npassed);
+            frames -= npassed;
+        }
+    }
+    while (frames > 0)
+    {
+        S_UpdateInput();
+        if (anykey && input)
+            return;
+        do
+            npassed = Sync();
+        while (!npassed);
+        frames -= npassed;
+    }
+}
+
 int S_PlayFMV(char *fname, int sequence)
 {
     return FMV_Play(fname);
