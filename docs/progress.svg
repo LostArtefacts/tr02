@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.81% (858)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.79% (384)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.89% (859)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.71% (383)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="513.97" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="513.97" y="0" class="decompiled"/>
-<rect width="230.03" height="6" x="516.97" y="0" class="todo"/>
+<rect width="514.57" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="514.57" y="0" class="decompiled"/>
+<rect width="229.43" height="6" x="517.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1188,7 +1188,7 @@
 <rect width="12" height="12" x="255" y="330" class="todo"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="330" class="named"><title>0x004553b0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="330" class="named"><title>0x00455400 CalcVolume (42 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="330" class="todo"><title>0x00455430 CalcPan (38 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="330" class="named"><title>0x00455430 CalcPan (38 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="330" class="named"><title>0x00455460 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="330" class="named"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.46%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.49%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.47%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.48%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="369.45" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="369.45" y="0" class="decompiled"/>
-<rect width="377.18" height="6" x="369.82" y="0" class="todo"/>
+<rect width="369.54" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="369.54" y="0" class="decompiled"/>
+<rect width="377.10" height="6" x="369.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2350,7 +2350,7 @@
 <rect width="2.57" height="2.67" x="687.32" y="327.25" class="named"><title>0x00425400 Inv_RingMotionRadius (38 bytes)</title></rect>
 <rect width="2.57" height="2.67" x="687.32" y="332.92" class="todo"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
 <rect width="2.57" height="2.67" x="687.32" y="338.59" class="named"><title>0x00452230 ScreenClear (38 bytes)</title></rect>
-<rect width="2.57" height="2.67" x="687.32" y="344.26" class="todo"><title>0x00455430 CalcPan (38 bytes)</title></rect>
+<rect width="2.57" height="2.67" x="687.32" y="344.26" class="named"><title>0x00455430 CalcPan (38 bytes)</title></rect>
 <rect width="2.57" height="2.67" x="687.32" y="349.94" class="decompiled"><title>0x00455d50 Func455d50 (38 bytes)</title></rect>
 <rect width="2.57" height="2.67" x="687.32" y="355.61" class="named"><title>0x00456100 FreeTexturePages (38 bytes)</title></rect>
 <rect width="2.57" height="2.67" x="687.32" y="361.28" class="todo"><title>0x00457470 Func457470 (38 bytes)</title></rect>

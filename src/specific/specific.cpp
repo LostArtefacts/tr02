@@ -21,6 +21,19 @@ int CalcVolume(int nGameVolume)
     return int(5000.0 * (double(nGameVolume) / 2097152.0 - 1.0));
 }
 
+int CalcPan(sint16 angle)
+{
+    angle += 0x4000;
+    if (angle < 0)
+    {
+        angle = -angle;
+        if (angle < 0)
+            angle = 0x7fff;
+    }
+    angle -= 0x4000;
+    return angle >> 4;
+}
+
 sint32 S_SoundPlaySampleLooped(int nSample, uint16 wVol, int nPitch, sint16 wPan)
 {
     if (!sound_active)
