@@ -29,3 +29,12 @@ extern "C" int GetFreePaletteIndex(void)
     }
     return -1;
 }
+
+extern "C" void FreePalette(int palIndex)
+{
+    if (TexturePalettes[palIndex])
+    {
+        TexturePalettes[palIndex]->Release();
+        TexturePalettes[palIndex] = NULL;
+    }
+}
