@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.54% (543)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">56.46% (704)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.62% (544)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">56.38% (703)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="325.28" height="6" x="0" y="0" class="named"/>
-<rect width="421.72" height="6" x="325.28" y="0" class="todo"/>
+<rect width="325.88" height="6" x="0" y="0" class="named"/>
+<rect width="421.12" height="6" x="325.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -681,7 +681,7 @@
 <rect width="12" height="12" x="165" y="180" class="todo"><title>0x00433dd0 TestBlockPush (220 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="180" class="todo"><title>0x00433eac Func433eac (91 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="180" class="todo"><title>0x00433f20 TestBlockPull (549 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="180" class="todo"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="180" class="named"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="180" class="named"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="180" class="named"><title>0x00434250 DrawUnclippedItem (107 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="180" class="named"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.93%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="171.91" height="6" x="0" y="0" class="named"/>
-<rect width="575.09" height="6" x="171.91" y="0" class="todo"/>
+<rect width="172.32" height="6" x="0" y="0" class="named"/>
+<rect width="574.68" height="6" x="172.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.40" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1795,7 +1795,7 @@
 <rect width="9.59" height="9.47" x="522.85" y="365.53" class="todo"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
 <rect width="9.98" height="9.10" x="535.44" y="150.95" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="9.91" height="9.10" x="548.42" y="150.95" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
-<rect width="9.91" height="9.10" x="561.34" y="150.95" class="todo"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
+<rect width="9.91" height="9.10" x="561.34" y="150.95" class="named"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
 <rect width="9.84" height="9.10" x="574.25" y="150.95" class="named"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="9.78" height="9.10" x="587.09" y="150.95" class="named"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
 <rect width="9.78" height="9.10" x="599.87" y="150.95" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
