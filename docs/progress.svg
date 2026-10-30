@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.65% (270)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.35% (977)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.73% (271)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.27% (976)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="161.74" height="6" x="0" y="0" class="named"/>
-<rect width="585.26" height="6" x="161.74" y="0" class="todo"/>
+<rect width="162.34" height="6" x="0" y="0" class="named"/>
+<rect width="584.66" height="6" x="162.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -541,7 +541,7 @@
 <rect width="12" height="12" x="315" y="135" class="todo"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="135" class="todo"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="135" class="todo"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="135" class="todo"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="135" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="135" class="todo"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="135" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="135" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="50.38" height="6" x="0" y="0" class="named"/>
-<rect width="696.62" height="6" x="50.38" y="0" class="todo"/>
+<rect width="50.61" height="6" x="0" y="0" class="named"/>
+<rect width="696.39" height="6" x="50.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2008,7 +2008,7 @@
 <rect width="6.54" height="6.31" x="590.21" y="313.46" class="todo"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
 <rect width="6.54" height="6.31" x="590.21" y="322.77" class="todo"><title>0x004461f0 WinVidRegisterGameWindowClass (106 bytes)</title></rect>
 <rect width="6.54" height="6.31" x="590.21" y="332.08" class="todo"><title>0x00455d80 Func455d80 (106 bytes)</title></rect>
-<rect width="6.54" height="6.22" x="590.21" y="341.39" class="todo"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
+<rect width="6.54" height="6.22" x="590.21" y="341.39" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
 <rect width="6.54" height="6.13" x="590.21" y="350.61" class="named"><title>0x0041c540 SoundEffects (104 bytes)</title></rect>
 <rect width="6.54" height="6.13" x="590.21" y="359.74" class="todo"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
 <rect width="6.54" height="6.13" x="590.21" y="368.87" class="named"><title>0x00429310 lara_col_death (104 bytes)</title></rect>

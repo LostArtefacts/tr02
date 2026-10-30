@@ -614,6 +614,23 @@ void lara_col_slideback(ITEM_INFO *item, COLL_INFO *coll)
     lara_slide_slope(item, coll);
 }
 
+void lara_col_swandive(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+    GetLaraCollisionInfo(item, coll);
+    LaraDeflectEdgeJump(item, coll);
+    if (coll->mid_floor <= 0 && item->fallspeed > 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        item->fallspeed = 0;
+        item->pos.y_pos += coll->mid_floor;
+        item->gravity_status = 0;
+    }
+}
+
 void lara_default_col(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.move_angle = item->pos.y_rot;
@@ -675,7 +692,7 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
