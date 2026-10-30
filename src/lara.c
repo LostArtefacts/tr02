@@ -1469,6 +1469,51 @@ void lara_col_leftjump(ITEM_INFO *item, COLL_INFO *coll)
 int LaraTestHangJumpUp(ITEM_INFO *item, COLL_INFO *coll);
 void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, sint16 room_number, sint32 objheight);
 
+void lara_col_upjump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+    if (item->speed < 0)
+        coll->facing = lara.move_angle - 32768;
+    else
+        coll->facing = lara.move_angle;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, 870);
+
+    if (LaraTestHangJumpUp(item, coll))
+        return;
+
+    ShiftItem(item, coll);
+
+    if (coll->coll_type == COLL_CLAMP || coll->coll_type == COLL_TOP || coll->coll_type == COLL_TOPFRONT)
+        item->goal_anim_state = AS_STOP;
+
+    if (coll->coll_type)
+        item->speed = (item->speed > 0) ? 2 : -2;
+    else if (item->fallspeed < -70)
+    {
+        if ((input & IN_FORWARD) && item->speed < 5)
+            item->speed++;
+        else if ((input & IN_BACK) && item->speed > -5)
+            item->speed -= 2;
+    }
+
+    if (item->fallspeed > 0)
+    {
+        if (coll->mid_floor <= 0)
+        {
+            if (LaraLandedBad(item, coll))
+                item->goal_anim_state = AS_DEATH;
+            else
+                item->goal_anim_state = AS_STOP;
+            item->fallspeed = 0;
+            item->pos.y_pos += coll->mid_floor;
+            item->gravity_status = 0;
+        }
+    }
+}
+
 void lara_col_fallback(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.move_angle = item->pos.y_rot - 32768;
@@ -2003,7 +2048,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
