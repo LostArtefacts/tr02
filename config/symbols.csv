@@ -2032,6 +2032,7 @@ address,size,name,symbol
 0x005252b4,4,OutsideCamera,_OutsideCamera
 0x005252b8,4,number_draw_rooms,_number_draw_rooms
 0x005252c0,,IMstack,_IMstack
+0x005258c0,48,vbufdoor,_vbufdoor
 0x005258f0,4,IM_frac,_IM_frac
 0x005258f4,4,anims,_anims
 0x00525900,512,BoundRooms,_BoundRooms
