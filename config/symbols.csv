@@ -1589,6 +1589,8 @@ address,size,name,symbol
 0x00466be6,2,DumpY,_DumpY
 0x00466be8,2,DumpWidth,_DumpWidth
 0x00466bea,2,DumpHeight,_DumpHeight
+0x00466bf0,,game_malloc_strings,_game_malloc_strings
+0x00466f34,36,GameMallocOutOfMemory,_GameMallocOutOfMemory
 0x00466f58,,layout,?layout@@3PAY0O@FA
 0x004676a4,29,RenderInitFailedFormat,_RenderInitFailedFormat
 0x00467724,4,detail_level,_detail_level
