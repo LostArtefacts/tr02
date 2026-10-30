@@ -666,7 +666,7 @@ address,size,name,symbol
 0x004363d0,1025,Cult1Control,_Cult1Control
 0x00436800,80,InitialiseCult3,_InitialiseCult3
 0x00436850,1380,Cult3Control,_Cult3Control
-0x00436dc0,970,Worker1Control,_Worker1Control
+0x00436dc0,1012,Worker1Control,_Worker1Control
 0x004371c0,1066,Worker2Control,_Worker2Control
 0x00437620,779,BanditControl,_BanditControl
 0x00437960,1032,Bandit2Control,_Bandit2Control
@@ -1512,6 +1512,7 @@ address,size,name,symbol
 0x00465f70,12,DeathSlidePosition,_DeathSlidePosition
 0x00465f90,16,cult3_gunl,_cult3_gunl
 0x00465fa0,16,cult3_gunr,_cult3_gunr
+0x00465fb0,16,work1_gun,_work1_gun
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466360,16,teeth1a,_teeth1a
 0x00466370,16,teeth1b,_teeth1b
