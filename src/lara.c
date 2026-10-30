@@ -507,3 +507,23 @@ int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
 
     return 1;
 }
+
+sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist)
+{
+    sint16 room;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, height;
+
+    x = item->pos.x_pos + ((phd_sin(ang) * dist) >> W2V_SHIFT);
+    y = item->pos.y_pos - LARA_HITE;
+    z = item->pos.z_pos + ((phd_cos(ang) * dist) >> W2V_SHIFT);
+    room = item->room_number;
+
+    floor = GetFloor(x, y, z, &room);
+    height = GetHeight(floor, x, y, z);
+
+    if (height != NO_HEIGHT)
+        height -= item->pos.y_pos;
+
+    return (sint16)height;
+}

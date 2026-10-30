@@ -13,7 +13,6 @@ enum door_anims { DOOR_CLOSED, DOOR_OPEN };
 void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 
 #define NO_ROOM 0xff
-#define NO_HEIGHT (-0x7f00)
 
 void ShutThatDoor(DOORPOS_DATA *d)
 {
