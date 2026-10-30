@@ -23,6 +23,7 @@
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
 void AnimateLara(ITEM_INFO *item);
+int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll);
 void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
@@ -765,6 +766,34 @@ void lara_col_fastfall(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_reach(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = 1;
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = 0;
+
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraTestHangJump(item, coll))
+        return;
+
+    LaraSlideEdgeJump(item, coll);
+
+    if (item->fallspeed > 0 && coll->mid_floor <= 0)
+    {
+        if (LaraLandedBad(item, coll))
+            item->goal_anim_state = AS_DEATH;
+        else
+            item->goal_anim_state = AS_STOP;
+        item->fallspeed = 0;
+        item->pos.y_pos += coll->mid_floor;
+        item->gravity_status = 0;
+    }
+}
+
 void lara_col_splat(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.move_angle = item->pos.y_rot;
@@ -1015,7 +1044,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)

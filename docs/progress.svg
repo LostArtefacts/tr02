@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.38% (329)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.62% (918)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.46% (330)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.54% (917)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="197.08" height="6" x="0" y="0" class="named"/>
-<rect width="549.92" height="6" x="197.08" y="0" class="todo"/>
+<rect width="197.68" height="6" x="0" y="0" class="named"/>
+<rect width="549.32" height="6" x="197.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -522,7 +522,7 @@
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00429310 lara_col_death (104 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="135" class="named"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="135" class="todo"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="135" class="todo"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="135" class="named"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="135" class="named"><title>0x004295e0 lara_col_splat (89 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="135" class="named"><title>0x00429640 lara_col_compress (150 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="135" class="todo"><title>0x004296e0 lara_col_back (251 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.68%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="62.18" height="6" x="0" y="0" class="named"/>
-<rect width="684.82" height="6" x="62.18" y="0" class="todo"/>
+<rect width="62.50" height="6" x="0" y="0" class="named"/>
+<rect width="684.50" height="6" x="62.50" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1895,7 +1895,7 @@
 <rect width="8.09" height="7.96" x="694.71" y="186.22" class="named"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="705.80" y="186.22" class="todo"><title>0x00441900 BladeControl (145 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="716.89" y="186.22" class="todo"><title>0x00456f20 GetRegistryGuidValue (145 bytes)</title></rect>
-<rect width="8.01" height="7.96" x="727.98" y="186.22" class="todo"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
+<rect width="8.01" height="7.96" x="727.98" y="186.22" class="named"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
 <rect width="8.01" height="7.96" x="738.99" y="186.22" class="todo"><title>0x0043d6b0 GetCollisionAnim (144 bytes)</title></rect>
 <rect width="8.06" height="7.90" x="558.67" y="197.17" class="todo"><title>0x00442be0 FlameEmitterControl (144 bytes)</title></rect>
 <rect width="8.06" height="7.90" x="558.67" y="208.08" class="todo"><title>0x004454e0 WinVidCopyBitmapToBuffer (144 bytes)</title></rect>
