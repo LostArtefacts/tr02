@@ -344,3 +344,12 @@ void Remove_Requester(REQUEST_INFO *req)
         req->texts2[n] = NULL;
     }
 }
+
+void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
+{
+    if (txt)
+    {
+        txt->xpos = req->xpos;
+        txt->bgndOffX = 0;
+    }
+}
