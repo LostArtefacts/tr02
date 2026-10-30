@@ -144,6 +144,13 @@ void Richochet(GAME_VECTOR *pos)
     }
 }
 
+void ControlRichochet1(sint16 fx_num)
+{
+    effects[fx_num].counter--;
+    if (!effects[fx_num].counter)
+        KillEffect(fx_num);
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
