@@ -28,3 +28,12 @@ void DecreaseScreenSize(void)
     game_sizer = screen_sizer;
     setup_screen_size();
 }
+
+void TempVideoAdjust(int hires, double sizer)
+{
+    mode_lock = 1;
+    if (sizer == screen_sizer)
+        return;
+    screen_sizer = sizer;
+    setup_screen_size();
+}
