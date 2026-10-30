@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.52% (393)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.48% (854)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.60% (394)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.40% (853)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="235.42" height="6" x="0" y="0" class="named"/>
-<rect width="511.58" height="6" x="235.42" y="0" class="todo"/>
+<rect width="236.02" height="6" x="0" y="0" class="named"/>
+<rect width="510.98" height="6" x="236.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -684,7 +684,7 @@
 <rect width="12" height="12" x="210" y="180" class="todo"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="180" class="named"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="180" class="named"><title>0x00434250 DrawUnclippedItem (107 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="180" class="todo"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="180" class="named"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="180" class="named"><title>0x004343a0 ControlCutShotgun (60 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="180" class="todo"><title>0x004343e0 InitialiseFinalLevel (157 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="180" class="todo"><title>0x004344b0 FinalLevelCounter (527 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.60%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.46%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.54%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="92.63" height="6" x="0" y="0" class="named"/>
-<rect width="654.37" height="6" x="92.63" y="0" class="todo"/>
+<rect width="93.11" height="6" x="0" y="0" class="named"/>
+<rect width="653.89" height="6" x="93.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1729,7 +1729,7 @@
 <rect width="10.77" height="10.38" x="495.87" y="205.32" class="todo"><title>0x00433dd0 TestBlockPush (220 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="218.70" class="todo"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="232.08" class="todo"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
-<rect width="10.77" height="10.32" x="495.87" y="245.46" class="todo"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
+<rect width="10.77" height="10.32" x="495.87" y="245.46" class="named"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="258.78" class="todo"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="272.10" class="named"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="285.43" class="todo"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>

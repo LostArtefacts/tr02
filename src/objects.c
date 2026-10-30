@@ -39,11 +39,47 @@ extern int flipmap[];
 #define BOWL_POUR 1
 #define HOT_LIQUID 220
 #define LIFT_WAIT_TIME 90
+#define FALLING_CEILING1 79
+#define FLAME_EMITTER 253
 #define DEATH_SPEED 100
 #define DEATH_ACC 5
 #define DEATH_GRAB 1
 
 extern sint16 final_boss_active;
+
+void EarthQuake(sint16 item_number)
+{
+    sint16 earth_item;
+    int want;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    if (GetRandomDraw() < 0x200)
+    {
+        SoundEffect(298, NULL, 0);
+        camera.bounce = -200;
+    }
+
+    want = GetRandomControl();
+    if (want < 0x400)
+    {
+        want = (want < 0x200) ? FLAME_EMITTER : FALLING_CEILING1;
+        for (earth_item = room[item->room_number].item_number; earth_item != NO_ITEM; earth_item = items[earth_item].next_item)
+        {
+            item = &items[earth_item];
+            if (item->object_number != want)
+                continue;
+            if (item->status == ACTIVE || item->status == DEACTIVATED)
+                continue;
+            AddActiveItem(earth_item);
+            item->status = ACTIVE;
+            item->flags = CODE_BITS;
+            item->timer = 0;
+            return;
+        }
+    }
+}
 
 void ControlCutShotgun(sint16 item_number)
 {
