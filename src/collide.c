@@ -67,6 +67,20 @@ void UpdateLaraRoom(ITEM_INFO *item, int height)
         ItemNewRoom(lara.item_number, room_number);
 }
 
+void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+
+    if (coll->enable_baddie_push && lara.water_status != LARA_UNDERWATER && !lara.water_status != LARA_SURFACE)
+        ItemPushLara(item, laraitem, coll, coll->enable_spaz, 0);
+}
+
 void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;
