@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.15% (164)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.85% (1083)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.23% (165)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.77% (1082)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="98.24" height="6" x="0" y="0" class="named"/>
-<rect width="648.76" height="6" x="98.24" y="0" class="todo"/>
+<rect width="98.84" height="6" x="0" y="0" class="named"/>
+<rect width="648.16" height="6" x="98.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -258,7 +258,7 @@
 <rect width="12" height="12" x="570" y="45" class="named"><title>0x004168e0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="45" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="45" class="todo"><title>0x00416af0 LoadLaraDemoPos (205 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="45" class="todo"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="45" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="45" class="todo"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="45" class="todo"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="45" class="todo"><title>0x00416d80 DiverControl (905 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.45%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.55%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.46%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.54%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="33.22" height="6" x="0" y="0" class="named"/>
-<rect width="713.78" height="6" x="33.22" y="0" class="todo"/>
+<rect width="33.32" height="6" x="0" y="0" class="named"/>
+<rect width="713.68" height="6" x="33.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2311,7 +2311,7 @@
 <rect width="3.09" height="3.33" x="737.82" y="302.90" class="todo"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="3.09" height="3.33" x="743.91" y="302.90" class="todo"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
 <rect width="2.97" height="3.46" x="675.19" y="309.23" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
-<rect width="2.97" height="3.32" x="675.19" y="315.69" class="todo"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
+<rect width="2.97" height="3.32" x="675.19" y="315.69" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="2.97" height="3.32" x="675.19" y="322" class="todo"><title>0x00421980 FlashIt (45 bytes)</title></rect>
 <rect width="2.97" height="3.32" x="675.19" y="328.32" class="todo"><title>0x00447860 WinInStart (45 bytes)</title></rect>
 <rect width="2.97" height="3.32" x="675.19" y="334.63" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>

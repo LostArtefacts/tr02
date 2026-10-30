@@ -1909,8 +1909,8 @@ address,size,name,symbol
 0x00526194,4,SunsetTimer,_SunsetTimer
 0x00526198,4,OutsideRight,_OutsideRight
 0x005261ac,4,OutsideTop,_OutsideTop
-0x005261b0,4,DemoPtr,_DemoPtr
-0x005261b4,4,DemoCount,_DemoCount
+0x005261b0,4,demoptr,_demoptr
+0x005261b4,4,democount,_democount
 0x005261c0,128,CD_Flags,_CD_Flags
 0x00526240,4,flip_status,_flip_status
 0x00526260,40,FlipMaps,_FlipMaps
