@@ -119,6 +119,123 @@ FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number)
 
 #define REVERSE 0x4000
 
+#define DATA_TYPE 0x00ff
+#define DOOR_TYPE 1
+#define TILT_TYPE 2
+#define ROOF_TYPE 3
+
+extern sint16 *floor_data;
+
+#define TRIGGER_TYPE 4
+#define LAVA_TYPE 5
+#define CLIMB_TYPE 6
+#define END_BIT 0x8000
+#define VALUE_BITS 0x03ff
+#define TRIG_BITS(T) ((T & 0x3fff) >> 10)
+#define TO_OBJECT 0
+#define TO_CAMERA 1
+#define WALL 0
+#define SMALL_SLOPE 1
+#define BIG_SLOPE 2
+
+extern int height_type;
+extern int IsChunkyCamera;
+extern sint16 GF_NoFloor;
+void S_ExitSystem(char *message);
+
+sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
+{
+    sint32 height, xoff, yoff;
+    ROOM_INFO *r;
+    ITEM_INFO *item;
+    sint16 *data, type, trigger;
+
+    height_type = WALL;
+    while (floor->pit_room != NO_ROOM)
+    {
+        r = &room[floor->pit_room];
+        floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+
+    height = floor->floor << 8;
+    if (GF_NoFloor && GF_NoFloor == height)
+        height = 0x4000;
+
+    trigger_index = NULL;
+    if (!floor->index)
+        return height;
+
+    data = &floor_data[floor->index];
+    do
+    {
+        type = *(data++);
+        switch (type & DATA_TYPE)
+        {
+        case TILT_TYPE:
+            xoff = *data >> 8;
+            yoff = (sint8)*data;
+            if (!IsChunkyCamera || (ABS(xoff) <= 2 && ABS(yoff) <= 2))
+            {
+                if (ABS(xoff) > 2 || ABS(yoff) > 2)
+                    height_type = BIG_SLOPE;
+                else
+                    height_type = SMALL_SLOPE;
+
+                if (xoff < 0)
+                    height -= (z & (WALL_L - 1)) * xoff >> 2;
+                else
+                    height += ((WALL_L - 1 - z) & (WALL_L - 1)) * xoff >> 2;
+
+                if (yoff < 0)
+                    height -= (x & (WALL_L - 1)) * yoff >> 2;
+                else
+                    height += ((WALL_L - 1 - x) & (WALL_L - 1)) * yoff >> 2;
+            }
+            data++;
+            break;
+
+        case DOOR_TYPE:
+        case ROOF_TYPE:
+            data++;
+            break;
+
+        case LAVA_TYPE:
+            trigger_index = data - 1;
+            break;
+
+        case CLIMB_TYPE:
+            if (!trigger_index)
+                trigger_index = data - 1;
+            break;
+
+        case TRIGGER_TYPE:
+            if (!trigger_index)
+                trigger_index = data - 1;
+            data++;
+            do
+            {
+                trigger = *(data++);
+                if (TRIG_BITS(trigger) != TO_OBJECT)
+                {
+                    if (TRIG_BITS(trigger) == TO_CAMERA)
+                        trigger = *(data++);
+                    continue;
+                }
+                item = &items[trigger & VALUE_BITS];
+                if (objects[item->object_number].floor)
+                    (*objects[item->object_number].floor)(item, x, y, z, &height);
+            } while (!(trigger & END_BIT));
+            break;
+
+        default:
+            S_ExitSystem("GetHeight(): Unknown type");
+            break;
+        }
+    } while (!(type & END_BIT));
+
+    return height;
+}
+
 int TriggerActive(ITEM_INFO *item)
 {
     int ok;
@@ -140,13 +257,6 @@ int TriggerActive(ITEM_INFO *item)
 
     return ok;
 }
-
-#define DATA_TYPE 0x00ff
-#define DOOR_TYPE 1
-#define TILT_TYPE 2
-#define ROOF_TYPE 3
-
-extern sint16 *floor_data;
 
 sint16 GetDoor(FLOOR_INFO *floor)
 {

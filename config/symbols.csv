@@ -171,7 +171,7 @@ address,size,name,symbol
 0x00414ae0,95,TranslateItem,_TranslateItem
 0x00414b40,408,GetFloor,_GetFloor
 0x00414ce0,360,GetWaterHeight,_GetWaterHeight
-0x00414e50,613,GetHeight,_GetHeight
+0x00414e50,640,GetHeight,_GetHeight
 0x004150d0,231,RefreshCamera,_RefreshCamera
 0x004151c0,1680,TestTriggers,_TestTriggers
 0x004158a0,85,TriggerActive,_TriggerActive
@@ -1629,6 +1629,7 @@ address,size,name,symbol
 0x004d7370,,GamePalette16,_GamePalette16
 0x004d7770,4,CineCurrentFrame,_CineCurrentFrame
 0x004d777c,4,IsChunkyCamera,_IsChunkyCamera
+0x004d7780,4,height_type,_height_type
 0x004d7784,4,NoInputCounter,_NoInputCounter
 0x004d7788,4,IsResetFlag,_IsResetFlag
 0x004d778c,4,fliptimer,_fliptimer
