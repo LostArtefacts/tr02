@@ -225,6 +225,22 @@ extern "C" DWORD GetZBufferDepth(void)
     return 8;
 }
 
+extern "C" void CreateRenderBuffer(void)
+{
+    DDSURFACEDESC dsp;
+
+    memset(&dsp, 0, sizeof(dsp));
+    dsp.dwSize = sizeof(dsp);
+    dsp.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH;
+    dsp.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
+    dsp.dwWidth = GameVidBufWidth;
+    dsp.dwHeight = GameVidBufHeight;
+    if (DX_TRY(DDrawSurfaceCreate(&dsp, &RenderBufferSurface)))
+        throw ERR_CreateRenderBuffer;
+    if (!WinVidClearBuffer(RenderBufferSurface, NULL, 0))
+        throw ERR_ClearRenderBuffer;
+}
+
 extern "C" void CreatePictureBuffer(void)
 {
     DDSURFACEDESC dsp;
