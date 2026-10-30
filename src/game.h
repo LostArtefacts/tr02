@@ -53,7 +53,7 @@ void AnimateItem(ITEM_INFO *item);
 int TriggerActive(ITEM_INFO *item);
 
 void SoundEffects(void);
-void DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);
 void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num, int number);
 void finish_level_effect(ITEM_INFO *item);
 void turn180_effect(ITEM_INFO *item);
