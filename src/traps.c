@@ -22,6 +22,17 @@ void InitialiseBlade(sint16 item_number)
     item->current_anim_state = BLADE_STOP;
 }
 
+void InitialiseKillerStatue(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    item->anim_number = objects[item->object_number].anim_index + 3;
+    item->frame_number = anims[item->anim_number].frame_base;
+    item->current_anim_state = BLADE_STOP;
+}
+
 void TrapDoorControl(sint16 item_number)
 {
     ITEM_INFO *item;
