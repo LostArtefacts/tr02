@@ -288,6 +288,20 @@ extern "C" HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 
     return rc;
 }
 
+extern "C" HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank)
+{
+    HRESULT rc;
+
+    rc = surface1->IsLost();
+    if (rc == DDERR_SURFACELOST)
+    {
+        rc = (surface2 ? surface2 : surface1)->Restore();
+        if (blank && SUCCEEDED(rc))
+            WinVidClearBuffer(surface1, NULL, 0);
+    }
+    return rc;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
