@@ -27,6 +27,20 @@ int LoadCameras(HANDLE file)
     return 1;
 }
 
+int LoadSoundEffects(HANDLE file)
+{
+    DWORD read;
+
+    MyReadFile(file, &number_sound_effects, sizeof(sint32), &read, NULL);
+    if (number_sound_effects == 0)
+        return 1;
+    sound_effects = (OBJECT_VECTOR *)game_malloc(sizeof(OBJECT_VECTOR) * number_sound_effects, SOUND_FX);
+    if (sound_effects == NULL)
+        return 0;
+    MyReadFile(file, sound_effects, sizeof(OBJECT_VECTOR) * number_sound_effects, &read, NULL);
+    return 1;
+}
+
 int S_LoadLevelFile(char *fname, int level_number, int type)
 {
     S_UnloadLevelFile();
