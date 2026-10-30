@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.13% (276)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.87% (971)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.21% (277)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.79% (970)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="165.33" height="6" x="0" y="0" class="named"/>
-<rect width="581.67" height="6" x="165.33" y="0" class="todo"/>
+<rect width="165.93" height="6" x="0" y="0" class="named"/>
+<rect width="581.07" height="6" x="165.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -745,7 +745,7 @@
 <rect width="12" height="12" x="375" y="195" class="todo"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="195" class="todo"><title>0x004388f0 KeyHoleCollision (547 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="195" class="todo"><title>0x00438b30 PuzzleHoleCollision (561 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="195" class="todo"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="195" class="named"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="195" class="named"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.10%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.45" height="6" x="0" y="0" class="named"/>
-<rect width="695.55" height="6" x="51.45" y="0" class="todo"/>
+<rect width="51.57" height="6" x="0" y="0" class="named"/>
+<rect width="695.43" height="6" x="51.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2215,7 +2215,7 @@
 <rect width="4.09" height="3.73" x="648.58" y="310.66" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="317.39" class="todo"><title>0x00426e50 CreateItem (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="324.13" class="named"><title>0x004284e0 lara_as_switchon (57 bytes)</title></rect>
-<rect width="4.09" height="3.73" x="648.58" y="330.86" class="todo"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
+<rect width="4.09" height="3.73" x="648.58" y="330.86" class="named"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="337.59" class="todo"><title>0x00440f80 GetTextScaleV (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="344.33" class="todo"><title>0x00447220 Func447220 (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="351.06" class="named"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
