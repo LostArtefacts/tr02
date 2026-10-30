@@ -1586,6 +1586,10 @@ address,size,name,symbol
 0x00466928,,LoadItemsBadObject,_LoadItemsBadObject
 0x00466958,,LoadItemsNoMemory,_LoadItemsNoMemory
 0x0046698c,,LoadItemsTooMany,_LoadItemsTooMany
+0x004669b8,,LoadBoxesFlyZone,_LoadBoxesFlyZone
+0x004669e0,,LoadBoxesGroundZone,_LoadBoxesGroundZone
+0x00466a0c,,LoadBoxesOverlaps,_LoadBoxesOverlaps
+0x00466a38,,LoadBoxesBoxes,_LoadBoxesBoxes
 0x00466a5c,4,DemoExtension,_DemoExtension
 0x00466b80,32,saved_levels,_saved_levels
 0x00466bb0,4,rand_1,_rand_1

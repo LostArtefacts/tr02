@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.04% (949)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.40% (292)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.12% (950)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.32% (291)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="568.03" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="568.03" y="0" class="decompiled"/>
-<rect width="174.78" height="6" x="572.22" y="0" class="todo"/>
+<rect width="568.63" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="568.63" y="0" class="decompiled"/>
+<rect width="174.18" height="6" x="572.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1028,7 +1028,7 @@
 <rect width="12" height="12" x="105" y="285" class="named"><title>0x0044a9d0 LoadPalettes (113 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="285" class="named"><title>0x0044aa50 LoadCameras (96 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="285" class="named"><title>0x0044aab0 LoadSoundEffects (96 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="285" class="todo"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="285" class="named"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="285" class="named"><title>0x0044ad40 LoadAnimatedTextures (85 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="285" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="285" class="named"><title>0x0044ae20 LoadDemo (138 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.17%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.74%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.33%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.59%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="419.62" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="419.62" y="0" class="decompiled"/>
-<rect width="326.77" height="6" x="420.23" y="0" class="todo"/>
+<rect width="420.81" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="420.81" y="0" class="decompiled"/>
+<rect width="325.58" height="6" x="421.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1488,7 +1488,7 @@
 <rect width="17.87" height="18.73" x="563.38" y="0" class="todo"><title>0x0040c630 draw_scaled_spriteC (547 bytes)</title></rect>
 <rect width="17.87" height="18.73" x="584.24" y="0" class="named"><title>0x00432000 LaraUnderWater (547 bytes)</title></rect>
 <rect width="17.79" height="18.73" x="605.11" y="0" class="named"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
-<rect width="17.79" height="18.73" x="625.90" y="0" class="todo"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
+<rect width="17.79" height="18.73" x="625.90" y="0" class="named"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
 <rect width="17.75" height="18.73" x="646.69" y="0" class="named"><title>0x00440120 SpiderControl (544 bytes)</title></rect>
 <rect width="17.75" height="18.73" x="667.45" y="0" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
 <rect width="17.60" height="18.73" x="688.20" y="0" class="named"><title>0x0040c8f0 EagleControl (540 bytes)</title></rect>

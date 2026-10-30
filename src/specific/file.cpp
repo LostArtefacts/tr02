@@ -346,3 +346,75 @@ extern "C" int LoadItems(HANDLE file)
     }
     return 1;
 }
+
+#define WORKER3 32
+#define SPIDER 36
+#define YETI 45
+#define SKIDOO_ARMED 51
+
+typedef struct box_info {
+    uint8 left, right, top, bottom;
+    sint16 height;
+    sint16 overlap_index;
+} BOX_INFO;
+
+extern "C" char LoadBoxesFlyZone[];
+extern "C" char LoadBoxesGroundZone[];
+extern "C" char LoadBoxesOverlaps[];
+extern "C" char LoadBoxesBoxes[];
+extern "C" BOX_INFO *boxes;
+extern "C" int number_boxes;
+extern "C" uint16 *Overlaps;
+extern "C" sint16 *ground_zone[4][2];
+extern "C" sint16 *fly_zone[2];
+
+extern "C" int LoadBoxes(HANDLE file)
+{
+    sint32 i, j, number_overlaps;
+    DWORD read;
+
+    MyReadFile(file, &number_boxes, sizeof(sint32), &read, NULL);
+    boxes = (BOX_INFO *)game_malloc(sizeof(BOX_INFO) * number_boxes, BOXES);
+    MyReadFile(file, boxes, sizeof(BOX_INFO) * number_boxes, &read, NULL);
+    if (read != sizeof(BOX_INFO) * number_boxes)
+    {
+        lstrcpy(StringToShow, LoadBoxesBoxes);
+        return 0;
+    }
+    MyReadFile(file, &number_overlaps, sizeof(sint32), &read, NULL);
+    Overlaps = (uint16 *)game_malloc(sizeof(uint16) * number_overlaps, OVERLAPS);
+    MyReadFile(file, Overlaps, sizeof(uint16) * number_overlaps, &read, NULL);
+    if (read != sizeof(uint16) * number_overlaps)
+    {
+        lstrcpy(StringToShow, LoadBoxesOverlaps);
+        return 0;
+    }
+    for (i = 0; i < 2; i++)
+    {
+        for (j = 0; j < 4; j++)
+        {
+            if (j == 2 || (j == 1 && !objects[SPIDER].loaded && !objects[SKIDOO_ARMED].loaded) || (j == 3 && !objects[YETI].loaded && !objects[WORKER3].loaded))
+            {
+                SetFilePointer(file, sizeof(sint16) * number_boxes, NULL, FILE_CURRENT);
+            }
+            else
+            {
+                ground_zone[j][i] = (sint16 *)game_malloc(sizeof(sint16) * number_boxes, GROUNDZONE);
+                MyReadFile(file, ground_zone[j][i], sizeof(sint16) * number_boxes, &read, NULL);
+                if (read != sizeof(sint16) * number_boxes)
+                {
+                    lstrcpy(StringToShow, LoadBoxesGroundZone);
+                    return 0;
+                }
+            }
+        }
+        fly_zone[i] = (sint16 *)game_malloc(sizeof(sint16) * number_boxes, FLYZONE);
+        MyReadFile(file, fly_zone[i], sizeof(sint16) * number_boxes, &read, NULL);
+        if (read != sizeof(sint16) * number_boxes)
+        {
+            lstrcpy(StringToShow, LoadBoxesFlyZone);
+            return 0;
+        }
+    }
+    return 1;
+}
