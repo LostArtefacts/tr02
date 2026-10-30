@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.94% (99)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.06% (1148)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.02% (100)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.98% (1147)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="59.30" height="6" x="0" y="0" class="named"/>
-<rect width="687.70" height="6" x="59.30" y="0" class="todo"/>
+<rect width="59.90" height="6" x="0" y="0" class="named"/>
+<rect width="687.10" height="6" x="59.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -796,7 +796,7 @@
 <rect width="12" height="12" x="390" y="210" class="todo"><title>0x0043f470 SoundEffect (1156 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="210" class="named"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="210" class="named"><title>0x0043f970 SOUND_EndScene (134 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="210" class="todo"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="210" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="210" class="todo"><title>0x0043fa30 SOUND_Init (42 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="210" class="todo"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="210" class="todo"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.57%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.43%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.58%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.42%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="11.72" height="6" x="0" y="0" class="named"/>
-<rect width="735.28" height="6" x="11.72" y="0" class="todo"/>
+<rect width="11.80" height="6" x="0" y="0" class="named"/>
+<rect width="735.20" height="6" x="11.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2361,7 +2361,7 @@
 <rect width="2.68" height="2.31" x="715.93" y="315.20" class="todo"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="721.60" y="315.20" class="todo"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="727.28" y="315.20" class="todo"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
-<rect width="2.68" height="2.31" x="732.96" y="315.20" class="todo"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
+<rect width="2.68" height="2.31" x="732.96" y="315.20" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="738.64" y="315.20" class="todo"><title>0x00440970 Func440970 (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="744.32" y="315.20" class="todo"><title>0x004445f0 Enumerate3DDevices (36 bytes)</title></rect>
 <rect width="2.31" height="2.68" x="692.58" y="320.51" class="todo"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>

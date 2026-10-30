@@ -86,3 +86,14 @@ void SOUND_EndScene(void)
         }
     }
 }
+
+void SOUND_Stop(void)
+{
+    int nSlot;
+
+    if (!sound_active)
+        return;
+    S_SoundStopAllSamples();
+    for (nSlot = 0; nSlot < ArraySize(LaSlot); ++nSlot)
+        LaSlot[nSlot].nSampleInfo = -1;
+}
