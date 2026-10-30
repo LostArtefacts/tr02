@@ -187,3 +187,30 @@ void Inv_RingRotateRight(RING_INFO *ring)
     ring->rot_count = ROTATE_DURATION;
     ring->rot_adder = ring->rot_adderR;
 }
+
+void Inv_RingMotionInit(RING_INFO *ring, sint16 frames, sint16 status, sint16 status_target)
+{
+    IMOTION_INFO *imo;
+
+    imo = ring->imo;
+    imo->count = frames;
+    imo->status = status;
+    imo->status_target = status_target;
+    imo->radius_target = 0;
+    imo->radius_rate = 0;
+    imo->camera_ytarget = 0;
+    imo->camera_yrate = 0;
+    imo->camera_pitch_target = 0;
+    imo->camera_pitch_rate = 0;
+    imo->rotate_target = 0;
+    imo->rotate_rate = 0;
+    imo->item_ptxrot_target = 0;
+    imo->item_ptxrot_rate = 0;
+    imo->item_xrot_target = 0;
+    imo->item_xrot_rate = 0;
+    imo->item_ytrans_target = 0;
+    imo->item_ytrans_rate = 0;
+    imo->item_ztrans_target = 0;
+    imo->item_ztrans_rate = 0;
+    imo->misc = 0;
+}
