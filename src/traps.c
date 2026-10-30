@@ -15,6 +15,11 @@
 #define SPIKE_DAMAGE 15
 #define SPIKE_DEATH_ANIM 149
 #define DARTS 61
+#define ROLLINGBALL_DAMAGE_AIR 100
+#define ROLLINGBALL_DEATH_ANIM 139
+#define LAVA 250
+#define LAVA_GLOB_DAMAGE 10
+#define GRAVITY 6
 #define PROPELLER1 76
 #define PROPELLER2 77
 #define PROPELLER3 94
@@ -42,6 +47,8 @@ void LaraBurn(void);
 int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
 sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite);
 
 extern BITE_INFO teeth1a, teeth1b, teeth2a, teeth2b, teeth3a, teeth3b;
@@ -424,6 +431,70 @@ void InitialiseRollingBall(sint16 item_number)
     old->y = item->pos.y_pos;
     old->z = item->pos.z_pos;
     old->room_number = item->room_number;
+}
+
+void RollingBallCollision(sint16 item_num, ITEM_INFO *litem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+    sint32 x, y, z, i;
+    sint16 d;
+
+    item = &items[item_num];
+
+    if (item->status == ACTIVE)
+    {
+        if (!TestBoundsCollide(item, litem, coll->radius))
+            return;
+        if (!TestCollision(item, litem))
+            return;
+
+        if (litem->gravity_status)
+        {
+            if (coll->enable_baddie_push)
+                ItemPushLara(item, litem, coll, coll->enable_spaz, 1);
+            litem->hit_points -= ROLLINGBALL_DAMAGE_AIR;
+            x = litem->pos.x_pos - item->pos.x_pos;
+            y = litem->pos.y_pos - item->pos.y_pos + 162;
+            z = litem->pos.z_pos - item->pos.z_pos;
+            d = (sint16)phd_sqrt(x * x + y * y + z * z);
+            if (d < WALL_L / 2)
+                d = WALL_L / 2;
+            x = item->pos.x_pos + (x << WALL_SHIFT) / 2 / d;
+            y = item->pos.y_pos + (y << WALL_SHIFT) / 2 / d - WALL_L / 2;
+            z = item->pos.z_pos + (z << WALL_SHIFT) / 2 / d;
+            DoBloodSplat(x, y, z, item->speed, item->pos.y_rot, item->room_number);
+        }
+        else
+        {
+            litem->hit_status = 1;
+            if (litem->hit_points > 0)
+            {
+                litem->hit_points = -1;
+                litem->pos.y_rot = item->pos.y_rot;
+                litem->pos.z_rot = 0;
+                litem->pos.x_rot = 0;
+                litem->anim_number = ROLLINGBALL_DEATH_ANIM;
+                litem->frame_number = anims[ROLLINGBALL_DEATH_ANIM].frame_base;
+                litem->current_anim_state = AS_SPECIAL;
+                litem->goal_anim_state = AS_SPECIAL;
+
+                camera.flags = FOLLOW_CENTRE;
+                camera.target_angle = 30940;
+                camera.target_elevation = -4550;
+
+                for (i = 0; i < 15; i++)
+                {
+                    x = litem->pos.x_pos + (GetRandomControl() - 0x4000) / 256;
+                    z = litem->pos.z_pos + (GetRandomControl() - 0x4000) / 256;
+                    y = litem->pos.y_pos - GetRandomControl() / 64;
+                    d = item->pos.y_rot + (GetRandomControl() - 0x4000) / 8;
+                    DoBloodSplat(x, y, z, (sint16)(item->speed * 2), d, item->room_number);
+                }
+            }
+        }
+    }
+    else if (item->status != INVISIBLE)
+        ObjectCollision(item_num, litem, coll);
 }
 
 void SpikeCollision(sint16 item_num, ITEM_INFO *litem, COLL_INFO *coll)
