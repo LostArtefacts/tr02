@@ -382,3 +382,33 @@ void ReqItemRightAlign(REQUEST_INFO *req, TEXTSTRING *txt)
         txt->bgndOffX = -x;
     }
 }
+
+void SetRequesterHeading(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2)
+{
+    T_RemovePrint(req->heading1text);
+    req->heading1text = NULL;
+    T_RemovePrint(req->heading2text);
+    req->heading2text = NULL;
+
+    if (text1)
+    {
+        sprintf(req->heading1_str, text1);
+        req->heading1_flags = R_USE | flags1;
+    }
+    else
+    {
+        sprintf(req->heading1_str, "u");
+        req->heading1_flags = 0;
+    }
+
+    if (text2)
+    {
+        sprintf(req->heading2_str, text2);
+        req->heading2_flags = R_USE | flags2;
+    }
+    else
+    {
+        sprintf(req->heading2_str, "u");
+        req->heading2_flags = 0;
+    }
+}

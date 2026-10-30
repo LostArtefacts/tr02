@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.10% (525)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.90% (722)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.18% (526)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.82% (721)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="314.49" height="6" x="0" y="0" class="named"/>
-<rect width="432.51" height="6" x="314.49" y="0" class="todo"/>
+<rect width="315.09" height="6" x="0" y="0" class="named"/>
+<rect width="431.91" height="6" x="315.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -434,7 +434,7 @@
 <rect width="12" height="12" x="210" y="105" class="named"><title>0x004256e0 ReqItemLeftAlign (84 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="105" class="named"><title>0x00425740 ReqItemRightAlign (86 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="105" class="todo"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="105" class="todo"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="105" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="105" class="todo"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="105" class="todo"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="105" class="todo"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.53%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="152.54" height="6" x="0" y="0" class="named"/>
-<rect width="594.46" height="6" x="152.54" y="0" class="todo"/>
+<rect width="152.92" height="6" x="0" y="0" class="named"/>
+<rect width="594.08" height="6" x="152.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1827,7 +1827,7 @@
 <rect width="9.09" height="8.83" x="534.99" y="330.90" class="todo"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
 <rect width="9.09" height="8.76" x="534.99" y="342.73" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="9.09" height="8.76" x="534.99" y="354.49" class="todo"><title>0x00409380 InsertObjectGT3_ZBuffered (170 bytes)</title></rect>
-<rect width="9.09" height="8.76" x="534.99" y="366.24" class="todo"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
+<rect width="9.09" height="8.76" x="534.99" y="366.24" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="9.13" height="8.72" x="547.08" y="163.33" class="todo"><title>0x0042e010 LaraCheckForLetGo (170 bytes)</title></rect>
 <rect width="9.13" height="8.72" x="559.22" y="163.33" class="todo"><title>0x0042f1f0 find_target_point (170 bytes)</title></rect>
 <rect width="9.13" height="8.72" x="571.35" y="163.33" class="todo"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
