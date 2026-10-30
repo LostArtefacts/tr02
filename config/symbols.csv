@@ -1772,8 +1772,8 @@ address,size,name,symbol
 0x0051a228,4,GhInstance,_GhInstance
 0x0051a22c,4,GpCmdLine,_GpCmdLine
 0x0051a238,4,KeyCursor,_KeyCursor
-0x0051a248,56,CtrlTextA,_CtrlTextA
-0x0051a280,56,CtrlTextB,_CtrlTextB
+0x0051a248,56,ctext,?ctext@@3PAPAUtextstringinfo@@A
+0x0051a280,56,btext,?btext@@3PAPAUtextstringinfo@@A
 0x0051a2bc,4,PassportTextInfo,_PassportTextInfo
 0x0051a2c8,,dtext,?dtext@@3PAPAUtextstringinfo@@A
 0x0051a2e0,,sa_text,?sa_text@@3PAPAUtextstringinfo@@A

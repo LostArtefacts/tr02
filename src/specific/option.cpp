@@ -14,6 +14,10 @@ extern "C" int detail_level;
 extern "C" void S_CDVolume(int volume);
 
 extern TEXTSTRING *dtext[5];
+extern TEXTSTRING *ctext[];
+extern TEXTSTRING *btext[];
+
+#define NUM_CONTROLS 14
 
 #define DWIDTH 160
 
@@ -240,6 +244,19 @@ void DefaultConflict(void)
                 break;
             }
         }
+    }
+}
+
+void S_RemoveCtrlText(void)
+{
+    int i;
+
+    for (i = 0; i < NUM_CONTROLS; i++)
+    {
+        T_RemovePrint(ctext[i]);
+        ctext[i] = NULL;
+        T_RemovePrint(btext[i]);
+        btext[i] = NULL;
     }
 }
 

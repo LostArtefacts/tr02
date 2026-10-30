@@ -121,6 +121,7 @@ int GetRenderWidth(void);
 void do_compass_option(INVENTORY_ITEM *inv_item);
 void do_detail_option(INVENTORY_ITEM *inv_item);
 void do_sound_option(INVENTORY_ITEM *inv_item);
+void S_RemoveCtrlText(void);
 
 extern REQUEST_INFO Load_Game_Requester;
 
