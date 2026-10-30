@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.76% (972)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.68% (271)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.84% (973)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.60% (270)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="580.87" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="580.87" y="0" class="decompiled"/>
-<rect width="161.95" height="6" x="585.05" y="0" class="todo"/>
+<rect width="581.46" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="581.46" y="0" class="decompiled"/>
+<rect width="161.35" height="6" x="585.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1004,7 +1004,7 @@
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="270" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="270" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="270" class="named"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="todo"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.28%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.64%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.31%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.61%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="435.33" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="435.33" y="0" class="decompiled"/>
-<rect width="311.06" height="6" x="435.94" y="0" class="todo"/>
+<rect width="435.57" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="435.57" y="0" class="decompiled"/>
+<rect width="310.82" height="6" x="436.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2002,7 +2002,7 @@
 <rect width="6.84" height="6.51" x="730.41" y="218.13" class="named"><title>0x00456e00 GetRegistryBinaryValue (113 bytes)</title></rect>
 <rect width="6.75" height="6.51" x="740.25" y="218.13" class="named"><title>0x0042bd00 ready_shotgun (112 bytes)</title></rect>
 <rect width="6.58" height="6.68" x="590.38" y="227.64" class="named"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
-<rect width="6.58" height="6.68" x="590.38" y="237.31" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
+<rect width="6.58" height="6.68" x="590.38" y="237.31" class="named"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="6.58" height="6.68" x="590.38" y="246.99" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
 <rect width="6.58" height="6.59" x="590.38" y="256.67" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
 <rect width="6.58" height="6.59" x="590.38" y="266.26" class="named"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
