@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.69% (470)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.31% (777)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.77% (471)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.23% (776)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="281.55" height="6" x="0" y="0" class="named"/>
-<rect width="465.45" height="6" x="281.55" y="0" class="todo"/>
+<rect width="282.15" height="6" x="0" y="0" class="named"/>
+<rect width="464.85" height="6" x="282.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -751,7 +751,7 @@
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="195" class="named"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="todo"><title>0x00438fa0 MouseControl (476 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="195" class="todo"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="195" class="named"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="195" class="todo"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="195" class="todo"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="195" class="todo"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.70%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="129.20" height="6" x="0" y="0" class="named"/>
-<rect width="617.80" height="6" x="129.20" y="0" class="todo"/>
+<rect width="129.41" height="6" x="0" y="0" class="named"/>
+<rect width="617.59" height="6" x="129.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.51" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2028,7 +2028,7 @@
 <rect width="6.04" height="6.17" x="599.46" y="350.49" class="todo"><title>0x00425360 Inv_RingMotionInit (99 bytes)</title></rect>
 <rect width="6.04" height="6.17" x="599.46" y="359.66" class="todo"><title>0x00425510 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
 <rect width="6.04" height="6.17" x="599.46" y="368.83" class="todo"><title>0x00455830 S_CDGetLoc (99 bytes)</title></rect>
-<rect width="5.99" height="6.13" x="608.50" y="227.78" class="todo"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
+<rect width="5.99" height="6.13" x="608.50" y="227.78" class="named"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
 <rect width="5.99" height="6.13" x="617.49" y="227.78" class="named"><title>0x004478c0 IncreaseScreenSize (98 bytes)</title></rect>
 <rect width="5.99" height="6.13" x="626.48" y="227.78" class="named"><title>0x00447930 DecreaseScreenSize (98 bytes)</title></rect>
 <rect width="5.90" height="6.13" x="635.46" y="227.78" class="todo"><title>0x0043a490 InitialiseGameFlags (97 bytes)</title></rect>
