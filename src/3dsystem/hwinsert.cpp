@@ -28,6 +28,12 @@ void HWR_EnableColorKey(bool tEnable);
 
 extern "C" D3DTLVERTEX VBufferD3D[];
 
+typedef struct {
+    float x, y, rhw, u, v, g;
+} VERTEX_INFO;
+
+extern "C" VERTEX_INFO VBuffer[];
+
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype);
 
 extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
@@ -167,6 +173,51 @@ extern "C" sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, int sortty
         objptr += 4;
     }
     return objptr;
+}
+
+extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, int blue, int poly_type)
+{
+    int i, r, g, b;
+    uint32 shade, alpha;
+    bool zbuf;
+    VERTEX_INFO *vbuf;
+    D3DTLVERTEX *vtx;
+
+    alpha = poly_type == 13 ? 0x80ffffff : 0xffffffff;
+    sort3dptr[0] = (sint32)info3dptr;
+    sort3dptr[1] = (sint32)z;
+    sort3dptr += 2;
+    info3dptr[0] = poly_type;
+    info3dptr[1] = vtx_count;
+    vtx = HWR_VertexPtr;
+    *(D3DTLVERTEX **)(info3dptr + 2) = vtx;
+    info3dptr += 4;
+    zbuf = SavedAppSettings.ZBuffer;
+    vbuf = VBuffer;
+    for (i = vtx_count; i; i--) {
+        {
+            vtx->sx = vbuf->x;
+            vtx->sy = vbuf->y;
+            if (zbuf)
+                vtx->sz = FltResZBuf - FltResZORhw * vbuf->rhw;
+            vtx->rhw = vbuf->rhw;
+            shade = 0x1fff - (int)vbuf->g;
+            r = (red * shade) >> 12;
+            if (r > 255)
+                r = 255;
+            g = (green * shade) >> 12;
+            if (g > 255)
+                g = 255;
+            b = (blue * shade) >> 12;
+            if (b > 255)
+                b = 255;
+            vtx->color = ShadeColor(r, g, b) & alpha;
+            vbuf++;
+            vtx++;
+        }
+    }
+    HWR_VertexPtr = vtx;
+    surfacenum++;
 }
 
 extern "C" void InsertFlatRect_Sorted(int x1, int y1, int x2, int y2, int z, int color)

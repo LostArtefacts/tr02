@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.24% (939)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.20% (302)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.32% (940)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.12% (301)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="562.05" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="562.05" y="0" class="decompiled"/>
-<rect width="180.76" height="6" x="566.24" y="0" class="todo"/>
+<rect width="562.64" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="562.64" y="0" class="decompiled"/>
+<rect width="180.17" height="6" x="566.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -138,7 +138,7 @@
 <rect width="12" height="12" x="255" y="15" class="named"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="named"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="15" class="todo"><title>0x0040ad90 InsertObjectG4_Sorted (1083 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="15" class="todo"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="15" class="named"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="15" class="todo"><title>0x0040b350 InsertObjectG3_Sorted (835 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="15" class="todo"><title>0x0040b6a0 InsertSprite_Sorted (839 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="15" class="named"><title>0x0040b9f0 InsertFlatRect_Sorted (383 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.20%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.31%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.61%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="412.32" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="412.32" y="0" class="decompiled"/>
-<rect width="334.07" height="6" x="412.93" y="0" class="todo"/>
+<rect width="413.13" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="413.13" y="0" class="decompiled"/>
+<rect width="333.26" height="6" x="413.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1577,7 +1577,7 @@
 <rect width="14.50" height="15" x="629.09" y="59.43" class="todo"><title>0x00453eb0 Func453eb0 (380 bytes)</title></rect>
 <rect width="14.46" height="15" x="646.59" y="59.43" class="named"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
 <rect width="14.37" height="15" x="664.05" y="59.43" class="named"><title>0x004358d0 LiftFloorCeiling (377 bytes)</title></rect>
-<rect width="14.18" height="15" x="681.41" y="59.43" class="todo"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
+<rect width="14.18" height="15" x="681.41" y="59.43" class="named"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
 <rect width="14.14" height="15" x="698.59" y="59.43" class="named"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="14.14" height="15" x="715.73" y="59.43" class="named"><title>0x0042a350 LaraDeflectEdgeJump (372 bytes)</title></rect>
 <rect width="14.14" height="15" x="732.86" y="59.43" class="todo"><title>0x00455eb0 TexturePageInit (372 bytes)</title></rect>
