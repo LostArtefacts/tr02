@@ -172,3 +172,14 @@ void T_RemoveOutline(TEXTSTRING *textString)
     if (textString)
         textString->flags &= ~T_ADDOUTLINE;
 }
+
+void T_CentreH(TEXTSTRING *textString, sint16 ok)
+{
+    if (textString == NULL)
+        return;
+
+    if (ok)
+        textString->flags |= T_CENTRE_H;
+    else
+        textString->flags &= ~T_CENTRE_H;
+}
