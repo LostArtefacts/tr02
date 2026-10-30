@@ -159,3 +159,85 @@ void SpiderControl(sint16 item_number)
     else
         SpiderLeap(item_number, angle);
 }
+
+#define BIG_SPIDER 37
+#define BIG_SPIDER_DAMAGE 100
+#define BIG_SPIDER_DIE_ANIM 2
+#define BIG_SPIDER_TURN (ONE_DEGREE * 4)
+
+void BigSpiderControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *spider;
+    sint16 angle;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    spider = (CREATURE_INFO *)item->data;
+    angle = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != SPIDER_DEATH)
+        {
+            item->anim_number = objects[BIG_SPIDER].anim_index + BIG_SPIDER_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = SPIDER_DEATH;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+
+        CreatureMood(item, &info, 1);
+
+        angle = CreatureTurn(item, BIG_SPIDER_TURN);
+
+        switch (item->current_anim_state)
+        {
+        case SPIDER_STOP:
+            spider->flags = 0;
+            if (spider->mood == BORED_MOOD)
+                break;
+            else if (info.ahead && item->touch_bits)
+                item->goal_anim_state = SPIDER_ATTACK1;
+            else if (spider->mood == STALK_MOOD)
+                item->goal_anim_state = SPIDER_WALK1;
+            else if (spider->mood == ESCAPE_MOOD || spider->mood == ATTACK_MOOD)
+                item->goal_anim_state = SPIDER_WALK2;
+            break;
+
+        case SPIDER_WALK1:
+            if (spider->mood == BORED_MOOD)
+                break;
+            else if (info.ahead && item->touch_bits)
+                item->goal_anim_state = SPIDER_STOP;
+            else if (spider->mood == ESCAPE_MOOD || spider->mood == ATTACK_MOOD)
+                item->goal_anim_state = SPIDER_WALK2;
+            break;
+
+        case SPIDER_WALK2:
+            spider->flags = 0;
+            if (info.ahead && item->touch_bits)
+                item->goal_anim_state = SPIDER_STOP;
+            else if (spider->mood == BORED_MOOD || spider->mood == STALK_MOOD)
+                item->goal_anim_state = SPIDER_WALK1;
+            break;
+
+        case SPIDER_ATTACK1:
+            if (!spider->flags && item->touch_bits)
+            {
+                CreatureEffect(item, &spider_bite, DoBloodSplat);
+                lara_item->hit_points -= BIG_SPIDER_DAMAGE;
+                lara_item->hit_status = 1;
+                spider->flags = 1;
+            }
+            break;
+        }
+    }
+
+    CreatureAnimation(item_number, angle, 0);
+}

@@ -736,7 +736,7 @@ address,size,name,symbol
 0x00440010,93,BaddieBiteEffect,_BaddieBiteEffect
 0x00440070,172,SpiderLeap,_SpiderLeap
 0x00440120,544,SpiderControl,_SpiderControl
-0x00440340,421,BigSpiderControl,_BigSpiderControl
+0x00440340,440,BigSpiderControl,_BigSpiderControl
 0x00440500,44,T_InitPrint,_T_InitPrint
 0x00440530,261,T_Print,_T_Print
 0x00440640,55,T_ChangeText,_T_ChangeText
