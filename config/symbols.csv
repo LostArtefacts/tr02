@@ -753,8 +753,8 @@ address,size,name,symbol
 0x00440830,263,T_GetTextWidth,_T_GetTextWidth
 0x00440940,37,T_RemovePrint,_T_RemovePrint
 0x00440970,36,T_RemoveAllPrints,_T_RemoveAllPrints
-0x004409a0,39,T_GetStringLen,_T_GetStringLen
-0x004409d0,393,T_DrawText,_T_DrawText
+0x004409a0,39,T_DrawText,_T_DrawText
+0x004409d0,393,T_GetStringLen,_T_GetStringLen
 0x00440b60,978,T_DrawThisText,_T_DrawThisText
 0x00440f40,55,GetTextScaleH,_GetTextScaleH
 0x00440f80,57,GetTextScaleV,_GetTextScaleV
