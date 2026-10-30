@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.36% (628)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.64% (619)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.44% (629)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.56% (618)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="376.20" height="6" x="0" y="0" class="named"/>
-<rect width="370.80" height="6" x="376.20" y="0" class="todo"/>
+<rect width="376.79" height="6" x="0" y="0" class="named"/>
+<rect width="370.21" height="6" x="376.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -603,7 +603,7 @@
 <rect width="12" height="12" x="495" y="150" class="named"><title>0x0042e010 LaraCheckForLetGo (170 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="150" class="todo"><title>0x0042e0c0 LaraTestClimb (611 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="150" class="named"><title>0x0042e330 LaraTestClimbPos (204 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="150" class="todo"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="150" class="named"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="150" class="todo"><title>0x0042e4f0 LaraTestClimbUpPos (564 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="150" class="todo"><title>0x0042e740 LaraGun (1256 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="150" class="todo"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.65%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.58%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="226.72" height="6" x="0" y="0" class="named"/>
-<rect width="520.28" height="6" x="226.72" y="0" class="todo"/>
+<rect width="227.24" height="6" x="0" y="0" class="named"/>
+<rect width="519.76" height="6" x="227.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1704,7 +1704,7 @@
 <rect width="10.88" height="11.54" x="722.36" y="109.80" class="todo"><title>0x0042be70 FireShotgun (242 bytes)</title></rect>
 <rect width="10.76" height="11.54" x="736.24" y="109.80" class="named"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="10.68" height="11.63" x="496.20" y="124.34" class="named"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
-<rect width="10.68" height="11.57" x="496.20" y="138.97" class="todo"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
+<rect width="10.68" height="11.57" x="496.20" y="138.97" class="named"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="10.68" height="11.44" x="496.20" y="153.53" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="10.68" height="11.26" x="496.20" y="167.98" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
 <rect width="10.68" height="11.14" x="496.20" y="182.24" class="named"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
