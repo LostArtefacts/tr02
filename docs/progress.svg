@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.52% (1034)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.84% (211)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.60% (1035)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.76% (210)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="616.44" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="616.44" y="0" class="decompiled"/>
-<rect width="125.79" height="6" x="621.21" y="0" class="todo"/>
+<rect width="617.04" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="617.04" y="0" class="decompiled"/>
+<rect width="125.20" height="6" x="621.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -673,7 +673,7 @@
 <rect width="12" height="12" x="30" y="180" class="named"><title>0x00433040 ClearLOT (73 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="180" class="named"><title>0x00433090 ControlMissile (720 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="180" class="named"><title>0x00433360 ShootAtLara (167 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="180" class="todo"><title>0x00433410 ExplodingDeath (902 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="180" class="named"><title>0x00433410 ExplodingDeath (902 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="180" class="named"><title>0x004337a0 ControlBodyPart (512 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="180" class="named"><title>0x004339a0 InitialiseMovingBlock (44 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="180" class="named"><title>0x004339d0 MovableBlock (328 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.89%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.15%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">30.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="514.59" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="514.59" y="0" class="decompiled"/>
-<rect width="231.75" height="6" x="515.25" y="0" class="todo"/>
+<rect width="516.55" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="516.55" y="0" class="decompiled"/>
+<rect width="229.80" height="6" x="517.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1414,7 +1414,7 @@
 <rect width="24.62" height="25.62" x="269.27" y="115.48" class="todo"><title>0x00409430 InsertObjectG4_ZBuffered (924 bytes)</title></rect>
 <rect width="24.62" height="25.46" x="269.27" y="144.10" class="named"><title>0x00426500 ShowStatsText (919 bytes)</title></rect>
 <rect width="24.62" height="25.21" x="269.27" y="172.56" class="named"><title>0x0042b5e0 GetLaraJointAbsPosition (911 bytes)</title></rect>
-<rect width="24.62" height="24.93" x="269.27" y="200.77" class="todo"><title>0x00433410 ExplodingDeath (902 bytes)</title></rect>
+<rect width="24.62" height="24.93" x="269.27" y="200.77" class="named"><title>0x00433410 ExplodingDeath (902 bytes)</title></rect>
 <rect width="24.62" height="24.72" x="269.27" y="228.71" class="named"><title>0x00418e20 SetRoomBounds (895 bytes)</title></rect>
 <rect width="24.62" height="24.50" x="269.27" y="256.43" class="named"><title>0x00419a50 DrawAnimatingItem (888 bytes)</title></rect>
 <rect width="24.62" height="24.38" x="269.27" y="283.93" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>

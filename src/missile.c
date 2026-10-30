@@ -109,6 +109,108 @@ void ShootAtLara(FX_INFO *fx)
 #define GRAVITY 6
 #define SPLASH1 230
 #define EXPLOSION1 229
+#define BODY_PART 242
+#define ROT_X 4
+#define ROT_Y 8
+#define ROT_Z 16
+
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+sint16 *GetBestFrame(ITEM_INFO *item);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+void phd_RotZ(PHD_ANGLE rz);
+extern sint32 LsAdder;
+
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage)
+{
+    int i, poppush;
+    ITEM_INFO *item;
+    OBJECT_INFO *object;
+    sint32 *bone, bit;
+    sint16 *rotation;
+    sint16 *frame, *extra_rotation;
+    sint16 fx_number;
+    FX_INFO *fx;
+
+    item = &items[item_number];
+    object = &objects[item->object_number];
+    *(phd_mxptr + M23) = 0;
+    S_CalculateLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    frame = GetBestFrame(item);
+    phd_PushUnitMatrix();
+    *(phd_mxptr + M03) = 0;
+    *(phd_mxptr + M13) = 0;
+    *(phd_mxptr + M23) = 0;
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    phd_TranslateRel(*(frame + 6), *(frame + 7), *(frame + 8));
+    rotation = frame + 9;
+    phd_RotYXZsuperpack(&rotation, 0);
+    bone = bones + object->bone_index;
+    extra_rotation = (sint16 *)item->data;
+    bit = 1;
+    if ((bit & mesh_bits) && (bit & item->mesh_bits))
+    {
+        fx_number = CreateEffect(item->room_number);
+        if (fx_number != NO_ITEM)
+        {
+            fx = &effects[fx_number];
+            fx->pos.x_pos = item->pos.x_pos + (*(phd_mxptr + M03) >> W2V_SHIFT);
+            fx->pos.y_pos = item->pos.y_pos + (*(phd_mxptr + M13) >> W2V_SHIFT);
+            fx->pos.z_pos = item->pos.z_pos + (*(phd_mxptr + M23) >> W2V_SHIFT);
+            fx->room_number = item->room_number;
+            fx->pos.y_rot = (GetRandomControl() - 0x4000) << 1;
+            fx->speed = (sint16)GetRandomControl() >> 8;
+            fx->fallspeed = (sint16)-GetRandomControl() >> 8;
+            fx->counter = damage;
+            fx->frame_number = object->mesh_index;
+            fx->object_number = BODY_PART;
+            fx->shade = LsAdder - 0x300;
+        }
+        item->mesh_bits -= bit;
+    }
+    for (i = 1; i < object->nmeshes; i++, bone += 3)
+    {
+        poppush = *(bone++);
+        if (poppush & 1)
+            phd_PopMatrix();
+        if (poppush & 2)
+            phd_PushMatrix();
+        phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
+        phd_RotYXZsuperpack(&rotation, 0);
+        if (poppush & (ROT_X | ROT_Y | ROT_Z))
+        {
+            if (poppush & ROT_Y)
+                phd_RotY(*(extra_rotation++));
+            if (poppush & ROT_X)
+                phd_RotX(*(extra_rotation++));
+            if (poppush & ROT_Z)
+                phd_RotZ(*(extra_rotation++));
+        }
+        bit <<= 1;
+        if ((bit & mesh_bits) && (bit & item->mesh_bits))
+        {
+            fx_number = CreateEffect(item->room_number);
+            if (fx_number != NO_ITEM)
+            {
+                fx = &effects[fx_number];
+                fx->pos.x_pos = item->pos.x_pos + (*(phd_mxptr + M03) >> W2V_SHIFT);
+                fx->pos.y_pos = item->pos.y_pos + (*(phd_mxptr + M13) >> W2V_SHIFT);
+                fx->pos.z_pos = item->pos.z_pos + (*(phd_mxptr + M23) >> W2V_SHIFT);
+                fx->room_number = item->room_number;
+                fx->pos.y_rot = (GetRandomControl() - 0x4000) << 1;
+                fx->speed = (sint16)GetRandomControl() >> 8;
+                fx->fallspeed = (sint16)-GetRandomControl() >> 8;
+                fx->counter = damage;
+                fx->frame_number = object->mesh_index + i;
+                fx->object_number = BODY_PART;
+                fx->shade = LsAdder - 0x300;
+            }
+            item->mesh_bits -= bit;
+        }
+    }
+    phd_PopMatrix();
+    return !(item->mesh_bits & (0x7fffffff >> (31 - object->nmeshes)));
+}
 
 
 void ControlBodyPart(sint16 fx_number)
