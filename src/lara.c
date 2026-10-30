@@ -8,6 +8,8 @@
 #define FASTFALL_FRICTION item->speed = (item->speed * 95) / 100
 #define SLOPE_DIF 60
 #define LARA_DEF_ADD_EDGE (5 * ONE_DEGREE)
+#define CAM_A_HANG 0
+#define CAM_E_HANG (-60 * ONE_DEGREE)
 
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -265,6 +267,16 @@ void lara_as_fallback(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_FASTFALL;
     if ((input & IN_ACTION) && lara.gun_status == LG_ARMLESS)
         item->goal_anim_state = AS_REACH;
+}
+
+void lara_as_hangleft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_angle = CAM_A_HANG;
+    camera.target_elevation = CAM_E_HANG;
+    if (!(input & IN_LEFT) && !(input & IN_STEPL))
+        item->goal_anim_state = AS_HANG;
 }
 
 void lara_as_slideback(ITEM_INFO *item, COLL_INFO *coll)
