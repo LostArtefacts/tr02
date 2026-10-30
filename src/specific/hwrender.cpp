@@ -1,11 +1,35 @@
 #include "include.h"
 #include "global.h"
 #include "hwrender.h"
+#include "winmain.h"
 
 #define MAX_TLVERTICES 8192
 
 extern "C" D3DTLVERTEX VertexBuffer[MAX_TLVERTICES];
 extern "C" int LanTextureHandle[32];
+extern "C" bool ZEnableState;
+extern "C" bool ZWriteEnableState;
+extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
+
+void HWR_EnableZBuffer(bool tWrite, bool tCompare)
+{
+    if (SavedAppSettings.ZBuffer)
+    {
+        if (tWrite != ZWriteEnableState)
+        {
+            G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZWRITEENABLE, tWrite);
+            ZWriteEnableState = tWrite;
+        }
+        if (tCompare != ZEnableState)
+        {
+            if (ZBufferSurface)
+                G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZFUNC, tCompare ? D3DCMP_LESSEQUAL : D3DCMP_ALWAYS);
+            else
+                G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZENABLE, tCompare);
+            ZEnableState = tCompare;
+        }
+    }
+}
 
 void HWR_BeginScene()
 {

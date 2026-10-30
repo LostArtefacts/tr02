@@ -9,6 +9,12 @@ typedef struct {
     void *PreferredJoystick;
     void *VideoMode;
     int RenderMode;
+    int WindowWidth;
+    int WindowHeight;
+    int AspectMode;
+    bool PerspectiveCorrect;
+    bool Dither;
+    bool ZBuffer;
 } APP_SETTINGS;
 
 #ifdef __cplusplus

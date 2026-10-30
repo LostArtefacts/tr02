@@ -1009,7 +1009,7 @@ address,size,name,symbol
 0x0044d240,89,HWR_ResetZBuffer,_HWR_ResetZBuffer
 0x0044d2a0,36,HWR_TexSource,_HWR_TexSource
 0x0044d2d0,74,HWR_EnableColorKey,_HWR_EnableColorKey
-0x0044d320,130,HWR_EnableZBuffer,_HWR_EnableZBuffer
+0x0044d320,130,HWR_EnableZBuffer,?HWR_EnableZBuffer@@YAX_N0@Z
 0x0044d3b0,22,HWR_BeginScene,?HWR_BeginScene@@YAXXZ
 0x0044d3d0,12,Func44d3d0,
 0x0044d3e0,364,HWR_DrawPolyList,_HWR_DrawPolyList

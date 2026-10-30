@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.84% (210)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.16% (1037)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.92% (211)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.08% (1036)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="125.80" height="6" x="0" y="0" class="named"/>
-<rect width="621.20" height="6" x="125.80" y="0" class="todo"/>
+<rect width="126.40" height="6" x="0" y="0" class="named"/>
+<rect width="620.60" height="6" x="126.40" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1077,7 +1077,7 @@
 <rect width="12" height="12" x="105" y="300" class="todo"><title>0x0044d240 HWR_ResetZBuffer (89 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="300" class="todo"><title>0x0044d2a0 HWR_TexSource (36 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="300" class="todo"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="300" class="todo"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="300" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="300" class="todo"><title>0x0044d3d0 Func44d3d0 (12 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="300" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.68%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.36%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.64%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="39.78" height="6" x="0" y="0" class="named"/>
-<rect width="707.22" height="6" x="39.78" y="0" class="todo"/>
+<rect width="40.06" height="6" x="0" y="0" class="named"/>
+<rect width="706.94" height="6" x="40.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1935,7 +1935,7 @@
 <rect width="7.14" height="7.82" x="569.75" y="218.72" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="7.14" height="7.74" x="569.75" y="229.54" class="todo"><title>0x0041c6c0 ControlBlood1 (130 bytes)</title></rect>
 <rect width="7.14" height="7.74" x="569.75" y="240.28" class="todo"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
-<rect width="7.14" height="7.74" x="569.75" y="251.02" class="todo"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
+<rect width="7.14" height="7.74" x="569.75" y="251.02" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="7.14" height="7.66" x="569.75" y="261.76" class="todo"><title>0x004234e0 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="7.14" height="7.66" x="569.75" y="272.42" class="todo"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
 <rect width="7.14" height="7.66" x="569.75" y="283.08" class="todo"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
