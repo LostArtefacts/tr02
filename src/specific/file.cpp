@@ -240,3 +240,54 @@ extern "C" void LoadDemoExternal(char *level_name)
         CloseHandle(file);
     }
 }
+
+typedef struct {
+    uint16 tpage;
+    uint16 offset;
+    uint16 width;
+    uint16 height;
+    sint16 x1;
+    sint16 y1;
+    sint16 x2;
+    sint16 y2;
+} PHDSPRITESTRUCT;
+
+typedef struct {
+    sint16 mesh_number;
+    uint16 flags;
+    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
+    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
+} STATIC_INFO;
+
+#define NUMBER_OBJECTS 265
+
+extern "C" PHDSPRITESTRUCT PhdSpriteInfo[];
+extern "C" STATIC_INFO StaticObjects[];
+
+extern "C" int LoadSprites(HANDLE file)
+{
+    int i, j;
+    int number;
+    DWORD read;
+
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    MyReadFile(file, PhdSpriteInfo, sizeof(PHDSPRITESTRUCT) * number, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    for (i = 0; i < number; i++)
+    {
+        MyReadFile(file, &j, sizeof(sint32), &read, NULL);
+        if (j < NUMBER_OBJECTS)
+        {
+            MyReadFile(file, &objects[j].nmeshes, sizeof(sint16), &read, NULL);
+            MyReadFile(file, &objects[j].mesh_index, sizeof(sint16), &read, NULL);
+            objects[j].loaded = 1;
+        }
+        else
+        {
+            j -= NUMBER_OBJECTS;
+            SetFilePointer(file, sizeof(sint16), NULL, FILE_CURRENT);
+            MyReadFile(file, &StaticObjects[j].mesh_number, sizeof(sint16), &read, NULL);
+        }
+    }
+    return 1;
+}

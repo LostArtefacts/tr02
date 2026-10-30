@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.88% (947)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.56% (294)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.96% (948)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.48% (293)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="566.83" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="566.83" y="0" class="decompiled"/>
-<rect width="175.98" height="6" x="571.02" y="0" class="todo"/>
+<rect width="567.43" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="567.43" y="0" class="decompiled"/>
+<rect width="175.38" height="6" x="571.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1022,7 +1022,7 @@
 <rect width="12" height="12" x="15" y="285" class="todo"><title>0x00449b60 LoadRooms (928 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="285" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="285" class="todo"><title>0x00449fa0 LoadObjects (1406 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="285" class="todo"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="285" class="named"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="285" class="todo"><title>0x0044a660 LoadItems (470 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="285" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="285" class="named"><title>0x0044a9d0 LoadPalettes (113 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.95%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.97%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.04%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.88%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="417.92" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="417.92" y="0" class="decompiled"/>
-<rect width="328.47" height="6" x="418.53" y="0" class="todo"/>
+<rect width="418.59" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="418.59" y="0" class="decompiled"/>
+<rect width="327.80" height="6" x="419.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1636,7 +1636,7 @@
 <rect width="12.46" height="13.68" x="734.54" y="77.43" class="todo"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="13.33" height="12.79" x="466.14" y="94.11" class="named"><title>0x00429990 lara_col_upjump (311 bytes)</title></rect>
 <rect width="13.33" height="12.79" x="482.46" y="94.11" class="todo"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
-<rect width="13.22" height="12.79" x="498.79" y="94.11" class="todo"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>
+<rect width="13.22" height="12.79" x="498.79" y="94.11" class="named"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>
 <rect width="13.17" height="12.79" x="515.01" y="94.11" class="todo"><title>0x00401c10 S_InsertBackground (308 bytes)</title></rect>
 <rect width="13.12" height="12.79" x="531.18" y="94.11" class="named"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
 <rect width="13.06" height="12.79" x="547.30" y="94.11" class="named"><title>0x004239d0 DoInventoryBackground (306 bytes)</title></rect>
