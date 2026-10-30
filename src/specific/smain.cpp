@@ -257,6 +257,157 @@ extern "C" int TitleSequence(void)
     return EXITGAME;
 }
 
+extern "C" {
+#include "../items.h"
+#include "../larafire.h"
+#include "../lara.h"
+#include "../laraanim.h"
+}
+
+#define SHOTGUN_ITEM 136
+#define MAGNUM_ITEM 137
+#define UZI_ITEM 138
+#define HARPOON_ITEM 139
+#define M16_ITEM 140
+#define GRENADE_ITEM 141
+#define MEDI_ITEM 149
+#define BIGMEDI_ITEM 150
+#define FLARE_ITEM 152
+#define SFX_ALWAYS 2
+
+extern "C" {
+extern uint32 CurrentLevel;
+extern int level_complete;
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+int Inv_AddItem(int item_number);
+int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
+}
+
+extern "C" int cheat_turn;
+extern "C" sint16 cheat_as;
+extern "C" sint16 cheat_angle;
+extern "C" int cheat_flare;
+extern "C" int cheat_mode;
+
+extern "C" void CheckCheatMode(void)
+{
+    int i;
+
+    if (!CurrentLevel || CurrentLevel == gameflow.num_levels - gameflow.num_demos - 1)
+        return;
+    cheat_as = lara_item->current_anim_state;
+    switch (cheat_mode)
+    {
+    case 0:
+        if (cheat_as == AS_WALK)
+            cheat_mode = 1;
+        break;
+
+    case 1:
+        cheat_flare = lara.gun_type == LG_FLARE;
+        if (cheat_as != AS_WALK)
+            cheat_mode = cheat_as == AS_STOP ? 2 : 0;
+        break;
+
+    case 2:
+        if (cheat_as != AS_STOP)
+            cheat_mode = cheat_as == AS_BACK ? 3 : 0;
+        break;
+
+    case 3:
+        if (cheat_as != AS_BACK)
+            cheat_mode = cheat_as == AS_STOP ? 4 : 0;
+        break;
+
+    case 4:
+        if (cheat_as != AS_STOP)
+        {
+            cheat_angle = lara_item->pos.y_rot;
+            cheat_turn = 0;
+            if (cheat_as == AS_TURN_L)
+                cheat_mode = 5;
+            else
+                cheat_mode = cheat_as == AS_TURN_R ? 6 : 0;
+        }
+        break;
+
+    case 5:
+        if (cheat_as == AS_TURN_L || cheat_as == AS_FASTTURN)
+        {
+            cheat_turn += (sint16)(lara_item->pos.y_rot - cheat_angle);
+            cheat_angle = lara_item->pos.y_rot;
+        }
+        else
+            cheat_mode = cheat_turn < -94208 ? 7 : 0;
+        break;
+
+    case 6:
+        if (cheat_as == AS_TURN_R || cheat_as == AS_FASTTURN)
+        {
+            cheat_turn += (sint16)(lara_item->pos.y_rot - cheat_angle);
+            cheat_angle = lara_item->pos.y_rot;
+        }
+        else
+            cheat_mode = cheat_turn > 94208 ? 7 : 0;
+        break;
+
+    case 7:
+        if (cheat_as != AS_STOP)
+            cheat_mode = cheat_as == AS_COMPRESS ? 8 : 0;
+        break;
+
+    case 8:
+        if (lara_item->fallspeed > 0)
+        {
+            if (cheat_flare)
+                cheat_flare = lara.gun_type == LG_FLARE;
+            if (cheat_as == AS_FORWARDJUMP && cheat_flare)
+            {
+                level_complete = 1;
+                cheat_mode = 0;
+            }
+            else if (cheat_as == AS_BACKJUMP && cheat_flare)
+            {
+                Inv_AddItem(HARPOON_ITEM);
+                Inv_AddItem(GRENADE_ITEM);
+                Inv_AddItem(M16_ITEM);
+                Inv_AddItem(SHOTGUN_ITEM);
+                Inv_AddItem(MAGNUM_ITEM);
+                Inv_AddItem(UZI_ITEM);
+                lara.shotgun.ammo = 500;
+                lara.magnums.ammo = 500;
+                lara.uzis.ammo = 5000;
+                lara.grenade.ammo = 5000;
+                lara.m16.ammo = 5000;
+                lara.harpoon.ammo = 5000;
+                for (i = 0; i < 50; i++)
+                {
+                    Inv_AddItem(MEDI_ITEM);
+                    Inv_AddItem(BIGMEDI_ITEM);
+                    Inv_AddItem(FLARE_ITEM);
+                }
+                SoundEffect(7, NULL, SFX_ALWAYS);
+                cheat_mode = 0;
+            }
+            else
+            {
+                if (cheat_as == AS_FORWARDJUMP || cheat_as == AS_BACKJUMP)
+                {
+                    ExplodingDeath(lara.item_number, -1, 1);
+                    lara_item->hit_points = 0;
+                    lara_item->flags |= ONESHOT;
+                }
+                cheat_mode = 0;
+            }
+        }
+        break;
+
+    default:
+        cheat_mode = 0;
+        break;
+    }
+}
+
 extern "C" void S_LoadSettings(void)
 {
     DWORD value;

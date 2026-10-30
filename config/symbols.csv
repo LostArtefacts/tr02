@@ -1116,7 +1116,7 @@ address,size,name,symbol
 0x00454af0,17,SE_FindSetupDialog,_SE_FindSetupDialog
 0x00454b10,720,GameMain,_GameMain
 0x00454de0,272,TitleSequence,_TitleSequence
-0x00454ef0,813,CheckCheatMode,_CheckCheatMode
+0x00454ef0,852,CheckCheatMode,_CheckCheatMode
 0x00455250,125,S_SaveSettings,_S_SaveSettings
 0x004552d0,219,S_LoadSettings,_S_LoadSettings
 0x004553b0,70,S_SoundPlaySample,_S_SoundPlaySample
@@ -1922,8 +1922,13 @@ address,size,name,symbol
 0x0051bcec,4,OptionsDialogHandle,_OptionsDialogHandle
 0x0051bcf0,1,IsSetupDialogCentered,_IsSetupDialogCentered
 0x0051bcf4,4,ControlsDialogHandle,_ControlsDialogHandle
+0x0051bd00,4,cheat_turn,_cheat_turn
+0x0051bd04,2,cheat_as,_cheat_as
+0x0051bd08,2,cheat_angle,_cheat_angle
+0x0051bd0c,4,cheat_flare,_cheat_flare
 0x0051bd10,128,StringToShow,_StringToShow
 0x0051bd90,4,title_loaded,_title_loaded
+0x0051bd94,4,cheat_mode,_cheat_mode
 0x0051bd98,4,LnMasterVolume,_LnMasterVolume
 0x0051bd9c,,MciDeviceID,_MciDeviceID
 0x0051bda0,4,CD_LoopTrack,_CD_LoopTrack
