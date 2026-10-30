@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.68% (632)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.32% (615)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.76% (633)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.24% (614)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="378.59" height="6" x="0" y="0" class="named"/>
-<rect width="368.41" height="6" x="378.59" y="0" class="todo"/>
+<rect width="379.19" height="6" x="0" y="0" class="named"/>
+<rect width="367.81" height="6" x="379.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -198,7 +198,7 @@
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="30" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="named"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="30" class="todo"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="30" class="named"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="named"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="todo"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.33%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="229.07" height="6" x="0" y="0" class="named"/>
-<rect width="517.93" height="6" x="229.07" y="0" class="todo"/>
+<rect width="229.95" height="6" x="0" y="0" class="named"/>
+<rect width="517.05" height="6" x="229.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1555,7 +1555,7 @@
 <rect width="15.66" height="14.95" x="602.64" y="41.82" class="todo"><title>0x00432550 GetWaterDepth (402 bytes)</title></rect>
 <rect width="15.62" height="14.95" x="621.30" y="41.82" class="todo"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
 <rect width="15.57" height="14.95" x="639.92" y="41.82" class="named"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
-<rect width="15.48" height="14.95" x="658.49" y="41.82" class="todo"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
+<rect width="15.48" height="14.95" x="658.49" y="41.82" class="named"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="15.39" height="14.95" x="676.97" y="41.82" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
 <rect width="15.25" height="14.95" x="695.36" y="41.82" class="named"><title>0x004409d0 draw_border (393 bytes)</title></rect>
 <rect width="15.20" height="14.95" x="713.60" y="41.82" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
