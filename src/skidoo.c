@@ -621,3 +621,41 @@ int SkidooUserControl(ITEM_INFO *skidoo, sint32 height, int *pitch)
 
     return drive;
 }
+
+extern int height_type;
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
+int SkidooCheckGetOffOK(int direction)
+{
+    int x, y, z, height, ceiling;
+    sint16 room_number, angle;
+    ITEM_INFO *skidoo;
+    FLOOR_INFO *floor;
+
+    skidoo = &items[lara.skidoo];
+
+    if (direction == SKID_GETOFFL)
+        angle = skidoo->pos.y_rot + 0x4000;
+    else
+        angle = skidoo->pos.y_rot - 0x4000;
+
+    x = skidoo->pos.x_pos - (SKIDOO_GETOFF_DIST * phd_sin(angle) >> W2V_SHIFT);
+    y = skidoo->pos.y_pos;
+    z = skidoo->pos.z_pos - (SKIDOO_GETOFF_DIST * phd_cos(angle) >> W2V_SHIFT);
+
+    room_number = skidoo->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+
+    if (height_type == BIG_SLOPE || height == NO_HEIGHT)
+        return 0;
+
+    if (ABS(height - skidoo->pos.y_pos) > WALL_L / 2)
+        return 0;
+
+    ceiling = GetCeiling(floor, x, y, z);
+    if (ceiling - skidoo->pos.y_pos > -LARA_HITE || height - ceiling < LARA_HITE)
+        return 0;
+
+    return 1;
+}
