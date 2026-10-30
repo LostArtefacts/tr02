@@ -168,3 +168,16 @@ extern "C" void FreeTexturePages(void)
             FreeTexturePage(i);
     }
 }
+
+extern "C" bool LoadTexturePage(int pageIndex, bool reset);
+
+extern "C" bool ReloadTextures(bool reset)
+{
+    bool result = true;
+    for (DWORD i = 0; i < MAX_TEXTURE_PAGES; i++)
+    {
+        if (TexturePages[i].status & 1)
+            result &= LoadTexturePage(i, reset);
+    }
+    return result;
+}
