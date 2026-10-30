@@ -49,3 +49,12 @@ void GetValidLevelsList(REQUEST_INFO *req)
         AddRequesterItem(req, GF_Level_Names[i], R_CENTRE, NULL, 0);
     }
 }
+
+void GetSavedGamesList(REQUEST_INFO *req)
+{
+    SetPCRequesterSize(req, 10, -32);
+    if (req->selected >= req->vis_lines)
+        req->line_offset = req->selected - req->vis_lines + 1;
+    memcpy(RequesterFlags1, SaveGameReqFlags1, MAXIMUM_LEVELS * sizeof(uint32));
+    memcpy(RequesterFlags2, SaveGameReqFlags2, MAXIMUM_LEVELS * sizeof(uint32));
+}
