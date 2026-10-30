@@ -127,3 +127,17 @@ extern "C" void SafeFreeTexturePage(int pageIndex)
     if (pageIndex >= 0 && (TexturePages[pageIndex].status & 1))
         FreeTexturePage(pageIndex);
 }
+
+extern "C" void TexturePageReleaseVidMemSurface(TEXPAGE_DESC *page);
+
+extern "C" void FreeTexturePage(int pageIndex)
+{
+    TEXPAGE_DESC *page = &TexturePages[pageIndex];
+    TexturePageReleaseVidMemSurface(page);
+    if (page->sysMemSurface)
+    {
+        page->sysMemSurface->Release();
+        page->sysMemSurface = NULL;
+    }
+    page->status = 0;
+}
