@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.92% (974)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.52% (269)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78% (975)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.44% (268)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="582.06" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="582.06" y="0" class="decompiled"/>
-<rect width="160.75" height="6" x="586.25" y="0" class="todo"/>
+<rect width="582.66" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="582.66" y="0" class="decompiled"/>
+<rect width="160.16" height="6" x="586.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -998,7 +998,7 @@
 <rect width="12" height="12" x="405" y="270" class="named"><title>0x004484b0 WinSndIsSoundEnabled (6 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="270" class="todo"><title>0x004484e0 CreateScreenBuffers (315 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="270" class="named"><title>0x00448620 CreatePrimarySurface (148 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="270" class="todo"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="270" class="named"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="270" class="todo"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.35%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.57%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.40%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.52%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="435.90" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="435.90" y="0" class="decompiled"/>
-<rect width="310.50" height="6" x="436.50" y="0" class="todo"/>
+<rect width="436.23" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="436.23" y="0" class="decompiled"/>
+<rect width="310.17" height="6" x="436.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1877,7 +1877,7 @@
 <rect width="8.23" height="8.28" x="547.24" y="255.36" class="named"><title>0x00413580 GetTiltType (153 bytes)</title></rect>
 <rect width="8.23" height="8.28" x="547.24" y="266.64" class="named"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
 <rect width="8.23" height="8.20" x="547.24" y="277.91" class="named"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
-<rect width="8.23" height="8.20" x="547.24" y="289.12" class="todo"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
+<rect width="8.23" height="8.20" x="547.24" y="289.12" class="named"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="8.23" height="8.20" x="547.24" y="300.32" class="named"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
 <rect width="8.23" height="8.13" x="547.24" y="311.52" class="named"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
 <rect width="8.23" height="8.13" x="547.24" y="322.65" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>

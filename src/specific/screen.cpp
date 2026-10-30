@@ -133,6 +133,26 @@ extern "C" void CreatePrimarySurface(void)
         throw ERR_CreatePrimarySurface;
 }
 
+extern "C" void CreateBackBuffer(void)
+{
+    DDSURFACEDESC dsp;
+
+    memset(&dsp, 0, sizeof(dsp));
+    dsp.dwSize = sizeof(dsp);
+    dsp.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH;
+    dsp.dwWidth = GameVidBufWidth;
+    dsp.dwHeight = GameVidBufHeight;
+    dsp.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_3DDEVICE;
+    switch (SavedAppSettings.RenderMode) {
+    case RM_Hardware:
+        dsp.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_VIDEOMEMORY | DDSCAPS_3DDEVICE;
+        break;
+    }
+    if (DX_TRY(DDrawSurfaceCreate(&dsp, &BackBufferSurface)))
+        throw ERR_CreateBackBuffer;
+    WinVidClearBuffer(BackBufferSurface, NULL, 0);
+}
+
 extern "C" DWORD GetZBufferDepth(void)
 {
     DWORD bitDepth = CurrentDisplayAdapter.D3DHWDeviceDesc.dwDeviceZBufferBitDepth;
