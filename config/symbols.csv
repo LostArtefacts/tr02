@@ -1847,6 +1847,7 @@ address,size,name,symbol
 0x004d9eb0,4,CurrentLevel,_CurrentLevel
 0x004d9eb4,4,level_complete,_level_complete
 0x004d9eb8,4,save_counter,?save_counter@@3HA
+0x004d9ebc,4,GameMode,_GameMode
 0x004d9ec8,,VertexBuffer,_VertexBuffer
 0x00519ec8,,CurrentTexSource,_CurrentTexSource
 0x00519ed0,,HWR_PageHandles,_HWR_PageHandles

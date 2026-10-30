@@ -26,6 +26,18 @@ extern "C" void S_FadeToBlack(void);
 extern "C" void S_FadeInInventory(int fade);
 extern "C" int S_LoadGame(void *data, int size, int slot);
 
+extern "C" int OverlayStatus;
+extern "C" int NoInputCounter;
+extern "C" int GameMode;
+extern "C" bool IsGameToExit;
+extern "C" sint16 Option_Music_Volume;
+extern "C" void InitialiseCamera(void);
+extern "C" sint32 ControlPhase(sint32 nframes, int demo_mode);
+extern "C" int DrawPhaseGame(void);
+extern "C" void S_SoundStopAllSamples(void);
+extern "C" void S_CDStop(void);
+extern "C" void S_CDVolume(int volume);
+
 extern "C" sint32 StartGame(int level_number, int type)
 {
     sint32 result;
@@ -71,6 +83,31 @@ extern "C" sint32 StartGame(int level_number, int type)
         return STARTGAME | LV_FIRSTLEVEL;
     }
     return EXIT_TO_TITLE;
+}
+
+extern "C" sint32 GameLoop(int demo_mode)
+{
+    sint32 result;
+    int nframes;
+
+    OverlayStatus = 1;
+    InitialiseCamera();
+    NoInputCounter = 0;
+    GameMode = demo_mode ? 2 : 1;
+    result = ControlPhase(1, demo_mode);
+    while (!result) {
+        nframes = DrawPhaseGame();
+        if (IsGameToExit)
+            result = EXITGAME;
+        else
+            result = ControlPhase(nframes, demo_mode);
+    }
+    GameMode = 0;
+    S_SoundStopAllSamples();
+    S_CDStop();
+    if (Option_Music_Volume)
+        S_CDVolume(Option_Music_Volume * 25 + 5);
+    return result;
 }
 
 sint32 LevelCompleteSequence(int level_number)
