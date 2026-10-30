@@ -1017,7 +1017,7 @@ address,size,name,symbol
 0x0044d5f0,74,HWR_FreeTexturePages,?HWR_FreeTexturePages@@YAXXZ
 0x0044d640,53,HWR_GetAllTextureHandles,?HWR_GetAllTextureHandles@@YAXXZ
 0x0044d680,25,HWR_VertexBufferFull,?HWR_VertexBufferFull@@YA_NXZ
-0x0044d6a0,11,Func44d6a0,
+0x0044d6a0,11,HWR_InitVertexList,?HWR_InitVertexList@@YAXXZ
 0x0044d6b0,34,HWR_Init,?HWR_Init@@YA_NXZ
 0x0044d6e0,66,S_InitialiseSystem,_S_InitialiseSystem
 0x0044d730,17,ShutdownGame,_ShutdownGame

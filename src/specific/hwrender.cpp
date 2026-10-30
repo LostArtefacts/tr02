@@ -157,6 +157,11 @@ bool HWR_VertexBufferFull()
     return HWR_VertexPtr - VertexBuffer >= MAX_TLVERTICES - 512;
 }
 
+void HWR_InitVertexList()
+{
+    HWR_VertexPtr = VertexBuffer;
+}
+
 bool HWR_Init()
 {
     Zero(VertexBuffer);
