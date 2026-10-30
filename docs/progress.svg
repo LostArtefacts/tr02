@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.86% (123)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.14% (1124)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.94% (124)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.06% (1123)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="73.68" height="6" x="0" y="0" class="named"/>
-<rect width="673.32" height="6" x="73.68" y="0" class="todo"/>
+<rect width="74.28" height="6" x="0" y="0" class="named"/>
+<rect width="672.72" height="6" x="74.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -967,7 +967,7 @@
 <rect width="12" height="12" x="705" y="255" class="todo"><title>0x00447890 WinInFinish (15 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="255" class="todo"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="255" class="named"><title>0x004478c0 IncreaseScreenSize (98 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="270" class="todo"><title>0x00447930 DecreaseScreenSize (98 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="270" class="named"><title>0x00447930 DecreaseScreenSize (98 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="270" class="todo"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="todo"><title>0x00447a40 TempVideoAdjust (52 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="270" class="todo"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="16.49" height="6" x="0" y="0" class="named"/>
-<rect width="730.51" height="6" x="16.49" y="0" class="todo"/>
+<rect width="16.71" height="6" x="0" y="0" class="named"/>
+<rect width="730.29" height="6" x="16.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2030,7 +2030,7 @@
 <rect width="6.17" height="6.05" x="740.83" y="227.40" class="todo"><title>0x00455830 S_CDGetLoc (99 bytes)</title></rect>
 <rect width="6.14" height="5.99" x="599.82" y="236.45" class="todo"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
 <rect width="6.14" height="5.99" x="599.82" y="245.44" class="named"><title>0x004478c0 IncreaseScreenSize (98 bytes)</title></rect>
-<rect width="6.14" height="5.99" x="599.82" y="254.43" class="todo"><title>0x00447930 DecreaseScreenSize (98 bytes)</title></rect>
+<rect width="6.14" height="5.99" x="599.82" y="254.43" class="named"><title>0x00447930 DecreaseScreenSize (98 bytes)</title></rect>
 <rect width="6.14" height="5.90" x="599.82" y="263.42" class="todo"><title>0x0043a490 InitialiseGameFlags (97 bytes)</title></rect>
 <rect width="6.14" height="5.90" x="599.82" y="272.32" class="todo"><title>0x004456d0 CalculateCompatibleColor (97 bytes)</title></rect>
 <rect width="6.14" height="5.90" x="599.82" y="281.22" class="todo"><title>0x004571c0 Func4571c0 (97 bytes)</title></rect>

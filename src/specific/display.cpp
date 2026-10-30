@@ -17,3 +17,14 @@ void IncreaseScreenSize(void)
     game_sizer = screen_sizer;
     setup_screen_size();
 }
+
+void DecreaseScreenSize(void)
+{
+    if (screen_sizer == 0.44)
+        return;
+    screen_sizer -= 0.08;
+    if (screen_sizer < 0.44)
+        screen_sizer = 0.44;
+    game_sizer = screen_sizer;
+    setup_screen_size();
+}
