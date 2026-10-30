@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.60% (207)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.40% (1040)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.68% (208)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.32% (1039)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="124" height="6" x="0" y="0" class="named"/>
-<rect width="623" height="6" x="124" y="0" class="todo"/>
+<rect width="124.60" height="6" x="0" y="0" class="named"/>
+<rect width="622.40" height="6" x="124.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -728,7 +728,7 @@
 <rect width="12" height="12" x="120" y="195" class="todo"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="195" class="todo"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="195" class="todo"><title>0x00436100 GunMiss (167 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="195" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="195" class="todo"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="195" class="todo"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x004363d0 Cult1Control (1025 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.71%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="39.12" height="6" x="0" y="0" class="named"/>
-<rect width="707.88" height="6" x="39.12" y="0" class="todo"/>
+<rect width="39.49" height="6" x="0" y="0" class="named"/>
+<rect width="707.51" height="6" x="39.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1838,7 +1838,7 @@
 <rect width="8.96" height="8.70" x="631.47" y="163.31" class="todo"><title>0x0040bf80 InsertSprite (167 bytes)</title></rect>
 <rect width="8.96" height="8.70" x="643.43" y="163.31" class="todo"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="8.96" height="8.70" x="655.39" y="163.31" class="todo"><title>0x00433360 ShootAtLara (167 bytes)</title></rect>
-<rect width="8.96" height="8.70" x="667.35" y="163.31" class="todo"><title>0x00436100 GunMiss (167 bytes)</title></rect>
+<rect width="8.96" height="8.70" x="667.35" y="163.31" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
 <rect width="8.96" height="8.70" x="679.31" y="163.31" class="todo"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
 <rect width="8.82" height="8.70" x="691.27" y="163.31" class="todo"><title>0x00428a80 extra_as_starthouse (165 bytes)</title></rect>
 <rect width="8.75" height="8.70" x="703.09" y="163.31" class="todo"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
