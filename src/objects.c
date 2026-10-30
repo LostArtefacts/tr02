@@ -48,6 +48,25 @@ void ControlCutShotgun(sint16 item_number)
         item->status = INVISIBLE;
 }
 
+void InitialiseDyingMonk(sint16 item_number)
+{
+    int *who;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    item->data = who = game_malloc(sizeof(int) * 2, 0);
+
+    item_number = room[item->room_number].item_number;
+    while (item_number != NO_ITEM)
+    {
+        if (objects[items[item_number].object_number].intelligent)
+            *(who++) = item_number;
+
+        item_number = items[item_number].next_item;
+    }
+}
+
 void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;

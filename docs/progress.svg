@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.27% (340)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.73% (907)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.35% (341)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.65% (906)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="203.67" height="6" x="0" y="0" class="named"/>
-<rect width="543.33" height="6" x="203.67" y="0" class="todo"/>
+<rect width="204.27" height="6" x="0" y="0" class="named"/>
+<rect width="542.73" height="6" x="204.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -689,7 +689,7 @@
 <rect width="12" height="12" x="285" y="180" class="todo"><title>0x004343e0 InitialiseFinalLevel (157 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="180" class="todo"><title>0x004344b0 FinalLevelCounter (527 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="180" class="todo"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="180" class="todo"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="180" class="named"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="180" class="todo"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="todo"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="180" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.07%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="66.42" height="6" x="0" y="0" class="named"/>
-<rect width="680.58" height="6" x="66.42" y="0" class="todo"/>
+<rect width="66.70" height="6" x="0" y="0" class="named"/>
+<rect width="680.30" height="6" x="66.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1957,7 +1957,7 @@
 <rect width="7.01" height="7.38" x="650.68" y="207.82" class="named"><title>0x00428100 lara_as_stepright (124 bytes)</title></rect>
 <rect width="7.01" height="7.38" x="660.70" y="207.82" class="named"><title>0x00428180 lara_as_stepleft (124 bytes)</title></rect>
 <rect width="7.01" height="7.38" x="670.71" y="207.82" class="todo"><title>0x0042d050 draw_pistols (124 bytes)</title></rect>
-<rect width="7.01" height="7.38" x="680.72" y="207.82" class="todo"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
+<rect width="7.01" height="7.38" x="680.72" y="207.82" class="named"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
 <rect width="7.01" height="7.38" x="690.73" y="207.82" class="todo"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
 <rect width="6.93" height="7.38" x="700.75" y="207.82" class="todo"><title>0x0042bf70 FireM16 (123 bytes)</title></rect>
 <rect width="6.85" height="7.38" x="710.68" y="207.82" class="todo"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
