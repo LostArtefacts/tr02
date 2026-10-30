@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.10% (500)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.90% (747)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.18% (501)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.82% (746)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="299.52" height="6" x="0" y="0" class="named"/>
-<rect width="447.48" height="6" x="299.52" y="0" class="todo"/>
+<rect width="300.12" height="6" x="0" y="0" class="named"/>
+<rect width="446.88" height="6" x="300.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -819,7 +819,7 @@
 <rect width="12" height="12" x="735" y="210" class="named"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="225" class="named"><title>0x00440810 T_BottomAlign (30 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="225" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="225" class="todo"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="225" class="named"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="225" class="todo"><title>0x00440970 T_GetStringLen (36 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="225" class="todo"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="225" class="todo"><title>0x004409d0 draw_border (393 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.22%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.76" height="6" x="0" y="0" class="named"/>
-<rect width="599.24" height="6" x="147.76" y="0" class="todo"/>
+<rect width="147.84" height="6" x="0" y="0" class="named"/>
+<rect width="599.16" height="6" x="147.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2354,7 +2354,7 @@
 <rect width="2.68" height="2.60" x="733.12" y="315.04" class="todo"><title>0x00456100 FreeTexturePages (38 bytes)</title></rect>
 <rect width="2.68" height="2.60" x="738.80" y="315.04" class="todo"><title>0x00457470 Func457470 (38 bytes)</title></rect>
 <rect width="2.53" height="2.60" x="744.47" y="315.04" class="todo"><title>0x00425460 Inv_RingMotionCameraPos (37 bytes)</title></rect>
-<rect width="2.31" height="2.83" x="687.25" y="320.64" class="todo"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
+<rect width="2.31" height="2.83" x="687.25" y="320.64" class="named"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
 <rect width="2.31" height="2.83" x="687.25" y="326.47" class="todo"><title>0x004454b0 WinVidBufferUnlock (37 bytes)</title></rect>
 <rect width="2.31" height="2.83" x="687.25" y="332.30" class="todo"><title>0x00456030 Create3DTexture (37 bytes)</title></rect>
 <rect width="2.31" height="2.83" x="687.25" y="338.13" class="todo"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>

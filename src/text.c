@@ -216,3 +216,16 @@ void T_BottomAlign(TEXTSTRING *textString, sint16 ok)
     else
         textString->flags &= ~T_BOTTOMALIGN;
 }
+
+int T_RemovePrint(TEXTSTRING *textString)
+{
+    if (!textString)
+        return 0;
+
+    if (!(textString->flags & T_ACTIVE))
+        return 0;
+
+    textString->flags &= ~T_ACTIVE;
+    T_numStrings--;
+    return 1;
+}
