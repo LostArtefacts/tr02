@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.19% (551)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.81% (696)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.27% (552)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.73% (695)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="330.07" height="6" x="0" y="0" class="named"/>
-<rect width="416.93" height="6" x="330.07" y="0" class="todo"/>
+<rect width="330.67" height="6" x="0" y="0" class="named"/>
+<rect width="416.33" height="6" x="330.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -410,7 +410,7 @@
 <rect width="12" height="12" x="600" y="90" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="90" class="named"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="90" class="named"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="90" class="todo"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="90" class="named"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="90" class="named"><title>0x00424dc0 Inv_GetItemOption (482 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="90" class="named"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="90" class="named"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.85%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.15%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">76.07%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="178.14" height="6" x="0" y="0" class="named"/>
-<rect width="568.86" height="6" x="178.14" y="0" class="todo"/>
+<rect width="178.74" height="6" x="0" y="0" class="named"/>
+<rect width="568.26" height="6" x="178.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1658,7 +1658,7 @@
 <rect width="12.02" height="12.33" x="573.09" y="94.24" class="named"><title>0x0044cef0 S_SaveGame (276 bytes)</title></rect>
 <rect width="11.96" height="12.33" x="588.11" y="94.24" class="todo"><title>0x0044c920 GameStats (275 bytes)</title></rect>
 <rect width="11.91" height="12.33" x="603.07" y="94.24" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
-<rect width="11.80" height="12.33" x="617.98" y="94.24" class="todo"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
+<rect width="11.80" height="12.33" x="617.98" y="94.24" class="named"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="11.80" height="12.33" x="632.78" y="94.24" class="todo"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
 <rect width="11.75" height="12.33" x="647.59" y="94.24" class="named"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="11.75" height="12.33" x="662.33" y="94.24" class="todo"><title>0x0044e9a0 ScreenShotPCX (271 bytes)</title></rect>
