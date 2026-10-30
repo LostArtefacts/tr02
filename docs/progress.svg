@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.07% (587)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.93% (660)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.15% (588)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.85% (659)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="351.64" height="6" x="0" y="0" class="named"/>
-<rect width="395.36" height="6" x="351.64" y="0" class="todo"/>
+<rect width="352.23" height="6" x="0" y="0" class="named"/>
+<rect width="394.77" height="6" x="352.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -784,7 +784,7 @@
 <rect width="12" height="12" x="210" y="210" class="named"><title>0x0043dee0 SkidooCheckGetOffOK (262 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="210" class="named"><title>0x0043dff0 SkidooAnimation (736 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="210" class="named"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="210" class="todo"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="210" class="named"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="210" class="todo"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="210" class="todo"><title>0x0043e6b0 SkidooControl (1088 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="210" class="todo"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">72.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.14%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.86%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="208.97" height="6" x="0" y="0" class="named"/>
-<rect width="538.03" height="6" x="208.97" y="0" class="todo"/>
+<rect width="210.20" height="6" x="0" y="0" class="named"/>
+<rect width="536.80" height="6" x="210.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1473,7 +1473,7 @@
 <rect width="19.12" height="18.44" x="371.73" y="292.83" class="todo"><title>0x00433b20 MovableBlockCollision (569 bytes)</title></rect>
 <rect width="19.12" height="18.26" x="371.73" y="314.27" class="todo"><title>0x0042e4f0 LaraTestClimbUpPos (564 bytes)</title></rect>
 <rect width="19.12" height="18.26" x="371.73" y="335.53" class="todo"><title>0x00454690 Func454690 (564 bytes)</title></rect>
-<rect width="19.12" height="18.22" x="371.73" y="356.78" class="todo"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
+<rect width="19.12" height="18.22" x="371.73" y="356.78" class="named"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
 <rect width="18.58" height="18.75" x="393.85" y="0" class="todo"><title>0x0044cb40 DisplayCredits (563 bytes)</title></rect>
 <rect width="18.50" height="18.75" x="415.43" y="0" class="todo"><title>0x00438b30 PuzzleHoleCollision (561 bytes)</title></rect>
 <rect width="18.46" height="18.75" x="436.93" y="0" class="named"><title>0x0043ca20 BaracuddaControl (560 bytes)</title></rect>

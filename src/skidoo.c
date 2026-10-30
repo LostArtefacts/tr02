@@ -777,3 +777,56 @@ void SkidooExplode(ITEM_INFO *skidoo)
     SoundEffect(105, NULL, 0);
     lara.skidoo = NO_ITEM;
 }
+
+#define SKID_FASTFALL_A 23
+
+int SkidooCheckGetOff(void)
+{
+    ITEM_INFO *skidoo;
+
+    skidoo = &items[lara.skidoo];
+
+    if ((lara_item->current_anim_state == SKID_GETOFF || lara_item->current_anim_state == SKID_GETOFFL) && lara_item->frame_number == anims[lara_item->anim_number].frame_end) {
+        if (lara_item->current_anim_state == SKID_GETOFFL)
+            lara_item->pos.y_rot += 0x4000;
+        else
+            lara_item->pos.y_rot -= 0x4000;
+
+        lara_item->anim_number = STOP_A;
+        lara_item->frame_number = STOP_F;
+        lara_item->current_anim_state = lara_item->goal_anim_state = AS_STOP;
+        lara_item->pos.x_pos -= SKIDOO_GETOFF_DIST * phd_sin(lara_item->pos.y_rot) >> W2V_SHIFT;
+        lara_item->pos.z_pos -= SKIDOO_GETOFF_DIST * phd_cos(lara_item->pos.y_rot) >> W2V_SHIFT;
+        lara_item->pos.x_rot = lara_item->pos.z_rot = 0;
+        lara.skidoo = NO_ITEM;
+        lara.gun_status = LG_ARMLESS;
+    } else if (lara_item->current_anim_state == SKID_LETGO && (skidoo->pos.y_pos == skidoo->floor || lara_item->frame_number == anims[lara_item->anim_number].frame_end)) {
+        lara_item->anim_number = SKID_FASTFALL_A;
+        lara_item->frame_number = GF(SKID_FASTFALL_A, 0);
+        lara_item->current_anim_state = AS_FASTFALL;
+
+        if (skidoo->pos.y_pos == skidoo->floor) {
+            lara_item->goal_anim_state = AS_DEATH;
+            lara_item->fallspeed = DAMAGE_START + DAMAGE_LENGTH;
+            lara_item->speed = 0;
+            SkidooExplode(skidoo);
+        } else {
+            lara_item->goal_anim_state = AS_FASTFALL;
+            lara_item->pos.y_pos -= 200;
+            lara_item->fallspeed = skidoo->fallspeed;
+            lara_item->speed = skidoo->speed;
+            SoundEffect(30, &lara_item->pos, 0);
+        }
+
+        lara_item->pos.x_rot = lara_item->pos.z_rot = 0;
+        lara_item->gravity_status = 1;
+        lara.gun_status = LG_ARMLESS;
+        lara.move_angle = skidoo->pos.y_rot;
+        skidoo->flags |= ONESHOT;
+        skidoo->collidable = 0;
+
+        return 0;
+    }
+
+    return 1;
+}
