@@ -138,3 +138,17 @@ void DS_AdjustPitch(int nHandle, int nPitch)
     }
 }
 
+void DS_StopSample(int nHandle)
+{
+    LPDIRECTSOUNDBUFFER pBuffer;
+
+    if (nHandle < 0)
+        return;
+    pBuffer = ChannelBuffers[nHandle];
+    if (pBuffer) {
+        DX_TRY(pBuffer->Stop());
+        pBuffer->Release();
+        ChannelBuffers[nHandle] = 0;
+    }
+}
+
