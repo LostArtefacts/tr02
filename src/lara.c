@@ -1293,6 +1293,44 @@ void lara_col_kick(ITEM_INFO *item, COLL_INFO *coll)
 {
 }
 
+void lara_slide_slope(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -512;
+    coll->bad_ceiling = 0;
+    GetLaraCollisionInfo(item, coll);
+    if (LaraHitCeiling(item, coll))
+        return;
+
+    LaraDeflectEdge(item, coll);
+
+    if (coll->mid_floor > 200)
+    {
+        if (item->current_anim_state == AS_SLIDE)
+        {
+            item->anim_number = FALLDOWN_A;
+            item->frame_number = FALLDOWN_F;
+            item->current_anim_state = AS_FORWARDJUMP;
+            item->goal_anim_state = AS_FORWARDJUMP;
+        }
+        else
+        {
+            item->anim_number = FALLBACK_A;
+            item->frame_number = FALLBACK_F;
+            item->current_anim_state = AS_FALLBACK;
+            item->goal_anim_state = AS_FALLBACK;
+        }
+        item->fallspeed = 0;
+        item->gravity_status = 1;
+        return;
+    }
+
+    TestLaraSlide(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+    if (ABS(coll->tilt_x) <= 2 && ABS(coll->tilt_z) <= 2)
+        item->goal_anim_state = AS_STOP;
+}
+
 int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->coll_type == COLL_TOP || coll->coll_type == COLL_CLAMP)

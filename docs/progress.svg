@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.73% (670)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.27% (577)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.81% (671)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.19% (576)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.36" height="6" x="0" y="0" class="named"/>
-<rect width="345.64" height="6" x="401.36" y="0" class="todo"/>
+<rect width="401.95" height="6" x="0" y="0" class="named"/>
+<rect width="345.05" height="6" x="401.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -548,7 +548,7 @@
 <rect width="12" height="12" x="420" y="135" class="named"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="135" class="named"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="135" class="todo"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="135" class="todo"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="135" class="named"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="135" class="named"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="135" class="named"><title>0x0042a2d0 LaraDeflectEdge (127 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="135" class="todo"><title>0x0042a350 LaraDeflectEdgeJump (310 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.53%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.47%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.41%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="265.37" height="6" x="0" y="0" class="named"/>
-<rect width="481.63" height="6" x="265.37" y="0" class="todo"/>
+<rect width="265.87" height="6" x="0" y="0" class="named"/>
+<rect width="481.13" height="6" x="265.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1720,7 +1720,7 @@
 <rect width="10.67" height="10.83" x="496.25" y="322.72" class="named"><title>0x00427370 KillEffect (227 bytes)</title></rect>
 <rect width="10.67" height="10.83" x="496.25" y="336.56" class="named"><title>0x0042a4d0 LaraSlideEdgeJump (227 bytes)</title></rect>
 <rect width="10.67" height="10.83" x="496.25" y="350.39" class="named"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
-<rect width="10.67" height="10.77" x="496.25" y="364.23" class="todo"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
+<rect width="10.67" height="10.77" x="496.25" y="364.23" class="named"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
 <rect width="10.68" height="10.77" x="509.92" y="124.34" class="todo"><title>0x00445080 WinVidSpinMessageLoop (226 bytes)</title></rect>
 <rect width="10.68" height="10.77" x="523.60" y="124.34" class="todo"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
 <rect width="10.62" height="10.77" x="537.28" y="124.34" class="named"><title>0x0043cf20 SkidooCheckGeton (225 bytes)</title></rect>
