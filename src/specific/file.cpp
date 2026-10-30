@@ -195,3 +195,14 @@ int Read_Strings(int num_strings, char **strings, char **buffer, DWORD *read, HA
         strings[i] = *buffer + LGF_offsets[i];
     return 1;
 }
+
+extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
+{
+    while (*file_name != '.' && *file_name)
+        file_name++;
+    *file_name++ = '.';
+    *file_name++ = *file_ext++;
+    *file_name++ = *file_ext++;
+    *file_name = *file_ext;
+    file_name[1] = 0;
+}
