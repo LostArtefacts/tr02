@@ -245,6 +245,101 @@ void draw_flare(void)
     set_flare_arm(lara.left_arm.frame_number);
 }
 
+#define FL_THROWRELEASE_F (20 + FL_THROW_F)
+#define FL_THROW_FRAMES 32
+#define THROWFLARE_A 189
+#define THROWFLARE_F GF(THROWFLARE_A, 0)
+
+void InitialiseNewWeapon(void);
+
+void undraw_flare(void)
+{
+    sint16 ani, ani2;
+
+    ani = lara.left_arm.frame_number;
+    ani2 = lara.flare_frame;
+
+    lara.flare_control_left = 1;
+
+    if (lara_item->goal_anim_state == AS_STOP && lara.skidoo == NO_ITEM)
+    {
+        if (lara_item->anim_number == BREATH_A)
+        {
+            lara_item->anim_number = THROWFLARE_A;
+            lara_item->frame_number = lara.flare_frame = ani2 = THROWFLARE_F + ani;
+        }
+
+        if (lara_item->anim_number == THROWFLARE_A)
+        {
+            lara.flare_control_left = 0;
+            if (ani2 >= THROWFLARE_F + FL_THROW_FRAMES - 1)
+            {
+                lara.gun_type = lara.request_gun_type = lara.last_gun_type;
+                lara.gun_status = LG_ARMLESS;
+                InitialiseNewWeapon();
+                lara.target = NULL;
+                lara.left_arm.lock = lara.right_arm.lock = 0;
+                lara_item->anim_number = STOP_A;
+                lara_item->frame_number = lara.flare_frame = STOP_F;
+                lara_item->current_anim_state = AS_STOP;
+                lara_item->goal_anim_state = AS_STOP;
+                return;
+            }
+
+            ani2++;
+            lara.flare_frame = ani2;
+        }
+    }
+    else if (lara_item->current_anim_state == AS_STOP && lara.skidoo == NO_ITEM)
+    {
+        lara_item->anim_number = STOP_A;
+        lara_item->frame_number = STOP_F;
+    }
+
+    if (ani == FL_HOLD_F)
+    {
+        ani = FL_THROW_F;
+    }
+    else if (ani >= FL_IGNITE_F && ani < FL_IGNITE_F + 23)
+    {
+        ani++;
+        if (ani == FL_IGNITE_F + FL_IGNITE_FT - 1)
+            ani = FL_THROW_F;
+    }
+    else if (ani >= FL_THROW_F && ani < FL_DRAW_F)
+    {
+        ani++;
+        if (ani == FL_THROWRELEASE_F)
+        {
+            CreateFlare(1);
+            undraw_flare_meshes();
+        }
+        else if (ani == FL_DRAW_F)
+        {
+            ani = 0;
+            lara.gun_type = lara.request_gun_type = lara.last_gun_type;
+            lara.gun_status = LG_ARMLESS;
+            InitialiseNewWeapon();
+            lara.target = NULL;
+            lara.left_arm.lock = lara.right_arm.lock = 0;
+            lara.flare_control_left = 0;
+            lara.flare_frame = 0;
+        }
+    }
+    else if (ani >= FL_2HOLD_F && ani < FL_END_F)
+    {
+        ani++;
+        if (ani == FL_END_F)
+            ani = FL_THROW_F;
+    }
+
+    if (ani >= FL_THROW_F && ani < FL_THROWRELEASE_F)
+        DoFlareInHand(lara.flare_age);
+
+    lara.left_arm.frame_number = ani;
+    set_flare_arm(lara.left_arm.frame_number);
+}
+
 void draw_flare_meshes(void)
 {
     lara.mesh_ptrs[HAND_L] = meshes[objects[FLARE].mesh_index + HAND_L];

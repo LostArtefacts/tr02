@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.23% (738)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.77% (508)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.31% (739)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.69% (507)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="442.44" height="6" x="0" y="0" class="named"/>
-<rect width="304.56" height="6" x="442.44" y="0" class="todo"/>
+<rect width="443.04" height="6" x="0" y="0" class="named"/>
+<rect width="303.96" height="6" x="443.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -622,7 +622,7 @@
 <rect width="12" height="12" x="30" y="165" class="named"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="165" class="named"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="165" class="named"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="165" class="todo"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="165" class="named"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="165" class="named"><title>0x00430090 draw_flare_meshes (24 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="165" class="named"><title>0x004300b0 undraw_flare_meshes (24 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="165" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.38%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="318.37" height="6" x="0" y="0" class="named"/>
-<rect width="428.63" height="6" x="318.37" y="0" class="todo"/>
+<rect width="319.56" height="6" x="0" y="0" class="named"/>
+<rect width="427.44" height="6" x="319.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1482,7 +1482,7 @@
 <rect width="17.95" height="18.71" x="521.57" y="0" class="todo"><title>0x0040c630 draw_scaled_spriteC (547 bytes)</title></rect>
 <rect width="17.95" height="18.71" x="542.52" y="0" class="todo"><title>0x00432000 LaraUnderWater (547 bytes)</title></rect>
 <rect width="17.95" height="18.71" x="563.48" y="0" class="todo"><title>0x004388f0 KeyHoleCollision (547 bytes)</title></rect>
-<rect width="17.88" height="18.71" x="584.43" y="0" class="todo"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
+<rect width="17.88" height="18.71" x="584.43" y="0" class="named"><title>0x0042fe60 undraw_flare (545 bytes)</title></rect>
 <rect width="17.88" height="18.71" x="605.31" y="0" class="todo"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
 <rect width="17.84" height="18.71" x="626.19" y="0" class="named"><title>0x00440120 SpiderControl (544 bytes)</title></rect>
 <rect width="17.84" height="18.71" x="647.03" y="0" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
