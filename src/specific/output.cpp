@@ -269,6 +269,61 @@ extern "C" void S_CopyBufferToScreen(void)
         Func444350();
 }
 
+typedef struct {
+    uint8 zsoft_flag;
+    char version;
+    uint8 encoding;
+    uint8 bits;
+    uint16 xmin;
+    uint16 ymin;
+    uint16 xmax;
+    uint16 ymax;
+    uint16 hres;
+    uint16 vres;
+    uint8 palette[48];
+    uint8 reserved;
+    uint8 planes;
+    uint16 bytes_per_line;
+    uint16 palette_type;
+    uint8 filler[58];
+} PCX_HEADER;
+
+extern "C" int DecompPCX(uint8 *pcx, int pcx_size, uint8 *bitmap, uint8 *palette)
+{
+    PCX_HEADER *header;
+    uint8 *in, *out, *end;
+    int width, height, pixels;
+    char count, c;
+
+    header = (PCX_HEADER *)pcx;
+    if (header->zsoft_flag != 10 || header->version < 5 || header->bits != 8 || header->encoding != 1 || header->planes != 1)
+        return 0;
+    width = header->xmax + 1 - header->xmin;
+    height = header->ymax + 1 - header->ymin;
+    pixels = width * height;
+    if (!pixels)
+        return 0;
+    in = pcx + sizeof(PCX_HEADER);
+    out = bitmap;
+    end = out + pixels;
+    while (out < end)
+    {
+        if ((*in & 0xc0) == 0xc0)
+        {
+            count = *in++;
+            count &= 0x3f;
+            c = *in++;
+            memset(out, c, count);
+            out += count;
+        }
+        else
+            *out++ = *in++;
+    }
+    if (palette)
+        memcpy(palette, pcx + pcx_size - 768, 768);
+    return 1;
+}
+
 extern "C" sint32 LsAdder;
 
 extern "C" void S_CalculateStaticLight(sint16 adder)
