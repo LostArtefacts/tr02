@@ -141,6 +141,30 @@ void CreatureHead(ITEM_INFO *item, sint16 required)
         creature->head_rotation = -HEAD_ARC;
 }
 
+void CreatureNeck(ITEM_INFO *item, sint16 required)
+{
+    sint16 change;
+    CREATURE_INFO *creature;
+
+    if (item->data == NULL)
+        return;
+
+    creature = (CREATURE_INFO *)item->data;
+
+    change = required - creature->neck_rotation;
+    if (change > MAX_HEAD_CHANGE)
+        change = MAX_HEAD_CHANGE;
+    else if (change < -MAX_HEAD_CHANGE)
+        change = -MAX_HEAD_CHANGE;
+
+    creature->neck_rotation += change;
+
+    if (creature->neck_rotation > HEAD_ARC)
+        creature->neck_rotation = HEAD_ARC;
+    else if (creature->neck_rotation < -HEAD_ARC)
+        creature->neck_rotation = -HEAD_ARC;
+}
+
 void CreatureUnderwater(ITEM_INFO *item, sint32 depth)
 {
     sint32 water_level;
