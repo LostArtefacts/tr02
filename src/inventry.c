@@ -118,6 +118,26 @@ void SelectMeshes(INVENTORY_ITEM *inv_item)
         inv_item->drawn_meshes = 0xffffffff;
 }
 
+sint32 AnimateInventoryItem(INVENTORY_ITEM *inv_item)
+{
+    if (inv_item->current_frame != inv_item->goal_frame) {
+        if (inv_item->anim_count)
+            inv_item->anim_count--;
+        else {
+            inv_item->anim_count = inv_item->anim_speed;
+            inv_item->current_frame += inv_item->anim_direction;
+            if (inv_item->current_frame >= inv_item->frames_total)
+                inv_item->current_frame = 0;
+            else if (inv_item->current_frame < 0)
+                inv_item->current_frame = inv_item->frames_total - 1;
+        }
+        SelectMeshes(inv_item);
+        return 1;
+    }
+    SelectMeshes(inv_item);
+    return 0;
+}
+
 void DoInventoryPicture(void)
 {
     S_CopyBufferToScreen();
