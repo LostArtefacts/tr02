@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">63.11% (787)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.65% (457)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">63.19% (788)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.57% (456)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="471.44" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="471.44" y="0" class="decompiled"/>
-<rect width="273.76" height="6" x="473.24" y="0" class="todo"/>
+<rect width="472.04" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="472.04" y="0" class="decompiled"/>
+<rect width="273.16" height="6" x="473.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -152,7 +152,7 @@
 <rect width="12" height="12" x="465" y="15" class="todo"><title>0x0040c4f0 S_DrawScreenSprite2d (150 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="15" class="todo"><title>0x0040c590 S_DrawScreenSprite (157 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="15" class="todo"><title>0x0040c630 draw_scaled_spriteC (547 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="15" class="todo"><title>0x0040c860 InitialiseEagle (137 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="15" class="named"><title>0x0040c860 InitialiseEagle (137 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="15" class="todo"><title>0x0040c8f0 EagleControl (512 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="15" class="named"><title>0x0040cb10 InitialiseBoat (60 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="15" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.92%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.07%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.96%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.03%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="350.52" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="350.52" y="0" class="decompiled"/>
-<rect width="396.43" height="6" x="350.57" y="0" class="todo"/>
+<rect width="350.82" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="350.82" y="0" class="decompiled"/>
+<rect width="396.13" height="6" x="350.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.09" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1917,7 +1917,7 @@
 <rect width="7.39" height="8.04" x="739.61" y="187.21" class="named"><title>0x00427cf0 lara_as_turn_r (138 bytes)</title></rect>
 <rect width="7.63" height="7.79" x="569.74" y="198.25" class="named"><title>0x0044ae20 LoadDemo (138 bytes)</title></rect>
 <rect width="7.63" height="7.79" x="569.74" y="209.04" class="todo"><title>0x00454600 Func454600 (138 bytes)</title></rect>
-<rect width="7.63" height="7.72" x="569.74" y="219.84" class="todo"><title>0x0040c860 InitialiseEagle (137 bytes)</title></rect>
+<rect width="7.63" height="7.72" x="569.74" y="219.84" class="named"><title>0x0040c860 InitialiseEagle (137 bytes)</title></rect>
 <rect width="7.63" height="7.72" x="569.74" y="230.55" class="named"><title>0x00423450 SelectMeshes (137 bytes)</title></rect>
 <rect width="7.63" height="7.72" x="569.74" y="241.27" class="named"><title>0x004277f0 ResetLook (137 bytes)</title></rect>
 <rect width="7.63" height="7.72" x="569.74" y="251.99" class="named"><title>0x00427d80 lara_as_turn_l (137 bytes)</title></rect>
