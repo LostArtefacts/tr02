@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.28% (966)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.16% (277)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.36% (967)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.08% (276)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="577.28" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="577.28" y="0" class="decompiled"/>
-<rect width="165.54" height="6" x="581.46" y="0" class="todo"/>
+<rect width="577.88" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="577.88" y="0" class="decompiled"/>
+<rect width="164.94" height="6" x="582.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1187,7 +1187,7 @@
 <rect width="12" height="12" x="240" y="330" class="todo"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="330" class="todo"><title>0x00454ef0 CheckCheatMode (813 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="330" class="todo"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="330" class="todo"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="330" class="named"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="330" class="named"><title>0x004553b0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="330" class="named"><title>0x00455400 CalcVolume (42 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x00455430 CalcPan (38 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.61%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">42.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.67%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">42.24%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="430.35" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="430.35" y="0" class="decompiled"/>
-<rect width="316.04" height="6" x="430.96" y="0" class="todo"/>
+<rect width="430.83" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="430.83" y="0" class="decompiled"/>
+<rect width="315.56" height="6" x="431.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1741,7 +1741,7 @@
 <rect width="10.79" height="10.15" x="496.05" y="299.24" class="named"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
 <rect width="10.79" height="10.15" x="496.05" y="312.38" class="named"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
 <rect width="10.79" height="10.15" x="496.05" y="325.53" class="named"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
-<rect width="10.79" height="10.15" x="496.05" y="338.68" class="todo"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
+<rect width="10.79" height="10.15" x="496.05" y="338.68" class="named"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="10.79" height="10.09" x="496.05" y="351.83" class="named"><title>0x00416230 ClipTarget (218 bytes)</title></rect>
 <rect width="10.79" height="10.09" x="496.05" y="364.91" class="named"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
 <rect width="10.64" height="10.18" x="509.84" y="137.75" class="named"><title>0x00417900 CreateBartoliLight (217 bytes)</title></rect>
