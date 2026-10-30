@@ -113,3 +113,18 @@ void T_SetScale(TEXTSTRING *textString, sint32 scaleH, sint32 scaleV)
         textString->scaleV = scaleV;
     }
 }
+
+void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate)
+{
+    if (textString == NULL)
+        return;
+
+    if (ok)
+    {
+        textString->flags |= T_FLASH;
+        textString->flashRate = rate;
+        textString->flashCount = rate;
+    }
+    else
+        textString->flags &= ~T_FLASH;
+}

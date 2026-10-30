@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.37% (491)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.63% (756)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.45% (492)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.55% (755)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="294.13" height="6" x="0" y="0" class="named"/>
-<rect width="452.87" height="6" x="294.13" y="0" class="todo"/>
+<rect width="294.73" height="6" x="0" y="0" class="named"/>
+<rect width="452.27" height="6" x="294.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -809,7 +809,7 @@
 <rect width="12" height="12" x="585" y="210" class="named"><title>0x00440530 T_Print (261 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="210" class="named"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="210" class="named"><title>0x00440680 T_SetScale (23 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="210" class="todo"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="210" class="named"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="210" class="todo"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="210" class="todo"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="210" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.33%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.32%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="146.93" height="6" x="0" y="0" class="named"/>
-<rect width="600.07" height="6" x="146.93" y="0" class="todo"/>
+<rect width="147.03" height="6" x="0" y="0" class="named"/>
+<rect width="599.97" height="6" x="147.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2328,7 +2328,7 @@
 <rect width="3.34" height="2.81" x="706.64" y="309.24" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="3.19" height="2.81" x="712.98" y="309.24" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="3.19" height="2.81" x="719.17" y="309.24" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
-<rect width="3.19" height="2.81" x="725.37" y="309.24" class="todo"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
+<rect width="3.19" height="2.81" x="725.37" y="309.24" class="named"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="3.19" height="2.81" x="731.56" y="309.24" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="3.19" height="2.81" x="737.76" y="309.24" class="named"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
 <rect width="3.05" height="2.81" x="743.95" y="309.24" class="named"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
