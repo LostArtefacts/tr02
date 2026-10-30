@@ -49,6 +49,11 @@ extern "C" void SE_GraphicsTestFinish(void)
     WinVidHideGameWindow();
 }
 
+extern "C" bool SE_GraphicsTestExecute(void)
+{
+    return false;
+}
+
 #include "ds.h"
 
 extern "C" {
