@@ -191,3 +191,11 @@ extern "C" D3DTEXTUREHANDLE GetTexturePageHandle(int pageIndex)
         LoadTexturePage(pageIndex, true);
     return page->texHandle;
 }
+
+extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context);
+
+extern "C" void EnumerateTextureFormats(void)
+{
+    memset(&TextureFormat, 0, 86);
+    G_Direct3DDevice->EnumTextureFormats(EnumTextureFormatsCallback, NULL);
+}
