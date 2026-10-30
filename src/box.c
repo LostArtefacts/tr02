@@ -116,6 +116,85 @@ void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info)
     info->bite = (info->ahead && enemy->hit_points > 0 && ABS(enemy->pos.y_pos - item->pos.y_pos) <= STEP_L * 3 / 2);
 }
 
+#define OVERLAP_INDEX 0x3fff
+#define SEARCH_NUMBER 0x7fff
+#define END_BIT 0x8000
+
+extern uint16 *Overlaps;
+
+int SearchLOT(LOT_INFO *LOT, int expansion)
+{
+    int i, index, done, change, box_number;
+    BOX_INFO *box;
+    BOX_NODE *node, *expand;
+    sint16 *zone, search_zone;
+
+    if (LOT->fly == NO_FLYING)
+        zone = ground_zone[ZONE(LOT->step)][flip_status];
+    else
+        zone = fly_zone[flip_status];
+    search_zone = zone[LOT->head];
+    for (i = 0; i < expansion; i++)
+    {
+        if (LOT->head == NO_BOX)
+        {
+            LOT->tail = NO_BOX;
+            return 0;
+        }
+        node = &LOT->node[LOT->head];
+        box = &boxes[LOT->head];
+        index = box->overlap_index & OVERLAP_INDEX;
+        done = 0;
+        do
+        {
+            box_number = Overlaps[index++];
+            if (box_number & END_BIT)
+            {
+                done = 1;
+                box_number &= BOX_NUMBER;
+            }
+            if (search_zone != zone[box_number])
+                continue;
+            change = boxes[box_number].height - box->height;
+            if (change > LOT->step || change < LOT->drop)
+                continue;
+            expand = &LOT->node[box_number];
+            if ((node->search_number & SEARCH_NUMBER) < (expand->search_number & SEARCH_NUMBER))
+                continue;
+            if (node->search_number & BLOCKED_SEARCH)
+            {
+                if ((node->search_number & SEARCH_NUMBER) == (expand->search_number & SEARCH_NUMBER))
+                    continue;
+                expand->search_number = node->search_number;
+            }
+            else
+            {
+                if ((node->search_number & SEARCH_NUMBER) == (expand->search_number & SEARCH_NUMBER)
+                    && !(expand->search_number & BLOCKED_SEARCH))
+                    continue;
+                if (boxes[box_number].overlap_index & LOT->block_mask)
+                {
+                    expand->search_number = node->search_number | BLOCKED_SEARCH;
+                }
+                else
+                {
+                    expand->search_number = node->search_number;
+                    expand->exit_box = LOT->head;
+                }
+            }
+            if (expand->next_expansion == NO_BOX && box_number != LOT->tail)
+            {
+                LOT->node[LOT->tail].next_expansion = box_number;
+                LOT->tail = box_number;
+            }
+        }
+        while (!done);
+        LOT->head = node->next_expansion;
+        node->next_expansion = NO_BOX;
+    }
+    return 1;
+}
+
 int UpdateLOT(LOT_INFO *LOT, int expansion)
 {
     BOX_NODE *expand;
@@ -160,6 +239,42 @@ void TargetBox(LOT_INFO *LOT, sint16 box_number)
         LOT->target.y = box->height - STEP_L * 3 / 2;
 }
 
+#define STALK_DIST (WALL_L * 3)
+
+int StalkBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
+{
+    BOX_INFO *box;
+    int baddie_quad, box_quad, enemy_quad;
+    sint32 x, z, xrange, zrange;
+
+    box = &boxes[box_number];
+    z = (((uint32)box->left + (uint32)box->right) << (WALL_SHIFT - 1)) - enemy->pos.z_pos;
+    x = (((uint32)box->top + (uint32)box->bottom) << (WALL_SHIFT - 1)) - enemy->pos.x_pos;
+    zrange = STALK_DIST + (((uint32)box->right - (uint32)box->left) << WALL_SHIFT);
+    xrange = STALK_DIST + (((uint32)box->bottom - (uint32)box->top) << WALL_SHIFT);
+    if (x > xrange || x < -xrange || z > zrange || z < -zrange)
+        return 0;
+
+    enemy_quad = (enemy->pos.y_rot >> 14) + 2;
+    if (z > 0)
+        box_quad = (x > 0) ? 2 : 1;
+    else
+        box_quad = (x > 0) ? 3 : 0;
+
+    if (enemy_quad == box_quad)
+        return 0;
+
+    if (item->pos.z_pos > enemy->pos.z_pos)
+        baddie_quad = (item->pos.x_pos > enemy->pos.x_pos) ? 2 : 1;
+    else
+        baddie_quad = (item->pos.x_pos > enemy->pos.x_pos) ? 3 : 0;
+
+    if (enemy_quad == baddie_quad && abs(enemy_quad - box_quad) == 2)
+        return 0;
+
+    return 1;
+}
+
 int EscapeBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
 {
     BOX_INFO *box;
@@ -194,9 +309,10 @@ int ValidBox(ITEM_INFO *item, sint16 zone_number, sint16 box_number)
     if (zone[box_number] != zone_number)
         return 0;
 
-    box = &boxes[box_number];
-    if (box->overlap_index & creature->LOT.block_mask)
+    if (boxes[box_number].overlap_index & creature->LOT.block_mask)
         return 0;
+
+    box = &boxes[box_number];
 
     if (item->pos.z_pos > ((sint32)box->left << WALL_SHIFT) && item->pos.z_pos < ((sint32)box->right << WALL_SHIFT) &&
         item->pos.x_pos > ((sint32)box->top << WALL_SHIFT) && item->pos.x_pos < ((sint32)box->bottom << WALL_SHIFT))
@@ -206,7 +322,7 @@ int ValidBox(ITEM_INFO *item, sint16 zone_number, sint16 box_number)
 }
 
 #define SQUARE(A) ((A) * (A))
-
+#define BLOCKED_SEARCH 0x8000
 int CreatureCreature(sint16 item_number)
 {
     sint16 link;

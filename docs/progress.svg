@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.36% (1032)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17% (213)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.52% (1034)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.84% (211)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="615.25" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="615.25" y="0" class="decompiled"/>
-<rect width="126.98" height="6" x="620.02" y="0" class="todo"/>
+<rect width="616.44" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="616.44" y="0" class="decompiled"/>
+<rect width="125.79" height="6" x="621.21" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -169,10 +169,10 @@
 <rect width="12" height="12" x="720" y="15" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="15" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="named"><title>0x0040e210 CreatureAIInfo (599 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="30" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="30" class="named"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="30" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="30" class="named"><title>0x0040e6e0 TargetBox (149 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="30" class="todo"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="30" class="named"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="30" class="named"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="30" class="named"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="30" class="todo"><title>0x0040e9e0 CreatureMood (1087 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.67%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.89%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">31.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="512.99" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="512.99" y="0" class="decompiled"/>
-<rect width="233.36" height="6" x="513.64" y="0" class="todo"/>
+<rect width="514.59" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="514.59" y="0" class="decompiled"/>
+<rect width="231.75" height="6" x="515.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1514,7 +1514,7 @@
 <rect width="17.67" height="17.77" x="566.21" y="22.61" class="named"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
 <rect width="17.63" height="17.77" x="586.88" y="22.61" class="todo"><title>0x0044ec80 ScreenShot (501 bytes)</title></rect>
 <rect width="17.59" height="17.77" x="607.51" y="22.61" class="named"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
-<rect width="17.55" height="17.77" x="628.10" y="22.61" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
+<rect width="17.55" height="17.77" x="628.10" y="22.61" class="named"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
 <rect width="17.47" height="17.77" x="648.65" y="22.61" class="todo"><title>0x00451040 S_PrintShadow (497 bytes)</title></rect>
 <rect width="17.43" height="17.77" x="669.12" y="22.61" class="named"><title>0x00438fa0 MouseControl (496 bytes)</title></rect>
 <rect width="17.26" height="17.77" x="689.55" y="22.61" class="named"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
@@ -1715,7 +1715,7 @@
 <rect width="11.45" height="11.38" x="483.64" y="349.85" class="named"><title>0x0041c970 ControlBubble1 (243 bytes)</title></rect>
 <rect width="11.45" height="11.38" x="483.64" y="364.23" class="named"><title>0x00431bf0 LaraSurfaceCollision (243 bytes)</title></rect>
 <rect width="11.45" height="11.38" x="483.64" y="378.62" class="named"><title>0x00447350 WinInReadJoystick (243 bytes)</title></rect>
-<rect width="11.49" height="11.28" x="498.09" y="128.94" class="todo"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
+<rect width="11.49" height="11.28" x="498.09" y="128.94" class="named"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
 <rect width="11.49" height="11.28" x="512.58" y="128.94" class="named"><title>0x0042be70 FireShotgun (242 bytes)</title></rect>
 <rect width="11.37" height="11.28" x="527.08" y="128.94" class="named"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="11.37" height="11.28" x="541.45" y="128.94" class="named"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
