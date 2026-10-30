@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.66% (719)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.34% (528)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.74% (720)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.26% (527)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="430.71" height="6" x="0" y="0" class="named"/>
-<rect width="316.29" height="6" x="430.71" y="0" class="todo"/>
+<rect width="431.31" height="6" x="0" y="0" class="named"/>
+<rect width="315.69" height="6" x="431.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -208,7 +208,7 @@
 <rect width="12" height="12" x="570" y="30" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="30" class="todo"><title>0x00412270 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="30" class="named"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="30" class="todo"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="30" class="named"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="30" class="named"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="30" class="named"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="30" class="named"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.38%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.32%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="303.42" height="6" x="0" y="0" class="named"/>
-<rect width="443.58" height="6" x="303.42" y="0" class="todo"/>
+<rect width="303.91" height="6" x="0" y="0" class="named"/>
+<rect width="443.09" height="6" x="303.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1726,7 +1726,7 @@
 <rect width="10.75" height="10.61" x="496.63" y="165.43" class="named"><title>0x0043cf20 SkidooCheckGeton (225 bytes)</title></rect>
 <rect width="10.75" height="10.55" x="496.63" y="179.04" class="named"><title>0x00442810 FallingCeiling (224 bytes)</title></rect>
 <rect width="10.75" height="10.43" x="496.63" y="192.59" class="named"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
-<rect width="10.75" height="10.31" x="496.63" y="206.02" class="todo"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
+<rect width="10.75" height="10.31" x="496.63" y="206.02" class="named"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
 <rect width="10.75" height="10.31" x="496.63" y="219.33" class="todo"><title>0x00433dd0 TestBlockPush (220 bytes)</title></rect>
 <rect width="10.75" height="10.31" x="496.63" y="232.63" class="named"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
 <rect width="10.75" height="10.31" x="496.63" y="245.94" class="todo"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>

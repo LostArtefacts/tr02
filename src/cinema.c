@@ -78,6 +78,37 @@ void AnimateLara(ITEM_INFO *item);
 
 void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
 
+void ControlCinematicPlayer(sint16 item_num)
+{
+    ITEM_INFO *item;
+    PHD_VECTOR pos;
+    sint16 room_number;
+
+    item = &items[item_num];
+    item->pos.y_rot = camera.target_angle;
+    item->pos.x_pos = camera.pos.x;
+    item->pos.y_pos = camera.pos.y;
+    item->pos.z_pos = camera.pos.z;
+
+    pos.x = 0;
+    pos.y = 0;
+    pos.z = 0;
+    GetJointAbsPosition(item, &pos, 0);
+    room_number = GetCinematicRoom(pos.x, pos.y, pos.z);
+
+    if (room_number != -1 && item->room_number != room_number)
+        ItemNewRoom(item_num, room_number);
+
+    if (item->dynamic_light && item->status != INVISIBLE) {
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
+        GetJointAbsPosition(item, &pos, 0);
+        AddDynamicLight(pos.x, pos.y, pos.z, 12, 11);
+    }
+    AnimateItem(item);
+}
+
 void LaraControlCinematic(sint16 item_num)
 {
     ITEM_INFO *item;
