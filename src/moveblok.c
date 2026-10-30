@@ -1,5 +1,13 @@
 #include "game.h"
 
+void DrawMovableBlock(ITEM_INFO *item)
+{
+    if (item->status != ACTIVE)
+        DrawAnimatingItem(item);
+    else
+        DrawUnclippedItem(item);
+}
+
 void DrawUnclippedItem(ITEM_INFO *item)
 {
     int left, right, top, bottom;

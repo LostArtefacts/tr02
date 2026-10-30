@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.44% (230)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.56% (1017)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.52% (231)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.48% (1016)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="137.78" height="6" x="0" y="0" class="named"/>
-<rect width="609.22" height="6" x="137.78" y="0" class="todo"/>
+<rect width="138.38" height="6" x="0" y="0" class="named"/>
+<rect width="608.62" height="6" x="138.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -682,7 +682,7 @@
 <rect width="12" height="12" x="180" y="180" class="todo"><title>0x00433eac Func433eac (91 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="180" class="todo"><title>0x00433f20 TestBlockPull (549 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="180" class="todo"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="180" class="todo"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="180" class="named"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="180" class="named"><title>0x00434250 DrawUnclippedItem (107 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="180" class="todo"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="180" class="todo"><title>0x004343a0 ControlCutShotgun (60 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.70%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.30%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="42.53" height="6" x="0" y="0" class="named"/>
-<rect width="704.47" height="6" x="42.53" y="0" class="todo"/>
+<rect width="42.61" height="6" x="0" y="0" class="named"/>
+<rect width="704.39" height="6" x="42.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2383,7 +2383,7 @@
 <rect width="2.60" height="2.24" x="692.58" y="352.40" class="todo"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.58" y="357.64" class="todo"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.58" y="362.73" class="todo"><title>0x00425430 Inv_RingMotionRotation (34 bytes)</title></rect>
-<rect width="2.60" height="2.09" x="692.58" y="367.82" class="todo"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
+<rect width="2.60" height="2.09" x="692.58" y="367.82" class="named"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.58" y="372.91" class="todo"><title>0x004472a0 DInputCreate (34 bytes)</title></rect>
 <rect width="2.19" height="2.49" x="698.18" y="326.19" class="named"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
 <rect width="2.19" height="2.33" x="698.18" y="331.68" class="todo"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
