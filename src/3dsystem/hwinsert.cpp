@@ -23,6 +23,10 @@ extern "C" sint32 *sort3dptr;
 extern "C" sint16 *info3dptr;
 
 bool HWR_VertexBufferFull();
+void HWR_TexSource(D3DTEXTUREHANDLE tSource);
+void HWR_EnableColorKey(bool tEnable);
+
+extern "C" D3DTLVERTEX VBufferD3D[];
 
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype);
 
@@ -69,6 +73,40 @@ extern "C" sint16 *InsertObjectGT3_ZBuffered(sint16 *objptr, int number, int sor
     return objptr;
 }
 
+inline uint32 ShadeColor(int r, int g, int b)
+{
+    if (bBlueEffect) {
+        r *= 128;
+        r >>= 8;
+        g *= 224;
+        g >>= 8;
+    }
+    return 0xff000000 | (r << 16) | (g << 8) | b;
+}
+
+extern "C" void InsertLine_ZBuffered(int x1, int y1, int x2, int y2, int z, uint8 color)
+{
+    uint8 *rgb;
+    float rhw;
+
+    if (z >= phd_zfar)
+        return;
+    if (z < phd_znear)
+        z = phd_znear;
+    rgb = (uint8 *)game_palette + color * 3;
+    VBufferD3D[0].sx = (float)(phd_winxmin + x1);
+    VBufferD3D[0].sy = (float)(phd_winymin + y1);
+    VBufferD3D[1].sx = (float)(phd_winxmin + x2);
+    VBufferD3D[1].sy = (float)(phd_winymin + y2);
+    rhw = RhwFactor / (float)z;
+    VBufferD3D[0].sz = VBufferD3D[1].sz = FltResZBuf - rhw * FltResZORhw;
+    VBufferD3D[0].rhw = VBufferD3D[1].rhw = rhw;
+    VBufferD3D[0].color = VBufferD3D[1].color = ShadeColor(rgb[0], rgb[1], rgb[2]);
+    HWR_TexSource(0);
+    HWR_EnableColorKey(false);
+    G_Direct3DDevice->DrawPrimitive(D3DPT_LINESTRIP, D3DVT_TLVERTEX, VBufferD3D, 2, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+}
+
 extern "C" sint16 *InsertObjectGT4_Sorted(sint16 *objptr, int number, int sorttype)
 {
     while (number) {
@@ -96,17 +134,6 @@ extern "C" sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, int sortty
         objptr += 4;
     }
     return objptr;
-}
-
-inline uint32 ShadeColor(int r, int g, int b)
-{
-    if (bBlueEffect) {
-        r *= 128;
-        r >>= 8;
-        g *= 224;
-        g >>= 8;
-    }
-    return 0xff000000 | (r << 16) | (g << 8) | b;
 }
 
 extern "C" void InsertFlatRect_Sorted(int x1, int y1, int x2, int y2, int z, int color)
