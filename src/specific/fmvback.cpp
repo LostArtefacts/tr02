@@ -188,3 +188,106 @@ extern "C" void FmvBackToGame(void)
         }
     }
 }
+
+extern "C" {
+extern int GameVidBufWidth;
+extern int GameVidBufHeight;
+extern RECT GameVidRect;
+extern bool WinVidNeedToResetBuffers;
+bool WinVidGoWindowed(int width, int height, DISPLAY_MODE *dispMode);
+void D3DSetViewport(void);
+void setup_screen_size(void);
+void HWR_InitState(void);
+void S_AdjustTexelCoordinates(void);
+void ClearBuffers(unsigned int flags, unsigned int fillColor);
+}
+
+extern "C" bool GameApplySettings(APP_SETTINGS *newSettings)
+{
+    bool needInitRenderState;
+    bool needRestart;
+    bool needAdjustTexel;
+    bool needRebuildBuffers;
+    bool result;
+    DISPLAY_MODE dispMode;
+    int dx;
+    int dy;
+
+    needRestart = false;
+    needInitRenderState = false;
+    needAdjustTexel = false;
+    needRebuildBuffers = false;
+    result = true;
+    if (newSettings->PreferredDisplayAdapter != SavedAppSettings.PreferredDisplayAdapter
+        || newSettings->PreferredSoundAdapter != SavedAppSettings.PreferredSoundAdapter
+        || newSettings->PreferredJoystick != SavedAppSettings.PreferredJoystick) {
+        return false;
+    }
+    if (newSettings->RenderMode != SavedAppSettings.RenderMode
+        || newSettings->VideoMode != SavedAppSettings.VideoMode
+        || newSettings->FullScreen != SavedAppSettings.FullScreen
+        || newSettings->ZBuffer != SavedAppSettings.ZBuffer
+        || newSettings->TripleBuffering != SavedAppSettings.TripleBuffering) {
+        needRestart = true;
+    }
+    if (newSettings->PerspectiveCorrect != SavedAppSettings.PerspectiveCorrect
+        || newSettings->Dither != SavedAppSettings.Dither
+        || newSettings->BilinearFiltering != SavedAppSettings.BilinearFiltering) {
+        needInitRenderState = true;
+    }
+    if (newSettings->BilinearFiltering != SavedAppSettings.BilinearFiltering
+        || newSettings->RenderMode != SavedAppSettings.RenderMode) {
+        needAdjustTexel = true;
+    }
+    if (!needRestart && !newSettings->FullScreen) {
+        if (newSettings->WindowWidth != SavedAppSettings.WindowWidth
+            || newSettings->WindowHeight != SavedAppSettings.WindowHeight) {
+            if (!WinVidGoWindowed(newSettings->WindowWidth, newSettings->WindowHeight, &dispMode)) {
+                return false;
+            }
+            newSettings->WindowWidth = dispMode.width;
+            newSettings->WindowHeight = dispMode.height;
+            if (dispMode.width != SavedAppSettings.WindowWidth
+                || dispMode.height != SavedAppSettings.WindowHeight) {
+                dx = dispMode.width - GameVidBufWidth;
+                dy = dispMode.height - GameVidBufHeight;
+                if (dx > 0 || dx < -64 || dy > 0 || dy < -64) {
+                    needRebuildBuffers = true;
+                } else {
+                    SavedAppSettings.WindowWidth = dispMode.width;
+                    SavedAppSettings.WindowHeight = newSettings->WindowHeight;
+                    GameVidWidth = newSettings->WindowWidth;
+                    GameVidHeight = newSettings->WindowHeight;
+                    GameVidRect.right = newSettings->WindowWidth;
+                    GameVidRect.bottom = newSettings->WindowHeight;
+                    if (SavedAppSettings.RenderMode == 2) {
+                        D3DSetViewport();
+                    }
+                    setup_screen_size();
+                    WinVidNeedToResetBuffers = false;
+                }
+            }
+        }
+    }
+    if (needRestart) {
+        result = ApplySettings(newSettings);
+        needInitRenderState = false;
+        needRebuildBuffers = false;
+    }
+    if (needInitRenderState) {
+        SavedAppSettings.PerspectiveCorrect = newSettings->PerspectiveCorrect;
+        SavedAppSettings.Dither = newSettings->Dither;
+        SavedAppSettings.BilinearFiltering = newSettings->BilinearFiltering;
+        if (SavedAppSettings.RenderMode == 2) {
+            HWR_InitState();
+        }
+    }
+    if (needAdjustTexel) {
+        S_AdjustTexelCoordinates();
+    }
+    if (needRebuildBuffers) {
+        ClearBuffers(0x40, 0);
+        result = ApplySettings(newSettings);
+    }
+    return result;
+}
