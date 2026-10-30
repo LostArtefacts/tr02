@@ -49,6 +49,32 @@ void ControlCutShotgun(sint16 item_number)
         item->status = INVISIBLE;
 }
 
+void MiniCopterControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint16 room_number;
+    PHD_3DPOS pos;
+
+    item = &items[item_number];
+
+    item->pos.z_pos += 100;
+
+    pos.x_pos = lara_item->pos.x_pos + ((item->pos.x_pos - lara_item->pos.x_pos) >> 2);
+    pos.y_pos = lara_item->pos.y_pos + ((item->pos.y_pos - lara_item->pos.y_pos) >> 2);
+    pos.z_pos = lara_item->pos.z_pos + ((item->pos.z_pos - lara_item->pos.z_pos) >> 2);
+    SoundEffect(297, &pos, 0);
+
+    if (ABS(item->pos.z_pos - lara_item->pos.z_pos) > WALL_L * 30)
+        KillItem(item_number);
+
+    AnimateItem(item);
+
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+}
+
 void InitialiseDyingMonk(sint16 item_number)
 {
     int *who;

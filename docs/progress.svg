@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.51% (343)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.49% (904)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.59% (344)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.41% (903)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="205.47" height="6" x="0" y="0" class="named"/>
-<rect width="541.53" height="6" x="205.47" y="0" class="todo"/>
+<rect width="206.07" height="6" x="0" y="0" class="named"/>
+<rect width="540.93" height="6" x="206.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -688,7 +688,7 @@
 <rect width="12" height="12" x="270" y="180" class="named"><title>0x004343a0 ControlCutShotgun (60 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="180" class="todo"><title>0x004343e0 InitialiseFinalLevel (157 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="180" class="todo"><title>0x004344b0 FinalLevelCounter (527 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="180" class="todo"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="180" class="named"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="180" class="named"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="180" class="named"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.02%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.98%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.91%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="67.41" height="6" x="0" y="0" class="named"/>
-<rect width="679.59" height="6" x="67.41" y="0" class="todo"/>
+<rect width="67.89" height="6" x="0" y="0" class="named"/>
+<rect width="679.11" height="6" x="67.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1737,7 +1737,7 @@
 <rect width="10.77" height="10.26" x="495.87" y="312.01" class="todo"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
 <rect width="10.77" height="10.20" x="495.87" y="325.27" class="todo"><title>0x00417900 CreateBartoliLight (217 bytes)</title></rect>
 <rect width="10.77" height="10.20" x="495.87" y="338.46" class="todo"><title>0x00417d80 DragonBones (217 bytes)</title></rect>
-<rect width="10.77" height="10.20" x="495.87" y="351.66" class="todo"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
+<rect width="10.77" height="10.20" x="495.87" y="351.66" class="named"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
 <rect width="10.77" height="10.14" x="495.87" y="364.86" class="named"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
 <rect width="10.69" height="10.16" x="509.65" y="137.50" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="10.69" height="10.16" x="523.34" y="137.50" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
