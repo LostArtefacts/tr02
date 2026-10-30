@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.88% (223)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.12% (1024)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.96% (224)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.04% (1023)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="133.59" height="6" x="0" y="0" class="named"/>
-<rect width="613.41" height="6" x="133.59" y="0" class="todo"/>
+<rect width="134.18" height="6" x="0" y="0" class="named"/>
+<rect width="612.82" height="6" x="134.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -491,7 +491,7 @@
 <rect width="12" height="12" x="315" y="120" class="named"><title>0x004283f0 lara_as_pushblock (48 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="120" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="120" class="named"><title>0x00428450 lara_as_pickup (48 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="120" class="todo"><title>0x00428480 lara_as_pickupflare (88 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="120" class="named"><title>0x00428480 lara_as_pickupflare (88 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="120" class="todo"><title>0x004284e0 lara_as_switchon (57 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="120" class="todo"><title>0x00428520 lara_as_usekey (48 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="120" class="named"><title>0x00428550 lara_as_special (29 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.55%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.45%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.58%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.42%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="41.46" height="6" x="0" y="0" class="named"/>
-<rect width="705.54" height="6" x="41.46" y="0" class="todo"/>
+<rect width="41.65" height="6" x="0" y="0" class="named"/>
+<rect width="705.35" height="6" x="41.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2072,7 +2072,7 @@
 <rect width="5.40" height="5.78" x="608.96" y="325.44" class="todo"><title>0x0041ef70 InitialiseXianLord (88 bytes)</title></rect>
 <rect width="5.40" height="5.78" x="608.96" y="334.21" class="todo"><title>0x00427500 ClearBodyBag (88 bytes)</title></rect>
 <rect width="5.40" height="5.78" x="608.96" y="342.99" class="todo"><title>0x00427e70 lara_as_hang (88 bytes)</title></rect>
-<rect width="5.40" height="5.78" x="608.96" y="351.77" class="todo"><title>0x00428480 lara_as_pickupflare (88 bytes)</title></rect>
+<rect width="5.40" height="5.78" x="608.96" y="351.77" class="named"><title>0x00428480 lara_as_pickupflare (88 bytes)</title></rect>
 <rect width="5.40" height="5.78" x="608.96" y="360.55" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
 <rect width="5.40" height="5.68" x="608.96" y="369.32" class="named"><title>0x00427c90 lara_as_fastback (87 bytes)</title></rect>
 <rect width="5.50" height="5.58" x="617.36" y="245.25" class="named"><title>0x00431b90 lara_col_surftread (87 bytes)</title></rect>
