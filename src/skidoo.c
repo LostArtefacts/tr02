@@ -659,3 +659,96 @@ int SkidooCheckGetOffOK(int direction)
 
     return 1;
 }
+
+#define SKIDOO_FALL_ANIM 8
+#define DAMAGE_START 140
+#define DAMAGE_LENGTH 14
+
+extern sint16 cd_flags[];
+void S_CDPlay(sint16 track, int mode);
+
+void SkidooAnimation(ITEM_INFO *skidoo, int collide, int dead)
+{
+    sint16 cd;
+    SKIDOO_INFO *skinfo;
+
+    skinfo = (SKIDOO_INFO *)skidoo->data;
+
+    if (skidoo->pos.y_pos != skidoo->floor && skidoo->fallspeed > 0 && lara_item->current_anim_state != SKID_FALL && !dead) {
+        lara_item->anim_number = objects[SKIDOO_ANIM].anim_index + SKIDOO_FALL_ANIM;
+        lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+        lara_item->current_anim_state = lara_item->goal_anim_state = SKID_FALL;
+    } else if (collide && !dead && lara_item->current_anim_state != SKID_FALL) {
+        if (lara_item->current_anim_state != SKID_HIT) {
+            if (collide == SKIDOO_HIT_FRONT)
+                SoundEffect(202, &skidoo->pos, 0);
+            else
+                SoundEffect(201, &skidoo->pos, 0);
+            lara_item->anim_number = (sint16)(objects[SKIDOO_ANIM].anim_index + collide);
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = SKID_HIT;
+        }
+    } else {
+        switch (lara_item->current_anim_state) {
+        case SKID_STILL:
+            cd = (skinfo->track_mesh & 4) ? 53 : 52;
+            if (!(cd_flags[cd] & ONESHOT)) {
+                S_CDPlay(cd, 0);
+                cd_flags[cd] |= ONESHOT;
+            }
+
+            if (dead) {
+                lara_item->goal_anim_state = SKID_DEATH;
+                break;
+            }
+
+            lara_item->goal_anim_state = SKID_STILL;
+
+            if (input & IN_JUMP) {
+                if ((input & IN_RIGHT) && SkidooCheckGetOffOK(SKID_GETOFF)) {
+                    lara_item->goal_anim_state = SKID_GETOFF;
+                    skidoo->speed = 0;
+                } else if ((input & IN_LEFT) && SkidooCheckGetOffOK(SKID_GETOFFL)) {
+                    lara_item->goal_anim_state = SKID_GETOFFL;
+                    skidoo->speed = 0;
+                }
+            } else if (input & IN_LEFT)
+                lara_item->goal_anim_state = SKID_LEFT;
+            else if (input & IN_RIGHT)
+                lara_item->goal_anim_state = SKID_RIGHT;
+            else if (input & (IN_FORWARD | IN_BACK))
+                lara_item->goal_anim_state = SKID_SIT;
+            break;
+
+        case SKID_SIT:
+            if (skidoo->speed == 0)
+                lara_item->goal_anim_state = SKID_STILL;
+
+            if (dead)
+                lara_item->goal_anim_state = SKID_FALLOFF;
+            else if (input & IN_LEFT)
+                lara_item->goal_anim_state = SKID_LEFT;
+            else if (input & IN_RIGHT)
+                lara_item->goal_anim_state = SKID_RIGHT;
+            break;
+
+        case SKID_LEFT:
+            if (!(input & IN_LEFT))
+                lara_item->goal_anim_state = SKID_SIT;
+            break;
+
+        case SKID_RIGHT:
+            if (!(input & IN_RIGHT))
+                lara_item->goal_anim_state = SKID_SIT;
+            break;
+
+        case SKID_FALL:
+            if (skidoo->fallspeed <= 0 || skinfo->left_fallspeed <= 0 || skinfo->right_fallspeed <= 0) {
+                SoundEffect(203, &skidoo->pos, 0);
+                lara_item->goal_anim_state = SKID_SIT;
+            } else if (skidoo->fallspeed > DAMAGE_START + DAMAGE_LENGTH)
+                lara_item->goal_anim_state = SKID_LETGO;
+            break;
+        }
+    }
+}
