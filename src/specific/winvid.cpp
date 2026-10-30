@@ -680,3 +680,16 @@ void DISPLAY_MODE_LIST::DisplayModeListDelete(void)
     dwCount = 0;
 }
 
+DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListHead(void)
+{
+    DISPLAY_MODE_NODE *node = new DISPLAY_MODE_NODE(NULL, head);
+
+    if (head)
+        head->previous = node;
+    else
+        tail = node;
+    head = node;
+    dwCount++;
+    return &node->body;
+}
+
