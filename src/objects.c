@@ -41,6 +41,8 @@ extern int flipmap[];
 #define LIFT_WAIT_TIME 90
 #define FALLING_CEILING1 79
 #define FLAME_EMITTER 253
+#define COPTER_SPIN 1
+#define COPTER_TAKEOFF 2
 #define DEATH_SPEED 100
 #define DEATH_ACC 5
 #define DEATH_GRAB 1
@@ -688,6 +690,40 @@ void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
     level = item->pos.y_pos + (GetOffset(item, x, z) >> 1);
     if (y > level)
         *height = level + STEP_L;
+}
+
+void CopterControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    PHD_VECTOR pos;
+    sint16 room_number, *bounds;
+
+    item = &items[item_number];
+
+    if (item->current_anim_state == COPTER_SPIN)
+    {
+        if (item->flags & ONESHOT)
+            item->goal_anim_state = COPTER_TAKEOFF;
+    }
+
+    AnimateItem(item);
+
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+
+    bounds = GetBoundsAccurate(item);
+    pos.x = (bounds[0] + bounds[1]) >> 1;
+    pos.y = (bounds[2] + bounds[3]) >> 1;
+    pos.z = (bounds[4] + bounds[5]) >> 1;
+    pos.x = lara_item->pos.x_pos + ((pos.x - lara_item->pos.x_pos) >> 2);
+    pos.y = lara_item->pos.y_pos + ((pos.y - lara_item->pos.y_pos) >> 2);
+    pos.z = lara_item->pos.z_pos + ((pos.z - lara_item->pos.z_pos) >> 2);
+    SoundEffect(297, (PHD_3DPOS *)&pos, 0);
+
+    if (item->status == DEACTIVATED)
+        KillItem(item_number);
 }
 
 void GeneralControl(sint16 item_number)
