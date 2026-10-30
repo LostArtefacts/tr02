@@ -1008,7 +1008,7 @@ address,size,name,symbol
 0x0044d210,43,HWR_ResetColorKey,?HWR_ResetColorKey@@YAXXZ
 0x0044d240,89,HWR_ResetZBuffer,?HWR_ResetZBuffer@@YAXXZ
 0x0044d2a0,36,HWR_TexSource,?HWR_TexSource@@YAXK@Z
-0x0044d2d0,74,HWR_EnableColorKey,_HWR_EnableColorKey
+0x0044d2d0,74,HWR_EnableColorKey,?HWR_EnableColorKey@@YAX_N@Z
 0x0044d320,130,HWR_EnableZBuffer,?HWR_EnableZBuffer@@YAX_N0@Z
 0x0044d3b0,22,HWR_BeginScene,?HWR_BeginScene@@YAXXZ
 0x0044d3d0,12,Func44d3d0,

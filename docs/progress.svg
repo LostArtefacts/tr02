@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.78% (309)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.22% (938)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.86% (310)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.14% (937)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="185.10" height="6" x="0" y="0" class="named"/>
-<rect width="561.90" height="6" x="185.10" y="0" class="todo"/>
+<rect width="185.70" height="6" x="0" y="0" class="named"/>
+<rect width="561.30" height="6" x="185.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1076,7 +1076,7 @@
 <rect width="12" height="12" x="90" y="300" class="named"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="300" class="named"><title>0x0044d240 HWR_ResetZBuffer (89 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="300" class="named"><title>0x0044d2a0 HWR_TexSource (36 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="300" class="todo"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="300" class="named"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="300" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="300" class="todo"><title>0x0044d3d0 Func44d3d0 (12 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="58.18" height="6" x="0" y="0" class="named"/>
-<rect width="688.82" height="6" x="58.18" y="0" class="todo"/>
+<rect width="58.34" height="6" x="0" y="0" class="named"/>
+<rect width="688.66" height="6" x="58.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2130,7 +2130,7 @@
 <rect width="5.01" height="4.84" x="625.79" y="308.56" class="todo"><title>0x004548d0 Func4548d0 (75 bytes)</title></rect>
 <rect width="5.01" height="4.74" x="625.79" y="316.41" class="named"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
 <rect width="5.01" height="4.74" x="625.79" y="324.15" class="todo"><title>0x00447110 InsertDisplayModeInListTail (74 bytes)</title></rect>
-<rect width="5.01" height="4.74" x="625.79" y="331.88" class="todo"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
+<rect width="5.01" height="4.74" x="625.79" y="331.88" class="named"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
 <rect width="5.01" height="4.74" x="625.79" y="339.62" class="todo"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
 <rect width="5.01" height="4.74" x="625.79" y="347.36" class="todo"><title>0x00456c50 SetRegistryStringValue (74 bytes)</title></rect>
 <rect width="5.01" height="4.63" x="625.79" y="355.10" class="todo"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>

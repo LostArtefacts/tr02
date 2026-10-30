@@ -46,6 +46,18 @@ void HWR_TexSource(D3DTEXTUREHANDLE tSource)
     }
 }
 
+void HWR_EnableColorKey(bool tEnable)
+{
+    if (tEnable != ColorKeyState)
+    {
+        if (TexturesAlphaChannel)
+            G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ALPHABLENDENABLE, tEnable);
+        else
+            G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_COLORKEYENABLE, tEnable);
+        ColorKeyState = tEnable;
+    }
+}
+
 void HWR_EnableZBuffer(bool tWrite, bool tCompare)
 {
     if (SavedAppSettings.ZBuffer)
