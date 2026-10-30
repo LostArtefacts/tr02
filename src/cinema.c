@@ -75,3 +75,9 @@ void InitialisePlayer1(sint16 item_num)
     lara.hit_direction = -1;
 }
 
+void InitialiseGenPlayer(sint16 item_num)
+{
+    AddActiveItem(item_num);
+    items[item_num].pos.y_rot = 0;
+    items[item_num].dynamic_light = 0;
+}
