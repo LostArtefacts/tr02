@@ -24,6 +24,7 @@ extern "C" int iconfig;
 extern "C" char *kname[];
 extern "C" char BadKeyString[];
 extern "C" TEXTSTRING *ControlTextInfo[2];
+extern "C" void T_FlashText(TEXTSTRING *textString, sint16 b, sint16 rate);
 
 #define DWIDTH 160
 
@@ -231,6 +232,28 @@ void do_compass_option(INVENTORY_ITEM *inv_item)
         inv_item->anim_direction = 1;
     }
     SoundEffect(113, NULL, SFX_ALWAYS);
+}
+
+extern "C" void FlashConflicts(void)
+{
+    int i, j;
+    sint16 key;
+
+    for (i = 0; i < NUM_CONTROLS; i++)
+    {
+        key = layout[iconfig][i];
+        T_FlashText(btext[i], 0, 0);
+        for (j = 0; j < NUM_CONTROLS; j++)
+        {
+            if (i == j)
+                continue;
+            if (key == layout[iconfig][j])
+            {
+                T_FlashText(btext[i], 1, 20);
+                break;
+            }
+        }
+    }
 }
 
 void DefaultConflict(void)
