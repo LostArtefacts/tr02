@@ -28,6 +28,19 @@ extern LPDIRECTINPUT DInput;
 extern LPDIRECTINPUTDEVICE IDID_SysKeyboard;
 }
 
+enum InitResult {
+    ERR_OK,
+    ERR_PreferredAdapterNotFound,
+    ERR_CantCreateWindow,
+    ERR_CantCreateDirectDraw,
+    ERR_CantInitRenderer,
+    ERR_CantCreateDirectInput,
+    ERR_CantCreateKeyboardDevice,
+    ERR_CantSetKBCooperativeLevel,
+    ERR_CantSetKBDataFormat,
+    ERR_CantAcquireKeyboard,
+};
+
 inline bool DX_TRY(HRESULT hr)
 {
     if (SUCCEEDED(hr))
@@ -135,4 +148,15 @@ extern "C" void WinInRunControlPanel(HWND hWnd)
 {
     if (DInput)
         DInput->RunControlPanel(hWnd, 0);
+}
+
+extern "C" void DInputKeyboardCreate(void);
+extern "C" void DInputJoystickCreate(void);
+
+extern "C" void WinInStart(void)
+{
+    if (!DInputCreate())
+        throw ERR_CantCreateDirectInput;
+    DInputKeyboardCreate();
+    DInputJoystickCreate();
 }

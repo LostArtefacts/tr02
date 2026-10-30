@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.60% (780)</tspan> · <tspan class="decompiled">0.08% (1)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">37.32% (465)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.68% (781)</tspan> · <tspan class="decompiled">0.08% (1)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">37.24% (464)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="467.62" height="6" x="0" y="0" class="named"/>
-<rect width="0.60" height="6" x="467.62" y="0" class="decompiled"/>
-<rect width="278.78" height="6" x="468.22" y="0" class="todo"/>
+<rect width="468.22" height="6" x="0" y="0" class="named"/>
+<rect width="0.60" height="6" x="468.22" y="0" class="decompiled"/>
+<rect width="278.18" height="6" x="468.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -963,7 +963,7 @@
 <rect width="12" height="12" x="630" y="255" class="todo"><title>0x00447670 DInputKeyboardCreate (201 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="255" class="named"><title>0x00447740 DInputKeyboardRelease (41 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="255" class="todo"><title>0x00447770 DInputJoystickCreate (228 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="255" class="todo"><title>0x00447860 WinInStart (45 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="255" class="named"><title>0x00447860 WinInStart (45 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="255" class="named"><title>0x00447890 WinInFinish (15 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="255" class="named"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="255" class="named"><title>0x004478c0 IncreaseScreenSize (98 bytes)</title></rect>
@@ -1318,11 +1318,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="345.17" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="345.17" y="0" class="decompiled"/>
-<rect width="401.80" height="6" x="345.20" y="0" class="todo"/>
+<rect width="345.27" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="345.27" y="0" class="decompiled"/>
+<rect width="401.70" height="6" x="345.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2313,7 +2313,7 @@
 <rect width="3.43" height="2.95" x="681.50" y="303.47" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="3.29" height="2.95" x="687.93" y="303.47" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="3.29" height="2.95" x="694.22" y="303.47" class="named"><title>0x00421980 FlashIt (45 bytes)</title></rect>
-<rect width="3.29" height="2.95" x="700.51" y="303.47" class="todo"><title>0x00447860 WinInStart (45 bytes)</title></rect>
+<rect width="3.29" height="2.95" x="700.51" y="303.47" class="named"><title>0x00447860 WinInStart (45 bytes)</title></rect>
 <rect width="3.29" height="2.95" x="706.80" y="303.47" class="named"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="3.15" height="2.95" x="713.09" y="303.47" class="named"><title>0x0041d110 ChandelierFX (44 bytes)</title></rect>
 <rect width="3.15" height="2.95" x="719.24" y="303.47" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>

@@ -1252,7 +1252,7 @@ address,size,name,symbol
 0x00459130,56,_strncmp,
 0x00459170,23,Func459170,
 0x00459190,30,Func459190,
-0x004591b0,71,Func4591b0,
+0x004591b0,71,_CxxThrowException,__CxxThrowException@8
 0x00459200,126,Func459200,
 0x00459280,21,Func459280,
 0x004592e0,14,Func4592e0,
@@ -1442,6 +1442,7 @@ address,size,name,symbol
 0x00462c40,171,Func462c40,
 0x00462cf0,80,Func462cf0,
 0x00462d40,6,RtlUnwind,
+0x00463184,4,type_info_vftable,??_7type_info@@6B@
 0x00464060,4,perspective_distance,_perspective_distance
 0x00464068,,poly_draw_routines,_poly_draw_routines
 0x0046408c,4,RhwFactor,_RhwFactor
