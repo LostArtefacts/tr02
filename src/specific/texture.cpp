@@ -199,3 +199,9 @@ extern "C" void EnumerateTextureFormats(void)
     memset(&TextureFormat, 0, 86);
     G_Direct3DDevice->EnumTextureFormats(EnumTextureFormatsCallback, NULL);
 }
+
+extern "C" void CleanupTextures(void)
+{
+    FreeTexturePages();
+    Func455d50();
+}
