@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.96% (1012)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.48% (231)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.04% (1013)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.40% (230)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="604.77" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="604.77" y="0" class="decompiled"/>
-<rect width="138.05" height="6" x="608.95" y="0" class="todo"/>
+<rect width="605.37" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="605.37" y="0" class="decompiled"/>
+<rect width="137.45" height="6" x="609.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -434,7 +434,7 @@
 <rect width="12" height="12" x="195" y="105" class="named"><title>0x004256c0 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="105" class="named"><title>0x004256e0 ReqItemLeftAlign (84 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="105" class="named"><title>0x00425740 ReqItemRightAlign (86 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="105" class="todo"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="105" class="named"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="105" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="105" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="105" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.55%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.37%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.18%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">37.74%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="459.78" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="459.78" y="0" class="decompiled"/>
-<rect width="286.61" height="6" x="460.39" y="0" class="todo"/>
+<rect width="464.47" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="464.47" y="0" class="decompiled"/>
+<rect width="281.93" height="6" x="465.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.77" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1342,7 +1342,7 @@
 <rect width="40.03" height="45.68" x="60.77" y="162.05" class="todo"><title>0x00420f00 HairControl (2533 bytes)</title></rect>
 <rect width="40.03" height="40.28" x="60.77" y="210.73" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
 <rect width="40.03" height="38.55" x="60.77" y="254.01" class="todo"><title>0x00406970 ins_objectGT3 (2162 bytes)</title></rect>
-<rect width="40.03" height="38.32" x="60.77" y="295.55" class="todo"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
+<rect width="40.03" height="38.32" x="60.77" y="295.55" class="named"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
 <rect width="40.03" height="38.13" x="60.77" y="336.87" class="named"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
 <rect width="35.25" height="38.53" x="103.80" y="0" class="named"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
 <rect width="35.25" height="36.89" x="103.80" y="41.53" class="todo"><title>0x00453770 Func453770 (1845 bytes)</title></rect>

@@ -1253,7 +1253,7 @@ address,size,name,symbol
 0x00459050,56,Func459050,
 0x00459090,39,_ftol,__ftol
 0x004590c0,104,sprintf,_sprintf
-0x00459130,56,_strncmp,
+0x00459130,56,_strncmp,_strncmp
 0x00459170,23,Func459170,
 0x00459190,30,Func459190,
 0x004591b0,71,_CxxThrowException,__CxxThrowException@8
@@ -1481,6 +1481,12 @@ address,size,name,symbol
 0x004642f0,32,GF_CDtracks,_GF_CDtracks
 0x00464310,2,CineTargetAngle,_CineTargetAngle
 0x004644e0,4,OverlayStatus,_OverlayStatus
+0x00464500,32,req_bgnd_gour1,_req_bgnd_gour1
+0x00464520,24,req_bgnd_gour2,_req_bgnd_gour2
+0x00464538,32,req_main_gour1,_req_main_gour1
+0x00464558,24,req_main_gour2,_req_main_gour2
+0x00464590,24,req_sel_gour2,_req_sel_gour2
+0x004645a8,32,req_unsel_gour1,_req_unsel_gour1
 0x00464718,,is_sound_muslevel,_is_sound_muslevel
 0x004647e0,,is_sound_sfxlevel,_is_sound_sfxlevel
 0x004648a8,,is_sound_muslevellow,_is_sound_muslevellow

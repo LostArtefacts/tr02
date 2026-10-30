@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "game.h"
 #include "invdata.h"
 #include "inventry.h"
@@ -1051,6 +1052,248 @@ void ReqItemRightAlign(REQUEST_INFO *req, TEXTSTRING *txt)
         txt->xpos = req->xpos + x;
         txt->bgndOffX = -x;
     }
+}
+
+extern SG_COL req_bgnd_gour1[];
+extern SG_COL req_bgnd_gour2[];
+extern SG_COL req_main_gour1[];
+extern SG_COL req_main_gour2[];
+extern SG_COL req_sel_gour2[];
+extern SG_COL req_unsel_gour1[];
+extern TEXTSTRING *PassportTextInfo;
+extern sint32 input;
+
+sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
+{
+    int n;
+    int linesheight = req->vis_lines * req->line_height + 10;
+    int lineoneoff = req->ypos - linesheight;
+    int lineqty = req->vis_lines;
+    int nWidth = GetRenderWidth();
+    int nHeight = GetRenderHeight();
+
+    if (nWidth != req->original_render_width || nHeight != req->original_render_height)
+    {
+        Remove_Requester(req);
+        req->original_render_width = nWidth;
+        req->original_render_height = nHeight;
+    }
+
+    req->itemtexts1_flags = RequesterFlags1;
+    req->itemtexts2_flags = RequesterFlags2;
+
+    if (req->items < req->vis_lines)
+        lineqty = req->items;
+
+    if (req->heading1_flags & R_USE)
+    {
+        if (!req->heading1text)
+        {
+            req->heading1text = T_Print(req->xpos, lineoneoff - req->line_height - 10, req->zpos, req->heading1_str);
+            T_CentreH(req->heading1text, 1);
+            T_BottomAlign(req->heading1text, 1);
+            if (backgrounds)
+            {
+                T_AddBackground(req->heading1text, req->pixwidth - 4, 0, 0, 0, 8, C_BLACK, req_main_gour1, 2);
+                T_AddOutline(req->heading1text, 1, C_ORANGE, req_main_gour2, 0);
+            }
+        }
+        if (req->heading1_flags & R_LEFTALIGN)
+            ReqItemLeftAlign(req, req->heading1text);
+        if (req->heading1_flags & R_RIGHTALIGN)
+            ReqItemRightAlign(req, req->heading1text);
+    }
+
+    if (req->heading2_flags & R_USE)
+    {
+        if (!req->heading2text)
+        {
+            req->heading2text = T_Print(req->xpos, lineoneoff - req->line_height - 10, req->zpos, req->heading2_str);
+            T_CentreH(req->heading2text, 1);
+            T_BottomAlign(req->heading2text, 1);
+            if (backgrounds)
+            {
+                T_AddBackground(req->heading2text, req->pixwidth - 4, 0, 0, 0, 8, C_BLACK, req_main_gour1, 2);
+                T_AddOutline(req->heading2text, 1, C_ORANGE, req_main_gour2, 0);
+            }
+        }
+        if (req->heading2_flags & R_LEFTALIGN)
+            ReqItemLeftAlign(req, req->heading2text);
+        if (req->heading2_flags & R_RIGHTALIGN)
+            ReqItemRightAlign(req, req->heading2text);
+    }
+
+    if (backgrounds && !req->backgroundtext && (req->background_flags & R_USE))
+    {
+        req->backgroundtext = T_Print(req->xpos, lineoneoff - req->line_height - 12, 0, " ");
+        T_CentreH(req->backgroundtext, 1);
+        T_BottomAlign(req->backgroundtext, 1);
+        T_AddBackground(req->backgroundtext, req->pixwidth, linesheight + req->line_height + 12, 0, 0, 48, C_BLACK, req_bgnd_gour1, 1);
+        T_AddOutline(req->backgroundtext, 1, C_BLUE, req_bgnd_gour2, 0);
+    }
+
+    if (req->line_offset)
+    {
+        if (!req->moreuptext && (req->moreup_flags & R_USE))
+        {
+            T_CentreH(req->moreuptext, 1);
+            T_BottomAlign(req->moreuptext, 1);
+        }
+    }
+    else
+    {
+        T_RemovePrint(req->moreuptext);
+        req->moreuptext = NULL;
+    }
+
+    if (req->items > req->line_offset + req->vis_lines)
+    {
+        if (!req->moredowntext && (req->moredown_flags & R_USE))
+        {
+            T_CentreH(req->moredowntext, 1);
+            T_BottomAlign(req->moredowntext, 1);
+        }
+    }
+    else
+    {
+        T_RemovePrint(req->moredowntext);
+        req->moredowntext = NULL;
+    }
+
+    for (n = 0; n < lineqty; n++)
+    {
+        if (req->itemtexts1_flags[n + req->line_offset] & R_USE)
+        {
+            if (!req->texts1[n])
+            {
+                req->texts1[n] = T_Print(0, lineoneoff + n * req->line_height, 0, req->itemtexts1 + (n + req->line_offset) * req->itemtextlen);
+                T_CentreH(req->texts1[n], 1);
+                T_BottomAlign(req->texts1[n], 1);
+            }
+            if (req->noselector || n + req->line_offset != req->selected)
+            {
+                T_RemoveBackground(req->texts1[n]);
+                T_RemoveOutline(req->texts1[n]);
+            }
+            else
+            {
+                T_AddBackground(req->texts1[n], req->pixwidth - 12, 0, 0, 0, 16, C_BLACK, req_unsel_gour1, 1);
+                T_AddOutline(req->texts1[n], 1, C_ORANGE, req_sel_gour2, 0);
+            }
+            if (req->itemtexts1_flags[n + req->line_offset] & R_LEFTALIGN)
+                ReqItemLeftAlign(req, req->texts1[n]);
+            else if (req->itemtexts1_flags[n + req->line_offset] & R_RIGHTALIGN)
+                ReqItemRightAlign(req, req->texts1[n]);
+            else
+                ReqItemCentreAlign(req, req->texts1[n]);
+        }
+        else
+        {
+            T_RemovePrint(req->texts1[n]);
+            T_RemoveBackground(req->texts1[n]);
+            T_RemoveOutline(req->texts1[n]);
+            req->texts1[n] = NULL;
+        }
+
+        if (req->itemtexts2_flags[n + req->line_offset] & R_USE)
+        {
+            if (!req->texts2[n])
+            {
+                req->texts2[n] = T_Print(0, lineoneoff + n * req->line_height, 0, req->itemtexts2 + (n + req->line_offset) * req->itemtextlen);
+                T_CentreH(req->texts2[n], 1);
+                T_BottomAlign(req->texts2[n], 1);
+            }
+            if (req->itemtexts2_flags[n + req->line_offset] & R_LEFTALIGN)
+                ReqItemLeftAlign(req, req->texts2[n]);
+            else if (req->itemtexts2_flags[n + req->line_offset] & R_RIGHTALIGN)
+                ReqItemRightAlign(req, req->texts2[n]);
+            else
+                ReqItemCentreAlign(req, req->texts2[n]);
+        }
+        else
+        {
+            T_RemovePrint(req->texts2[n]);
+            T_RemoveBackground(req->texts2[n]);
+            T_RemoveOutline(req->texts2[n]);
+            req->texts2[n] = NULL;
+        }
+    }
+
+    if (req->line_offset != req->line_oldoffset)
+    {
+        for (n = 0; n < lineqty; n++)
+        {
+            if (req->texts1[n] && (req->itemtexts1_flags[n + req->line_offset] & R_USE))
+                T_ChangeText(req->texts1[n], req->itemtexts1 + (n + req->line_offset) * req->itemtextlen);
+            if (req->itemtexts1_flags[n + req->line_offset] & R_LEFTALIGN)
+                ReqItemLeftAlign(req, req->texts1[n]);
+            else if (req->itemtexts1_flags[n + req->line_offset] & R_RIGHTALIGN)
+                ReqItemRightAlign(req, req->texts1[n]);
+            else
+                ReqItemCentreAlign(req, req->texts1[n]);
+            if (req->texts2[n] && (req->itemtexts2_flags[n + req->line_offset] & R_USE))
+                T_ChangeText(req->texts2[n], req->itemtexts2 + (n + req->line_offset) * req->itemtextlen);
+            if (req->itemtexts2_flags[n + req->line_offset] & R_LEFTALIGN)
+                ReqItemLeftAlign(req, req->texts2[n]);
+            else if (req->itemtexts2_flags[n + req->line_offset] & R_RIGHTALIGN)
+                ReqItemRightAlign(req, req->texts2[n]);
+            else
+                ReqItemCentreAlign(req, req->texts2[n]);
+        }
+    }
+
+    if (inputDB & IN_BACK)
+    {
+        if (req->noselector)
+        {
+            req->line_oldoffset = req->line_offset;
+            if (req->line_offset + req->vis_lines < req->items)
+                req->line_offset++;
+        }
+        else
+        {
+            if (req->selected < req->items - 1)
+                req->selected++;
+            req->line_oldoffset = req->line_offset;
+            if (req->selected > req->line_offset + req->vis_lines - 1)
+                req->line_offset++;
+        }
+        return 0;
+    }
+    else if (inputDB & IN_FORWARD)
+    {
+        if (req->noselector)
+        {
+            req->line_oldoffset = req->line_offset;
+            if (req->line_offset > 0)
+                req->line_offset--;
+        }
+        else
+        {
+            if (req->selected > 0)
+                req->selected--;
+            req->line_oldoffset = req->line_offset;
+            if (req->selected < req->line_offset)
+                req->line_offset--;
+        }
+        return 0;
+    }
+    else if (inputDB & SELECT_ITEM)
+    {
+        if (!strncmp(req->texts1[req->selected - req->line_offset]->string, GF_PCStrings[15], 12) && !strcmp(PassportTextInfo->string, GF_GameStrings[4]))
+        {
+            input = 0;
+            return 0;
+        }
+        Remove_Requester(req);
+        return req->selected + 1;
+    }
+    else if ((inputDB & DESELECT_ITEM) && des == 1)
+    {
+        Remove_Requester(req);
+        return -1;
+    }
+    return 0;
 }
 
 void SetRequesterHeading(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2)
