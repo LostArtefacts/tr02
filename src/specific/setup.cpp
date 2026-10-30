@@ -115,6 +115,11 @@ extern "C" void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter)
     SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
 }
 
+extern "C" void SE_SoundAdapterSet(HWND hwndDlg, void *adapter)
+{
+    ChangedAppSettings.PreferredSoundAdapter = adapter;
+}
+
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
 
 extern "C" char SetupDialogName[];
