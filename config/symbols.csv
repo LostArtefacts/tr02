@@ -193,7 +193,7 @@ address,size,name,symbol
 0x00416bc0,45,GetDemoInput,_GetDemoInput
 0x00416bf0,122,Harpoon,_Harpoon
 0x00416c70,262,GetWaterSurface,_GetWaterSurface
-0x00416d80,905,DiverControl,_DiverControl
+0x00416d80,936,DiverControl,_DiverControl
 0x00417130,940,DogControl,_DogControl
 0x004174e0,672,TigerControl,_TigerControl
 0x00417780,383,ControlTwinkle,_ControlTwinkle
@@ -1450,6 +1450,7 @@ address,size,name,symbol
 0x004640b8,4,CineTickRate,_CineTickRate
 0x004640bc,2,CD_TrackID,_CD_TrackID
 0x004640c4,4,flipeffect,_flipeffect
+0x00464120,16,diver_poon,_diver_poon
 0x00464130,16,dog_bite,_dog_bite
 0x00464140,16,tiger_bite,_tiger_bite
 0x004641e0,16,bigeel_bite,_bigeel_bite
