@@ -75,6 +75,11 @@ extern "C" BOOL OpenRegistryKey(LPCTSTR lpSubKey)
     return RegCreateKeyEx(HKEY_CURRENT_USER, lpSubKey, 0, RegistryClass, 0, KEY_ALL_ACCESS, NULL, &HKey, &RegKeyDisposition) == ERROR_SUCCESS;
 }
 
+extern "C" bool IsNewRegistryKeyCreated(void)
+{
+    return RegKeyDisposition == REG_CREATED_NEW_KEY;
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
