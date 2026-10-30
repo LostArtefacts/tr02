@@ -314,6 +314,18 @@ extern "C" bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWO
     return true;
 }
 
+extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc, DWORD flags)
+{
+    HRESULT rc;
+
+    memset(desc, 0, sizeof(DDSURFACEDESC));
+    desc->dwSize = sizeof(DDSURFACEDESC);
+    rc = surface->Lock(NULL, desc, flags, NULL);
+    if (!DX_TRY(rc))
+        LockedBufferCount++;
+    return rc;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
