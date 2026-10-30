@@ -199,6 +199,28 @@ void DoChimeSound(ITEM_INFO *item)
     SoundEffect(208, &pos, 0);
 }
 
+void ControlClockChimes(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->timer == 0)
+        return;
+
+    if ((item->timer % 60) == 59)
+        DoChimeSound(item);
+    item->timer--;
+
+    if (item->timer == 0)
+    {
+        DoChimeSound(item);
+        item->timer = -1;
+        RemoveActiveItem(item_number);
+        item->status = NOT_ACTIVE;
+        item->flags &= ~CODE_BITS;
+    }
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
