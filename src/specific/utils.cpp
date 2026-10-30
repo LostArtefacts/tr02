@@ -85,6 +85,11 @@ extern "C" LONG CloseRegistryKey(void)
     return RegCloseKey(HKey);
 }
 
+extern "C" LONG SetRegistryDwordValue(LPCTSTR lpValueName, DWORD value)
+{
+    return RegSetValueEx(HKey, lpValueName, 0, REG_DWORD, (BYTE *)&value, sizeof(DWORD));
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
