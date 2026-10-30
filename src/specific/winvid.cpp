@@ -211,3 +211,8 @@ extern "C" void WinVidHideGameWindow(void)
     }
 }
 
+extern "C" void WinVidSetGameWindowSize(int width, int height)
+{
+    GameWindowCalculateSizeFromClient(&width, &height);
+    SetWindowPos(HGameWindow, NULL, 0, 0, width, height, SWP_NOCOPYBITS | SWP_NOACTIVATE | SWP_NOZORDER | SWP_NOMOVE);
+}
