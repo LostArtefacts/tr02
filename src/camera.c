@@ -1,4 +1,5 @@
 #include "game.h"
+#include "box.h"
 
 #define NO_CAMERA (-1)
 
@@ -34,12 +35,66 @@ void InitialiseCamera(void)
     CalculateCamera();
 }
 
-#define MAX_ELEVATION (ONE_DEGREE * 85)
 #define SQUARE(A) ((A) * (A))
+#define MIN_SQUARE SQUARE(WALL_L / 3)
+
+void ShiftCamera(sint32 *x, sint32 *y, sint32 *h, sint32 target_x, sint32 target_y, sint32 target_h,
+    sint32 left, sint32 top, sint32 right, sint32 bottom)
+{
+    sint32 shift, TL_square, BL_square, TR_square;
+
+    TL_square = SQUARE(target_x - left) + SQUARE(target_y - top);
+    BL_square = SQUARE(target_x - left) + SQUARE(target_y - bottom);
+    TR_square = SQUARE(target_x - right) + SQUARE(target_y - top);
+
+    if (camera.target_square < TL_square)
+    {
+        *x = left;
+        shift = camera.target_square - SQUARE(target_x - left);
+        if (shift < 0)
+            return;
+        shift = phd_sqrt(shift);
+        *y = target_y + ((top < bottom) ? -shift : shift);
+    }
+    else if (TL_square > MIN_SQUARE)
+    {
+        *x = left;
+        *y = top;
+    }
+    else if (camera.target_square < BL_square)
+    {
+        *x = left;
+        shift = camera.target_square - SQUARE(target_x - left);
+        if (shift < 0)
+            return;
+        shift = phd_sqrt(shift);
+        *y = target_y + ((top < bottom) ? shift : -shift);
+    }
+    else if ((camera.target_square << 1) < TR_square)
+    {
+        shift = (camera.target_square << 1) - SQUARE(target_y - top);
+        if (shift < 0)
+            return;
+        shift = phd_sqrt(shift);
+        *x = target_x + ((left < right) ? shift : -shift);
+        *y = top;
+    }
+    else if (BL_square > TR_square)
+    {
+        *x = left;
+        *y = bottom;
+    }
+    else
+    {
+        *x = right;
+        *y = top;
+    }
+}
+
+#define MAX_ELEVATION (ONE_DEGREE * 85)
 
 void MoveCamera(GAME_VECTOR *ideal, int speed);
-void ShiftCamera(GAME_VECTOR *ideal);
-void SmartShift(GAME_VECTOR *ideal, void (*shift)(GAME_VECTOR *ideal));
+void SmartShift(GAME_VECTOR *ideal, void (*shift)(sint32 *x, sint32 *y, sint32 *h, sint32 target_x, sint32 target_y, sint32 target_h, sint32 left, sint32 top, sint32 right, sint32 bottom));
 
 void ChaseCamera(ITEM_INFO *item)
 {
@@ -68,7 +123,8 @@ void ChaseCamera(ITEM_INFO *item)
     MoveCamera(&ideal, camera.speed);
 }
 
-void ShiftClamp(GAME_VECTOR *pos, int clamp);
+#define COMBAT_DISTANCE (WALL_L * 5 / 2)
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
 void FixedCamera(void)
