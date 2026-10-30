@@ -204,7 +204,7 @@ address,size,name,symbol
 0x00417e60,1305,DragonControl,_DragonControl
 0x004183b0,284,InitialiseBartoli,_InitialiseBartoli
 0x004184d0,403,BartoliControl,_BartoliControl
-0x00418670,647,DinoControl,_DinoControl
+0x00418670,676,DinoControl,_DinoControl
 0x00418920,55,DrawPhaseCinematic,_DrawPhaseCinematic
 0x00418960,55,DrawPhaseGame,_DrawPhaseGame
 0x004189a0,688,DrawRooms,_DrawRooms
