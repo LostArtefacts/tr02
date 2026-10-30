@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.16% (977)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.28% (266)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.24% (978)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.20% (265)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="583.86" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="583.86" y="0" class="decompiled"/>
-<rect width="158.96" height="6" x="588.04" y="0" class="todo"/>
+<rect width="584.45" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="584.45" y="0" class="decompiled"/>
+<rect width="158.36" height="6" x="588.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1001,7 +1001,7 @@
 <rect width="12" height="12" x="450" y="270" class="named"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="270" class="named"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="named"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="270" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="270" class="named"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="270" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="270" class="named"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.50%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.41%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.56%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="437.03" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="437.03" y="0" class="decompiled"/>
-<rect width="309.36" height="6" x="437.64" y="0" class="todo"/>
+<rect width="437.44" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="437.44" y="0" class="decompiled"/>
+<rect width="308.95" height="6" x="438.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1801,7 +1801,7 @@
 <rect width="9.11" height="9.92" x="523.03" y="163.50" class="todo"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="9.11" height="9.85" x="523.03" y="176.42" class="named"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
 <rect width="9.11" height="9.85" x="523.03" y="189.26" class="todo"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
-<rect width="9.11" height="9.85" x="523.03" y="202.11" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
+<rect width="9.11" height="9.85" x="523.03" y="202.11" class="named"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="9.11" height="9.78" x="523.03" y="214.96" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
 <rect width="9.11" height="9.78" x="523.03" y="227.73" class="named"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>
 <rect width="9.11" height="9.71" x="523.03" y="240.51" class="named"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>

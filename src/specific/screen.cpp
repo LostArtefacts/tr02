@@ -193,6 +193,25 @@ extern "C" void CreateWindowPalette(void)
         throw ERR_SetPalette;
 }
 
+extern "C" void CreateZBuffer(void)
+{
+    DDSURFACEDESC dsp;
+
+    if (!(CurrentDisplayAdapter.D3DHWDeviceDesc.dpcTriCaps.dwRasterCaps & D3DPRASTERCAPS_ZBUFFERLESSHSR)) {
+        memset(&dsp, 0, sizeof(dsp));
+        dsp.dwSize = sizeof(dsp);
+        dsp.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_ZBUFFERBITDEPTH;
+        dsp.ddsCaps.dwCaps = DDSCAPS_ZBUFFER | DDSCAPS_VIDEOMEMORY;
+        dsp.dwWidth = GameVidBufWidth;
+        dsp.dwHeight = GameVidBufHeight;
+        dsp.dwZBufferBitDepth = GetZBufferDepth();
+        if (DX_TRY(DDrawSurfaceCreate(&dsp, &ZBufferSurface)))
+            throw ERR_CreateZBuffer;
+        if (DX_TRY(BackBufferSurface->AddAttachedSurface(ZBufferSurface)))
+            throw ERR_AttachZBuffer;
+    }
+}
+
 extern "C" DWORD GetZBufferDepth(void)
 {
     DWORD bitDepth = CurrentDisplayAdapter.D3DHWDeviceDesc.dwDeviceZBufferBitDepth;
