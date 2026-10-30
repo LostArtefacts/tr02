@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.60% (818)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">34.16% (426)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.68% (819)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">34.08% (425)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="490.01" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="490.01" y="0" class="decompiled"/>
-<rect width="255.19" height="6" x="491.81" y="0" class="todo"/>
+<rect width="490.61" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="490.61" y="0" class="decompiled"/>
+<rect width="254.59" height="6" x="492.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1261,7 +1261,7 @@
 <rect width="12" height="12" x="600" y="345" class="named"><title>0x00456d20 GetRegistryBoolValue (118 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="345" class="todo"><title>0x00456da0 GetRegistryFloatValue (92 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="345" class="named"><title>0x00456e00 GetRegistryBinaryValue (113 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="345" class="todo"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="345" class="named"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="345" class="todo"><title>0x00456f20 GetRegistryGuidValue (145 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="345" class="todo"><title>0x00456fc0 Func456fc0 (55 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="345" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.56%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.44%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.60%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.39%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="362.71" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="362.71" y="0" class="decompiled"/>
-<rect width="384.24" height="6" x="362.76" y="0" class="todo"/>
+<rect width="363.03" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="363.03" y="0" class="decompiled"/>
+<rect width="383.92" height="6" x="363.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1888,7 +1888,7 @@
 <rect width="7.92" height="8.33" x="558.88" y="232.86" class="named"><title>0x0040e6e0 TargetBox (149 bytes)</title></rect>
 <rect width="7.92" height="8.33" x="558.88" y="244.20" class="named"><title>0x00429250 lara_col_turn_r (149 bytes)</title></rect>
 <rect width="7.92" height="8.33" x="558.88" y="255.53" class="todo"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
-<rect width="7.92" height="8.33" x="558.88" y="266.86" class="todo"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
+<rect width="7.92" height="8.33" x="558.88" y="266.86" class="named"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
 <rect width="7.92" height="8.26" x="558.88" y="278.20" class="todo"><title>0x00448620 CreatePrimarySurface (148 bytes)</title></rect>
 <rect width="7.92" height="8.18" x="558.88" y="289.46" class="named"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
 <rect width="7.92" height="8.18" x="558.88" y="300.64" class="named"><title>0x00427460 EffectNewRoom (147 bytes)</title></rect>

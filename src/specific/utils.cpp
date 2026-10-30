@@ -168,6 +168,28 @@ extern "C" bool GetRegistryBinaryValue(LPCTSTR lpValueName, LPBYTE value, DWORD 
     return false;
 }
 
+extern "C" bool GetRegistryStringValue(LPCTSTR lpValueName, LPTSTR value, DWORD maxSize, LPCTSTR defaultValue)
+{
+    DWORD type;
+    DWORD size = maxSize;
+    if (!RegQueryValueEx(HKey, lpValueName, 0, &type, (BYTE *)value, &size) && type == REG_SZ)
+        return true;
+    if (defaultValue)
+    {
+        SetRegistryStringValue(lpValueName, defaultValue, -1);
+        int length = strlen(defaultValue) + 1;
+        if (length > (int)maxSize)
+        {
+            length = maxSize - 1;
+            value[length] = 0;
+        }
+        memcpy(value, defaultValue, length);
+    }
+    else
+        RegDeleteValue(HKey, lpValueName);
+    return false;
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
