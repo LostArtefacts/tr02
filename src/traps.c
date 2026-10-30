@@ -6,6 +6,8 @@
 #define BLADE 81
 #define FLAME 252
 #define RICOCHET 238
+#define FLAME_ONFIRE_DAMAGE 7
+#define FLAME_TOONEAR_DAMAGE 5
 #define HOOK_DAMAGE 50
 #define BLADE_DAMAGE 100
 #define BIG_FIRE 0
@@ -25,6 +27,9 @@
 sint16 CreateEffect(sint16 room_num);
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
+void LaraBurn(void);
 void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite);
 
 extern BITE_INFO teeth1a, teeth1b, teeth2a, teeth2b, teeth3a, teeth3b;
@@ -565,6 +570,61 @@ void FlameEmitterControl(sint16 item_number)
     {
         KillEffect((sint16)((int)(item->data) - 1));
         item->data = NULL;
+    }
+}
+
+void FlameControl(sint16 fx_number)
+{
+    FX_INFO *fx;
+    sint32 x, y, z;
+
+    fx = &effects[fx_number];
+
+    if (--fx->frame_number <= objects[FLAME].nmeshes)
+        fx->frame_number = 0;
+
+    if (fx->counter < 0)
+    {
+        fx->pos.x_pos = 0;
+        fx->pos.y_pos = 0;
+        if (fx->counter == -1)
+            fx->pos.z_pos = -100;
+        else
+            fx->pos.z_pos = 0;
+        GetJointAbsPosition(lara_item, (PHD_VECTOR *)&fx->pos, -1 - fx->counter);
+        if (lara_item->room_number != fx->room_number)
+            EffectNewRoom(fx_number, lara_item->room_number);
+
+        y = GetWaterHeight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, fx->room_number);
+        if (y != NO_HEIGHT && fx->pos.y_pos > y)
+        {
+            fx->counter = 0;
+            KillEffect(fx_number);
+            lara.burn = 0;
+        }
+        else
+        {
+            SoundEffect(150, &fx->pos, 0);
+            lara_item->hit_points -= FLAME_ONFIRE_DAMAGE;
+            lara_item->hit_status = 1;
+        }
+        return;
+    }
+
+    SoundEffect(150, &fx->pos, 0);
+    if (fx->counter)
+        fx->counter--;
+    else if (ItemNearLara(&fx->pos, 600))
+    {
+        x = lara_item->pos.x_pos - fx->pos.x_pos;
+        z = lara_item->pos.z_pos - fx->pos.z_pos;
+        lara_item->hit_points -= FLAME_TOONEAR_DAMAGE;
+        lara_item->hit_status = 1;
+        if (x * x + z * z < 450 * 450)
+        {
+            fx->counter = 100;
+            LaraBurn();
+        }
     }
 }
 

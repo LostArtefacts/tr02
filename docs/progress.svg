@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.63% (357)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.37% (890)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.71% (358)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.29% (889)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="213.86" height="6" x="0" y="0" class="named"/>
-<rect width="533.14" height="6" x="213.86" y="0" class="todo"/>
+<rect width="214.46" height="6" x="0" y="0" class="named"/>
+<rect width="532.54" height="6" x="214.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -856,7 +856,7 @@
 <rect width="12" height="12" x="540" y="225" class="named"><title>0x00442a30 DartsControl (341 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="225" class="named"><title>0x00442b90 DartEffectControl (75 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="225" class="named"><title>0x00442be0 FlameEmitterControl (144 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="225" class="todo"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="225" class="named"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="225" class="named"><title>0x00442de0 LaraBurn (73 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="225" class="todo"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="225" class="todo"><title>0x00442f20 LavaSpray (197 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="73.89" height="6" x="0" y="0" class="named"/>
-<rect width="673.11" height="6" x="73.89" y="0" class="todo"/>
+<rect width="74.68" height="6" x="0" y="0" class="named"/>
+<rect width="672.32" height="6" x="74.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1587,7 +1587,7 @@
 <rect width="13.83" height="14.87" x="432.61" y="185.34" class="todo"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
 <rect width="13.83" height="14.82" x="432.61" y="203.21" class="todo"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
 <rect width="13.83" height="14.77" x="432.61" y="221.02" class="named"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
-<rect width="13.83" height="14.72" x="432.61" y="238.79" class="todo"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
+<rect width="13.83" height="14.72" x="432.61" y="238.79" class="named"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
 <rect width="13.83" height="14.62" x="432.61" y="256.51" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="13.83" height="14.52" x="432.61" y="274.13" class="todo"><title>0x004576ff gourA (352 bytes)</title></rect>
 <rect width="13.83" height="14.47" x="432.61" y="291.65" class="todo"><title>0x0043a330 InitialiseLevel (351 bytes)</title></rect>
