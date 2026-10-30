@@ -287,3 +287,9 @@ void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, u
         pSrc += nSStride;
     }
 }
+
+extern "C" void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam)
+{
+    if (uMsg == WM_PALETTECHANGED || uMsg == WM_QUERYNEWPALETTE)
+        SendMessage(hWnd, uMsg, wParam, 0);
+}
