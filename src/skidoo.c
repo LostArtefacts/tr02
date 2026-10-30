@@ -95,3 +95,68 @@ int SkidooCheckGeton(sint16 item_number, COLL_INFO *coll)
 
     return geton;
 }
+
+void SkidmanPush(ITEM_INFO *item, ITEM_INFO *laraitem, int radius);
+
+void SkidooBaddieCollision(ITEM_INFO *skidoo)
+{
+    int i, x, y, z;
+    ITEM_INFO *item;
+    OBJECT_INFO *object;
+    sint16 roomies[12], numroom, *door;
+    sint16 item_num;
+
+    numroom = 1;
+    roomies[0] = skidoo->room_number;
+
+    door = room[skidoo->room_number].door;
+    if (door)
+    {
+        for (i = (int)*(door++); i > 0; i--)
+        {
+            roomies[numroom++] = *(door);
+            door += 16;
+        }
+    }
+
+    for (i = 0; i < numroom; i++)
+    {
+        item_num = room[roomies[i]].item_number;
+        while (item_num != NO_ITEM)
+        {
+            item = &items[item_num];
+            if (item->collidable && item->status != INVISIBLE && item != lara_item && item != skidoo)
+            {
+                object = &objects[item->object_number];
+                if (object->collision && (object->intelligent || item->object_number == AVALANCHE))
+                {
+                    x = skidoo->pos.x_pos - item->pos.x_pos;
+                    y = skidoo->pos.y_pos - item->pos.y_pos;
+                    z = skidoo->pos.z_pos - item->pos.z_pos;
+                    if (x > -WALL_L * 2 && x < WALL_L * 2 && z > -WALL_L * 2 && z < WALL_L * 2 && y > -WALL_L * 2 && y < WALL_L * 2)
+                    {
+                        if (TestBoundsCollide(item, skidoo, SKIDOO_RADIUS))
+                        {
+                            if (item->object_number == SKIDMAN)
+                                SkidmanPush(item, skidoo, SKIDOO_RADIUS);
+                            else if (item->object_number == AVALANCHE)
+                            {
+                                if (item->current_anim_state == TRAP_ACTIVATE)
+                                {
+                                    lara_item->hit_status = 1;
+                                    lara_item->hit_points -= 100;
+                                }
+                            }
+                            else
+                            {
+                                DoLotsOfBlood(item->pos.x_pos, skidoo->pos.y_pos - STEP_L, item->pos.z_pos, skidoo->speed, skidoo->pos.y_rot, item->room_number, 3);
+                                item->hit_points = 0;
+                            }
+                        }
+                    }
+                }
+            }
+            item_num = item->next_item;
+        }
+    }
+}
