@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.10% (313)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.90% (934)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.18% (314)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.82% (933)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="187.50" height="6" x="0" y="0" class="named"/>
-<rect width="559.50" height="6" x="187.50" y="0" class="todo"/>
+<rect width="188.10" height="6" x="0" y="0" class="named"/>
+<rect width="558.90" height="6" x="188.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1084,7 +1084,7 @@
 <rect width="12" height="12" x="210" y="300" class="named"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="named"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="300" class="named"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="300" class="todo"><title>0x0044d680 HWR_VertexBufferFull (25 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="300" class="named"><title>0x0044d680 HWR_VertexBufferFull (25 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="300" class="todo"><title>0x0044d6a0 Func44d6a0 (11 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="300" class="named"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="300" class="todo"><title>0x0044d6e0 S_InitialiseSystem (66 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.10%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="58.93" height="6" x="0" y="0" class="named"/>
-<rect width="688.07" height="6" x="58.93" y="0" class="todo"/>
+<rect width="58.99" height="6" x="0" y="0" class="named"/>
+<rect width="688.01" height="6" x="58.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2436,7 +2436,7 @@
 <rect width="1.54" height="1.80" x="708.38" y="350.32" class="todo"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
 <rect width="1.54" height="1.80" x="708.38" y="355.11" class="todo"><title>0x00457f09 Func457f09 (26 bytes)</title></rect>
 <rect width="1.54" height="1.61" x="708.38" y="359.91" class="todo"><title>0x004239a0 GetDebouncedInput (25 bytes)</title></rect>
-<rect width="1.54" height="1.61" x="708.38" y="364.53" class="todo"><title>0x0044d680 HWR_VertexBufferFull (25 bytes)</title></rect>
+<rect width="1.54" height="1.61" x="708.38" y="364.53" class="named"><title>0x0044d680 HWR_VertexBufferFull (25 bytes)</title></rect>
 <rect width="1.54" height="1.43" x="708.38" y="369.14" class="todo"><title>0x004026d0 phd_SetFarZ (24 bytes)</title></rect>
 <rect width="1.54" height="1.43" x="708.38" y="373.57" class="named"><title>0x004283d0 lara_as_slideback (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="712.92" y="340.72" class="named"><title>0x00430090 draw_flare_meshes (24 bytes)</title></rect>

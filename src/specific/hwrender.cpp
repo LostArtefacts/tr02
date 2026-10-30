@@ -15,6 +15,7 @@ extern "C" DWORD GetTexturePageHandle(int nHandle);
 extern "C" void SafeFreeTexturePage(int nHandle);
 extern "C" void SafeFreePalette(int nHandle);
 extern "C" int PaletteIndex;
+extern "C" D3DTLVERTEX *HWR_VertexPtr;
 extern "C" int CreateTexturePalette(uint8 *pPalette);
 extern "C" int AddTexturePage8(int nWidth, int nHeight, uint8 *pTexture, int nPalette);
 extern "C" int AddTexturePage16(int nWidth, int nHeight, uint8 *pTexture);
@@ -149,6 +150,11 @@ void HWR_GetAllTextureHandles()
         else
             HWR_PageHandles[nTPage] = 0;
     }
+}
+
+bool HWR_VertexBufferFull()
+{
+    return HWR_VertexPtr - VertexBuffer >= MAX_TLVERTICES - 512;
 }
 
 bool HWR_Init()
