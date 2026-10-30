@@ -65,3 +65,50 @@ void InitialiseBoat(sint16 item_number)
     binfo->water = 0;
     binfo->pitch = 0;
 }
+
+#define MOTORBOAT 14
+#define GONDOLA 24
+#define GONDOLA_FLOATING 1
+#define GONDOLA_CRASH 2
+#define SQUARE(A) ((A) * (A))
+
+void DoBoatShift(int boat_number)
+{
+    ITEM_INFO *item, *boat;
+    int item_number, distance, x, z, dx, dz;
+
+    boat = &items[boat_number];
+    item_number = room[boat->room_number].item_number;
+    while (item_number != NO_ITEM) {
+        item = &items[item_number];
+        if (item->object_number == MOTORBOAT && item_number != boat_number && lara.skidoo != item_number) {
+            x = item->pos.x_pos - boat->pos.x_pos;
+            z = item->pos.z_pos - boat->pos.z_pos;
+            distance = x * x + z * z;
+            if (distance < SQUARE(BOAT_RADIUS * 2)) {
+                boat->pos.x_pos = item->pos.x_pos - x * SQUARE(BOAT_RADIUS * 2) / distance;
+                boat->pos.z_pos = item->pos.z_pos - z * SQUARE(BOAT_RADIUS * 2) / distance;
+            }
+            return;
+        }
+
+        if (item->object_number == GONDOLA && item->current_anim_state == GONDOLA_FLOATING) {
+            x = item->pos.x_pos - (512 * phd_sin(item->pos.y_rot) >> W2V_SHIFT);
+            z = item->pos.z_pos - (512 * phd_cos(item->pos.y_rot) >> W2V_SHIFT);
+            dx = x - boat->pos.x_pos;
+            dz = z - boat->pos.z_pos;
+            distance = dx * dx + dz * dz;
+            if (distance < SQUARE(BOAT_RADIUS * 2)) {
+                if (boat->speed < BOAT_MAX_SPEED - 10) {
+                    boat->pos.x_pos = x - dx * SQUARE(BOAT_RADIUS * 2) / distance;
+                    boat->pos.z_pos = z - dz * SQUARE(BOAT_RADIUS * 2) / distance;
+                } else if (item->pos.y_pos - boat->pos.y_pos < WALL_L * 2) {
+                    SoundEffect(337, &item->pos, 0);
+                    item->goal_anim_state = GONDOLA_CRASH;
+                }
+            }
+        }
+
+        item_number = item->next_item;
+    }
+}

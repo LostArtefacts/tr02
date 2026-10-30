@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.63% (594)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.37% (653)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.71% (595)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.29% (652)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="355.83" height="6" x="0" y="0" class="named"/>
-<rect width="391.17" height="6" x="355.83" y="0" class="todo"/>
+<rect width="356.43" height="6" x="0" y="0" class="named"/>
+<rect width="390.57" height="6" x="356.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -157,7 +157,7 @@
 <rect width="12" height="12" x="555" y="15" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="15" class="todo"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="15" class="todo"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="15" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="todo"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="todo"><title>0x0040d270 DoBoatDynamics (75 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="15" class="todo"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.61%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.39%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="213.74" height="6" x="0" y="0" class="named"/>
-<rect width="533.26" height="6" x="213.74" y="0" class="todo"/>
+<rect width="214.73" height="6" x="0" y="0" class="named"/>
+<rect width="532.27" height="6" x="214.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1526,7 +1526,7 @@
 <rect width="16.70" height="16.21" x="393.85" y="339.67" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
 <rect width="16.70" height="16.12" x="393.85" y="358.88" class="named"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
 <rect width="16.28" height="16.46" x="413.55" y="41.82" class="todo"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
-<rect width="16.28" height="16.41" x="413.55" y="61.28" class="todo"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
+<rect width="16.28" height="16.41" x="413.55" y="61.28" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="16.28" height="16.37" x="413.55" y="80.69" class="todo"><title>0x00446870 WinVidResizeGameWindow (448 bytes)</title></rect>
 <rect width="16.28" height="16.28" x="413.55" y="100.06" class="todo"><title>0x00445ff0 EnumDisplayAdaptersCallback (446 bytes)</title></rect>
 <rect width="16.28" height="16.02" x="413.55" y="119.35" class="named"><title>0x00440340 BigSpiderControl (440 bytes)</title></rect>
