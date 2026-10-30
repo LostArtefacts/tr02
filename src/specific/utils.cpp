@@ -67,6 +67,27 @@ void UT_ErrorBox(int nID, HWND hWndOwner)
         UT_ErrorBox(buffer, hWndOwner);
 }
 
+extern "C" const char GuidFormat[];
+extern "C" const char HexDigits[];
+extern "C" char GuidString[];
+
+extern "C" LPCTSTR GuidBinaryToString(GUID *guid)
+{
+    char *p = GuidString;
+    for (unsigned int i = 0; i < 21; i++)
+    {
+        if (GuidFormat[i] < 16)
+        {
+            *p++ = HexDigits[((uint8 *)guid)[GuidFormat[i]] >> 4];
+            *p++ = HexDigits[((uint8 *)guid)[GuidFormat[i]] & 15];
+        }
+        else
+            *p++ = GuidFormat[i];
+    }
+    *p = 0;
+    return GuidString;
+}
+
 extern "C" HKEY HKey;
 extern "C" DWORD RegKeyDisposition;
 extern "C" char RegistryClass[];
