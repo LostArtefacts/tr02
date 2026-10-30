@@ -683,6 +683,34 @@ void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll)
         lara.death_count = 1;
 }
 
+
+#define PUZZLE_ITEM2 175
+
+void extra_as_pulldagger(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 room_number;
+    int frame;
+    FLOOR_INFO *floor;
+
+    frame = item->frame_number - anims[item->anim_number].frame_base;
+    if (frame == 1)
+        StartSyncedAudio(28);
+    else if (frame == 180)
+    {
+        lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
+        Inv_AddItem(PUZZLE_ITEM2);
+    }
+
+    if (item->frame_number == anims[item->anim_number].frame_end)
+    {
+        item->pos.y_rot += 0x4000;
+        room_number = item->room_number;
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+        TestTriggers(trigger_index, 1);
+    }
+}
+
 void extra_as_startanim(ITEM_INFO *item, COLL_INFO *coll)
 {
     sint16 room_number;
