@@ -260,3 +260,23 @@ void T_DrawText(void)
         textString++;
     }
 }
+
+#define BORDERS 100
+
+void S_DrawScreenSprite2d(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
+
+void draw_border(sint32 xpos, sint32 ypos, sint32 zpos, sint32 width, sint32 height)
+{
+    width -= 8;
+    height -= 8;
+    xpos += 4;
+    ypos += 4;
+    S_DrawScreenSprite2d(xpos, ypos, zpos, 0x10000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 0), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos + width, ypos, zpos, 0x10000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 1), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos + width, ypos + height, zpos, 0x10000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 2), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos, ypos + height, zpos, 0x10000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 3), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos, ypos, zpos, width * 0x2000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 4), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos + width, ypos, zpos, 0x10000, height * 0x2000, (sint16)(objects[BORDERS].mesh_index + 5), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos, ypos + height, zpos, width * 0x2000, 0x10000, (sint16)(objects[BORDERS].mesh_index + 6), 16 << 8, 0);
+    S_DrawScreenSprite2d(xpos, ypos, zpos, 0x10000, height * 0x2000, (sint16)(objects[BORDERS].mesh_index + 7), 16 << 8, 0);
+}

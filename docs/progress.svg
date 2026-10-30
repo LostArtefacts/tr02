@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.34% (503)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.66% (744)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.42% (504)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.58% (743)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="301.32" height="6" x="0" y="0" class="named"/>
-<rect width="445.68" height="6" x="301.32" y="0" class="todo"/>
+<rect width="301.91" height="6" x="0" y="0" class="named"/>
+<rect width="445.09" height="6" x="301.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -822,7 +822,7 @@
 <rect width="12" height="12" x="30" y="225" class="named"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="225" class="named"><title>0x00440970 T_GetStringLen (36 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="225" class="named"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="225" class="todo"><title>0x004409d0 draw_border (393 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="225" class="named"><title>0x004409d0 draw_border (393 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="225" class="todo"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="225" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="225" class="todo"><title>0x00440f80 GetTextScaleV (57 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.07%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="148.01" height="6" x="0" y="0" class="named"/>
-<rect width="598.99" height="6" x="148.01" y="0" class="todo"/>
+<rect width="148.87" height="6" x="0" y="0" class="named"/>
+<rect width="598.13" height="6" x="148.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1556,7 +1556,7 @@
 <rect width="14.95" height="15.64" x="413.66" y="249.32" class="named"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="14.95" height="15.54" x="413.66" y="267.96" class="todo"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="14.95" height="15.45" x="413.66" y="286.50" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
-<rect width="14.95" height="15.31" x="413.66" y="304.95" class="todo"><title>0x004409d0 draw_border (393 bytes)</title></rect>
+<rect width="14.95" height="15.31" x="413.66" y="304.95" class="named"><title>0x004409d0 draw_border (393 bytes)</title></rect>
 <rect width="14.95" height="15.26" x="413.66" y="323.26" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="14.95" height="15.26" x="413.66" y="341.52" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>
 <rect width="14.95" height="15.22" x="413.66" y="359.78" class="todo"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
