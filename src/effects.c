@@ -341,6 +341,38 @@ void ControlHotLiquid(sint16 fx_num)
     SoundEffect(284, &fx->pos, 0);
 }
 
+void WaterFall(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FX_INFO *fx;
+    sint16 fx_num;
+    sint32 x, y, z;
+
+    item = &items[item_number];
+    x = item->pos.x_pos - lara_item->pos.x_pos;
+    y = item->pos.y_pos - lara_item->pos.y_pos;
+    z = item->pos.z_pos - lara_item->pos.z_pos;
+
+    if (x >= -WATERFALL_RANGE && x <= WATERFALL_RANGE && z >= -WATERFALL_RANGE && z <= WATERFALL_RANGE
+        && y >= -WATERFALL_RANGE && y <= WATERFALL_RANGE)
+    {
+        S_CalculateLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+        fx_num = CreateEffect(item->room_number);
+        if (fx_num != NO_ITEM)
+        {
+            fx = &effects[fx_num];
+            fx->pos.x_pos = item->pos.x_pos + (GetRandomDraw() - 0x4000) * WALL_L / 0x7fff;
+            fx->pos.z_pos = item->pos.z_pos + (GetRandomDraw() - 0x4000) * WALL_L / 0x7fff;
+            fx->pos.y_pos = item->pos.y_pos;
+            fx->speed = 0;
+            fx->shade = LsAdder;
+            fx->frame_number = 0;
+            fx->object_number = SPLASH1;
+        }
+        SoundEffect(79, &item->pos, 0);
+    }
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
