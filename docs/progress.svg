@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.68% (183)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85.32% (1064)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.76% (184)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85.24% (1063)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="109.62" height="6" x="0" y="0" class="named"/>
-<rect width="637.38" height="6" x="109.62" y="0" class="todo"/>
+<rect width="110.22" height="6" x="0" y="0" class="named"/>
+<rect width="636.78" height="6" x="110.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -705,7 +705,7 @@
 <rect width="12" height="12" x="525" y="180" class="todo"><title>0x00435190 InitialiseDoor (988 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="180" class="todo"><title>0x00435570 DoorControl (200 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="180" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="180" class="todo"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="180" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="180" class="todo"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="180" class="todo"><title>0x00435780 DrawBridgeCollision (44 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="180" class="todo"><title>0x004357b0 InitialiseLift (53 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.28%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.27%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="35.23" height="6" x="0" y="0" class="named"/>
-<rect width="711.77" height="6" x="35.23" y="0" class="todo"/>
+<rect width="35.35" height="6" x="0" y="0" class="named"/>
+<rect width="711.65" height="6" x="35.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2238,7 +2238,7 @@
 <rect width="3.72" height="3.86" x="743.28" y="283.23" class="todo"><title>0x00456fc0 Func456fc0 (55 bytes)</title></rect>
 <rect width="3.63" height="3.82" x="655.68" y="290.09" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
 <rect width="3.63" height="3.82" x="655.68" y="296.91" class="todo"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
-<rect width="3.63" height="3.82" x="655.68" y="303.73" class="todo"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
+<rect width="3.63" height="3.82" x="655.68" y="303.73" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
 <rect width="3.63" height="3.82" x="655.68" y="310.55" class="todo"><title>0x0044b1c0 ChangeFileNameExtension (54 bytes)</title></rect>
 <rect width="3.63" height="3.82" x="655.68" y="317.37" class="todo"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
 <rect width="3.63" height="3.82" x="655.68" y="324.20" class="todo"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>

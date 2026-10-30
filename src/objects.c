@@ -8,6 +8,8 @@ typedef struct {
     sint16 block;
 } DOORPOS_DATA;
 
+enum door_anims { DOOR_CLOSED, DOOR_OPEN };
+
 #define NO_ROOM 0xff
 #define NO_HEIGHT (-0x7f00)
 
@@ -59,6 +61,18 @@ int OnDrawBridge(ITEM_INFO *item, sint32 x, sint32 y)
         return (1);
 
     return (0);
+}
+
+void DrawBridgeFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    if (item->current_anim_state == DOOR_OPEN)
+    {
+        if (!OnDrawBridge(item, z, x))
+            return;
+
+        if (y <= item->pos.y_pos)
+            *height = item->pos.y_pos;
+    }
 }
 
 void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
