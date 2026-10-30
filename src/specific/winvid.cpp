@@ -199,3 +199,15 @@ extern "C" void WinVidShowGameWindow(int nCmdShow)
     }
 }
 
+extern "C" void WinVidHideGameWindow(void)
+{
+    if (IsGameWindowShow)
+    {
+        IsGameWindowUpdating = true;
+        ShowWindow(HGameWindow, SW_HIDE);
+        UpdateWindow(HGameWindow);
+        IsGameWindowUpdating = false;
+        IsGameWindowShow = false;
+    }
+}
+
