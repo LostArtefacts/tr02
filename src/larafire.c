@@ -36,6 +36,50 @@ typedef struct {
 
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
+void draw_pistol_meshes(int weapon_type);
+void draw_shotgun_meshes(int weapon_type);
+int WeaponObject(int weapon_type);
+
+void InitialiseNewWeapon(void)
+{
+    lara.left_arm.frame_number = lara.right_arm.frame_number = 0;
+    lara.left_arm.x_rot = lara.left_arm.y_rot = lara.left_arm.z_rot = 0;
+    lara.right_arm.x_rot = lara.right_arm.y_rot = lara.right_arm.z_rot = 0;
+    lara.target = NULL;
+    lara.left_arm.lock = lara.right_arm.lock = 0;
+    lara.left_arm.flash_gun = lara.right_arm.flash_gun = 0;
+
+    switch (lara.gun_type)
+    {
+    case LG_PISTOLS:
+    case LG_MAGNUMS:
+    case LG_UZIS:
+        lara.left_arm.frame_base = lara.right_arm.frame_base = objects[PISTOLS].frame_base;
+        if (lara.gun_status != LG_ARMLESS)
+            draw_pistol_meshes(lara.gun_type);
+        break;
+
+    case LG_SHOTGUN:
+    case LG_M16:
+    case LG_GRENADE:
+    case LG_HARPOON:
+        lara.left_arm.frame_base = lara.right_arm.frame_base = objects[WeaponObject(lara.gun_type)].frame_base;
+        if (lara.gun_status != LG_ARMLESS)
+            draw_shotgun_meshes(lara.gun_type);
+        break;
+
+    case LG_FLARE:
+        lara.left_arm.frame_base = lara.right_arm.frame_base = objects[FLARE].frame_base;
+        if (lara.gun_status != LG_ARMLESS)
+            draw_flare_meshes();
+        break;
+
+    default:
+        lara.left_arm.frame_base = lara.right_arm.frame_base = anims[lara_item->anim_number].frame_ptr;
+        break;
+    }
+}
+
 void LaraTargetInfo(WEAPON_INFO *winfo)
 {
     GAME_VECTOR src, target;
