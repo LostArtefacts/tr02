@@ -1178,3 +1178,15 @@ void AddRoomFlipItems(ROOM_INFO *r)
             AlterFloorHeight(item, -1024);
     }
 }
+
+#define MAX_CD_TRACKS 64
+
+void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type);
+
+void TriggerCDTrack(sint16 value, sint16 flags, sint16 type)
+{
+    if (value <= 1 || value >= MAX_CD_TRACKS)
+        return;
+
+    TriggerNormalCDTrack(value, flags, type);
+}

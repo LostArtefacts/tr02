@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.79% (571)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">54.21% (676)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.87% (572)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">54.13% (675)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="342.05" height="6" x="0" y="0" class="named"/>
-<rect width="404.95" height="6" x="342.05" y="0" class="todo"/>
+<rect width="342.65" height="6" x="0" y="0" class="named"/>
+<rect width="404.35" height="6" x="342.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -253,7 +253,7 @@
 <rect width="12" height="12" x="495" y="45" class="named"><title>0x00416610 FlipMap (179 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="45" class="named"><title>0x004166d0 RemoveRoomFlipItems (150 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="45" class="named"><title>0x00416770 AddRoomFlipItems (92 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="45" class="todo"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="45" class="named"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="45" class="todo"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="45" class="named"><title>0x004168e0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="45" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="195.84" height="6" x="0" y="0" class="named"/>
-<rect width="551.16" height="6" x="195.84" y="0" class="todo"/>
+<rect width="195.92" height="6" x="0" y="0" class="named"/>
+<rect width="551.08" height="6" x="195.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.27" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2358,7 +2358,7 @@
 <rect width="2.30" height="2.82" x="687.35" y="326.56" class="todo"><title>0x004454b0 WinVidBufferUnlock (37 bytes)</title></rect>
 <rect width="2.30" height="2.82" x="687.35" y="332.38" class="todo"><title>0x00456030 Create3DTexture (37 bytes)</title></rect>
 <rect width="2.30" height="2.82" x="687.35" y="338.20" class="todo"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
-<rect width="2.30" height="2.66" x="687.35" y="344.02" class="todo"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
+<rect width="2.30" height="2.66" x="687.35" y="344.02" class="named"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="2.30" height="2.66" x="687.35" y="349.68" class="named"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="2.30" height="2.66" x="687.35" y="355.35" class="named"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="2.30" height="2.66" x="687.35" y="361.01" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
