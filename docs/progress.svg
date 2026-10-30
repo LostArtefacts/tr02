@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.90% (722)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.10% (525)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.98% (723)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.02% (524)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="432.51" height="6" x="0" y="0" class="named"/>
-<rect width="314.49" height="6" x="432.51" y="0" class="todo"/>
+<rect width="433.10" height="6" x="0" y="0" class="named"/>
+<rect width="313.90" height="6" x="433.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -212,7 +212,7 @@
 <rect width="12" height="12" x="630" y="30" class="named"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="30" class="named"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="30" class="named"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="30" class="todo"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="30" class="named"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="30" class="todo"><title>0x004128d0 GetCollisionInfo (1660 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="30" class="named"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="30" class="todo"><title>0x00412fc0 CollideStaticObjects (978 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.87%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.13%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.04%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.96%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="305.31" height="6" x="0" y="0" class="named"/>
-<rect width="441.69" height="6" x="305.31" y="0" class="todo"/>
+<rect width="306.58" height="6" x="0" y="0" class="named"/>
+<rect width="440.42" height="6" x="306.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1469,7 +1469,7 @@
 <rect width="19.19" height="18.96" x="371.28" y="205.40" class="named"><title>0x00441f70 RollingBallCollision (586 bytes)</title></rect>
 <rect width="19.19" height="18.96" x="371.28" y="227.36" class="todo"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
 <rect width="19.19" height="18.89" x="371.28" y="249.33" class="named"><title>0x0042e4f0 LaraTestClimbUpPos (584 bytes)</title></rect>
-<rect width="19.19" height="18.78" x="371.28" y="271.22" class="todo"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
+<rect width="19.19" height="18.78" x="371.28" y="271.22" class="named"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
 <rect width="19.19" height="18.40" x="371.28" y="292.99" class="todo"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
 <rect width="19.19" height="18.36" x="371.28" y="314.39" class="todo"><title>0x004496c0 GameApplySettings (570 bytes)</title></rect>
 <rect width="19.19" height="18.14" x="371.28" y="335.76" class="todo"><title>0x00454690 Func454690 (564 bytes)</title></rect>
