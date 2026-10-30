@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.22% (302)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.78% (945)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.30% (303)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.70% (944)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="180.91" height="6" x="0" y="0" class="named"/>
-<rect width="566.09" height="6" x="180.91" y="0" class="todo"/>
+<rect width="181.51" height="6" x="0" y="0" class="named"/>
+<rect width="565.49" height="6" x="181.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -225,7 +225,7 @@
 <rect width="12" height="12" x="75" y="45" class="todo"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="45" class="todo"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="45" class="todo"><title>0x004138c0 ObjectCollision (85 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="45" class="todo"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="45" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="45" class="todo"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="45" class="todo"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="45" class="todo"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.40%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.63%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.37%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="56.75" height="6" x="0" y="0" class="named"/>
-<rect width="690.25" height="6" x="56.75" y="0" class="todo"/>
+<rect width="57.01" height="6" x="0" y="0" class="named"/>
+<rect width="689.99" height="6" x="57.01" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1969,7 +1969,7 @@
 <rect width="7.09" height="6.96" x="610.56" y="207.83" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="7.09" height="6.96" x="620.65" y="207.83" class="todo"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="7.09" height="6.96" x="630.74" y="207.83" class="todo"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
-<rect width="7.01" height="6.96" x="640.84" y="207.83" class="todo"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
+<rect width="7.01" height="6.96" x="640.84" y="207.83" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
 <rect width="7.01" height="6.96" x="650.84" y="207.83" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="7.01" height="6.96" x="660.85" y="207.83" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="6.92" height="6.96" x="670.86" y="207.83" class="todo"><title>0x0041db30 Knife (118 bytes)</title></rect>

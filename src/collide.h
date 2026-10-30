@@ -51,5 +51,7 @@ void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 roo
 void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void ShiftItem(ITEM_INFO *item, COLL_INFO *coll);
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd);
+void ItemPushLara(ITEM_INFO *item, ITEM_INFO *laraitem, COLL_INFO *coll, int spazon, int bigpush);
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
 
 #endif

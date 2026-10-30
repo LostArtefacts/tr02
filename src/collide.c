@@ -67,6 +67,25 @@ void UpdateLaraRoom(ITEM_INFO *item, int height)
         ItemNewRoom(lara.item_number, room_number);
 }
 
+void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+
+    if (coll->enable_baddie_push)
+    {
+        if (item->current_anim_state != item->goal_anim_state)
+            ItemPushLara(item, laraitem, coll, coll->enable_spaz, 1);
+        else
+            ItemPushLara(item, laraitem, coll, 0, 1);
+    }
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;
