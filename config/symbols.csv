@@ -1214,7 +1214,7 @@ address,size,name,symbol
 0x00457eee,27,phd_sin,@phd_sin@4
 0x00457f09,26,Func457f09,
 0x00457f23,44,phd_sqrt,@phd_sqrt@4
-0x00457f50,6,Func457f50,
+0x00457f50,6,DirectInputCreateA_thunk,_DirectInputCreateA@16
 0x00458f78,6,DirectSoundEnumerateA_thunk,_DirectSoundEnumerateA@8
 0x00458f7e,6,DirectSoundCreate_thunk,_DirectSoundCreate@12
 0x00458f84,6,Func458f84,
