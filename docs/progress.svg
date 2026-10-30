@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.45% (442)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.55% (805)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.53% (443)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.47% (804)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="264.77" height="6" x="0" y="0" class="named"/>
-<rect width="482.23" height="6" x="264.77" y="0" class="todo"/>
+<rect width="265.37" height="6" x="0" y="0" class="named"/>
+<rect width="481.63" height="6" x="265.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -386,7 +386,7 @@
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x00421b00 DrawGameInfo (69 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="90" class="todo"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="90" class="todo"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="90" class="todo"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="90" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x00421cd0 DrawAmmoInfo (306 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="todo"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.52%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.48%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.53%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.47%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="108.45" height="6" x="0" y="0" class="named"/>
-<rect width="638.55" height="6" x="108.45" y="0" class="todo"/>
+<rect width="108.54" height="6" x="0" y="0" class="named"/>
+<rect width="638.46" height="6" x="108.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2339,7 +2339,7 @@
 <rect width="2.75" height="2.97" x="710.56" y="309.24" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
 <rect width="2.75" height="2.97" x="716.32" y="309.24" class="todo"><title>0x00447740 DInputKeyboardRelease (41 bytes)</title></rect>
 <rect width="2.75" height="2.97" x="722.07" y="309.24" class="todo"><title>0x0044d1e0 HWR_ResetTexSource (41 bytes)</title></rect>
-<rect width="2.61" height="2.97" x="727.83" y="309.24" class="todo"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
+<rect width="2.61" height="2.97" x="727.83" y="309.24" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="2.61" height="2.97" x="733.44" y="309.24" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="2.47" height="2.97" x="739.05" y="309.24" class="named"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="2.47" height="2.97" x="744.53" y="309.24" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>

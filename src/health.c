@@ -41,3 +41,18 @@ void DrawGameInfo(int timed)
     }
     T_DrawText();
 }
+
+void MakeAmmoString(char *string)
+{
+    char *c;
+
+    for (c = string; *c != 0; c++)
+    {
+        if (*c == 32)
+            continue;
+        else if (*c - 'A' >= 0)
+            *c += 12 - 'A';
+        else
+            *c += 1 - '0';
+    }
+}
