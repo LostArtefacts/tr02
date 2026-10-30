@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.52% (994)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.92% (249)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.60% (995)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.84% (248)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="594.01" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="594.01" y="0" class="decompiled"/>
-<rect width="148.80" height="6" x="598.20" y="0" class="todo"/>
+<rect width="594.61" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="594.61" y="0" class="decompiled"/>
+<rect width="148.20" height="6" x="598.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1007,7 +1007,7 @@
 <rect width="12" height="12" x="540" y="270" class="named"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="named"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="270" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="270" class="named"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="270" class="named"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="270" class="named"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00448f00 RenderStart (933 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.88%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">40.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.94%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.98%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="447.31" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="447.31" y="0" class="decompiled"/>
-<rect width="299.09" height="6" x="447.91" y="0" class="todo"/>
+<rect width="447.76" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="447.76" y="0" class="decompiled"/>
+<rect width="298.64" height="6" x="448.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1760,7 +1760,7 @@
 <rect width="10.19" height="10.18" x="684.47" y="137.75" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="10.19" height="10.18" x="697.66" y="137.75" class="named"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>
 <rect width="10.19" height="10.18" x="710.86" y="137.75" class="named"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>
-<rect width="10.01" height="10.18" x="724.05" y="137.75" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
+<rect width="10.01" height="10.18" x="724.05" y="137.75" class="named"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="9.94" height="10.18" x="737.06" y="137.75" class="named"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
 <rect width="10.16" height="9.95" x="509.87" y="150.92" class="named"><title>0x004326f0 LaraTestWaterDepth (206 bytes)</title></rect>
 <rect width="10.16" height="9.95" x="509.87" y="163.88" class="named"><title>0x0043c830 GetCarriedItems (206 bytes)</title></rect>

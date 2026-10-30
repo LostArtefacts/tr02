@@ -415,3 +415,35 @@ extern "C" bool RestoreLostBuffers(void)
     }
     return rebuild;
 }
+
+extern "C" {
+extern RECT GameVidRect;
+extern int GameWindowPositionX;
+extern int GameWindowPositionY;
+bool WinVidSpinMessageLoop(bool needWait);
+}
+
+extern "C" bool DX_UpdateFrame(bool needRunMessageLoop, LPRECT rect)
+{
+    LPDIRECTDRAWSURFACE3 surface;
+    RECT dstRect;
+
+    if (!rect)
+        rect = &GameVidRect;
+    RestoreLostBuffers();
+    if (SavedAppSettings.FullScreen) {
+        if (SavedAppSettings.RenderMode == RM_Software)
+            BackBufferSurface->Blt(rect, RenderBufferSurface, rect, DDBLT_WAIT, NULL);
+        PrimaryBufferSurface->Flip(NULL, DDFLIP_WAIT);
+    } else {
+        dstRect.left = GameWindowPositionX + rect->left;
+        dstRect.top = GameWindowPositionY + rect->top;
+        dstRect.right = GameWindowPositionX + rect->right;
+        dstRect.bottom = GameWindowPositionY + rect->bottom;
+        surface = (SavedAppSettings.RenderMode == RM_Software) ? RenderBufferSurface : BackBufferSurface;
+        PrimaryBufferSurface->Blt(&dstRect, surface, rect, DDBLT_WAIT, NULL);
+    }
+    if (needRunMessageLoop)
+        return WinVidSpinMessageLoop(false);
+    return true;
+}
