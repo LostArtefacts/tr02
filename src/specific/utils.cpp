@@ -6,6 +6,17 @@ extern double LdPerformanceDivisor;
 extern double LdInitialTimer;
 extern DWORD LdwInitialTimer;
 
+extern "C" LPVOID UT_LoadResource(LPCSTR name, LPCSTR type)
+{
+    HRSRC res = FindResource(GhInstance, name, type);
+    if (!res)
+        return NULL;
+    HGLOBAL data = LoadResource(GhInstance, res);
+    if (!data)
+        return NULL;
+    return LockResource(data);
+}
+
 void UT_InitAccurateTimer()
 {
     LARGE_INTEGER pf;

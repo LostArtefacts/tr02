@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.49% (904)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.94% (336)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.57% (905)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.86% (335)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="541.53" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="541.53" y="0" class="decompiled"/>
-<rect width="201.28" height="6" x="545.72" y="0" class="todo"/>
+<rect width="542.13" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="542.13" y="0" class="decompiled"/>
+<rect width="200.68" height="6" x="546.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1238,7 +1238,7 @@
 <rect width="12" height="12" x="255" y="345" class="named"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="345" class="named"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="345" class="named"><title>0x00456720 Sync (86 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="345" class="todo"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="345" class="named"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="345" class="named"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="345" class="named"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="345" class="named"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.71%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.72%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.20%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.19" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="401.19" y="0" class="decompiled"/>
-<rect width="345.20" height="6" x="401.80" y="0" class="todo"/>
+<rect width="401.31" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.31" y="0" class="decompiled"/>
+<rect width="345.08" height="6" x="401.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2242,7 +2242,7 @@
 <rect width="3.80" height="3.60" x="675.96" y="283.98" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
 <rect width="3.80" height="3.60" x="682.76" y="283.98" class="named"><title>0x0044b1c0 ChangeFileNameExtension (54 bytes)</title></rect>
 <rect width="3.80" height="3.60" x="689.56" y="283.98" class="named"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
-<rect width="3.80" height="3.60" x="696.36" y="283.98" class="todo"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
+<rect width="3.80" height="3.60" x="696.36" y="283.98" class="named"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
 <rect width="3.80" height="3.60" x="703.16" y="283.98" class="named"><title>0x00456bd0 SetRegistryFloatValue (54 bytes)</title></rect>
 <rect width="3.67" height="3.60" x="709.96" y="283.98" class="named"><title>0x00402b00 draw_poly_flat (53 bytes)</title></rect>
 <rect width="3.67" height="3.60" x="716.63" y="283.98" class="named"><title>0x00402b40 draw_poly_trans (53 bytes)</title></rect>
