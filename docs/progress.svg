@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.93% (660)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.07% (587)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.01% (661)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.99% (586)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="395.36" height="6" x="0" y="0" class="named"/>
-<rect width="351.64" height="6" x="395.36" y="0" class="todo"/>
+<rect width="395.96" height="6" x="0" y="0" class="named"/>
+<rect width="351.04" height="6" x="395.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -362,7 +362,7 @@
 <rect width="12" height="12" x="630" y="75" class="named"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="75" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="75" class="named"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="75" class="todo"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="75" class="named"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="75" class="named"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="75" class="named"><title>0x0041dbb0 Cult2Control (1072 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="75" class="named"><title>0x0041dfe0 MonkControl (1232 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.33%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.28%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="258.98" height="6" x="0" y="0" class="named"/>
-<rect width="488.02" height="6" x="258.98" y="0" class="todo"/>
+<rect width="259.38" height="6" x="0" y="0" class="named"/>
+<rect width="487.62" height="6" x="259.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1807,7 +1807,7 @@
 <rect width="9.35" height="9.08" x="676.19" y="151.26" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
 <rect width="9.35" height="9.08" x="688.54" y="151.26" class="named"><title>0x00416610 FlipMap (179 bytes)</title></rect>
 <rect width="9.35" height="9.08" x="700.88" y="151.26" class="named"><title>0x00429190 lara_col_fastback (179 bytes)</title></rect>
-<rect width="9.28" height="9.08" x="713.23" y="151.26" class="todo"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
+<rect width="9.28" height="9.08" x="713.23" y="151.26" class="named"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
 <rect width="9.28" height="9.08" x="725.51" y="151.26" class="named"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
 <rect width="9.21" height="9.08" x="737.79" y="151.26" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="9.19" height="9.10" x="535.67" y="163.34" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>

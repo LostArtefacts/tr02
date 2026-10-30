@@ -844,6 +844,42 @@ void AssaultReset(ITEM_INFO *item)
     flipeffect = -1;
 }
 
+int AddAssaultTime(uint32 time);
+void S_CDPlay(sint16 track, int mode);
+extern int AssaultBestTime;
+
+void AssaultFinished(ITEM_INFO *item)
+{
+    if (assault_timer_active)
+    {
+        AddAssaultTime(savegame.timer);
+        if (AssaultBestTime < 0)
+        {
+            if (savegame.timer < 100 * 30)
+            {
+                S_CDPlay(22, 0);
+                AssaultBestTime = savegame.timer;
+            }
+            else
+            {
+                S_CDPlay(24, 0);
+                AssaultBestTime = 100 * 30;
+            }
+        }
+        else if (savegame.timer < (uint32)AssaultBestTime)
+        {
+            S_CDPlay(22, 0);
+            AssaultBestTime = savegame.timer;
+        }
+        else if (savegame.timer < (uint32)AssaultBestTime + 5 * 30)
+            S_CDPlay(23, 0);
+        else
+            S_CDPlay(21, 0);
+        assault_timer_active = 0;
+    }
+    flipeffect = -1;
+}
+
 void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite)
 {
     PHD_VECTOR pos;
