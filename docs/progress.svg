@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.56% (1022)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.80% (223)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.64% (1023)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.72% (222)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="609.28" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="609.28" y="0" class="decompiled"/>
-<rect width="132.95" height="6" x="614.05" y="0" class="todo"/>
+<rect width="609.88" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="609.88" y="0" class="decompiled"/>
+<rect width="132.35" height="6" x="614.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -378,7 +378,7 @@
 <rect width="12" height="12" x="105" y="90" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="90" class="named"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="90" class="named"><title>0x0041fcc0 GF_InterpretSequence (1240 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="90" class="todo"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="90" class="named"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x00420e80 InitialiseHair (116 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="90" class="todo"><title>0x00420f00 HairControl (2533 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="90" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.72%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">34.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.68%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">33.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="490.96" height="6" x="0" y="0" class="named"/>
-<rect width="0.66" height="6" x="490.96" y="0" class="decompiled"/>
-<rect width="255.38" height="6" x="491.62" y="0" class="todo"/>
+<rect width="498.08" height="6" x="0" y="0" class="named"/>
+<rect width="0.66" height="6" x="498.08" y="0" class="decompiled"/>
+<rect width="248.26" height="6" x="498.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.59" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1337,7 +1337,7 @@
 <rect width="57.59" height="55.70" x="0" y="138.82" class="named"><title>0x0043a530 BaddyObjects (4155 bytes)</title></rect>
 <rect width="57.59" height="54.05" x="0" y="197.52" class="todo"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="57.59" height="44.58" x="0" y="254.56" class="named"><title>0x00419dd0 DrawLara (3368 bytes)</title></rect>
-<rect width="57.59" height="43.38" x="0" y="302.15" class="todo"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
+<rect width="57.59" height="43.38" x="0" y="302.15" class="named"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
 <rect width="57.59" height="41.47" x="0" y="348.53" class="named"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
 <rect width="44.11" height="52.46" x="60.59" y="0" class="named"><title>0x0041ab00 DrawLaraInt (3052 bytes)</title></rect>
 <rect width="44.11" height="47.26" x="60.59" y="55.46" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
