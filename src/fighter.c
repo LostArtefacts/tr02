@@ -702,3 +702,22 @@ void Worker3Control(sint16 item_number)
         CreatureAnimation(item_number, angle, 0);
     }
 }
+
+#define XIAN_LORD 41
+#define XIAN_START_ANIM 48
+#define XIAN_START 18
+
+void InitialiseXianLord(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->object_number == XIAN_LORD)
+    {
+        item->anim_number = objects[XIAN_LORD].anim_index + XIAN_START_ANIM;
+        item->frame_number = anims[item->anim_number].frame_base;
+        item->current_anim_state = item->goal_anim_state = XIAN_START;
+    }
+    item->status = NOT_ACTIVE;
+    item->mesh_bits = 0;
+}
