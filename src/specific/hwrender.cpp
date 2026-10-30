@@ -99,6 +99,65 @@ void HWR_EndScene()
     G_Direct3DDevice->EndScene();
 }
 
+extern "C" sint32 surfacenum;
+extern "C" sint32 sort3d_buffer[][2];
+extern "C" D3DRENDERSTATETYPE AlphaBlendEnabler;
+
+extern "C" void HWR_DrawPolyList(void)
+{
+    DWORD n;
+    sint32 *sort;
+    sint16 *info;
+    int type;
+    int page;
+    int count;
+    D3DTLVERTEX *vtx;
+    DWORD alpha;
+
+    HWR_EnableZBuffer(false, true);
+    sort = sort3d_buffer[0];
+    n = surfacenum;
+    while (n--) {
+        info = (sint16 *)sort[0];
+        type = *info++;
+        switch (type) {
+        case 9:
+        case 10:
+            page = info[0];
+            count = info[1];
+            vtx = *(D3DTLVERTEX **)(info + 2);
+            HWR_TexSource(HWR_PageHandles[page]);
+            HWR_EnableColorKey(type == 10);
+            G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, vtx, count, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+            break;
+        case 11:
+            count = info[0];
+            vtx = *(D3DTLVERTEX **)(info + 1);
+            HWR_TexSource(0);
+            HWR_EnableColorKey(false);
+            G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, vtx, count, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+            break;
+        case 12:
+            count = info[0];
+            vtx = *(D3DTLVERTEX **)(info + 1);
+            HWR_TexSource(0);
+            HWR_EnableColorKey(false);
+            G_Direct3DDevice->DrawPrimitive(D3DPT_LINESTRIP, D3DVT_TLVERTEX, vtx, count, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+            break;
+        case 13:
+            count = info[0];
+            vtx = *(D3DTLVERTEX **)(info + 1);
+            HWR_TexSource(0);
+            G_Direct3DDevice->GetRenderState(AlphaBlendEnabler, &alpha);
+            G_Direct3DDevice->SetRenderState(AlphaBlendEnabler, TRUE);
+            G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, vtx, count, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+            G_Direct3DDevice->SetRenderState(AlphaBlendEnabler, alpha);
+            break;
+        }
+        sort += 2;
+    }
+}
+
 void HWR_LoadTexturePages(int nPages, uint8 *pImage, uint8 *pPalette)
 {
     HWR_FreeTexturePages();
