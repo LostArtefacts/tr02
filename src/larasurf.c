@@ -173,3 +173,51 @@ void lara_col_surftread(ITEM_INFO *item, COLL_INFO *coll)
     lara.move_angle = item->pos.y_rot;
     LaraSurfaceCollision(item, coll);
 }
+
+
+#define BIG_SLOPE 2
+#define SURF_HITE 700
+#define SURF2WADE1_A 190
+#define SURF2WADE1_F GF(SURF2WADE1_A, 0)
+#define WADE_A 177
+#define WADE_F GF(WADE_A, 0)
+
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+
+int LaraTestWaterStepOut(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (coll->coll_type == COLL_FRONT || coll->mid_type == BIG_SLOPE || coll->mid_floor >= 0)
+        return 0;
+
+    if (coll->mid_floor < -(STEP_L / 2))
+    {
+        item->anim_number = SURF2WADE1_A;
+        item->frame_number = SURF2WADE1_F;
+        item->current_anim_state = AS_WATEROUT;
+        item->goal_anim_state = AS_STOP;
+    }
+    else
+    {
+        if (item->goal_anim_state == AS_SURFLEFT)
+            item->goal_anim_state = AS_STEPLEFT;
+        else if (item->goal_anim_state == AS_SURFRIGHT)
+            item->goal_anim_state = AS_STEPRIGHT;
+        else
+        {
+            item->goal_anim_state = AS_WADE;
+            item->current_anim_state = AS_WADE;
+            item->anim_number = WADE_A;
+            item->frame_number = WADE_F;
+        }
+    }
+
+    item->pos.y_pos += (coll->front_floor + SURF_HITE - 5);
+    UpdateLaraRoom(item, -LARA_HITE / 2);
+    item->pos.x_rot = item->pos.z_rot = 0;
+    item->gravity_status = 0;
+    item->speed = 0;
+    item->fallspeed = 0;
+    lara.water_status = LARA_WADE;
+
+    return 1;
+}
