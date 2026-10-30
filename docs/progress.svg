@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.73% (882)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.71% (358)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.81% (883)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.63% (357)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="528.35" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="528.35" y="0" class="decompiled"/>
-<rect width="214.46" height="6" x="532.54" y="0" class="todo"/>
+<rect width="528.95" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="528.95" y="0" class="decompiled"/>
+<rect width="213.86" height="6" x="533.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -764,7 +764,7 @@
 <rect width="12" height="12" x="645" y="195" class="named"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="195" class="todo"><title>0x0043a530 BaddyObjects (4155 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="195" class="named"><title>0x0043b570 TrapObjects (1533 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="195" class="todo"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="195" class="named"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="195" class="named"><title>0x0043c7c0 InitialiseObjects (104 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="195" class="named"><title>0x0043c830 GetCarriedItems (206 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="195" class="named"><title>0x0043c900 JellyControl (278 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.50%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">49.42%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.42%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.50%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="377.22" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="377.22" y="0" class="decompiled"/>
-<rect width="369.17" height="6" x="377.83" y="0" class="todo"/>
+<rect width="384.11" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="384.11" y="0" class="decompiled"/>
+<rect width="362.28" height="6" x="384.72" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1332,7 +1332,7 @@
 <rect width="58.06" height="51.94" x="0" y="190.24" class="todo"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="58.06" height="42.31" x="0" y="245.18" class="todo"><title>0x00419dd0 DrawLara (3330 bytes)</title></rect>
 <rect width="58.06" height="41.67" x="0" y="290.49" class="todo"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
-<rect width="58.06" height="39.83" x="0" y="335.17" class="todo"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
+<rect width="58.06" height="39.83" x="0" y="335.17" class="named"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
 <rect width="40.23" height="54.92" x="61.06" y="0" class="todo"><title>0x0041ab00 DrawLaraInt (3014 bytes)</title></rect>
 <rect width="40.23" height="50.16" x="61.06" y="57.92" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
 <rect width="40.23" height="47.97" x="61.06" y="111.08" class="todo"><title>0x00405f10 ins_objectGT4 (2652 bytes)</title></rect>

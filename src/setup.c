@@ -429,6 +429,502 @@ void TrapObjects(void)
     objects[LAVA].semi_transparent = 1;
 }
 
+#define SKIDOO_FAST 13
+#define BOAT 14
+#define DRAW_BRIDGE 63
+#define LIFT 65
+#define BIG_BOWL 71
+#define WINDOW1 72
+#define WINDOW2 73
+#define BELL 88
+#define WATER_SPRITE 89
+#define SNOW_SPRITE 90
+#define SWITCH_TYPE1 92
+#define SWITCH_TYPE2 93
+#define SWITCH_TYPE3 103
+#define SWITCH_TYPE4 104
+#define SWITCH_TYPE5 105
+#define DOOR_TYPE1 106
+#define DOOR_TYPE2 107
+#define DOOR_TYPE3 108
+#define DOOR_TYPE4 109
+#define DOOR_TYPE5 110
+#define DOOR_TYPE6 111
+#define DOOR_TYPE7 112
+#define DOOR_TYPE8 113
+#define TRAPDOOR 114
+#define TRAPDOOR2 115
+#define BRIDGE_FLAT 117
+#define BRIDGE_TILT1 118
+#define BRIDGE_TILT2 119
+#define PLAYER_1 123
+#define PLAYER_2 124
+#define PLAYER_3 125
+#define PLAYER_4 126
+#define PLAYER_5 127
+#define PLAYER_6 128
+#define PLAYER_7 129
+#define PLAYER_8 130
+#define PLAYER_9 131
+#define PLAYER_10 132
+#define PISTOL_ITEM 135
+#define SHOTGUN_ITEM 136
+#define MAGNUM_ITEM 137
+#define UZI_ITEM 138
+#define HARPOON_ITEM 139
+#define M16_ITEM 140
+#define ROCKET_GUN_ITEM 141
+#define PISTOL_AMMO_ITEM 142
+#define SHOTGUN_AMMO_ITEM 143
+#define MAGNUM_AMMO_ITEM 144
+#define UZI_AMMO_ITEM 145
+#define HARPOON_AMMO_ITEM 146
+#define M16_AMMO_ITEM 147
+#define ROCKET_AMMO_ITEM 148
+#define MEDI_ITEM 149
+#define BIGMEDI_ITEM 150
+#define FLARES_ITEM 151
+#define FLARE_ITEM 152
+#define PUZZLE_ITEM1 174
+#define PUZZLE_ITEM2 175
+#define PUZZLE_ITEM3 176
+#define PUZZLE_ITEM4 177
+#define PUZZLE_HOLE1 182
+#define PUZZLE_HOLE2 183
+#define PUZZLE_HOLE3 184
+#define PUZZLE_HOLE4 185
+#define PUZZLE_DONE1 186
+#define PUZZLE_DONE2 187
+#define PUZZLE_DONE3 188
+#define PUZZLE_DONE4 189
+#define SECRET1 190
+#define SECRET2 191
+#define SECRET3 192
+#define KEY_ITEM1 193
+#define KEY_ITEM2 194
+#define KEY_ITEM3 195
+#define KEY_ITEM4 196
+#define KEY_HOLE1 201
+#define KEY_HOLE2 202
+#define KEY_HOLE3 203
+#define KEY_HOLE4 204
+#define PICKUP_ITEM1 205
+#define PICKUP_ITEM2 206
+#define SPHERE_OF_DOOM 209
+#define SPHERE_OF_DOOM2 210
+#define SPHERE_OF_DOOM3 211
+#define ALARM_SOUND 212
+#define WATER_DRIP 213
+#define BIRD_TWEETER 215
+#define CLOCK_CHIMES 216
+#define HOT_LIQUID 220
+#define GONG_BONGER 225
+#define DETONATOR1 226
+#define DETONATOR2 227
+#define EXPLOSION1 229
+#define SPLASH1 230
+#define BUBBLES1 231
+#define BLOOD1 233
+#define GLOW 236
+#define RICOCHET1 238
+#define TWINKLE 239
+#define GUN_FLASH 240
+#define BODY_PART 242
+#define CAMERA_TARGET 243
+#define WATERFALL 244
+#define DIVER_HARPOON 245
+#define DRAGON_FIRE 246
+#define KNIFE 247
+#define ROCKET 248
+#define HARPOON_BOLT 249
+#define DING_DONG 257
+#define LARA_ALARM 258
+#define FINAL_LEVEL 262
+#define CUT_SHOTGUN 263
+#define EARTHQUAKE 264
+
+void SphereOfDoom(sint16 item_number);
+void DrawSphereOfDoom(ITEM_INFO *item);
+void SphereOfDoomCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void ControlRocket(sint16 item_number);
+void ControlHarpoonBolt(sint16 item_number);
+void ControlMissile(sint16 fx_num);
+void InitialiseSkidoo(sint16 item_number);
+void SkidooCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DrawSkidoo(ITEM_INFO *item);
+void InitialiseBoat(sint16 item_number);
+void BoatControl(sint16 item_number);
+void BoatCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void BigBowlControl(sint16 item_number);
+void BellControl(sint16 item_number);
+void FlareControl(sint16 item_number);
+void DrawFlareInAir(ITEM_INFO *item);
+void InitialiseWindow(sint16 item_number);
+void WindowControl(sint16 item_number);
+void SmashIceControl(sint16 item_number);
+void InitialiseLift(sint16 item_number);
+void LiftControl(sint16 item_number);
+void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeFlatFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeFlatCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt1Floor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt1Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt2Floor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void DrawBridgeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DrawBridgeFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void DrawBridgeCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void SwitchControl(sint16 item_number);
+void SwitchCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void SwitchCollision2(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void InitialiseDoor(sint16 item_number);
+void DoorControl(sint16 item_number);
+void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void TrapDoorControl(sint16 item_number);
+void TrapDoorFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void TrapDoorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void ControlGongBonger(sint16 item_number);
+void SecretControl(sint16 item_number);
+void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DetonatorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DetonatorControl(sint16 item_number);
+void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void InitialiseGenPlayer(sint16 item_number);
+void ControlCinematicPlayer(sint16 item_number);
+void ControlBlood1(sint16 fx_num);
+void ControlBubble1(sint16 fx_num);
+void ControlExplosion1(sint16 fx_num);
+void ControlRichochet1(sint16 fx_num);
+void ControlTwinkle(sint16 fx_num);
+void ControlSplash1(sint16 fx_num);
+void ControlSnowSprite(sint16 fx_num);
+void ControlWaterSprite(sint16 fx_num);
+void WaterFall(sint16 item_number);
+void ControlBodyPart(sint16 fx_num);
+void ControlGunShot(sint16 fx_num);
+void ControlGlow(sint16 fx_num);
+void ControlHotLiquid(sint16 fx_num);
+void ControlBirdTweeter(sint16 item_number);
+void ControlAlarmSound(sint16 item_number);
+void ControlDingDong(sint16 item_number);
+void ControlLaraAlarm(sint16 item_number);
+void ControlClockChimes(sint16 item_number);
+void FinalLevelCounter(sint16 item_number);
+void ControlCutShotgun(sint16 item_number);
+void EarthQuake(sint16 item_number);
+void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+#define INIT_PICKUP(a) \
+    obj = &objects[a]; \
+    obj->draw_routine = DrawSpriteItem; \
+    obj->collision = PickUpCollision; \
+    obj->save_flags = obj->save_position = 1
+
+#define INIT_KEYHOLE(a) \
+    obj = &objects[a]; \
+    obj->collision = KeyHoleCollision; \
+    obj->save_flags = 1
+
+#define INIT_PUZZLEHOLE(a) \
+    obj = &objects[a]; \
+    obj->collision = PuzzleHoleCollision; \
+    obj->save_flags = 1
+
+#define INIT_DOOR(a) \
+    obj = &objects[a]; \
+    obj->initialise = InitialiseDoor; \
+    obj->draw_routine = DrawUnclippedItem; \
+    obj->control = DoorControl; \
+    obj->collision = DoorCollision; \
+    obj->save_flags = obj->save_anim = 1
+
+#define INIT_SWITCH(a, b) \
+    obj = &objects[a]; \
+    obj->control = SwitchControl; \
+    obj->collision = b; \
+    obj->save_anim = obj->save_flags = 1
+
+#define INIT_PLAYER(a) \
+    obj = &objects[a]; \
+    obj->initialise = InitialiseGenPlayer; \
+    obj->control = ControlCinematicPlayer; \
+    obj->hit_points = 1
+
+void ObjectObjects(void)
+{
+    OBJECT_INFO *obj;
+
+    objects[CAMERA_TARGET].draw_routine = DrawDummyItem;
+
+    obj = &objects[SPHERE_OF_DOOM];
+    obj->control = SphereOfDoom;
+    obj->draw_routine = DrawSphereOfDoom;
+    obj->collision = SphereOfDoomCollision;
+    obj->save_flags = obj->save_position = 1;
+    obj->semi_transparent = 1;
+
+    obj = &objects[SPHERE_OF_DOOM2];
+    obj->control = SphereOfDoom;
+    obj->draw_routine = DrawSphereOfDoom;
+    obj->collision = SphereOfDoomCollision;
+    obj->save_flags = obj->save_position = 1;
+    obj->semi_transparent = 1;
+
+    obj = &objects[SPHERE_OF_DOOM3];
+    obj->control = SphereOfDoom;
+    obj->draw_routine = DrawSphereOfDoom;
+    obj->collision = SphereOfDoomCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[BIG_BOWL];
+    obj->control = BigBowlControl;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[BELL];
+    obj->control = BellControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[ROCKET];
+    obj->control = ControlRocket;
+    obj->save_position = 1;
+
+    obj = &objects[HARPOON_BOLT];
+    obj->control = ControlHarpoonBolt;
+    obj->save_position = 1;
+
+    obj = &objects[KNIFE];
+    obj->control = ControlMissile;
+    obj->save_position = 1;
+
+    obj = &objects[DIVER_HARPOON];
+    obj->control = ControlMissile;
+    obj->save_position = 1;
+
+    obj = &objects[SKIDOO_FAST];
+    obj->initialise = InitialiseSkidoo;
+    obj->collision = SkidooCollision;
+    obj->draw_routine = DrawSkidoo;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[BOAT];
+    obj->initialise = InitialiseBoat;
+    obj->control = BoatControl;
+    obj->collision = BoatCollision;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[FLARE_ITEM];
+    obj->control = FlareControl;
+    obj->collision = PickUpCollision;
+    obj->draw_routine = DrawFlareInAir;
+    obj->save_position = obj->save_flags = 1;
+
+    obj = &objects[WINDOW1];
+    obj->initialise = InitialiseWindow;
+    obj->control = WindowControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[WINDOW2];
+    obj->initialise = InitialiseWindow;
+    obj->control = SmashIceControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[LIFT];
+    obj->initialise = InitialiseLift;
+    obj->control = LiftControl;
+    obj->floor = LiftFloor;
+    obj->ceiling = LiftCeiling;
+    obj->save_anim = obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[BRIDGE_FLAT];
+    obj->floor = BridgeFlatFloor;
+    obj->ceiling = BridgeFlatCeiling;
+
+    obj = &objects[BRIDGE_TILT1];
+    obj->floor = BridgeTilt1Floor;
+    obj->ceiling = BridgeTilt1Ceiling;
+
+    obj = &objects[BRIDGE_TILT2];
+    obj->floor = BridgeTilt2Floor;
+    obj->ceiling = BridgeTilt2Ceiling;
+
+    obj = &objects[DRAW_BRIDGE];
+    if (obj->loaded)
+    {
+        obj->control = GeneralControl;
+        obj->collision = DrawBridgeCollision;
+        obj->floor = DrawBridgeFloor;
+        obj->ceiling = DrawBridgeCeiling;
+        obj->save_anim = obj->save_flags = 1;
+    }
+
+    INIT_SWITCH(SWITCH_TYPE2, SwitchCollision);
+    INIT_SWITCH(SWITCH_TYPE3, SwitchCollision);
+    INIT_SWITCH(SWITCH_TYPE1, SwitchCollision);
+    INIT_SWITCH(SWITCH_TYPE4, SwitchCollision);
+    INIT_SWITCH(SWITCH_TYPE5, SwitchCollision2);
+
+    INIT_DOOR(DOOR_TYPE1);
+    INIT_DOOR(DOOR_TYPE2);
+    INIT_DOOR(DOOR_TYPE3);
+    INIT_DOOR(DOOR_TYPE4);
+    INIT_DOOR(DOOR_TYPE5);
+    INIT_DOOR(DOOR_TYPE6);
+    INIT_DOOR(DOOR_TYPE7);
+    INIT_DOOR(DOOR_TYPE8);
+
+    obj = &objects[TRAPDOOR];
+    obj->control = TrapDoorControl;
+    obj->floor = TrapDoorFloor;
+    obj->ceiling = TrapDoorCeiling;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[TRAPDOOR2];
+    obj->control = TrapDoorControl;
+    obj->floor = TrapDoorFloor;
+    obj->ceiling = TrapDoorCeiling;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[GONG_BONGER];
+    obj->control = ControlGongBonger;
+    obj->save_anim = obj->save_flags = 1;
+
+    INIT_PICKUP(PICKUP_ITEM1);
+    INIT_PICKUP(PICKUP_ITEM2);
+    INIT_PICKUP(KEY_ITEM1);
+    INIT_PICKUP(KEY_ITEM2);
+    INIT_PICKUP(KEY_ITEM3);
+    INIT_PICKUP(KEY_ITEM4);
+    INIT_PICKUP(PUZZLE_ITEM1);
+    INIT_PICKUP(PUZZLE_ITEM2);
+    INIT_PICKUP(PUZZLE_ITEM3);
+    INIT_PICKUP(PUZZLE_ITEM4);
+    INIT_PICKUP(SECRET1);
+    INIT_PICKUP(SECRET2);
+    objects[SECRET2].control = SecretControl;
+    INIT_PICKUP(SECRET3);
+    INIT_PICKUP(PISTOL_ITEM);
+    INIT_PICKUP(SHOTGUN_ITEM);
+    INIT_PICKUP(HARPOON_ITEM);
+    INIT_PICKUP(ROCKET_GUN_ITEM);
+    INIT_PICKUP(M16_ITEM);
+    INIT_PICKUP(MAGNUM_ITEM);
+    INIT_PICKUP(UZI_ITEM);
+    INIT_PICKUP(FLARES_ITEM);
+    INIT_PICKUP(PISTOL_AMMO_ITEM);
+    INIT_PICKUP(SHOTGUN_AMMO_ITEM);
+    INIT_PICKUP(MAGNUM_AMMO_ITEM);
+    INIT_PICKUP(UZI_AMMO_ITEM);
+    INIT_PICKUP(HARPOON_AMMO_ITEM);
+    INIT_PICKUP(M16_AMMO_ITEM);
+    INIT_PICKUP(ROCKET_AMMO_ITEM);
+    INIT_PICKUP(MEDI_ITEM);
+    INIT_PICKUP(BIGMEDI_ITEM);
+
+    INIT_KEYHOLE(KEY_HOLE1);
+    INIT_KEYHOLE(KEY_HOLE2);
+    INIT_KEYHOLE(KEY_HOLE3);
+    INIT_KEYHOLE(KEY_HOLE4);
+
+    obj = &objects[DETONATOR2];
+    obj->collision = DetonatorCollision;
+    obj->control = DetonatorControl;
+    obj->save_flags = obj->save_anim = 1;
+
+    objects[DETONATOR1].collision = DetonatorCollision;
+
+    INIT_PUZZLEHOLE(PUZZLE_HOLE1);
+    INIT_PUZZLEHOLE(PUZZLE_HOLE2);
+    INIT_PUZZLEHOLE(PUZZLE_HOLE3);
+    INIT_PUZZLEHOLE(PUZZLE_HOLE4);
+
+    objects[PUZZLE_DONE1].save_flags = 1;
+    objects[PUZZLE_DONE2].save_flags = 1;
+    objects[PUZZLE_DONE3].save_flags = 1;
+    objects[PUZZLE_DONE4].save_flags = 1;
+
+    INIT_PLAYER(PLAYER_1);
+    INIT_PLAYER(PLAYER_2);
+    INIT_PLAYER(PLAYER_3);
+    INIT_PLAYER(PLAYER_4);
+    INIT_PLAYER(PLAYER_5);
+    INIT_PLAYER(PLAYER_6);
+    INIT_PLAYER(PLAYER_7);
+    INIT_PLAYER(PLAYER_8);
+    INIT_PLAYER(PLAYER_9);
+    INIT_PLAYER(PLAYER_10);
+
+    objects[BLOOD1].control = ControlBlood1;
+    objects[BLOOD1].semi_transparent = 1;
+
+    objects[BUBBLES1].control = ControlBubble1;
+
+    objects[EXPLOSION1].control = ControlExplosion1;
+    objects[EXPLOSION1].semi_transparent = 1;
+
+    objects[DRAGON_FIRE].control = ControlMissile;
+    objects[DRAGON_FIRE].semi_transparent = 1;
+
+    objects[RICOCHET1].control = ControlRichochet1;
+
+    objects[TWINKLE].control = ControlTwinkle;
+
+    objects[SPLASH1].control = ControlSplash1;
+    objects[SPLASH1].semi_transparent = 1;
+
+    objects[SNOW_SPRITE].control = ControlSnowSprite;
+
+    objects[WATER_SPRITE].control = ControlWaterSprite;
+    objects[WATER_SPRITE].semi_transparent = 1;
+
+    objects[WATERFALL].control = WaterFall;
+    objects[WATERFALL].draw_routine = DrawDummyItem;
+
+    objects[BODY_PART].control = ControlBodyPart;
+    objects[BODY_PART].nmeshes = 0;
+    objects[BODY_PART].loaded = 1;
+
+    objects[GUN_FLASH].control = ControlGunShot;
+
+    objects[GLOW].control = ControlGlow;
+
+    objects[HOT_LIQUID].control = ControlHotLiquid;
+    objects[HOT_LIQUID].semi_transparent = 1;
+
+    objects[BIRD_TWEETER].control = ControlBirdTweeter;
+    objects[BIRD_TWEETER].draw_routine = DrawDummyItem;
+
+    objects[WATER_DRIP].control = ControlBirdTweeter;
+    objects[WATER_DRIP].draw_routine = DrawDummyItem;
+
+    objects[ALARM_SOUND].control = ControlAlarmSound;
+    objects[ALARM_SOUND].save_flags = 1;
+
+    objects[DING_DONG].control = ControlDingDong;
+    objects[DING_DONG].draw_routine = DrawDummyItem;
+
+    objects[LARA_ALARM].control = ControlLaraAlarm;
+    objects[LARA_ALARM].draw_routine = DrawDummyItem;
+    objects[LARA_ALARM].save_flags = 1;
+
+    objects[CLOCK_CHIMES].control = ControlClockChimes;
+    objects[CLOCK_CHIMES].draw_routine = DrawDummyItem;
+    objects[CLOCK_CHIMES].save_flags = 1;
+
+    objects[FINAL_LEVEL].draw_routine = DrawDummyItem;
+    objects[FINAL_LEVEL].control = FinalLevelCounter;
+    objects[FINAL_LEVEL].save_flags = 1;
+
+    objects[CUT_SHOTGUN].control = ControlCutShotgun;
+    objects[CUT_SHOTGUN].save_flags = objects[CUT_SHOTGUN].save_anim = 1;
+
+    objects[EARTHQUAKE].draw_routine = DrawDummyItem;
+    objects[EARTHQUAKE].control = EarthQuake;
+    objects[EARTHQUAKE].save_flags = 1;
+}
+
 void InitialiseObjects(void)
 {
     int i;
