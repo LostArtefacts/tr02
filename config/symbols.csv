@@ -808,7 +808,7 @@ address,size,name,symbol
 0x004445c0,48,BGND_Init,_BGND_Init
 0x004445f0,36,Enumerate3DDevices,_Enumerate3DDevices
 0x00444620,31,D3DCreate,_D3DCreate
-0x00444640,26,Func444640,
+0x00444640,26,D3DRelease,_D3DRelease
 0x00444660,189,Enum3DDevicesCallback,_Enum3DDevicesCallback@24
 0x00444720,55,D3DIsSupported,_D3DIsSupported
 0x00444760,185,D3DSetViewport,_D3DSetViewport
@@ -1445,6 +1445,7 @@ address,size,name,symbol
 0x00462d40,6,RtlUnwind,
 0x004630d8,21,GuidFormat,_GuidFormat
 0x004630f0,17,HexDigits,_HexDigits
+0x00463120,16,IID_IDirect3D2,_IID_IDirect3D2
 0x00463160,16,GUID_SysKeyboard,_GUID_SysKeyboard
 0x00463170,16,IID_IDirect3DTexture2,_IID_IDirect3DTexture2
 0x00463184,4,type_info_vftable,??_7type_info@@6B@

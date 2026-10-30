@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.88% (834)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">32.72% (408)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.96% (835)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">32.64% (407)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="499.60" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="499.60" y="0" class="decompiled"/>
-<rect width="244.41" height="6" x="502.59" y="0" class="todo"/>
+<rect width="500.20" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="500.20" y="0" class="decompiled"/>
+<rect width="243.81" height="6" x="503.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -876,8 +876,8 @@
 <rect width="12" height="12" x="75" y="240" class="todo"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="240" class="todo"><title>0x004445c0 BGND_Init (48 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="240" class="todo"><title>0x004445f0 Enumerate3DDevices (36 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="240" class="todo"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="240" class="todo"><title>0x00444640 Func444640 (26 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="240" class="named"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="240" class="todo"><title>0x00444640 D3DRelease (26 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="240" class="todo"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="240" class="todo"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.96%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.97%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.98%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="365.75" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="365.75" y="0" class="decompiled"/>
-<rect width="380.88" height="6" x="366.12" y="0" class="todo"/>
+<rect width="365.82" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="365.82" y="0" class="decompiled"/>
+<rect width="380.81" height="6" x="366.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2394,7 +2394,7 @@
 <rect width="2.13" height="2.18" x="698.45" y="347.72" class="named"><title>0x00456060 SafeFreeTexturePage (32 bytes)</title></rect>
 <rect width="2.13" height="2.02" x="698.45" y="352.90" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="2.13" height="2.02" x="698.45" y="357.92" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
-<rect width="2.13" height="2.02" x="698.45" y="362.94" class="todo"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
+<rect width="2.13" height="2.02" x="698.45" y="362.94" class="named"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
 <rect width="2.13" height="2.02" x="698.45" y="367.96" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="2.13" height="2.02" x="698.45" y="372.98" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="2.29" height="1.87" x="703.58" y="326.51" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
@@ -2431,7 +2431,7 @@
 <rect width="1.64" height="1.83" x="727.14" y="336.06" class="todo"><title>0x00446697 Func446697 (27 bytes)</title></rect>
 <rect width="1.64" height="1.83" x="731.78" y="336.06" class="todo"><title>0x004466b2 Func4466b2 (27 bytes)</title></rect>
 <rect width="1.64" height="1.83" x="736.42" y="336.06" class="todo"><title>0x00457eee phd_sin (27 bytes)</title></rect>
-<rect width="1.47" height="1.83" x="741.06" y="336.06" class="todo"><title>0x00444640 Func444640 (26 bytes)</title></rect>
+<rect width="1.47" height="1.83" x="741.06" y="336.06" class="todo"><title>0x00444640 D3DRelease (26 bytes)</title></rect>
 <rect width="1.47" height="1.83" x="745.53" y="336.06" class="todo"><title>0x00445fd0 EnumerateDisplayAdapters (26 bytes)</title></rect>
 <rect width="1.48" height="1.82" x="708.58" y="340.89" class="named"><title>0x004472d0 DInputRelease (26 bytes)</title></rect>
 <rect width="1.48" height="1.82" x="708.58" y="345.71" class="named"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
