@@ -39,6 +39,19 @@ extern "C" void GameWindowCalculateSizeFromClient(int *width, int *height)
     *height = rect.bottom - rect.top;
 }
 
+extern "C" void GameWindowCalculateSizeFromClientByZero(int *width, int *height)
+{
+    RECT rect;
+
+    rect.bottom = 0;
+    rect.right = 0;
+    rect.top = 0;
+    rect.left = 0;
+    AdjustWindowRectEx(&rect, GetWindowLong(HGameWindow, GWL_STYLE), FALSE, GetWindowLong(HGameWindow, GWL_EXSTYLE));
+    *width += rect.left - rect.right;
+    *height += rect.top - rect.bottom;
+}
+
 extern "C" void WinVidSetMinWindowSize(int width, int height)
 {
     MinWindowClientWidth = width;

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.80% (770)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.20% (476)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.88% (771)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.12% (475)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="461.63" height="6" x="0" y="0" class="named"/>
-<rect width="285.37" height="6" x="461.63" y="0" class="todo"/>
+<rect width="462.23" height="6" x="0" y="0" class="named"/>
+<rect width="284.77" height="6" x="462.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -890,7 +890,7 @@
 <rect width="12" height="12" x="300" y="240" class="todo"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="named"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="240" class="named"><title>0x00444d20 GameWindowCalculateSizeFromClient (115 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="240" class="todo"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="240" class="named"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="240" class="named"><title>0x00444e10 WinVidSetMinWindowSize (65 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="240" class="named"><title>0x00444e60 WinVidClearMinWindowSize (8 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="named"><title>0x00444e70 WinVidSetMaxWindowSize (65 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.02%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.98%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="343.80" height="6" x="0" y="0" class="named"/>
-<rect width="403.20" height="6" x="343.80" y="0" class="todo"/>
+<rect width="344.03" height="6" x="0" y="0" class="named"/>
+<rect width="402.97" height="6" x="344.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2004,7 +2004,7 @@
 <rect width="6.55" height="6.41" x="590.74" y="295.01" class="named"><title>0x00427300 CreateEffect (108 bytes)</title></rect>
 <rect width="6.55" height="6.32" x="590.74" y="304.41" class="named"><title>0x004322c0 lara_as_swim (107 bytes)</title></rect>
 <rect width="6.55" height="6.32" x="590.74" y="313.73" class="named"><title>0x00434250 DrawUnclippedItem (107 bytes)</title></rect>
-<rect width="6.55" height="6.23" x="590.74" y="323.05" class="todo"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
+<rect width="6.55" height="6.23" x="590.74" y="323.05" class="named"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
 <rect width="6.55" height="6.23" x="590.74" y="332.28" class="todo"><title>0x004461f0 WinVidRegisterGameWindowClass (106 bytes)</title></rect>
 <rect width="6.55" height="6.23" x="590.74" y="341.51" class="todo"><title>0x00455d80 Func455d80 (106 bytes)</title></rect>
 <rect width="6.55" height="6.14" x="590.74" y="350.74" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
