@@ -1171,6 +1171,40 @@ void lara_col_roll(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos += coll->mid_floor;
 }
 
+void lara_col_roll2(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot - 32768;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (TestLaraSlide(item, coll))
+        return;
+    if (coll->mid_floor > 200)
+    {
+        item->anim_number = FALLBACK_A;
+        item->frame_number = FALLBACK_F;
+        item->current_anim_state = AS_FALLBACK;
+        item->goal_anim_state = AS_FALLBACK;
+        item->fallspeed = 0;
+        item->gravity_status = 1;
+        return;
+    }
+    if (coll->mid_floor < coll->bad_neg)
+    {
+        item->pos.x_pos = coll->old.x;
+        item->pos.y_pos = coll->old.y;
+        item->pos.z_pos = coll->old.z;
+        return;
+    }
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_special(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_default_col(item, coll);
