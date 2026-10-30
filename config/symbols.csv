@@ -194,7 +194,7 @@ address,size,name,symbol
 0x00416bf0,122,Harpoon,_Harpoon
 0x00416c70,262,GetWaterSurface,_GetWaterSurface
 0x00416d80,905,DiverControl,_DiverControl
-0x00417130,903,DogControl,_DogControl
+0x00417130,940,DogControl,_DogControl
 0x004174e0,638,TigerControl,_TigerControl
 0x00417780,383,ControlTwinkle,_ControlTwinkle
 0x00417900,217,CreateBartoliLight,_CreateBartoliLight
@@ -1450,6 +1450,7 @@ address,size,name,symbol
 0x004640b8,4,CineTickRate,_CineTickRate
 0x004640bc,2,CD_TrackID,_CD_TrackID
 0x004640c4,4,flipeffect,_flipeffect
+0x00464130,16,dog_bite,_dog_bite
 0x004641f0,4,AssaultBestTime,_AssaultBestTime
 0x004641f8,,effect_routines,_effect_routines
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets
