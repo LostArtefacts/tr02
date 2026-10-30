@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.73% (246)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.27% (1001)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.81% (247)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.19% (1000)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.36" height="6" x="0" y="0" class="named"/>
-<rect width="599.64" height="6" x="147.36" y="0" class="todo"/>
+<rect width="147.96" height="6" x="0" y="0" class="named"/>
+<rect width="599.04" height="6" x="147.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -844,7 +844,7 @@
 <rect width="12" height="12" x="360" y="225" class="todo"><title>0x004421c0 SpikeCollision (341 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="225" class="todo"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="225" class="todo"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="225" class="todo"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="225" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="225" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x004425b0 FallingBlock (261 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.80%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="46.18" height="6" x="0" y="0" class="named"/>
-<rect width="700.82" height="6" x="46.18" y="0" class="todo"/>
+<rect width="46.31" height="6" x="0" y="0" class="named"/>
+<rect width="700.69" height="6" x="46.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2184,7 +2184,7 @@
 <rect width="4.46" height="4.19" x="656.05" y="269.17" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="663.51" y="269.17" class="todo"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="670.97" y="269.17" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
-<rect width="4.34" height="4.19" x="678.31" y="269.17" class="todo"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
+<rect width="4.34" height="4.19" x="678.31" y="269.17" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="685.66" y="269.17" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="692.88" y="269.17" class="named"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="700.11" y="269.17" class="todo"><title>0x0044ec40 EncodePutPCX (62 bytes)</title></rect>
