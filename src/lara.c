@@ -292,6 +292,75 @@ void lara_as_run(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_STOP;
 }
 
+void lara_as_wade(ITEM_INFO *item, COLL_INFO *coll);
+
+void lara_as_stop(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_DEATH;
+        return;
+    }
+
+    if ((input & IN_ROLL) && lara.water_status != LARA_WADE)
+    {
+        item->anim_number = ROLL_A;
+        item->frame_number = ROLL_F;
+        item->current_anim_state = AS_ROLL;
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    item->goal_anim_state = AS_STOP;
+
+    if (input & IN_LOOK)
+        LookUpDown();
+
+    if (input & IN_STEPL)
+        item->goal_anim_state = AS_STEPLEFT;
+    else if (input & IN_STEPR)
+        item->goal_anim_state = AS_STEPRIGHT;
+    else if (input & IN_LEFT)
+        item->goal_anim_state = AS_TURN_L;
+    else if (input & IN_RIGHT)
+        item->goal_anim_state = AS_TURN_R;
+
+    if (lara.water_status == LARA_WADE)
+    {
+        if (input & IN_JUMP)
+            item->goal_anim_state = AS_COMPRESS;
+
+        if (input & IN_FORWARD)
+        {
+            if (input & IN_SLOW)
+                lara_as_wade(item, coll);
+            else
+                lara_as_walk(item, coll);
+        }
+        else if (input & IN_BACK)
+            lara_as_back(item, coll);
+    }
+    else
+    {
+        if (input & IN_JUMP)
+            item->goal_anim_state = AS_COMPRESS;
+        else if (input & IN_FORWARD)
+        {
+            if (input & IN_SLOW)
+                lara_as_walk(item, coll);
+            else
+                lara_as_run(item, coll);
+        }
+        else if (input & IN_BACK)
+        {
+            if (input & IN_SLOW)
+                lara_as_back(item, coll);
+            else
+                item->goal_anim_state = AS_FASTBACK;
+        }
+    }
+}
+
 void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->goal_anim_state == AS_SWANDIVE || item->goal_anim_state == AS_REACH)
@@ -2132,7 +2201,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
