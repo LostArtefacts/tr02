@@ -152,3 +152,14 @@ void DS_StopSample(int nHandle)
     }
 }
 
+void DS_StopAllSamples()
+{
+    for (int nChannel = 0; nChannel < ArraySize(ChannelBuffers); ++nChannel) {
+        LPDIRECTSOUNDBUFFER pBuffer = ChannelBuffers[nChannel];
+        if (pBuffer) {
+            DX_TRY(pBuffer->Stop());
+            pBuffer->Release();
+            ChannelBuffers[nChannel] = 0;
+        }
+    }
+}

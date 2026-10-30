@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.68% (607)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.32% (640)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.76% (608)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.24% (639)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="363.62" height="6" x="0" y="0" class="named"/>
-<rect width="383.38" height="6" x="363.62" y="0" class="todo"/>
+<rect width="364.21" height="6" x="0" y="0" class="named"/>
+<rect width="382.79" height="6" x="364.21" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -986,7 +986,7 @@
 <rect width="12" height="12" x="240" y="270" class="named"><title>0x00447f80 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="270" class="named"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="270" class="named"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="270" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="270" class="named"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="270" class="todo"><title>0x00448050 Func448050 (5 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="270" class="todo"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="270" class="todo"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.34%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.66%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.65%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="219.14" height="6" x="0" y="0" class="named"/>
-<rect width="527.86" height="6" x="219.14" y="0" class="todo"/>
+<rect width="219.24" height="6" x="0" y="0" class="named"/>
+<rect width="527.76" height="6" x="219.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2314,7 +2314,7 @@
 <rect width="2.95" height="3.30" x="675.40" y="315.84" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="2.95" height="3.30" x="675.40" y="322.14" class="named"><title>0x00421980 FlashIt (45 bytes)</title></rect>
 <rect width="2.95" height="3.30" x="675.40" y="328.44" class="todo"><title>0x00447860 WinInStart (45 bytes)</title></rect>
-<rect width="2.95" height="3.30" x="675.40" y="334.74" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
+<rect width="2.95" height="3.30" x="675.40" y="334.74" class="named"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="2.95" height="3.16" x="675.40" y="341.04" class="named"><title>0x0041d110 ChandelierFX (44 bytes)</title></rect>
 <rect width="2.95" height="3.16" x="675.40" y="347.20" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
 <rect width="2.95" height="3.16" x="675.40" y="353.36" class="named"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
