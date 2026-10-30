@@ -22,11 +22,14 @@ int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
 
 extern sint16 DeathSlideBounds[12];
 extern PHD_VECTOR DeathSlidePosition;
+extern int flipmap[];
 
 #define NO_ROOM 0xff
 #define FINAL_COUNTDOWN 150
 #define BELL_STOP 0
 #define BELL_SWING 1
+#define BOWL_POUR 1
+#define HOT_LIQUID 220
 
 extern sint16 final_boss_active;
 
@@ -72,6 +75,45 @@ void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *col
         item->status = ACTIVE;
         item->flags |= ONESHOT;
     }
+}
+
+void BigBowlControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FX_INFO *fx;
+    sint16 fx_number;
+
+    item = &items[item_number];
+
+    if (item->current_anim_state == BOWL_POUR)
+    {
+        fx_number = CreateEffect(item->room_number);
+        if (fx_number != NO_ITEM)
+        {
+            fx = &effects[fx_number];
+            fx->object_number = HOT_LIQUID;
+            fx->pos.x_pos = item->pos.x_pos + STEP_L * 2;
+            fx->pos.z_pos = item->pos.z_pos + STEP_L * 2;
+            fx->pos.y_pos = item->pos.y_pos + STEP_L * 2 + 100;
+            fx->room_number = item->room_number;
+            fx->frame_number = GetRandomDraw() * objects[HOT_LIQUID].nmeshes >> 15;
+            fx->fallspeed = 0;
+            fx->shade = 0x800;
+        }
+
+        item->timer++;
+        if (item->timer == 30 * 5)
+        {
+            flipmap[4] = CODE_BITS | ONESHOT;
+            if (!flip_status)
+                FlipMap();
+        }
+    }
+
+    AnimateItem(item);
+
+    if (item->status == DEACTIVATED && item->timer >= 30 * 7)
+        RemoveActiveItem(item_number);
 }
 
 void BellControl(sint16 item_number)
