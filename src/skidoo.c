@@ -284,3 +284,31 @@ int DoShift(ITEM_INFO *skidoo, PHD_VECTOR *pos, PHD_VECTOR *old)
 
     return 0;
 }
+
+int DoDynamics(int height, int fallspeed, int *y)
+{
+    int kick;
+
+    if (height > *y)
+    {
+        *y += fallspeed;
+        if (*y > height - SKIDOO_MIN_BOUNCE)
+        {
+            *y = height;
+            fallspeed = 0;
+        }
+        else
+            fallspeed += GRAVITY;
+    }
+    else
+    {
+        kick = height - *y << 2;
+        if (kick < SKIDOO_MAX_KICK)
+            kick = SKIDOO_MAX_KICK;
+        fallspeed += (kick - fallspeed >> 3);
+        if (*y > height)
+            *y = height;
+    }
+
+    return fallspeed;
+}
