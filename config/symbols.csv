@@ -343,7 +343,7 @@ address,size,name,symbol
 0x00424c10,119,Inv_RequestItem,_Inv_RequestItem
 0x00424c90,27,Inv_RemoveAllItems,_Inv_RemoveAllItems
 0x00424cb0,272,Inv_RemoveItem,_Inv_RemoveItem
-0x00424dc0,193,Inv_GetItemOption,_Inv_GetItemOption
+0x00424dc0,482,Inv_GetItemOption,_Inv_GetItemOption
 0x00424fb0,36,RemoveInventoryText,_RemoveInventoryText
 0x00424fe0,271,Inv_RingInit,_Inv_RingInit
 0x004250f0,96,Inv_RingGetView,_Inv_RingGetView

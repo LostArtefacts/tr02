@@ -389,6 +389,148 @@ void Inv_RemoveAllItems(void)
     inv_keys_current = 0;
 }
 
+#define GUN_OPTION 157
+#define GUN_ITEM 135
+#define SHOTGUN_ITEM 136
+#define MAGNUM_ITEM 137
+#define UZI_ITEM 138
+#define M16_ITEM 140
+#define ROCKET_GUN_ITEM 141
+#define HARPOON_ITEM 139
+#define SG_AMMO_ITEM 143
+#define MAG_AMMO_ITEM 144
+#define HARPOON_AMMO_ITEM 146
+#define M16_AMMO_ITEM 147
+#define ROCKET_AMMO_ITEM 148
+#define UZI_AMMO_ITEM 145
+#define MEDI_ITEM 149
+#define BIGMEDI_ITEM 150
+#define FLARE_ITEM 151
+#define FLAREBOX_ITEM 152
+#define PUZZLE_ITEM1 174
+#define PUZZLE_ITEM2 175
+#define PUZZLE_ITEM3 176
+#define PUZZLE_ITEM4 177
+#define KEY_ITEM1 193
+#define KEY_ITEM2 194
+#define KEY_ITEM3 195
+#define KEY_ITEM4 196
+#define PICKUP_ITEM1 205
+#define PICKUP_ITEM2 206
+
+int Inv_GetItemOption(int itemNum)
+{
+    switch (itemNum)
+    {
+    case GUN_ITEM:
+    case GUN_OPTION:
+        return GUN_OPTION;
+
+    case FLARE_ITEM:
+    case FLAREBOX_ITEM:
+    case FLAREBOX_OPTION:
+        return FLAREBOX_OPTION;
+
+    case SHOTGUN_ITEM:
+    case SHOTGUN_OPTION:
+        return SHOTGUN_OPTION;
+
+    case MAGNUM_ITEM:
+    case MAGNUM_OPTION:
+        return MAGNUM_OPTION;
+
+    case UZI_ITEM:
+    case UZI_OPTION:
+        return UZI_OPTION;
+
+    case M16_ITEM:
+    case M16_OPTION:
+        return M16_OPTION;
+
+    case ROCKET_GUN_ITEM:
+    case ROCKET_OPTION:
+        return ROCKET_OPTION;
+
+    case HARPOON_ITEM:
+    case HARPOON_OPTION:
+        return HARPOON_OPTION;
+
+    case SG_AMMO_ITEM:
+    case SG_AMMO_OPTION:
+        return SG_AMMO_OPTION;
+
+    case MAG_AMMO_ITEM:
+    case MAG_AMMO_OPTION:
+        return MAG_AMMO_OPTION;
+
+    case HARPOON_AMMO_ITEM:
+    case HARPOON_AMMO_OPTION:
+        return HARPOON_AMMO_OPTION;
+
+    case M16_AMMO_ITEM:
+    case M16_AMMO_OPTION:
+        return M16_AMMO_OPTION;
+
+    case ROCKET_AMMO_ITEM:
+    case ROCKET_AMMO_OPTION:
+        return ROCKET_AMMO_OPTION;
+
+    case UZI_AMMO_ITEM:
+    case UZI_AMMO_OPTION:
+        return UZI_AMMO_OPTION;
+
+    case MEDI_ITEM:
+    case MEDI_OPTION:
+        return MEDI_OPTION;
+
+    case BIGMEDI_ITEM:
+    case BIGMEDI_OPTION:
+        return BIGMEDI_OPTION;
+
+    case PUZZLE_ITEM1:
+    case PUZZLE_OPTION1:
+        return PUZZLE_OPTION1;
+
+    case PUZZLE_ITEM2:
+    case PUZZLE_OPTION2:
+        return PUZZLE_OPTION2;
+
+    case PUZZLE_ITEM3:
+    case PUZZLE_OPTION3:
+        return PUZZLE_OPTION3;
+
+    case PUZZLE_ITEM4:
+    case PUZZLE_OPTION4:
+        return PUZZLE_OPTION4;
+
+    case PICKUP_ITEM1:
+    case PICKUP_OPTION1:
+        return PICKUP_OPTION1;
+
+    case PICKUP_ITEM2:
+    case PICKUP_OPTION2:
+        return PICKUP_OPTION2;
+
+    case KEY_ITEM1:
+    case KEY_OPTION1:
+        return KEY_OPTION1;
+
+    case KEY_ITEM2:
+    case KEY_OPTION2:
+        return KEY_OPTION2;
+
+    case KEY_ITEM3:
+    case KEY_OPTION3:
+        return KEY_OPTION3;
+
+    case KEY_ITEM4:
+    case KEY_OPTION4:
+        return KEY_OPTION4;
+    }
+
+    return -1;
+}
+
 void RemoveInventoryText(void)
 {
     int n;
