@@ -17,6 +17,8 @@ typedef struct {
 
 void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 void *game_malloc(int size, int type);
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
 
 extern sint16 DeathSlideBounds[12];
 extern PHD_VECTOR DeathSlidePosition;
@@ -85,6 +87,31 @@ void InitialiseWindow(sint16 item_number)
     floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
     if (boxes[floor->box].overlap_index & BLOCKABLE)
         boxes[floor->box].overlap_index |= BLOCKED;
+}
+
+void SmashWindow(sint16 item_number)
+{
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    r = &room[item->room_number];
+    floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
+    if (boxes[floor->box].overlap_index & BLOCKABLE)
+        boxes[floor->box].overlap_index &= (~BLOCKED);
+
+    SoundEffect(58, &item->pos, 0);
+
+    item->collidable = 0;
+    item->mesh_bits = 0x0fffe;
+    ExplodingDeath(item_number, 0x0fefe, 0);
+
+    item->flags |= ONESHOT;
+    if (item->status == ACTIVE)
+        RemoveActiveItem(item_number);
+    item->status = DEACTIVATED;
 }
 
 void ShutThatDoor(DOORPOS_DATA *d)

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.94% (336)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.06% (911)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.02% (337)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.98% (910)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="201.28" height="6" x="0" y="0" class="named"/>
-<rect width="545.72" height="6" x="201.28" y="0" class="todo"/>
+<rect width="201.88" height="6" x="0" y="0" class="named"/>
+<rect width="545.12" height="6" x="201.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -697,7 +697,7 @@
 <rect width="12" height="12" x="405" y="180" class="todo"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="180" class="todo"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="180" class="named"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="180" class="todo"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="180" class="named"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="180" class="todo"><title>0x00434f80 WindowControl (150 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="180" class="todo"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="180" class="named"><title>0x00435100 ShutThatDoor (66 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="64.88" height="6" x="0" y="0" class="named"/>
-<rect width="682.12" height="6" x="64.88" y="0" class="todo"/>
+<rect width="65.31" height="6" x="0" y="0" class="named"/>
+<rect width="681.69" height="6" x="65.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1768,7 +1768,7 @@
 <rect width="10.12" height="9.65" x="509.65" y="253.06" class="named"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
 <rect width="10.12" height="9.58" x="509.65" y="265.70" class="named"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
 <rect width="10.12" height="9.58" x="509.65" y="278.29" class="todo"><title>0x00442f20 LavaSpray (197 bytes)</title></rect>
-<rect width="10.12" height="9.52" x="509.65" y="290.87" class="todo"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
+<rect width="10.12" height="9.52" x="509.65" y="290.87" class="named"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="10.12" height="9.52" x="509.65" y="303.39" class="todo"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
 <rect width="10.12" height="9.52" x="509.65" y="315.91" class="todo"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
 <rect width="10.12" height="9.52" x="509.65" y="328.43" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
