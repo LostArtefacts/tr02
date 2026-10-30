@@ -313,6 +313,31 @@ void DrawGunFlash(int weapon_type, int clip)
     phd_PutPolygons(meshes[objects[GUN_FLASH].mesh_index], clip);
 }
 
+void __cdecl phd_PushUnitMatrix(void);
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame)
+{
+    sint32 *mptr;
+    sint32 x, y, z;
+
+    if (item->shade < 0)
+    {
+        phd_PushUnitMatrix();
+        mptr = phd_mxptr;
+        *(mptr + M03) = *(mptr + M13) = *(mptr + M23) = 0;
+        phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+        phd_TranslateRel((*(frame + 0) + *(frame + 1)) >> 1, (*(frame + 2) + *(frame + 3)) >> 1, (*(frame + 4) + *(frame + 5)) >> 1);
+        x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
+        y = (*(phd_mxptr + M13) >> W2V_SHIFT) + item->pos.y_pos;
+        z = (*(phd_mxptr + M23) >> W2V_SHIFT) + item->pos.z_pos;
+        phd_PopMatrix();
+        S_CalculateLight(x, y, z, item->room_number);
+    }
+    else
+        S_CalculateStaticMeshLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->shade, item->shadeB, &room[item->room_number]);
+}
+
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate)
 {
     ANIM_STRUCT *anim;
