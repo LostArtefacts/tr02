@@ -23,6 +23,8 @@
 #define FALLBACK_F GF(FALLBACK_A, 0)
 #define FASTFALL_A 32
 #define FASTFALL_F GF(FASTFALL_A, 0)
+#define LARA_EXTRA 12
+#define PUZZLE_ITEM1 174
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
@@ -33,6 +35,8 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll);
 void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll);
 int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll);
 int LaraFallen(ITEM_INFO *item, COLL_INFO *coll);
+int StartSyncedAudio(int num);
+int Inv_AddItem(int itemNum);
 void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
@@ -688,6 +692,30 @@ void extra_as_startanim(ITEM_INFO *item, COLL_INFO *coll)
     floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
     GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
     TestTriggers(trigger_index, 0);
+}
+
+void extra_as_starthouse(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int frame;
+
+    frame = item->frame_number - anims[item->anim_number].frame_base;
+    if (frame == 1)
+    {
+        StartSyncedAudio(63);
+        lara.mesh_ptrs[HAND_R] = meshes[objects[LARA_EXTRA].mesh_index + HAND_R];
+        lara.mesh_ptrs[HIPS] = meshes[objects[LARA_EXTRA].mesh_index + HIPS];
+    }
+    else if (frame == 401)
+    {
+        lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
+        lara.mesh_ptrs[HIPS] = meshes[objects[LARA].mesh_index + HIPS];
+        Inv_AddItem(PUZZLE_ITEM1);
+    }
+    else if (item->frame_number == anims[item->anim_number].frame_end)
+    {
+        camera.type = CHASE_CAMERA;
+        AlterFOV(GAME_FOV * ONE_DEGREE);
+    }
 }
 
 int LaraFallen(ITEM_INFO *item, COLL_INFO *coll)
