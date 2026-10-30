@@ -43,3 +43,22 @@ extern "C" sint16 *InsertObjectGT4_Sorted(sint16 *objptr, int number, int sortty
     }
     return objptr;
 }
+
+extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
+
+extern "C" sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, int sorttype)
+{
+    PHDTEXTURESTRUCT *tex;
+
+    if (HWR_VertexBufferFull())
+        return objptr + 4 * number;
+    while (number) {
+        if (HWR_VertexBufferFull())
+            return objptr + 4 * number;
+        tex = &phdtextinfo[objptr[3]];
+        InsertGT3_Sorted(&PhdVBuf[objptr[0]], &PhdVBuf[objptr[1]], &PhdVBuf[objptr[2]], tex, &tex->u1, &tex->u2, &tex->u3, sorttype);
+        number--;
+        objptr += 4;
+    }
+    return objptr;
+}
