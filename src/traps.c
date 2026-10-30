@@ -10,6 +10,11 @@
 #define FLAME_TOONEAR_DAMAGE 5
 #define HOOK_DAMAGE 50
 #define SPIKEWALL_DAMAGE 20
+#define PROPELLER_DAMAGE 200
+#define SPINBLADE_DAMAGE 100
+#define PROPELLER1 76
+#define PROPELLER2 77
+#define PROPELLER3 94
 #define BLADE_DAMAGE 100
 #define BIG_FIRE 0
 #define TEETHTRAP_DAMAGE 400
@@ -40,6 +45,8 @@ enum door_anims { DOOR_CLOSED, DOOR_OPEN };
 enum teeth_anims { TT_NICE, TT_NASTY };
 enum statue_anims { STATUE_EMPTY, STATUE_STOP, STATUE_CUT };
 enum blade_anims { BLADE_EMPTY, BLADE_STOP, BLADE_CUT };
+enum prop_anims { PROP_ON, PROP_OFF };
+enum spin_anims { SPIN_EMPTY, SPIN_STOP, SPIN_SPIN };
 
 static int clonked = 0;
 
@@ -137,6 +144,55 @@ void HookControl(sint16 item_number)
         clonked = 0;
 
     AnimateItem(item);
+}
+
+void PropellerControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    if (TriggerActive(item) && !(item->flags & ONESHOT))
+    {
+        item->goal_anim_state = PROP_ON;
+
+        if (item->touch_bits & 6)
+        {
+            lara_item->hit_points -= PROPELLER_DAMAGE;
+            lara_item->hit_status = 1;
+            DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, (sint16)(GetRandomDraw() >> 10), item->pos.y_rot + 0x4000, lara_item->room_number, 3);
+            if (item->object_number == PROPELLER2)
+                SoundEffect(207, &item->pos, 0);
+        }
+        else
+        {
+            if (item->object_number == PROPELLER2)
+                SoundEffect(206, &item->pos, 0);
+            else if (item->object_number == PROPELLER1)
+                SoundEffect(213, &item->pos, 0);
+            else if (item->object_number == PROPELLER3)
+                SoundEffect(215, &item->pos, 1);
+            else
+                SoundEffect(217, &item->pos, 0);
+        }
+    }
+    else if (item->goal_anim_state != PROP_OFF)
+    {
+        if (item->object_number == PROPELLER1)
+            SoundEffect(213, &item->pos, 0);
+        else if (item->object_number == PROPELLER3)
+            SoundEffect(216, &item->pos, 1);
+        item->goal_anim_state = PROP_OFF;
+    }
+
+    AnimateItem(item);
+
+    if (item->status == DEACTIVATED)
+    {
+        RemoveActiveItem(item_number);
+        if (item->object_number != PROPELLER2)
+            item->collidable = 0;
+    }
 }
 
 void IcicleControl(sint16 item_number)
