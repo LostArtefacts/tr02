@@ -58,3 +58,10 @@ void UT_ErrorBox(char *szString, HWND hWndOwner)
 {
     MessageBox(hWndOwner, szString, "Tomb Raider II", MB_ICONERROR);
 }
+
+void UT_ErrorBox(int nID, HWND hWndOwner)
+{
+    char buffer[256];
+    if (LoadString(GhInstance, nID, buffer, sizeof buffer))
+        UT_ErrorBox(buffer, hWndOwner);
+}
