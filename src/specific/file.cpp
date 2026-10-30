@@ -6,6 +6,7 @@
 #include "../camera.h"
 #include "../effects.h"
 #include "../gameflow.h"
+#include "hwrender.h"
 
 extern "C" int LnTextureInfos;
 extern "C" int democount;
@@ -13,6 +14,20 @@ extern "C" uint32 *demoptr;
 extern "C" int demo_loaded;
 
 #define DEMOCOUNT_MAX (30 * 60 * 5)
+#define MAX_TEXTPAGES 32
+#define RM_Hardware 2
+
+typedef struct {
+    void *PreferredDisplayAdapter;
+    void *PreferredSoundAdapter;
+    void *PreferredJoystick;
+    void *VideoMode;
+    int RenderMode;
+} APP_SETTINGS;
+
+extern "C" APP_SETTINGS SavedAppSettings;
+extern "C" char LevelFileName[];
+extern "C" char *texture_page_ptrs[];
 
 void AdjustTextureUVs(bool tNew);
 int LoadLevel(char *filename, int req_level);
@@ -86,6 +101,16 @@ int S_LoadLevelFile(char *fname, int level_number, int type)
 {
     S_UnloadLevelFile();
     return LoadLevel(fname, level_number);
+}
+
+void S_UnloadLevelFile(void)
+{
+    if (SavedAppSettings.RenderMode == RM_Hardware)
+        HWR_FreeTexturePages();
+    for (int i = 0; i < MAX_TEXTPAGES; ++i)
+        texture_page_ptrs[i] = 0;
+    LevelFileName[0] = 0;
+    LnTextureInfos = 0;
 }
 
 void S_AdjustTexelCoordinates(void)

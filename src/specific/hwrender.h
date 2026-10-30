@@ -3,5 +3,6 @@
 
 void HWR_BeginScene();
 void HWR_GetAllTextureHandles();
+void HWR_FreeTexturePages();
 
 #endif
