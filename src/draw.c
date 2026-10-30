@@ -30,6 +30,13 @@ void phd_PopMatrix_I(void)
     IMptr -= 12;
 }
 
+void phd_PushMatrix_I(void)
+{
+    phd_PushMatrix();
+    S_LongMemCpy(IMptr + 12, IMptr, 12);
+    IMptr += 12;
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;
