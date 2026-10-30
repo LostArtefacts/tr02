@@ -63,6 +63,44 @@ void SwitchControl(sint16 item_number)
 
 #define AIRLOCK_SWITCH 92
 
+int SwitchTrigger(sint16 item_num, sint16 timer)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (item->object_number == AIRLOCK_SWITCH)
+    {
+        if (item->status == DEACTIVATED)
+        {
+            RemoveActiveItem(item_num);
+            item->status = NOT_ACTIVE;
+            return 0;
+        }
+        else if ((item->flags & ONESHOT) || item->current_anim_state == SS_OFF)
+            return 0;
+        item->flags |= ONESHOT;
+        return 1;
+    }
+
+    if (item->status == DEACTIVATED)
+    {
+        if (item->current_anim_state == SS_OFF && timer > 0)
+        {
+            item->timer = timer;
+            if (timer != 1)
+                item->timer *= 30;
+            item->status = ACTIVE;
+        }
+        else
+        {
+            RemoveActiveItem(item_num);
+            item->status = NOT_ACTIVE;
+        }
+        return 1;
+    }
+    return 0;
+}
+
 int KeyTrigger(sint16 item_num)
 {
     ITEM_INFO *item;
