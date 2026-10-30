@@ -1026,7 +1026,7 @@ address,size,name,symbol
 0x0044d800,52,game_free,_game_free
 0x0044d840,232,CalculateWibbleTable,_CalculateWibbleTable
 0x0044d930,127,S_SeedRandom,_S_SeedRandom
-0x0044d9b0,288,Key,_Key
+0x0044d9b0,288,Key,?Key@@YAHH@Z
 0x0044dad0,2766,S_UpdateInput,_S_UpdateInput
 0x0044e5a0,60,RenderErrorBox,_RenderErrorBox
 0x0044e5e0,391,WinMain,_WinMain@16
@@ -1046,7 +1046,7 @@ address,size,name,symbol
 0x0044f8c0,1181,do_sound_option,_do_sound_option
 0x0044fd60,192,do_compass_option,_do_compass_option
 0x0044fe20,126,FlashConflicts,_FlashConflicts
-0x0044fea0,64,DefaultConflict,_DefaultConflict
+0x0044fea0,64,DefaultConflict,?DefaultConflict@@YAXXZ
 0x0044fee0,1780,do_control_option,_do_control_option
 0x004505f0,1232,S_ShowControls,_S_ShowControls
 0x00450ac0,150,S_ChangeCtrlText,_S_ChangeCtrlText
@@ -1522,7 +1522,7 @@ address,size,name,symbol
 0x00466be6,2,DumpY,_DumpY
 0x00466be8,2,DumpWidth,_DumpWidth
 0x00466bea,2,DumpHeight,_DumpHeight
-0x00466f58,,Layout,_Layout
+0x00466f58,,layout,?layout@@3PAY0O@FA
 0x00467724,4,DetailLevel,_DetailLevel
 0x0046c2f0,4,MidSort,_MidSort
 0x0046c2f4,4,FltViewAspect,_FltViewAspect
@@ -1760,11 +1760,11 @@ address,size,name,symbol
 0x00519ff8,4,GameAllocMemUsed,_GameAllocMemUsed
 0x00519ffc,4,GameAllocMemFree,_GameAllocMemFree
 0x0051a0bc,4,malloc_buffer,_malloc_buffer
-0x0051a0c0,56,ConflictLayout,_ConflictLayout
-0x0051a0f8,256,DIKeys,_DIKeys
+0x0051a0c0,56,conflict,?conflict@@3PAHA
+0x0051a0f8,256,keymap,?keymap@@3PAEA
 0x0051a1f8,4,input,_input
 0x0051a1fc,1,IsVidModeLock,_IsVidModeLock
-0x0051a200,4,JoyKeys,_JoyKeys
+0x0051a200,4,joy_fire,?joy_fire@@3HA
 0x0051a228,4,GhInstance,_GhInstance
 0x0051a22c,4,GpCmdLine,_GpCmdLine
 0x0051a238,4,KeyCursor,_KeyCursor
