@@ -281,10 +281,43 @@ extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
     return FALSE;
 }
 
+typedef struct
+{
+    void *head;
+    void *tail;
+    int count;
+} SETUP_SOUND_LIST;
+
+extern "C" SETUP_SOUND_LIST SoundAdapterList;
+
+inline void SE_EnableItem(HWND hwndDlg, int id, bool enable)
+{
+    EnableWindow(GetDlgItem(hwndDlg, id), enable);
+}
+
+inline void SE_CheckItem(HWND hwndDlg, int id, bool enable, bool check)
+{
+    HWND item = GetDlgItem(hwndDlg, id);
+    EnableWindow(item, enable);
+    SendMessage(item, BM_SETCHECK, check, 0);
+}
+
+extern "C" void SE_SoundDlgUpdate(HWND hwndDlg)
+{
+    int count = SoundAdapterList.count;
+    bool isAvailable = count > 0;
+
+    SE_EnableItem(hwndDlg, 1097, isAvailable);
+    SE_EnableItem(hwndDlg, 1098, isAvailable);
+    SE_CheckItem(hwndDlg, 1057, isAvailable, ChangedAppSettings.SoundEnabled && isAvailable);
+    SE_CheckItem(hwndDlg, 1086, isAvailable, !ChangedAppSettings.LaraMic);
+    SE_CheckItem(hwndDlg, 1087, isAvailable, ChangedAppSettings.LaraMic);
+    SE_EnableItem(hwndDlg, 1089, isAvailable);
+}
+
 extern "C" {
 extern HWND SoundImageHandle;
 void SE_SoundDlgInit(HWND hwndDlg);
-void SE_SoundDlgUpdate(HWND hwndDlg);
 }
 
 extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)

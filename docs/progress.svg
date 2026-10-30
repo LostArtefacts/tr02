@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.32% (954)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.12% (289)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.40% (955)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.04% (288)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="570.11" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="570.11" y="0" class="decompiled"/>
-<rect width="172.71" height="6" x="574.29" y="0" class="todo"/>
+<rect width="570.71" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="570.71" y="0" class="decompiled"/>
+<rect width="172.11" height="6" x="574.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1171,7 +1171,7 @@
 <rect width="12" height="12" x="0" y="330" class="todo"><title>0x00453eb0 Func453eb0 (380 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="330" class="named"><title>0x00454030 SE_SoundDlgProc (385 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="330" class="named"><title>0x004541c0 SE_SoundAdapterSet (10 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="330" class="todo"><title>0x004541d0 SE_SoundDlgUpdate (283 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="330" class="named"><title>0x004541d0 SE_SoundDlgUpdate (283 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="330" class="todo"><title>0x004542f0 SE_SoundDlgInit (190 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="330" class="named"><title>0x004543b0 SE_ControlsDlgProc (262 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x004544c0 SE_ControlsJoystickSet (10 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.51%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.41%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.59%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.33%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="422.11" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="422.11" y="0" class="decompiled"/>
-<rect width="324.28" height="6" x="422.72" y="0" class="todo"/>
+<rect width="422.73" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="422.73" y="0" class="decompiled"/>
+<rect width="323.67" height="6" x="423.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1658,7 +1658,7 @@
 <rect width="12.26" height="12.41" x="496.83" y="93.91" class="todo"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
 <rect width="12.26" height="12.41" x="512.09" y="93.91" class="todo"><title>0x004493a0 ApplySettings (284 bytes)</title></rect>
 <rect width="12.21" height="12.41" x="527.35" y="93.91" class="named"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
-<rect width="12.21" height="12.41" x="542.56" y="93.91" class="todo"><title>0x004541d0 SE_SoundDlgUpdate (283 bytes)</title></rect>
+<rect width="12.21" height="12.41" x="542.56" y="93.91" class="named"><title>0x004541d0 SE_SoundDlgUpdate (283 bytes)</title></rect>
 <rect width="12.16" height="12.41" x="557.77" y="93.91" class="todo"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
 <rect width="12.10" height="12.41" x="572.92" y="93.91" class="named"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
 <rect width="11.94" height="12.41" x="588.02" y="93.91" class="named"><title>0x0043c900 JellyControl (278 bytes)</title></rect>
