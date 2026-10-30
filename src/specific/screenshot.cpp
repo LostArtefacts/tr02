@@ -1,5 +1,6 @@
 #include "include.h"
 #include "global.h"
+#include "winmain.h"
 
 typedef struct {
     BYTE manufacturer;
@@ -22,8 +23,51 @@ typedef struct {
     BYTE filler[54];
 } PCX_HEADER;
 
+extern "C" LPDIRECTDRAWSURFACE RenderBufferSurface;
+extern "C" LPDIRECTDRAWSURFACE PrimaryBufferSurface;
+extern "C" int ScreenShotPcxNumber;
+extern "C" char ScreenShotPcxFormat[];
+
+extern "C" DWORD CompPCX(BYTE *bitmap, int width, int height, BYTE *palette, BYTE **pcxData);
 extern "C" DWORD EncodePutPCX(BYTE value, BYTE num, BYTE *buffer);
 extern "C" DWORD EncodeLinePCX(BYTE *src, int width, BYTE *dst);
+
+extern "C" void ScreenShotPCX(void)
+{
+    LPDIRECTDRAWSURFACE surface;
+    DDSURFACEDESC desc;
+    HRESULT rc;
+    BYTE *pcxData;
+    DWORD size;
+    DWORD written;
+    HANDLE file;
+    char fileName[20];
+
+    surface = RenderBufferSurface;
+    if (SavedAppSettings.RenderMode != RM_Software)
+        surface = PrimaryBufferSurface;
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    do {
+        rc = surface->Lock(NULL, &desc, 0, NULL);
+    } while (rc == DDERR_WASSTILLDRAWING);
+    if (rc == DDERR_SURFACELOST) {
+        surface->Restore();
+        return;
+    }
+    if (FAILED(rc))
+        return;
+    size = CompPCX((BYTE *)desc.lpSurface, desc.dwWidth, desc.dwHeight, game_palette, &pcxData);
+    surface->Unlock(&desc);
+    if (!size)
+        return;
+    if (++ScreenShotPcxNumber > 9999)
+        ScreenShotPcxNumber = 1;
+    wsprintf(fileName, ScreenShotPcxFormat, ScreenShotPcxNumber);
+    file = CreateFile(fileName, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    WriteFile(file, pcxData, size, &written, NULL);
+    CloseHandle(file);
+    GlobalFree(pcxData);
+}
 
 extern "C" DWORD CompPCX(BYTE *bitmap, int width, int height, BYTE *palette, BYTE **pcxData)
 {
