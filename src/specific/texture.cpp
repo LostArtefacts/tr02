@@ -53,3 +53,24 @@ extern "C" void Func455d50(void)
             FreePalette(i);
     }
 }
+
+extern "C" int GetFreeTexturePageIndex(void);
+extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page);
+extern "C" bool TexturePageInit(TEXPAGE_DESC *page);
+
+extern "C" int Func455d80(int width, int height, LPDIRECTDRAWPALETTE palette)
+{
+    int pageIndex = GetFreeTexturePageIndex();
+    if (pageIndex < 0)
+        return -1;
+    TEXPAGE_DESC *page = &TexturePages[pageIndex];
+    memset(page, 0, sizeof(TEXPAGE_DESC));
+    page->status = 1;
+    page->width = width;
+    page->height = height;
+    page->palette = palette;
+    if (!CreateTexturePageSurface(page))
+        return -1;
+    TexturePageInit(page);
+    return pageIndex;
+}
