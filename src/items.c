@@ -3,6 +3,7 @@
 extern sint16 body_bag;
 extern sint16 next_item_free, next_item_active;
 extern int level_items;
+extern sint16 number_rooms;
 
 #define NO_ROOM 0xff
 
@@ -137,6 +138,27 @@ void ItemNewRoom(sint16 item_num, sint16 room_number)
     r = &room[room_number];
     item->next_item = r->item_number;
     r->item_number = item_num;
+}
+
+int GlobalItemReplace(int in_objnum, int out_objnum)
+{
+    int i, j;
+    ROOM_INFO *r;
+    sint16 item_num;
+
+    j = 0;
+    for (i = 0, r = room; i < number_rooms; i++, r++)
+    {
+        for (item_num = r->item_number; item_num != NO_ITEM; item_num = items[item_num].next_item)
+        {
+            if (items[item_num].object_number == in_objnum)
+            {
+                items[item_num].object_number = out_objnum;
+                j++;
+            }
+        }
+    }
+    return j;
 }
 
 void InitialiseFXArray(void)
