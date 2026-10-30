@@ -157,3 +157,19 @@ void lara_col_surfright(ITEM_INFO *item, COLL_INFO *coll)
     lara.move_angle = item->pos.y_rot + 16384;
     LaraSurfaceCollision(item, coll);
 }
+
+void lara_col_surftread(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->goal_anim_state == AS_SWIM)
+    {
+        item->current_anim_state = AS_DIVE;
+        item->anim_number = SURFDIVE_A;
+        item->frame_number = SURFDIVE_F;
+        item->pos.x_rot = -45 * ONE_DEGREE;
+        item->fallspeed = 20 * 4;
+        lara.water_status = LARA_UNDERWATER;
+    }
+
+    lara.move_angle = item->pos.y_rot;
+    LaraSurfaceCollision(item, coll);
+}
