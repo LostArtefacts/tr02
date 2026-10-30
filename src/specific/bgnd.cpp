@@ -113,6 +113,79 @@ extern "C" void BGND_DrawInGameBlack(void)
     HWR_EnableZBuffer(true, true);
 }
 
+extern "C" {
+extern int UvAdd;
+extern float RhwFactor;
+extern float FltFarZ;
+}
+
+extern "C" void DrawTextureTile(int sx, int sy, int width, int height, D3DTEXTUREHANDLE texSource, int tu, int tv, int tWidth, int tHeight, D3DCOLOR color0, D3DCOLOR color1, D3DCOLOR color2, D3DCOLOR color3)
+{
+    D3DTLVERTEX vertex[4];
+    float sx0;
+    float sy0;
+    float sx1;
+    float sy1;
+    float tu0;
+    float tv0;
+    float tu1;
+    float tv1;
+    float sz;
+    float rhw;
+    float uvAdjust;
+
+    sx0 = (float)sx;
+    sy0 = (float)sy;
+    sx1 = (float)(sx + width);
+    sy1 = (float)(sy + height);
+    tu0 = (float)tu * (1.0f / 256.0f);
+    tv0 = (float)tv * (1.0f / 256.0f);
+    tu1 = (float)(tu + tWidth) * (1.0f / 256.0f);
+    tv1 = (float)(tv + tHeight) * (1.0f / 256.0f);
+    uvAdjust = (float)UvAdd * (1.0f / 65536.0f);
+    tu0 += uvAdjust;
+    tv0 += uvAdjust;
+    tu1 -= uvAdjust;
+    tv1 -= uvAdjust;
+    sz = 0.995f;
+    rhw = RhwFactor / FltFarZ;
+    vertex[0].sx = sx0;
+    vertex[0].sy = sy0;
+    vertex[0].sz = sz;
+    vertex[0].rhw = rhw;
+    vertex[0].color = color0;
+    vertex[0].specular = 0;
+    vertex[0].tu = tu0;
+    vertex[0].tv = tv0;
+    vertex[1].sx = sx1;
+    vertex[1].sy = sy0;
+    vertex[1].sz = sz;
+    vertex[1].rhw = rhw;
+    vertex[1].color = color1;
+    vertex[1].specular = 0;
+    vertex[1].tu = tu1;
+    vertex[1].tv = tv0;
+    vertex[2].sx = sx0;
+    vertex[2].sy = sy1;
+    vertex[2].sz = sz;
+    vertex[2].rhw = rhw;
+    vertex[2].color = color2;
+    vertex[2].specular = 0;
+    vertex[2].tu = tu0;
+    vertex[2].tv = tv1;
+    vertex[3].sx = sx1;
+    vertex[3].sy = sy1;
+    vertex[3].sz = sz;
+    vertex[3].rhw = rhw;
+    vertex[3].color = color3;
+    vertex[3].specular = 0;
+    vertex[3].tu = tu1;
+    vertex[3].tv = tv1;
+    HWR_TexSource(texSource);
+    HWR_EnableColorKey(false);
+    G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, D3DVT_TLVERTEX, vertex, 4, D3DDP_DONOTUPDATEEXTENTS | D3DDP_DONOTCLIP);
+}
+
 extern "C" void Func444560(void)
 {
     BGND_Free();

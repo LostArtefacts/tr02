@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.80% (1025)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.56% (220)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.88% (1026)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.48% (219)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="611.07" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="611.07" y="0" class="decompiled"/>
-<rect width="131.16" height="6" x="615.84" y="0" class="todo"/>
+<rect width="611.67" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="611.67" y="0" class="decompiled"/>
+<rect width="130.56" height="6" x="616.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -869,7 +869,7 @@
 <rect width="12" height="12" x="720" y="225" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="named"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="240" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="240" class="todo"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="240" class="named"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="240" class="named"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="240" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="240" class="decompiled"><title>0x00444560 Func444560 (13 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.95%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">32.96%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">67.12%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">32.79%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="500.11" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="500.11" y="0" class="decompiled"/>
-<rect width="246.24" height="6" x="500.76" y="0" class="todo"/>
+<rect width="501.39" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="501.39" y="0" class="decompiled"/>
+<rect width="244.95" height="6" x="502.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1474,7 +1474,7 @@
 <rect width="19.85" height="19.61" x="420.70" y="0" class="named"><title>0x00433b20 MovableBlockCollision (604 bytes)</title></rect>
 <rect width="19.70" height="19.61" x="443.56" y="0" class="named"><title>0x00415900 GetCeiling (600 bytes)</title></rect>
 <rect width="19.66" height="19.61" x="466.26" y="0" class="named"><title>0x0040e210 CreatureAIInfo (599 bytes)</title></rect>
-<rect width="19.44" height="19.61" x="488.92" y="0" class="todo"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
+<rect width="19.44" height="19.61" x="488.92" y="0" class="named"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
 <rect width="19.17" height="19.61" x="511.36" y="0" class="named"><title>0x00441f70 RollingBallCollision (586 bytes)</title></rect>
 <rect width="19.17" height="19.61" x="533.53" y="0" class="named"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
 <rect width="19.10" height="19.61" x="555.71" y="0" class="named"><title>0x0042e4f0 LaraTestClimbUpPos (584 bytes)</title></rect>
