@@ -1604,6 +1604,7 @@ address,size,name,symbol
 0x0047030c,4,phd_bottomfloat,_phd_bottomfloat
 0x00470310,4,FltResZBuf,_FltResZBuf
 0x00470314,4,FltResZ,_FltResZ
+0x00470318,4,InsertTransQuad,_InsertTransQuad
 0x0047031c,4,phd_winheight,_phd_winheight
 0x00470320,4,phd_centerx,_phd_centerx
 0x00470324,4,phd_centery,_phd_centery

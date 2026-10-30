@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.97% (885)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.47% (355)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.05% (886)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.39% (354)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="530.15" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="530.15" y="0" class="decompiled"/>
-<rect width="212.66" height="6" x="534.34" y="0" class="todo"/>
+<rect width="530.75" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="530.75" y="0" class="decompiled"/>
+<rect width="212.06" height="6" x="534.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1050,7 +1050,7 @@
 <rect width="12" height="12" x="435" y="285" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="285" class="named"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="285" class="named"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="285" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="285" class="named"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="285" class="named"><title>0x0044c460 S_FinishInventory (15 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="285" class="named"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="285" class="named"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.46%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.46%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.48%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.44%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="384.43" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="384.43" y="0" class="decompiled"/>
-<rect width="361.96" height="6" x="385.04" y="0" class="todo"/>
+<rect width="384.53" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="384.53" y="0" class="decompiled"/>
+<rect width="361.86" height="6" x="385.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2311,7 +2311,7 @@
 <rect width="3.21" height="3.29" x="725.55" y="303.40" class="named"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
 <rect width="3.08" height="3.29" x="731.76" y="303.40" class="named"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="3.08" height="3.29" x="737.84" y="303.40" class="named"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
-<rect width="3.08" height="3.29" x="743.92" y="303.40" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
+<rect width="3.08" height="3.29" x="743.92" y="303.40" class="named"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="2.94" height="3.30" x="675.60" y="309.69" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="2.94" height="3.30" x="675.60" y="315.99" class="named"><title>0x00421980 FlashIt (45 bytes)</title></rect>
 <rect width="2.94" height="3.30" x="675.60" y="322.29" class="named"><title>0x00447860 WinInStart (45 bytes)</title></rect>

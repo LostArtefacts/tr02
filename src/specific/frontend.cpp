@@ -31,6 +31,14 @@ void S_DrawScreenBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 
     S_DrawScreenLine(sx - 1, sy + h + 1, z, w + 1, 0, B_ORANGE, NULL, flags);
 }
 
+extern "C" void (*InsertTransQuad)(sint32 sx, sint32 sy, sint32 w, sint32 h, sint32 z);
+extern "C" void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, uint16 *grdptr, uint16 flags);
+
+void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, uint16 *grdptr, uint16 flags)
+{
+    InsertTransQuad(sx, sy, w + 1, h + 1, phd_znear + (z << 3));
+}
+
 void S_FinishInventory(void)
 {
     if (Inventory_Mode != INV_TITLE_MODE)
