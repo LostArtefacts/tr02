@@ -25,3 +25,14 @@ void WriteSG(void *pointer, int size)
     for (; size > 0; size--)
         *(SG_Point++) = *(data++);
 }
+
+
+void ReadSG(void *pointer, int size)
+{
+    char *data;
+
+    SG_Count += size;
+    data = pointer;
+    for (; size > 0; size--)
+        *(data++) = *(SG_Point++);
+}
