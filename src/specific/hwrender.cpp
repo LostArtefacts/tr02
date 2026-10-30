@@ -10,6 +10,8 @@ extern "C" int LanTextureHandle[32];
 extern "C" bool ZEnableState;
 extern "C" bool ZWriteEnableState;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
+extern "C" DWORD HWR_PageHandles[32];
+extern "C" DWORD GetTexturePageHandle(int nHandle);
 extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
 extern "C" D3DTEXTUREHANDLE CurrentTexSource;
@@ -83,6 +85,18 @@ void HWR_BeginScene()
     HWR_GetAllTextureHandles();
     DX_DoFlipWait();
     G_Direct3DDevice->BeginScene();
+}
+
+void HWR_GetAllTextureHandles()
+{
+    for (int nTPage = 0; nTPage < ArraySize(LanTextureHandle); ++nTPage)
+    {
+        int nHandle = LanTextureHandle[nTPage];
+        if (nHandle >= 0)
+            HWR_PageHandles[nTPage] = GetTexturePageHandle(nHandle);
+        else
+            HWR_PageHandles[nTPage] = 0;
+    }
 }
 
 bool HWR_Init()

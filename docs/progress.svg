@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.86% (310)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.14% (937)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.94% (311)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.06% (936)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="185.70" height="6" x="0" y="0" class="named"/>
-<rect width="561.30" height="6" x="185.70" y="0" class="todo"/>
+<rect width="186.30" height="6" x="0" y="0" class="named"/>
+<rect width="560.70" height="6" x="186.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1083,7 +1083,7 @@
 <rect width="12" height="12" x="195" y="300" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="300" class="todo"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="todo"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="300" class="todo"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="300" class="named"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="300" class="todo"><title>0x0044d680 HWR_VertexBufferFull (25 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="300" class="todo"><title>0x0044d6a0 Func44d6a0 (11 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="300" class="named"><title>0x0044d6b0 HWR_Init (34 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.83%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.17%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="58.34" height="6" x="0" y="0" class="named"/>
-<rect width="688.66" height="6" x="58.34" y="0" class="todo"/>
+<rect width="58.46" height="6" x="0" y="0" class="named"/>
+<rect width="688.54" height="6" x="58.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2261,7 +2261,7 @@
 <rect width="3.58" height="3.75" x="662.13" y="351.02" class="todo"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
 <rect width="3.58" height="3.75" x="662.13" y="357.76" class="named"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="3.58" height="3.75" x="662.13" y="364.51" class="named"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
-<rect width="3.58" height="3.75" x="662.13" y="371.25" class="todo"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
+<rect width="3.58" height="3.75" x="662.13" y="371.25" class="named"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
 <rect width="3.96" height="3.38" x="668.71" y="290.31" class="todo"><title>0x004561e0 ReloadTextures (53 bytes)</title></rect>
 <rect width="3.83" height="3.38" x="675.67" y="290.31" class="todo"><title>0x0041b6f0 InitInterpolate (52 bytes)</title></rect>
 <rect width="3.83" height="3.38" x="682.50" y="290.31" class="named"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
