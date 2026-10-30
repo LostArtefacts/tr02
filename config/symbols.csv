@@ -663,7 +663,7 @@ address,size,name,symbol
 0x00436100,167,GunMiss,_GunMiss
 0x004361b0,452,ShotLara,_ShotLara
 0x00436380,67,InitialiseCult1,_InitialiseCult1
-0x004363d0,1025,Cult1Control,_Cult1Control
+0x004363d0,1072,Cult1Control,_Cult1Control
 0x00436800,80,InitialiseCult3,_InitialiseCult3
 0x00436850,1380,Cult3Control,_Cult3Control
 0x00436dc0,1012,Worker1Control,_Worker1Control
@@ -1516,6 +1516,7 @@ address,size,name,symbol
 0x00465ae0,,Weapons,_Weapons
 0x00465f58,24,DeathSlideBounds,_DeathSlideBounds
 0x00465f70,12,DeathSlidePosition,_DeathSlidePosition
+0x00465f80,16,cult1_gun,_cult1_gun
 0x00465f90,16,cult3_gunl,_cult3_gunl
 0x00465fa0,16,cult3_gunr,_cult3_gunr
 0x00465fb0,16,work1_gun,_work1_gun

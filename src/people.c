@@ -208,6 +208,203 @@ void InitialiseCult1(sint16 item_number)
         items[item_number].mesh_bits -= 0x1f8000;
 }
 
+#define CULT1 16
+#define CULT1_SHOT_DAMAGE 50
+#define CULT1_POSE_CHANCE 0x500
+#define CULT1_UNPOSE_CHANCE 0x100
+#define CULT1_WALK_CHANCE (CULT1_POSE_CHANCE + 0x500)
+#define CULT1_UNWALK_CHANCE 0x300
+#define CULT1_RUN_RANGE SQUARE(WALL_L * 2)
+#define CULT1_WALK_TURN (ONE_DEGREE * 5)
+#define CULT1_RUN_TURN (ONE_DEGREE * 5)
+#define CULT1_DIE_ANIM 20
+
+enum cult1_anims {
+    CULT1_EMPTY,
+    CULT1_WALK,
+    CULT1_RUN,
+    CULT1_STOP,
+    CULT1_WAIT1,
+    CULT1_WAIT2,
+    CULT1_AIM1,
+    CULT1_SHOOT1,
+    CULT1_AIM2,
+    CULT1_SHOOT2,
+    CULT1_AIM3,
+    CULT1_SHOOT3,
+    CULT1_DEATH
+};
+
+extern BITE_INFO cult1_gun;
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+void CreatureHead(ITEM_INFO *item, sint16 required);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+
+void Cult1Control(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *cult;
+    sint16 angle, head, tilt, random;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    cult = (CREATURE_INFO *)item->data;
+    head = angle = tilt = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != CULT1_DEATH)
+        {
+            item->anim_number = objects[CULT1].anim_index + CULT1_DIE_ANIM + (GetRandomControl() / 0x4000);
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = CULT1_DEATH;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        CreatureMood(item, &info, 0);
+        angle = CreatureTurn(item, cult->maximum_turn);
+
+        switch (item->current_anim_state)
+        {
+        case CULT1_STOP:
+            cult->maximum_turn = 0;
+            if (item->required_anim_state)
+                item->goal_anim_state = item->required_anim_state;
+            break;
+
+        case CULT1_WAIT1:
+            if (cult->mood == ESCAPE_MOOD)
+            {
+                item->required_anim_state = CULT1_RUN;
+                item->goal_anim_state = CULT1_STOP;
+            }
+            else if (Targetable(item, &info))
+            {
+                item->required_anim_state = (GetRandomControl() < 0x4000) ? CULT1_AIM1 : CULT1_AIM3;
+                item->goal_anim_state = CULT1_STOP;
+            }
+            else if (cult->mood == BORED_MOOD && info.ahead)
+            {
+                random = (sint16)GetRandomControl();
+                if (random < CULT1_POSE_CHANCE)
+                {
+                    item->required_anim_state = CULT1_WAIT2;
+                    item->goal_anim_state = CULT1_STOP;
+                }
+                else if (random < CULT1_WALK_CHANCE)
+                {
+                    item->required_anim_state = CULT1_WALK;
+                    item->goal_anim_state = CULT1_STOP;
+                }
+            }
+            else if (info.distance < CULT1_RUN_RANGE || cult->mood == BORED_MOOD)
+            {
+                item->required_anim_state = CULT1_WALK;
+                item->goal_anim_state = CULT1_STOP;
+            }
+            else
+            {
+                item->required_anim_state = CULT1_RUN;
+                item->goal_anim_state = CULT1_STOP;
+            }
+            break;
+
+        case CULT1_WAIT2:
+            if (Targetable(item, &info))
+            {
+                item->goal_anim_state = CULT1_STOP;
+                item->required_anim_state = CULT1_AIM1;
+            }
+            else if (cult->mood != BORED_MOOD || GetRandomControl() < CULT1_UNPOSE_CHANCE || !info.ahead)
+                item->goal_anim_state = CULT1_STOP;
+            break;
+
+        case CULT1_WALK:
+            cult->maximum_turn = CULT1_WALK_TURN;
+            if (cult->mood == ESCAPE_MOOD)
+                item->goal_anim_state = CULT1_RUN;
+            else if (Targetable(item, &info))
+            {
+                item->required_anim_state = (GetRandomControl() < 0x4000) ? CULT1_AIM1 : CULT1_AIM3;
+                item->goal_anim_state = CULT1_STOP;
+            }
+            else if (info.distance > CULT1_RUN_RANGE || !info.ahead)
+                item->goal_anim_state = CULT1_RUN;
+            else if (cult->mood == BORED_MOOD && GetRandomControl() < CULT1_UNWALK_CHANCE)
+                item->goal_anim_state = CULT1_STOP;
+            break;
+
+        case CULT1_RUN:
+            cult->maximum_turn = CULT1_RUN_TURN;
+            tilt = angle / 4;
+            cult->flags = 0;
+            if (cult->mood == ESCAPE_MOOD)
+            {
+                if (Targetable(item, &info))
+                    item->goal_anim_state = CULT1_SHOOT2;
+            }
+            else if (Targetable(item, &info))
+            {
+                if (info.distance < CULT1_RUN_RANGE || info.zone_number != info.enemy_zone)
+                    item->goal_anim_state = CULT1_STOP;
+                else
+                    item->goal_anim_state = CULT1_SHOOT2;
+            }
+            else if (cult->mood == BORED_MOOD)
+                item->goal_anim_state = CULT1_STOP;
+            break;
+
+        case CULT1_AIM1:
+        case CULT1_AIM3:
+            cult->flags = 0;
+            if (info.ahead)
+                head = info.angle;
+            if (cult->mood == ESCAPE_MOOD)
+                item->goal_anim_state = CULT1_STOP;
+            else if (Targetable(item, &info))
+                item->goal_anim_state = (item->current_anim_state == CULT1_AIM1) ? CULT1_SHOOT1 : CULT1_SHOOT3;
+            else
+                item->goal_anim_state = CULT1_STOP;
+            break;
+
+        case CULT1_SHOOT1:
+        case CULT1_SHOOT3:
+            if (info.ahead)
+                head = info.angle;
+            if (!cult->flags)
+            {
+                ShotLara(item, &info, &cult1_gun, head, CULT1_SHOT_DAMAGE);
+                cult->flags = 1;
+            }
+            break;
+
+        case CULT1_SHOOT2:
+            if (info.ahead)
+                head = info.angle;
+            if (!item->required_anim_state)
+            {
+                if (!ShotLara(item, &info, &cult1_gun, head, CULT1_SHOT_DAMAGE))
+                    item->goal_anim_state = CULT1_RUN;
+                item->required_anim_state = CULT1_SHOOT2;
+            }
+            break;
+        }
+    }
+
+    CreatureTilt(item, tilt);
+    CreatureHead(item, head);
+    CreatureAnimation(item_number, angle, 0);
+}
+
 #define CULT3 20
 #define CULT3_WAIT 2
 #define CULT3_WAIT_ANIM 3
@@ -245,13 +442,7 @@ void InitialiseCult3(sint16 item_number)
 
 extern BITE_INFO cult3_gunl, cult3_gunr;
 
-int CreatureActive(sint16 item_number);
-void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
-void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
-sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
-void CreatureHead(ITEM_INFO *item, sint16 required);
 void CreatureNeck(ITEM_INFO *item, sint16 required);
-int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
 
 void Cult3Control(sint16 item_number)
 {
