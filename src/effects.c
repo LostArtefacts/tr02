@@ -565,6 +565,52 @@ void ControlClockChimes(sint16 item_number)
     }
 }
 
+#define SPHERE_OF_DOOM2 210
+#define SPHERE_RADIUS (STEP_L * 5 / 2)
+#define FALLDOWN_A 34
+
+void SphereOfDoomCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    int radius, x, z, dist;
+    ITEM_INFO *item;
+    sint16 angle, diff;
+
+    if (room[laraitem->room_number].flags & UNDERWATER)
+        return;
+
+    item = &items[item_number];
+
+    radius = item->timer * SPHERE_RADIUS >> 8;
+    x = laraitem->pos.x_pos - item->pos.x_pos;
+    z = laraitem->pos.z_pos - item->pos.z_pos;
+    dist = x * x + z * z;
+
+    if (dist < radius * radius)
+    {
+        angle = phd_atan(z, x);
+        diff = laraitem->pos.y_rot - angle;
+        if (ABS(diff) < 0x4000)
+        {
+            laraitem->speed = 150;
+            laraitem->pos.y_rot = angle;
+        }
+        else
+        {
+            laraitem->speed = -150;
+            laraitem->pos.y_rot = (sint16)(angle - 0x8000);
+        }
+        laraitem->gravity_status = 1;
+        laraitem->fallspeed = -50;
+        laraitem->pos.z_pos = item->pos.z_pos + ((radius + 50) * phd_cos(angle) >> W2V_SHIFT);
+        laraitem->pos.x_pos = item->pos.x_pos + ((radius + 50) * phd_sin(angle) >> W2V_SHIFT);
+        laraitem->pos.x_rot = laraitem->pos.z_rot = 0;
+        lara_item->anim_number = FALLDOWN_A;
+        lara_item->frame_number = anims[FALLDOWN_A].frame_base;
+        lara_item->current_anim_state = AS_FORWARDJUMP;
+        lara_item->goal_anim_state = AS_FORWARDJUMP;
+    }
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.92% (398)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.08% (849)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32% (399)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68% (848)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="238.42" height="6" x="0" y="0" class="named"/>
-<rect width="508.58" height="6" x="238.42" y="0" class="todo"/>
+<rect width="239.02" height="6" x="0" y="0" class="named"/>
+<rect width="507.98" height="6" x="239.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -344,7 +344,7 @@
 <rect width="12" height="12" x="360" y="75" class="named"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="75" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="75" class="named"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="75" class="todo"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="75" class="named"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="75" class="todo"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="75" class="todo"><title>0x0041d630 DrawSphereOfDoom (301 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="75" class="named"><title>0x0041d760 lara_hands_free (10 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.91%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="97.15" height="6" x="0" y="0" class="named"/>
-<rect width="649.85" height="6" x="97.15" y="0" class="todo"/>
+<rect width="97.80" height="6" x="0" y="0" class="named"/>
+<rect width="649.20" height="6" x="97.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1637,7 +1637,7 @@
 <rect width="13.19" height="12.57" x="515.25" y="93.80" class="todo"><title>0x0041d630 DrawSphereOfDoom (301 bytes)</title></rect>
 <rect width="13.08" height="12.57" x="531.44" y="93.80" class="todo"><title>0x0040bb70 InsertLine_Sorted (299 bytes)</title></rect>
 <rect width="12.98" height="12.57" x="547.52" y="93.80" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>
-<rect width="12.92" height="12.57" x="563.50" y="93.80" class="todo"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
+<rect width="12.92" height="12.57" x="563.50" y="93.80" class="named"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
 <rect width="12.92" height="12.57" x="579.42" y="93.80" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12.92" height="12.57" x="595.35" y="93.80" class="todo"><title>0x0044d0b0 HWR_InitState (296 bytes)</title></rect>
 <rect width="12.87" height="12.57" x="611.27" y="93.80" class="todo"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
