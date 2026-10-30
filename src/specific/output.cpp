@@ -305,3 +305,45 @@ extern "C" void S_DrawHealthBar(int percent)
         InsertLine(8, 12, x, 12, z, colour);
     }
 }
+
+extern "C" sint16 DumpWidth;
+
+extern "C" void S_DrawAirBar(int percent)
+{
+    int x0;
+    int bar;
+    sint32 z;
+    char colour;
+
+    x0 = DumpWidth - 110;
+    bar = percent * 100 / 100;
+    bBlueEffect = false;
+    z = phd_znear + 50;
+    colour = inv_colours[C_BLACK];
+    InsertLine(x0 - 2, 7, x0 + 101, 7, z, colour);
+    InsertLine(x0 - 2, 8, x0 + 101, 8, z, colour);
+    InsertLine(x0 - 2, 9, x0 + 101, 9, z, colour);
+    InsertLine(x0 - 2, 10, x0 + 101, 10, z, colour);
+    InsertLine(x0 - 2, 11, x0 + 101, 11, z, colour);
+    InsertLine(x0 - 2, 12, x0 + 101, 12, z, colour);
+    InsertLine(x0 - 2, 13, x0 + 101, 13, z, colour);
+    z = phd_znear + 40;
+    colour = inv_colours[C_GREY];
+    InsertLine(x0 - 2, 14, x0 + 102, 14, z, colour);
+    InsertLine(x0 + 102, 6, x0 + 102, 14, z, colour);
+    z = phd_znear + 30;
+    colour = inv_colours[C_WHITE];
+    InsertLine(x0 - 2, 6, x0 + 102, 6, z, colour);
+    InsertLine(x0 - 2, 14, x0 - 2, 6, z, colour);
+    if (percent > 0)
+    {
+        z = phd_znear + 20;
+        colour = inv_colours[C_WHITE];
+        InsertLine(x0, 9, x0 + bar, 9, z, colour);
+        colour = inv_colours[C_BLUE];
+        InsertLine(x0, 8, x0 + bar, 8, z, colour);
+        InsertLine(x0, 10, x0 + bar, 10, z, colour);
+        InsertLine(x0, 11, x0 + bar, 11, z, colour);
+        InsertLine(x0, 12, x0 + bar, 12, z, colour);
+    }
+}

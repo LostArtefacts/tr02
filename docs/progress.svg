@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.64% (944)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.80% (297)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.72% (945)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">23.72% (296)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="565.04" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="565.04" y="0" class="decompiled"/>
-<rect width="177.77" height="6" x="569.23" y="0" class="todo"/>
+<rect width="565.64" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="565.64" y="0" class="decompiled"/>
+<rect width="177.17" height="6" x="569.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1134,7 +1134,7 @@
 <rect width="12" height="12" x="195" y="315" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="315" class="todo"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="named"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="315" class="todo"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="315" class="named"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="315" class="named"><title>0x00451d50 S_SetupBelowWater (81 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="315" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.58%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.34%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.73%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="415.19" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="415.19" y="0" class="decompiled"/>
-<rect width="331.20" height="6" x="415.80" y="0" class="todo"/>
+<rect width="416.29" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="416.29" y="0" class="decompiled"/>
+<rect width="330.10" height="6" x="416.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1504,7 +1504,7 @@
 <rect width="17.21" height="18.04" x="392.77" y="172.48" class="named"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
 <rect width="17.21" height="18" x="392.77" y="193.53" class="named"><title>0x004337a0 ControlBodyPart (512 bytes)</title></rect>
 <rect width="17.21" height="17.72" x="392.77" y="214.53" class="named"><title>0x0043d110 SkidooBaddieCollision (505 bytes)</title></rect>
-<rect width="17.21" height="17.59" x="392.77" y="235.25" class="todo"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
+<rect width="17.21" height="17.59" x="392.77" y="235.25" class="named"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
 <rect width="17.21" height="17.55" x="392.77" y="255.84" class="todo"><title>0x0044ec80 ScreenShot (501 bytes)</title></rect>
 <rect width="17.21" height="17.51" x="392.77" y="276.39" class="named"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
 <rect width="17.21" height="17.47" x="392.77" y="296.90" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
