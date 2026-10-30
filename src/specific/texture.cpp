@@ -159,3 +159,12 @@ extern "C" void TexturePageReleaseVidMemSurface(TEXPAGE_DESC *page)
         page->vidMemSurface = NULL;
     }
 }
+
+extern "C" void FreeTexturePages(void)
+{
+    for (DWORD i = 0; i < MAX_TEXTURE_PAGES; i++)
+    {
+        if (TexturePages[i].status & 1)
+            FreeTexturePage(i);
+    }
+}
