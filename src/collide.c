@@ -43,6 +43,22 @@ void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number)
         draw_rooms[number_draw_rooms++] = room_number;
 }
 
+void UpdateLaraRoom(ITEM_INFO *item, int height)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+    sint32 x, y, z;
+
+    x = item->pos.x_pos;
+    y = item->pos.y_pos + height;
+    z = item->pos.z_pos;
+    room_number = item->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    item->floor = GetHeight(floor, x, y, z);
+    if (item->room_number != room_number)
+        ItemNewRoom(lara.item_number, room_number);
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;

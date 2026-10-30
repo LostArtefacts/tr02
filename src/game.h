@@ -36,6 +36,8 @@ extern int assault_timer_display, assault_timer_active;
 
 void FlipMap(void);
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+void ItemNewRoom(sint16 item_number, sint16 room_number);
 void InitialiseHair(void);
 void DrawHair(void);
 void DrawAnimatingItem(ITEM_INFO *item);
