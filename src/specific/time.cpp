@@ -14,3 +14,17 @@ bool TIME_Init()
     TIME_Reset();
     return true;
 }
+
+int Sync(void)
+{
+    int nFrames;
+    LARGE_INTEGER ct;
+    double dCounter;
+
+    QueryPerformanceCounter(&ct);
+    dCounter = (double)ct.LowPart + (double)ct.HighPart * (double)0xffffffff;
+    dCounter /= LdFreq;
+    nFrames = long(dCounter) - long(LdSync);
+    LdSync = dCounter;
+    return nFrames;
+}
