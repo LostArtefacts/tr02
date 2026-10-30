@@ -229,6 +229,670 @@ void TrapCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 
+#define LARA_EXTRA 12
+#define DOG 15
+#define CULT1 16
+#define CULT1A 17
+#define CULT1B 18
+#define CULT2 19
+#define CULT3 20
+#define MOUSE 21
+#define DRAGON_FRONT 22
+#define DRAGON_BACK 23
+#define SHARK 25
+#define EEL 26
+#define BIG_EEL 27
+#define BARRACUDA 28
+#define DIVER 29
+#define WORKER1 30
+#define WORKER2 31
+#define WORKER3 32
+#define WORKER4 33
+#define WORKER5 34
+#define JELLY 35
+#define SPIDER 36
+#define BIG_SPIDER 37
+#define CROW 38
+#define TIGER 39
+#define BARTOLI 40
+#define XIAN_LORD 41
+#define CHINESE2 42
+#define WARRIOR 43
+#define CHINESE4 44
+#define YETI 45
+#define GIANT_YETI 46
+#define EAGLE 47
+#define BANDIT1 48
+#define BANDIT2 49
+#define BANDIT2B 50
+#define SKIDOO_ARMED 51
+#define SKIDMAN 52
+#define MONK1 53
+#define MONK2 54
+#define DINO 214
+#define WINSTON 260
+#define ROT_Y 8
+#define ROT_Z 16
+
+void S_ExitSystem(char *message);
+void InitialiseLaraLoad(sint16 item_number);
+void ControlLaraExtra(sint16 item_number);
+void DogControl(sint16 item_number);
+void MouseControl(sint16 item_number);
+void InitialiseCult1(sint16 item_number);
+void Cult1Control(sint16 item_number);
+void Cult2Control(sint16 item_number);
+void SharkControl(sint16 item_number);
+void DrawUnclippedItem(ITEM_INFO *item);
+void TigerControl(sint16 item_number);
+void BaracuddaControl(sint16 item_number);
+void SpiderControl(sint16 item_number);
+void BigSpiderControl(sint16 item_number);
+void YetiControl(sint16 item_number);
+void JellyControl(sint16 item_number);
+void DiverControl(sint16 item_number);
+void Worker1Control(sint16 item_number);
+void Worker2Control(sint16 item_number);
+void Worker3Control(sint16 item_number);
+void InitialiseCult3(sint16 item_number);
+void Cult3Control(sint16 item_number);
+void MonkControl(sint16 item_number);
+void InitialiseEagle(sint16 item_number);
+void EagleControl(sint16 item_number);
+void BigEelControl(sint16 item_number);
+void EelControl(sint16 item_number);
+void BanditControl(sint16 item_number);
+void Bandit2Control(sint16 item_number);
+void DrawSkidoo(ITEM_INFO *item);
+void SkidmanCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void InitialiseSkidman(sint16 item_number);
+void SkidManControl(sint16 item_number);
+void InitialiseXianLord(sint16 item_number);
+void DrawXianLord(ITEM_INFO *item);
+void XianLordControl(sint16 item_number);
+void WarriorControl(sint16 item_number);
+void DragonControl(sint16 item_number);
+void DragonCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void InitialiseBartoli(sint16 item_number);
+void BartoliControl(sint16 item_number);
+void GiantYetiControl(sint16 item_number);
+void DinoControl(sint16 item_number);
+void WinstonControl(sint16 item_number);
+void DrawDummyItem(ITEM_INFO *item);
+void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+#define SAVE_CREATURE(o) \
+    o->save_position = o->save_hitpoints = o->save_anim = o->save_flags = 1
+
+void BaddyObjects(void)
+{
+    OBJECT_INFO *obj;
+
+    obj = &objects[LARA];
+    obj->initialise = InitialiseLaraLoad;
+    obj->shadow_size = (UNIT_SHADOW / 16) * 10;
+    obj->hit_points = 1000;
+    obj->draw_routine = DrawDummyItem;
+    obj->save_position = obj->save_hitpoints = 1;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[LARA_EXTRA];
+    obj->control = ControlLaraExtra;
+
+    obj = &objects[DOG];
+    if (obj->loaded)
+    {
+        obj->control = DogControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 10;
+        obj->pivot_length = 300;
+        obj->radius = 341;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 19 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[MOUSE];
+    if (obj->loaded)
+    {
+        obj->control = MouseControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 4;
+        obj->pivot_length = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 3 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[CULT1];
+    if (obj->loaded)
+    {
+        obj->initialise = InitialiseCult1;
+        obj->control = Cult1Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 25;
+        obj->pivot_length = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 0 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[CULT1A];
+    if (obj->loaded)
+    {
+        if (!objects[CULT1].loaded)
+            S_ExitSystem("FATAL: CULT1B requires CULT1");
+        obj->frame_base = objects[CULT1].frame_base;
+        obj->anim_index = objects[CULT1].anim_index;
+        obj->initialise = InitialiseCult1;
+        obj->control = Cult1Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 25;
+        obj->pivot_length = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 0 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[CULT1B];
+    if (obj->loaded)
+    {
+        if (!objects[CULT1].loaded)
+            S_ExitSystem("FATAL: CULT1B requires CULT1");
+        obj->frame_base = objects[CULT1].frame_base;
+        obj->anim_index = objects[CULT1].anim_index;
+        obj->initialise = InitialiseCult1;
+        obj->control = Cult1Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 25;
+        obj->pivot_length = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 0 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[CULT2];
+    if (obj->loaded)
+    {
+        obj->control = Cult2Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 60;
+        obj->pivot_length = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 0 * 4] |= ROT_Y;
+        bones[obj->bone_index + 8 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[SHARK];
+    if (obj->loaded)
+    {
+        obj->control = SharkControl;
+        obj->draw_routine = DrawUnclippedItem;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 30;
+        obj->pivot_length = 200;
+        obj->radius = 341;
+        obj->intelligent = 1;
+        obj->water_creature = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 9 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[TIGER];
+    if (obj->loaded)
+    {
+        obj->control = TigerControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 20;
+        obj->pivot_length = 200;
+        obj->radius = 341;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 21 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[BARRACUDA];
+    if (obj->loaded)
+    {
+        obj->control = BaracuddaControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 12;
+        obj->pivot_length = 200;
+        obj->radius = 204;
+        obj->intelligent = 1;
+        obj->water_creature = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[SPIDER];
+    if (obj->loaded)
+    {
+        obj->control = SpiderControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 5;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+    }
+
+    obj = &objects[BIG_SPIDER];
+    if (obj->loaded)
+    {
+        obj->control = BigSpiderControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 40;
+        obj->radius = 341;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+    }
+
+    obj = &objects[YETI];
+    if (obj->loaded)
+    {
+        obj->control = YetiControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 30;
+        obj->radius = 128;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 100;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+        bones[obj->bone_index + 14 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[JELLY];
+    if (obj->loaded)
+    {
+        obj->control = JellyControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 10;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        obj->water_creature = 1;
+        SAVE_CREATURE(obj);
+    }
+
+    obj = &objects[DIVER];
+    if (obj->loaded)
+    {
+        obj->control = DiverControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 20;
+        obj->radius = 341;
+        obj->pivot_length = 50;
+        obj->intelligent = 1;
+        obj->water_creature = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 10 * 4] |= ROT_Y;
+        bones[obj->bone_index + 14 * 4] |= ROT_Z;
+    }
+
+    obj = &objects[WORKER1];
+    if (obj->loaded)
+    {
+        obj->control = Worker1Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 25;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 4 * 4] |= ROT_Y;
+        bones[obj->bone_index + 13 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[WORKER2];
+    if (obj->loaded)
+    {
+        obj->control = Worker2Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 20;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 4 * 4] |= ROT_Y;
+        bones[obj->bone_index + 13 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[WORKER3];
+    if (obj->loaded)
+    {
+        obj->control = Worker3Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 27;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 0 * 4] |= ROT_Y;
+        bones[obj->bone_index + 4 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[WORKER4];
+    if (obj->loaded)
+    {
+        obj->hit_points = 27;
+        obj->control = Worker3Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->radius = 102;
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 0 * 4] |= ROT_Y;
+        bones[obj->bone_index + 4 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[WORKER5];
+    if (obj->loaded)
+    {
+        obj->control = Worker2Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 20;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 4 * 4] |= ROT_Y;
+        bones[obj->bone_index + 13 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[CULT3];
+    if (obj->loaded)
+    {
+        obj->initialise = InitialiseCult3;
+        obj->control = Cult3Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 150;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+    }
+
+    obj = &objects[MONK1];
+    if (obj->loaded)
+    {
+        obj->control = MonkControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 30;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[MONK2];
+    if (obj->loaded)
+    {
+        obj->control = MonkControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 30;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[EAGLE];
+    if (obj->loaded)
+    {
+        obj->initialise = InitialiseEagle;
+        obj->control = EagleControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 20;
+        obj->radius = 204;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+    }
+
+    obj = &objects[CROW];
+    if (obj->loaded)
+    {
+        obj->initialise = InitialiseEagle;
+        obj->control = EagleControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 15;
+        obj->radius = 204;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+    }
+
+    obj = &objects[BIG_EEL];
+    if (obj->loaded)
+    {
+        obj->control = BigEelControl;
+        obj->collision = CreatureCollision;
+        obj->hit_points = 20;
+        obj->water_creature = 1;
+        obj->save_hitpoints = obj->save_anim = obj->save_flags = 1;
+    }
+
+    obj = &objects[EEL];
+    if (obj->loaded)
+    {
+        obj->control = EelControl;
+        obj->collision = CreatureCollision;
+        obj->hit_points = 5;
+        obj->water_creature = 1;
+        obj->save_hitpoints = obj->save_anim = obj->save_flags = 1;
+    }
+
+    obj = &objects[BANDIT1];
+    if (obj->loaded)
+    {
+        obj->control = BanditControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 45;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+        bones[obj->bone_index + 8 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[BANDIT2];
+    if (obj->loaded)
+    {
+        obj->control = Bandit2Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+        bones[obj->bone_index + 8 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[BANDIT2B];
+    if (obj->loaded)
+    {
+        if (!objects[BANDIT2].loaded)
+            S_ExitSystem("FATAL: BANDIT2B requires BANDIT2");
+        obj->frame_base = objects[BANDIT2].frame_base;
+        obj->anim_index = objects[BANDIT2].anim_index;
+        obj->control = Bandit2Control;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 50;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+        bones[obj->bone_index + 8 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[SKIDOO_ARMED];
+    if (obj->loaded)
+    {
+        obj->draw_routine = DrawSkidoo;
+        obj->collision = SkidmanCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->hit_points = 100;
+        obj->radius = 341;
+        obj->pivot_length = 0;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+    }
+
+    obj = &objects[SKIDMAN];
+    if (obj->loaded)
+    {
+        obj->initialise = InitialiseSkidman;
+        obj->control = SkidManControl;
+        obj->hit_points = 1;
+        obj->save_position = obj->save_anim = obj->save_flags = 1;
+    }
+
+    obj = &objects[XIAN_LORD];
+    if (obj->loaded)
+    {
+        if (!objects[CHINESE2].loaded)
+            S_ExitSystem("FATAL: XianLord requires CHINESE2 (statue)");
+        obj->initialise = InitialiseXianLord;
+        obj->draw_routine = DrawXianLord;
+        obj->control = XianLordControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->hit_points = 100;
+        obj->radius = 204;
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+        bones[obj->bone_index + 12 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[WARRIOR];
+    if (obj->loaded)
+    {
+        if (!objects[CHINESE4].loaded)
+            S_ExitSystem("FATAL: Warrior requires CHINESE4 (statue)");
+        obj->draw_routine = DrawXianLord;
+        obj->initialise = InitialiseXianLord;
+        obj->control = WarriorControl;
+        obj->collision = CreatureCollision;
+        obj->shadow_size = UNIT_SHADOW / 2;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->hit_points = 80;
+        obj->radius = 204;
+        obj->pivot_length = 0;
+        bones[obj->bone_index + 6 * 4] |= ROT_Y;
+        bones[obj->bone_index + 16 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[DRAGON_FRONT];
+    if (obj->loaded)
+    {
+        if (!objects[DRAGON_BACK].loaded)
+            S_ExitSystem("FATAL: Dragon front needs back");
+        obj->control = DragonControl;
+        obj->collision = DragonCollision;
+        obj->hit_points = 300;
+        obj->radius = 341;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->pivot_length = 300;
+        bones[obj->bone_index + 10 * 4] |= ROT_Z;
+    }
+
+    obj = &objects[DRAGON_BACK];
+    if (obj->loaded)
+    {
+        obj->control = DragonControl;
+        obj->collision = DragonCollision;
+        obj->radius = 341;
+        obj->save_position = obj->save_anim = obj->save_flags = 1;
+    }
+
+    obj = &objects[BARTOLI];
+    if (obj->loaded)
+    {
+        obj->initialise = InitialiseBartoli;
+        obj->control = BartoliControl;
+        obj->save_anim = obj->save_flags = 1;
+    }
+
+    obj = &objects[GIANT_YETI];
+    if (obj->loaded)
+    {
+        obj->control = GiantYetiControl;
+        obj->collision = CreatureCollision;
+        obj->hit_points = 200;
+        obj->radius = 341;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        bones[obj->bone_index + 14 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[DINO];
+    if (obj->loaded)
+    {
+        obj->control = DinoControl;
+        obj->collision = CreatureCollision;
+        obj->hit_points = 100;
+        obj->shadow_size = UNIT_SHADOW / 4;
+        obj->pivot_length = 1800;
+        obj->intelligent = 1;
+        SAVE_CREATURE(obj);
+        obj->radius = 341;
+        bones[obj->bone_index + 10 * 4] |= ROT_Y;
+        bones[obj->bone_index + 11 * 4] |= ROT_Y;
+    }
+
+    obj = &objects[WINSTON];
+    if (obj->loaded)
+    {
+        obj->control = WinstonControl;
+        obj->collision = ObjectCollision;
+        obj->hit_points = DONT_TARGET;
+        obj->shadow_size = UNIT_SHADOW / 4;
+        obj->radius = 102;
+        obj->intelligent = 1;
+        obj->save_position = obj->save_anim = obj->save_flags = 1;
+    }
+}
+
 #define INIT_MOVBLOCK(a) \
     obj = &objects[a]; \
     obj->initialise = InitialiseMovingBlock; \
