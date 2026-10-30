@@ -105,3 +105,33 @@ void lara_col_climbright(ITEM_INFO *item, COLL_INFO *coll)
 
     LaraDoClimbLeftRight(item, coll, result, shift);
 }
+
+
+#define FALLDOWN_A 34
+
+int LaraCheckForLetGo(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    item->gravity_status = item->fallspeed = 0;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    coll->trigger = trigger_index;
+
+    if (!(input & IN_ACTION) || item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_FORWARDJUMP;
+        item->current_anim_state = AS_FORWARDJUMP;
+        item->anim_number = FALLDOWN_A;
+        item->frame_number = anims[FALLDOWN_A].frame_base;
+        item->gravity_status = 1;
+        item->speed = 2;
+        item->fallspeed = 1;
+        lara.gun_status = LG_ARMLESS;
+        return 1;
+    }
+    return 0;
+}
