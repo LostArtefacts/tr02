@@ -26,14 +26,25 @@
 #define SKIDOO_HIT_FRONT 13
 #define SKIDOO_HIT_BACK 14
 
+#define SKIDOO_UNDO_TURN (ONE_DEGREE * 2)
+#define SKIDOO_MOMENTUM_TURN (ONE_DEGREE * 3)
+#define SKIDOO_MAX_MOM_TURN (ONE_DEGREE * 150)
 #define SKIDOO_MAX_SPEED 100
+#define SKIDOO_ACCELERATION 10
+#define SKIDOO_MAX_BACK -30
 #define SKIDOO_MAX_KICK -80
+#define SKIDOO_SLIP 100
+#define SKIDOO_SLIP_SIDE 50
+#define SKIDOO_FRONT 550
+#define SKIDOO_SIDE 260
 #define SKIDOO_RADIUS 500
+#define SKIDOO_SNOW 500
 #define SKIDOO_MIN_BOUNCE (SKIDOO_MAX_SPEED / 2)
 
 #define GRAVITY 6
 #define SKIDMAN 51
 #define AVALANCHE 83
+#define SNOW_SPRITE 90
 #define TRAP_ACTIVATE 1
 
 typedef struct {
@@ -343,4 +354,42 @@ int GetCollisionAnim(ITEM_INFO *skidoo, PHD_VECTOR *moved)
     }
 
     return 0;
+}
+
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
+extern sint32 LsAdder;
+
+void DoSnowEffect(ITEM_INFO *skidoo)
+{
+    sint32 c, s, x;
+    sint16 fx_number;
+    FX_INFO *fx;
+
+    fx_number = CreateEffect(skidoo->room_number);
+    if (fx_number != NO_ITEM)
+    {
+        s = phd_sin(skidoo->pos.y_rot);
+        c = phd_cos(skidoo->pos.y_rot);
+        x = (GetRandomDraw() - 0x4000) * SKIDOO_SIDE >> 14;
+
+        fx = &effects[fx_number];
+        fx->pos.x_pos = skidoo->pos.x_pos - (SKIDOO_SNOW * s + x * c >> W2V_SHIFT);
+        fx->pos.y_pos = skidoo->pos.y_pos + (SKIDOO_SNOW * phd_sin(skidoo->pos.x_rot) >> W2V_SHIFT);
+        fx->pos.z_pos = skidoo->pos.z_pos - (SKIDOO_SNOW * c - x * s >> W2V_SHIFT);
+        fx->room_number = skidoo->room_number;
+        fx->frame_number = 0;
+        fx->object_number = SNOW_SPRITE;
+        fx->speed = 0;
+        if (skidoo->speed < 64)
+            fx->fallspeed = GetRandomDraw() * (ABS(skidoo->speed) - 64) >> 15;
+        else
+            fx->fallspeed = 0;
+
+        *(phd_mxptr + M23) = 0;
+        S_CalculateLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, fx->room_number);
+        fx->shade = LsAdder - 0x200;
+        if (fx->shade < 0)
+            fx->shade = 0;
+    }
 }
