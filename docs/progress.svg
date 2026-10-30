@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.24% (639)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.76% (608)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.32% (640)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.68% (607)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="382.79" height="6" x="0" y="0" class="named"/>
-<rect width="364.21" height="6" x="382.79" y="0" class="todo"/>
+<rect width="383.38" height="6" x="0" y="0" class="named"/>
+<rect width="363.62" height="6" x="383.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1235,7 +1235,7 @@
 <rect width="12" height="12" x="225" y="345" class="todo"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="345" class="todo"><title>0x00456650 CleanupTextures (10 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="345" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="345" class="todo"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="345" class="named"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="345" class="named"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="345" class="named"><title>0x00456720 Sync (86 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="345" class="todo"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.65%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="234.17" height="6" x="0" y="0" class="named"/>
-<rect width="512.83" height="6" x="234.17" y="0" class="todo"/>
+<rect width="234.31" height="6" x="0" y="0" class="named"/>
+<rect width="512.69" height="6" x="234.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2183,7 +2183,7 @@
 <rect width="4.20" height="4.41" x="641.46" y="276.83" class="todo"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
 <rect width="4.20" height="4.41" x="641.46" y="284.23" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="4.20" height="4.41" x="641.46" y="291.64" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
-<rect width="4.20" height="4.41" x="641.46" y="299.05" class="todo"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
+<rect width="4.20" height="4.41" x="641.46" y="299.05" class="named"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="4.20" height="4.29" x="641.46" y="306.46" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="4.20" height="4.29" x="641.46" y="313.75" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="4.20" height="4.18" x="641.46" y="321.05" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>

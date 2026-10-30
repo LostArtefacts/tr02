@@ -3,6 +3,15 @@
 
 extern double LdSync, LdFreq;
 
+extern "C" void TIME_Reset()
+{
+    LARGE_INTEGER fq;
+
+    QueryPerformanceCounter(&fq);
+    LdSync = (double)fq.LowPart + (double)fq.HighPart * (double)0xffffffff;
+    LdSync /= LdFreq;
+}
+
 bool TIME_Init()
 {
     LARGE_INTEGER fq;
@@ -18,8 +27,8 @@ bool TIME_Init()
 int Sync(void)
 {
     int nFrames;
-    LARGE_INTEGER ct;
     double dCounter;
+    LARGE_INTEGER ct;
 
     QueryPerformanceCounter(&ct);
     dCounter = (double)ct.LowPart + (double)ct.HighPart * (double)0xffffffff;
