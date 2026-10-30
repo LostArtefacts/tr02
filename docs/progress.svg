@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.35% (578)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.65% (669)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.43% (579)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.57% (668)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="346.24" height="6" x="0" y="0" class="named"/>
-<rect width="400.76" height="6" x="346.24" y="0" class="todo"/>
+<rect width="346.84" height="6" x="0" y="0" class="named"/>
+<rect width="400.16" height="6" x="346.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -775,7 +775,7 @@
 <rect width="12" height="12" x="75" y="210" class="todo"><title>0x0043d010 SkidooCollision (248 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="210" class="named"><title>0x0043d110 SkidooBaddieCollision (505 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="210" class="named"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="210" class="todo"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="210" class="named"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="210" class="todo"><title>0x0043d650 DoDynamics (84 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="210" class="todo"><title>0x0043d6b0 GetCollisionAnim (144 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="210" class="todo"><title>0x0043d740 DoSnowEffect (320 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.82%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.18%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">72.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="200.37" height="6" x="0" y="0" class="named"/>
-<rect width="546.63" height="6" x="200.37" y="0" class="todo"/>
+<rect width="201.77" height="6" x="0" y="0" class="named"/>
+<rect width="545.23" height="6" x="201.77" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.27" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1455,7 +1455,7 @@
 <rect width="20.75" height="19.61" x="347.94" y="266.23" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="20.75" height="19.47" x="347.94" y="288.84" class="named"><title>0x00414e50 GetHeight (640 bytes)</title></rect>
 <rect width="20.75" height="19.36" x="347.94" y="311.30" class="todo"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
-<rect width="20.75" height="19.33" x="347.94" y="333.66" class="todo"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
+<rect width="20.75" height="19.33" x="347.94" y="333.66" class="named"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
 <rect width="20.75" height="19.01" x="347.94" y="355.99" class="todo"><title>0x004524e0 Func4524e0 (627 bytes)</title></rect>
 <rect width="19.12" height="20.52" x="371.69" y="0" class="todo"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
 <rect width="19.12" height="20.44" x="371.69" y="23.52" class="todo"><title>0x00430110 FlareControl (622 bytes)</title></rect>

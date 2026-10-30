@@ -179,3 +179,108 @@ sint32 TestHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *pos)
     floor = GetFloor(pos->x, pos->y, pos->z, &room_number);
     return GetHeight(floor, pos->x, pos->y, pos->z);
 }
+
+int DoShift(ITEM_INFO *skidoo, PHD_VECTOR *pos, PHD_VECTOR *old)
+{
+    int x, z, x_old, z_old, shift_x, shift_z;
+
+    x = pos->x >> WALL_SHIFT;
+    z = pos->z >> WALL_SHIFT;
+
+    x_old = old->x >> WALL_SHIFT;
+    z_old = old->z >> WALL_SHIFT;
+
+    shift_x = pos->x & (WALL_L - 1);
+    shift_z = pos->z & (WALL_L - 1);
+
+    if (x == x_old)
+    {
+        if (z == z_old)
+        {
+            skidoo->pos.z_pos += (old->z - pos->z);
+            skidoo->pos.x_pos += (old->x - pos->x);
+        }
+        else if (z > z_old)
+        {
+            skidoo->pos.z_pos -= shift_z + 1;
+            return (pos->x - skidoo->pos.x_pos);
+        }
+        else
+        {
+            skidoo->pos.z_pos += WALL_L - shift_z;
+            return (skidoo->pos.x_pos - pos->x);
+        }
+    }
+    else if (z == z_old)
+    {
+        if (x > x_old)
+        {
+            skidoo->pos.x_pos -= shift_x + 1;
+            return (skidoo->pos.z_pos - pos->z);
+        }
+        else
+        {
+            skidoo->pos.x_pos += WALL_L - shift_x;
+            return (pos->z - skidoo->pos.z_pos);
+        }
+    }
+    else
+    {
+        sint16 room_number;
+        FLOOR_INFO *floor;
+        sint32 height;
+
+        x = z = 0;
+
+        room_number = skidoo->room_number;
+        floor = GetFloor(old->x, pos->y, pos->z, &room_number);
+        height = GetHeight(floor, old->x, pos->y, pos->z);
+        if (height < old->y - STEP_L)
+        {
+            if (pos->z > old->z)
+                z = -shift_z - 1;
+            else
+                z = WALL_L - shift_z;
+        }
+
+        room_number = skidoo->room_number;
+        floor = GetFloor(pos->x, pos->y, old->z, &room_number);
+        height = GetHeight(floor, pos->x, pos->y, old->z);
+        if (height < old->y - STEP_L)
+        {
+            if (pos->x > old->x)
+                x = -shift_x - 1;
+            else
+                x = WALL_L - shift_x;
+        }
+
+        if (x && z)
+        {
+            skidoo->pos.z_pos += z;
+            skidoo->pos.x_pos += x;
+        }
+        else if (z)
+        {
+            skidoo->pos.z_pos += z;
+            if (z > 0)
+                return (skidoo->pos.x_pos - pos->x);
+            else
+                return (pos->x - skidoo->pos.x_pos);
+        }
+        else if (x)
+        {
+            skidoo->pos.x_pos += x;
+            if (x > 0)
+                return (pos->z - skidoo->pos.z_pos);
+            else
+                return (skidoo->pos.z_pos - pos->z);
+        }
+        else
+        {
+            skidoo->pos.z_pos += (old->z - pos->z);
+            skidoo->pos.x_pos += (old->x - pos->x);
+        }
+    }
+
+    return 0;
+}
