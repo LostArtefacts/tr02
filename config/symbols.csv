@@ -912,11 +912,11 @@ address,size,name,symbol
 0x00447c70,72,GetSoundAdapter,_GetSoundAdapter
 0x00447cc0,46,WinSndFreeAllSamples,_WinSndFreeAllSamples
 0x00447cf0,270,WinSndMakeSample,_WinSndMakeSample
-0x00447e00,69,WinSndIsChannelPlaying,_WinSndIsChannelPlaying
-0x00447e50,231,WinSndPlaySample,_WinSndPlaySample
+0x00447e00,69,DS_IsChannelPlaying,?DS_IsChannelPlaying@@YA_NH@Z
+0x00447e50,231,DS_StartSample,?DS_StartSample@@YAHHHHHK@Z
 0x00447f40,57,WinSndGetFreeChannelIndex,_WinSndGetFreeChannelIndex
-0x00447f80,44,WinSndAdjustVolumeAndPan,_WinSndAdjustVolumeAndPan
-0x00447fb0,49,WinSndAdjustPitch,_WinSndAdjustPitch
+0x00447f80,44,DS_AdjustVolumeAndPan,?DS_AdjustVolumeAndPan@@YAXHHH@Z
+0x00447fb0,49,DS_AdjustPitch,?DS_AdjustPitch@@YAXHH@Z
 0x00447ff0,47,DS_StopSample,?DS_StopSample@@YAXH@Z
 0x00448020,45,DS_StopAllSamples,?DS_StopAllSamples@@YAXXZ
 0x00448050,5,Func448050,
@@ -1119,8 +1119,8 @@ address,size,name,symbol
 0x00455250,125,S_SaveSettings,_S_SaveSettings
 0x004552d0,219,S_LoadSettings,_S_LoadSettings
 0x004553b0,70,S_SoundPlaySample,_S_SoundPlaySample
-0x00455400,42,S_Sound_CalculateSampleVolume,_S_Sound_CalculateSampleVolume
-0x00455430,38,S_Sound_CalculateSamplePan,_S_Sound_CalculateSamplePan
+0x00455400,42,CalcVolume,?CalcVolume@@YAHH@Z
+0x00455430,38,CalcPan,?CalcPan@@YAHF@Z
 0x00455460,70,S_SoundPlaySampleLooped,_S_SoundPlaySampleLooped
 0x004554b0,57,S_SoundSetPanAndVolume,_S_SoundSetPanAndVolume
 0x004554f0,28,S_SoundSetPitch,_S_SoundSetPitch
