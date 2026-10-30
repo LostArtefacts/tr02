@@ -1462,6 +1462,8 @@ address,size,name,symbol
 0x004641f8,,effect_routines,_effect_routines
 0x00464278,16,monk_hit,_monk_hit
 0x00464288,16,work3_hit,_work3_hit
+0x00464298,16,xian_left_spear,_xian_left_spear
+0x004642a8,16,xian_right_spear,_xian_right_spear
 0x004642c8,16,cult2_left,_cult2_left
 0x004642d8,16,cult2_right,_cult2_right
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets

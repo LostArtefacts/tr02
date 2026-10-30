@@ -703,6 +703,31 @@ void Worker3Control(sint16 item_number)
     }
 }
 
+#define XIAN_TOUCH_RIGHT 0x40000
+#define XIAN_TOUCH_LEFT 0x800
+
+extern BITE_INFO xian_left_spear, xian_right_spear;
+
+void XianDamage(ITEM_INFO *item, CREATURE_INFO *xian, sint32 damage)
+{
+    if (!(xian->flags & 1) && (item->touch_bits & XIAN_TOUCH_RIGHT))
+    {
+        lara_item->hit_points -= damage;
+        lara_item->hit_status = 1;
+        CreatureEffect(item, &xian_right_spear, DoBloodSplat);
+        xian->flags |= 1;
+        SoundEffect(318, &item->pos, 0);
+    }
+    if (!(xian->flags & 2) && (item->touch_bits & XIAN_TOUCH_LEFT))
+    {
+        lara_item->hit_points -= damage;
+        lara_item->hit_status = 1;
+        CreatureEffect(item, &xian_left_spear, DoBloodSplat);
+        xian->flags |= 2;
+        SoundEffect(318, &item->pos, 0);
+    }
+}
+
 #define XIAN_LORD 41
 #define XIAN_START_ANIM 48
 #define XIAN_START 18
