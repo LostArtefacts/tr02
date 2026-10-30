@@ -1165,3 +1165,16 @@ void RemoveRoomFlipItems(ROOM_INFO *r)
         }
     }
 }
+
+void AddRoomFlipItems(ROOM_INFO *r)
+{
+    ITEM_INFO *item;
+    sint16 item_num;
+
+    for (item_num = r->item_number; item_num != NO_ITEM; item_num = items[item_num].next_item)
+    {
+        item = &items[item_num];
+        if (objects[item->object_number].control == MovableBlock)
+            AlterFloorHeight(item, -1024);
+    }
+}
