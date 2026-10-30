@@ -32,6 +32,43 @@ extern "C" DWORD GetZBufferDepth(void)
     return 8;
 }
 
+typedef struct {
+    void *PreferredDisplayAdapter;
+    void *PreferredSoundAdapter;
+    void *PreferredJoystick;
+    void *VideoMode;
+    int RenderMode;
+    int WindowWidth;
+    int WindowHeight;
+    int AspectMode;
+    bool PerspectiveCorrect;
+    bool Dither;
+    bool ZBuffer;
+    bool BilinearFiltering;
+    bool TripleBuffering;
+    bool FullScreen;
+    bool SoundEnabled;
+    bool LaraMic;
+    bool JoystickEnabled;
+    bool Disable16BitTextures;
+    bool DontSortPrimitives;
+    bool FlipBroken;
+} APP_SETTINGS;
+
+extern "C" {
+extern APP_SETTINGS SavedAppSettings;
+extern LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
+}
+
+extern "C" void DX_DoFlipWait(void)
+{
+    if (SavedAppSettings.FlipBroken && SavedAppSettings.FullScreen)
+    {
+        while (PrimaryBufferSurface->GetFlipStatus(DDGFS_ISFLIPDONE) == DDERR_WASSTILLDRAWING)
+            ;
+    }
+}
+
 extern "C" bool RenderInit(void)
 {
     return true;
