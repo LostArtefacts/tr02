@@ -1,4 +1,5 @@
 #include "game.h"
+#include "specific/init.h"
 
 #define FALLING_PLANK 57
 #define BLADE 81
@@ -31,6 +32,20 @@ void InitialiseKillerStatue(sint16 item_number)
     item->anim_number = objects[item->object_number].anim_index + 3;
     item->frame_number = anims[item->anim_number].frame_base;
     item->current_anim_state = BLADE_STOP;
+}
+
+void InitialiseRollingBall(sint16 item_number)
+{
+    ITEM_INFO *item;
+    GAME_VECTOR *old;
+
+    item = &items[item_number];
+
+    old = item->data = (GAME_VECTOR *)game_malloc(sizeof(GAME_VECTOR), ROLLINGBALL_STUFF);
+    old->x = item->pos.x_pos;
+    old->y = item->pos.y_pos;
+    old->z = item->pos.z_pos;
+    old->room_number = item->room_number;
 }
 
 void TrapDoorControl(sint16 item_number)

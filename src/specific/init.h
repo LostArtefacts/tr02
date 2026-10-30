@@ -40,7 +40,11 @@ enum game_malloc_types {
     EXTRA_DOOR_STUFF,
     EFFECTS_ARRAY,
     CREATURE_DATA,
-    CREATURE_LOT
+    CREATURE_LOT,
+    SAMPLE_INFOS,
+    SAMPLES,
+    SAMPLE_OFFSETS,
+    ROLLINGBALL_STUFF
 };
 
 void *game_malloc(int size, int type);
