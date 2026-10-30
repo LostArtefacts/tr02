@@ -1831,8 +1831,8 @@ address,size,name,symbol
 0x005207bc,4,lara_item,_lara_item
 0x005207c0,4,effects,_effects
 0x005207c4,2,next_fx_free,_next_fx_free
-0x005207c6,2,NextItemFree,_NextItemFree
-0x005207c8,2,NextItemActive,_NextItemActive
+0x005207c6,2,next_item_free,_next_item_free
+0x005207c8,2,next_item_active,_next_item_active
 0x005207ca,2,next_fx_active,_next_fx_active
 0x005207cc,2,body_bag,_body_bag
 0x005207e0,,SaveGameStrings1,_SaveGameStrings1
