@@ -75,6 +75,11 @@ void WinSndFinish(void);
 bool SE_SoundTestStart(void);
 }
 
+extern "C" void SE_SoundTestFinish(void)
+{
+    WinSndFinish();
+}
+
 extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
 
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
