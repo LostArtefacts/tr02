@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">64.64% (806)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">35.12% (438)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">64.72% (807)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">35.04% (437)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="482.82" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="482.82" y="0" class="decompiled"/>
-<rect width="262.38" height="6" x="484.62" y="0" class="todo"/>
+<rect width="483.42" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="483.42" y="0" class="decompiled"/>
+<rect width="261.78" height="6" x="485.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1248,7 +1248,7 @@
 <rect width="12" height="12" x="405" y="345" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="345" class="todo"><title>0x00456a20 GuidBinaryToString (81 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="345" class="todo"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="345" class="todo"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="345" class="named"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="345" class="todo"><title>0x00456b60 IsNewRegistryKeyCreated (15 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="345" class="todo"><title>0x00456b70 CloseRegistryKey (13 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="345" class="todo"><title>0x00456b80 SetRegistryDwordValue (30 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.36%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.64%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.37%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.62%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="361.23" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="361.23" y="0" class="decompiled"/>
-<rect width="385.72" height="6" x="361.28" y="0" class="todo"/>
+<rect width="361.33" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="361.33" y="0" class="decompiled"/>
+<rect width="385.62" height="6" x="361.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2301,7 +2301,7 @@
 <rect width="3.49" height="3.15" x="668.92" y="365.70" class="named"><title>0x00435b50 BridgeTilt1Floor (48 bytes)</title></rect>
 <rect width="3.49" height="3.15" x="668.92" y="371.85" class="todo"><title>0x004445c0 BGND_Init (48 bytes)</title></rect>
 <rect width="3.29" height="3.34" x="675.41" y="303.59" class="todo"><title>0x00455760 S_CDStop (48 bytes)</title></rect>
-<rect width="3.29" height="3.34" x="675.41" y="309.93" class="todo"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
+<rect width="3.29" height="3.34" x="675.41" y="309.93" class="named"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
 <rect width="3.29" height="3.21" x="675.41" y="316.28" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
 <rect width="3.29" height="3.21" x="675.41" y="322.49" class="named"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
 <rect width="3.29" height="3.21" x="675.41" y="328.70" class="named"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
