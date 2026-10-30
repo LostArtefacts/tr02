@@ -11,3 +11,12 @@ void ready_pistols(int weapon_type)
 
     lara.left_arm.frame_base = lara.right_arm.frame_base = objects[PISTOLS].frame_base;
 }
+
+void undraw_pistol_mesh_right(int weapon_type)
+{
+    int obj;
+
+    obj = WeaponObject(weapon_type);
+    lara.mesh_ptrs[THIGH_R] = meshes[objects[obj].mesh_index + THIGH_R];
+    lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
+}
