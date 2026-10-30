@@ -975,6 +975,72 @@ void lara_col_walk(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos += coll->mid_floor;
 }
 
+void lara_col_run(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (TestLaraVault(item, coll))
+        return;
+
+    if (LaraDeflectEdge(item, coll))
+    {
+        item->pos.z_rot = 0;
+        if (item->anim_number != STARTRUN_A && TestWall(item, 256, 0, -640))
+        {
+            item->current_anim_state = AS_SPLAT;
+            if (item->frame_number >= 0 && item->frame_number <= 9)
+            {
+                item->anim_number = HITWALLLEFT_A;
+                item->frame_number = HITWALLLEFT_F;
+                return;
+            }
+            if (item->frame_number >= 10 && item->frame_number <= 21)
+            {
+                item->anim_number = HITWALLRIGHT_A;
+                item->frame_number = HITWALLRIGHT_F;
+                return;
+            }
+        }
+        LaraCollideStop(item, coll);
+    }
+
+    if (LaraFallen(item, coll))
+        return;
+
+    if (coll->mid_floor >= -STEPUP_HEIGHT && coll->mid_floor < -STEP_L / 2)
+    {
+        if (coll->front_floor <= -STEPUP_HEIGHT)
+            return;
+        if (item->frame_number >= 3 && item->frame_number <= 14)
+        {
+            item->anim_number = RUNSTEPUP_LEFT_A;
+            item->frame_number = RUNSTEPUP_LEFT_F;
+        }
+        else
+        {
+            item->anim_number = RUNSTEPUP_RIGHT_A;
+            item->frame_number = RUNSTEPUP_RIGHT_F;
+        }
+    }
+
+    if (TestLaraSlide(item, coll))
+        return;
+
+    if (coll->mid_floor >= 50)
+    {
+        item->pos.y_pos += 50;
+        return;
+    }
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_stop(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->gravity_status = item->fallspeed = 0;
@@ -1740,7 +1806,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)

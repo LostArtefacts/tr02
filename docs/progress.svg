@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.85% (684)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.15% (563)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.93% (685)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.07% (562)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="409.74" height="6" x="0" y="0" class="named"/>
-<rect width="337.26" height="6" x="409.74" y="0" class="todo"/>
+<rect width="410.34" height="6" x="0" y="0" class="named"/>
+<rect width="336.66" height="6" x="410.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -513,7 +513,7 @@
 <rect width="12" height="12" x="645" y="120" class="named"><title>0x00428be0 LaraFallen (81 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="120" class="named"><title>0x00428c40 LaraCollideStop (191 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="120" class="named"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="120" class="todo"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="120" class="named"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="120" class="named"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="120" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="120" class="named"><title>0x00429190 lara_col_fastback (179 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.28%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="274.32" height="6" x="0" y="0" class="named"/>
-<rect width="472.68" height="6" x="274.32" y="0" class="todo"/>
+<rect width="275.16" height="6" x="0" y="0" class="named"/>
+<rect width="471.84" height="6" x="275.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1566,7 +1566,7 @@
 <rect width="15.18" height="14.92" x="487.29" y="59.73" class="todo"><title>0x0044e5e0 WinMain (391 bytes)</title></rect>
 <rect width="14.81" height="14.92" x="505.47" y="59.73" class="todo"><title>0x0040b9f0 InsertFlatRect_Sorted (383 bytes)</title></rect>
 <rect width="14.81" height="14.92" x="523.28" y="59.73" class="named"><title>0x00417780 ControlTwinkle (383 bytes)</title></rect>
-<rect width="14.81" height="14.92" x="541.08" y="59.73" class="todo"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
+<rect width="14.81" height="14.92" x="541.08" y="59.73" class="named"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
 <rect width="14.67" height="14.92" x="558.89" y="59.73" class="todo"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
 <rect width="14.67" height="14.92" x="576.56" y="59.73" class="todo"><title>0x00453eb0 Func453eb0 (380 bytes)</title></rect>
 <rect width="14.62" height="14.92" x="594.23" y="59.73" class="named"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
