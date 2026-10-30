@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.54% (730)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">41.46% (517)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.62% (731)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">41.38% (516)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="437.30" height="6" x="0" y="0" class="named"/>
-<rect width="309.70" height="6" x="437.30" y="0" class="todo"/>
+<rect width="437.90" height="6" x="0" y="0" class="named"/>
+<rect width="309.10" height="6" x="437.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -275,7 +275,7 @@
 <rect width="12" height="12" x="75" y="60" class="todo"><title>0x00418670 DinoControl (647 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="60" class="named"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="named"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="60" class="todo"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="60" class="named"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="60" class="todo"><title>0x00418e20 SetRoomBounds (895 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="60" class="todo"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.39%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.61%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.40%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="309.21" height="6" x="0" y="0" class="named"/>
-<rect width="437.79" height="6" x="309.21" y="0" class="todo"/>
+<rect width="310.72" height="6" x="0" y="0" class="named"/>
+<rect width="436.28" height="6" x="310.72" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1447,7 +1447,7 @@
 <rect width="20.76" height="22.21" x="347.52" y="75.73" class="todo"><title>0x00454b10 GameMain (720 bytes)</title></rect>
 <rect width="20.76" height="21.89" x="347.52" y="100.93" class="todo"><title>0x0040c030 S_DrawSprite (711 bytes)</title></rect>
 <rect width="20.76" height="21.54" x="347.52" y="125.82" class="named"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
-<rect width="20.76" height="21.09" x="347.52" y="150.37" class="todo"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
+<rect width="20.76" height="21.09" x="347.52" y="150.37" class="named"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
 <rect width="20.76" height="20.53" x="347.52" y="174.45" class="named"><title>0x004174e0 TigerControl (672 bytes)</title></rect>
 <rect width="20.76" height="19.97" x="347.52" y="197.98" class="named"><title>0x0043cc50 SharkControl (656 bytes)</title></rect>
 <rect width="20.76" height="19.93" x="347.52" y="220.95" class="named"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>

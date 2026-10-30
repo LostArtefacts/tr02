@@ -53,6 +53,93 @@ extern int OutsideCamera;
 void S_LightRoom(ROOM_INFO *r);
 void ClipRoom(ROOM_INFO *r);
 
+#define OUTSIDE 8
+#define HORIZON 254
+
+extern int BoundStart, BoundEnd;
+extern int BoundRooms[];
+extern int OutsideLeft, OutsideRight, OutsideTop, OutsideBottom;
+
+void GetRoomBounds(void);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void S_InitialisePolyList(int clear);
+void S_InsertBackground(sint16 *objptr);
+void DrawLara(ITEM_INFO *item);
+void PrintRooms(sint16 room_number);
+void PrintObjects(sint16 room_number);
+
+void DrawRooms(sint16 current_room)
+{
+    int i;
+    ROOM_INFO *r;
+    sint16 *frame;
+
+    r = &room[current_room];
+    phd_left = r->test_left = 0;
+    phd_top = r->test_top = 0;
+    phd_right = r->test_right = phd_winxmax;
+    phd_bottom = r->test_bottom = phd_winymax;
+
+    r->bound_active = 2;
+    BoundRooms[0] = current_room;
+    BoundStart = 0;
+    BoundEnd = 1;
+    number_draw_rooms = 0;
+
+    OutsideCamera = r->flags & OUTSIDE;
+    if (OutsideCamera) {
+        OutsideLeft = OutsideTop = 0;
+        OutsideRight = phd_winxmax;
+        OutsideBottom = phd_winymax;
+    } else {
+        OutsideLeft = phd_winxmax;
+        OutsideTop = phd_winymax;
+        OutsideRight = OutsideBottom = 0;
+    }
+    UnderwaterCamera = r->flags & UNDERWATER;
+
+    GetRoomBounds();
+
+    MidSort = 0;
+    if (OutsideCamera) {
+        phd_left = OutsideLeft;
+        phd_right = OutsideRight;
+        phd_top = OutsideTop;
+        phd_bottom = OutsideBottom;
+        if (objects[HORIZON].loaded) {
+            S_SetupAboveWater(UnderwaterCamera);
+            phd_PushMatrix();
+            *(phd_mxptr + M03) = *(phd_mxptr + M13) = *(phd_mxptr + M23) = 0;
+            frame = anims[objects[HORIZON].anim_index].frame_ptr + 9;
+            phd_RotYXZsuperpack(&frame, 0);
+            S_InitialisePolyList(0);
+            S_InsertBackground(meshes[objects[HORIZON].mesh_index]);
+            phd_PopMatrix();
+        } else {
+            S_InitialisePolyList(1);
+            OutsideCamera = -1;
+        }
+    } else
+        S_InitialisePolyList(0);
+
+    if (objects[LARA].loaded && !(lara_item->flags & ONESHOT)) {
+        if (room[lara_item->room_number].flags & UNDERWATER)
+            S_SetupBelowWater(UnderwaterCamera);
+        else
+            S_SetupAboveWater(UnderwaterCamera);
+        MidSort = (sint16)room[lara_item->room_number].bound_active >> 8;
+        if (MidSort)
+            MidSort--;
+        DrawLara(lara_item);
+    }
+
+    for (i = 0; i < number_draw_rooms; i++)
+        PrintRooms(draw_rooms[i]);
+
+    for (i = 0; i < number_draw_rooms; i++)
+        PrintObjects(draw_rooms[i]);
+}
+
 void PrintRooms(sint16 room_number)
 {
     ROOM_INFO *r;
