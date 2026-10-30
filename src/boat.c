@@ -157,3 +157,24 @@ void DoWakeEffect(ITEM_INFO *boat)
         }
     }
 }
+
+#define GRAVITY 6
+
+int DoBoatDynamics(int height, int fallspeed, int *y)
+{
+    if (height > *y) {
+        *y += fallspeed;
+        if (*y > height) {
+            *y = height;
+            fallspeed = 0;
+        } else
+            fallspeed += GRAVITY;
+    } else {
+        fallspeed += ((height - *y - fallspeed) >> 3);
+        if (fallspeed < -20)
+            fallspeed = -20;
+        if (*y > height)
+            *y = height;
+    }
+    return fallspeed;
+}
