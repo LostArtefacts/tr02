@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.62% (494)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.38% (753)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.70% (495)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.30% (752)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="295.92" height="6" x="0" y="0" class="named"/>
-<rect width="451.08" height="6" x="295.92" y="0" class="todo"/>
+<rect width="296.52" height="6" x="0" y="0" class="named"/>
+<rect width="450.48" height="6" x="296.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -812,7 +812,7 @@
 <rect width="12" height="12" x="630" y="210" class="named"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="210" class="named"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="210" class="named"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="210" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="210" class="named"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="210" class="todo"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="210" class="todo"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="210" class="todo"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.27%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.37" height="6" x="0" y="0" class="named"/>
-<rect width="599.63" height="6" x="147.37" y="0" class="todo"/>
+<rect width="147.46" height="6" x="0" y="0" class="named"/>
+<rect width="599.54" height="6" x="147.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2336,7 +2336,7 @@
 <rect width="2.97" height="2.89" x="681.29" y="320.93" class="named"><title>0x0044b580 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="2.97" height="2.89" x="681.29" y="326.82" class="todo"><title>0x00455400 CalcVolume (42 bytes)</title></rect>
 <rect width="2.97" height="2.89" x="681.29" y="332.71" class="todo"><title>0x00456ba0 SetRegistryBoolValue (42 bytes)</title></rect>
-<rect width="2.97" height="2.75" x="681.29" y="338.60" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
+<rect width="2.97" height="2.75" x="681.29" y="338.60" class="named"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
 <rect width="2.97" height="2.75" x="681.29" y="344.35" class="todo"><title>0x00447740 DInputKeyboardRelease (41 bytes)</title></rect>
 <rect width="2.97" height="2.75" x="681.29" y="350.10" class="todo"><title>0x0044d1e0 HWR_ResetTexSource (41 bytes)</title></rect>
 <rect width="2.97" height="2.61" x="681.29" y="355.85" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
