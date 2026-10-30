@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.94% (498)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.06% (749)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.02% (499)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.98% (748)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="298.32" height="6" x="0" y="0" class="named"/>
-<rect width="448.68" height="6" x="298.32" y="0" class="todo"/>
+<rect width="298.92" height="6" x="0" y="0" class="named"/>
+<rect width="448.08" height="6" x="298.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -816,7 +816,7 @@
 <rect width="12" height="12" x="690" y="210" class="named"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="210" class="named"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="210" class="named"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="210" class="todo"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="210" class="named"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="225" class="todo"><title>0x00440810 T_BottomAlign (30 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="225" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="225" class="todo"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.63" height="6" x="0" y="0" class="named"/>
-<rect width="599.37" height="6" x="147.63" y="0" class="todo"/>
+<rect width="147.70" height="6" x="0" y="0" class="named"/>
+<rect width="599.30" height="6" x="147.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2402,7 +2402,7 @@
 <rect width="2.12" height="1.90" x="724.41" y="326.23" class="named"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
 <rect width="2.12" height="1.90" x="729.52" y="326.23" class="named"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
 <rect width="2.12" height="1.90" x="734.64" y="326.23" class="named"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
-<rect width="2.12" height="1.90" x="739.76" y="326.23" class="todo"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
+<rect width="2.12" height="1.90" x="739.76" y="326.23" class="named"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
 <rect width="2.12" height="1.90" x="744.88" y="326.23" class="todo"><title>0x00440810 T_BottomAlign (30 bytes)</title></rect>
 <rect width="2.31" height="1.72" x="703.42" y="331.14" class="named"><title>0x0044ca40 GetRandomControl (30 bytes)</title></rect>
 <rect width="2.31" height="1.72" x="708.73" y="331.14" class="named"><title>0x0044ca70 GetRandomDraw (30 bytes)</title></rect>

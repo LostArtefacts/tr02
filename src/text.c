@@ -194,3 +194,14 @@ void T_CentreV(TEXTSTRING *textString, sint16 ok)
     else
         textString->flags &= ~T_CENTRE_V;
 }
+
+void T_RightAlign(TEXTSTRING *textString, sint16 ok)
+{
+    if (textString == NULL)
+        return;
+
+    if (ok)
+        textString->flags |= T_RIGHTALIGN;
+    else
+        textString->flags &= ~T_RIGHTALIGN;
+}
