@@ -121,6 +121,9 @@ sint32 __fastcall phd_sin(sint32 angle);
 uint32 __fastcall phd_sqrt(uint32 n);
 sint16 __fastcall phd_atan(sint32 x, sint32 y);
 
+void draw_poly_flat(sint16 *iptr);
+int xgen_x(sint16 *iptr);
+
 #ifdef __cplusplus
 }
 #endif

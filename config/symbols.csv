@@ -1527,8 +1527,8 @@ address,size,name,symbol
 0x00467724,4,detail_level,_detail_level
 0x0046c2f0,4,MidSort,_MidSort
 0x0046c2f4,4,LfAspectCorrection,?LfAspectCorrection@@3MA
-0x0046c2f8,4,XGen_y0,_XGen_y0
-0x0046c2fc,4,XGen_y1,_XGen_y1
+0x0046c2f8,4,xgen_ymin,_xgen_ymin
+0x0046c2fc,4,xgen_ymax,_xgen_ymax
 0x0046c300,,GouraudTable,_GouraudTable
 0x0046e300,4,phd_top,_phd_top
 0x0046e308,,PhdSpriteInfo,_PhdSpriteInfo
