@@ -693,3 +693,15 @@ DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListHead(void)
     return &node->body;
 }
 
+DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
+{
+    DISPLAY_MODE_NODE *node = new DISPLAY_MODE_NODE(tail, NULL);
+
+    if (tail)
+        tail->next = node;
+    else
+        head = node;
+    tail = node;
+    dwCount++;
+    return &node->body;
+}
