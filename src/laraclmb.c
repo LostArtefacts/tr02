@@ -107,6 +107,99 @@ void lara_col_climbright(ITEM_INFO *item, COLL_INFO *coll)
 }
 
 
+#define CLIMBING_A 161
+#define CLIMBDOWN_A 168
+#define CLIMBUP_LNK1 29
+#define CLIMBUP_LNK2 58
+#define CLIMBDN_LNK1 29
+#define CLIMBDN_LNK2 58
+
+int LaraTestClimbUpPos(ITEM_INFO *item, int front, int right, int *shift, int *ledge);
+#define CLIMBSTNC_A 164
+#define CLIMBSTNC_F GF(CLIMBSTNC_A, 0)
+
+void AnimateLara(ITEM_INFO *item);
+
+void lara_col_climbstnc(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int shift_r, ledge_r, shift_l, result_l, result_r, ledge_l;
+
+    if (LaraCheckForLetGo(item, coll))
+        return;
+    if (item->anim_number != CLIMBSTNC_A)
+        return;
+
+    if (input & IN_FORWARD)
+    {
+        if (item->goal_anim_state == AS_NULL)
+            return;
+
+        item->goal_anim_state = AS_CLIMBSTNC;
+        result_r = LaraTestClimbUpPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, &shift_r, &ledge_r);
+        result_l = LaraTestClimbUpPos(item, coll->radius, -(coll->radius + CLIMB_WIDTHL), &shift_l, &ledge_l);
+        if (!result_r || !result_l)
+            return;
+
+        if (result_r < 0 || result_l < 0)
+        {
+            if (ABS(ledge_l - ledge_r) > 120)
+                return;
+            item->pos.y_pos += (ledge_l + ledge_r) / 2 - STEP_L;
+            item->goal_anim_state = AS_NULL;
+            return;
+        }
+
+        if (shift_r)
+        {
+            if (shift_l)
+            {
+                if ((shift_r < 0) ^ (shift_l < 0))
+                    return;
+                if (shift_r < 0 && shift_r < shift_l)
+                    shift_l = shift_r;
+                else if (shift_r > 0 && shift_r > shift_l)
+                    shift_l = shift_r;
+            }
+            else
+                shift_l = shift_r;
+        }
+
+        item->goal_anim_state = AS_CLIMBING;
+        item->pos.y_pos += shift_l;
+    }
+    else if (input & IN_BACK)
+    {
+        if (item->goal_anim_state == AS_HANG)
+            return;
+
+        item->goal_anim_state = AS_CLIMBSTNC;
+        item->pos.y_pos += STEP_L;
+        result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -CLIMB_HITE, CLIMB_HITE, &shift_r);
+        result_l = LaraTestClimbPos(item, coll->radius, -(coll->radius + CLIMB_WIDTHL), -CLIMB_HITE, CLIMB_HITE, &shift_l);
+        item->pos.y_pos -= STEP_L;
+        if (!result_r || !result_l)
+            return;
+
+        if (shift_r && shift_l)
+        {
+            if ((shift_r < 0) ^ (shift_l < 0))
+                return;
+            if (shift_r < 0 && shift_r < shift_l)
+                shift_l = shift_r;
+            else if (shift_r > 0 && shift_r > shift_l)
+                shift_l = shift_r;
+        }
+
+        if (result_r == 1 && result_l == 1)
+        {
+            item->goal_anim_state = AS_CLIMBDOWN;
+            item->pos.y_pos += shift_l;
+        }
+        else
+            item->goal_anim_state = AS_HANG;
+    }
+}
+
 #define FALLDOWN_A 34
 
 int LaraCheckForLetGo(ITEM_INFO *item, COLL_INFO *coll)
@@ -304,11 +397,6 @@ int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int heig
     return LaraTestClimb(x, item->pos.y_pos + origin, z, xfront, zfront, height, item->room_number, shift);
 }
 
-
-#define CLIMBSTNC_A 164
-#define CLIMBSTNC_F GF(CLIMBSTNC_A, 0)
-
-void AnimateLara(ITEM_INFO *item);
 
 void LaraDoClimbLeftRight(ITEM_INFO *item, COLL_INFO *coll, int result, int shift)
 {
