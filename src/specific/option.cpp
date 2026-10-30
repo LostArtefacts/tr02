@@ -350,6 +350,86 @@ void DefaultConflict(void)
     }
 }
 
+extern "C" int KeyCursor;
+extern "C" void T_SetScale(TEXTSTRING *textString, sint32 scaleH, sint32 scaleV);
+
+extern "C" void S_ShowControls(void)
+{
+    int i;
+    int centre;
+    sint16 vpos;
+    sint16 *key;
+
+    centre = GetRenderWidth() / 2;
+    if (centre > 320)
+        centre = 320;
+    if (!btext[0])
+    {
+        key = layout[iconfig];
+        if (centre < 320)
+            vpos = centre - 140;
+        else
+            vpos = centre - 200;
+        btext[0] = T_Print(vpos, -25, 16, kname[key[0]]);
+        btext[1] = T_Print(vpos, -10, 16, kname[key[1]]);
+        btext[2] = T_Print(vpos, 5, 16, kname[key[2]]);
+        btext[3] = T_Print(vpos, 20, 16, kname[key[3]]);
+        btext[4] = T_Print(vpos, 35, 16, kname[key[4]]);
+        btext[5] = T_Print(vpos, 50, 16, kname[key[5]]);
+        btext[6] = T_Print(vpos, 65, 16, kname[key[6]]);
+        vpos = centre + 10;
+        btext[7] = T_Print(vpos, -25, 16, kname[key[7]]);
+        btext[8] = T_Print(vpos, -10, 16, kname[key[8]]);
+        btext[9] = T_Print(vpos, 5, 16, kname[key[9]]);
+        btext[10] = T_Print(vpos, 20, 16, kname[key[10]]);
+        btext[11] = T_Print(vpos, 35, 16, kname[key[11]]);
+        btext[12] = T_Print(vpos, 50, 16, kname[key[12]]);
+        btext[13] = T_Print(vpos, 65, 16, kname[key[13]]);
+        for (i = 0; i < NUM_CONTROLS; i++)
+            T_CentreV(btext[i], 1);
+        KeyCursor = 0;
+    }
+    if (!ctext[0])
+    {
+        if (centre < 320)
+            vpos = centre - 70;
+        else
+            vpos = centre - 130;
+        ctext[0] = T_Print(vpos, -25, 16, GF_GameStrings[19]);
+        ctext[1] = T_Print(vpos, -10, 16, GF_GameStrings[22]);
+        ctext[2] = T_Print(vpos, 5, 16, GF_GameStrings[20]);
+        ctext[3] = T_Print(vpos, 20, 16, GF_GameStrings[21]);
+        ctext[4] = T_Print(vpos, 35, 16, GF_GameStrings[23]);
+        ctext[5] = T_Print(vpos, 50, 16, GF_GameStrings[25]);
+        ctext[6] = T_Print(vpos, 65, 16, GF_GameStrings[17]);
+        vpos = centre + 90;
+        ctext[7] = T_Print(vpos, -25, 16, GF_GameStrings[28]);
+        ctext[8] = T_Print(vpos, -10, 16, GF_GameStrings[29]);
+        ctext[9] = T_Print(vpos, 5, 16, GF_GameStrings[30]);
+        ctext[10] = T_Print(vpos, 20, 16, GF_GameStrings[33]);
+        ctext[11] = T_Print(vpos, 35, 16, GF_GameStrings[27]);
+        ctext[12] = T_Print(vpos, 50, 16, GF_GameStrings[18]);
+        ctext[13] = T_Print(vpos, 65, 16, GF_GameStrings[32]);
+        for (i = 0; i < NUM_CONTROLS; i++)
+            T_CentreV(ctext[i], 1);
+    }
+    ControlTextInfo[1] = T_Print(0, -55, 0, " ");
+    T_CentreV(ControlTextInfo[1], 1);
+    T_CentreH(ControlTextInfo[1], 1);
+    T_AddOutline(ControlTextInfo[1], 1, 15, NULL, 0);
+    if (centre < 320)
+    {
+        for (i = 0; i < NUM_CONTROLS; i++)
+        {
+            T_SetScale(btext[i], 0x8000, 0x10000);
+            T_SetScale(ctext[i], 0x8000, 0x10000);
+        }
+        T_AddBackground(ControlTextInfo[1], 300, 140, 0, 0, 48, 0, NULL, 0);
+    }
+    else
+        T_AddBackground(ControlTextInfo[1], 420, 150, 0, 0, 48, 0, NULL, 0);
+}
+
 extern "C" void S_ChangeCtrlText(void)
 {
     int i;
