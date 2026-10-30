@@ -7,6 +7,58 @@ void SetCutsceneTrack(int track)
 
 extern sint16 number_rooms;
 
+#define CINE_ADJUST 6
+#define END_ACTION 2
+
+extern sint16 CineLevelID;
+extern sint16 CineTargetAngle;
+extern int CineCurrentFrame;
+extern sint16 cine_frame;
+extern sint16 Option_Music_Volume;
+
+int InitialiseLevel(int level_number, int type);
+void InitCinematicRooms(void);
+void InitialisePlayer1(sint16 item_num);
+int StartSyncedAudio(int num);
+void S_CDVolume(int volume);
+void S_CDStop(void);
+void DrawPhaseCinematic(void);
+void S_FadeToBlack(void);
+void S_ClearScreen(void);
+sint32 DoCinematic(sint32 nframes);
+
+#define OUTSIDE 8
+
+void InitCinematicRooms(void)
+{
+    int i;
+
+    for (i = 0; i < number_rooms; i++) {
+        if (room[i].flipped_room >= 0)
+            room[room[i].flipped_room].bound_active = 1;
+        room[i].flags |= OUTSIDE;
+    }
+
+    number_draw_rooms = 0;
+    for (i = 0; i < number_rooms; i++) {
+        if (!room[i].bound_active)
+            draw_rooms[number_draw_rooms++] = i;
+    }
+}
+
+int GetCinematicRoom(sint32 x, sint32 y, sint32 z);
+void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, sint16 roll);
+
+extern int CineTickRate;
+extern int number_dynamics;
+extern sint16 next_item_active;
+
+int S_UpdateInput(void);
+int S_CDGetLoc(void);
+void HairControl(int in_cutscene);
+
+void CalculateCinematicCamera(void);
+
 int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
 {
     int i;
@@ -23,6 +75,8 @@ int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
 
 void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint);
 void AnimateLara(ITEM_INFO *item);
+
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
 
 void LaraControlCinematic(sint16 item_num)
 {
@@ -81,3 +135,7 @@ void InitialiseGenPlayer(sint16 item_num)
     items[item_num].pos.y_rot = 0;
     items[item_num].dynamic_light = 0;
 }
+
+extern PHD_3DPOS cinematic_pos;
+extern sint32 PhdPersp;
+
