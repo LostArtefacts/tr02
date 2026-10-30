@@ -49,3 +49,17 @@ void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
         pitch = -pitch;
     *(dest + 1) = pitch;
 }
+
+void S_InsertRoom(sint16 *objptr, int outside)
+{
+    phd_leftfloat = (float)(phd_winxmin + phd_left);
+    phd_topfloat = (float)(phd_winymin + phd_top);
+    phd_rightfloat = (float)(phd_winxmin + phd_right + 1);
+    phd_bottomfloat = (float)(phd_winymin + phd_bottom + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+    objptr = calc_roomvert(objptr, outside ? 0 : 16);
+    objptr = InsertObjectGT4(objptr + 1, *(objptr), FAR_SORT);
+    objptr = InsertObjectGT3(objptr + 1, *(objptr), FAR_SORT);
+    objptr = ins_room_sprite(objptr + 1, *(objptr));
+}

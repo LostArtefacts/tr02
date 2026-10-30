@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.95% (149)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.05% (1098)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.03% (150)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.97% (1097)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="89.26" height="6" x="0" y="0" class="named"/>
-<rect width="657.74" height="6" x="89.26" y="0" class="todo"/>
+<rect width="89.86" height="6" x="0" y="0" class="named"/>
+<rect width="657.14" height="6" x="89.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -78,7 +78,7 @@
 <rect width="12" height="12" x="120" y="0" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="todo"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="todo"><title>0x004019e0 phd_PutPolygons (243 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="0" class="todo"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="0" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="0" class="todo"><title>0x00401bd0 calc_background_light (50 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="0" class="todo"><title>0x00401c10 S_InsertBackground (308 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="0" class="todo"><title>0x00401d50 calc_object_vertices (469 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="28.18" height="6" x="0" y="0" class="named"/>
-<rect width="718.82" height="6" x="28.18" y="0" class="todo"/>
+<rect width="28.70" height="6" x="0" y="0" class="named"/>
+<rect width="718.30" height="6" x="28.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1704,7 +1704,7 @@
 <rect width="11.50" height="10.87" x="481.48" y="350.32" class="todo"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
 <rect width="11.50" height="10.81" x="481.48" y="364.19" class="todo"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="11.57" height="10.63" x="495.98" y="123.98" class="todo"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
-<rect width="11.38" height="10.63" x="510.55" y="123.98" class="todo"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
+<rect width="11.38" height="10.63" x="510.55" y="123.98" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
 <rect width="11.26" height="10.63" x="524.93" y="123.98" class="todo"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="11.26" height="10.63" x="539.19" y="123.98" class="todo"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
 <rect width="11.26" height="10.63" x="553.45" y="123.98" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
