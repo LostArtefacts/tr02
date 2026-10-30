@@ -109,6 +109,12 @@ extern "C" bool SE_SoundTest(void)
 
 extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
 
+extern "C" void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter)
+{
+    ChangedAppSettings.PreferredDisplayAdapter = adapter;
+    SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
+}
+
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
 
 extern "C" char SetupDialogName[];
