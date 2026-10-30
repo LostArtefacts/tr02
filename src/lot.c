@@ -23,6 +23,30 @@ void InitialiseLOTarray(void)
     slots_used = 0;
 }
 
+void DisableBaddieAI(sint16 item_num)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *creature;
+
+    if (item_num == lara.item_number)
+    {
+        creature = lara.creature;
+        lara.creature = NULL;
+    }
+    else
+    {
+        item = &items[item_num];
+        creature = (CREATURE_INFO *)item->data;
+        item->data = NULL;
+    }
+
+    if (creature)
+    {
+        creature->item_num = NO_ITEM;
+        slots_used--;
+    }
+}
+
 void ClearLOT(LOT_INFO *LOT)
 {
     int i;
