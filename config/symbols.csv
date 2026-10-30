@@ -1580,7 +1580,7 @@ address,size,name,symbol
 0x004bcb48,,matrix_stack,_matrix_stack
 0x004bd2c8,,DepthQTable,_DepthQTable
 0x004bf2c8,256,DepthQIndex,_DepthQIndex
-0x004bf3c8,4,PhdScreenWidth,_PhdScreenWidth
+0x004bf3c8,4,phd_scrwidth,_phd_scrwidth
 0x004bf3cc,4,LsDivider,_LsDivider
 0x004bf3d0,,PhdVBuf,_PhdVBuf
 0x004caf50,48000,xbuffer,_xbuffer

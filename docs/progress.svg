@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.91% (161)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.09% (1086)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.99% (162)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.01% (1085)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="96.45" height="6" x="0" y="0" class="named"/>
-<rect width="650.55" height="6" x="96.45" y="0" class="todo"/>
+<rect width="97.04" height="6" x="0" y="0" class="named"/>
+<rect width="649.96" height="6" x="97.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -94,7 +94,7 @@
 <rect width="12" height="12" x="360" y="0" class="todo"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="todo"><title>0x004026d0 phd_SetFarZ (24 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="0" class="todo"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="0" class="todo"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="0" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="0" class="named"><title>0x00402b00 draw_poly_flat (53 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="0" class="named"><title>0x00402b40 draw_poly_trans (53 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="0" class="named"><title>0x00402b80 draw_poly_gouraud (53 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.25%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.75%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.38%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.62%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="31.77" height="6" x="0" y="0" class="named"/>
-<rect width="715.23" height="6" x="31.77" y="0" class="todo"/>
+<rect width="32.68" height="6" x="0" y="0" class="named"/>
+<rect width="714.32" height="6" x="32.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1538,7 +1538,7 @@
 <rect width="15.36" height="16.22" x="604.81" y="41.45" class="todo"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
 <rect width="15.36" height="16.22" x="623.17" y="41.45" class="todo"><title>0x00440340 BigSpiderControl (421 bytes)</title></rect>
 <rect width="15.31" height="16.22" x="641.52" y="41.45" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
-<rect width="15.09" height="16.22" x="659.84" y="41.45" class="todo"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
+<rect width="15.09" height="16.22" x="659.84" y="41.45" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
 <rect width="15.05" height="16.22" x="677.93" y="41.45" class="todo"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
 <rect width="15.05" height="16.22" x="695.98" y="41.45" class="todo"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
 <rect width="15.01" height="16.22" x="714.03" y="41.45" class="todo"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
