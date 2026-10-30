@@ -166,7 +166,7 @@ address,size,name,symbol
 0x00414070,391,MoveLaraPosition,_MoveLaraPosition
 0x00414200,366,Move3DPosTo3DPos,_Move3DPosTo3DPos
 0x00414370,835,ControlPhase,_ControlPhase
-0x004146c0,824,AnimateItem,_AnimateItem
+0x004146c0,872,AnimateItem,_AnimateItem
 0x00414a30,171,GetChange,_GetChange
 0x00414ae0,95,TranslateItem,_TranslateItem
 0x00414b40,408,GetFloor,_GetFloor
@@ -1945,7 +1945,7 @@ address,size,name,symbol
 0x00525900,512,BoundRooms,_BoundRooms
 0x00525b00,4,OutsideBottom,_OutsideBottom
 0x00525b04,4,ranges,_ranges
-0x00525b08,4,AnimCommands,_AnimCommands
+0x00525b08,4,commands,_commands
 0x00525b20,200,draw_rooms,_draw_rooms
 0x00525be8,4,bones,_bones
 0x00525bec,4,number_dynamics,_number_dynamics
