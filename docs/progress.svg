@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.88% (410)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.12% (837)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.96% (411)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.04% (836)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="245.61" height="6" x="0" y="0" class="named"/>
-<rect width="501.39" height="6" x="245.61" y="0" class="todo"/>
+<rect width="246.20" height="6" x="0" y="0" class="named"/>
+<rect width="500.80" height="6" x="246.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -304,7 +304,7 @@
 <rect width="12" height="12" x="510" y="60" class="todo"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="named"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="60" class="named"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="60" class="todo"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="60" class="named"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="60" class="todo"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="60" class="todo"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.63%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.37%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="101.79" height="6" x="0" y="0" class="named"/>
-<rect width="645.21" height="6" x="101.79" y="0" class="todo"/>
+<rect width="101.90" height="6" x="0" y="0" class="named"/>
+<rect width="645.10" height="6" x="101.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2247,7 +2247,7 @@
 <rect width="3.69" height="3.64" x="716.54" y="283.68" class="named"><title>0x00402b40 draw_poly_trans (53 bytes)</title></rect>
 <rect width="3.69" height="3.64" x="723.23" y="283.68" class="named"><title>0x00402b80 draw_poly_gouraud (53 bytes)</title></rect>
 <rect width="3.69" height="3.64" x="729.93" y="283.68" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
-<rect width="3.69" height="3.64" x="736.62" y="283.68" class="todo"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
+<rect width="3.69" height="3.64" x="736.62" y="283.68" class="named"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
 <rect width="3.69" height="3.64" x="743.31" y="283.68" class="named"><title>0x00428350 lara_as_hangleft (53 bytes)</title></rect>
 <rect width="3.58" height="3.75" x="662.13" y="290.31" class="named"><title>0x00428390 lara_as_hangright (53 bytes)</title></rect>
 <rect width="3.58" height="3.75" x="662.13" y="297.06" class="named"><title>0x0042d8f0 lara_as_climbleft (53 bytes)</title></rect>

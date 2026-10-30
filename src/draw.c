@@ -104,3 +104,16 @@ sint16 *GetBoundsAccurate(ITEM_INFO *item)
         return interpolated_bounds;
     }
 }
+
+sint16 *GetBestFrame(ITEM_INFO *item)
+{
+    int frac, rate;
+    sint16 *frmptr[2];
+
+    frac = GetFrames(item, frmptr, &rate);
+
+    if (frac <= rate / 2)
+        return frmptr[0];
+    else
+        return frmptr[1];
+}
