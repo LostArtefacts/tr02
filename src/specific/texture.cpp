@@ -38,3 +38,9 @@ extern "C" void FreePalette(int palIndex)
         TexturePalettes[palIndex] = NULL;
     }
 }
+
+extern "C" void SafeFreePalette(int palIndex)
+{
+    if (palIndex >= 0)
+        FreePalette(palIndex);
+}

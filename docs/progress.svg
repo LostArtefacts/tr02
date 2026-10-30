@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.16% (825)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">33.60% (419)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66.24% (826)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">33.52% (418)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="494.21" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="494.21" y="0" class="decompiled"/>
-<rect width="251" height="6" x="496" y="0" class="todo"/>
+<rect width="494.81" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="494.81" y="0" class="decompiled"/>
+<rect width="250.40" height="6" x="496.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1215,7 +1215,7 @@
 <rect width="12" height="12" x="660" y="330" class="todo"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="named"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="330" class="named"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="330" class="todo"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="330" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="330" class="todo"><title>0x00455d50 Func455d50 (38 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="330" class="todo"><title>0x00455d80 Func455d80 (106 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="345" class="todo"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.76%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.77%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="364.24" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="364.24" y="0" class="decompiled"/>
-<rect width="382.71" height="6" x="364.29" y="0" class="todo"/>
+<rect width="364.28" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="364.28" y="0" class="decompiled"/>
+<rect width="382.67" height="6" x="364.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2480,7 +2480,7 @@
 <rect width="0.97" height="0.77" x="742.07" y="349.23" class="todo"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
 <rect width="0.97" height="0.77" x="746.03" y="349.23" class="todo"><title>0x00447170 Func447170 (18 bytes)</title></rect>
 <rect width="0.96" height="0.78" x="721.35" y="353" class="todo"><title>0x00447b40 Func447b40 (18 bytes)</title></rect>
-<rect width="0.96" height="0.78" x="721.35" y="356.78" class="todo"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
+<rect width="0.96" height="0.78" x="721.35" y="356.78" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
 <rect width="0.96" height="0.57" x="721.35" y="360.56" class="named"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="0.96" height="0.57" x="721.35" y="364.14" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
 <rect width="0.96" height="0.57" x="721.35" y="367.71" class="todo"><title>0x00454af0 Func454af0 (17 bytes)</title></rect>
