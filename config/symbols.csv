@@ -599,7 +599,7 @@ address,size,name,symbol
 0x00432b10,83,InitialiseLOTarray,_InitialiseLOTarray
 0x00432b70,79,DisableBaddieAI,_DisableBaddieAI
 0x00432bc0,432,EnableBaddieAI,_EnableBaddieAI
-0x00432d70,262,InitialiseSlot,_InitialiseSlot
+0x00432d70,527,InitialiseSlot,_InitialiseSlot
 0x00432f80,184,CreateZone,_CreateZone
 0x00433040,73,ClearLOT,_ClearLOT
 0x00433090,720,ControlMissile,_ControlMissile

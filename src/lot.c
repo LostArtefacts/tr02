@@ -52,6 +52,87 @@ extern sint16 *fly_zone[2];
 
 #define ZONE(A) (((A) >> 8) - 1)
 
+#define SHARK 25
+#define BARACUDDA 28
+#define DIVER 29
+#define WORKER3 32
+#define WORKER4 33
+#define JELLY 35
+#define SPIDER 36
+#define CROW 38
+#define YETI 45
+#define EAGLE 47
+#define SKIDMAN 51
+#define DINOSAUR 214
+
+void ClearLOT(LOT_INFO *LOT);
+void CreateZone(ITEM_INFO *item);
+
+void InitialiseSlot(sint16 item_number, int slot)
+{
+    CREATURE_INFO *creature;
+    ITEM_INFO *item;
+
+    creature = &baddie_slots[slot];
+    item = &items[item_number];
+    if (item_number == lara.item_number)
+        lara.creature = creature;
+    else
+        item->data = (void *)creature;
+    creature->item_num = item_number;
+    creature->mood = BORED_MOOD;
+    creature->head_rotation = creature->neck_rotation = 0;
+    creature->maximum_turn = ONE_DEGREE;
+    creature->flags = 0;
+    creature->enemy = NULL;
+    creature->LOT.step = STEP_L;
+    creature->LOT.drop = -STEP_L * 2;
+    creature->LOT.block_mask = BLOCKED;
+    creature->LOT.fly = NO_FLYING;
+    switch (item->object_number)
+    {
+    case LARA:
+        creature->LOT.step = WALL_L * 20;
+        creature->LOT.drop = -WALL_L * 20;
+        creature->LOT.fly = STEP_L;
+        break;
+
+    case SHARK:
+    case BARACUDDA:
+    case DIVER:
+    case JELLY:
+    case CROW:
+    case EAGLE:
+        creature->LOT.step = WALL_L * 20;
+        creature->LOT.drop = -WALL_L * 20;
+        creature->LOT.fly = STEP_L / 16;
+        if (item->object_number == SHARK)
+            creature->LOT.block_mask = BLOCKABLE;
+        break;
+
+    case SPIDER:
+    case SKIDMAN:
+        creature->LOT.step = STEP_L * 2;
+        creature->LOT.drop = -WALL_L;
+        break;
+
+    case WORKER3:
+    case WORKER4:
+    case YETI:
+        creature->LOT.step = WALL_L;
+        creature->LOT.drop = -WALL_L;
+        break;
+
+    case DINOSAUR:
+        creature->LOT.block_mask = BLOCKABLE;
+        break;
+    }
+    ClearLOT(&creature->LOT);
+    if (item_number != lara.item_number)
+        CreateZone(item);
+    slots_used++;
+}
+
 void CreateZone(ITEM_INFO *item)
 {
     int i;
