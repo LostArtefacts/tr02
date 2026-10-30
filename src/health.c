@@ -139,3 +139,15 @@ void DrawAirBar(int flash_state)
     else
         S_DrawAirBar(air * 100 / LARA_AIR);
 }
+
+extern TEXTSTRING *DisplayModeTextInfo;
+extern int DisplayModeInfoTimer;
+
+void DrawModeInfo(void)
+{
+    if (DisplayModeTextInfo && --DisplayModeInfoTimer == 0)
+    {
+        T_RemovePrint(DisplayModeTextInfo);
+        DisplayModeTextInfo = NULL;
+    }
+}
