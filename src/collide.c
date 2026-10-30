@@ -15,6 +15,204 @@ sint32 FindGridShift(sint32 src, sint32 dst)
         return -(src + 1);
 }
 
+typedef struct {
+    sint32 x, y, z;
+    PHD_ANGLE y_rot;
+    sint16 shade;
+    sint16 shadeB;
+    sint16 static_number;
+} MESH_INFO;
+
+typedef struct {
+    sint16 mesh_number;
+    uint16 flags;
+    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
+    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
+} STATIC_INFO;
+
+extern STATIC_INFO StaticObjects[];
+
+enum {
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
+};
+
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite)
+{
+    int i, j;
+    ROOM_INFO *r;
+    MESH_INFO *mesh;
+    STATIC_INFO *sinfo;
+    sint32 xmin, xmax, ymin, ymax, zmin, zmax;
+    sint32 inxmin, inxmax, inymin, inymax, inzmin, inzmax;
+    PHD_VECTOR shifter;
+    sint32 shl, shr;
+
+    coll->hit_static = 0;
+    inxmin = x - coll->radius;
+    inxmax = x + coll->radius;
+    inymin = y - hite;
+    inymax = y;
+    inzmin = z - coll->radius;
+    inzmax = z + coll->radius;
+    shifter.x = shifter.y = shifter.z = 0;
+    GetNearByRooms(x, y, z, coll->radius + 50, hite + 50, room_number);
+    for (i = 0; i < number_draw_rooms; i++)
+    {
+        r = &room[draw_rooms[i]];
+        mesh = (MESH_INFO *)r->mesh;
+
+        for (j = r->num_meshes; j > 0; j--, mesh++)
+        {
+            sinfo = &StaticObjects[mesh->static_number];
+            if (sinfo->flags & 1)
+                continue;
+
+            ymin = mesh->y + sinfo->y_minc;
+            ymax = mesh->y + sinfo->y_maxc;
+            switch (mesh->y_rot)
+            {
+            default:
+                xmin = mesh->x + sinfo->x_minc;
+                xmax = mesh->x + sinfo->x_maxc;
+                zmin = mesh->z + sinfo->z_minc;
+                zmax = mesh->z + sinfo->z_maxc;
+                break;
+
+            case 16384:
+                xmin = mesh->x + sinfo->z_minc;
+                xmax = mesh->x + sinfo->z_maxc;
+                zmin = mesh->z - sinfo->x_maxc;
+                zmax = mesh->z - sinfo->x_minc;
+                break;
+
+            case -32768:
+                xmin = mesh->x - sinfo->x_maxc;
+                xmax = mesh->x - sinfo->x_minc;
+                zmin = mesh->z - sinfo->z_maxc;
+                zmax = mesh->z - sinfo->z_minc;
+                break;
+
+            case -16384:
+                xmin = mesh->x - sinfo->z_maxc;
+                xmax = mesh->x - sinfo->z_minc;
+                zmin = mesh->z + sinfo->x_minc;
+                zmax = mesh->z + sinfo->x_maxc;
+                break;
+            }
+
+            if (inxmax <= xmin || inxmin >= xmax || inymax <= ymin || inymin >= ymax || inzmax <= zmin || inzmin >= zmax)
+                continue;
+
+            shl = inxmax - xmin;
+            shr = xmax - inxmin;
+            if (shl < shr)
+                shifter.x = -shl;
+            else
+                shifter.x = shr;
+
+            shl = inzmax - zmin;
+            shr = zmax - inzmin;
+            if (shl < shr)
+                shifter.z = -shl;
+            else
+                shifter.z = shr;
+
+            switch (coll->quadrant)
+            {
+            case NORTH:
+                if (shifter.x > coll->radius || shifter.x < -coll->radius)
+                {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = coll->old.x - x;
+                    coll->coll_type = COLL_FRONT;
+                }
+                else if (shifter.x > 0 && shifter.x <= coll->radius)
+                {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_LEFT;
+                }
+                else if (shifter.x < 0 && shifter.x >= -coll->radius)
+                {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_RIGHT;
+                }
+                break;
+
+            case EAST:
+                if (shifter.z > coll->radius || shifter.z < -coll->radius)
+                {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = coll->old.z - z;
+                    coll->coll_type = COLL_FRONT;
+                }
+                else if (shifter.z > 0 && shifter.z <= coll->radius)
+                {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_RIGHT;
+                }
+                else if (shifter.z < 0 && shifter.z >= -coll->radius)
+                {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_LEFT;
+                }
+                break;
+
+            case SOUTH:
+                if (shifter.x > coll->radius || shifter.x < -coll->radius)
+                {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = coll->old.x - x;
+                    coll->coll_type = COLL_FRONT;
+                }
+                else if (shifter.x > 0 && shifter.x <= coll->radius)
+                {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_RIGHT;
+                }
+                else if (shifter.x < 0 && shifter.x >= -coll->radius)
+                {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_LEFT;
+                }
+                break;
+
+            case WEST:
+                if (shifter.z > coll->radius || shifter.z < -coll->radius)
+                {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = coll->old.z - z;
+                    coll->coll_type = COLL_FRONT;
+                }
+                else if (shifter.z > 0 && shifter.z <= coll->radius)
+                {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_LEFT;
+                }
+                else if (shifter.z < 0 && shifter.z >= -coll->radius)
+                {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_RIGHT;
+                }
+                break;
+            }
+            coll->hit_static = 1;
+            return 1;
+        }
+    }
+    return 0;
+}
+
 void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number)
 {
     draw_rooms[0] = room_number;
@@ -244,8 +442,8 @@ sint16 *GetBestFrame(ITEM_INFO *item);
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius)
 {
     OBJECT_INFO *object;
-    sint16 *larabounds, *bounds;
     sint32 c, s, rx, rz, x, z;
+    sint16 *larabounds, *bounds;
     sint32 minx, maxx, minz, maxz;
 
     object = &objects[item->object_number];
