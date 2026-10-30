@@ -1595,6 +1595,8 @@ address,size,name,symbol
 0x004664b4,28,RendererReinitFailed,_RendererReinitFailed
 0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
 0x004664e8,4,ErrorStringTable,_ErrorStringTable
+0x004668c0,,LoadRoomsTooMany,_LoadRoomsTooMany
+0x004668dc,,LoadRoomsNoMemory,_LoadRoomsNoMemory
 0x00466928,,LoadItemsBadObject,_LoadItemsBadObject
 0x00466958,,LoadItemsNoMemory,_LoadItemsNoMemory
 0x0046698c,,LoadItemsTooMany,_LoadItemsTooMany

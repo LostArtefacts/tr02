@@ -39,6 +39,107 @@ BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *
     return ReadFile(hFile, pBuffer, nNumberOfBytesToRead, pNumberOfBytesRead, pOverlapped);
 }
 
+extern "C" char StringToShow[];
+extern "C" {
+#include "../room.h"
+}
+
+extern "C" char LoadRoomsTooMany[];
+extern "C" char LoadRoomsNoMemory[];
+extern "C" sint16 number_rooms;
+extern "C" sint16 *floor_data;
+
+typedef struct {
+    sint32 x, y, z;
+    sint16 intensity1, intensity2;
+    sint32 fade1, fade2;
+} LIGHT_INFO;
+
+typedef struct {
+    sint32 x, y, z;
+    sint16 y_rot;
+    sint16 shade1, shade2;
+    sint16 static_number;
+} MESH_INFO;
+
+extern "C" int LoadRooms(HANDLE file)
+{
+    int i;
+    sint16 ndoors;
+    sint32 size;
+    ROOM_INFO *r;
+    DWORD read;
+
+    MyReadFile(file, &number_rooms, sizeof(number_rooms), &read, NULL);
+    if (number_rooms < 0 || number_rooms > 1024)
+    {
+        lstrcpy(StringToShow, LoadRoomsTooMany);
+        return 0;
+    }
+    room = (ROOM_INFO *)game_malloc(number_rooms * sizeof(ROOM_INFO), ROOM_INFOS);
+    if (room == NULL)
+    {
+        lstrcpy(StringToShow, LoadRoomsNoMemory);
+        return 0;
+    }
+    for (i = 0, r = room; i < number_rooms; i++, r++)
+    {
+        MyReadFile(file, &r->x, sizeof(sint32), &read, NULL);
+        r->y = 0;
+        MyReadFile(file, &r->z, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &r->minfloor, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &r->maxceiling, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+        r->data = (sint16 *)game_malloc(size * sizeof(sint16), ROOM_MESH);
+        MyReadFile(file, r->data, sizeof(sint16) * size, &read, NULL);
+        MyReadFile(file, &ndoors, sizeof(sint16), &read, NULL);
+        if (ndoors)
+        {
+            r->door = (sint16 *)game_malloc((ndoors * 16 + 1) * sizeof(sint16), ROOM_DOOR);
+            r->door[0] = ndoors;
+            MyReadFile(file, &r->door[1], sizeof(sint16) * ndoors * 16, &read, NULL);
+        }
+        else
+            r->door = NULL;
+        MyReadFile(file, &r->x_size, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->y_size, sizeof(sint16), &read, NULL);
+        size = (int)r->x_size * r->y_size;
+        r->floor = (FLOOR_INFO *)game_malloc(size * sizeof(FLOOR_INFO), ROOM_FLOOR);
+        MyReadFile(file, r->floor, sizeof(FLOOR_INFO) * size, &read, NULL);
+        MyReadFile(file, &r->ambient, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->ambient2, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->lighting, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->num_lights, sizeof(sint16), &read, NULL);
+        if (r->num_lights)
+        {
+            r->light = game_malloc(r->num_lights * sizeof(LIGHT_INFO), ROOM_LIGHTS);
+            MyReadFile(file, r->light, sizeof(LIGHT_INFO) * r->num_lights, &read, NULL);
+        }
+        else
+            r->light = NULL;
+        MyReadFile(file, &r->num_meshes, sizeof(sint16), &read, NULL);
+        if (r->num_meshes)
+        {
+            r->mesh = game_malloc(r->num_meshes * sizeof(MESH_INFO), ROOM_STATIC_MESH_INFOS);
+            MyReadFile(file, r->mesh, sizeof(MESH_INFO) * r->num_meshes, &read, NULL);
+        }
+        else
+            r->mesh = NULL;
+        MyReadFile(file, &r->flipped_room, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->flags, sizeof(uint16), &read, NULL);
+        r->bound_active = 0;
+        r->left = phd_winxmax;
+        r->top = phd_winymax;
+        r->right = r->bottom = 0;
+        r->item_number = NO_ITEM;
+        r->fx_number = NO_ITEM;
+    }
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    floor_data = (sint16 *)game_malloc(size * sizeof(sint16), FLOOR_DATA);
+    MyReadFile(file, floor_data, sizeof(sint16) * size, &read, NULL);
+    return 1;
+}
+
 int LoadCameras(HANDLE file)
 {
     DWORD read;
