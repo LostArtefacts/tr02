@@ -74,3 +74,25 @@ bool DS_IsChannelPlaying(int nChannel)
 
 extern "C" int WinSndGetFreeChannelIndex();
 
+int DS_StartSample(int nSample, int nVolume, int nPitch, int nPan, DWORD dwFlags)
+{
+    int nChannel;
+    int nFrequency;
+    LPDIRECTSOUNDBUFFER pOrigBuffer, pBuffer;
+
+    nChannel = WinSndGetFreeChannelIndex();
+    if (nChannel < 0)
+        return -1;
+    pOrigBuffer = SampleBuffers[nSample];
+    if (DX_TRY(DSound->DuplicateSoundBuffer(pOrigBuffer, &pBuffer)))
+        return -2;
+    nFrequency = (nPitch * SampleFreqs[nSample]) >> 16;
+    if (DX_TRY(pBuffer->SetVolume(nVolume)) || DX_TRY(pBuffer->SetFrequency(nFrequency))
+        || DX_TRY(pBuffer->SetPan(nPan)) || DX_TRY(pBuffer->SetCurrentPosition(0))
+        || DX_TRY(pBuffer->Play(0, 0, dwFlags)))
+        return -2;
+    ChannelBuffers[nChannel] = pBuffer;
+    ChannelSamples[nChannel] = nSample;
+    return nChannel;
+}
+

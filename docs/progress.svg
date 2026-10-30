@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.28% (602)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.72% (645)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.36% (603)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.64% (644)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="360.62" height="6" x="0" y="0" class="named"/>
-<rect width="386.38" height="6" x="360.62" y="0" class="todo"/>
+<rect width="361.22" height="6" x="0" y="0" class="named"/>
+<rect width="385.78" height="6" x="361.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -981,7 +981,7 @@
 <rect width="12" height="12" x="165" y="270" class="named"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="270" class="named"><title>0x00447cf0 WinSndMakeSample (270 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="270" class="named"><title>0x00447e00 DS_IsChannelPlaying (69 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="270" class="todo"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="270" class="named"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="270" class="todo"><title>0x00447f40 WinSndGetFreeChannelIndex (57 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="270" class="todo"><title>0x00447f80 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="270" class="todo"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.72%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="218.20" height="6" x="0" y="0" class="named"/>
-<rect width="528.80" height="6" x="218.20" y="0" class="todo"/>
+<rect width="218.71" height="6" x="0" y="0" class="named"/>
+<rect width="528.29" height="6" x="218.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1712,7 +1712,7 @@
 <rect width="10.68" height="11.14" x="496.23" y="210.53" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="10.68" height="11.08" x="496.23" y="224.67" class="named"><title>0x004150d0 RefreshCamera (231 bytes)</title></rect>
 <rect width="10.68" height="11.08" x="496.23" y="238.75" class="todo"><title>0x00431cf0 LaraTestWaterStepOut (231 bytes)</title></rect>
-<rect width="10.68" height="11.08" x="496.23" y="252.82" class="todo"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>
+<rect width="10.68" height="11.08" x="496.23" y="252.82" class="named"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>
 <rect width="10.68" height="11.02" x="496.23" y="266.90" class="named"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
 <rect width="10.68" height="11.02" x="496.23" y="280.92" class="todo"><title>0x004492b0 RenderFinish (230 bytes)</title></rect>
 <rect width="10.68" height="10.90" x="496.23" y="294.93" class="todo"><title>0x00447770 DInputJoystickCreate (228 bytes)</title></rect>
