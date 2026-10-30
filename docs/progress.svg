@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">63.03% (786)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.73% (458)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">63.11% (787)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.65% (457)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="470.84" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="470.84" y="0" class="decompiled"/>
-<rect width="274.36" height="6" x="472.64" y="0" class="todo"/>
+<rect width="471.44" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="471.44" y="0" class="decompiled"/>
+<rect width="273.76" height="6" x="473.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -190,7 +190,7 @@
 <rect width="12" height="12" x="285" y="30" class="named"><title>0x00410090 CreatureEffect (92 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="30" class="named"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="30" class="named"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="30" class="todo"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="30" class="named"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="30" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="30" class="named"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="30" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.78%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.92%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.07%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="349.48" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="349.48" y="0" class="decompiled"/>
-<rect width="397.47" height="6" x="349.53" y="0" class="todo"/>
+<rect width="350.52" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="350.52" y="0" class="decompiled"/>
+<rect width="396.43" height="6" x="350.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.09" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1516,7 +1516,7 @@
 <rect width="17.07" height="16.71" x="474.61" y="21.75" class="todo"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="17.07" height="16.71" x="494.68" y="21.75" class="todo"><title>0x00438fa0 MouseControl (476 bytes)</title></rect>
 <rect width="17.07" height="16.71" x="514.75" y="21.75" class="todo"><title>0x00453560 Func453560 (476 bytes)</title></rect>
-<rect width="17.03" height="16.71" x="534.82" y="21.75" class="todo"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
+<rect width="17.03" height="16.71" x="534.82" y="21.75" class="named"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="16.86" height="16.71" x="554.85" y="21.75" class="named"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
 <rect width="16.82" height="16.71" x="574.71" y="21.75" class="named"><title>0x00426320 ShowGymStatsText (470 bytes)</title></rect>
 <rect width="16.82" height="16.71" x="594.53" y="21.75" class="todo"><title>0x0044a660 LoadItems (470 bytes)</title></rect>

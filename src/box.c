@@ -550,3 +550,69 @@ void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_
     lara.gun_type = LG_UNARMED;
     camera.pos.room_number = lara_item->room_number;
 }
+
+#define NUM_SLOTS 5
+#define TARGET_TOLERANCE SQUARE(WALL_L * 2)
+
+extern CREATURE_INFO *baddie_slots;
+extern sint32 monks_attack_lara;
+
+void GetBaddieTarget(sint16 item_number, int goody)
+{
+    int slot, distance, best_distance, x, y, z;
+    CREATURE_INFO *cinfo, *creature;
+    ITEM_INFO *item, *target, *best;
+
+    item = &items[item_number];
+    creature = (CREATURE_INFO *)item->data;
+    best = NULL;
+    best_distance = 0x7fffffff;
+    cinfo = baddie_slots;
+    for (slot = 0; slot < NUM_SLOTS; slot++, cinfo++) {
+        if (cinfo->item_num == NO_ITEM || cinfo->item_num == item_number)
+            continue;
+        target = &items[cinfo->item_num];
+        if (goody) {
+            if (target->object_number != BANDIT1 && target->object_number != BANDIT2)
+                continue;
+        } else if (target->object_number != MONK1 && target->object_number != MONK2) {
+            continue;
+        }
+        x = (target->pos.x_pos - item->pos.x_pos) >> 6;
+        y = (target->pos.y_pos - item->pos.y_pos) >> 6;
+        z = (target->pos.z_pos - item->pos.z_pos) >> 6;
+        distance = x * x + y * y + z * z;
+        if (distance < best_distance) {
+            best = target;
+            best_distance = distance;
+        }
+    }
+    if (best == NULL) {
+        if (goody && !monks_attack_lara)
+            creature->enemy = NULL;
+        else
+            creature->enemy = lara_item;
+        return;
+    }
+    if (!goody || monks_attack_lara) {
+        x = (lara_item->pos.x_pos - item->pos.x_pos) >> 6;
+        y = (lara_item->pos.y_pos - item->pos.y_pos) >> 6;
+        z = (lara_item->pos.z_pos - item->pos.z_pos) >> 6;
+        distance = x * x + y * y + z * z;
+        if (distance < best_distance) {
+            best = lara_item;
+            best_distance = distance;
+        }
+    }
+    if (!creature->enemy || creature->enemy->status != ACTIVE) {
+        creature->enemy = best;
+        return;
+    }
+    target = creature->enemy;
+    x = (target->pos.x_pos - item->pos.x_pos) >> 6;
+    y = (target->pos.y_pos - item->pos.y_pos) >> 6;
+    z = (target->pos.z_pos - item->pos.z_pos) >> 6;
+    distance = x * x + y * y + z * z;
+    if (distance < best_distance + TARGET_TOLERANCE)
+        creature->enemy = best;
+}
