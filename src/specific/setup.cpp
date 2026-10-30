@@ -119,6 +119,118 @@ extern "C" bool SE_GraphicsTest(void)
     return result;
 }
 
+struct DISPLAY_MODE
+{
+    int width;
+    int height;
+    int bpp;
+    int vga;
+    bool CompareVideoModes(DISPLAY_MODE *mode);
+};
+
+struct SETUP_MODE_NODE
+{
+    SETUP_MODE_NODE *next;
+    SETUP_MODE_NODE *previous;
+    DISPLAY_MODE body;
+};
+
+typedef struct
+{
+    SETUP_MODE_NODE *head;
+    SETUP_MODE_NODE *tail;
+    DWORD count;
+} SETUP_MODE_LIST;
+
+#pragma pack(push, 1)
+struct SETUP_ADAPTER_NODE
+{
+    SETUP_ADAPTER_NODE *next;
+    SETUP_ADAPTER_NODE *previous;
+    GUID *lpAdapterGuid;
+    uint8 pad0[0x3ce];
+    SETUP_MODE_LIST hwDispModeList;
+    SETUP_MODE_LIST swDispModeList;
+    uint8 pad1[0x24];
+    bool hwRenderSupported;
+    uint8 pad2[4];
+    bool PerspectiveCorrectSupported;
+    bool DitherSupported;
+    bool ZBufferSupported;
+    bool LinearFilterSupported;
+};
+#pragma pack(pop)
+
+extern "C" SETUP_ADAPTER_NODE *DisplayAdapterList;
+
+extern "C" void SE_DefaultGraphicsSettings(void)
+{
+    SETUP_ADAPTER_NODE *adapter;
+    SETUP_ADAPTER_NODE *swAdapter;
+    SETUP_ADAPTER_NODE *hwAdapter;
+    SETUP_MODE_LIST *modeList;
+    SETUP_MODE_NODE *mode;
+    DISPLAY_MODE target;
+
+    hwAdapter = NULL;
+    swAdapter = NULL;
+    for (adapter = DisplayAdapterList; adapter; adapter = adapter->next)
+    {
+        if (!adapter->lpAdapterGuid)
+            swAdapter = adapter;
+        if (adapter->hwRenderSupported && (swAdapter != adapter || !hwAdapter))
+        {
+            hwAdapter = adapter;
+            ChangedAppSettings.PerspectiveCorrect = adapter->PerspectiveCorrectSupported;
+            ChangedAppSettings.Dither = adapter->DitherSupported;
+            ChangedAppSettings.ZBuffer = adapter->ZBufferSupported;
+            ChangedAppSettings.BilinearFiltering = adapter->LinearFilterSupported;
+        }
+        if (!adapter)
+            break;
+    }
+    if (hwAdapter)
+    {
+        ChangedAppSettings.PreferredDisplayAdapter = hwAdapter;
+        ChangedAppSettings.RenderMode = 2;
+    }
+    else
+    {
+        ChangedAppSettings.PreferredDisplayAdapter = swAdapter;
+        ChangedAppSettings.RenderMode = 1;
+        ChangedAppSettings.PerspectiveCorrect = true;
+    }
+    ChangedAppSettings.FullScreen = true;
+    ChangedAppSettings.WindowWidth = 512;
+    ChangedAppSettings.WindowHeight = 384;
+    if (!ChangedAppSettings.PreferredDisplayAdapter)
+        return;
+    if (ChangedAppSettings.RenderMode == 2)
+        modeList = &((SETUP_ADAPTER_NODE *)ChangedAppSettings.PreferredDisplayAdapter)->hwDispModeList;
+    else
+        modeList = &((SETUP_ADAPTER_NODE *)ChangedAppSettings.PreferredDisplayAdapter)->swDispModeList;
+    mode = modeList->head;
+    target.width = 640;
+    target.height = 480;
+    target.bpp = 16;
+    target.vga = 0;
+    if (!mode)
+    {
+        ChangedAppSettings.VideoMode = mode;
+        return;
+    }
+    while (mode->body.CompareVideoModes(&target))
+    {
+        mode = mode->next;
+        if (!mode)
+        {
+            mode = modeList->tail;
+            break;
+        }
+    }
+    ChangedAppSettings.VideoMode = mode;
+}
+
 #include "ds.h"
 
 void WinSndStart(HWND hWnd);

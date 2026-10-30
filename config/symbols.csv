@@ -1088,7 +1088,7 @@ address,size,name,symbol
 0x00452b90,20,SE_GraphicsTestFinish,_SE_GraphicsTestFinish
 0x00452bb0,3,SE_GraphicsTestExecute,_SE_GraphicsTestExecute
 0x00452bc0,90,SE_GraphicsTest,_SE_GraphicsTest
-0x00452c20,323,Func452c20,
+0x00452c20,323,SE_DefaultGraphicsSettings,_SE_DefaultGraphicsSettings
 0x00452d70,189,SE_SoundTestStart,_SE_SoundTestStart
 0x00452e30,5,SE_SoundTestFinish,_SE_SoundTestFinish
 0x00452e40,61,SE_SoundTestExecute,_SE_SoundTestExecute

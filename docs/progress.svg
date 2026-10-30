@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.40% (1005)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.04% (238)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.48% (1006)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.96% (237)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="600.59" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="600.59" y="0" class="decompiled"/>
-<rect width="142.23" height="6" x="604.77" y="0" class="todo"/>
+<rect width="601.19" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="601.19" y="0" class="decompiled"/>
+<rect width="141.63" height="6" x="605.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1157,7 +1157,7 @@
 <rect width="12" height="12" x="540" y="315" class="named"><title>0x00452b90 SE_GraphicsTestFinish (20 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="315" class="named"><title>0x00452bb0 SE_GraphicsTestExecute (3 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="315" class="named"><title>0x00452bc0 SE_GraphicsTest (90 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="315" class="todo"><title>0x00452c20 Func452c20 (323 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="315" class="named"><title>0x00452c20 SE_DefaultGraphicsSettings (323 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="315" class="named"><title>0x00452d70 SE_SoundTestStart (189 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="named"><title>0x00452e30 SE_SoundTestFinish (5 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="315" class="named"><title>0x00452e40 SE_SoundTestExecute (61 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.92%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.10%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.82%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="455.68" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="455.68" y="0" class="decompiled"/>
-<rect width="290.72" height="6" x="456.28" y="0" class="todo"/>
+<rect width="456.38" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="456.38" y="0" class="decompiled"/>
+<rect width="290.01" height="6" x="456.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.82" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1621,7 +1621,7 @@
 <rect width="13.15" height="13.65" x="465.50" y="77.21" class="todo"><title>0x004219b0 DrawAssaultTimer (325 bytes)</title></rect>
 <rect width="13.10" height="13.65" x="481.65" y="77.21" class="named"><title>0x0044c550 StartGame (324 bytes)</title></rect>
 <rect width="13.05" height="13.65" x="497.75" y="77.21" class="named"><title>0x00427910 lara_as_run (323 bytes)</title></rect>
-<rect width="13.05" height="13.65" x="513.80" y="77.21" class="todo"><title>0x00452c20 Func452c20 (323 bytes)</title></rect>
+<rect width="13.05" height="13.65" x="513.80" y="77.21" class="named"><title>0x00452c20 SE_DefaultGraphicsSettings (323 bytes)</title></rect>
 <rect width="12.90" height="13.65" x="529.85" y="77.21" class="todo"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
 <rect width="12.90" height="13.65" x="545.76" y="77.21" class="todo"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
 <rect width="12.90" height="13.65" x="561.66" y="77.21" class="named"><title>0x0043d740 DoSnowEffect (320 bytes)</title></rect>
