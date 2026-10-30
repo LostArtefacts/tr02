@@ -478,7 +478,7 @@ address,size,name,symbol
 0x00429e90,354,lara_col_wade,_lara_col_wade
 0x0042a000,54,lara_default_col,_lara_default_col
 0x0042a040,216,lara_col_jumper,_lara_col_jumper
-0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait _S_InsertInvBgnd _DInputJoystickRelease _ShowThis _DrawDummyItem
+0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait _S_InsertInvBgnd _DInputJoystickRelease _ShowThis _DrawDummyItem _do_gamma_option
 0x0042a130,50,GetLaraCollisionInfo,_GetLaraCollisionInfo
 0x0042a170,226,lara_slide_slope,_lara_slide_slope
 0x0042a260,103,LaraHitCeiling,_LaraHitCeiling
@@ -1039,7 +1039,7 @@ address,size,name,symbol
 0x0044eb60,210,EncodeLinePCX,_EncodeLinePCX
 0x0044ec40,62,EncodePutPCX,_EncodePutPCX
 0x0044ec80,501,ScreenShot,_ScreenShot
-0x0044ee80,127,do_inventory_options,_do_inventory_options
+0x0044ee80,269,do_inventory_options,_do_inventory_options
 0x0044ef90,1608,do_passport_option,_do_passport_option
 0x0044f5e0,730,do_detail_option,_do_detail_option
 0x0044f8c0,1181,do_sound_option,_do_sound_option

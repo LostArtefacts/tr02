@@ -28,6 +28,80 @@ extern "C" void T_FlashText(TEXTSTRING *textString, sint16 b, sint16 rate);
 
 #define DWIDTH 160
 
+#define PASSPORT_OPTION 120
+#define MAP_OPTION 121
+#define DETAIL_OPTION 153
+#define SOUND_OPTION 154
+#define CONTROL_OPTION 155
+#define GAMMA_OPTION 156
+
+extern "C" void do_passport_option(INVENTORY_ITEM *inv_item);
+extern "C" void do_gamma_option(INVENTORY_ITEM *inv_item);
+extern "C" void do_control_option(INVENTORY_ITEM *inv_item);
+
+extern "C" void do_inventory_options(INVENTORY_ITEM *inv_item)
+{
+    switch (inv_item->object_number)
+    {
+    case MAP_OPTION:
+        do_compass_option(inv_item);
+        break;
+    case 157:
+    case 158:
+    case 159:
+    case 160:
+    case 161:
+    case 162:
+    case 163:
+        inputDB |= SELECT_ITEM;
+        break;
+    case 164:
+    case 165:
+    case 166:
+    case 167:
+    case 168:
+    case 169:
+    case 170:
+        break;
+    case 171:
+    case 172:
+    case 178:
+    case 179:
+    case 180:
+    case 181:
+    case 197:
+    case 198:
+    case 199:
+    case 200:
+    case 207:
+    case 208:
+        inputDB |= SELECT_ITEM;
+        break;
+    case PASSPORT_OPTION:
+        do_passport_option(inv_item);
+        break;
+    case GAMMA_OPTION:
+        do_gamma_option(inv_item);
+        break;
+    case DETAIL_OPTION:
+        do_detail_option(inv_item);
+        break;
+    case SOUND_OPTION:
+        do_sound_option(inv_item);
+        break;
+    case CONTROL_OPTION:
+        do_control_option(inv_item);
+        break;
+    default:
+        if (inputDB & (SELECT_ITEM | DESELECT_ITEM))
+        {
+            inv_item->goal_frame = 0;
+            inv_item->anim_direction = -1;
+        }
+        break;
+    }
+}
+
 void do_detail_option(INVENTORY_ITEM *inv_item)
 {
     int i;
