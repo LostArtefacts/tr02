@@ -67,6 +67,36 @@ void UpdateLaraRoom(ITEM_INFO *item, int height)
         ItemNewRoom(lara.item_number, room_number);
 }
 
+#define NO_ROOM 0xff
+#define DATA_TYPE 0x00ff
+#define TILT_TYPE 2
+
+extern sint16 *floor_data;
+
+sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
+{
+    ROOM_INFO *r;
+    sint16 *data;
+
+    while (floor->pit_room != NO_ROOM)
+    {
+        r = &room[floor->pit_room];
+        floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+
+    if (y + 512 < ((sint32)floor->floor << 8))
+        return 0;
+
+    if (floor->index)
+    {
+        data = &floor_data[floor->index];
+        if ((*data & DATA_TYPE) == TILT_TYPE)
+            return *(data + 1);
+    }
+
+    return 0;
+}
+
 void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;

@@ -1747,7 +1747,7 @@ address,size,name,symbol
 0x004d9be8,4,LevelFileTexPagesOffset,_LevelFileTexPagesOffset
 0x004d9bf0,,LGF_offsets,?LGF_offsets@@3PAFA
 0x004d9d80,4,Meshes,_Meshes
-0x004d9d84,4,FloorData,_FloorData
+0x004d9d84,4,floor_data,_floor_data
 0x004d9d88,256,LevelFileName,_LevelFileName
 0x004d9e88,4,LnTextureInfos,_LnTextureInfos
 0x004d9e8c,4,LevelFileDepthQOffset,_LevelFileDepthQOffset
