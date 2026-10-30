@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.70% (96)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.30% (1151)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.78% (97)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.22% (1150)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="57.51" height="6" x="0" y="0" class="named"/>
-<rect width="689.49" height="6" x="57.51" y="0" class="todo"/>
+<rect width="58.11" height="6" x="0" y="0" class="named"/>
+<rect width="688.89" height="6" x="58.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -792,7 +792,7 @@
 <rect width="12" height="12" x="330" y="210" class="todo"><title>0x0043ee80 SkidManControl (994 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="210" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="210" class="todo"><title>0x0043f3a0 SkidmanCollision (129 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="210" class="todo"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="210" class="named"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="210" class="todo"><title>0x0043f470 SoundEffect (1156 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="210" class="todo"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="210" class="todo"><title>0x0043f970 SOUND_EndScene (134 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.51%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.50%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.50%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="11.11" height="6" x="0" y="0" class="named"/>
-<rect width="735.89" height="6" x="11.11" y="0" class="todo"/>
+<rect width="11.22" height="6" x="0" y="0" class="named"/>
+<rect width="735.78" height="6" x="11.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2289,7 +2289,7 @@
 <rect width="3.49" height="3.32" x="668.70" y="302.90" class="todo"><title>0x0041b790 phd_RotY_I (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.70" y="309.23" class="todo"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.70" y="315.55" class="todo"><title>0x0041b810 phd_RotZ_I (49 bytes)</title></rect>
-<rect width="3.49" height="3.32" x="668.70" y="321.87" class="todo"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
+<rect width="3.49" height="3.32" x="668.70" y="321.87" class="named"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.70" y="328.19" class="todo"><title>0x00447fb0 WinSndAdjustPitch (49 bytes)</title></rect>
 <rect width="3.49" height="3.32" x="668.70" y="334.52" class="todo"><title>0x00451540 S_CalculateStaticLight (49 bytes)</title></rect>
 <rect width="3.49" height="3.19" x="668.70" y="340.84" class="todo"><title>0x0041c850 ControlRichochet1 (48 bytes)</title></rect>
