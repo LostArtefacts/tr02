@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.67% (158)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.33% (1089)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.75% (159)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.25% (1088)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="94.65" height="6" x="0" y="0" class="named"/>
-<rect width="652.35" height="6" x="94.65" y="0" class="todo"/>
+<rect width="95.25" height="6" x="0" y="0" class="named"/>
+<rect width="651.75" height="6" x="95.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -102,7 +102,7 @@
 <rect width="12" height="12" x="480" y="0" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="0" class="todo"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="todo"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.94%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="30.34" height="6" x="0" y="0" class="named"/>
-<rect width="716.66" height="6" x="30.34" y="0" class="todo"/>
+<rect width="31.52" height="6" x="0" y="0" class="named"/>
+<rect width="715.48" height="6" x="31.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1488,7 +1488,7 @@
 <rect width="17.81" height="18.74" x="626.35" y="0" class="todo"><title>0x0042efd0 LaraGetNewTarget (540 bytes)</title></rect>
 <rect width="17.81" height="18.74" x="647.16" y="0" class="todo"><title>0x00431de0 LaraTestWaterClimbOut (540 bytes)</title></rect>
 <rect width="17.78" height="18.74" x="667.98" y="0" class="todo"><title>0x0043ca20 BaracuddaControl (539 bytes)</title></rect>
-<rect width="17.70" height="18.74" x="688.75" y="0" class="todo"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
+<rect width="17.70" height="18.74" x="688.75" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="17.31" height="18.74" x="709.45" y="0" class="todo"><title>0x004344b0 FinalLevelCounter (527 bytes)</title></rect>
 <rect width="17.24" height="18.74" x="729.76" y="0" class="todo"><title>0x0042db10 lara_col_climbstnc (525 bytes)</title></rect>
 <rect width="17.15" height="18.70" x="393.35" y="21.74" class="todo"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
