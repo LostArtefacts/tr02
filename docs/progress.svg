@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.80% (621)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.20% (626)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.88% (622)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.12% (625)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="372" height="6" x="0" y="0" class="named"/>
-<rect width="375" height="6" x="372" y="0" class="todo"/>
+<rect width="372.60" height="6" x="0" y="0" class="named"/>
+<rect width="374.40" height="6" x="372.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -668,7 +668,7 @@
 <rect width="12" height="12" x="720" y="165" class="named"><title>0x00432b70 DisableBaddieAI (79 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="165" class="todo"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="180" class="todo"><title>0x00432d70 InitialiseSlot (262 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="180" class="todo"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="180" class="named"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="180" class="named"><title>0x00433040 ClearLOT (73 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="180" class="todo"><title>0x00433090 ControlMissile (720 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="180" class="named"><title>0x00433360 ShootAtLara (167 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.02%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.98%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="223.82" height="6" x="0" y="0" class="named"/>
-<rect width="523.18" height="6" x="223.82" y="0" class="todo"/>
+<rect width="224.23" height="6" x="0" y="0" class="named"/>
+<rect width="522.77" height="6" x="224.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1802,7 +1802,7 @@
 <rect width="9.76" height="9.08" x="612.78" y="151.24" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="9.76" height="9.08" x="625.54" y="151.24" class="todo"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="9.69" height="9.08" x="638.31" y="151.24" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
-<rect width="9.69" height="9.08" x="651" y="151.24" class="todo"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
+<rect width="9.69" height="9.08" x="651" y="151.24" class="named"><title>0x00432f80 CreateZone (184 bytes)</title></rect>
 <rect width="9.49" height="9.08" x="663.69" y="151.24" class="todo"><title>0x00408650 InsertLine (181 bytes)</title></rect>
 <rect width="9.35" height="9.08" x="676.18" y="151.24" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
 <rect width="9.35" height="9.08" x="688.53" y="151.24" class="named"><title>0x00416610 FlipMap (179 bytes)</title></rect>
