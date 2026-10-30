@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.43% (554)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.57% (693)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.51% (555)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.49% (692)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="331.87" height="6" x="0" y="0" class="named"/>
-<rect width="415.13" height="6" x="331.87" y="0" class="todo"/>
+<rect width="332.47" height="6" x="0" y="0" class="named"/>
+<rect width="414.53" height="6" x="332.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -439,7 +439,7 @@
 <rect width="12" height="12" x="285" y="105" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="105" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="105" class="named"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="105" class="todo"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="105" class="named"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="105" class="todo"><title>0x00426320 ShowGymStatsText (470 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="105" class="todo"><title>0x00426500 ShowStatsText (919 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="105" class="todo"><title>0x004268a0 ShowEndStatsText (1061 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.91%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.13%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.87%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="179.97" height="6" x="0" y="0" class="named"/>
-<rect width="567.03" height="6" x="179.97" y="0" class="todo"/>
+<rect width="180.26" height="6" x="0" y="0" class="named"/>
+<rect width="566.74" height="6" x="180.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1938,7 +1938,7 @@
 <rect width="7.72" height="7.11" x="623.22" y="198.17" class="named"><title>0x0044d320 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="7.64" height="7.11" x="633.94" y="198.17" class="todo"><title>0x004234e0 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="7.64" height="7.11" x="644.58" y="198.17" class="named"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
-<rect width="7.64" height="7.11" x="655.22" y="198.17" class="todo"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
+<rect width="7.64" height="7.11" x="655.22" y="198.17" class="named"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
 <rect width="7.64" height="7.11" x="665.86" y="198.17" class="todo"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
 <rect width="7.64" height="7.11" x="676.50" y="198.17" class="todo"><title>0x0043f3a0 SkidmanCollision (129 bytes)</title></rect>
 <rect width="7.48" height="7.11" x="687.14" y="198.17" class="todo"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>

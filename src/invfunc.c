@@ -1150,3 +1150,37 @@ void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos)
     req->ypos = ypos;
     req->vis_lines = lines;
 }
+
+#define NUM_ASS_TIMES 10
+
+extern uint32 best_assault_times[NUM_ASS_TIMES];
+extern uint32 best_assault_finish[NUM_ASS_TIMES];
+extern uint32 finishes;
+
+int AddAssaultTime(uint32 time)
+{
+    int i, j, insert = 0;
+
+    for (i = 0; i < NUM_ASS_TIMES; i++)
+    {
+        if (best_assault_times[i] == 0 || time < best_assault_times[i])
+        {
+            insert = 1;
+            break;
+        }
+    }
+
+    if (insert)
+    {
+        for (j = NUM_ASS_TIMES - 1; j > i; j--)
+        {
+            best_assault_times[j] = best_assault_times[j - 1];
+            best_assault_finish[j] = best_assault_finish[j - 1];
+        }
+        best_assault_times[i] = time;
+        best_assault_finish[i] = finishes + 1;
+        finishes++;
+        return 1;
+    }
+    return 0;
+}

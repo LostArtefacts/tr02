@@ -1673,7 +1673,9 @@ address,size,name,symbol
 0x004d79a8,4,idcount,_idcount
 0x004d79ac,,item_data,_item_data
 0x004d79b0,,StatsRequester,_StatsRequester
-0x004d7bc8,,Assault,_Assault
+0x004d7bc8,40,best_assault_times,_best_assault_times
+0x004d7bf0,40,best_assault_finish,_best_assault_finish
+0x004d7c18,4,finishes,_finishes
 0x004d7c28,4,level_items,_level_items
 0x004d7c2c,4,HealthBarTimer,_HealthBarTimer
 0x004d7c40,4,slots_used,_slots_used
