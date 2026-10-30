@@ -187,3 +187,10 @@ extern "C" void phd_SetNearZ(sint32 z)
     FltPerspONearZ = FltPersp / FltNearZ;
     Func402620();
 }
+
+extern "C" void phd_SetFarZ(sint32 z)
+{
+    phd_zfar = z;
+    FltFarZ = (float)z;
+    Func402620();
+}
