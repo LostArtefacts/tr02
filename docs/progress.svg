@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.01% (898)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.43% (342)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.09% (899)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.35% (341)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="537.94" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="537.94" y="0" class="decompiled"/>
-<rect width="204.87" height="6" x="542.13" y="0" class="todo"/>
+<rect width="538.53" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="538.53" y="0" class="decompiled"/>
+<rect width="204.27" height="6" x="542.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -755,7 +755,7 @@
 <rect width="12" height="12" x="510" y="195" class="named"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="195" class="named"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="195" class="todo"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="195" class="todo"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="195" class="named"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="195" class="named"><title>0x0043a280 ResetSG (21 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="195" class="named"><title>0x0043a2a0 WriteSG (76 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="195" class="named"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.02%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.90%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.65%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.27%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="396.08" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="396.08" y="0" class="decompiled"/>
-<rect width="350.31" height="6" x="396.69" y="0" class="todo"/>
+<rect width="400.77" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="400.77" y="0" class="decompiled"/>
+<rect width="345.62" height="6" x="401.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1340,7 +1340,7 @@
 <rect width="40.23" height="40.28" x="61.06" y="210.73" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
 <rect width="40.23" height="38.55" x="61.06" y="254.01" class="todo"><title>0x00406970 ins_objectGT3 (2162 bytes)</title></rect>
 <rect width="40.23" height="38.32" x="61.06" y="295.55" class="todo"><title>0x004257a0 Display_Requester (2150 bytes)</title></rect>
-<rect width="40.23" height="38.13" x="61.06" y="336.87" class="todo"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
+<rect width="40.23" height="38.13" x="61.06" y="336.87" class="named"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
 <rect width="35.42" height="38.53" x="104.28" y="0" class="named"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
 <rect width="35.42" height="36.89" x="104.28" y="41.53" class="todo"><title>0x00453770 Func453770 (1845 bytes)</title></rect>
 <rect width="35.42" height="35.87" x="104.28" y="81.42" class="todo"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
