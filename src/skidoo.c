@@ -312,3 +312,35 @@ int DoDynamics(int height, int fallspeed, int *y)
 
     return fallspeed;
 }
+
+int GetCollisionAnim(ITEM_INFO *skidoo, PHD_VECTOR *moved)
+{
+    sint32 c, s, front, side;
+
+    moved->x = skidoo->pos.x_pos - moved->x;
+    moved->z = skidoo->pos.z_pos - moved->z;
+
+    if (moved->x || moved->z)
+    {
+        c = phd_cos(skidoo->pos.y_rot);
+        s = phd_sin(skidoo->pos.y_rot);
+        front = (moved->z * c + moved->x * s) >> W2V_SHIFT;
+        side = (-moved->z * s + moved->x * c) >> W2V_SHIFT;
+        if (ABS(front) > ABS(side))
+        {
+            if (front > 0)
+                return SKIDOO_HIT_BACK;
+            else
+                return SKIDOO_HIT_FRONT;
+        }
+        else
+        {
+            if (side > 0)
+                return SKIDOO_HIT_LEFT;
+            else
+                return SKIDOO_HIT_RIGHT;
+        }
+    }
+
+    return 0;
+}
