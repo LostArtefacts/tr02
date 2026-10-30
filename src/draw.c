@@ -118,6 +118,16 @@ void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip)
     phd_mxptr = oldm;
 }
 
+void InterpolateMatrix(void);
+
+void phd_PutPolygons_I(sint16 *ptr, int clip)
+{
+    phd_PushMatrix();
+    InterpolateMatrix();
+    phd_PutPolygons(ptr, clip);
+    phd_PopMatrix();
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;
