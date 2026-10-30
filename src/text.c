@@ -229,3 +229,16 @@ int T_RemovePrint(TEXTSTRING *textString)
     T_numStrings--;
     return 1;
 }
+
+sint16 T_GetStringLen(char *string)
+{
+    sint16 len = 1;
+
+    while (*string++)
+    {
+        len++;
+        if (len > MAX_STRING_SIZE)
+            return MAX_STRING_SIZE;
+    }
+    return len;
+}
