@@ -124,6 +124,11 @@ extern "C" LONG SetRegistryStringValue(LPCTSTR lpValueName, LPCTSTR value, int l
     return RegDeleteValue(HKey, lpValueName);
 }
 
+extern "C" LONG DeleteRegistryValue(LPCTSTR lpValueName)
+{
+    return RegDeleteValue(HKey, lpValueName);
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
