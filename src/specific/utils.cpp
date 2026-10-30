@@ -129,6 +129,17 @@ extern "C" LONG DeleteRegistryValue(LPCTSTR lpValueName)
     return RegDeleteValue(HKey, lpValueName);
 }
 
+extern "C" bool GetRegistryDwordValue(LPCTSTR lpValueName, DWORD *pValue, DWORD defaultValue)
+{
+    DWORD type;
+    DWORD size = sizeof(DWORD);
+    if (!RegQueryValueEx(HKey, lpValueName, 0, &type, (BYTE *)pValue, &size) && type == REG_DWORD && size == sizeof(DWORD))
+        return true;
+    SetRegistryDwordValue(lpValueName, defaultValue);
+    *pValue = defaultValue;
+    return false;
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
