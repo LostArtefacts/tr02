@@ -216,6 +216,31 @@ extern "C" float RhwFactor;
 extern "C" float FltRhwONearZ;
 extern "C" float FltPerspONearZ;
 extern "C" float FltPersp;
+extern "C" float FltRhwOPersp;
+extern "C" sint32 PhdPersp;
+
+typedef struct {
+    APP_SETTINGS base;
+    bool BilinearFiltering;
+    bool TripleBuffering;
+    bool FullScreen;
+} APP_SETTINGS_EXT;
+
+extern "C" void AlterFOV(PHD_ANGLE fov)
+{
+    float aspect, ratio;
+
+    fov /= 2;
+    PhdPersp = ((phd_winwidth / 2) * phd_cos(fov)) / phd_sin(fov);
+    FltPersp = (float)PhdPersp;
+    FltRhwOPersp = RhwFactor / FltPersp;
+    FltPerspONearZ = FltPersp / FltNearZ;
+    ratio = (float)phd_winwidth / (float)phd_winheight;
+    aspect = 4.0f / 3.0f;
+    if (!((APP_SETTINGS_EXT *)&SavedAppSettings)->FullScreen && SavedAppSettings.AspectMode == 1)
+        aspect = 16.0f / 9.0f;
+    LfAspectCorrection = aspect / ratio;
+}
 
 extern "C" void Func402620(void);
 

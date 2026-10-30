@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.76% (1037)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.60% (208)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.84% (1038)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.52% (207)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="618.23" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="618.23" y="0" class="decompiled"/>
-<rect width="124" height="6" x="623" y="0" class="todo"/>
+<rect width="618.82" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="618.82" y="0" class="decompiled"/>
+<rect width="123.41" height="6" x="623.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -90,7 +90,7 @@
 <rect width="12" height="12" x="285" y="0" class="named"><title>0x00402420 phd_SortPolyList (51 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="0" class="named"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="0" class="todo"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="0" class="named"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="0" class="todo"><title>0x00402620 Func402620 (83 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="named"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="named"><title>0x004026d0 phd_SetFarZ (24 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.25%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">30.66%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.30%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">30.61%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="517.32" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="517.32" y="0" class="decompiled"/>
-<rect width="229.02" height="6" x="517.98" y="0" class="todo"/>
+<rect width="517.67" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="517.67" y="0" class="decompiled"/>
+<rect width="228.67" height="6" x="518.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1865,7 +1865,7 @@
 <rect width="8.92" height="8.69" x="597.91" y="181.95" class="named"><title>0x00428b30 extra_as_finalanim (163 bytes)</title></rect>
 <rect width="8.92" height="8.69" x="609.84" y="181.95" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
 <rect width="8.85" height="8.69" x="621.76" y="181.95" class="todo"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
-<rect width="8.78" height="8.69" x="633.61" y="181.95" class="todo"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
+<rect width="8.78" height="8.69" x="633.61" y="181.95" class="named"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
 <rect width="8.78" height="8.69" x="645.39" y="181.95" class="todo"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="8.78" height="8.69" x="657.17" y="181.95" class="named"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
 <rect width="8.70" height="8.69" x="668.95" y="181.95" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
