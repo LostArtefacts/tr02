@@ -130,3 +130,9 @@ extern "C" void WinInFinish(void)
     DInputKeyboardRelease();
     DInputRelease();
 }
+
+extern "C" void WinInRunControlPanel(HWND hWnd)
+{
+    if (DInput)
+        DInput->RunControlPanel(hWnd, 0);
+}
