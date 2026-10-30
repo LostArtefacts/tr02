@@ -7,6 +7,7 @@ extern "C" char *malloc_ptr;
 extern "C" int malloc_size;
 extern "C" int malloc_free, malloc_used;
 extern "C" void init_game_malloc(void);
+extern "C" void game_free(int size, int type);
 
 void ShutdownGame(void)
 {
@@ -19,6 +20,14 @@ void init_game_malloc(void)
     malloc_ptr = malloc_buffer;
     malloc_free = malloc_size;
     malloc_used = 0;
+}
+
+void game_free(int size, int type)
+{
+    size = (size + 3) & ~3;
+    malloc_ptr -= size;
+    malloc_free += size;
+    malloc_used -= size;
 }
 
 void CalculateWibbleTable(void)

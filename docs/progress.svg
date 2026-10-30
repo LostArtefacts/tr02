@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.89% (273)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.11% (974)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.97% (274)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.03% (973)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="163.54" height="6" x="0" y="0" class="named"/>
-<rect width="583.46" height="6" x="163.54" y="0" class="todo"/>
+<rect width="164.14" height="6" x="0" y="0" class="named"/>
+<rect width="582.86" height="6" x="164.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1091,7 +1091,7 @@
 <rect width="12" height="12" x="315" y="300" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="300" class="named"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="300" class="todo"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="300" class="todo"><title>0x0044d800 game_free (52 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="300" class="named"><title>0x0044d800 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="300" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="300" class="named"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="named"><title>0x0044d9b0 Key (288 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.83%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.17%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.02" height="6" x="0" y="0" class="named"/>
-<rect width="695.98" height="6" x="51.02" y="0" class="todo"/>
+<rect width="51.13" height="6" x="0" y="0" class="named"/>
+<rect width="695.87" height="6" x="51.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2266,7 +2266,7 @@
 <rect width="3.38" height="3.83" x="662.31" y="303.65" class="todo"><title>0x0041b6f0 InitInterpolate (52 bytes)</title></rect>
 <rect width="3.38" height="3.83" x="662.31" y="310.48" class="named"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="3.38" height="3.83" x="662.31" y="317.31" class="named"><title>0x00447a40 TempVideoAdjust (52 bytes)</title></rect>
-<rect width="3.38" height="3.83" x="662.31" y="324.14" class="todo"><title>0x0044d800 game_free (52 bytes)</title></rect>
+<rect width="3.38" height="3.83" x="662.31" y="324.14" class="named"><title>0x0044d800 game_free (52 bytes)</title></rect>
 <rect width="3.38" height="3.83" x="662.31" y="330.97" class="todo"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
 <rect width="3.38" height="3.70" x="662.31" y="337.80" class="todo"><title>0x00402420 phd_SortPolyList (51 bytes)</title></rect>
 <rect width="3.38" height="3.70" x="662.31" y="344.50" class="todo"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
