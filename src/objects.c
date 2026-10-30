@@ -19,6 +19,7 @@ void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 void *game_malloc(int size, int type);
 int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
+void S_CDPlay(sint16 track, int mode);
 
 extern sint16 DeathSlideBounds[12];
 extern PHD_VECTOR DeathSlidePosition;
@@ -80,6 +81,33 @@ void DyingMonk(sint16 item_number)
         if (ABS(lara_item->pos.x_pos - item->pos.x_pos) < WALL_L && ABS(lara_item->pos.z_pos - item->pos.z_pos) < WALL_L
             && !lara_item->gravity_status && lara_item->pos.y_pos == item->pos.y_pos)
             level_complete = 1;
+    }
+}
+
+void ControlGongBonger(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+
+    AnimateItem(item);
+
+    if (item->frame_number - anims[item->anim_number].frame_base == 41)
+    {
+        S_CDPlay(61, 0);
+        camera.bounce -= 50;
+    }
+
+    if (item->frame_number == anims[item->anim_number].frame_end)
+    {
+        room_number = item->room_number;
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+        TestTriggers(trigger_index, 1);
+
+        KillItem(item_number);
     }
 }
 

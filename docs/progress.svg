@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.43% (342)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.57% (905)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.51% (343)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.49% (904)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="204.87" height="6" x="0" y="0" class="named"/>
-<rect width="542.13" height="6" x="204.87" y="0" class="todo"/>
+<rect width="205.47" height="6" x="0" y="0" class="named"/>
+<rect width="541.53" height="6" x="205.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -691,7 +691,7 @@
 <rect width="12" height="12" x="315" y="180" class="todo"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="180" class="named"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="180" class="named"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="180" class="todo"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="180" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="180" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="180" class="todo"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="named"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.02%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.98%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="67" height="6" x="0" y="0" class="named"/>
-<rect width="680" height="6" x="67" y="0" class="todo"/>
+<rect width="67.41" height="6" x="0" y="0" class="named"/>
+<rect width="679.59" height="6" x="67.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1783,7 +1783,7 @@
 <rect width="9.65" height="9.58" x="586.61" y="150.66" class="named"><title>0x00429800 lara_col_stepright (190 bytes)</title></rect>
 <rect width="9.65" height="9.58" x="599.26" y="150.66" class="named"><title>0x0042a7e0 LaraTestClimbStance (190 bytes)</title></rect>
 <rect width="9.65" height="9.58" x="611.91" y="150.66" class="todo"><title>0x004542f0 Func4542f0 (190 bytes)</title></rect>
-<rect width="9.58" height="9.58" x="624.56" y="150.66" class="todo"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
+<rect width="9.58" height="9.58" x="624.56" y="150.66" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="637.15" y="150.66" class="todo"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="649.73" y="150.66" class="todo"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="9.58" height="9.58" x="662.31" y="150.66" class="todo"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>

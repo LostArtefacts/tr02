@@ -68,5 +68,6 @@ extern sint16 next_fx_free;
 void RemoveActiveItem(sint16 item_num);
 void AddActiveItem(sint16 item_num);
 sint16 CreateEffect(sint16 room_num);
+void KillItem(sint16 item_number);
 
 #endif
