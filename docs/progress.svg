@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.50% (530)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.50% (717)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.58% (531)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.42% (716)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="317.49" height="6" x="0" y="0" class="named"/>
-<rect width="429.51" height="6" x="317.49" y="0" class="todo"/>
+<rect width="318.09" height="6" x="0" y="0" class="named"/>
+<rect width="428.91" height="6" x="318.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -405,7 +405,7 @@
 <rect width="12" height="12" x="525" y="90" class="todo"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="90" class="todo"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="90" class="todo"><title>0x00423e20 RingNotActive (873 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="90" class="todo"><title>0x00424290 RingActive (50 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="90" class="named"><title>0x00424290 RingActive (50 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="90" class="todo"><title>0x004242d0 Inv_AddItem (1726 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="90" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="90" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.40%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="153.89" height="6" x="0" y="0" class="named"/>
-<rect width="593.11" height="6" x="153.89" y="0" class="todo"/>
+<rect width="154" height="6" x="0" y="0" class="named"/>
+<rect width="593" height="6" x="154" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2279,7 +2279,7 @@
 <rect width="3.22" height="3.86" x="668.74" y="310.50" class="todo"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="3.22" height="3.86" x="668.74" y="317.36" class="todo"><title>0x0045752e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="3.22" height="3.72" x="668.74" y="324.22" class="todo"><title>0x00401bd0 calc_background_light (50 bytes)</title></rect>
-<rect width="3.22" height="3.72" x="668.74" y="330.94" class="todo"><title>0x00424290 RingActive (50 bytes)</title></rect>
+<rect width="3.22" height="3.72" x="668.74" y="330.94" class="named"><title>0x00424290 RingActive (50 bytes)</title></rect>
 <rect width="3.22" height="3.72" x="668.74" y="337.66" class="todo"><title>0x0042a130 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="3.22" height="3.72" x="668.74" y="344.39" class="named"><title>0x00431ac0 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="3.22" height="3.72" x="668.74" y="351.11" class="named"><title>0x00435150 OpenThatDoor (50 bytes)</title></rect>

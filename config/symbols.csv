@@ -1499,10 +1499,10 @@ address,size,name,symbol
 0x00465440,,InvControlOption,_InvControlOption
 0x00465490,,InvPhotoOption,_InvPhotoOption
 0x004654e0,2,inv_main_objects,_inv_main_objects
-0x004654e8,,InvMainQtys,_InvMainQtys
-0x00465518,92,InvMainList,_InvMainList
-0x00465578,,InvKeysQtys,_InvKeysQtys
-0x004655a8,92,InvKeysList,_InvKeysList
+0x004654e8,,inv_main_qtys,_inv_main_qtys
+0x00465518,92,inv_main_list,_inv_main_list
+0x00465578,,inv_keys_qtys,_inv_keys_qtys
+0x004655a8,92,inv_keys_list,_inv_keys_list
 0x00465604,2,InvOptionObjectsCount,_InvOptionObjectsCount
 0x00465608,16,InvOptionList,_InvOptionList
 0x00465618,4,GymInvOpenEnabled,_GymInvOpenEnabled
@@ -1652,7 +1652,7 @@ address,size,name,symbol
 0x004d792c,2,inv_keys_objects,_inv_keys_objects
 0x004d7930,2,inv_keys_current,_inv_keys_current
 0x004d7934,,InvOptionCurrent,_InvOptionCurrent
-0x004d7938,8,InvItemText,_InvItemText
+0x004d7938,8,Inv_itemText,_Inv_itemText
 0x004d7944,4,InvRingText,_InvRingText
 0x004d794c,4,InvUpArrow1,_InvUpArrow1
 0x004d7950,4,InvUpArrow2,_InvUpArrow2

@@ -48,6 +48,20 @@ typedef struct ring_info {
     IMOTION_INFO *imo;
 } RING_INFO;
 
+#define IT_NAME 0
+#define IT_QTY 1
+#define IT_NUMBEROF 2
+
+extern TEXTSTRING *Inv_itemText[IT_NUMBEROF];
+
+void RingActive(void)
+{
+    T_RemovePrint(Inv_itemText[IT_NAME]);
+    Inv_itemText[IT_NAME] = NULL;
+    T_RemovePrint(Inv_itemText[IT_QTY]);
+    Inv_itemText[IT_QTY] = NULL;
+}
+
 extern sint16 inv_main_objects, inv_main_current;
 extern sint16 inv_keys_objects, inv_keys_current;
 
