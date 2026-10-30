@@ -167,6 +167,28 @@ void DrawAirBar(int flash_state)
 extern TEXTSTRING *DisplayModeTextInfo;
 extern int DisplayModeInfoTimer;
 
+void T_RightAlign(TEXTSTRING *textString, sint16 ok);
+void T_BottomAlign(TEXTSTRING *textString, sint16 ok);
+
+void DisplayModeInfo(char *string)
+{
+    if (!string)
+    {
+        T_RemovePrint(DisplayModeTextInfo);
+        DisplayModeTextInfo = NULL;
+        return;
+    }
+    if (DisplayModeTextInfo)
+        T_ChangeText(DisplayModeTextInfo, string);
+    else
+    {
+        DisplayModeTextInfo = T_Print(-16, -16, 0, string);
+        T_RightAlign(DisplayModeTextInfo, 1);
+        T_BottomAlign(DisplayModeTextInfo, 1);
+    }
+    DisplayModeInfoTimer = 75;
+}
+
 void DrawModeInfo(void)
 {
     if (DisplayModeTextInfo && --DisplayModeInfoTimer == 0)
