@@ -1,4 +1,5 @@
 #include "game.h"
+#include "savegame.h"
 
 #define GUN_ITEM 135
 #define SHOTGUN_ITEM 136
@@ -12,6 +13,98 @@
 #define FLAREBOX_ITEM 151
 
 int Inv_AddItem(int itemNum);
+
+#define GUN_OPTION 157
+#define SHOTGUN_OPTION 158
+#define MAGNUM_OPTION 159
+#define UZI_OPTION 160
+#define HARPOON_OPTION 161
+#define M16_OPTION 162
+#define GRENADE_OPTION 163
+#define MEDI_OPTION 171
+#define BIGMEDI_OPTION 172
+#define FLAREBOX_OPTION 173
+#define NUMBER_OBJECTS 265
+#define LARA_HITPOINTS 1000
+
+int Inv_RemoveItem(int itemNum);
+
+void UseItem(sint16 object_num)
+{
+    if (object_num < 0 || object_num >= NUMBER_OBJECTS)
+        return;
+    switch (object_num)
+    {
+    case GUN_ITEM:
+    case GUN_OPTION:
+        lara.request_gun_type = LG_PISTOLS;
+        break;
+
+    case MAGNUM_ITEM:
+    case MAGNUM_OPTION:
+        lara.request_gun_type = LG_MAGNUMS;
+        break;
+
+    case UZI_ITEM:
+    case UZI_OPTION:
+        lara.request_gun_type = LG_UZIS;
+        break;
+
+    case SHOTGUN_ITEM:
+    case SHOTGUN_OPTION:
+        lara.request_gun_type = LG_SHOTGUN;
+        break;
+
+    case HARPOON_ITEM:
+    case HARPOON_OPTION:
+        lara.request_gun_type = LG_HARPOON;
+        break;
+
+    case M16_ITEM:
+    case M16_OPTION:
+        lara.request_gun_type = LG_M16;
+        break;
+
+    case GRENADE_ITEM:
+    case GRENADE_OPTION:
+        lara.request_gun_type = LG_GRENADE;
+        break;
+
+    case FLAREBOX_ITEM:
+    case FLAREBOX_OPTION:
+        lara.request_gun_type = LG_FLARE;
+        break;
+
+    case MEDI_ITEM:
+    case MEDI_OPTION:
+        if (lara_item->hit_points > 0 && lara_item->hit_points < LARA_HITPOINTS)
+        {
+            lara_item->hit_points += LARA_HITPOINTS / 2;
+            if (lara_item->hit_points > LARA_HITPOINTS)
+                lara_item->hit_points = LARA_HITPOINTS;
+            Inv_RemoveItem(MEDI_ITEM);
+            SoundEffect(116, NULL, SFX_ALWAYS);
+            savegame.health_used++;
+        }
+        break;
+
+    case BIGMEDI_ITEM:
+    case BIGMEDI_OPTION:
+        if (lara_item->hit_points > 0 && lara_item->hit_points < LARA_HITPOINTS)
+        {
+            lara_item->hit_points += LARA_HITPOINTS;
+            if (lara_item->hit_points > LARA_HITPOINTS)
+                lara_item->hit_points = LARA_HITPOINTS;
+            Inv_RemoveItem(BIGMEDI_ITEM);
+            SoundEffect(116, NULL, SFX_ALWAYS);
+            savegame.health_used += 2;
+        }
+        break;
+
+    default:
+        break;
+    }
+}
 
 void LaraCheatGetStuff(void)
 {

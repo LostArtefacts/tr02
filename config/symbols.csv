@@ -561,7 +561,7 @@ address,size,name,symbol
 0x00430110,622,FlareControl,_FlareControl
 0x00430380,1640,LaraControl,_LaraControl
 0x00430a10,717,AnimateLara,_AnimateLara
-0x00430d10,319,UseItem,_UseItem
+0x00430d10,443,UseItem,_UseItem
 0x00430ed0,186,LaraCheatGetStuff,_LaraCheatGetStuff
 0x00430f90,27,ControlLaraExtra,_ControlLaraExtra
 0x00430fb0,33,InitialiseLaraLoad,_InitialiseLaraLoad
