@@ -555,3 +555,30 @@ extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterLis
         return false;
     return true;
 }
+
+extern "C" DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
+
+extern "C" DISPLAY_ADAPTER_NODE *WinVidGetDisplayAdapter(GUID *lpGuid)
+{
+    DISPLAY_ADAPTER_NODE *node;
+    DISPLAY_ADAPTER_NODE *result;
+
+    result = NULL;
+    for (node = DisplayAdapterList.head; node; node = node->next)
+    {
+        if (lpGuid && !memcmp(&node->body.adapterGuid, lpGuid, sizeof(GUID)))
+        {
+            result = node;
+            break;
+        }
+        if (!node)
+            break;
+    }
+    if (!result)
+    {
+        result = PrimaryDisplayAdapter;
+        if (!result)
+            result = NULL;
+    }
+    return result;
+}
