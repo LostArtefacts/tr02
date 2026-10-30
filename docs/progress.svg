@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.75% (558)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.25% (689)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.83% (559)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.17% (688)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="334.26" height="6" x="0" y="0" class="named"/>
-<rect width="412.74" height="6" x="334.26" y="0" class="todo"/>
+<rect width="334.86" height="6" x="0" y="0" class="named"/>
+<rect width="412.14" height="6" x="334.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -244,7 +244,7 @@
 <rect width="12" height="12" x="360" y="45" class="todo"><title>0x004151c0 TestTriggers (1680 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="45" class="named"><title>0x004158a0 TriggerActive (85 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="45" class="todo"><title>0x00415900 GetCeiling (573 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="45" class="todo"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="45" class="named"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="45" class="todo"><title>0x00415bb0 LOS (160 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="45" class="todo"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="45" class="todo"><title>0x00415f40 xLOS (748 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.67%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.65%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="181.72" height="6" x="0" y="0" class="named"/>
-<rect width="565.28" height="6" x="181.72" y="0" class="todo"/>
+<rect width="181.89" height="6" x="0" y="0" class="named"/>
+<rect width="565.11" height="6" x="181.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2108,7 +2108,7 @@
 <rect width="5.16" height="5.08" x="617.54" y="369.92" class="named"><title>0x00432b70 DisableBaddieAI (79 bytes)</title></rect>
 <rect width="4.84" height="5.41" x="625.69" y="254.09" class="named"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
 <rect width="4.84" height="5.30" x="625.69" y="262.50" class="named"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
-<rect width="4.84" height="5.30" x="625.69" y="270.80" class="todo"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
+<rect width="4.84" height="5.30" x="625.69" y="270.80" class="named"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
 <rect width="4.84" height="5.30" x="625.69" y="279.11" class="named"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
 <rect width="4.84" height="5.30" x="625.69" y="287.41" class="named"><title>0x00433d80 TestBlockMovable (78 bytes)</title></rect>
 <rect width="4.84" height="5.30" x="625.69" y="295.71" class="named"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
