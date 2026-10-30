@@ -669,6 +669,46 @@ void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
     camera.flags = FOLLOW_CENTRE;
 }
 
+void lara_as_wade(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    camera.target_elevation = -22 * ONE_DEGREE;
+
+    if (input & IN_LEFT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_FAST_TURN)
+            lara.turn_rate = -LARA_FAST_TURN;
+        item->pos.z_rot -= LARA_LEAN_RATE;
+        if (item->pos.z_rot < -LARA_LEAN_MAX)
+            item->pos.z_rot = -LARA_LEAN_MAX;
+    }
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_FAST_TURN)
+            lara.turn_rate = LARA_FAST_TURN;
+        item->pos.z_rot += LARA_LEAN_RATE;
+        if (item->pos.z_rot > LARA_LEAN_MAX)
+            item->pos.z_rot = LARA_LEAN_MAX;
+    }
+
+    if (input & IN_FORWARD)
+    {
+        if (lara.water_status == LARA_ABOVEWATER)
+            item->goal_anim_state = AS_RUN;
+        else
+            item->goal_anim_state = AS_WADE;
+    }
+    else
+        item->goal_anim_state = AS_STOP;
+}
+
 void lara_as_deathslide(ITEM_INFO *item, COLL_INFO *coll)
 {
     sint16 room_number;
@@ -1276,6 +1316,11 @@ void lara_col_compress(ITEM_INFO *item, COLL_INFO *coll)
         item->pos.y_pos += coll->mid_floor;
 }
 
+#define BACKSTEPD_LEFT_A 61
+#define BACKSTEPD_LEFT_F GF(BACKSTEPD_LEFT_A, 0)
+#define BACKSTEPD_RIGHT_A 62
+#define BACKSTEPD_RIGHT_F GF(BACKSTEPD_RIGHT_A, 0)
+
 void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_stop(item, coll);
@@ -1479,6 +1524,8 @@ void lara_col_fastdive(ITEM_INFO *item, COLL_INFO *coll)
         item->gravity_status = 0;
     }
 }
+
+#define WALL 0
 
 void lara_default_col(ITEM_INFO *item, COLL_INFO *coll)
 {

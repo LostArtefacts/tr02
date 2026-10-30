@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.93% (685)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.07% (562)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.01% (686)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.99% (561)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="410.34" height="6" x="0" y="0" class="named"/>
-<rect width="336.66" height="6" x="410.34" y="0" class="todo"/>
+<rect width="410.94" height="6" x="0" y="0" class="named"/>
+<rect width="336.06" height="6" x="410.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -498,7 +498,7 @@
 <rect width="12" height="12" x="420" y="120" class="named"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="120" class="named"><title>0x004285a0 lara_as_fastdive (84 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="120" class="named"><title>0x00428600 lara_as_waterout (21 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="120" class="todo"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="120" class="named"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="120" class="named"><title>0x004286f0 lara_as_deathslide (150 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="120" class="named"><title>0x00428790 extra_as_breath (76 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="120" class="named"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.16%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.10%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="275.16" height="6" x="0" y="0" class="named"/>
-<rect width="471.84" height="6" x="275.16" y="0" class="todo"/>
+<rect width="275.61" height="6" x="0" y="0" class="named"/>
+<rect width="471.39" height="6" x="275.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1760,7 +1760,7 @@
 <rect width="9.92" height="10.16" x="535.61" y="137.89" class="named"><title>0x0042e330 LaraTestClimbPos (204 bytes)</title></rect>
 <rect width="9.85" height="10.16" x="548.53" y="137.89" class="todo"><title>0x00408580 InsertFlatRect (203 bytes)</title></rect>
 <rect width="9.85" height="10.16" x="561.38" y="137.89" class="todo"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
-<rect width="9.79" height="10.16" x="574.24" y="137.89" class="todo"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
+<rect width="9.79" height="10.16" x="574.24" y="137.89" class="named"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
 <rect width="9.73" height="10.16" x="587.03" y="137.89" class="todo"><title>0x00447670 DInputKeyboardCreate (201 bytes)</title></rect>
 <rect width="9.66" height="10.16" x="599.75" y="137.89" class="named"><title>0x004133b0 GetNearByRooms (200 bytes)</title></rect>
 <rect width="9.66" height="10.16" x="612.41" y="137.89" class="named"><title>0x00435570 DoorControl (200 bytes)</title></rect>
