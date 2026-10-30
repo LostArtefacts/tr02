@@ -103,9 +103,32 @@ extern "C" bool SE_GraphicsTest(void)
 
 #include "ds.h"
 
+void WinSndStart(HWND hWnd);
+LPVOID UT_LoadResource(LPCSTR name, LPCSTR type);
+bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
+
 extern "C" {
+extern HWND SoundDialogHandle;
 void WinSndFinish(void);
-bool SE_SoundTestStart(void);
+}
+
+extern "C" bool SE_SoundTestStart(void)
+{
+    uint8 *waveFile;
+    WAVEFORMATEX format;
+
+    try
+    {
+        WinSndStart(SoundDialogHandle);
+    }
+    catch (...)
+    {
+        return false;
+    }
+    waveFile = (uint8 *)UT_LoadResource(MAKEINTRESOURCE(163), "WAVE");
+    format = *(WAVEFORMATEX *)&waveFile[0x14];
+    format.cbSize = 0;
+    return WinSndMakeSample(0, &format, &waveFile[0x2c], *(DWORD *)&waveFile[0x28]) ? true : false;
 }
 
 extern "C" void SE_SoundTestFinish(void)

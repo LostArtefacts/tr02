@@ -910,7 +910,7 @@ address,size,name,symbol
 0x00447c30,14,Func447c30,
 0x00447c70,72,GetSoundAdapter,_GetSoundAdapter
 0x00447cc0,46,WinSndFreeAllSamples,_WinSndFreeAllSamples
-0x00447cf0,270,WinSndMakeSample,_WinSndMakeSample
+0x00447cf0,270,WinSndMakeSample,_WinSndMakeSample ?WinSndMakeSample@@YA_NHPAUtWAVEFORMATEX@@PAXK@Z
 0x00447e00,69,DS_IsChannelPlaying,?DS_IsChannelPlaying@@YA_NH@Z
 0x00447e50,231,DS_StartSample,?DS_StartSample@@YAHHHHHK@Z
 0x00447f40,57,WinSndGetFreeChannelIndex,_WinSndGetFreeChannelIndex
@@ -922,7 +922,7 @@ address,size,name,symbol
 0x00448060,156,WinSndInit,_WinSndInit
 0x00448100,26,DSoundEnumerate,_DSoundEnumerate
 0x00448120,226,DSoundEnumCallback,_DSoundEnumCallback@16
-0x00448210,380,WinSndStart,_WinSndStart
+0x00448210,380,WinSndStart,_WinSndStart ?WinSndStart@@YAXPAX@Z
 0x00448390,28,DSoundCreate,_DSoundCreate
 0x004483b0,196,DSoundBufferTest,_DSoundBufferTest
 0x00448480,36,WinSndFinish,_WinSndFinish
@@ -1089,7 +1089,7 @@ address,size,name,symbol
 0x00452bb0,3,SE_GraphicsTestExecute,_SE_GraphicsTestExecute
 0x00452bc0,90,SE_GraphicsTest,_SE_GraphicsTest
 0x00452c20,323,Func452c20,
-0x00452d70,164,SE_SoundTestStart,_SE_SoundTestStart
+0x00452d70,189,SE_SoundTestStart,_SE_SoundTestStart
 0x00452e30,5,SE_SoundTestFinish,_SE_SoundTestFinish
 0x00452e40,61,SE_SoundTestExecute,_SE_SoundTestExecute
 0x00452e80,90,SE_SoundTest,_SE_SoundTest
@@ -1171,7 +1171,7 @@ address,size,name,symbol
 0x00456680,64,TIME_Reset,_TIME_Reset
 0x004566c0,81,TIME_Init,?TIME_Init@@YA_NXZ
 0x00456720,86,Sync,?Sync@@YAHXZ
-0x00456780,54,UT_LoadResource,_UT_LoadResource
+0x00456780,54,UT_LoadResource,_UT_LoadResource ?UT_LoadResource@@YAPAXPBD0@Z
 0x004567c0,96,UT_InitAccurateTimer,?UT_InitAccurateTimer@@YAXXZ
 0x00456820,78,UT_GetAccurateTimer,?UT_GetAccurateTimer@@YANXZ
 0x00456870,111,UT_CenterWindow,?UT_CenterWindow@@YAXPAX@Z
