@@ -329,7 +329,7 @@ address,size,name,symbol
 0x004232f0,342,Construct_Inventory,_Construct_Inventory
 0x00423450,137,SelectMeshes,_SelectMeshes
 0x004234e0,129,AnimateInventoryItem,_AnimateInventoryItem
-0x00423570,1053,DrawInventoryItem,_DrawInventoryItem
+0x00423570,1072,DrawInventoryItem,_DrawInventoryItem
 0x004239a0,25,GetDebouncedInput,_GetDebouncedInput
 0x004239c0,5,DoInventoryPicture,_DoInventoryPicture
 0x004239d0,306,DoInventoryBackground,_DoInventoryBackground

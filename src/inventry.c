@@ -138,6 +138,160 @@ sint32 AnimateInventoryItem(INVENTORY_ITEM *inv_item)
     return 0;
 }
 
+#include "savegame.h"
+
+#define ALPHABET 255
+#define SHAPE_SPRITE 1
+#define SHAPE_LINE 2
+#define SHAPE_BOX 3
+#define SHAPE_FBOX 4
+
+typedef struct {
+    sint16 mesh_number;
+    uint16 flags;
+    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
+    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
+} STATIC_INFO;
+
+extern STATIC_INFO StaticObjects[];
+extern sint32 PhdPersp;
+
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+void phd_RotZ(PHD_ANGLE rz);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+int S_GetObjectBounds(sint16 *bptr);
+void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale);
+void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
+void S_DrawScreenLine(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, uint16 *grdptr, uint16 flags);
+void S_DrawScreenBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, uint16 *grdptr, uint16 flags);
+void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, uint16 *grdptr, uint16 flags);
+
+void DrawInventoryItem(INVENTORY_ITEM *inv_item)
+{
+    int hours, minutes, seconds, totsec;
+    int clip, i, poppush;
+    sint16 mesh, mesh_num;
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation;
+    sint16 *frame;
+    INVENTORY_SPRITE *isprite, **isprite_list;
+    sint32 xv, yv, zv, zp;
+    sint32 sx, sy;
+
+    if (inv_item->object_number == MAP_OPTION)
+    {
+        totsec = savegame.timer / 30;
+        seconds = totsec % 60;
+        minutes = ((totsec % 3600) * -91) / 5;
+        hours = ((totsec / 12) * -91) / 5;
+        seconds *= -1092;
+    }
+    else
+        hours = minutes = seconds = totsec = 0;
+
+    phd_TranslateRel(0, inv_item->ytrans, inv_item->ztrans);
+    phd_RotYXZ(inv_item->y_rot, inv_item->x_rot, 0);
+
+    object = &objects[inv_item->object_number];
+    if (!object->loaded)
+        return;
+
+    if (object->nmeshes < 0)
+    {
+        mesh = object->mesh_index;
+        S_DrawSprite(0, 0, 0, 0, mesh, 0, 0);
+        return;
+    }
+
+    if ((isprite_list = inv_item->sprlist))
+    {
+        zv = *(phd_mxptr + M23);
+        xv = *(phd_mxptr + M03);
+        yv = *(phd_mxptr + M13);
+        zp = zv / PhdPersp;
+        sx = (sint32)(xv / zp + phd_centerx);
+        sy = (sint32)(yv / zp + phd_centery);
+        while ((isprite = *isprite_list++))
+        {
+            if (zv < phd_znear || zv > phd_zfar)
+                break;
+            while (isprite->shape)
+            {
+                switch (isprite->shape)
+                {
+                case SHAPE_SPRITE:
+                    S_DrawScreenSprite(sx + isprite->x, sy + isprite->y, isprite->z, isprite->param1, isprite->param2, (sint16)(StaticObjects[ALPHABET].mesh_number + isprite->sprnum), 16 * 256, 0);
+                    break;
+                case SHAPE_LINE:
+                    S_DrawScreenLine(sx + isprite->x, sy + isprite->y, isprite->z, isprite->param1, isprite->param2, isprite->sprnum, isprite->grdptr, 0);
+                    break;
+                case SHAPE_BOX:
+                    S_DrawScreenBox(sx + isprite->x, sy + isprite->y, isprite->z, isprite->param1, isprite->param2, isprite->sprnum, isprite->grdptr, 0);
+                    break;
+                case SHAPE_FBOX:
+                    S_DrawScreenFBox(sx + isprite->x, sy + isprite->y, isprite->z, isprite->param1, isprite->param2, isprite->sprnum, isprite->grdptr, 0);
+                    break;
+                default:
+                    break;
+                }
+                isprite++;
+            }
+        }
+    }
+
+    frame = object->frame_base + inv_item->current_frame * (anims[object->anim_index].interpolation >> 8);
+
+    phd_PushMatrix();
+    if ((clip = S_GetObjectBounds(frame)))
+    {
+        phd_TranslateRel((sint32)*(frame + 6), (sint32)*(frame + 7), (sint32)*(frame + 8));
+        rotation = frame + 9;
+        phd_RotYXZsuperpack(&rotation, 0);
+
+        mesh = object->mesh_index;
+        bone = bones + object->bone_index;
+
+        mesh_num = 1;
+        if (mesh_num & inv_item->drawn_meshes)
+            phd_PutPolygons(meshes[mesh], clip);
+
+        for (i = object->nmeshes - 1; i > 0; i--)
+        {
+            mesh++;
+            mesh_num <<= 1;
+
+            poppush = *(bone++);
+            if (poppush & 1)
+                phd_PopMatrix();
+            if (poppush & 2)
+                phd_PushMatrix();
+
+            phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
+            phd_RotYXZsuperpack(&rotation, 0);
+
+            if (inv_item->object_number == MAP_OPTION)
+            {
+                if (i == 2)
+                {
+                    phd_RotZ((PHD_ANGLE)seconds);
+                    inv_item->misc_data[1] = inv_item->misc_data[0];
+                    inv_item->misc_data[0] = seconds;
+                }
+                if (i == 3)
+                    phd_RotZ((PHD_ANGLE)minutes);
+                if (i == 4)
+                    phd_RotZ((PHD_ANGLE)hours);
+            }
+
+            if (mesh_num & inv_item->drawn_meshes)
+                phd_PutPolygons(meshes[mesh], clip);
+            bone += 3;
+        }
+    }
+    phd_PopMatrix();
+}
+
 void DoInventoryPicture(void)
 {
     S_CopyBufferToScreen();
