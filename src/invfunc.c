@@ -244,3 +244,12 @@ void Inv_RingMotionRotation(RING_INFO *ring, sint16 rotation, sint16 target)
     imo->rotate_rate = rotation / imo->count;
     imo->rotate_target = target;
 }
+
+void Inv_RingMotionCameraPos(RING_INFO *ring, sint16 target)
+{
+    IMOTION_INFO *imo;
+
+    imo = ring->imo;
+    imo->camera_ytarget = target;
+    imo->camera_yrate = (target - ring->camera.y_pos) / imo->count;
+}
