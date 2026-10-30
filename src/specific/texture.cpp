@@ -138,6 +138,72 @@ extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page)
     return true;
 }
 
+extern "C" LPDIRECT3DTEXTURE2 Create3DTexture(LPDIRECTDRAWSURFACE3 surface);
+
+extern "C" bool TexturePageInit(TEXPAGE_DESC *page)
+{
+    DDSURFACEDESC desc;
+    DDCOLORKEY colorKey;
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXELFORMAT;
+    desc.ddsCaps.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_VIDEOMEMORY | DDSCAPS_ALLOCONLOAD;
+    desc.dwWidth = page->width;
+    desc.dwHeight = page->height;
+    desc.ddpfPixelFormat = TextureFormat;
+    if (DX_TRY(DDrawSurfaceCreate(&desc, &page->vidMemSurface)))
+        return false;
+    if (page->palette)
+    {
+        if (DX_TRY(page->vidMemSurface->SetPalette(page->palette)))
+        {
+            if (page->vidMemSurface)
+            {
+                page->vidMemSurface->Release();
+                page->vidMemSurface = NULL;
+            }
+            return false;
+        }
+        colorKey.dwColorSpaceLowValue = 0;
+        colorKey.dwColorSpaceHighValue = 0;
+        if (DX_TRY(page->vidMemSurface->SetColorKey(DDCKEY_SRCBLT, &colorKey)))
+        {
+            if (page->vidMemSurface)
+            {
+                page->vidMemSurface->Release();
+                page->vidMemSurface = NULL;
+            }
+            return false;
+        }
+    }
+    page->texture3d = Create3DTexture(page->vidMemSurface);
+    if (!page->texture3d)
+    {
+        if (page->vidMemSurface)
+        {
+            page->vidMemSurface->Release();
+            page->vidMemSurface = NULL;
+        }
+        return false;
+    }
+    if (DX_TRY(page->texture3d->GetHandle(G_Direct3DDevice, &page->texHandle)))
+    {
+        if (page->texture3d)
+        {
+            page->texture3d->Release();
+            page->texture3d = NULL;
+        }
+        if (page->vidMemSurface)
+        {
+            page->vidMemSurface->Release();
+            page->vidMemSurface = NULL;
+        }
+        page->texHandle = 0;
+        return false;
+    }
+    return true;
+}
+
 extern "C" LPDIRECT3DTEXTURE2 Create3DTexture(LPDIRECTDRAWSURFACE3 surface)
 {
     LPDIRECT3DTEXTURE2 texture;
