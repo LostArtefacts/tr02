@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.08% (213)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.92% (1034)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.16% (214)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.84% (1033)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="127.60" height="6" x="0" y="0" class="named"/>
-<rect width="619.40" height="6" x="127.60" y="0" class="todo"/>
+<rect width="128.19" height="6" x="0" y="0" class="named"/>
+<rect width="618.81" height="6" x="128.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -590,7 +590,7 @@
 <rect width="12" height="12" x="300" y="150" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="150" class="todo"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="150" class="named"><title>0x0042d8f0 lara_as_climbleft (53 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="150" class="todo"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="150" class="named"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="150" class="todo"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="150" class="todo"><title>0x0042d9f0 lara_as_climbing (20 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="150" class="todo"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.39%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.61%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.60%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="40.23" height="6" x="0" y="0" class="named"/>
-<rect width="706.77" height="6" x="40.23" y="0" class="todo"/>
+<rect width="40.34" height="6" x="0" y="0" class="named"/>
+<rect width="706.66" height="6" x="40.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2251,7 +2251,7 @@
 <rect width="3.63" height="3.69" x="655.68" y="371.31" class="todo"><title>0x00428350 lara_as_hangleft (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="662.32" y="290.09" class="todo"><title>0x00428390 lara_as_hangright (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="669.06" y="290.09" class="named"><title>0x0042d8f0 lara_as_climbleft (53 bytes)</title></rect>
-<rect width="3.74" height="3.58" x="675.81" y="290.09" class="todo"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
+<rect width="3.74" height="3.58" x="675.81" y="290.09" class="named"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="682.55" y="290.09" class="todo"><title>0x004357b0 InitialiseLift (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="689.30" y="290.09" class="named"><title>0x00435a50 LiftFloor (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="696.04" y="290.09" class="named"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
