@@ -15,10 +15,40 @@ typedef struct {
     DWORD status;
 } TEXPAGE_DESC;
 
+struct COLOR_BIT_MASKS {
+    DWORD dwRBitMask;
+    DWORD dwGBitMask;
+    DWORD dwBBitMask;
+    DWORD dwRGBAlphaBitMask;
+    DWORD dwRBitDepth;
+    DWORD dwGBitDepth;
+    DWORD dwBBitDepth;
+    DWORD dwRGBAlphaBitDepth;
+    DWORD dwRBitOffset;
+    DWORD dwGBitOffset;
+    DWORD dwBBitOffset;
+    DWORD dwRGBAlphaBitOffset;
+    void WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat);
+};
+
+typedef struct {
+    DDPIXELFORMAT pixelFormat;
+    COLOR_BIT_MASKS colorBitMasks;
+    DWORD bpp;
+} TEXTURE_FORMAT;
+
+typedef struct {
+    uint8 pad[0x29];
+    bool Disable16BitTextures;
+} TEXTURE_APP_SETTINGS;
+
 extern "C" {
+extern TEXTURE_APP_SETTINGS SavedAppSettings;
 extern TEXPAGE_DESC TexturePages[MAX_TEXTURE_PAGES];
 extern LPDIRECTDRAWPALETTE TexturePalettes[MAX_PALETTES];
-extern DDPIXELFORMAT TextureFormat;
+extern TEXTURE_FORMAT TextureFormat;
+extern bool TexturesAlphaChannel;
+extern bool TexturesHaveCompatibleMasks;
 }
 
 typedef struct {
@@ -130,7 +160,7 @@ extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page)
     desc.ddsCaps.dwCaps = DDSCAPS_SYSTEMMEMORY | DDSCAPS_TEXTURE;
     desc.dwWidth = page->width;
     desc.dwHeight = page->height;
-    desc.ddpfPixelFormat = TextureFormat;
+    desc.ddpfPixelFormat = TextureFormat.pixelFormat;
     if (DX_TRY(DDrawSurfaceCreate(&desc, &page->sysMemSurface)))
         return false;
     if (page->palette && DX_TRY(page->sysMemSurface->SetPalette(page->palette)))
@@ -150,7 +180,7 @@ extern "C" bool TexturePageInit(TEXPAGE_DESC *page)
     desc.ddsCaps.dwCaps = DDSCAPS_TEXTURE | DDSCAPS_VIDEOMEMORY | DDSCAPS_ALLOCONLOAD;
     desc.dwWidth = page->width;
     desc.dwHeight = page->height;
-    desc.ddpfPixelFormat = TextureFormat;
+    desc.ddpfPixelFormat = TextureFormat.pixelFormat;
     if (DX_TRY(DDrawSurfaceCreate(&desc, &page->vidMemSurface)))
         return false;
     if (page->palette)
@@ -285,6 +315,45 @@ extern "C" D3DTEXTUREHANDLE GetTexturePageHandle(int pageIndex)
 }
 
 extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context);
+
+extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context)
+{
+    DDPIXELFORMAT pixelFormat = desc->ddpfPixelFormat;
+    if (pixelFormat.dwRGBBitCount < 8)
+        return D3DENUMRET_OK;
+    if (!SavedAppSettings.Disable16BitTextures && pixelFormat.dwRGBBitCount == 16)
+    {
+        if (!(pixelFormat.dwFlags & DDPF_RGB))
+            return D3DENUMRET_OK;
+        TextureFormat.pixelFormat = desc->ddpfPixelFormat;
+        TextureFormat.bpp = 16;
+        TexturesAlphaChannel = pixelFormat.dwFlags & DDPF_ALPHAPIXELS;
+        TextureFormat.colorBitMasks.WinVidGetColorBitMasks(&pixelFormat);
+        if (TextureFormat.bpp == 16
+            && TextureFormat.colorBitMasks.dwRGBAlphaBitDepth == 1
+            && TextureFormat.colorBitMasks.dwRBitDepth == 5
+            && TextureFormat.colorBitMasks.dwGBitDepth == 5
+            && TextureFormat.colorBitMasks.dwBBitDepth == 5
+            && TextureFormat.colorBitMasks.dwRGBAlphaBitOffset == 15
+            && TextureFormat.colorBitMasks.dwRBitOffset == 10
+            && TextureFormat.colorBitMasks.dwGBitOffset == 5
+            && TextureFormat.colorBitMasks.dwBBitOffset == 0)
+        {
+            TexturesHaveCompatibleMasks = true;
+            return D3DENUMRET_CANCEL;
+        }
+    }
+    else
+    {
+        if (!(pixelFormat.dwFlags & DDPF_PALETTEINDEXED8))
+            return D3DENUMRET_OK;
+        TextureFormat.pixelFormat = desc->ddpfPixelFormat;
+        TextureFormat.bpp = 8;
+        TexturesAlphaChannel = false;
+    }
+    TexturesHaveCompatibleMasks = false;
+    return D3DENUMRET_OK;
+}
 
 extern "C" void EnumerateTextureFormats(void)
 {
