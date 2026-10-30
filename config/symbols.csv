@@ -942,9 +942,9 @@ address,size,name,symbol
 0x00448eb0,59,DX_DoFlipWait,_DX_DoFlipWait
 0x00448ef0,3,RenderInit,_RenderInit
 0x00448f00,933,RenderStart,_RenderStart ?RenderStart@@YAX_N@Z
-0x004492b0,230,RenderFinish,_RenderFinish
+0x004492b0,230,RenderFinish,_RenderFinish ?RenderFinish@@YAX_N@Z
 0x004493a0,284,ApplySettings,_ApplySettings
-0x004495b0,68,FmvBackToGame,_FmvBackToGame
+0x004495b0,272,FmvBackToGame,_FmvBackToGame
 0x004496c0,570,GameApplySettings,_GameApplySettings
 0x00449900,104,UpdateGameResolution,_UpdateGameResolution
 0x00449970,12,DecodeErrorMessage,_DecodeErrorMessage
@@ -1033,7 +1033,7 @@ address,size,name,symbol
 0x0044e830,35,WinCleanup,_WinCleanup
 0x0044e860,114,WinGameStart,_WinGameStart
 0x0044e8e0,57,WinGameFinish,_WinGameFinish
-0x0044e950,66,S_ExitSystem,_S_ExitSystem
+0x0044e950,66,S_ExitSystem,_S_ExitSystem ?S_ExitSystem@@YAXPAD@Z
 0x0044e9a0,271,ScreenShotPCX,_ScreenShotPCX
 0x0044eab0,174,CompPCX,_CompPCX
 0x0044eb60,210,EncodeLinePCX,_EncodeLinePCX
@@ -1584,6 +1584,7 @@ address,size,name,symbol
 0x00466490,4,fade_value,?fade_value@@3HA
 0x00466494,4,fade_limit,?fade_limit@@3HA
 0x00466498,4,fade_adder,?fade_adder@@3HA
+0x004664b4,28,RendererReinitFailed,_RendererReinitFailed
 0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
 0x004664e8,4,ErrorStringTable,_ErrorStringTable
 0x00466928,,LoadItemsBadObject,_LoadItemsBadObject
