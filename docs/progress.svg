@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.83% (758)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39.17% (488)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.91% (759)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39.09% (487)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="454.43" height="6" x="0" y="0" class="named"/>
-<rect width="292.57" height="6" x="454.43" y="0" class="todo"/>
+<rect width="455.03" height="6" x="0" y="0" class="named"/>
+<rect width="291.97" height="6" x="455.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -895,7 +895,7 @@
 <rect width="12" height="12" x="375" y="240" class="named"><title>0x00444e60 WinVidClearMinWindowSize (8 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="named"><title>0x00444e70 WinVidSetMaxWindowSize (65 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="240" class="named"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="240" class="todo"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="240" class="named"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="240" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="240" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.24%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="341.65" height="6" x="0" y="0" class="named"/>
-<rect width="405.35" height="6" x="341.65" y="0" class="todo"/>
+<rect width="341.80" height="6" x="0" y="0" class="named"/>
+<rect width="405.20" height="6" x="341.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2137,7 +2137,7 @@
 <rect width="4.71" height="4.88" x="633.74" y="262.23" class="named"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="4.71" height="4.88" x="633.74" y="270.10" class="todo"><title>0x00455940 Func455940 (73 bytes)</title></rect>
 <rect width="4.71" height="4.77" x="633.74" y="277.98" class="named"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
-<rect width="4.71" height="4.77" x="633.74" y="285.75" class="todo"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
+<rect width="4.71" height="4.77" x="633.74" y="285.75" class="named"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
 <rect width="4.71" height="4.77" x="633.74" y="293.52" class="todo"><title>0x00446c60 WinVidGetDisplayAdapter (72 bytes)</title></rect>
 <rect width="4.71" height="4.77" x="633.74" y="301.29" class="todo"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
 <rect width="4.71" height="4.77" x="633.74" y="309.05" class="todo"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>

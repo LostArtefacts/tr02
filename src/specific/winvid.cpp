@@ -57,3 +57,15 @@ extern "C" void WinVidClearMaxWindowSize(void)
     IsMaxWindowSizeSet = false;
 }
 
+extern "C" int CalculateWindowWidth(int width, int height)
+{
+    switch (SavedAppSettings.AspectMode)
+    {
+    case AM_16_9:
+        return 16 * height / 9;
+    case AM_4_3:
+        return 4 * height / 3;
+    }
+    return width;
+}
+
