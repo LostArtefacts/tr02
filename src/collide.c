@@ -177,6 +177,39 @@ void TrapCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         ObjectCollision(item_num, laraitem, coll);
 }
 
+sint16 *GetBestFrame(ITEM_INFO *item);
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius)
+{
+    sint16 *larabounds, *bounds;
+    OBJECT_INFO *object;
+    sint32 c, s, rx, rz, x, z;
+    sint32 minx, maxx, minz, maxz;
+
+    object = &objects[item->object_number];
+    bounds = GetBestFrame(item);
+    object = &objects[laraitem->object_number];
+    larabounds = GetBestFrame(laraitem);
+
+    if (item->pos.y_pos + *(bounds + 3) <= laraitem->pos.y_pos + *(larabounds + 2)
+        || item->pos.y_pos + *(bounds + 2) >= laraitem->pos.y_pos + *(larabounds + 3))
+        return 0;
+
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+    x = laraitem->pos.x_pos - item->pos.x_pos;
+    z = laraitem->pos.z_pos - item->pos.z_pos;
+    rx = (c * x - s * z) >> W2V_SHIFT;
+    rz = (c * z + s * x) >> W2V_SHIFT;
+    minx = *(bounds + 0) - radius;
+    maxx = *(bounds + 1) + radius;
+    minz = *(bounds + 4) - radius;
+    maxz = *(bounds + 5) + radius;
+    if (rx >= minx && rx <= maxx && rz >= minz && rz <= maxz)
+        return 1;
+    return 0;
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;
