@@ -74,6 +74,126 @@ void ModifyStartInfo(int level_number)
     }
 }
 
+#define GUN_ITEM 135
+#define SHOTGUN_ITEM 136
+#define MAGNUM_ITEM 137
+#define UZI_ITEM 138
+#define HARPOON_ITEM 139
+#define M16_ITEM 140
+#define ROCKET_GUN_ITEM 141
+#define SG_AMMO_ITEM 143
+#define MAG_AMMO_ITEM 144
+#define UZI_AMMO_ITEM 145
+#define HARPOON_AMMO_ITEM 146
+#define M16_AMMO_ITEM 147
+#define ROCKET_AMMO_ITEM 148
+#define MEDI_ITEM 149
+#define BIGMEDI_ITEM 150
+#define FLAREBOX_ITEM 152
+#define MAGNUM_AMMO_QTY 40
+#define UZI_AMMO_QTY 80
+#define SHOTGUN_AMMO_QTY (SHOTGUN_AMMO_CLIP * 2)
+#define HARPOON_AMMO_QTY 3
+#define M16_AMMO_QTY 40
+#define ROCKET_AMMO_QTY 2
+
+int Inv_RequestItem(int itemNum);
+
+void CreateStartInfo(int level_number)
+{
+    START_INFO *start;
+
+    start = &savegame.start[level_number];
+    start->available = 1;
+
+    if (Inv_RequestItem(GUN_ITEM))
+    {
+        start->pistol_ammo = 1000;
+        start->got_pistols = 1;
+    }
+    else
+    {
+        start->pistol_ammo = 1000;
+        start->got_pistols = 0;
+    }
+
+    if (Inv_RequestItem(MAGNUM_ITEM))
+    {
+        start->magnum_ammo = lara.magnums.ammo;
+        start->got_magnums = 1;
+    }
+    else
+    {
+        start->magnum_ammo = Inv_RequestItem(MAG_AMMO_ITEM) * MAGNUM_AMMO_QTY;
+        start->got_magnums = 0;
+    }
+
+    if (Inv_RequestItem(UZI_ITEM))
+    {
+        start->uzi_ammo = lara.uzis.ammo;
+        start->got_uzis = 1;
+    }
+    else
+    {
+        start->uzi_ammo = Inv_RequestItem(UZI_AMMO_ITEM) * UZI_AMMO_QTY;
+        start->got_uzis = 0;
+    }
+
+    if (Inv_RequestItem(SHOTGUN_ITEM))
+    {
+        start->shotgun_ammo = lara.shotgun.ammo;
+        start->got_shotgun = 1;
+    }
+    else
+    {
+        start->shotgun_ammo = Inv_RequestItem(SG_AMMO_ITEM) * SHOTGUN_AMMO_QTY;
+        start->got_shotgun = 0;
+    }
+
+    if (Inv_RequestItem(HARPOON_ITEM))
+    {
+        start->harpoon_ammo = lara.harpoon.ammo;
+        start->got_harpoon = 1;
+    }
+    else
+    {
+        start->harpoon_ammo = Inv_RequestItem(HARPOON_AMMO_ITEM) * HARPOON_AMMO_QTY;
+        start->got_harpoon = 0;
+    }
+
+    if (Inv_RequestItem(M16_ITEM))
+    {
+        start->m16_ammo = lara.m16.ammo;
+        start->got_m16 = 1;
+    }
+    else
+    {
+        start->m16_ammo = Inv_RequestItem(M16_AMMO_ITEM) * M16_AMMO_QTY;
+        start->got_m16 = 0;
+    }
+
+    if (Inv_RequestItem(ROCKET_GUN_ITEM))
+    {
+        start->rocket_ammo = lara.grenade.ammo;
+        start->got_rocket = 1;
+    }
+    else
+    {
+        start->rocket_ammo = Inv_RequestItem(ROCKET_AMMO_ITEM) * ROCKET_AMMO_QTY;
+        start->got_rocket = 0;
+    }
+
+    start->num_flares = Inv_RequestItem(FLAREBOX_ITEM);
+    start->num_medis = Inv_RequestItem(MEDI_ITEM);
+    start->num_big_medis = Inv_RequestItem(BIGMEDI_ITEM);
+
+    if (lara.gun_type == LG_FLARE)
+        start->gun_type = (char)lara.last_gun_type;
+    else
+        start->gun_type = (char)lara.gun_type;
+    start->gun_status = LG_ARMLESS;
+}
+
 void ResetSG(void)
 {
     SG_Count = 0;
