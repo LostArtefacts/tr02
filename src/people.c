@@ -976,3 +976,190 @@ void BanditControl(sint16 item_number)
     CreatureNeck(item, neck);
     CreatureAnimation(item_number, angle, 0);
 }
+
+
+#define BANDIT2 49
+#define BANDIT2_SHOT_DAMAGE 50
+#define BANDIT2_WALK_TURN (ONE_DEGREE * 4)
+#define BANDIT2_RUN_TURN (ONE_DEGREE * 6)
+#define BANDIT2_WALK_RANGE SQUARE(WALL_L * 2)
+#define BANDIT2_DIE_ANIM 9
+
+enum bandit2_anims {
+    BANDIT2_EMPTY,
+    BANDIT2_AIM4,
+    BANDIT2_WAIT,
+    BANDIT2_WALK,
+    BANDIT2_RUN,
+    BANDIT2_AIM1,
+    BANDIT2_AIM2,
+    BANDIT2_SHOOT1,
+    BANDIT2_SHOOT2,
+    BANDIT2_SHOOT4A,
+    BANDIT2_SHOOT4B,
+    BANDIT2_DEATH,
+    BANDIT2_AIM5,
+    BANDIT2_SHOOT5
+};
+
+extern BITE_INFO bandit2_gun;
+
+void Bandit2Control(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *bandit;
+    sint16 angle, head, neck, tilt;
+    int random;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    bandit = (CREATURE_INFO *)item->data;
+    head = neck = angle = tilt = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != BANDIT2_DEATH)
+        {
+            item->anim_number = objects[BANDIT2].anim_index + BANDIT2_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = BANDIT2_DEATH;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        CreatureMood(item, &info, 1);
+        angle = CreatureTurn(item, bandit->maximum_turn);
+
+        switch (item->current_anim_state)
+        {
+        case BANDIT2_WAIT:
+            if (info.ahead)
+                neck = info.angle;
+            bandit->maximum_turn = 0;
+            if (bandit->mood == ESCAPE_MOOD)
+                item->goal_anim_state = BANDIT2_RUN;
+            else if (Targetable(item, &info))
+            {
+                if (info.distance > BANDIT2_WALK_RANGE && GetRandomControl() < 0x4000)
+                    item->goal_anim_state = BANDIT2_WALK;
+                else
+                {
+                    random = GetRandomControl();
+                    if (random < 0x2000)
+                        item->goal_anim_state = BANDIT2_SHOOT1;
+                    else if (random < 0x5000)
+                        item->goal_anim_state = BANDIT2_SHOOT2;
+                    else
+                        item->goal_anim_state = BANDIT2_AIM5;
+                }
+            }
+            else if (bandit->mood == BORED_MOOD)
+            {
+                if (!info.ahead || GetRandomControl() < 0x100)
+                    item->goal_anim_state = BANDIT2_WALK;
+            }
+            else
+                item->goal_anim_state = BANDIT2_RUN;
+            break;
+
+        case BANDIT2_WALK:
+            if (info.ahead)
+                neck = info.angle;
+            bandit->maximum_turn = BANDIT2_WALK_TURN;
+            if (bandit->mood == ESCAPE_MOOD)
+                item->goal_anim_state = BANDIT2_RUN;
+            else if (Targetable(item, &info))
+            {
+                if (info.distance < BANDIT2_WALK_RANGE || info.zone_number == info.enemy_zone || GetRandomControl() < 0x400)
+                    item->goal_anim_state = BANDIT2_WAIT;
+                else
+                    item->goal_anim_state = BANDIT2_AIM4;
+            }
+            else if (bandit->mood == BORED_MOOD)
+            {
+                if (info.ahead && GetRandomControl() < 0x400)
+                    item->goal_anim_state = BANDIT2_WAIT;
+            }
+            else
+                item->goal_anim_state = BANDIT2_RUN;
+            break;
+
+        case BANDIT2_RUN:
+            if (info.ahead)
+                neck = info.angle;
+            bandit->maximum_turn = BANDIT2_RUN_TURN;
+            tilt = angle / 2;
+            if (bandit->mood == ESCAPE_MOOD)
+                break;
+            else if (bandit->mood == BORED_MOOD || Targetable(item, &info))
+                item->goal_anim_state = BANDIT2_WAIT;
+            break;
+
+        case BANDIT2_AIM1:
+        case BANDIT2_AIM2:
+        case BANDIT2_AIM4:
+            if (info.ahead)
+                head = info.angle;
+            bandit->flags = 0;
+            break;
+
+        case BANDIT2_AIM5:
+            if (info.ahead)
+                head = info.angle;
+            bandit->flags = 0;
+            if (Targetable(item, &info))
+                item->goal_anim_state = BANDIT2_SHOOT5;
+            else
+                item->goal_anim_state = BANDIT2_WAIT;
+            break;
+
+        case BANDIT2_SHOOT1:
+        case BANDIT2_SHOOT2:
+        case BANDIT2_SHOOT5:
+            if (info.ahead)
+                head = info.angle;
+            if (!bandit->flags)
+            {
+                if (!ShotLara(item, &info, &bandit2_gun, head, BANDIT2_SHOT_DAMAGE) || GetRandomControl() < 0x2000)
+                    item->goal_anim_state = BANDIT2_WAIT;
+                bandit->flags = 1;
+            }
+            break;
+
+        case BANDIT2_SHOOT4A:
+            if (info.ahead)
+                head = info.angle;
+            if (bandit->flags != 1)
+            {
+                if (!ShotLara(item, &info, &bandit2_gun, head, BANDIT2_SHOT_DAMAGE))
+                    item->goal_anim_state = BANDIT2_WALK;
+                bandit->flags = 1;
+            }
+            if (info.distance < BANDIT2_WALK_RANGE)
+                item->goal_anim_state = BANDIT2_WALK;
+            break;
+
+        case BANDIT2_SHOOT4B:
+            if (info.ahead)
+                head = info.angle;
+            if (bandit->flags != 2)
+            {
+                if (!ShotLara(item, &info, &bandit2_gun, head, BANDIT2_SHOT_DAMAGE))
+                    item->goal_anim_state = BANDIT2_WALK;
+                bandit->flags = 2;
+            }
+            if (info.distance < BANDIT2_WALK_RANGE)
+                item->goal_anim_state = BANDIT2_WALK;
+            break;
+        }
+    }
+
+    CreatureTilt(item, tilt);
+    CreatureHead(item, head);
+    CreatureNeck(item, neck);
+    CreatureAnimation(item_number, angle, 0);
+}

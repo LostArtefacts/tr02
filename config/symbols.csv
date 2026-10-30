@@ -669,7 +669,7 @@ address,size,name,symbol
 0x00436dc0,1012,Worker1Control,_Worker1Control
 0x004371c0,1112,Worker2Control,_Worker2Control
 0x00437620,826,BanditControl,_BanditControl
-0x00437960,1032,Bandit2Control,_Bandit2Control
+0x00437960,1084,Bandit2Control,_Bandit2Control
 0x00437da0,370,WinstonControl,_WinstonControl
 0x00437f20,1152,PickUpCollision,_PickUpCollision
 0x004383a0,522,SwitchCollision,_SwitchCollision
@@ -1515,6 +1515,7 @@ address,size,name,symbol
 0x00465fb0,16,work1_gun,_work1_gun
 0x00465fc0,16,work2_gun,_work2_gun
 0x00465fd0,16,bandit_gun,_bandit_gun
+0x00465fe0,16,bandit2_gun,_bandit2_gun
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466360,16,teeth1a,_teeth1a
 0x00466370,16,teeth1b,_teeth1b
