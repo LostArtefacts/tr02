@@ -103,6 +103,38 @@ int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height
     return (0);
 }
 
+#define FRONT_ARC 0x4000
+#define SQUARE(A) ((A) * (A))
+
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn)
+{
+    sint32 x, z, range;
+    sint16 angle;
+    CREATURE_INFO *creature;
+
+    if (item->data == NULL || item->speed == 0 || maximum_turn == 0)
+        return 0;
+
+    creature = (CREATURE_INFO *)item->data;
+
+    z = creature->target.z - item->pos.z_pos;
+    x = creature->target.x - item->pos.x_pos;
+    angle = phd_atan(z, x) - item->pos.y_rot;
+    range = (item->speed << 14) / maximum_turn;
+
+    if ((angle > FRONT_ARC || angle < -FRONT_ARC) && x * x + z * z < SQUARE(range))
+        maximum_turn >>= 1;
+
+    if (angle > maximum_turn)
+        angle = maximum_turn;
+    else if (angle < -maximum_turn)
+        angle = -maximum_turn;
+
+    item->pos.y_rot += angle;
+
+    return angle;
+}
+
 void CreatureTilt(ITEM_INFO *item, sint16 angle)
 {
     angle = (angle << 2) - item->pos.z_rot;

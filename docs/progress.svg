@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.48% (430)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.52% (817)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.56% (431)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.44% (816)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="257.59" height="6" x="0" y="0" class="named"/>
-<rect width="489.41" height="6" x="257.59" y="0" class="todo"/>
+<rect width="258.19" height="6" x="0" y="0" class="named"/>
+<rect width="488.81" height="6" x="258.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -180,7 +180,7 @@
 <rect width="12" height="12" x="150" y="30" class="named"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="30" class="todo"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="30" class="todo"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="30" class="named"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="30" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="30" class="named"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="30" class="named"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.85%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.79%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="105.68" height="6" x="0" y="0" class="named"/>
-<rect width="641.32" height="6" x="105.68" y="0" class="todo"/>
+<rect width="106.15" height="6" x="0" y="0" class="named"/>
+<rect width="640.85" height="6" x="106.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1741,7 +1741,7 @@
 <rect width="10.77" height="10.14" x="495.88" y="364.86" class="named"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
 <rect width="10.69" height="10.16" x="509.66" y="137.51" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="10.69" height="10.16" x="523.34" y="137.51" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
-<rect width="10.56" height="10.16" x="537.03" y="137.51" class="todo"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
+<rect width="10.56" height="10.16" x="537.03" y="137.51" class="named"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
 <rect width="10.56" height="10.16" x="550.59" y="137.51" class="todo"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
 <rect width="10.50" height="10.16" x="564.16" y="137.51" class="named"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
 <rect width="10.43" height="10.16" x="577.65" y="137.51" class="todo"><title>0x004084a0 InsertTransQuad (211 bytes)</title></rect>
