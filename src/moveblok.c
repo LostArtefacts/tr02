@@ -185,6 +185,124 @@ int TestBlockMovable(ITEM_INFO *item, int blokhite)
     return 1;
 }
 
+#define WALL 0
+
+extern int height_type;
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
+
+int TestBlockPush(ITEM_INFO *item, int blokhite, uint16 quadrant)
+{
+    COLL_INFO scoll;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, cmax;
+    sint16 room_num;
+
+    if (!TestBlockMovable(item, blokhite))
+        return 0;
+    x = item->pos.x_pos;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos;
+    room_num = item->room_number;
+    switch (quadrant)
+    {
+    case 0:
+        z += WALL_L;
+        break;
+
+    case 1:
+        x += WALL_L;
+        break;
+
+    case 2:
+        z -= WALL_L;
+        break;
+
+    case 3:
+        x -= WALL_L;
+        break;
+    }
+    floor = GetFloor(x, y, z, &room_num);
+    scoll.quadrant = quadrant;
+    scoll.radius = 500;
+    if (CollideStaticObjects(&scoll, x, y, z, room_num, 1000))
+        return 0;
+    if (((sint32)floor->floor << 8) != y)
+        return 0;
+    GetHeight(floor, x, y, z);
+    if (height_type != WALL)
+        return 0;
+    cmax = y - (blokhite - 100);
+    floor = GetFloor(x, cmax, z, &room_num);
+    if (GetCeiling(floor, x, cmax, z) > cmax)
+        return 0;
+    return 1;
+}
+
+int TestBlockPull(ITEM_INFO *item, int blokhite, uint16 quadrant)
+{
+    COLL_INFO scoll;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, zadd, xadd, cmax;
+    sint16 room_num;
+
+    if (!TestBlockMovable(item, blokhite))
+        return 0;
+    xadd = zadd = 0;
+    switch (quadrant)
+    {
+    case 0:
+        zadd = -WALL_L;
+        break;
+
+    case 1:
+        xadd = -WALL_L;
+        break;
+
+    case 2:
+        zadd = WALL_L;
+        break;
+
+    case 3:
+        xadd = WALL_L;
+        break;
+    }
+    x = item->pos.x_pos + xadd;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos + zadd;
+    room_num = item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    scoll.quadrant = quadrant;
+    scoll.radius = 500;
+    if (CollideStaticObjects(&scoll, x, y, z, room_num, 1000))
+        return 0;
+    if (((sint32)floor->floor << 8) != y)
+        return 0;
+    cmax = y - blokhite;
+    floor = GetFloor(x, cmax, z, &room_num);
+    if (((sint32)floor->ceiling << 8) > cmax)
+        return 0;
+    x += xadd;
+    z += zadd;
+    room_num = item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    if (((sint32)floor->floor << 8) != y)
+        return 0;
+    cmax = y - LARA_HITE;
+    floor = GetFloor(x, cmax, z, &room_num);
+    if (((sint32)floor->ceiling << 8) > cmax)
+        return 0;
+    x = lara_item->pos.x_pos + xadd;
+    y = lara_item->pos.y_pos;
+    z = lara_item->pos.z_pos + zadd;
+    room_num = lara_item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    scoll.quadrant = (quadrant + 2) & 3;
+    scoll.radius = LARA_RAD;
+    if (CollideStaticObjects(&scoll, x, y, z, room_num, LARA_HITE))
+        return 0;
+    return 1;
+}
+
 void AlterFloorHeight(ITEM_INFO *item, int height)
 {
     FLOOR_INFO *floor, *ceiling;

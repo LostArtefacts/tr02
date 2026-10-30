@@ -610,9 +610,8 @@ address,size,name,symbol
 0x004339d0,328,MovableBlock,_MovableBlock
 0x00433b20,604,MovableBlockCollision,_MovableBlockCollision
 0x00433d80,78,TestBlockMovable,_TestBlockMovable
-0x00433dd0,220,TestBlockPush,_TestBlockPush
-0x00433eac,91,Func433eac,
-0x00433f20,549,TestBlockPull,_TestBlockPull
+0x00433dd0,328,TestBlockPush,_TestBlockPush
+0x00433f20,568,TestBlockPull,_TestBlockPull
 0x00434160,187,AlterFloorHeight,_AlterFloorHeight
 0x00434220,34,DrawMovableBlock,_DrawMovableBlock
 0x00434250,107,DrawUnclippedItem,_DrawUnclippedItem
