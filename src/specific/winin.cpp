@@ -20,3 +20,11 @@ extern "C" bool DInputCreate(void)
         return false;
     return true;
 }
+
+extern "C" void DInputRelease(void)
+{
+    if (DInput) {
+        DInput->Release();
+        DInput = NULL;
+    }
+}
