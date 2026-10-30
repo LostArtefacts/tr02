@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.12% (625)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.88% (622)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.20% (626)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.80% (621)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="374.40" height="6" x="0" y="0" class="named"/>
-<rect width="372.60" height="6" x="374.40" y="0" class="todo"/>
+<rect width="375" height="6" x="0" y="0" class="named"/>
+<rect width="372" height="6" x="375" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -190,7 +190,7 @@
 <rect width="12" height="12" x="300" y="30" class="named"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="30" class="named"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="30" class="todo"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="30" class="todo"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="30" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="30" class="todo"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="30" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="30" class="todo"><title>0x00410a90 ShiftCamera (340 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="225.47" height="6" x="0" y="0" class="named"/>
-<rect width="521.53" height="6" x="225.47" y="0" class="todo"/>
+<rect width="225.86" height="6" x="0" y="0" class="named"/>
+<rect width="521.14" height="6" x="225.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1812,7 +1812,7 @@
 <rect width="9.21" height="9.08" x="737.79" y="151.26" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="9.20" height="9.10" x="535.64" y="163.34" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
 <rect width="9.20" height="9.10" x="547.84" y="163.34" class="todo"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
-<rect width="9.13" height="9.10" x="560.03" y="163.34" class="todo"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
+<rect width="9.13" height="9.10" x="560.03" y="163.34" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
 <rect width="9.06" height="9.10" x="572.16" y="163.34" class="todo"><title>0x00445f00 WinVidGetDisplayAdapters (175 bytes)</title></rect>
 <rect width="8.99" height="9.10" x="584.22" y="163.34" class="named"><title>0x0041cbc0 ControlWaterSprite (174 bytes)</title></rect>
 <rect width="8.99" height="9.10" x="596.21" y="163.34" class="todo"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
