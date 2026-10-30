@@ -122,6 +122,20 @@ extern "C" bool DInputEnumDevices(void *joystickList)
     return true;
 }
 
+extern "C" HWND HGameWindow;
+
+extern "C" void DInputKeyboardCreate(void)
+{
+    if (DX_TRY(DInput->CreateDevice(GUID_SysKeyboard, &IDID_SysKeyboard, NULL)))
+        throw ERR_CantCreateKeyboardDevice;
+    if (DX_TRY(IDID_SysKeyboard->SetCooperativeLevel(HGameWindow, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
+        throw ERR_CantSetKBCooperativeLevel;
+    if (DX_TRY(IDID_SysKeyboard->SetDataFormat(&c_dfDIKeyboard)))
+        throw ERR_CantSetKBDataFormat;
+    if (DX_TRY(IDID_SysKeyboard->Acquire()))
+        throw ERR_CantAcquireKeyboard;
+}
+
 extern "C" void DInputKeyboardRelease(void)
 {
     if (IDID_SysKeyboard) {
@@ -150,7 +164,6 @@ extern "C" void WinInRunControlPanel(HWND hWnd)
         DInput->RunControlPanel(hWnd, 0);
 }
 
-extern "C" void DInputKeyboardCreate(void);
 extern "C" void DInputJoystickCreate(void);
 
 extern "C" void WinInStart(void)
