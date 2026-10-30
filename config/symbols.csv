@@ -1018,7 +1018,7 @@ address,size,name,symbol
 0x0044d640,53,HWR_GetAllTextureHandles,?HWR_GetAllTextureHandles@@YAXXZ
 0x0044d680,25,HWR_VertexBufferFull,_HWR_VertexBufferFull
 0x0044d6a0,11,Func44d6a0,
-0x0044d6b0,34,HWR_Init,_HWR_Init
+0x0044d6b0,34,HWR_Init,?HWR_Init@@YA_NXZ
 0x0044d6e0,66,S_InitialiseSystem,_S_InitialiseSystem
 0x0044d730,17,ShutdownGame,_ShutdownGame
 0x0044d750,33,init_game_malloc,_init_game_malloc
@@ -1750,7 +1750,7 @@ address,size,name,symbol
 0x004d9eb0,4,CurrentLevel,_CurrentLevel
 0x004d9eb4,4,level_complete,_level_complete
 0x004d9eb8,4,save_counter,?save_counter@@3HA
-0x004d9ec8,,HWR_VertexBuffer,_HWR_VertexBuffer
+0x004d9ec8,,VertexBuffer,_VertexBuffer
 0x00519ec8,,CurrentTexSource,_CurrentTexSource
 0x00519ed0,,HWR_PageHandles,_HWR_PageHandles
 0x00519f50,4,HWR_VertexPtr,_HWR_VertexPtr
@@ -1758,7 +1758,7 @@ address,size,name,symbol
 0x00519f58,,AlphaBlendEnabler,_AlphaBlendEnabler
 0x00519f5c,1,ColorKeyState,_ColorKeyState
 0x00519f60,1,ZWriteEnableState,_ZWriteEnableState
-0x00519f68,128,HWR_TexturePageIndexes,_HWR_TexturePageIndexes
+0x00519f68,128,LanTextureHandle,_LanTextureHandle
 0x00519ff0,4,GameMemorySize,_GameMemorySize
 0x00519ff4,4,GameAllocMemPointer,_GameAllocMemPointer
 0x00519ff8,4,GameAllocMemUsed,_GameAllocMemUsed
