@@ -97,6 +97,25 @@ sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
     return 0;
 }
 
+void EffectSpaz(ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    sint32 x, z;
+    PHD_ANGLE hitang;
+
+    x = lara.spaz_effect->pos.x_pos - laraitem->pos.x_pos;
+    z = lara.spaz_effect->pos.z_pos - laraitem->pos.z_pos;
+    hitang = laraitem->pos.y_rot - (32768 + phd_atan(z, x));
+    lara.hit_direction = (uint16)(hitang + 0x2000) / 0x4000;
+    if (!lara.hit_frame)
+        SoundEffect(31, &laraitem->pos, 0);
+
+    lara.hit_frame++;
+    if (lara.hit_frame > 34)
+        lara.hit_frame = 34;
+
+    lara.spaz_effect_count--;
+}
+
 void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;

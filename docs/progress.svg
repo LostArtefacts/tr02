@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.88% (435)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.12% (812)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.96% (436)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.04% (811)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="260.58" height="6" x="0" y="0" class="named"/>
-<rect width="486.42" height="6" x="260.58" y="0" class="todo"/>
+<rect width="261.18" height="6" x="0" y="0" class="named"/>
+<rect width="485.82" height="6" x="261.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -222,7 +222,7 @@
 <rect width="12" height="12" x="30" y="45" class="named"><title>0x00413520 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="45" class="named"><title>0x00413580 GetTiltType (153 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="45" class="todo"><title>0x00413620 LaraBaddieCollision (405 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="45" class="todo"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="45" class="named"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="45" class="named"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="45" class="named"><title>0x004138c0 ObjectCollision (85 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="45" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.63%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.41%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.59%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="107.36" height="6" x="0" y="0" class="named"/>
-<rect width="639.64" height="6" x="107.36" y="0" class="todo"/>
+<rect width="107.62" height="6" x="0" y="0" class="named"/>
+<rect width="639.38" height="6" x="107.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1963,7 +1963,7 @@
 <rect width="6.85" height="7.38" x="710.68" y="207.83" class="todo"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="6.85" height="7.38" x="720.53" y="207.83" class="todo"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
 <rect width="6.85" height="7.38" x="730.38" y="207.83" class="todo"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
-<rect width="6.77" height="7.38" x="740.23" y="207.83" class="todo"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
+<rect width="6.77" height="7.38" x="740.23" y="207.83" class="named"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
 <rect width="6.96" height="7.18" x="579.88" y="218.20" class="named"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
 <rect width="6.96" height="7.18" x="579.88" y="228.38" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="6.96" height="7.09" x="579.88" y="238.56" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
