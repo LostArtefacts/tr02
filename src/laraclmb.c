@@ -146,6 +146,131 @@ enum direction {
 
 int LaraTestClimb(int x, int y, int z, int xfront, int zfront, int item_height, sint16 item_room, int *shift);
 
+#define CLIMB_SHIFT 70
+#define CLIMB_HANG 900
+
+int LaraTestClimb(int x, int y, int z, int xfront, int zfront, int item_height, sint16 item_room, int *shift)
+{
+    sint16 room_number;
+    int height, ceiling;
+    int hang = 1;
+    FLOOR_INFO *floor;
+
+    *shift = 0;
+
+    if (!lara.climb_status)
+        return 0;
+
+    room_number = item_room;
+    floor = GetFloor(x, y - STEP_L / 2, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+    if (height == NO_HEIGHT)
+        return 0;
+
+    height -= (y + item_height + (STEP_L / 2));
+    if (height < -CLIMB_SHIFT)
+        return 0;
+    else if (height < 0)
+        *shift = height;
+
+    ceiling = GetCeiling(floor, x, y, z) - y;
+    if (ceiling > CLIMB_SHIFT)
+        return 0;
+    else if (ceiling > 0)
+    {
+        if (*shift)
+            return 0;
+        *shift = ceiling;
+    }
+
+    if (item_height + height < CLIMB_HANG)
+        hang = 0;
+
+    floor = GetFloor(x + xfront, y, z + zfront, &room_number);
+    height = GetHeight(floor, x + xfront, y, z + zfront);
+    if (height != NO_HEIGHT)
+        height -= y;
+
+    if (height > CLIMB_SHIFT)
+    {
+        ceiling = GetCeiling(floor, x + xfront, y, z + zfront) - y;
+        if (ceiling >= CLIMB_HITE)
+            return 1;
+        else if (ceiling > CLIMB_HITE - CLIMB_SHIFT)
+        {
+            if (*shift > 0)
+            {
+                if (hang)
+                    return -1;
+                else
+                    return 0;
+            }
+            *shift = ceiling - CLIMB_HITE;
+            return 1;
+        }
+        else if (ceiling > 0)
+        {
+            if (hang)
+                return -1;
+            else
+                return 0;
+        }
+        else if (ceiling > -CLIMB_SHIFT)
+        {
+            if (hang && *shift <= 0)
+            {
+                if (*shift > ceiling)
+                    *shift = ceiling;
+                return -1;
+            }
+            else
+                return 0;
+        }
+        else
+            return 0;
+    }
+    else if (height > 0)
+    {
+        if (*shift < 0)
+            return 0;
+        if (height > *shift)
+            *shift = height;
+    }
+
+    room_number = item_room;
+    floor = GetFloor(x, y + item_height, z, &room_number);
+    floor = GetFloor(x + xfront, y + item_height, z + zfront, &room_number);
+    ceiling = GetCeiling(floor, x + xfront, y + item_height, z + zfront);
+    if (ceiling == NO_HEIGHT)
+        return 1;
+
+    ceiling -= y;
+    if (ceiling <= height)
+        return 1;
+
+    if (ceiling >= CLIMB_HITE)
+        return 1;
+    else if (ceiling > CLIMB_HITE - CLIMB_SHIFT)
+    {
+        if (*shift > 0)
+        {
+            if (hang)
+                return -1;
+            else
+                return 0;
+        }
+        *shift = ceiling - CLIMB_HITE;
+        return 1;
+    }
+    else
+    {
+        if (hang)
+            return -1;
+        else
+            return 0;
+    }
+}
+
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift)
 {
     int angle, x, z;

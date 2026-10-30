@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.04% (649)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.96% (598)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.13% (650)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.87% (597)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="388.78" height="6" x="0" y="0" class="named"/>
-<rect width="358.22" height="6" x="388.78" y="0" class="todo"/>
+<rect width="389.37" height="6" x="0" y="0" class="named"/>
+<rect width="357.63" height="6" x="389.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -601,7 +601,7 @@
 <rect width="12" height="12" x="465" y="150" class="todo"><title>0x0042dd20 lara_col_climbing (333 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="150" class="todo"><title>0x0042de70 lara_col_climbdown (412 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="150" class="named"><title>0x0042e010 LaraCheckForLetGo (170 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="150" class="todo"><title>0x0042e0c0 LaraTestClimb (611 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="150" class="named"><title>0x0042e0c0 LaraTestClimb (611 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="150" class="named"><title>0x0042e330 LaraTestClimbPos (204 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="150" class="named"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="150" class="todo"><title>0x0042e4f0 LaraTestClimbUpPos (564 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">67.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">66.85%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="246.28" height="6" x="0" y="0" class="named"/>
-<rect width="500.72" height="6" x="246.28" y="0" class="todo"/>
+<rect width="247.62" height="6" x="0" y="0" class="named"/>
+<rect width="499.38" height="6" x="247.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1461,7 +1461,7 @@
 <rect width="19.12" height="20.44" x="371.72" y="23.52" class="todo"><title>0x00430110 FlareControl (622 bytes)</title></rect>
 <rect width="19.12" height="20.14" x="371.72" y="46.96" class="todo"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
 <rect width="19.12" height="20.10" x="371.72" y="70.10" class="todo"><title>0x0044af50 LoadSamples (613 bytes)</title></rect>
-<rect width="19.12" height="20.03" x="371.72" y="93.20" class="todo"><title>0x0042e0c0 LaraTestClimb (611 bytes)</title></rect>
+<rect width="19.12" height="20.03" x="371.72" y="93.20" class="named"><title>0x0042e0c0 LaraTestClimb (611 bytes)</title></rect>
 <rect width="19.12" height="19.61" x="371.72" y="116.23" class="named"><title>0x00415900 GetCeiling (600 bytes)</title></rect>
 <rect width="19.12" height="19.57" x="371.72" y="138.84" class="named"><title>0x0040e210 CreatureAIInfo (599 bytes)</title></rect>
 <rect width="19.12" height="19.35" x="371.72" y="161.41" class="todo"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
