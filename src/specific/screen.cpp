@@ -126,6 +126,35 @@ HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFA
 DWORD GetZBufferDepth(void);
 }
 
+extern "C" LPDIRECTDRAWSURFACE3 ThirdBufferSurface;
+
+extern "C" void CreateScreenBuffers(void)
+{
+    DDSCAPS caps;
+    DDSURFACEDESC dsp;
+
+    memset(&dsp, 0, sizeof(dsp));
+    dsp.dwSize = sizeof(dsp);
+    dsp.dwFlags = DDSD_CAPS | DDSD_BACKBUFFERCOUNT;
+    dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_FLIP | DDSCAPS_COMPLEX;
+    if (SavedAppSettings.RenderMode != RM_Software)
+        dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_FLIP | DDSCAPS_COMPLEX | DDSCAPS_3DDEVICE;
+    dsp.dwBackBufferCount = SavedAppSettings.TripleBuffering + 1;
+    if (DX_TRY(DDrawSurfaceCreate(&dsp, &PrimaryBufferSurface)))
+        throw ERR_CreateScreenBuffers;
+    WinVidClearBuffer(PrimaryBufferSurface, NULL, 0);
+    caps.dwCaps = DDSCAPS_BACKBUFFER;
+    if (DX_TRY(PrimaryBufferSurface->GetAttachedSurface(&caps, &BackBufferSurface)))
+        throw ERR_GetBackBuffer;
+    WinVidClearBuffer(BackBufferSurface, NULL, 0);
+    if (SavedAppSettings.TripleBuffering) {
+        caps.dwCaps = DDSCAPS_FLIP;
+        if (DX_TRY(BackBufferSurface->GetAttachedSurface(&caps, &ThirdBufferSurface)))
+            throw ERR_GetThirdBuffer;
+        WinVidClearBuffer(ThirdBufferSurface, NULL, 0);
+    }
+}
+
 extern "C" void CreatePrimarySurface(void)
 {
     DDSURFACEDESC dsp;
@@ -303,7 +332,6 @@ extern "C" void UpdateGameResolution(void)
 }
 
 extern "C" {
-extern LPDIRECTDRAWSURFACE3 ThirdBufferSurface;
 extern bool NeedToReloadTextures;
 void Direct3DRelease(void);
 void CleanupTextures(void);
