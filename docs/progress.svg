@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.60% (419)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.40% (828)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.68% (420)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.32% (827)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="251" height="6" x="0" y="0" class="named"/>
-<rect width="496" height="6" x="251" y="0" class="todo"/>
+<rect width="251.60" height="6" x="0" y="0" class="named"/>
+<rect width="495.40" height="6" x="251.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -293,7 +293,7 @@
 <rect width="12" height="12" x="345" y="60" class="named"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="60" class="named"><title>0x0041b810 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="60" class="named"><title>0x0041b850 phd_TranslateRel_I (65 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="60" class="todo"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="60" class="named"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="60" class="todo"><title>0x0041b8f0 phd_RotYXZ_I (65 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="60" class="todo"><title>0x0041b940 phd_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="60" class="todo"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="102.81" height="6" x="0" y="0" class="named"/>
-<rect width="644.19" height="6" x="102.81" y="0" class="todo"/>
+<rect width="102.96" height="6" x="0" y="0" class="named"/>
+<rect width="644.04" height="6" x="102.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2146,7 +2146,7 @@
 <rect width="4.80" height="4.74" x="688.60" y="261.30" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
 <rect width="4.80" height="4.74" x="696.40" y="261.30" class="todo"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
 <rect width="4.69" height="4.74" x="704.19" y="261.30" class="todo"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
-<rect width="4.69" height="4.74" x="711.88" y="261.30" class="todo"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
+<rect width="4.69" height="4.74" x="711.88" y="261.30" class="named"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="4.69" height="4.74" x="719.57" y="261.30" class="named"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
 <rect width="4.58" height="4.74" x="727.26" y="261.30" class="named"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
 <rect width="4.58" height="4.74" x="734.84" y="261.30" class="todo"><title>0x004453d0 DDrawSurfaceRestoreLost (70 bytes)</title></rect>
