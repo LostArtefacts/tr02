@@ -1033,6 +1033,7 @@ address,size,name,symbol
 0x0044e830,35,WinCleanup,_WinCleanup
 0x0044e860,114,WinGameStart,_WinGameStart
 0x0044e8e0,57,WinGameFinish,_WinGameFinish
+0x0044e920,24,Func44e920,_Func44e920
 0x0044e950,66,S_ExitSystem,_S_ExitSystem ?S_ExitSystem@@YAXPAD@Z
 0x0044e9a0,271,ScreenShotPCX,_ScreenShotPCX
 0x0044eab0,174,CompPCX,_CompPCX
