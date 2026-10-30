@@ -18,6 +18,7 @@
 #define MAX_HEAD_TILT (22 * ONE_DEGREE)
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
+void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
 
 void LookUpDown(void)
 {
@@ -521,6 +522,21 @@ void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
     lara_col_turn_r(item, coll);
 }
 
+void lara_col_death(ITEM_INFO *item, COLL_INFO *coll)
+{
+    StopSoundEffect(30);
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->radius = LARA_RAD * 4;
+    GetLaraCollisionInfo(item, coll);
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+    item->hit_points = -1;
+    lara.air = -1;
+}
+
 void lara_col_fastturn(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_stop(item, coll);
@@ -606,7 +622,7 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
