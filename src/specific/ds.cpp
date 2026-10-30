@@ -187,6 +187,33 @@ extern "C" bool DSoundCreate(LPGUID lpGuid)
     return true;
 }
 
+extern "C" bool DSoundBufferTest(void)
+{
+    LPDIRECTSOUNDBUFFER dsBuffer;
+    WAVEFORMATEX format;
+    DSBUFFERDESC desc;
+
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DSBCAPS_PRIMARYBUFFER;
+    if (DX_TRY(DSound->CreateSoundBuffer(&desc, &dsBuffer, NULL)))
+        return false;
+    memset(&format, 0, sizeof(format));
+    format.wFormatTag = WAVE_FORMAT_PCM;
+    format.nChannels = 2;
+    format.nSamplesPerSec = 11025;
+    format.nAvgBytesPerSec = 44100;
+    format.nBlockAlign = 4;
+    format.wBitsPerSample = 16;
+    if (DX_TRY(dsBuffer->SetFormat(&format)))
+        return false;
+    if (dsBuffer) {
+        dsBuffer->Release();
+        dsBuffer = NULL;
+    }
+    return true;
+}
+
 extern "C" bool WinSndIsSoundEnabled()
 {
     return IsSoundEnabled;
