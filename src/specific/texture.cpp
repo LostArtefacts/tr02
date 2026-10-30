@@ -141,3 +141,21 @@ extern "C" void FreeTexturePage(int pageIndex)
     }
     page->status = 0;
 }
+
+extern "C" void HWR_ResetTexSource(void);
+
+extern "C" void TexturePageReleaseVidMemSurface(TEXPAGE_DESC *page)
+{
+    HWR_ResetTexSource();
+    page->texHandle = 0;
+    if (page->texture3d)
+    {
+        page->texture3d->Release();
+        page->texture3d = NULL;
+    }
+    if (page->vidMemSurface)
+    {
+        page->vidMemSurface->Release();
+        page->vidMemSurface = NULL;
+    }
+}
