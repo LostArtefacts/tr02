@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.89% (697)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.11% (550)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.97% (698)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.03% (549)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="417.53" height="6" x="0" y="0" class="named"/>
-<rect width="329.47" height="6" x="417.53" y="0" class="todo"/>
+<rect width="418.13" height="6" x="0" y="0" class="named"/>
+<rect width="328.87" height="6" x="418.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -587,7 +587,7 @@
 <rect width="12" height="12" x="255" y="150" class="named"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="150" class="named"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="150" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="150" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="150" class="named"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="150" class="todo"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="150" class="named"><title>0x0042d8f0 lara_as_climbleft (53 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="150" class="named"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">61.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">61.65%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="285.62" height="6" x="0" y="0" class="named"/>
-<rect width="461.38" height="6" x="285.62" y="0" class="todo"/>
+<rect width="286.49" height="6" x="0" y="0" class="named"/>
+<rect width="460.51" height="6" x="286.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.22" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1556,7 +1556,7 @@
 <rect width="15.62" height="14.94" x="621.29" y="41.79" class="named"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
 <rect width="15.57" height="14.94" x="639.91" y="41.79" class="named"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="15.48" height="14.94" x="658.48" y="41.79" class="named"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
-<rect width="15.39" height="14.94" x="676.96" y="41.79" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
+<rect width="15.39" height="14.94" x="676.96" y="41.79" class="named"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
 <rect width="15.25" height="14.94" x="695.35" y="41.79" class="named"><title>0x004409d0 draw_border (393 bytes)</title></rect>
 <rect width="15.20" height="14.94" x="713.60" y="41.79" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="15.20" height="14.94" x="731.80" y="41.79" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>

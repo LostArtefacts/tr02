@@ -158,3 +158,63 @@ void undraw_pistol_mesh_right(int weapon_type)
     lara.mesh_ptrs[THIGH_R] = meshes[objects[obj].mesh_index + THIGH_R];
     lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
 }
+
+typedef struct {
+    PHD_ANGLE lock_angles[4];
+    PHD_ANGLE left_angles[4];
+    PHD_ANGLE right_angles[4];
+    PHD_ANGLE aim_speed;
+    PHD_ANGLE shot_accuracy;
+    int gun_height;
+    int damage;
+    int target_dist;
+    sint16 recoil_frame;
+    sint16 flash_time;
+    sint16 sample_num;
+} WEAPON_INFO;
+
+extern WEAPON_INFO weapons[];
+
+void LaraTargetInfo(WEAPON_INFO *winfo);
+void LaraGetNewTarget(WEAPON_INFO *winfo);
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm);
+void AnimatePistols(int weapon_type);
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
+
+void PistolHandler(int weapon_type)
+{
+    WEAPON_INFO *winfo;
+
+    winfo = &weapons[weapon_type];
+    if (input & IN_ACTION)
+        LaraTargetInfo(winfo);
+    else
+        lara.target = NULL;
+    if (lara.target == NULL)
+        LaraGetNewTarget(winfo);
+    AimWeapon(winfo, &lara.left_arm);
+    AimWeapon(winfo, &lara.right_arm);
+    if (lara.left_arm.lock && !lara.right_arm.lock)
+    {
+        lara.head_y_rot = lara.torso_y_rot = lara.left_arm.y_rot / 2;
+        lara.head_x_rot = lara.torso_x_rot = lara.left_arm.x_rot / 2;
+    }
+    else if (lara.right_arm.lock && !lara.left_arm.lock)
+    {
+        lara.head_y_rot = lara.torso_y_rot = lara.right_arm.y_rot / 2;
+        lara.head_x_rot = lara.torso_x_rot = lara.right_arm.x_rot / 2;
+    }
+    else if (lara.left_arm.lock && lara.right_arm.lock)
+    {
+        lara.head_y_rot = lara.torso_y_rot = (lara.left_arm.y_rot + lara.right_arm.y_rot) / 4;
+        lara.head_x_rot = lara.torso_x_rot = (lara.left_arm.x_rot + lara.right_arm.x_rot) / 4;
+    }
+    AnimatePistols(weapon_type);
+    if (lara.left_arm.flash_gun || lara.right_arm.flash_gun)
+    {
+        AddDynamicLight(lara_item->pos.x_pos + (phd_sin(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)),
+            lara_item->pos.y_pos - WALL_L / 2,
+            lara_item->pos.z_pos + (phd_cos(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)),
+            12, 11);
+    }
+}
