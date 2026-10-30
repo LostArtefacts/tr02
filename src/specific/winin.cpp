@@ -5,6 +5,7 @@
 extern "C" {
 extern HINSTANCE GhInstance;
 extern LPDIRECTINPUT DInput;
+extern LPDIRECTINPUTDEVICE IDID_SysKeyboard;
 }
 
 inline bool DX_TRY(HRESULT hr)
@@ -26,5 +27,15 @@ extern "C" void DInputRelease(void)
     if (DInput) {
         DInput->Release();
         DInput = NULL;
+    }
+}
+
+extern "C" void WinInReadKeyboard(LPVOID lpInputData)
+{
+    HRESULT hr = IDID_SysKeyboard->GetDeviceState(256, lpInputData);
+
+    if (FAILED(hr) && hr == DIERR_INPUTLOST) {
+        if (DX_TRY(IDID_SysKeyboard->Acquire()) || DX_TRY(IDID_SysKeyboard->GetDeviceState(256, lpInputData)))
+            memset(lpInputData, 0, 256);
     }
 }
