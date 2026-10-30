@@ -69,3 +69,15 @@ extern "C" int CalculateWindowWidth(int width, int height)
     return width;
 }
 
+extern "C" int CalculateWindowHeight(int width, int height)
+{
+    switch (SavedAppSettings.AspectMode)
+    {
+    case AM_16_9:
+        return (9 * width) >> 4;
+    case AM_4_3:
+        return (3 * width) >> 2;
+    }
+    return height;
+}
+

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.91% (759)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39.09% (487)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61% (760)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">39% (486)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="455.03" height="6" x="0" y="0" class="named"/>
-<rect width="291.97" height="6" x="455.03" y="0" class="todo"/>
+<rect width="455.63" height="6" x="0" y="0" class="named"/>
+<rect width="291.37" height="6" x="455.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -896,7 +896,7 @@
 <rect width="12" height="12" x="390" y="240" class="named"><title>0x00444e70 WinVidSetMaxWindowSize (65 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="240" class="named"><title>0x00444ec0 WinVidClearMaxWindowSize (8 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="240" class="named"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="240" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="240" class="named"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="240" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00445080 WinVidSpinMessageLoop (226 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.23%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="341.80" height="6" x="0" y="0" class="named"/>
-<rect width="405.20" height="6" x="341.80" y="0" class="todo"/>
+<rect width="341.89" height="6" x="0" y="0" class="named"/>
+<rect width="405.11" height="6" x="341.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2338,7 +2338,7 @@
 <rect width="2.95" height="2.73" x="681.50" y="344.44" class="todo"><title>0x00447740 DInputKeyboardRelease (41 bytes)</title></rect>
 <rect width="2.95" height="2.73" x="681.50" y="350.17" class="todo"><title>0x0044d1e0 HWR_ResetTexSource (41 bytes)</title></rect>
 <rect width="2.95" height="2.59" x="681.50" y="355.91" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
-<rect width="2.95" height="2.59" x="681.50" y="361.50" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
+<rect width="2.95" height="2.59" x="681.50" y="361.50" class="named"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="2.95" height="2.45" x="681.50" y="367.09" class="named"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="2.95" height="2.45" x="681.50" y="372.55" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
 <rect width="2.81" height="2.58" x="687.45" y="315.21" class="named"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
