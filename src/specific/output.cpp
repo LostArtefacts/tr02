@@ -147,3 +147,24 @@ void ScreenClear(bool tWindow)
         dwFlags |= 0x100;
     ClearBuffers(dwFlags, 0);
 }
+
+#include "include.h"
+
+extern "C" uint8 PicPalette[];
+extern "C" LPDIRECTDRAWSURFACE RenderBufferSurface;
+extern "C" LPDIRECTDRAWSURFACE PictureBufferSurface;
+extern "C" RECT GameVidRect;
+extern "C" void S_SyncPictureBufferPalette(void);
+extern "C" void Func444350(void);
+
+extern "C" void S_CopyBufferToScreen(void)
+{
+    if (SavedAppSettings.RenderMode == RM_Software)
+    {
+        if (memcmp(game_palette, PicPalette, 0x300))
+            S_SyncPictureBufferPalette();
+        RenderBufferSurface->Blt(&GameVidRect, PictureBufferSurface, NULL, DDBLT_WAIT, NULL);
+    }
+    else
+        Func444350();
+}
