@@ -37,3 +37,12 @@ void TempVideoAdjust(int hires, double sizer)
     screen_sizer = sizer;
     setup_screen_size();
 }
+
+void TempVideoRemove(void)
+{
+    mode_lock = 0;
+    if (screen_sizer == game_sizer)
+        return;
+    screen_sizer = game_sizer;
+    setup_screen_size();
+}
