@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.92% (935)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.52% (306)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75% (936)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.44% (305)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="559.65" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="559.65" y="0" class="decompiled"/>
-<rect width="183.16" height="6" x="563.84" y="0" class="todo"/>
+<rect width="560.25" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="560.25" y="0" class="decompiled"/>
+<rect width="182.56" height="6" x="564.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -941,7 +941,7 @@
 <rect width="12" height="12" x="300" y="255" class="named"><title>0x00446c60 WinVidGetDisplayAdapter (72 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="named"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="255" class="todo"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="255" class="named"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="255" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="todo"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="255" class="todo"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
@@ -1322,9 +1322,9 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.14%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="411.86" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="411.86" y="0" class="decompiled"/>
-<rect width="334.53" height="6" x="412.47" y="0" class="todo"/>
+<rect width="411.89" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="411.89" y="0" class="decompiled"/>
+<rect width="334.50" height="6" x="412.50" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2503,7 +2503,7 @@
 <rect width="0.25" height="0.57" x="725.33" y="374.43" class="named"><title>0x0044c520 S_PlayFMV (14 bytes)</title></rect>
 <rect width="0.33" height="0.48" x="728.58" y="356.56" class="named"><title>0x00454ae0 SE_AdvancedDlgInit (14 bytes)</title></rect>
 <rect width="0.10" height="0.48" x="731.91" y="356.56" class="decompiled"><title>0x00444560 Func444560 (13 bytes)</title></rect>
-<rect width="0.10" height="0.48" x="735" y="356.56" class="todo"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
+<rect width="0.10" height="0.48" x="735" y="356.56" class="named"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
 <rect width="0.10" height="0.48" x="738.10" y="356.56" class="named"><title>0x00452040 ScreenDump (13 bytes)</title></rect>
 <rect width="0.10" height="0.48" x="741.19" y="356.56" class="named"><title>0x00456b70 CloseRegistryKey (13 bytes)</title></rect>
 <rect width="0.10" height="0.48" x="744.29" y="356.56" class="named"><title>0x00449970 DecodeErrorMessage (12 bytes)</title></rect>

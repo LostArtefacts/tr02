@@ -639,3 +639,30 @@ STRING_FLAGGED::~STRING_FLAGGED()
 DISPLAY_ADAPTER::DISPLAY_ADAPTER() : driverDescription(256), driverName(256)
 {
 }
+
+struct DISPLAY_MODE_NODE {
+    DISPLAY_MODE_NODE *next;
+    DISPLAY_MODE_NODE *previous;
+    DISPLAY_MODE body;
+    DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode) : next(nextNode), previous(prevNode)
+    {
+    }
+};
+
+struct DISPLAY_MODE_LIST {
+    DISPLAY_MODE_NODE *head;
+    DISPLAY_MODE_NODE *tail;
+    DWORD dwCount;
+    DISPLAY_MODE_LIST();
+    void DisplayModeListDelete(void);
+    DISPLAY_MODE *InsertDisplayModeInListHead(void);
+    DISPLAY_MODE *InsertDisplayModeInListTail(void);
+};
+
+DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
+{
+    head = NULL;
+    tail = NULL;
+    dwCount = 0;
+}
+
