@@ -217,7 +217,7 @@ address,size,name,symbol
 0x004199c0,131,DrawSpriteItem,_DrawSpriteItem
 0x00419a50,888,DrawAnimatingItem,_DrawAnimatingItem
 0x00419dd0,3368,DrawLara,_DrawLara
-0x0041ab00,3014,DrawLaraInt,_DrawLaraInt
+0x0041ab00,3052,DrawLaraInt,_DrawLaraInt
 0x0041b6f0,52,InitInterpolate,_InitInterpolate
 0x0041b730,34,phd_PopMatrix_I,_phd_PopMatrix_I
 0x0041b760,39,phd_PushMatrix_I,_phd_PushMatrix_I
