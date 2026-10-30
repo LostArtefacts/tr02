@@ -174,3 +174,34 @@ sint16 GetDoor(FLOOR_INFO *floor)
         return *data;
     return NO_ROOM;
 }
+
+int xLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int zLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target, FLOOR_INFO *floor);
+
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    int los1, los2;
+    FLOOR_INFO *floor;
+
+    if ((ABS(target->z - start->z)) > (ABS(target->x - start->x)))
+    {
+        los1 = xLOS(start, target);
+        los2 = zLOS(start, target);
+    }
+    else
+    {
+        los1 = zLOS(start, target);
+        los2 = xLOS(start, target);
+    }
+
+    if (!los2)
+        return 0;
+
+    floor = GetFloor(target->x, target->y, target->z, &target->room_number);
+
+    if (!ClipTarget(start, target, floor) || los1 != 1 || los2 != 1)
+        return 0;
+    else
+        return 1;
+}

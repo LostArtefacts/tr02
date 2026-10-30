@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.83% (559)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.17% (688)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.91% (560)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.09% (687)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="334.86" height="6" x="0" y="0" class="named"/>
-<rect width="412.14" height="6" x="334.86" y="0" class="todo"/>
+<rect width="335.46" height="6" x="0" y="0" class="named"/>
+<rect width="411.54" height="6" x="335.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -245,7 +245,7 @@
 <rect width="12" height="12" x="375" y="45" class="named"><title>0x004158a0 TriggerActive (85 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="45" class="todo"><title>0x00415900 GetCeiling (573 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="45" class="named"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="45" class="todo"><title>0x00415bb0 LOS (160 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="45" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="45" class="todo"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="45" class="todo"><title>0x00415f40 xLOS (748 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="45" class="todo"><title>0x00416230 ClipTarget (218 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.65%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.60%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="181.89" height="6" x="0" y="0" class="named"/>
-<rect width="565.11" height="6" x="181.89" y="0" class="todo"/>
+<rect width="182.24" height="6" x="0" y="0" class="named"/>
+<rect width="564.76" height="6" x="182.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1853,7 +1853,7 @@
 <rect width="8.36" height="8.82" x="604.85" y="175.31" class="todo"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
 <rect width="8.36" height="8.82" x="616.21" y="175.31" class="todo"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="8.36" height="8.82" x="627.57" y="175.31" class="todo"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
-<rect width="8.29" height="8.82" x="638.93" y="175.31" class="todo"><title>0x00415bb0 LOS (160 bytes)</title></rect>
+<rect width="8.29" height="8.82" x="638.93" y="175.31" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
 <rect width="8.22" height="8.82" x="650.22" y="175.31" class="todo"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
 <rect width="8.22" height="8.82" x="661.44" y="175.31" class="todo"><title>0x00429c10 lara_col_roll (159 bytes)</title></rect>
 <rect width="8.22" height="8.82" x="672.66" y="175.31" class="todo"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
