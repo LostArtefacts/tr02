@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.33% (877)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.11% (363)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.41% (878)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.03% (362)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="525.36" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="525.36" y="0" class="decompiled"/>
-<rect width="217.45" height="6" x="529.55" y="0" class="todo"/>
+<rect width="525.96" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="525.96" y="0" class="decompiled"/>
+<rect width="216.85" height="6" x="530.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -135,7 +135,7 @@
 <rect width="12" height="12" x="210" y="15" class="todo"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="todo"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="todo"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="15" class="todo"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="15" class="named"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="todo"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="15" class="todo"><title>0x0040ad90 InsertObjectG4_Sorted (1083 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="15" class="todo"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.87%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.05%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.91%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.01%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="372.52" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="372.52" y="0" class="decompiled"/>
-<rect width="373.87" height="6" x="373.13" y="0" class="todo"/>
+<rect width="372.83" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="372.83" y="0" class="decompiled"/>
+<rect width="373.57" height="6" x="373.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1905,7 +1905,7 @@
 <rect width="7.77" height="8.03" x="612.97" y="187.12" class="named"><title>0x0041d050 FloodFX (143 bytes)</title></rect>
 <rect width="7.70" height="8.03" x="623.74" y="187.12" class="named"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="7.62" height="8.03" x="634.44" y="187.12" class="named"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
-<rect width="7.55" height="8.03" x="645.06" y="187.12" class="todo"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
+<rect width="7.55" height="8.03" x="645.06" y="187.12" class="named"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="7.55" height="8.03" x="655.60" y="187.12" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="7.55" height="8.03" x="666.15" y="187.12" class="named"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
 <rect width="7.55" height="8.03" x="676.70" y="187.12" class="named"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
