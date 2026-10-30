@@ -98,6 +98,44 @@ void ControlCutShotgun(sint16 item_number)
         item->status = INVISIBLE;
 }
 
+#define DOG 15
+#define CULT1 16
+#define CULT3 20
+#define WORKER3 32
+
+extern sint16 final_boss[5];
+extern sint16 final_level_count;
+extern sint16 final_boss_count;
+extern int level_items;
+
+void InitialiseFinalLevel(void)
+{
+    int i;
+    ITEM_INFO *item;
+
+    final_level_count = final_boss_count = final_boss_active = 0;
+
+    for (i = 0, item = items; i < level_items; i++, item++)
+    {
+        switch (item->object_number)
+        {
+        case CULT1:
+        case WORKER3:
+        case DOG:
+            final_level_count++;
+            break;
+
+        case CULT3:
+            final_boss[final_boss_count++] = i;
+            if (item->status == ACTIVE)
+                final_boss_active = 1;
+            else if (item->status == DEACTIVATED)
+                final_boss_active = 2;
+            break;
+        }
+    }
+}
+
 void MiniCopterControl(sint16 item_number)
 {
     ITEM_INFO *item;

@@ -618,7 +618,7 @@ address,size,name,symbol
 0x00434250,107,DrawUnclippedItem,_DrawUnclippedItem
 0x004342c0,219,EarthQuake,_EarthQuake
 0x004343a0,60,ControlCutShotgun,_ControlCutShotgun
-0x004343e0,157,InitialiseFinalLevel,_InitialiseFinalLevel
+0x004343e0,194,InitialiseFinalLevel,_InitialiseFinalLevel
 0x004344b0,527,FinalLevelCounter,_FinalLevelCounter
 0x004346c0,217,MiniCopterControl,_MiniCopterControl
 0x004347a0,124,InitialiseDyingMonk,_InitialiseDyingMonk
@@ -1856,6 +1856,9 @@ address,size,name,symbol
 0x0051e9e0,,savegame,_savegame
 0x005206a4,4,SG_Count,_SG_Count
 0x005206a8,2,final_boss_active,_final_boss_active
+0x005206b0,10,final_boss,_final_boss
+0x005206ba,2,final_level_count,_final_level_count
+0x005206bc,2,final_boss_count,_final_boss_count
 0x005206c0,4,baddie_slots,_baddie_slots
 0x005206e0,,lara,_lara
 0x005207bc,4,lara_item,_lara_item
