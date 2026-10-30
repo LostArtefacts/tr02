@@ -255,6 +255,21 @@ void TeethTrap(sint16 item_number)
     AnimateItem(item);
 }
 
+void DartEffectControl(sint16 fx_num)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_num];
+    fx->counter++;
+    if (fx->counter >= 3)
+    {
+        fx->counter = 0;
+        fx->frame_number--;
+        if (fx->frame_number <= objects[fx->object_number].nmeshes)
+            KillEffect(fx_num);
+    }
+}
+
 void FlameEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;
