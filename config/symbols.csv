@@ -793,7 +793,7 @@ address,size,name,symbol
 0x00442e30,230,LavaBurn,_LavaBurn
 0x00442f20,197,LavaSpray,_LavaSpray
 0x00442ff0,267,ControlLavaBlob,_ControlLavaBlob
-0x00443100,714,GiantYetiControl,_GiantYetiControl
+0x00443100,760,GiantYetiControl,_GiantYetiControl
 0x00443400,1517,YetiControl,_YetiControl
 0x00443a40,440,BGND_Make640x480,_BGND_Make640x480
 0x00443c00,185,BGND_AddTexture,_BGND_AddTexture
@@ -1532,6 +1532,8 @@ address,size,name,symbol
 0x00466390,16,teeth2b,_teeth2b
 0x004663a0,16,teeth3a,_teeth3a
 0x004663b0,16,teeth3b,_teeth3b
+0x004663e0,16,birdy_left,_birdy_left
+0x004663f0,16,birdy_right,_birdy_right
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
 0x00466480,8,screen_sizer,_screen_sizer
 0x00466488,8,game_sizer,_game_sizer
