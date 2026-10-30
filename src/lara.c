@@ -12,8 +12,30 @@
 #define CAM_E_HANG (-60 * ONE_DEGREE)
 #define CLIMB_WIDTHL 80
 #define CLIMB_WIDTHR 120
+#define MAX_HEAD_ROTATION (44 * ONE_DEGREE)
+#define HEAD_TURN (2 * ONE_DEGREE)
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
+
+void LookLeftRight(void)
+{
+    camera.type = LOOK_CAMERA;
+    if (input & IN_LEFT)
+    {
+        input -= IN_LEFT;
+        if (lara.head_y_rot > -MAX_HEAD_ROTATION)
+            lara.head_y_rot -= HEAD_TURN;
+    }
+    else if (input & IN_RIGHT)
+    {
+        input -= IN_RIGHT;
+        if (lara.head_y_rot < MAX_HEAD_ROTATION)
+            lara.head_y_rot += HEAD_TURN;
+    }
+
+    if (lara.gun_status != LG_HANDSBUSY && lara.skidoo == NO_ITEM)
+        lara.torso_y_rot = lara.head_y_rot;
+}
 
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {

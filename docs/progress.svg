@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.69% (258)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.31% (989)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.77% (259)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.23% (988)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="154.55" height="6" x="0" y="0" class="named"/>
-<rect width="592.45" height="6" x="154.55" y="0" class="todo"/>
+<rect width="155.15" height="6" x="0" y="0" class="named"/>
+<rect width="591.85" height="6" x="155.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -459,7 +459,7 @@
 <rect width="12" height="12" x="585" y="105" class="todo"><title>0x00427500 ClearBodyBag (88 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="105" class="todo"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="105" class="todo"><title>0x00427700 LookUpDown (102 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="105" class="todo"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="105" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="105" class="todo"><title>0x004277f0 ResetLook (137 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="105" class="named"><title>0x00427880 lara_as_walk (139 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="105" class="todo"><title>0x00427910 lara_as_run (323 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.53%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.50%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.50%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="48.30" height="6" x="0" y="0" class="named"/>
-<rect width="698.70" height="6" x="48.30" y="0" class="todo"/>
+<rect width="48.55" height="6" x="0" y="0" class="named"/>
+<rect width="698.45" height="6" x="48.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1986,7 +1986,7 @@
 <rect width="7.11" height="6.53" x="620.71" y="217.80" class="todo"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
 <rect width="7.02" height="6.53" x="630.81" y="217.80" class="todo"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="7.02" height="6.53" x="640.83" y="217.80" class="todo"><title>0x0041c7d0 Richochet (114 bytes)</title></rect>
-<rect width="7.02" height="6.53" x="650.85" y="217.80" class="todo"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
+<rect width="7.02" height="6.53" x="650.85" y="217.80" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
 <rect width="7.02" height="6.53" x="660.87" y="217.80" class="todo"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
 <rect width="6.93" height="6.53" x="670.89" y="217.80" class="todo"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
 <rect width="6.93" height="6.53" x="680.83" y="217.80" class="todo"><title>0x00445600 WinVidGetColorBitMasks (113 bytes)</title></rect>
