@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.72% (408)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.28% (839)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.80% (409)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.20% (838)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="244.41" height="6" x="0" y="0" class="named"/>
-<rect width="502.59" height="6" x="244.41" y="0" class="todo"/>
+<rect width="245.01" height="6" x="0" y="0" class="named"/>
+<rect width="501.99" height="6" x="245.01" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -302,7 +302,7 @@
 <rect width="12" height="12" x="480" y="60" class="todo"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="todo"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="60" class="todo"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="60" class="named"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="60" class="todo"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="todo"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.55%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.45%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.41%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="101.19" height="6" x="0" y="0" class="named"/>
-<rect width="645.81" height="6" x="101.19" y="0" class="todo"/>
+<rect width="101.51" height="6" x="0" y="0" class="named"/>
+<rect width="645.49" height="6" x="101.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1890,7 +1890,7 @@
 <rect width="8.32" height="7.96" x="638.66" y="186.23" class="todo"><title>0x00448620 CreatePrimarySurface (148 bytes)</title></rect>
 <rect width="8.24" height="7.96" x="649.98" y="186.23" class="todo"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
 <rect width="8.24" height="7.96" x="661.22" y="186.23" class="named"><title>0x00427460 EffectNewRoom (147 bytes)</title></rect>
-<rect width="8.16" height="7.96" x="672.46" y="186.23" class="todo"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
+<rect width="8.16" height="7.96" x="672.46" y="186.23" class="named"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="683.63" y="186.23" class="todo"><title>0x004092e0 InsertObjectGT4_ZBuffered (145 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="694.71" y="186.23" class="named"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="8.09" height="7.96" x="705.80" y="186.23" class="named"><title>0x00441900 BladeControl (145 bytes)</title></rect>

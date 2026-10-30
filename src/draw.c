@@ -58,3 +58,29 @@ void DrawGunFlash(int weapon_type, int clip)
     S_CalculateStaticLight(light);
     phd_PutPolygons(meshes[objects[GUN_FLASH].mesh_index], clip);
 }
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate)
+{
+    ANIM_STRUCT *anim;
+    int frm;
+    int first, second;
+    int frame_size;
+    int interp, rat;
+
+    frm = item->frame_number;
+    anim = &anims[item->anim_number];
+    frmptr[0] = frmptr[1] = anim->frame_ptr;
+    rat = *rate = anim->interpolation & 0x00ff;
+    frame_size = anim->interpolation >> 8;
+    frm -= anim->frame_base;
+    first = frm / rat;
+    interp = frm % rat;
+    frmptr[0] += first * frame_size;
+    frmptr[1] = frmptr[0] + frame_size;
+    if (interp == 0)
+        return 0;
+    second = first * rat + rat;
+    if (second > anim->frame_end)
+        *rate = anim->frame_end - (second - rat);
+    return interp;
+}
