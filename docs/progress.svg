@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.82% (721)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.18% (526)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.90% (722)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.10% (525)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="431.91" height="6" x="0" y="0" class="named"/>
-<rect width="315.09" height="6" x="431.91" y="0" class="todo"/>
+<rect width="432.51" height="6" x="0" y="0" class="named"/>
+<rect width="314.49" height="6" x="432.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -203,7 +203,7 @@
 <rect width="12" height="12" x="495" y="30" class="named"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="named"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="30" class="named"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="30" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="30" class="named"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="30" class="named"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="30" class="named"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="30" class="todo"><title>0x00412270 CalculateCinematicCamera (312 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.87%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.13%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="304.71" height="6" x="0" y="0" class="named"/>
-<rect width="442.29" height="6" x="304.71" y="0" class="todo"/>
+<rect width="305.31" height="6" x="0" y="0" class="named"/>
+<rect width="441.69" height="6" x="305.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1658,7 +1658,7 @@
 <rect width="12" height="12.36" x="573.37" y="94.47" class="named"><title>0x00441300 ControlCeilingSpikes (277 bytes)</title></rect>
 <rect width="11.95" height="12.36" x="588.38" y="94.47" class="named"><title>0x0044cef0 S_SaveGame (276 bytes)</title></rect>
 <rect width="11.89" height="12.36" x="603.33" y="94.47" class="todo"><title>0x0044c920 GameStats (275 bytes)</title></rect>
-<rect width="11.84" height="12.36" x="618.22" y="94.47" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
+<rect width="11.84" height="12.36" x="618.22" y="94.47" class="named"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
 <rect width="11.73" height="12.36" x="633.06" y="94.47" class="named"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="11.73" height="12.36" x="647.79" y="94.47" class="todo"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
 <rect width="11.68" height="12.36" x="662.53" y="94.47" class="named"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>

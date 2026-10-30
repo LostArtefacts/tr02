@@ -27,6 +27,48 @@ void S_FadeToBlack(void);
 void S_ClearScreen(void);
 sint32 DoCinematic(sint32 nframes);
 
+sint32 StartCinematic(int level_number)
+{
+    sint32 nframes, cine_over;
+    int saved_sound_active;
+
+    title_loaded = 0;
+    CineLevelID = level_number;
+    S_FadeToBlack();
+    if (!InitialiseLevel(level_number, IL_CUTSCENE))
+        return END_ACTION;
+
+    InitCinematicRooms();
+    InitialisePlayer1(lara.item_number);
+    camera.target_angle = CineTargetAngle;
+    saved_sound_active = sound_active;
+    sound_active = 0;
+    cine_frame = 0;
+    S_ClearScreen();
+    if (!StartSyncedAudio(cutscene_track))
+        return 1;
+    S_CDVolume(255);
+    CineCurrentFrame = 0;
+
+    do {
+        DrawPhaseCinematic();
+        nframes = CineCurrentFrame - cine_frame * 2 + CINE_ADJUST + 2;
+        if (nframes < 2)
+            nframes = 2;
+        cine_over = DoCinematic(nframes);
+    } while (!cine_over);
+
+    if (Option_Music_Volume)
+        S_CDVolume(Option_Music_Volume * 25 + 5);
+    else
+        S_CDVolume(0);
+    S_CDStop();
+    sound_active = saved_sound_active;
+    S_SoundStopAllSamples();
+    level_complete = 1;
+    return cine_over;
+}
+
 #define OUTSIDE 8
 
 void InitCinematicRooms(void)
