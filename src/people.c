@@ -73,6 +73,32 @@ void ControlGunShot(sint16 fx_number)
     AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 12, 11);
 }
 
+#define GUN_FLASH 240
+
+sint16 GunShot(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number)
+{
+    FX_INFO *fx;
+    sint16 fx_number;
+
+    fx_number = CreateEffect(room_number);
+    if (fx_number != NO_ITEM)
+    {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = x;
+        fx->pos.y_pos = y;
+        fx->pos.z_pos = z;
+        fx->room_number = room_number;
+        fx->pos.x_rot = fx->pos.z_rot = 0;
+        fx->pos.y_rot = yrot;
+        fx->counter = 3;
+        fx->frame_number = 0;
+        fx->object_number = GUN_FLASH;
+        fx->shade = 16 * 256;
+    }
+
+    return fx_number;
+}
+
 sint16 GunHit(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number)
 {
     PHD_VECTOR pos;

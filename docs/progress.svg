@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.48% (405)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.52% (842)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.56% (406)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">67.44% (841)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="242.61" height="6" x="0" y="0" class="named"/>
-<rect width="504.39" height="6" x="242.61" y="0" class="todo"/>
+<rect width="243.21" height="6" x="0" y="0" class="named"/>
+<rect width="503.79" height="6" x="243.21" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -726,7 +726,7 @@
 <rect width="12" height="12" x="90" y="195" class="named"><title>0x00435eb0 Targetable (133 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="195" class="named"><title>0x00435f40 ControlGlow (59 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="195" class="named"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="195" class="todo"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="195" class="named"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="195" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="195" class="todo"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.44%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.56%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.53%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="100.38" height="6" x="0" y="0" class="named"/>
-<rect width="646.62" height="6" x="100.38" y="0" class="todo"/>
+<rect width="100.60" height="6" x="0" y="0" class="named"/>
+<rect width="646.40" height="6" x="100.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2020,7 +2020,7 @@
 <rect width="6.04" height="6.54" x="599.37" y="275.73" class="named"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
 <rect width="6.04" height="6.45" x="599.37" y="285.27" class="named"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="6.04" height="6.45" x="599.37" y="294.72" class="named"><title>0x00427700 LookUpDown (102 bytes)</title></rect>
-<rect width="6.04" height="6.45" x="599.37" y="304.17" class="todo"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
+<rect width="6.04" height="6.45" x="599.37" y="304.17" class="named"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="6.04" height="6.26" x="599.37" y="313.62" class="named"><title>0x0041c880 CreateBubble (100 bytes)</title></rect>
 <rect width="6.04" height="6.26" x="599.37" y="322.88" class="todo"><title>0x004570d0 Func4570d0 (100 bytes)</title></rect>
 <rect width="6.04" height="6.17" x="599.37" y="332.15" class="named"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
