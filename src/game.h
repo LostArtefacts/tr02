@@ -27,6 +27,7 @@
 #include "specific/global.h"
 
 extern int level_complete;
+extern sint16 *trigger_index;
 extern int flipeffect, fliptimer;
 extern int number_draw_rooms;
 extern sint16 draw_rooms[];
@@ -47,6 +48,8 @@ void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
 sint32 DoDemoSequence(int level_number);
 sint16 *GetBoundsAccurate(ITEM_INFO *item);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void TestTriggers(sint16 *data, int heavy);
+void AnimateItem(ITEM_INFO *item);
 
 void SoundEffects(void);
 void DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE direction, sint16 room_num);

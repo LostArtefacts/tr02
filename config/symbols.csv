@@ -1915,7 +1915,7 @@ address,size,name,symbol
 0x005261c0,128,CD_Flags,_CD_Flags
 0x00526240,4,flip_status,_flip_status
 0x00526260,40,FlipMaps,_FlipMaps
-0x00526288,4,TriggerPtr,_TriggerPtr
+0x00526288,4,trigger_index,_trigger_index
 0x005262f0,4,items,_items
 0x005262f4,2,cine_loaded,_cine_loaded
 0x005262f6,2,num_cine_frames,_num_cine_frames

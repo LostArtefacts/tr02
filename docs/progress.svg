@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.89% (248)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.11% (999)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.97% (249)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">80.03% (998)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="148.56" height="6" x="0" y="0" class="named"/>
-<rect width="598.44" height="6" x="148.56" y="0" class="todo"/>
+<rect width="149.16" height="6" x="0" y="0" class="named"/>
+<rect width="597.84" height="6" x="149.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -507,7 +507,7 @@
 <rect width="12" height="12" x="555" y="120" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="120" class="named"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="120" class="todo"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="120" class="todo"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="120" class="named"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="120" class="todo"><title>0x00428a80 extra_as_starthouse (165 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="120" class="todo"><title>0x00428b30 extra_as_finalanim (163 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="120" class="named"><title>0x00428be0 LaraFallen (81 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.25%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.75%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="46.51" height="6" x="0" y="0" class="named"/>
-<rect width="700.49" height="6" x="46.51" y="0" class="todo"/>
+<rect width="46.68" height="6" x="0" y="0" class="named"/>
+<rect width="700.32" height="6" x="46.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2114,7 +2114,7 @@
 <rect width="4.84" height="5.34" x="625.51" y="295.54" class="todo"><title>0x00447620 GetJoystick (78 bytes)</title></rect>
 <rect width="4.84" height="5.34" x="625.51" y="303.88" class="todo"><title>0x00452480 OpenGameRegistryKey (78 bytes)</title></rect>
 <rect width="4.84" height="5.34" x="625.51" y="312.22" class="named"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
-<rect width="4.84" height="5.24" x="625.51" y="320.57" class="todo"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
+<rect width="4.84" height="5.24" x="625.51" y="320.57" class="named"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="4.84" height="5.24" x="625.51" y="328.80" class="todo"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
 <rect width="4.84" height="5.24" x="625.51" y="337.04" class="todo"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
 <rect width="4.84" height="5.24" x="625.51" y="345.27" class="todo"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>

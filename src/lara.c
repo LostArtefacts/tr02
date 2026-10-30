@@ -420,6 +420,17 @@ void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll)
         lara.death_count = 1;
 }
 
+void extra_as_startanim(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    TestTriggers(trigger_index, 0);
+}
+
 int LaraFallen(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->mid_floor > STEPUP_HEIGHT && lara.water_status != LARA_WADE)
