@@ -1498,7 +1498,7 @@ address,size,name,symbol
 0x004653f0,,InvSoundOption,_InvSoundOption
 0x00465440,,InvControlOption,_InvControlOption
 0x00465490,,InvPhotoOption,_InvPhotoOption
-0x004654e0,2,InvMainObjectsCount,_InvMainObjectsCount
+0x004654e0,2,inv_main_objects,_inv_main_objects
 0x004654e8,,InvMainQtys,_InvMainQtys
 0x00465518,92,InvMainList,_InvMainList
 0x00465578,,InvKeysQtys,_InvKeysQtys
@@ -1648,9 +1648,9 @@ address,size,name,symbol
 0x004d791c,4,AmmoTextInfo,_AmmoTextInfo
 0x004d7920,4,DisplayModeTextInfo,_DisplayModeTextInfo
 0x004d7924,4,DisplayModeInfoTimer,_DisplayModeInfoTimer
-0x004d7928,,InvMainCurrent,_InvMainCurrent
-0x004d792c,,InvKeyObjectsCount,_InvKeyObjectsCount
-0x004d7930,,InvKeysCurrent,_InvKeysCurrent
+0x004d7928,2,inv_main_current,_inv_main_current
+0x004d792c,2,inv_keys_objects,_inv_keys_objects
+0x004d7930,2,inv_keys_current,_inv_keys_current
 0x004d7934,,InvOptionCurrent,_InvOptionCurrent
 0x004d7938,8,InvItemText,_InvItemText
 0x004d7944,4,InvRingText,_InvRingText

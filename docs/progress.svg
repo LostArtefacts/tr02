@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.50% (505)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.50% (742)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.58% (506)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.42% (741)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="302.51" height="6" x="0" y="0" class="named"/>
-<rect width="444.49" height="6" x="302.51" y="0" class="todo"/>
+<rect width="303.11" height="6" x="0" y="0" class="named"/>
+<rect width="443.89" height="6" x="303.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -409,7 +409,7 @@
 <rect width="12" height="12" x="585" y="90" class="todo"><title>0x004242d0 Inv_AddItem (1726 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="90" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="90" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="90" class="todo"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="90" class="named"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="90" class="todo"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="90" class="todo"><title>0x00424dc0 Inv_GetItemOption (193 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="90" class="todo"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.95%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.05%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="149" height="6" x="0" y="0" class="named"/>
-<rect width="598" height="6" x="149" y="0" class="todo"/>
+<rect width="149.05" height="6" x="0" y="0" class="named"/>
+<rect width="597.95" height="6" x="149.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2423,7 +2423,7 @@
 <rect width="2" height="1.68" x="703.42" y="368.64" class="todo"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
 <rect width="2" height="1.68" x="703.42" y="373.32" class="todo"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
 <rect width="1.79" height="1.89" x="708.42" y="335.86" class="todo"><title>0x00457140 Func457140 (28 bytes)</title></rect>
-<rect width="1.62" height="1.89" x="713.21" y="335.86" class="todo"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
+<rect width="1.62" height="1.89" x="713.21" y="335.86" class="named"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="1.62" height="1.89" x="717.83" y="335.86" class="todo"><title>0x004256c0 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="1.62" height="1.89" x="722.45" y="335.86" class="named"><title>0x00430f90 ControlLaraExtra (27 bytes)</title></rect>
 <rect width="1.62" height="1.89" x="727.07" y="335.86" class="named"><title>0x00435af0 BridgeFlatCeiling (27 bytes)</title></rect>
