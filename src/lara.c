@@ -310,6 +310,17 @@ void lara_as_pickupflare(ITEM_INFO *item, COLL_INFO *coll)
         lara.gun_status = LG_ARMLESS;
 }
 
+void lara_as_switchon(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.look = 0;
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_angle = 80 * ONE_DEGREE;
+    camera.target_elevation = -25 * ONE_DEGREE;
+    camera.target_distance = WALL_L;
+    camera.speed = 6;
+}
+
 void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
 {
     camera.flags = FOLLOW_CENTRE;
