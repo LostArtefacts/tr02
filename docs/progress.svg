@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.12% (226)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.88% (1021)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.20% (227)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.80% (1020)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="135.38" height="6" x="0" y="0" class="named"/>
-<rect width="611.62" height="6" x="135.38" y="0" class="todo"/>
+<rect width="135.98" height="6" x="0" y="0" class="named"/>
+<rect width="611.02" height="6" x="135.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -495,7 +495,7 @@
 <rect width="12" height="12" x="375" y="120" class="named"><title>0x004284e0 lara_as_switchon (57 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="120" class="named"><title>0x00428520 lara_as_usekey (48 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="120" class="named"><title>0x00428550 lara_as_special (29 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="120" class="todo"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="120" class="named"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="120" class="todo"><title>0x004285a0 lara_as_fastdive (84 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="120" class="named"><title>0x00428600 lara_as_waterout (21 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="120" class="todo"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.61%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.39%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="41.88" height="6" x="0" y="0" class="named"/>
-<rect width="705.12" height="6" x="41.88" y="0" class="todo"/>
+<rect width="41.99" height="6" x="0" y="0" class="named"/>
+<rect width="705.01" height="6" x="41.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2305,7 +2305,7 @@
 <rect width="3.22" height="3.33" x="700.48" y="302.90" class="named"><title>0x00412f90 FindGridShift (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="706.70" y="302.90" class="todo"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="712.93" y="302.90" class="todo"><title>0x00425330 Inv_RingRotateRight (47 bytes)</title></rect>
-<rect width="3.22" height="3.33" x="719.15" y="302.90" class="todo"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
+<rect width="3.22" height="3.33" x="719.15" y="302.90" class="named"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="725.37" y="302.90" class="named"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="731.60" y="302.90" class="todo"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
 <rect width="3.09" height="3.33" x="737.82" y="302.90" class="todo"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
