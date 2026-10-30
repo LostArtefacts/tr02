@@ -674,7 +674,7 @@ address,size,name,symbol
 0x004383a0,522,SwitchCollision,_SwitchCollision
 0x004385b0,252,SwitchCollision2,_SwitchCollision2
 0x004386b0,571,DetonatorCollision,_DetonatorCollision
-0x004388f0,547,KeyHoleCollision,_KeyHoleCollision
+0x004388f0,564,KeyHoleCollision,_KeyHoleCollision
 0x00438b30,561,PuzzleHoleCollision,_PuzzleHoleCollision
 0x00438df0,57,SwitchControl,_SwitchControl
 0x00438e30,189,SwitchTrigger,_SwitchTrigger
@@ -1538,6 +1538,8 @@ address,size,name,symbol
 0x00466090,12,AirlockPosition,_AirlockPosition
 0x004660a0,24,Switch2Bounds,_Switch2Bounds
 0x004660b8,12,Switch2Position,_Switch2Position
+0x004660c8,24,KeyHoleBounds,_KeyHoleBounds
+0x004660e0,12,KeyHolePosition,_KeyHolePosition
 0x00466210,16,bara_bite,_bara_bite
 0x00466220,16,shark_bite,_shark_bite
 0x00466230,16,left_gun,_left_gun
@@ -1699,6 +1701,9 @@ address,size,name,symbol
 0x004d7c30,4,m16_firing,_m16_firing
 0x004d7c34,4,harpoon_fired,_harpoon_fired
 0x004d7c40,4,slots_used,_slots_used
+0x004d7c48,4,pup_x,_pup_x
+0x004d7c4c,4,pup_y,_pup_y
+0x004d7c50,4,pup_z,_pup_z
 0x004d7c64,4,number_cameras,_number_cameras
 0x004d7c68,,LaSlot,_LaSlot
 0x004d7e6c,4,detonate_all_mines,_detonate_all_mines

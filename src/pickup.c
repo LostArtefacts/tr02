@@ -126,6 +126,119 @@ void SwitchCollision2(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     }
 }
 
+#define KEY_OPTION1 197
+#define KEY_OPTION2 198
+#define KEY_OPTION3 199
+#define KEY_OPTION4 200
+#define KEY_HOLE1 201
+#define KEY_HOLE2 202
+#define KEY_HOLE3 203
+#define KEY_HOLE4 204
+
+extern sint16 InventoryChosen;
+extern sint16 inv_keys_objects;
+extern sint32 pup_x, pup_y, pup_z;
+extern sint16 KeyHoleBounds[];
+extern PHD_VECTOR KeyHolePosition;
+int Display_Inventory(int inv_mode);
+int Inv_RemoveItem(int itemNum);
+
+void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+    int correct = 0;
+
+    if (laraitem->current_anim_state == AS_STOP)
+    {
+        item = &items[item_num];
+        if ((InventoryChosen == -1 && !(input & IN_ACTION)) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
+            return;
+
+        if (!TestLaraPosition(KeyHoleBounds, item, laraitem))
+            return;
+        if (item->status != NOT_ACTIVE)
+        {
+            if (laraitem->pos.x_pos != pup_x || laraitem->pos.y_pos != pup_y || laraitem->pos.z_pos != pup_z)
+            {
+                pup_x = laraitem->pos.x_pos;
+                pup_y = laraitem->pos.y_pos;
+                pup_z = laraitem->pos.z_pos;
+                SoundEffect(2, &laraitem->pos, 0);
+            }
+            return;
+        }
+
+        if (InventoryChosen == -1)
+        {
+            Display_Inventory(INV_KEYS_MODE);
+            if (InventoryChosen == -1 && inv_keys_objects)
+                return;
+            if (InventoryChosen != -1)
+                pup_y = laraitem->pos.y_pos - 1;
+        }
+        else
+            pup_y = laraitem->pos.y_pos - 1;
+
+        switch (item->object_number)
+        {
+        case KEY_HOLE1:
+            if (InventoryChosen != KEY_OPTION1)
+                break;
+            Inv_RemoveItem(KEY_OPTION1);
+            correct = 1;
+            break;
+
+        case KEY_HOLE2:
+            if (InventoryChosen != KEY_OPTION2)
+                break;
+            Inv_RemoveItem(KEY_OPTION2);
+            correct = 1;
+            break;
+
+        case KEY_HOLE3:
+            if (InventoryChosen != KEY_OPTION3)
+                break;
+            Inv_RemoveItem(KEY_OPTION3);
+            correct = 1;
+            break;
+
+        case KEY_HOLE4:
+            if (InventoryChosen != KEY_OPTION4)
+                break;
+            Inv_RemoveItem(KEY_OPTION4);
+            correct = 1;
+            break;
+        }
+
+        InventoryChosen = -1;
+        if (!correct)
+        {
+            if (laraitem->pos.x_pos != pup_x || laraitem->pos.y_pos != pup_y || laraitem->pos.z_pos != pup_z)
+            {
+                SoundEffect(2, &laraitem->pos, 0);
+                pup_x = laraitem->pos.x_pos;
+                pup_y = laraitem->pos.y_pos;
+                pup_z = laraitem->pos.z_pos;
+            }
+            return;
+        }
+
+        AlignLaraPosition(&KeyHolePosition, item, laraitem);
+        laraitem->goal_anim_state = AS_USEKEY;
+        do
+            AnimateLara(laraitem);
+        while (laraitem->current_anim_state != AS_USEKEY);
+
+        laraitem->goal_anim_state = AS_STOP;
+        lara.gun_status = LG_HANDSBUSY;
+        item->status = ACTIVE;
+
+        pup_x = laraitem->pos.x_pos;
+        pup_y = laraitem->pos.y_pos;
+        pup_z = laraitem->pos.z_pos;
+    }
+}
+
 void SwitchControl(sint16 item_number)
 {
     ITEM_INFO *item;
