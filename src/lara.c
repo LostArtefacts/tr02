@@ -17,10 +17,13 @@
 #define MIN_HEAD_TILT (-42 * ONE_DEGREE)
 #define MAX_HEAD_TILT (22 * ONE_DEGREE)
 #define BAD_JUMP_CEILING ((STEP_L * 3) / 4)
+#define LANDFAR_A 24
+#define LANDFAR_F GF(LANDFAR_A, 0)
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
 void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
+void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
 void lara_default_col(ITEM_INFO *item, COLL_INFO *coll);
 sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist);
@@ -580,6 +583,32 @@ void lara_col_death(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos += coll->mid_floor;
     item->hit_points = -1;
     lara.air = -1;
+}
+
+void lara_col_fastfall(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = 1;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+    GetLaraCollisionInfo(item, coll);
+    LaraSlideEdgeJump(item, coll);
+    if (coll->mid_floor <= 0)
+    {
+        if (LaraLandedBad(item, coll))
+            item->goal_anim_state = AS_DEATH;
+        else
+        {
+            item->goal_anim_state = AS_STOP;
+            item->current_anim_state = AS_STOP;
+            item->frame_number = LANDFAR_F;
+            item->anim_number = LANDFAR_A;
+        }
+        StopSoundEffect(30);
+        item->pos.y_pos += coll->mid_floor;
+        item->gravity_status = 0;
+        item->fallspeed = 0;
+    }
 }
 
 void lara_col_splat(ITEM_INFO *item, COLL_INFO *coll)

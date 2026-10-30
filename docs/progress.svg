@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.90% (298)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.10% (949)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.98% (299)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.02% (948)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="178.51" height="6" x="0" y="0" class="named"/>
-<rect width="568.49" height="6" x="178.51" y="0" class="todo"/>
+<rect width="179.11" height="6" x="0" y="0" class="named"/>
+<rect width="567.89" height="6" x="179.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -520,7 +520,7 @@
 <rect width="12" height="12" x="0" y="135" class="todo"><title>0x00429250 lara_col_turn_r (149 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="135" class="named"><title>0x004292f0 lara_col_turn_l (19 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00429310 lara_col_death (104 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="135" class="todo"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="135" class="named"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="135" class="todo"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="135" class="todo"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="135" class="named"><title>0x004295e0 lara_col_splat (89 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.44%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.56%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.51%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="55.60" height="6" x="0" y="0" class="named"/>
-<rect width="691.40" height="6" x="55.60" y="0" class="todo"/>
+<rect width="55.94" height="6" x="0" y="0" class="named"/>
+<rect width="691.06" height="6" x="55.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1867,7 +1867,7 @@
 <rect width="8.27" height="8.45" x="546.95" y="198.07" class="todo"><title>0x0044c6a0 GameLoop (154 bytes)</title></rect>
 <rect width="8.27" height="8.37" x="546.95" y="209.52" class="todo"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="8.27" height="8.37" x="546.95" y="220.89" class="todo"><title>0x00413580 GetTiltType (153 bytes)</title></rect>
-<rect width="8.27" height="8.37" x="546.95" y="232.26" class="todo"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
+<rect width="8.27" height="8.37" x="546.95" y="232.26" class="named"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
 <rect width="8.27" height="8.30" x="546.95" y="243.63" class="todo"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
 <rect width="8.27" height="8.30" x="546.95" y="254.93" class="todo"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="8.27" height="8.30" x="546.95" y="266.22" class="todo"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
