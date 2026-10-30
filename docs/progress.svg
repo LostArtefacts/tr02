@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.26% (502)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.74% (745)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.34% (503)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.66% (744)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="300.72" height="6" x="0" y="0" class="named"/>
-<rect width="446.28" height="6" x="300.72" y="0" class="todo"/>
+<rect width="301.32" height="6" x="0" y="0" class="named"/>
+<rect width="445.68" height="6" x="301.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -821,7 +821,7 @@
 <rect width="12" height="12" x="15" y="225" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="225" class="named"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="225" class="named"><title>0x00440970 T_GetStringLen (36 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="225" class="todo"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="225" class="named"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="225" class="todo"><title>0x004409d0 draw_border (393 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="225" class="todo"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="225" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.80%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.20%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.92" height="6" x="0" y="0" class="named"/>
-<rect width="599.08" height="6" x="147.92" y="0" class="todo"/>
+<rect width="148.01" height="6" x="0" y="0" class="named"/>
+<rect width="598.99" height="6" x="148.01" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2344,7 +2344,7 @@
 <rect width="2.97" height="2.47" x="681.29" y="367.06" class="named"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="2.97" height="2.47" x="681.29" y="372.53" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
 <rect width="2.83" height="2.60" x="687.25" y="315.04" class="todo"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
-<rect width="2.83" height="2.60" x="693.08" y="315.04" class="todo"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
+<rect width="2.83" height="2.60" x="693.08" y="315.04" class="named"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
 <rect width="2.83" height="2.60" x="698.91" y="315.04" class="named"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="2.68" height="2.60" x="704.73" y="315.04" class="todo"><title>0x00425400 Inv_RingMotionRadius (38 bytes)</title></rect>
 <rect width="2.68" height="2.60" x="710.41" y="315.04" class="todo"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
