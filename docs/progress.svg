@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.25% (477)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.75% (770)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.33% (478)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.67% (769)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="285.74" height="6" x="0" y="0" class="named"/>
-<rect width="461.26" height="6" x="285.74" y="0" class="todo"/>
+<rect width="286.34" height="6" x="0" y="0" class="named"/>
+<rect width="460.66" height="6" x="286.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -802,7 +802,7 @@
 <rect width="12" height="12" x="480" y="210" class="todo"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="210" class="todo"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="210" class="named"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="210" class="todo"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="210" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="210" class="todo"><title>0x00440120 SpiderControl (518 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="210" class="todo"><title>0x00440340 BigSpiderControl (421 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="210" class="todo"><title>0x00440500 T_InitPrint (44 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.42%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.53%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="137.57" height="6" x="0" y="0" class="named"/>
-<rect width="609.43" height="6" x="137.57" y="0" class="todo"/>
+<rect width="137.95" height="6" x="0" y="0" class="named"/>
+<rect width="609.05" height="6" x="137.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.49" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1818,7 +1818,7 @@
 <rect width="9.10" height="9.04" x="534.93" y="223.90" class="todo"><title>0x00455ba0 SyncSurfacePalettes (174 bytes)</title></rect>
 <rect width="9.10" height="8.97" x="534.93" y="235.93" class="named"><title>0x0042ac00 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="9.10" height="8.90" x="534.93" y="247.90" class="todo"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
-<rect width="9.10" height="8.90" x="534.93" y="259.79" class="todo"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
+<rect width="9.10" height="8.90" x="534.93" y="259.79" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="9.10" height="8.90" x="534.93" y="271.69" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
 <rect width="9.10" height="8.83" x="534.93" y="283.59" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="9.10" height="8.83" x="534.93" y="295.41" class="todo"><title>0x00414a30 GetChange (171 bytes)</title></rect>
