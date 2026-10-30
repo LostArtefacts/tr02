@@ -120,6 +120,11 @@ extern "C" void SE_SoundAdapterSet(HWND hwndDlg, void *adapter)
     ChangedAppSettings.PreferredSoundAdapter = adapter;
 }
 
+extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick)
+{
+    ChangedAppSettings.PreferredJoystick = joystick;
+}
+
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
 
 extern "C" char SetupDialogName[];
