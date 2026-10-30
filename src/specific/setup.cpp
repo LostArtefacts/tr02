@@ -1,6 +1,7 @@
 // cflags: /GX
 #include <stdio.h>
 #include "global.h"
+#include <commctrl.h>
 
 extern "C" {
 extern char RegistryKeyName[];
@@ -330,6 +331,81 @@ extern "C" LRESULT CALLBACK SE_NewPropSheetWndProc(HWND hWnd, UINT uMsg, WPARAM 
         break;
     }
     return CallWindowProc((FARPROC)SE_OldPropSheetWndProc, hWnd, uMsg, wParam, lParam);
+}
+
+extern "C" {
+extern bool initOnce;
+extern bool IsSetupDialogCentered;
+extern char SetupDialogName[];
+BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+BOOL CALLBACK SE_GraphicsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+void SE_RegisterSetupWindowClass(void);
+}
+
+extern "C" bool SE_ShowSetupDialog(HWND hParent, bool isDefault)
+{
+    HINSTANCE hInst;
+    PROPSHEETHEADER header;
+    PROPSHEETPAGE pages[5];
+
+    ChangedAppSettings = SavedAppSettings;
+    if (isDefault)
+    {
+        SE_DefaultGraphicsSettings();
+        ChangedAppSettings.SoundEnabled = true;
+    }
+    memset(pages, 0, sizeof(pages));
+    hInst = GhInstance;
+    pages[0].dwSize = sizeof(PROPSHEETPAGE);
+    memset(&header, 0, sizeof(header));
+    pages[0].dwFlags = 0;
+    pages[0].hInstance = hInst;
+    pages[0].pszTemplate = MAKEINTRESOURCE(110);
+    pages[0].pfnDlgProc = (DLGPROC)SE_OptionsDlgProc;
+    pages[1].dwSize = sizeof(PROPSHEETPAGE);
+    pages[1].dwFlags = 0;
+    pages[1].hInstance = hInst;
+    pages[1].pszTemplate = MAKEINTRESOURCE(107);
+    pages[1].pfnDlgProc = (DLGPROC)SE_GraphicsDlgProc;
+    pages[2].dwSize = sizeof(PROPSHEETPAGE);
+    pages[2].dwFlags = 0;
+    pages[2].hInstance = hInst;
+    pages[2].pszTemplate = MAKEINTRESOURCE(108);
+    pages[2].pfnDlgProc = (DLGPROC)SE_SoundDlgProc;
+    pages[3].dwSize = sizeof(PROPSHEETPAGE);
+    pages[3].dwFlags = 0;
+    pages[3].hInstance = hInst;
+    pages[3].pszTemplate = MAKEINTRESOURCE(109);
+    pages[3].pfnDlgProc = (DLGPROC)SE_ControlsDlgProc;
+    pages[4].dwSize = sizeof(PROPSHEETPAGE);
+    pages[4].dwFlags = 0;
+    pages[4].hInstance = hInst;
+    pages[4].pszTemplate = MAKEINTRESOURCE(144);
+    pages[4].pfnDlgProc = (DLGPROC)SE_AdvancedDlgProc;
+    header.dwSize = sizeof(PROPSHEETHEADER);
+    header.dwFlags = PSH_USECALLBACK | PSH_NOAPPLYNOW | PSH_PROPSHEETPAGE | PSH_USEHICON;
+    header.hwndParent = hParent;
+    header.hInstance = hInst;
+    header.hIcon = (HICON)LoadImage(hInst, MAKEINTRESOURCE(100), IMAGE_ICON, 16, 16, 0);
+    header.pszCaption = SetupDialogName;
+    header.nPages = 5;
+    header.nStartPage = 1;
+    header.ppsp = pages;
+    header.pfnCallback = SE_PropSheetCallback;
+    if (!initOnce)
+    {
+        InitCommonControls();
+        SE_RegisterSetupWindowClass();
+        initOnce = true;
+    }
+    IsSetupDialogCentered = false;
+    if (PropertySheet(&header) != 1)
+        return false;
+    SavedAppSettings = ChangedAppSettings;
+    return true;
 }
 
 extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);

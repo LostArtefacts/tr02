@@ -1095,7 +1095,8 @@ address,size,name,symbol
 0x00452e80,90,SE_SoundTest,_SE_SoundTest
 0x00452ee0,62,SE_PropSheetCallback,_SE_PropSheetCallback@12
 0x00452f20,93,SE_NewPropSheetWndProc,_SE_NewPropSheetWndProc@16
-0x00452f80,456,Func452f80,
+0x00452f80,456,SE_ShowSetupDialog,_SE_ShowSetupDialog
+0x00453150,1034,SE_GraphicsDlgProc,_SE_GraphicsDlgProc@16
 0x00453560,476,SE_GraphicsDlgFullScreenModesUpdate,_SE_GraphicsDlgFullScreenModesUpdate
 0x00453750,23,SE_GraphicsAdapterSet,_SE_GraphicsAdapterSet
 0x00453770,1845,Func453770,
@@ -1111,6 +1112,7 @@ address,size,name,symbol
 0x00454600,138,SE_OptionsDlgProc,_SE_OptionsDlgProc@16
 0x00454690,564,SE_OptionsDlgUpdate,_SE_OptionsDlgUpdate
 0x004548d0,75,SE_OptionsStrCat,_SE_OptionsStrCat
+0x00454920,268,SE_AdvancedDlgProc,_SE_AdvancedDlgProc@16
 0x00454a30,169,SE_AdvancedDlgUpdate,_SE_AdvancedDlgUpdate
 0x00454ae0,14,SE_AdvancedDlgInit,_SE_AdvancedDlgInit
 0x00454af0,17,SE_FindSetupDialog,_SE_FindSetupDialog
@@ -1954,6 +1956,7 @@ address,size,name,symbol
 0x0051bcec,4,OptionsDialogHandle,_OptionsDialogHandle
 0x0051bcf0,1,IsSetupDialogCentered,_IsSetupDialogCentered
 0x0051bcf4,4,ControlsDialogHandle,_ControlsDialogHandle
+0x0051bcfc,1,initOnce,_initOnce
 0x0051bd00,4,cheat_turn,_cheat_turn
 0x0051bd04,2,cheat_as,_cheat_as
 0x0051bd08,2,cheat_angle,_cheat_angle
@@ -2110,6 +2113,7 @@ address,size,name,symbol
 0x005283b8,4,RegSetValueExA,__imp__RegSetValueExA@24
 0x005283bc,4,RegDeleteValueA,__imp__RegDeleteValueA@8
 0x005283c0,4,RegQueryValueExA,__imp__RegQueryValueExA@24
+0x005283c8,4,InitCommonControls,__imp__InitCommonControls@0
 0x005283cc,4,PropertySheetA,__imp__PropertySheetA@4
 0x005283d4,4,DirectDrawCreate,__imp__DirectDrawCreate@12
 0x005283d8,4,DirectDrawEnumerateA,__imp__DirectDrawEnumerateA@8
