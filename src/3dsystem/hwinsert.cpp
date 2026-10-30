@@ -1,3 +1,4 @@
+#include "../specific/include.h"
 #include "../3dglodef.h"
 
 typedef struct {
@@ -7,6 +8,15 @@ typedef struct {
 
 extern "C" PHD_VBUF PhdVBuf[];
 extern "C" PHDTEXTURESTRUCT phdtextinfo[];
+
+typedef struct {
+    uint8 red, green, blue;
+} RGB888;
+
+extern "C" D3DTLVERTEX *HWR_VertexPtr;
+extern "C" RGB888 game_palette[];
+extern "C" sint32 *sort3dptr;
+extern "C" sint16 *info3dptr;
 
 bool HWR_VertexBufferFull();
 
@@ -82,4 +92,48 @@ extern "C" sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, int sortty
         objptr += 4;
     }
     return objptr;
+}
+
+inline uint32 ShadeColor(int r, int g, int b)
+{
+    if (bBlueEffect) {
+        r *= 128;
+        r >>= 8;
+        g *= 224;
+        g >>= 8;
+    }
+    return 0xff000000 | (r << 16) | (g << 8) | b;
+}
+
+extern "C" void InsertFlatRect_Sorted(int x1, int y1, int x2, int y2, int z, int color)
+{
+    uint8 *rgb;
+    D3DTLVERTEX *v;
+
+    if (x2 <= x1 || y2 <= y1)
+        return;
+    if (x1 < phd_winxmin)
+        x1 = phd_winxmin;
+    if (y1 < phd_winymin)
+        y1 = phd_winymin;
+    if (x2 > phd_winxmin + phd_winwidth)
+        x2 = phd_winxmin + phd_winwidth;
+    if (y2 > phd_winymin + phd_winheight)
+        x2 = phd_winymin + phd_winheight;
+    sort3dptr[0] = (sint32)info3dptr;
+    rgb = (uint8 *)game_palette + color * 3;
+    sort3dptr[1] = z;
+    sort3dptr += 2;
+    info3dptr[0] = 11;
+    info3dptr[1] = 4;
+    v = HWR_VertexPtr;
+    *(D3DTLVERTEX **)(info3dptr + 2) = v;
+    info3dptr += 4;
+    v[0].sx = v[3].sx = (float)x1;
+    v[0].sy = v[1].sy = (float)y1;
+    v[1].sx = v[2].sx = (float)x2;
+    v[3].sy = v[2].sy = (float)y2;
+    v[0].color = v[1].color = v[2].color = v[3].color = ShadeColor(rgb[0], rgb[1], rgb[2]);
+    HWR_VertexPtr = v + 4;
+    surfacenum++;
 }
