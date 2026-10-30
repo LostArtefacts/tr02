@@ -142,6 +142,39 @@ sint32 DoCinematic(sint32 nframes)
     return 0;
 }
 
+void CalculateCinematicCamera(void)
+{
+    sint16 *ptr;
+    sint32 tx, ty, tz;
+    PHD_VECTOR campos, camtar;
+    sint32 cz, cy, cx;
+    int room_number;
+    sint16 roll, fov;
+    sint32 c, s;
+
+    ptr = cine + (int)(8 * cine_frame);
+    tx = (sint32)*(ptr + 0);
+    ty = (sint32)*(ptr + 1);
+    tz = (sint32)*(ptr + 2);
+    cx = (sint32)*(ptr + 3);
+    cy = (sint32)*(ptr + 4);
+    cz = (sint32)*(ptr + 5);
+    fov = *(ptr + 6);
+    roll = *(ptr + 7);
+    c = phd_cos(camera.target_angle);
+    s = phd_sin(camera.target_angle);
+    camtar.x = lara_item->pos.x_pos + ((tx * c + tz * s) >> W2V_SHIFT);
+    camtar.y = lara_item->pos.y_pos + ty;
+    camtar.z = lara_item->pos.z_pos + ((tz * c - tx * s) >> W2V_SHIFT);
+    campos.x = lara_item->pos.x_pos + ((cx * c + cz * s) >> W2V_SHIFT);
+    campos.y = lara_item->pos.y_pos + cy;
+    campos.z = lara_item->pos.z_pos + ((cz * c - cx * s) >> W2V_SHIFT);
+    if ((room_number = GetCinematicRoom(campos.x, campos.y, campos.z)) >= 0)
+        camera.pos.room_number = room_number;
+    AlterFOV(fov);
+    phd_LookAt(campos.x, campos.y, campos.z, camtar.x, camtar.y, camtar.z, roll);
+}
+
 int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
 {
     int i;
