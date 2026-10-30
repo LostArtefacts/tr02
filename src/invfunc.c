@@ -1239,3 +1239,97 @@ void ShowGymStatsText(char *time_str, int type)
         gym_mode = 1;
     }
 }
+
+extern sint16 GF_NumSecrets;
+
+static int stats_mode;
+
+void ShowStatsText(char *time_str, int type)
+{
+    int select, numsecrets, distance, len = 0;
+    char str[32];
+
+    if (stats_mode == 1)
+    {
+        ChangeRequesterItem(&StatsRequester, 0, GF_GameStrings[59], R_LEFTALIGN, time_str, R_RIGHTALIGN);
+        if ((select = Display_Requester(&StatsRequester, type, 1)))
+            stats_mode = 0;
+        else
+            input = inputDB = 0;
+    }
+    else
+    {
+        StatsRequester.noselector = 1;
+        SetPCRequesterSize(&StatsRequester, 7, -32);
+        StatsRequester.line_height = 18;
+        StatsRequester.items = 0;
+        StatsRequester.selected = 0;
+        StatsRequester.line_offset = 0;
+        StatsRequester.line_oldoffset = 0;
+        StatsRequester.pixwidth = 304;
+        StatsRequester.xpos = 0;
+        StatsRequester.zpos = 0;
+        StatsRequester.itemtexts1 = &SaveGameStrings1[0][0];
+        StatsRequester.itemtexts2 = &SaveGameStrings2[0][0];
+        StatsRequester.itemtextlen = 50;
+        Init_Requester(&StatsRequester);
+        SetRequesterHeading(&StatsRequester, GF_Level_Names[CurrentLevel], R_CENTRE, NULL, 0);
+        AddRequesterItem(&StatsRequester, GF_GameStrings[59], R_LEFTALIGN, time_str, R_RIGHTALIGN);
+
+        if (GF_NumSecrets)
+        {
+            numsecrets = (savegame.secrets & 1) + ((savegame.secrets & 2) >> 1) + ((savegame.secrets & 4) >> 2);
+            if (numsecrets)
+            {
+                if (savegame.secrets & 1)
+                    str[len++] = 127;
+                else
+                {
+                    str[len++] = ' ';
+                    str[len++] = ' ';
+                    str[len++] = ' ';
+                }
+                if (savegame.secrets & 2)
+                    str[len++] = (char)128;
+                else
+                {
+                    str[len++] = ' ';
+                    str[len++] = ' ';
+                    str[len++] = ' ';
+                }
+                if (savegame.secrets & 4)
+                    str[len++] = (char)129;
+                else
+                {
+                    str[len++] = ' ';
+                    str[len++] = ' ';
+                    str[len++] = ' ';
+                }
+                str[len] = 0;
+            }
+            else
+                sprintf(str, GF_GameStrings[69]);
+            AddRequesterItem(&StatsRequester, GF_GameStrings[60], R_LEFTALIGN, str, R_RIGHTALIGN);
+        }
+
+        sprintf(str, "%d", savegame.kills);
+        AddRequesterItem(&StatsRequester, GF_GameStrings[62], R_LEFTALIGN, str, R_RIGHTALIGN);
+        sprintf(str, "%d", (int)savegame.ammo_used);
+        AddRequesterItem(&StatsRequester, GF_GameStrings[63], R_LEFTALIGN, str, R_RIGHTALIGN);
+        sprintf(str, "%d", (int)savegame.ammo_hit);
+        AddRequesterItem(&StatsRequester, GF_GameStrings[64], R_LEFTALIGN, str, R_RIGHTALIGN);
+        if (savegame.health_used & 1)
+            sprintf(str, "%d.5", savegame.health_used >> 1);
+        else
+            sprintf(str, "%d.0", savegame.health_used >> 1);
+        AddRequesterItem(&StatsRequester, GF_GameStrings[67], R_LEFTALIGN, str, R_RIGHTALIGN);
+
+        distance = savegame.distance_travelled / 445;
+        if (distance >= 1000)
+            sprintf(str, "%d.%02dkm", distance / 1000, distance % 100);
+        else
+            sprintf(str, "%dm", distance);
+        AddRequesterItem(&StatsRequester, GF_GameStrings[66], R_LEFTALIGN, str, R_RIGHTALIGN);
+        stats_mode = 1;
+    }
+}
