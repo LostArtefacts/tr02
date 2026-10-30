@@ -16,6 +16,26 @@ sint16 CreateItem(void)
     return item_num;
 }
 
+void AddActiveItem(sint16 item_num)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+
+    if (objects[item->object_number].control == NULL)
+    {
+        item->status = NOT_ACTIVE;
+        return;
+    }
+
+    if (item->active == 1)
+        return;
+    item->active = 1;
+
+    item->next_active = next_item_active;
+    next_item_active = item_num;
+}
+
 void InitialiseFXArray(void)
 {
     int i;
