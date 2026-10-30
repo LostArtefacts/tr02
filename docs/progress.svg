@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.96% (1027)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.40% (218)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.04% (1028)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.32% (217)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="612.27" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="612.27" y="0" class="decompiled"/>
-<rect width="129.96" height="6" x="617.04" y="0" class="todo"/>
+<rect width="612.86" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="612.86" y="0" class="decompiled"/>
+<rect width="129.37" height="6" x="617.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -589,7 +589,7 @@
 <rect width="12" height="12" x="270" y="150" class="named"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="150" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="150" class="named"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="150" class="todo"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="150" class="named"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="150" class="named"><title>0x0042d8f0 lara_as_climbleft (53 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="150" class="named"><title>0x0042d930 lara_as_climbright (53 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="150" class="named"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">67.33%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">32.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">67.57%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">32.35%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="502.95" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="502.95" y="0" class="decompiled"/>
-<rect width="243.39" height="6" x="503.61" y="0" class="todo"/>
+<rect width="504.72" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="504.72" y="0" class="decompiled"/>
+<rect width="241.62" height="6" x="505.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.55" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1432,7 +1432,7 @@
 <rect width="24.14" height="23.32" x="296.87" y="214.20" class="named"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="24.14" height="23.25" x="296.87" y="240.52" class="todo"><title>0x00457b5c wgtmapA (833 bytes)</title></rect>
 <rect width="24.14" height="23.03" x="296.87" y="266.77" class="named"><title>0x00437620 BanditControl (826 bytes)</title></rect>
-<rect width="24.14" height="22.72" x="296.87" y="292.80" class="todo"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
+<rect width="24.14" height="22.72" x="296.87" y="292.80" class="named"><title>0x0042d5c0 AnimatePistols (816 bytes)</title></rect>
 <rect width="24.14" height="22.06" x="296.87" y="318.52" class="todo"><title>0x00407a00 ins_objectG3 (795 bytes)</title></rect>
 <rect width="24.14" height="22.03" x="296.87" y="343.58" class="named"><title>0x0042b970 GetLJAInt (794 bytes)</title></rect>
 <rect width="24.14" height="21.40" x="296.87" y="368.60" class="named"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>

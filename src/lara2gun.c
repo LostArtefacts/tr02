@@ -218,3 +218,121 @@ void PistolHandler(int weapon_type)
             12, 11);
     }
 }
+
+int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
+
+void AnimatePistols(int weapon_type)
+{
+    PHD_ANGLE angles[2];
+    sint16 anil, anir, sound_already;
+    WEAPON_INFO *winfo;
+    static int uzi_left = 0, uzi_right = 0;
+
+    winfo = &weapons[weapon_type];
+    anir = lara.right_arm.frame_number;
+    sound_already = 0;
+    if (lara.right_arm.lock || ((input & IN_ACTION) && !lara.target))
+    {
+        if (anir >= 0 && anir < DRAW1_F - 1)
+            anir++;
+        else if (anir == DRAW1_F - 1)
+        {
+            if (input & IN_ACTION)
+            {
+                angles[0] = lara.right_arm.y_rot + lara_item->pos.y_rot;
+                angles[1] = lara.right_arm.x_rot;
+                if (FireWeapon(weapon_type, lara.target, lara_item, angles))
+                {
+                    lara.right_arm.flash_gun = winfo->flash_time;
+                    SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                    sound_already = 1;
+                    if (weapon_type == LG_UZIS)
+                        uzi_right = 1;
+                }
+                anir = RECOIL_F;
+            }
+            else if (uzi_right)
+            {
+                SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+                uzi_right = 0;
+            }
+        }
+        else if (anir >= RECOIL_F)
+        {
+            if (weapon_type == LG_UZIS)
+            {
+                SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                uzi_right = 1;
+            }
+            anir++;
+            if (anir == RECOIL_F + winfo->recoil_frame)
+                anir = DRAW1_F - 1;
+        }
+    }
+    else
+    {
+        if (anir >= RECOIL_F)
+            anir = DRAW1_F - 1;
+        else if (anir > 0 && anir <= DRAW1_F - 1)
+            anir--;
+        if (uzi_right)
+        {
+            SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+            uzi_right = 0;
+        }
+    }
+    set_pistol_arm(&lara.right_arm, anir);
+
+    anil = lara.left_arm.frame_number;
+    if (lara.left_arm.lock || ((input & IN_ACTION) && !lara.target))
+    {
+        if (anil >= 0 && anil < DRAW1_F - 1)
+            anil++;
+        else if (anil == DRAW1_F - 1)
+        {
+            if (input & IN_ACTION)
+            {
+                angles[0] = lara.left_arm.y_rot + lara_item->pos.y_rot;
+                angles[1] = lara.left_arm.x_rot;
+                if (FireWeapon(weapon_type, lara.target, lara_item, angles))
+                {
+                    lara.left_arm.flash_gun = winfo->flash_time;
+                    if (!sound_already)
+                        SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                    if (weapon_type == LG_UZIS)
+                        uzi_left = 1;
+                }
+                anil = RECOIL_F;
+            }
+            else if (uzi_left)
+            {
+                SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+                uzi_left = 0;
+            }
+        }
+        else if (anil >= RECOIL_F)
+        {
+            if (weapon_type == LG_UZIS)
+            {
+                SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                uzi_left = 1;
+            }
+            anil++;
+            if (anil == RECOIL_F + winfo->recoil_frame)
+                anil = DRAW1_F - 1;
+        }
+    }
+    else
+    {
+        if (anil >= RECOIL_F)
+            anil = DRAW1_F - 1;
+        else if (anil > 0 && anil <= DRAW1_F - 1)
+            anil--;
+        if (uzi_left)
+        {
+            SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+            uzi_left = 0;
+        }
+    }
+    set_pistol_arm(&lara.left_arm, anil);
+}
