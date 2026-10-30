@@ -949,7 +949,7 @@ address,size,name,symbol
 0x004496c0,570,GameApplySettings,_GameApplySettings
 0x00449900,104,UpdateGameResolution,_UpdateGameResolution
 0x00449970,12,DecodeErrorMessage,_DecodeErrorMessage
-0x00449980,73,ReadFileSync,_ReadFileSync
+0x00449980,73,MyReadFile,?MyReadFile@@YAHPAX0KPAKPAU_OVERLAPPED@@@Z
 0x004499d0,392,LoadTexturePages,_LoadTexturePages
 0x00449b60,928,LoadRooms,_LoadRooms
 0x00449f00,151,AdjustTextureUVs,?AdjustTextureUVs@@YAX_N@Z
@@ -958,11 +958,11 @@ address,size,name,symbol
 0x0044a660,470,LoadItems,_LoadItems
 0x0044a840,392,LoadDepthQ,_LoadDepthQ
 0x0044a9d0,113,LoadPalettes,_LoadPalettes
-0x0044aa50,96,LoadCameras,_LoadCameras
-0x0044aab0,96,LoadSoundEffects,_LoadSoundEffects
+0x0044aa50,96,LoadCameras,?LoadCameras@@YAHPAX@Z
+0x0044aab0,96,LoadSoundEffects,?LoadSoundEffects@@YAHPAX@Z
 0x0044ab10,545,LoadBoxes,_LoadBoxes
 0x0044ad40,85,LoadAnimatedTextures,_LoadAnimatedTextures
-0x0044ada0,121,LoadCinematic,_LoadCinematic
+0x0044ada0,121,LoadCinematic,?LoadCinematic@@YAHPAX@Z
 0x0044ae20,138,LoadDemo,_LoadDemo
 0x0044aeb0,154,LoadDemoExternal,_LoadDemoExternal
 0x0044af50,613,LoadSamples,_LoadSamples
@@ -973,7 +973,7 @@ address,size,name,symbol
 0x0044b580,42,S_UnloadLevelFile,_S_UnloadLevelFile
 0x0044b5b0,20,S_AdjustTexelCoordinates,_S_AdjustTexelCoordinates
 0x0044b5d0,196,S_ReloadLevelGraphics,_S_ReloadLevelGraphics
-0x0044b6a0,198,Read_Strings,_Read_Strings
+0x0044b6a0,198,Read_Strings,?Read_Strings@@YAHHPAPAD0PAKPAX@Z
 0x0044b770,1745,S_LoadGameFlow,_S_LoadGameFlow
 0x0044be50,116,FMV_Play,?FMV_Play@@YAHPAD@Z
 0x0044bed0,736,WinPlayFMV,_WinPlayFMV
@@ -1637,7 +1637,7 @@ address,size,name,symbol
 0x004d7bc8,,Assault,_Assault
 0x004d7c28,4,LevelItemCount,_LevelItemCount
 0x004d7c2c,4,HealthBarTimer,_HealthBarTimer
-0x004d7c64,4,CameraCount,_CameraCount
+0x004d7c64,4,number_cameras,_number_cameras
 0x004d7c68,,LaSlot,_LaSlot
 0x004d7e6c,4,MinesDetonated,_MinesDetonated
 0x004d7e78,1,BGND_PictureIsReady,_BGND_PictureIsReady
@@ -1731,6 +1731,7 @@ address,size,name,symbol
 0x004d9be0,4,ReadFileBytesCounter,_ReadFileBytesCounter
 0x004d9be4,4,LevelFilePalettesOffset,_LevelFilePalettesOffset
 0x004d9be8,4,LevelFileTexPagesOffset,_LevelFileTexPagesOffset
+0x004d9bf0,,LGF_offsets,?LGF_offsets@@3PAFA
 0x004d9d80,4,Meshes,_Meshes
 0x004d9d84,4,FloorData,_FloorData
 0x004d9d88,256,LevelFileName,_LevelFileName
@@ -1909,9 +1910,9 @@ address,size,name,symbol
 0x00526260,40,FlipMaps,_FlipMaps
 0x00526288,4,TriggerPtr,_TriggerPtr
 0x005262f0,4,items,_items
-0x005262f4,2,IsCinematicLoaded,_IsCinematicLoaded
-0x005262f6,2,CineFramesCount,_CineFramesCount
-0x005262f8,4,CineFrames,_CineFrames
+0x005262f4,2,cine_loaded,_cine_loaded
+0x005262f6,2,num_cine_frames,_num_cine_frames
+0x005262f8,4,cine,_cine
 0x00526312,2,CineLevelID,_CineLevelID
 0x00526314,2,CineFrameIdx,_CineFrameIdx
 0x00526320,,camera,_camera

@@ -13,6 +13,7 @@
 #include "collide.h"
 #include "larafunc.h"
 #include "cinema.h"
+#include "effects.h"
 #include "title.h"
 #include "invdata.h"
 #include "input.h"
@@ -30,8 +31,6 @@ extern int flipeffect, fliptimer;
 extern int number_draw_rooms;
 extern sint16 draw_rooms[];
 extern int flip_status;
-extern int number_sound_effects;
-extern OBJECT_VECTOR *sound_effects;
 extern void (*effect_routines[])(ITEM_INFO *item);
 extern int assault_timer_display, assault_timer_active;
 

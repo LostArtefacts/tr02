@@ -5,6 +5,37 @@
 extern "C" {
 #endif
 
+enum game_malloc_types {
+    TEMP_ALLOC,
+    TEXTURE_PAGES,
+    MESH_POINTERS,
+    MESHES,
+    ANIMS,
+    STRUCTS,
+    RANGES,
+    COMMANDS,
+    BONES,
+    FRAMES,
+    ROOM_TEXTURES,
+    ROOM_INFOS,
+    ROOM_MESH,
+    ROOM_DOOR,
+    ROOM_FLOOR,
+    ROOM_LIGHTS,
+    ROOM_STATIC_MESH_INFOS,
+    FLOOR_DATA,
+    ITEMS,
+    CAMERAS,
+    SOUND_FX,
+    BOXES,
+    OVERLAPS,
+    GROUNDZONE,
+    FLYZONE,
+    ANIMATING_TEXTURE_RANGES,
+    CINEMATIC_FRAMES
+};
+
+void *game_malloc(int size, int type);
 void ShutdownGame();
 void CalculateWibbleTable();
 

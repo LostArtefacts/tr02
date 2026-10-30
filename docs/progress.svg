@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.67% (133)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.33% (1114)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.75% (134)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.25% (1113)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="79.67" height="6" x="0" y="0" class="named"/>
-<rect width="667.33" height="6" x="79.67" y="0" class="todo"/>
+<rect width="80.27" height="6" x="0" y="0" class="named"/>
+<rect width="666.73" height="6" x="80.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1017,7 +1017,7 @@
 <rect width="12" height="12" x="705" y="270" class="todo"><title>0x004496c0 GameApplySettings (570 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="270" class="todo"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="todo"><title>0x00449970 DecodeErrorMessage (12 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="285" class="todo"><title>0x00449980 ReadFileSync (73 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="285" class="todo"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="285" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="285" class="todo"><title>0x00449b60 LoadRooms (928 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="285" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
@@ -1026,7 +1026,7 @@
 <rect width="12" height="12" x="90" y="285" class="todo"><title>0x0044a660 LoadItems (470 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="285" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="285" class="todo"><title>0x0044a9d0 LoadPalettes (113 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="285" class="todo"><title>0x0044aa50 LoadCameras (96 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="285" class="named"><title>0x0044aa50 LoadCameras (96 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="285" class="todo"><title>0x0044aab0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="285" class="todo"><title>0x0044ab10 LoadBoxes (545 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="285" class="todo"><title>0x0044ad40 LoadAnimatedTextures (85 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.45%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.55%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.48%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.52%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="18.30" height="6" x="0" y="0" class="named"/>
-<rect width="728.70" height="6" x="18.30" y="0" class="todo"/>
+<rect width="18.51" height="6" x="0" y="0" class="named"/>
+<rect width="728.49" height="6" x="18.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2038,7 +2038,7 @@
 <rect width="6.14" height="5.81" x="599.82" y="299.02" class="todo"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="6.14" height="5.81" x="599.82" y="307.82" class="todo"><title>0x00431940 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="6.14" height="5.81" x="599.82" y="316.63" class="todo"><title>0x004319a0 lara_as_surfright (96 bytes)</title></rect>
-<rect width="6.14" height="5.81" x="599.82" y="325.44" class="todo"><title>0x0044aa50 LoadCameras (96 bytes)</title></rect>
+<rect width="6.14" height="5.81" x="599.82" y="325.44" class="named"><title>0x0044aa50 LoadCameras (96 bytes)</title></rect>
 <rect width="6.14" height="5.81" x="599.82" y="334.24" class="todo"><title>0x0044aab0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="6.14" height="5.81" x="599.82" y="343.05" class="named"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="6.14" height="5.71" x="599.82" y="351.86" class="todo"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
@@ -2135,7 +2135,7 @@
 <rect width="4.65" height="5" x="719.40" y="253.83" class="todo"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="4.65" height="5" x="727.05" y="253.83" class="todo"><title>0x00433040 ClearLOT (73 bytes)</title></rect>
 <rect width="4.65" height="5" x="734.70" y="253.83" class="todo"><title>0x00442de0 LaraBurn (73 bytes)</title></rect>
-<rect width="4.65" height="5" x="742.35" y="253.83" class="todo"><title>0x00449980 ReadFileSync (73 bytes)</title></rect>
+<rect width="4.65" height="5" x="742.35" y="253.83" class="todo"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="4.72" height="4.93" x="633.35" y="261.82" class="todo"><title>0x00455940 Func455940 (73 bytes)</title></rect>
 <rect width="4.72" height="4.82" x="633.35" y="269.75" class="todo"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
 <rect width="4.72" height="4.82" x="633.35" y="277.57" class="todo"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>

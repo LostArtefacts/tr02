@@ -1,6 +1,10 @@
 #ifndef GAMEFLOW_H
 #define GAMEFLOW_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "types.h"
 
 enum level_types {
@@ -61,5 +65,9 @@ extern sint16 GF_valid_demos[];
 sint32 GF_DoFrontEndSequence(void);
 sint32 GF_DoLevelSequence(int level, int type);
 sint32 GF_InterpretSequence(sint16 *ptr, int type, int seq_type);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

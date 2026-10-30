@@ -1,6 +1,10 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "anim.h"
 #include "items.h"
 
@@ -37,5 +41,9 @@ typedef struct {
 } CAMERA_INFO;
 
 extern CAMERA_INFO camera;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
