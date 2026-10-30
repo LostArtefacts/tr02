@@ -296,7 +296,7 @@ address,size,name,symbol
 0x0041da50,23,AssaultReset,_AssaultReset
 0x0041da70,178,AssaultFinished,_AssaultFinished
 0x0041db30,118,Knife,_Knife
-0x0041dbb0,1035,Cult2Control,_Cult2Control
+0x0041dbb0,1072,Cult2Control,_Cult2Control
 0x0041dfe0,1185,MonkControl,_MonkControl
 0x0041e4b0,1469,Worker3Control,_Worker3Control
 0x0041eac0,1015,DrawXianLord,_DrawXianLord
@@ -1455,6 +1455,8 @@ address,size,name,symbol
 0x004641e0,16,bigeel_bite,_bigeel_bite
 0x004641f0,4,AssaultBestTime,_AssaultBestTime
 0x004641f8,,effect_routines,_effect_routines
+0x004642c8,16,cult2_left,_cult2_left
+0x004642d8,16,cult2_right,_cult2_right
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets
 0x004642f0,32,TrackIDs,_TrackIDs
 0x00464310,2,CineTargetAngle,_CineTargetAngle
