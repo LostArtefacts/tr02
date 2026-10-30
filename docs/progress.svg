@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.76% (184)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85.24% (1063)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.84% (185)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85.16% (1062)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="110.22" height="6" x="0" y="0" class="named"/>
-<rect width="636.78" height="6" x="110.22" y="0" class="todo"/>
+<rect width="110.82" height="6" x="0" y="0" class="named"/>
+<rect width="636.18" height="6" x="110.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -706,7 +706,7 @@
 <rect width="12" height="12" x="540" y="180" class="todo"><title>0x00435570 DoorControl (200 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="180" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="180" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="180" class="todo"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="180" class="named"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="180" class="todo"><title>0x00435780 DrawBridgeCollision (44 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="180" class="todo"><title>0x004357b0 InitialiseLift (53 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="180" class="todo"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.27%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="35.35" height="6" x="0" y="0" class="named"/>
-<rect width="711.65" height="6" x="35.35" y="0" class="todo"/>
+<rect width="35.48" height="6" x="0" y="0" class="named"/>
+<rect width="711.52" height="6" x="35.48" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2202,7 +2202,7 @@
 <rect width="4.31" height="3.88" x="685.16" y="276.36" class="todo"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="692.47" y="276.36" class="todo"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="699.66" y="276.36" class="todo"><title>0x0042f7e0 WeaponObject (59 bytes)</title></rect>
-<rect width="4.19" height="3.88" x="706.85" y="276.36" class="todo"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
+<rect width="4.19" height="3.88" x="706.85" y="276.36" class="named"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="714.04" y="276.36" class="named"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="721.23" y="276.36" class="todo"><title>0x00435f40 ControlGlow (59 bytes)</title></rect>
 <rect width="4.19" height="3.88" x="728.43" y="276.36" class="todo"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
