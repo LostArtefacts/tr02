@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.52% (605)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.48% (642)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.60% (606)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.40% (641)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="362.42" height="6" x="0" y="0" class="named"/>
-<rect width="384.58" height="6" x="362.42" y="0" class="todo"/>
+<rect width="363.02" height="6" x="0" y="0" class="named"/>
+<rect width="383.98" height="6" x="363.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -984,7 +984,7 @@
 <rect width="12" height="12" x="210" y="270" class="named"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="270" class="named"><title>0x00447f40 WinSndGetFreeChannelIndex (57 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="270" class="named"><title>0x00447f80 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="270" class="todo"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="270" class="named"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="270" class="todo"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="270" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="270" class="todo"><title>0x00448050 Func448050 (5 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.69%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="218.93" height="6" x="0" y="0" class="named"/>
-<rect width="528.07" height="6" x="218.93" y="0" class="todo"/>
+<rect width="219.04" height="6" x="0" y="0" class="named"/>
+<rect width="527.96" height="6" x="219.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2290,7 +2290,7 @@
 <rect width="3.48" height="3.31" x="668.93" y="309.39" class="named"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
 <rect width="3.48" height="3.31" x="668.93" y="315.70" class="named"><title>0x0041b810 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="3.48" height="3.31" x="668.93" y="322.01" class="named"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
-<rect width="3.48" height="3.31" x="668.93" y="328.32" class="todo"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
+<rect width="3.48" height="3.31" x="668.93" y="328.32" class="named"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="3.48" height="3.31" x="668.93" y="334.62" class="todo"><title>0x00451540 S_CalculateStaticLight (49 bytes)</title></rect>
 <rect width="3.48" height="3.18" x="668.93" y="340.93" class="named"><title>0x0041c850 ControlRichochet1 (48 bytes)</title></rect>
 <rect width="3.48" height="3.18" x="668.93" y="347.11" class="named"><title>0x004272d0 InitialiseFXArray (48 bytes)</title></rect>

@@ -124,3 +124,17 @@ void DS_AdjustVolumeAndPan(int nHandle, int nVolume, int nPan)
     }
 }
 
+void DS_AdjustPitch(int nHandle, int nPitch)
+{
+    LPDIRECTSOUNDBUFFER pBuffer;
+    int nFrequency;
+
+    if (nHandle < 0)
+        return;
+    pBuffer = ChannelBuffers[nHandle];
+    if (pBuffer) {
+        nFrequency = (nPitch * SampleFreqs[ChannelSamples[nHandle]]) >> 16;
+        DX_TRY(pBuffer->SetFrequency(nFrequency));
+    }
+}
+
