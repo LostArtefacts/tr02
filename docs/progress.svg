@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.71% (595)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.29% (652)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.79% (596)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.21% (651)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="356.43" height="6" x="0" y="0" class="named"/>
-<rect width="390.57" height="6" x="356.43" y="0" class="todo"/>
+<rect width="357.03" height="6" x="0" y="0" class="named"/>
+<rect width="389.97" height="6" x="357.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -158,7 +158,7 @@
 <rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="15" class="todo"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="15" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="15" class="todo"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="15" class="named"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="todo"><title>0x0040d270 DoBoatDynamics (75 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="15" class="todo"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="15" class="todo"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.85%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.15%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="214.73" height="6" x="0" y="0" class="named"/>
-<rect width="532.27" height="6" x="214.73" y="0" class="todo"/>
+<rect width="215.54" height="6" x="0" y="0" class="named"/>
+<rect width="531.46" height="6" x="215.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1572,7 +1572,7 @@
 <rect width="14.63" height="14.92" x="594.39" y="59.78" class="named"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
 <rect width="14.54" height="14.92" x="612.02" y="59.78" class="todo"><title>0x004358d0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="14.35" height="14.92" x="629.56" y="59.78" class="todo"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
-<rect width="14.31" height="14.92" x="646.91" y="59.78" class="todo"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
+<rect width="14.31" height="14.92" x="646.91" y="59.78" class="named"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="14.31" height="14.92" x="664.22" y="59.78" class="todo"><title>0x00455eb0 TexturePageInit (372 bytes)</title></rect>
 <rect width="14.21" height="14.92" x="681.52" y="59.78" class="named"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
 <rect width="14.12" height="14.92" x="698.74" y="59.78" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>

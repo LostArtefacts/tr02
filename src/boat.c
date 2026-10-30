@@ -112,3 +112,48 @@ void DoBoatShift(int boat_number)
         item_number = item->next_item;
     }
 }
+
+#define WATER_SPRITE 89
+
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
+extern sint32 LsAdder;
+
+void DoWakeEffect(ITEM_INFO *boat)
+{
+    int i;
+    sint32 c, s, w, h;
+    sint16 fx_number, frame;
+    FX_INFO *fx;
+
+    *(phd_mxptr + M23) = 0;
+    S_CalculateLight(boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos, boat->room_number);
+
+    frame = GetRandomDraw() * objects[WATER_SPRITE].nmeshes >> 15;
+    for (i = 0; i < 3; i++) {
+        fx_number = CreateEffect(boat->room_number);
+        if (fx_number != NO_ITEM) {
+            fx = &effects[fx_number];
+            c = phd_cos(boat->pos.y_rot);
+            s = phd_sin(boat->pos.y_rot);
+            h = BOAT_WAKE;
+            w = (1 - i) * BOAT_SIDE;
+            fx->pos.x_pos = boat->pos.x_pos + ((-(c * w) - (h * s)) >> W2V_SHIFT);
+            fx->pos.y_pos = boat->pos.y_pos;
+            fx->pos.z_pos = boat->pos.z_pos + (((s * w) - (h * c)) >> W2V_SHIFT);
+            fx->pos.y_rot = boat->pos.y_rot - (1 - i) * 0x4000;
+            fx->room_number = boat->room_number;
+            fx->frame_number = frame;
+            fx->counter = 20;
+            fx->object_number = WATER_SPRITE;
+            fx->speed = boat->speed >> 2;
+            if (boat->speed < 64)
+                fx->fallspeed = GetRandomDraw() * (ABS(boat->speed) - 64) >> 15;
+            else
+                fx->fallspeed = 0;
+            fx->shade = LsAdder - 0x300;
+            if (fx->shade < 0)
+                fx->shade = 0;
+        }
+    }
+}
