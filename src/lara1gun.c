@@ -134,6 +134,46 @@ void FireHarpoon(void)
 
 #define ROCKET 248
 
+void FireRocket(void)
+{
+    sint16 item_number;
+    ITEM_INFO *item;
+    PHD_VECTOR pos;
+
+    if (lara.grenade.ammo <= 0)
+        return;
+
+    item_number = CreateItem();
+    if (item_number != NO_ITEM)
+    {
+        item = &items[item_number];
+
+        item->object_number = ROCKET;
+        item->room_number = lara_item->room_number;
+        pos.x = -2;
+        pos.y = 273 + 100;
+        pos.z = 77;
+        GetLaraJointAbsPosition(&pos, 10);
+        item->pos.x_pos = pos.x;
+        item->pos.y_pos = pos.y;
+        item->pos.z_pos = pos.z;
+
+        InitialiseItem(item_number);
+
+        item->pos.x_rot = lara_item->pos.x_rot + lara.left_arm.x_rot;
+        item->pos.y_rot = lara_item->pos.y_rot + lara.left_arm.y_rot;
+        item->pos.z_rot = 0;
+        item->speed = 200;
+        item->fallspeed = 0;
+
+        AddActiveItem(item_number);
+
+        if (!savegame.bonus_flag)
+            lara.grenade.ammo--;
+        savegame.ammo_used++;
+    }
+}
+
 enum weapon_anim {
     W_AIM,
     W_DRAW,
