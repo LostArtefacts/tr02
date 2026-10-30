@@ -293,3 +293,67 @@ sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint3
     GetJointAbsPosition(item, &pos, bite->mesh_num);
     return ((*generate)(pos.x, pos.y, pos.z, item->speed, item->pos.y_rot, item->room_number));
 }
+
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+
+int CreatureVault(sint16 item_number, sint16 angle, int vault, int shift)
+{
+    ITEM_INFO *item;
+    sint32 y, xx, yy, x_floor, y_floor;
+    sint16 room_number;
+
+    item = &items[item_number];
+    xx = item->pos.z_pos >> WALL_SHIFT;
+    yy = item->pos.x_pos >> WALL_SHIFT;
+    y = item->pos.y_pos;
+    room_number = item->room_number;
+
+    CreatureAnimation(item_number, angle, 0);
+
+    if (item->floor > y + STEP_L * 7 / 2)
+        vault = -4;
+    else if (item->pos.y_pos > y - STEP_L * 3 / 2)
+        return 0;
+    else if (item->pos.y_pos > y - STEP_L * 5 / 2)
+        vault = 2;
+    else if (item->pos.y_pos > y - STEP_L * 7 / 2)
+        vault = 3;
+    else
+        vault = 4;
+
+    x_floor = item->pos.z_pos >> WALL_SHIFT;
+    y_floor = item->pos.x_pos >> WALL_SHIFT;
+    if (xx == x_floor)
+    {
+        if (yy == y_floor)
+            return 0;
+        if (yy < y_floor)
+        {
+            item->pos.x_pos = (y_floor << WALL_SHIFT) - shift;
+            item->pos.y_rot = 0x4000;
+        }
+        else
+        {
+            item->pos.x_pos = (yy << WALL_SHIFT) + shift;
+            item->pos.y_rot = -0x4000;
+        }
+    }
+    else if (yy == y_floor)
+    {
+        if (xx < x_floor)
+        {
+            item->pos.z_pos = (x_floor << WALL_SHIFT) - shift;
+            item->pos.y_rot = 0;
+        }
+        else
+        {
+            item->pos.z_pos = (xx << WALL_SHIFT) + shift;
+            item->pos.y_rot = -0x8000;
+        }
+    }
+
+    item->pos.y_pos = item->floor = y;
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+    return vault;
+}

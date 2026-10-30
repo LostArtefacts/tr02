@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.89% (460)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.11% (787)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.97% (461)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.03% (786)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="275.56" height="6" x="0" y="0" class="named"/>
-<rect width="471.44" height="6" x="275.56" y="0" class="todo"/>
+<rect width="276.16" height="6" x="0" y="0" class="named"/>
+<rect width="470.84" height="6" x="276.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -187,7 +187,7 @@
 <rect width="12" height="12" x="255" y="30" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="30" class="named"><title>0x00410040 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="30" class="named"><title>0x00410090 CreatureEffect (92 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="30" class="todo"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="30" class="named"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="30" class="todo"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="30" class="todo"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="30" class="todo"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.25%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="125.12" height="6" x="0" y="0" class="named"/>
-<rect width="621.88" height="6" x="125.12" y="0" class="todo"/>
+<rect width="125.79" height="6" x="0" y="0" class="named"/>
+<rect width="621.21" height="6" x="125.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.52" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1632,7 +1632,7 @@
 <rect width="12.51" height="13.62" x="719.03" y="77.49" class="todo"><title>0x00401c10 S_InsertBackground (308 bytes)</title></rect>
 <rect width="12.46" height="13.62" x="734.54" y="77.49" class="todo"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
 <rect width="12.57" height="13.46" x="465.96" y="94.11" class="todo"><title>0x004239d0 DoInventoryBackground (306 bytes)</title></rect>
-<rect width="12.57" height="13.40" x="465.96" y="110.57" class="todo"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
+<rect width="12.57" height="13.40" x="465.96" y="110.57" class="named"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
 <rect width="12.57" height="13.35" x="465.96" y="126.97" class="todo"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
 <rect width="12.57" height="13.19" x="465.96" y="143.32" class="named"><title>0x0041d630 DrawSphereOfDoom (301 bytes)</title></rect>
 <rect width="12.57" height="13.08" x="465.96" y="159.50" class="todo"><title>0x0040bb70 InsertLine_Sorted (299 bytes)</title></rect>
