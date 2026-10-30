@@ -77,6 +77,24 @@ void LookLeftRight(void)
         lara.torso_y_rot = lara.head_y_rot;
 }
 
+void ResetLook(void)
+{
+    if (camera.type == LOOK_CAMERA)
+        return;
+
+    if ((lara.head_x_rot > -HEAD_TURN) && (lara.head_x_rot < HEAD_TURN))
+        lara.head_x_rot = 0;
+    else
+        lara.head_x_rot -= lara.head_x_rot / 8;
+    lara.torso_x_rot = lara.head_x_rot;
+
+    if ((lara.head_y_rot > -HEAD_TURN) && (lara.head_y_rot < HEAD_TURN))
+        lara.head_y_rot = 0;
+    else
+        lara.head_y_rot -= lara.head_y_rot / 8;
+    lara.torso_y_rot = lara.head_y_rot;
+}
+
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
@@ -1110,7 +1128,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
