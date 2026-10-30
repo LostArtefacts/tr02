@@ -1,6 +1,7 @@
 #include "game.h"
 
 #define FALLING_PLANK 57
+#define BLADE 81
 #define FLAME 252
 
 sint16 CreateEffect(sint16 room_num);
@@ -8,6 +9,18 @@ int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 
 enum trap_anims { TRAP_SET, TRAP_ACTIVATE, TRAP_WORKING, TRAP_FINISHED };
 enum door_anims { DOOR_CLOSED, DOOR_OPEN };
+enum blade_anims { BLADE_EMPTY, BLADE_STOP, BLADE_CUT };
+
+void InitialiseBlade(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    item->anim_number = objects[BLADE].anim_index + 2;
+    item->frame_number = anims[item->anim_number].frame_base;
+    item->current_anim_state = BLADE_STOP;
+}
 
 void TrapDoorFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {

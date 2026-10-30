@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.29% (278)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.71% (969)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.37% (279)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.63% (968)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="166.53" height="6" x="0" y="0" class="named"/>
-<rect width="580.47" height="6" x="166.53" y="0" class="todo"/>
+<rect width="167.13" height="6" x="0" y="0" class="named"/>
+<rect width="579.87" height="6" x="167.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -833,7 +833,7 @@
 <rect width="12" height="12" x="195" y="225" class="todo"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="225" class="todo"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="225" class="todo"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="225" class="todo"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="225" class="named"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="225" class="todo"><title>0x00441900 BladeControl (145 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="225" class="todo"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="225" class="todo"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.06%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.95%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.05%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.82" height="6" x="0" y="0" class="named"/>
-<rect width="695.18" height="6" x="51.82" y="0" class="todo"/>
+<rect width="51.95" height="6" x="0" y="0" class="named"/>
+<rect width="695.05" height="6" x="51.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2198,7 +2198,7 @@
 <rect width="4.30" height="3.88" x="655.89" y="276.36" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="4.30" height="3.88" x="663.19" y="276.36" class="todo"><title>0x0040cb10 InitialiseBoat (60 bytes)</title></rect>
 <rect width="4.30" height="3.88" x="670.50" y="276.36" class="todo"><title>0x004343a0 ControlCutShotgun (60 bytes)</title></rect>
-<rect width="4.30" height="3.88" x="677.80" y="276.36" class="todo"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
+<rect width="4.30" height="3.88" x="677.80" y="276.36" class="named"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
 <rect width="4.30" height="3.88" x="685.11" y="276.36" class="todo"><title>0x00441be0 InitialiseRollingBall (60 bytes)</title></rect>
 <rect width="4.30" height="3.88" x="692.41" y="276.36" class="todo"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
 <rect width="4.18" height="3.88" x="699.72" y="276.36" class="todo"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
