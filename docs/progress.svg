@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.76% (933)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.68% (308)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.84% (934)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.60% (307)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="558.45" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="558.45" y="0" class="decompiled"/>
-<rect width="184.36" height="6" x="562.64" y="0" class="todo"/>
+<rect width="559.05" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="559.05" y="0" class="decompiled"/>
+<rect width="183.76" height="6" x="563.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -955,7 +955,7 @@
 <rect width="12" height="12" x="510" y="255" class="named"><title>0x004472f0 WinInReadKeyboard (90 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="255" class="named"><title>0x00447350 WinInReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="255" class="decompiled"><title>0x00447450 Func447450 (5 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="255" class="todo"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="255" class="named"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="255" class="named"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="255" class="named"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="255" class="named"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.03%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.89%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.07%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.85%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="411.09" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="411.09" y="0" class="decompiled"/>
-<rect width="335.31" height="6" x="411.69" y="0" class="todo"/>
+<rect width="411.36" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="411.36" y="0" class="decompiled"/>
+<rect width="335.03" height="6" x="411.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1950,7 +1950,7 @@
 <rect width="7.14" height="7.38" x="570.33" y="346.85" class="named"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="7.14" height="7.38" x="570.33" y="357.23" class="named"><title>0x0041c750 ControlExplosion1 (127 bytes)</title></rect>
 <rect width="7.14" height="7.38" x="570.33" y="367.62" class="named"><title>0x0042a2d0 LaraDeflectEdge (127 bytes)</title></rect>
-<rect width="7.17" height="7.36" x="580.47" y="208.43" class="todo"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
+<rect width="7.17" height="7.36" x="580.47" y="208.43" class="named"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
 <rect width="7.17" height="7.36" x="590.63" y="208.43" class="named"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="7.09" height="7.36" x="600.80" y="208.43" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="7.09" height="7.36" x="610.89" y="208.43" class="named"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>

@@ -185,6 +185,11 @@ struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
     STRING_FLAGGED(DWORD size);
+    ~STRING_FLAGGED()
+    {
+        if (isPresented)
+            delete[] lpString;
+    }
 };
 
 STRING_FLAGGED::STRING_FLAGGED(DWORD size)
@@ -244,4 +249,26 @@ extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LP
     strcpy(joyNode->body.productName.lpString, lpddi->tszProductName);
     strcpy(joyNode->body.instanceName.lpString, lpddi->tszInstanceName);
     return DIENUM_CONTINUE;
+}
+
+extern "C" JOYSTICK_LIST JoystickList;
+
+extern "C" bool WinInputInit(void)
+{
+    JOYSTICK_NODE *node;
+    JOYSTICK_NODE *nextNode;
+    bool result;
+
+    for (node = JoystickList.head; node; node = nextNode) {
+        nextNode = node->next;
+        delete node;
+    }
+    JoystickList.head = NULL;
+    JoystickList.tail = NULL;
+    JoystickList.dwCount = 0;
+    if (!DInputCreate())
+        return false;
+    result = DInputEnumDevices(&JoystickList);
+    DInputRelease();
+    return result;
 }
