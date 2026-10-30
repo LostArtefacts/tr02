@@ -45,3 +45,11 @@ void UT_CenterWindow(HWND hWnd)
     y -= (rcWnd.bottom - rcWnd.top) >> 1;
     SetWindowPos(hWnd, NULL, x, y, -1, -1, SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);
 }
+
+char *UT_FindArg(char *szArg)
+{
+    char *pArg = strstr(GpCmdLine, szArg);
+    if (!pArg)
+        return 0;
+    return pArg + strlen(szArg);
+}

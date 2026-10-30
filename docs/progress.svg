@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.98% (112)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.02% (1135)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.06% (113)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.94% (1134)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="67.09" height="6" x="0" y="0" class="named"/>
-<rect width="679.91" height="6" x="67.09" y="0" class="todo"/>
+<rect width="67.69" height="6" x="0" y="0" class="named"/>
+<rect width="679.31" height="6" x="67.69" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1242,7 +1242,7 @@
 <rect width="12" height="12" x="330" y="345" class="named"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="345" class="named"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="345" class="named"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="345" class="todo"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="345" class="named"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="345" class="todo"><title>0x00456910 UT_ErrorBox (24 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="345" class="todo"><title>0x00456930 UT_ErrorBox (66 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="345" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.10%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="14.11" height="6" x="0" y="0" class="named"/>
-<rect width="732.89" height="6" x="14.11" y="0" class="todo"/>
+<rect width="14.21" height="6" x="0" y="0" class="named"/>
+<rect width="732.79" height="6" x="14.21" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2324,7 +2324,7 @@
 <rect width="2.81" height="3.34" x="681.16" y="309.23" class="todo"><title>0x00435780 DrawBridgeCollision (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="315.58" class="todo"><title>0x00440500 Func440500 (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="321.92" class="todo"><title>0x00447f80 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
-<rect width="2.81" height="3.34" x="681.16" y="328.26" class="todo"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
+<rect width="2.81" height="3.34" x="681.16" y="328.26" class="named"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="334.61" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="340.95" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="347.15" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
