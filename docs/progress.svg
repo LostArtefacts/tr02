@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.71% (744)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.29% (502)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.79% (745)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.21% (501)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="446.04" height="6" x="0" y="0" class="named"/>
-<rect width="300.96" height="6" x="446.04" y="0" class="todo"/>
+<rect width="446.64" height="6" x="0" y="0" class="named"/>
+<rect width="300.36" height="6" x="446.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -799,7 +799,7 @@
 <rect width="12" height="12" x="435" y="210" class="named"><title>0x0043fa30 SOUND_Init (42 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="210" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="210" class="named"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="210" class="todo"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="210" class="named"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="210" class="named"><title>0x00440010 BaddieBiteEffect (93 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="210" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="210" class="named"><title>0x00440120 SpiderControl (544 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.58%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.42%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.70%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.30%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="325.55" height="6" x="0" y="0" class="named"/>
-<rect width="421.45" height="6" x="325.55" y="0" class="todo"/>
+<rect width="326.45" height="6" x="0" y="0" class="named"/>
+<rect width="420.55" height="6" x="326.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1545,7 +1545,7 @@
 <rect width="15.03" height="16.10" x="413.59" y="60.82" class="named"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
 <rect width="15.03" height="16.05" x="413.59" y="79.92" class="named"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
 <rect width="15.03" height="16.01" x="413.59" y="98.98" class="named"><title>0x0042de70 lara_col_climbdown (412 bytes)</title></rect>
-<rect width="15.03" height="15.92" x="413.59" y="117.98" class="todo"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
+<rect width="15.03" height="15.92" x="413.59" y="117.98" class="named"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="15.03" height="15.82" x="413.59" y="136.90" class="named"><title>0x00414b40 GetFloor (408 bytes)</title></rect>
 <rect width="15.03" height="15.73" x="413.59" y="155.72" class="todo"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
 <rect width="15.03" height="15.68" x="413.59" y="174.45" class="todo"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>

@@ -142,3 +142,57 @@ int GetSpheres(ITEM_INFO *item, SPHERE *ptr, int WorldSpace)
     phd_PopMatrix();
     return object->nmeshes;
 }
+
+void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint)
+{
+    int i, poppush;
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation;
+    sint16 *frame;
+    sint16 *extra_rotation;
+
+    object = &objects[item->object_number];
+    frame = GetBestFrame(item);
+
+    phd_PushUnitMatrix();
+    *(phd_mxptr + M03) = 0;
+    *(phd_mxptr + M13) = 0;
+    *(phd_mxptr + M23) = 0;
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    phd_TranslateRel((sint32)frame[6], (sint32)frame[7], (sint32)frame[8]);
+
+    rotation = frame + 9;
+    phd_RotYXZsuperpack(&rotation, 0);
+
+    bone = bones + object->bone_index;
+
+    extra_rotation = (sint16 *)item->data;
+    for (i = 0; i < joint; i++, bone += 3)
+    {
+        poppush = *(bone++);
+        if (poppush & 1)
+            phd_PopMatrix();
+        if (poppush & 2)
+            phd_PushMatrix();
+
+        phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
+        phd_RotYXZsuperpack(&rotation, 0);
+
+        if (poppush & (ROT_X | ROT_Y | ROT_Z))
+        {
+            if (poppush & ROT_Y)
+                phd_RotY(*(extra_rotation++));
+            if (poppush & ROT_X)
+                phd_RotX(*(extra_rotation++));
+            if (poppush & ROT_Z)
+                phd_RotZ(*(extra_rotation++));
+        }
+    }
+    phd_TranslateRel(vec->x, vec->y, vec->z);
+    vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
+    vec->y = (*(phd_mxptr + M13) >> W2V_SHIFT) + item->pos.y_pos;
+    vec->z = (*(phd_mxptr + M23) >> W2V_SHIFT) + item->pos.z_pos;
+    phd_PopMatrix();
+}
