@@ -1068,3 +1068,26 @@ void SkidmanPush(ITEM_INFO *item, ITEM_INFO *laraitem, int radius)
         laraitem->pos.z_pos = item->pos.z_pos + ((c * rz - s * rx) >> W2V_SHIFT);
     }
 }
+
+void SkidmanCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+
+    if (coll->enable_baddie_push) {
+        if (item->speed > 0)
+            ItemPushLara(item, laraitem, coll, coll->enable_spaz, 0);
+        else
+            ItemPushLara(item, laraitem, coll, 0, 0);
+    }
+
+    if (lara.skidoo == NO_ITEM && item->speed > 0) {
+        laraitem->hit_status = 1;
+        laraitem->hit_points -= 100;
+    }
+}
