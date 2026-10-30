@@ -28,8 +28,8 @@ the one TRX's manifest names.
 
 ## Compiler
 
-Visual C++ 5.0, which is not redistributable: `cl` 11.00.7022 and
-`link` 5.00.7022. It is on disc 3 of Visual Studio 97 Enterprise
+Visual C++ 5.0 with Service Pack 3, which is not redistributable:
+`cl` 11.00.7022 and `link` 5.10.7303. It is on disc 3 of Visual Studio 97 Enterprise
 (`VS97ENT3.iso`), under `DEVSTUDIO`, uncompressed. Copy `VC\BIN`,
 `VC\INCLUDE` and `VC\LIB` into the Wine prefix as `C:\msvc5\bin`,
 `include` and `lib`, and next to them in `bin` the DLLs the linker
@@ -46,6 +46,23 @@ cp -r iso/DEVSTUDIO/VC/INCLUDE .wine/drive_c/msvc5/include
 cp -r iso/DEVSTUDIO/VC/LIB .wine/drive_c/msvc5/lib
 cp iso/DEVSTUDIO/SHAREDIDE/BIN/MSPDB50.DLL iso/DEVSTUDIO/SHAREDIDE/BIN/MSDIS100.DLL \
     iso/DEVSTUDIO/VC/REDIST/MSVCP50.DLL .wine/drive_c/msvc5/bin/
+```
+
+### Service Pack 3
+
+The game was built with Service Pack 3's compiler: its `C2.EXE` pads a
+jump table with `lea ecx,[ecx+0]` (`8d 49 00`) where 7022's writes
+`nop; mov edi,edi`. The driver, `CL.EXE`, still says 11.00.7022. From
+the Service Pack 3 disc (X03-50158), copy the plain install into
+`C:\msvc5sp3`, then the service pack's files over it:
+
+```sh
+7z x -osp3 'Microsoft Visual Studio 97 (Service Pack 3)(X03-50158)(1997).ISO' \
+    ENU/VC/BIN ALL/SHARED/BIN ALL/VC/LIB ALL/VC/INCLUDE
+cp -r .wine/drive_c/msvc5 .wine/drive_c/msvc5sp3
+cp sp3/ENU/VC/BIN/* sp3/ALL/SHARED/BIN/*.DLL .wine/drive_c/msvc5sp3/bin/
+cp sp3/ALL/VC/LIB/* .wine/drive_c/msvc5sp3/lib/
+cp -r sp3/ALL/VC/INCLUDE/* .wine/drive_c/msvc5sp3/include/
 ```
 
 ## DirectX 5 SDK
