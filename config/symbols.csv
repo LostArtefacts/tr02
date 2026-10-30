@@ -1594,6 +1594,8 @@ address,size,name,symbol
 0x00466a0c,,LoadBoxesOverlaps,_LoadBoxesOverlaps
 0x00466a38,,LoadBoxesBoxes,_LoadBoxesBoxes
 0x00466a5c,4,DemoExtension,_DemoExtension
+0x00466a60,,MainSfxOpenFailed,_MainSfxOpenFailed
+0x00466a80,,MainSfxFileName,_MainSfxFileName
 0x00466b80,32,saved_levels,_saved_levels
 0x00466bb0,4,rand_1,_rand_1
 0x00466bb4,4,rand_2,_rand_2

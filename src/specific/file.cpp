@@ -6,6 +6,7 @@
 #include "../camera.h"
 #include "../effects.h"
 #include "../gameflow.h"
+#include "../sound.h"
 #include "hwrender.h"
 #include "winmain.h"
 
@@ -110,6 +111,91 @@ int LoadDemo(HANDLE file)
     else
         demo_loaded = 0;
 
+    return 1;
+}
+
+extern "C" int sound_active;
+extern "C" int SampleInfoCount;
+extern "C" char StringToShow[];
+extern "C" char MainSfxFileName[];
+extern "C" char MainSfxOpenFailed[];
+extern "C" bool WinSndIsSoundEnabled(void);
+extern "C" void WinSndFreeAllSamples(void);
+extern "C" bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
+extern "C" char *GetFullPath(char *path);
+extern "C" void game_free(int size, int type);
+
+extern "C" int LoadSamples(HANDLE file)
+{
+    DWORD read;
+    int nSamples;
+    int required_samples[500];
+    int required;
+    int sample;
+    char *pWaveData;
+    DWORD dwHeader[11];
+    DWORD dwWaveLength;
+    DWORD dwStoredLength;
+    WAVEFORMATEX *pWF;
+    HANDLE sfx;
+
+    sound_active = 0;
+    if (!WinSndIsSoundEnabled())
+        return 1;
+
+    WinSndFreeAllSamples();
+
+    MyReadFile(file, sample_lut, sizeof(sint16) * 370, &read, NULL);
+    MyReadFile(file, &SampleInfoCount, sizeof(int), &read, NULL);
+    if (!SampleInfoCount)
+        return 0;
+
+    sample_infos = (SAMPLE_INFO *)game_malloc(sizeof(SAMPLE_INFO) * SampleInfoCount, 35);
+    MyReadFile(file, sample_infos, sizeof(SAMPLE_INFO) * SampleInfoCount, &read, NULL);
+
+    MyReadFile(file, &nSamples, sizeof(int), &read, NULL);
+    if (!nSamples)
+        return 0;
+
+    MyReadFile(file, required_samples, sizeof(int) * nSamples, &read, NULL);
+
+    sfx = CreateFile(GetFullPath(MainSfxFileName), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (sfx == INVALID_HANDLE_VALUE)
+    {
+        wsprintf(StringToShow, MainSfxOpenFailed);
+        return 0;
+    }
+
+    required = 0;
+    sample = 0;
+    pWF = (WAVEFORMATEX *)(dwHeader + 5);
+    while (required < nSamples)
+    {
+        MyReadFile(sfx, dwHeader, sizeof(dwHeader), &read, NULL);
+        if (dwHeader[0] != MAKEFOURCC('R', 'I', 'F', 'F') || dwHeader[2] != MAKEFOURCC('W', 'A', 'V', 'E') || dwHeader[9] != MAKEFOURCC('d', 'a', 't', 'a'))
+            return 0;
+
+        pWF->cbSize = 0;
+        dwWaveLength = dwHeader[10];
+        dwStoredLength = (dwWaveLength + 1) & ~1;
+
+        if (required_samples[required] != sample)
+            SetFilePointer(sfx, dwStoredLength, 0, FILE_CURRENT);
+        else
+        {
+            pWaveData = (char *)game_malloc(dwStoredLength, 36);
+            MyReadFile(sfx, pWaveData, dwStoredLength, &read, NULL);
+            if (!WinSndMakeSample(required, pWF, pWaveData, dwWaveLength))
+                return 0;
+            game_free(dwStoredLength, 36);
+            required++;
+        }
+
+        sample++;
+    }
+
+    CloseHandle(sfx);
+    sound_active = 1;
     return 1;
 }
 
