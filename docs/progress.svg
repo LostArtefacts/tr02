@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.79% (783)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.97% (461)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.87% (784)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.89% (460)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="469.05" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="469.05" y="0" class="decompiled"/>
-<rect width="276.16" height="6" x="470.84" y="0" class="todo"/>
+<rect width="469.65" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="469.65" y="0" class="decompiled"/>
+<rect width="275.56" height="6" x="471.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1009,7 +1009,7 @@
 <rect width="12" height="12" x="570" y="270" class="todo"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="270" class="todo"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="270" class="todo"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="270" class="named"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00448f00 RenderStart (933 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="270" class="todo"><title>0x004492b0 RenderFinish (230 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="270" class="todo"><title>0x004493a0 ApplySettings (284 bytes)</title></rect>
@@ -1321,9 +1321,9 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.29%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="345.78" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="345.78" y="0" class="decompiled"/>
-<rect width="401.17" height="6" x="345.83" y="0" class="todo"/>
+<rect width="345.79" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="345.79" y="0" class="decompiled"/>
+<rect width="401.16" height="6" x="345.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2570,7 +2570,7 @@
 <rect width="0.10" height="0.10" x="745.71" y="373.73" class="decompiled"><title>0x00448050 Func448050 (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.71" y="375.87" class="todo"><title>0x004524d0 CloseGameRegistryKey (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.66" y="373.73" class="todo"><title>0x00452e30 Func452e30 (5 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="747.66" y="375.51" class="todo"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="747.66" y="375.51" class="named"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="748.83" y="375.51" class="todo"><title>0x00452bb0 Func452bb0 (3 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.66" y="377.64" class="named"><title>0x0042a120 lara_col_kick (1 bytes)</title></rect>
 </g>

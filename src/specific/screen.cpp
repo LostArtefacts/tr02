@@ -32,6 +32,11 @@ extern "C" DWORD GetZBufferDepth(void)
     return 8;
 }
 
+extern "C" bool RenderInit(void)
+{
+    return true;
+}
+
 extern "C" {
 extern LPCTSTR ErrorStringTable[];
 }
