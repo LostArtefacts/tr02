@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.39% (167)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.61% (1080)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.47% (168)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.53% (1079)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="100.04" height="6" x="0" y="0" class="named"/>
-<rect width="646.96" height="6" x="100.04" y="0" class="todo"/>
+<rect width="100.64" height="6" x="0" y="0" class="named"/>
+<rect width="646.36" height="6" x="100.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -529,7 +529,7 @@
 <rect width="12" height="12" x="135" y="135" class="named"><title>0x004297e0 lara_col_fastturn (19 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="135" class="todo"><title>0x00429800 lara_col_stepright (190 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="135" class="named"><title>0x004298c0 lara_col_stepleft (19 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="135" class="todo"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="135" class="named"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="135" class="todo"><title>0x00429900 lara_col_backjump (35 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="135" class="todo"><title>0x00429930 lara_col_rightjump (35 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="135" class="todo"><title>0x00429960 lara_col_leftjump (35 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.51%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="33.51" height="6" x="0" y="0" class="named"/>
-<rect width="713.49" height="6" x="33.51" y="0" class="todo"/>
+<rect width="33.57" height="6" x="0" y="0" class="named"/>
+<rect width="713.43" height="6" x="33.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2398,7 +2398,7 @@
 <rect width="2.30" height="1.91" x="703.37" y="326.19" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="2.30" height="1.91" x="708.66" y="326.19" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
 <rect width="2.30" height="1.91" x="713.96" y="326.19" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
-<rect width="2.12" height="1.91" x="719.25" y="326.19" class="todo"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
+<rect width="2.12" height="1.91" x="719.25" y="326.19" class="named"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
 <rect width="2.12" height="1.91" x="724.38" y="326.19" class="todo"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
 <rect width="2.12" height="1.91" x="729.50" y="326.19" class="todo"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
 <rect width="2.12" height="1.91" x="734.63" y="326.19" class="todo"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
