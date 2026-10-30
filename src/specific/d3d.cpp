@@ -41,7 +41,7 @@ extern "C" void D3DRelease(void)
     }
 }
 
-extern "C" bool D3DIsSupported(LPD3DDEVICEDESC desc)
+extern "C" bool D3DIsSupported(LPD3DDEVICEDESC desc, bool hardware)
 {
     if (!(desc->dwFlags & D3DDD_COLORMODEL))
         return false;
@@ -59,6 +59,67 @@ extern "C" bool D3DIsSupported(LPD3DDEVICEDESC desc)
 extern "C" {
 extern LPDIRECT3DVIEWPORT2 D3DView;
 extern LPDIRECT3DMATERIAL2 D3DMaterial;
+}
+
+typedef struct {
+    LPTSTR lpString;
+    bool isPresented;
+} STRING_FLAGGED;
+
+typedef struct {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+} DISPLAY_MODE;
+
+typedef struct {
+    void *head;
+    void *tail;
+    DWORD dwCount;
+} DISPLAY_MODE_LIST;
+
+typedef struct {
+    LPGUID lpAdapterGuid;
+    GUID adapterGuid;
+    STRING_FLAGGED driverDescription;
+    STRING_FLAGGED driverName;
+    DDCAPS driverCaps;
+    DDCAPS helCaps;
+    GUID deviceGuid;
+    D3DDEVICEDESC D3DHWDeviceDesc;
+    DISPLAY_MODE_LIST hwDispModeList;
+    DISPLAY_MODE_LIST swDispModeList;
+    DISPLAY_MODE vgaMode1;
+    DISPLAY_MODE vgaMode2;
+    DWORD screenWidth;
+    bool hwRenderSupported;
+    bool swWindowedSupported;
+    bool hwWindowedSupported;
+    bool isVgaMode1Presented;
+    bool isVgaMode2Presented;
+    bool perspectiveCorrectSupported;
+    bool ditherSupported;
+    bool zBufferSupported;
+    bool linearFilterSupported;
+    bool shadeRestricted;
+} DISPLAY_ADAPTER;
+
+extern "C" HRESULT WINAPI Enum3DDevicesCallback(GUID *lpGuid, LPTSTR lpDeviceDescription, LPTSTR lpDeviceName, LPD3DDEVICEDESC lpD3DHWDeviceDesc, LPD3DDEVICEDESC lpD3DHELDeviceDesc, LPVOID lpContext)
+{
+    DISPLAY_ADAPTER *adapter = (DISPLAY_ADAPTER *)lpContext;
+
+    if (lpD3DHWDeviceDesc && D3DIsSupported(lpD3DHWDeviceDesc, true)) {
+        adapter->hwRenderSupported = true;
+        adapter->deviceGuid = *lpGuid;
+        adapter->D3DHWDeviceDesc = *lpD3DHWDeviceDesc;
+        adapter->perspectiveCorrectSupported = (lpD3DHWDeviceDesc->dpcTriCaps.dwTextureCaps & D3DPTEXTURECAPS_PERSPECTIVE) ? true : false;
+        adapter->ditherSupported = (lpD3DHWDeviceDesc->dpcTriCaps.dwRasterCaps & D3DPRASTERCAPS_DITHER) ? true : false;
+        adapter->zBufferSupported = lpD3DHWDeviceDesc->dwDeviceZBufferBitDepth != 0;
+        adapter->linearFilterSupported = (lpD3DHWDeviceDesc->dpcTriCaps.dwTextureFilterCaps & D3DPTFILTERCAPS_LINEAR) ? true : false;
+        adapter->shadeRestricted = !(lpD3DHWDeviceDesc->dpcTriCaps.dwShadeCaps & (D3DPSHADECAPS_ALPHAGOURAUDBLEND | D3DPSHADECAPS_ALPHAFLATBLEND));
+    }
+    return D3DENUMRET_OK;
 }
 
 extern "C" {

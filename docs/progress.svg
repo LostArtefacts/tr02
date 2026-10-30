@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.56% (982)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">20.88% (261)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.64% (983)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">20.80% (260)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="586.84" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="586.84" y="0" class="decompiled"/>
-<rect width="155.97" height="6" x="591.03" y="0" class="todo"/>
+<rect width="587.44" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="587.44" y="0" class="decompiled"/>
+<rect width="155.38" height="6" x="591.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -878,7 +878,7 @@
 <rect width="12" height="12" x="105" y="240" class="named"><title>0x004445f0 Enumerate3DDevices (36 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="240" class="named"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="240" class="named"><title>0x00444640 D3DRelease (26 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="240" class="todo"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="240" class="named"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="240" class="named"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="named"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="240" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.74%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.18%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.80%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.12%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="438.80" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="438.80" y="0" class="decompiled"/>
-<rect width="307.59" height="6" x="439.41" y="0" class="todo"/>
+<rect width="439.22" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="439.22" y="0" class="decompiled"/>
+<rect width="307.18" height="6" x="439.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1797,7 +1797,7 @@
 <rect width="9.44" height="9.58" x="700.25" y="150.92" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="9.44" height="9.58" x="712.69" y="150.92" class="named"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
 <rect width="9.44" height="9.58" x="725.12" y="150.92" class="named"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
-<rect width="9.44" height="9.58" x="737.56" y="150.92" class="todo"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
+<rect width="9.44" height="9.58" x="737.56" y="150.92" class="named"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="9.11" height="9.92" x="523.03" y="163.50" class="todo"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="9.11" height="9.85" x="523.03" y="176.42" class="named"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
 <rect width="9.11" height="9.85" x="523.03" y="189.26" class="todo"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
