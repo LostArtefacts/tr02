@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.68% (208)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.32% (1039)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.76% (209)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">83.24% (1038)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="124.60" height="6" x="0" y="0" class="named"/>
-<rect width="622.40" height="6" x="124.60" y="0" class="todo"/>
+<rect width="125.20" height="6" x="0" y="0" class="named"/>
+<rect width="621.80" height="6" x="125.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -849,7 +849,7 @@
 <rect width="12" height="12" x="435" y="225" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x004425b0 FallingBlock (261 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="225" class="todo"><title>0x004426c0 FallingBlockFloor (62 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="225" class="todo"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="225" class="named"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="225" class="todo"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="225" class="todo"><title>0x00442810 FallingCeiling (224 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="225" class="todo"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.71%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="39.49" height="6" x="0" y="0" class="named"/>
-<rect width="707.51" height="6" x="39.49" y="0" class="todo"/>
+<rect width="39.64" height="6" x="0" y="0" class="named"/>
+<rect width="707.36" height="6" x="39.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2156,7 +2156,7 @@
 <rect width="4.87" height="4.35" x="657.04" y="261.82" class="todo"><title>0x00421b00 DrawGameInfo (69 bytes)</title></rect>
 <rect width="4.87" height="4.35" x="664.91" y="261.82" class="todo"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
 <rect width="4.87" height="4.35" x="672.78" y="261.82" class="todo"><title>0x00447e00 DS_IsChannelPlaying (69 bytes)</title></rect>
-<rect width="4.76" height="4.35" x="680.65" y="261.82" class="todo"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
+<rect width="4.76" height="4.35" x="680.65" y="261.82" class="named"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="4.76" height="4.35" x="688.40" y="261.82" class="todo"><title>0x00445380 DDrawSurfaceCreate (68 bytes)</title></rect>
 <rect width="4.76" height="4.35" x="696.16" y="261.82" class="todo"><title>0x00445680 BitMaskGetNumberOfBits (68 bytes)</title></rect>
 <rect width="4.76" height="4.35" x="703.92" y="261.82" class="todo"><title>0x004495b0 FmvBackToGame (68 bytes)</title></rect>
