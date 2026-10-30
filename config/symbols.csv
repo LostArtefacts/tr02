@@ -864,7 +864,7 @@ address,size,name,symbol
 0x00446260,1129,WinVidGameWindowProc,_WinVidGameWindowProc@16
 0x00446697,27,Func446697,
 0x004466b2,27,Func4466b2,
-0x00446870,448,WinVidResizeGameWindow,_WinVidResizeGameWindow
+0x00446870,480,WinVidResizeGameWindow,_WinVidResizeGameWindow
 0x00446a50,188,WinVidCheckGameWindowPalette,_WinVidCheckGameWindowPalette
 0x00446b10,198,WinVidCreateGameWindow,_WinVidCreateGameWindow
 0x00446be0,28,WinVidFreeWindow,_WinVidFreeWindow

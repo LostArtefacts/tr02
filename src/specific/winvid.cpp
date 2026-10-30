@@ -151,6 +151,73 @@ extern "C" bool WinVidGetMinMaxInfo(LPMINMAXINFO info)
     return IsMinWindowSizeSet || IsMaxWindowSizeSet;
 }
 
+extern "C" void WinVidResizeGameWindow(HWND hWnd, int edge, LPRECT rect)
+{
+    bool isShiftPressed;
+    int width;
+    int height;
+    int newHeight;
+    int newWidth;
+
+    if (IsGameFullScreen) {
+        rect->left = 0;
+        rect->top = 0;
+        rect->right = FullScreenWidth;
+        rect->bottom = FullScreenHeight;
+        return;
+    }
+    isShiftPressed = GetAsyncKeyState(VK_SHIFT) < 0;
+    width = rect->right - rect->left;
+    height = rect->bottom - rect->top;
+    GameWindowCalculateSizeFromClientByZero(&width, &height);
+    if (edge == WMSZ_TOP || edge == WMSZ_BOTTOM) {
+        newHeight = height;
+        if (isShiftPressed)
+            newHeight &= ~0x1F;
+        newWidth = CalculateWindowWidth(width, newHeight);
+    } else {
+        newWidth = width;
+        if (isShiftPressed)
+            newWidth &= ~0x1F;
+        newHeight = CalculateWindowHeight(newWidth, height);
+    }
+    if (IsMinWindowSizeSet) {
+        if (newHeight < MinWindowClientHeight)
+            newHeight = MinWindowClientHeight;
+        if (newWidth < MinWindowClientWidth)
+            newWidth = MinWindowClientWidth;
+    }
+    if (IsMaxWindowSizeSet) {
+        if (newHeight > MaxWindowClientHeight)
+            newHeight = MaxWindowClientHeight;
+        if (newWidth > MaxWindowClientWidth)
+            newWidth = MaxWindowClientWidth;
+    }
+    GameWindowCalculateSizeFromClient(&newWidth, &newHeight);
+    switch (edge) {
+    case WMSZ_TOPLEFT:
+        rect->left = rect->right - newWidth;
+        rect->top = rect->bottom - newHeight;
+        break;
+    case WMSZ_RIGHT:
+    case WMSZ_BOTTOM:
+    case WMSZ_BOTTOMRIGHT:
+        rect->right = rect->left + newWidth;
+        rect->bottom = rect->top + newHeight;
+        break;
+    case WMSZ_LEFT:
+    case WMSZ_BOTTOMLEFT:
+        rect->bottom = rect->top + newHeight;
+        rect->left = rect->right - newWidth;
+        break;
+    case WMSZ_TOP:
+    case WMSZ_TOPRIGHT:
+        rect->top = rect->bottom - newHeight;
+        rect->right = rect->left + newWidth;
+        break;
+    }
+}
+
 extern "C" {
 extern char ClassName[];
 extern char WindowName[];
