@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.48% (766)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.52% (480)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.56% (767)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.44% (479)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="459.23" height="6" x="0" y="0" class="named"/>
-<rect width="287.77" height="6" x="459.23" y="0" class="todo"/>
+<rect width="459.83" height="6" x="0" y="0" class="named"/>
+<rect width="287.17" height="6" x="459.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -888,7 +888,7 @@
 <rect width="12" height="12" x="270" y="240" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="240" class="todo"><title>0x00444bc0 Func444bc0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="240" class="todo"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="240" class="todo"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="240" class="named"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="240" class="todo"><title>0x00444d20 GameWindowCalculateSizeFromClient (115 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="240" class="todo"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="240" class="named"><title>0x00444e10 WinVidSetMinWindowSize (65 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="343.38" height="6" x="0" y="0" class="named"/>
-<rect width="403.62" height="6" x="343.38" y="0" class="todo"/>
+<rect width="343.49" height="6" x="0" y="0" class="named"/>
+<rect width="403.51" height="6" x="343.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2274,7 +2274,7 @@
 <rect width="3.36" height="3.67" x="662.64" y="371.33" class="named"><title>0x00429ba0 lara_col_hangright (51 bytes)</title></rect>
 <rect width="3.20" height="3.84" x="668.99" y="297" class="named"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
 <rect width="3.20" height="3.84" x="668.99" y="303.84" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
-<rect width="3.20" height="3.84" x="668.99" y="310.68" class="todo"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
+<rect width="3.20" height="3.84" x="668.99" y="310.68" class="named"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="3.20" height="3.84" x="668.99" y="317.52" class="todo"><title>0x0045752e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="3.20" height="3.70" x="668.99" y="324.36" class="todo"><title>0x00401bd0 calc_background_light (50 bytes)</title></rect>
 <rect width="3.20" height="3.70" x="668.99" y="331.07" class="named"><title>0x00424290 RingActive (50 bytes)</title></rect>

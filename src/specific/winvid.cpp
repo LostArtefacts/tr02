@@ -1,3 +1,4 @@
+#include "include.h"
 #include "global.h"
 #include "winmain.h"
 
@@ -216,3 +217,25 @@ extern "C" void WinVidSetGameWindowSize(int width, int height)
     GameWindowCalculateSizeFromClient(&width, &height);
     SetWindowPos(HGameWindow, NULL, 0, 0, width, height, SWP_NOCOPYBITS | SWP_NOACTIVATE | SWP_NOZORDER | SWP_NOMOVE);
 }
+
+extern "C" {
+extern bool IsDDrawGameWindowShow;
+extern LPDIRECTDRAW DDrawInterface;
+extern LPDIRECTDRAW2 DDraw;
+void HideDDrawGameWindow(void);
+}
+
+extern "C" void DDrawRelease(void)
+{
+    if (DDraw)
+    {
+        DDraw->Release();
+        DDraw = NULL;
+    }
+    if (DDrawInterface)
+    {
+        DDrawInterface->Release();
+        DDrawInterface = NULL;
+    }
+}
+
