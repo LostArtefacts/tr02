@@ -626,6 +626,50 @@ void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem)
     laraitem->pos.z_pos = z;
 }
 
+#define FLARE_ITEM 152
+#define MOVE_SPEED 16
+#define MOVE_ANG (2 * ONE_DEGREE)
+
+int MoveLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem)
+{
+    sint16 room_number;
+    PHD_3DPOS dest;
+    FLOOR_INFO *floor;
+    sint32 dist, x, *mptr, height, y, z;
+
+    dest.x_rot = item->pos.x_rot;
+    dest.y_rot = item->pos.y_rot;
+    dest.z_rot = item->pos.z_rot;
+
+    phd_PushUnitMatrix();
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    mptr = phd_mxptr;
+    dest.x_pos = item->pos.x_pos + ((*(mptr + M00) * vec->x + *(mptr + M01) * vec->y + *(mptr + M02) * vec->z) >> W2V_SHIFT);
+    dest.y_pos = item->pos.y_pos + ((*(mptr + M10) * vec->x + *(mptr + M11) * vec->y + *(mptr + M12) * vec->z) >> W2V_SHIFT);
+    dest.z_pos = item->pos.z_pos + ((*(mptr + M20) * vec->x + *(mptr + M21) * vec->y + *(mptr + M22) * vec->z) >> W2V_SHIFT);
+    phd_PopMatrix();
+
+    if (item->object_number == FLARE_ITEM)
+    {
+        room_number = laraitem->room_number;
+        floor = GetFloor(dest.x_pos, dest.y_pos, dest.z_pos, &room_number);
+        height = GetHeight(floor, dest.x_pos, dest.y_pos, dest.z_pos);
+        if (ABS(height - laraitem->pos.y_pos) > STEP_L * 2)
+            return 0;
+        else
+        {
+            x = dest.x_pos - laraitem->pos.x_pos;
+            y = dest.y_pos - laraitem->pos.y_pos;
+            z = dest.z_pos - laraitem->pos.z_pos;
+            dist = phd_sqrt(x * x + y * y + z * z);
+            if (dist < 128)
+                return 1;
+        }
+    }
+
+    return Move3DPosTo3DPos(&laraitem->pos, &dest, MOVE_SPEED, MOVE_ANG);
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;

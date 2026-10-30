@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.64% (958)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.80% (285)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.72% (959)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.72% (284)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="572.50" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="572.50" y="0" class="decompiled"/>
-<rect width="170.32" height="6" x="576.68" y="0" class="todo"/>
+<rect width="573.10" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="573.10" y="0" class="decompiled"/>
+<rect width="169.72" height="6" x="577.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -232,7 +232,7 @@
 <rect width="12" height="12" x="165" y="45" class="named"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="45" class="named"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="named"><title>0x00413f30 AlignLaraPosition (315 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="45" class="todo"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="45" class="named"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="45" class="named"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="named"><title>0x004146c0 AnimateItem (872 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.80%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.12%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.92%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="424.32" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="424.32" y="0" class="decompiled"/>
-<rect width="322.07" height="6" x="424.93" y="0" class="todo"/>
+<rect width="425.17" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="425.17" y="0" class="decompiled"/>
+<rect width="321.22" height="6" x="425.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1569,7 +1569,7 @@
 <rect width="15.05" height="14.98" x="449.93" y="59.26" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="15.05" height="14.98" x="467.98" y="59.26" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>
 <rect width="15.01" height="14.98" x="486.04" y="59.26" class="named"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
-<rect width="15.01" height="14.98" x="504.05" y="59.26" class="todo"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
+<rect width="15.01" height="14.98" x="504.05" y="59.26" class="named"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
 <rect width="15.01" height="14.98" x="522.06" y="59.26" class="named"><title>0x0042bff0 FireHarpoon (391 bytes)</title></rect>
 <rect width="15.01" height="14.98" x="540.07" y="59.26" class="todo"><title>0x0044e5e0 WinMain (391 bytes)</title></rect>
 <rect width="14.73" height="14.98" x="558.07" y="59.26" class="named"><title>0x00454030 SE_SoundDlgProc (385 bytes)</title></rect>
