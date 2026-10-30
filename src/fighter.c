@@ -768,3 +768,192 @@ void WarriorSparkleTrail(ITEM_INFO *item)
     }
     SoundEffect(312, &item->pos, 0);
 }
+
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+void DisableBaddieAI(sint16 item_number);
+
+#define WARRIOR 43
+#define WARRIOR_STATUE 44
+#define WARRIOR_STOP 1
+#define WARRIOR_WALK 2
+#define WARRIOR_AIM1 3
+#define WARRIOR_ATTACK1 4
+#define WARRIOR_AIM2 5
+#define WARRIOR_ATTACK2 6
+#define WARRIOR_WAIT 7
+#define WARRIOR_FLY 8
+#define WARRIOR_STATUE_STATE 9
+#define WARRIOR_AIM3 10
+#define WARRIOR_ATTACK3 11
+#define WARRIOR_DEATH 12
+#define WARRIOR_WALK_TURN (ONE_DEGREE * 5)
+#define WARRIOR_FLY_TURN (ONE_DEGREE * 4)
+#define WARRIOR_CLOSE_RANGE SQUARE(WALL_L)
+#define WARRIOR_WALK_RANGE SQUARE(WALL_L * 2)
+#define WARRIOR_TOUCH 0xc000
+#define WARRIOR_DAMAGE 300
+
+extern BITE_INFO warrior_hit;
+
+void WarriorControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *warrior;
+    AI_INFO info;
+    sint16 angle, head, neck;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    head = neck = 0;
+    item = &items[item_number];
+    warrior = (CREATURE_INFO *)item->data;
+
+    if (item->hit_points <= 0)
+    {
+        item->current_anim_state = WARRIOR_DEATH;
+        item->mesh_bits >>= 1;
+        if (!item->mesh_bits)
+        {
+            SoundEffect(105, NULL, 0);
+            item->mesh_bits = -1;
+            item->object_number = WARRIOR_STATUE;
+            ExplodingDeath(item_number, -1, 0);
+            item->object_number = WARRIOR;
+            DisableBaddieAI(item_number);
+            KillItem(item_number);
+            item->status = DEACTIVATED;
+            item->flags |= ONESHOT;
+        }
+        return;
+    }
+
+    warrior->LOT.step = STEP_L;
+    warrior->LOT.drop = -STEP_L;
+    warrior->LOT.fly = 0;
+    CreatureAIInfo(item, &info);
+
+    if (item->current_anim_state == WARRIOR_FLY && info.zone_number != info.enemy_zone)
+    {
+        warrior->LOT.step = WALL_L * 20;
+        warrior->LOT.drop = -WALL_L * 20;
+        warrior->LOT.fly = 64;
+        CreatureAIInfo(item, &info);
+    }
+
+    CreatureMood(item, &info, 1);
+
+    angle = CreatureTurn(item, warrior->maximum_turn);
+
+    if (item->current_anim_state != WARRIOR_STATUE_STATE)
+        item->mesh_bits = -1;
+
+    switch (item->current_anim_state)
+    {
+    case WARRIOR_STATUE_STATE:
+        if (!warrior->flags)
+        {
+            item->mesh_bits = (item->mesh_bits << 1) + 1;
+            warrior->flags = 3;
+        }
+        else
+            warrior->flags--;
+        break;
+
+    case WARRIOR_STOP:
+        warrior->maximum_turn = 0;
+        if (info.ahead)
+            neck = info.angle;
+
+        if (lara_item->hit_points <= 0)
+            item->goal_anim_state = WARRIOR_WAIT;
+        else if (info.bite && info.distance < WARRIOR_CLOSE_RANGE)
+        {
+            if (GetRandomControl() < 0x4000)
+                item->goal_anim_state = WARRIOR_AIM1;
+            else
+                item->goal_anim_state = WARRIOR_AIM2;
+        }
+        else if (info.zone_number != info.enemy_zone)
+            item->goal_anim_state = WARRIOR_FLY;
+        else
+            item->goal_anim_state = WARRIOR_WALK;
+        break;
+
+    case WARRIOR_WALK:
+        warrior->maximum_turn = WARRIOR_WALK_TURN;
+        if (info.ahead)
+            neck = info.angle;
+
+        if (lara_item->hit_points <= 0)
+            item->goal_anim_state = WARRIOR_STOP;
+        else if (info.bite && info.distance < WARRIOR_WALK_RANGE)
+            item->goal_anim_state = WARRIOR_AIM3;
+        else if (info.zone_number != info.enemy_zone)
+            item->goal_anim_state = WARRIOR_STOP;
+        break;
+
+    case WARRIOR_FLY:
+        warrior->maximum_turn = WARRIOR_FLY_TURN;
+        if (info.ahead)
+            neck = info.angle;
+
+        WarriorSparkleTrail(item);
+        if (!warrior->LOT.fly)
+            item->goal_anim_state = WARRIOR_STOP;
+        break;
+
+    case WARRIOR_AIM1:
+        warrior->flags = 0;
+        if (info.ahead)
+            head = info.angle;
+
+        if (info.bite && info.distance < WARRIOR_CLOSE_RANGE)
+            item->goal_anim_state = WARRIOR_ATTACK1;
+        else
+            item->goal_anim_state = WARRIOR_STOP;
+        break;
+
+    case WARRIOR_AIM2:
+        warrior->flags = 0;
+        if (info.ahead)
+            head = info.angle;
+
+        if (info.bite && info.distance < WARRIOR_CLOSE_RANGE)
+            item->goal_anim_state = WARRIOR_ATTACK2;
+        else
+            item->goal_anim_state = WARRIOR_STOP;
+        break;
+
+    case WARRIOR_AIM3:
+        warrior->flags = 0;
+        if (info.ahead)
+            head = info.angle;
+
+        if (info.bite && info.distance < WARRIOR_WALK_RANGE)
+            item->goal_anim_state = WARRIOR_ATTACK3;
+        else
+            item->goal_anim_state = WARRIOR_WALK;
+        break;
+
+    case WARRIOR_ATTACK1:
+    case WARRIOR_ATTACK2:
+    case WARRIOR_ATTACK3:
+        if (info.ahead)
+            head = info.angle;
+
+        if (!warrior->flags && (item->touch_bits & WARRIOR_TOUCH))
+        {
+            lara_item->hit_status = 1;
+            lara_item->hit_points -= WARRIOR_DAMAGE;
+            CreatureEffect(item, &warrior_hit, DoBloodSplat);
+            warrior->flags = 1;
+        }
+        break;
+    }
+
+    CreatureTilt(item, 0);
+    CreatureHead(item, head);
+    CreatureNeck(item, neck);
+    CreatureAnimation(item_number, angle, 0);
+}

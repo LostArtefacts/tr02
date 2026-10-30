@@ -304,7 +304,7 @@ address,size,name,symbol
 0x0041ef70,88,InitialiseXianLord,_InitialiseXianLord
 0x0041efd0,1424,XianLordControl,_XianLordControl
 0x0041f5b0,152,WarriorSparkleTrail,_WarriorSparkleTrail
-0x0041f650,954,WarriorControl,_WarriorControl
+0x0041f650,1000,WarriorControl,_WarriorControl
 0x0041fa40,489,GF_LoadScriptFile,_GF_LoadScriptFile
 0x0041fc30,31,GF_DoFrontEndSequence,_GF_DoFrontEndSequence
 0x0041fc50,102,GF_DoLevelSequence,_GF_DoLevelSequence
@@ -1464,6 +1464,7 @@ address,size,name,symbol
 0x00464288,16,work3_hit,_work3_hit
 0x00464298,16,xian_left_spear,_xian_left_spear
 0x004642a8,16,xian_right_spear,_xian_right_spear
+0x004642b8,16,warrior_hit,_warrior_hit
 0x004642c8,16,cult2_left,_cult2_left
 0x004642d8,16,cult2_right,_cult2_right
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets
