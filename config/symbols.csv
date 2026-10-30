@@ -1809,6 +1809,7 @@ address,size,name,symbol
 0x004d854c,,DInput,_DInput
 0x004d8550,,IDID_SysKeyboard,_IDID_SysKeyboard
 0x004d8554,,IDID_SysJoystick,_IDID_SysJoystick
+0x004d8558,4,GameMainReset,_GameMainReset
 0x004d855c,4,mode_lock,_mode_lock
 0x004d8560,1024,SampleFreqs,_SampleFreqs
 0x004d8960,,SoundAdapterList,_SoundAdapterList
