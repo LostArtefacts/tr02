@@ -1843,6 +1843,7 @@ address,size,name,symbol
 0x004d8d78,128,ChannelSamples,_ChannelSamples
 0x004d8df8,,ChannelBuffers,_ChannelBuffers
 0x004d8e78,,CurrentSoundAdapter,_CurrentSoundAdapter
+0x004d8e98,4,Var4d8e98,_Var4d8e98
 0x004d8e9c,4,PrimarySoundAdapter,_PrimarySoundAdapter
 0x004d8ea0,4,RenderBufferSurface,_RenderBufferSurface
 0x004d8ea4,,DDrawClipper,_DDrawClipper

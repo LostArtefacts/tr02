@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.64% (1008)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.80% (235)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.72% (1009)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.72% (234)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="602.38" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="602.38" y="0" class="decompiled"/>
-<rect width="140.44" height="6" x="606.56" y="0" class="todo"/>
+<rect width="602.98" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="602.98" y="0" class="decompiled"/>
+<rect width="139.84" height="6" x="607.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -991,7 +991,7 @@
 <rect width="12" height="12" x="300" y="270" class="todo"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="270" class="named"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="270" class="todo"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="270" class="todo"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="270" class="named"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="270" class="named"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="270" class="named"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="270" class="todo"><title>0x00448480 WinSndFinish (36 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.13%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.24%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="456.67" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="456.67" y="0" class="decompiled"/>
-<rect width="289.72" height="6" x="457.28" y="0" class="todo"/>
+<rect width="457.50" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="457.50" y="0" class="decompiled"/>
+<rect width="288.89" height="6" x="458.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.81" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1577,7 +1577,7 @@
 <rect width="14.62" height="14.99" x="593.13" y="59.20" class="named"><title>0x0040b9f0 InsertFlatRect_Sorted (383 bytes)</title></rect>
 <rect width="14.62" height="14.99" x="610.75" y="59.20" class="named"><title>0x00417780 ControlTwinkle (383 bytes)</title></rect>
 <rect width="14.62" height="14.99" x="628.37" y="59.20" class="named"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
-<rect width="14.48" height="14.99" x="645.99" y="59.20" class="todo"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
+<rect width="14.48" height="14.99" x="645.99" y="59.20" class="named"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
 <rect width="14.48" height="14.99" x="663.47" y="59.20" class="todo"><title>0x00453eb0 Func453eb0 (380 bytes)</title></rect>
 <rect width="14.43" height="14.99" x="680.95" y="59.20" class="named"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
 <rect width="14.34" height="14.99" x="698.39" y="59.20" class="named"><title>0x004358d0 LiftFloorCeiling (377 bytes)</title></rect>

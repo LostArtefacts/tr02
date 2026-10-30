@@ -2,6 +2,7 @@
 #include <dsound.h>
 #include "global.h"
 #include "ds.h"
+#include "../camera.h"
 
 extern "C" LPDIRECTSOUND DSound;
 extern "C" LPDIRECTSOUNDBUFFER SampleBuffers[256];
@@ -180,6 +181,104 @@ extern "C" bool DSoundEnumerate(LPVOID lpContext)
     return true;
 }
 
+struct STRING_FLAGGED {
+    LPTSTR lpString;
+    bool isPresented;
+    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
+    {
+        if (this != &src) {
+            if (!isPresented)
+                lpString = new char[strlen(src.lpString) + 1];
+            strcpy(lpString, src.lpString);
+        }
+        return *this;
+    }
+};
+
+typedef struct {
+    LPGUID lpAdapterGuid;
+    GUID adapterGuid;
+    STRING_FLAGGED description;
+    STRING_FLAGGED module;
+} SOUND_ADAPTER;
+
+typedef struct SOUND_ADAPTER_NODE {
+    struct SOUND_ADAPTER_NODE *next;
+    struct SOUND_ADAPTER_NODE *previous;
+    SOUND_ADAPTER body;
+} SOUND_ADAPTER_NODE;
+
+typedef struct {
+    SOUND_ADAPTER_NODE *head;
+    SOUND_ADAPTER_NODE *tail;
+    DWORD dwCount;
+} SOUND_ADAPTER_LIST;
+
+#pragma pack(push, 1)
+typedef struct {
+    void *PreferredDisplayAdapter;
+    SOUND_ADAPTER_NODE *PreferredSoundAdapter;
+    void *PreferredJoystick;
+    void *VideoMode;
+    int RenderMode;
+    int WindowWidth;
+    int WindowHeight;
+    int AspectMode;
+    bool PerspectiveCorrect;
+    bool Dither;
+    bool ZBuffer;
+    bool BilinearFiltering;
+    bool TripleBuffering;
+    bool FullScreen;
+    bool SoundEnabled;
+    bool LaraMic;
+    bool JoystickEnabled;
+    bool Disable16BitTextures;
+    bool DontSortPrimitives;
+    bool FlipBroken;
+    bool DisableFMV;
+    int TexelAdjustMode;
+    int NearestAdjustment;
+    int LinearAdjustment;
+} APP_SETTINGS_PART;
+#pragma pack(pop)
+
+enum InitResult {
+    ERR_CantSetDSCooperativeLevel = 10
+};
+
+extern "C" {
+extern APP_SETTINGS_PART SavedAppSettings;
+extern SOUND_ADAPTER CurrentSoundAdapter;
+extern int Var4d8e98;
+extern HWND HGameWindow;
+bool DSoundCreate(LPGUID lpGuid);
+bool DSoundBufferTest(void);
+}
+
+extern "C" void WinSndStart(HWND hWnd)
+{
+    SOUND_ADAPTER *preferred;
+
+    memset(SampleBuffers, 0, sizeof(SampleBuffers));
+    memset(ChannelBuffers, 0, sizeof(ChannelBuffers));
+    Var4d8e98 = 0;
+    camera.mike_at_lara = SavedAppSettings.LaraMic;
+    IsSoundEnabled = false;
+    if (!SavedAppSettings.SoundEnabled || !SavedAppSettings.PreferredSoundAdapter)
+        return;
+    preferred = &SavedAppSettings.PreferredSoundAdapter->body;
+    CurrentSoundAdapter = *preferred;
+    if (!DSoundCreate(CurrentSoundAdapter.lpAdapterGuid))
+        return;
+    if (!hWnd)
+        hWnd = HGameWindow;
+    if (DX_TRY(DSound->SetCooperativeLevel(hWnd, DSSCL_EXCLUSIVE)))
+        throw ERR_CantSetDSCooperativeLevel;
+    DSoundBufferTest();
+    IsSoundEnabled = true;
+}
+
 extern "C" bool DSoundCreate(LPGUID lpGuid)
 {
     if (DX_TRY(DirectSoundCreate(lpGuid, &DSound, NULL)))
@@ -218,23 +317,6 @@ extern "C" bool WinSndIsSoundEnabled()
 {
     return IsSoundEnabled;
 }
-
-typedef struct {
-    LPGUID lpAdapterGuid;
-    GUID adapterGuid;
-} SOUND_ADAPTER;
-
-typedef struct SOUND_ADAPTER_NODE {
-    struct SOUND_ADAPTER_NODE *next;
-    struct SOUND_ADAPTER_NODE *previous;
-    SOUND_ADAPTER body;
-} SOUND_ADAPTER_NODE;
-
-typedef struct {
-    SOUND_ADAPTER_NODE *head;
-    SOUND_ADAPTER_NODE *tail;
-    DWORD dwCount;
-} SOUND_ADAPTER_LIST;
 
 extern "C" {
 extern SOUND_ADAPTER_LIST SoundAdapterList;
