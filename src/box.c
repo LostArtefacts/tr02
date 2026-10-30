@@ -30,6 +30,21 @@ void CreatureTilt(ITEM_INFO *item, sint16 angle)
     item->pos.z_rot += angle;
 }
 
+void CreatureUnderwater(ITEM_INFO *item, sint32 depth)
+{
+    sint32 water_level;
+
+    water_level = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (item->pos.y_pos < water_level + depth)
+    {
+        item->pos.y_pos = water_level + depth;
+        if (item->pos.x_rot > 2 * ONE_DEGREE)
+            item->pos.x_rot -= 2 * ONE_DEGREE;
+        else if (item->pos.x_rot > 0)
+            item->pos.x_rot = 0;
+    }
+}
+
 sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number))
 {
     PHD_VECTOR pos;
