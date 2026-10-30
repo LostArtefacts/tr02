@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.30% (116)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.70% (1131)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.38% (117)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.62% (1130)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="69.49" height="6" x="0" y="0" class="named"/>
-<rect width="677.51" height="6" x="69.49" y="0" class="todo"/>
+<rect width="70.09" height="6" x="0" y="0" class="named"/>
+<rect width="676.91" height="6" x="70.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1092,7 +1092,7 @@
 <rect width="12" height="12" x="330" y="300" class="todo"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="300" class="todo"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="todo"><title>0x0044d800 game_free (52 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="300" class="todo"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="300" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="300" class="todo"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="todo"><title>0x0044d9b0 Key (288 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="300" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.03%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.97%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="14.65" height="6" x="0" y="0" class="named"/>
-<rect width="732.35" height="6" x="14.65" y="0" class="todo"/>
+<rect width="15.16" height="6" x="0" y="0" class="named"/>
+<rect width="731.84" height="6" x="15.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1707,7 +1707,7 @@
 <rect width="11.38" height="10.63" x="510.55" y="123.98" class="todo"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
 <rect width="11.26" height="10.63" x="524.93" y="123.98" class="todo"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="11.26" height="10.63" x="539.19" y="123.98" class="todo"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
-<rect width="11.26" height="10.63" x="553.45" y="123.98" class="todo"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
+<rect width="11.26" height="10.63" x="553.45" y="123.98" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="11.20" height="10.63" x="567.71" y="123.98" class="todo"><title>0x004150d0 RefreshCamera (231 bytes)</title></rect>
 <rect width="11.20" height="10.63" x="581.91" y="123.98" class="todo"><title>0x00431cf0 LaraTestWaterStepOut (231 bytes)</title></rect>
 <rect width="11.20" height="10.63" x="596.10" y="123.98" class="todo"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>

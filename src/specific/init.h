@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 void ShutdownGame();
+void CalculateWibbleTable();
 
 #ifdef __cplusplus
 }

@@ -1272,8 +1272,8 @@ address,size,name,symbol
 0x0045970a,35,__abnormal_termination,
 0x0045972d,9,__NLG_Notify1,
 0x00459736,24,Func459736,
-0x00459750,486,Func459750,
-0x00459940,300,Func459940,
+0x00459750,486,localtime,_localtime
+0x00459940,300,time,_time
 0x00459a70,27,_abort,
 0x00459a90,48,Func459a90,
 0x00459ac0,18,Func459ac0,
@@ -1563,7 +1563,7 @@ address,size,name,symbol
 0x004b2a0c,2,phd_winymax,_phd_winymax
 0x004b2a14,4,FltNearZ,_FltNearZ
 0x004b2a18,4,phd_mxptr,_phd_mxptr
-0x004b2a28,128,RandomTable,_RandomTable
+0x004b2a28,128,rand_table,_rand_table
 0x004b2aa8,4,FltPersp,_FltPersp
 0x004b2ab0,,MatrixW2V,_MatrixW2V
 0x004b2ae0,4,Info3dPtr,_Info3dPtr
@@ -1571,7 +1571,7 @@ address,size,name,symbol
 0x004b2af0,,PhdTextureInfo,_PhdTextureInfo
 0x004bcaf0,4,PhdViewDistance,_PhdViewDistance
 0x004bcaf4,2,PhdLsPitch,_PhdLsPitch
-0x004bcb00,64,ShadesTable,_ShadesTable
+0x004bcb00,64,shade_table,_shade_table
 0x004bcb48,,MatrixStack,_MatrixStack
 0x004bd2c8,,DepthQTable,_DepthQTable
 0x004bf2c8,256,DepthQIndex,_DepthQIndex
@@ -1581,7 +1581,7 @@ address,size,name,symbol
 0x004d6ad0,128,TexturePageBuffer8,_TexturePageBuffer8
 0x004d6b50,4,FltWinRight,_FltWinRight
 0x004d6b58,,LsVectorView,_LsVectorView
-0x004d6b68,128,WibbleTable,_WibbleTable
+0x004d6b68,128,wibble_table,_wibble_table
 0x004d6be8,4,phd_right,_phd_right
 0x004d6bec,4,SurfaceCount,_SurfaceCount
 0x004d6bf0,4,Sort3dPtr,_Sort3dPtr
@@ -1769,7 +1769,7 @@ address,size,name,symbol
 0x0051a280,56,CtrlTextB,_CtrlTextB
 0x0051a2bc,4,PassportTextInfo,_PassportTextInfo
 0x0051a2f0,8,ControlTextInfo,_ControlTextInfo
-0x0051a2f8,,RoomLightTables,_RoomLightTables
+0x0051a2f8,,wibble_light,_wibble_light
 0x0051b2f8,,WaterPalette,_WaterPalette
 0x0051b5f8,,PicPalette,_PicPalette
 0x0051b8f8,16,RoomLightShades,_RoomLightShades

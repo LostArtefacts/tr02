@@ -5,6 +5,10 @@
 extern "C" {
 #endif
 
+#include "../3dglodef.h"
+
+extern int wibble_light[WIBBLE_SIZE][32];
+
 void ScreenDump(void);
 void ScreenPartialDump();
 void S_ClearScreen();

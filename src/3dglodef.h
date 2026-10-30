@@ -7,6 +7,12 @@ extern "C" {
 
 #include "types.h"
 
+#define WIBBLE_SIZE 32
+#define MAX_WIBBLE 2
+#define MAX_SHADE 0x300
+
+#define W2V_SHIFT 14
+
 #define ABS(x) (((x)<0) ? (-(x)):(x))
 
 #define phd_PopMatrix() phd_mxptr -= 12
@@ -28,6 +34,9 @@ typedef struct phd_3dpos {
     PHD_ANGLE z_rot;
 } PHD_3DPOS;
 
+extern float wibble_table[];
+extern sint32 rand_table[];
+extern sint16 shade_table[];
 extern sint32 *phd_mxptr;
 extern sint32 phd_left;
 extern sint32 phd_right;
