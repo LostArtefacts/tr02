@@ -20,6 +20,11 @@ extern "C" BOOL OpenGameRegistryKey(LPCTSTR key)
     return OpenRegistryKey(RegistryKeyName);
 }
 
+extern "C" LONG CloseGameRegistryKey(void)
+{
+    return CloseRegistryKey();
+}
+
 typedef struct
 {
     void *PreferredDisplayAdapter;

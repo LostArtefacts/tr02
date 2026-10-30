@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.05% (861)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.47% (380)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.13% (862)</tspan> · <tspan class="decompiled">0.48% (6)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">30.39% (379)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="515.77" height="6" x="0" y="0" class="named"/>
-<rect width="3.59" height="6" x="515.77" y="0" class="decompiled"/>
-<rect width="227.63" height="6" x="519.37" y="0" class="todo"/>
+<rect width="516.37" height="6" x="0" y="0" class="named"/>
+<rect width="3.59" height="6" x="516.37" y="0" class="decompiled"/>
+<rect width="227.04" height="6" x="519.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1150,7 +1150,7 @@
 <rect width="12" height="12" x="435" y="315" class="named"><title>0x00452310 S_CopyBufferToScreen (77 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="315" class="todo"><title>0x00452360 DecompPCX (248 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="315" class="named"><title>0x00452480 OpenGameRegistryKey (78 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="315" class="todo"><title>0x004524d0 CloseGameRegistryKey (5 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="315" class="named"><title>0x004524d0 CloseGameRegistryKey (5 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="315" class="todo"><title>0x004524e0 Func4524e0 (627 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="315" class="todo"><title>0x00452760 Func452760 (859 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="315" class="todo"><title>0x00452ac0 SE_GraphicsTestStart (126 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.54%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.39%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.54%</tspan> · <tspan class="decompiled">0.07%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="370.09" height="6" x="0" y="0" class="named"/>
-<rect width="0.53" height="6" x="370.09" y="0" class="decompiled"/>
-<rect width="376.39" height="6" x="370.61" y="0" class="todo"/>
+<rect width="370.10" height="6" x="0" y="0" class="named"/>
+<rect width="0.53" height="6" x="370.10" y="0" class="decompiled"/>
+<rect width="376.37" height="6" x="370.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2568,7 +2568,7 @@
 <rect width="0.10" height="0.10" x="743.77" y="373.74" class="named"><title>0x004239c0 DoInventoryPicture (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.77" y="375.87" class="decompiled"><title>0x00447450 Func447450 (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.71" y="373.74" class="decompiled"><title>0x00448050 Func448050 (5 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="745.71" y="375.87" class="todo"><title>0x004524d0 CloseGameRegistryKey (5 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="745.71" y="375.87" class="named"><title>0x004524d0 CloseGameRegistryKey (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.66" y="373.74" class="todo"><title>0x00452e30 SE_SoundTestFinish (5 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.66" y="375.51" class="named"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="748.83" y="375.51" class="todo"><title>0x00452bb0 SE_GraphicsTestExecute (3 bytes)</title></rect>
