@@ -95,7 +95,7 @@ extern "C" void WinCleanup(void)
     CD_Cleanup();
 }
 
-void WinVidStart(void);
+bool WinVidStart(void);
 void RenderStart(bool reset);
 void WinSndStart(HWND hWnd);
 void WinInStart(void);
