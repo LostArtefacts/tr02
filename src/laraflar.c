@@ -358,3 +358,114 @@ void ready_flare(void)
     lara.left_arm.lock = lara.right_arm.lock = 0;
     lara.target = NULL;
 }
+
+#define GRAVITY 6
+
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
+void FlareControl(sint16 item_number)
+{
+    ITEM_INFO *flare;
+    sint16 room_number;
+    sint32 ceiling, height;
+    sint32 x, y, z, flare_age;
+    FLOOR_INFO *floor;
+
+    flare = &items[item_number];
+
+    if (flare->fallspeed)
+    {
+        flare->pos.x_rot += ONE_DEGREE * 3;
+        flare->pos.z_rot += ONE_DEGREE * 5;
+    }
+    else
+    {
+        flare->pos.x_rot = 0;
+        flare->pos.z_rot = 0;
+    }
+
+    z = flare->pos.z_pos;
+    y = flare->pos.y_pos;
+    x = flare->pos.x_pos;
+
+    flare->pos.z_pos += flare->speed * phd_cos(flare->pos.y_rot) >> W2V_SHIFT;
+    flare->pos.x_pos += flare->speed * phd_sin(flare->pos.y_rot) >> W2V_SHIFT;
+
+    if (room[flare->room_number].flags & UNDERWATER)
+    {
+        flare->fallspeed += (5 - flare->fallspeed) / 2;
+        flare->speed += (5 - flare->speed) / 2;
+    }
+    else
+        flare->fallspeed += GRAVITY;
+    flare->pos.y_pos += flare->fallspeed;
+
+    room_number = flare->room_number;
+    floor = GetFloor(flare->pos.x_pos, flare->pos.y_pos, flare->pos.z_pos, &room_number);
+    height = GetHeight(floor, flare->pos.x_pos, flare->pos.y_pos, flare->pos.z_pos);
+    if (flare->pos.y_pos >= height)
+    {
+        if (y > height)
+        {
+            flare->pos.y_rot += -32768;
+            flare->pos.y_pos = y;
+            flare->speed /= 2;
+            flare->pos.x_pos = x;
+            flare->pos.z_pos = z;
+            room_number = flare->room_number;
+        }
+        else
+        {
+            if (flare->fallspeed > 40)
+            {
+                flare->fallspeed = 40 - flare->fallspeed;
+                if (flare->fallspeed < -100)
+                    flare->fallspeed = -100;
+            }
+            else
+            {
+                flare->fallspeed = 0;
+                flare->speed -= 3;
+                if (flare->speed < 0)
+                    flare->speed = 0;
+            }
+            flare->pos.y_pos = height;
+        }
+    }
+    else
+    {
+        ceiling = GetCeiling(floor, flare->pos.x_pos, flare->pos.y_pos, flare->pos.z_pos);
+        if (flare->pos.y_pos < ceiling)
+        {
+            flare->fallspeed = -flare->fallspeed;
+            flare->pos.y_pos = ceiling;
+        }
+    }
+
+    if (room_number != flare->room_number)
+        ItemNewRoom(item_number, room_number);
+
+    flare_age = (sint32)flare->data & 0x7fff;
+    if (flare_age < MAX_FLARE_AGE)
+        flare_age++;
+    else if (flare->fallspeed == 0 && flare->speed == 0)
+    {
+        KillItem(item_number);
+        return;
+    }
+
+    if (DoFlareLight((PHD_VECTOR *)&flare->pos, flare_age))
+    {
+        flare_age |= 0x8000;
+        if (room[flare->room_number].flags & UNDERWATER)
+        {
+            SoundEffect(12, &flare->pos, UNDERWATER);
+            if (GetRandomDraw() < 0x4000)
+                CreateBubble(&flare->pos, flare->room_number);
+        }
+        else
+            SoundEffect(12, &flare->pos, 0);
+    }
+
+    flare->data = (void *)flare_age;
+}
