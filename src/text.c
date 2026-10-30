@@ -128,3 +128,24 @@ void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate)
     else
         textString->flags &= ~T_FLASH;
 }
+
+void T_AddBackground(TEXTSTRING *textString, sint16 xsize, sint16 ysize, sint16 xoff, sint16 yoff, sint16 zoff, sint16 colour, SG_COL *gourptr, uint16 flags)
+{
+    uint32 scaleV, scaleH;
+
+    scaleH = GetTextScaleH(textString->scaleH);
+    scaleV = GetTextScaleV(textString->scaleV);
+
+    if (textString)
+    {
+        textString->flags |= T_ADDBACKGROUND;
+        textString->bgndSizeX = (sint16)((xsize * scaleH) >> 16);
+        textString->bgndSizeY = (sint16)((ysize * scaleV) >> 16);
+        textString->bgndOffX = (sint16)((xoff * scaleH) >> 16);
+        textString->bgndOffY = (sint16)((yoff * scaleV) >> 16);
+        textString->bgndOffZ = zoff;
+        textString->bgndColour = colour;
+        textString->bgndGour = gourptr;
+        textString->bgndflags = flags;
+    }
+}
