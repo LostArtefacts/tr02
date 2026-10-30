@@ -357,3 +357,38 @@ int CreatureVault(sint16 item_number, sint16 angle, int vault, int shift)
         ItemNewRoom(item_number, room_number);
     return vault;
 }
+
+#define LARA_EXTRA 12
+#define EXTRA_BREATH 0
+
+void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state)
+{
+    item->anim_number = objects[item->object_number].anim_index + kill_anim;
+    item->frame_number = anims[item->anim_number].frame_base;
+    item->current_anim_state = kill_state;
+
+    lara_item->anim_number = objects[LARA_EXTRA].anim_index;
+    lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+    lara_item->current_anim_state = EXTRA_BREATH;
+    lara_item->goal_anim_state = lara_kill_state;
+    lara_item->pos.x_pos = item->pos.x_pos;
+    lara_item->pos.y_pos = item->pos.y_pos;
+    lara_item->pos.z_pos = item->pos.z_pos;
+    lara_item->pos.y_rot = item->pos.y_rot;
+    lara_item->pos.x_rot = item->pos.x_rot;
+    lara_item->pos.z_rot = item->pos.z_rot;
+    lara_item->fallspeed = 0;
+    lara_item->gravity_status = 0;
+    lara_item->speed = 0;
+    if (item->room_number != lara_item->room_number)
+        ItemNewRoom(lara.item_number, item->room_number);
+    AnimateItem(lara_item);
+    lara_item->current_anim_state = lara_item->goal_anim_state = lara_kill_state;
+
+    lara.extra_anim = 1;
+    lara.hit_direction = -1;
+    lara.air = -1;
+    lara.gun_status = LG_HANDSBUSY;
+    lara.gun_type = LG_UNARMED;
+    camera.pos.room_number = lara_item->room_number;
+}
