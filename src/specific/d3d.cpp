@@ -23,6 +23,15 @@ extern "C" bool D3DCreate(void)
     return true;
 }
 
+extern "C" void D3DRelease(void)
+{
+    if (D3D)
+    {
+        D3D->Release();
+        D3D = NULL;
+    }
+}
+
 extern "C" BOOL Direct3DInit(void)
 {
     return TRUE;
