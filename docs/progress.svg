@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.65% (457)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.35% (790)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.73% (458)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">63.27% (789)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="273.76" height="6" x="0" y="0" class="named"/>
-<rect width="473.24" height="6" x="273.76" y="0" class="todo"/>
+<rect width="274.36" height="6" x="0" y="0" class="named"/>
+<rect width="472.64" height="6" x="274.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -340,7 +340,7 @@
 <rect width="12" height="12" x="300" y="75" class="named"><title>0x0041d1d0 SetChangeFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="75" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="75" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="75" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="75" class="named"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="75" class="named"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="75" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="75" class="named"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">16.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">83.33%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="124.31" height="6" x="0" y="0" class="named"/>
-<rect width="622.69" height="6" x="124.31" y="0" class="todo"/>
+<rect width="124.54" height="6" x="0" y="0" class="named"/>
+<rect width="622.46" height="6" x="124.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.52" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2016,7 +2016,7 @@
 <rect width="6.04" height="6.63" x="599.44" y="237.42" class="todo"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
 <rect width="6.04" height="6.63" x="599.44" y="247.05" class="todo"><title>0x004544d0 Func4544d0 (104 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.44" y="256.68" class="named"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
-<rect width="6.04" height="6.54" x="599.44" y="266.22" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
+<rect width="6.04" height="6.54" x="599.44" y="266.22" class="named"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.44" y="275.76" class="named"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
 <rect width="6.04" height="6.45" x="599.44" y="285.30" class="named"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="6.04" height="6.45" x="599.44" y="294.74" class="named"><title>0x00427700 LookUpDown (102 bytes)</title></rect>

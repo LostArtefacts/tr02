@@ -518,6 +518,27 @@ void ControlLaraAlarm(sint16 item_number)
         SoundEffect(335, &item->pos, 0);
 }
 
+void ControlAlarmSound(sint16 item_number)
+{
+    int timer;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if ((item->flags & CODE_BITS) == CODE_BITS)
+    {
+        SoundEffect(332, &item->pos, 0);
+        timer = (int)item->data;
+        timer++;
+        if (timer > 6)
+        {
+            AddDynamicLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 12, 11);
+            if (timer > 12)
+                timer = 0;
+        }
+        item->data = (void *)timer;
+    }
+}
+
 void ControlBirdTweeter(sint16 item_number)
 {
     ITEM_INFO *item;
