@@ -104,3 +104,12 @@ void T_ChangeText(TEXTSTRING *textString, char *string)
         memcpy(textString->string, string, MAX_STRING_SIZE);
     }
 }
+
+void T_SetScale(TEXTSTRING *textString, sint32 scaleH, sint32 scaleV)
+{
+    if (textString)
+    {
+        textString->scaleH = scaleH;
+        textString->scaleV = scaleV;
+    }
+}
