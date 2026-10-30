@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.03% (574)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.97% (673)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.11% (575)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.89% (672)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="343.85" height="6" x="0" y="0" class="named"/>
-<rect width="403.15" height="6" x="343.85" y="0" class="todo"/>
+<rect width="344.45" height="6" x="0" y="0" class="named"/>
+<rect width="402.55" height="6" x="344.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -770,7 +770,7 @@
 <rect width="12" height="12" x="0" y="210" class="todo"><title>0x0043c900 JellyControl (278 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="210" class="named"><title>0x0043ca20 BaracuddaControl (560 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="210" class="named"><title>0x0043cc50 SharkControl (656 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="210" class="todo"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="210" class="named"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="210" class="todo"><title>0x0043cf20 SkidooCheckGeton (225 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="210" class="todo"><title>0x0043d010 SkidooCollision (248 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="210" class="todo"><title>0x0043d110 SkidooBaddieCollision (505 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.46%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.56%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.44%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="198.23" height="6" x="0" y="0" class="named"/>
-<rect width="548.77" height="6" x="198.23" y="0" class="todo"/>
+<rect width="198.37" height="6" x="0" y="0" class="named"/>
+<rect width="548.63" height="6" x="198.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.27" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2179,7 +2179,7 @@
 <rect width="4.53" height="4.09" x="641.28" y="349.65" class="named"><title>0x0041cff0 lara_normal_effect (64 bytes)</title></rect>
 <rect width="4.53" height="4.09" x="641.28" y="356.73" class="named"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
 <rect width="4.53" height="4.09" x="641.28" y="363.82" class="named"><title>0x00427e30 lara_as_fastfall (64 bytes)</title></rect>
-<rect width="4.53" height="4.09" x="641.28" y="370.91" class="todo"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
+<rect width="4.53" height="4.09" x="641.28" y="370.91" class="named"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
 <rect width="4.41" height="4.20" x="648.81" y="269.46" class="todo"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
 <rect width="4.41" height="4.20" x="656.22" y="269.46" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="4.41" height="4.20" x="663.63" y="269.46" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
