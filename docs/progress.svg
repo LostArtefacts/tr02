@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.16% (189)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.84% (1058)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.24% (190)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.76% (1057)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="113.22" height="6" x="0" y="0" class="named"/>
-<rect width="633.78" height="6" x="113.22" y="0" class="todo"/>
+<rect width="113.82" height="6" x="0" y="0" class="named"/>
+<rect width="633.18" height="6" x="113.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -718,7 +718,7 @@
 <rect width="12" height="12" x="720" y="180" class="named"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="180" class="named"><title>0x00435b50 BridgeTilt1Floor (48 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="195" class="named"><title>0x00435b80 BridgeTilt1Ceiling (53 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="195" class="todo"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="195" class="named"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="195" class="named"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="195" class="todo"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="195" class="todo"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.80%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.20%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="35.85" height="6" x="0" y="0" class="named"/>
-<rect width="711.15" height="6" x="35.85" y="0" class="todo"/>
+<rect width="35.95" height="6" x="0" y="0" class="named"/>
+<rect width="711.05" height="6" x="35.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2306,7 +2306,7 @@
 <rect width="3.22" height="3.33" x="706.70" y="302.90" class="todo"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="712.93" y="302.90" class="todo"><title>0x00425330 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="719.15" y="302.90" class="todo"><title>0x00428570 lara_as_swandive (47 bytes)</title></rect>
-<rect width="3.22" height="3.33" x="725.37" y="302.90" class="todo"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
+<rect width="3.22" height="3.33" x="725.37" y="302.90" class="named"><title>0x00435bc0 BridgeTilt2Floor (47 bytes)</title></rect>
 <rect width="3.22" height="3.33" x="731.60" y="302.90" class="todo"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
 <rect width="3.09" height="3.33" x="737.82" y="302.90" class="todo"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="3.09" height="3.33" x="743.91" y="302.90" class="todo"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
