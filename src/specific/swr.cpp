@@ -57,3 +57,28 @@ extern "C" uint8 SWR_FindNearestPaletteEntry(uint8 *pPal, int nR, int nG, int nB
     }
     return (uint8)nColour;
 }
+
+typedef struct
+{
+    uint8 red;
+    uint8 green;
+    uint8 blue;
+} RGB888;
+
+extern "C" void SyncSurfacePalettes(uint8 *src, uint32 width, uint32 height, int srcPitch, RGB888 *srcPalette, uint8 *dst, int dstPitch, RGB888 *dstPalette, bool preserveSysPalette)
+{
+    int i;
+    uint32 x;
+    uint8 bitmap[256];
+
+    for (i = 0; i < 256; i++)
+        bitmap[i] = SWR_FindNearestPaletteEntry((uint8 *)dstPalette, srcPalette[i].red, srcPalette[i].green, srcPalette[i].blue, preserveSysPalette);
+    while (height--)
+    {
+        x = width;
+        while (x--)
+            *dst++ = bitmap[*src++];
+        src += srcPitch - width;
+        dst += dstPitch - width;
+    }
+}
