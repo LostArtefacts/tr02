@@ -47,6 +47,71 @@ typedef struct {
 extern WEAPON_INFO weapons[];
 
 int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
+void LaraTargetInfo(WEAPON_INFO *winfo);
+void LaraGetNewTarget(WEAPON_INFO *winfo);
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm);
+void AnimateShotgun(int weapon_type);
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
+
+void RifleHandler(int weapon_type)
+{
+    WEAPON_INFO *winfo;
+
+    winfo = &weapons[weapon_type];
+    if (input & IN_ACTION)
+        LaraTargetInfo(winfo);
+    else
+        lara.target = NULL;
+    if (lara.target == NULL)
+        LaraGetNewTarget(winfo);
+    AimWeapon(winfo, &lara.left_arm);
+    if (lara.left_arm.lock)
+    {
+        lara.torso_y_rot = lara.left_arm.y_rot;
+        lara.torso_x_rot = lara.left_arm.x_rot;
+        lara.head_x_rot = lara.head_y_rot = 0;
+    }
+    AnimateShotgun(weapon_type);
+    if (lara.right_arm.flash_gun)
+    {
+        if (weapon_type == LG_SHOTGUN || weapon_type == LG_M16)
+        {
+            AddDynamicLight(lara_item->pos.x_pos + (phd_sin(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)),
+                lara_item->pos.y_pos - WALL_L / 2,
+                lara_item->pos.z_pos + (phd_cos(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)),
+                12, 11);
+        }
+    }
+}
+
+#define PELLET_SCATTER (20 * ONE_DEGREE)
+#define SHOTGUN_AMMO_CLIP 6
+
+void FireShotgun(void)
+{
+    int i, r, fired;
+    PHD_ANGLE angles[2];
+    PHD_ANGLE dangles[2];
+
+    angles[0] = lara.left_arm.y_rot + lara_item->pos.y_rot;
+    angles[1] = lara.left_arm.x_rot;
+
+    fired = 0;
+    for (i = 0; i < SHOTGUN_AMMO_CLIP; i++)
+    {
+        r = (int)((GetRandomControl() - 16384) * PELLET_SCATTER) / 65536;
+        dangles[0] = angles[0] + r;
+        r = (int)((GetRandomControl() - 16384) * PELLET_SCATTER) / 65536;
+        dangles[1] = angles[1] + r;
+        if (FireWeapon(LG_SHOTGUN, lara.target, lara_item, dangles))
+            fired = 1;
+    }
+    if (fired)
+    {
+        lara.right_arm.flash_gun = weapons[LG_SHOTGUN].flash_time;
+        SoundEffect(weapons[LG_SHOTGUN].sample_num, &lara_item->pos, 0);
+    }
+}
 
 void FireM16(int running)
 {
