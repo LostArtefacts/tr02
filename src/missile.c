@@ -1,5 +1,91 @@
 #include "game.h"
 
+#define BLOOD1 233
+#define RICOCHET1 238
+#define DIVER_HARPOON 245
+#define DRAGON_FIRE 246
+#define KNIFE 247
+#define UNDERWATER 1
+
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number);
+void LaraBurn(void);
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+void KillEffect(sint16 fx_num);
+
+void ControlMissile(sint16 fx_number)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+    sint32 speed;
+
+    fx = &effects[fx_number];
+    if (fx->object_number == DIVER_HARPOON && !(room[fx->room_number].flags & UNDERWATER) && fx->pos.x_rot > -0x3000)
+        fx->pos.x_rot -= ONE_DEGREE;
+    fx->pos.y_pos += fx->speed * phd_sin(-fx->pos.x_rot) >> W2V_SHIFT;
+    speed = fx->speed * phd_cos(fx->pos.x_rot) >> W2V_SHIFT;
+    fx->pos.z_pos += speed * phd_cos(fx->pos.y_rot) >> W2V_SHIFT;
+    fx->pos.x_pos += speed * phd_sin(fx->pos.y_rot) >> W2V_SHIFT;
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    if (fx->pos.y_pos >= GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos)
+        || fx->pos.y_pos <= GetCeiling(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos))
+    {
+        if (fx->object_number == KNIFE || fx->object_number == DIVER_HARPOON)
+        {
+            fx->speed = 0;
+            fx->frame_number = -GetRandomControl() / 11000;
+            fx->counter = 6;
+            fx->object_number = RICOCHET1;
+            SoundEffect(258, &fx->pos, 0);
+        }
+        else if (fx->object_number == DRAGON_FIRE)
+        {
+            AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 14, 11);
+            KillEffect(fx_number);
+        }
+        return;
+    }
+    if (room_number != fx->room_number)
+        EffectNewRoom(fx_number, room_number);
+    if (fx->object_number == DRAGON_FIRE)
+    {
+        if (ItemNearLara(&fx->pos, 350))
+        {
+            lara_item->hit_points -= 3;
+            lara_item->hit_status = 1;
+            LaraBurn();
+            return;
+        }
+    }
+    else if (ItemNearLara(&fx->pos, 200))
+    {
+        if (fx->object_number == KNIFE || fx->object_number == DIVER_HARPOON)
+        {
+            lara_item->hit_points -= 50;
+            fx->object_number = BLOOD1;
+            SoundEffect(317, &fx->pos, 0);
+        }
+        lara_item->hit_status = 1;
+        fx->pos.y_rot = lara_item->pos.y_rot;
+        fx->speed = lara_item->speed;
+        fx->frame_number = fx->counter = 0;
+    }
+    if (fx->object_number == DIVER_HARPOON && (room[fx->room_number].flags & UNDERWATER))
+        CreateBubble(&fx->pos, fx->room_number);
+    else if (fx->object_number == DRAGON_FIRE && !fx->counter--)
+    {
+        AddDynamicLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, 14, 11);
+        SoundEffect(305, &fx->pos, 0);
+        KillEffect(fx_number);
+    }
+    else if (fx->object_number == KNIFE)
+        fx->pos.z_rot += 30 * ONE_DEGREE;
+}
+
 void ShootAtLara(FX_INFO *fx)
 {
     sint32 x, y, z, distance;
@@ -23,12 +109,7 @@ void ShootAtLara(FX_INFO *fx)
 #define GRAVITY 6
 #define SPLASH1 230
 #define EXPLOSION1 229
-#define UNDERWATER 1
 
-sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
-int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
-void EffectNewRoom(sint16 fx_num, sint16 room_number);
-void KillEffect(sint16 fx_num);
 
 void ControlBodyPart(sint16 fx_number)
 {
