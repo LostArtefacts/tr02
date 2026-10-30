@@ -748,6 +748,80 @@ void LiftControl(sint16 item_number)
         ItemNewRoom(item_number, room_number);
 }
 
+#define LIFT_HEIGHT (STEP_L * 5)
+
+void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling)
+{
+    int ix, iz, lx, lz, point_in_shaft;
+    int lift_floor, lift_ceiling;
+
+    ix = item->pos.x_pos >> WALL_SHIFT;
+    iz = item->pos.z_pos >> WALL_SHIFT;
+
+    lx = lara_item->pos.x_pos >> WALL_SHIFT;
+    lz = lara_item->pos.z_pos >> WALL_SHIFT;
+
+    x >>= WALL_SHIFT;
+    z >>= WALL_SHIFT;
+
+    point_in_shaft = ((x == ix || x + 1 == ix) && (z == iz || z - 1 == iz));
+
+    lift_floor = item->pos.y_pos;
+    lift_ceiling = item->pos.y_pos - LIFT_HEIGHT;
+
+    *floor = 0x7fff;
+    *ceiling = -0x7fff;
+
+    if ((lx == ix || lx + 1 == ix) && (lz == iz || lz - 1 == iz))
+    {
+        if (item->current_anim_state == DOOR_CLOSED && lara_item->pos.y_pos < lift_floor + STEP_L && lara_item->pos.y_pos > lift_ceiling + STEP_L)
+        {
+            if (point_in_shaft)
+            {
+                *floor = lift_floor;
+                *ceiling = lift_ceiling + STEP_L;
+            }
+            else
+            {
+                *floor = NO_HEIGHT;
+                *ceiling = 0x7fff;
+            }
+        }
+        else if (point_in_shaft)
+        {
+            if (lara_item->pos.y_pos < lift_ceiling + STEP_L)
+                *floor = lift_ceiling;
+            else if (lara_item->pos.y_pos < lift_floor + STEP_L)
+            {
+                *floor = lift_floor;
+                *ceiling = lift_ceiling + STEP_L;
+            }
+            else
+                *ceiling = lift_floor + STEP_L;
+        }
+    }
+    else if (point_in_shaft)
+    {
+        if (y <= lift_ceiling)
+            *floor = lift_ceiling;
+        else if (y < lift_floor + STEP_L)
+        {
+            if (item->current_anim_state == DOOR_CLOSED)
+            {
+                *floor = NO_HEIGHT;
+                *ceiling = 0x7fff;
+            }
+            else
+            {
+                *floor = lift_floor;
+                *ceiling = lift_ceiling + STEP_L;
+            }
+        }
+        else
+            *ceiling = lift_floor + STEP_L;
+    }
+}
+
 void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 floor, ceiling;
@@ -829,8 +903,8 @@ void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
 void CopterControl(sint16 item_number)
 {
     ITEM_INFO *item;
-    sint16 room_number, *bounds;
     PHD_VECTOR pos;
+    sint16 room_number, *bounds;
 
     item = &items[item_number];
 
