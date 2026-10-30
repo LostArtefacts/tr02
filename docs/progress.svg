@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.02% (711)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.98% (536)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.10% (712)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.90% (535)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="425.92" height="6" x="0" y="0" class="named"/>
-<rect width="321.08" height="6" x="425.92" y="0" class="todo"/>
+<rect width="426.51" height="6" x="0" y="0" class="named"/>
+<rect width="320.49" height="6" x="426.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -209,7 +209,7 @@
 <rect width="12" height="12" x="585" y="30" class="todo"><title>0x00412270 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="30" class="todo"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="30" class="todo"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="30" class="todo"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="30" class="named"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="30" class="todo"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="30" class="todo"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="30" class="todo"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.19%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.81%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="300.23" height="6" x="0" y="0" class="named"/>
-<rect width="446.77" height="6" x="300.23" y="0" class="todo"/>
+<rect width="300.55" height="6" x="0" y="0" class="named"/>
+<rect width="446.45" height="6" x="300.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1874,7 +1874,7 @@
 <rect width="8.24" height="8.18" x="547.66" y="277.90" class="named"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
 <rect width="8.24" height="8.18" x="547.66" y="289.08" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
 <rect width="8.24" height="8.11" x="547.66" y="300.26" class="todo"><title>0x0040c4f0 S_DrawScreenSprite2d (150 bytes)</title></rect>
-<rect width="8.24" height="8.11" x="547.66" y="311.36" class="todo"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
+<rect width="8.24" height="8.11" x="547.66" y="311.36" class="named"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
 <rect width="8.24" height="8.11" x="547.66" y="322.47" class="named"><title>0x004166d0 RemoveRoomFlipItems (150 bytes)</title></rect>
 <rect width="8.24" height="8.11" x="547.66" y="333.58" class="named"><title>0x0041cf50 floor_shake_effect (150 bytes)</title></rect>
 <rect width="8.24" height="8.11" x="547.66" y="344.68" class="named"><title>0x004286f0 lara_as_deathslide (150 bytes)</title></rect>
