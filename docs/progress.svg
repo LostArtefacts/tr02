@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75% (936)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.44% (305)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.08% (937)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.36% (304)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="560.25" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="560.25" y="0" class="decompiled"/>
-<rect width="182.56" height="6" x="564.44" y="0" class="todo"/>
+<rect width="560.85" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="560.85" y="0" class="decompiled"/>
+<rect width="181.96" height="6" x="565.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -942,7 +942,7 @@
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="named"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="named"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="255" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="255" class="named"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="todo"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="255" class="todo"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="255" class="todo"><title>0x00447110 InsertDisplayModeInListTail (74 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.14%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.15%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="411.89" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="411.89" y="0" class="decompiled"/>
-<rect width="334.50" height="6" x="412.50" y="0" class="todo"/>
+<rect width="412" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="412" y="0" class="decompiled"/>
+<rect width="334.39" height="6" x="412.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2287,7 +2287,7 @@
 <rect width="3.20" height="3.68" x="712.91" y="297" class="named"><title>0x00431ac0 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="3.20" height="3.68" x="719.11" y="297" class="named"><title>0x00435150 OpenThatDoor (50 bytes)</title></rect>
 <rect width="3.20" height="3.68" x="725.32" y="297" class="named"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
-<rect width="3.20" height="3.68" x="731.52" y="297" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
+<rect width="3.20" height="3.68" x="731.52" y="297" class="named"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="3.20" height="3.68" x="737.72" y="297" class="named"><title>0x00456080 FreeTexturePage (50 bytes)</title></rect>
 <rect width="3.08" height="3.68" x="743.92" y="297" class="named"><title>0x0041b790 phd_RotY_I (49 bytes)</title></rect>
 <rect width="3.48" height="3.27" x="669" y="303.68" class="named"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>

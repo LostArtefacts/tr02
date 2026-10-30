@@ -666,3 +666,17 @@ DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
     dwCount = 0;
 }
 
+void DISPLAY_MODE_LIST::DisplayModeListDelete(void)
+{
+    DISPLAY_MODE_NODE *node;
+    DISPLAY_MODE_NODE *nextNode;
+
+    for (node = head; node; node = nextNode) {
+        nextNode = node->next;
+        delete node;
+    }
+    head = NULL;
+    tail = NULL;
+    dwCount = 0;
+}
+
