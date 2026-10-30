@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.27% (577)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.73% (670)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.35% (578)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.65% (669)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="345.64" height="6" x="0" y="0" class="named"/>
-<rect width="401.36" height="6" x="345.64" y="0" class="todo"/>
+<rect width="346.24" height="6" x="0" y="0" class="named"/>
+<rect width="400.76" height="6" x="346.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -774,7 +774,7 @@
 <rect width="12" height="12" x="60" y="210" class="named"><title>0x0043cf20 SkidooCheckGeton (225 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="210" class="todo"><title>0x0043d010 SkidooCollision (248 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="210" class="named"><title>0x0043d110 SkidooBaddieCollision (505 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="210" class="todo"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="210" class="named"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="210" class="todo"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="210" class="todo"><title>0x0043d650 DoDynamics (84 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="210" class="todo"><title>0x0043d6b0 GetCollisionAnim (144 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.82%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.18%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="199.98" height="6" x="0" y="0" class="named"/>
-<rect width="547.02" height="6" x="199.98" y="0" class="todo"/>
+<rect width="200.37" height="6" x="0" y="0" class="named"/>
+<rect width="546.63" height="6" x="200.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.27" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1808,7 +1808,7 @@
 <rect width="9.08" height="9.35" x="523.23" y="316.53" class="named"><title>0x00416610 FlipMap (179 bytes)</title></rect>
 <rect width="9.08" height="9.35" x="523.23" y="328.88" class="named"><title>0x00429190 lara_col_fastback (179 bytes)</title></rect>
 <rect width="9.08" height="9.28" x="523.23" y="341.23" class="todo"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
-<rect width="9.08" height="9.28" x="523.23" y="353.51" class="todo"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
+<rect width="9.08" height="9.28" x="523.23" y="353.51" class="named"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
 <rect width="9.08" height="9.21" x="523.23" y="365.79" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="9.10" height="9.20" x="535.31" y="163.64" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
 <rect width="9.10" height="9.20" x="535.31" y="175.83" class="todo"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>

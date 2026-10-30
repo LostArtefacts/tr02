@@ -160,3 +160,22 @@ void SkidooBaddieCollision(ITEM_INFO *skidoo)
         }
     }
 }
+
+sint32 TestHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *pos)
+{
+    FLOOR_INFO *floor;
+    sint32 s, c;
+    sint16 room_number;
+
+    pos->y = item->pos.y_pos - (z_off * phd_sin(item->pos.x_rot) >> W2V_SHIFT) + (x_off * phd_sin(item->pos.z_rot) >> W2V_SHIFT);
+
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+
+    pos->z = item->pos.z_pos + ((z_off * c - x_off * s) >> W2V_SHIFT);
+    pos->x = item->pos.x_pos + ((z_off * s + x_off * c) >> W2V_SHIFT);
+
+    room_number = item->room_number;
+    floor = GetFloor(pos->x, pos->y, pos->z, &room_number);
+    return GetHeight(floor, pos->x, pos->y, pos->z);
+}
