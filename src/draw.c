@@ -128,6 +128,48 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
     phd_PopMatrix();
 }
 
+void InterpolateMatrix(void)
+{
+    sint32 *mptr, *iptr;
+    sint32 frac, rate;
+
+    mptr = phd_mxptr;
+    iptr = IMptr;
+    frac = IM_frac;
+    rate = IM_rate;
+
+    if (rate == 2)
+    {
+        *(mptr + M00) = (*(iptr + M00) + *(mptr + M00)) >> 1;
+        *(mptr + M01) = (*(iptr + M01) + *(mptr + M01)) >> 1;
+        *(mptr + M02) = (*(iptr + M02) + *(mptr + M02)) >> 1;
+        *(mptr + M03) = (*(iptr + M03) + *(mptr + M03)) >> 1;
+        *(mptr + M10) = (*(iptr + M10) + *(mptr + M10)) >> 1;
+        *(mptr + M11) = (*(iptr + M11) + *(mptr + M11)) >> 1;
+        *(mptr + M12) = (*(iptr + M12) + *(mptr + M12)) >> 1;
+        *(mptr + M13) = (*(iptr + M13) + *(mptr + M13)) >> 1;
+        *(mptr + M20) = (*(iptr + M20) + *(mptr + M20)) >> 1;
+        *(mptr + M21) = (*(iptr + M21) + *(mptr + M21)) >> 1;
+        *(mptr + M22) = (*(iptr + M22) + *(mptr + M22)) >> 1;
+        *(mptr + M23) = (*(iptr + M23) + *(mptr + M23)) >> 1;
+    }
+    else
+    {
+        *(mptr + M00) += ((*(iptr + M00) - *(mptr + M00)) * frac) / rate;
+        *(mptr + M01) += ((*(iptr + M01) - *(mptr + M01)) * frac) / rate;
+        *(mptr + M02) += ((*(iptr + M02) - *(mptr + M02)) * frac) / rate;
+        *(mptr + M03) += ((*(iptr + M03) - *(mptr + M03)) * frac) / rate;
+        *(mptr + M10) += ((*(iptr + M10) - *(mptr + M10)) * frac) / rate;
+        *(mptr + M11) += ((*(iptr + M11) - *(mptr + M11)) * frac) / rate;
+        *(mptr + M12) += ((*(iptr + M12) - *(mptr + M12)) * frac) / rate;
+        *(mptr + M13) += ((*(iptr + M13) - *(mptr + M13)) * frac) / rate;
+        *(mptr + M20) += ((*(iptr + M20) - *(mptr + M20)) * frac) / rate;
+        *(mptr + M21) += ((*(iptr + M21) - *(mptr + M21)) * frac) / rate;
+        *(mptr + M22) += ((*(iptr + M22) - *(mptr + M22)) * frac) / rate;
+        *(mptr + M23) += ((*(iptr + M23) - *(mptr + M23)) * frac) / rate;
+    }
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;

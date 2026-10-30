@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.92% (423)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.08% (824)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34% (424)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66% (823)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="253.39" height="6" x="0" y="0" class="named"/>
-<rect width="493.61" height="6" x="253.39" y="0" class="todo"/>
+<rect width="253.99" height="6" x="0" y="0" class="named"/>
+<rect width="493.01" height="6" x="253.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -298,7 +298,7 @@
 <rect width="12" height="12" x="420" y="60" class="named"><title>0x0041b940 phd_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="60" class="todo"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="named"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="60" class="todo"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="60" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="60" class="todo"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="todo"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.83%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.17%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.04%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="103.33" height="6" x="0" y="0" class="named"/>
-<rect width="643.67" height="6" x="103.33" y="0" class="todo"/>
+<rect width="104.26" height="6" x="0" y="0" class="named"/>
+<rect width="642.74" height="6" x="104.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1535,7 +1535,7 @@
 <rect width="16.21" height="15.84" x="413.36" y="176.44" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="16.21" height="15.84" x="413.36" y="195.27" class="todo"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
 <rect width="16.21" height="15.67" x="413.36" y="214.11" class="todo"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
-<rect width="16.21" height="15.36" x="413.36" y="232.78" class="todo"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
+<rect width="16.21" height="15.36" x="413.36" y="232.78" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
 <rect width="16.21" height="15.36" x="413.36" y="251.14" class="todo"><title>0x00440340 BigSpiderControl (421 bytes)</title></rect>
 <rect width="16.21" height="15.32" x="413.36" y="269.50" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="16.21" height="15.10" x="413.36" y="287.81" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
