@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.13% (650)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.87% (597)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.21% (651)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.79% (596)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="389.37" height="6" x="0" y="0" class="named"/>
-<rect width="357.63" height="6" x="389.37" y="0" class="todo"/>
+<rect width="389.97" height="6" x="0" y="0" class="named"/>
+<rect width="357.03" height="6" x="389.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -649,7 +649,7 @@
 <rect width="12" height="12" x="435" y="165" class="named"><title>0x00431b90 lara_col_surftread (87 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="165" class="todo"><title>0x00431bf0 LaraSurfaceCollision (243 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="165" class="named"><title>0x00431cf0 LaraTestWaterStepOut (231 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="165" class="todo"><title>0x00431de0 LaraTestWaterClimbOut (540 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="165" class="named"><title>0x00431de0 LaraTestWaterClimbOut (540 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="165" class="todo"><title>0x00432000 LaraUnderWater (547 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="165" class="named"><title>0x00432230 SwimTurn (134 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="165" class="named"><title>0x004322c0 lara_as_swim (107 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">66.85%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">66.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="247.62" height="6" x="0" y="0" class="named"/>
-<rect width="499.38" height="6" x="247.62" y="0" class="todo"/>
+<rect width="248.81" height="6" x="0" y="0" class="named"/>
+<rect width="498.19" height="6" x="248.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1488,7 +1488,7 @@
 <rect width="17.85" height="18.75" x="626.13" y="0" class="named"><title>0x00440120 SpiderControl (544 bytes)</title></rect>
 <rect width="17.85" height="18.75" x="646.98" y="0" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
 <rect width="17.70" height="18.75" x="667.83" y="0" class="todo"><title>0x0042efd0 LaraGetNewTarget (540 bytes)</title></rect>
-<rect width="17.70" height="18.75" x="688.52" y="0" class="todo"><title>0x00431de0 LaraTestWaterClimbOut (540 bytes)</title></rect>
+<rect width="17.70" height="18.75" x="688.52" y="0" class="named"><title>0x00431de0 LaraTestWaterClimbOut (540 bytes)</title></rect>
 <rect width="17.58" height="18.75" x="709.22" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="17.20" height="18.75" x="729.80" y="0" class="named"><title>0x004344b0 FinalLevelCounter (527 bytes)</title></rect>
 <rect width="18.81" height="17.07" x="393.83" y="21.75" class="todo"><title>0x0042db10 lara_col_climbstnc (525 bytes)</title></rect>

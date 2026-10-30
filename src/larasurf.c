@@ -221,3 +221,91 @@ int LaraTestWaterStepOut(ITEM_INFO *item, COLL_INFO *coll)
 
     return 1;
 }
+
+#define SLOPE_DIF 60
+#define HANG_ANGLE (35 * ONE_DEGREE)
+#define SURFCLIMB_A 111
+#define SURFCLIMB_F GF(SURFCLIMB_A, 0)
+#define SURF2STND_A 191
+#define SURF2STND_F GF(SURF2STND_A, 0)
+#define SURF2QSTND_A 193
+#define SURF2QSTND_F GF(SURF2QSTND_A, 0)
+
+int LaraTestWaterClimbOut(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int hdif;
+    PHD_ANGLE angle;
+
+    if (coll->coll_type != COLL_FRONT || !(input & IN_ACTION) || coll->front_type == BIG_SLOPE || ABS(coll->left_floor - coll->right_floor) >= SLOPE_DIF)
+        return 0;
+
+    if (lara.gun_status != LG_ARMLESS && !(lara.gun_status == LG_READY && lara.gun_type == LG_FLARE))
+        return 0;
+
+    if (coll->front_ceiling > 0 || coll->mid_ceiling > -STEPUP_HEIGHT)
+        return 0;
+
+    hdif = coll->front_floor + SURF_HITE;
+    if (hdif <= -(STEP_L * 2) || hdif > SURF_HITE - STEPUP_HEIGHT)
+        return 0;
+
+    angle = item->pos.y_rot;
+    if (angle >= 0 - HANG_ANGLE && angle <= 0 + HANG_ANGLE)
+        angle = 0;
+    else if (angle >= 16384 - HANG_ANGLE && angle <= 16384 + HANG_ANGLE)
+        angle = 16384;
+    else if (angle >= 32767 - HANG_ANGLE || angle <= -32767 + HANG_ANGLE)
+        angle = -32768;
+    else if (angle >= -16384 - HANG_ANGLE && angle <= -16384 + HANG_ANGLE)
+        angle = -16384;
+
+    if (angle & 0x3fff)
+        return 0;
+
+    item->pos.y_pos += (hdif - 5);
+    UpdateLaraRoom(item, -LARA_HITE / 2);
+
+    switch (angle)
+    {
+    case 0:
+        item->pos.z_pos = (item->pos.z_pos & -WALL_L) + WALL_L + LARA_RAD;
+        break;
+    case 0x4000:
+        item->pos.x_pos = (item->pos.x_pos & -WALL_L) + WALL_L + LARA_RAD;
+        break;
+    case -0x8000:
+        item->pos.z_pos = (item->pos.z_pos & -WALL_L) - LARA_RAD;
+        break;
+    case -0x4000:
+        item->pos.x_pos = (item->pos.x_pos & -WALL_L) - LARA_RAD;
+        break;
+    }
+
+    if (hdif < -128)
+    {
+        item->anim_number = SURFCLIMB_A;
+        item->frame_number = SURFCLIMB_F;
+    }
+    else if (hdif < 128)
+    {
+        item->anim_number = SURF2STND_A;
+        item->frame_number = SURF2STND_F;
+    }
+    else
+    {
+        item->anim_number = SURF2QSTND_A;
+        item->frame_number = SURF2QSTND_F;
+    }
+
+    item->current_anim_state = AS_WATEROUT;
+    item->goal_anim_state = AS_STOP;
+    item->pos.y_rot = angle;
+    lara.gun_status = LG_HANDSBUSY;
+    item->pos.x_rot = item->pos.z_rot = 0;
+    item->gravity_status = 0;
+    item->speed = 0;
+    item->fallspeed = 0;
+    lara.water_status = LARA_ABOVEWATER;
+
+    return 1;
+}
