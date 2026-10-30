@@ -308,7 +308,7 @@ address,size,name,symbol
 0x0041fa40,489,GF_LoadScriptFile,_GF_LoadScriptFile
 0x0041fc30,31,GF_DoFrontEndSequence,_GF_DoFrontEndSequence
 0x0041fc50,102,GF_DoLevelSequence,_GF_DoLevelSequence
-0x0041fcc0,1148,GF_InterpretSequence,_GF_InterpretSequence
+0x0041fcc0,1240,GF_InterpretSequence,_GF_InterpretSequence
 0x004201a0,3283,GF_ModifyInventory,_GF_ModifyInventory
 0x00420e80,116,InitialiseHair,_InitialiseHair
 0x00420f00,2533,HairControl,_HairControl
@@ -478,7 +478,7 @@ address,size,name,symbol
 0x00429e90,354,lara_col_wade,_lara_col_wade
 0x0042a000,54,lara_default_col,_lara_default_col
 0x0042a040,216,lara_col_jumper,_lara_col_jumper
-0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait _S_InsertInvBgnd _DInputJoystickRelease
+0x0042a120,1,lara_col_kick,_lara_col_kick _FadeWait _S_InsertInvBgnd _DInputJoystickRelease _ShowThis
 0x0042a130,50,GetLaraCollisionInfo,_GetLaraCollisionInfo
 0x0042a170,226,lara_slide_slope,_lara_slide_slope
 0x0042a260,103,LaraHitCeiling,_LaraHitCeiling
