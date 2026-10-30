@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.85% (447)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.15% (800)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.93% (448)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.07% (799)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="267.77" height="6" x="0" y="0" class="named"/>
-<rect width="479.23" height="6" x="267.77" y="0" class="todo"/>
+<rect width="268.37" height="6" x="0" y="0" class="named"/>
+<rect width="478.63" height="6" x="268.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -390,7 +390,7 @@
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x00421cd0 DrawAmmoInfo (306 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="named"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="90" class="todo"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="90" class="named"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="90" class="todo"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="90" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="90" class="todo"><title>0x00422060 Display_Inventory (4510 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.32%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="109.39" height="6" x="0" y="0" class="named"/>
-<rect width="637.61" height="6" x="109.39" y="0" class="todo"/>
+<rect width="109.63" height="6" x="0" y="0" class="named"/>
+<rect width="637.37" height="6" x="109.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2001,7 +2001,7 @@
 <rect width="6.74" height="6.54" x="618.86" y="218.20" class="named"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="6.66" height="6.54" x="628.60" y="218.20" class="named"><title>0x004574a0 UT_MemBlt (110 bytes)</title></rect>
 <rect width="6.48" height="6.54" x="638.26" y="218.20" class="todo"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
-<rect width="6.48" height="6.54" x="647.74" y="218.20" class="todo"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
+<rect width="6.48" height="6.54" x="647.74" y="218.20" class="named"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
 <rect width="6.48" height="6.54" x="657.22" y="218.20" class="named"><title>0x00427300 CreateEffect (108 bytes)</title></rect>
 <rect width="6.39" height="6.54" x="666.70" y="218.20" class="named"><title>0x004322c0 lara_as_swim (107 bytes)</title></rect>
 <rect width="6.39" height="6.54" x="676.09" y="218.20" class="named"><title>0x00434250 DrawUnclippedItem (107 bytes)</title></rect>

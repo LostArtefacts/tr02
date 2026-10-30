@@ -75,6 +75,30 @@ void InitialisePickUpDisplay(void)
         pickups[i].duration = 0;
 }
 
+#define SECRET_ITEM1 190
+#define SECRET_ITEM2 191
+#define SECRET_ITEM3 192
+
+void S_CDPlay(sint16 track, int mode);
+
+void AddDisplayPickup(sint16 objnum)
+{
+    int i;
+
+    if (objnum == SECRET_ITEM1 || objnum == SECRET_ITEM2 || objnum == SECRET_ITEM3)
+        S_CDPlay(gameflow.secret_track, 0);
+
+    for (i = 0; i < NUM_PU; i++)
+    {
+        if (pickups[i].duration <= 0)
+        {
+            pickups[i].duration = 75;
+            pickups[i].sprnum = objects[objnum].mesh_index;
+            return;
+        }
+    }
+}
+
 #define LARA_HITPOINTS 1000
 
 extern int HealthBarTimer;
