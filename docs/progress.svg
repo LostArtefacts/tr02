@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.41% (691)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.59% (556)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.49% (692)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.51% (555)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="413.94" height="6" x="0" y="0" class="named"/>
-<rect width="333.06" height="6" x="413.94" y="0" class="todo"/>
+<rect width="414.53" height="6" x="0" y="0" class="named"/>
+<rect width="332.47" height="6" x="414.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -457,7 +457,7 @@
 <rect width="12" height="12" x="555" y="105" class="named"><title>0x00427370 KillEffect (227 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="105" class="named"><title>0x00427460 EffectNewRoom (147 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="105" class="named"><title>0x00427500 ClearBodyBag (88 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="105" class="todo"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="105" class="named"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="105" class="named"><title>0x00427700 LookUpDown (102 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="105" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="105" class="named"><title>0x004277f0 ResetLook (137 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.69%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.43%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.57%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="278.71" height="6" x="0" y="0" class="named"/>
-<rect width="468.29" height="6" x="278.71" y="0" class="todo"/>
+<rect width="279.60" height="6" x="0" y="0" class="named"/>
+<rect width="467.40" height="6" x="279.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1549,7 +1549,7 @@
 <rect width="15.85" height="14.94" x="489.86" y="41.79" class="todo"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
 <rect width="15.81" height="14.94" x="508.71" y="41.79" class="todo"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
 <rect width="15.81" height="14.94" x="527.52" y="41.79" class="todo"><title>0x00413620 LaraBaddieCollision (405 bytes)</title></rect>
-<rect width="15.81" height="14.94" x="546.33" y="41.79" class="todo"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
+<rect width="15.81" height="14.94" x="546.33" y="41.79" class="named"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
 <rect width="15.76" height="14.94" x="565.13" y="41.79" class="named"><title>0x0042ee30 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="15.71" height="14.94" x="583.90" y="41.79" class="todo"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
 <rect width="15.67" height="14.94" x="602.61" y="41.79" class="named"><title>0x00432550 GetWaterDepth (402 bytes)</title></rect>

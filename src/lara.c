@@ -43,6 +43,91 @@ int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
 void lara_default_col(ITEM_INFO *item, COLL_INFO *coll);
 sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist);
 
+#define LARA_LEAN_UNDO ONE_DEGREE
+#define SKIDOO 13
+
+int SkidooControl(void);
+void LaraGun(void);
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+void LookLeftRight(void);
+void ResetLook(void);
+
+extern void (*lara_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*extra_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*lara_collision_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+
+void LaraAboveWater(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->old.x = item->pos.x_pos;
+    coll->old.y = item->pos.y_pos;
+    coll->old.z = item->pos.z_pos;
+    coll->old_anim_state = item->current_anim_state;
+    coll->old_anim_number = item->anim_number;
+    coll->old_frame_number = item->frame_number;
+    coll->radius = LARA_RAD;
+    coll->trigger = NULL;
+
+    coll->lava_is_pit = 0;
+    coll->slopes_are_walls = 0;
+    coll->slopes_are_pits = 0;
+    coll->enable_spaz = 1;
+    coll->enable_baddie_push = 1;
+
+    if ((input & IN_LOOK) && !lara.extra_anim && lara.look)
+        LookLeftRight();
+    else
+        ResetLook();
+    lara.look = 1;
+
+    if (lara.skidoo != NO_ITEM)
+    {
+        if (items[lara.skidoo].object_number == SKIDOO)
+        {
+            if (SkidooControl())
+                return;
+        }
+        else
+        {
+            LaraGun();
+            return;
+        }
+    }
+
+    if (lara.extra_anim)
+        (*extra_control_routines[item->current_anim_state])(item, coll);
+    else
+        (*lara_control_routines[item->current_anim_state])(item, coll);
+
+    if (item->pos.z_rot >= -LARA_LEAN_UNDO && item->pos.z_rot <= LARA_LEAN_UNDO)
+        item->pos.z_rot = 0;
+    else if (item->pos.z_rot < -LARA_LEAN_UNDO)
+        item->pos.z_rot += LARA_LEAN_UNDO;
+    else
+        item->pos.z_rot -= LARA_LEAN_UNDO;
+
+    if (lara.turn_rate >= -LARA_TURN_UNDO && lara.turn_rate <= LARA_TURN_UNDO)
+        lara.turn_rate = 0;
+    else if (lara.turn_rate < -LARA_TURN_UNDO)
+        lara.turn_rate += LARA_TURN_UNDO;
+    else
+        lara.turn_rate -= LARA_TURN_UNDO;
+    item->pos.y_rot += lara.turn_rate;
+
+    AnimateLara(item);
+
+    if (!lara.extra_anim)
+    {
+        LaraBaddieCollision(item, coll);
+        if (lara.skidoo == NO_ITEM)
+            (*lara_collision_routines[item->current_anim_state])(item, coll);
+    }
+
+    UpdateLaraRoom(item, -LARA_HITE / 2);
+    LaraGun();
+    TestTriggers(coll->trigger, 0);
+}
+
 void LookUpDown(void)
 {
     camera.type = LOOK_CAMERA;
@@ -136,7 +221,6 @@ void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_STOP;
 }
 
-#define LARA_LEAN_UNDO ONE_DEGREE
 #define LARA_LEAN_RATE ((ONE_DEGREE / 2) + LARA_LEAN_UNDO)
 #define LARA_LEAN_MAX ((10 * ONE_DEGREE) + LARA_LEAN_UNDO)
 #define ROLL_A 146
@@ -2048,7 +2132,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
