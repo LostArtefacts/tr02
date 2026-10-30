@@ -7,7 +7,7 @@ window_title = "Tomb Raider II"
 dir = "orig/tomb2"
 exe = "Tomb2.exe"
 checksums = "orig/tomb2.sha1"
-original = "build/tomb2.exe"
+original = "build/orig/tomb2.exe"
 game_end = 0x459030  # phd_sqrt, the 3DSYSTEM assembly, is last; the CRT follows
 
 [ghidra]
