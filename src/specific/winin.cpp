@@ -119,3 +119,14 @@ extern "C" void DInputKeyboardRelease(void)
         }
     }
 }
+
+extern "C" void DInputJoystickRelease(void)
+{
+}
+
+extern "C" void WinInFinish(void)
+{
+    DInputJoystickRelease();
+    DInputKeyboardRelease();
+    DInputRelease();
+}
