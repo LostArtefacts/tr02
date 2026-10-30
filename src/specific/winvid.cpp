@@ -475,6 +475,12 @@ struct DISPLAY_ADAPTER {
     DDCAPS helCaps;
     GUID deviceGuid;
     D3DDEVICEDESC D3DHWDeviceDesc;
+    DWORD dispModeLists[6];
+    int vgaModes[8];
+    DWORD screenWidth;
+    bool hwRenderSupported;
+    bool swWindowedSupported;
+    bool hwWindowedSupported;
     DISPLAY_ADAPTER();
 };
 
@@ -667,6 +673,35 @@ extern "C" bool WinVidGetDisplayMode(DISPLAY_MODE *dispMode)
     else
         dispMode->vga = 0;
     return true;
+}
+
+extern "C" DWORD GetRenderBitDepth(DWORD dwRGBBitCount);
+
+extern "C" void WinVidSetDisplayAdapter(DISPLAY_ADAPTER *dispAdapter)
+{
+    DISPLAY_MODE dispMode;
+    DWORD bitDepth;
+    int width;
+    bool rc;
+
+    dispAdapter->swWindowedSupported = false;
+    dispAdapter->hwWindowedSupported = false;
+    dispAdapter->screenWidth = 0;
+    if (dispAdapter->lpAdapterGuid)
+        return;
+    if (!DDrawCreate(NULL))
+        return;
+    rc = WinVidGetDisplayMode(&dispMode);
+    DDrawRelease();
+    if (!rc)
+        return;
+    dispAdapter->swWindowedSupported = dispMode.vga == 1;
+    bitDepth = GetRenderBitDepth(dispMode.bpp);
+    dispAdapter->hwWindowedSupported = dispAdapter->hwRenderSupported && (dispAdapter->D3DHWDeviceDesc.dwFlags & D3DDD_DEVICERENDERBITDEPTH) && (bitDepth & dispAdapter->D3DHWDeviceDesc.dwDeviceRenderBitDepth);
+    width = dispMode.width & ~0x1F;
+    if (width * 3 >> 2 > dispMode.height)
+        width = (dispMode.height * 4 / 3) & ~0x1F;
+    dispAdapter->screenWidth = width;
 }
 
 bool DISPLAY_MODE::CompareVideoModes(DISPLAY_MODE *mode)
