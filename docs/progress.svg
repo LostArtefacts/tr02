@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.19% (389)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.81% (858)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.28% (390)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.72% (857)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="233.03" height="6" x="0" y="0" class="named"/>
-<rect width="513.97" height="6" x="233.03" y="0" class="todo"/>
+<rect width="233.62" height="6" x="0" y="0" class="named"/>
+<rect width="513.38" height="6" x="233.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -860,7 +860,7 @@
 <rect width="12" height="12" x="600" y="225" class="named"><title>0x00442de0 LaraBurn (73 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="225" class="named"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="225" class="named"><title>0x00442f20 LavaSpray (197 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="225" class="todo"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="225" class="named"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="todo"><title>0x00443100 GiantYetiControl (714 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="todo"><title>0x00443400 YetiControl (1517 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="225" class="todo"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.85%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="90.80" height="6" x="0" y="0" class="named"/>
-<rect width="656.20" height="6" x="90.80" y="0" class="todo"/>
+<rect width="91.39" height="6" x="0" y="0" class="named"/>
+<rect width="655.61" height="6" x="91.39" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1664,7 +1664,7 @@
 <rect width="12.32" height="11.76" x="466.03" y="290.19" class="todo"><title>0x00447cf0 WinSndMakeSample (270 bytes)</title></rect>
 <rect width="12.32" height="11.65" x="466.03" y="304.95" class="named"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
 <rect width="12.32" height="11.65" x="466.03" y="319.61" class="todo"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
-<rect width="12.32" height="11.60" x="466.03" y="334.26" class="todo"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
+<rect width="12.32" height="11.60" x="466.03" y="334.26" class="named"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="12.32" height="11.60" x="466.03" y="348.86" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
 <rect width="12.32" height="11.54" x="466.03" y="363.46" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
 <rect width="11.52" height="12.34" x="481.35" y="109.38" class="named"><title>0x004424a0 Pendulum (266 bytes)</title></rect>

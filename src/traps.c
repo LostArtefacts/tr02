@@ -1069,3 +1069,30 @@ void LavaSpray(sint16 item_number)
         SoundEffect(149, &item->pos, 0);
     }
 }
+
+void ControlLavaBlob(sint16 fx_num)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    fx = &effects[fx_num];
+    fx->pos.z_pos += (phd_cos(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+    fx->pos.x_pos += (phd_sin(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+    fx->fallspeed += GRAVITY;
+    fx->pos.y_pos += fx->fallspeed;
+
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    if (fx->pos.y_pos >= GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos)
+        || fx->pos.y_pos < GetCeiling(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos))
+        KillEffect(fx_num);
+    else if (ItemNearLara(&fx->pos, 200))
+    {
+        lara_item->hit_points -= LAVA_GLOB_DAMAGE;
+        lara_item->hit_status = 1;
+        KillEffect(fx_num);
+    }
+    else if (room_number != fx->room_number)
+        EffectNewRoom(fx_num, room_number);
+}
