@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.12% (413)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.88% (834)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">33.20% (414)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66.80% (833)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="247.40" height="6" x="0" y="0" class="named"/>
-<rect width="499.60" height="6" x="247.40" y="0" class="todo"/>
+<rect width="248" height="6" x="0" y="0" class="named"/>
+<rect width="499" height="6" x="248" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -287,7 +287,7 @@
 <rect width="12" height="12" x="255" y="60" class="todo"><title>0x00419dd0 DrawLara (3330 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="60" class="todo"><title>0x0041ab00 DrawLaraInt (3014 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="60" class="named"><title>0x0041b6f0 InitInterpolate (52 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="60" class="todo"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="60" class="named"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="60" class="todo"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="60" class="todo"><title>0x0041b790 phd_RotY_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="60" class="todo"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.32%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.31%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="102.18" height="6" x="0" y="0" class="named"/>
-<rect width="644.82" height="6" x="102.18" y="0" class="todo"/>
+<rect width="102.25" height="6" x="0" y="0" class="named"/>
+<rect width="644.75" height="6" x="102.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2381,7 +2381,7 @@
 <rect width="2.60" height="2.24" x="692.59" y="341.92" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="347.16" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="352.40" class="todo"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
-<rect width="2.60" height="2.09" x="692.59" y="357.64" class="todo"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
+<rect width="2.60" height="2.09" x="692.59" y="357.64" class="named"><title>0x0041b730 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.59" y="362.73" class="todo"><title>0x00425430 Inv_RingMotionRotation (34 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.59" y="367.82" class="named"><title>0x00434220 DrawMovableBlock (34 bytes)</title></rect>
 <rect width="2.60" height="2.09" x="692.59" y="372.91" class="todo"><title>0x004472a0 DInputCreate (34 bytes)</title></rect>

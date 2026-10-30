@@ -24,6 +24,12 @@ void InitInterpolate(int frac, int rate)
     S_LongMemCpy(IMstack, phd_mxptr, 12);
 }
 
+void phd_PopMatrix_I(void)
+{
+    phd_PopMatrix();
+    IMptr -= 12;
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;
