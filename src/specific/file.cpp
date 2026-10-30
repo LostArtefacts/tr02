@@ -70,3 +70,26 @@ void S_AdjustTexelCoordinates(void)
 }
 
 extern sint16 LGF_offsets[200];
+
+int Read_Strings(int num_strings, char **strings, char **buffer, DWORD *read, HANDLE file)
+{
+    int i;
+    sint16 size;
+    char *strptr;
+
+    MyReadFile(file, LGF_offsets, num_strings * sizeof(sint16), read, NULL);
+    MyReadFile(file, &size, sizeof(sint16), read, NULL);
+    *buffer = (char *)GlobalAlloc(GMEM_FIXED, size);
+    if (!buffer)
+        return 0;
+    MyReadFile(file, *buffer, size, read, NULL);
+    if (gameflow.cyphered_strings)
+    {
+        strptr = *buffer;
+        for (i = 0; i < size; i++)
+            *(strptr + i) ^= gameflow.cypher_code;
+    }
+    for (i = 0; i < num_strings; i++)
+        strings[i] = *buffer + LGF_offsets[i];
+    return 1;
+}
