@@ -357,6 +357,67 @@ extern INVENTORY_ITEM *inv_keys_list[];
 extern sint16 inv_main_qtys[];
 extern sint16 inv_keys_qtys[];
 
+void Inv_InsertItem(INVENTORY_ITEM *inv_item)
+{
+    int n, m;
+    INVENTORY_ITEM *inv_place;
+
+    if (inv_item->inv_pos < 100)
+    {
+        for (n = 0; n < inv_main_objects; n++)
+        {
+            inv_place = inv_main_list[n];
+            if (inv_place->inv_pos > inv_item->inv_pos)
+                break;
+        }
+
+        if (n == inv_main_objects)
+        {
+            inv_main_list[inv_main_objects] = inv_item;
+            inv_main_qtys[inv_main_objects] = 1;
+            inv_main_objects++;
+        }
+        else
+        {
+            for (m = inv_main_objects; m > (n - 1); m--)
+            {
+                inv_main_list[m + 1] = inv_main_list[m];
+                inv_main_qtys[m + 1] = inv_main_qtys[m];
+            }
+            inv_main_list[n] = inv_item;
+            inv_main_qtys[n] = 1;
+            inv_main_objects++;
+        }
+    }
+    else
+    {
+        for (n = 0; n < inv_keys_objects; n++)
+        {
+            inv_place = inv_keys_list[n];
+            if (inv_place->inv_pos > inv_item->inv_pos)
+                break;
+        }
+
+        if (n == inv_keys_objects)
+        {
+            inv_keys_list[inv_keys_objects] = inv_item;
+            inv_keys_qtys[inv_keys_objects] = 1;
+            inv_keys_objects++;
+        }
+        else
+        {
+            for (m = inv_keys_objects; m > (n - 1); m--)
+            {
+                inv_keys_list[m + 1] = inv_keys_list[m];
+                inv_keys_qtys[m + 1] = inv_keys_qtys[m];
+            }
+            inv_keys_list[n] = inv_item;
+            inv_keys_qtys[n] = 1;
+            inv_keys_objects++;
+        }
+    }
+}
+
 int Inv_GetItemOption(int itemNum);
 
 int Inv_RequestItem(int itemNum)
