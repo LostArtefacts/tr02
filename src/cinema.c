@@ -59,6 +59,47 @@ void HairControl(int in_cutscene);
 
 void CalculateCinematicCamera(void);
 
+sint32 DoCinematic(sint32 nframes)
+{
+    sint16 item_num, nex;
+    static int framecount = 0;
+
+    framecount += nframes * CineTickRate;
+    for (; framecount >= 0; framecount -= 65536) {
+        if (S_UpdateInput())
+            return 3;
+        if (input & IN_ACTION)
+            return 1;
+        if (input & IN_OPTION)
+            return 2;
+
+        number_dynamics = 0;
+        item_num = next_item_active;
+        while (item_num != NO_ITEM) {
+            nex = items[item_num].next_active;
+            if (objects[items[item_num].object_number].control)
+                (*objects[items[item_num].object_number].control)(item_num);
+            item_num = nex;
+        }
+
+        item_num = next_fx_active;
+        while (item_num != NO_ITEM) {
+            nex = effects[item_num].next_active;
+            if (objects[effects[item_num].object_number].control)
+                (*objects[effects[item_num].object_number].control)(item_num);
+            item_num = nex;
+        }
+
+        HairControl(1);
+        CalculateCinematicCamera();
+        cine_frame++;
+        if (cine_frame >= num_cine_frames)
+            return 1;
+    }
+    CineCurrentFrame = (S_CDGetLoc() * 4) / 5;
+    return 0;
+}
+
 int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
 {
     int i;

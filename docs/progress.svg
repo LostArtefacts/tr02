@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.74% (720)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.26% (527)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.82% (721)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.18% (526)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="431.31" height="6" x="0" y="0" class="named"/>
-<rect width="315.69" height="6" x="431.31" y="0" class="todo"/>
+<rect width="431.91" height="6" x="0" y="0" class="named"/>
+<rect width="315.09" height="6" x="431.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -205,7 +205,7 @@
 <rect width="12" height="12" x="525" y="30" class="named"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="30" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="30" class="named"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="30" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="30" class="named"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="30" class="todo"><title>0x00412270 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="30" class="named"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="30" class="named"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.32%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="303.91" height="6" x="0" y="0" class="named"/>
-<rect width="443.09" height="6" x="303.91" y="0" class="todo"/>
+<rect width="304.71" height="6" x="0" y="0" class="named"/>
+<rect width="442.29" height="6" x="304.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1580,7 +1580,7 @@
 <rect width="15.02" height="14.08" x="431.63" y="360.92" class="named"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
 <rect width="15.02" height="13.99" x="449.65" y="60.80" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
 <rect width="14.97" height="13.99" x="467.67" y="60.80" class="named"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
-<rect width="14.97" height="13.99" x="485.64" y="60.80" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
+<rect width="14.97" height="13.99" x="485.64" y="60.80" class="named"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
 <rect width="14.92" height="13.99" x="503.61" y="60.80" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="14.87" height="13.99" x="521.53" y="60.80" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="14.82" height="13.99" x="539.41" y="60.80" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
