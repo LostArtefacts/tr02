@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.53% (468)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.47% (779)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.61% (469)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">62.39% (778)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="280.35" height="6" x="0" y="0" class="named"/>
-<rect width="466.65" height="6" x="280.35" y="0" class="todo"/>
+<rect width="280.95" height="6" x="0" y="0" class="named"/>
+<rect width="466.05" height="6" x="280.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -757,7 +757,7 @@
 <rect width="12" height="12" x="555" y="195" class="todo"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="195" class="todo"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="195" class="named"><title>0x0043a280 ResetSG (21 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="195" class="todo"><title>0x0043a2a0 WriteSG (76 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="195" class="named"><title>0x0043a2a0 WriteSG (76 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="195" class="todo"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="195" class="todo"><title>0x0043a330 InitialiseLevel (351 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="195" class="todo"><title>0x0043a490 InitialiseGameFlags (97 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.26%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.74%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">82.72%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="128.91" height="6" x="0" y="0" class="named"/>
-<rect width="618.09" height="6" x="128.91" y="0" class="todo"/>
+<rect width="129.08" height="6" x="0" y="0" class="named"/>
+<rect width="617.92" height="6" x="129.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.51" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2121,7 +2121,7 @@
 <rect width="5.21" height="4.85" x="725.47" y="253.48" class="todo"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>
 <rect width="5.21" height="4.85" x="733.68" y="253.48" class="todo"><title>0x00452310 S_CopyBufferToScreen (77 bytes)</title></rect>
 <rect width="5.10" height="4.85" x="741.90" y="253.48" class="named"><title>0x00428790 extra_as_breath (76 bytes)</title></rect>
-<rect width="5.01" height="4.95" x="625.87" y="261.33" class="todo"><title>0x0043a2a0 WriteSG (76 bytes)</title></rect>
+<rect width="5.01" height="4.95" x="625.87" y="261.33" class="named"><title>0x0043a2a0 WriteSG (76 bytes)</title></rect>
 <rect width="5.01" height="4.95" x="625.87" y="269.28" class="named"><title>0x0044caf0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="5.01" height="4.84" x="625.87" y="277.22" class="todo"><title>0x0040d270 DoBoatDynamics (75 bytes)</title></rect>
 <rect width="5.01" height="4.84" x="625.87" y="285.06" class="named"><title>0x004280b0 lara_as_fastturn (75 bytes)</title></rect>
