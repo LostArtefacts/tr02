@@ -675,6 +675,44 @@ extern "C" bool WinVidGetDisplayMode(DISPLAY_MODE *dispMode)
     return true;
 }
 
+extern "C" bool WinVidGoWindowed(int width, int height, DISPLAY_MODE *dispMode)
+{
+    int maxWidth;
+    int maxHeight;
+    RECT rect;
+
+    if (!HideDDrawGameWindow())
+        return false;
+    if (!WinVidGetDisplayMode(dispMode))
+        return false;
+    maxWidth = dispMode->width;
+    maxHeight = CalculateWindowHeight(dispMode->width, dispMode->height);
+    if (maxHeight > dispMode->height)
+    {
+        maxHeight = dispMode->height;
+        maxWidth = CalculateWindowWidth(dispMode->width, maxHeight);
+    }
+    WinVidSetMaxWindowSize(maxWidth, maxHeight);
+    if (width > maxWidth || height > maxHeight)
+    {
+        width = maxWidth;
+        height = maxHeight;
+    }
+    IsGameFullScreen = false;
+    IsGameWindowUpdating = true;
+    WinVidSetGameWindowSize(width, height);
+    IsGameWindowUpdating = false;
+    GetClientRect(HGameWindow, &rect);
+    MapWindowPoints(HGameWindow, NULL, (LPPOINT)&rect, 2);
+    if ((rect.left > 0 || rect.right < dispMode->width) && (rect.top > 0 || rect.bottom < dispMode->height))
+        WinVidShowGameWindow(SW_SHOW);
+    else
+        WinVidShowGameWindow(SW_MAXIMIZE);
+    dispMode->width = width;
+    dispMode->height = height;
+    return true;
+}
+
 extern "C" DWORD GetRenderBitDepth(DWORD dwRGBBitCount);
 
 extern "C" void WinVidSetDisplayAdapter(DISPLAY_ADAPTER *dispAdapter)
