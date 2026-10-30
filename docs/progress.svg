@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.62% (706)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.38% (541)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.70% (707)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">43.30% (540)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="422.92" height="6" x="0" y="0" class="named"/>
-<rect width="324.08" height="6" x="422.92" y="0" class="todo"/>
+<rect width="423.52" height="6" x="0" y="0" class="named"/>
+<rect width="323.48" height="6" x="423.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -606,7 +606,7 @@
 <rect width="12" height="12" x="540" y="150" class="named"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="150" class="named"><title>0x0042e4f0 LaraTestClimbUpPos (584 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="150" class="todo"><title>0x0042e740 LaraGun (1256 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="150" class="todo"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="150" class="named"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="150" class="named"><title>0x0042ecf0 InitialiseNewWeapon (316 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="150" class="named"><title>0x0042ee30 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="150" class="named"><title>0x0042efd0 LaraGetNewTarget (540 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">60.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">60.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="297.03" height="6" x="0" y="0" class="named"/>
-<rect width="449.97" height="6" x="297.03" y="0" class="todo"/>
+<rect width="297.16" height="6" x="0" y="0" class="named"/>
+<rect width="449.84" height="6" x="297.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2201,7 +2201,7 @@
 <rect width="4.28" height="3.86" x="678.05" y="276.75" class="named"><title>0x004418c0 InitialiseBlade (60 bytes)</title></rect>
 <rect width="4.28" height="3.86" x="685.33" y="276.75" class="named"><title>0x00441be0 InitialiseRollingBall (60 bytes)</title></rect>
 <rect width="4.28" height="3.86" x="692.61" y="276.75" class="todo"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
-<rect width="4.16" height="3.86" x="699.89" y="276.75" class="todo"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
+<rect width="4.16" height="3.86" x="699.89" y="276.75" class="named"><title>0x0042ecb0 CheckForHoldingState (59 bytes)</title></rect>
 <rect width="4.16" height="3.86" x="707.05" y="276.75" class="named"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="4.16" height="3.86" x="714.21" y="276.75" class="named"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
 <rect width="4.16" height="3.86" x="721.37" y="276.75" class="named"><title>0x00435f40 ControlGlow (59 bytes)</title></rect>

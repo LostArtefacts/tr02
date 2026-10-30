@@ -40,6 +40,23 @@ void draw_pistol_meshes(int weapon_type);
 void draw_shotgun_meshes(int weapon_type);
 int WeaponObject(int weapon_type);
 
+extern sint16 HoldStates[14];
+
+int CheckForHoldingState(int state)
+{
+    sint16 *holds = HoldStates;
+
+    if (lara.extra_anim)
+        return 0;
+
+    while (*holds >= 0) {
+        if (state == *holds)
+            return 1;
+        holds++;
+    }
+    return 0;
+}
+
 void InitialiseNewWeapon(void)
 {
     lara.left_arm.frame_number = lara.right_arm.frame_number = 0;

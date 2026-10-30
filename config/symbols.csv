@@ -1519,6 +1519,7 @@ address,size,name,symbol
 0x00465ad4,4,jump_ok,_jump_ok
 0x00465ad8,2,old_ang,_old_ang
 0x00465ae0,,weapons,_weapons
+0x00465cb0,,HoldStates,_HoldStates
 0x00465cd0,,lara_control_routines,_lara_control_routines
 0x00465df0,,extra_control_routines,_extra_control_routines
 0x00465e20,,lara_collision_routines,_lara_collision_routines
