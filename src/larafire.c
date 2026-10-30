@@ -130,6 +130,40 @@ void LaraTargetInfo(WEAPON_INFO *winfo)
 
 void SmashWindow(sint16 item_number);
 
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm)
+{
+    PHD_ANGLE curr, speed;
+    PHD_ANGLE destx, desty;
+
+    speed = winfo->aim_speed;
+    if (arm->lock)
+    {
+        desty = lara.target_angles[0];
+        destx = lara.target_angles[1];
+    }
+    else
+        desty = destx = 0;
+
+    curr = arm->y_rot;
+    if (curr >= desty - speed && curr <= desty + speed)
+        curr = desty;
+    else if (curr < desty)
+        curr += speed;
+    else
+        curr -= speed;
+    arm->y_rot = curr;
+
+    curr = arm->x_rot;
+    if (curr >= destx - speed && curr <= destx + speed)
+        curr = destx;
+    else if (curr < destx)
+        curr += speed;
+    else
+        curr -= speed;
+    arm->x_rot = curr;
+    arm->z_rot = 0;
+}
+
 #include "box.h"
 #include "savegame.h"
 

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.45% (679)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.55% (568)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.53% (680)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.47% (567)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="406.75" height="6" x="0" y="0" class="named"/>
-<rect width="340.25" height="6" x="406.75" y="0" class="todo"/>
+<rect width="407.35" height="6" x="0" y="0" class="named"/>
+<rect width="339.65" height="6" x="407.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -611,7 +611,7 @@
 <rect width="12" height="12" x="615" y="150" class="named"><title>0x0042ee30 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="150" class="todo"><title>0x0042efd0 LaraGetNewTarget (540 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="150" class="named"><title>0x0042f1f0 find_target_point (170 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="150" class="todo"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="150" class="named"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="150" class="todo"><title>0x0042f370 FireWeapon (864 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="150" class="named"><title>0x0042f6e0 HitTarget (150 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="150" class="named"><title>0x0042f780 SmashItem (81 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="270.25" height="6" x="0" y="0" class="named"/>
-<rect width="476.75" height="6" x="270.25" y="0" class="todo"/>
+<rect width="270.68" height="6" x="0" y="0" class="named"/>
+<rect width="476.32" height="6" x="270.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1776,7 +1776,7 @@
 <rect width="9.41" height="10.16" x="737.59" y="137.89" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
 <rect width="9.61" height="9.82" x="522.63" y="151.05" class="named"><title>0x0041ca70 Splash (194 bytes)</title></rect>
 <rect width="9.61" height="9.82" x="522.63" y="163.87" class="named"><title>0x004343e0 InitialiseFinalLevel (194 bytes)</title></rect>
-<rect width="9.61" height="9.76" x="522.63" y="176.70" class="todo"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
+<rect width="9.61" height="9.76" x="522.63" y="176.70" class="named"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
 <rect width="9.61" height="9.69" x="522.63" y="189.45" class="todo"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
 <rect width="9.61" height="9.69" x="522.63" y="202.14" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="9.61" height="9.69" x="522.63" y="214.83" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
