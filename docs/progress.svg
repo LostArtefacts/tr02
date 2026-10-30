@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.30% (328)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.70% (919)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.38% (329)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">73.62% (918)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="196.48" height="6" x="0" y="0" class="named"/>
-<rect width="550.52" height="6" x="196.48" y="0" class="todo"/>
+<rect width="197.08" height="6" x="0" y="0" class="named"/>
+<rect width="549.92" height="6" x="197.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -470,7 +470,7 @@
 <rect width="12" height="12" x="0" y="120" class="named"><title>0x00427d80 lara_as_turn_l (137 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="120" class="named"><title>0x00427e10 lara_as_death (20 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="120" class="named"><title>0x00427e30 lara_as_fastfall (64 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="120" class="todo"><title>0x00427e70 lara_as_hang (88 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="120" class="named"><title>0x00427e70 lara_as_hang (88 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="120" class="named"><title>0x00427ed0 lara_as_reach (28 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="120" class="named"><title>0x00427ef0 lara_as_splat (10 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="120" class="named"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.70%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="61.99" height="6" x="0" y="0" class="named"/>
-<rect width="685.01" height="6" x="61.99" y="0" class="todo"/>
+<rect width="62.18" height="6" x="0" y="0" class="named"/>
+<rect width="684.82" height="6" x="62.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2071,7 +2071,7 @@
 <rect width="5.87" height="5.40" x="688.48" y="236.87" class="named"><title>0x0044d240 HWR_ResetZBuffer (89 bytes)</title></rect>
 <rect width="5.77" height="5.40" x="697.36" y="236.87" class="todo"><title>0x0041ef70 InitialiseXianLord (88 bytes)</title></rect>
 <rect width="5.77" height="5.40" x="706.13" y="236.87" class="named"><title>0x00427500 ClearBodyBag (88 bytes)</title></rect>
-<rect width="5.77" height="5.40" x="714.90" y="236.87" class="todo"><title>0x00427e70 lara_as_hang (88 bytes)</title></rect>
+<rect width="5.77" height="5.40" x="714.90" y="236.87" class="named"><title>0x00427e70 lara_as_hang (88 bytes)</title></rect>
 <rect width="5.77" height="5.40" x="723.68" y="236.87" class="named"><title>0x00428480 lara_as_pickupflare (88 bytes)</title></rect>
 <rect width="5.77" height="5.40" x="732.45" y="236.87" class="named"><title>0x0042f7e0 WeaponObject (88 bytes)</title></rect>
 <rect width="5.77" height="5.40" x="741.23" y="236.87" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
