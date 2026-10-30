@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.34% (291)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.66% (956)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.42% (292)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.58% (955)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="174.32" height="6" x="0" y="0" class="named"/>
-<rect width="572.68" height="6" x="174.32" y="0" class="todo"/>
+<rect width="174.92" height="6" x="0" y="0" class="named"/>
+<rect width="572.08" height="6" x="174.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -473,7 +473,7 @@
 <rect width="12" height="12" x="45" y="120" class="todo"><title>0x00427e70 lara_as_hang (88 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="120" class="named"><title>0x00427ed0 lara_as_reach (28 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="120" class="named"><title>0x00427ef0 lara_as_splat (10 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="120" class="todo"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="120" class="named"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="120" class="named"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="120" class="named"><title>0x004280a0 lara_as_null (11 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="120" class="named"><title>0x004280b0 lara_as_fastturn (75 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="54.06" height="6" x="0" y="0" class="named"/>
-<rect width="692.94" height="6" x="54.06" y="0" class="todo"/>
+<rect width="54.65" height="6" x="0" y="0" class="named"/>
+<rect width="692.35" height="6" x="54.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1662,7 +1662,7 @@
 <rect width="11.81" height="12.33" x="632.58" y="94.09" class="todo"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="11.81" height="12.33" x="647.40" y="94.09" class="todo"><title>0x0044e9a0 ScreenShotPCX (271 bytes)</title></rect>
 <rect width="11.76" height="12.33" x="662.21" y="94.09" class="todo"><title>0x00447cf0 WinSndMakeSample (270 bytes)</title></rect>
-<rect width="11.65" height="12.33" x="676.97" y="94.09" class="todo"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
+<rect width="11.65" height="12.33" x="676.97" y="94.09" class="named"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
 <rect width="11.65" height="12.33" x="691.62" y="94.09" class="todo"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
 <rect width="11.60" height="12.33" x="706.27" y="94.09" class="todo"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="11.60" height="12.33" x="720.86" y="94.09" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
