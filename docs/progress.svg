@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">64.31% (802)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">35.45% (442)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">64.39% (803)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">35.36% (441)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="480.43" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="480.43" y="0" class="decompiled"/>
-<rect width="264.77" height="6" x="482.23" y="0" class="todo"/>
+<rect width="481.03" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="481.03" y="0" class="decompiled"/>
+<rect width="264.18" height="6" x="482.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1125,7 +1125,7 @@
 <rect width="12" height="12" x="60" y="315" class="named"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="315" class="named"><title>0x00450cf0 S_ClearScreen (11 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="315" class="named"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="315" class="todo"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="315" class="named"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="315" class="todo"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="315" class="named"><title>0x00450ff0 S_InsertBackPolygon (70 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="todo"><title>0x00451040 S_PrintShadow (497 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.28%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.29%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="360.62" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="360.62" y="0" class="decompiled"/>
-<rect width="386.33" height="6" x="360.67" y="0" class="todo"/>
+<rect width="360.73" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="360.73" y="0" class="decompiled"/>
+<rect width="386.22" height="6" x="360.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2268,7 +2268,7 @@
 <rect width="3.81" height="3.34" x="682.67" y="290.55" class="named"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="3.81" height="3.34" x="689.48" y="290.55" class="named"><title>0x00447a40 TempVideoAdjust (52 bytes)</title></rect>
 <rect width="3.81" height="3.34" x="696.30" y="290.55" class="named"><title>0x0044d800 game_free (52 bytes)</title></rect>
-<rect width="3.81" height="3.34" x="703.11" y="290.55" class="todo"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
+<rect width="3.81" height="3.34" x="703.11" y="290.55" class="named"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="709.92" y="290.55" class="named"><title>0x00402420 phd_SortPolyList (51 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="716.60" y="290.55" class="named"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="723.28" y="290.55" class="named"><title>0x00428280 lara_as_rightjump (51 bytes)</title></rect>

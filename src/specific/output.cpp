@@ -49,6 +49,27 @@ void S_InitialiseScreen(int type)
         HWR_InitState();
 }
 
+extern "C" void phd_SortPolyList(void);
+extern "C" void HWR_DrawPolyList(void);
+extern "C" void Func455940(void);
+void HWR_EndScene();
+
+extern "C" void S_OutputPolyList(void)
+{
+    if (SavedAppSettings.RenderMode == RM_Software)
+    {
+        phd_SortPolyList();
+        Func455940();
+    }
+    else
+    {
+        if (!SavedAppSettings.ZBuffer || !*((bool *)&SavedAppSettings + 0x2a))
+            phd_SortPolyList();
+        HWR_DrawPolyList();
+        HWR_EndScene();
+    }
+}
+
 void S_InsertBackPolygon(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int colour)
 {
     min_x += phd_winxmin;
