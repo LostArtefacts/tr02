@@ -4,6 +4,8 @@ extern sint16 body_bag;
 extern sint16 next_item_free, next_item_active;
 extern int level_items;
 
+#define NO_ROOM 0xff
+
 void KillItem(sint16 item_number);
 
 void InitialiseItemArray(int numitems)
@@ -32,6 +34,32 @@ sint16 CreateItem(void)
     items[item_num].flags = 0;
     next_item_free = items[item_num].next_item;
     return item_num;
+}
+
+void RemoveActiveItem(sint16 item_num)
+{
+    sint16 linknum;
+
+    if (!items[item_num].active)
+        return;
+
+    items[item_num].active = 0;
+
+    linknum = next_item_active;
+    if (linknum == item_num)
+    {
+        next_item_active = items[item_num].next_active;
+        return;
+    }
+
+    for (; linknum != NO_ITEM; linknum = items[linknum].next_active)
+    {
+        if (items[linknum].next_active == item_num)
+        {
+            items[linknum].next_active = items[item_num].next_active;
+            break;
+        }
+    }
 }
 
 void AddActiveItem(sint16 item_num)
