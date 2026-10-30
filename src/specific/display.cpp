@@ -46,3 +46,15 @@ void TempVideoRemove(void)
     screen_sizer = game_sizer;
     setup_screen_size();
 }
+
+void S_FadeInInventory(int fade)
+{
+    if (Inventory_Mode != INV_TITLE_MODE)
+        S_CopyScreenToBuffer();
+    if (fade)
+    {
+        fade_value = 16 << 16;
+        fade_limit = 24 << 16;
+        fade_adder = 32768;
+    }
+}

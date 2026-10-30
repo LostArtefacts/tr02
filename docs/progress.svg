@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.10% (126)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.90% (1121)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.18% (127)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.82% (1120)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="75.48" height="6" x="0" y="0" class="named"/>
-<rect width="671.52" height="6" x="75.48" y="0" class="todo"/>
+<rect width="76.08" height="6" x="0" y="0" class="named"/>
+<rect width="670.92" height="6" x="76.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -971,7 +971,7 @@
 <rect width="12" height="12" x="15" y="270" class="todo"><title>0x004479a0 setup_screen_size (159 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="named"><title>0x00447a40 TempVideoAdjust (52 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="270" class="named"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="270" class="todo"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="270" class="named"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="todo"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="270" class="todo"><title>0x00447b40 Func447b40 (18 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="todo"><title>0x00447b60 Func447b60 (14 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.27%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.73%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.72%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="16.95" height="6" x="0" y="0" class="named"/>
-<rect width="730.05" height="6" x="16.95" y="0" class="todo"/>
+<rect width="17.06" height="6" x="0" y="0" class="named"/>
+<rect width="729.94" height="6" x="17.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2259,7 +2259,7 @@
 <rect width="3.74" height="3.58" x="709.53" y="290.09" class="todo"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="716.28" y="290.09" class="todo"><title>0x00445200 WinVidSetGameWindowSize (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="723.02" y="290.09" class="todo"><title>0x004461b0 FlaggedStringsCreate (53 bytes)</title></rect>
-<rect width="3.74" height="3.58" x="729.77" y="290.09" class="todo"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
+<rect width="3.74" height="3.58" x="729.77" y="290.09" class="named"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="736.51" y="290.09" class="todo"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="743.26" y="290.09" class="todo"><title>0x0044d640 HWR_GetAllTextureHandles (53 bytes)</title></rect>
 <rect width="3.38" height="3.96" x="662.32" y="296.68" class="todo"><title>0x004561e0 ReloadTextures (53 bytes)</title></rect>
