@@ -336,6 +336,43 @@ extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACED
     return rc;
 }
 
+extern "C" DWORD GetRenderBitDepth(DWORD dwRGBBitCount)
+{
+    switch (dwRGBBitCount)
+    {
+    case 1:
+        return DDBD_1;
+    case 2:
+        return DDBD_2;
+    case 4:
+        return DDBD_4;
+    case 8:
+        return DDBD_8;
+    case 16:
+        return DDBD_16;
+    case 24:
+        return DDBD_24;
+    case 32:
+        return DDBD_32;
+    }
+    return 0;
+}
+
+typedef struct {
+    DWORD dwRBitMask;
+    DWORD dwGBitMask;
+    DWORD dwBBitMask;
+    DWORD dwRGBAlphaBitMask;
+    DWORD dwRBitDepth;
+    DWORD dwGBitDepth;
+    DWORD dwBBitDepth;
+    DWORD dwRGBAlphaBitDepth;
+    DWORD dwRBitOffset;
+    DWORD dwGBitOffset;
+    DWORD dwBBitOffset;
+    DWORD dwRGBAlphaBitOffset;
+} COLOR_BIT_MASKS;
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)

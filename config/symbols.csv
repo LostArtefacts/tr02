@@ -843,7 +843,7 @@ address,size,name,symbol
 0x00445470,61,WinVidBufferLock,_WinVidBufferLock
 0x004454b0,37,WinVidBufferUnlock,_WinVidBufferUnlock
 0x004454e0,144,WinVidCopyBitmapToBuffer,_WinVidCopyBitmapToBuffer
-0x00445570,70,GetRenderBitDepth,_GetRenderBitDepth
+0x00445570,136,GetRenderBitDepth,_GetRenderBitDepth
 0x00445600,113,WinVidGetColorBitMasks,
 0x00445680,68,BitMaskGetNumberOfBits,_BitMaskGetNumberOfBits
 0x004456d0,97,CalculateCompatibleColor,_CalculateCompatibleColor
