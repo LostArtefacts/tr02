@@ -1,5 +1,6 @@
 #include "global.h"
 #include "utils.h"
+#include <stdio.h>
 
 extern double LdPerformanceDivisor;
 extern double LdInitialTimer;
@@ -94,6 +95,15 @@ extern "C" LONG SetRegistryBoolValue(LPCTSTR lpValueName, bool value)
 {
     DWORD dword = value;
     return RegSetValueEx(HKey, lpValueName, 0, REG_DWORD, (BYTE *)&dword, sizeof(DWORD));
+}
+
+extern "C" LONG SetRegistryStringValue(LPCTSTR lpValueName, LPCTSTR value, int length);
+
+extern "C" LONG SetRegistryFloatValue(LPCTSTR lpValueName, double value)
+{
+    char buffer[64];
+    int length = sprintf(buffer, "%.5f", value);
+    return SetRegistryStringValue(lpValueName, buffer, length);
 }
 
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
