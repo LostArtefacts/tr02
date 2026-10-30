@@ -55,3 +55,35 @@ extern "C" void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH
     if (x2 >= 0 && y2 >= 0 && x1 < phd_winwidth && y1 < phd_winheight)
         InsertSprite(z << 3, x1, y1, x2, y2, sprnum, shade);
 }
+
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint8 clip, clip_hi;
+    sint16 g, u, v;
+} PHD_VBUF;
+
+extern "C" PHD_VBUF PhdVBuf[];
+extern "C" sint32 PhdPersp;
+
+extern "C" sint16 *ins_room_sprite(sint16 *objptr, int num)
+{
+    PHD_VBUF *vn;
+    sint32 x1, y1, x2, y2, zv;
+    PHDSPRITESTRUCT *sptr;
+
+    for (; num > 0; num--, objptr += 2) {
+        vn = &PhdVBuf[*objptr];
+        if (vn->clip < 0)
+            continue;
+        zv = (sint32)vn->zv / PhdPersp;
+        sptr = &PhdSpriteInfo[objptr[1]];
+        x1 = (sint32)((vn->xv + (sptr->x1 << W2V_SHIFT)) / zv + phd_centerx);
+        y1 = (sint32)((vn->yv + (sptr->y1 << W2V_SHIFT)) / zv + phd_centery);
+        x2 = (sint32)((vn->xv + (sptr->x2 << W2V_SHIFT)) / zv + phd_centerx);
+        y2 = (sint32)((vn->yv + (sptr->y2 << W2V_SHIFT)) / zv + phd_centery);
+        if (x2 < phd_left || y2 < phd_top || x1 >= phd_right || y1 >= phd_bottom)
+            continue;
+        InsertSprite((int)vn->zv, x1, y1, x2, y2, objptr[1], vn->g);
+    }
+    return objptr;
+}
