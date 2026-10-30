@@ -552,6 +552,23 @@ bool WinVidGetDisplayAdapters(void);
 BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriverDescription, LPTSTR lpDriverName, LPVOID lpContext);
 }
 
+extern "C" LRESULT CALLBACK WinVidGameWindowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+extern "C" bool WinVidRegisterGameWindowClass(void)
+{
+    WNDCLASSEXA wndClass;
+
+    memset(&wndClass, 0, sizeof(wndClass));
+    wndClass.style = 0;
+    wndClass.cbSize = sizeof(wndClass);
+    wndClass.lpfnWndProc = WinVidGameWindowProc;
+    wndClass.hInstance = GhInstance;
+    wndClass.hIcon = LoadIconA(GhInstance, MAKEINTRESOURCE(100));
+    wndClass.hCursor = LoadCursorA(NULL, IDC_ARROW);
+    wndClass.lpszClassName = ClassName;
+    return RegisterClassExA(&wndClass) ? true : false;
+}
+
 extern "C" bool WinVidInit(void)
 {
     AppResultCode = 0;
