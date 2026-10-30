@@ -1,5 +1,6 @@
 #include "game.h"
 #include "box.h"
+#include "savegame.h"
 
 #define BLOOD_RADIUS 256
 #define MAX_BOUNCE 100
@@ -244,6 +245,14 @@ void dynamic_light_off(ITEM_INFO *item)
 void reset_hair(ITEM_INFO *item)
 {
     InitialiseHair();
+}
+
+void AssaultStart(ITEM_INFO *item)
+{
+    savegame.timer = 0;
+    assault_timer_active = 1;
+    assault_timer_display = 1;
+    flipeffect = -1;
 }
 
 void AssaultStop(ITEM_INFO *item)

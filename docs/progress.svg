@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.93% (261)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">79.07% (986)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.01% (262)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.99% (985)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="156.35" height="6" x="0" y="0" class="named"/>
-<rect width="590.65" height="6" x="156.35" y="0" class="todo"/>
+<rect width="156.95" height="6" x="0" y="0" class="named"/>
+<rect width="590.05" height="6" x="156.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -359,7 +359,7 @@
 <rect width="12" height="12" x="585" y="75" class="named"><title>0x0041d9d0 dynamic_light_on (9 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="75" class="named"><title>0x0041d9e0 dynamic_light_off (11 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="75" class="named"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="75" class="todo"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="75" class="named"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="75" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="75" class="named"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="75" class="todo"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.56%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.44%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.57%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.43%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="49" height="6" x="0" y="0" class="named"/>
-<rect width="698" height="6" x="49" y="0" class="todo"/>
+<rect width="49.08" height="6" x="0" y="0" class="named"/>
+<rect width="697.92" height="6" x="49.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2359,7 +2359,7 @@
 <rect width="2.84" height="2.31" x="704.25" y="315.21" class="todo"><title>0x00456030 Create3DTexture (37 bytes)</title></rect>
 <rect width="2.84" height="2.31" x="710.09" y="315.21" class="todo"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="715.92" y="315.21" class="todo"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
-<rect width="2.68" height="2.31" x="721.60" y="315.21" class="todo"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
+<rect width="2.68" height="2.31" x="721.60" y="315.21" class="named"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="727.28" y="315.21" class="todo"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="732.96" y="315.21" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="738.64" y="315.21" class="todo"><title>0x00440970 T_RemoveAllPrints (36 bytes)</title></rect>
