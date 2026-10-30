@@ -108,6 +108,12 @@ int Player_StartTimer(void *movie);
 int Movie_GetCurrentFrame(void *movie);
 int Movie_GetTotalFrames(void *movie);
 int Player_PlayFrame(void *movie, void *fmv, void *sound, int a, RECT *rect, int b, int c, int d);
+int Player_StopTimer(void *movie);
+int Player_ShutDownSound(void **sound);
+int Player_ShutDownVideo(void **fmv);
+int Player_ShutDownMovie(void **movie);
+int Player_ShutDownSoundSystem(void);
+int Player_ReturnPlaybackMode(void);
 }
 
 void WinPlayFMV(char *path, bool playback)
@@ -153,4 +159,15 @@ void WinPlayFMV(char *path, bool playback)
         if (S_UpdateInput() || (input & 0x100))
             break;
     }
+}
+
+void WinStopFMV(bool playback)
+{
+    Player_StopTimer(MovieContext);
+    Player_ShutDownSound(&FmvSoundContext);
+    Player_ShutDownVideo(&FmvContext);
+    Player_ShutDownMovie(&MovieContext);
+    Player_ShutDownSoundSystem();
+    if (playback)
+        Player_ReturnPlaybackMode();
 }

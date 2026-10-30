@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.08% (1001)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.36% (242)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.16% (1002)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.28% (241)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="598.20" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="598.20" y="0" class="decompiled"/>
-<rect width="144.62" height="6" x="602.38" y="0" class="todo"/>
+<rect width="598.80" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="598.80" y="0" class="decompiled"/>
+<rect width="144.02" height="6" x="602.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1045,7 +1045,7 @@
 <rect width="12" height="12" x="360" y="285" class="todo"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="285" class="named"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="285" class="named"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="285" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="285" class="named"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="285" class="named"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="285" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="285" class="named"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.72%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.20%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.74%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.18%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="453.57" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="453.57" y="0" class="decompiled"/>
-<rect width="292.83" height="6" x="454.17" y="0" class="todo"/>
+<rect width="453.72" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="453.72" y="0" class="decompiled"/>
+<rect width="292.67" height="6" x="454.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2150,7 +2150,7 @@
 <rect width="4.74" height="4.70" x="680.84" y="261.38" class="named"><title>0x00446c60 WinVidGetDisplayAdapter (72 bytes)</title></rect>
 <rect width="4.74" height="4.70" x="688.59" y="261.38" class="named"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
 <rect width="4.74" height="4.70" x="696.33" y="261.38" class="named"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>
-<rect width="4.74" height="4.70" x="704.08" y="261.38" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
+<rect width="4.74" height="4.70" x="704.08" y="261.38" class="named"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
 <rect width="4.74" height="4.70" x="711.82" y="261.38" class="todo"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
 <rect width="4.64" height="4.70" x="719.56" y="261.38" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="4.64" height="4.70" x="727.20" y="261.38" class="named"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
