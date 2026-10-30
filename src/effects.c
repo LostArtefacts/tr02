@@ -218,3 +218,10 @@ void AssaultStop(ITEM_INFO *item)
     assault_timer_display = 1;
     flipeffect = -1;
 }
+
+void AssaultReset(ITEM_INFO *item)
+{
+    assault_timer_active = 0;
+    assault_timer_display = 0;
+    flipeffect = -1;
+}

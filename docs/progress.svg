@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.23% (165)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.77% (1082)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.31% (166)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.69% (1081)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="98.84" height="6" x="0" y="0" class="named"/>
-<rect width="648.16" height="6" x="98.84" y="0" class="todo"/>
+<rect width="99.44" height="6" x="0" y="0" class="named"/>
+<rect width="647.56" height="6" x="99.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -361,7 +361,7 @@
 <rect width="12" height="12" x="615" y="75" class="named"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="75" class="todo"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="75" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="75" class="todo"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="75" class="named"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="75" class="todo"><title>0x0041da70 AssaultFinished (178 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="75" class="todo"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="75" class="todo"><title>0x0041dbb0 Cult2Control (1035 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.46%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.54%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.53%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="33.32" height="6" x="0" y="0" class="named"/>
-<rect width="713.68" height="6" x="33.32" y="0" class="todo"/>
+<rect width="33.37" height="6" x="0" y="0" class="named"/>
+<rect width="713.63" height="6" x="33.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2444,7 +2444,7 @@
 <rect width="1.71" height="1.27" x="722.33" y="340.72" class="named"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="727.04" y="340.72" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="731.75" y="340.72" class="named"><title>0x00456910 UT_ErrorBox (24 bytes)</title></rect>
-<rect width="1.51" height="1.27" x="736.46" y="340.72" class="todo"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
+<rect width="1.51" height="1.27" x="736.46" y="340.72" class="named"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="740.97" y="340.72" class="todo"><title>0x00440680 T_SetScale (23 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="745.49" y="340.72" class="todo"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
 <rect width="1.47" height="1.31" x="712.91" y="344.99" class="todo"><title>0x00453750 Func453750 (23 bytes)</title></rect>
