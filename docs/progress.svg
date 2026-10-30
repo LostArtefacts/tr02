@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.28% (776)</tspan> · <tspan class="decompiled">0.08% (1)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">37.64% (469)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.36% (777)</tspan> · <tspan class="decompiled">0.08% (1)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">37.56% (468)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="465.23" height="6" x="0" y="0" class="named"/>
-<rect width="0.60" height="6" x="465.23" y="0" class="decompiled"/>
-<rect width="281.17" height="6" x="465.83" y="0" class="todo"/>
+<rect width="465.83" height="6" x="0" y="0" class="named"/>
+<rect width="0.60" height="6" x="465.83" y="0" class="decompiled"/>
+<rect width="280.57" height="6" x="466.43" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -956,7 +956,7 @@
 <rect width="12" height="12" x="525" y="255" class="named"><title>0x00447350 WinInReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="255" class="todo"><title>0x00447450 Func447450 (5 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="255" class="todo"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="255" class="todo"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="255" class="named"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="255" class="todo"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="255" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="255" class="todo"><title>0x00447620 GetJoystick (78 bytes)</title></rect>
@@ -1318,11 +1318,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.17%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.82%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.18%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.81%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="344.92" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="344.92" y="0" class="decompiled"/>
-<rect width="402.05" height="6" x="344.95" y="0" class="todo"/>
+<rect width="345" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="345" y="0" class="decompiled"/>
+<rect width="401.97" height="6" x="345.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2364,7 +2364,7 @@
 <rect width="2.29" height="2.66" x="687.45" y="361.03" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
 <rect width="2.29" height="2.66" x="687.45" y="366.69" class="named"><title>0x00440970 T_GetStringLen (36 bytes)</title></rect>
 <rect width="2.29" height="2.66" x="687.45" y="372.34" class="todo"><title>0x004445f0 Enumerate3DDevices (36 bytes)</title></rect>
-<rect width="2.65" height="2.29" x="692.74" y="320.80" class="todo"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
+<rect width="2.65" height="2.29" x="692.74" y="320.80" class="named"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
 <rect width="2.65" height="2.29" x="692.74" y="326.09" class="todo"><title>0x00448480 WinSndFinish (36 bytes)</title></rect>
 <rect width="2.65" height="2.29" x="692.74" y="331.38" class="named"><title>0x0044d2a0 HWR_TexSource (36 bytes)</title></rect>
 <rect width="2.65" height="2.29" x="692.74" y="336.68" class="todo"><title>0x004558e1 Func4558e1 (36 bytes)</title></rect>

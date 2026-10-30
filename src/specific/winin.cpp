@@ -99,3 +99,12 @@ extern "C" DWORD WinInReadJoystick(int *x, int *y)
     *y = 32 * joy.dwYpos / (JoyCaps.wYmax - JoyCaps.wYmin) - 16;
     return joy.dwButtons;
 }
+
+extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef);
+
+extern "C" bool DInputEnumDevices(void *joystickList)
+{
+    if (DX_TRY(DInput->EnumDevices(DIDEVTYPE_JOYSTICK, DInputEnumDevicesCallback, joystickList, DIEDFL_ATTACHEDONLY)))
+        return false;
+    return true;
+}
