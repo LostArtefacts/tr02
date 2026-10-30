@@ -44,6 +44,28 @@ int DrawPhaseGame(void)
     return camera.number_frames;
 }
 
+#define SPRITE_ABS 0x01000000
+#define SPRITE_SEMITRANS 0x02000000
+#define SPRITE_SHADE 0x08000000
+
+extern sint32 LsAdder;
+
+void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r);
+void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale);
+
+void DrawSpriteItem(ITEM_INFO *item)
+{
+    OBJECT_INFO *obj;
+
+    S_CalculateStaticMeshLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->shade, item->shadeB, &room[item->room_number]);
+
+    obj = &objects[item->object_number];
+    S_DrawSprite(SPRITE_ABS | (obj->semi_transparent ? SPRITE_SEMITRANS : 0) | SPRITE_SHADE,
+                 item->pos.x_pos, item->pos.y_pos, item->pos.z_pos,
+                 (sint16)(obj->mesh_index - item->frame_number),
+                 (sint16)(LsAdder + 16 * 256), 0);
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;

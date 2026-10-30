@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.24% (427)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.76% (820)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.32% (428)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.68% (819)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="255.79" height="6" x="0" y="0" class="named"/>
-<rect width="491.21" height="6" x="255.79" y="0" class="todo"/>
+<rect width="256.39" height="6" x="0" y="0" class="named"/>
+<rect width="490.61" height="6" x="256.39" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -282,7 +282,7 @@
 <rect width="12" height="12" x="180" y="60" class="todo"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="60" class="todo"><title>0x00419640 PrintObjects (548 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="60" class="todo"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="60" class="todo"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="60" class="named"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="60" class="todo"><title>0x00419a50 DrawAnimatingItem (888 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="60" class="todo"><title>0x00419dd0 DrawLara (3330 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="60" class="todo"><title>0x0041ab00 DrawLaraInt (3014 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.94%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.10%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.90%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="105.06" height="6" x="0" y="0" class="named"/>
-<rect width="641.94" height="6" x="105.06" y="0" class="todo"/>
+<rect width="105.35" height="6" x="0" y="0" class="named"/>
+<rect width="641.65" height="6" x="105.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1930,7 +1930,7 @@
 <rect width="7.46" height="7.65" x="708.38" y="197.18" class="named"><title>0x004323b0 lara_as_tread (133 bytes)</title></rect>
 <rect width="7.46" height="7.65" x="718.84" y="197.18" class="named"><title>0x00435eb0 Targetable (133 bytes)</title></rect>
 <rect width="7.39" height="7.65" x="729.31" y="197.18" class="named"><title>0x00428010 lara_as_back (132 bytes)</title></rect>
-<rect width="7.31" height="7.65" x="739.69" y="197.18" class="todo"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
+<rect width="7.31" height="7.65" x="739.69" y="197.18" class="named"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
 <rect width="7.14" height="7.83" x="569.74" y="207.83" class="named"><title>0x00429ad0 lara_col_fallback (131 bytes)</title></rect>
 <rect width="7.14" height="7.83" x="569.74" y="218.65" class="todo"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="7.14" height="7.74" x="569.74" y="229.48" class="named"><title>0x0041c6c0 ControlBlood1 (130 bytes)</title></rect>
