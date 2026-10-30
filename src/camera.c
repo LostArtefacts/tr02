@@ -133,6 +133,50 @@ void ChaseCamera(ITEM_INFO *item)
     MoveCamera(&ideal, camera.speed);
 }
 
+sint32 ShiftClamp(GAME_VECTOR *pos, sint32 clamp)
+{
+    sint32 height, ceiling, shift, x, y, z;
+    sint32 left, right, top, bottom;
+    FLOOR_INFO *floor;
+    BOX_INFO *box;
+
+    x = pos->x;
+    y = pos->y;
+    z = pos->z;
+
+    floor = GetFloor(x, y, z, &pos->room_number);
+
+    box = &boxes[floor->box];
+    left = ((sint32)box->left << WALL_SHIFT) + clamp;
+    right = ((sint32)box->right << WALL_SHIFT) - clamp - 1;
+    if (z < left && !GoodPosition(x, y, z - clamp, pos->room_number))
+        pos->z = left;
+    else if (z > right && !GoodPosition(x, y, z + clamp, pos->room_number))
+        pos->z = right;
+
+    top = ((sint32)box->top << WALL_SHIFT) + clamp;
+    bottom = ((sint32)box->bottom << WALL_SHIFT) - clamp - 1;
+    if (x < top && !GoodPosition(x - clamp, y, z, pos->room_number))
+        pos->x = top;
+    else if (x > bottom && !GoodPosition(x + clamp, y, z, pos->room_number))
+        pos->x = bottom;
+
+    height = GetHeight(floor, x, y, z) - clamp;
+    ceiling = GetCeiling(floor, x, y, z) + clamp;
+
+    if (height < ceiling)
+        height = ceiling = (height + ceiling) >> 1;
+
+    if (y > height)
+        shift = height - y;
+    else if (pos->y < ceiling)
+        shift = ceiling - y;
+    else
+        shift = 0;
+
+    return shift;
+}
+
 #define COMBAT_DISTANCE (WALL_L * 5 / 2)
 
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
