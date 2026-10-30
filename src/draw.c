@@ -117,3 +117,30 @@ sint16 *GetBestFrame(ITEM_INFO *item)
     else
         return frmptr[1];
 }
+
+#define MAX_DYNAMICS 10
+
+typedef struct {
+    sint32 x, y, z;
+    sint16 intensity, intensity2;
+    sint32 falloff, falloff2;
+} LIGHT_INFO;
+
+extern sint32 number_dynamics;
+extern LIGHT_INFO dynamic[MAX_DYNAMICS];
+
+void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff)
+{
+    LIGHT_INFO *dl;
+
+    if (number_dynamics >= MAX_DYNAMICS)
+        dl = dynamic;
+    else
+        dl = &dynamic[number_dynamics++];
+
+    dl->x = x;
+    dl->y = y;
+    dl->z = z;
+    dl->intensity = (sint16)intensity;
+    dl->falloff = falloff;
+}

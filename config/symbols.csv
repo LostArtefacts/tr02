@@ -1901,7 +1901,7 @@ address,size,name,symbol
 0x00521fe0,4,sound_effects,_sound_effects
 0x00522000,,objects,_objects
 0x005251b0,4,AnimFrames,_AnimFrames
-0x005251c0,,DynamicLights,_DynamicLights
+0x005251c0,,dynamic,_dynamic
 0x005252b0,4,meshes,_meshes
 0x005252b4,4,OutsideCamera,_OutsideCamera
 0x005252b8,4,number_draw_rooms,_number_draw_rooms
@@ -1912,16 +1912,16 @@ address,size,name,symbol
 0x00525b08,4,AnimCommands,_AnimCommands
 0x00525b20,200,draw_rooms,_draw_rooms
 0x00525be8,4,bones,_bones
-0x00525bec,4,DynamicLightCount,_DynamicLightCount
+0x00525bec,4,number_dynamics,_number_dynamics
 0x00525c00,,StaticObjects,_StaticObjects
 0x00526178,4,OutsideLeft,_OutsideLeft
 0x0052617c,4,AnimChanges,_AnimChanges
 0x00526180,2,number_rooms,_number_rooms
 0x0052618c,4,room,_room
-0x005261a0,12,interpolated_bounds,_interpolated_bounds
 0x00526190,4,UnderwaterCamera,_UnderwaterCamera
 0x00526194,4,SunsetTimer,_SunsetTimer
 0x00526198,4,OutsideRight,_OutsideRight
+0x005261a0,12,interpolated_bounds,_interpolated_bounds
 0x005261ac,4,OutsideTop,_OutsideTop
 0x005261b0,4,demoptr,_demoptr
 0x005261b4,4,democount,_democount
