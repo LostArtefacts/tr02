@@ -56,3 +56,33 @@ void StopSoundEffect(int nSFX)
         }
     }
 }
+
+void SOUND_EndScene(void)
+{
+    int nSlot;
+
+    if (!sound_active)
+        return;
+    for (nSlot = 0; nSlot < ArraySize(LaSlot); nSlot++)
+    {
+        if (LaSlot[nSlot].nSampleInfo >= 0)
+        {
+            if ((sample_infos[LaSlot[nSlot].nSampleInfo].flags & 3) == LOOPED_SOUND)
+            {
+                if (LaSlot[nSlot].nVolume)
+                {
+                    S_SoundSetPanAndVolume(nSlot, (sint16)LaSlot[nSlot].nPan, (uint16)LaSlot[nSlot].nVolume);
+                    S_SoundSetPitch(nSlot, LaSlot[nSlot].nPitch);
+                    LaSlot[nSlot].nVolume = 0;
+                }
+                else
+                {
+                    S_SoundStopSample(nSlot);
+                    LaSlot[nSlot].nSampleInfo = -1;
+                }
+            }
+            else if (!S_SoundSampleIsPlaying(nSlot))
+                LaSlot[nSlot].nSampleInfo = -1;
+        }
+    }
+}
