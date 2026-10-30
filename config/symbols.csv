@@ -735,7 +735,7 @@ address,size,name,symbol
 0x0043fe70,410,GetJointAbsPosition,_GetJointAbsPosition
 0x00440010,93,BaddieBiteEffect,_BaddieBiteEffect
 0x00440070,172,SpiderLeap,_SpiderLeap
-0x00440120,518,SpiderControl,_SpiderControl
+0x00440120,544,SpiderControl,_SpiderControl
 0x00440340,421,BigSpiderControl,_BigSpiderControl
 0x00440500,44,T_InitPrint,_T_InitPrint
 0x00440530,261,T_Print,_T_Print
@@ -1523,6 +1523,7 @@ address,size,name,symbol
 0x00466210,16,bara_bite,_bara_bite
 0x00466220,16,shark_bite,_shark_bite
 0x00466278,,tracksRemoved,_tracksRemoved
+0x00466280,16,spider_bite,_spider_bite
 0x00466360,16,teeth1a,_teeth1a
 0x00466370,16,teeth1b,_teeth1b
 0x00466380,16,teeth2a,_teeth2a
