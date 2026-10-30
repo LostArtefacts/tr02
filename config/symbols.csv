@@ -1099,9 +1099,10 @@ address,size,name,symbol
 0x00453750,23,SE_GraphicsAdapterSet,_SE_GraphicsAdapterSet
 0x00453770,1845,Func453770,
 0x00453eb0,380,Func453eb0,
+0x00454030,385,SE_SoundDlgProc,_SE_SoundDlgProc@16
 0x004541c0,10,SE_SoundAdapterSet,_SE_SoundAdapterSet
-0x004541d0,283,Func4541d0,
-0x004542f0,190,Func4542f0,
+0x004541d0,283,SE_SoundDlgUpdate,_SE_SoundDlgUpdate
+0x004542f0,190,SE_SoundDlgInit,_SE_SoundDlgInit
 0x004543b0,262,SE_ControlsDlgProc,_SE_ControlsDlgProc@16
 0x004544c0,10,SE_ControlsJoystickSet,_SE_ControlsJoystickSet
 0x004544d0,104,SE_ControlsDlgUpdate,_SE_ControlsDlgUpdate
@@ -1908,6 +1909,7 @@ address,size,name,symbol
 0x0051bc84,4,OptionsImageHandle,_OptionsImageHandle
 0x0051bc8c,4,SE_DisplayAdapter,_SE_DisplayAdapter
 0x0051bc90,4,SoundDialogHandle,_SoundDialogHandle
+0x0051bc94,4,SoundImageHandle,_SoundImageHandle
 0x0051bc98,4,ControlsImageHandle,_ControlsImageHandle
 0x0051bc9c,4,GraphicsDialogHandle,_GraphicsDialogHandle
 0x0051bca0,,SE_FullScreenMode,_SE_FullScreenMode

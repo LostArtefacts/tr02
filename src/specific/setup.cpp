@@ -30,7 +30,9 @@ typedef struct
     void *PreferredDisplayAdapter;
     void *PreferredSoundAdapter;
     void *PreferredJoystick;
-    uint8 pad[0x1c];
+    uint8 pad[0x1a];
+    bool SoundEnabled;
+    bool LaraMic;
     bool JoystickEnabled;
     uint8 rest[0x10];
 } SETUP_APP_SETTINGS;
@@ -112,6 +114,7 @@ extern "C" bool SE_SoundTest(void)
 extern "C" {
 extern WNDPROC SE_OldPropSheetWndProc;
 extern HWND GraphicsDialogHandle;
+extern HWND SoundDialogHandle;
 }
 
 extern "C" LRESULT CALLBACK SE_NewPropSheetWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -257,5 +260,61 @@ extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
         break;
     }
     Func457470(ControlsImageHandle, uMsg, wParam);
+    return FALSE;
+}
+
+extern "C" {
+extern HWND SE_PropSheetWndHandle;
+extern HWND SoundImageHandle;
+void SE_SoundDlgInit(HWND hwndDlg);
+void SE_SoundDlgUpdate(HWND hwndDlg);
+}
+
+extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    LRESULT result;
+
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        SoundDialogHandle = hwndDlg;
+        SoundImageHandle = GetDlgItem(hwndDlg, 1074);
+        SE_SoundDlgInit(hwndDlg);
+        return TRUE;
+    case WM_COMMAND:
+        if (HIWORD(wParam) == BN_CLICKED)
+        {
+            result = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
+            switch (LOWORD(wParam))
+            {
+            case 1057:
+                ChangedAppSettings.SoundEnabled = result == BST_CHECKED;
+                break;
+            case 1086:
+                ChangedAppSettings.LaraMic = false;
+                break;
+            case 1087:
+                ChangedAppSettings.LaraMic = true;
+                break;
+            case 1089:
+                if (SE_SoundTest())
+                    PostMessage(SE_PropSheetWndHandle, WM_USER + 113, 5, 0);
+                SendMessage((HWND)lParam, BM_SETCHECK, 0, 0);
+                break;
+            }
+        }
+        else if (HIWORD(wParam) == CBN_SELCHANGE)
+        {
+            result = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
+            result = SendMessage((HWND)lParam, CB_GETITEMDATA, result, 0);
+            if (LOWORD(wParam) == 1052)
+            {
+                SE_SoundAdapterSet(hwndDlg, (void *)result);
+                SE_SoundDlgUpdate(hwndDlg);
+            }
+        }
+        break;
+    }
+    Func457470(SoundImageHandle, uMsg, wParam);
     return FALSE;
 }
