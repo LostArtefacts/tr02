@@ -41,3 +41,17 @@ extern "C" void S_DrawScreenSprite2d(sint32 sx, sint32 sy, sint32 z, sint32 scal
     if (x2 >= 0 && y2 >= 0 && x1 < phd_winwidth && y1 < phd_winheight)
         InsertSprite(phd_znear + (z << 3), x1, y1, x2, y2, sprnum, shade);
 }
+
+extern "C" void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags)
+{
+    PHDSPRITESTRUCT *sprite;
+    int x1, y1, x2, y2;
+
+    sprite = &PhdSpriteInfo[sprnum];
+    x1 = sx + ((scaleH * (sprite->x1 >> 3)) >> 16);
+    x2 = sx + ((scaleH * (sprite->x2 >> 3)) >> 16);
+    y1 = sy + ((scaleV * (sprite->y1 >> 3)) >> 16);
+    y2 = sy + ((scaleV * (sprite->y2 >> 3)) >> 16);
+    if (x2 >= 0 && y2 >= 0 && x1 < phd_winwidth && y1 < phd_winheight)
+        InsertSprite(z << 3, x1, y1, x2, y2, sprnum, shade);
+}
