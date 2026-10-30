@@ -2247,6 +2247,75 @@ int LaraTestHangJumpUp(ITEM_INFO *item, COLL_INFO *coll)
     return 1;
 }
 
+#define GRABLEDGE_A 96
+#define GRABLEDGE_F GF(GRABLEDGE_A, 0)
+#define GRABLEDGEIN_A 150
+#define GRABLEDGEIN_F GF(GRABLEDGEIN_A, 0)
+
+int TestHangSwingIn(ITEM_INFO *item, PHD_ANGLE angle);
+
+int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int edge_catch;
+    PHD_ANGLE angle;
+    sint16 *bounds;
+    sint32 edge;
+
+    if (coll->coll_type != COLL_FRONT || !(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || coll->hit_static)
+        return 0;
+    if (coll->mid_ceiling > -STEPUP_HEIGHT || coll->mid_floor < 200)
+        return 0;
+
+    edge_catch = LaraTestEdgeCatch(item, coll, &edge);
+    if (!edge_catch)
+        return 0;
+    if (edge_catch < 0 && !LaraTestHangOnClimbWall(item, coll))
+        return 0;
+
+    angle = item->pos.y_rot;
+    if (angle >= 0 - HANG_ANGLE && angle <= 0 + HANG_ANGLE)
+        angle = 0;
+    else if (angle >= 16384 - HANG_ANGLE && angle <= 16384 + HANG_ANGLE)
+        angle = 16384;
+    else if (angle >= 32767 - HANG_ANGLE || angle <= -32767 + HANG_ANGLE)
+        angle = -32768;
+    else if (angle >= -16384 - HANG_ANGLE && angle <= -16384 + HANG_ANGLE)
+        angle = -16384;
+
+    if (angle & 0x3fff)
+        return 0;
+
+    if (TestHangSwingIn(item, angle))
+    {
+        item->anim_number = GRABLEDGEIN_A;
+        item->frame_number = GRABLEDGEIN_F;
+    }
+    else
+    {
+        item->anim_number = GRABLEDGE_A;
+        item->frame_number = GRABLEDGE_F;
+    }
+    item->current_anim_state = AS_HANG;
+    item->goal_anim_state = AS_HANG;
+
+    bounds = GetBoundsAccurate(item);
+    if (edge_catch > 0)
+    {
+        item->pos.y_pos += coll->front_floor - bounds[2];
+        item->pos.x_pos += coll->shift.x;
+        item->pos.z_pos += coll->shift.z;
+    }
+    else
+        item->pos.y_pos = edge - bounds[2];
+
+    item->pos.y_rot = angle;
+    item->gravity_status = 1;
+    item->speed = 2;
+    item->fallspeed = 1;
+    lara.gun_status = LG_HANDSBUSY;
+    return 1;
+}
+
 
 #define SLIDE_A 70
 #define SLIDE_F GF(SLIDE_A, 0)
