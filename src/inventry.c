@@ -77,6 +77,47 @@ void Construct_Inventory(void)
     item_data = 0;
 }
 
+#define PASSPORT_OPTION 120
+#define MAP_OPTION 121
+#define PFRONT 1
+#define PSPINE 2
+#define PINFRONT 4
+#define PPAGE2 8
+#define PBACK 16
+#define PINBACK 32
+#define PPAGE1 64
+#define PASS_MESH (PFRONT | PSPINE | PBACK)
+
+void SelectMeshes(INVENTORY_ITEM *inv_item)
+{
+    int frame;
+
+    if (inv_item->object_number == PASSPORT_OPTION) {
+        frame = inv_item->current_frame;
+        if (frame < 4)
+            inv_item->drawn_meshes = PASS_MESH | PINFRONT;
+        else if (frame <= 16)
+            inv_item->drawn_meshes = PASS_MESH | PINFRONT | PPAGE1;
+        else if (frame < 19)
+            inv_item->drawn_meshes = PASS_MESH | PINFRONT | PPAGE1 | PPAGE2;
+        else if (frame == 19)
+            inv_item->drawn_meshes = PASS_MESH | PPAGE1 | PPAGE2;
+        else if (frame < 24)
+            inv_item->drawn_meshes = PASS_MESH | PPAGE1 | PPAGE2 | PINBACK;
+        else if (frame < 29)
+            inv_item->drawn_meshes = PASS_MESH | PPAGE2 | PINBACK;
+        else if (frame == 29)
+            inv_item->drawn_meshes = PASS_MESH;
+    } else if (inv_item->object_number == MAP_OPTION) {
+        frame = inv_item->current_frame;
+        if (frame && frame < 18)
+            inv_item->drawn_meshes = 0xffffffff;
+        else
+            inv_item->drawn_meshes = inv_item->which_meshes;
+    } else
+        inv_item->drawn_meshes = 0xffffffff;
+}
+
 void DoInventoryPicture(void)
 {
     S_CopyBufferToScreen();

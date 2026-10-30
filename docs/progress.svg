@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.14% (725)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">41.86% (522)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.22% (726)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">41.78% (521)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="434.30" height="6" x="0" y="0" class="named"/>
-<rect width="312.70" height="6" x="434.30" y="0" class="todo"/>
+<rect width="434.90" height="6" x="0" y="0" class="named"/>
+<rect width="312.10" height="6" x="434.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -395,7 +395,7 @@
 <rect width="12" height="12" x="375" y="90" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="90" class="todo"><title>0x00422060 Display_Inventory (4510 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="90" class="named"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="90" class="todo"><title>0x00423450 SelectMeshes (137 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="90" class="named"><title>0x00423450 SelectMeshes (137 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="90" class="todo"><title>0x004234e0 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="90" class="todo"><title>0x00423570 DrawInventoryItem (1053 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="90" class="todo"><title>0x004239a0 GetDebouncedInput (25 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.16%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.84%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">58.80%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="307.48" height="6" x="0" y="0" class="named"/>
-<rect width="439.52" height="6" x="307.48" y="0" class="todo"/>
+<rect width="307.78" height="6" x="0" y="0" class="named"/>
+<rect width="439.22" height="6" x="307.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1916,7 +1916,7 @@
 <rect width="7.41" height="8.02" x="739.59" y="187.35" class="named"><title>0x0044ae20 LoadDemo (138 bytes)</title></rect>
 <rect width="7.61" height="7.82" x="569.82" y="198.37" class="todo"><title>0x00454600 Func454600 (138 bytes)</title></rect>
 <rect width="7.61" height="7.74" x="569.82" y="209.19" class="todo"><title>0x0040c860 InitialiseEagle (137 bytes)</title></rect>
-<rect width="7.61" height="7.74" x="569.82" y="219.93" class="todo"><title>0x00423450 SelectMeshes (137 bytes)</title></rect>
+<rect width="7.61" height="7.74" x="569.82" y="219.93" class="named"><title>0x00423450 SelectMeshes (137 bytes)</title></rect>
 <rect width="7.61" height="7.74" x="569.82" y="230.67" class="named"><title>0x004277f0 ResetLook (137 bytes)</title></rect>
 <rect width="7.61" height="7.74" x="569.82" y="241.42" class="named"><title>0x00427d80 lara_as_turn_l (137 bytes)</title></rect>
 <rect width="7.61" height="7.66" x="569.82" y="252.16" class="todo"><title>0x004457d0 WinVidGoFullScreen (136 bytes)</title></rect>
