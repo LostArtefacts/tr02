@@ -124,6 +124,42 @@ void S_AdjustTexelCoordinates(void)
         AdjustTextureUVs(false);
 }
 
+extern "C" DWORD LevelFilePalettesOffset, LevelFileTexPagesOffset, LevelFileDepthQOffset;
+extern "C" int LoadPalettes(HANDLE file);
+extern "C" int LoadDepthQ(HANDLE file);
+extern "C" int LoadTexturePages(HANDLE file);
+extern "C" void InitColours(void);
+
+extern "C" int S_ReloadLevelGraphics(int tPalDPQ, int tTPages)
+{
+    HANDLE file;
+
+    if (LevelFileName[0])
+    {
+        file = CreateFile(LevelFileName, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        if (file == INVALID_HANDLE_VALUE)
+            return 0;
+        if (tPalDPQ && SavedAppSettings.RenderMode == RM_Software)
+        {
+            SetFilePointer(file, LevelFilePalettesOffset, 0, FILE_BEGIN);
+            LoadPalettes(file);
+            SetFilePointer(file, LevelFileDepthQOffset, 0, FILE_BEGIN);
+            LoadDepthQ(file);
+        }
+        if (tTPages)
+        {
+            if (SavedAppSettings.RenderMode == RM_Hardware)
+                HWR_FreeTexturePages();
+            SetFilePointer(file, LevelFileTexPagesOffset, 0, FILE_BEGIN);
+            LoadTexturePages(file);
+        }
+        CloseHandle(file);
+    }
+    if (tPalDPQ)
+        InitColours();
+    return 1;
+}
+
 extern sint16 LGF_offsets[200];
 
 int Read_Strings(int num_strings, char **strings, char **buffer, DWORD *read, HANDLE file)

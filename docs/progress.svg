@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.72% (645)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.28% (602)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.80% (646)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.20% (601)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="386.38" height="6" x="0" y="0" class="named"/>
-<rect width="360.62" height="6" x="386.38" y="0" class="todo"/>
+<rect width="386.98" height="6" x="0" y="0" class="named"/>
+<rect width="360.02" height="6" x="386.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1040,7 +1040,7 @@
 <rect width="12" height="12" x="300" y="285" class="named"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="285" class="named"><title>0x0044b580 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="285" class="named"><title>0x0044b5b0 S_AdjustTexelCoordinates (20 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="285" class="todo"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="285" class="named"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="285" class="named"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="285" class="todo"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="285" class="todo"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="237.08" height="6" x="0" y="0" class="named"/>
-<rect width="509.92" height="6" x="237.08" y="0" class="todo"/>
+<rect width="237.51" height="6" x="0" y="0" class="named"/>
+<rect width="509.49" height="6" x="237.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1772,7 +1772,7 @@
 <rect width="9.49" height="10.15" x="675.51" y="138.11" class="named"><title>0x00442f20 LavaSpray (197 bytes)</title></rect>
 <rect width="9.43" height="10.15" x="688" y="138.11" class="named"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="9.43" height="10.15" x="700.42" y="138.11" class="todo"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
-<rect width="9.43" height="10.15" x="712.85" y="138.11" class="todo"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
+<rect width="9.43" height="10.15" x="712.85" y="138.11" class="named"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
 <rect width="9.43" height="10.15" x="725.28" y="138.11" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
 <rect width="9.30" height="10.15" x="737.70" y="138.11" class="named"><title>0x0041ca70 Splash (194 bytes)</title></rect>
 <rect width="9.60" height="9.83" x="523.04" y="151.26" class="named"><title>0x004343e0 InitialiseFinalLevel (194 bytes)</title></rect>
