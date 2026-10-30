@@ -1,5 +1,6 @@
 #include "include.h"
 #include "global.h"
+#include <math.h>
 
 extern "C" {
 extern bool BGND_PictureIsReady;
@@ -61,4 +62,17 @@ extern "C" void BGND_Free(void)
         SafeFreePalette(BGND_PaletteIndex);
         BGND_PaletteIndex = -1;
     }
+}
+
+extern "C" D3DCOLOR BGND_CenterLighting(int x, int y, int width, int height)
+{
+    double xDist = (double)(x - (width >> 1)) / (double)width;
+    double yDist = (double)(y - (height >> 1)) / (double)height;
+    int light = 256 - (int)(sqrt(xDist * xDist + yDist * yDist) * 300.0);
+
+    if (light < 0)
+        light = 0;
+    else if (light > 255)
+        light = 255;
+    return RGBA_MAKE(light, light, light, 0xFF);
 }

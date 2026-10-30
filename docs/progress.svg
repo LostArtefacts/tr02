@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.32% (979)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.12% (264)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.40% (980)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.04% (263)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="585.05" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="585.05" y="0" class="decompiled"/>
-<rect width="157.77" height="6" x="589.23" y="0" class="todo"/>
+<rect width="585.65" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="585.65" y="0" class="decompiled"/>
+<rect width="157.17" height="6" x="589.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -870,7 +870,7 @@
 <rect width="12" height="12" x="735" y="225" class="todo"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="240" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="240" class="todo"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="240" class="todo"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="240" class="named"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="240" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="240" class="decompiled"><title>0x00444560 Func444560 (13 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="240" class="named"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.61%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.65%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.27%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="437.79" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="437.79" y="0" class="decompiled"/>
-<rect width="308.60" height="6" x="438.40" y="0" class="todo"/>
+<rect width="438.10" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="438.10" y="0" class="decompiled"/>
+<rect width="308.30" height="6" x="438.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1918,7 +1918,7 @@
 <rect width="7.51" height="8.03" x="708.20" y="187.04" class="todo"><title>0x00445740 WinVidGetDisplayMode (140 bytes)</title></rect>
 <rect width="7.43" height="8.03" x="718.71" y="187.04" class="named"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
 <rect width="7.43" height="8.03" x="729.14" y="187.04" class="named"><title>0x00427880 lara_as_walk (139 bytes)</title></rect>
-<rect width="7.43" height="8.03" x="739.57" y="187.04" class="todo"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
+<rect width="7.43" height="8.03" x="739.57" y="187.04" class="named"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
 <rect width="7.64" height="7.74" x="569.39" y="198.07" class="named"><title>0x00427050 RemoveActiveItem (138 bytes)</title></rect>
 <rect width="7.64" height="7.74" x="569.39" y="208.81" class="named"><title>0x00427cf0 lara_as_turn_r (138 bytes)</title></rect>
 <rect width="7.64" height="7.74" x="569.39" y="219.55" class="named"><title>0x0044ae20 LoadDemo (138 bytes)</title></rect>
