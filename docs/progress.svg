@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.66% (507)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.34% (740)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.74% (508)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.26% (739)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="303.71" height="6" x="0" y="0" class="named"/>
-<rect width="443.29" height="6" x="303.71" y="0" class="todo"/>
+<rect width="304.31" height="6" x="0" y="0" class="named"/>
+<rect width="442.69" height="6" x="304.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -415,7 +415,7 @@
 <rect width="12" height="12" x="675" y="90" class="todo"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="90" class="todo"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="90" class="named"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="90" class="todo"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="90" class="named"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="90" class="todo"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="105" class="todo"><title>0x004251c0 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="105" class="todo"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.98%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="149.27" height="6" x="0" y="0" class="named"/>
-<rect width="597.73" height="6" x="149.27" y="0" class="todo"/>
+<rect width="149.41" height="6" x="0" y="0" class="named"/>
+<rect width="597.59" height="6" x="149.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2177,7 +2177,7 @@
 <rect width="4.54" height="4.21" x="641.11" y="335.18" class="todo"><title>0x00444e10 WinVidSetMinWindowSize (65 bytes)</title></rect>
 <rect width="4.54" height="4.21" x="641.11" y="342.39" class="todo"><title>0x00444e70 WinVidSetMaxWindowSize (65 bytes)</title></rect>
 <rect width="4.54" height="4.10" x="641.11" y="349.60" class="named"><title>0x0041cff0 lara_normal_effect (64 bytes)</title></rect>
-<rect width="4.54" height="4.10" x="641.11" y="356.70" class="todo"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
+<rect width="4.54" height="4.10" x="641.11" y="356.70" class="named"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
 <rect width="4.54" height="4.10" x="641.11" y="363.80" class="named"><title>0x00427e30 lara_as_fastfall (64 bytes)</title></rect>
 <rect width="4.54" height="4.10" x="641.11" y="370.90" class="todo"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
 <rect width="4.42" height="4.21" x="648.65" y="269.27" class="todo"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>

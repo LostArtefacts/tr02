@@ -70,3 +70,14 @@ void Inv_RingGetView(RING_INFO *ring, PHD_3DPOS *viewer)
     viewer->y_rot = angles[0];
     viewer->z_rot = 0;
 }
+
+extern sint32 ls_divider;
+
+void Inv_RingLight(RING_INFO *ring)
+{
+    PHD_ANGLE angles[2];
+
+    ls_divider = 0x6000;
+    phd_GetVectorAngles(ring->light.x, ring->light.y, ring->light.z, angles);
+    phd_RotateLight(angles[1], angles[0]);
+}
