@@ -41,6 +41,26 @@ extern "C" void D3DRelease(void)
     }
 }
 
+extern "C" bool D3DIsSupported(LPD3DDEVICEDESC desc)
+{
+    if (!(desc->dwFlags & D3DDD_COLORMODEL))
+        return false;
+    if (!(desc->dcmColorModel & D3DCOLOR_RGB))
+        return false;
+    if (!(desc->dwFlags & D3DDD_TRICAPS))
+        return false;
+    if (!(desc->dpcTriCaps.dwShadeCaps & D3DPSHADECAPS_COLORGOURAUDRGB))
+        return false;
+    if (!(desc->dpcTriCaps.dwTextureBlendCaps & D3DPTBLENDCAPS_MODULATE))
+        return false;
+    return true;
+}
+
+extern "C" {
+extern LPDIRECT3DVIEWPORT2 D3DView;
+extern LPDIRECT3DMATERIAL2 D3DMaterial;
+}
+
 extern "C" BOOL Direct3DInit(void)
 {
     return TRUE;
