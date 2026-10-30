@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.17% (875)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.27% (365)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.25% (876)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">29.19% (364)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="524.16" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="524.16" y="0" class="decompiled"/>
-<rect width="218.65" height="6" x="528.35" y="0" class="todo"/>
+<rect width="524.76" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="524.76" y="0" class="decompiled"/>
+<rect width="218.05" height="6" x="528.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -120,7 +120,7 @@
 <rect width="12" height="12" x="735" y="0" class="todo"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="15" class="todo"><title>0x00407ff0 ins_poly_trans8 (1188 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="15" class="todo"><title>0x004084a0 ins_trans_quad (211 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="15" class="todo"><title>0x00408580 ins_flat_rect (203 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="15" class="named"><title>0x00408580 ins_flat_rect (203 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="15" class="named"><title>0x00408650 ins_line (181 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="15" class="todo"><title>0x00408710 InsertGT3_ZBuffered (1602 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="15" class="todo"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.75%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.17%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.81%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.11%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="371.61" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="371.61" y="0" class="decompiled"/>
-<rect width="374.78" height="6" x="372.22" y="0" class="todo"/>
+<rect width="372.06" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="372.06" y="0" class="decompiled"/>
+<rect width="374.33" height="6" x="372.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1760,7 +1760,7 @@
 <rect width="10" height="10.17" x="737" y="137.83" class="named"><title>0x0043c830 GetCarriedItems (206 bytes)</title></rect>
 <rect width="10.14" height="9.96" x="510.20" y="150.99" class="named"><title>0x00416af0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="10.14" height="9.90" x="510.20" y="163.95" class="named"><title>0x0042e330 LaraTestClimbPos (204 bytes)</title></rect>
-<rect width="10.14" height="9.83" x="510.20" y="176.85" class="todo"><title>0x00408580 ins_flat_rect (203 bytes)</title></rect>
+<rect width="10.14" height="9.83" x="510.20" y="176.85" class="named"><title>0x00408580 ins_flat_rect (203 bytes)</title></rect>
 <rect width="10.14" height="9.83" x="510.20" y="189.68" class="named"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="10.14" height="9.77" x="510.20" y="202.51" class="named"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
 <rect width="10.14" height="9.71" x="510.20" y="215.28" class="named"><title>0x00447670 DInputKeyboardCreate (201 bytes)</title></rect>
