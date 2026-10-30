@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.12% (438)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.88% (809)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.20% (439)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.80% (808)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="262.38" height="6" x="0" y="0" class="named"/>
-<rect width="484.62" height="6" x="262.38" y="0" class="todo"/>
+<rect width="262.98" height="6" x="0" y="0" class="named"/>
+<rect width="484.02" height="6" x="262.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -730,7 +730,7 @@
 <rect width="12" height="12" x="150" y="195" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="195" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="195" class="todo"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="195" class="todo"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="195" class="named"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x004363d0 Cult1Control (1025 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="195" class="todo"><title>0x00436800 InitialiseCult3 (80 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="195" class="todo"><title>0x00436850 Cult3Control (1340 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.44%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.56%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.46%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.54%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="107.87" height="6" x="0" y="0" class="named"/>
-<rect width="639.13" height="6" x="107.87" y="0" class="todo"/>
+<rect width="108.02" height="6" x="0" y="0" class="named"/>
+<rect width="638.98" height="6" x="108.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2164,7 +2164,7 @@
 <rect width="4.37" height="4.73" x="633.81" y="347.40" class="named"><title>0x0044caa0 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="4.37" height="4.62" x="633.81" y="355.14" class="named"><title>0x0041d780 draw_right_gun (67 bytes)</title></rect>
 <rect width="4.37" height="4.62" x="633.81" y="362.76" class="named"><title>0x0041d7d0 draw_left_gun (67 bytes)</title></rect>
-<rect width="4.37" height="4.62" x="633.81" y="370.38" class="todo"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
+<rect width="4.37" height="4.62" x="633.81" y="370.38" class="named"><title>0x00436380 InitialiseCult1 (67 bytes)</title></rect>
 <rect width="4.44" height="4.54" x="641.17" y="269.04" class="todo"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
 <rect width="4.44" height="4.54" x="648.61" y="269.04" class="named"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
 <rect width="4.33" height="4.54" x="656.05" y="269.04" class="todo"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>

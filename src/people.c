@@ -123,3 +123,13 @@ sint16 GunMiss(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint1
 
     return (GunShot(x, y, z, speed, yrot, room_number));
 }
+
+#define CULT1C 18
+
+void InitialiseCult1(sint16 item_number)
+{
+    if (GetRandomControl() < 0x4000)
+        items[item_number].mesh_bits -= 0x30;
+    if (items[item_number].object_number == CULT1C)
+        items[item_number].mesh_bits -= 0x1f8000;
+}
