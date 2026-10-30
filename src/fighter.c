@@ -747,6 +747,324 @@ void InitialiseXianLord(sint16 item_number)
     item->mesh_bits = 0;
 }
 
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+void DisableBaddieAI(sint16 item_number);
+void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state);
+
+#define XIAN_LORD_STATUE 42
+#define XIAN_STOP 1
+#define XIAN_STOP2 2
+#define XIAN_WALK 3
+#define XIAN_RUN 4
+#define XIAN_AIM1 5
+#define XIAN_ATTACK1 6
+#define XIAN_AIM2 7
+#define XIAN_ATTACK2 8
+#define XIAN_AIM3 9
+#define XIAN_ATTACK3 10
+#define XIAN_AIM4 11
+#define XIAN_ATTACK4 12
+#define XIAN_AIM5 13
+#define XIAN_ATTACK5 14
+#define XIAN_AIM6 15
+#define XIAN_ATTACK6 16
+#define XIAN_DEATH 17
+#define XIAN_KILL_ANIM 49
+#define XIAN_KILL 19
+#define XIAN_WALK_TURN (ONE_DEGREE * 3)
+#define XIAN_RUN_TURN (ONE_DEGREE * 5)
+#define XIAN_CLOSE_RANGE SQUARE(WALL_L)
+#define XIAN_AIM2_RANGE SQUARE(WALL_L * 3 / 2)
+#define XIAN_WALK_RANGE SQUARE(WALL_L * 2)
+#define XIAN_RUN_RANGE SQUARE(WALL_L * 3)
+#define XIAN_DAMAGE 75
+#define XIAN_BIG_DAMAGE 120
+#define XIAN_BORED_CHANCE 0x200
+#define XIAN_WAIT_CHANCE 0x400
+
+void XianLordControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *xian;
+    AI_INFO info;
+    sint16 angle, head, neck;
+    int lara_alive, random;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    head = neck = 0;
+    item = &items[item_number];
+    xian = (CREATURE_INFO *)item->data;
+    lara_alive = (lara_item->hit_points > 0);
+
+    if (item->hit_points <= 0)
+    {
+        item->current_anim_state = XIAN_DEATH;
+        item->mesh_bits >>= 1;
+        if (!item->mesh_bits)
+        {
+            SoundEffect(105, NULL, 0);
+            item->mesh_bits = -1;
+            item->object_number = XIAN_LORD_STATUE;
+            ExplodingDeath(item_number, -1, 0);
+            item->object_number = XIAN_LORD;
+            DisableBaddieAI(item_number);
+            KillItem(item_number);
+            item->status = DEACTIVATED;
+            item->flags |= ONESHOT;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        CreatureMood(item, &info, 1);
+
+        angle = CreatureTurn(item, xian->maximum_turn);
+
+        if (item->current_anim_state != XIAN_START)
+            item->mesh_bits = -1;
+
+        switch (item->current_anim_state)
+        {
+        case XIAN_START:
+            if (!xian->flags)
+            {
+                item->mesh_bits = (item->mesh_bits << 1) + 1;
+                xian->flags = 3;
+            }
+            else
+                xian->flags--;
+            break;
+
+        case XIAN_STOP:
+            if (info.ahead)
+                neck = info.angle;
+            xian->maximum_turn = 0;
+
+            if (xian->mood == BORED_MOOD)
+            {
+                random = GetRandomControl();
+                if (random < XIAN_BORED_CHANCE)
+                    item->goal_anim_state = XIAN_STOP2;
+                else if (random < XIAN_WAIT_CHANCE)
+                    item->goal_anim_state = XIAN_WALK;
+            }
+            else
+            {
+                if (info.ahead && info.distance < XIAN_CLOSE_RANGE)
+                    item->goal_anim_state = XIAN_AIM1;
+                else
+                    item->goal_anim_state = XIAN_WALK;
+            }
+            break;
+
+        case XIAN_STOP2:
+            if (info.ahead)
+                neck = info.angle;
+            xian->maximum_turn = 0;
+
+            if (xian->mood == ESCAPE_MOOD)
+                item->goal_anim_state = XIAN_WALK;
+            else if (xian->mood == BORED_MOOD)
+            {
+                random = GetRandomControl();
+                if (random < XIAN_BORED_CHANCE)
+                    item->goal_anim_state = XIAN_STOP;
+                else if (random < XIAN_WAIT_CHANCE)
+                    item->goal_anim_state = XIAN_WALK;
+            }
+            else
+            {
+                if (info.ahead && info.distance < XIAN_CLOSE_RANGE)
+                    item->goal_anim_state = XIAN_AIM5;
+                else
+                    item->goal_anim_state = XIAN_WALK;
+            }
+            break;
+
+        case XIAN_WALK:
+            if (info.ahead)
+                neck = info.angle;
+            xian->maximum_turn = XIAN_WALK_TURN;
+
+            if (xian->mood == ESCAPE_MOOD)
+                item->goal_anim_state = XIAN_RUN;
+            else if (xian->mood == BORED_MOOD)
+            {
+                random = GetRandomControl();
+                if (random < XIAN_BORED_CHANCE)
+                    item->goal_anim_state = XIAN_STOP;
+                else if (random < XIAN_WAIT_CHANCE)
+                    item->goal_anim_state = XIAN_STOP2;
+            }
+            else
+            {
+                if (info.ahead && info.distance < XIAN_WALK_RANGE)
+                {
+                    if (info.distance < XIAN_AIM2_RANGE)
+                        item->goal_anim_state = XIAN_AIM2;
+                    else if (GetRandomControl() < 0x4000)
+                        item->goal_anim_state = XIAN_AIM3;
+                    else
+                        item->goal_anim_state = XIAN_AIM4;
+                }
+                else if (!info.ahead || info.distance > XIAN_RUN_RANGE)
+                    item->goal_anim_state = XIAN_RUN;
+            }
+            break;
+
+        case XIAN_RUN:
+            if (info.ahead)
+                neck = info.angle;
+            xian->maximum_turn = XIAN_RUN_TURN;
+
+            if (xian->mood == ESCAPE_MOOD)
+                break;
+            else if (xian->mood == BORED_MOOD)
+            {
+                if (GetRandomControl() < 0x4000)
+                    item->goal_anim_state = XIAN_STOP;
+                else
+                    item->goal_anim_state = XIAN_STOP2;
+            }
+            else if (info.ahead && info.distance < XIAN_WALK_RANGE)
+                item->goal_anim_state = XIAN_AIM6;
+            break;
+
+        case XIAN_AIM1:
+            if (info.ahead)
+                head = info.angle;
+            xian->flags = 0;
+
+            if (info.ahead && info.distance <= XIAN_CLOSE_RANGE)
+                item->goal_anim_state = XIAN_ATTACK1;
+            else
+                item->goal_anim_state = XIAN_STOP;
+            break;
+
+        case XIAN_AIM2:
+            if (info.ahead)
+                head = info.angle;
+            xian->flags = 0;
+
+            if (info.ahead && info.distance <= XIAN_AIM2_RANGE)
+                item->goal_anim_state = XIAN_ATTACK2;
+            else
+                item->goal_anim_state = XIAN_WALK;
+            break;
+
+        case XIAN_AIM3:
+            if (info.ahead)
+                head = info.angle;
+            xian->flags = 0;
+
+            if (info.ahead && info.distance <= XIAN_WALK_RANGE)
+                item->goal_anim_state = XIAN_ATTACK2;
+            else
+                item->goal_anim_state = XIAN_WALK;
+            break;
+
+        case XIAN_AIM4:
+            if (info.ahead)
+                head = info.angle;
+            xian->flags = 0;
+
+            if (info.ahead && info.distance <= XIAN_WALK_RANGE)
+                item->goal_anim_state = XIAN_ATTACK2;
+            else
+                item->goal_anim_state = XIAN_WALK;
+            break;
+
+        case XIAN_AIM5:
+            if (info.ahead)
+                head = info.angle;
+            xian->flags = 0;
+
+            if (info.ahead && info.distance <= XIAN_CLOSE_RANGE)
+                item->goal_anim_state = XIAN_ATTACK5;
+            else
+                item->goal_anim_state = XIAN_STOP2;
+            break;
+
+        case XIAN_AIM6:
+            if (info.ahead)
+                head = info.angle;
+            xian->flags = 0;
+
+            if (info.ahead && info.distance <= XIAN_WALK_RANGE)
+                item->goal_anim_state = XIAN_ATTACK6;
+            else
+                item->goal_anim_state = XIAN_RUN;
+            break;
+
+        case XIAN_ATTACK1:
+            XianDamage(item, xian, XIAN_DAMAGE);
+            break;
+
+        case XIAN_ATTACK2:
+        case XIAN_ATTACK3:
+        case XIAN_ATTACK4:
+            if (info.ahead)
+                head = info.angle;
+
+            XianDamage(item, xian, XIAN_DAMAGE);
+
+            if (info.ahead && info.distance < XIAN_CLOSE_RANGE)
+            {
+                if (GetRandomControl() < 0x4000)
+                    item->goal_anim_state = XIAN_STOP;
+                else
+                    item->goal_anim_state = XIAN_STOP2;
+            }
+            else
+                item->goal_anim_state = XIAN_WALK;
+            break;
+
+        case XIAN_ATTACK5:
+            if (info.ahead)
+                head = info.angle;
+
+            XianDamage(item, xian, XIAN_DAMAGE);
+
+            if (info.ahead && info.distance < XIAN_CLOSE_RANGE)
+                item->goal_anim_state = XIAN_STOP;
+            else
+                item->goal_anim_state = XIAN_STOP2;
+            break;
+
+        case XIAN_ATTACK6:
+            if (info.ahead)
+                head = info.angle;
+
+            XianDamage(item, xian, XIAN_BIG_DAMAGE);
+
+            if (info.ahead && info.distance < XIAN_CLOSE_RANGE)
+            {
+                if (GetRandomControl() < 0x4000)
+                    item->goal_anim_state = XIAN_STOP;
+                else
+                    item->goal_anim_state = XIAN_STOP2;
+            }
+            else if (info.ahead && info.distance < XIAN_WALK_RANGE)
+                item->goal_anim_state = XIAN_WALK;
+            else
+                item->goal_anim_state = XIAN_RUN;
+            break;
+        }
+
+        if (lara_alive && lara_item->hit_points <= 0)
+            CreatureKill(item, XIAN_KILL_ANIM, XIAN_KILL, 2);
+        else
+        {
+            CreatureTilt(item, 0);
+            CreatureHead(item, head);
+            CreatureNeck(item, neck);
+            CreatureAnimation(item_number, angle, 0);
+        }
+    }
+}
+
 #define TWINKLE 239
 
 void WarriorSparkleTrail(ITEM_INFO *item)
@@ -768,9 +1086,6 @@ void WarriorSparkleTrail(ITEM_INFO *item)
     }
     SoundEffect(312, &item->pos, 0);
 }
-
-int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
-void DisableBaddieAI(sint16 item_number);
 
 #define WARRIOR 43
 #define WARRIOR_STATUE 44

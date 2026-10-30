@@ -302,7 +302,7 @@ address,size,name,symbol
 0x0041eac0,1015,DrawXianLord,_DrawXianLord
 0x0041eec0,168,XianDamage,_XianDamage
 0x0041ef70,88,InitialiseXianLord,_InitialiseXianLord
-0x0041efd0,1424,XianLordControl,_XianLordControl
+0x0041efd0,1496,XianLordControl,_XianLordControl
 0x0041f5b0,152,WarriorSparkleTrail,_WarriorSparkleTrail
 0x0041f650,1000,WarriorControl,_WarriorControl
 0x0041fa40,489,GF_LoadScriptFile,_GF_LoadScriptFile
