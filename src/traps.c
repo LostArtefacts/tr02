@@ -9,6 +9,17 @@ int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 enum trap_anims { TRAP_SET, TRAP_ACTIVATE, TRAP_WORKING, TRAP_FINISHED };
 enum door_anims { DOOR_CLOSED, DOOR_OPEN };
 
+void TrapDoorFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    if (!OnTrapDoor(item, x, z))
+        return;
+    if (y <= item->pos.y_pos)
+    {
+        if (item->current_anim_state == DOOR_CLOSED && item->pos.y_pos < *height)
+            *height = item->pos.y_pos;
+    }
+}
+
 void TrapDoorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     if (!OnTrapDoor(item, x, z))

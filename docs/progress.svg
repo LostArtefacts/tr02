@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.25% (265)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.75% (982)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.33% (266)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.67% (981)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="158.74" height="6" x="0" y="0" class="named"/>
-<rect width="588.26" height="6" x="158.74" y="0" class="todo"/>
+<rect width="159.34" height="6" x="0" y="0" class="named"/>
+<rect width="587.66" height="6" x="159.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -843,7 +843,7 @@
 <rect width="12" height="12" x="345" y="225" class="todo"><title>0x00441f70 RollingBallCollision (586 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="225" class="todo"><title>0x004421c0 SpikeCollision (341 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="225" class="todo"><title>0x00442320 TrapDoorControl (79 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="225" class="todo"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="225" class="named"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="225" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="225" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.38%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="49.44" height="6" x="0" y="0" class="named"/>
-<rect width="697.56" height="6" x="49.44" y="0" class="todo"/>
+<rect width="49.57" height="6" x="0" y="0" class="named"/>
+<rect width="697.43" height="6" x="49.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2210,7 +2210,7 @@
 <rect width="4.18" height="3.88" x="742.82" y="276.36" class="todo"><title>0x004560c0 TexturePageReleaseVidMemSurface (59 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.58" y="283.25" class="todo"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.58" y="290.10" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
-<rect width="4.09" height="3.85" x="648.58" y="296.95" class="todo"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
+<rect width="4.09" height="3.85" x="648.58" y="296.95" class="named"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
 <rect width="4.09" height="3.85" x="648.58" y="303.80" class="todo"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="310.66" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.58" y="317.39" class="todo"><title>0x00426e50 CreateItem (57 bytes)</title></rect>
