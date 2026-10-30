@@ -86,6 +86,36 @@ void LaraTargetInfo(WEAPON_INFO *winfo)
 
 void SmashWindow(sint16 item_number);
 
+#include "box.h"
+#include "savegame.h"
+
+#define MONK1 53
+#define MONK2 54
+#define MONKS_GET_ANGRY 10
+
+extern int monks_attack_lara;
+
+void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage)
+{
+    CREATURE_INFO *monk;
+
+    if (item->hit_points > 0 && item->hit_points <= damage)
+        savegame.kills++;
+    item->hit_points -= damage;
+    item->hit_status = 1;
+
+    if (hitpos)
+        DoBloodSplat(hitpos->x, hitpos->y, hitpos->z, item->speed, item->pos.y_rot, item->room_number);
+
+    if (!monks_attack_lara && (item->object_number == MONK1 || item->object_number == MONK2))
+    {
+        monk = (CREATURE_INFO *)item->data;
+        monk->flags += damage;
+        if ((monk->flags & 0x0fff) > MONKS_GET_ANGRY || monk->mood == BORED_MOOD)
+            monks_attack_lara = 1;
+    }
+}
+
 void SmashItem(sint16 item_number, int weapon_type)
 {
     ITEM_INFO *item;

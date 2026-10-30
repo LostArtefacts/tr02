@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.81% (671)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.19% (576)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.89% (672)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.11% (575)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.95" height="6" x="0" y="0" class="named"/>
-<rect width="345.05" height="6" x="401.95" y="0" class="todo"/>
+<rect width="402.55" height="6" x="0" y="0" class="named"/>
+<rect width="344.45" height="6" x="402.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -613,7 +613,7 @@
 <rect width="12" height="12" x="645" y="150" class="named"><title>0x0042f1f0 find_target_point (170 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="150" class="todo"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="150" class="todo"><title>0x0042f370 FireWeapon (864 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="150" class="todo"><title>0x0042f6e0 HitTarget (150 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="150" class="named"><title>0x0042f6e0 HitTarget (150 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="150" class="named"><title>0x0042f780 SmashItem (81 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="150" class="named"><title>0x0042f7e0 WeaponObject (88 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="150" class="named"><title>0x0042f840 DoFlareLight (157 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.41%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="265.87" height="6" x="0" y="0" class="named"/>
-<rect width="481.13" height="6" x="265.87" y="0" class="todo"/>
+<rect width="266.20" height="6" x="0" y="0" class="named"/>
+<rect width="480.80" height="6" x="266.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1879,7 +1879,7 @@
 <rect width="8.11" height="8.25" x="705.55" y="175.43" class="named"><title>0x0041cf50 floor_shake_effect (150 bytes)</title></rect>
 <rect width="8.11" height="8.25" x="716.66" y="175.43" class="named"><title>0x004286f0 lara_as_deathslide (150 bytes)</title></rect>
 <rect width="8.11" height="8.25" x="727.77" y="175.43" class="named"><title>0x00429640 lara_col_compress (150 bytes)</title></rect>
-<rect width="8.11" height="8.25" x="738.89" y="175.43" class="todo"><title>0x0042f6e0 HitTarget (150 bytes)</title></rect>
+<rect width="8.11" height="8.25" x="738.89" y="175.43" class="named"><title>0x0042f6e0 HitTarget (150 bytes)</title></rect>
 <rect width="8.44" height="7.93" x="559.22" y="186.68" class="named"><title>0x00434f80 WindowControl (150 bytes)</title></rect>
 <rect width="8.44" height="7.93" x="570.65" y="186.68" class="named"><title>0x0044d010 S_LoadGame (150 bytes)</title></rect>
 <rect width="8.44" height="7.93" x="582.09" y="186.68" class="todo"><title>0x00450ac0 S_ChangeCtrlText (150 bytes)</title></rect>
