@@ -17,6 +17,54 @@ extern "C" DWORD GetTexturePageHandle(int nHandle);
 extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR color);
 void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
+typedef struct {
+    uint8 red;
+    uint8 green;
+    uint8 blue;
+} RGB888;
+
+typedef struct {
+    uint8 pad[0x50];
+    int bpp;
+} BGND_TEXTURE_FORMAT;
+
+extern "C" {
+extern BGND_TEXTURE_FORMAT TextureFormat;
+extern int BGND_PaletteIndex;
+void *game_malloc(int size, int type);
+void game_free(int size, int type);
+int CreateTexturePalette(RGB888 *pal);
+int BGND_AddTexture(int tileIndex, uint8 *bitmap, int palIndex, RGB888 *bmpPal);
+void BGND_GetPageHandles(void);
+}
+
+void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride);
+
+extern "C" void BGND_Make640x480(uint8 *bitmap, RGB888 *palette)
+{
+    uint8 *buffer;
+
+    if (TextureFormat.bpp < 16)
+        BGND_PaletteIndex = CreateTexturePalette(palette);
+    else
+        BGND_PaletteIndex = -1;
+    buffer = (uint8 *)game_malloc(0x20000, 0);
+    UT_MemBlt(buffer, 0, 0, 256, 256, 256, bitmap, 0, 0, 640);
+    BGND_AddTexture(0, buffer, BGND_PaletteIndex, palette);
+    UT_MemBlt(buffer, 0, 0, 256, 256, 256, bitmap, 256, 0, 640);
+    BGND_AddTexture(1, buffer, BGND_PaletteIndex, palette);
+    UT_MemBlt(buffer, 0, 0, 128, 256, 256, bitmap, 512, 0, 640);
+    UT_MemBlt(buffer, 128, 0, 128, 224, 256, bitmap, 512, 256, 640);
+    BGND_AddTexture(2, buffer, BGND_PaletteIndex, palette);
+    UT_MemBlt(buffer, 0, 0, 256, 224, 256, bitmap, 0, 256, 640);
+    BGND_AddTexture(3, buffer, BGND_PaletteIndex, palette);
+    UT_MemBlt(buffer, 0, 0, 256, 224, 256, bitmap, 256, 256, 640);
+    BGND_AddTexture(4, buffer, BGND_PaletteIndex, palette);
+    game_free(0x20000, 0);
+    BGND_GetPageHandles();
+    BGND_PictureIsReady = true;
+}
+
 extern "C" void BGND_GetPageHandles(void)
 {
     DWORD i;

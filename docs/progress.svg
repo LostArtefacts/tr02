@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.72% (1009)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.72% (234)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.80% (1010)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">18.64% (233)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="602.98" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="602.98" y="0" class="decompiled"/>
-<rect width="139.84" height="6" x="607.16" y="0" class="todo"/>
+<rect width="603.58" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="603.58" y="0" class="decompiled"/>
+<rect width="139.24" height="6" x="607.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -863,7 +863,7 @@
 <rect width="12" height="12" x="630" y="225" class="named"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00443100 GiantYetiControl (760 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="named"><title>0x00443400 YetiControl (1592 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="225" class="todo"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="225" class="named"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="225" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="225" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.24%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.67%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.37%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">38.55%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="457.50" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="457.50" y="0" class="decompiled"/>
-<rect width="288.89" height="6" x="458.11" y="0" class="todo"/>
+<rect width="458.46" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="458.46" y="0" class="decompiled"/>
+<rect width="287.93" height="6" x="459.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.81" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1538,7 +1538,7 @@
 <rect width="16.37" height="16.05" x="412.30" y="137.51" class="todo"><title>0x00445ff0 EnumDisplayAdaptersCallback (446 bytes)</title></rect>
 <rect width="16.37" height="15.92" x="412.30" y="156.57" class="named"><title>0x00430d10 UseItem (443 bytes)</title></rect>
 <rect width="16.37" height="15.79" x="412.30" y="175.49" class="named"><title>0x00440340 BigSpiderControl (440 bytes)</title></rect>
-<rect width="16.37" height="15.79" x="412.30" y="194.28" class="todo"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
+<rect width="16.37" height="15.79" x="412.30" y="194.28" class="named"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
 <rect width="16.37" height="15.79" x="412.30" y="213.08" class="named"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="16.37" height="15.71" x="412.30" y="231.87" class="named"><title>0x0043dd20 SkidooUserControl (438 bytes)</title></rect>
 <rect width="16.37" height="15.58" x="412.30" y="250.58" class="named"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
