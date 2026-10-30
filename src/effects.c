@@ -6,6 +6,8 @@
 #define MAX_BOUNCE 100
 #define FLIPFLAG 64
 #define UNFLIPFLAG 128
+#define MESHSWAP1 97
+#define MESHSWAP2 98
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
 {
@@ -229,6 +231,23 @@ void draw_left_gun(ITEM_INFO *item)
     temp = lara.mesh_ptrs[HAND_L];
     lara.mesh_ptrs[HAND_L] = meshes[objects[PISTOLS].mesh_index + HAND_L];
     meshes[objects[PISTOLS].mesh_index + HAND_L] = temp;
+}
+
+void swap_meshes_with_meshswap1(ITEM_INFO *item)
+{
+    int i;
+    sint16 nmeshes;
+    sint16 *temp;
+    OBJECT_INFO *obj;
+
+    obj = &objects[item->object_number];
+    nmeshes = obj->nmeshes;
+    for (i = 0; i < obj->nmeshes; i++)
+    {
+        temp = meshes[obj->mesh_index + i];
+        meshes[obj->mesh_index + i] = meshes[objects[MESHSWAP1].mesh_index + i];
+        meshes[objects[MESHSWAP1].mesh_index + i] = temp;
+    }
 }
 
 void invisibility_on(ITEM_INFO *item)

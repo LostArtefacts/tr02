@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.61% (282)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.39% (965)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.69% (283)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.31% (964)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="168.93" height="6" x="0" y="0" class="named"/>
-<rect width="578.07" height="6" x="168.93" y="0" class="todo"/>
+<rect width="169.53" height="6" x="0" y="0" class="named"/>
+<rect width="577.47" height="6" x="169.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -351,7 +351,7 @@
 <rect width="12" height="12" x="465" y="75" class="named"><title>0x0041d770 flip_map_effect (5 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="75" class="named"><title>0x0041d780 draw_right_gun (67 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="75" class="named"><title>0x0041d7d0 draw_left_gun (67 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="75" class="todo"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="75" class="named"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="75" class="todo"><title>0x0041d890 swap_meshes_with_meshswap2 (99 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="75" class="todo"><title>0x0041d900 swap_meshes_with_meshswap3 (154 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="75" class="named"><title>0x0041d9a0 invisibility_on (9 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.03%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.97%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.27" height="6" x="0" y="0" class="named"/>
-<rect width="694.73" height="6" x="52.27" y="0" class="todo"/>
+<rect width="52.49" height="6" x="0" y="0" class="named"/>
+<rect width="694.51" height="6" x="52.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2023,7 +2023,7 @@
 <rect width="6.45" height="6.05" x="676.17" y="227.33" class="todo"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="6.26" height="6.05" x="685.62" y="227.33" class="todo"><title>0x0041c880 CreateBubble (100 bytes)</title></rect>
 <rect width="6.26" height="6.05" x="694.88" y="227.33" class="todo"><title>0x004570d0 Func4570d0 (100 bytes)</title></rect>
-<rect width="6.17" height="6.05" x="704.15" y="227.33" class="todo"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
+<rect width="6.17" height="6.05" x="704.15" y="227.33" class="named"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
 <rect width="6.17" height="6.05" x="713.32" y="227.33" class="todo"><title>0x0041d890 swap_meshes_with_meshswap2 (99 bytes)</title></rect>
 <rect width="6.17" height="6.05" x="722.49" y="227.33" class="todo"><title>0x00425360 Inv_RingMotionInit (99 bytes)</title></rect>
 <rect width="6.17" height="6.05" x="731.66" y="227.33" class="todo"><title>0x00425510 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
