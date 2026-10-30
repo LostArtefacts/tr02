@@ -12,6 +12,8 @@ extern int wibble_light[WIBBLE_SIZE][32];
 void ScreenDump(void);
 void ScreenPartialDump();
 void S_ClearScreen();
+void S_SetupBelowWater(int underwater);
+void S_SetupAboveWater(int underwater);
 
 #ifdef __cplusplus
 void ScreenClear(bool tWindow = false);

@@ -25,9 +25,15 @@ bool DX_UpdateFrame(bool tSpinMessageLoop = true, RECT *prcWindow = 0);
 #define ERR_SOUND_NOT_ENABLED (-3)
 
 extern int sound_active;
+extern uint8 game_palette[];
+extern int wet;
+extern uint8 water_palette[];
+extern sint16 *aranges;
 extern char *malloc_buffer;
 
 void S_SeedRandom(void);
+void FadeToPal(int nframes, uint8 *pal);
+void S_InsertBackPolygon(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int colour);
 sint32 GetRandomDraw(void);
 void SeedRandomDraw(sint32 seed);
 sint32 GetRandomControl(void);

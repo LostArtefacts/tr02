@@ -34,10 +34,24 @@ typedef struct phd_3dpos {
     PHD_ANGLE z_rot;
 } PHD_3DPOS;
 
+typedef struct phdtexturestruct {
+    uint16 drawtype;
+    uint16 tpage;
+    uint16 u1, v1;
+    uint16 u2, v2;
+    uint16 u3, v3;
+    uint16 u4, v4;
+} PHDTEXTURESTRUCT;
+
 extern float wibble_table[];
+extern sint32 water_effect;
+extern sint32 shade_effect;
 extern sint32 rand_table[];
 extern sint16 shade_table[];
 extern sint32 *phd_mxptr;
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern sint32 phd_zfar;
 extern sint32 phd_left;
 extern sint32 phd_right;
 extern sint32 phd_top;
@@ -46,6 +60,13 @@ extern sint16 phd_winxmax;
 extern sint16 phd_winymax;
 extern sint32 phd_winwidth;
 extern sint32 phd_winheight;
+
+extern PHDTEXTURESTRUCT phdtextinfo[];
+#ifdef __cplusplus
+extern bool bBlueEffect;
+#endif
+
+extern void (*InsertFlatRect)(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
 
 void AlterFOV(PHD_ANGLE fov);
 
