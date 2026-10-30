@@ -10,6 +10,10 @@
 #define LARA_DEF_ADD_EDGE (5 * ONE_DEGREE)
 #define CAM_A_HANG 0
 #define CAM_E_HANG (-60 * ONE_DEGREE)
+#define CLIMB_WIDTHL 80
+#define CLIMB_WIDTHR 120
+
+int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -554,6 +558,38 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
         item->pos.y_rot -= LARA_DEF_ADD_EDGE;
     }
     return 0;
+}
+
+int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int result_r, result_l, shift_l, shift_r;
+
+    result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
+    if (result_r != 1)
+        return 0;
+
+    result_l = LaraTestClimbPos(item, coll->radius, -(coll->radius + CLIMB_WIDTHL), -700, STEP_L * 2, &shift_l);
+    if (result_l != 1)
+        return 0;
+
+    if (shift_r)
+    {
+        if (shift_l)
+        {
+            if ((shift_l < 0) ^ (shift_r < 0))
+                return 0;
+            if (shift_r < 0 && shift_l < shift_r)
+                shift_r = shift_l;
+            else if (shift_r > 0 && shift_l > shift_r)
+                shift_r = shift_l;
+        }
+
+        item->pos.y_pos += shift_r;
+    }
+    else if (shift_l)
+        item->pos.y_pos += shift_l;
+
+    return 1;
 }
 
 int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
