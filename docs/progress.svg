@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.89% (884)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.55% (356)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">70.97% (885)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.47% (355)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="529.55" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="529.55" y="0" class="decompiled"/>
-<rect width="213.26" height="6" x="533.74" y="0" class="todo"/>
+<rect width="530.15" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="530.15" y="0" class="decompiled"/>
+<rect width="212.66" height="6" x="534.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -866,7 +866,7 @@
 <rect width="12" height="12" x="675" y="225" class="todo"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="225" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="225" class="todo"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="225" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="todo"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="240" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="240" class="todo"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.44%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.48%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.46%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="384.22" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="384.22" y="0" class="decompiled"/>
-<rect width="362.17" height="6" x="384.83" y="0" class="todo"/>
+<rect width="384.43" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="384.43" y="0" class="decompiled"/>
+<rect width="361.96" height="6" x="385.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2045,7 +2045,7 @@
 <rect width="5.74" height="6.13" x="723.87" y="228.21" class="named"><title>0x0044aab0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="5.74" height="6.13" x="732.61" y="228.21" class="named"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="5.65" height="6.13" x="741.35" y="228.21" class="todo"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
-<rect width="5.79" height="5.97" x="608.81" y="237.34" class="todo"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
+<rect width="5.79" height="5.97" x="608.81" y="237.34" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
 <rect width="5.79" height="5.97" x="608.81" y="246.31" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
 <rect width="5.79" height="5.88" x="608.81" y="255.29" class="named"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="5.79" height="5.88" x="608.81" y="264.17" class="named"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>

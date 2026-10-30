@@ -6,9 +6,15 @@ extern bool BGND_PictureIsReady;
 void BGND_Free(void);
 extern int BGND_TexturePageIndexes[5];
 extern DWORD BGND_PageHandles[5];
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern int phd_winwidth;
+extern int phd_winheight;
 }
 
 extern "C" DWORD GetTexturePageHandle(int nHandle);
+extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR color);
+void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
 extern "C" void BGND_GetPageHandles(void)
 {
@@ -21,6 +27,13 @@ extern "C" void BGND_GetPageHandles(void)
         else
             BGND_PageHandles[i] = 0;
     }
+}
+
+extern "C" void BGND_DrawInGameBlack(void)
+{
+    HWR_EnableZBuffer(false, false);
+    DrawQuad((float)phd_winxmin, (float)phd_winymin, (float)phd_winwidth, (float)phd_winheight, 0);
+    HWR_EnableZBuffer(true, true);
 }
 
 extern "C" void Func444560(void)
