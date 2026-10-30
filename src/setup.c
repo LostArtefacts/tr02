@@ -135,9 +135,299 @@ void InitialiseLevelFlags(void)
     savegame.health_used = 0;
 }
 
+#define GONDOLA 24
+#define FALLING_BLOCK 55
+#define FALLING_BLOCK2 56
+#define FALLING_PLANK 57
+#define PENDULUM 58
+#define SPIKES 59
+#define ROLLING_BALL 60
+#define DARTS 61
+#define DART_EMITTER 62
+#define TEETH_TRAP 64
+#define MOVING_BAR 66
+#define MOVABLE_BLOCK 67
+#define MOVABLE_BLOCK2 68
+#define MOVABLE_BLOCK3 69
+#define MOVABLE_BLOCK4 70
+#define PROPELLER1 76
+#define PROPELLER2 77
+#define HOOK 78
+#define FALLING_CEILING1 79
+#define SPINNING_BLADE 80
+#define BLADE 81
+#define KILLER_STATUE 82
+#define OILDRUMS 83
+#define ICICLES 84
+#define SPIKE_WALL 85
+#define SPRING_BOARD 86
+#define CEILING_SPIKES 87
+#define PROPELLER3 94
+#define SMALL_FAN 95
+#define SWING_BOX 96
+#define BIG_ROLLING_BALL 101
+#define DEATH_SLIDE 102
+#define MINES 222
+#define COPTER 228
+#define DART_EFFECT 234
+#define LAVA 250
+#define LAVA_EMITTER 251
+#define FLAME 252
+#define FLAME_EMITTER 253
+#define DYING_MONK 256
+#define MINI_COPTER 259
+#define UNIT_SHADOW 256
+
 void BaddyObjects(void);
 void TrapObjects(void);
 void ObjectObjects(void);
+
+void InitialiseDyingMonk(sint16 item_number);
+void DyingMonk(sint16 item_number);
+void GondolaControl(sint16 item_number);
+void CopterControl(sint16 item_number);
+void MiniCopterControl(sint16 item_number);
+void GeneralControl(sint16 item_number);
+void MineControl(sint16 item_number);
+void InitialiseRollingBall(sint16 item_number);
+void DeathSlideCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void ControlDeathSlide(sint16 item_number);
+void ControlSpikeWall(sint16 item_number);
+void ControlCeilingSpikes(sint16 item_number);
+void HookControl(sint16 item_number);
+void PropellerControl(sint16 item_number);
+void InitialiseKillerStatue(sint16 item_number);
+void SpinningBlade(sint16 item_number);
+void IcicleControl(sint16 item_number);
+void KillerStatueControl(sint16 item_number);
+void InitialiseBlade(sint16 item_number);
+void BladeControl(sint16 item_number);
+void SpringBoardControl(sint16 item_number);
+void FallingBlock(sint16 item_number);
+void FallingBlockFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void FallingBlockCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void Pendulum(sint16 item_number);
+void TeethTrap(sint16 item_number);
+void RollingBallCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void RollingBallControl(sint16 item_number);
+void SpikeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void FallingCeiling(sint16 item_number);
+void InitialiseMovingBlock(sint16 item_number);
+void MovableBlock(sint16 item_number);
+void MovableBlockCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DrawMovableBlock(ITEM_INFO *item);
+void DartEmitterControl(sint16 item_number);
+void DartsControl(sint16 item_number);
+void DartEffectControl(sint16 fx_num);
+void DrawSpriteItem(ITEM_INFO *item);
+void FlameEmitterControl(sint16 item_number);
+void FlameControl(sint16 fx_num);
+void LavaSpray(sint16 item_number);
+void ControlLavaBlob(sint16 fx_num);
+void DrawDummyItem(ITEM_INFO *item);
+void TrapCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+#define INIT_MOVBLOCK(a) \
+    obj = &objects[a]; \
+    obj->initialise = InitialiseMovingBlock; \
+    obj->control = MovableBlock; \
+    obj->collision = MovableBlockCollision; \
+    obj->draw_routine = DrawMovableBlock; \
+    obj->save_position = obj->save_anim = obj->save_flags = 1
+
+#define INIT_ROLLBALL(a) \
+    obj = &objects[a]; \
+    obj->collision = RollingBallCollision; \
+    obj->control = RollingBallControl; \
+    obj->initialise = InitialiseRollingBall; \
+    obj->save_position = obj->save_flags = 1; \
+    obj->save_anim = 1
+
+#define INIT_FALLBLOCK(a) \
+    obj = &objects[a]; \
+    obj->control = FallingBlock; \
+    obj->floor = FallingBlockFloor; \
+    obj->ceiling = FallingBlockCeiling; \
+    obj->save_position = obj->save_anim = 1; \
+    obj->save_flags = 1
+
+void TrapObjects(void)
+{
+    OBJECT_INFO *obj;
+
+    obj = &objects[DYING_MONK];
+    obj->initialise = InitialiseDyingMonk;
+    obj->control = DyingMonk;
+    obj->collision = ObjectCollision;
+    obj->save_flags = 1;
+
+    obj = &objects[GONDOLA];
+    obj->control = GondolaControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[COPTER];
+    obj->control = CopterControl;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[MINI_COPTER];
+    obj->control = MiniCopterControl;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[MOVING_BAR];
+    obj->collision = ObjectCollision;
+    obj->control = GeneralControl;
+    obj->save_anim = obj->save_flags = 1;
+    obj->water_creature = 1;
+
+    obj = &objects[MINES];
+    obj->collision = ObjectCollision;
+    obj->control = MineControl;
+    obj->save_flags = 1;
+
+    obj = &objects[DEATH_SLIDE];
+    obj->initialise = InitialiseRollingBall;
+    obj->collision = DeathSlideCollision;
+    obj->control = ControlDeathSlide;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[SPIKE_WALL];
+    obj->control = ControlSpikeWall;
+    obj->collision = ObjectCollision;
+    obj->save_position = obj->save_flags = 1;
+
+    obj = &objects[CEILING_SPIKES];
+    obj->control = ControlCeilingSpikes;
+    obj->collision = TrapCollision;
+    obj->save_position = obj->save_flags = 1;
+
+    obj = &objects[HOOK];
+    obj->control = HookControl;
+    obj->collision = CreatureCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[PROPELLER2];
+    obj->control = PropellerControl;
+    obj->collision = ObjectCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[PROPELLER3];
+    obj->water_creature = 1;
+    obj->control = PropellerControl;
+    obj->collision = TrapCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[SMALL_FAN];
+    obj->control = PropellerControl;
+    obj->collision = TrapCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[PROPELLER1];
+    obj->control = PropellerControl;
+    obj->collision = TrapCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[SPINNING_BLADE];
+    obj->initialise = InitialiseKillerStatue;
+    obj->control = SpinningBlade;
+    obj->collision = ObjectCollision;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[ICICLES];
+    obj->control = IcicleControl;
+    obj->collision = TrapCollision;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[KILLER_STATUE];
+    obj->initialise = InitialiseKillerStatue;
+    obj->control = KillerStatueControl;
+    obj->collision = TrapCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[BLADE];
+    obj->initialise = InitialiseBlade;
+    obj->control = BladeControl;
+    obj->collision = TrapCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[SPRING_BOARD];
+    obj->control = SpringBoardControl;
+    obj->save_anim = obj->save_flags = 1;
+
+    INIT_FALLBLOCK(FALLING_BLOCK);
+    INIT_FALLBLOCK(FALLING_BLOCK2);
+    INIT_FALLBLOCK(FALLING_PLANK);
+
+    obj = &objects[PENDULUM];
+    obj->shadow_size = UNIT_SHADOW / 2;
+    obj->control = Pendulum;
+    obj->collision = ObjectCollision;
+    obj->save_flags = 1;
+    obj->save_anim = 1;
+
+    obj = &objects[SWING_BOX];
+    obj->shadow_size = UNIT_SHADOW / 2;
+    obj->control = Pendulum;
+    obj->collision = ObjectCollision;
+    obj->save_flags = 1;
+    obj->save_anim = 1;
+
+    obj = &objects[TEETH_TRAP];
+    obj->collision = TrapCollision;
+    obj->control = TeethTrap;
+    obj->save_flags = 1;
+    obj->save_anim = 1;
+
+    INIT_ROLLBALL(OILDRUMS);
+    INIT_ROLLBALL(BIG_ROLLING_BALL);
+    INIT_ROLLBALL(ROLLING_BALL);
+
+    obj = &objects[SPIKES];
+    obj->collision = SpikeCollision;
+
+    obj = &objects[FALLING_CEILING1];
+    obj->control = FallingCeiling;
+    obj->collision = TrapCollision;
+    obj->save_position = obj->save_anim = 1;
+    obj->save_flags = 1;
+
+    INIT_MOVBLOCK(MOVABLE_BLOCK);
+    INIT_MOVBLOCK(MOVABLE_BLOCK2);
+    INIT_MOVBLOCK(MOVABLE_BLOCK3);
+    INIT_MOVBLOCK(MOVABLE_BLOCK4);
+
+    obj = &objects[DART_EMITTER];
+    obj->control = DartEmitterControl;
+    obj->save_flags = 1;
+
+    obj = &objects[DARTS];
+    obj->control = DartsControl;
+    obj->collision = ObjectCollision;
+    obj->shadow_size = UNIT_SHADOW / 2;
+
+    obj = &objects[DART_EFFECT];
+    obj->control = DartEffectControl;
+    obj->draw_routine = DrawSpriteItem;
+    obj->semi_transparent = 1;
+
+    obj = &objects[FLAME_EMITTER];
+    obj->control = FlameEmitterControl;
+    obj->draw_routine = DrawDummyItem;
+    obj->save_flags = 1;
+
+    objects[FLAME].control = FlameControl;
+    objects[FLAME].semi_transparent = 1;
+
+    objects[LAVA_EMITTER].control = LavaSpray;
+    objects[LAVA_EMITTER].collision = ObjectCollision;
+    objects[LAVA_EMITTER].draw_routine = DrawDummyItem;
+    objects[LAVA_EMITTER].save_flags = 1;
+
+    objects[LAVA].control = ControlLavaBlob;
+    objects[LAVA].semi_transparent = 1;
+}
 
 void InitialiseObjects(void)
 {
