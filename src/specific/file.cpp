@@ -24,6 +24,20 @@ void AdjustTextureUVs(bool tNew);
 int LoadLevel(char *filename, int req_level);
 BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped);
 
+extern "C" DWORD ReadFileBytesCounter;
+extern "C" void WinVidSpinMessageLoop(bool tWait);
+
+BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped)
+{
+    ReadFileBytesCounter += nNumberOfBytesToRead;
+    if (ReadFileBytesCounter > 16384)
+    {
+        ReadFileBytesCounter = 0;
+        WinVidSpinMessageLoop(false);
+    }
+    return ReadFile(hFile, pBuffer, nNumberOfBytesToRead, pNumberOfBytesRead, pOverlapped);
+}
+
 int LoadCameras(HANDLE file)
 {
     DWORD read;

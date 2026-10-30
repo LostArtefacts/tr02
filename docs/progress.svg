@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.32% (640)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.68% (607)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.40% (641)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.60% (606)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="383.38" height="6" x="0" y="0" class="named"/>
-<rect width="363.62" height="6" x="383.38" y="0" class="todo"/>
+<rect width="383.98" height="6" x="0" y="0" class="named"/>
+<rect width="363.02" height="6" x="383.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1017,7 +1017,7 @@
 <rect width="12" height="12" x="705" y="270" class="todo"><title>0x004496c0 GameApplySettings (570 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="270" class="todo"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="todo"><title>0x00449970 DecodeErrorMessage (12 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="285" class="todo"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="285" class="named"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="285" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="285" class="todo"><title>0x00449b60 LoadRooms (928 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="285" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.63%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.39%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.61%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="234.31" height="6" x="0" y="0" class="named"/>
-<rect width="512.69" height="6" x="234.31" y="0" class="todo"/>
+<rect width="234.47" height="6" x="0" y="0" class="named"/>
+<rect width="512.53" height="6" x="234.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2136,7 +2136,7 @@
 <rect width="4.99" height="4.62" x="626.12" y="355.15" class="named"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="4.99" height="4.62" x="626.12" y="362.77" class="named"><title>0x00433040 ClearLOT (73 bytes)</title></rect>
 <rect width="4.99" height="4.62" x="626.12" y="370.38" class="named"><title>0x00442de0 LaraBurn (73 bytes)</title></rect>
-<rect width="4.88" height="4.72" x="634.11" y="261.58" class="todo"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
+<rect width="4.88" height="4.72" x="634.11" y="261.58" class="named"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="4.88" height="4.72" x="642" y="261.58" class="todo"><title>0x00455940 Func455940 (73 bytes)</title></rect>
 <rect width="4.78" height="4.72" x="649.88" y="261.58" class="named"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
 <rect width="4.78" height="4.72" x="657.66" y="261.58" class="todo"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
