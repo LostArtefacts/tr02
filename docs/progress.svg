@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.04% (437)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.96% (810)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.12% (438)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.88% (809)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="261.78" height="6" x="0" y="0" class="named"/>
-<rect width="485.22" height="6" x="261.78" y="0" class="todo"/>
+<rect width="262.38" height="6" x="0" y="0" class="named"/>
+<rect width="484.62" height="6" x="262.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -749,7 +749,7 @@
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="195" class="named"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="195" class="todo"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="195" class="named"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="todo"><title>0x00438fa0 MouseControl (476 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="195" class="todo"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="195" class="todo"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.43%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.57%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.44%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.56%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="107.80" height="6" x="0" y="0" class="named"/>
-<rect width="639.20" height="6" x="107.80" y="0" class="todo"/>
+<rect width="107.87" height="6" x="0" y="0" class="named"/>
+<rect width="639.13" height="6" x="107.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2377,7 +2377,7 @@
 <rect width="2.17" height="2.68" x="744.83" y="320.52" class="named"><title>0x00431b00 lara_col_surfback (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="326.20" class="named"><title>0x00431b30 lara_col_surfleft (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="331.44" class="named"><title>0x00431b60 lara_col_surfright (35 bytes)</title></rect>
-<rect width="2.60" height="2.24" x="692.59" y="336.68" class="todo"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
+<rect width="2.60" height="2.24" x="692.59" y="336.68" class="named"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="341.92" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="347.16" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="2.60" height="2.24" x="692.59" y="352.40" class="todo"><title>0x00455d00 FreePalette (35 bytes)</title></rect>

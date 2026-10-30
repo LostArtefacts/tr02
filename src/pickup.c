@@ -45,3 +45,11 @@ int PickupTrigger(sint16 item_num)
     }
     return 0;
 }
+
+void RemoveDrawnItem(sint16 item_num);
+
+void SecretControl(sint16 item_number)
+{
+    items[item_number].status = INVISIBLE;
+    RemoveDrawnItem(item_number);
+}
