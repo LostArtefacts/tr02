@@ -93,6 +93,20 @@ extern "C" bool SE_SoundTestExecute(void)
     return false;
 }
 
+extern "C" bool SE_SoundTest(void)
+{
+    SETUP_APP_SETTINGS saved;
+    bool result = false;
+
+    saved = SavedAppSettings;
+    SavedAppSettings = ChangedAppSettings;
+    if (SE_SoundTestStart())
+        result = SE_SoundTestExecute();
+    SE_SoundTestFinish();
+    SavedAppSettings = saved;
+    return result;
+}
+
 extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
 
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
