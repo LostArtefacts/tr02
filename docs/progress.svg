@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">67.92% (847)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.68% (395)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68% (848)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.60% (394)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="507.38" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="507.38" y="0" class="decompiled"/>
-<rect width="236.62" height="6" x="510.38" y="0" class="todo"/>
+<rect width="507.98" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="507.98" y="0" class="decompiled"/>
+<rect width="236.02" height="6" x="510.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -888,7 +888,7 @@
 <rect width="12" height="12" x="255" y="240" class="todo"><title>0x00444a70 Func444a70 (14 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="240" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="240" class="todo"><title>0x00444bc0 Func444bc0 (14 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="240" class="todo"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="240" class="named"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="named"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="240" class="named"><title>0x00444d20 GameWindowCalculateSizeFromClient (115 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="240" class="named"><title>0x00444da0 GameWindowCalculateSizeFromClientByZero (106 bytes)</title></rect>
@@ -1287,7 +1287,7 @@
 <rect width="12" height="12" x="240" y="360" class="todo"><title>0x00458f60 c_dfDIKeyboard (24 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00458f78 DirectSoundEnumerateA_thunk (6 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="360" class="todo"><title>0x00458f7e DirectSoundCreate_thunk (6 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="360" class="todo"><title>0x00458f84 Func458f84 (6 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="360" class="todo"><title>0x00458f84 DirectDrawCreate_thunk (6 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="360" class="todo"><title>0x00458f8a Func458f8a (6 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="360" class="todo"><title>0x00458f90 Func458f90 (6 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="360" class="todo"><title>0x00458f96 Func458f96 (6 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.20%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.75%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.22%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.73%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="367.53" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="367.53" y="0" class="decompiled"/>
-<rect width="379.11" height="6" x="367.89" y="0" class="todo"/>
+<rect width="367.71" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="367.71" y="0" class="decompiled"/>
+<rect width="378.92" height="6" x="368.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2090,7 +2090,7 @@
 <rect width="5.58" height="5.13" x="617.61" y="337.45" class="named"><title>0x004256e0 ReqItemLeftAlign (84 bytes)</title></rect>
 <rect width="5.58" height="5.13" x="617.61" y="345.58" class="named"><title>0x004285a0 lara_as_fastdive (84 bytes)</title></rect>
 <rect width="5.58" height="5.13" x="617.61" y="353.71" class="named"><title>0x0043d650 DoDynamics (84 bytes)</title></rect>
-<rect width="5.58" height="5.13" x="617.61" y="361.84" class="todo"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
+<rect width="5.58" height="5.13" x="617.61" y="361.84" class="named"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
 <rect width="5.58" height="5.03" x="617.61" y="369.97" class="todo"><title>0x00402620 Func402620 (83 bytes)</title></rect>
 <rect width="5.45" height="5.16" x="626.19" y="245.71" class="named"><title>0x00432460 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="5.45" height="5.16" x="634.64" y="245.71" class="named"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
@@ -2535,7 +2535,7 @@
 <rect width="0.10" height="0.10" x="734.63" y="371.35" class="todo"><title>0x00457f50 DirectInputCreateA_thunk (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.63" y="373.57" class="todo"><title>0x00458f78 DirectSoundEnumerateA_thunk (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.63" y="375.78" class="todo"><title>0x00458f7e DirectSoundCreate_thunk (6 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="736.88" y="364.70" class="todo"><title>0x00458f84 Func458f84 (6 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="736.88" y="364.70" class="todo"><title>0x00458f84 DirectDrawCreate_thunk (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.07" y="364.70" class="todo"><title>0x00458f8a Func458f8a (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="741.25" y="364.70" class="todo"><title>0x00458f90 Func458f90 (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="743.44" y="364.70" class="todo"><title>0x00458f96 Func458f96 (6 bytes)</title></rect>

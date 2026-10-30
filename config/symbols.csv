@@ -1218,7 +1218,7 @@ address,size,name,symbol
 0x00458f60,24,c_dfDIKeyboard,_c_dfDIKeyboard
 0x00458f78,6,DirectSoundEnumerateA_thunk,_DirectSoundEnumerateA@8
 0x00458f7e,6,DirectSoundCreate_thunk,_DirectSoundCreate@12
-0x00458f84,6,Func458f84,
+0x00458f84,6,DirectDrawCreate_thunk,_DirectDrawCreate@12
 0x00458f8a,6,Func458f8a,
 0x00458f90,6,Func458f90,
 0x00458f96,6,Func458f96,
@@ -1446,6 +1446,7 @@ address,size,name,symbol
 0x004630d8,21,GuidFormat,_GuidFormat
 0x004630f0,17,HexDigits,_HexDigits
 0x00463120,16,IID_IDirect3D2,_IID_IDirect3D2
+0x00463140,16,IID_IDirectDraw2,_IID_IDirectDraw2
 0x00463150,16,IID_IDirectDrawSurface3,_IID_IDirectDrawSurface3
 0x00463160,16,GUID_SysKeyboard,_GUID_SysKeyboard
 0x00463170,16,IID_IDirect3DTexture2,_IID_IDirect3DTexture2

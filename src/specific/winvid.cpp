@@ -398,6 +398,50 @@ extern "C" DWORD CalculateCompatibleColor(COLOR_BIT_MASKS *mask, int red, int gr
     return (red >> (8 - mask->dwRBitDepth) << mask->dwRBitOffset) | (green >> (8 - mask->dwGBitDepth) << mask->dwGBitOffset) | (blue >> (8 - mask->dwBBitDepth) << mask->dwBBitOffset) | (alpha >> (8 - mask->dwRGBAlphaBitDepth) << mask->dwRGBAlphaBitOffset);
 }
 
+typedef struct {
+    LPTSTR lpString;
+    bool isPresented;
+} STRING_FLAGGED;
+
+typedef struct {
+    LPGUID lpAdapterGuid;
+    GUID adapterGuid;
+    STRING_FLAGGED driverDescription;
+    STRING_FLAGGED driverName;
+    DDCAPS driverCaps;
+    DDCAPS helCaps;
+    GUID deviceGuid;
+    D3DDEVICEDESC D3DHWDeviceDesc;
+} DISPLAY_ADAPTER;
+
+typedef struct DISPLAY_ADAPTER_NODE {
+    struct DISPLAY_ADAPTER_NODE *next;
+    struct DISPLAY_ADAPTER_NODE *previous;
+    DISPLAY_ADAPTER body;
+} DISPLAY_ADAPTER_NODE;
+
+typedef struct {
+    DISPLAY_ADAPTER_NODE *head;
+    DISPLAY_ADAPTER_NODE *tail;
+    DWORD dwCount;
+} DISPLAY_ADAPTER_LIST;
+
+extern "C" {
+extern DISPLAY_ADAPTER_LIST DisplayAdapterList;
+void ShowDDrawGameWindow(bool active);
+HRESULT WINAPI EnumDisplayModesCallback(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext);
+}
+
+extern "C" bool DDrawCreate(LPGUID lpGUID)
+{
+    if (DX_TRY(DirectDrawCreate(lpGUID, &DDrawInterface, NULL)))
+        return false;
+    if (DX_TRY(DDrawInterface->QueryInterface(IID_IDirectDraw2, (LPVOID *)&DDraw)))
+        return false;
+    DDraw->SetCooperativeLevel(HGameWindow, DDSCL_NORMAL);
+    return true;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)
