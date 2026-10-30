@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.54% (306)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.46% (941)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.62% (307)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">75.38% (940)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="183.31" height="6" x="0" y="0" class="named"/>
-<rect width="563.69" height="6" x="183.31" y="0" class="todo"/>
+<rect width="183.90" height="6" x="0" y="0" class="named"/>
+<rect width="563.10" height="6" x="183.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1073,7 +1073,7 @@
 <rect width="12" height="12" x="45" y="300" class="named"><title>0x0044d010 S_LoadGame (150 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="300" class="todo"><title>0x0044d0b0 HWR_InitState (296 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="300" class="todo"><title>0x0044d1e0 HWR_ResetTexSource (41 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="300" class="todo"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="300" class="named"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="300" class="todo"><title>0x0044d240 HWR_ResetZBuffer (89 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="300" class="todo"><title>0x0044d2a0 HWR_TexSource (36 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="300" class="todo"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="57.81" height="6" x="0" y="0" class="named"/>
-<rect width="689.19" height="6" x="57.81" y="0" class="todo"/>
+<rect width="57.90" height="6" x="0" y="0" class="named"/>
+<rect width="689.10" height="6" x="57.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2330,7 +2330,7 @@
 <rect width="2.81" height="3.20" x="681.17" y="347.15" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.17" y="353.35" class="todo"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.17" y="359.55" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
-<rect width="2.81" height="3.20" x="681.17" y="365.75" class="todo"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
+<rect width="2.81" height="3.20" x="681.17" y="365.75" class="named"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
 <rect width="2.81" height="3.05" x="681.17" y="371.95" class="todo"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="2.89" height="2.97" x="686.98" y="309.24" class="named"><title>0x0043fa30 SOUND_Init (42 bytes)</title></rect>
 <rect width="2.89" height="2.97" x="692.88" y="309.24" class="named"><title>0x0044b580 S_UnloadLevelFile (42 bytes)</title></rect>

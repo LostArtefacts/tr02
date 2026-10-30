@@ -10,6 +10,17 @@ extern "C" int LanTextureHandle[32];
 extern "C" bool ZEnableState;
 extern "C" bool ZWriteEnableState;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
+extern "C" bool ColorKeyState;
+extern "C" bool TexturesAlphaChannel;
+
+void HWR_ResetColorKey()
+{
+    ColorKeyState = false;
+    if (TexturesAlphaChannel)
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ALPHABLENDENABLE, false);
+    else
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_COLORKEYENABLE, false);
+}
 
 void HWR_EnableZBuffer(bool tWrite, bool tCompare)
 {
