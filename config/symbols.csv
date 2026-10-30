@@ -173,7 +173,7 @@ address,size,name,symbol
 0x00414ce0,360,GetWaterHeight,_GetWaterHeight
 0x00414e50,640,GetHeight,_GetHeight
 0x004150d0,231,RefreshCamera,_RefreshCamera
-0x004151c0,1680,TestTriggers,_TestTriggers
+0x004151c0,1760,TestTriggers,_TestTriggers
 0x004158a0,85,TriggerActive,_TriggerActive
 0x00415900,600,GetCeiling,_GetCeiling
 0x00415b60,78,GetDoor,_GetDoor
