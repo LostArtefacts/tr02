@@ -1583,6 +1583,7 @@ address,size,name,symbol
 0x004bf3c8,4,PhdScreenWidth,_PhdScreenWidth
 0x004bf3cc,4,LsDivider,_LsDivider
 0x004bf3d0,,PhdVBuf,_PhdVBuf
+0x004caf50,48000,xbuffer,_xbuffer
 0x004d6ad0,128,texture_page_ptrs,_texture_page_ptrs
 0x004d6b50,4,phd_rightfloat,_phd_rightfloat
 0x004d6b58,,ls_vector_view,_ls_vector_view

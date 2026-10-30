@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.59% (157)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.41% (1090)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.67% (158)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.33% (1089)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="94.05" height="6" x="0" y="0" class="named"/>
-<rect width="652.95" height="6" x="94.05" y="0" class="todo"/>
+<rect width="94.65" height="6" x="0" y="0" class="named"/>
+<rect width="652.35" height="6" x="94.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -100,7 +100,7 @@
 <rect width="12" height="12" x="450" y="0" class="named"><title>0x00402b80 draw_poly_gouraud (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402bc0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="0" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="todo"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="29.88" height="6" x="0" y="0" class="named"/>
-<rect width="717.12" height="6" x="29.88" y="0" class="todo"/>
+<rect width="30.34" height="6" x="0" y="0" class="named"/>
+<rect width="716.66" height="6" x="30.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1747,7 +1747,7 @@
 <rect width="10.47" height="10.12" x="577.67" y="137.61" class="named"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="10.47" height="10.12" x="591.14" y="137.61" class="todo"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
 <rect width="10.47" height="10.12" x="604.61" y="137.61" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
-<rect width="10.41" height="10.12" x="618.09" y="137.61" class="todo"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
+<rect width="10.41" height="10.12" x="618.09" y="137.61" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="10.41" height="10.12" x="631.49" y="137.61" class="todo"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>
 <rect width="10.41" height="10.12" x="644.90" y="137.61" class="todo"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>
 <rect width="10.22" height="10.12" x="658.31" y="137.61" class="todo"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
