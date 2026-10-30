@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34% (424)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">66% (823)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.08% (425)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.92% (822)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="253.99" height="6" x="0" y="0" class="named"/>
-<rect width="493.01" height="6" x="253.99" y="0" class="todo"/>
+<rect width="254.59" height="6" x="0" y="0" class="named"/>
+<rect width="492.41" height="6" x="254.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -299,7 +299,7 @@
 <rect width="12" height="12" x="435" y="60" class="todo"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="named"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="60" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="60" class="todo"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="60" class="named"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="todo"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="named"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">13.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">86.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.03%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.97%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="104.26" height="6" x="0" y="0" class="named"/>
-<rect width="642.74" height="6" x="104.26" y="0" class="todo"/>
+<rect width="104.82" height="6" x="0" y="0" class="named"/>
+<rect width="642.18" height="6" x="104.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1681,7 +1681,7 @@
 <rect width="11.52" height="12" x="481.36" y="275.79" class="todo"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="11.52" height="11.65" x="481.36" y="290.79" class="named"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
 <rect width="11.52" height="11.59" x="481.36" y="305.44" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
-<rect width="11.52" height="11.54" x="481.36" y="320.03" class="todo"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
+<rect width="11.52" height="11.54" x="481.36" y="320.03" class="named"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="11.52" height="11.54" x="481.36" y="334.57" class="todo"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
 <rect width="11.52" height="11.48" x="481.36" y="349.10" class="todo"><title>0x004296e0 lara_col_back (251 bytes)</title></rect>
 <rect width="11.52" height="11.42" x="481.36" y="363.58" class="todo"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>

@@ -170,6 +170,48 @@ void InterpolateMatrix(void)
     }
 }
 
+void InterpolateArmMatrix(void)
+{
+    sint32 *mptr, *iptr;
+    sint32 frac, rate;
+
+    mptr = phd_mxptr;
+    iptr = IMptr;
+    frac = IM_frac;
+    rate = IM_rate;
+
+    if (rate == 2)
+    {
+        *(mptr + M00) = *(mptr + M00 - 24);
+        *(mptr + M01) = *(mptr + M01 - 24);
+        *(mptr + M02) = *(mptr + M02 - 24);
+        *(mptr + M03) = (*(iptr + M03) + *(mptr + M03)) / 2;
+        *(mptr + M10) = *(mptr + M10 - 24);
+        *(mptr + M11) = *(mptr + M11 - 24);
+        *(mptr + M12) = *(mptr + M12 - 24);
+        *(mptr + M13) = (*(iptr + M13) + *(mptr + M13)) / 2;
+        *(mptr + M20) = *(mptr + M20 - 24);
+        *(mptr + M21) = *(mptr + M21 - 24);
+        *(mptr + M22) = *(mptr + M22 - 24);
+        *(mptr + M23) = (*(iptr + M23) + *(mptr + M23)) / 2;
+    }
+    else
+    {
+        *(mptr + M00) = *(mptr + M00 - 24);
+        *(mptr + M01) = *(mptr + M01 - 24);
+        *(mptr + M02) = *(mptr + M02 - 24);
+        *(mptr + M03) += ((*(iptr + M03) - *(mptr + M03)) * frac) / rate;
+        *(mptr + M10) = *(mptr + M10 - 24);
+        *(mptr + M11) = *(mptr + M11 - 24);
+        *(mptr + M12) = *(mptr + M12 - 24);
+        *(mptr + M13) += ((*(iptr + M13) - *(mptr + M13)) * frac) / rate;
+        *(mptr + M20) = *(mptr + M20 - 24);
+        *(mptr + M21) = *(mptr + M21 - 24);
+        *(mptr + M22) = *(mptr + M22 - 24);
+        *(mptr + M23) += ((*(iptr + M23) - *(mptr + M23)) * frac) / rate;
+    }
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;
