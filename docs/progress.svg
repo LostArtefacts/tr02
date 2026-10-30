@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.53% (493)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.47% (754)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">39.62% (494)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">60.38% (753)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="295.33" height="6" x="0" y="0" class="named"/>
-<rect width="451.67" height="6" x="295.33" y="0" class="todo"/>
+<rect width="295.92" height="6" x="0" y="0" class="named"/>
+<rect width="451.08" height="6" x="295.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -811,7 +811,7 @@
 <rect width="12" height="12" x="615" y="210" class="named"><title>0x00440680 T_SetScale (23 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="210" class="named"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="210" class="named"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="210" class="todo"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="210" class="named"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="210" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="210" class="todo"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="210" class="todo"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.28%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.27%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="147.34" height="6" x="0" y="0" class="named"/>
-<rect width="599.66" height="6" x="147.34" y="0" class="todo"/>
+<rect width="147.37" height="6" x="0" y="0" class="named"/>
+<rect width="599.63" height="6" x="147.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2482,7 +2482,7 @@
 <rect width="0.97" height="0.59" x="721.27" y="360.50" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="0.97" height="0.59" x="721.27" y="364.08" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
 <rect width="0.97" height="0.59" x="721.27" y="367.67" class="todo"><title>0x00454af0 Func454af0 (17 bytes)</title></rect>
-<rect width="0.97" height="0.37" x="721.27" y="371.25" class="todo"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
+<rect width="0.97" height="0.37" x="721.27" y="371.25" class="named"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
 <rect width="0.97" height="0.37" x="721.27" y="374.63" class="todo"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="0.77" height="0.55" x="725.24" y="352.90" class="named"><title>0x00452050 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="0.54" height="0.55" x="729.01" y="352.90" class="todo"><title>0x00447890 WinInFinish (15 bytes)</title></rect>
