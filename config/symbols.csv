@@ -1452,6 +1452,7 @@ address,size,name,symbol
 0x004640c4,4,flipeffect,_flipeffect
 0x00464130,16,dog_bite,_dog_bite
 0x00464140,16,tiger_bite,_tiger_bite
+0x004641e0,16,bigeel_bite,_bigeel_bite
 0x004641f0,4,AssaultBestTime,_AssaultBestTime
 0x004641f8,,effect_routines,_effect_routines
 0x004642e8,2,GF_NumSecrets,_GF_NumSecrets

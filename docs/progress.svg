@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.09% (475)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.91% (772)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.17% (476)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.83% (771)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="284.54" height="6" x="0" y="0" class="named"/>
-<rect width="462.46" height="6" x="284.54" y="0" class="todo"/>
+<rect width="285.14" height="6" x="0" y="0" class="named"/>
+<rect width="461.86" height="6" x="285.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -306,7 +306,7 @@
 <rect width="12" height="12" x="540" y="60" class="named"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="named"><title>0x0041c0d0 AddDynamicLight (72 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="60" class="todo"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="60" class="named"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="60" class="todo"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="60" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x0041c540 SoundEffects (104 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.85%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.28%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">81.72%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="135.60" height="6" x="0" y="0" class="named"/>
-<rect width="611.40" height="6" x="135.60" y="0" class="todo"/>
+<rect width="136.51" height="6" x="0" y="0" class="named"/>
+<rect width="610.49" height="6" x="136.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.49" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1541,7 +1541,7 @@
 <rect width="15.09" height="16.20" x="659.86" y="41.45" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
 <rect width="15.05" height="16.20" x="677.95" y="41.45" class="todo"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
 <rect width="15.05" height="16.20" x="695.99" y="41.45" class="todo"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
-<rect width="15" height="16.20" x="714.04" y="41.45" class="todo"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
+<rect width="15" height="16.20" x="714.04" y="41.45" class="named"><title>0x0041c120 BigEelControl (413 bytes)</title></rect>
 <rect width="14.96" height="16.20" x="732.04" y="41.45" class="todo"><title>0x0042de70 lara_col_climbdown (412 bytes)</title></rect>
 <rect width="14.96" height="16.10" x="413.57" y="60.64" class="todo"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="14.96" height="16.01" x="413.57" y="79.74" class="todo"><title>0x00414b40 GetFloor (408 bytes)</title></rect>
