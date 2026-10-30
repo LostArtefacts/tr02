@@ -195,6 +195,58 @@ void PropellerControl(sint16 item_number)
     }
 }
 
+void SpinningBlade(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint32 x, z;
+    sint16 room_number;
+    int spinning;
+
+    item = &items[item_number];
+
+    if (item->current_anim_state == SPIN_SPIN)
+    {
+        if (item->goal_anim_state != SPIN_STOP)
+        {
+            z = item->pos.z_pos + ((WALL_L * 3 / 2 * phd_cos(item->pos.y_rot)) >> W2V_SHIFT);
+            x = item->pos.x_pos + ((WALL_L * 3 / 2 * phd_sin(item->pos.y_rot)) >> W2V_SHIFT);
+            room_number = item->room_number;
+            floor = GetFloor(x, item->pos.y_pos, z, &room_number);
+            if (GetHeight(floor, x, item->pos.y_pos, z) == NO_HEIGHT)
+                item->goal_anim_state = SPIN_STOP;
+        }
+
+        spinning = 1;
+
+        if (item->touch_bits)
+        {
+            lara_item->hit_status = 1;
+            lara_item->hit_points -= SPINBLADE_DAMAGE;
+            DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, (sint16)(item->speed * 2), lara_item->pos.y_rot, lara_item->room_number, 2);
+        }
+
+        SoundEffect(231, &item->pos, 0);
+    }
+    else
+    {
+        if (TriggerActive(item))
+            item->goal_anim_state = SPIN_SPIN;
+        spinning = 0;
+    }
+
+    AnimateItem(item);
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = item->pos.y_pos = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+
+    if (spinning && item->current_anim_state == SPIN_STOP)
+        item->pos.y_rot += -0x8000;
+}
+
 void IcicleControl(sint16 item_number)
 {
     sint16 room_number;
