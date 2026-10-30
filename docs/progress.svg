@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.43% (130)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.57% (1117)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.51% (131)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.49% (1116)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="77.87" height="6" x="0" y="0" class="named"/>
-<rect width="669.13" height="6" x="77.87" y="0" class="todo"/>
+<rect width="78.47" height="6" x="0" y="0" class="named"/>
+<rect width="668.53" height="6" x="78.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1049,7 +1049,7 @@
 <rect width="12" height="12" x="435" y="285" class="todo"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="285" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="285" class="named"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="285" class="todo"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="285" class="named"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="285" class="todo"><title>0x0044c430 S_DrawScreenFBox (46 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="285" class="named"><title>0x0044c460 S_FinishInventory (15 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="285" class="todo"><title>0x0044c470 S_FadeToBlack (67 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.68%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.60%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="17.34" height="6" x="0" y="0" class="named"/>
-<rect width="729.66" height="6" x="17.34" y="0" class="todo"/>
+<rect width="17.96" height="6" x="0" y="0" class="named"/>
+<rect width="729.04" height="6" x="17.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1652,7 +1652,7 @@
 <rect width="12.41" height="12.33" x="481.48" y="94.11" class="todo"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
 <rect width="12.36" height="12.33" x="496.89" y="94.11" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
 <rect width="12.19" height="12.33" x="512.25" y="94.11" class="todo"><title>0x0043c900 JellyControl (278 bytes)</title></rect>
-<rect width="12.19" height="12.33" x="527.45" y="94.11" class="todo"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
+<rect width="12.19" height="12.33" x="527.45" y="94.11" class="named"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12.14" height="12.33" x="542.64" y="94.11" class="todo"><title>0x00441300 ControlCeilingSpikes (277 bytes)</title></rect>
 <rect width="12.08" height="12.33" x="557.78" y="94.11" class="todo"><title>0x0044cef0 S_SaveGame (276 bytes)</title></rect>
 <rect width="12.03" height="12.33" x="572.86" y="94.11" class="todo"><title>0x0044c920 GameStats (275 bytes)</title></rect>
