@@ -484,6 +484,16 @@ void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
     lara.extra_anim = 0;
 }
 
+void extra_as_yetikill(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_angle = ONE_DEGREE * 160;
+    camera.target_distance = 3 * WALL_L;
+    lara.hit_direction = -1;
+
+    if (item->frame_number < anims[item->anim_number].frame_end - 30)
+        lara.death_count = 1;
+}
+
 void extra_as_sharkkill(ITEM_INFO *item, COLL_INFO *coll)
 {
     int wh;
@@ -764,7 +774,7 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)

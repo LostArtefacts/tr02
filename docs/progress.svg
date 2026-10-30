@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.74% (296)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.26% (951)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.82% (297)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.18% (950)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="177.32" height="6" x="0" y="0" class="named"/>
-<rect width="569.68" height="6" x="177.32" y="0" class="todo"/>
+<rect width="177.91" height="6" x="0" y="0" class="named"/>
+<rect width="569.09" height="6" x="177.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -501,7 +501,7 @@
 <rect width="12" height="12" x="465" y="120" class="todo"><title>0x00428620 lara_as_wade (202 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="120" class="todo"><title>0x004286f0 lara_as_deathslide (150 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="120" class="named"><title>0x00428790 extra_as_breath (76 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="120" class="todo"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="120" class="named"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="120" class="named"><title>0x00428830 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="120" class="named"><title>0x004288d0 extra_as_airlock (19 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="120" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.60%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.43%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.57%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="55.31" height="6" x="0" y="0" class="named"/>
-<rect width="691.69" height="6" x="55.31" y="0" class="todo"/>
+<rect width="55.47" height="6" x="0" y="0" class="named"/>
+<rect width="691.53" height="6" x="55.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2147,7 +2147,7 @@
 <rect width="4.74" height="4.80" x="633.31" y="324.38" class="todo"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
 <rect width="4.74" height="4.69" x="633.31" y="332.18" class="todo"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="4.74" height="4.69" x="633.31" y="339.87" class="todo"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
-<rect width="4.74" height="4.69" x="633.31" y="347.56" class="todo"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
+<rect width="4.74" height="4.69" x="633.31" y="347.56" class="named"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
 <rect width="4.74" height="4.58" x="633.31" y="355.25" class="named"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
 <rect width="4.74" height="4.58" x="633.31" y="362.84" class="todo"><title>0x004453d0 DDrawSurfaceRestoreLost (70 bytes)</title></rect>
 <rect width="4.74" height="4.58" x="633.31" y="370.42" class="todo"><title>0x00445570 GetRenderBitDepth (70 bytes)</title></rect>
