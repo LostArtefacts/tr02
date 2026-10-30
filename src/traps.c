@@ -4,6 +4,8 @@
 #define FALLING_PLANK 57
 #define BLADE 81
 #define FLAME 252
+#define HOOK_DAMAGE 50
+#define BLADE_DAMAGE 100
 
 sint16 CreateEffect(sint16 room_num);
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
@@ -11,6 +13,28 @@ int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 enum trap_anims { TRAP_SET, TRAP_ACTIVATE, TRAP_WORKING, TRAP_FINISHED };
 enum door_anims { DOOR_CLOSED, DOOR_OPEN };
 enum blade_anims { BLADE_EMPTY, BLADE_STOP, BLADE_CUT };
+
+static int clonked = 0;
+
+void HookControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    if (item->touch_bits && !clonked)
+    {
+        lara_item->hit_points -= HOOK_DAMAGE;
+        lara_item->hit_status = 1;
+
+        DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - (WALL_L / 2), lara_item->pos.z_pos,
+            lara_item->speed, lara_item->pos.y_rot, lara_item->room_number, 3);
+    }
+    else
+        clonked = 0;
+
+    AnimateItem(item);
+}
 
 void InitialiseBlade(sint16 item_number)
 {

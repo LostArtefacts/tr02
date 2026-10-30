@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.67% (345)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.33% (902)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.75% (346)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.25% (901)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="206.67" height="6" x="0" y="0" class="named"/>
-<rect width="540.33" height="6" x="206.67" y="0" class="todo"/>
+<rect width="207.27" height="6" x="0" y="0" class="named"/>
+<rect width="539.73" height="6" x="207.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -829,7 +829,7 @@
 <rect width="12" height="12" x="135" y="225" class="todo"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="225" class="todo"><title>0x004411c0 ControlSpikeWall (312 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="225" class="todo"><title>0x00441300 ControlCeilingSpikes (277 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="225" class="todo"><title>0x00441420 HookControl (134 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="225" class="named"><title>0x00441420 HookControl (134 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="225" class="todo"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="225" class="todo"><title>0x00441640 SpinningBlade (379 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="225" class="todo"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.15%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.85%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.19%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.81%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="68.33" height="6" x="0" y="0" class="named"/>
-<rect width="678.67" height="6" x="68.33" y="0" class="todo"/>
+<rect width="68.63" height="6" x="0" y="0" class="named"/>
+<rect width="678.37" height="6" x="68.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1925,7 +1925,7 @@
 <rect width="7.62" height="7.65" x="655.66" y="197.17" class="todo"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
 <rect width="7.54" height="7.65" x="666.28" y="197.17" class="todo"><title>0x00432230 SwimTurn (134 bytes)</title></rect>
 <rect width="7.54" height="7.65" x="676.82" y="197.17" class="named"><title>0x0043f970 SOUND_EndScene (134 bytes)</title></rect>
-<rect width="7.54" height="7.65" x="687.37" y="197.17" class="todo"><title>0x00441420 HookControl (134 bytes)</title></rect>
+<rect width="7.54" height="7.65" x="687.37" y="197.17" class="named"><title>0x00441420 HookControl (134 bytes)</title></rect>
 <rect width="7.46" height="7.65" x="697.91" y="197.17" class="todo"><title>0x0040c300 S_DrawPickup (133 bytes)</title></rect>
 <rect width="7.46" height="7.65" x="708.38" y="197.17" class="named"><title>0x004323b0 lara_as_tread (133 bytes)</title></rect>
 <rect width="7.46" height="7.65" x="718.84" y="197.17" class="todo"><title>0x00435eb0 Targetable (133 bytes)</title></rect>
