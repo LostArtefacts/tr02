@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.08% (761)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.92% (485)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">61.16% (762)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">38.84% (484)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="456.23" height="6" x="0" y="0" class="named"/>
-<rect width="290.77" height="6" x="456.23" y="0" class="todo"/>
+<rect width="456.83" height="6" x="0" y="0" class="named"/>
+<rect width="290.17" height="6" x="456.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -898,7 +898,7 @@
 <rect width="12" height="12" x="420" y="240" class="named"><title>0x00444ed0 CalculateWindowWidth (72 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="240" class="named"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="240" class="named"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="240" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="240" class="named"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00445080 WinVidSpinMessageLoop (226 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="todo"><title>0x00445170 WinVidShowGameWindow (67 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="todo"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.16%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.85%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">54.15%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="342.46" height="6" x="0" y="0" class="named"/>
-<rect width="404.54" height="6" x="342.46" y="0" class="todo"/>
+<rect width="342.50" height="6" x="0" y="0" class="named"/>
+<rect width="404.50" height="6" x="342.50" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2477,7 +2477,7 @@
 <rect width="0.77" height="0.97" x="721.21" y="374.03" class="todo"><title>0x00447170 Func447170 (18 bytes)</title></rect>
 <rect width="0.78" height="0.96" x="724.98" y="349.35" class="todo"><title>0x00447b40 Func447b40 (18 bytes)</title></rect>
 <rect width="0.78" height="0.96" x="728.77" y="349.35" class="todo"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
-<rect width="0.57" height="0.96" x="732.55" y="349.35" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
+<rect width="0.57" height="0.96" x="732.55" y="349.35" class="named"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="0.57" height="0.96" x="736.12" y="349.35" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
 <rect width="0.57" height="0.96" x="739.70" y="349.35" class="todo"><title>0x00454af0 Func454af0 (17 bytes)</title></rect>
 <rect width="0.36" height="0.96" x="743.27" y="349.35" class="named"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>

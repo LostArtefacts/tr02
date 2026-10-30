@@ -125,3 +125,22 @@ extern "C" bool WinVidGetMinMaxInfo(LPMINMAXINFO info)
 
     return IsMinWindowSizeSet || IsMaxWindowSizeSet;
 }
+
+extern "C" {
+extern char ClassName[];
+extern char WindowName[];
+extern int MessageLoopCounter;
+extern bool IsMessageLoopClosed;
+extern bool IsGameToExit;
+extern bool IsGameWindowActive;
+extern bool IsGameWindowMinimized;
+extern bool IsGameWindowShow;
+extern bool IsGameWindowUpdating;
+extern int AppResultCode;
+extern int StopInventory;
+}
+
+extern "C" HWND WinVidFindGameWindow(void)
+{
+    return FindWindow(ClassName, WindowName);
+}
