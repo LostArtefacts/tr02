@@ -9,6 +9,21 @@ extern "C" int malloc_free, malloc_used;
 extern "C" void init_game_malloc(void);
 extern "C" void game_free(int size, int type);
 
+extern "C" sint16 DumpX, DumpY, DumpWidth, DumpHeight;
+extern "C" int GameVidWidth, GameVidHeight;
+
+extern "C" int S_InitialiseSystem(void)
+{
+    S_SeedRandom();
+    DumpX = 0;
+    DumpY = 0;
+    DumpWidth = GameVidWidth;
+    DumpHeight = GameVidHeight;
+    CalculateWibbleTable();
+    malloc_size = 0x380000;
+    return 1;
+}
+
 void ShutdownGame(void)
 {
     if (malloc_buffer)
