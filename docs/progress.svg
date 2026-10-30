@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.48% (956)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.96% (287)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.56% (957)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">22.88% (286)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="571.31" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="571.31" y="0" class="decompiled"/>
-<rect width="171.51" height="6" x="575.49" y="0" class="todo"/>
+<rect width="571.90" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="571.90" y="0" class="decompiled"/>
+<rect width="170.91" height="6" x="576.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -230,7 +230,7 @@
 <rect width="12" height="12" x="135" y="45" class="named"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="45" class="named"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="45" class="named"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="45" class="todo"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="45" class="named"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="todo"><title>0x00413f30 AlignLaraPosition (315 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="45" class="todo"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.62%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.30%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">56.71%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">43.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="422.95" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="422.95" y="0" class="decompiled"/>
-<rect width="323.44" height="6" x="423.56" y="0" class="todo"/>
+<rect width="423.63" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="423.63" y="0" class="decompiled"/>
+<rect width="322.76" height="6" x="424.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1636,7 +1636,7 @@
 <rect width="12.60" height="13.67" x="703.41" y="77.24" class="todo"><title>0x004575c5 transA (314 bytes)</title></rect>
 <rect width="12.50" height="13.67" x="719" y="77.24" class="named"><title>0x00412270 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="12.50" height="13.67" x="734.50" y="77.24" class="named"><title>0x004411c0 ControlSpikeWall (312 bytes)</title></rect>
-<rect width="12.83" height="13.27" x="465.62" y="93.91" class="todo"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
+<rect width="12.83" height="13.27" x="465.62" y="93.91" class="named"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="12.83" height="13.27" x="465.62" y="110.17" class="named"><title>0x00429990 lara_col_upjump (311 bytes)</title></rect>
 <rect width="12.83" height="13.27" x="465.62" y="126.44" class="todo"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
 <rect width="12.83" height="13.16" x="465.62" y="142.70" class="named"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>

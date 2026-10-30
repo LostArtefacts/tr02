@@ -557,6 +557,44 @@ int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius)
     return 0;
 }
 
+void phd_PushUnitMatrix(void);
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+
+int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem)
+{
+    PHD_ANGLE yrotrel, zrotrel, xrotrel;
+    sint32 ry, rz, rx;
+    sint32 *mptr;
+    sint32 x, z, y;
+
+    xrotrel = laraitem->pos.x_rot - item->pos.x_rot;
+    yrotrel = laraitem->pos.y_rot - item->pos.y_rot;
+    zrotrel = laraitem->pos.z_rot - item->pos.z_rot;
+
+    if (xrotrel < *(bounds + 6) || xrotrel > *(bounds + 7) ||
+        yrotrel < *(bounds + 8) || yrotrel > *(bounds + 9) ||
+        zrotrel < *(bounds + 10) || zrotrel > *(bounds + 11))
+        return 0;
+    x = laraitem->pos.x_pos - item->pos.x_pos;
+    y = laraitem->pos.y_pos - item->pos.y_pos;
+    z = laraitem->pos.z_pos - item->pos.z_pos;
+
+    phd_PushUnitMatrix();
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    mptr = phd_mxptr;
+    rx = (*(mptr + M00) * x + *(mptr + M10) * y + *(mptr + M20) * z) >> W2V_SHIFT;
+    ry = (*(mptr + M01) * x + *(mptr + M11) * y + *(mptr + M21) * z) >> W2V_SHIFT;
+    rz = (*(mptr + M02) * x + *(mptr + M12) * y + *(mptr + M22) * z) >> W2V_SHIFT;
+
+    phd_PopMatrix();
+    if (rx < (sint32)*(bounds + 0) || rx > (sint32)*(bounds + 1) ||
+        ry < (sint32)*(bounds + 2) || ry > (sint32)*(bounds + 3) ||
+        rz < (sint32)*(bounds + 4) || rz > (sint32)*(bounds + 5))
+        return 0;
+
+    return 1;
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;
