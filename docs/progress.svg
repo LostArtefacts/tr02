@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.21% (888)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.23% (352)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.29% (889)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">28.15% (351)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="531.95" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="531.95" y="0" class="decompiled"/>
-<rect width="210.86" height="6" x="536.14" y="0" class="todo"/>
+<rect width="532.54" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="532.54" y="0" class="decompiled"/>
+<rect width="210.26" height="6" x="536.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1101,7 +1101,7 @@
 <rect width="12" height="12" x="450" y="300" class="todo"><title>0x0044e7b0 Init (118 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="300" class="todo"><title>0x0044e830 WinCleanup (35 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="300" class="todo"><title>0x0044e860 WinGameStart (88 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="300" class="todo"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="300" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="300" class="todo"><title>0x0044e950 S_ExitSystem (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="todo"><title>0x0044e9a0 ScreenShotPCX (271 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="300" class="todo"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.53%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.39%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.54%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="384.89" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="384.89" y="0" class="decompiled"/>
-<rect width="361.50" height="6" x="385.50" y="0" class="todo"/>
+<rect width="385.02" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="385.02" y="0" class="decompiled"/>
+<rect width="361.37" height="6" x="385.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2222,7 +2222,7 @@
 <rect width="3.71" height="4.05" x="723.15" y="276.92" class="named"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
 <rect width="3.71" height="4.05" x="729.86" y="276.92" class="todo"><title>0x00447bf0 Func447bf0 (57 bytes)</title></rect>
 <rect width="3.71" height="4.05" x="736.57" y="276.92" class="named"><title>0x00447f40 WinSndGetFreeChannelIndex (57 bytes)</title></rect>
-<rect width="3.71" height="4.05" x="743.29" y="276.92" class="todo"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
+<rect width="3.71" height="4.05" x="743.29" y="276.92" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
 <rect width="3.82" height="3.94" x="655.55" y="283.98" class="named"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
 <rect width="3.82" height="3.70" x="655.55" y="290.92" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="3.82" height="3.70" x="655.55" y="297.62" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
