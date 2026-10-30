@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.40% (616)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.60% (631)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.48% (617)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.52% (630)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="369.01" height="6" x="0" y="0" class="named"/>
-<rect width="377.99" height="6" x="369.01" y="0" class="todo"/>
+<rect width="369.61" height="6" x="0" y="0" class="named"/>
+<rect width="377.39" height="6" x="369.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -577,7 +577,7 @@
 <rect width="12" height="12" x="105" y="150" class="todo"><title>0x0042c180 ControlHarpoonBolt (836 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="150" class="todo"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="150" class="todo"><title>0x0042c5c0 ControlRocket (1030 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="150" class="todo"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="150" class="named"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="150" class="todo"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="150" class="todo"><title>0x0042cc50 AnimateShotgun (894 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="150" class="todo"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.55%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.45%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.35%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="220.71" height="6" x="0" y="0" class="named"/>
-<rect width="526.29" height="6" x="220.71" y="0" class="todo"/>
+<rect width="221.49" height="6" x="0" y="0" class="named"/>
+<rect width="525.51" height="6" x="221.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1587,7 +1587,7 @@
 <rect width="13.88" height="14.78" x="432.83" y="185.20" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="13.88" height="14.73" x="432.83" y="202.98" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
 <rect width="13.88" height="14.73" x="432.83" y="220.71" class="named"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
-<rect width="13.88" height="14.68" x="432.83" y="238.44" class="todo"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
+<rect width="13.88" height="14.68" x="432.83" y="238.44" class="named"><title>0x0042c9d0 draw_shotgun (358 bytes)</title></rect>
 <rect width="13.88" height="14.63" x="432.83" y="256.12" class="named"><title>0x0044cd80 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="13.88" height="14.58" x="432.83" y="273.75" class="named"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
 <rect width="13.88" height="14.48" x="432.83" y="291.33" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>

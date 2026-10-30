@@ -68,3 +68,59 @@ void FireM16(int running)
     if (FireWeapon(LG_M16, lara.target, lara_item, angles))
         lara.right_arm.flash_gun = weapons[LG_M16].flash_time;
 }
+
+enum weapon_anim {
+    W_AIM,
+    W_DRAW,
+    W_RECOIL,
+    W_UNDRAW,
+    W_UNAIM,
+    W_RELOAD,
+    W_UAIM,
+    W_UUNAIM,
+    W_URECOIL,
+    W_SURF_UNDRAW
+};
+
+#define ROCKET_DRAW_ANIM 0
+#define HARPOON_DRAW_ANIM 1
+#define NO_ROOM 0xff
+
+sint16 CreateItem(void);
+
+void draw_shotgun(int weapon_type)
+{
+    ITEM_INFO *item;
+
+    if (lara.weapon_item == NO_ITEM)
+    {
+        lara.weapon_item = CreateItem();
+        item = &items[lara.weapon_item];
+        item->object_number = WeaponObject(weapon_type);
+        if (weapon_type == LG_GRENADE)
+            item->anim_number = objects[GRENADE_GUN].anim_index + ROCKET_DRAW_ANIM;
+        else
+            item->anim_number = objects[item->object_number].anim_index + HARPOON_DRAW_ANIM;
+        item->frame_number = anims[item->anim_number].frame_base;
+        item->current_anim_state = item->goal_anim_state = W_DRAW;
+        item->status = ACTIVE;
+        item->room_number = NO_ROOM;
+        lara.left_arm.frame_base = lara.right_arm.frame_base = objects[item->object_number].frame_base;
+    }
+    else
+        item = &items[lara.weapon_item];
+
+    AnimateItem(item);
+
+    if (item->current_anim_state == W_AIM || item->current_anim_state == W_UAIM)
+        ready_shotgun(weapon_type);
+    else if (item->frame_number - anims[item->anim_number].frame_base == 10)
+        draw_shotgun_meshes(weapon_type);
+    else if (lara.water_status == LARA_UNDERWATER)
+        item->goal_anim_state = W_UAIM;
+
+    lara.left_arm.frame_base = lara.right_arm.frame_base = anims[item->anim_number].frame_ptr;
+    lara.left_arm.frame_number = lara.right_arm.frame_number = item->frame_number - anims[item->anim_number].frame_base;
+    lara.left_arm.anim_number = lara.right_arm.anim_number = item->anim_number;
+}
+
