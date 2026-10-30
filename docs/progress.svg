@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.78% (521)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">58.22% (726)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.86% (522)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">58.14% (725)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="312.10" height="6" x="0" y="0" class="named"/>
-<rect width="434.90" height="6" x="312.10" y="0" class="todo"/>
+<rect width="312.70" height="6" x="0" y="0" class="named"/>
+<rect width="434.30" height="6" x="312.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -429,7 +429,7 @@
 <rect width="12" height="12" x="135" y="105" class="named"><title>0x004254b0 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="105" class="named"><title>0x00425510 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="105" class="named"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="105" class="todo"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="105" class="named"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="105" class="todo"><title>0x004256c0 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="105" class="todo"><title>0x004256e0 ReqItemLeftAlign (84 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="105" class="todo"><title>0x00425740 ReqItemRightAlign (86 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.69%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.36%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.64%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="151.75" height="6" x="0" y="0" class="named"/>
-<rect width="595.25" height="6" x="151.75" y="0" class="todo"/>
+<rect width="152.11" height="6" x="0" y="0" class="named"/>
+<rect width="594.89" height="6" x="152.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1845,7 +1845,7 @@
 <rect width="8.71" height="8.72" x="714.88" y="163.33" class="named"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
 <rect width="8.71" height="8.72" x="726.59" y="163.33" class="named"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="8.71" height="8.72" x="738.29" y="163.33" class="todo"><title>0x00452d70 Func452d70 (164 bytes)</title></rect>
-<rect width="8.54" height="8.81" x="547.08" y="175.05" class="todo"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
+<rect width="8.54" height="8.81" x="547.08" y="175.05" class="named"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
 <rect width="8.54" height="8.81" x="558.63" y="175.05" class="named"><title>0x00428b30 extra_as_finalanim (163 bytes)</title></rect>
 <rect width="8.54" height="8.81" x="570.17" y="175.05" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
 <rect width="8.47" height="8.81" x="581.72" y="175.05" class="todo"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>

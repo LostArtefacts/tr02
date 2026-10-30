@@ -321,3 +321,26 @@ void Init_Requester(REQUEST_INFO *req)
     req->original_render_width = GetRenderWidth();
     req->original_render_height = GetRenderHeight();
 }
+
+void Remove_Requester(REQUEST_INFO *req)
+{
+    int n;
+
+    T_RemovePrint(req->heading1text);
+    req->heading1text = NULL;
+    T_RemovePrint(req->heading2text);
+    req->heading2text = NULL;
+    T_RemovePrint(req->backgroundtext);
+    req->backgroundtext = NULL;
+    T_RemovePrint(req->moreuptext);
+    req->moreuptext = NULL;
+    T_RemovePrint(req->moredowntext);
+    req->moredowntext = NULL;
+    for (n = 0; n < MAX_REQLINES; n++)
+    {
+        T_RemovePrint(req->texts1[n]);
+        req->texts1[n] = NULL;
+        T_RemovePrint(req->texts2[n]);
+        req->texts2[n] = NULL;
+    }
+}
