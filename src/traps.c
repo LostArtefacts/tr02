@@ -6,9 +6,11 @@
 #define FLAME 252
 #define HOOK_DAMAGE 50
 #define BLADE_DAMAGE 100
+#define BIG_FIRE 0
 
 sint16 CreateEffect(sint16 room_num);
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
+void KillEffect(sint16 fx_num);
 
 enum trap_anims { TRAP_SET, TRAP_ACTIVATE, TRAP_WORKING, TRAP_FINISHED };
 enum door_anims { DOOR_CLOSED, DOOR_OPEN };
@@ -184,6 +186,40 @@ void FallingBlockCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *
     if (y > item->pos.y_pos - origin)
         if (item->current_anim_state == TRAP_SET || item->current_anim_state == TRAP_ACTIVATE)
             *height = item->pos.y_pos + STEP_L - origin;
+}
+
+void FlameEmitterControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FX_INFO *fx;
+    sint16 fx_number;
+
+    item = &items[item_number];
+
+    if (TriggerActive(item))
+    {
+        if (item->data == NULL)
+        {
+            fx_number = CreateEffect(item->room_number);
+            if (fx_number != NO_ITEM)
+            {
+                fx = &effects[fx_number];
+                fx->pos.x_pos = item->pos.x_pos;
+                fx->pos.y_pos = item->pos.y_pos;
+                fx->pos.z_pos = item->pos.z_pos;
+                fx->frame_number = BIG_FIRE;
+                fx->object_number = FLAME;
+                fx->counter = 0;
+            }
+
+            item->data = (void *)(fx_number + 1);
+        }
+    }
+    else if (item->data)
+    {
+        KillEffect((sint16)((int)(item->data) - 1));
+        item->data = NULL;
+    }
 }
 
 void LaraBurn(void)
