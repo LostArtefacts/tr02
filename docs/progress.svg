@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.84% (998)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.60% (245)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.92% (999)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.52% (244)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="596.40" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="596.40" y="0" class="decompiled"/>
-<rect width="146.41" height="6" x="600.59" y="0" class="todo"/>
+<rect width="597" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="597" y="0" class="decompiled"/>
+<rect width="145.81" height="6" x="601.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1044,7 +1044,7 @@
 <rect width="12" height="12" x="345" y="285" class="named"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="285" class="todo"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="285" class="named"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="285" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="285" class="named"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="285" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="285" class="named"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="285" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.36%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.56%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.58%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.34%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="450.91" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="450.91" y="0" class="decompiled"/>
-<rect width="295.48" height="6" x="451.52" y="0" class="todo"/>
+<rect width="452.52" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="452.52" y="0" class="decompiled"/>
+<rect width="293.87" height="6" x="453.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1442,7 +1442,7 @@
 <rect width="21.60" height="22.14" x="321.86" y="204.87" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="21.60" height="22" x="321.86" y="230" class="named"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="21.60" height="21.77" x="321.86" y="255.01" class="named"><title>0x0043dff0 SkidooAnimation (736 bytes)</title></rect>
-<rect width="21.60" height="21.77" x="321.86" y="279.77" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
+<rect width="21.60" height="21.77" x="321.86" y="279.77" class="named"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="21.60" height="21.57" x="321.86" y="304.54" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="21.60" height="21.50" x="321.86" y="329.11" class="named"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="21.60" height="21.40" x="321.86" y="353.60" class="named"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
