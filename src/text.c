@@ -205,3 +205,14 @@ void T_RightAlign(TEXTSTRING *textString, sint16 ok)
     else
         textString->flags &= ~T_RIGHTALIGN;
 }
+
+void T_BottomAlign(TEXTSTRING *textString, sint16 ok)
+{
+    if (textString == NULL)
+        return;
+
+    if (ok)
+        textString->flags |= T_BOTTOMALIGN;
+    else
+        textString->flags &= ~T_BOTTOMALIGN;
+}
