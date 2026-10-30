@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.31% (590)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.69% (657)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.39% (591)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.61% (656)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="353.43" height="6" x="0" y="0" class="named"/>
-<rect width="393.57" height="6" x="353.43" y="0" class="todo"/>
+<rect width="354.03" height="6" x="0" y="0" class="named"/>
+<rect width="392.97" height="6" x="354.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -787,7 +787,7 @@
 <rect width="12" height="12" x="255" y="210" class="named"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="210" class="named"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="210" class="todo"><title>0x0043e6b0 SkidooControl (1088 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="210" class="todo"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="210" class="named"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="210" class="named"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="210" class="todo"><title>0x0043ee80 SkidManControl (994 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="210" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.26%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.74%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.53%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="211.11" height="6" x="0" y="0" class="named"/>
-<rect width="535.89" height="6" x="211.11" y="0" class="todo"/>
+<rect width="212.71" height="6" x="0" y="0" class="named"/>
+<rect width="534.29" height="6" x="212.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1439,7 +1439,7 @@
 <rect width="21.67" height="21.87" x="323.27" y="254.95" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="21.67" height="21.66" x="323.27" y="279.82" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="21.67" height="21.60" x="323.27" y="304.48" class="todo"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
-<rect width="21.67" height="21.49" x="323.27" y="329.08" class="todo"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
+<rect width="21.67" height="21.49" x="323.27" y="329.08" class="named"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
 <rect width="21.67" height="21.43" x="323.27" y="353.57" class="todo"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
 <rect width="20.80" height="22.22" x="347.94" y="0" class="todo"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
 <rect width="20.80" height="22.22" x="347.94" y="25.22" class="todo"><title>0x00433090 ControlMissile (720 bytes)</title></rect>

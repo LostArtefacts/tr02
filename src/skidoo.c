@@ -918,3 +918,109 @@ void InitialiseSkidman(sint16 item_number)
     } else
         S_ExitSystem("FATAL: Cannot create SKIDOO for SKIDMAN");
 }
+
+#define SKID_TRACK 91
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void InitInterpolate(int frac, int rate);
+void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
+void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+void phd_PutPolygons_I(sint16 *ptr, int clip);
+void phd_PopMatrix_I(void);
+void phd_PushMatrix_I(void);
+void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
+
+void DrawSkidoo(ITEM_INFO *item)
+{
+    int clip, i, poppush;
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation1, *rotation2;
+    sint16 **meshpp, **track;
+    sint16 *frmptr[2];
+    int rate, frac;
+    sint16 flags = 0;
+
+    frac = GetFrames(item, frmptr, &rate);
+
+    if (item->data)
+        flags = *(sint16 *)item->data;
+
+    if (flags & 4)
+        object = &objects[BANDIT3];
+    else
+        object = &objects[item->object_number];
+
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    if ((clip = S_GetObjectBounds(frmptr[0]))) {
+        CalculateObjectLighting(item, frmptr[0]);
+
+        meshpp = &meshes[object->mesh_index];
+        bone = bones + object->bone_index;
+
+        track = NULL;
+        if ((flags & 3) == 1)
+            track = &meshes[objects[SKID_TRACK].mesh_index] + 1;
+        else if ((flags & 3) == 2)
+            track = &meshes[objects[SKID_TRACK].mesh_index] + 7;
+
+        if (!frac) {
+            rotation1 = frmptr[0] + 9;
+
+            phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
+            phd_RotYXZsuperpack(&rotation1, 0);
+            phd_PutPolygons(*meshpp, clip);
+
+            for (i = object->nmeshes - 1, meshpp++; i > 0; i--, bone += 4, meshpp++) {
+                poppush = *(bone);
+                if (poppush & 1)
+                    phd_PopMatrix();
+                if (poppush & 2)
+                    phd_PushMatrix();
+
+                phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
+                phd_RotYXZsuperpack(&rotation1, 0);
+
+                if (track) {
+                    phd_PutPolygons(*track, clip);
+                    track = NULL;
+                } else
+                    phd_PutPolygons(*meshpp, clip);
+            }
+        } else {
+            rotation1 = frmptr[0] + 9;
+            rotation2 = frmptr[1] + 9;
+
+            InitInterpolate(frac, rate);
+            phd_TranslateRel_ID((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8), (sint32)*(frmptr[1] + 6), (sint32)*(frmptr[1] + 7), (sint32)*(frmptr[1] + 8));
+            phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+            phd_PutPolygons_I(*meshpp, clip);
+
+            for (i = object->nmeshes - 1, meshpp++; i > 0; i--, bone += 4, meshpp++) {
+                poppush = *(bone);
+                if (poppush & 1)
+                    phd_PopMatrix_I();
+                if (poppush & 2)
+                    phd_PushMatrix_I();
+
+                phd_TranslateRel_I(*(bone + 1), *(bone + 2), *(bone + 3));
+                phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+
+                if (track) {
+                    phd_PutPolygons_I(*track, clip);
+                    track = NULL;
+                } else
+                    phd_PutPolygons_I(*meshpp, clip);
+            }
+        }
+    }
+    phd_PopMatrix();
+}
