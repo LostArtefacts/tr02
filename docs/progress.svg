@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.50% (106)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.50% (1141)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.58% (107)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.42% (1140)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="63.50" height="6" x="0" y="0" class="named"/>
-<rect width="683.50" height="6" x="63.50" y="0" class="todo"/>
+<rect width="64.10" height="6" x="0" y="0" class="named"/>
+<rect width="682.90" height="6" x="64.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1195,7 +1195,7 @@
 <rect width="12" height="12" x="375" y="330" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="named"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="330" class="todo"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="330" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.25%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.24%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="13.05" height="6" x="0" y="0" class="named"/>
-<rect width="733.95" height="6" x="13.05" y="0" class="todo"/>
+<rect width="13.11" height="6" x="0" y="0" class="named"/>
+<rect width="733.89" height="6" x="13.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2395,7 +2395,7 @@
 <rect width="2.19" height="2" x="698.18" y="362.99" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.18" y="367.99" class="todo"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.18" y="373" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
-<rect width="2.30" height="1.91" x="703.37" y="326.19" class="todo"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
+<rect width="2.30" height="1.91" x="703.37" y="326.19" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="2.30" height="1.91" x="708.66" y="326.19" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
 <rect width="2.30" height="1.91" x="713.96" y="326.19" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
 <rect width="2.12" height="1.91" x="719.25" y="326.19" class="todo"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>

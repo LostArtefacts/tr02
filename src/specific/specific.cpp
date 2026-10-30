@@ -54,3 +54,10 @@ void S_SoundStopAllSamples(void)
         return;
     DS_StopAllSamples();
 }
+
+sint32 S_SoundSampleIsPlaying(sint32 handle)
+{
+    if (!sound_active)
+        return false;
+    return DS_IsChannelPlaying(handle);
+}
