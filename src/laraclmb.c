@@ -70,3 +70,10 @@ void lara_as_climbend(ITEM_INFO *item, COLL_INFO *coll)
     camera.flags = FOLLOW_CENTRE;
     camera.target_angle = -45 * ONE_DEGREE;
 }
+
+void lara_as_climbdown(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_elevation = CAM_E_CLIMBD;
+}
