@@ -686,3 +686,26 @@ void GeneralControl(sint16 item_number)
         item->flags |= ONESHOT;
     }
 }
+
+void DetonatorControl(sint16 item_number)
+{
+    int frame_number;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    AnimateItem(item);
+
+    frame_number = item->frame_number - anims[item->anim_number].frame_base;
+    if (frame_number > 75 && frame_number < 100)
+        AddDynamicLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 13, 11);
+
+    if (frame_number == 80)
+    {
+        camera.bounce = -150;
+        SoundEffect(105, NULL, 0);
+    }
+
+    if (item->status == DEACTIVATED)
+        RemoveActiveItem(item_number);
+}

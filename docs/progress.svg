@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.44% (392)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.56% (855)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.52% (393)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.48% (854)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="234.82" height="6" x="0" y="0" class="named"/>
-<rect width="512.18" height="6" x="234.82" y="0" class="todo"/>
+<rect width="235.42" height="6" x="0" y="0" class="named"/>
+<rect width="511.58" height="6" x="235.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -722,7 +722,7 @@
 <rect width="12" height="12" x="30" y="195" class="named"><title>0x00435bf0 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="195" class="todo"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="195" class="named"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="195" class="todo"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="195" class="named"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="195" class="todo"><title>0x00435eb0 Targetable (133 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="195" class="todo"><title>0x00435f40 ControlGlow (59 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="195" class="todo"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.36%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.64%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.40%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.60%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="92.32" height="6" x="0" y="0" class="named"/>
-<rect width="654.68" height="6" x="92.32" y="0" class="todo"/>
+<rect width="92.63" height="6" x="0" y="0" class="named"/>
+<rect width="654.37" height="6" x="92.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1902,7 +1902,7 @@
 <rect width="8.06" height="7.83" x="558.67" y="218.98" class="todo"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
 <rect width="8.06" height="7.83" x="558.67" y="229.81" class="named"><title>0x0041d050 FloodFX (143 bytes)</title></rect>
 <rect width="8.06" height="7.75" x="558.67" y="240.64" class="named"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
-<rect width="8.06" height="7.68" x="558.67" y="251.39" class="todo"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
+<rect width="8.06" height="7.68" x="558.67" y="251.39" class="named"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="262.07" class="todo"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="272.67" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="283.27" class="named"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
