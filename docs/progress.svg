@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.53% (443)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.47% (804)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.61% (444)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.39% (803)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="265.37" height="6" x="0" y="0" class="named"/>
-<rect width="481.63" height="6" x="265.37" y="0" class="todo"/>
+<rect width="265.97" height="6" x="0" y="0" class="named"/>
+<rect width="481.03" height="6" x="265.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -388,7 +388,7 @@
 <rect width="12" height="12" x="270" y="90" class="todo"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x00421cd0 DrawAmmoInfo (306 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="90" class="todo"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="90" class="named"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="90" class="todo"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="90" class="todo"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.53%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.47%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="108.54" height="6" x="0" y="0" class="named"/>
-<rect width="638.46" height="6" x="108.54" y="0" class="todo"/>
+<rect width="108.59" height="6" x="0" y="0" class="named"/>
+<rect width="638.41" height="6" x="108.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2453,7 +2453,7 @@
 <rect width="1.47" height="1.13" x="712.92" y="357.74" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.92" y="361.87" class="named"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.92" y="366" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
-<rect width="1.47" height="0.94" x="712.92" y="370.12" class="todo"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
+<rect width="1.47" height="0.94" x="712.92" y="370.12" class="named"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="1.47" height="0.94" x="712.92" y="374.06" class="named"><title>0x00428600 lara_as_waterout (21 bytes)</title></rect>
 <rect width="1.28" height="1.11" x="717.39" y="344.99" class="todo"><title>0x0043a280 ResetSG (21 bytes)</title></rect>
 <rect width="1.08" height="1.11" x="721.67" y="344.99" class="named"><title>0x00427e10 lara_as_death (20 bytes)</title></rect>

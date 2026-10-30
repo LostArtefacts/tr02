@@ -1853,7 +1853,7 @@ address,size,name,symbol
 0x00521720,,SaveGameStrings2,_SaveGameStrings2
 0x00521be0,96,SaveGameReqFlags2,_SaveGameReqFlags2
 0x00521c40,96,SaveGameReqFlags1,_SaveGameReqFlags1
-0x00521ca0,,PickupInfos,_PickupInfos
+0x00521ca0,48,pickups,_pickups
 0x00521cd0,,first_hair,_first_hair
 0x00521ce0,,hvel,_hvel
 0x00521d40,,hair,_hair

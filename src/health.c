@@ -56,3 +56,20 @@ void MakeAmmoString(char *string)
             *c += 1 - '0';
     }
 }
+
+#define NUM_PU 12
+
+typedef struct {
+    sint16 duration;
+    sint16 sprnum;
+} DISPLAYPU;
+
+static DISPLAYPU pickups[NUM_PU];
+
+void InitialisePickUpDisplay(void)
+{
+    int i;
+
+    for (i = 0; i < NUM_PU; i++)
+        pickups[i].duration = 0;
+}
