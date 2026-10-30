@@ -183,3 +183,14 @@ void T_CentreH(TEXTSTRING *textString, sint16 ok)
     else
         textString->flags &= ~T_CENTRE_H;
 }
+
+void T_CentreV(TEXTSTRING *textString, sint16 ok)
+{
+    if (textString == NULL)
+        return;
+
+    if (ok)
+        textString->flags |= T_CENTRE_V;
+    else
+        textString->flags &= ~T_CENTRE_V;
+}
