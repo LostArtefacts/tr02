@@ -33,3 +33,37 @@ void InitialiseCamera(void)
 
     CalculateCamera();
 }
+
+#define MAX_ELEVATION (ONE_DEGREE * 85)
+#define SQUARE(A) ((A) * (A))
+
+void MoveCamera(GAME_VECTOR *ideal, int speed);
+void ShiftCamera(GAME_VECTOR *ideal);
+void SmartShift(GAME_VECTOR *ideal, void (*shift)(GAME_VECTOR *ideal));
+
+void ChaseCamera(ITEM_INFO *item)
+{
+    GAME_VECTOR ideal;
+    sint32 distance;
+    sint16 angle;
+
+    camera.target_elevation += item->pos.x_rot;
+    if (camera.target_elevation > MAX_ELEVATION)
+        camera.target_elevation = MAX_ELEVATION;
+    else if (camera.target_elevation < -MAX_ELEVATION)
+        camera.target_elevation = -MAX_ELEVATION;
+
+    distance = camera.target_distance * phd_cos(camera.target_elevation) >> W2V_SHIFT;
+    ideal.y = camera.target.y + (camera.target_distance * phd_sin(camera.target_elevation) >> W2V_SHIFT);
+
+    camera.target_square = SQUARE(distance);
+
+    angle = item->pos.y_rot + camera.target_angle;
+    ideal.x = camera.target.x - (distance * phd_sin(angle) >> W2V_SHIFT);
+    ideal.z = camera.target.z - (distance * phd_cos(angle) >> W2V_SHIFT);
+    ideal.room_number = camera.pos.room_number;
+
+    SmartShift(&ideal, ShiftCamera);
+
+    MoveCamera(&ideal, camera.speed);
+}

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.20% (626)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.80% (621)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">50.28% (627)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">49.72% (620)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="375" height="6" x="0" y="0" class="named"/>
-<rect width="372" height="6" x="375" y="0" class="todo"/>
+<rect width="375.60" height="6" x="0" y="0" class="named"/>
+<rect width="371.40" height="6" x="375.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -196,7 +196,7 @@
 <rect width="12" height="12" x="390" y="30" class="todo"><title>0x00410a90 ShiftCamera (340 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="todo"><title>0x00410bf0 BadPosition (80 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="30" class="todo"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="30" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="todo"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="30" class="todo"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">69.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="225.86" height="6" x="0" y="0" class="named"/>
-<rect width="521.14" height="6" x="225.86" y="0" class="todo"/>
+<rect width="226.38" height="6" x="0" y="0" class="named"/>
+<rect width="520.62" height="6" x="226.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1705,7 +1705,7 @@
 <rect width="10.76" height="11.54" x="736.24" y="109.80" class="named"><title>0x0041d540 SphereOfDoom (240 bytes)</title></rect>
 <rect width="10.68" height="11.63" x="496.20" y="124.34" class="named"><title>0x0042c4d0 FireRocket (240 bytes)</title></rect>
 <rect width="10.68" height="11.57" x="496.20" y="138.97" class="todo"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
-<rect width="10.68" height="11.44" x="496.20" y="153.53" class="todo"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
+<rect width="10.68" height="11.44" x="496.20" y="153.53" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="10.68" height="11.26" x="496.20" y="167.98" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
 <rect width="10.68" height="11.14" x="496.20" y="182.24" class="named"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="10.68" height="11.14" x="496.20" y="196.38" class="todo"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
