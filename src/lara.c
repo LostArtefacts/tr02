@@ -733,6 +733,32 @@ int LaraFallen(ITEM_INFO *item, COLL_INFO *coll)
     return 0;
 }
 
+
+void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll)
+{
+    switch (coll->old_anim_state)
+    {
+    case AS_STOP:
+    case AS_TURN_L:
+    case AS_TURN_R:
+    case AS_FASTTURN:
+        item->current_anim_state = coll->old_anim_state;
+        item->anim_number = coll->old_anim_number;
+        item->frame_number = coll->old_frame_number;
+        if (input & IN_LEFT)
+            item->goal_anim_state = AS_TURN_L;
+        else if (input & IN_RIGHT)
+            item->goal_anim_state = AS_TURN_R;
+        else
+            item->goal_anim_state = AS_STOP;
+        AnimateLara(item);
+        break;
+    default:
+        item->anim_number = STOP_A;
+        item->frame_number = STOP_F;
+    }
+}
+
 void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->speed >= 0)
@@ -1189,7 +1215,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
@@ -1268,3 +1294,4 @@ sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist)
 
     return (sint16)height;
 }
+

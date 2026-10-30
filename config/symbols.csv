@@ -443,7 +443,7 @@ address,size,name,symbol
 0x00428a80,165,extra_as_starthouse,_extra_as_starthouse
 0x00428b30,163,extra_as_finalanim,_extra_as_finalanim
 0x00428be0,81,LaraFallen,_LaraFallen
-0x00428c40,155,LaraCollideStop,_LaraCollideStop
+0x00428c40,191,LaraCollideStop,_LaraCollideStop
 0x00428d00,401,lara_col_walk,_lara_col_walk
 0x00428ea0,383,lara_col_run,_lara_col_run
 0x00429020,129,lara_col_stop,_lara_col_stop
