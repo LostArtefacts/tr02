@@ -918,7 +918,7 @@ address,size,name,symbol
 0x00447fb0,49,DS_AdjustPitch,?DS_AdjustPitch@@YAXHH@Z
 0x00447ff0,47,DS_StopSample,?DS_StopSample@@YAXH@Z
 0x00448020,45,DS_StopAllSamples,?DS_StopAllSamples@@YAXXZ
-0x00448050,5,Func448050,
+0x00448050,5,Func448050,_Func448050
 0x00448060,156,WinSndInit,_WinSndInit
 0x00448100,26,DSoundEnumerate,_DSoundEnumerate
 0x00448120,226,DSoundEnumCallback,_DSoundEnumCallback@16

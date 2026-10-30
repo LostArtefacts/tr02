@@ -164,6 +164,13 @@ void DS_StopAllSamples()
     }
 }
 
+extern "C" bool WinSndInit(void);
+
+extern "C" bool Func448050(void)
+{
+    return WinSndInit();
+}
+
 extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext);
 
 extern "C" bool DSoundEnumerate(LPVOID lpContext)
