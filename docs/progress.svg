@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.60% (931)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.84% (310)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.68% (932)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">24.76% (309)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="557.26" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="557.26" y="0" class="decompiled"/>
-<rect width="185.55" height="6" x="561.45" y="0" class="todo"/>
+<rect width="557.86" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="557.86" y="0" class="decompiled"/>
+<rect width="184.95" height="6" x="562.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -958,7 +958,7 @@
 <rect width="12" height="12" x="555" y="255" class="todo"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="255" class="named"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="255" class="todo"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="255" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="255" class="named"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="255" class="todo"><title>0x00447620 GetJoystick (78 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="255" class="named"><title>0x00447670 DInputKeyboardCreate (201 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="255" class="named"><title>0x00447740 DInputKeyboardRelease (41 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.95%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.96%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.96%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">44.95%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="410.51" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="410.51" y="0" class="decompiled"/>
-<rect width="335.88" height="6" x="411.12" y="0" class="todo"/>
+<rect width="410.58" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="410.58" y="0" class="decompiled"/>
+<rect width="335.81" height="6" x="411.19" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2397,7 +2397,7 @@
 <rect width="2.13" height="2.01" x="698.51" y="352.94" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="2.13" height="2.01" x="698.51" y="357.95" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="2.13" height="2.01" x="698.51" y="362.96" class="named"><title>0x00444620 D3DCreate (31 bytes)</title></rect>
-<rect width="2.13" height="2.01" x="698.51" y="367.97" class="todo"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
+<rect width="2.13" height="2.01" x="698.51" y="367.97" class="named"><title>0x00447600 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="2.13" height="2.01" x="698.51" y="372.99" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="2.28" height="1.86" x="703.63" y="326.58" class="todo"><title>0x00455600 Func455600 (31 bytes)</title></rect>
 <rect width="2.28" height="1.86" x="708.92" y="326.58" class="named"><title>0x00456660 InitTextures (31 bytes)</title></rect>

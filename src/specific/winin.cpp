@@ -180,3 +180,16 @@ extern "C" void WinInStart(void)
     DInputKeyboardCreate();
     DInputJoystickCreate();
 }
+
+struct STRING_FLAGGED {
+    LPTSTR lpString;
+    bool isPresented;
+    STRING_FLAGGED(DWORD size);
+};
+
+STRING_FLAGGED::STRING_FLAGGED(DWORD size)
+{
+    lpString = new char[size];
+    *lpString = 0;
+    isPresented = true;
+}

@@ -889,7 +889,7 @@ address,size,name,symbol
 0x00447460,127,WinInputInit,_WinInputInit
 0x004474e0,36,DInputEnumDevices,_DInputEnumDevices
 0x00447510,232,DInputEnumDevicesCallback,_DInputEnumDevicesCallback@8
-0x00447600,31,FlaggedStringCreate,
+0x00447600,31,FlaggedStringCreate,??0STRING_FLAGGED@@QAE@K@Z
 0x00447620,78,GetJoystick,_GetJoystick
 0x00447670,201,DInputKeyboardCreate,_DInputKeyboardCreate
 0x00447740,41,DInputKeyboardRelease,_DInputKeyboardRelease
