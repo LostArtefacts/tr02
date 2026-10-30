@@ -97,3 +97,13 @@ void SOUND_Stop(void)
     for (nSlot = 0; nSlot < ArraySize(LaSlot); ++nSlot)
         LaSlot[nSlot].nSampleInfo = -1;
 }
+
+void SOUND_Init(void)
+{
+    int nSlot;
+
+    S_SoundSetMasterVolume(32);
+    for (nSlot = 0; nSlot < ArraySize(LaSlot); ++nSlot)
+        LaSlot[nSlot].nSampleInfo = -1;
+    sound_active = 1;
+}
