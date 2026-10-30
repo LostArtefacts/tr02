@@ -14,6 +14,7 @@ void ScreenDump(void);
 void ScreenPartialDump();
 void FadeWait(void);
 void S_ClearScreen();
+void S_InitialiseScreen(int type);
 void S_SetupBelowWater(int underwater);
 void S_SetupAboveWater(int underwater);
 void S_DontDisplayPicture(void);

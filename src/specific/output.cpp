@@ -2,14 +2,32 @@
 #include "output.h"
 #include "../inventry.h"
 #include "winmain.h"
+#include "display.h"
+#include "../gameflow.h"
 
 extern "C" void Func444560(void);
+extern "C" void HWR_InitState(void);
 
 #define ANIMATED_TEXTURE 10
 
 void S_ClearScreen(void)
 {
     ScreenClear();
+}
+
+void S_InitialiseScreen(int type)
+{
+    if (type >= 0)
+    {
+        if (type != IL_TITLE)
+            TempVideoRemove();
+        FadeToPal(30, game_palette);
+    }
+    else
+        FadeToPal(0, game_palette);
+
+    if (SavedAppSettings.RenderMode != RM_Software)
+        HWR_InitState();
 }
 
 void S_InsertBackPolygon(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int colour)

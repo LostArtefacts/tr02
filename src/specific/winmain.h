@@ -1,6 +1,7 @@
 #ifndef WINMAIN_H
 #define WINMAIN_H
 
+#define RM_Software 1
 #define RM_Hardware 2
 
 typedef struct {
