@@ -202,3 +202,138 @@ void DogControl(sint16 item_number)
     CreatureHead(item, head);
     CreatureAnimation(item_number, angle, tilt);
 }
+
+#define TIGER 39
+#define TIGER_BITE_DAMAGE 100
+#define TIGER_TOUCH 0x7fdc000
+#define TIGER_EMPTY 0
+#define TIGER_STOP 1
+#define TIGER_WALK 2
+#define TIGER_RUN 3
+#define TIGER_WAIT 4
+#define TIGER_ROAR 5
+#define TIGER_ATTACK1 6
+#define TIGER_ATTACK2 7
+#define TIGER_ATTACK3 8
+#define TIGER_DEATH 9
+#define TIGER_DIE_ANIM 11
+#define TIGER_WALK_TURN (3 * ONE_DEGREE)
+#define TIGER_RUN_TURN (6 * ONE_DEGREE)
+#define TIGER_ATTACK1_RANGE SQUARE(WALL_L / 3)
+#define TIGER_ATTACK2_RANGE SQUARE(WALL_L * 3 / 2)
+#define TIGER_ATTACK3_RANGE SQUARE(WALL_L)
+#define TIGER_ROAR_CHANCE 0x60
+#define TIGER_WALK_CHANCE (TIGER_ROAR_CHANCE + 0x400)
+
+extern BITE_INFO tiger_bite;
+
+void TigerControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *tiger;
+    sint16 angle, head, tilt, random;
+    AI_INFO info;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    tiger = (CREATURE_INFO *)item->data;
+    head = angle = tilt = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != TIGER_DEATH)
+        {
+            item->anim_number = objects[TIGER].anim_index + TIGER_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = TIGER_DEATH;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        if (info.ahead)
+            head = info.angle;
+
+        CreatureMood(item, &info, 1);
+        angle = CreatureTurn(item, tiger->maximum_turn);
+
+        switch (item->current_anim_state)
+        {
+        case TIGER_STOP:
+            tiger->maximum_turn = 0;
+            tiger->flags = 0;
+            if (tiger->mood == ESCAPE_MOOD)
+                item->goal_anim_state = TIGER_RUN;
+            else if (tiger->mood == BORED_MOOD)
+            {
+                random = (sint16)GetRandomControl();
+                if (random < TIGER_ROAR_CHANCE)
+                    item->goal_anim_state = TIGER_ROAR;
+                else if (random < TIGER_WALK_CHANCE);
+                    item->goal_anim_state = TIGER_WALK;
+            }
+            else if (info.ahead && info.distance < TIGER_ATTACK1_RANGE)
+                item->goal_anim_state = TIGER_ATTACK1;
+            else if (info.ahead && info.distance < TIGER_ATTACK3_RANGE)
+            {
+                tiger->maximum_turn = TIGER_WALK_TURN;
+                item->goal_anim_state = TIGER_ATTACK3;
+            }
+            else if (item->required_anim_state)
+                item->goal_anim_state = item->required_anim_state;
+            else if (tiger->mood != ATTACK_MOOD && GetRandomControl() < TIGER_ROAR_CHANCE)
+                item->goal_anim_state = TIGER_ROAR;
+            else
+                item->goal_anim_state = TIGER_RUN;
+            break;
+
+        case TIGER_WALK:
+            tiger->maximum_turn = TIGER_WALK_TURN;
+            if (GetRandomControl() < TIGER_ROAR_CHANCE)
+            {
+                item->goal_anim_state = TIGER_STOP;
+                item->required_anim_state = TIGER_ROAR;
+            }
+            break;
+
+        case TIGER_RUN:
+            tiger->maximum_turn = TIGER_RUN_TURN;
+            if (tiger->mood == BORED_MOOD)
+                item->goal_anim_state = TIGER_STOP;
+            else if (tiger->flags && info.ahead)
+                item->goal_anim_state = TIGER_STOP;
+            else if (info.ahead && info.distance < TIGER_ATTACK2_RANGE)
+            {
+                if (lara_item->speed == 0)
+                    item->goal_anim_state = TIGER_STOP;
+                else
+                    item->goal_anim_state = TIGER_ATTACK2;
+            }
+            else if (tiger->mood != ATTACK_MOOD && GetRandomControl() < TIGER_ROAR_CHANCE)
+            {
+                item->required_anim_state = TIGER_ROAR;
+                item->goal_anim_state = TIGER_STOP;
+            }
+            tiger->flags = 0;
+            break;
+
+        case TIGER_ATTACK1:
+        case TIGER_ATTACK2:
+        case TIGER_ATTACK3:
+            if (!tiger->flags && (item->touch_bits & TIGER_TOUCH))
+            {
+                lara_item->hit_status = 1;
+                lara_item->hit_points -= TIGER_BITE_DAMAGE;
+                CreatureEffect(item, &tiger_bite, DoBloodSplat);
+                tiger->flags = 1;
+            }
+            break;
+        }
+    }
+
+    CreatureTilt(item, tilt);
+    CreatureHead(item, head);
+    CreatureAnimation(item_number, angle, tilt);
+}
