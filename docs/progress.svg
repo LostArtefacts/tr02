@@ -61,13 +61,13 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.79% (147)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.21% (1100)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.87% (148)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.13% (1099)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="88.06" height="6" x="0" y="0" class="named"/>
-<rect width="658.94" height="6" x="88.06" y="0" class="todo"/>
+<rect width="88.66" height="6" x="0" y="0" class="named"/>
+<rect width="658.34" height="6" x="88.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
-<rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="todo"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="todo"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.40%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="26.89" height="6" x="0" y="0" class="named"/>
-<rect width="720.11" height="6" x="26.89" y="0" class="todo"/>
+<rect width="27.92" height="6" x="0" y="0" class="named"/>
+<rect width="719.08" height="6" x="27.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1517,7 +1517,7 @@
 <rect width="16.98" height="16.71" x="534.89" y="21.74" class="todo"><title>0x00426320 ShowGymStatsText (470 bytes)</title></rect>
 <rect width="16.98" height="16.71" x="554.88" y="21.74" class="todo"><title>0x0044a660 LoadItems (470 bytes)</title></rect>
 <rect width="16.94" height="16.71" x="574.86" y="21.74" class="todo"><title>0x00401d50 calc_object_vertices (469 bytes)</title></rect>
-<rect width="16.73" height="16.71" x="594.80" y="21.74" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
+<rect width="16.73" height="16.71" x="594.80" y="21.74" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="16.56" height="16.71" x="614.53" y="21.74" class="todo"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
 <rect width="16.43" height="16.71" x="634.09" y="21.74" class="todo"><title>0x00409bb0 InsertFlatRect_ZBuffered (457 bytes)</title></rect>
 <rect width="16.43" height="16.71" x="653.52" y="21.74" class="todo"><title>0x00452060 FadeToPal (457 bytes)</title></rect>
