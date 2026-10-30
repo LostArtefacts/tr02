@@ -1589,6 +1589,7 @@ address,size,name,symbol
 0x00466be8,2,DumpWidth,_DumpWidth
 0x00466bea,2,DumpHeight,_DumpHeight
 0x00466f58,,layout,?layout@@3PAY0O@FA
+0x004676a4,29,RenderInitFailedFormat,_RenderInitFailedFormat
 0x00467724,4,detail_level,_detail_level
 0x004677d8,36,RegistryKeyName,_RegistryKeyName
 0x00467808,15,SetupDialogName,_SetupDialogName
