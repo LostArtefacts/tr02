@@ -135,3 +135,46 @@ int LaraCheckForLetGo(ITEM_INFO *item, COLL_INFO *coll)
     }
     return 0;
 }
+
+
+enum direction {
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
+};
+
+int LaraTestClimb(int x, int y, int z, int xfront, int zfront, int item_height, sint16 item_room, int *shift);
+
+int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift)
+{
+    int angle, x, z;
+    int xfront = 0, zfront = 0;
+
+    angle = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+    switch (angle)
+    {
+    case NORTH:
+        z = item->pos.z_pos + front;
+        x = item->pos.x_pos + right;
+        zfront = 2;
+        break;
+    case EAST:
+        x = item->pos.x_pos + front;
+        z = item->pos.z_pos - right;
+        xfront = 2;
+        break;
+    case SOUTH:
+        z = item->pos.z_pos - front;
+        x = item->pos.x_pos - right;
+        zfront = -2;
+        break;
+    case WEST:
+        x = item->pos.x_pos - front;
+        z = item->pos.z_pos + right;
+        xfront = -2;
+        break;
+    }
+
+    return LaraTestClimb(x, item->pos.y_pos + origin, z, xfront, zfront, height, item->room_number, shift);
+}

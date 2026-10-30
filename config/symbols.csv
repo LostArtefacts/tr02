@@ -534,7 +534,7 @@ address,size,name,symbol
 0x0042de70,412,lara_col_climbdown,_lara_col_climbdown
 0x0042e010,170,LaraCheckForLetGo,_LaraCheckForLetGo
 0x0042e0c0,611,LaraTestClimb,_LaraTestClimb
-0x0042e330,188,LaraTestClimbPos,_LaraTestClimbPos
+0x0042e330,204,LaraTestClimbPos,_LaraTestClimbPos
 0x0042e400,239,LaraDoClimbLeftRight,_LaraDoClimbLeftRight
 0x0042e4f0,564,LaraTestClimbUpPos,_LaraTestClimbUpPos
 0x0042e740,1256,LaraGun,_LaraGun
