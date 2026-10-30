@@ -113,6 +113,13 @@ extern "C" DWORD WinInReadJoystick(int *x, int *y)
     return joy.dwButtons;
 }
 
+extern "C" bool WinInputInit(void);
+
+extern "C" bool Func447450(void)
+{
+    return WinInputInit();
+}
+
 extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef);
 
 extern "C" bool DInputEnumDevices(void *joystickList)
