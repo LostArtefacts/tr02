@@ -361,6 +361,12 @@ void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
     SelectPalette(hdc, old, FALSE);
 }
 
+void BITMAP_RESOURCE::UpdatePalette(HWND hWnd, HWND hSender)
+{
+    if (hPalette && hSender != hWnd)
+        ChangePalette(hWnd);
+}
+
 void BITMAP_RESOURCE::ChangePalette(HWND hWnd)
 {
     if (!hPalette)
