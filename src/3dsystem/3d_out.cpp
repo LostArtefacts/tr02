@@ -48,6 +48,9 @@ extern "C" int xgen_xguv(sint16 *iptr);
 extern "C" void draw_poly_gtmap(sint16 *iptr);
 extern "C" void __fastcall wgtmapA(int min_y, int max_y, char *tptr);
 extern "C" void draw_poly_wgtmap(sint16 *iptr);
+extern "C" void draw_poly_gtmap_persp(sint16 *iptr);
+extern "C" int xgen_xguvpersp_fp(sint16 *iptr);
+extern "C" void gtmap_persp32_fp(int y1, int y2, unsigned char *tptr);
 
 static sint32 xgen_ymin;
 static sint32 xgen_ymax;
@@ -260,4 +263,10 @@ int xgen_xguv(sint16 *iptr)
     xgen_ymin = min_y;
     xgen_ymax = max_y;
     return (1);
+}
+
+void draw_poly_gtmap_persp(sint16 *iptr)
+{
+    if (xgen_xguvpersp_fp(iptr + 1))
+        gtmap_persp32_fp(xgen_ymin, xgen_ymax, (unsigned char *)texture_page_ptrs[*(iptr)]);
 }

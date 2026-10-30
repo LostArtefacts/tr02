@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.75% (159)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.25% (1088)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.83% (160)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.17% (1087)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="95.25" height="6" x="0" y="0" class="named"/>
-<rect width="651.75" height="6" x="95.25" y="0" class="todo"/>
+<rect width="95.85" height="6" x="0" y="0" class="named"/>
+<rect width="651.15" height="6" x="95.85" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -106,7 +106,7 @@
 <rect width="12" height="12" x="540" y="0" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="todo"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="0" class="todo"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="todo"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="0" class="todo"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="0" class="todo"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="31.52" height="6" x="0" y="0" class="named"/>
-<rect width="715.48" height="6" x="31.52" y="0" class="todo"/>
+<rect width="31.65" height="6" x="0" y="0" class="named"/>
+<rect width="715.35" height="6" x="31.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2223,7 +2223,7 @@
 <rect width="4.09" height="3.74" x="648.59" y="364.53" class="todo"><title>0x00447f40 WinSndGetFreeChannelIndex (57 bytes)</title></rect>
 <rect width="4.09" height="3.74" x="648.59" y="371.26" class="todo"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
 <rect width="3.96" height="3.86" x="655.68" y="283.23" class="named"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
-<rect width="3.72" height="3.86" x="662.65" y="283.23" class="todo"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
+<rect width="3.72" height="3.86" x="662.65" y="283.23" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="669.37" y="283.23" class="todo"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="676.08" y="283.23" class="todo"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="682.80" y="283.23" class="todo"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
