@@ -54,6 +54,20 @@ extern "C" bool SE_GraphicsTestExecute(void)
     return false;
 }
 
+extern "C" bool SE_GraphicsTest(void)
+{
+    SETUP_APP_SETTINGS saved;
+    bool result = false;
+
+    saved = SavedAppSettings;
+    SavedAppSettings = ChangedAppSettings;
+    if (SE_GraphicsTestStart())
+        result = SE_GraphicsTestExecute();
+    SE_GraphicsTestFinish();
+    SavedAppSettings = saved;
+    return result;
+}
+
 #include "ds.h"
 
 extern "C" {
