@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.76% (997)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.68% (246)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.84% (998)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">19.60% (245)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="595.81" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="595.81" y="0" class="decompiled"/>
-<rect width="147.01" height="6" x="599.99" y="0" class="todo"/>
+<rect width="596.40" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="596.40" y="0" class="decompiled"/>
+<rect width="146.41" height="6" x="600.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1036,7 +1036,7 @@
 <rect width="12" height="12" x="225" y="285" class="named"><title>0x0044af50 LoadSamples (613 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="285" class="named"><title>0x0044b1c0 ChangeFileNameExtension (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="285" class="todo"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="285" class="todo"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="285" class="named"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="285" class="named"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="285" class="named"><title>0x0044b580 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="285" class="named"><title>0x0044b5b0 S_AdjustTexelCoordinates (20 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.19%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.73%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">60.36%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">39.56%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="449.64" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="449.64" y="0" class="decompiled"/>
-<rect width="296.76" height="6" x="450.24" y="0" class="todo"/>
+<rect width="450.91" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="450.91" y="0" class="decompiled"/>
+<rect width="295.48" height="6" x="451.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1472,7 +1472,7 @@
 <rect width="19.11" height="19.43" x="370.17" y="160.55" class="named"><title>0x0040e210 CreatureAIInfo (599 bytes)</title></rect>
 <rect width="19.11" height="19.20" x="370.17" y="182.97" class="todo"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
 <rect width="19.11" height="18.94" x="370.17" y="205.17" class="named"><title>0x00441f70 RollingBallCollision (586 bytes)</title></rect>
-<rect width="19.11" height="18.94" x="370.17" y="227.11" class="todo"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
+<rect width="19.11" height="18.94" x="370.17" y="227.11" class="named"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
 <rect width="19.11" height="18.87" x="370.17" y="249.05" class="named"><title>0x0042e4f0 LaraTestClimbUpPos (584 bytes)</title></rect>
 <rect width="19.11" height="18.75" x="370.17" y="270.92" class="named"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
 <rect width="19.11" height="18.38" x="370.17" y="292.67" class="todo"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>

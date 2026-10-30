@@ -199,6 +199,92 @@ extern "C" int LoadSamples(HANDLE file)
     return 1;
 }
 
+extern "C" DWORD LevelFilePalettesOffset, LevelFileTexPagesOffset, LevelFileDepthQOffset;
+extern "C" char LoadLevelOpenFailed[];
+extern "C" char LoadLevelTooNew[];
+extern "C" char LoadLevelOutOfDate[];
+extern "C" void init_game_malloc(void);
+extern "C" int LoadPalettes(HANDLE file);
+extern "C" int LoadTexturePages(HANDLE file);
+extern "C" int LoadRooms(HANDLE file);
+extern "C" int LoadObjects(HANDLE file);
+extern "C" int LoadSprites(HANDLE file);
+extern "C" int LoadBoxes(HANDLE file);
+extern "C" int LoadItems(HANDLE file);
+extern "C" int LoadDepthQ(HANDLE file);
+extern "C" void LoadDemoExternal(char *level_name);
+
+int LoadLevel(char *filename, int req_level)
+{
+    DWORD read;
+    HANDLE file;
+    int version;
+    int level;
+
+    filename = GetFullPath(filename);
+    strcpy(LevelFileName, filename);
+
+    init_game_malloc();
+
+    file = CreateFile(filename, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN, NULL);
+    if (file == INVALID_HANDLE_VALUE)
+    {
+        wsprintf(StringToShow, LoadLevelOpenFailed, filename, req_level);
+        return 0;
+    }
+
+    MyReadFile(file, &version, sizeof(int), &read, NULL);
+    if (version != 45)
+    {
+        if (version < 45)
+            wsprintf(StringToShow, LoadLevelOutOfDate, req_level, filename, version);
+        else
+            wsprintf(StringToShow, LoadLevelTooNew, req_level, filename, version);
+        return 0;
+    }
+
+    LevelFilePalettesOffset = SetFilePointer(file, 0, 0, FILE_CURRENT);
+    if (!LoadPalettes(file))
+        return 0;
+
+    LevelFileTexPagesOffset = SetFilePointer(file, 0, 0, FILE_CURRENT);
+    if (!LoadTexturePages(file))
+        return 0;
+
+    MyReadFile(file, &level, sizeof(int), &read, NULL);
+
+    if (!LoadRooms(file))
+        return 0;
+    if (!LoadObjects(file))
+        return 0;
+    if (!LoadSprites(file))
+        return 0;
+    if (!LoadCameras(file))
+        return 0;
+    if (!LoadSoundEffects(file))
+        return 0;
+    if (!LoadBoxes(file))
+        return 0;
+    if (!LoadAnimatedTextures(file))
+        return 0;
+    if (!LoadItems(file))
+        return 0;
+
+    LevelFileDepthQOffset = SetFilePointer(file, 0, 0, FILE_CURRENT);
+    if (!LoadDepthQ(file))
+        return 0;
+    if (!LoadCinematic(file))
+        return 0;
+    if (!LoadDemo(file))
+        return 0;
+    if (!LoadSamples(file))
+        return 0;
+
+    LoadDemoExternal(filename);
+    CloseHandle(file);
+    return 1;
+}
+
 int S_LoadLevelFile(char *fname, int level_number, int type)
 {
     S_UnloadLevelFile();
@@ -221,7 +307,6 @@ void S_AdjustTexelCoordinates(void)
         AdjustTextureUVs(false);
 }
 
-extern "C" DWORD LevelFilePalettesOffset, LevelFileTexPagesOffset, LevelFileDepthQOffset;
 extern "C" int LoadPalettes(HANDLE file);
 extern "C" int LoadDepthQ(HANDLE file);
 extern "C" int LoadTexturePages(HANDLE file);
