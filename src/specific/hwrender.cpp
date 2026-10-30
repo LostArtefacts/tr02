@@ -15,6 +15,9 @@ extern "C" DWORD GetTexturePageHandle(int nHandle);
 extern "C" void SafeFreeTexturePage(int nHandle);
 extern "C" void SafeFreePalette(int nHandle);
 extern "C" int PaletteIndex;
+extern "C" int CreateTexturePalette(uint8 *pPalette);
+extern "C" int AddTexturePage8(int nWidth, int nHeight, uint8 *pTexture, int nPalette);
+extern "C" int AddTexturePage16(int nWidth, int nHeight, uint8 *pTexture);
 extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
 extern "C" D3DTEXTUREHANDLE CurrentTexSource;
@@ -88,6 +91,36 @@ void HWR_BeginScene()
     HWR_GetAllTextureHandles();
     DX_DoFlipWait();
     G_Direct3DDevice->BeginScene();
+}
+
+void HWR_LoadTexturePages(int nPages, uint8 *pImage, uint8 *pPalette)
+{
+    HWR_FreeTexturePages();
+
+    int nPage, nHandle;
+    if (pPalette)
+        PaletteIndex = CreateTexturePalette(pPalette);
+
+    for (nPage = 0; nPage < nPages; ++nPage)
+    {
+        if (pPalette)
+        {
+            nHandle = AddTexturePage8(256, 256, pImage, PaletteIndex);
+            pImage += 0x10000;
+        }
+        else
+        {
+            nHandle = AddTexturePage16(256, 256, pImage);
+            pImage += 0x20000;
+        }
+
+        if (nHandle >= 0)
+            LanTextureHandle[nPage] = nHandle;
+        else
+            LanTextureHandle[nPage] = -1;
+    }
+
+    HWR_GetAllTextureHandles();
 }
 
 void HWR_FreeTexturePages()

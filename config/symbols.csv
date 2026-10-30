@@ -1013,7 +1013,7 @@ address,size,name,symbol
 0x0044d3b0,22,HWR_BeginScene,?HWR_BeginScene@@YAXXZ
 0x0044d3d0,12,Func44d3d0,
 0x0044d3e0,364,HWR_DrawPolyList,_HWR_DrawPolyList
-0x0044d560,142,HWR_LoadTexturePages,_HWR_LoadTexturePages
+0x0044d560,142,HWR_LoadTexturePages,?HWR_LoadTexturePages@@YAXHPAE0@Z
 0x0044d5f0,74,HWR_FreeTexturePages,?HWR_FreeTexturePages@@YAXXZ
 0x0044d640,53,HWR_GetAllTextureHandles,?HWR_GetAllTextureHandles@@YAXXZ
 0x0044d680,25,HWR_VertexBufferFull,_HWR_VertexBufferFull
