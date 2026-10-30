@@ -681,7 +681,7 @@ address,size,name,symbol
 0x00438ef0,61,KeyTrigger,_KeyTrigger
 0x00438f30,51,PickupTrigger,_PickupTrigger
 0x00438f70,35,SecretControl,_SecretControl
-0x00438fa0,476,MouseControl,_MouseControl
+0x00438fa0,496,MouseControl,_MouseControl
 0x00439190,98,InitialiseStartInfo,_InitialiseStartInfo
 0x00439200,219,ModifyStartInfo,_ModifyStartInfo
 0x004392e0,513,CreateStartInfo,_CreateStartInfo
@@ -1567,6 +1567,7 @@ address,size,name,symbol
 0x004660b8,12,Switch2Position,_Switch2Position
 0x004660c8,24,KeyHoleBounds,_KeyHoleBounds
 0x004660e0,12,KeyHolePosition,_KeyHolePosition
+0x00466118,16,mouse_bite,_mouse_bite
 0x00466210,16,bara_bite,_bara_bite
 0x00466220,16,shark_bite,_shark_bite
 0x00466230,16,left_gun,_left_gun
