@@ -26,17 +26,35 @@ extern "C" LONG CloseGameRegistryKey(void)
     return CloseRegistryKey();
 }
 
+#pragma pack(push, 1)
 typedef struct
 {
     void *PreferredDisplayAdapter;
     void *PreferredSoundAdapter;
     void *PreferredJoystick;
-    uint8 pad[0x1a];
+    void *VideoMode;
+    int RenderMode;
+    int WindowWidth;
+    int WindowHeight;
+    int AspectMode;
+    bool PerspectiveCorrect;
+    bool Dither;
+    bool ZBuffer;
+    bool BilinearFiltering;
+    bool TripleBuffering;
+    bool FullScreen;
     bool SoundEnabled;
     bool LaraMic;
     bool JoystickEnabled;
-    uint8 rest[0x10];
+    bool Disable16BitTextures;
+    bool DontSortPrimitives;
+    bool FlipBroken;
+    bool DisableFMV;
+    int TexelAdjustMode;
+    int NearestAdjustment;
+    int LinearAdjustment;
 } SETUP_APP_SETTINGS;
+#pragma pack(pop)
 
 extern "C" {
 extern SETUP_APP_SETTINGS SavedAppSettings;
@@ -255,7 +273,91 @@ extern bool IsSetupDialogCentered;
 extern HWND OptionsDialogHandle;
 extern HWND OptionsImageHandle;
 void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam);
-void SE_OptionsDlgUpdate(HWND hwndDlg);
+extern LPCSTR String_Software3d;
+extern LPCSTR String_Hardware3d;
+extern LPCSTR String_FullScreen;
+extern LPCSTR String_Windowed;
+extern LPCSTR String_ZBuffered;
+extern LPCSTR String_BilinearFiltered;
+extern LPCSTR String_Dithered;
+extern LPCSTR String_TripleBuffered;
+extern LPCSTR String_PerspectiveCorrect;
+extern LPCSTR String_None;
+extern LPCSTR String_NA;
+extern LPCSTR String_Enabled;
+extern LPCSTR String_Disabled;
+extern LPCSTR String_Camera;
+extern LPCSTR Strings_Aspect[];
+}
+
+typedef struct
+{
+    uint8 pad[0x1c];
+    LPSTR description;
+} SETUP_DEVICE;
+
+typedef struct
+{
+    uint8 pad[8];
+    int width;
+    int height;
+    int bpp;
+} SETUP_VIDEO_MODE;
+
+extern "C" void SE_OptionsDlgUpdate(HWND hwndDlg)
+{
+    LPSTR str;
+    char buffer[256];
+    bool isNext;
+
+    if (ChangedAppSettings.PreferredDisplayAdapter)
+    {
+        str = ((SETUP_DEVICE *)ChangedAppSettings.PreferredDisplayAdapter)->description;
+        SetDlgItemText(hwndDlg, 1077, str);
+        if (ChangedAppSettings.RenderMode == 1)
+            str = (LPSTR)String_Software3d;
+        else
+            str = (LPSTR)String_Hardware3d;
+        SetDlgItemText(hwndDlg, 1078, str);
+        if (ChangedAppSettings.FullScreen && ChangedAppSettings.VideoMode)
+        {
+            SETUP_VIDEO_MODE *mode = (SETUP_VIDEO_MODE *)ChangedAppSettings.VideoMode;
+            sprintf(buffer, String_FullScreen, mode->width, mode->height, mode->bpp);
+        }
+        else
+        {
+            sprintf(buffer, String_Windowed, ChangedAppSettings.WindowWidth, ChangedAppSettings.WindowHeight, Strings_Aspect[ChangedAppSettings.AspectMode]);
+        }
+        SetDlgItemText(hwndDlg, 1079, buffer);
+        str = buffer;
+        isNext = false;
+        SE_OptionsStrCat(&str, ChangedAppSettings.ZBuffer, &isNext, String_ZBuffered);
+        SE_OptionsStrCat(&str, ChangedAppSettings.BilinearFiltering, &isNext, String_BilinearFiltered);
+        SE_OptionsStrCat(&str, ChangedAppSettings.Dither, &isNext, String_Dithered);
+        SE_OptionsStrCat(&str, ChangedAppSettings.TripleBuffering, &isNext, String_TripleBuffered);
+        SE_OptionsStrCat(&str, ChangedAppSettings.PerspectiveCorrect, &isNext, String_PerspectiveCorrect);
+        *str = 0;
+        SetDlgItemText(hwndDlg, 1080, buffer);
+    }
+    else
+    {
+        SetDlgItemText(hwndDlg, 1077, String_None);
+        SetDlgItemText(hwndDlg, 1078, String_NA);
+        SetDlgItemText(hwndDlg, 1079, String_NA);
+        SetDlgItemText(hwndDlg, 1080, String_NA);
+    }
+    if (ChangedAppSettings.PreferredSoundAdapter)
+        str = ((SETUP_DEVICE *)ChangedAppSettings.PreferredSoundAdapter)->description;
+    else
+        str = (LPSTR)String_None;
+    SetDlgItemText(hwndDlg, 1081, str);
+    SetDlgItemText(hwndDlg, 1082, ChangedAppSettings.SoundEnabled ? String_Enabled : String_Disabled);
+    SetDlgItemText(hwndDlg, 1085, ChangedAppSettings.LaraMic ? "Lara" : String_Camera);
+    if (ChangedAppSettings.PreferredJoystick)
+        str = ((SETUP_DEVICE *)ChangedAppSettings.PreferredJoystick)->description;
+    else
+        str = (LPSTR)String_None;
+    SetDlgItemText(hwndDlg, 1084, str);
 }
 
 extern "C" BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
