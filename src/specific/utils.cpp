@@ -53,3 +53,8 @@ char *UT_FindArg(char *szArg)
         return 0;
     return pArg + strlen(szArg);
 }
+
+void UT_ErrorBox(char *szString, HWND hWndOwner)
+{
+    MessageBox(hWndOwner, szString, "Tomb Raider II", MB_ICONERROR);
+}
