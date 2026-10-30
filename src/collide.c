@@ -113,6 +113,21 @@ void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     }
 }
 
+void TrapCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (item->status == ACTIVE)
+    {
+        if (!TestBoundsCollide(item, laraitem, coll->radius))
+            return;
+        TestCollision(item, laraitem);
+    }
+    else if (item->status != INVISIBLE)
+        ObjectCollision(item_num, laraitem, coll);
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;

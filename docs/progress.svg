@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.72% (433)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.28% (814)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.80% (434)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.20% (813)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="259.38" height="6" x="0" y="0" class="named"/>
-<rect width="487.62" height="6" x="259.38" y="0" class="todo"/>
+<rect width="259.98" height="6" x="0" y="0" class="named"/>
+<rect width="487.02" height="6" x="259.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -226,7 +226,7 @@
 <rect width="12" height="12" x="90" y="45" class="named"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="45" class="named"><title>0x004138c0 ObjectCollision (85 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="45" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="45" class="todo"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="45" class="named"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="45" class="todo"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="45" class="todo"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="45" class="todo"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.70%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="106.79" height="6" x="0" y="0" class="named"/>
-<rect width="640.21" height="6" x="106.79" y="0" class="todo"/>
+<rect width="107.02" height="6" x="0" y="0" class="named"/>
+<rect width="639.98" height="6" x="107.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2015,7 +2015,7 @@
 <rect width="6.04" height="6.63" x="599.37" y="227.75" class="todo"><title>0x0043c7c0 InitialiseObjects (104 bytes)</title></rect>
 <rect width="6.04" height="6.63" x="599.37" y="237.38" class="todo"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
 <rect width="6.04" height="6.63" x="599.37" y="247.01" class="todo"><title>0x004544d0 Func4544d0 (104 bytes)</title></rect>
-<rect width="6.04" height="6.54" x="599.37" y="256.65" class="todo"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
+<rect width="6.04" height="6.54" x="599.37" y="256.65" class="named"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.37" y="266.19" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.37" y="275.73" class="named"><title>0x0042a260 LaraHitCeiling (103 bytes)</title></rect>
 <rect width="6.04" height="6.45" x="599.37" y="285.27" class="named"><title>0x0041fc50 GF_DoLevelSequence (102 bytes)</title></rect>
