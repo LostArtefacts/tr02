@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.08% (976)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.36% (267)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.16% (977)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.28% (266)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="583.26" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="583.26" y="0" class="decompiled"/>
-<rect width="159.56" height="6" x="587.44" y="0" class="todo"/>
+<rect width="583.86" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="583.86" y="0" class="decompiled"/>
+<rect width="158.96" height="6" x="588.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1000,7 +1000,7 @@
 <rect width="12" height="12" x="435" y="270" class="named"><title>0x00448620 CreatePrimarySurface (148 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="270" class="named"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="270" class="named"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="270" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="270" class="named"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="270" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.44%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.48%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.50%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.41%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="436.57" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="436.57" y="0" class="decompiled"/>
-<rect width="309.82" height="6" x="437.18" y="0" class="todo"/>
+<rect width="437.03" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="437.03" y="0" class="decompiled"/>
+<rect width="309.36" height="6" x="437.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1756,7 +1756,7 @@
 <rect width="10.26" height="10.18" x="631.44" y="137.75" class="named"><title>0x004084a0 ins_trans_quad (211 bytes)</title></rect>
 <rect width="10.26" height="10.18" x="644.70" y="137.75" class="named"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="10.26" height="10.18" x="657.95" y="137.75" class="named"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
-<rect width="10.26" height="10.18" x="671.21" y="137.75" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
+<rect width="10.26" height="10.18" x="671.21" y="137.75" class="named"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="10.19" height="10.18" x="684.47" y="137.75" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="10.19" height="10.18" x="697.66" y="137.75" class="named"><title>0x00435d40 GeneralControl (210 bytes)</title></rect>
 <rect width="10.19" height="10.18" x="710.86" y="137.75" class="named"><title>0x0044eb60 EncodeLinePCX (210 bytes)</title></rect>

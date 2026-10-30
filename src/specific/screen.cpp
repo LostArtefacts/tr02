@@ -115,8 +115,14 @@ extern LPDIRECTDRAW2 DDraw;
 extern LPDIRECTDRAWCLIPPER DDrawClipper;
 extern LPDIRECTDRAWSURFACE3 BackBufferSurface;
 extern LPDIRECTDRAWSURFACE3 PictureBufferSurface;
+extern LPDIRECTDRAWSURFACE3 RenderBufferSurface;
+extern LPDIRECTDRAWSURFACE3 ZBufferSurface;
+extern LPDIRECTDRAWPALETTE DDrawPalette;
+extern PALETTEENTRY WinVidPalette[256];
+extern bool GameVid_IsWindowedVga;
 HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface);
 bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
+DWORD GetZBufferDepth(void);
 }
 
 extern "C" void CreatePrimarySurface(void)
@@ -161,6 +167,30 @@ extern "C" void CreateClipper(void)
         throw ERR_SetClipperHWnd;
     if (DX_TRY(PrimaryBufferSurface->SetClipper(DDrawClipper)))
         throw ERR_SetClipper;
+}
+
+extern "C" void CreateWindowPalette(void)
+{
+    DWORD flags = DDPCAPS_8BIT;
+    int i;
+
+    memset(WinVidPalette, 0, sizeof(WinVidPalette));
+    if (GameVid_IsWindowedVga) {
+        for (i = 0; i < 10; i++) {
+            WinVidPalette[i].peFlags = WinVidPalette[i + 246].peFlags = PC_EXPLICIT;
+            WinVidPalette[i].peRed = WinVidPalette[i + 246].peRed = i;
+        }
+        for (i = 10; i < 246; i++)
+            WinVidPalette[i].peFlags = PC_NOCOLLAPSE | PC_RESERVED;
+    } else {
+        for (i = 0; i < 256; i++)
+            WinVidPalette[i].peFlags = PC_RESERVED;
+        flags = DDPCAPS_8BIT | DDPCAPS_ALLOW256;
+    }
+    if (DX_TRY(DDraw->CreatePalette(flags, WinVidPalette, &DDrawPalette, NULL)))
+        throw ERR_CreatePalette;
+    if (DX_TRY(PrimaryBufferSurface->SetPalette(DDrawPalette)))
+        throw ERR_SetPalette;
 }
 
 extern "C" DWORD GetZBufferDepth(void)
