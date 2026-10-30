@@ -1,4 +1,5 @@
 #include "../3dglodef.h"
+#include "../specific/winmain.h"
 
 extern float LfAspectCorrection;
 
@@ -80,6 +81,20 @@ void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
     ls_vector_view.x = (*(mptr + M00) * ls_world.x + *(mptr + M01) * ls_world.y + *(mptr + M02) * ls_world.z) >> W2V_SHIFT;
     ls_vector_view.y = (*(mptr + M10) * ls_world.x + *(mptr + M11) * ls_world.y + *(mptr + M12) * ls_world.z) >> W2V_SHIFT;
     ls_vector_view.z = (*(mptr + M20) * ls_world.x + *(mptr + M21) * ls_world.y + *(mptr + M22) * ls_world.z) >> W2V_SHIFT;
+}
+
+extern "C" sint32 *sort3dptr;
+extern "C" sint16 *info3dptr;
+extern "C" sint16 info3d_buffer[];
+void HWR_InitVertexList();
+
+extern "C" void phd_InitPolyList(void)
+{
+    surfacenum = 0;
+    sort3dptr = (sint32 *)sort3d_buffer;
+    info3dptr = info3d_buffer;
+    if (SavedAppSettings.RenderMode != RM_Software)
+        HWR_InitVertexList();
 }
 
 extern "C" void do_quickysorty(int left, int right);

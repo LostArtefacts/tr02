@@ -1550,7 +1550,7 @@ address,size,name,symbol
 0x00478054,4,PhdPersp,_PhdPersp
 0x00478058,4,phd_left,_phd_left
 0x0047805c,,InsertFlatRect,_InsertFlatRect
-0x00478060,240000,Info3dBuffer,_Info3dBuffer
+0x00478060,240000,info3d_buffer,_info3d_buffer
 0x004b29e0,2,phd_winxmax,_phd_winxmax
 0x004b29e4,4,phd_znear,_phd_znear
 0x004b29e8,4,FltResZORhw,_FltResZORhw
@@ -1570,7 +1570,7 @@ address,size,name,symbol
 0x004b2a28,128,rand_table,_rand_table
 0x004b2aa8,4,FltPersp,_FltPersp
 0x004b2ab0,,w2v_matrix,_w2v_matrix
-0x004b2ae0,4,Info3dPtr,_Info3dPtr
+0x004b2ae0,4,info3dptr,_info3dptr
 0x004b2ae4,4,phd_winwidth,_phd_winwidth
 0x004b2ae8,,InsertLine,_InsertLine
 0x004b2af0,,phdtextinfo,_phdtextinfo
@@ -1590,7 +1590,7 @@ address,size,name,symbol
 0x004d6b68,128,wibble_table,_wibble_table
 0x004d6be8,4,phd_right,_phd_right
 0x004d6bec,4,surfacenum,_surfacenum
-0x004d6bf0,4,Sort3dPtr,_Sort3dPtr
+0x004d6bf0,4,sort3dptr,_sort3dptr
 0x004d6bfc,4,WibbleOffset,_WibbleOffset
 0x004d6c00,4,water_effect,_water_effect
 0x004d6c04,4,shade_effect,_shade_effect
