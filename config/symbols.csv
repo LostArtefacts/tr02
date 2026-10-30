@@ -232,7 +232,7 @@ address,size,name,symbol
 0x0041ba30,42,phd_PutPolygons_I,_phd_PutPolygons_I
 0x0041ba60,421,InterpolateMatrix,_InterpolateMatrix
 0x0041bc10,252,InterpolateArmMatrix,_InterpolateArmMatrix
-0x0041bd10,331,DrawGunFlash,_DrawGunFlash
+0x0041bd10,360,DrawGunFlash,_DrawGunFlash
 0x0041be80,232,CalculateObjectLighting,_CalculateObjectLighting
 0x0041bf70,146,GetFrames,_GetFrames
 0x0041c010,124,GetBoundsAccurate,_GetBoundsAccurate
