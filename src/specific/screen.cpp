@@ -19,6 +19,40 @@ typedef struct {
 
 extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
 
+#pragma pack(push, 1)
+typedef struct {
+    void *PreferredDisplayAdapter;
+    void *PreferredSoundAdapter;
+    void *PreferredJoystick;
+    void *VideoMode;
+    int RenderMode;
+    int WindowWidth;
+    int WindowHeight;
+    int AspectMode;
+    bool PerspectiveCorrect;
+    bool Dither;
+    bool ZBuffer;
+    bool BilinearFiltering;
+    bool TripleBuffering;
+    bool FullScreen;
+    bool SoundEnabled;
+    bool LaraMic;
+    bool JoystickEnabled;
+    bool Disable16BitTextures;
+    bool DontSortPrimitives;
+    bool FlipBroken;
+    bool DisableFMV;
+    int TexelAdjustMode;
+    int NearestAdjustment;
+    int LinearAdjustment;
+} APP_SETTINGS;
+#pragma pack(pop)
+
+extern "C" {
+extern APP_SETTINGS SavedAppSettings;
+extern LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
+}
+
 enum InitResult {
     ERR_OK,
     ERR_PreferredAdapterNotFound,
@@ -85,6 +119,20 @@ HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface);
 bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
 }
 
+extern "C" void CreatePrimarySurface(void)
+{
+    DDSURFACEDESC dsp;
+
+    if ((GameVid_IsVga && SavedAppSettings.RenderMode == RM_Hardware) || (!GameVid_IsVga && SavedAppSettings.RenderMode == RM_Software))
+        throw ERR_WrongBitDepth;
+    memset(&dsp, 0, sizeof(dsp));
+    dsp.dwSize = sizeof(dsp);
+    dsp.dwFlags = DDSD_CAPS;
+    dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
+    if (DX_TRY(DDrawSurfaceCreate(&dsp, &PrimaryBufferSurface)))
+        throw ERR_CreatePrimarySurface;
+}
+
 extern "C" DWORD GetZBufferDepth(void)
 {
     DWORD bitDepth = CurrentDisplayAdapter.D3DHWDeviceDesc.dwDeviceZBufferBitDepth;
@@ -110,40 +158,6 @@ extern "C" void CreatePictureBuffer(void)
     dsp.dwHeight = 480;
     if (DX_TRY(DDrawSurfaceCreate(&dsp, &PictureBufferSurface)))
         throw ERR_CreatePictureBuffer;
-}
-
-#pragma pack(push, 1)
-typedef struct {
-    void *PreferredDisplayAdapter;
-    void *PreferredSoundAdapter;
-    void *PreferredJoystick;
-    void *VideoMode;
-    int RenderMode;
-    int WindowWidth;
-    int WindowHeight;
-    int AspectMode;
-    bool PerspectiveCorrect;
-    bool Dither;
-    bool ZBuffer;
-    bool BilinearFiltering;
-    bool TripleBuffering;
-    bool FullScreen;
-    bool SoundEnabled;
-    bool LaraMic;
-    bool JoystickEnabled;
-    bool Disable16BitTextures;
-    bool DontSortPrimitives;
-    bool FlipBroken;
-    bool DisableFMV;
-    int TexelAdjustMode;
-    int NearestAdjustment;
-    int LinearAdjustment;
-} APP_SETTINGS;
-#pragma pack(pop)
-
-extern "C" {
-extern APP_SETTINGS SavedAppSettings;
-extern LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
 }
 
 extern "C" void DX_DoFlipWait(void)
