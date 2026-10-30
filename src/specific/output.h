@@ -13,6 +13,7 @@ void S_CopyScreenToBuffer(void);
 void ScreenDump(void);
 void ScreenPartialDump();
 void FadeWait(void);
+int S_DumpScreen(void);
 void S_ClearScreen();
 void S_InitialiseScreen(int type);
 void S_SetupBelowWater(int underwater);

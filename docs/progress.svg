@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.18% (314)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.82% (933)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.26% (315)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.74% (932)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="188.10" height="6" x="0" y="0" class="named"/>
-<rect width="558.90" height="6" x="188.10" y="0" class="todo"/>
+<rect width="188.70" height="6" x="0" y="0" class="named"/>
+<rect width="558.30" height="6" x="188.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1122,7 +1122,7 @@
 <rect width="12" height="12" x="30" y="315" class="named"><title>0x00450ba0 GetRenderHeight (6 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="315" class="named"><title>0x00450bb0 GetRenderWidth (6 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="315" class="todo"><title>0x00450bc0 S_InitialisePolyList (228 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="315" class="todo"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="315" class="named"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="315" class="named"><title>0x00450cf0 S_ClearScreen (11 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="315" class="named"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="315" class="todo"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.90%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.10%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.91%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.09%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="58.99" height="6" x="0" y="0" class="named"/>
-<rect width="688.01" height="6" x="58.99" y="0" class="todo"/>
+<rect width="59.11" height="6" x="0" y="0" class="named"/>
+<rect width="687.89" height="6" x="59.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2240,7 +2240,7 @@
 <rect width="3.82" height="3.64" x="668.94" y="283.67" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
 <rect width="3.82" height="3.64" x="675.76" y="283.67" class="named"><title>0x00435700 DrawBridgeFloor (54 bytes)</title></rect>
 <rect width="3.82" height="3.64" x="682.58" y="283.67" class="todo"><title>0x0044b1c0 ChangeFileNameExtension (54 bytes)</title></rect>
-<rect width="3.82" height="3.64" x="689.40" y="283.67" class="todo"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
+<rect width="3.82" height="3.64" x="689.40" y="283.67" class="named"><title>0x00450cb0 S_DumpScreen (54 bytes)</title></rect>
 <rect width="3.82" height="3.64" x="696.21" y="283.67" class="todo"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
 <rect width="3.82" height="3.64" x="703.03" y="283.67" class="todo"><title>0x00456bd0 SetRegistryFloatValue (54 bytes)</title></rect>
 <rect width="3.69" height="3.64" x="709.85" y="283.67" class="named"><title>0x00402b00 draw_poly_flat (53 bytes)</title></rect>

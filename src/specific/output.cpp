@@ -3,12 +3,30 @@
 #include "../inventry.h"
 #include "winmain.h"
 #include "display.h"
+#include "time.h"
 #include "../gameflow.h"
 
 extern "C" void Func444560(void);
 extern "C" void HWR_InitState(void);
 
 #define ANIMATED_TEXTURE 10
+
+int S_DumpScreen(void)
+{
+    int nframes;
+
+    nframes = Sync();
+    while (nframes < 2)
+    {
+        while (!Sync())
+            ;
+        nframes++;
+    }
+
+    ScreenPartialDump();
+
+    return nframes;
+}
 
 void S_ClearScreen(void)
 {
