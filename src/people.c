@@ -133,3 +133,20 @@ void InitialiseCult1(sint16 item_number)
     if (items[item_number].object_number == CULT1C)
         items[item_number].mesh_bits -= 0x1f8000;
 }
+
+#define CULT3 20
+#define CULT3_WAIT 2
+#define CULT3_WAIT_ANIM 3
+
+void InitialiseCreature(sint16 item_number);
+
+void InitialiseCult3(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    InitialiseCreature(item_number);
+    item = &items[item_number];
+    item->anim_number = objects[CULT3].anim_index + CULT3_WAIT_ANIM;
+    item->frame_number = anims[item->anim_number].frame_base;
+    item->current_anim_state = item->goal_anim_state = CULT3_WAIT;
+}
