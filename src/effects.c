@@ -15,10 +15,15 @@
 #define SPLASH1 230
 #define UNDERWATER 1
 #define GRAVITY 6
+#define HOT_LIQUID 220
+#define WATERFALL_RANGE (WALL_L * 10)
 
 void KillEffect(sint16 fx_num);
 void EffectNewRoom(sint16 fx_num, sint16 room_number);
 sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
+extern sint32 LsAdder;
 void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
@@ -278,6 +283,27 @@ void ControlWaterSprite(sint16 fx_num)
             fx->pos.y_pos += fx->fallspeed;
             fx->fallspeed += GRAVITY;
         }
+    }
+}
+
+void ControlSnowSprite(sint16 fx_num)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_num];
+    fx->frame_number--;
+    if (fx->frame_number <= objects[fx->object_number].nmeshes)
+    {
+        KillEffect(fx_num);
+        return;
+    }
+
+    fx->pos.z_pos += (phd_cos(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+    fx->pos.x_pos += (phd_sin(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+    if (fx->fallspeed)
+    {
+        fx->pos.y_pos += fx->fallspeed;
+        fx->fallspeed += GRAVITY;
     }
 }
 

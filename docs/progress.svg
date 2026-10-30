@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.67% (370)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.33% (877)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.75% (371)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.25% (876)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="221.64" height="6" x="0" y="0" class="named"/>
-<rect width="525.36" height="6" x="221.64" y="0" class="todo"/>
+<rect width="222.24" height="6" x="0" y="0" class="named"/>
+<rect width="524.76" height="6" x="222.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -322,7 +322,7 @@
 <rect width="12" height="12" x="30" y="75" class="named"><title>0x0041ca70 Splash (194 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="75" class="named"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="75" class="named"><title>0x0041cbc0 ControlWaterSprite (174 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="75" class="todo"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="75" class="named"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="75" class="todo"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="75" class="todo"><title>0x0041cde0 WaterFall (317 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="75" class="named"><title>0x0041cf20 finish_level_effect (11 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.31%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="79.57" height="6" x="0" y="0" class="named"/>
-<rect width="667.43" height="6" x="79.57" y="0" class="todo"/>
+<rect width="79.88" height="6" x="0" y="0" class="named"/>
+<rect width="667.12" height="6" x="79.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1905,7 +1905,7 @@
 <rect width="8.06" height="7.68" x="558.67" y="251.39" class="todo"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="262.07" class="todo"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="272.67" class="named"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
-<rect width="8.06" height="7.60" x="558.67" y="283.27" class="todo"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
+<rect width="8.06" height="7.60" x="558.67" y="283.27" class="named"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="293.87" class="todo"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
 <rect width="8.06" height="7.60" x="558.67" y="304.47" class="todo"><title>0x00445740 WinVidGetDisplayMode (140 bytes)</title></rect>
 <rect width="8.06" height="7.53" x="558.67" y="315.07" class="named"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
