@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.28% (390)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.72% (857)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.36% (391)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.64% (856)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="233.62" height="6" x="0" y="0" class="named"/>
-<rect width="513.38" height="6" x="233.62" y="0" class="todo"/>
+<rect width="234.22" height="6" x="0" y="0" class="named"/>
+<rect width="512.78" height="6" x="234.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -709,7 +709,7 @@
 <rect width="12" height="12" x="585" y="180" class="named"><title>0x00435740 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="180" class="named"><title>0x00435780 DrawBridgeCollision (44 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="180" class="named"><title>0x004357b0 InitialiseLift (53 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="180" class="todo"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="180" class="named"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="180" class="todo"><title>0x004358d0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="180" class="named"><title>0x00435a50 LiftFloor (53 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="180" class="named"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.23%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">12.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">87.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="91.39" height="6" x="0" y="0" class="named"/>
-<rect width="655.61" height="6" x="91.39" y="0" class="todo"/>
+<rect width="91.85" height="6" x="0" y="0" class="named"/>
+<rect width="655.15" height="6" x="91.85" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1743,7 +1743,7 @@
 <rect width="10.69" height="10.16" x="523.34" y="137.50" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
 <rect width="10.56" height="10.16" x="537.03" y="137.50" class="todo"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
 <rect width="10.56" height="10.16" x="550.59" y="137.50" class="todo"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
-<rect width="10.50" height="10.16" x="564.15" y="137.50" class="todo"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
+<rect width="10.50" height="10.16" x="564.15" y="137.50" class="named"><title>0x004357f0 LiftControl (212 bytes)</title></rect>
 <rect width="10.43" height="10.16" x="577.65" y="137.50" class="todo"><title>0x004084a0 InsertTransQuad (211 bytes)</title></rect>
 <rect width="10.43" height="10.16" x="591.08" y="137.50" class="named"><title>0x00427bb0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="10.43" height="10.16" x="604.52" y="137.50" class="todo"><title>0x0042f8e0 DoFlareInHand (211 bytes)</title></rect>
