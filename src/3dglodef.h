@@ -12,6 +12,7 @@ extern "C" {
 #define MAX_SHADE 0x300
 
 #define W2V_SHIFT 14
+#define W2V_SCALE (1 << W2V_SHIFT)
 
 #define ABS(x) (((x)<0) ? (-(x)):(x))
 
@@ -51,6 +52,7 @@ extern sint16 shade_table[];
 extern sint32 *phd_mxptr;
 extern sint16 phd_winxmin;
 extern sint16 phd_winymin;
+extern int perspective_distance;
 extern sint32 phd_znear;
 extern sint32 phd_zfar;
 extern sint32 phd_left;

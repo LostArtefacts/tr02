@@ -41,6 +41,9 @@ enum inventory_colours {
 
 extern sint32 Inventory_Mode;
 extern SG_COL inv_colours[];
+extern sint32 idelay;
+extern sint32 idcount;
+extern sint16 item_data;
 
 #ifdef __cplusplus
 }

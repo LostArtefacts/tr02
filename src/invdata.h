@@ -12,6 +12,11 @@ extern "C" {
 #define DESELECT_ITEM IN_DESELECT
 #define SELECT_ITEM IN_SELECT
 
+#define DEC_HBAR IN_LEFT
+#define INC_HBAR IN_RIGHT
+#define PREV_HBAR IN_FORWARD
+#define NEXT_HBAR IN_BACK
+
 enum R_flags {
     R_CENTRE = 0,
     R_USE = (1 << 0),
@@ -103,12 +108,19 @@ typedef struct inventory_item {
 
 extern sint32 inputDB;
 
+extern INVENTORY_SPRITE is_sound_muslevel[];
+extern INVENTORY_SPRITE is_sound_sfxlevel[];
+extern INVENTORY_SPRITE is_sound_muslevellow[];
+extern INVENTORY_SPRITE is_sound_sfxlevellow[];
+
 void ShowStatsText(char *time_str, int type);
 void ShowGymStatsText(char *time_str, int type);
 void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos);
 int GetRenderHeight(void);
 int GetRenderWidth(void);
 void do_compass_option(INVENTORY_ITEM *inv_item);
+void do_detail_option(INVENTORY_ITEM *inv_item);
+void do_sound_option(INVENTORY_ITEM *inv_item);
 
 extern REQUEST_INFO Load_Game_Requester;
 

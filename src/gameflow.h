@@ -9,6 +9,26 @@ extern "C" {
 
 #define MAXIMUM_LEVELS 24
 
+enum game_string_ids {
+    GT_MAIN_HEADING = 0,
+    GT_OPTION_HEADING,
+    GT_KEYS_HEADING,
+    GT_GAMEOVER_HEADING,
+    GT_LOADGAME,
+    GT_SAVEGAME,
+    GT_STARTGAME,
+    GT_RESTARTLEVEL,
+    GT_EXIT2TITLE,
+    GT_EXITDEMO,
+    GT_EXITGAME,
+    GT_SELECTLEVEL,
+    GT_SAVEPOSITION,
+    GT_DETAIL,
+    GT_HIGH_DETAIL,
+    GT_MEDIUM_DETAIL,
+    GT_LOW_DETAIL
+};
+
 enum pc_string_ids {
     PCSTR_DETAILLEVEL = 0,
     PCSTR_DEMOMODE,
@@ -85,6 +105,7 @@ typedef struct gameflow_info {
 
 extern GAMEFLOW_INFO gameflow;
 extern char **GF_Level_Names;
+extern char **GF_GameStrings;
 extern char **GF_PCStrings;
 extern sint16 *GF_frontendSequence;
 extern sint16 *GF_level_sequence_list[];

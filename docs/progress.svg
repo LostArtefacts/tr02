@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.63% (145)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.37% (1102)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.71% (146)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.29% (1101)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="86.86" height="6" x="0" y="0" class="named"/>
-<rect width="660.14" height="6" x="86.86" y="0" class="todo"/>
+<rect width="87.46" height="6" x="0" y="0" class="named"/>
+<rect width="659.54" height="6" x="87.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -805,27 +805,27 @@
 <rect width="12" height="12" x="525" y="210" class="todo"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="210" class="todo"><title>0x00440120 SpiderControl (518 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="210" class="todo"><title>0x00440340 BigSpiderControl (421 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="210" class="todo"><title>0x00440500 Func440500 (44 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="210" class="todo"><title>0x00440530 Func440530 (261 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="210" class="todo"><title>0x00440640 Func440640 (55 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="210" class="todo"><title>0x00440680 Func440680 (23 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="210" class="todo"><title>0x004406a0 Func4406a0 (43 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="210" class="todo"><title>0x004406d0 Func4406d0 (140 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="210" class="todo"><title>0x00440760 Func440760 (16 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="210" class="todo"><title>0x00440770 Func440770 (41 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="210" class="todo"><title>0x004407a0 Func4407a0 (16 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="210" class="todo"><title>0x004407b0 Func4407b0 (30 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="210" class="todo"><title>0x004407d0 Func4407d0 (30 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="210" class="todo"><title>0x004407f0 Func4407f0 (30 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="225" class="todo"><title>0x00440810 Func440810 (30 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="225" class="todo"><title>0x00440830 Func440830 (263 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="225" class="todo"><title>0x00440940 Func440940 (37 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="225" class="todo"><title>0x00440970 Func440970 (36 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="225" class="todo"><title>0x004409a0 Func4409a0 (39 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="225" class="todo"><title>0x004409d0 Func4409d0 (393 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="225" class="todo"><title>0x00440b60 Func440b60 (978 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="225" class="todo"><title>0x00440f40 Func440f40 (55 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="225" class="todo"><title>0x00440f80 Func440f80 (57 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="210" class="todo"><title>0x00440500 T_InitPrint (44 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="210" class="todo"><title>0x00440530 T_Print (261 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="210" class="todo"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="210" class="todo"><title>0x00440680 T_SetScale (23 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="210" class="todo"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="210" class="todo"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="210" class="todo"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="210" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="210" class="todo"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="210" class="todo"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="210" class="todo"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="210" class="todo"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="225" class="todo"><title>0x00440810 T_BottomAlign (30 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="225" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="225" class="todo"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="225" class="todo"><title>0x00440970 T_RemoveAllPrints (36 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="225" class="todo"><title>0x004409a0 T_GetStringLen (39 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="225" class="todo"><title>0x004409d0 T_DrawText (393 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="225" class="todo"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="225" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="225" class="todo"><title>0x00440f80 GetTextScaleV (57 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="225" class="todo"><title>0x00440fc0 MineControl (500 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="225" class="todo"><title>0x004411c0 ControlSpikeWall (312 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="225" class="todo"><title>0x00441300 ControlCeilingSpikes (277 bytes)</title></rect>
@@ -1110,7 +1110,7 @@
 <rect width="12" height="12" x="600" y="300" class="todo"><title>0x0044ec80 ScreenShot (501 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="300" class="todo"><title>0x0044ee80 do_inventory_options (127 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="300" class="todo"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="300" class="todo"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="300" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="todo"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="named"><title>0x0044fd60 do_compass_option (192 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="300" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.04%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.96%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">3.25%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">96.75%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="22.67" height="6" x="0" y="0" class="named"/>
-<rect width="724.33" height="6" x="22.67" y="0" class="todo"/>
+<rect width="24.29" height="6" x="0" y="0" class="named"/>
+<rect width="722.71" height="6" x="24.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1391,7 +1391,7 @@
 <rect width="25.07" height="26.49" x="241.47" y="90.57" class="todo"><title>0x00435190 InitialiseDoor (988 bytes)</title></rect>
 <rect width="25.07" height="26.19" x="241.47" y="120.06" class="todo"><title>0x00412fc0 CollideStaticObjects (978 bytes)</title></rect>
 <rect width="25.07" height="26.19" x="241.47" y="149.25" class="todo"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
-<rect width="25.07" height="26.19" x="241.47" y="178.45" class="todo"><title>0x00440b60 Func440b60 (978 bytes)</title></rect>
+<rect width="25.07" height="26.19" x="241.47" y="178.45" class="todo"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
 <rect width="25.07" height="26.16" x="241.47" y="207.64" class="todo"><title>0x00407620 InsertObjectG4 (977 bytes)</title></rect>
 <rect width="25.07" height="25.96" x="241.47" y="236.81" class="todo"><title>0x00436dc0 Worker1Control (970 bytes)</title></rect>
 <rect width="25.07" height="25.48" x="241.47" y="265.76" class="todo"><title>0x0041f650 WarriorControl (954 bytes)</title></rect>
@@ -1435,7 +1435,7 @@
 <rect width="21.68" height="22.37" x="322.86" y="154.84" class="todo"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="21.68" height="22.23" x="322.86" y="180.21" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="21.68" height="21.99" x="322.86" y="205.43" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
-<rect width="21.68" height="21.79" x="322.86" y="230.43" class="todo"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
+<rect width="21.68" height="21.79" x="322.86" y="230.43" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="21.68" height="21.72" x="322.86" y="255.21" class="todo"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="21.68" height="21.62" x="322.86" y="279.93" class="todo"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
 <rect width="21.68" height="21.55" x="322.86" y="304.55" class="todo"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
@@ -1556,7 +1556,7 @@
 <rect width="14.99" height="15.64" x="413.50" y="249.32" class="todo"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="14.99" height="15.54" x="413.50" y="267.95" class="todo"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="14.99" height="15.45" x="413.50" y="286.50" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
-<rect width="14.99" height="15.31" x="413.50" y="304.95" class="todo"><title>0x004409d0 Func4409d0 (393 bytes)</title></rect>
+<rect width="14.99" height="15.31" x="413.50" y="304.95" class="todo"><title>0x004409d0 T_DrawText (393 bytes)</title></rect>
 <rect width="14.99" height="15.26" x="413.50" y="323.26" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="14.99" height="15.26" x="413.50" y="341.52" class="todo"><title>0x0044a840 LoadDepthQ (392 bytes)</title></rect>
 <rect width="14.99" height="15.22" x="413.50" y="359.78" class="todo"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
@@ -1669,12 +1669,12 @@
 <rect width="11.54" height="12.33" x="735.46" y="94.11" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
 <rect width="12.34" height="11.53" x="481.48" y="109.44" class="todo"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="12.28" height="11.53" x="496.82" y="109.44" class="todo"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
-<rect width="12.16" height="11.53" x="512.10" y="109.44" class="todo"><title>0x00440830 Func440830 (263 bytes)</title></rect>
+<rect width="12.16" height="11.53" x="512.10" y="109.44" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="12.11" height="11.53" x="527.26" y="109.44" class="todo"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12.11" height="11.53" x="542.37" y="109.44" class="todo"><title>0x00432d70 InitialiseSlot (262 bytes)</title></rect>
 <rect width="12.11" height="11.53" x="557.48" y="109.44" class="todo"><title>0x0043dee0 SkidooCheckGetOffOK (262 bytes)</title></rect>
 <rect width="12.11" height="11.53" x="572.58" y="109.44" class="todo"><title>0x004543b0 Func4543b0 (262 bytes)</title></rect>
-<rect width="12.05" height="11.53" x="587.69" y="109.44" class="todo"><title>0x00440530 Func440530 (261 bytes)</title></rect>
+<rect width="12.05" height="11.53" x="587.69" y="109.44" class="todo"><title>0x00440530 T_Print (261 bytes)</title></rect>
 <rect width="12.05" height="11.53" x="602.74" y="109.44" class="todo"><title>0x004425b0 FallingBlock (261 bytes)</title></rect>
 <rect width="12.05" height="11.53" x="617.79" y="109.44" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="11.99" height="11.53" x="632.84" y="109.44" class="todo"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
@@ -1906,7 +1906,7 @@
 <rect width="8.07" height="7.60" x="558.68" y="262.11" class="todo"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="272.71" class="todo"><title>0x0041c4b0 ItemNearLara (140 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="283.31" class="todo"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
-<rect width="8.07" height="7.60" x="558.68" y="293.91" class="todo"><title>0x004406d0 Func4406d0 (140 bytes)</title></rect>
+<rect width="8.07" height="7.60" x="558.68" y="293.91" class="todo"><title>0x004406d0 T_AddBackground (140 bytes)</title></rect>
 <rect width="8.07" height="7.60" x="558.68" y="304.50" class="todo"><title>0x00445740 WinVidGetDisplayMode (140 bytes)</title></rect>
 <rect width="8.07" height="7.52" x="558.68" y="315.10" class="todo"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
 <rect width="8.07" height="7.52" x="558.68" y="325.62" class="named"><title>0x00427880 lara_as_walk (139 bytes)</title></rect>
@@ -2216,7 +2216,7 @@
 <rect width="4.09" height="3.74" x="648.59" y="317.38" class="todo"><title>0x00426e50 CreateItem (57 bytes)</title></rect>
 <rect width="4.09" height="3.74" x="648.59" y="324.12" class="todo"><title>0x004284e0 lara_as_switchon (57 bytes)</title></rect>
 <rect width="4.09" height="3.74" x="648.59" y="330.85" class="todo"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
-<rect width="4.09" height="3.74" x="648.59" y="337.59" class="todo"><title>0x00440f80 Func440f80 (57 bytes)</title></rect>
+<rect width="4.09" height="3.74" x="648.59" y="337.59" class="todo"><title>0x00440f80 GetTextScaleV (57 bytes)</title></rect>
 <rect width="4.09" height="3.74" x="648.59" y="344.32" class="todo"><title>0x00447220 Func447220 (57 bytes)</title></rect>
 <rect width="4.09" height="3.74" x="648.59" y="351.06" class="named"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
 <rect width="4.09" height="3.74" x="648.59" y="357.79" class="todo"><title>0x00447bf0 Func447bf0 (57 bytes)</title></rect>
@@ -2229,8 +2229,8 @@
 <rect width="3.72" height="3.86" x="682.80" y="283.23" class="todo"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="689.52" y="283.23" class="todo"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="696.24" y="283.23" class="todo"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
-<rect width="3.72" height="3.86" x="702.96" y="283.23" class="todo"><title>0x00440640 Func440640 (55 bytes)</title></rect>
-<rect width="3.72" height="3.86" x="709.68" y="283.23" class="todo"><title>0x00440f40 Func440f40 (55 bytes)</title></rect>
+<rect width="3.72" height="3.86" x="702.96" y="283.23" class="todo"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
+<rect width="3.72" height="3.86" x="709.68" y="283.23" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="716.40" y="283.23" class="todo"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="723.12" y="283.23" class="todo"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="729.84" y="283.23" class="todo"><title>0x004558a0 S_CDVolume (55 bytes)</title></rect>
@@ -2322,13 +2322,13 @@
 <rect width="2.97" height="3.18" x="675.19" y="365.65" class="named"><title>0x00428320 lara_as_fallback (44 bytes)</title></rect>
 <rect width="2.97" height="3.18" x="675.19" y="371.82" class="todo"><title>0x004339a0 InitialiseMovingBlock (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="309.23" class="todo"><title>0x00435780 DrawBridgeCollision (44 bytes)</title></rect>
-<rect width="2.81" height="3.34" x="681.16" y="315.58" class="todo"><title>0x00440500 Func440500 (44 bytes)</title></rect>
+<rect width="2.81" height="3.34" x="681.16" y="315.58" class="todo"><title>0x00440500 T_InitPrint (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="321.92" class="todo"><title>0x00447f80 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="328.26" class="named"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
 <rect width="2.81" height="3.34" x="681.16" y="334.61" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="340.95" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="347.15" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
-<rect width="2.81" height="3.20" x="681.16" y="353.35" class="todo"><title>0x004406a0 Func4406a0 (43 bytes)</title></rect>
+<rect width="2.81" height="3.20" x="681.16" y="353.35" class="todo"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="359.55" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="2.81" height="3.20" x="681.16" y="365.75" class="todo"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
 <rect width="2.81" height="3.05" x="681.16" y="371.95" class="todo"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
@@ -2336,7 +2336,7 @@
 <rect width="2.90" height="2.97" x="692.87" y="309.23" class="todo"><title>0x0044b580 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="2.90" height="2.97" x="698.76" y="309.23" class="todo"><title>0x00455400 CalcVolume (42 bytes)</title></rect>
 <rect width="2.90" height="2.97" x="704.66" y="309.23" class="todo"><title>0x00456ba0 SetRegistryBoolValue (42 bytes)</title></rect>
-<rect width="2.76" height="2.97" x="710.56" y="309.23" class="todo"><title>0x00440770 Func440770 (41 bytes)</title></rect>
+<rect width="2.76" height="2.97" x="710.56" y="309.23" class="todo"><title>0x00440770 T_AddOutline (41 bytes)</title></rect>
 <rect width="2.76" height="2.97" x="716.31" y="309.23" class="todo"><title>0x00447740 DInputKeyboardRelease (41 bytes)</title></rect>
 <rect width="2.76" height="2.97" x="722.07" y="309.23" class="todo"><title>0x0044d1e0 HWR_ResetTexSource (41 bytes)</title></rect>
 <rect width="2.61" height="2.97" x="727.82" y="309.23" class="todo"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
@@ -2344,7 +2344,7 @@
 <rect width="2.47" height="2.97" x="739.05" y="309.23" class="todo"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="2.47" height="2.97" x="744.53" y="309.23" class="todo"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
 <rect width="2.60" height="2.83" x="686.97" y="315.20" class="todo"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
-<rect width="2.60" height="2.83" x="686.97" y="321.03" class="todo"><title>0x004409a0 Func4409a0 (39 bytes)</title></rect>
+<rect width="2.60" height="2.83" x="686.97" y="321.03" class="todo"><title>0x004409a0 T_GetStringLen (39 bytes)</title></rect>
 <rect width="2.60" height="2.83" x="686.97" y="326.86" class="named"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="2.60" height="2.68" x="686.97" y="332.70" class="todo"><title>0x00425400 Inv_RingMotionRadius (38 bytes)</title></rect>
 <rect width="2.60" height="2.68" x="686.97" y="338.38" class="todo"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
@@ -2354,7 +2354,7 @@
 <rect width="2.60" height="2.68" x="686.97" y="361.10" class="todo"><title>0x00456100 FreeTexturePages (38 bytes)</title></rect>
 <rect width="2.60" height="2.68" x="686.97" y="366.79" class="todo"><title>0x00457470 Func457470 (38 bytes)</title></rect>
 <rect width="2.60" height="2.53" x="686.97" y="372.47" class="todo"><title>0x00425460 Inv_RingMotionCameraPos (37 bytes)</title></rect>
-<rect width="2.84" height="2.31" x="692.58" y="315.20" class="todo"><title>0x00440940 Func440940 (37 bytes)</title></rect>
+<rect width="2.84" height="2.31" x="692.58" y="315.20" class="todo"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
 <rect width="2.84" height="2.31" x="698.42" y="315.20" class="todo"><title>0x004454b0 WinVidBufferUnlock (37 bytes)</title></rect>
 <rect width="2.84" height="2.31" x="704.25" y="315.20" class="todo"><title>0x00456030 Create3DTexture (37 bytes)</title></rect>
 <rect width="2.84" height="2.31" x="710.09" y="315.20" class="todo"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
@@ -2362,7 +2362,7 @@
 <rect width="2.68" height="2.31" x="721.60" y="315.20" class="todo"><title>0x0041da00 AssaultStart (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="727.28" y="315.20" class="todo"><title>0x00424fb0 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="732.96" y="315.20" class="named"><title>0x0043fa00 SOUND_Stop (36 bytes)</title></rect>
-<rect width="2.68" height="2.31" x="738.64" y="315.20" class="todo"><title>0x00440970 Func440970 (36 bytes)</title></rect>
+<rect width="2.68" height="2.31" x="738.64" y="315.20" class="todo"><title>0x00440970 T_RemoveAllPrints (36 bytes)</title></rect>
 <rect width="2.68" height="2.31" x="744.32" y="315.20" class="todo"><title>0x004445f0 Enumerate3DDevices (36 bytes)</title></rect>
 <rect width="2.31" height="2.68" x="692.58" y="320.51" class="todo"><title>0x004474e0 DInputEnumDevices (36 bytes)</title></rect>
 <rect width="2.31" height="2.68" x="697.89" y="320.51" class="todo"><title>0x00448480 WinSndFinish (36 bytes)</title></rect>
@@ -2400,10 +2400,10 @@
 <rect width="2.30" height="1.91" x="713.96" y="326.19" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
 <rect width="2.12" height="1.91" x="719.25" y="326.19" class="todo"><title>0x004298e0 lara_col_slide (30 bytes)</title></rect>
 <rect width="2.12" height="1.91" x="724.38" y="326.19" class="todo"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
-<rect width="2.12" height="1.91" x="729.50" y="326.19" class="todo"><title>0x004407b0 Func4407b0 (30 bytes)</title></rect>
-<rect width="2.12" height="1.91" x="734.63" y="326.19" class="todo"><title>0x004407d0 Func4407d0 (30 bytes)</title></rect>
-<rect width="2.12" height="1.91" x="739.75" y="326.19" class="todo"><title>0x004407f0 Func4407f0 (30 bytes)</title></rect>
-<rect width="2.12" height="1.91" x="744.88" y="326.19" class="todo"><title>0x00440810 Func440810 (30 bytes)</title></rect>
+<rect width="2.12" height="1.91" x="729.50" y="326.19" class="todo"><title>0x004407b0 T_CentreH (30 bytes)</title></rect>
+<rect width="2.12" height="1.91" x="734.63" y="326.19" class="todo"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
+<rect width="2.12" height="1.91" x="739.75" y="326.19" class="todo"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
+<rect width="2.12" height="1.91" x="744.88" y="326.19" class="todo"><title>0x00440810 T_BottomAlign (30 bytes)</title></rect>
 <rect width="2.32" height="1.73" x="703.37" y="331.10" class="named"><title>0x0044ca40 GetRandomControl (30 bytes)</title></rect>
 <rect width="2.32" height="1.73" x="708.69" y="331.10" class="named"><title>0x0044ca70 GetRandomDraw (30 bytes)</title></rect>
 <rect width="2.32" height="1.73" x="714.01" y="331.10" class="todo"><title>0x00456b80 SetRegistryDwordValue (30 bytes)</title></rect>
@@ -2445,7 +2445,7 @@
 <rect width="1.71" height="1.27" x="727.04" y="340.72" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="731.75" y="340.72" class="named"><title>0x00456910 UT_ErrorBox (24 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="736.46" y="340.72" class="todo"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
-<rect width="1.51" height="1.27" x="740.97" y="340.72" class="todo"><title>0x00440680 Func440680 (23 bytes)</title></rect>
+<rect width="1.51" height="1.27" x="740.97" y="340.72" class="todo"><title>0x00440680 T_SetScale (23 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="745.49" y="340.72" class="todo"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
 <rect width="1.47" height="1.31" x="712.91" y="344.99" class="todo"><title>0x00453750 Func453750 (23 bytes)</title></rect>
 <rect width="1.47" height="1.31" x="712.91" y="349.30" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
@@ -2482,8 +2482,8 @@
 <rect width="0.97" height="0.59" x="721.24" y="360.48" class="todo"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
 <rect width="0.97" height="0.59" x="721.24" y="364.07" class="named"><title>0x0044d730 ShutdownGame (17 bytes)</title></rect>
 <rect width="0.97" height="0.59" x="721.24" y="367.66" class="todo"><title>0x00454af0 Func454af0 (17 bytes)</title></rect>
-<rect width="0.97" height="0.38" x="721.24" y="371.25" class="todo"><title>0x00440760 Func440760 (16 bytes)</title></rect>
-<rect width="0.97" height="0.38" x="721.24" y="374.62" class="todo"><title>0x004407a0 Func4407a0 (16 bytes)</title></rect>
+<rect width="0.97" height="0.38" x="721.24" y="371.25" class="todo"><title>0x00440760 T_RemoveBackground (16 bytes)</title></rect>
+<rect width="0.97" height="0.38" x="721.24" y="374.62" class="todo"><title>0x004407a0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="0.78" height="0.55" x="725.21" y="352.88" class="named"><title>0x00452050 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="0.54" height="0.55" x="728.99" y="352.88" class="todo"><title>0x00447890 WinInFinish (15 bytes)</title></rect>
 <rect width="0.54" height="0.55" x="732.53" y="352.88" class="named"><title>0x0044c460 S_FinishInventory (15 bytes)</title></rect>
