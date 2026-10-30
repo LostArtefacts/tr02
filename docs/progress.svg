@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.35% (553)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.65% (694)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">44.43% (554)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">55.57% (693)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="331.27" height="6" x="0" y="0" class="named"/>
-<rect width="415.73" height="6" x="331.27" y="0" class="todo"/>
+<rect width="331.87" height="6" x="0" y="0" class="named"/>
+<rect width="415.13" height="6" x="331.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -401,7 +401,7 @@
 <rect width="12" height="12" x="465" y="90" class="todo"><title>0x004239a0 GetDebouncedInput (25 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="90" class="named"><title>0x004239c0 DoInventoryPicture (5 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="90" class="todo"><title>0x004239d0 DoInventoryBackground (306 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="90" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="90" class="named"><title>0x00423b10 InitColours (266 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="90" class="named"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="90" class="named"><title>0x00423d90 RingIsNotOpen (129 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="90" class="named"><title>0x00423e20 RingNotActive (1127 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">24.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">75.91%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="179.39" height="6" x="0" y="0" class="named"/>
-<rect width="567.61" height="6" x="179.39" y="0" class="todo"/>
+<rect width="179.97" height="6" x="0" y="0" class="named"/>
+<rect width="567.03" height="6" x="179.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.30" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1667,7 +1667,7 @@
 <rect width="11.58" height="12.33" x="706.36" y="94.24" class="named"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
 <rect width="11.53" height="12.33" x="720.94" y="94.24" class="named"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="11.53" height="12.33" x="735.47" y="94.24" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
-<rect width="12.20" height="11.59" x="481.72" y="109.56" class="todo"><title>0x00423b10 InitColours (266 bytes)</title></rect>
+<rect width="12.20" height="11.59" x="481.72" y="109.56" class="named"><title>0x00423b10 InitColours (266 bytes)</title></rect>
 <rect width="12.20" height="11.59" x="496.92" y="109.56" class="named"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="12.15" height="11.59" x="512.13" y="109.56" class="named"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
 <rect width="12.09" height="11.59" x="527.27" y="109.56" class="named"><title>0x0042a6d0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
