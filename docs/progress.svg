@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.07% (736)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.93% (510)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.15% (737)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.85% (509)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="441.25" height="6" x="0" y="0" class="named"/>
-<rect width="305.75" height="6" x="441.25" y="0" class="todo"/>
+<rect width="441.85" height="6" x="0" y="0" class="named"/>
+<rect width="305.15" height="6" x="441.85" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -227,7 +227,7 @@
 <rect width="12" height="12" x="105" y="45" class="named"><title>0x004138c0 ObjectCollision (85 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="45" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="45" class="named"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="45" class="todo"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="45" class="named"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="45" class="named"><title>0x00413d20 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="45" class="todo"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="todo"><title>0x00413f30 AlignLaraPosition (315 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.71%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.51%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.49%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="315.88" height="6" x="0" y="0" class="named"/>
-<rect width="431.12" height="6" x="315.88" y="0" class="todo"/>
+<rect width="317.58" height="6" x="0" y="0" class="named"/>
+<rect width="429.42" height="6" x="317.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1425,7 +1425,7 @@
 <rect width="22.65" height="23.37" x="297.14" y="300.10" class="todo"><title>0x00454ef0 CheckCheatMode (813 bytes)</title></rect>
 <rect width="22.65" height="22.78" x="297.14" y="326.47" class="todo"><title>0x00407a00 InsertObjectG3 (795 bytes)</title></rect>
 <rect width="22.65" height="22.75" x="297.14" y="352.25" class="todo"><title>0x0042b970 GetLJAInt (794 bytes)</title></rect>
-<rect width="21.72" height="23.05" x="322.79" y="0" class="todo"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
+<rect width="21.72" height="23.05" x="322.79" y="0" class="named"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
 <rect width="21.72" height="22.84" x="322.79" y="26.05" class="named"><title>0x00430a10 AnimateLara (768 bytes)</title></rect>
 <rect width="21.72" height="22.78" x="322.79" y="51.89" class="todo"><title>0x00416310 ObjectOnLOS (766 bytes)</title></rect>
 <rect width="21.72" height="22.74" x="322.79" y="77.67" class="todo"><title>0x0045785f gtmapA (765 bytes)</title></rect>
