@@ -1429,6 +1429,61 @@ int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
 }
 
 
+#define HANG_ANGLE (35 * ONE_DEGREE)
+#define STARTHANG_A 96
+#define STARTHANG_F GF(STARTHANG_A, 12)
+
+int LaraTestHangJumpUp(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint32 edge;
+    int edge_catch;
+    sint16 *bounds;
+    PHD_ANGLE angle;
+
+    if (coll->coll_type != COLL_FRONT || !(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || coll->hit_static
+        || coll->mid_ceiling > -STEPUP_HEIGHT)
+        return 0;
+
+    if (!(edge_catch = LaraTestEdgeCatch(item, coll, &edge)))
+        return 0;
+
+    if (edge_catch < 0 && !LaraTestHangOnClimbWall(item, coll))
+        return 0;
+
+    angle = item->pos.y_rot;
+
+    if (angle >= 0 - HANG_ANGLE && angle <= 0 + HANG_ANGLE)
+        angle = 0;
+    else if (angle >= 16384 - HANG_ANGLE && angle <= 16384 + HANG_ANGLE)
+        angle = 16384;
+    else if (angle >= 32767 - HANG_ANGLE || angle <= -32767 + HANG_ANGLE)
+        angle = -32768;
+    else if (angle >= -16384 - HANG_ANGLE && angle <= -16384 + HANG_ANGLE)
+        angle = -16384;
+    if (angle & 0x3fff)
+        return 0;
+
+    item->goal_anim_state = AS_HANG;
+    item->current_anim_state = AS_HANG;
+    item->anim_number = STARTHANG_A;
+    item->frame_number = STARTHANG_F;
+    bounds = GetBoundsAccurate(item);
+    if (edge_catch > 0)
+        item->pos.y_pos += coll->front_floor - bounds[2];
+    else
+        item->pos.y_pos = edge - bounds[2];
+
+    item->pos.x_pos += coll->shift.x;
+    item->pos.z_pos += coll->shift.z;
+    item->pos.y_rot = angle;
+    item->gravity_status = 0;
+    item->speed = 0;
+    item->fallspeed = 0;
+    lara.gun_status = LG_HANDSBUSY;
+    return 1;
+}
+
+
 #define SLIDE_A 70
 #define SLIDE_F GF(SLIDE_A, 0)
 #define SLIDEBACK_A 104

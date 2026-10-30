@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.16% (638)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.84% (609)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.24% (639)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.76% (608)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="382.19" height="6" x="0" y="0" class="named"/>
-<rect width="364.81" height="6" x="382.19" y="0" class="todo"/>
+<rect width="382.79" height="6" x="0" y="0" class="named"/>
+<rect width="364.21" height="6" x="382.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -558,7 +558,7 @@
 <rect width="12" height="12" x="570" y="135" class="named"><title>0x0042a7e0 LaraTestClimbStance (190 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="135" class="todo"><title>0x0042a8a0 LaraHangTest (830 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="135" class="named"><title>0x0042ac00 LaraTestEdgeCatch (173 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="135" class="todo"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="135" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="135" class="todo"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="135" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="135" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.76%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.35%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">68.65%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="233.37" height="6" x="0" y="0" class="named"/>
-<rect width="513.63" height="6" x="233.37" y="0" class="todo"/>
+<rect width="234.17" height="6" x="0" y="0" class="named"/>
+<rect width="512.83" height="6" x="234.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1579,7 +1579,7 @@
 <rect width="14.07" height="14.92" x="715.85" y="59.77" class="named"><title>0x00410230 CreatureKill (367 bytes)</title></rect>
 <rect width="14.07" height="14.92" x="732.93" y="59.77" class="todo"><title>0x00412100 DoCinematic (367 bytes)</title></rect>
 <rect width="13.88" height="15.08" x="432.81" y="77.69" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
-<rect width="13.88" height="15.03" x="432.81" y="95.76" class="todo"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
+<rect width="13.88" height="15.03" x="432.81" y="95.76" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="13.88" height="14.98" x="432.81" y="113.79" class="todo"><title>0x0044d3e0 HWR_DrawPolyList (364 bytes)</title></rect>
 <rect width="13.88" height="14.83" x="432.81" y="131.76" class="named"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
 <rect width="13.88" height="14.83" x="432.81" y="149.59" class="todo"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
