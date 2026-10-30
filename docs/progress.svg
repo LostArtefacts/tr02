@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.91% (373)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.09% (874)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.99% (374)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.01% (873)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="223.44" height="6" x="0" y="0" class="named"/>
-<rect width="523.56" height="6" x="223.44" y="0" class="todo"/>
+<rect width="224.04" height="6" x="0" y="0" class="named"/>
+<rect width="522.96" height="6" x="224.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -317,7 +317,7 @@
 <rect width="12" height="12" x="705" y="60" class="named"><title>0x0041c7d0 Richochet (114 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="60" class="named"><title>0x0041c850 ControlRichochet1 (48 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="60" class="named"><title>0x0041c880 CreateBubble (100 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="75" class="todo"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="75" class="named"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="75" class="named"><title>0x0041c970 ControlBubble1 (243 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="75" class="named"><title>0x0041ca70 Splash (194 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="75" class="named"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.85%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.15%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.89%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.11%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="81.07" height="6" x="0" y="0" class="named"/>
-<rect width="665.93" height="6" x="81.07" y="0" class="todo"/>
+<rect width="81.33" height="6" x="0" y="0" class="named"/>
+<rect width="665.67" height="6" x="81.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1968,7 +1968,7 @@
 <rect width="6.96" height="7.18" x="579.87" y="228.37" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="6.96" height="7.09" x="579.87" y="238.55" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="6.96" height="7.09" x="579.87" y="248.64" class="todo"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
-<rect width="6.96" height="7.09" x="579.87" y="258.74" class="todo"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
+<rect width="6.96" height="7.09" x="579.87" y="258.74" class="named"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
 <rect width="6.96" height="7.01" x="579.87" y="268.83" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
 <rect width="6.96" height="7.01" x="579.87" y="278.84" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="6.96" height="7.01" x="579.87" y="288.85" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>

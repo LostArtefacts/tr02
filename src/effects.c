@@ -179,6 +179,24 @@ void CreateBubble(PHD_3DPOS *pos, sint16 room_number)
     }
 }
 
+void LaraBubbles(ITEM_INFO *item)
+{
+    int count;
+    PHD_VECTOR offset;
+
+    count = GetRandomDraw() * 3 / 0x8000;
+    if (!count)
+        return;
+
+    SoundEffect(37, &item->pos, UNDERWATER);
+    offset.x = 0;
+    offset.y = 0;
+    offset.z = 50;
+    GetJointAbsPosition(item, &offset, 14);
+    for (; count > 0; count--)
+        CreateBubble((PHD_3DPOS *)&offset, item->room_number);
+}
+
 void ControlBubble1(sint16 fx_num)
 {
     FX_INFO *fx;
