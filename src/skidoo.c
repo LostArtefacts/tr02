@@ -25,12 +25,21 @@
 #define SKIDOO_HIT_RIGHT 12
 #define SKIDOO_HIT_FRONT 13
 #define SKIDOO_HIT_BACK 14
+#define SKIDOO_GETOFF_DIST 330
 
 #define SKIDOO_UNDO_TURN (ONE_DEGREE * 2)
+#define SKIDOO_TURN (ONE_DEGREE / 2 + SKIDOO_UNDO_TURN)
+#define SKIDOO_MAX_TURN (ONE_DEGREE * 6)
 #define SKIDOO_MOMENTUM_TURN (ONE_DEGREE * 3)
 #define SKIDOO_MAX_MOM_TURN (ONE_DEGREE * 150)
+#define SKIDOO_FAST_SPEED 150
 #define SKIDOO_MAX_SPEED 100
+#define SKIDOO_SLOW_SPEED 50
+#define SKIDOO_MIN_SPEED 15
 #define SKIDOO_ACCELERATION 10
+#define SKIDOO_BRAKE 5
+#define SKIDOO_SLOWDOWN 2
+#define SKIDOO_REVERSE -5
 #define SKIDOO_MAX_BACK -30
 #define SKIDOO_MAX_KICK -80
 #define SKIDOO_SLIP 100
@@ -46,6 +55,7 @@
 #define AVALANCHE 83
 #define SNOW_SPRITE 90
 #define TRAP_ACTIVATE 1
+#define BIG_SLOPE 2
 
 typedef struct {
     sint16 track_mesh;
@@ -533,4 +543,81 @@ int SkidooDynamics(ITEM_INFO *skidoo)
     }
 
     return collide;
+}
+
+int SkidooUserControl(ITEM_INFO *skidoo, sint32 height, int *pitch)
+{
+    int drive = 0, max_speed;
+    SKIDOO_INFO *skinfo;
+
+    skinfo = (SKIDOO_INFO *)skidoo->data;
+
+    if (skidoo->pos.y_pos >= height - STEP_L)
+    {
+        *pitch = skidoo->speed + (height - skidoo->pos.y_pos);
+
+        if (skidoo->speed == 0 && (input & IN_LOOK))
+            LookUpDown();
+
+        if (((input & IN_LEFT) && !(input & IN_BACK)) || ((input & IN_RIGHT) && (input & IN_BACK)))
+        {
+            skinfo->skidoo_turn -= SKIDOO_TURN;
+            if (skinfo->skidoo_turn < -SKIDOO_MAX_TURN)
+                skinfo->skidoo_turn = -SKIDOO_MAX_TURN;
+        }
+
+        if (((input & IN_RIGHT) && !(input & IN_BACK)) || ((input & IN_LEFT) && (input & IN_BACK)))
+        {
+            skinfo->skidoo_turn += SKIDOO_TURN;
+            if (skinfo->skidoo_turn > SKIDOO_MAX_TURN)
+                skinfo->skidoo_turn = SKIDOO_MAX_TURN;
+        }
+
+        if (input & IN_BACK)
+        {
+            if (skidoo->speed > 0)
+                skidoo->speed -= SKIDOO_BRAKE;
+            else
+            {
+                if (skidoo->speed > SKIDOO_MAX_BACK)
+                    skidoo->speed += SKIDOO_REVERSE;
+                drive = 1;
+            }
+        }
+        else if (input & IN_FORWARD)
+        {
+            if ((input & IN_ACTION) && !(skinfo->track_mesh & 4))
+                max_speed = SKIDOO_FAST_SPEED;
+            else if (input & IN_SLOW)
+                max_speed = SKIDOO_SLOW_SPEED;
+            else
+                max_speed = SKIDOO_MAX_SPEED;
+
+            if (skidoo->speed < max_speed)
+                skidoo->speed += SKIDOO_ACCELERATION / 2 + SKIDOO_ACCELERATION * skidoo->speed / (2 * max_speed);
+            else if (skidoo->speed > max_speed + SKIDOO_SLOWDOWN)
+                skidoo->speed -= SKIDOO_SLOWDOWN;
+            drive = 1;
+        }
+        else if (skidoo->speed >= 0 && skidoo->speed < SKIDOO_MIN_SPEED && (input & (IN_LEFT | IN_RIGHT)))
+        {
+            skidoo->speed = SKIDOO_MIN_SPEED;
+            drive = 1;
+        }
+        else if (skidoo->speed > SKIDOO_SLOWDOWN)
+        {
+            skidoo->speed -= SKIDOO_SLOWDOWN;
+            if ((GetRandomDraw() & 0x7f) < skidoo->speed)
+                drive = 1;
+        }
+        else
+            skidoo->speed = 0;
+    }
+    else if (input & (IN_FORWARD | IN_BACK))
+    {
+        drive = 1;
+        *pitch = skinfo->pitch + 50;
+    }
+
+    return drive;
 }
