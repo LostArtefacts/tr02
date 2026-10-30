@@ -943,7 +943,7 @@ address,size,name,symbol
 0x00448ef0,3,RenderInit,_RenderInit
 0x00448f00,933,RenderStart,_RenderStart ?RenderStart@@YAX_N@Z
 0x004492b0,230,RenderFinish,_RenderFinish ?RenderFinish@@YAX_N@Z
-0x004493a0,284,ApplySettings,_ApplySettings
+0x004493a0,524,ApplySettings,_ApplySettings
 0x004495b0,272,FmvBackToGame,_FmvBackToGame
 0x004496c0,570,GameApplySettings,_GameApplySettings
 0x00449900,104,UpdateGameResolution,_UpdateGameResolution
@@ -1597,6 +1597,7 @@ address,size,name,symbol
 0x00466498,4,fade_adder,?fade_adder@@3HA
 0x004664b4,28,RendererReinitFailed,_RendererReinitFailed
 0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
+0x004664d8,9,Var4664d8,_Var4664d8
 0x004664e8,4,ErrorStringTable,_ErrorStringTable
 0x004668c0,,LoadRoomsTooMany,_LoadRoomsTooMany
 0x004668dc,,LoadRoomsNoMemory,_LoadRoomsNoMemory
