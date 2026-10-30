@@ -31,3 +31,17 @@ double UT_GetAccurateTimer()
     else
         return double(timeGetTime() - LdwInitialTimer) / 1000.0;
 }
+
+void UT_CenterWindow(HWND hWnd)
+{
+    RECT rcWnd, rcArea;
+
+    SystemParametersInfo(SPI_GETWORKAREA, NULL, &rcArea, NULL);
+    GetWindowRect(hWnd, &rcWnd);
+    int x, y;
+    x = (rcArea.right + rcArea.left) >> 1;
+    y = (rcArea.bottom + rcArea.top) >> 1;
+    x -= (rcWnd.right - rcWnd.left) >> 1;
+    y -= (rcWnd.bottom - rcWnd.top) >> 1;
+    SetWindowPos(hWnd, NULL, x, y, -1, -1, SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);
+}
