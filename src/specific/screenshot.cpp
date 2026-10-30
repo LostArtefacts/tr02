@@ -57,3 +57,46 @@ extern "C" DWORD CompPCX(BYTE *bitmap, int width, int height, BYTE *palette, BYT
         *pic++ = *palette++;
     return pic - *pcxData;
 }
+
+extern "C" DWORD EncodeLinePCX(BYTE *src, int width, BYTE *dst)
+{
+    BYTE current;
+    DWORD add;
+    DWORD total = 0;
+    BYTE run = 1;
+    BYTE last = *src;
+    int i;
+
+    for (i = 1; i < width; i++) {
+        current = *++src;
+        if (current == last) {
+            run++;
+            if (run == 63) {
+                add = EncodePutPCX(last, run, dst);
+                if (!add)
+                    return 0;
+                total += add;
+                dst += add;
+                run = 0;
+            }
+        } else {
+            if (run) {
+                add = EncodePutPCX(last, run, dst);
+                if (!add)
+                    return 0;
+                total += add;
+                dst += add;
+            }
+            last = current;
+            run = 1;
+        }
+    }
+    if (run) {
+        add = EncodePutPCX(last, run, dst);
+        if (!add)
+            return 0;
+        total += add;
+        dst += add;
+    }
+    return total;
+}
