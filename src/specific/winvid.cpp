@@ -617,6 +617,26 @@ struct DISPLAY_MODE {
     bool CompareVideoModes(DISPLAY_MODE *mode);
 };
 
+extern "C" bool WinVidGetDisplayMode(DISPLAY_MODE *dispMode)
+{
+    DDSURFACEDESC dsp;
+
+    memset(&dsp, 0, sizeof(dsp));
+    dsp.dwSize = sizeof(dsp);
+    if (DX_TRY(DDraw->GetDisplayMode(&dsp)))
+        return false;
+    if (!(dsp.dwFlags & DDSD_WIDTH) || !(dsp.dwFlags & DDSD_HEIGHT) || !(dsp.dwFlags & DDSD_PIXELFORMAT) || !(dsp.ddpfPixelFormat.dwFlags & DDPF_RGB))
+        return false;
+    dispMode->width = dsp.dwWidth;
+    dispMode->height = dsp.dwHeight;
+    dispMode->bpp = dsp.ddpfPixelFormat.dwRGBBitCount;
+    if (dsp.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED8)
+        dispMode->vga = 1;
+    else
+        dispMode->vga = 0;
+    return true;
+}
+
 bool DISPLAY_MODE::CompareVideoModes(DISPLAY_MODE *mode)
 {
     int square1 = width * height;
