@@ -360,3 +360,15 @@ void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
     SetDIBitsToDevice(hdc, x, y, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, 0, 0, info->bmiHeader.biHeight, bmpData, bmpInfo, DIB_RGB_COLORS);
     SelectPalette(hdc, old, FALSE);
 }
+
+void BITMAP_RESOURCE::ChangePalette(HWND hWnd)
+{
+    if (!hPalette)
+        return;
+    HDC hdc = GetDC(hWnd);
+    HPALETTE old = SelectPalette(hdc, hPalette, FALSE);
+    UnrealizeObject(hPalette);
+    RealizePalette(hdc);
+    SelectPalette(hdc, old, FALSE);
+    ReleaseDC(hWnd, hdc);
+}

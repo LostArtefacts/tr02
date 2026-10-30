@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.84% (909)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.60% (332)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.92% (910)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.52% (331)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="544.09" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="544.09" y="0" class="decompiled"/>
-<rect width="198.72" height="6" x="548.28" y="0" class="todo"/>
+<rect width="544.69" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="544.69" y="0" class="decompiled"/>
+<rect width="198.12" height="6" x="548.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1267,7 +1267,7 @@
 <rect width="12" height="12" x="690" y="345" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="345" class="named"><title>0x004570d0 SE_DrawBitmap (100 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="345" class="todo"><title>0x00457140 Func457140 (28 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="345" class="todo"><title>0x00457160 Func457160 (87 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="345" class="named"><title>0x00457160 SE_ChangeBitmapPalette (87 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="360" class="named"><title>0x004571c0 SE_RegisterSetupWindowClass (97 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="360" class="todo"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="360" class="decompiled"><title>0x00457470 Func457470 (38 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.73%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.19%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.75%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.16%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.35" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="401.35" y="0" class="decompiled"/>
-<rect width="345.04" height="6" x="401.96" y="0" class="todo"/>
+<rect width="401.54" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.54" y="0" class="decompiled"/>
+<rect width="344.85" height="6" x="402.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.95" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2082,7 +2082,7 @@
 <rect width="5.40" height="5.59" x="634.53" y="245.45" class="named"><title>0x00427c90 lara_as_fastback (87 bytes)</title></rect>
 <rect width="5.40" height="5.59" x="642.93" y="245.45" class="named"><title>0x00431b90 lara_col_surftread (87 bytes)</title></rect>
 <rect width="5.40" height="5.59" x="651.33" y="245.45" class="named"><title>0x0044c4c0 S_Wait (87 bytes)</title></rect>
-<rect width="5.40" height="5.59" x="659.73" y="245.45" class="todo"><title>0x00457160 Func457160 (87 bytes)</title></rect>
+<rect width="5.40" height="5.59" x="659.73" y="245.45" class="named"><title>0x00457160 SE_ChangeBitmapPalette (87 bytes)</title></rect>
 <rect width="5.30" height="5.59" x="668.13" y="245.45" class="named"><title>0x00425740 ReqItemRightAlign (86 bytes)</title></rect>
 <rect width="5.30" height="5.59" x="676.43" y="245.45" class="named"><title>0x00456720 Sync (86 bytes)</title></rect>
 <rect width="5.21" height="5.59" x="684.74" y="245.45" class="named"><title>0x00413480 GetNewRoom (85 bytes)</title></rect>
