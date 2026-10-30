@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.42% (317)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.58% (930)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">25.50% (318)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">74.50% (929)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="189.89" height="6" x="0" y="0" class="named"/>
-<rect width="557.11" height="6" x="189.89" y="0" class="todo"/>
+<rect width="190.49" height="6" x="0" y="0" class="named"/>
+<rect width="556.51" height="6" x="190.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -696,7 +696,7 @@
 <rect width="12" height="12" x="390" y="180" class="todo"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="todo"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="180" class="todo"><title>0x00434db0 BellControl (126 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="180" class="todo"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="180" class="named"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="180" class="todo"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="180" class="todo"><title>0x00434f80 WindowControl (150 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="180" class="todo"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="59.53" height="6" x="0" y="0" class="named"/>
-<rect width="687.47" height="6" x="59.53" y="0" class="todo"/>
+<rect width="59.79" height="6" x="0" y="0" class="named"/>
+<rect width="687.21" height="6" x="59.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1979,7 +1979,7 @@
 <rect width="6.96" height="6.92" x="579.87" y="338.55" class="todo"><title>0x00456d20 GetRegistryBoolValue (118 bytes)</title></rect>
 <rect width="6.96" height="6.84" x="579.87" y="348.48" class="named"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
 <rect width="6.96" height="6.84" x="579.87" y="358.32" class="named"><title>0x0042d970 lara_as_climbstnc (117 bytes)</title></rect>
-<rect width="6.96" height="6.84" x="579.87" y="368.16" class="todo"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
+<rect width="6.96" height="6.84" x="579.87" y="368.16" class="named"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
 <rect width="6.53" height="7.20" x="589.83" y="218.20" class="named"><title>0x00420e80 InitialiseHair (116 bytes)</title></rect>
 <rect width="6.53" height="7.20" x="589.83" y="228.39" class="todo"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
 <rect width="6.53" height="7.11" x="589.83" y="238.59" class="todo"><title>0x00444d20 GameWindowCalculateSizeFromClient (115 bytes)</title></rect>
