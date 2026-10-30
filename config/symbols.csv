@@ -1509,11 +1509,11 @@ address,size,name,symbol
 0x00465ae0,,Weapons,_Weapons
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
-0x00466480,8,ScreenSizer,_ScreenSizer
-0x00466488,8,GameSizer,_GameSizer
-0x00466490,4,FadeValue,_FadeValue
-0x00466494,4,FadeLimit,_FadeLimit
-0x00466498,4,FadeAdder,_FadeAdder
+0x00466480,8,screen_sizer,_screen_sizer
+0x00466488,8,game_sizer,_game_sizer
+0x00466490,4,fade_value,?fade_value@@3HA
+0x00466494,4,fade_limit,?fade_limit@@3HA
+0x00466498,4,fade_adder,?fade_adder@@3HA
 0x00466b80,32,SaveSlotFlags,_SaveSlotFlags
 0x00466bb0,4,rand_1,_rand_1
 0x00466bb4,4,rand_2,_rand_2
@@ -1691,7 +1691,7 @@ address,size,name,symbol
 0x004d854c,,DInput,_DInput
 0x004d8550,,IDID_SysKeyboard,_IDID_SysKeyboard
 0x004d8554,,IDID_SysJoystick,_IDID_SysJoystick
-0x004d855c,4,IsVidSizeLock,_IsVidSizeLock
+0x004d855c,4,mode_lock,_mode_lock
 0x004d8560,1024,SampleFreqs,_SampleFreqs
 0x004d8960,,SoundAdapterList,_SoundAdapterList
 0x004d8970,,SampleBuffers,_SampleBuffers

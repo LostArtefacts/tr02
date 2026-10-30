@@ -9,6 +9,7 @@ extern "C" {
 
 extern int wibble_light[WIBBLE_SIZE][32];
 
+void S_CopyScreenToBuffer(void);
 void ScreenDump(void);
 void ScreenPartialDump();
 void S_ClearScreen();
