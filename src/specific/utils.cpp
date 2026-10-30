@@ -88,6 +88,38 @@ extern "C" LPCTSTR GuidBinaryToString(GUID *guid)
     return GuidString;
 }
 
+inline char HexCharValue(char c)
+{
+    if (c >= '0' && c <= '9')
+        return c - '0';
+    if (c >= 'A' && c <= 'F')
+        return c - 'A' + 10;
+    if (c >= 'a' && c <= 'f')
+        return c - 'A' + 10;
+    return -1;
+}
+
+extern "C" bool GuidStringToBinary(LPCTSTR lpString, GUID *guid)
+{
+    for (unsigned int i = 0; i < 21; i++)
+    {
+        char c = GuidFormat[i];
+        if (c < 16)
+        {
+            char hi = HexCharValue(*lpString++);
+            if (hi < 0)
+                return false;
+            char lo = HexCharValue(*lpString++);
+            if (lo < 0)
+                return false;
+            ((uint8 *)guid)[GuidFormat[i]] = hi * 16 + lo;
+        }
+        else if (*lpString++ != c)
+            return false;
+    }
+    return *lpString == 0;
+}
+
 extern "C" HKEY HKey;
 extern "C" DWORD RegKeyDisposition;
 extern "C" char RegistryClass[];

@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.92% (822)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">33.84% (422)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">66% (823)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">33.76% (421)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="492.41" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="492.41" y="0" class="decompiled"/>
-<rect width="252.79" height="6" x="494.21" y="0" class="todo"/>
+<rect width="493.01" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="493.01" y="0" class="decompiled"/>
+<rect width="252.19" height="6" x="494.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1247,7 +1247,7 @@
 <rect width="12" height="12" x="390" y="345" class="named"><title>0x00456930 UT_ErrorBox (66 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="345" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="345" class="named"><title>0x00456a20 GuidBinaryToString (81 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="345" class="todo"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="345" class="named"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="345" class="named"><title>0x00456b30 OpenRegistryKey (48 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="345" class="named"><title>0x00456b60 IsNewRegistryKeyCreated (15 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="345" class="named"><title>0x00456b70 CloseRegistryKey (13 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.69%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.30%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.74%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="363.73" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="363.73" y="0" class="decompiled"/>
-<rect width="383.22" height="6" x="363.78" y="0" class="todo"/>
+<rect width="364.10" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="364.10" y="0" class="decompiled"/>
+<rect width="382.85" height="6" x="364.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1833,7 +1833,7 @@
 <rect width="9.05" height="8.72" x="559.69" y="163.66" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="9.05" height="8.72" x="571.74" y="163.66" class="named"><title>0x0042e010 LaraCheckForLetGo (170 bytes)</title></rect>
 <rect width="9.05" height="8.72" x="583.79" y="163.66" class="named"><title>0x0042f1f0 find_target_point (170 bytes)</title></rect>
-<rect width="9.05" height="8.72" x="595.84" y="163.66" class="todo"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
+<rect width="9.05" height="8.72" x="595.84" y="163.66" class="named"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
 <rect width="8.98" height="8.72" x="607.89" y="163.66" class="todo"><title>0x00454a30 Func454a30 (169 bytes)</title></rect>
 <rect width="8.91" height="8.72" x="619.87" y="163.66" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="8.91" height="8.72" x="631.78" y="163.66" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
