@@ -701,7 +701,7 @@ address,size,name,symbol
 0x0043c830,206,GetCarriedItems,_GetCarriedItems
 0x0043c900,278,JellyControl,_JellyControl
 0x0043ca20,560,BaracuddaControl,_BaracuddaControl
-0x0043cc50,636,SharkControl,_SharkControl
+0x0043cc50,656,SharkControl,_SharkControl
 0x0043cee0,64,InitialiseSkidoo,_InitialiseSkidoo
 0x0043cf20,225,SkidooCheckGeton,_SkidooCheckGeton
 0x0043d010,248,SkidooCollision,_SkidooCollision
@@ -1520,6 +1520,7 @@ address,size,name,symbol
 0x00465fd0,16,bandit_gun,_bandit_gun
 0x00465fe0,16,bandit2_gun,_bandit2_gun
 0x00466210,16,bara_bite,_bara_bite
+0x00466220,16,shark_bite,_shark_bite
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466360,16,teeth1a,_teeth1a
 0x00466370,16,teeth1b,_teeth1b

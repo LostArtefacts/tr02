@@ -123,3 +123,128 @@ void BaracuddaControl(sint16 item_number)
     CreatureAnimation(item_number, angle, 0);
     CreatureUnderwater(item, STEP_L);
 }
+
+void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state);
+
+#define SHARK 25
+#define SHARK_BITE 400
+#define SHARK_STOP 0
+#define SHARK_SWIM1 1
+#define SHARK_SWIM2 2
+#define SHARK_ATTACK1 3
+#define SHARK_ATTACK2 4
+#define SHARK_DEATH 5
+#define SHARK_KILL 6
+#define SHARK_SWIM2_RANGE SQUARE(WALL_L * 3)
+#define SHARK_ATTACK1_RANGE SQUARE(WALL_L * 3 / 4)
+#define SHARK_ATTACK2_RANGE SQUARE(WALL_L * 4 / 3)
+#define SHARK_SWIM1_TURN (ONE_DEGREE / 2)
+#define SHARK_SWIM2_TURN (ONE_DEGREE * 2)
+#define SHARK_ATTACK1_CHANCE 0x800
+#define SHARK_DIE_ANIM 4
+#define SHARK_KILL_ANIM 19
+#define SHARK_TOUCH 0x3400
+#define EXTRA_SHARKKILL 3
+
+extern BITE_INFO shark_bite;
+
+void SharkControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *shark;
+    sint16 angle, head;
+    AI_INFO info;
+    int lara_alive;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    shark = (CREATURE_INFO *)item->data;
+    angle = head = 0;
+    lara_alive = (lara_item->hit_points > 0);
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != SHARK_DEATH)
+        {
+            item->anim_number = objects[SHARK].anim_index + SHARK_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = SHARK_DEATH;
+        }
+        CreatureFloat(item_number);
+        return;
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        CreatureMood(item, &info, 1);
+        angle = CreatureTurn(item, shark->maximum_turn);
+
+        switch (item->current_anim_state)
+        {
+        case SHARK_STOP:
+            shark->flags = 0;
+            shark->maximum_turn = 0;
+            if (info.ahead && info.distance < SHARK_ATTACK1_RANGE && info.zone_number == info.enemy_zone)
+                item->goal_anim_state = SHARK_ATTACK1;
+            else
+                item->goal_anim_state = SHARK_SWIM1;
+            break;
+
+        case SHARK_SWIM1:
+            shark->maximum_turn = SHARK_SWIM1_TURN;
+            if (shark->mood == BORED_MOOD)
+                break;
+            else if (info.ahead && info.distance < SHARK_ATTACK1_RANGE)
+                item->goal_anim_state = SHARK_STOP;
+            else if (shark->mood == ESCAPE_MOOD || info.distance > SHARK_SWIM2_RANGE || !info.ahead)
+                item->goal_anim_state = SHARK_SWIM2;
+            break;
+
+        case SHARK_SWIM2:
+            shark->flags = 0;
+            shark->maximum_turn = SHARK_SWIM2_TURN;
+            if (shark->mood == BORED_MOOD)
+                item->goal_anim_state = SHARK_SWIM1;
+            else if (shark->mood == ESCAPE_MOOD)
+                break;
+            else if (info.ahead && info.distance < SHARK_ATTACK2_RANGE && info.zone_number == info.enemy_zone)
+            {
+                if (GetRandomControl() < SHARK_ATTACK1_CHANCE)
+                    item->goal_anim_state = SHARK_STOP;
+                else if (info.distance < SHARK_ATTACK1_RANGE)
+                    item->goal_anim_state = SHARK_ATTACK2;
+            }
+            break;
+
+        case SHARK_ATTACK1:
+        case SHARK_ATTACK2:
+            if (info.ahead)
+                head = info.angle;
+            if (!shark->flags && (item->touch_bits & SHARK_TOUCH))
+            {
+                lara_item->hit_points -= SHARK_BITE;
+                lara_item->hit_status = 1;
+                CreatureEffect(item, &shark_bite, DoBloodSplat);
+                shark->flags = 1;
+            }
+            break;
+        }
+    }
+
+    if (lara_alive && lara_item->hit_points <= 0)
+    {
+        CreatureKill(item, SHARK_KILL_ANIM, SHARK_KILL, EXTRA_SHARKKILL);
+        return;
+    }
+
+    if (item->current_anim_state != SHARK_KILL)
+    {
+        CreatureHead(item, head);
+        CreatureAnimation(item_number, angle, 0);
+        CreatureUnderwater(item, WALL_L / 3);
+    }
+    else
+        AnimateItem(item);
+}
