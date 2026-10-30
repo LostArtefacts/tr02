@@ -1635,6 +1635,7 @@ address,size,name,symbol
 0x004d778c,4,fliptimer,_fliptimer
 0x004d7790,4,number_los_rooms,_number_los_rooms
 0x004d7794,4,StopInventory,_StopInventory
+0x004d7798,4,framecount,_framecount
 0x004d779c,4,IsDemoLevelType,_IsDemoLevelType
 0x004d77a0,4,demo_loaded,_demo_loaded
 0x004d77b0,4,BoundStart,_BoundStart

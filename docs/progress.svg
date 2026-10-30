@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">45.95% (573)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">54.05% (674)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.03% (574)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.97% (673)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="343.25" height="6" x="0" y="0" class="named"/>
-<rect width="403.75" height="6" x="343.25" y="0" class="todo"/>
+<rect width="343.85" height="6" x="0" y="0" class="named"/>
+<rect width="403.15" height="6" x="343.85" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -233,7 +233,7 @@
 <rect width="12" height="12" x="195" y="45" class="todo"><title>0x00413f30 AlignLaraPosition (315 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="45" class="todo"><title>0x00414070 MoveLaraPosition (391 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="named"><title>0x00414200 Move3DPosTo3DPos (366 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="45" class="todo"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="45" class="named"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="named"><title>0x004146c0 AnimateItem (872 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="45" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="45" class="todo"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.71%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">26.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">73.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="196.40" height="6" x="0" y="0" class="named"/>
-<rect width="550.60" height="6" x="196.40" y="0" class="todo"/>
+<rect width="198.23" height="6" x="0" y="0" class="named"/>
+<rect width="548.77" height="6" x="198.23" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.27" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1418,7 +1418,7 @@
 <rect width="22.61" height="24.31" x="297.69" y="83.39" class="named"><title>0x00441c20 RollingBallControl (839 bytes)</title></rect>
 <rect width="22.61" height="24.21" x="297.69" y="110.69" class="todo"><title>0x0042c180 ControlHarpoonBolt (836 bytes)</title></rect>
 <rect width="22.61" height="24.18" x="297.69" y="137.90" class="todo"><title>0x0040b350 InsertObjectG3_Sorted (835 bytes)</title></rect>
-<rect width="22.61" height="24.18" x="297.69" y="165.08" class="todo"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
+<rect width="22.61" height="24.18" x="297.69" y="165.08" class="named"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="22.61" height="24.11" x="297.69" y="192.25" class="todo"><title>0x00457b5c wgtmapA (833 bytes)</title></rect>
 <rect width="22.61" height="24.01" x="297.69" y="219.37" class="todo"><title>0x0042a8a0 LaraHangTest (830 bytes)</title></rect>
 <rect width="22.61" height="23.88" x="297.69" y="246.38" class="named"><title>0x00437620 BanditControl (826 bytes)</title></rect>

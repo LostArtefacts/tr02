@@ -1,5 +1,7 @@
 #include "game.h"
 #include "box.h"
+#include "savegame.h"
+#include "inventry.h"
 
 typedef struct {
     sint16 goal_anim_state;
@@ -16,6 +18,175 @@ typedef struct {
 
 extern CHANGE_STRUCT *changes;
 extern RANGE_STRUCT *ranges;
+
+#define MAX_FRAMES 10
+#define DEATH_WAIT (10 * 30)
+
+static int framecount = 0;
+
+extern int IsResetFlag;
+extern int NoInputCounter;
+extern int OverlayStatus;
+extern int InventoryExtraData[];
+extern int HealthBarTimer;
+extern sint16 cdtrack;
+extern sint32 number_dynamics;
+extern sint16 next_item_active;
+void S_CDLoop(void);
+void CheckCheatMode(void);
+int S_UpdateInput(void);
+void GetDemoInput(void);
+int Display_Inventory(int inv_mode);
+void CreateSaveGameInfo(void);
+int S_SaveGame(void *data, int size, int slot);
+void S_SaveSettings(void);
+void LaraControl(sint16 item_num);
+void HairControl(int in_cutscene);
+void CalculateCamera(void);
+
+sint32 ControlPhase(sint32 nframes, int demo_mode)
+{
+    sint32 return_val;
+    sint16 item_num, nex;
+
+    if (nframes > MAX_FRAMES)
+        nframes = MAX_FRAMES;
+
+    framecount += nframes;
+    for (; framecount > 0; framecount -= 2)
+    {
+        if (cdtrack > 0)
+            S_CDLoop();
+
+        if (!gameflow.cheatmodecheck_disabled)
+            CheckCheatMode();
+
+        if (level_complete)
+            return 1;
+
+        S_UpdateInput();
+
+        if (IsResetFlag)
+            return EXIT_TO_TITLE;
+
+        if (demo_mode)
+        {
+            if (input)
+                return gameflow.on_demo_interrupt;
+
+            GetDemoInput();
+            if (input == -1)
+            {
+                input = 0;
+                return gameflow.on_demo_end;
+            }
+        }
+        else if (gameflow.noinput_timeout)
+        {
+            if (input)
+                NoInputCounter = 0;
+            else
+            {
+                NoInputCounter++;
+                if (NoInputCounter > gameflow.noinput_time)
+                    return STARTDEMO;
+            }
+        }
+
+        if (lara.death_count > DEATH_WAIT || (lara.death_count > 2 * 30 && input) || OverlayStatus == 2)
+        {
+            if (demo_mode)
+                return gameflow.ondeath_demo_mode;
+
+            if (CurrentLevel == LV_GYM)
+                return EXIT_TO_TITLE;
+
+            if (OverlayStatus == 2)
+            {
+                OverlayStatus = 1;
+                return_val = Display_Inventory(INV_DEATH_MODE);
+                if (return_val)
+                    return return_val;
+            }
+            else
+                OverlayStatus = 2;
+        }
+
+        if ((input & IN_OPTION || input & IN_LOAD || input & IN_SAVE || OverlayStatus <= 0) && !lara.death_count && !lara.extra_anim)
+        {
+            if (OverlayStatus <= 0)
+            {
+                if (OverlayStatus == -1)
+                    return_val = Display_Inventory(INV_LOAD_MODE);
+                else if (OverlayStatus == -2)
+                    return_val = Display_Inventory(INV_SAVE_MODE);
+                else
+                    return_val = Display_Inventory(INV_GAME_MODE);
+
+                OverlayStatus = 1;
+                if (return_val)
+                {
+                    if (InventoryExtraData[0] == 1)
+                    {
+                        if (CurrentLevel == LV_GYM)
+                            return STARTGAME | LV_FIRSTLEVEL;
+
+                        CreateSaveGameInfo();
+                        S_SaveGame(&savegame, sizeof(SAVEGAME_INFO), InventoryExtraData[1]);
+                        S_SaveSettings();
+                    }
+                    else
+                        return return_val;
+                }
+            }
+            else
+            {
+                if (!gameflow.loadsave_disabled)
+                {
+                    if (input & IN_LOAD)
+                        OverlayStatus = -1;
+                    else if (input & IN_SAVE)
+                        OverlayStatus = -2;
+                    else
+                        OverlayStatus = 0;
+                }
+                else
+                    OverlayStatus = 0;
+            }
+        }
+
+        number_dynamics = 0;
+
+        item_num = next_item_active;
+        while (item_num != NO_ITEM)
+        {
+            nex = items[item_num].next_active;
+            if (objects[items[item_num].object_number].control)
+                (*objects[items[item_num].object_number].control)(item_num);
+            item_num = nex;
+        }
+
+        item_num = next_fx_active;
+        while (item_num != NO_ITEM)
+        {
+            nex = effects[item_num].next_active;
+            if (objects[effects[item_num].object_number].control)
+                (*objects[effects[item_num].object_number].control)(item_num);
+            item_num = nex;
+        }
+
+        LaraControl(0);
+        HairControl(0);
+        CalculateCamera();
+        SoundEffects();
+
+        HealthBarTimer--;
+
+        if (CurrentLevel != LV_GYM || assault_timer_active)
+            savegame.timer++;
+    }
+    return 0;
+}
 
 #define COMMAND_MOVE_ORIGIN 1
 #define COMMAND_JUMP_VELOCITY 2
@@ -1192,7 +1363,6 @@ void TriggerCDTrack(sint16 value, sint16 flags, sint16 type)
 }
 
 extern sint16 cd_flags[];
-extern sint16 cdtrack;
 void S_CDPlay(sint16 track, int mode);
 
 void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type)
