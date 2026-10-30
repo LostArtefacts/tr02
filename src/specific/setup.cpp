@@ -1,3 +1,4 @@
+// cflags: /GX
 #include <stdio.h>
 #include "global.h"
 
@@ -43,7 +44,35 @@ extern SETUP_APP_SETTINGS ChangedAppSettings;
 void RenderFinish(bool reset);
 void WinVidFinish(void);
 void WinVidHideGameWindow(void);
-bool SE_GraphicsTestStart(void);
+}
+
+bool WinVidStart(void);
+void RenderStart(bool reset);
+
+extern "C" {
+extern LPCSTR SE_PassedText;
+extern LPCSTR SE_FailedText;
+extern LPCSTR SE_SettingsOkText;
+extern HWND GraphicsDialogHandle;
+LPCSTR DecodeErrorMessage(DWORD error);
+}
+
+extern "C" bool SE_GraphicsTestStart(void)
+{
+    try
+    {
+        WinVidStart();
+        RenderStart(true);
+    }
+    catch (DWORD error)
+    {
+        SetDlgItemText(GraphicsDialogHandle, 1043, SE_FailedText);
+        SetDlgItemText(GraphicsDialogHandle, 1046, DecodeErrorMessage(error));
+        return false;
+    }
+    SetDlgItemText(GraphicsDialogHandle, 1043, SE_PassedText);
+    SetDlgItemText(GraphicsDialogHandle, 1046, SE_SettingsOkText);
+    return true;
 }
 
 extern "C" void SE_GraphicsTestFinish(void)

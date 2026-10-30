@@ -870,7 +870,7 @@ address,size,name,symbol
 0x00446be0,28,WinVidFreeWindow,_WinVidFreeWindow
 0x00446c10,77,WinVidExitMessage,_WinVidExitMessage
 0x00446c60,72,WinVidGetDisplayAdapter,_WinVidGetDisplayAdapter
-0x00446cb0,884,WinVidStart,_WinVidStart
+0x00446cb0,884,WinVidStart,_WinVidStart ?WinVidStart@@YA_NXZ
 0x00447030,19,WinVidFinish,_WinVidFinish
 0x00447050,13,DisplayModeListInit,??0DISPLAY_MODE_LIST@@QAE@XZ
 0x00447060,50,DisplayModeListDelete,?DisplayModeListDelete@DISPLAY_MODE_LIST@@QAEXXZ
@@ -941,7 +941,7 @@ address,size,name,symbol
 0x00448de0,207,DX_UpdateFrame,_DX_UpdateFrame
 0x00448eb0,59,DX_DoFlipWait,_DX_DoFlipWait
 0x00448ef0,3,RenderInit,_RenderInit
-0x00448f00,933,RenderStart,_RenderStart
+0x00448f00,933,RenderStart,_RenderStart ?RenderStart@@YAX_N@Z
 0x004492b0,230,RenderFinish,_RenderFinish
 0x004493a0,284,ApplySettings,_ApplySettings
 0x004495b0,68,FmvBackToGame,_FmvBackToGame
@@ -1084,7 +1084,7 @@ address,size,name,symbol
 0x004524d0,5,CloseGameRegistryKey,_CloseGameRegistryKey
 0x004524e0,627,Func4524e0,
 0x00452760,859,Func452760,
-0x00452ac0,126,SE_GraphicsTestStart,_SE_GraphicsTestStart
+0x00452ac0,207,SE_GraphicsTestStart,_SE_GraphicsTestStart
 0x00452b90,20,SE_GraphicsTestFinish,_SE_GraphicsTestFinish
 0x00452bb0,3,SE_GraphicsTestExecute,_SE_GraphicsTestExecute
 0x00452bc0,90,SE_GraphicsTest,_SE_GraphicsTest
@@ -1616,6 +1616,9 @@ address,size,name,symbol
 0x00467700,13,ScreenShotPcxFormat,_ScreenShotPcxFormat
 0x00467724,4,detail_level,_detail_level
 0x0046773c,4,BadKeyString,_BadKeyString
+0x004677c8,4,SE_PassedText,_SE_PassedText
+0x004677cc,4,SE_FailedText,_SE_FailedText
+0x004677d0,4,SE_SettingsOkText,_SE_SettingsOkText
 0x004677d8,36,RegistryKeyName,_RegistryKeyName
 0x00467808,15,SetupDialogName,_SetupDialogName
 0x00467b18,6,RegistryKeyFormat,_RegistryKeyFormat
