@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.17% (264)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.83% (983)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.25% (265)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.75% (982)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="158.15" height="6" x="0" y="0" class="named"/>
-<rect width="588.85" height="6" x="158.15" y="0" class="todo"/>
+<rect width="158.74" height="6" x="0" y="0" class="named"/>
+<rect width="588.26" height="6" x="158.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -748,7 +748,7 @@
 <rect width="12" height="12" x="420" y="195" class="todo"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="195" class="todo"><title>0x00438ef0 KeyTrigger (61 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="195" class="todo"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="195" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="195" class="todo"><title>0x00438f70 SecretControl (35 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="todo"><title>0x00438fa0 MouseControl (476 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="195" class="todo"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.40%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.38%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="49.33" height="6" x="0" y="0" class="named"/>
-<rect width="697.67" height="6" x="49.33" y="0" class="todo"/>
+<rect width="49.44" height="6" x="0" y="0" class="named"/>
+<rect width="697.56" height="6" x="49.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2275,7 +2275,7 @@
 <rect width="3.38" height="3.70" x="662.31" y="364.60" class="named"><title>0x00429b60 lara_col_hangleft (51 bytes)</title></rect>
 <rect width="3.38" height="3.70" x="662.31" y="371.30" class="named"><title>0x00429ba0 lara_col_hangright (51 bytes)</title></rect>
 <rect width="3.87" height="3.22" x="668.69" y="296.69" class="named"><title>0x0042bc90 draw_shotgun_meshes (51 bytes)</title></rect>
-<rect width="3.87" height="3.22" x="675.56" y="296.69" class="todo"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
+<rect width="3.87" height="3.22" x="675.56" y="296.69" class="named"><title>0x00438f30 PickupTrigger (51 bytes)</title></rect>
 <rect width="3.87" height="3.22" x="682.42" y="296.69" class="todo"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
 <rect width="3.87" height="3.22" x="689.29" y="296.69" class="todo"><title>0x0045752e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="3.73" height="3.22" x="696.15" y="296.69" class="todo"><title>0x00401bd0 calc_background_light (50 bytes)</title></rect>
