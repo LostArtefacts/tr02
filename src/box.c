@@ -1,6 +1,8 @@
 #include "game.h"
 #include "box.h"
 
+#define ESCAPE_DIST (WALL_L * 5)
+
 int SearchLOT(LOT_INFO *LOT, int expansion);
 
 void InitialiseCreature(sint16 item_number)
@@ -56,6 +58,24 @@ void TargetBox(LOT_INFO *LOT, sint16 box_number)
         LOT->target.y = box->height;
     else
         LOT->target.y = box->height - STEP_L * 3 / 2;
+}
+
+int EscapeBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
+{
+    BOX_INFO *box;
+    sint32 x, z;
+
+    box = &boxes[box_number];
+    z = (((uint32)box->left + (uint32)box->right) << (WALL_SHIFT - 1)) - enemy->pos.z_pos;
+    x = (((uint32)box->top + (uint32)box->bottom) << (WALL_SHIFT - 1)) - enemy->pos.x_pos;
+
+    if (x > -ESCAPE_DIST && x < ESCAPE_DIST && z > -ESCAPE_DIST && z < ESCAPE_DIST)
+        return 0;
+
+    if (((z > 0) ^ (item->pos.z_pos > enemy->pos.z_pos)) && ((x > 0) ^ (item->pos.x_pos > enemy->pos.x_pos)))
+        return 0;
+
+    return 1;
 }
 
 void CreatureTilt(ITEM_INFO *item, sint16 angle)

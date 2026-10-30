@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.26% (290)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.74% (957)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">23.34% (291)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">76.66% (956)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="173.72" height="6" x="0" y="0" class="named"/>
-<rect width="573.28" height="6" x="173.72" y="0" class="todo"/>
+<rect width="174.32" height="6" x="0" y="0" class="named"/>
+<rect width="572.68" height="6" x="174.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -172,7 +172,7 @@
 <rect width="12" height="12" x="30" y="30" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="30" class="named"><title>0x0040e6e0 TargetBox (149 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="30" class="todo"><title>0x0040e780 StalkBox (242 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="30" class="todo"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="30" class="named"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="30" class="todo"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="30" class="todo"><title>0x0040e9e0 CreatureMood (1087 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="30" class="todo"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.19%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.81%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">7.24%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">92.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="53.70" height="6" x="0" y="0" class="named"/>
-<rect width="693.30" height="6" x="53.70" y="0" class="todo"/>
+<rect width="54.06" height="6" x="0" y="0" class="named"/>
+<rect width="692.94" height="6" x="54.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1841,7 +1841,7 @@
 <rect width="8.70" height="8.96" x="535.26" y="295.33" class="named"><title>0x00436100 GunMiss (167 bytes)</title></rect>
 <rect width="8.70" height="8.96" x="535.26" y="307.29" class="todo"><title>0x00445240 ShowDDrawGameWindow (167 bytes)</title></rect>
 <rect width="8.70" height="8.82" x="535.26" y="319.26" class="todo"><title>0x00428a80 extra_as_starthouse (165 bytes)</title></rect>
-<rect width="8.70" height="8.75" x="535.26" y="331.08" class="todo"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
+<rect width="8.70" height="8.75" x="535.26" y="331.08" class="named"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
 <rect width="8.70" height="8.75" x="535.26" y="342.83" class="named"><title>0x0041c610 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="8.70" height="8.75" x="535.26" y="354.57" class="todo"><title>0x00452d70 Func452d70 (164 bytes)</title></rect>
 <rect width="8.70" height="8.68" x="535.26" y="366.32" class="todo"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
