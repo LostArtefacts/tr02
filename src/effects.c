@@ -254,6 +254,33 @@ void ControlSplash1(sint16 fx_num)
     fx->pos.x_pos += (phd_sin(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
 }
 
+void ControlWaterSprite(sint16 fx_num)
+{
+    FX_INFO *fx;
+
+    fx = &effects[fx_num];
+    fx->counter--;
+    if (!(fx->counter & 3))
+    {
+        fx->frame_number--;
+        if (fx->frame_number <= objects[fx->object_number].nmeshes)
+            fx->frame_number = 0;
+    }
+
+    if (!fx->counter || fx->fallspeed > 0)
+        KillEffect(fx_num);
+    else
+    {
+        fx->pos.z_pos += (phd_cos(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+        fx->pos.x_pos += (phd_sin(fx->pos.y_rot) * fx->speed) >> W2V_SHIFT;
+        if (fx->fallspeed)
+        {
+            fx->pos.y_pos += fx->fallspeed;
+            fx->fallspeed += GRAVITY;
+        }
+    }
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
