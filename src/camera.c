@@ -524,3 +524,176 @@ void FixedCamera(void)
             camera.timer = -1;
     }
 }
+
+#define UNDERWATER 1
+#define CHASE_SPEED 10
+#define LOOK_SPEED 4
+#define COMBAT_SPEED 8
+#define CAM_MAX_HEAD_ROTATION (50 * ONE_DEGREE)
+#define CAM_MAX_HEAD_TILT (85 * ONE_DEGREE)
+#define CAM_MIN_HEAD_TILT (-85 * ONE_DEGREE)
+#define CAM_HEAD_TURN (4 * ONE_DEGREE)
+
+extern sint16 Option_Music_Volume;
+void S_CDVolume(int volume);
+void InGameCinematicCamera(void);
+void LookCamera(ITEM_INFO *item);
+
+void CalculateCamera(void)
+{
+    FLOOR_INFO *floor;
+    ITEM_INFO *item;
+    sint32 shift, fixed_camera, y;
+    OBJECT_INFO *object;
+    sint16 *bounds, angle, tilt, change;
+
+    if (room[camera.pos.room_number].flags & UNDERWATER)
+    {
+        SoundEffect(60, NULL, SFX_ALWAYS);
+        if (!camera.underwater)
+        {
+            S_CDVolume(0);
+            camera.underwater = 1;
+        }
+    }
+    else
+    {
+        if (camera.underwater)
+        {
+            if (Option_Music_Volume)
+                S_CDVolume(Option_Music_Volume * 25 + 5);
+            camera.underwater = 0;
+        }
+    }
+
+    if (camera.type == CINEMATIC_CAMERA)
+    {
+        InGameCinematicCamera();
+        return;
+    }
+
+    if (camera.flags != NO_CHUNKY)
+        IsChunkyCamera = 1;
+
+    fixed_camera = (camera.item && (camera.type == FIXED_CAMERA || camera.type == HEAVY_CAMERA));
+    item = fixed_camera ? camera.item : lara_item;
+
+    object = &objects[item->object_number];
+    bounds = GetBoundsAccurate(item);
+
+    y = item->pos.y_pos;
+    if (!fixed_camera)
+        y += bounds[3] + ((bounds[2] - bounds[3]) * 3 >> 2);
+    else
+        y += (bounds[2] + bounds[3]) / 2;
+
+    if (camera.item && !fixed_camera)
+    {
+        shift = phd_sqrt(SQUARE(camera.item->pos.z_pos - item->pos.z_pos) + SQUARE(camera.item->pos.x_pos - item->pos.x_pos));
+        angle = phd_atan(camera.item->pos.z_pos - item->pos.z_pos, camera.item->pos.x_pos - item->pos.x_pos) - item->pos.y_rot;
+        bounds = GetBoundsAccurate(camera.item);
+        tilt = phd_atan(shift, y - (camera.item->pos.y_pos + (bounds[2] + bounds[3]) / 2));
+        angle >>= 1;
+        tilt >>= 1;
+        if (angle > -CAM_MAX_HEAD_ROTATION && angle < CAM_MAX_HEAD_ROTATION && tilt > CAM_MIN_HEAD_TILT && tilt < CAM_MAX_HEAD_TILT)
+        {
+            change = angle - lara.head_y_rot;
+            if (change > CAM_HEAD_TURN)
+                lara.head_y_rot += CAM_HEAD_TURN;
+            else if (change < -CAM_HEAD_TURN)
+                lara.head_y_rot -= CAM_HEAD_TURN;
+            else
+                lara.head_y_rot += change;
+            lara.torso_y_rot = lara.head_y_rot;
+
+            change = tilt - lara.head_x_rot;
+            if (change > CAM_HEAD_TURN)
+                lara.head_x_rot += CAM_HEAD_TURN;
+            else if (change < -CAM_HEAD_TURN)
+                lara.head_x_rot -= CAM_HEAD_TURN;
+            else
+                lara.head_x_rot += change;
+            lara.torso_x_rot = lara.head_x_rot;
+
+            camera.type = LOOK_CAMERA;
+
+            camera.item->looked_at = 1;
+        }
+    }
+
+    if (camera.type == LOOK_CAMERA || camera.type == COMBAT_CAMERA)
+    {
+        y -= STEP_L;
+        camera.target.room_number = item->room_number;
+
+        if (camera.fixed_camera)
+        {
+            camera.target.y = y;
+            camera.speed = 1;
+        }
+        else
+        {
+            camera.target.y += ((y - camera.target.y) >> 2);
+            camera.speed = (camera.type == LOOK_CAMERA) ? LOOK_SPEED : COMBAT_SPEED;
+        }
+
+        camera.fixed_camera = 0;
+
+        if (camera.type == LOOK_CAMERA)
+            LookCamera(item);
+        else
+            CombatCamera(item);
+    }
+    else
+    {
+        camera.target.x = item->pos.x_pos;
+        camera.target.z = item->pos.z_pos;
+
+        if (camera.flags == FOLLOW_CENTRE)
+        {
+            shift = (bounds[4] + bounds[5]) / 2;
+            camera.target.z += phd_cos(item->pos.y_rot) * shift >> W2V_SHIFT;
+            camera.target.x += phd_sin(item->pos.y_rot) * shift >> W2V_SHIFT;
+        }
+        camera.target.room_number = item->room_number;
+
+        if (camera.fixed_camera ^ fixed_camera)
+        {
+            camera.target.y = y;
+            camera.fixed_camera = 1;
+            camera.speed = 1;
+        }
+        else
+        {
+            camera.target.y += (y - camera.target.y) / 4;
+            camera.fixed_camera = 0;
+        }
+
+        floor = GetFloor(camera.target.x, camera.target.y, camera.target.z, &camera.target.room_number);
+
+        if (camera.target.y > GetHeight(floor, camera.target.x, camera.target.y, camera.target.z))
+            IsChunkyCamera = 0;
+
+        if (camera.type == CHASE_CAMERA || camera.flags == CHASE_OBJECT)
+            ChaseCamera(item);
+        else
+            FixedCamera();
+    }
+
+    camera.last = camera.number;
+    camera.fixed_camera = fixed_camera;
+
+    if (camera.type != HEAVY_CAMERA || camera.timer == -1)
+    {
+        camera.type = CHASE_CAMERA;
+        camera.speed = CHASE_SPEED;
+        camera.number = NO_CAMERA;
+        camera.last_item = camera.item;
+        camera.item = NULL;
+        camera.target_angle = camera.target_elevation = 0;
+        camera.target_distance = WALL_L * 3 / 2;
+        camera.flags = 0;
+    }
+
+    IsChunkyCamera = 0;
+}

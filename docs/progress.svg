@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.96% (648)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">48.04% (599)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.04% (649)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.96% (598)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="388.18" height="6" x="0" y="0" class="named"/>
-<rect width="358.82" height="6" x="388.18" y="0" class="todo"/>
+<rect width="388.78" height="6" x="0" y="0" class="named"/>
+<rect width="358.22" height="6" x="388.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -201,7 +201,7 @@
 <rect width="12" height="12" x="465" y="30" class="named"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="named"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="30" class="todo"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="30" class="named"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="30" class="named"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="30" class="todo"><title>0x00411f40 StartCinematic (274 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="30" class="todo"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">67.38%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">32.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">67.03%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="243.66" height="6" x="0" y="0" class="named"/>
-<rect width="503.34" height="6" x="243.66" y="0" class="todo"/>
+<rect width="246.28" height="6" x="0" y="0" class="named"/>
+<rect width="500.72" height="6" x="246.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1365,7 +1365,7 @@
 <rect width="28.76" height="29.51" x="178.43" y="65.63" class="todo"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
 <rect width="28.76" height="29.33" x="178.43" y="98.15" class="named"><title>0x0041dfe0 MonkControl (1232 bytes)</title></rect>
 <rect width="28.76" height="29.33" x="178.43" y="130.48" class="todo"><title>0x004505f0 S_ShowControls (1232 bytes)</title></rect>
-<rect width="28.76" height="28.31" x="178.43" y="162.81" class="todo"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
+<rect width="28.76" height="28.31" x="178.43" y="162.81" class="named"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
 <rect width="28.76" height="28.18" x="178.43" y="194.12" class="todo"><title>0x00407ff0 InsertTrans8 (1188 bytes)</title></rect>
 <rect width="28.76" height="28.02" x="178.43" y="225.29" class="named"><title>0x0043d880 SkidooDynamics (1182 bytes)</title></rect>
 <rect width="28.76" height="27.99" x="178.43" y="256.31" class="named"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
