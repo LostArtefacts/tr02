@@ -1966,8 +1966,9 @@ address,size,name,symbol
 0x005262f4,2,cine_loaded,_cine_loaded
 0x005262f6,2,num_cine_frames,_num_cine_frames
 0x005262f8,4,cine,_cine
+0x00526300,18,cinematic_pos,_cinematic_pos
 0x00526312,2,CineLevelID,_CineLevelID
-0x00526314,2,CineFrameIdx,_CineFrameIdx
+0x00526314,2,cine_frame,_cine_frame
 0x00526320,,camera,_camera
 0x005263a0,32,ground_zone,_ground_zone
 0x005263c0,8,fly_zone,_fly_zone

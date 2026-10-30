@@ -1,6 +1,7 @@
 #include <string.h>
 #include "game.h"
 #include "box.h"
+#include "savegame.h"
 
 typedef struct {
     FLOOR_INFO *floor;
@@ -132,6 +133,75 @@ void InitialiseFinalLevel(void)
             else if (item->status == DEACTIVATED)
                 final_boss_active = 2;
             break;
+        }
+    }
+}
+
+#define EXTRA_FINALANIM 10
+
+extern sint16 cine_frame;
+extern PHD_3DPOS cinematic_pos;
+
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int EnableBaddieAI(sint16 item_number, int always);
+void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state);
+
+void FinalLevelCounter(sint16 item_number)
+{
+    sint16 best;
+    ITEM_INFO *item;
+    GAME_VECTOR start, target;
+    int i, best_distance, distance, x, y, z;
+
+    if (savegame.kills == final_level_count && !final_boss_active)
+    {
+        best = final_boss[0];
+        for (i = 0; i < final_boss_count; i++)
+        {
+            item = &items[final_boss[i]];
+
+            start.x = lara_item->pos.x_pos;
+            start.y = lara_item->pos.y_pos - STEP_L * 2;
+            start.z = lara_item->pos.z_pos;
+            start.room_number = lara_item->room_number;
+
+            target.x = item->pos.x_pos;
+            target.y = item->pos.y_pos - STEP_L * 2;
+            target.z = item->pos.z_pos;
+
+            if (!LOS(&start, &target))
+            {
+                x = (lara_item->pos.x_pos - item->pos.x_pos) >> 6;
+                y = (lara_item->pos.y_pos - item->pos.y_pos) >> 6;
+                z = (lara_item->pos.z_pos - item->pos.z_pos) >> 6;
+                distance = x * x + y * y + z * z;
+                if (distance < best_distance)
+                {
+                    best_distance = distance;
+                    best = final_boss[i];
+                }
+            }
+        }
+
+        item = &items[best];
+        item->touch_bits = 0;
+        item->status = ACTIVE;
+        AddActiveItem(best);
+        EnableBaddieAI(best, 1);
+        item->mesh_bits = 0xffff1fff;
+        final_boss_active = 1;
+    }
+    else if (savegame.kills > final_level_count)
+    {
+        final_boss_active++;
+        if (final_boss_active == FINAL_COUNTDOWN)
+        {
+            cine_frame = 428;
+            item = &items[item_number];
+            CreatureKill(item, 0, 0, EXTRA_FINALANIM);
+            lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
+            camera.type = CINEMATIC_CAMERA;
+            memcpy(&cinematic_pos, &item->pos, sizeof(PHD_3DPOS));
         }
     }
 }
@@ -759,8 +829,8 @@ void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
 void CopterControl(sint16 item_number)
 {
     ITEM_INFO *item;
-    PHD_VECTOR pos;
     sint16 room_number, *bounds;
+    PHD_VECTOR pos;
 
     item = &items[item_number];
 
