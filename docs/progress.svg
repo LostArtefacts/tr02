@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.56% (431)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.44% (816)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.64% (432)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.36% (815)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="258.19" height="6" x="0" y="0" class="named"/>
-<rect width="488.81" height="6" x="258.19" y="0" class="todo"/>
+<rect width="258.78" height="6" x="0" y="0" class="named"/>
+<rect width="488.22" height="6" x="258.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -184,7 +184,7 @@
 <rect width="12" height="12" x="210" y="30" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="30" class="named"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="30" class="named"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="30" class="todo"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="30" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="30" class="named"><title>0x00410040 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="30" class="named"><title>0x00410090 CreatureEffect (92 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="30" class="todo"><title>0x004100f0 CreatureVault (305 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.26%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.74%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="106.15" height="6" x="0" y="0" class="named"/>
-<rect width="640.85" height="6" x="106.15" y="0" class="todo"/>
+<rect width="106.53" height="6" x="0" y="0" class="named"/>
+<rect width="640.47" height="6" x="106.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1833,7 +1833,7 @@
 <rect width="9.10" height="8.70" x="571.24" y="163.25" class="todo"><title>0x00454a30 Func454a30 (169 bytes)</title></rect>
 <rect width="9.03" height="8.70" x="583.34" y="163.25" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="9.03" height="8.70" x="595.38" y="163.25" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
-<rect width="9.03" height="8.70" x="607.41" y="163.25" class="todo"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
+<rect width="9.03" height="8.70" x="607.41" y="163.25" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="9.03" height="8.70" x="619.44" y="163.25" class="todo"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
 <rect width="8.96" height="8.70" x="631.47" y="163.25" class="todo"><title>0x0040bf80 InsertSprite (167 bytes)</title></rect>
 <rect width="8.96" height="8.70" x="643.43" y="163.25" class="todo"><title>0x0040e930 ValidBox (167 bytes)</title></rect>

@@ -197,6 +197,35 @@ void CreatureNeck(ITEM_INFO *item, sint16 required)
         creature->neck_rotation = -HEAD_ARC;
 }
 
+#define DONT_TARGET (-16384)
+#define CREATURE_FLOAT_SPEED 32
+
+void CreatureFloat(sint16 item_number)
+{
+    sint32 water_level;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    item = &items[item_number];
+    item->hit_points = DONT_TARGET;
+    item->pos.x_rot = 0;
+
+    water_level = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (item->pos.y_pos > water_level)
+        item->pos.y_pos -= CREATURE_FLOAT_SPEED;
+    if (item->pos.y_pos < water_level)
+        item->pos.y_pos = water_level;
+
+    AnimateItem(item);
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+}
+
 void CreatureUnderwater(ITEM_INFO *item, sint32 depth)
 {
     sint32 water_level;
