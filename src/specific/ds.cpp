@@ -29,6 +29,32 @@ extern "C" void WinSndFreeAllSamples()
     }
 }
 
+extern "C" bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength)
+{
+    DSBUFFERDESC desc;
+    void *pBlock;
+    DWORD dwBlockLength;
+
+    if (!IsSoundEnabled)
+        return false;
+    if (nSample >= ArraySize(SampleBuffers))
+        return false;
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DSBCAPS_CTRLDEFAULT | DSBCAPS_LOCSOFTWARE;
+    desc.dwBufferBytes = dwWaveLength;
+    desc.lpwfxFormat = pWF;
+    desc.dwReserved = 0;
+    if (DX_TRY(DSound->CreateSoundBuffer(&desc, SampleBuffers + nSample, NULL)))
+        return false;
+    if (DX_TRY(SampleBuffers[nSample]->Lock(0, dwWaveLength, &pBlock, &dwBlockLength, NULL, NULL, 0)))
+        return false;
+    memcpy(pBlock, pWaveData, dwBlockLength);
+    if (DX_TRY(SampleBuffers[nSample]->Unlock(pBlock, dwBlockLength, NULL, 0)))
+        return false;
+    SampleFreqs[nSample] = pWF->nSamplesPerSec;
+    return true;
+}
+
 bool DS_IsChannelPlaying(int nChannel)
 {
     LPDIRECTSOUNDBUFFER pBuffer;
