@@ -101,3 +101,28 @@ int S_FrontEndCheck(void *data, int size)
     memcpy(SaveGameReqFlags2, RequesterFlags2, MAXIMUM_LEVELS * sizeof(uint32));
     return 1;
 }
+
+int S_SaveGame(void *data, int size, int slot)
+{
+    HANDLE file;
+    char filename[80], count_str[16];
+    DWORD write;
+
+    wsprintf(filename, "savegame.%d", slot);
+    file = CreateFile(filename, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file != INVALID_HANDLE_VALUE)
+    {
+        wsprintf(filename, "%s", GF_Level_Names[savegame.current_level]);
+        WriteFile(file, filename, 75, &write, NULL);
+        WriteFile(file, &save_counter, sizeof(sint32), &write, NULL);
+        WriteFile(file, data, size, &write, NULL);
+        CloseHandle(file);
+        wsprintf(count_str, "%d", save_counter);
+        ChangeRequesterItem(&Load_Game_Requester, slot, filename, R_LEFTALIGN, count_str, R_RIGHTALIGN);
+        saved_levels[slot] = 1;
+        save_counter++;
+        SavedGames++;
+        return 1;
+    }
+    return 0;
+}
