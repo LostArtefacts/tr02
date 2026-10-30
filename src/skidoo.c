@@ -752,3 +752,28 @@ void SkidooAnimation(ITEM_INFO *skidoo, int collide, int dead)
         }
     }
 }
+
+#define EXPLOSION1 229
+
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+
+void SkidooExplode(ITEM_INFO *skidoo)
+{
+    int fx_number;
+    FX_INFO *fx;
+
+    fx_number = CreateEffect(skidoo->room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = skidoo->pos.x_pos;
+        fx->pos.y_pos = skidoo->pos.y_pos;
+        fx->pos.z_pos = skidoo->pos.z_pos;
+        fx->speed = 0;
+        fx->frame_number = 0;
+        fx->counter = 0;
+        fx->object_number = EXPLOSION1;
+    }
+    ExplodingDeath(lara.skidoo, 0xfffffffc, 0);
+    SoundEffect(105, NULL, 0);
+    lara.skidoo = NO_ITEM;
+}

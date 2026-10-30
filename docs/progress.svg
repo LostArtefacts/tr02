@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.99% (586)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">53.01% (661)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.07% (587)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.93% (660)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="351.04" height="6" x="0" y="0" class="named"/>
-<rect width="395.96" height="6" x="351.04" y="0" class="todo"/>
+<rect width="351.64" height="6" x="0" y="0" class="named"/>
+<rect width="395.36" height="6" x="351.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -783,7 +783,7 @@
 <rect width="12" height="12" x="195" y="210" class="named"><title>0x0043dd20 SkidooUserControl (438 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="210" class="named"><title>0x0043dee0 SkidooCheckGetOffOK (262 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="210" class="named"><title>0x0043dff0 SkidooAnimation (736 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="210" class="todo"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="210" class="named"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="210" class="todo"><title>0x0043e350 SkidooCheckGetOff (563 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="210" class="todo"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="210" class="todo"><title>0x0043e6b0 SkidooControl (1088 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.94%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">72.06%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.97%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">72.03%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="208.70" height="6" x="0" y="0" class="named"/>
-<rect width="538.30" height="6" x="208.70" y="0" class="todo"/>
+<rect width="208.97" height="6" x="0" y="0" class="named"/>
+<rect width="538.03" height="6" x="208.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1958,7 +1958,7 @@
 <rect width="6.99" height="7.35" x="660.94" y="208.22" class="named"><title>0x00428180 lara_as_stepleft (124 bytes)</title></rect>
 <rect width="6.99" height="7.35" x="670.92" y="208.22" class="todo"><title>0x0042d050 draw_pistols (124 bytes)</title></rect>
 <rect width="6.99" height="7.35" x="680.91" y="208.22" class="named"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
-<rect width="6.99" height="7.35" x="690.89" y="208.22" class="todo"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
+<rect width="6.99" height="7.35" x="690.89" y="208.22" class="named"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
 <rect width="6.90" height="7.35" x="700.88" y="208.22" class="todo"><title>0x0042bf70 FireM16 (123 bytes)</title></rect>
 <rect width="6.82" height="7.35" x="710.78" y="208.22" class="todo"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="6.82" height="7.35" x="720.61" y="208.22" class="named"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
