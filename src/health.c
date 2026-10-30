@@ -1,4 +1,5 @@
 #include "game.h"
+#include "larafire.h"
 
 static int flash_state = 0;
 static int flash_count = 0;
@@ -72,4 +73,41 @@ void InitialisePickUpDisplay(void)
 
     for (i = 0; i < NUM_PU; i++)
         pickups[i].duration = 0;
+}
+
+#define LARA_HITPOINTS 1000
+
+extern int HealthBarTimer;
+static int old_hitpoints;
+
+void S_DrawHealthBar(int percent);
+
+void DrawHealthBar(int flash_state)
+{
+    int hitpoints;
+
+    hitpoints = lara_item->hit_points;
+    if (hitpoints < 0)
+        hitpoints = 0;
+    else if (hitpoints > LARA_HITPOINTS)
+        hitpoints = LARA_HITPOINTS;
+
+    if (old_hitpoints != hitpoints)
+    {
+        HealthBarTimer = 40;
+        old_hitpoints = hitpoints;
+    }
+
+    if (HealthBarTimer < 0)
+        HealthBarTimer = 0;
+
+    if (hitpoints <= LARA_HITPOINTS / 4)
+    {
+        if (flash_state)
+            S_DrawHealthBar(hitpoints / 10);
+        else
+            S_DrawHealthBar(0);
+    }
+    else if (HealthBarTimer > 0 || hitpoints <= 0 || lara.gun_status == LG_READY)
+        S_DrawHealthBar(hitpoints / 10);
 }

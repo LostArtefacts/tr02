@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.61% (444)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.39% (803)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.69% (445)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.31% (802)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="265.97" height="6" x="0" y="0" class="named"/>
-<rect width="481.03" height="6" x="265.97" y="0" class="todo"/>
+<rect width="266.57" height="6" x="0" y="0" class="named"/>
+<rect width="480.43" height="6" x="266.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -384,7 +384,7 @@
 <rect width="12" height="12" x="210" y="90" class="named"><title>0x00421980 FlashIt (45 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="90" class="todo"><title>0x004219b0 DrawAssaultTimer (325 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x00421b00 DrawGameInfo (69 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="90" class="todo"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="90" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="90" class="todo"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x00421cd0 DrawAmmoInfo (306 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.46%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.41%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="108.59" height="6" x="0" y="0" class="named"/>
-<rect width="638.41" height="6" x="108.59" y="0" class="todo"/>
+<rect width="108.96" height="6" x="0" y="0" class="named"/>
+<rect width="638.04" height="6" x="108.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1822,7 +1822,7 @@
 <rect width="9.08" height="8.86" x="534.81" y="271.56" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="9.08" height="8.86" x="534.81" y="283.42" class="todo"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="9.08" height="8.86" x="534.81" y="295.28" class="todo"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
-<rect width="9.08" height="8.86" x="534.81" y="307.13" class="todo"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
+<rect width="9.08" height="8.86" x="534.81" y="307.13" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
 <rect width="9.08" height="8.86" x="534.81" y="318.99" class="todo"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
 <rect width="9.08" height="8.79" x="534.81" y="330.85" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="9.08" height="8.79" x="534.81" y="342.64" class="todo"><title>0x00409380 InsertObjectGT3_ZBuffered (170 bytes)</title></rect>

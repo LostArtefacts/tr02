@@ -1627,6 +1627,7 @@ address,size,name,symbol
 0x004d77fc,1,GF_StartGame,_GF_StartGame
 0x004d7910,4,flash_state,_flash_state
 0x004d7914,4,flash_count,_flash_count
+0x004d7918,4,old_hitpoints,_old_hitpoints
 0x004d791c,4,AmmoTextInfo,_AmmoTextInfo
 0x004d7920,4,DisplayModeTextInfo,_DisplayModeTextInfo
 0x004d7924,4,DisplayModeInfoTimer,_DisplayModeInfoTimer
