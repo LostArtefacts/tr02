@@ -442,6 +442,27 @@ extern "C" bool DDrawCreate(LPGUID lpGUID)
     return true;
 }
 
+extern "C" bool WinVidGetDisplayModes(void)
+{
+    DISPLAY_ADAPTER_NODE *node;
+    DISPLAY_ADAPTER *adapter;
+
+    node = DisplayAdapterList.head;
+    if (node)
+    {
+        do
+        {
+            adapter = &node->body;
+            DDrawCreate(adapter->lpAdapterGuid);
+            ShowDDrawGameWindow(false);
+            DDraw->EnumDisplayModes(DDEDM_STANDARDVGAMODES, NULL, adapter, EnumDisplayModesCallback);
+            HideDDrawGameWindow();
+            DDrawRelease();
+        } while (node && (node = node->next));
+    }
+    return true;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)

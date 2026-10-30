@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68% (848)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.60% (394)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">68.08% (849)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">31.52% (393)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="507.98" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="507.98" y="0" class="decompiled"/>
-<rect width="236.02" height="6" x="510.98" y="0" class="todo"/>
+<rect width="508.58" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="508.58" y="0" class="decompiled"/>
+<rect width="235.42" height="6" x="511.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -921,7 +921,7 @@
 <rect width="12" height="12" x="0" y="255" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="255" class="todo"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="255" class="todo"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="255" class="todo"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="255" class="named"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="255" class="todo"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="255" class="todo"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="255" class="todo"><title>0x00445f00 WinVidGetDisplayAdapters (175 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.22%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.73%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.25%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="367.71" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="367.71" y="0" class="decompiled"/>
-<rect width="378.92" height="6" x="368.08" y="0" class="todo"/>
+<rect width="367.89" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="367.89" y="0" class="decompiled"/>
+<rect width="378.74" height="6" x="368.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2094,7 +2094,7 @@
 <rect width="5.58" height="5.03" x="617.61" y="369.97" class="todo"><title>0x00402620 Func402620 (83 bytes)</title></rect>
 <rect width="5.45" height="5.16" x="626.19" y="245.71" class="named"><title>0x00432460 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="5.45" height="5.16" x="634.64" y="245.71" class="named"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
-<rect width="5.45" height="5.16" x="643.09" y="245.71" class="todo"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
+<rect width="5.45" height="5.16" x="643.09" y="245.71" class="named"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
 <rect width="5.35" height="5.16" x="651.54" y="245.71" class="named"><title>0x00426cd0 InitialiseItemArray (82 bytes)</title></rect>
 <rect width="5.25" height="5.16" x="659.89" y="245.71" class="named"><title>0x00428910 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="5.25" height="5.16" x="668.14" y="245.71" class="named"><title>0x00428be0 LaraFallen (81 bytes)</title></rect>
