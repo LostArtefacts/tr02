@@ -1,5 +1,9 @@
 #include "game.h"
 
+#define DAMAGE_START 140
+#define DAMAGE_LENGTH 14
+#define FASTFALL_FRICTION item->speed = (item->speed * 95) / 100
+
 void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
@@ -86,6 +90,13 @@ void lara_as_death(ITEM_INFO *item, COLL_INFO *coll)
     lara.look = 0;
     coll->enable_spaz = 0;
     coll->enable_baddie_push = 0;
+}
+
+void lara_as_fastfall(ITEM_INFO *item, COLL_INFO *coll)
+{
+    FASTFALL_FRICTION;
+    if (item->fallspeed == DAMAGE_START + DAMAGE_LENGTH)
+        SoundEffect(30, &item->pos, 0);
 }
 
 void lara_as_reach(ITEM_INFO *item, COLL_INFO *coll)
