@@ -193,3 +193,55 @@ STRING_FLAGGED::STRING_FLAGGED(DWORD size)
     *lpString = 0;
     isPresented = true;
 }
+
+struct JOYSTICK {
+    LPGUID lpJoystickGuid;
+    GUID joystickGuid;
+    STRING_FLAGGED productName;
+    STRING_FLAGGED instanceName;
+    JOYSTICK() : productName(256), instanceName(256)
+    {
+    }
+    void SetGuid(const GUID *guid)
+    {
+        if (guid) {
+            joystickGuid = *guid;
+            lpJoystickGuid = &joystickGuid;
+        } else {
+            memset(&joystickGuid, 0, sizeof(GUID));
+            lpJoystickGuid = NULL;
+        }
+    }
+};
+
+struct JOYSTICK_NODE {
+    JOYSTICK_NODE *next;
+    JOYSTICK_NODE *previous;
+    JOYSTICK body;
+    JOYSTICK_NODE(JOYSTICK_NODE *prev) : next(NULL), previous(prev)
+    {
+    }
+};
+
+typedef struct {
+    JOYSTICK_NODE *head;
+    JOYSTICK_NODE *tail;
+    DWORD dwCount;
+} JOYSTICK_LIST;
+
+extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
+{
+    JOYSTICK_LIST *joyList = (JOYSTICK_LIST *)pvRef;
+    JOYSTICK_NODE *joyNode = new JOYSTICK_NODE(joyList->tail);
+
+    if (joyList->tail)
+        joyList->tail->next = joyNode;
+    else
+        joyList->head = joyNode;
+    joyList->tail = joyNode;
+    joyList->dwCount++;
+    joyNode->body.SetGuid(&lpddi->guidInstance);
+    strcpy(joyNode->body.productName.lpString, lpddi->tszProductName);
+    strcpy(joyNode->body.instanceName.lpString, lpddi->tszInstanceName);
+    return DIENUM_CONTINUE;
+}
