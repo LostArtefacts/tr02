@@ -443,3 +443,27 @@ void ChangeRequesterItem(REQUEST_INFO *req, int item, char *text1, uint32 flags1
     else
         req->itemtexts2_flags[item] = 0;
 }
+
+void AddRequesterItem(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2)
+{
+    req->itemtexts1_flags = RequesterFlags1;
+    req->itemtexts2_flags = RequesterFlags2;
+
+    if (text1)
+    {
+        sprintf(req->itemtexts1 + (req->items * req->itemtextlen), text1);
+        req->itemtexts1_flags[req->items] = R_USE | flags1;
+    }
+    else
+        req->itemtexts1_flags[req->items] = 0;
+
+    if (text2)
+    {
+        sprintf(req->itemtexts2 + (req->items * req->itemtextlen), text2);
+        req->itemtexts2_flags[req->items] = R_USE | flags2;
+    }
+    else
+        req->itemtexts2_flags[req->items] = 0;
+
+    req->items++;
+}

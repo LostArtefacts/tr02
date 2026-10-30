@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.34% (528)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.66% (719)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.42% (529)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.58% (718)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="316.29" height="6" x="0" y="0" class="named"/>
-<rect width="430.71" height="6" x="316.29" y="0" class="todo"/>
+<rect width="316.89" height="6" x="0" y="0" class="named"/>
+<rect width="430.11" height="6" x="316.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -437,7 +437,7 @@
 <rect width="12" height="12" x="255" y="105" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="105" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="105" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="105" class="todo"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="105" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="105" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="105" class="todo"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="105" class="todo"><title>0x00426320 ShowGymStatsText (470 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.53%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.47%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.58%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.42%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="153.38" height="6" x="0" y="0" class="named"/>
-<rect width="593.62" height="6" x="153.38" y="0" class="todo"/>
+<rect width="153.76" height="6" x="0" y="0" class="named"/>
+<rect width="593.24" height="6" x="153.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1817,7 +1817,7 @@
 <rect width="9.09" height="9.03" x="534.99" y="211.88" class="todo"><title>0x0044eab0 CompPCX (174 bytes)</title></rect>
 <rect width="9.09" height="9.03" x="534.99" y="223.91" class="todo"><title>0x00455ba0 SyncSurfacePalettes (174 bytes)</title></rect>
 <rect width="9.09" height="8.96" x="534.99" y="235.95" class="named"><title>0x0042ac00 LaraTestEdgeCatch (173 bytes)</title></rect>
-<rect width="9.09" height="8.90" x="534.99" y="247.91" class="todo"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
+<rect width="9.09" height="8.90" x="534.99" y="247.91" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="9.09" height="8.90" x="534.99" y="259.81" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="9.09" height="8.90" x="534.99" y="271.70" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
 <rect width="9.09" height="8.83" x="534.99" y="283.60" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
