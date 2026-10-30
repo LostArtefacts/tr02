@@ -37,6 +37,20 @@ void GetBaddieTarget(sint16 item_num, int goody);
 
 int EnableBaddieAI(sint16 item_number, int always);
 
+int CreatureActive(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->status == INVISIBLE)
+    {
+        if (!EnableBaddieAI(item_number, 0))
+            return 0;
+        item->status = ACTIVE;
+    }
+    return 1;
+}
+
 void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info)
 {
     ROOM_INFO *r;

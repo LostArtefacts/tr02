@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.89% (485)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.11% (762)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">38.97% (486)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">61.03% (761)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="290.53" height="6" x="0" y="0" class="named"/>
-<rect width="456.47" height="6" x="290.53" y="0" class="todo"/>
+<rect width="291.13" height="6" x="0" y="0" class="named"/>
+<rect width="455.87" height="6" x="291.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -166,7 +166,7 @@
 <rect width="12" height="12" x="690" y="15" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="15" class="todo"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="15" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="15" class="todo"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="15" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="named"><title>0x0040e210 CreatureAIInfo (599 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="30" class="todo"><title>0x0040e470 SearchLOT (499 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="30" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.49%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.51%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">19.51%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80.49%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="145.56" height="6" x="0" y="0" class="named"/>
-<rect width="601.44" height="6" x="145.56" y="0" class="todo"/>
+<rect width="145.72" height="6" x="0" y="0" class="named"/>
+<rect width="601.28" height="6" x="145.72" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2145,7 +2145,7 @@
 <rect width="4.73" height="4.79" x="633.38" y="308.87" class="todo"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>
 <rect width="4.73" height="4.79" x="633.38" y="316.66" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
 <rect width="4.73" height="4.79" x="633.38" y="324.45" class="todo"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
-<rect width="4.73" height="4.68" x="633.38" y="332.24" class="todo"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
+<rect width="4.73" height="4.68" x="633.38" y="332.24" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="4.73" height="4.68" x="633.38" y="339.92" class="named"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="4.73" height="4.68" x="633.38" y="347.60" class="named"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>
 <rect width="4.73" height="4.57" x="633.38" y="355.28" class="named"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
