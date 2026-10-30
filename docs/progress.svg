@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.77% (683)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.23% (564)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.85% (684)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.15% (563)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="409.14" height="6" x="0" y="0" class="named"/>
-<rect width="337.86" height="6" x="409.14" y="0" class="todo"/>
+<rect width="409.74" height="6" x="0" y="0" class="named"/>
+<rect width="337.26" height="6" x="409.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -512,7 +512,7 @@
 <rect width="12" height="12" x="630" y="120" class="named"><title>0x00428b30 extra_as_finalanim (163 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="120" class="named"><title>0x00428be0 LaraFallen (81 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="120" class="named"><title>0x00428c40 LaraCollideStop (191 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="120" class="todo"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="120" class="named"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="120" class="todo"><title>0x00428ea0 lara_col_run (383 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="120" class="named"><title>0x00429020 lara_col_stop (129 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="120" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.61%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.39%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.28%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="273.44" height="6" x="0" y="0" class="named"/>
-<rect width="473.56" height="6" x="273.44" y="0" class="todo"/>
+<rect width="274.32" height="6" x="0" y="0" class="named"/>
+<rect width="472.68" height="6" x="274.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1553,7 +1553,7 @@
 <rect width="15.76" height="14.94" x="565.13" y="41.79" class="named"><title>0x0042ee30 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="15.71" height="14.94" x="583.90" y="41.79" class="todo"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
 <rect width="15.67" height="14.94" x="602.61" y="41.79" class="named"><title>0x00432550 GetWaterDepth (402 bytes)</title></rect>
-<rect width="15.62" height="14.94" x="621.28" y="41.79" class="todo"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
+<rect width="15.62" height="14.94" x="621.28" y="41.79" class="named"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
 <rect width="15.57" height="14.94" x="639.90" y="41.79" class="named"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
 <rect width="15.48" height="14.94" x="658.47" y="41.79" class="named"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
 <rect width="15.39" height="14.94" x="676.95" y="41.79" class="todo"><title>0x0042d430 PistolHandler (396 bytes)</title></rect>
