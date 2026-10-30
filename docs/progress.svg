@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.29% (677)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.71% (570)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.37% (678)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">45.63% (569)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="405.55" height="6" x="0" y="0" class="named"/>
-<rect width="341.45" height="6" x="405.55" y="0" class="todo"/>
+<rect width="406.15" height="6" x="0" y="0" class="named"/>
+<rect width="340.85" height="6" x="406.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -582,7 +582,7 @@
 <rect width="12" height="12" x="180" y="150" class="named"><title>0x0042cc50 AnimateShotgun (932 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="150" class="named"><title>0x0042d000 set_pistol_arm (79 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="150" class="named"><title>0x0042d050 draw_pistols (124 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="150" class="todo"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="150" class="named"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="150" class="named"><title>0x0042d300 ready_pistols (92 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="150" class="named"><title>0x0042d360 draw_pistol_meshes (78 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="150" class="named"><title>0x0042d3b0 undraw_pistol_mesh_left (58 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">64.07%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">36.09%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">63.91%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="268.38" height="6" x="0" y="0" class="named"/>
-<rect width="478.62" height="6" x="268.38" y="0" class="todo"/>
+<rect width="269.59" height="6" x="0" y="0" class="named"/>
+<rect width="477.41" height="6" x="269.59" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.24" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1477,7 +1477,7 @@
 <rect width="18.58" height="18.74" x="393.82" y="0" class="todo"><title>0x0044cb40 DisplayCredits (563 bytes)</title></rect>
 <rect width="18.50" height="18.74" x="415.40" y="0" class="todo"><title>0x00438b30 PuzzleHoleCollision (561 bytes)</title></rect>
 <rect width="18.46" height="18.74" x="436.90" y="0" class="named"><title>0x0043ca20 BaracuddaControl (560 bytes)</title></rect>
-<rect width="18.04" height="18.74" x="458.37" y="0" class="todo"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
+<rect width="18.04" height="18.74" x="458.37" y="0" class="named"><title>0x0042d0d0 undraw_pistols (549 bytes)</title></rect>
 <rect width="18.04" height="18.74" x="479.41" y="0" class="todo"><title>0x00433f20 TestBlockPull (549 bytes)</title></rect>
 <rect width="18" height="18.74" x="500.45" y="0" class="todo"><title>0x00419640 PrintObjects (548 bytes)</title></rect>
 <rect width="17.97" height="18.74" x="521.45" y="0" class="todo"><title>0x0040c630 draw_scaled_spriteC (547 bytes)</title></rect>
