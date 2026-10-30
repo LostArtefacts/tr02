@@ -122,6 +122,7 @@ extern PALETTEENTRY WinVidPalette[256];
 extern bool GameVid_IsWindowedVga;
 HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface);
 bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
+HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank);
 DWORD GetZBufferDepth(void);
 }
 
@@ -353,4 +354,36 @@ extern "C" void RenderFinish(bool needToClearTextures)
     }
     if (needToClearTextures)
         NeedToReloadTextures = false;
+}
+
+extern "C" {
+extern bool IsGameToExit;
+void S_ExitSystem(const char *message);
+bool ApplySettings(APP_SETTINGS *newSettings);
+}
+void HWR_GetAllTextureHandles(void);
+
+extern "C" bool RestoreLostBuffers(void)
+{
+    bool rebuild;
+
+    if (!PrimaryBufferSurface)
+        S_ExitSystem("Oops... no front buffer");
+    rebuild = DX_TRY(DDrawSurfaceRestoreLost(PrimaryBufferSurface, NULL, SavedAppSettings.FullScreen));
+    if ((SavedAppSettings.FullScreen || SavedAppSettings.RenderMode == RM_Hardware) && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(BackBufferSurface, PrimaryBufferSurface, true))))
+        rebuild = true;
+    if (SavedAppSettings.TripleBuffering && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ThirdBufferSurface, PrimaryBufferSurface, true))))
+        rebuild = true;
+    if (SavedAppSettings.RenderMode == RM_Software && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(RenderBufferSurface, NULL, false))))
+        rebuild = true;
+    if (ZBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ZBufferSurface, NULL, false))))
+        rebuild = true;
+    if (PictureBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(PictureBufferSurface, NULL, false))))
+        rebuild = true;
+    if (rebuild && !IsGameToExit) {
+        ApplySettings(&SavedAppSettings);
+        if (SavedAppSettings.RenderMode == RM_Hardware)
+            HWR_GetAllTextureHandles();
+    }
+    return rebuild;
 }
