@@ -19,4 +19,28 @@ typedef struct {
     signed char ceiling;
 } FLOOR_INFO;
 
+typedef struct room_info {
+    sint16 *data;
+    sint16 *door;
+    FLOOR_INFO *floor;
+    void *light;
+    void *mesh;
+    sint32 x, y, z;
+    sint32 minfloor, maxceiling;
+    sint16 x_size, y_size;
+    sint16 ambient, ambient2;
+    sint16 lighting;
+    sint16 num_lights;
+    sint16 num_meshes;
+    sint16 left, right, top, bottom;
+    uint16 bound_active;
+    sint16 test_left, test_right, test_top, test_bottom;
+    sint16 item_number;
+    sint16 fx_number;
+    sint16 flipped_room;
+    uint16 flags;
+} ROOM_INFO;
+
+extern ROOM_INFO *room;
+
 #endif
