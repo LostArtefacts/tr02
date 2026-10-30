@@ -466,3 +466,54 @@ extern "C" int LoadDepthQ(HANDLE file)
     }
     return 1;
 }
+
+typedef struct {
+    BYTE pixelFormat[32];
+    BYTE unknown[48];
+    int bpp;
+} TEXTURE_FORMAT;
+
+void HWR_LoadTexturePages(int nPages, uint8 *pImage, uint8 *pPalette);
+
+extern "C" TEXTURE_FORMAT TextureFormat;
+extern "C" int HwrTexturePagesCount;
+
+extern "C" int LoadTexturePages(HANDLE file)
+{
+    DWORD read;
+    char *base;
+    int i;
+    int num_pages;
+    bool t16BitTextures;
+    int nBytesPerPage;
+
+    MyReadFile(file, &num_pages, sizeof(int), &read, NULL);
+    if (SavedAppSettings.RenderMode == RM_Software) {
+        for (i = 0; i < num_pages; i++) {
+            if (!texture_page_ptrs[i])
+                texture_page_ptrs[i] = (char *)game_malloc(65536, TEXTURE_PAGES);
+            MyReadFile(file, texture_page_ptrs[i], 65536, &read, NULL);
+        }
+        SetFilePointer(file, num_pages * 131072, NULL, FILE_CURRENT);
+        return 1;
+    }
+    t16BitTextures = TextureFormat.bpp >= 16;
+    nBytesPerPage = t16BitTextures ? 0x20000 : 0x10000;
+    base = (char *)GlobalAlloc(GMEM_FIXED, num_pages * nBytesPerPage);
+    if (!base)
+        return 0;
+    if (t16BitTextures) {
+        SetFilePointer(file, num_pages * 65536, NULL, FILE_CURRENT);
+        for (i = 0; i < num_pages; i++)
+            MyReadFile(file, base + i * nBytesPerPage, nBytesPerPage, &read, NULL);
+        HWR_LoadTexturePages(num_pages, (uint8 *)base, NULL);
+    } else {
+        for (i = 0; i < num_pages; i++)
+            MyReadFile(file, base + i * nBytesPerPage, nBytesPerPage, &read, NULL);
+        SetFilePointer(file, num_pages * 131072, NULL, FILE_CURRENT);
+        HWR_LoadTexturePages(num_pages, (uint8 *)base, game_palette);
+    }
+    HwrTexturePagesCount = num_pages;
+    GlobalFree(base);
+    return 1;
+}
