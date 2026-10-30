@@ -29,6 +29,13 @@ void S_SoundSetPanAndVolume(sint32 handle, sint16 wPan, uint16 wVolume)
     DS_AdjustVolumeAndPan(handle, CalcVolume(wVolume), CalcPan(wPan));
 }
 
+void S_SoundSetPitch(sint32 handle, int nNewPitch)
+{
+    if (!sound_active)
+        return;
+    DS_AdjustPitch(handle, nNewPitch);
+}
+
 void S_SoundSetMasterVolume(int nVolume)
 {
     LnMasterVolume = nVolume;

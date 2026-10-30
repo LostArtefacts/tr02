@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.42% (105)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.58% (1142)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.50% (106)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.50% (1141)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="62.90" height="6" x="0" y="0" class="named"/>
-<rect width="684.10" height="6" x="62.90" y="0" class="todo"/>
+<rect width="63.50" height="6" x="0" y="0" class="named"/>
+<rect width="683.50" height="6" x="63.50" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1191,7 +1191,7 @@
 <rect width="12" height="12" x="315" y="330" class="todo"><title>0x00455430 CalcPan (38 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x00455460 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="330" class="named"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="330" class="todo"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="330" class="named"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="330" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="named"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.26%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.75%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="12.98" height="6" x="0" y="0" class="named"/>
-<rect width="734.02" height="6" x="12.98" y="0" class="todo"/>
+<rect width="13.05" height="6" x="0" y="0" class="named"/>
+<rect width="733.95" height="6" x="13.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2419,7 +2419,7 @@
 <rect width="2.01" height="1.69" x="703.37" y="349.88" class="named"><title>0x00427ed0 lara_as_reach (28 bytes)</title></rect>
 <rect width="2.01" height="1.69" x="703.37" y="354.57" class="todo"><title>0x00446be0 WinVidFreeWindow (28 bytes)</title></rect>
 <rect width="2.01" height="1.69" x="703.37" y="359.26" class="todo"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
-<rect width="2.01" height="1.69" x="703.37" y="363.94" class="todo"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
+<rect width="2.01" height="1.69" x="703.37" y="363.94" class="named"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="2.01" height="1.69" x="703.37" y="368.63" class="todo"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
 <rect width="2.01" height="1.69" x="703.37" y="373.31" class="todo"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
 <rect width="1.80" height="1.89" x="708.37" y="335.82" class="todo"><title>0x00457140 Func457140 (28 bytes)</title></rect>
