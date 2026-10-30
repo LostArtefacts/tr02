@@ -3,6 +3,7 @@
 
 #ifdef __cplusplus
 #include <windows.h>
+#include <string.h>
 #endif
 
 #ifdef __cplusplus
@@ -13,6 +14,8 @@ extern "C" {
 
 #ifdef __cplusplus
 extern RECT GrcDumpWindow;
+extern HINSTANCE GhInstance;
+extern char *GpCmdLine;
 
 void DX_DoFlipWait();
 

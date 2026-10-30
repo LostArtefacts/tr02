@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.58% (107)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.42% (1140)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.66% (108)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.34% (1139)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="64.10" height="6" x="0" y="0" class="named"/>
-<rect width="682.90" height="6" x="64.10" y="0" class="todo"/>
+<rect width="64.70" height="6" x="0" y="0" class="named"/>
+<rect width="682.30" height="6" x="64.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1235,15 +1235,15 @@
 <rect width="12" height="12" x="225" y="345" class="todo"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="345" class="todo"><title>0x00456650 CleanupTextures (10 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="345" class="todo"><title>0x00456660 InitTextures (31 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="345" class="todo"><title>0x00456680 UpdateTicks (64 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="345" class="todo"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="345" class="todo"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="345" class="named"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="345" class="todo"><title>0x00456720 Sync (86 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="345" class="todo"><title>0x00456780 UT_LoadResource (54 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="345" class="todo"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="345" class="todo"><title>0x00456820 UT_Microseconds (78 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="345" class="todo"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="345" class="todo"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="345" class="todo"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="345" class="todo"><title>0x00456910 UT_MessageBox (24 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="345" class="todo"><title>0x00456910 UT_ErrorBox (24 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="345" class="todo"><title>0x00456930 UT_ErrorBox (66 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="345" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="345" class="todo"><title>0x00456a20 GuidBinaryToString (81 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.24%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">1.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="13.11" height="6" x="0" y="0" class="named"/>
-<rect width="733.89" height="6" x="13.11" y="0" class="todo"/>
+<rect width="13.29" height="6" x="0" y="0" class="named"/>
+<rect width="733.71" height="6" x="13.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2097,7 +2097,7 @@
 <rect width="5.15" height="5.33" x="617.36" y="279.11" class="todo"><title>0x00428be0 LaraFallen (81 bytes)</title></rect>
 <rect width="5.15" height="5.33" x="617.36" y="287.44" class="todo"><title>0x0042f780 SmashItem (81 bytes)</title></rect>
 <rect width="5.15" height="5.33" x="617.36" y="295.77" class="todo"><title>0x00451d50 S_SetupBelowWater (81 bytes)</title></rect>
-<rect width="5.15" height="5.33" x="617.36" y="304.09" class="todo"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
+<rect width="5.15" height="5.33" x="617.36" y="304.09" class="named"><title>0x004566c0 TIME_Init (81 bytes)</title></rect>
 <rect width="5.15" height="5.33" x="617.36" y="312.42" class="todo"><title>0x00456a20 GuidBinaryToString (81 bytes)</title></rect>
 <rect width="5.15" height="5.22" x="617.36" y="320.74" class="todo"><title>0x00410040 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="5.15" height="5.22" x="617.36" y="328.97" class="todo"><title>0x00410bf0 BadPosition (80 bytes)</title></rect>
@@ -2113,7 +2113,7 @@
 <rect width="4.84" height="5.34" x="625.51" y="287.20" class="todo"><title>0x00435f80 ControlGunShot (78 bytes)</title></rect>
 <rect width="4.84" height="5.34" x="625.51" y="295.54" class="todo"><title>0x00447620 GetJoystick (78 bytes)</title></rect>
 <rect width="4.84" height="5.34" x="625.51" y="303.88" class="todo"><title>0x00452480 OpenGameRegistryKey (78 bytes)</title></rect>
-<rect width="4.84" height="5.34" x="625.51" y="312.22" class="todo"><title>0x00456820 UT_Microseconds (78 bytes)</title></rect>
+<rect width="4.84" height="5.34" x="625.51" y="312.22" class="todo"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="4.84" height="5.24" x="625.51" y="320.57" class="todo"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="4.84" height="5.24" x="625.51" y="328.80" class="todo"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
 <rect width="4.84" height="5.24" x="625.51" y="337.04" class="todo"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
@@ -2182,7 +2182,7 @@
 <rect width="4.52" height="4.13" x="641.07" y="370.87" class="todo"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="648.59" y="269.17" class="todo"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
 <rect width="4.46" height="4.19" x="656.05" y="269.17" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
-<rect width="4.46" height="4.19" x="663.51" y="269.17" class="todo"><title>0x00456680 UpdateTicks (64 bytes)</title></rect>
+<rect width="4.46" height="4.19" x="663.51" y="269.17" class="todo"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="670.97" y="269.17" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="4.34" height="4.19" x="678.31" y="269.17" class="todo"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>
 <rect width="4.23" height="4.19" x="685.66" y="269.17" class="named"><title>0x004300d0 ready_flare (62 bytes)</title></rect>
@@ -2443,7 +2443,7 @@
 <rect width="1.71" height="1.27" x="717.62" y="340.72" class="named"><title>0x004300b0 undraw_flare_meshes (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="722.33" y="340.72" class="named"><title>0x0044b560 S_LoadLevelFile (24 bytes)</title></rect>
 <rect width="1.71" height="1.27" x="727.04" y="340.72" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
-<rect width="1.71" height="1.27" x="731.75" y="340.72" class="todo"><title>0x00456910 UT_MessageBox (24 bytes)</title></rect>
+<rect width="1.71" height="1.27" x="731.75" y="340.72" class="todo"><title>0x00456910 UT_ErrorBox (24 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="736.46" y="340.72" class="todo"><title>0x0041da50 AssaultReset (23 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="740.97" y="340.72" class="todo"><title>0x00440680 Func440680 (23 bytes)</title></rect>
 <rect width="1.51" height="1.27" x="745.49" y="340.72" class="todo"><title>0x004478a0 WinInRunControlPanel (23 bytes)</title></rect>
