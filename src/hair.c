@@ -2,9 +2,9 @@
 
 #define HAIR_SEGMENTS 6
 
-static int first_hair;
-static PHD_3DPOS hair[HAIR_SEGMENTS + 1];
-static PHD_VECTOR hvel[HAIR_SEGMENTS + 1];
+extern int first_hair;
+extern PHD_3DPOS hair[HAIR_SEGMENTS + 1];
+extern PHD_VECTOR hvel[HAIR_SEGMENTS + 1];
 
 void InitialiseHair(void)
 {

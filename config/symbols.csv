@@ -1825,7 +1825,7 @@ address,size,name,symbol
 0x00521c40,96,SaveGameItemFlags1,_SaveGameItemFlags1
 0x00521ca0,,PickupInfos,_PickupInfos
 0x00521cd0,,first_hair,_first_hair
-0x00521cf0,,hvel,_hvel
+0x00521ce0,,hvel,_hvel
 0x00521d40,,hair,_hair
 0x00521dc0,4,GF_Puzzle1StringTable,_GF_Puzzle1StringTable
 0x00521dc4,4,GF_CutsFilesStringTable,_GF_CutsFilesStringTable
