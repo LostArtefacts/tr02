@@ -136,6 +136,78 @@ void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_STOP;
 }
 
+#define LARA_LEAN_UNDO ONE_DEGREE
+#define LARA_LEAN_RATE ((ONE_DEGREE / 2) + LARA_LEAN_UNDO)
+#define LARA_LEAN_MAX ((10 * ONE_DEGREE) + LARA_LEAN_UNDO)
+#define ROLL_A 146
+#define ROLL_F GF(ROLL_A, 2)
+
+static int jump_ok = 1;
+
+void lara_as_run(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_DEATH;
+        return;
+    }
+
+    if (input & IN_ROLL)
+    {
+        item->anim_number = ROLL_A;
+        item->frame_number = ROLL_F;
+        item->current_anim_state = AS_ROLL;
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    if (input & IN_LEFT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_FAST_TURN)
+            lara.turn_rate = -LARA_FAST_TURN;
+        item->pos.z_rot -= LARA_LEAN_RATE;
+        if (item->pos.z_rot < -LARA_LEAN_MAX)
+            item->pos.z_rot = -LARA_LEAN_MAX;
+    }
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_FAST_TURN)
+            lara.turn_rate = LARA_FAST_TURN;
+        item->pos.z_rot += LARA_LEAN_RATE;
+        if (item->pos.z_rot > LARA_LEAN_MAX)
+            item->pos.z_rot = LARA_LEAN_MAX;
+    }
+
+    if (item->anim_number == 6)
+        jump_ok = 0;
+    else if (item->anim_number == 0)
+    {
+        if (item->frame_number == 4)
+            jump_ok = 1;
+    }
+    else
+        jump_ok = 1;
+
+    if ((input & IN_JUMP) && jump_ok && !item->gravity_status)
+        item->goal_anim_state = AS_FORWARDJUMP;
+    else if (input & IN_FORWARD)
+    {
+        if (lara.water_status == LARA_WADE)
+            item->goal_anim_state = AS_WADE;
+        else
+        {
+            if (input & IN_SLOW)
+                item->goal_anim_state = AS_WALK;
+            else
+                item->goal_anim_state = AS_RUN;
+        }
+    }
+    else
+        item->goal_anim_state = AS_STOP;
+}
+
 void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->goal_anim_state == AS_SWANDIVE || item->goal_anim_state == AS_REACH)
