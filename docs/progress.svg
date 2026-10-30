@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.77% (658)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.23% (589)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.85% (659)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.15% (588)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="394.17" height="6" x="0" y="0" class="named"/>
-<rect width="352.83" height="6" x="394.17" y="0" class="todo"/>
+<rect width="394.77" height="6" x="0" y="0" class="named"/>
+<rect width="352.23" height="6" x="394.77" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -267,7 +267,7 @@
 <rect width="12" height="12" x="705" y="45" class="named"><title>0x00417780 ControlTwinkle (383 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="45" class="named"><title>0x00417900 CreateBartoliLight (217 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="45" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="60" class="todo"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="60" class="named"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="60" class="todo"><title>0x00417d80 DragonBones (217 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="60" class="todo"><title>0x00417e60 DragonControl (1305 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="60" class="todo"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.68%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="256.39" height="6" x="0" y="0" class="named"/>
-<rect width="490.61" height="6" x="256.39" y="0" class="todo"/>
+<rect width="258.04" height="6" x="0" y="0" class="named"/>
+<rect width="488.96" height="6" x="258.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1431,7 +1431,7 @@
 <rect width="21.67" height="22.85" x="323.30" y="52.03" class="todo"><title>0x0045785f gtmapA (765 bytes)</title></rect>
 <rect width="21.67" height="22.68" x="323.30" y="77.88" class="named"><title>0x00443100 GiantYetiControl (760 bytes)</title></rect>
 <rect width="21.67" height="22.61" x="323.30" y="103.55" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
-<rect width="21.67" height="22.31" x="323.30" y="129.16" class="todo"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
+<rect width="21.67" height="22.31" x="323.30" y="129.16" class="named"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
 <rect width="21.67" height="22.27" x="323.30" y="154.47" class="named"><title>0x00415f40 xLOS (748 bytes)</title></rect>
 <rect width="21.67" height="22.24" x="323.30" y="179.74" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="21.67" height="22.10" x="323.30" y="204.98" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>

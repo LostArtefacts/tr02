@@ -74,3 +74,105 @@ void CreateBartoliLight(sint16 item_number)
     AddDynamicLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, (GetRandomDraw() * 4 >> 15) + 12, (GetRandomDraw() * 4 >> 15) + 10);
 }
 
+#include "box.h"
+
+#define DRAGON_BACK 23
+#define DRAGON_DEATH 11
+#define DRAGON_LCOL -512
+#define DRAGON_RCOL 512
+#define DRAGON_CLOSE 900
+#define DRAGON_FAR 2300
+#define DRAGON_MID ((DRAGON_CLOSE + DRAGON_FAR) / 2)
+#define DRAGON_DEAD_ANIM 22
+#define DRAGON_ALMOST_LIVE 100
+#define LARA_EXTRA 12
+#define EXTRA_BREATH 0
+#define EXTRA_PULLDAGGER 7
+
+int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+extern sint16 cine_frame;
+extern PHD_3DPOS cinematic_pos;
+
+void DragonCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+    int c, s, rx, rz, shift, side_shift, angle;
+    int anim, frame;
+
+    item = &items[item_number];
+
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+
+    if (item->current_anim_state == DRAGON_DEATH)
+    {
+        rx = laraitem->pos.x_pos - item->pos.x_pos;
+        rz = laraitem->pos.z_pos - item->pos.z_pos;
+        c = phd_cos(item->pos.y_rot);
+        s = phd_sin(item->pos.y_rot);
+
+        side_shift = (rx * s + rz * c) >> W2V_SHIFT;
+        if (side_shift > DRAGON_LCOL && side_shift < DRAGON_RCOL)
+        {
+            shift = (rx * c - rz * s) >> W2V_SHIFT;
+            if (shift <= DRAGON_CLOSE && shift >= DRAGON_FAR)
+                return;
+
+            angle = laraitem->pos.y_rot - item->pos.y_rot;
+
+            anim = item->anim_number - objects[DRAGON_BACK].anim_index;
+            frame = item->frame_number - anims[item->anim_number].frame_base;
+            if ((anim == DRAGON_DEAD_ANIM || (anim == DRAGON_DEAD_ANIM + 1 && frame <= DRAGON_ALMOST_LIVE))
+                && (input & IN_ACTION) && item->object_number == DRAGON_BACK && !laraitem->gravity_status
+                && shift <= DRAGON_MID && shift > DRAGON_CLOSE - 350 && side_shift > -350 && side_shift < 350
+                && angle > 0x4000 - 30 * ONE_DEGREE && angle < 0x4000 + 30 * ONE_DEGREE)
+            {
+                laraitem->anim_number = objects[LARA_EXTRA].anim_index;
+                laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+                laraitem->current_anim_state = EXTRA_BREATH;
+                laraitem->goal_anim_state = EXTRA_PULLDAGGER;
+
+                laraitem->pos.x_pos = item->pos.x_pos;
+                laraitem->pos.y_pos = item->pos.y_pos;
+                laraitem->pos.z_pos = item->pos.z_pos;
+                laraitem->pos.y_rot = item->pos.y_rot;
+                laraitem->pos.x_rot = item->pos.x_rot;
+                laraitem->pos.z_rot = item->pos.z_rot;
+                laraitem->fallspeed = 0;
+                laraitem->gravity_status = 0;
+                laraitem->speed = 0;
+
+                if (item->room_number != laraitem->room_number)
+                    ItemNewRoom(lara.item_number, item->room_number);
+
+                AnimateItem(lara_item);
+
+                lara.extra_anim = 1;
+                lara.gun_status = LG_HANDSBUSY;
+                lara.hit_direction = -1;
+
+                lara.mesh_ptrs[HAND_R] = meshes[objects[LARA_EXTRA].mesh_index + HAND_R];
+
+                camera.type = CINEMATIC_CAMERA;
+                cine_frame = 0;
+                memcpy(&cinematic_pos, &laraitem->pos, sizeof(PHD_3DPOS));
+
+                ((CREATURE_INFO *)items[(int)item->data].data)->flags = -1;
+                return;
+            }
+
+            if (shift < DRAGON_MID)
+                shift = DRAGON_CLOSE - shift;
+            else
+                shift = DRAGON_FAR - shift;
+
+            laraitem->pos.x_pos += shift * c >> W2V_SHIFT;
+            laraitem->pos.z_pos -= shift * s >> W2V_SHIFT;
+            return;
+        }
+    }
+
+    ItemPushLara(item, laraitem, coll, 1, 0);
+}
