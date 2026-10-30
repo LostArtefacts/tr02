@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.76% (908)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.68% (333)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.84% (909)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.60% (332)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="543.49" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="543.49" y="0" class="decompiled"/>
-<rect width="199.32" height="6" x="547.68" y="0" class="todo"/>
+<rect width="544.09" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="544.09" y="0" class="decompiled"/>
+<rect width="198.72" height="6" x="548.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1265,7 +1265,7 @@
 <rect width="12" height="12" x="660" y="345" class="named"><title>0x00456f20 GetRegistryGuidValue (145 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="345" class="named"><title>0x00456fc0 SE_ReleaseBitmapResource (55 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="345" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="345" class="todo"><title>0x004570d0 Func4570d0 (100 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="345" class="named"><title>0x004570d0 SE_DrawBitmap (100 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="345" class="todo"><title>0x00457140 Func457140 (28 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="345" class="todo"><title>0x00457160 Func457160 (87 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="360" class="named"><title>0x004571c0 SE_RegisterSetupWindowClass (97 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.70%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.22%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.73%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.14" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="401.14" y="0" class="decompiled"/>
-<rect width="345.26" height="6" x="401.74" y="0" class="todo"/>
+<rect width="401.35" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.35" y="0" class="decompiled"/>
+<rect width="345.04" height="6" x="401.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.95" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2027,7 +2027,7 @@
 <rect width="6.34" height="6.05" x="694.86" y="227.60" class="named"><title>0x00427700 LookUpDown (102 bytes)</title></rect>
 <rect width="6.34" height="6.05" x="704.20" y="227.60" class="named"><title>0x00435fd0 GunShot (102 bytes)</title></rect>
 <rect width="6.16" height="6.05" x="713.54" y="227.60" class="named"><title>0x0041c880 CreateBubble (100 bytes)</title></rect>
-<rect width="6.16" height="6.05" x="722.70" y="227.60" class="todo"><title>0x004570d0 Func4570d0 (100 bytes)</title></rect>
+<rect width="6.16" height="6.05" x="722.70" y="227.60" class="named"><title>0x004570d0 SE_DrawBitmap (100 bytes)</title></rect>
 <rect width="6.07" height="6.05" x="731.86" y="227.60" class="named"><title>0x0041d820 swap_meshes_with_meshswap1 (99 bytes)</title></rect>
 <rect width="6.07" height="6.05" x="740.93" y="227.60" class="named"><title>0x0041d890 swap_meshes_with_meshswap2 (99 bytes)</title></rect>
 <rect width="6.12" height="6" x="600.05" y="236.65" class="named"><title>0x00425360 Inv_RingMotionInit (99 bytes)</title></rect>

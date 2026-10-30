@@ -349,3 +349,14 @@ void BITMAP_RESOURCE::Release(void)
         bmpData = NULL;
     }
 }
+
+void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
+{
+    if (!hPalette)
+        return;
+    LPBITMAPINFO info = bmpInfo;
+    HPALETTE old = SelectPalette(hdc, hPalette, FALSE);
+    RealizePalette(hdc);
+    SetDIBitsToDevice(hdc, x, y, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, 0, 0, info->bmiHeader.biHeight, bmpData, bmpInfo, DIB_RGB_COLORS);
+    SelectPalette(hdc, old, FALSE);
+}
