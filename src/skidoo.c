@@ -393,3 +393,144 @@ void DoSnowEffect(ITEM_INFO *skidoo)
             fx->shade = 0;
     }
 }
+
+int SkidooDynamics(ITEM_INFO *skidoo)
+{
+    SKIDOO_INFO *skinfo;
+    PHD_VECTOR moved, fl, fr, br, bl;
+    PHD_VECTOR old, fl_old, fr_old, bl_old, br_old;
+    sint32 hfl, hfr, hbr, hbl;
+    sint32 hfr_old, hfl_old, hbr_old, hbl_old;
+    FLOOR_INFO *floor;
+    sint32 height, slip, collide;
+    sint16 room_number, rot;
+    int newspeed;
+
+    skinfo = (SKIDOO_INFO *)skidoo->data;
+
+    hfl_old = TestHeight(skidoo, SKIDOO_FRONT, -SKIDOO_SIDE, &fl_old);
+    hfr_old = TestHeight(skidoo, SKIDOO_FRONT, SKIDOO_SIDE, &fr_old);
+    hbl_old = TestHeight(skidoo, -SKIDOO_FRONT, -SKIDOO_SIDE, &bl_old);
+    hbr_old = TestHeight(skidoo, -SKIDOO_FRONT, SKIDOO_SIDE, &br_old);
+
+    old.x = skidoo->pos.x_pos;
+    old.y = skidoo->pos.y_pos;
+    old.z = skidoo->pos.z_pos;
+
+    if (bl_old.y > hbl_old)
+        bl_old.y = hbl_old;
+    if (br_old.y > hbr_old)
+        br_old.y = hbr_old;
+    if (fl_old.y > hfl_old)
+        fl_old.y = hfl_old;
+    if (fr_old.y > hfr_old)
+        fr_old.y = hfr_old;
+
+    if (skidoo->pos.y_pos > skidoo->floor - STEP_L)
+    {
+        if (skinfo->skidoo_turn < -SKIDOO_UNDO_TURN)
+            skinfo->skidoo_turn += SKIDOO_UNDO_TURN;
+        else if (skinfo->skidoo_turn > SKIDOO_UNDO_TURN)
+            skinfo->skidoo_turn -= SKIDOO_UNDO_TURN;
+        else
+            skinfo->skidoo_turn = 0;
+        skidoo->pos.y_rot += skinfo->skidoo_turn + skinfo->extra_rotation;
+
+        rot = skidoo->pos.y_rot - skinfo->momentum_angle;
+        if (rot < -SKIDOO_MOMENTUM_TURN)
+        {
+            if (rot < -SKIDOO_MAX_MOM_TURN)
+            {
+                rot = -SKIDOO_MAX_MOM_TURN;
+                skinfo->momentum_angle = skidoo->pos.y_rot - rot;
+            }
+            else
+                skinfo->momentum_angle -= SKIDOO_MOMENTUM_TURN;
+        }
+        else if (rot > SKIDOO_MOMENTUM_TURN)
+        {
+            if (rot > SKIDOO_MAX_MOM_TURN)
+            {
+                rot = SKIDOO_MAX_MOM_TURN;
+                skinfo->momentum_angle = skidoo->pos.y_rot - rot;
+            }
+            else
+                skinfo->momentum_angle += SKIDOO_MOMENTUM_TURN;
+        }
+        else
+            skinfo->momentum_angle = skidoo->pos.y_rot;
+    }
+    else
+        skidoo->pos.y_rot += skinfo->skidoo_turn + skinfo->extra_rotation;
+
+    skidoo->pos.z_pos += skidoo->speed * phd_cos(skinfo->momentum_angle) >> W2V_SHIFT;
+    skidoo->pos.x_pos += skidoo->speed * phd_sin(skinfo->momentum_angle) >> W2V_SHIFT;
+
+    slip = SKIDOO_SLIP * phd_sin(skidoo->pos.x_rot) >> W2V_SHIFT;
+    if (ABS(slip) > SKIDOO_SLIP / 2)
+    {
+        skidoo->pos.z_pos -= slip * phd_cos(skidoo->pos.y_rot) >> W2V_SHIFT;
+        skidoo->pos.x_pos -= slip * phd_sin(skidoo->pos.y_rot) >> W2V_SHIFT;
+    }
+
+    slip = SKIDOO_SLIP_SIDE * phd_sin(skidoo->pos.z_rot) >> W2V_SHIFT;
+    if (ABS(slip) > SKIDOO_SLIP_SIDE / 2)
+    {
+        skidoo->pos.z_pos -= slip * phd_sin(skidoo->pos.y_rot) >> W2V_SHIFT;
+        skidoo->pos.x_pos += slip * phd_cos(skidoo->pos.y_rot) >> W2V_SHIFT;
+    }
+
+    moved.x = skidoo->pos.x_pos;
+    moved.z = skidoo->pos.z_pos;
+
+    if (!(skidoo->flags & ONESHOT))
+        SkidooBaddieCollision(skidoo);
+
+    rot = 0;
+
+    hbl = TestHeight(skidoo, -SKIDOO_FRONT, -SKIDOO_SIDE, &bl);
+    if (hbl < bl_old.y - STEP_L)
+        rot = DoShift(skidoo, &bl, &bl_old);
+
+    hbr = TestHeight(skidoo, -SKIDOO_FRONT, SKIDOO_SIDE, &br);
+    if (hbr < br_old.y - STEP_L)
+        rot += DoShift(skidoo, &br, &br_old);
+
+    hfl = TestHeight(skidoo, SKIDOO_FRONT, -SKIDOO_SIDE, &fl);
+    if (hfl < fl_old.y - STEP_L)
+        rot += DoShift(skidoo, &fl, &fl_old);
+
+    hfr = TestHeight(skidoo, SKIDOO_FRONT, SKIDOO_SIDE, &fr);
+    if (hfr < fr_old.y - STEP_L)
+        rot += DoShift(skidoo, &fr, &fr_old);
+
+    room_number = skidoo->room_number;
+    floor = GetFloor(skidoo->pos.x_pos, skidoo->pos.y_pos, skidoo->pos.z_pos, &room_number);
+    height = GetHeight(floor, skidoo->pos.x_pos, skidoo->pos.y_pos, skidoo->pos.z_pos);
+    if (height < skidoo->pos.y_pos - STEP_L)
+        DoShift(skidoo, (PHD_VECTOR *)&skidoo->pos, &old);
+
+    skinfo->extra_rotation = rot;
+
+    collide = GetCollisionAnim(skidoo, &moved);
+    if (collide)
+    {
+        newspeed = (skidoo->pos.z_pos - old.z) * phd_cos(skinfo->momentum_angle) + (skidoo->pos.x_pos - old.x) * phd_sin(skinfo->momentum_angle) >> W2V_SHIFT;
+
+        if (&items[lara.skidoo] == skidoo && skidoo->speed > SKIDOO_MAX_SPEED + SKIDOO_ACCELERATION && newspeed < skidoo->speed - 10)
+        {
+            lara_item->hit_points -= (skidoo->speed - newspeed) >> 1;
+            lara_item->hit_status = 1;
+        }
+
+        if (skidoo->speed > 0 && newspeed < skidoo->speed)
+            skidoo->speed = (newspeed < 0) ? 0 : newspeed;
+        else if (skidoo->speed < 0 && newspeed > skidoo->speed)
+            skidoo->speed = (newspeed > 0) ? 0 : newspeed;
+
+        if (skidoo->speed < SKIDOO_MAX_BACK)
+            skidoo->speed = SKIDOO_MAX_BACK;
+    }
+
+    return collide;
+}
