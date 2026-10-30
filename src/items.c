@@ -1,5 +1,9 @@
 #include "game.h"
 
+extern sint16 body_bag;
+
+void KillItem(sint16 item_number);
+
 void InitialiseFXArray(void)
 {
     int i;
@@ -40,4 +44,24 @@ void EffectNewRoom(sint16 fx_num, sint16 room_number)
     r = &room[room_number];
     fx->next_fx = r->fx_number;
     r->fx_number = fx_num;
+}
+
+void ClearBodyBag(void)
+{
+    sint16 item_number;
+    ITEM_INFO *item;
+
+    if (body_bag == NO_ITEM)
+        return;
+
+    item_number = body_bag;
+    while (item_number != NO_ITEM)
+    {
+        item = &items[item_number];
+
+        KillItem(item_number);
+        item_number = item->next_active;
+        item->next_active = NO_ITEM;
+    }
+    body_bag = NO_ITEM;
 }

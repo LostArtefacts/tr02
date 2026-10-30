@@ -1831,7 +1831,7 @@ address,size,name,symbol
 0x005207c6,2,NextItemFree,_NextItemFree
 0x005207c8,2,NextItemActive,_NextItemActive
 0x005207ca,2,next_fx_active,_next_fx_active
-0x005207cc,2,PrevItemActive,_PrevItemActive
+0x005207cc,2,body_bag,_body_bag
 0x005207e0,,SaveGameStrings1,_SaveGameStrings1
 0x00520ca0,96,RequesterFlags2,_RequesterFlags2
 0x00520d00,96,RequesterFlags1,_RequesterFlags1
