@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15% (187)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">85% (1060)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">15.08% (188)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">84.92% (1059)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="112.02" height="6" x="0" y="0" class="named"/>
-<rect width="634.98" height="6" x="112.02" y="0" class="todo"/>
+<rect width="112.62" height="6" x="0" y="0" class="named"/>
+<rect width="634.38" height="6" x="112.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -713,7 +713,7 @@
 <rect width="12" height="12" x="645" y="180" class="todo"><title>0x004358d0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="180" class="named"><title>0x00435a50 LiftFloor (53 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="180" class="named"><title>0x00435a90 LiftCeiling (53 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="180" class="todo"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="180" class="named"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="180" class="named"><title>0x00435af0 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="180" class="named"><title>0x00435b10 GetOffset (59 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="180" class="todo"><title>0x00435b50 BridgeTilt1Floor (48 bytes)</title></rect>
@@ -1320,8 +1320,8 @@
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">4.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">95.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="35.69" height="6" x="0" y="0" class="named"/>
-<rect width="711.31" height="6" x="35.69" y="0" class="todo"/>
+<rect width="35.74" height="6" x="0" y="0" class="named"/>
+<rect width="711.26" height="6" x="35.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2451,7 +2451,7 @@
 <rect width="1.47" height="1.31" x="712.91" y="349.30" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="353.62" class="named"><title>0x0041cf30 turn180_effect (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="357.74" class="named"><title>0x0041d9b0 invisibility_off (22 bytes)</title></rect>
-<rect width="1.47" height="1.13" x="712.91" y="361.87" class="todo"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
+<rect width="1.47" height="1.13" x="712.91" y="361.87" class="named"><title>0x00435ad0 BridgeFlatFloor (22 bytes)</title></rect>
 <rect width="1.47" height="1.13" x="712.91" y="366" class="named"><title>0x0044d3b0 HWR_BeginScene (22 bytes)</title></rect>
 <rect width="1.47" height="0.94" x="712.91" y="370.12" class="todo"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="1.47" height="0.94" x="712.91" y="374.06" class="todo"><title>0x00428600 lara_as_waterout (21 bytes)</title></rect>
