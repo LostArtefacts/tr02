@@ -90,6 +90,37 @@ inline uint32 ShadeColor(int r, int g, int b)
     return 0xff000000 | (r << 16) | (g << 8) | b;
 }
 
+extern "C" void DrawPoly_Gouraud(int vtx_count, int red, int green, int blue)
+{
+    int i, r, g, b;
+    uint32 shade;
+    VERTEX_INFO *vbuf;
+    D3DTLVERTEX *vtx;
+
+    vbuf = VBuffer;
+    vtx = VBufferD3D;
+    for (i = vtx_count; i; i--) {
+        vtx->sx = vbuf->x;
+        vtx->sy = vbuf->y;
+        vtx->sz = FltResZBuf - FltResZORhw * vbuf->rhw;
+        vtx->rhw = vbuf->rhw;
+        shade = 0x1fff - (int)vbuf->g;
+        r = (red * shade) >> 12;
+        if (r > 255)
+            r = 255;
+        g = (green * shade) >> 12;
+        if (g > 255)
+            g = 255;
+        b = (blue * shade) >> 12;
+        if (b > 255)
+            b = 255;
+        vtx->color = ShadeColor(r, g, b);
+        vbuf++;
+        vtx++;
+    }
+    G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, VBufferD3D, vtx_count, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+}
+
 extern "C" void InsertLine_ZBuffered(int x1, int y1, int x2, int y2, int z, uint8 color)
 {
     uint8 *rgb;
