@@ -1746,6 +1746,7 @@ address,size,name,symbol
 0x004d77d0,4,assault_timer_display,_assault_timer_display
 0x004d77d4,4,assault_timer_active,_assault_timer_active
 0x004d77d8,4,monks_attack_lara,_monks_attack_lara
+0x004d77dc,4,GF_ScriptVersion,_GF_ScriptVersion
 0x004d77e0,4,GF_LaraStartAnim,_GF_LaraStartAnim
 0x004d77e4,,GF_SunsetEnabled,_GF_SunsetEnabled
 0x004d77e8,,GF_DeadlyWater,_GF_DeadlyWater
@@ -1754,6 +1755,7 @@ address,size,name,symbol
 0x004d77f4,,GF_RemoveAmmo,_GF_RemoveAmmo
 0x004d77f8,1,GF_Kill2Complete,_GF_Kill2Complete
 0x004d77fc,1,GF_StartGame,_GF_StartGame
+0x004d7808,256,GF_Description,_GF_Description
 0x004d7910,4,flash_state,_flash_state
 0x004d7914,4,flash_count,_flash_count
 0x004d7918,4,old_hitpoints,_old_hitpoints
@@ -2032,6 +2034,7 @@ address,size,name,symbol
 0x00521e74,4,GF_Key2Strings,_GF_Key2Strings
 0x00521e78,4,GF_CutsFilesStringBuffer,_GF_CutsFilesStringBuffer
 0x00521e7c,4,GF_Key4StringBuffer,_GF_Key4StringBuffer
+0x00521e80,4,GF_sequence_buffer,_GF_sequence_buffer
 0x00521e84,4,GF_Key2StringBuffer,_GF_Key2StringBuffer
 0x00521e88,4,GF_Pickup2StringBuffer,_GF_Pickup2StringBuffer
 0x00521e8c,4,GF_PictureFilesStringBuffer,_GF_PictureFilesStringBuffer

@@ -586,6 +586,171 @@ int Read_Strings(int num_strings, char **strings, char **buffer, DWORD *read, HA
     return 1;
 }
 
+extern "C" uint32 GF_ScriptVersion;
+extern "C" char GF_Description[];
+extern "C" sint16 *GF_sequence_buffer;
+extern "C" char **GF_PictureFilesStringTable, **GF_titlefilenames, **GF_FmvFilesStringTable;
+extern "C" char **GF_levelfilenames, **GF_cutscenefilenames;
+extern "C" char *GF_LevelNamesStringBuffer, *GF_PictureFilesStringBuffer, *GF_TitleFilesStringBuffer;
+extern "C" char *GF_FmvFilesStringBuffer, *GF_LevelFilesStringBuffer, *GF_CutsFilesStringBuffer;
+extern "C" char *GF_GameStringBuffer, *GF_SpecificStringBuffer;
+extern "C" char **GF_Puzzle1Strings, **GF_Puzzle2Strings, **GF_Puzzle3Strings, **GF_Puzzle4Strings;
+extern "C" char **GF_Pickup1Strings, **GF_Pickup2Strings;
+extern "C" char **GF_Key1Strings, **GF_Key2Strings, **GF_Key3Strings, **GF_Key4Strings;
+extern "C" char *GF_Puzzle1StringBuffer, *GF_Puzzle2StringBuffer, *GF_Puzzle3StringBuffer, *GF_Puzzle4StringBuffer;
+extern "C" char *GF_Pickup1StringBuffer, *GF_Pickup2StringBuffer;
+extern "C" char *GF_Key1StringBuffer, *GF_Key2StringBuffer, *GF_Key3StringBuffer, *GF_Key4StringBuffer;
+
+extern "C" int S_LoadGameFlow(char *filename)
+{
+    DWORD read;
+    HANDLE file;
+    sint16 number, size;
+    int i;
+
+    filename = GetFullPath(filename);
+    file = CreateFile(filename, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file == INVALID_HANDLE_VALUE)
+        return 0;
+
+    MyReadFile(file, &GF_ScriptVersion, sizeof(uint32), &read, NULL);
+    if (GF_ScriptVersion != 3)
+        return 0;
+    MyReadFile(file, GF_Description, 256, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint16), &read, NULL);
+    if (size != sizeof(GAMEFLOW_INFO))
+        return 0;
+    MyReadFile(file, &gameflow, sizeof(GAMEFLOW_INFO), &read, NULL);
+
+    GF_Level_Names = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Level_Names)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Level_Names, &GF_LevelNamesStringBuffer, &read, file))
+        return 0;
+
+    GF_PictureFilesStringTable = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_picfiles * sizeof(char *));
+    if (!GF_PictureFilesStringTable)
+        return 0;
+    if (!Read_Strings(gameflow.num_picfiles, GF_PictureFilesStringTable, &GF_PictureFilesStringBuffer, &read, file))
+        return 0;
+
+    GF_titlefilenames = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_titlefiles * sizeof(char *));
+    if (!GF_titlefilenames)
+        return 0;
+    if (!Read_Strings(gameflow.num_titlefiles, GF_titlefilenames, &GF_TitleFilesStringBuffer, &read, file))
+        return 0;
+
+    GF_FmvFilesStringTable = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_fmvfiles * sizeof(char *));
+    if (!GF_FmvFilesStringTable)
+        return 0;
+    if (!Read_Strings(gameflow.num_fmvfiles, GF_FmvFilesStringTable, &GF_FmvFilesStringBuffer, &read, file))
+        return 0;
+
+    GF_levelfilenames = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_levelfilenames)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_levelfilenames, &GF_LevelFilesStringBuffer, &read, file))
+        return 0;
+
+    GF_cutscenefilenames = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_cutfiles * sizeof(char *));
+    if (!GF_cutscenefilenames)
+        return 0;
+    if (!Read_Strings(gameflow.num_cutfiles, GF_cutscenefilenames, &GF_CutsFilesStringBuffer, &read, file))
+        return 0;
+
+    MyReadFile(file, LGF_offsets, sizeof(sint16) * (gameflow.num_levels + 1), &read, NULL);
+    MyReadFile(file, &size, sizeof(sint16), &read, NULL);
+    GF_sequence_buffer = (sint16 *)GlobalAlloc(GMEM_FIXED, size);
+    if (!GF_sequence_buffer)
+        return 0;
+    MyReadFile(file, GF_sequence_buffer, size, &read, NULL);
+    GF_frontendSequence = GF_sequence_buffer;
+    for (i = 0; i < gameflow.num_levels; i++)
+        GF_level_sequence_list[i] = GF_sequence_buffer + LGF_offsets[i + 1] / 2;
+
+    if (gameflow.num_demos)
+        MyReadFile(file, GF_valid_demos, sizeof(sint16) * gameflow.num_demos, &read, NULL);
+
+    MyReadFile(file, &number, sizeof(sint16), &read, NULL);
+    if (number != 89)
+        return 0;
+
+    GF_GameStrings = (char **)GlobalAlloc(GMEM_FIXED, 89 * sizeof(char *));
+    if (!GF_GameStrings)
+        return 0;
+    if (!Read_Strings(89, GF_GameStrings, &GF_GameStringBuffer, &read, file))
+        return 0;
+
+    GF_PCStrings = (char **)GlobalAlloc(GMEM_FIXED, 41 * sizeof(char *));
+    if (!GF_PCStrings)
+        return 0;
+    if (!Read_Strings(41, GF_PCStrings, &GF_SpecificStringBuffer, &read, file))
+        return 0;
+
+    GF_Puzzle1Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Puzzle1Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Puzzle1Strings, &GF_Puzzle1StringBuffer, &read, file))
+        return 0;
+
+    GF_Puzzle2Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Puzzle2Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Puzzle2Strings, &GF_Puzzle2StringBuffer, &read, file))
+        return 0;
+
+    GF_Puzzle3Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Puzzle3Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Puzzle3Strings, &GF_Puzzle3StringBuffer, &read, file))
+        return 0;
+
+    GF_Puzzle4Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Puzzle4Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Puzzle4Strings, &GF_Puzzle4StringBuffer, &read, file))
+        return 0;
+
+    GF_Pickup1Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Pickup1Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Pickup1Strings, &GF_Pickup1StringBuffer, &read, file))
+        return 0;
+
+    GF_Pickup2Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Pickup2Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Pickup2Strings, &GF_Pickup2StringBuffer, &read, file))
+        return 0;
+
+    GF_Key1Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Key1Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Key1Strings, &GF_Key1StringBuffer, &read, file))
+        return 0;
+
+    GF_Key2Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Key2Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Key2Strings, &GF_Key2StringBuffer, &read, file))
+        return 0;
+
+    GF_Key3Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Key3Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Key3Strings, &GF_Key3StringBuffer, &read, file))
+        return 0;
+
+    GF_Key4Strings = (char **)GlobalAlloc(GMEM_FIXED, gameflow.num_levels * sizeof(char *));
+    if (!GF_Key4Strings)
+        return 0;
+    if (!Read_Strings(gameflow.num_levels, GF_Key4Strings, &GF_Key4StringBuffer, &read, file))
+        return 0;
+
+    CloseHandle(file);
+    return 1;
+}
+
 extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
 {
     while (*file_name != '.' && *file_name)

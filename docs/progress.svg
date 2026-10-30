@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.48% (1021)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.88% (224)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.56% (1022)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">17.80% (223)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="608.69" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="608.69" y="0" class="decompiled"/>
-<rect width="133.54" height="6" x="613.46" y="0" class="todo"/>
+<rect width="609.28" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="609.28" y="0" class="decompiled"/>
+<rect width="132.95" height="6" x="614.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1042,7 +1042,7 @@
 <rect width="12" height="12" x="315" y="285" class="named"><title>0x0044b5b0 S_AdjustTexelCoordinates (20 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="285" class="named"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="285" class="named"><title>0x0044b6a0 Read_Strings (198 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="285" class="todo"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="285" class="named"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="285" class="named"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="285" class="named"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="285" class="named"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.22%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">34.69%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.72%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">34.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="487.17" height="6" x="0" y="0" class="named"/>
-<rect width="0.66" height="6" x="487.17" y="0" class="decompiled"/>
-<rect width="259.17" height="6" x="487.83" y="0" class="todo"/>
+<rect width="490.96" height="6" x="0" y="0" class="named"/>
+<rect width="0.66" height="6" x="490.96" y="0" class="decompiled"/>
+<rect width="255.38" height="6" x="491.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.59" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1352,7 +1352,7 @@
 <rect width="34.39" height="38.17" x="107.71" y="42.24" class="todo"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
 <rect width="34.39" height="37.76" x="107.71" y="83.41" class="todo"><title>0x0044fee0 do_control_option (1780 bytes)</title></rect>
 <rect width="34.39" height="37.30" x="107.71" y="124.17" class="named"><title>0x004151c0 TestTriggers (1760 bytes)</title></rect>
-<rect width="34.39" height="36.95" x="107.71" y="164.47" class="todo"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
+<rect width="34.39" height="36.95" x="107.71" y="164.47" class="named"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="34.39" height="36.52" x="107.71" y="204.42" class="todo"><title>0x004242d0 Inv_AddItem (1726 bytes)</title></rect>
 <rect width="34.39" height="35.01" x="107.71" y="243.94" class="todo"><title>0x004128d0 GetCollisionInfo (1660 bytes)</title></rect>
 <rect width="34.39" height="34.55" x="107.71" y="281.95" class="todo"><title>0x00430380 LaraControl (1640 bytes)</title></rect>
