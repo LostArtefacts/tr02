@@ -109,3 +109,16 @@ void lara_col_swim(ITEM_INFO *item, COLL_INFO *coll)
 {
     LaraSwimCollision(item, coll);
 }
+
+void lara_col_uwdeath(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int wh;
+
+    item->hit_points = -1;
+    lara.air = -1;
+    lara.gun_status = LG_HANDSBUSY;
+    wh = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (wh != NO_HEIGHT && wh < item->pos.y_pos - 100)
+        item->pos.y_pos -= 5;
+    LaraSwimCollision(item, coll);
+}
