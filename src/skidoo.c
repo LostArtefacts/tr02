@@ -1024,3 +1024,47 @@ void DrawSkidoo(ITEM_INFO *item)
     }
     phd_PopMatrix();
 }
+
+sint16 *GetBestFrame(ITEM_INFO *item);
+
+void SkidmanPush(ITEM_INFO *item, ITEM_INFO *laraitem, int radius)
+{
+    int x, z, rx, rz, c, s;
+    int minx, maxx, minz, maxz;
+    int l, r, t, b;
+    OBJECT_INFO *object;
+    sint16 *bounds;
+
+    x = laraitem->pos.x_pos - item->pos.x_pos;
+    z = laraitem->pos.z_pos - item->pos.z_pos;
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+    rx = (c * x - s * z) >> W2V_SHIFT;
+    rz = (c * z + s * x) >> W2V_SHIFT;
+
+    object = &objects[item->object_number];
+    bounds = GetBestFrame(item);
+    minx = *(bounds + 0) - radius;
+    maxx = *(bounds + 1) + radius;
+    minz = *(bounds + 4) - radius;
+    maxz = *(bounds + 5) + radius;
+
+    if (rx >= minx && rx <= maxx && rz >= minz && rz <= maxz) {
+        l = rx - minx;
+        r = maxx - rx;
+        t = maxz - rz;
+        b = rz - minz;
+
+        if (l <= r && l <= t && l <= b)
+            rx -= l;
+        else if (r <= l && r <= t && r <= b)
+            rx += r;
+        else if (t <= l && t <= r && t <= b)
+            rz += t;
+        else
+            rz -= b;
+
+        laraitem->pos.x_pos = item->pos.x_pos + ((c * rx + s * rz) >> W2V_SHIFT);
+        laraitem->pos.z_pos = item->pos.z_pos + ((c * rz - s * rx) >> W2V_SHIFT);
+    }
+}

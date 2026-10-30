@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.39% (591)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.61% (656)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">47.47% (592)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">52.53% (655)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="354.03" height="6" x="0" y="0" class="named"/>
-<rect width="392.97" height="6" x="354.03" y="0" class="todo"/>
+<rect width="354.63" height="6" x="0" y="0" class="named"/>
+<rect width="392.37" height="6" x="354.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -790,7 +790,7 @@
 <rect width="12" height="12" x="300" y="210" class="named"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="210" class="named"><title>0x0043edf0 InitialiseSkidman (131 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="210" class="todo"><title>0x0043ee80 SkidManControl (994 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="210" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="210" class="named"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="210" class="todo"><title>0x0043f3a0 SkidmanCollision (129 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="210" class="named"><title>0x0043f430 GetRealTrack (49 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="210" class="todo"><title>0x0043f470 SoundEffect (1156 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.47%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.53%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.56%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">71.44%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="212.71" height="6" x="0" y="0" class="named"/>
-<rect width="534.29" height="6" x="212.71" y="0" class="todo"/>
+<rect width="213.32" height="6" x="0" y="0" class="named"/>
+<rect width="533.68" height="6" x="213.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1651,7 +1651,7 @@
 <rect width="12.14" height="12.58" x="734.86" y="94.24" class="named"><title>0x0043e590 SkidooGuns (283 bytes)</title></rect>
 <rect width="12.32" height="12.39" x="466.32" y="109.82" class="todo"><title>0x004541d0 Func4541d0 (283 bytes)</title></rect>
 <rect width="12.32" height="12.34" x="466.32" y="125.21" class="todo"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
-<rect width="12.32" height="12.29" x="466.32" y="140.55" class="todo"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
+<rect width="12.32" height="12.29" x="466.32" y="140.55" class="named"><title>0x0043f280 SkidmanPush (281 bytes)</title></rect>
 <rect width="12.32" height="12.12" x="466.32" y="155.84" class="todo"><title>0x0043c900 JellyControl (278 bytes)</title></rect>
 <rect width="12.32" height="12.12" x="466.32" y="170.96" class="named"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12.32" height="12.07" x="466.32" y="186.08" class="named"><title>0x00441300 ControlCeilingSpikes (277 bytes)</title></rect>
