@@ -1102,10 +1102,10 @@ address,size,name,symbol
 0x004541c0,10,SE_SoundAdapterSet,_SE_SoundAdapterSet
 0x004541d0,283,Func4541d0,
 0x004542f0,190,Func4542f0,
-0x004543b0,262,Func4543b0,
+0x004543b0,262,SE_ControlsDlgProc,_SE_ControlsDlgProc@16
 0x004544c0,10,SE_ControlsJoystickSet,_SE_ControlsJoystickSet
-0x004544d0,104,Func4544d0,
-0x00454540,189,Func454540,
+0x004544d0,104,SE_ControlsDlgUpdate,_SE_ControlsDlgUpdate
+0x00454540,189,SE_ControlsDlgInit,_SE_ControlsDlgInit
 0x00454600,138,SE_OptionsDlgProc,_SE_OptionsDlgProc@16
 0x00454690,564,SE_OptionsDlgUpdate,_SE_OptionsDlgUpdate
 0x004548d0,75,SE_OptionsStrCat,_SE_OptionsStrCat
@@ -1908,11 +1908,13 @@ address,size,name,symbol
 0x0051bc84,4,OptionsImageHandle,_OptionsImageHandle
 0x0051bc8c,4,SE_DisplayAdapter,_SE_DisplayAdapter
 0x0051bc90,4,SoundDialogHandle,_SoundDialogHandle
+0x0051bc98,4,ControlsImageHandle,_ControlsImageHandle
 0x0051bc9c,4,GraphicsDialogHandle,_GraphicsDialogHandle
 0x0051bca0,,SE_FullScreenMode,_SE_FullScreenMode
 0x0051bcb0,,SavedAppSettings,_SavedAppSettings
 0x0051bcec,4,OptionsDialogHandle,_OptionsDialogHandle
 0x0051bcf0,1,IsSetupDialogCentered,_IsSetupDialogCentered
+0x0051bcf4,4,ControlsDialogHandle,_ControlsDialogHandle
 0x0051bd10,128,StringToShow,_StringToShow
 0x0051bd90,4,title_loaded,_title_loaded
 0x0051bd98,4,LnMasterVolume,_LnMasterVolume

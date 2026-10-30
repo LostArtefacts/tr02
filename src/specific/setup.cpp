@@ -30,7 +30,9 @@ typedef struct
     void *PreferredDisplayAdapter;
     void *PreferredSoundAdapter;
     void *PreferredJoystick;
-    uint8 rest[0x2d];
+    uint8 pad[0x1c];
+    bool JoystickEnabled;
+    uint8 rest[0x10];
 } SETUP_APP_SETTINGS;
 
 extern "C" {
@@ -202,5 +204,58 @@ extern "C" BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPara
         break;
     }
     Func457470(OptionsImageHandle, uMsg, wParam);
+    return FALSE;
+}
+
+extern "C" {
+extern HWND ControlsDialogHandle;
+extern HWND ControlsImageHandle;
+void SE_ControlsDlgInit(HWND hwndDlg);
+void SE_ControlsDlgUpdate(HWND hwndDlg);
+void DInputCreate(void);
+void DInputRelease(void);
+void WinInRunControlPanel(HWND hWnd);
+}
+
+extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    LRESULT result;
+
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        ControlsDialogHandle = hwndDlg;
+        ControlsImageHandle = GetDlgItem(hwndDlg, 1075);
+        SE_ControlsDlgInit(hwndDlg);
+        return TRUE;
+    case WM_COMMAND:
+        if (HIWORD(wParam) == CBN_SELCHANGE)
+        {
+            result = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
+            result = SendMessage((HWND)lParam, CB_GETITEMDATA, result, 0);
+            if (LOWORD(wParam) == 1055)
+            {
+                SE_ControlsJoystickSet(hwndDlg, (void *)result);
+                SE_ControlsDlgUpdate(hwndDlg);
+            }
+        }
+        else if (HIWORD(wParam) == BN_CLICKED)
+        {
+            result = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
+            switch (LOWORD(wParam))
+            {
+            case 1099:
+                ChangedAppSettings.JoystickEnabled = result == BST_CHECKED;
+                break;
+            case 1100:
+                DInputCreate();
+                WinInRunControlPanel(hwndDlg);
+                DInputRelease();
+                break;
+            }
+        }
+        break;
+    }
+    Func457470(ControlsImageHandle, uMsg, wParam);
     return FALSE;
 }
