@@ -34,3 +34,12 @@ void BridgeTilt1Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
     if (y > level)
         *height = level + STEP_L;
 }
+
+void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    sint32 level;
+
+    level = item->pos.y_pos + (GetOffset(item, x, z) >> 1);
+    if (y > level)
+        *height = level + STEP_L;
+}
