@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.69% (894)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.75% (346)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">71.77% (895)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">27.67% (345)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="535.54" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="535.54" y="0" class="decompiled"/>
-<rect width="207.27" height="6" x="539.73" y="0" class="todo"/>
+<rect width="536.14" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="536.14" y="0" class="decompiled"/>
+<rect width="206.67" height="6" x="540.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1046,7 +1046,7 @@
 <rect width="12" height="12" x="375" y="285" class="named"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="285" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="285" class="todo"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="285" class="todo"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="285" class="named"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="285" class="named"><title>0x0044c2a0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="285" class="named"><title>0x0044c2d0 S_DrawScreenLine (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="285" class="named"><title>0x0044c310 S_DrawScreenBox (278 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.67%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.25%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">51.72%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">48.20%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="385.99" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="385.99" y="0" class="decompiled"/>
-<rect width="360.40" height="6" x="386.60" y="0" class="todo"/>
+<rect width="386.32" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="386.32" y="0" class="decompiled"/>
+<rect width="360.07" height="6" x="386.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1887,7 +1887,7 @@
 <rect width="7.92" height="8.42" x="558.73" y="221.37" class="todo"><title>0x00450ac0 S_ChangeCtrlText (150 bytes)</title></rect>
 <rect width="7.92" height="8.34" x="558.73" y="232.78" class="named"><title>0x0040e6e0 TargetBox (149 bytes)</title></rect>
 <rect width="7.92" height="8.34" x="558.73" y="244.12" class="named"><title>0x00429250 lara_col_turn_r (149 bytes)</title></rect>
-<rect width="7.92" height="8.34" x="558.73" y="255.46" class="todo"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
+<rect width="7.92" height="8.34" x="558.73" y="255.46" class="named"><title>0x0044c200 FMV_PlayIntro (149 bytes)</title></rect>
 <rect width="7.92" height="8.34" x="558.73" y="266.80" class="named"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
 <rect width="7.92" height="8.26" x="558.73" y="278.14" class="todo"><title>0x00448620 CreatePrimarySurface (148 bytes)</title></rect>
 <rect width="7.92" height="8.19" x="558.73" y="289.41" class="named"><title>0x00412060 InitCinematicRooms (147 bytes)</title></rect>
