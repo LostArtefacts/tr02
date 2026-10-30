@@ -2231,6 +2231,137 @@ int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
     return 1;
 }
 
+#define NO_BAD_NEG NO_HEIGHT
+#define STOPHANG_A 28
+#define STOPHANG_F GF(STOPHANG_A, 9)
+
+void LaraHangTest(ITEM_INFO *item, COLL_INFO *coll)
+{
+    PHD_ANGLE angle;
+    sint16 *bounds;
+    int flag = 0;
+    int hdif;
+    PHD_VECTOR pos;
+
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = NO_BAD_NEG;
+    coll->bad_ceiling = 0;
+    GetLaraCollisionInfo(item, coll);
+    if (coll->front_floor < 200)
+        flag = 1;
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot;
+    angle = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+    switch (angle)
+    {
+    case 0:
+        item->pos.z_pos += 2;
+        break;
+
+    case 3:
+        item->pos.x_pos -= 2;
+        break;
+
+    case 2:
+        item->pos.z_pos -= 2;
+        break;
+
+    case 1:
+        item->pos.x_pos += 2;
+        break;
+    }
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    GetLaraCollisionInfo(item, coll);
+    if (lara.climb_status)
+    {
+        if (!(input & IN_ACTION) || item->hit_points <= 0)
+        {
+            pos.x = pos.y = pos.z = 0;
+            GetJointAbsPosition(item, &pos, 0);
+            if (angle == 0 || angle == 2)
+                item->pos.x_pos = pos.x;
+            else
+                item->pos.z_pos = pos.z;
+            item->goal_anim_state = AS_FORWARDJUMP;
+            item->current_anim_state = AS_FORWARDJUMP;
+            item->anim_number = FALLDOWN_A;
+            item->frame_number = FALLDOWN_F;
+            item->pos.y_pos += 256;
+            item->gravity_status = 1;
+            item->speed = 2;
+            item->fallspeed = 1;
+            lara.gun_status = LG_ARMLESS;
+            return;
+        }
+        if (!LaraTestHangOnClimbWall(item, coll))
+        {
+            item->pos.x_pos = coll->old.x;
+            item->pos.y_pos = coll->old.y;
+            item->pos.z_pos = coll->old.z;
+            item->goal_anim_state = AS_HANG;
+            item->current_anim_state = AS_HANG;
+            item->frame_number = HANG_F;
+            item->anim_number = HANG_A;
+            return;
+        }
+        if (item->anim_number == HANG_A && item->frame_number == HANG_F)
+        {
+            if (LaraTestClimbStance(item, coll))
+                item->goal_anim_state = AS_CLIMBSTNC;
+        }
+        return;
+    }
+    if (!(input & IN_ACTION) || item->hit_points <= 0 || coll->front_floor > 0)
+    {
+        item->goal_anim_state = AS_UPJUMP;
+        item->current_anim_state = AS_UPJUMP;
+        item->anim_number = STOPHANG_A;
+        item->frame_number = STOPHANG_F;
+        bounds = GetBoundsAccurate(item);
+        item->pos.y_pos += bounds[3];
+        item->pos.x_pos += coll->shift.x;
+        item->pos.z_pos += coll->shift.z;
+        item->gravity_status = 1;
+        item->speed = 2;
+        item->fallspeed = 1;
+        lara.gun_status = LG_ARMLESS;
+        return;
+    }
+    bounds = GetBoundsAccurate(item);
+    hdif = coll->front_floor - bounds[2];
+    if (ABS(coll->left_floor - coll->right_floor) >= SLOPE_DIF ||
+        coll->mid_ceiling >= 0 || coll->coll_type != COLL_FRONT || flag || coll->hit_static ||
+        hdif < -SLOPE_DIF || hdif > SLOPE_DIF)
+    {
+        item->pos.x_pos = coll->old.x;
+        item->pos.y_pos = coll->old.y;
+        item->pos.z_pos = coll->old.z;
+        if (item->current_anim_state == AS_HANGLEFT || item->current_anim_state == AS_HANGRIGHT)
+        {
+            item->goal_anim_state = AS_HANG;
+            item->current_anim_state = AS_HANG;
+            item->frame_number = HANG_F;
+            item->anim_number = HANG_A;
+        }
+        return;
+    }
+    switch (angle)
+    {
+    case 0:
+    case 2:
+        item->pos.z_pos += coll->shift.z;
+        break;
+
+    case 3:
+    case 1:
+        item->pos.x_pos += coll->shift.x;
+        break;
+    }
+    item->pos.y_pos += hdif;
+}
+
 int LaraTestEdgeCatch(ITEM_INFO *item, COLL_INFO *coll, sint32 *edge)
 {
     int hdif;

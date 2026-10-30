@@ -488,7 +488,7 @@ address,size,name,symbol
 0x0042a5c0,260,TestWall,_TestWall
 0x0042a6d0,264,LaraTestHangOnClimbWall,_LaraTestHangOnClimbWall
 0x0042a7e0,190,LaraTestClimbStance,_LaraTestClimbStance
-0x0042a8a0,830,LaraHangTest,_LaraHangTest
+0x0042a8a0,864,LaraHangTest,_LaraHangTest
 0x0042ac00,173,LaraTestEdgeCatch,_LaraTestEdgeCatch
 0x0042acb0,365,LaraTestHangJumpUp,_LaraTestHangJumpUp
 0x0042ae20,414,LaraTestHangJump,_LaraTestHangJump
