@@ -676,6 +676,67 @@ void TeethTrap(sint16 item_number)
     AnimateItem(item);
 }
 
+void DartEmitterControl(sint16 item_num)
+{
+    ITEM_INFO *item, *dart;
+    sint16 dart_item_num;
+    sint32 xoff, zoff;
+
+    item = &items[item_num];
+
+    if (TriggerActive(item))
+    {
+        if (item->current_anim_state == DART_OFF)
+            item->goal_anim_state = DART_FIRE;
+    }
+    else
+    {
+        if (item->current_anim_state == DART_FIRE)
+            item->goal_anim_state = DART_OFF;
+    }
+
+    if (item->current_anim_state == DART_FIRE && item->frame_number == anims[item->anim_number].frame_base)
+    {
+        dart_item_num = CreateItem();
+        if (dart_item_num != NO_ITEM)
+        {
+            dart = &items[dart_item_num];
+            dart->object_number = DARTS;
+            dart->room_number = item->room_number;
+            dart->shade = -1;
+            dart->pos.y_rot = item->pos.y_rot;
+            dart->pos.y_pos = item->pos.y_pos - WALL_L / 2;
+
+            xoff = 0;
+            zoff = 0;
+            switch (dart->pos.y_rot)
+            {
+            case 0:
+                zoff = -412;
+                break;
+            case 16364:
+                xoff = -412;
+                break;
+            case -0x8000:
+                zoff = 412;
+                break;
+            case -0x4000:
+                xoff = 412;
+                break;
+            }
+
+            dart->pos.x_pos = item->pos.x_pos + xoff;
+            dart->pos.z_pos = item->pos.z_pos + zoff;
+            InitialiseItem(dart_item_num);
+            AddActiveItem(dart_item_num);
+            dart->status = ACTIVE;
+            SoundEffect(254, &dart->pos, 0);
+        }
+    }
+
+    AnimateItem(item);
+}
+
 void DartsControl(sint16 item_num)
 {
     ITEM_INFO *item;

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.95% (386)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.05% (861)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">31.03% (387)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">68.97% (860)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="231.23" height="6" x="0" y="0" class="named"/>
-<rect width="515.77" height="6" x="231.23" y="0" class="todo"/>
+<rect width="231.83" height="6" x="0" y="0" class="named"/>
+<rect width="515.17" height="6" x="231.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -852,7 +852,7 @@
 <rect width="12" height="12" x="480" y="225" class="named"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="225" class="named"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="225" class="named"><title>0x00442810 FallingCeiling (224 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="225" class="todo"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="225" class="named"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="225" class="named"><title>0x00442a30 DartsControl (341 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="225" class="named"><title>0x00442b90 DartEffectControl (75 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="225" class="named"><title>0x00442be0 FlameEmitterControl (144 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.83%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">88.17%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">11.92%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">88.08%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="88.37" height="6" x="0" y="0" class="named"/>
-<rect width="658.63" height="6" x="88.37" y="0" class="todo"/>
+<rect width="89.07" height="6" x="0" y="0" class="named"/>
+<rect width="657.93" height="6" x="89.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1614,7 +1614,7 @@
 <rect width="13.28" height="13.47" x="717.49" y="77.34" class="todo"><title>0x0043d740 DoSnowEffect (320 bytes)</title></rect>
 <rect width="13.23" height="13.47" x="733.77" y="77.34" class="todo"><title>0x00430d10 UseItem (319 bytes)</title></rect>
 <rect width="13.59" height="13.06" x="449.44" y="93.80" class="todo"><title>0x004251c0 Inv_RingDoMotions (318 bytes)</title></rect>
-<rect width="13.59" height="13.06" x="449.44" y="109.86" class="todo"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
+<rect width="13.59" height="13.06" x="449.44" y="109.86" class="named"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
 <rect width="13.59" height="13.01" x="449.44" y="125.92" class="todo"><title>0x0040be40 InsertTransQuad_Sorted (317 bytes)</title></rect>
 <rect width="13.59" height="13.01" x="449.44" y="141.93" class="named"><title>0x0041cde0 WaterFall (317 bytes)</title></rect>
 <rect width="13.59" height="12.96" x="449.44" y="157.94" class="todo"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
