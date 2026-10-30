@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.97% (274)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.03% (973)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">22.05% (275)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">77.95% (972)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="164.14" height="6" x="0" y="0" class="named"/>
-<rect width="582.86" height="6" x="164.14" y="0" class="todo"/>
+<rect width="164.74" height="6" x="0" y="0" class="named"/>
+<rect width="582.26" height="6" x="164.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -339,7 +339,7 @@
 <rect width="12" height="12" x="285" y="75" class="named"><title>0x0041d1b0 StatueFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="75" class="named"><title>0x0041d1d0 SetChangeFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="75" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="75" class="todo"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="75" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="75" class="todo"><title>0x0041d2e0 ControlBirdTweeter (93 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="75" class="named"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.84%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.16%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.86%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.14%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="51.13" height="6" x="0" y="0" class="named"/>
-<rect width="695.87" height="6" x="51.13" y="0" class="todo"/>
+<rect width="51.25" height="6" x="0" y="0" class="named"/>
+<rect width="695.75" height="6" x="51.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2228,7 +2228,7 @@
 <rect width="3.72" height="3.86" x="676.08" y="283.25" class="todo"><title>0x004134e0 ShiftItem (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="682.80" y="283.25" class="todo"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="689.52" y="283.25" class="todo"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
-<rect width="3.72" height="3.86" x="696.24" y="283.25" class="todo"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
+<rect width="3.72" height="3.86" x="696.24" y="283.25" class="named"><title>0x0041d230 ControlLaraAlarm (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="702.96" y="283.25" class="todo"><title>0x00440640 T_ChangeText (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="709.68" y="283.25" class="todo"><title>0x00440f40 GetTextScaleH (55 bytes)</title></rect>
 <rect width="3.72" height="3.86" x="716.40" y="283.25" class="todo"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
