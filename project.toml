@@ -31,3 +31,4 @@ manifest = "refs/trx/docs/symbols/tr2-steam.txt"
 progress = true  # every commit redraws docs/progress.svg
 compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
+no_comments = true  # no comments, tabs or CRs in src/
