@@ -646,3 +646,33 @@ void LaraBurn(void)
         lara.burn = 1;
     }
 }
+
+void LavaBurn(ITEM_INFO *item)
+{
+    int i;
+    FX_INFO *fx;
+    sint16 fx_number, room_number;
+    FLOOR_INFO *floor;
+
+    if (item->hit_points < 0)
+        return;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, 32000, item->pos.z_pos, &room_number);
+    if (item->floor != GetHeight(floor, item->pos.x_pos, 32000, item->pos.z_pos))
+        return;
+
+    item->hit_status = 1;
+    item->hit_points = -1;
+    for (i = 0; i < 10; i++)
+    {
+        fx_number = CreateEffect(item->room_number);
+        if (fx_number != NO_ITEM)
+        {
+            fx = &effects[fx_number];
+            fx->frame_number = (objects[FLAME].nmeshes * GetRandomControl()) / 0x7fff;
+            fx->object_number = FLAME;
+            fx->counter = -1 - GetRandomControl() * 24 / 0x7fff;
+        }
+    }
+}

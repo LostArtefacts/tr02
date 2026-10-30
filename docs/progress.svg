@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.71% (358)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.29% (889)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.79% (359)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.21% (888)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="214.46" height="6" x="0" y="0" class="named"/>
-<rect width="532.54" height="6" x="214.46" y="0" class="todo"/>
+<rect width="215.05" height="6" x="0" y="0" class="named"/>
+<rect width="531.95" height="6" x="215.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -858,7 +858,7 @@
 <rect width="12" height="12" x="570" y="225" class="named"><title>0x00442be0 FlameEmitterControl (144 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="225" class="named"><title>0x00442c70 FlameControl (356 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="225" class="named"><title>0x00442de0 LaraBurn (73 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="225" class="todo"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="225" class="named"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="225" class="todo"><title>0x00442f20 LavaSpray (197 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="225" class="todo"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="todo"><title>0x00443100 GiantYetiControl (714 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="74.68" height="6" x="0" y="0" class="named"/>
-<rect width="672.32" height="6" x="74.68" y="0" class="todo"/>
+<rect width="75.18" height="6" x="0" y="0" class="named"/>
+<rect width="671.82" height="6" x="75.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1711,7 +1711,7 @@
 <rect width="11.20" height="10.63" x="567.59" y="123.87" class="todo"><title>0x004150d0 RefreshCamera (231 bytes)</title></rect>
 <rect width="11.20" height="10.63" x="581.79" y="123.87" class="todo"><title>0x00431cf0 LaraTestWaterStepOut (231 bytes)</title></rect>
 <rect width="11.20" height="10.63" x="595.99" y="123.87" class="todo"><title>0x00447e50 DS_StartSample (231 bytes)</title></rect>
-<rect width="11.14" height="10.63" x="610.18" y="123.87" class="todo"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
+<rect width="11.14" height="10.63" x="610.18" y="123.87" class="named"><title>0x00442e30 LavaBurn (230 bytes)</title></rect>
 <rect width="11.14" height="10.63" x="624.32" y="123.87" class="todo"><title>0x004492b0 RenderFinish (230 bytes)</title></rect>
 <rect width="11.01" height="10.63" x="638.46" y="123.87" class="todo"><title>0x00447770 DInputJoystickCreate (228 bytes)</title></rect>
 <rect width="11.01" height="10.63" x="652.47" y="123.87" class="todo"><title>0x00450bc0 S_InitialisePolyList (228 bytes)</title></rect>
