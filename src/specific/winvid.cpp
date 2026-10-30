@@ -302,6 +302,18 @@ extern "C" HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRE
     return rc;
 }
 
+extern "C" bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor)
+{
+    DDBLTFX blt;
+
+    memset(&blt, 0, sizeof(blt));
+    blt.dwFillColor = fillColor;
+    blt.dwSize = sizeof(blt);
+    if (DX_TRY(surface->Blt(rect, NULL, NULL, DDBLT_COLORFILL | DDBLT_WAIT, &blt)))
+        return false;
+    return true;
+}
+
 extern "C" void WinVidFinish(void)
 {
     if (IsDDrawGameWindowShow)

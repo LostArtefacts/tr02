@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">67.44% (841)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">32.16% (401)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">67.52% (842)</tspan> · <tspan class="decompiled">0.40% (5)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">32.08% (400)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="503.79" height="6" x="0" y="0" class="named"/>
-<rect width="3" height="6" x="503.79" y="0" class="decompiled"/>
-<rect width="240.21" height="6" x="506.79" y="0" class="todo"/>
+<rect width="504.39" height="6" x="0" y="0" class="named"/>
+<rect width="3" height="6" x="504.39" y="0" class="decompiled"/>
+<rect width="239.62" height="6" x="507.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -908,7 +908,7 @@
 <rect width="12" height="12" x="555" y="240" class="todo"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="named"><title>0x00445380 DDrawSurfaceCreate (68 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="240" class="named"><title>0x004453d0 DDrawSurfaceRestoreLost (70 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="240" class="todo"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="240" class="named"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="240" class="todo"><title>0x00445470 WinVidBufferLock (61 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="240" class="todo"><title>0x004454b0 WinVidBufferUnlock (37 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="240" class="todo"><title>0x004454e0 WinVidCopyBitmapToBuffer (144 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.07%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.88%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.09%</tspan> · <tspan class="decompiled">0.05%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">50.86%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="366.56" height="6" x="0" y="0" class="named"/>
-<rect width="0.37" height="6" x="366.56" y="0" class="decompiled"/>
-<rect width="380.08" height="6" x="366.92" y="0" class="todo"/>
+<rect width="366.72" height="6" x="0" y="0" class="named"/>
+<rect width="0.37" height="6" x="366.72" y="0" class="decompiled"/>
+<rect width="379.91" height="6" x="367.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2118,7 +2118,7 @@
 <rect width="5.29" height="4.81" x="692.68" y="253.88" class="named"><title>0x00456820 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="5.19" height="4.81" x="700.98" y="253.88" class="named"><title>0x00428a30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="5.19" height="4.81" x="709.17" y="253.88" class="todo"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
-<rect width="5.19" height="4.81" x="717.35" y="253.88" class="todo"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
+<rect width="5.19" height="4.81" x="717.35" y="253.88" class="named"><title>0x00445420 WinVidClearBuffer (77 bytes)</title></rect>
 <rect width="5.19" height="4.81" x="725.54" y="253.88" class="todo"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>
 <rect width="5.19" height="4.81" x="733.73" y="253.88" class="named"><title>0x00452310 S_CopyBufferToScreen (77 bytes)</title></rect>
 <rect width="5.08" height="4.81" x="741.92" y="253.88" class="named"><title>0x00428790 extra_as_breath (76 bytes)</title></rect>
