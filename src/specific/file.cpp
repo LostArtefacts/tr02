@@ -140,6 +140,124 @@ extern "C" int LoadRooms(HANDLE file)
     return 1;
 }
 
+typedef struct {
+    sint16 mesh_number;
+    uint16 flags;
+    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
+    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
+} STATIC_INFO;
+
+extern "C" STATIC_INFO StaticObjects[];
+
+typedef struct {
+    sint16 goal_anim_state;
+    sint16 number_ranges;
+    sint16 range_index;
+} CHANGE_STRUCT;
+
+typedef struct {
+    sint16 start_frame;
+    sint16 end_frame;
+    sint16 link_anim_num;
+    sint16 link_frame_num;
+} RANGE_STRUCT;
+
+extern "C" sint16 *Meshes;
+extern "C" CHANGE_STRUCT *changes;
+extern "C" RANGE_STRUCT *ranges;
+extern "C" sint16 *commands;
+extern "C" sint16 *AnimFrames;
+extern "C" char LabTextureUVFlags[];
+extern "C" char LoadObjectsTooManyTextures[];
+extern "C" void InitialiseObjects(void);
+
+extern "C" int LoadObjects(HANDLE file)
+{
+    int i, j, k;
+    sint32 number, size, number_anims;
+    DWORD read;
+    uint16 *uv;
+    char flags;
+
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    Meshes = (sint16 *)game_malloc(size * sizeof(sint16), MESHES);
+    MyReadFile(file, Meshes, sizeof(sint16) * size, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    meshes = (sint16 **)game_malloc(number * sizeof(sint16 *), MESH_POINTERS);
+    MyReadFile(file, meshes, sizeof(sint16 *) * number, &read, NULL);
+    for (i = 0; i < number; i++)
+        meshes[i] = Meshes + (int)meshes[i] / 2;
+    MyReadFile(file, &number_anims, sizeof(sint32), &read, NULL);
+    anims = (ANIM_STRUCT *)game_malloc(number_anims * sizeof(ANIM_STRUCT), ANIMS);
+    MyReadFile(file, anims, sizeof(ANIM_STRUCT) * number_anims, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    changes = (CHANGE_STRUCT *)game_malloc(number * sizeof(CHANGE_STRUCT), STRUCTS);
+    MyReadFile(file, changes, sizeof(CHANGE_STRUCT) * number, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    ranges = (RANGE_STRUCT *)game_malloc(number * sizeof(RANGE_STRUCT), RANGES);
+    MyReadFile(file, ranges, sizeof(RANGE_STRUCT) * number, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    commands = (sint16 *)game_malloc(size * sizeof(sint16), COMMANDS);
+    MyReadFile(file, commands, sizeof(sint16) * size, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    bones = (sint32 *)game_malloc(size * sizeof(sint32), BONES);
+    MyReadFile(file, bones, sizeof(sint32) * size, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    AnimFrames = (sint16 *)game_malloc(size * sizeof(sint16), FRAMES);
+    MyReadFile(file, AnimFrames, sizeof(sint16) * size, &read, NULL);
+    for (i = 0; i < number_anims; i++)
+        anims[i].frame_ptr = (sint16 *)((long)anims[i].frame_ptr + (long)AnimFrames);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    for (i = 0; i < number; i++)
+    {
+        MyReadFile(file, &j, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &objects[j].nmeshes, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &objects[j].mesh_index, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &objects[j].bone_index, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+        objects[j].frame_base = (sint16 *)((long)size + (long)AnimFrames);
+        MyReadFile(file, &objects[j].anim_index, sizeof(sint16), &read, NULL);
+        objects[j].loaded = 1;
+    }
+    InitialiseObjects();
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    for (i = 0; i < number; i++)
+    {
+        MyReadFile(file, &j, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &StaticObjects[j].mesh_number, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &StaticObjects[j].x_minp, sizeof(sint16) * 6, &read, NULL);
+        MyReadFile(file, &StaticObjects[j].x_minc, sizeof(sint16) * 6, &read, NULL);
+        MyReadFile(file, &StaticObjects[j].flags, sizeof(uint16), &read, NULL);
+    }
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    if (number > 2048)
+    {
+        lstrcpy(StringToShow, LoadObjectsTooManyTextures);
+        return 0;
+    }
+    MyReadFile(file, phdtextinfo, sizeof(PHDTEXTURESTRUCT) * number, &read, NULL);
+    LnTextureInfos = number;
+    for (number = 0; number < LnTextureInfos; number++)
+    {
+        uv = &phdtextinfo[number].u1;
+        flags = 0;
+        for (k = 0; k < 8; k++)
+        {
+            if (*uv & 0x80)
+            {
+                *uv |= 0xff;
+                flags |= 1 << k;
+            }
+            else
+                *uv &= 0xff00;
+            uv++;
+        }
+        LabTextureUVFlags[number] = flags;
+    }
+    AdjustTextureUVs(true);
+    return 1;
+}
+
 int LoadCameras(HANDLE file)
 {
     DWORD read;
@@ -524,17 +642,9 @@ typedef struct {
     sint16 y2;
 } PHDSPRITESTRUCT;
 
-typedef struct {
-    sint16 mesh_number;
-    uint16 flags;
-    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
-    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
-} STATIC_INFO;
-
 #define NUMBER_OBJECTS 265
 
 extern "C" PHDSPRITESTRUCT PhdSpriteInfo[];
-extern "C" STATIC_INFO StaticObjects[];
 
 extern "C" int LoadSprites(HANDLE file)
 {
