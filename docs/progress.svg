@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.46% (517)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">58.54% (730)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">41.54% (518)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">58.46% (729)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="309.70" height="6" x="0" y="0" class="named"/>
-<rect width="437.30" height="6" x="309.70" y="0" class="todo"/>
+<rect width="310.30" height="6" x="0" y="0" class="named"/>
+<rect width="436.70" height="6" x="310.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -425,7 +425,7 @@
 <rect width="12" height="12" x="75" y="105" class="named"><title>0x00425400 Inv_RingMotionRadius (38 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="105" class="named"><title>0x00425430 Inv_RingMotionRotation (34 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="105" class="named"><title>0x00425460 Inv_RingMotionCameraPos (37 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="105" class="todo"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="105" class="named"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="105" class="todo"><title>0x004254b0 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="105" class="todo"><title>0x00425510 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="105" class="todo"><title>0x00425580 Init_Requester (130 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.21%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="150.97" height="6" x="0" y="0" class="named"/>
-<rect width="596.03" height="6" x="150.97" y="0" class="todo"/>
+<rect width="151.04" height="6" x="0" y="0" class="named"/>
+<rect width="595.96" height="6" x="151.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2389,7 +2389,7 @@
 <rect width="2.19" height="2.32" x="698.23" y="331.72" class="named"><title>0x00430fb0 InitialiseLaraLoad (33 bytes)</title></rect>
 <rect width="2.19" height="2.32" x="698.23" y="337.04" class="named"><title>0x0044d750 init_game_malloc (33 bytes)</title></rect>
 <rect width="2.19" height="2.32" x="698.23" y="342.36" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
-<rect width="2.19" height="2.16" x="698.23" y="347.68" class="todo"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
+<rect width="2.19" height="2.16" x="698.23" y="347.68" class="named"><title>0x00425490 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="2.19" height="2.16" x="698.23" y="352.84" class="todo"><title>0x00456060 SafeFreeTexturePage (32 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.23" y="358" class="named"><title>0x0041da30 AssaultStop (31 bytes)</title></rect>
 <rect width="2.19" height="2" x="698.23" y="363" class="named"><title>0x0041fc30 GF_DoFrontEndSequence (31 bytes)</title></rect>
