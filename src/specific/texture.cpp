@@ -21,6 +21,32 @@ extern LPDIRECTDRAWPALETTE TexturePalettes[MAX_PALETTES];
 extern DDPIXELFORMAT TextureFormat;
 }
 
+typedef struct {
+    uint8 red;
+    uint8 green;
+    uint8 blue;
+} RGB888;
+
+extern "C" LPDIRECTDRAW2 DDraw;
+
+extern "C" int GetFreePaletteIndex(void);
+
+extern "C" int CreateTexturePalette(RGB888 *pal)
+{
+    PALETTEENTRY entries[256];
+    int index;
+    int i;
+
+    index = GetFreePaletteIndex();
+    if (index < 0)
+        return -1;
+    for (i = 0; i < 256; i++, pal++)
+        *(DWORD *)&entries[i] = pal->red | (pal->green << 8) | (pal->blue << 16);
+    if (FAILED(DDraw->CreatePalette(DDPCAPS_8BIT | DDPCAPS_ALLOW256, entries, &TexturePalettes[index], NULL)))
+        return -1;
+    return index;
+}
+
 extern "C" int GetFreePaletteIndex(void)
 {
     for (DWORD i = 0; i < MAX_PALETTES; i++)

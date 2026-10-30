@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.60% (970)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.84% (273)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">77.68% (971)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">21.76% (272)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="579.67" height="6" x="0" y="0" class="named"/>
-<rect width="4.18" height="6" x="579.67" y="0" class="decompiled"/>
-<rect width="163.14" height="6" x="583.86" y="0" class="todo"/>
+<rect width="580.27" height="6" x="0" y="0" class="named"/>
+<rect width="4.18" height="6" x="580.27" y="0" class="decompiled"/>
+<rect width="162.55" height="6" x="584.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1214,7 +1214,7 @@
 <rect width="12" height="12" x="645" y="330" class="todo"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="330" class="named"><title>0x00455ad0 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="named"><title>0x00455ba0 SyncSurfacePalettes (174 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="330" class="todo"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="330" class="named"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="330" class="named"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="330" class="named"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="330" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
@@ -1322,11 +1322,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.21%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.71%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">58.25%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">41.67%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="434.80" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="434.80" y="0" class="decompiled"/>
-<rect width="311.59" height="6" x="435.41" y="0" class="todo"/>
+<rect width="435.10" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="435.10" y="0" class="decompiled"/>
+<rect width="311.30" height="6" x="435.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1931,7 +1931,7 @@
 <rect width="7.64" height="7.58" x="569.39" y="294.26" class="todo"><title>0x004457d0 WinVidGoFullScreen (136 bytes)</title></rect>
 <rect width="7.64" height="7.51" x="569.39" y="304.85" class="named"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
 <rect width="7.64" height="7.51" x="569.39" y="315.35" class="named"><title>0x004452f0 HideDDrawGameWindow (135 bytes)</title></rect>
-<rect width="7.64" height="7.51" x="569.39" y="325.86" class="todo"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
+<rect width="7.64" height="7.51" x="569.39" y="325.86" class="named"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
 <rect width="7.64" height="7.43" x="569.39" y="336.36" class="named"><title>0x00432230 SwimTurn (134 bytes)</title></rect>
 <rect width="7.64" height="7.43" x="569.39" y="346.79" class="named"><title>0x0043f970 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="7.64" height="7.43" x="569.39" y="357.22" class="named"><title>0x00441420 HookControl (134 bytes)</title></rect>
