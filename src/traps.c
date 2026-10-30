@@ -9,6 +9,10 @@
 #define BLADE_DAMAGE 100
 #define BIG_FIRE 0
 #define TEETHTRAP_DAMAGE 400
+#define BOARD_OFF 0
+#define BOARD_ON 1
+#define FALLDOWN_A 34
+#define FALLDOWN_F GF(FALLDOWN_A, 0)
 
 sint16 CreateEffect(sint16 room_num);
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
@@ -87,6 +91,36 @@ void InitialiseKillerStatue(sint16 item_number)
     item->anim_number = objects[item->object_number].anim_index + 3;
     item->frame_number = anims[item->anim_number].frame_base;
     item->current_anim_state = BLADE_STOP;
+}
+
+void SpringBoardControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+
+    if (item->current_anim_state == BOARD_OFF && lara_item->pos.y_pos == item->pos.y_pos
+        && (lara_item->pos.x_pos >> WALL_SHIFT) == (item->pos.x_pos >> WALL_SHIFT)
+        && (lara_item->pos.z_pos >> WALL_SHIFT) == (item->pos.z_pos >> WALL_SHIFT))
+    {
+        if (lara_item->hit_points <= 0)
+            return;
+
+        if (lara_item->current_anim_state == AS_BACK || lara_item->current_anim_state == AS_FASTBACK)
+            lara_item->speed = -lara_item->speed;
+
+        lara_item->fallspeed = -240;
+        lara_item->gravity_status = 1;
+
+        lara_item->anim_number = FALLDOWN_A;
+        lara_item->frame_number = FALLDOWN_F;
+        lara_item->current_anim_state = AS_FORWARDJUMP;
+        lara_item->goal_anim_state = AS_FORWARDJUMP;
+
+        item->goal_anim_state = BOARD_ON;
+    }
+
+    AnimateItem(item);
 }
 
 void InitialiseRollingBall(sint16 item_number)

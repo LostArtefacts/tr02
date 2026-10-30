@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.99% (349)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.01% (898)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.07% (350)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.93% (897)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="209.06" height="6" x="0" y="0" class="named"/>
-<rect width="537.94" height="6" x="209.06" y="0" class="todo"/>
+<rect width="209.66" height="6" x="0" y="0" class="named"/>
+<rect width="537.34" height="6" x="209.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -837,7 +837,7 @@
 <rect width="12" height="12" x="255" y="225" class="named"><title>0x00441900 BladeControl (145 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="225" class="named"><title>0x004419a0 InitialiseKillerStatue (70 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="225" class="todo"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="225" class="todo"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="225" class="named"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="225" class="named"><title>0x00441be0 InitialiseRollingBall (60 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="225" class="todo"><title>0x00441c20 RollingBallControl (839 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="225" class="todo"><title>0x00441f70 RollingBallCollision (586 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.33%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.67%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.39%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">90.61%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="69.68" height="6" x="0" y="0" class="named"/>
-<rect width="677.32" height="6" x="69.68" y="0" class="todo"/>
+<rect width="70.17" height="6" x="0" y="0" class="named"/>
+<rect width="676.83" height="6" x="70.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1731,7 +1731,7 @@
 <rect width="10.77" height="10.38" x="495.87" y="232.08" class="todo"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="245.46" class="todo"><title>0x004342c0 EarthQuake (219 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="258.78" class="todo"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
-<rect width="10.77" height="10.32" x="495.87" y="272.10" class="todo"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
+<rect width="10.77" height="10.32" x="495.87" y="272.10" class="named"><title>0x00441b00 SpringBoardControl (219 bytes)</title></rect>
 <rect width="10.77" height="10.32" x="495.87" y="285.43" class="todo"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="10.77" height="10.26" x="495.87" y="298.75" class="todo"><title>0x00416230 ClipTarget (218 bytes)</title></rect>
 <rect width="10.77" height="10.26" x="495.87" y="312.01" class="todo"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
