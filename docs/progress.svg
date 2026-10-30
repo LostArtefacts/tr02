@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.28% (927)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.16% (314)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.36% (928)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.08% (313)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="554.86" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="554.86" y="0" class="decompiled"/>
-<rect width="187.95" height="6" x="559.05" y="0" class="todo"/>
+<rect width="555.46" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="555.46" y="0" class="decompiled"/>
+<rect width="187.35" height="6" x="559.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -920,7 +920,7 @@
 <rect width="12" height="12" x="735" y="240" class="todo"><title>0x004457d0 WinVidGoFullScreen (136 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="255" class="todo"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="255" class="todo"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="255" class="todo"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="255" class="named"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="255" class="named"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="255" class="todo"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="255" class="named"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.88%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.90%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="409.96" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="409.96" y="0" class="decompiled"/>
-<rect width="336.44" height="6" x="410.56" y="0" class="todo"/>
+<rect width="410.11" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="410.11" y="0" class="decompiled"/>
+<rect width="336.29" height="6" x="410.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2158,7 +2158,7 @@
 <rect width="4.32" height="4.93" x="634.31" y="277.45" class="named"><title>0x004553b0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="4.32" height="4.93" x="634.31" y="285.38" class="named"><title>0x00455460 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="4.32" height="4.81" x="634.31" y="293.30" class="named"><title>0x00421b00 DrawGameInfo (69 bytes)</title></rect>
-<rect width="4.32" height="4.81" x="634.31" y="301.12" class="todo"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
+<rect width="4.32" height="4.81" x="634.31" y="301.12" class="named"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
 <rect width="4.32" height="4.81" x="634.31" y="308.93" class="named"><title>0x00447e00 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="4.32" height="4.70" x="634.31" y="316.74" class="named"><title>0x00442700 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="4.32" height="4.70" x="634.31" y="324.44" class="named"><title>0x00445380 DDrawSurfaceCreate (68 bytes)</title></rect>

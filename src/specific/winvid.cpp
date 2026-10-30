@@ -582,3 +582,29 @@ extern "C" DISPLAY_ADAPTER_NODE *WinVidGetDisplayAdapter(GUID *lpGuid)
     }
     return result;
 }
+
+struct DISPLAY_MODE {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+    bool CompareVideoModes(DISPLAY_MODE *mode);
+};
+
+bool DISPLAY_MODE::CompareVideoModes(DISPLAY_MODE *mode)
+{
+    int square1 = width * height;
+    int square2 = mode->width * mode->height;
+
+    if (square1 < square2)
+        return true;
+    if (square1 == square2) {
+        if (bpp < mode->bpp)
+            return true;
+        if (bpp == mode->bpp) {
+            if (vga < mode->vga)
+                return true;
+        }
+    }
+    return false;
+}

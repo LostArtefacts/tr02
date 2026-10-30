@@ -851,7 +851,7 @@ address,size,name,symbol
 0x004457d0,136,WinVidGoFullScreen,_WinVidGoFullScreen
 0x00445860,267,WinVidGoWindowed,_WinVidGoWindowed
 0x00445970,213,WinVidSetDisplayAdapter,_WinVidSetDisplayAdapter
-0x00445a50,69,CompareVideoModes,
+0x00445a50,69,CompareVideoModes,?CompareVideoModes@DISPLAY_MODE@@QAE_NPAU1@@Z
 0x00445aa0,83,WinVidGetDisplayModes,_WinVidGetDisplayModes
 0x00445b00,945,EnumDisplayModesCallback,_EnumDisplayModesCallback@8
 0x00445ec0,64,WinVidInit,_WinVidInit
