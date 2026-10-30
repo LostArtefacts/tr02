@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.42% (529)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.58% (718)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.50% (530)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.50% (717)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="316.89" height="6" x="0" y="0" class="named"/>
-<rect width="430.11" height="6" x="316.89" y="0" class="todo"/>
+<rect width="317.49" height="6" x="0" y="0" class="named"/>
+<rect width="429.51" height="6" x="317.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -438,7 +438,7 @@
 <rect width="12" height="12" x="270" y="105" class="named"><title>0x004260c0 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="105" class="named"><title>0x004260e0 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="105" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="105" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="105" class="named"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="105" class="todo"><title>0x00426290 AddAssaultTime (129 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="105" class="todo"><title>0x00426320 ShowGymStatsText (470 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="105" class="todo"><title>0x00426500 ShowStatsText (919 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.58%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.42%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.40%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="153.76" height="6" x="0" y="0" class="named"/>
-<rect width="593.24" height="6" x="153.76" y="0" class="todo"/>
+<rect width="153.89" height="6" x="0" y="0" class="named"/>
+<rect width="593.11" height="6" x="153.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2212,7 +2212,7 @@
 <rect width="4.09" height="3.84" x="648.65" y="290.20" class="named"><title>0x0042d3f0 undraw_pistol_mesh_right (58 bytes)</title></rect>
 <rect width="4.09" height="3.84" x="648.65" y="297.05" class="named"><title>0x00442370 TrapDoorFloor (58 bytes)</title></rect>
 <rect width="4.09" height="3.84" x="648.65" y="303.89" class="todo"><title>0x004451c0 WinVidHideGameWindow (58 bytes)</title></rect>
-<rect width="4.09" height="3.73" x="648.65" y="310.74" class="todo"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
+<rect width="4.09" height="3.73" x="648.65" y="310.74" class="named"><title>0x00426250 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.65" y="317.46" class="named"><title>0x00426e50 CreateItem (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.65" y="324.19" class="named"><title>0x004284e0 lara_as_switchon (57 bytes)</title></rect>
 <rect width="4.09" height="3.73" x="648.65" y="330.92" class="named"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>

@@ -467,3 +467,16 @@ void AddRequesterItem(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2
 
     req->items++;
 }
+
+#define TEXT_HEIGHT 11
+
+void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos)
+{
+    int height = GetRenderHeight();
+    int lines = (height / 2) / (TEXT_HEIGHT + 7);
+
+    if (lines > maxlines)
+        lines = maxlines;
+    req->ypos = ypos;
+    req->vis_lines = lines;
+}
