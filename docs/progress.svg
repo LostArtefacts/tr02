@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.38% (117)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.62% (1130)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">9.46% (118)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.54% (1129)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="70.09" height="6" x="0" y="0" class="named"/>
-<rect width="676.91" height="6" x="70.09" y="0" class="todo"/>
+<rect width="70.69" height="6" x="0" y="0" class="named"/>
+<rect width="676.31" height="6" x="70.69" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1093,7 +1093,7 @@
 <rect width="12" height="12" x="345" y="300" class="todo"><title>0x0044d780 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="todo"><title>0x0044d800 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="300" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="300" class="todo"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="300" class="named"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="todo"><title>0x0044d9b0 Key (288 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="300" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="300" class="todo"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.03%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.97%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">2.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">97.93%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="15.16" height="6" x="0" y="0" class="named"/>
-<rect width="731.84" height="6" x="15.16" y="0" class="todo"/>
+<rect width="15.44" height="6" x="0" y="0" class="named"/>
+<rect width="731.56" height="6" x="15.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1945,7 +1945,7 @@
 <rect width="7.14" height="7.49" x="569.75" y="325.54" class="todo"><title>0x0041c750 ControlExplosion1 (127 bytes)</title></rect>
 <rect width="7.14" height="7.49" x="569.75" y="336.03" class="todo"><title>0x0042a2d0 LaraDeflectEdge (127 bytes)</title></rect>
 <rect width="7.14" height="7.49" x="569.75" y="346.52" class="todo"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
-<rect width="7.14" height="7.49" x="569.75" y="357.02" class="todo"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
+<rect width="7.14" height="7.49" x="569.75" y="357.02" class="named"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="7.14" height="7.49" x="569.75" y="367.51" class="todo"><title>0x0044ee80 do_inventory_options (127 bytes)</title></rect>
 <rect width="7.38" height="7.17" x="579.90" y="207.90" class="todo"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="7.38" height="7.17" x="579.90" y="218.07" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>

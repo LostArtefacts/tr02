@@ -25,3 +25,14 @@ void CalculateWibbleTable(void)
             wibble_light[i][j] = ((j - 16) * i << 9) / (WIBBLE_SIZE - 1);
     }
 }
+
+void S_SeedRandom(void)
+{
+    struct tm *tptr;
+    time_t lt;
+
+    lt = time(NULL);
+    tptr = localtime(&lt);
+    SeedRandomControl(tptr->tm_sec + (tptr->tm_min * 57) + (tptr->tm_hour * 3543));
+    SeedRandomDraw(tptr->tm_sec + (tptr->tm_min * 43) + (tptr->tm_hour * 3477));
+}
