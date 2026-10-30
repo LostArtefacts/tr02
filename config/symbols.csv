@@ -99,7 +99,7 @@ address,size,name,symbol
 0x0040e0d0,179,GondolaControl,_GondolaControl
 0x0040e190,47,InitialiseCreature,_InitialiseCreature
 0x0040e1c0,71,CreatureActive,_CreatureActive
-0x0040e210,578,CreatureAIInfo,_CreatureAIInfo
+0x0040e210,599,CreatureAIInfo,_CreatureAIInfo
 0x0040e470,499,SearchLOT,_SearchLOT
 0x0040e670,111,UpdateLOT,_UpdateLOT
 0x0040e6e0,149,TargetBox,_TargetBox
@@ -1960,8 +1960,8 @@ address,size,name,symbol
 0x00526312,2,CineLevelID,_CineLevelID
 0x00526314,2,CineFrameIdx,_CineFrameIdx
 0x00526320,,camera,_camera
-0x005263a0,32,GroundZones,_GroundZones
-0x005263c0,8,FlyZones,_FlyZones
+0x005263a0,32,ground_zone,_ground_zone
+0x005263c0,8,fly_zone,_fly_zone
 0x005263c8,4,Overlaps,_Overlaps
 0x005263cc,4,boxes,_boxes
 0x005263d0,4,number_boxes,_number_boxes

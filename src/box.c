@@ -16,6 +16,92 @@ void InitialiseCreature(sint16 item_number)
     item->data = NULL;
 }
 
+typedef struct {
+    sint16 zone_number, enemy_zone;
+    sint32 distance, ahead, bite;
+    sint16 angle, enemy_facing;
+} AI_INFO;
+
+extern sint16 *ground_zone[4][2];
+extern sint16 *fly_zone[2];
+
+#define ZONE(A) (((A) >> 8) - 1)
+#define BLOCKED_SEARCH 0x8000
+#define FRONT_ARC 0x4000
+#define BANDIT1 48
+#define BANDIT2 49
+#define MONK1 53
+#define MONK2 54
+
+void GetBaddieTarget(sint16 item_num, int goody);
+
+int EnableBaddieAI(sint16 item_number, int always);
+
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info)
+{
+    ROOM_INFO *r;
+    sint32 x, z;
+    sint16 angle, *zone;
+    CREATURE_INFO *creature;
+    OBJECT_INFO *object;
+    ITEM_INFO *enemy;
+
+    if (item->data == NULL)
+        return;
+
+    creature = (CREATURE_INFO *)item->data;
+    switch (item->object_number)
+    {
+    case BANDIT1:
+    case BANDIT2:
+        GetBaddieTarget(creature->item_num, 0);
+        break;
+
+    case MONK1:
+    case MONK2:
+        GetBaddieTarget(creature->item_num, 1);
+        break;
+
+    default:
+        creature->enemy = lara_item;
+    }
+
+    enemy = creature->enemy;
+    if (!enemy)
+        enemy = lara_item;
+
+    if (creature->LOT.fly == NO_FLYING)
+        zone = ground_zone[ZONE(creature->LOT.step)][flip_status];
+    else
+        zone = fly_zone[flip_status];
+
+    r = &room[item->room_number];
+    item->box_number = r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size].box;
+    info->zone_number = zone[item->box_number];
+
+    r = &room[enemy->room_number];
+    enemy->box_number = r->floor[((enemy->pos.z_pos - r->z) >> WALL_SHIFT) + ((enemy->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size].box;
+    info->enemy_zone = zone[enemy->box_number];
+
+    if (boxes[enemy->box_number].overlap_index & creature->LOT.block_mask)
+        info->enemy_zone |= BLOCKED;
+    else if (creature->LOT.node[item->box_number].search_number == (creature->LOT.search_number | BLOCKED_SEARCH))
+        info->enemy_zone |= BLOCKED;
+
+    object = &objects[item->object_number];
+    z = enemy->pos.z_pos - (item->pos.z_pos + (object->pivot_length * phd_cos(item->pos.y_rot) >> W2V_SHIFT));
+    x = enemy->pos.x_pos - (item->pos.x_pos + (object->pivot_length * phd_sin(item->pos.y_rot) >> W2V_SHIFT));
+    angle = phd_atan(z, x);
+    if (creature->enemy)
+        info->distance = z * z + x * x;
+    else
+        info->distance = 0x7fffffff;
+    info->angle = angle - item->pos.y_rot;
+    info->enemy_facing = 0x8000 + angle - enemy->pos.y_rot;
+    info->ahead = (info->angle > -FRONT_ARC && info->angle < FRONT_ARC);
+    info->bite = (info->ahead && enemy->hit_points > 0 && ABS(enemy->pos.y_pos - item->pos.y_pos) <= STEP_L * 3 / 2);
+}
+
 int UpdateLOT(LOT_INFO *LOT, int expansion)
 {
     BOX_NODE *expand;
@@ -103,7 +189,6 @@ int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height
     return (0);
 }
 
-#define FRONT_ARC 0x4000
 #define SQUARE(A) ((A) * (A))
 
 #define DONT_TARGET (-16384)

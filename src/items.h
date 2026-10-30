@@ -25,7 +25,7 @@ typedef struct item_info {
     sint16 speed;
     sint16 fallspeed;
     sint16 hit_points;
-    uint16 box_number;
+    sint16 box_number;
     sint16 timer;
     sint16 flags;
     sint16 shade;
