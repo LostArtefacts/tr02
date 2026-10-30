@@ -2387,6 +2387,107 @@ int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll)
 
 
 #define SLIDE_A 70
+#define VAULT_ANGLE (30 * ONE_DEGREE)
+#define GRAVITY 6
+#define VAULT12_A 50
+#define VAULT12_F GF(VAULT12_A, 0)
+#define VAULT34_A 42
+#define VAULT34_F GF(VAULT34_A, 0)
+
+int TestLaraVault(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int hdif, slope;
+    PHD_ANGLE angle;
+
+    if (coll->coll_type != COLL_FRONT || !(input & IN_ACTION) || lara.gun_status != LG_ARMLESS)
+        return 0;
+
+    angle = item->pos.y_rot;
+    if (angle >= 0 - VAULT_ANGLE && angle <= 0 + VAULT_ANGLE)
+        angle = 0;
+    else if (angle >= 16384 - VAULT_ANGLE && angle <= 16384 + VAULT_ANGLE)
+        angle = 16384;
+    else if (angle >= 32767 - VAULT_ANGLE || angle <= -32767 + VAULT_ANGLE)
+        angle = -32768;
+    else if (angle >= -16384 - VAULT_ANGLE && angle <= -16384 + VAULT_ANGLE)
+        angle = -16384;
+
+    if (angle & 0x3fff)
+        return 0;
+
+    hdif = coll->front_floor;
+    slope = (ABS(coll->left_floor - coll->right_floor) >= SLOPE_DIF);
+    if (hdif >= -STEP_L * 2 - STEP_L / 2 && hdif <= -STEP_L * 2 + STEP_L / 2)
+    {
+        if (slope || coll->front_floor - coll->front_ceiling < 0 ||
+            coll->left_floor - coll->left_ceiling < 0 ||
+            coll->right_floor - coll->right_ceiling < 0)
+            return 0;
+        item->anim_number = VAULT12_A;
+        item->frame_number = VAULT12_F;
+        item->current_anim_state = AS_NULL;
+        item->goal_anim_state = AS_STOP;
+        item->pos.y_pos += STEP_L * 2 + hdif;
+        lara.gun_status = LG_HANDSBUSY;
+    }
+    else if (hdif >= -STEP_L * 3 - STEP_L / 2 && hdif <= -STEP_L * 3 + STEP_L / 2)
+    {
+        if (slope || coll->front_floor - coll->front_ceiling < 0 ||
+            coll->left_floor - coll->left_ceiling < 0 ||
+            coll->right_floor - coll->right_ceiling < 0)
+            return 0;
+        item->anim_number = VAULT34_A;
+        item->frame_number = VAULT34_F;
+        item->current_anim_state = AS_NULL;
+        item->goal_anim_state = AS_STOP;
+        item->pos.y_pos += STEP_L * 3 + hdif;
+        lara.gun_status = LG_HANDSBUSY;
+    }
+    else if (!slope && hdif >= -STEP_L * 7 - STEP_L / 2 && hdif <= -STEP_L * 4 + STEP_L / 2)
+    {
+        item->anim_number = STOP_A;
+        item->frame_number = STOP_F;
+        item->goal_anim_state = AS_UPJUMP;
+        item->current_anim_state = AS_STOP;
+        lara.calc_fallspeed = -(sint16)(phd_sqrt((int)(-2 * GRAVITY * (hdif + 800))) + 3);
+        AnimateLara(item);
+    }
+    else if (lara.climb_status && hdif <= -STEP_L * 8 + STEP_L / 2 && lara.water_status != LARA_WADE &&
+             coll->left_floor <= -STEP_L * 8 + STEP_L / 2 && coll->right_floor <= -STEP_L * 8 &&
+             coll->mid_ceiling <= -STEP_L * 8 + STEP_L / 2 + LARA_HITE)
+    {
+        item->anim_number = STOP_A;
+        item->frame_number = STOP_F;
+        item->goal_anim_state = AS_UPJUMP;
+        item->current_anim_state = AS_STOP;
+        lara.calc_fallspeed = -116;
+        AnimateLara(item);
+    }
+    else if (lara.climb_status && (hdif < -STEP_L * 4 || coll->front_ceiling >= LARA_HITE - STEP_L) &&
+             coll->mid_ceiling <= -STEP_L * 5 + LARA_HITE)
+    {
+        ShiftItem(item, coll);
+        if (LaraTestClimbStance(item, coll))
+        {
+            item->anim_number = STOP_A;
+            item->frame_number = STOP_F;
+            item->goal_anim_state = AS_CLIMBSTNC;
+            item->current_anim_state = AS_STOP;
+            AnimateLara(item);
+            item->pos.y_rot = angle;
+            lara.gun_status = LG_HANDSBUSY;
+            return 1;
+        }
+        return 0;
+    }
+    else
+        return 0;
+
+    item->pos.y_rot = angle;
+    ShiftItem(item, coll);
+    return 1;
+}
+
 #define SLIDE_F GF(SLIDE_A, 0)
 #define SLIDEBACK_A 104
 #define SLIDEBACK_F GF(SLIDEBACK_A, 0)

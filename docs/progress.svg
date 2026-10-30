@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.73% (695)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.27% (552)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.81% (696)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.19% (551)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="416.33" height="6" x="0" y="0" class="named"/>
-<rect width="330.67" height="6" x="416.33" y="0" class="todo"/>
+<rect width="416.93" height="6" x="0" y="0" class="named"/>
+<rect width="330.07" height="6" x="416.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -561,7 +561,7 @@
 <rect width="12" height="12" x="615" y="135" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="135" class="named"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="135" class="todo"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="135" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="135" class="named"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="135" class="named"><title>0x0042b370 TestLaraSlide (304 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0042b4a0 LaraFloorFront (117 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.77%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.23%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.99%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.01%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="282.12" height="6" x="0" y="0" class="named"/>
-<rect width="464.88" height="6" x="282.12" y="0" class="todo"/>
+<rect width="283.75" height="6" x="0" y="0" class="named"/>
+<rect width="463.25" height="6" x="283.75" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1434,7 +1434,7 @@
 <rect width="21.66" height="22.31" x="323.19" y="129.16" class="named"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
 <rect width="21.66" height="22.27" x="323.19" y="154.47" class="named"><title>0x00415f40 xLOS (748 bytes)</title></rect>
 <rect width="21.66" height="22.24" x="323.19" y="179.74" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
-<rect width="21.66" height="22.10" x="323.19" y="204.98" class="todo"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
+<rect width="21.66" height="22.10" x="323.19" y="204.98" class="named"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="21.66" height="21.87" x="323.19" y="230.08" class="named"><title>0x0043dff0 SkidooAnimation (736 bytes)</title></rect>
 <rect width="21.66" height="21.87" x="323.19" y="254.95" class="todo"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
 <rect width="21.66" height="21.66" x="323.19" y="279.82" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
