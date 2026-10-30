@@ -124,6 +124,31 @@ void S_SetupAboveWater(int underwater)
     bBlueEffect = bool(underwater);
 }
 
+#define WIBBLE_SIZE 32
+#define SUNSET_TIME (20 * 60 * 60)
+
+extern "C" int WibbleOffset;
+extern "C" int RoomLightShades[4];
+extern "C" sint16 GF_SunsetEnabled;
+extern "C" int SunsetTimer;
+extern "C" sint32 GetRandomDraw(void);
+
+extern "C" void S_AnimateTextures(int nframes)
+{
+    WibbleOffset = (WibbleOffset + nframes / 2) & (WIBBLE_SIZE - 1);
+    RoomLightShades[1] = GetRandomDraw() & (WIBBLE_SIZE - 1);
+    RoomLightShades[2] = (phd_sin(WibbleOffset * 65536 / WIBBLE_SIZE) + (1 << W2V_SHIFT)) * (WIBBLE_SIZE - 1) >> (W2V_SHIFT + 1);
+    if (GF_SunsetEnabled)
+    {
+        SunsetTimer += nframes;
+        if (SunsetTimer < SUNSET_TIME)
+            RoomLightShades[3] = SunsetTimer * (WIBBLE_SIZE - 1) / SUNSET_TIME;
+        else
+            RoomLightShades[3] = WIBBLE_SIZE - 1;
+    }
+    AnimateTextures(nframes);
+}
+
 void S_DontDisplayPicture(void)
 {
     if (SavedAppSettings.RenderMode == RM_Hardware)

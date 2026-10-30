@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.88% (922)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.56% (319)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.96% (923)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.48% (318)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="551.87" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="551.87" y="0" class="decompiled"/>
-<rect width="190.94" height="6" x="556.06" y="0" class="todo"/>
+<rect width="552.47" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="552.47" y="0" class="decompiled"/>
+<rect width="190.34" height="6" x="556.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1138,7 +1138,7 @@
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00451c90 AnimateTextures (192 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="315" class="named"><title>0x00451d50 S_SetupBelowWater (81 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="315" class="named"><title>0x00451db0 S_SetupAboveWater (33 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="315" class="todo"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="315" class="named"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="315" class="todo"><title>0x00451ea0 S_DisplayPicture (261 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="315" class="named"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="315" class="named"><title>0x00452030 S_DontDisplayPicture (15 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.51%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.41%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.56%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="407.19" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="407.19" y="0" class="decompiled"/>
-<rect width="339.20" height="6" x="407.80" y="0" class="todo"/>
+<rect width="407.58" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="407.58" y="0" class="decompiled"/>
+<rect width="338.82" height="6" x="408.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1816,7 +1816,7 @@
 <rect width="9.20" height="9.09" x="535.73" y="163.53" class="named"><title>0x0043d310 TestHeight (178 bytes)</title></rect>
 <rect width="9.13" height="9.09" x="547.93" y="163.53" class="named"><title>0x0042afc0 TestHangSwingIn (177 bytes)</title></rect>
 <rect width="9.13" height="9.09" x="560.06" y="163.53" class="named"><title>0x00435640 OnDrawBridge (177 bytes)</title></rect>
-<rect width="9.13" height="9.09" x="572.20" y="163.53" class="todo"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
+<rect width="9.13" height="9.09" x="572.20" y="163.53" class="named"><title>0x00451de0 S_AnimateTextures (177 bytes)</title></rect>
 <rect width="9.06" height="9.09" x="584.33" y="163.53" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
 <rect width="9" height="9.09" x="596.39" y="163.53" class="todo"><title>0x00445f00 WinVidGetDisplayAdapters (175 bytes)</title></rect>
 <rect width="8.93" height="9.09" x="608.39" y="163.53" class="named"><title>0x0041cbc0 ControlWaterSprite (174 bytes)</title></rect>
