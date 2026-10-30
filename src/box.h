@@ -7,6 +7,7 @@
 #define NO_BOX -1
 #define BLOCKED 0x4000
 #define NO_FLYING 0
+#define MAX_TILT (ONE_DEGREE * 3)
 
 typedef struct box_info {
     uint8 left, right, top, bottom;
@@ -41,6 +42,7 @@ extern BOX_INFO *boxes;
 extern int number_boxes;
 
 void TargetBox(LOT_INFO *LOT, sint16 box_number);
+void CreatureTilt(ITEM_INFO *item, sint16 angle);
 sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number));
 void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint);
 

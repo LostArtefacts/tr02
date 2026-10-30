@@ -19,6 +19,17 @@ void TargetBox(LOT_INFO *LOT, sint16 box_number)
         LOT->target.y = box->height - STEP_L * 3 / 2;
 }
 
+void CreatureTilt(ITEM_INFO *item, sint16 angle)
+{
+    angle = (angle << 2) - item->pos.z_rot;
+    if (angle < -MAX_TILT)
+        angle = -MAX_TILT;
+    else if (angle > MAX_TILT)
+        angle = MAX_TILT;
+
+    item->pos.z_rot += angle;
+}
+
 sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number))
 {
     PHD_VECTOR pos;

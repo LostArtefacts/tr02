@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.52% (231)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.48% (1016)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">18.60% (232)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">81.40% (1015)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="138.38" height="6" x="0" y="0" class="named"/>
-<rect width="608.62" height="6" x="138.38" y="0" class="todo"/>
+<rect width="138.98" height="6" x="0" y="0" class="named"/>
+<rect width="608.02" height="6" x="138.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -181,7 +181,7 @@
 <rect width="12" height="12" x="165" y="30" class="todo"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="30" class="todo"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="30" class="todo"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="30" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="30" class="todo"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="30" class="todo"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="30" class="todo"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.70%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.30%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.28%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="42.61" height="6" x="0" y="0" class="named"/>
-<rect width="704.39" height="6" x="42.61" y="0" class="todo"/>
+<rect width="42.73" height="6" x="0" y="0" class="named"/>
+<rect width="704.27" height="6" x="42.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2246,7 +2246,7 @@
 <rect width="3.63" height="3.69" x="655.68" y="337.84" class="named"><title>0x00402b00 draw_poly_flat (53 bytes)</title></rect>
 <rect width="3.63" height="3.69" x="655.68" y="344.53" class="named"><title>0x00402b40 draw_poly_trans (53 bytes)</title></rect>
 <rect width="3.63" height="3.69" x="655.68" y="351.22" class="named"><title>0x00402b80 draw_poly_gouraud (53 bytes)</title></rect>
-<rect width="3.63" height="3.69" x="655.68" y="357.92" class="todo"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
+<rect width="3.63" height="3.69" x="655.68" y="357.92" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
 <rect width="3.63" height="3.69" x="655.68" y="364.61" class="todo"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
 <rect width="3.63" height="3.69" x="655.68" y="371.31" class="todo"><title>0x00428350 lara_as_hangleft (53 bytes)</title></rect>
 <rect width="3.74" height="3.58" x="662.32" y="290.09" class="todo"><title>0x00428390 lara_as_hangright (53 bytes)</title></rect>
