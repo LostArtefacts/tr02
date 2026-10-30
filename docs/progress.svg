@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.34% (715)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.66% (532)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">57.42% (716)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">42.58% (531)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="428.31" height="6" x="0" y="0" class="named"/>
-<rect width="318.69" height="6" x="428.31" y="0" class="todo"/>
+<rect width="428.91" height="6" x="0" y="0" class="named"/>
+<rect width="318.09" height="6" x="428.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -210,7 +210,7 @@
 <rect width="12" height="12" x="600" y="30" class="todo"><title>0x004123b0 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="30" class="todo"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="30" class="named"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="30" class="todo"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="30" class="named"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="30" class="todo"><title>0x00412640 InitialiseGenPlayer (51 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="30" class="todo"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="30" class="todo"><title>0x004128d0 GetCollisionInfo (1660 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.48%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.52%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.52%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">59.48%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="302.40" height="6" x="0" y="0" class="named"/>
-<rect width="444.60" height="6" x="302.40" y="0" class="todo"/>
+<rect width="302.71" height="6" x="0" y="0" class="named"/>
+<rect width="444.29" height="6" x="302.71" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.14" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1899,7 +1899,7 @@
 <rect width="7.92" height="7.97" x="558.90" y="367.03" class="named"><title>0x0043d6b0 GetCollisionAnim (144 bytes)</title></rect>
 <rect width="7.87" height="8.02" x="569.82" y="187.35" class="named"><title>0x00442be0 FlameEmitterControl (144 bytes)</title></rect>
 <rect width="7.87" height="8.02" x="580.68" y="187.35" class="todo"><title>0x004454e0 WinVidCopyBitmapToBuffer (144 bytes)</title></rect>
-<rect width="7.79" height="8.02" x="591.55" y="187.35" class="todo"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
+<rect width="7.79" height="8.02" x="591.55" y="187.35" class="named"><title>0x004125b0 InitialisePlayer1 (143 bytes)</title></rect>
 <rect width="7.79" height="8.02" x="602.34" y="187.35" class="named"><title>0x0041d050 FloodFX (143 bytes)</title></rect>
 <rect width="7.71" height="8.02" x="613.13" y="187.35" class="named"><title>0x0044d560 HWR_LoadTexturePages (142 bytes)</title></rect>
 <rect width="7.64" height="8.02" x="623.84" y="187.35" class="named"><title>0x00435e20 DetonatorControl (141 bytes)</title></rect>

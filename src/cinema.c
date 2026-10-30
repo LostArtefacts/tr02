@@ -5,8 +5,9 @@ void SetCutsceneTrack(int track)
     cutscene_track = track;
 }
 
+extern sint16 number_rooms;
+
 void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint);
-int GetCinematicRoom(sint32 x, sint32 y, sint32 z);
 void AnimateLara(ITEM_INFO *item);
 
 void LaraControlCinematic(sint16 item_num)
@@ -32,3 +33,31 @@ void LaraControlCinematic(sint16 item_num)
 
     AnimateLara(item);
 }
+
+extern int original_room;
+
+void DrawLara(ITEM_INFO *item);
+
+void InitialisePlayer1(sint16 item_num)
+{
+    ITEM_INFO *item;
+    OBJECT_INFO *obj;
+
+    obj = &objects[LARA];
+    obj->draw_routine = DrawLara;
+    obj->control = LaraControlCinematic;
+    AddActiveItem(item_num);
+    item = &items[item_num];
+    camera.pos.x = item->pos.x_pos;
+    camera.pos.y = item->pos.y_pos;
+    camera.pos.z = item->pos.z_pos;
+    camera.target_angle = item->pos.y_rot = 0;
+    original_room = camera.pos.room_number = item->room_number;
+    item->dynamic_light = 0;
+    item->goal_anim_state = 0;
+    item->current_anim_state = 0;
+    item->frame_number = 0;
+    item->anim_number = 0;
+    lara.hit_direction = -1;
+}
+

@@ -1639,6 +1639,7 @@ address,size,name,symbol
 0x004d6f68,1,bBlueEffect,_bBlueEffect
 0x004d7370,,GamePalette16,_GamePalette16
 0x004d7770,4,CineCurrentFrame,_CineCurrentFrame
+0x004d7778,,original_room,_original_room
 0x004d777c,4,IsChunkyCamera,_IsChunkyCamera
 0x004d7780,4,height_type,_height_type
 0x004d7784,4,NoInputCounter,_NoInputCounter
