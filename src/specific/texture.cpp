@@ -111,3 +111,11 @@ extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page)
         return false;
     return true;
 }
+
+extern "C" LPDIRECT3DTEXTURE2 Create3DTexture(LPDIRECTDRAWSURFACE3 surface)
+{
+    LPDIRECT3DTEXTURE2 texture;
+    if (DX_TRY(surface->QueryInterface(IID_IDirect3DTexture2, (void **)&texture)))
+        return NULL;
+    return texture;
+}

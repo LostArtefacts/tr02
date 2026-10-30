@@ -1446,6 +1446,7 @@ address,size,name,symbol
 0x004630d8,21,GuidFormat,_GuidFormat
 0x004630f0,17,HexDigits,_HexDigits
 0x00463160,16,GUID_SysKeyboard,_GUID_SysKeyboard
+0x00463170,16,IID_IDirect3DTexture2,_IID_IDirect3DTexture2
 0x00463184,4,type_info_vftable,??_7type_info@@6B@
 0x00464060,4,perspective_distance,_perspective_distance
 0x00464068,,poly_draw_routines,_poly_draw_routines
