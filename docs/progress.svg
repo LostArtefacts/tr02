@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.01% (661)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.99% (586)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.09% (662)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">46.91% (585)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="395.96" height="6" x="0" y="0" class="named"/>
-<rect width="351.04" height="6" x="395.96" y="0" class="todo"/>
+<rect width="396.56" height="6" x="0" y="0" class="named"/>
+<rect width="350.44" height="6" x="396.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -394,7 +394,7 @@
 <rect width="12" height="12" x="360" y="90" class="named"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="90" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="90" class="todo"><title>0x00422060 Display_Inventory (4510 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="90" class="todo"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="90" class="named"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="90" class="todo"><title>0x00423450 SelectMeshes (137 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="90" class="todo"><title>0x004234e0 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="90" class="todo"><title>0x00423570 DrawInventoryItem (1053 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.72%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.28%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.82%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.18%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="259.38" height="6" x="0" y="0" class="named"/>
-<rect width="487.62" height="6" x="259.38" y="0" class="todo"/>
+<rect width="260.13" height="6" x="0" y="0" class="named"/>
+<rect width="486.87" height="6" x="260.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1596,7 +1596,7 @@
 <rect width="13.88" height="14.28" x="432.85" y="343.53" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
 <rect width="13.88" height="14.19" x="432.85" y="360.81" class="todo"><title>0x004327c0 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="14.33" height="13.54" x="449.72" y="77.69" class="todo"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
-<rect width="14.23" height="13.54" x="467.06" y="77.69" class="todo"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>
+<rect width="14.23" height="13.54" x="467.06" y="77.69" class="named"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>
 <rect width="14.18" height="13.54" x="484.29" y="77.69" class="named"><title>0x004421c0 SpikeCollision (341 bytes)</title></rect>
 <rect width="14.18" height="13.54" x="501.47" y="77.69" class="named"><title>0x00442a30 DartsControl (341 bytes)</title></rect>
 <rect width="14.13" height="13.54" x="518.66" y="77.69" class="named"><title>0x00410a90 ShiftCamera (340 bytes)</title></rect>
