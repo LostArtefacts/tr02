@@ -67,6 +67,22 @@ void InitialiseDyingMonk(sint16 item_number)
     }
 }
 
+void DyingMonk(sint16 item_number)
+{
+    int *who;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    who = (int *)item->data;
+
+    if (items[*who].hit_points <= 0 && items[*(who + 1)].hit_points <= 0)
+    {
+        if (ABS(lara_item->pos.x_pos - item->pos.x_pos) < WALL_L && ABS(lara_item->pos.z_pos - item->pos.z_pos) < WALL_L
+            && !lara_item->gravity_status && lara_item->pos.y_pos == item->pos.y_pos)
+            level_complete = 1;
+    }
+}
+
 void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;
