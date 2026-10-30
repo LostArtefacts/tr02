@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49% (611)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51% (636)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">49.08% (612)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">50.92% (635)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="366.01" height="6" x="0" y="0" class="named"/>
-<rect width="380.99" height="6" x="366.01" y="0" class="todo"/>
+<rect width="366.61" height="6" x="0" y="0" class="named"/>
+<rect width="380.39" height="6" x="366.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -761,7 +761,7 @@
 <rect width="12" height="12" x="615" y="195" class="named"><title>0x0043a2f0 ReadSG (53 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="195" class="todo"><title>0x0043a330 InitialiseLevel (351 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="195" class="todo"><title>0x0043a490 InitialiseGameFlags (97 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="195" class="todo"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="195" class="named"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="195" class="todo"><title>0x0043a530 BaddyObjects (4155 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="195" class="todo"><title>0x0043b570 TrapObjects (1533 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="195" class="todo"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.63%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.38%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.62%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="219.37" height="6" x="0" y="0" class="named"/>
-<rect width="527.63" height="6" x="219.37" y="0" class="todo"/>
+<rect width="219.46" height="6" x="0" y="0" class="named"/>
+<rect width="527.54" height="6" x="219.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2343,7 +2343,7 @@
 <rect width="2.60" height="2.96" x="733.48" y="309.40" class="todo"><title>0x00444f20 CalculateWindowHeight (40 bytes)</title></rect>
 <rect width="2.46" height="2.96" x="739.08" y="309.40" class="named"><title>0x0041b760 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="2.46" height="2.96" x="744.54" y="309.40" class="named"><title>0x00428420 lara_as_ppready (39 bytes)</title></rect>
-<rect width="2.59" height="2.82" x="687.15" y="315.36" class="todo"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
+<rect width="2.59" height="2.82" x="687.15" y="315.36" class="named"><title>0x0043a500 InitialiseLevelFlags (39 bytes)</title></rect>
 <rect width="2.59" height="2.82" x="687.15" y="321.17" class="named"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
 <rect width="2.59" height="2.82" x="687.15" y="326.99" class="named"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="2.59" height="2.67" x="687.15" y="332.81" class="named"><title>0x00425400 Inv_RingMotionRadius (38 bytes)</title></rect>
