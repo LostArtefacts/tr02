@@ -22,6 +22,7 @@
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll);
+void AnimateLara(ITEM_INFO *item);
 void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
 int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
@@ -476,6 +477,29 @@ void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
     camera.flags = FOLLOW_CENTRE;
 }
 
+void lara_as_deathslide(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    camera.target_angle = ONE_DEGREE * 70;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    coll->trigger = trigger_index;
+
+    if (!(input & IN_ACTION))
+    {
+        item->goal_anim_state = AS_FORWARDJUMP;
+        AnimateLara(item);
+        lara_item->gravity_status = 1;
+        lara_item->speed = 100;
+        lara_item->fallspeed = 40;
+        lara.move_angle = item->pos.y_rot;
+    }
+}
+
 void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->anim_number = BREATH_A;
@@ -861,7 +885,7 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_r, shift_l;
+    int result_r, result_l, shift_l, shift_r;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)
