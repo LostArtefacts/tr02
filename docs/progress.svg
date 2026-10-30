@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.69% (445)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.31% (802)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">35.77% (446)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">64.23% (801)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="266.57" height="6" x="0" y="0" class="named"/>
-<rect width="480.43" height="6" x="266.57" y="0" class="todo"/>
+<rect width="267.17" height="6" x="0" y="0" class="named"/>
+<rect width="479.83" height="6" x="267.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -385,7 +385,7 @@
 <rect width="12" height="12" x="225" y="90" class="todo"><title>0x004219b0 DrawAssaultTimer (325 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x00421b00 DrawGameInfo (69 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="90" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="90" class="todo"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="90" class="named"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x00421cd0 DrawAmmoInfo (306 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="named"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.41%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.63%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.37%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="108.96" height="6" x="0" y="0" class="named"/>
-<rect width="638.04" height="6" x="108.96" y="0" class="todo"/>
+<rect width="109.30" height="6" x="0" y="0" class="named"/>
+<rect width="637.70" height="6" x="109.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1871,7 +1871,7 @@
 <rect width="8.29" height="8.27" x="615.67" y="174.95" class="todo"><title>0x0041f5b0 WarriorSparkleTrail (152 bytes)</title></rect>
 <rect width="8.29" height="8.27" x="626.96" y="174.95" class="todo"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="8.29" height="8.27" x="638.25" y="174.95" class="todo"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
-<rect width="8.22" height="8.27" x="649.55" y="174.95" class="todo"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
+<rect width="8.22" height="8.27" x="649.55" y="174.95" class="named"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
 <rect width="8.22" height="8.27" x="660.77" y="174.95" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
 <rect width="8.14" height="8.27" x="671.99" y="174.95" class="todo"><title>0x0040c4f0 S_DrawScreenSprite2d (150 bytes)</title></rect>
 <rect width="8.14" height="8.27" x="683.13" y="174.95" class="todo"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
