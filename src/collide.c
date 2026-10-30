@@ -595,6 +595,37 @@ int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem)
     return 1;
 }
 
+void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, *mptr, height, ceiling;
+
+    laraitem->pos.x_rot = item->pos.x_rot;
+    laraitem->pos.y_rot = item->pos.y_rot;
+    laraitem->pos.z_rot = item->pos.z_rot;
+    phd_PushUnitMatrix();
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    mptr = phd_mxptr;
+
+    x = item->pos.x_pos + ((*(mptr + M00) * vec->x + *(mptr + M01) * vec->y + *(mptr + M02) * vec->z) >> W2V_SHIFT);
+    y = item->pos.y_pos + ((*(mptr + M10) * vec->x + *(mptr + M11) * vec->y + *(mptr + M12) * vec->z) >> W2V_SHIFT);
+    z = item->pos.z_pos + ((*(mptr + M20) * vec->x + *(mptr + M21) * vec->y + *(mptr + M22) * vec->z) >> W2V_SHIFT);
+    phd_PopMatrix();
+
+    room_number = laraitem->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+    ceiling = GetCeiling(floor, x, y, z);
+    if (ABS(height - laraitem->pos.y_pos) > STEP_L ||
+        ABS(ceiling - laraitem->pos.y_pos) < LARA_HITE)
+        return;
+
+    laraitem->pos.x_pos = x;
+    laraitem->pos.y_pos = y;
+    laraitem->pos.z_pos = z;
+}
+
 int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_ANGLE angadd)
 {
     int dist, x, y, z;
