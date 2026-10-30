@@ -173,3 +173,10 @@ extern "C" bool DSoundEnumerate(LPVOID lpContext)
     return true;
 }
 
+extern "C" bool DSoundCreate(LPGUID lpGuid)
+{
+    if (DX_TRY(DirectSoundCreate(lpGuid, &DSound, NULL)))
+        return false;
+    return true;
+}
+

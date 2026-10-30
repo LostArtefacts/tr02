@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.84% (609)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.16% (638)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.92% (610)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">51.08% (637)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="364.81" height="6" x="0" y="0" class="named"/>
-<rect width="382.19" height="6" x="364.81" y="0" class="todo"/>
+<rect width="365.41" height="6" x="0" y="0" class="named"/>
+<rect width="381.59" height="6" x="365.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -992,7 +992,7 @@
 <rect width="12" height="12" x="330" y="270" class="named"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="270" class="todo"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="270" class="todo"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="270" class="todo"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="270" class="named"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="270" class="todo"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="270" class="todo"><title>0x00448480 WinSndFinish (36 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="270" class="todo"><title>0x004484b0 WinSndIsSoundEnabled (6 bytes)</title></rect>
@@ -1285,7 +1285,7 @@
 <rect width="12" height="12" x="225" y="360" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="360" class="todo"><title>0x00457f50 Func457f50 (6 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00458f78 DirectSoundEnumerateA_thunk (6 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="360" class="todo"><title>0x00458f7e Func458f7e (6 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="360" class="todo"><title>0x00458f7e DirectSoundCreate_thunk (6 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="360" class="todo"><title>0x00458f84 Func458f84 (6 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="360" class="todo"><title>0x00458f8a Func458f8a (6 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="360" class="todo"><title>0x00458f90 Func458f90 (6 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.36%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.64%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">70.63%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="219.30" height="6" x="0" y="0" class="named"/>
-<rect width="527.70" height="6" x="219.30" y="0" class="todo"/>
+<rect width="219.36" height="6" x="0" y="0" class="named"/>
+<rect width="527.64" height="6" x="219.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.26" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2418,7 +2418,7 @@
 <rect width="1.67" height="1.99" x="717.28" y="331.50" class="named"><title>0x0041d1d0 SetChangeFX (28 bytes)</title></rect>
 <rect width="1.67" height="1.99" x="721.95" y="331.50" class="named"><title>0x00427ed0 lara_as_reach (28 bytes)</title></rect>
 <rect width="1.67" height="1.99" x="726.63" y="331.50" class="todo"><title>0x00446be0 WinVidFreeWindow (28 bytes)</title></rect>
-<rect width="1.67" height="1.99" x="731.30" y="331.50" class="todo"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
+<rect width="1.67" height="1.99" x="731.30" y="331.50" class="named"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
 <rect width="1.67" height="1.99" x="735.98" y="331.50" class="named"><title>0x004554f0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="1.67" height="1.99" x="740.65" y="331.50" class="todo"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
 <rect width="1.67" height="1.99" x="745.33" y="331.50" class="todo"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
@@ -2532,7 +2532,7 @@
 <rect width="0.10" height="0.10" x="734.60" y="369.13" class="todo"><title>0x00457ee8 phd_cos (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.60" y="371.34" class="todo"><title>0x00457f50 Func457f50 (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="734.60" y="373.56" class="todo"><title>0x00458f78 DirectSoundEnumerateA_thunk (6 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="734.60" y="375.78" class="todo"><title>0x00458f7e Func458f7e (6 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="734.60" y="375.78" class="todo"><title>0x00458f7e DirectSoundCreate_thunk (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="736.85" y="364.69" class="todo"><title>0x00458f84 Func458f84 (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.04" y="364.69" class="todo"><title>0x00458f8a Func458f8a (6 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="741.23" y="364.69" class="todo"><title>0x00458f90 Func458f90 (6 bytes)</title></rect>

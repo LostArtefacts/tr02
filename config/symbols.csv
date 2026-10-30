@@ -1217,7 +1217,7 @@ address,size,name,symbol
 0x00457f23,44,phd_sqrt,@phd_sqrt@4
 0x00457f50,6,Func457f50,
 0x00458f78,6,DirectSoundEnumerateA_thunk,_DirectSoundEnumerateA@8
-0x00458f7e,6,Func458f7e,
+0x00458f7e,6,DirectSoundCreate_thunk,_DirectSoundCreate@12
 0x00458f84,6,Func458f84,
 0x00458f8a,6,Func458f8a,
 0x00458f90,6,Func458f90,
