@@ -25,6 +25,8 @@ extern PHD_VECTOR DeathSlidePosition;
 
 #define NO_ROOM 0xff
 #define FINAL_COUNTDOWN 150
+#define BELL_STOP 0
+#define BELL_SWING 1
 
 extern sint16 final_boss_active;
 
@@ -69,6 +71,28 @@ void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *col
             AddActiveItem(item_number);
         item->status = ACTIVE;
         item->flags |= ONESHOT;
+    }
+}
+
+void BellControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+
+    item->goal_anim_state = BELL_SWING;
+
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &item->room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    TestTriggers(trigger_index, 1);
+
+    AnimateItem(item);
+
+    if (item->current_anim_state == BELL_STOP)
+    {
+        item->status = NOT_ACTIVE;
+        RemoveActiveItem(item_number);
     }
 }
 

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.11% (338)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.89% (909)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">27.19% (339)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">72.81% (908)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="202.47" height="6" x="0" y="0" class="named"/>
-<rect width="544.53" height="6" x="202.47" y="0" class="todo"/>
+<rect width="203.07" height="6" x="0" y="0" class="named"/>
+<rect width="543.93" height="6" x="203.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -695,7 +695,7 @@
 <rect width="12" height="12" x="375" y="180" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="180" class="todo"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="todo"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="180" class="todo"><title>0x00434db0 BellControl (126 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="180" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="180" class="named"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="180" class="named"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="180" class="named"><title>0x00434f80 WindowControl (150 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.79%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.21%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">8.83%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">91.17%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="65.64" height="6" x="0" y="0" class="named"/>
-<rect width="681.36" height="6" x="65.64" y="0" class="todo"/>
+<rect width="65.92" height="6" x="0" y="0" class="named"/>
+<rect width="681.08" height="6" x="65.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1947,7 +1947,7 @@
 <rect width="7.14" height="7.50" x="569.74" y="346.51" class="todo"><title>0x00447460 WinInputInit (127 bytes)</title></rect>
 <rect width="7.14" height="7.50" x="569.74" y="357.01" class="named"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="7.14" height="7.50" x="569.74" y="367.50" class="todo"><title>0x0044ee80 do_inventory_options (127 bytes)</title></rect>
-<rect width="7.17" height="7.38" x="579.87" y="207.82" class="todo"><title>0x00434db0 BellControl (126 bytes)</title></rect>
+<rect width="7.17" height="7.38" x="579.87" y="207.82" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="7.17" height="7.38" x="590.05" y="207.82" class="todo"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
 <rect width="7.17" height="7.38" x="600.22" y="207.82" class="todo"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
 <rect width="7.17" height="7.38" x="610.39" y="207.82" class="todo"><title>0x00452ac0 Func452ac0 (126 bytes)</title></rect>
