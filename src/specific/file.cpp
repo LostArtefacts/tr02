@@ -291,3 +291,58 @@ extern "C" int LoadSprites(HANDLE file)
     }
     return 1;
 }
+
+#define NUMBER_ITEMS 256
+
+extern "C" char StringToShow[];
+extern "C" char LoadItemsBadObject[];
+extern "C" char LoadItemsNoMemory[];
+extern "C" char LoadItemsTooMany[];
+extern "C" int level_items;
+extern "C" void InitialiseItemArray(int numitems);
+extern "C" void InitialiseItem(sint16 item_num);
+
+extern "C" int LoadItems(HANDLE file)
+{
+    sint16 i;
+    sint32 number_items;
+    ITEM_INFO *item;
+    DWORD read;
+
+    MyReadFile(file, &number_items, sizeof(sint32), &read, NULL);
+    if (number_items == 0)
+        return 1;
+    if (number_items > NUMBER_ITEMS)
+    {
+        lstrcpy(StringToShow, LoadItemsTooMany);
+        return 0;
+    }
+    items = (ITEM_INFO *)game_malloc(sizeof(ITEM_INFO) * NUMBER_ITEMS, ITEMS);
+    if (items == NULL)
+    {
+        lstrcpy(StringToShow, LoadItemsNoMemory);
+        return 0;
+    }
+    level_items = number_items;
+    InitialiseItemArray(NUMBER_ITEMS);
+    for (i = 0; i < number_items; i++)
+    {
+        item = &items[i];
+        MyReadFile(file, &item->object_number, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->room_number, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->pos.x_pos, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &item->pos.y_pos, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &item->pos.z_pos, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &item->pos.y_rot, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->shade, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->shadeB, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->flags, sizeof(sint16), &read, NULL);
+        if (item->object_number < 0 || item->object_number >= NUMBER_OBJECTS)
+        {
+            wsprintf(StringToShow, LoadItemsBadObject, item->object_number, i);
+            return 0;
+        }
+        InitialiseItem(i);
+    }
+    return 1;
+}
