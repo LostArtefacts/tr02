@@ -1286,7 +1286,7 @@ address,size,name,symbol
 0x00459dc0,35,Func459dc0,
 0x00459df0,21,Func459df0,
 0x00459e10,133,strstr,_strstr
-0x00459e90,87,Func459e90,
+0x00459e90,87,atof,_atof
 0x00459ef0,74,Func459ef0,
 0x00459f40,20,Func459f40,
 0x00459f60,68,Func459f60,

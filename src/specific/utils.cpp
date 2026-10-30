@@ -155,6 +155,21 @@ extern "C" bool GetRegistryBoolValue(LPCTSTR lpValueName, bool *pValue, bool def
     return false;
 }
 
+extern "C" bool GetRegistryStringValue(LPCTSTR lpValueName, LPTSTR value, DWORD maxSize, LPCTSTR defaultValue);
+
+extern "C" bool GetRegistryFloatValue(LPCTSTR lpValueName, double *value, double defaultValue)
+{
+    char buffer[64];
+    if (GetRegistryStringValue(lpValueName, buffer, sizeof(buffer), NULL))
+    {
+        *value = atof(buffer);
+        return true;
+    }
+    SetRegistryFloatValue(lpValueName, defaultValue);
+    *value = defaultValue;
+    return false;
+}
+
 extern "C" bool GetRegistryBinaryValue(LPCTSTR lpValueName, LPBYTE value, DWORD valueSize, LPBYTE defaultValue)
 {
     DWORD type;
