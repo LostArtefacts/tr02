@@ -226,3 +226,12 @@ void Inv_RingMotionSetup(RING_INFO *ring, sint16 status, sint16 status_target, s
     imo->radius_rate = 0;
     imo->camera_yrate = 0;
 }
+
+void Inv_RingMotionRadius(RING_INFO *ring, sint16 target)
+{
+    IMOTION_INFO *imo;
+
+    imo = ring->imo;
+    imo->radius_target = target;
+    imo->radius_rate = (target - ring->radius) / imo->count;
+}
