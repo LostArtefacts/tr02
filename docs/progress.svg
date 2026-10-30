@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.07% (375)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.93% (872)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">30.15% (376)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">69.85% (871)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="224.64" height="6" x="0" y="0" class="named"/>
-<rect width="522.36" height="6" x="224.64" y="0" class="todo"/>
+<rect width="225.24" height="6" x="0" y="0" class="named"/>
+<rect width="521.76" height="6" x="225.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -448,7 +448,7 @@
 <rect width="12" height="12" x="420" y="105" class="named"><title>0x00426e50 CreateItem (57 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="105" class="todo"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="105" class="named"><title>0x00427050 RemoveActiveItem (138 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="105" class="todo"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="105" class="named"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="105" class="named"><title>0x00427150 AddActiveItem (90 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="105" class="todo"><title>0x004271b0 ItemNewRoom (156 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="105" class="todo"><title>0x00427250 GlobalItemReplace (124 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.93%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.07%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.04%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="81.64" height="6" x="0" y="0" class="named"/>
-<rect width="665.36" height="6" x="81.64" y="0" class="todo"/>
+<rect width="81.88" height="6" x="0" y="0" class="named"/>
+<rect width="665.12" height="6" x="81.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1997,7 +1997,7 @@
 <rect width="6.53" height="6.84" x="589.83" y="358.31" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="6.53" height="6.84" x="589.83" y="368.16" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
 <rect width="6.74" height="6.54" x="599.36" y="218.20" class="named"><title>0x0040e670 UpdateLOT (111 bytes)</title></rect>
-<rect width="6.74" height="6.54" x="609.11" y="218.20" class="todo"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
+<rect width="6.74" height="6.54" x="609.11" y="218.20" class="named"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
 <rect width="6.74" height="6.54" x="618.85" y="218.20" class="named"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="6.66" height="6.54" x="628.60" y="218.20" class="named"><title>0x004574a0 UT_MemBlt (110 bytes)</title></rect>
 <rect width="6.48" height="6.54" x="638.25" y="218.20" class="todo"><title>0x00405840 visible_zclip (108 bytes)</title></rect>

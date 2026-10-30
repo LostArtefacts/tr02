@@ -62,6 +62,30 @@ void RemoveActiveItem(sint16 item_num)
     }
 }
 
+void RemoveDrawnItem(sint16 item_num)
+{
+    ITEM_INFO *item;
+    sint16 linknum;
+
+    item = &items[item_num];
+
+    linknum = room[item->room_number].item_number;
+    if (linknum == item_num)
+    {
+        room[item->room_number].item_number = item->next_item;
+        return;
+    }
+
+    for (; linknum != NO_ITEM; linknum = items[linknum].next_item)
+    {
+        if (items[linknum].next_item == item_num)
+        {
+            items[linknum].next_item = item->next_item;
+            break;
+        }
+    }
+}
+
 void AddActiveItem(sint16 item_num)
 {
     ITEM_INFO *item;
