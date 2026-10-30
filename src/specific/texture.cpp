@@ -314,6 +314,43 @@ extern "C" D3DTEXTUREHANDLE GetTexturePageHandle(int pageIndex)
     return page->texHandle;
 }
 
+extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc, DWORD flags);
+extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc);
+
+inline bool DX_FAILED(HRESULT hr)
+{
+    return FAILED(hr);
+}
+
+extern "C" int AddTexturePage8(int width, int height, uint8 *pageBuffer, int palIndex)
+{
+    int pageIndex;
+    TEXPAGE_DESC *page;
+    DDSURFACEDESC desc;
+    uint8 *dst;
+    DWORD i;
+    int pitch;
+    if (palIndex < 0)
+        return -1;
+    pageIndex = Func455d80(width, height, TexturePalettes[palIndex]);
+    if (pageIndex < 0)
+        return -1;
+    page = &TexturePages[pageIndex];
+    if (DX_FAILED(WinVidBufferLock(page->sysMemSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+        return -1;
+    dst = (uint8 *)desc.lpSurface;
+    pitch = desc.lPitch;
+    for (i = height; i != 0; i--)
+    {
+        memcpy(dst, pageBuffer, width);
+        pageBuffer += width;
+        dst += pitch;
+    }
+    WinVidBufferUnlock(page->sysMemSurface, &desc);
+    LoadTexturePage(pageIndex, false);
+    return pageIndex;
+}
+
 extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context);
 
 extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context)
