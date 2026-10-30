@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.74% (508)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.26% (739)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">40.82% (509)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">59.18% (738)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="304.31" height="6" x="0" y="0" class="named"/>
-<rect width="442.69" height="6" x="304.31" y="0" class="todo"/>
+<rect width="304.91" height="6" x="0" y="0" class="named"/>
+<rect width="442.09" height="6" x="304.91" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -416,7 +416,7 @@
 <rect width="12" height="12" x="690" y="90" class="todo"><title>0x00424fe0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="90" class="named"><title>0x004250f0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="90" class="named"><title>0x00425150 Inv_RingLight (64 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="90" class="todo"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="90" class="named"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="105" class="todo"><title>0x004251c0 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="105" class="todo"><title>0x00425300 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="105" class="todo"><title>0x00425330 Inv_RingRotateRight (47 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">80%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="149.41" height="6" x="0" y="0" class="named"/>
-<rect width="597.59" height="6" x="149.41" y="0" class="todo"/>
+<rect width="149.50" height="6" x="0" y="0" class="named"/>
+<rect width="597.50" height="6" x="149.50" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2317,7 +2317,7 @@
 <rect width="3.31" height="2.96" x="706.67" y="303.27" class="todo"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="3.17" height="2.96" x="712.98" y="303.27" class="named"><title>0x0041d110 ChandelierFX (44 bytes)</title></rect>
 <rect width="3.17" height="2.96" x="719.15" y="303.27" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
-<rect width="3.17" height="2.96" x="725.32" y="303.27" class="todo"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
+<rect width="3.17" height="2.96" x="725.32" y="303.27" class="named"><title>0x00425190 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="3.17" height="2.96" x="731.49" y="303.27" class="todo"><title>0x004253d0 Inv_RingMotionSetup (44 bytes)</title></rect>
 <rect width="3.17" height="2.96" x="737.66" y="303.27" class="named"><title>0x00428320 lara_as_fallback (44 bytes)</title></rect>
 <rect width="3.17" height="2.96" x="743.83" y="303.27" class="named"><title>0x004339a0 InitialiseMovingBlock (44 bytes)</title></rect>

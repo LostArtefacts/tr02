@@ -81,3 +81,10 @@ void Inv_RingLight(RING_INFO *ring)
     phd_GetVectorAngles(ring->light.x, ring->light.y, ring->light.z, angles);
     phd_RotateLight(angles[1], angles[0]);
 }
+
+void Inv_RingCalcAdders(RING_INFO *ring, sint16 rotation_duration)
+{
+    ring->angle_adder = 0x10000 / ring->number_of_objects;
+    ring->rot_adderL = ring->angle_adder / rotation_duration;
+    ring->rot_adderR = -ring->rot_adderL;
+}
