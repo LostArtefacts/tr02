@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.71% (782)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">37.05% (462)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">62.79% (783)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">36.97% (461)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="468.45" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="468.45" y="0" class="decompiled"/>
-<rect width="276.76" height="6" x="470.24" y="0" class="todo"/>
+<rect width="469.05" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="469.05" y="0" class="decompiled"/>
+<rect width="276.16" height="6" x="470.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1002,7 +1002,7 @@
 <rect width="12" height="12" x="465" y="270" class="todo"><title>0x00448760 CreateClipper (157 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="todo"><title>0x00448800 CreateWindowPalette (211 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="270" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="270" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="270" class="todo"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.28%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">46.29%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">53.70%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="345.69" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="345.69" y="0" class="decompiled"/>
-<rect width="401.26" height="6" x="345.74" y="0" class="todo"/>
+<rect width="345.78" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="345.78" y="0" class="decompiled"/>
+<rect width="401.17" height="6" x="345.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.11" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2330,7 +2330,7 @@
 <rect width="2.78" height="3.19" x="681.50" y="334.99" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="2.78" height="3.19" x="681.50" y="341.17" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="2.78" height="3.19" x="681.50" y="347.36" class="named"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
-<rect width="2.78" height="3.19" x="681.50" y="353.54" class="todo"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
+<rect width="2.78" height="3.19" x="681.50" y="353.54" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="2.78" height="3.19" x="681.50" y="359.73" class="named"><title>0x0044d210 HWR_ResetColorKey (43 bytes)</title></rect>
 <rect width="2.78" height="3.04" x="681.50" y="365.92" class="named"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="2.78" height="3.04" x="681.50" y="371.96" class="named"><title>0x0043fa30 SOUND_Init (42 bytes)</title></rect>
