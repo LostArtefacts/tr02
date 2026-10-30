@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.39% (740)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.61% (506)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">59.47% (741)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">40.53% (505)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="443.64" height="6" x="0" y="0" class="named"/>
-<rect width="303.36" height="6" x="443.64" y="0" class="todo"/>
+<rect width="444.24" height="6" x="0" y="0" class="named"/>
+<rect width="302.76" height="6" x="444.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -636,7 +636,7 @@
 <rect width="12" height="12" x="240" y="165" class="named"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="165" class="named"><title>0x004312a0 InitialiseLaraInventory (876 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="165" class="named"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="165" class="todo"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="165" class="named"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="165" class="named"><title>0x00431870 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="165" class="named"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="165" class="named"><title>0x00431940 lara_as_surfleft (96 bytes)</title></rect>
@@ -1317,10 +1317,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.96%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">57.04%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">43.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">56.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="320.93" height="6" x="0" y="0" class="named"/>
-<rect width="426.07" height="6" x="320.93" y="0" class="todo"/>
+<rect width="321.68" height="6" x="0" y="0" class="named"/>
+<rect width="425.32" height="6" x="321.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.13" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1597,7 +1597,7 @@
 <rect width="13.76" height="14.42" x="449.64" y="77.81" class="named"><title>0x0043a330 InitialiseLevel (351 bytes)</title></rect>
 <rect width="13.76" height="14.37" x="449.64" y="95.22" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
 <rect width="13.76" height="14.27" x="449.64" y="112.59" class="named"><title>0x004327c0 LaraSwimCollision (348 bytes)</title></rect>
-<rect width="13.76" height="14.07" x="449.64" y="129.86" class="todo"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
+<rect width="13.76" height="14.07" x="449.64" y="129.86" class="named"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
 <rect width="13.76" height="13.97" x="449.64" y="146.93" class="named"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>
 <rect width="13.76" height="13.92" x="449.64" y="163.90" class="named"><title>0x004421c0 SpikeCollision (341 bytes)</title></rect>
 <rect width="13.76" height="13.92" x="449.64" y="180.82" class="named"><title>0x00442a30 DartsControl (341 bytes)</title></rect>
