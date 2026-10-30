@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.56% (219)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.44% (1028)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">17.64% (220)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">82.36% (1027)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="131.19" height="6" x="0" y="0" class="named"/>
-<rect width="615.81" height="6" x="131.19" y="0" class="todo"/>
+<rect width="131.79" height="6" x="0" y="0" class="named"/>
+<rect width="615.21" height="6" x="131.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -596,7 +596,7 @@
 <rect width="12" height="12" x="390" y="150" class="named"><title>0x0042da10 lara_as_climbend (30 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="150" class="named"><title>0x0042da30 lara_as_climbdown (20 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="150" class="named"><title>0x0042da50 lara_col_climbleft (93 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="150" class="todo"><title>0x0042dab0 lara_col_climbright (89 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="150" class="named"><title>0x0042dab0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="150" class="todo"><title>0x0042db10 lara_col_climbstnc (525 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="150" class="todo"><title>0x0042dd20 lara_col_climbing (333 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="150" class="todo"><title>0x0042de70 lara_col_climbdown (412 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.48%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.52%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">5.51%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">94.49%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="40.96" height="6" x="0" y="0" class="named"/>
-<rect width="706.04" height="6" x="40.96" y="0" class="todo"/>
+<rect width="41.16" height="6" x="0" y="0" class="named"/>
+<rect width="705.84" height="6" x="41.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.59" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2067,7 +2067,7 @@
 <rect width="5.40" height="5.88" x="608.96" y="281.05" class="todo"><title>0x0041c5b0 DoBloodSplat (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="289.93" class="todo"><title>0x0041d340 DoChimeSound (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="298.81" class="todo"><title>0x004295e0 lara_col_splat (89 bytes)</title></rect>
-<rect width="5.40" height="5.88" x="608.96" y="307.68" class="todo"><title>0x0042dab0 lara_col_climbright (89 bytes)</title></rect>
+<rect width="5.40" height="5.88" x="608.96" y="307.68" class="named"><title>0x0042dab0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="5.40" height="5.88" x="608.96" y="316.56" class="todo"><title>0x0044d240 HWR_ResetZBuffer (89 bytes)</title></rect>
 <rect width="5.40" height="5.78" x="608.96" y="325.44" class="todo"><title>0x0041ef70 InitialiseXianLord (88 bytes)</title></rect>
 <rect width="5.40" height="5.78" x="608.96" y="334.21" class="todo"><title>0x00427500 ClearBodyBag (88 bytes)</title></rect>

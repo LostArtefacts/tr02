@@ -91,3 +91,17 @@ void lara_col_climbleft(ITEM_INFO *item, COLL_INFO *coll)
 
     LaraDoClimbLeftRight(item, coll, result, shift);
 }
+
+void lara_col_climbright(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int result, shift;
+
+    if (LaraCheckForLetGo(item, coll))
+        return;
+
+    lara.move_angle = item->pos.y_rot + 16384;
+
+    result = LaraTestClimbPos(item, coll->radius, (coll->radius + CLIMB_WIDTHR), -CLIMB_HITE, CLIMB_HITE, &shift);
+
+    LaraDoClimbLeftRight(item, coll, result, shift);
+}
