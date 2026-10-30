@@ -171,7 +171,7 @@ extern "C" void WinInRunControlPanel(HWND hWnd)
         DInput->RunControlPanel(hWnd, 0);
 }
 
-extern "C" void DInputJoystickCreate(void);
+extern "C" bool DInputJoystickCreate(void);
 
 extern "C" void WinInStart(void)
 {
@@ -189,6 +189,15 @@ struct STRING_FLAGGED {
     {
         if (isPresented)
             delete[] lpString;
+    }
+    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
+    {
+        if (this != &src) {
+            if (!isPresented)
+                lpString = new char[strlen(src.lpString) + 1];
+            strcpy(lpString, src.lpString);
+        }
+        return *this;
     }
 };
 
@@ -271,4 +280,14 @@ extern "C" bool WinInputInit(void)
     result = DInputEnumDevices(&JoystickList);
     DInputRelease();
     return result;
+}
+
+extern "C" JOYSTICK CurrentJoystick;
+
+extern "C" bool DInputJoystickCreate(void)
+{
+    if (!SavedAppSettings.PreferredJoystick)
+        return true;
+    CurrentJoystick = ((JOYSTICK_NODE *)SavedAppSettings.PreferredJoystick)->body;
+    return true;
 }
