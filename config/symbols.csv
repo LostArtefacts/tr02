@@ -1108,7 +1108,7 @@ address,size,name,symbol
 0x00454540,189,Func454540,
 0x00454600,138,Func454600,
 0x00454690,564,Func454690,
-0x004548d0,75,Func4548d0,
+0x004548d0,75,SE_OptionsStrCat,_SE_OptionsStrCat
 0x00454a30,169,SE_AdvancedDlgUpdate,_SE_AdvancedDlgUpdate
 0x00454ae0,14,SE_AdvancedDlgInit,_SE_AdvancedDlgInit
 0x00454af0,17,SE_FindSetupDialog,_SE_FindSetupDialog

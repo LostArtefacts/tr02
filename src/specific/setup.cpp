@@ -125,6 +125,20 @@ extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick)
     ChangedAppSettings.PreferredJoystick = joystick;
 }
 
+extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCSTR src)
+{
+    if (!isEnabled)
+        return;
+    if (*isNext)
+    {
+        *(*dst)++ = ',';
+        *(*dst)++ = ' ';
+    }
+    while (*src)
+        *(*dst)++ = *src++;
+    *isNext = true;
+}
+
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
 
 extern "C" void SE_AdvancedDlgInit(HWND hwndDlg)

@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.57% (905)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.86% (335)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.65% (906)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">26.78% (334)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="542.13" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="542.13" y="0" class="decompiled"/>
-<rect width="200.68" height="6" x="546.32" y="0" class="todo"/>
+<rect width="542.73" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="542.73" y="0" class="decompiled"/>
+<rect width="200.08" height="6" x="546.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1177,7 +1177,7 @@
 <rect width="12" height="12" x="90" y="330" class="todo"><title>0x00454540 Func454540 (189 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="todo"><title>0x00454600 Func454600 (138 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="330" class="todo"><title>0x00454690 Func454690 (564 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="330" class="todo"><title>0x004548d0 Func4548d0 (75 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="330" class="named"><title>0x004548d0 SE_OptionsStrCat (75 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="todo"><title>0x00454a30 SE_AdvancedDlgUpdate (169 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="named"><title>0x00454ae0 SE_AdvancedDlgInit (14 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="330" class="named"><title>0x00454af0 SE_FindSetupDialog (17 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.72%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.20%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">53.74%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">46.17%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="401.31" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="401.31" y="0" class="decompiled"/>
-<rect width="345.08" height="6" x="401.92" y="0" class="todo"/>
+<rect width="401.47" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="401.47" y="0" class="decompiled"/>
+<rect width="344.92" height="6" x="402.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.06" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2129,7 +2129,7 @@
 <rect width="4.99" height="4.79" x="626.19" y="293.19" class="named"><title>0x004280b0 lara_as_fastturn (75 bytes)</title></rect>
 <rect width="4.99" height="4.79" x="626.19" y="300.99" class="named"><title>0x0042fca0 set_flare_arm (75 bytes)</title></rect>
 <rect width="4.99" height="4.79" x="626.19" y="308.78" class="named"><title>0x00442b90 DartEffectControl (75 bytes)</title></rect>
-<rect width="4.99" height="4.79" x="626.19" y="316.58" class="todo"><title>0x004548d0 Func4548d0 (75 bytes)</title></rect>
+<rect width="4.99" height="4.79" x="626.19" y="316.58" class="named"><title>0x004548d0 SE_OptionsStrCat (75 bytes)</title></rect>
 <rect width="4.99" height="4.69" x="626.19" y="324.37" class="named"><title>0x00428230 lara_as_backjump (74 bytes)</title></rect>
 <rect width="4.99" height="4.69" x="626.19" y="332.06" class="todo"><title>0x00447110 InsertDisplayModeInListTail (74 bytes)</title></rect>
 <rect width="4.99" height="4.69" x="626.19" y="339.75" class="named"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
