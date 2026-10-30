@@ -80,6 +80,11 @@ extern "C" bool IsNewRegistryKeyCreated(void)
     return RegKeyDisposition == REG_CREATED_NEW_KEY;
 }
 
+extern "C" LONG CloseRegistryKey(void)
+{
+    return RegCloseKey(HKey);
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);
