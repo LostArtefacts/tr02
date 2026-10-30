@@ -307,6 +307,40 @@ void ControlSnowSprite(sint16 fx_num)
     }
 }
 
+void ControlHotLiquid(sint16 fx_num)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+    sint32 height;
+
+    fx = &effects[fx_num];
+    fx->frame_number--;
+    if (fx->frame_number <= objects[HOT_LIQUID].nmeshes)
+        fx->frame_number = 0;
+
+    fx->pos.y_pos += fx->fallspeed;
+    fx->fallspeed += GRAVITY;
+
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    height = GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos);
+    if (fx->pos.y_pos >= height)
+    {
+        SoundEffect(285, &fx->pos, 0);
+        fx->object_number = SPLASH1;
+        fx->pos.y_pos = height;
+        fx->pos.y_rot = GetRandomDraw() * 2;
+        fx->fallspeed = 0;
+        fx->speed = 50;
+        return;
+    }
+
+    if (fx->room_number != room_number)
+        EffectNewRoom(fx_num, room_number);
+    SoundEffect(284, &fx->pos, 0);
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.75% (371)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.25% (876)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">29.83% (372)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">70.17% (875)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="222.24" height="6" x="0" y="0" class="named"/>
-<rect width="524.76" height="6" x="222.24" y="0" class="todo"/>
+<rect width="222.84" height="6" x="0" y="0" class="named"/>
+<rect width="524.16" height="6" x="222.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -323,7 +323,7 @@
 <rect width="12" height="12" x="45" y="75" class="named"><title>0x0041cb40 ControlSplash1 (113 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="75" class="named"><title>0x0041cbc0 ControlWaterSprite (174 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="75" class="named"><title>0x0041cc70 ControlSnowSprite (140 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="75" class="todo"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="75" class="named"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="75" class="todo"><title>0x0041cde0 WaterFall (317 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="75" class="named"><title>0x0041cf20 finish_level_effect (11 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="75" class="named"><title>0x0041cf30 turn180_effect (22 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.69%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.76%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.24%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="79.88" height="6" x="0" y="0" class="named"/>
-<rect width="667.12" height="6" x="79.88" y="0" class="todo"/>
+<rect width="80.37" height="6" x="0" y="0" class="named"/>
+<rect width="666.63" height="6" x="80.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1724,7 +1724,7 @@
 <rect width="10.77" height="10.69" x="495.87" y="137.50" class="todo"><title>0x0043cf20 SkidooCheckGeton (225 bytes)</title></rect>
 <rect width="10.77" height="10.62" x="495.87" y="151.19" class="todo"><title>0x0042a5c0 TestWall (224 bytes)</title></rect>
 <rect width="10.77" height="10.62" x="495.87" y="164.81" class="named"><title>0x00442810 FallingCeiling (224 bytes)</title></rect>
-<rect width="10.77" height="10.50" x="495.87" y="178.44" class="todo"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
+<rect width="10.77" height="10.50" x="495.87" y="178.44" class="named"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="191.94" class="todo"><title>0x00412430 ControlCinematicPlayer (220 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="205.32" class="todo"><title>0x00433dd0 TestBlockPush (220 bytes)</title></rect>
 <rect width="10.77" height="10.38" x="495.87" y="218.70" class="todo"><title>0x00435020 SmashIceControl (220 bytes)</title></rect>
