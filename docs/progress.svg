@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.73% (271)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.27% (976)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">21.81% (272)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">78.19% (975)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="162.34" height="6" x="0" y="0" class="named"/>
-<rect width="584.66" height="6" x="162.34" y="0" class="todo"/>
+<rect width="162.94" height="6" x="0" y="0" class="named"/>
+<rect width="584.06" height="6" x="162.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -542,7 +542,7 @@
 <rect width="12" height="12" x="330" y="135" class="todo"><title>0x00429cb0 lara_col_roll2 (206 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="135" class="todo"><title>0x00429d80 lara_col_special (19 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="135" class="named"><title>0x00429da0 lara_col_swandive (105 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="135" class="todo"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="135" class="named"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="135" class="todo"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="135" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="135" class="todo"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.78%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.22%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">6.81%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">93.19%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="50.61" height="6" x="0" y="0" class="named"/>
-<rect width="696.39" height="6" x="50.61" y="0" class="todo"/>
+<rect width="50.88" height="6" x="0" y="0" class="named"/>
+<rect width="696.12" height="6" x="50.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.58" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1964,7 +1964,7 @@
 <rect width="7.38" height="6.85" x="579.83" y="348.52" class="todo"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
 <rect width="7.38" height="6.85" x="579.83" y="358.37" class="todo"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="7.38" height="6.77" x="579.83" y="368.23" class="todo"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
-<rect width="7.18" height="6.96" x="590.21" y="207.83" class="todo"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
+<rect width="7.18" height="6.96" x="590.21" y="207.83" class="named"><title>0x00429e10 lara_col_fastdive (121 bytes)</title></rect>
 <rect width="7.18" height="6.96" x="600.38" y="207.83" class="named"><title>0x0044ada0 LoadCinematic (121 bytes)</title></rect>
 <rect width="7.09" height="6.96" x="610.56" y="207.83" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="7.09" height="6.96" x="620.65" y="207.83" class="todo"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
