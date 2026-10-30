@@ -12,6 +12,67 @@ extern "C" int SavedGames;
 extern int save_counter;
 extern "C" sint16 saved_levels[];
 
+extern "C" uint32 CurrentLevel;
+extern "C" int title_loaded;
+extern "C" int level_complete;
+extern "C" sint16 InventoryChosen;
+extern "C" int InventoryExtraData[];
+extern "C" SAVEGAME_INFO savegame;
+extern "C" void ModifyStartInfo(int level_number);
+extern "C" void InitialiseLevelFlags(void);
+extern "C" int InitialiseLevel(int level_number, int type);
+extern "C" sint32 GameLoop(int demo_mode);
+extern "C" void S_FadeToBlack(void);
+extern "C" void S_FadeInInventory(int fade);
+extern "C" int S_LoadGame(void *data, int size, int slot);
+
+extern "C" sint32 StartGame(int level_number, int type)
+{
+    sint32 result;
+
+    if (type == IL_NORMAL || type == IL_SAVED || type == IL_DEMO)
+        CurrentLevel = level_number;
+    if (type != IL_SAVED)
+        ModifyStartInfo(level_number);
+    title_loaded = 0;
+    if (type != IL_SAVED)
+        InitialiseLevelFlags();
+    if (!InitialiseLevel(level_number, type)) {
+        CurrentLevel = 0;
+        return EXITGAME;
+    }
+    result = GameLoop(0);
+    if (result == EXIT_TO_TITLE || result == STARTDEMO)
+        return result;
+    if (result == EXITGAME) {
+        CurrentLevel = 0;
+        return EXITGAME;
+    }
+    if (level_complete) {
+        if (gameflow.demoversion && gameflow.singlelevel)
+            return EXIT_TO_TITLE;
+        if (CurrentLevel == LV_GYM) {
+            S_FadeToBlack();
+            return EXIT_TO_TITLE;
+        }
+        S_FadeInInventory(1);
+        return LEVELCOMPLETE | CurrentLevel;
+    }
+    S_FadeToBlack();
+    if (!InventoryChosen)
+        return EXIT_TO_TITLE;
+    if (InventoryExtraData[0] == 0) {
+        S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), InventoryExtraData[1]);
+        return STARTSAVEDGAME | InventoryExtraData[1];
+    }
+    if (InventoryExtraData[0] == 1) {
+        if (gameflow.play_any_level)
+            return STARTGAME | (InventoryExtraData[1] + 1);
+        return STARTGAME | LV_FIRSTLEVEL;
+    }
+    return EXIT_TO_TITLE;
+}
+
 sint32 LevelCompleteSequence(int level_number)
 {
     return EXIT_TO_TITLE;
