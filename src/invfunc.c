@@ -2,6 +2,7 @@
 #include "game.h"
 #include "invdata.h"
 #include "inventry.h"
+#include "savegame.h"
 
 #define ROTATE_DURATION 24
 #define CAMERA_YOFFSET -0x60
@@ -133,6 +134,214 @@ void RingIsNotOpen(RING_INFO *ring)
     Inv_downArrow1 = NULL;
     T_RemovePrint(Inv_downArrow2);
     Inv_downArrow2 = NULL;
+}
+
+#define PASSPORT_OPTION 120
+#define SHOTGUN_OPTION 158
+#define MAGNUM_OPTION 159
+#define UZI_OPTION 160
+#define HARPOON_OPTION 161
+#define M16_OPTION 162
+#define ROCKET_OPTION 163
+#define SG_AMMO_OPTION 165
+#define MAG_AMMO_OPTION 166
+#define UZI_AMMO_OPTION 167
+#define HARPOON_AMMO_OPTION 168
+#define M16_AMMO_OPTION 169
+#define ROCKET_AMMO_OPTION 170
+#define MEDI_OPTION 171
+#define BIGMEDI_OPTION 172
+#define FLAREBOX_OPTION 173
+#define PUZZLE_OPTION1 178
+#define PUZZLE_OPTION2 179
+#define PUZZLE_OPTION3 180
+#define PUZZLE_OPTION4 181
+#define KEY_OPTION1 197
+#define KEY_OPTION2 198
+#define KEY_OPTION3 199
+#define KEY_OPTION4 200
+#define PICKUP_OPTION1 207
+#define PICKUP_OPTION2 208
+#define SHOTGUN_AMMO_CLIP 6
+#define NUM_SG_SHELLS 2
+
+extern char **GF_Puzzle1Strings, **GF_Puzzle2Strings, **GF_Puzzle3Strings, **GF_Puzzle4Strings;
+extern char **GF_Pickup1Strings, **GF_Pickup2Strings;
+extern char **GF_Key1Strings, **GF_Key2Strings, **GF_Key3Strings, **GF_Key4Strings;
+extern int HealthBarTimer;
+
+int FlashIt(void);
+void DrawHealthBar(int flash_state);
+void MakeAmmoString(char *string);
+int Inv_RequestItem(int itemNum);
+__declspec(dllimport) int __cdecl wsprintfA(char *buf, const char *fmt, ...);
+
+void RingNotActive(INVENTORY_ITEM *inv_item)
+{
+    int tempInt;
+    char tempText[64];
+
+    if (!Inv_itemText[IT_NAME])
+    {
+        switch (inv_item->object_number)
+        {
+        case PUZZLE_OPTION1:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle1Strings[CurrentLevel]);
+            break;
+
+        case PUZZLE_OPTION2:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle2Strings[CurrentLevel]);
+            break;
+
+        case PUZZLE_OPTION3:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle3Strings[CurrentLevel]);
+            break;
+
+        case PUZZLE_OPTION4:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle4Strings[CurrentLevel]);
+            break;
+
+        case PICKUP_OPTION1:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Pickup1Strings[CurrentLevel]);
+            break;
+
+        case PICKUP_OPTION2:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Pickup2Strings[CurrentLevel]);
+            break;
+
+        case KEY_OPTION1:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key1Strings[CurrentLevel]);
+            break;
+
+        case KEY_OPTION2:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key2Strings[CurrentLevel]);
+            break;
+
+        case KEY_OPTION3:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key3Strings[CurrentLevel]);
+            break;
+
+        case KEY_OPTION4:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key4Strings[CurrentLevel]);
+            break;
+
+        case PASSPORT_OPTION:
+            break;
+
+        default:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, inv_item->itemText);
+            break;
+        }
+
+        if (Inv_itemText[IT_NAME])
+        {
+            T_BottomAlign(Inv_itemText[IT_NAME], 1);
+            T_CentreH(Inv_itemText[IT_NAME], 1);
+        }
+    }
+
+    tempInt = Inv_RequestItem(inv_item->object_number);
+
+    switch (inv_item->object_number)
+    {
+    case SHOTGUN_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%5d", lara.shotgun.ammo / SHOTGUN_AMMO_CLIP);
+        else
+            return;
+        break;
+
+    case MAGNUM_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%5d", lara.magnums.ammo);
+        else
+            return;
+        break;
+
+    case UZI_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%5d", lara.uzis.ammo);
+        else
+            return;
+        break;
+
+    case HARPOON_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%5d", lara.harpoon.ammo);
+        else
+            return;
+        break;
+
+    case M16_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%5d", lara.m16.ammo);
+        else
+            return;
+        break;
+
+    case ROCKET_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%5d", lara.grenade.ammo);
+        else
+            return;
+        break;
+
+    case SG_AMMO_OPTION:
+        if (!Inv_itemText[IT_QTY])
+            wsprintfA(tempText, "%d", tempInt * NUM_SG_SHELLS);
+        else
+            return;
+        break;
+
+    case MAG_AMMO_OPTION:
+    case UZI_AMMO_OPTION:
+    case M16_AMMO_OPTION:
+    case HARPOON_AMMO_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%d", tempInt * 2);
+        else
+            return;
+        break;
+
+    case ROCKET_AMMO_OPTION:
+    case FLAREBOX_OPTION:
+        if (!Inv_itemText[IT_QTY] && !savegame.bonus_flag)
+            wsprintfA(tempText, "%d", tempInt);
+        else
+            return;
+        break;
+
+    case MEDI_OPTION:
+    case BIGMEDI_OPTION:
+        HealthBarTimer = 40;
+        DrawHealthBar(FlashIt());
+    case PUZZLE_OPTION1:
+    case PUZZLE_OPTION2:
+    case PUZZLE_OPTION3:
+    case PUZZLE_OPTION4:
+    case PICKUP_OPTION1:
+    case PICKUP_OPTION2:
+    case KEY_OPTION1:
+    case KEY_OPTION2:
+    case KEY_OPTION3:
+    case KEY_OPTION4:
+        if (!Inv_itemText[IT_QTY] && tempInt > 1)
+            wsprintfA(tempText, "%d", tempInt);
+        else
+            return;
+        break;
+
+    default:
+        return;
+    }
+
+    if (!Inv_itemText[IT_QTY])
+    {
+        MakeAmmoString(tempText);
+        Inv_itemText[IT_QTY] = T_Print(64, -56, 0, tempText);
+        T_BottomAlign(Inv_itemText[IT_QTY], 1);
+        T_CentreH(Inv_itemText[IT_QTY], 1);
+    }
 }
 
 void RingActive(void)
