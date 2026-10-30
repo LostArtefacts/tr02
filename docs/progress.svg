@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.58% (531)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.42% (716)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">42.66% (532)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">57.34% (715)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="318.09" height="6" x="0" y="0" class="named"/>
-<rect width="428.91" height="6" x="318.09" y="0" class="todo"/>
+<rect width="318.69" height="6" x="0" y="0" class="named"/>
+<rect width="428.31" height="6" x="318.69" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -408,7 +408,7 @@
 <rect width="12" height="12" x="570" y="90" class="named"><title>0x00424290 RingActive (50 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="90" class="todo"><title>0x004242d0 Inv_AddItem (1726 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="90" class="todo"><title>0x00424ae0 Inv_InsertItem (297 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="90" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="90" class="named"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="90" class="named"><title>0x00424c90 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="90" class="todo"><title>0x00424cb0 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="90" class="todo"><title>0x00424dc0 Inv_GetItemOption (193 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.62%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.38%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">20.65%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">79.35%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="154" height="6" x="0" y="0" class="named"/>
-<rect width="593" height="6" x="154" y="0" class="todo"/>
+<rect width="154.26" height="6" x="0" y="0" class="named"/>
+<rect width="592.74" height="6" x="154.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.47" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1970,7 +1970,7 @@
 <rect width="7.09" height="6.95" x="620.73" y="208.04" class="named"><title>0x00413840 CreatureCollision (120 bytes)</title></rect>
 <rect width="7.09" height="6.95" x="630.82" y="208.04" class="named"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
 <rect width="7" height="6.95" x="640.90" y="208.04" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
-<rect width="7" height="6.95" x="650.91" y="208.04" class="todo"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
+<rect width="7" height="6.95" x="650.91" y="208.04" class="named"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="7" height="6.95" x="660.91" y="208.04" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="6.92" height="6.95" x="670.91" y="208.04" class="named"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="6.92" height="6.95" x="680.83" y="208.04" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
