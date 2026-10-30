@@ -12,8 +12,13 @@
 #define BLOOD1 233
 #define BUBBLES1 231
 #define RICOCHET1 238
+#define SPLASH1 230
+#define UNDERWATER 1
+#define GRAVITY 6
 
 void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
@@ -167,6 +172,42 @@ void CreateBubble(PHD_3DPOS *pos, sint16 room_number)
         fx->frame_number = -((GetRandomDraw() * 3) >> 15);
         fx->object_number = BUBBLES1;
     }
+}
+
+void ControlBubble1(sint16 fx_num)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, ceiling;
+    sint16 room_number;
+
+    fx = &effects[fx_num];
+    fx->pos.y_rot += 1638;
+    fx->pos.x_rot += 2366;
+    x = fx->pos.x_pos + ((phd_sin(fx->pos.y_rot) * 11) >> W2V_SHIFT);
+    y = fx->pos.y_pos - fx->speed;
+    z = fx->pos.z_pos + ((phd_cos(fx->pos.x_rot) * 8) >> W2V_SHIFT);
+
+    room_number = fx->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    if (!floor || !(room[room_number].flags & UNDERWATER))
+    {
+        KillEffect(fx_num);
+        return;
+    }
+
+    ceiling = GetCeiling(floor, x, y, z);
+    if (ceiling == NO_HEIGHT || y <= ceiling)
+    {
+        KillEffect(fx_num);
+        return;
+    }
+
+    if (fx->room_number != room_number)
+        EffectNewRoom(fx_num, room_number);
+    fx->pos.x_pos = x;
+    fx->pos.y_pos = y;
+    fx->pos.z_pos = z;
 }
 
 void finish_level_effect(ITEM_INFO *item)
