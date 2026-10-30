@@ -1248,6 +1248,46 @@ void lara_col_fastfall(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+#define HANG_A 96
+#define HANG_F GF(HANG_A, 21)
+#define HANGUP_A 187
+#define HANGUP_F GF(HANGUP_A, 0)
+#define HANGDOWN_A 188
+#define HANGDOWN_F GF(HANGDOWN_A, 0)
+
+void lara_col_hang(ITEM_INFO *item, COLL_INFO *coll)
+{
+    LaraHangTest(item, coll);
+    if (item->goal_anim_state == AS_HANG)
+    {
+        if (input & IN_FORWARD)
+        {
+            if (coll->front_floor > -850 && coll->front_floor < -650 && coll->front_floor - coll->front_ceiling >= 0
+                && coll->left_floor - coll->left_ceiling >= 0 && coll->right_floor - coll->right_ceiling >= 0 && !coll->hit_static)
+            {
+                if (input & IN_SLOW)
+                    item->goal_anim_state = AS_GYMNAST;
+                else
+                    item->goal_anim_state = AS_NULL;
+            }
+            else if (lara.climb_status && item->anim_number == HANG_A && item->frame_number == HANG_F && coll->mid_ceiling <= -256)
+            {
+                item->goal_anim_state = AS_HANG;
+                item->current_anim_state = AS_HANG;
+                item->anim_number = HANGUP_A;
+                item->frame_number = HANGUP_F;
+            }
+        }
+        else if ((input & IN_BACK) && lara.climb_status && item->anim_number == HANG_A && item->frame_number == HANG_F)
+        {
+            item->goal_anim_state = AS_HANG;
+            item->current_anim_state = AS_HANG;
+            item->anim_number = HANGDOWN_A;
+            item->frame_number = HANGDOWN_F;
+        }
+    }
+}
+
 void lara_col_reach(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->gravity_status = 1;
@@ -1425,6 +1465,9 @@ void lara_col_leftjump(ITEM_INFO *item, COLL_INFO *coll)
     lara.move_angle = item->pos.y_rot - 16384;
     lara_col_jumper(item, coll);
 }
+
+int LaraTestHangJumpUp(ITEM_INFO *item, COLL_INFO *coll);
+void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, sint16 room_number, sint32 objheight);
 
 void lara_col_fallback(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -1960,7 +2003,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)

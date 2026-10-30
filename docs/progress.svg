@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.17% (688)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.83% (559)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">55.25% (689)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">44.75% (558)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="412.14" height="6" x="0" y="0" class="named"/>
-<rect width="334.86" height="6" x="412.14" y="0" class="todo"/>
+<rect width="412.74" height="6" x="0" y="0" class="named"/>
+<rect width="334.26" height="6" x="412.74" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -521,7 +521,7 @@
 <rect width="12" height="12" x="15" y="135" class="named"><title>0x004292f0 lara_col_turn_l (19 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00429310 lara_col_death (104 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="135" class="named"><title>0x00429380 lara_col_fastfall (153 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="135" class="todo"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="135" class="named"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="135" class="named"><title>0x00429550 lara_col_reach (144 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="135" class="named"><title>0x004295e0 lara_col_splat (89 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="135" class="named"><title>0x00429640 lara_col_compress (150 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.93%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">37.16%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">62.84%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="276.94" height="6" x="0" y="0" class="named"/>
-<rect width="470.06" height="6" x="276.94" y="0" class="todo"/>
+<rect width="277.58" height="6" x="0" y="0" class="named"/>
+<rect width="469.42" height="6" x="277.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.23" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1642,7 +1642,7 @@
 <rect width="12.72" height="12.69" x="465.41" y="239.28" class="named"><title>0x0041d410 SphereOfDoomCollision (296 bytes)</title></rect>
 <rect width="12.72" height="12.69" x="465.41" y="254.97" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12.72" height="12.69" x="465.41" y="270.66" class="todo"><title>0x0044d0b0 HWR_InitState (296 bytes)</title></rect>
-<rect width="12.72" height="12.64" x="465.41" y="286.35" class="todo"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
+<rect width="12.72" height="12.64" x="465.41" y="286.35" class="named"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
 <rect width="12.72" height="12.48" x="465.41" y="301.99" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
 <rect width="12.72" height="12.27" x="465.41" y="317.47" class="named"><title>0x0044d9b0 Key (288 bytes)</title></rect>
 <rect width="12.72" height="12.16" x="465.41" y="332.73" class="named"><title>0x00426d30 KillItem (286 bytes)</title></rect>
