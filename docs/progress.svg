@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.20% (926)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.24% (315)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.28% (927)</tspan> · <tspan class="decompiled">0.56% (7)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">25.16% (314)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="554.26" height="6" x="0" y="0" class="named"/>
-<rect width="4.19" height="6" x="554.26" y="0" class="decompiled"/>
-<rect width="188.55" height="6" x="558.45" y="0" class="todo"/>
+<rect width="554.86" height="6" x="0" y="0" class="named"/>
+<rect width="4.19" height="6" x="554.86" y="0" class="decompiled"/>
+<rect width="187.95" height="6" x="559.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1015,7 +1015,7 @@
 <rect width="12" height="12" x="660" y="270" class="todo"><title>0x004493a0 ApplySettings (284 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="270" class="todo"><title>0x004495b0 FmvBackToGame (68 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="270" class="todo"><title>0x004496c0 GameApplySettings (570 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="270" class="todo"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="270" class="named"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="270" class="named"><title>0x00449970 DecodeErrorMessage (12 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="named"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="285" class="todo"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
@@ -1320,11 +1320,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.85%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.07%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">54.88%</tspan> · <tspan class="decompiled">0.08%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">45.04%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="409.73" height="6" x="0" y="0" class="named"/>
-<rect width="0.61" height="6" x="409.73" y="0" class="decompiled"/>
-<rect width="336.66" height="6" x="410.34" y="0" class="todo"/>
+<rect width="409.96" height="6" x="0" y="0" class="named"/>
+<rect width="0.61" height="6" x="409.96" y="0" class="decompiled"/>
+<rect width="336.44" height="6" x="410.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2018,7 +2018,7 @@
 <rect width="6.04" height="6.54" x="599.93" y="228.36" class="named"><title>0x0041d3a0 ControlClockChimes (104 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.93" y="237.89" class="named"><title>0x00429310 lara_col_death (104 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.93" y="247.43" class="named"><title>0x0043c7c0 InitialiseObjects (104 bytes)</title></rect>
-<rect width="6.04" height="6.54" x="599.93" y="256.97" class="todo"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
+<rect width="6.04" height="6.54" x="599.93" y="256.97" class="named"><title>0x00449900 UpdateGameResolution (104 bytes)</title></rect>
 <rect width="6.04" height="6.54" x="599.93" y="266.50" class="todo"><title>0x004544d0 Func4544d0 (104 bytes)</title></rect>
 <rect width="6.04" height="6.44" x="599.93" y="276.04" class="named"><title>0x004139a0 TrapCollision (103 bytes)</title></rect>
 <rect width="6.04" height="6.44" x="599.93" y="285.48" class="named"><title>0x0041d270 ControlAlarmSound (103 bytes)</title></rect>

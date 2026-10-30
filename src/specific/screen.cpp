@@ -32,6 +32,7 @@ extern "C" DWORD GetZBufferDepth(void)
     return 8;
 }
 
+#pragma pack(push, 1)
 typedef struct {
     void *PreferredDisplayAdapter;
     void *PreferredSoundAdapter;
@@ -53,7 +54,12 @@ typedef struct {
     bool Disable16BitTextures;
     bool DontSortPrimitives;
     bool FlipBroken;
+    bool DisableFMV;
+    int TexelAdjustMode;
+    int NearestAdjustment;
+    int LinearAdjustment;
 } APP_SETTINGS;
+#pragma pack(pop)
 
 extern "C" {
 extern APP_SETTINGS SavedAppSettings;
@@ -81,4 +87,27 @@ extern LPCTSTR ErrorStringTable[];
 extern "C" LPCTSTR DecodeErrorMessage(DWORD errorCode)
 {
     return ErrorStringTable[errorCode];
+}
+
+#include <stdio.h>
+
+extern "C" {
+extern int GameWindowWidth, GameWindowHeight;
+extern int GameVidWidth, GameVidHeight;
+extern char ModeInfoFormat[];
+void DisplayModeInfo(char *string);
+void GameApplySettings(APP_SETTINGS *newSettings);
+}
+
+extern "C" void UpdateGameResolution(void)
+{
+    APP_SETTINGS newSettings;
+    char modeString[64];
+
+    newSettings = SavedAppSettings;
+    newSettings.WindowWidth = GameWindowWidth;
+    newSettings.WindowHeight = GameWindowHeight;
+    GameApplySettings(&newSettings);
+    sprintf(modeString, ModeInfoFormat, GameVidWidth, GameVidHeight);
+    DisplayModeInfo(modeString);
 }

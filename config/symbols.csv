@@ -1581,6 +1581,7 @@ address,size,name,symbol
 0x00466490,4,fade_value,?fade_value@@3HA
 0x00466494,4,fade_limit,?fade_limit@@3HA
 0x00466498,4,fade_adder,?fade_adder@@3HA
+0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
 0x004664e8,4,ErrorStringTable,_ErrorStringTable
 0x00466a5c,4,DemoExtension,_DemoExtension
 0x00466b80,32,saved_levels,_saved_levels
