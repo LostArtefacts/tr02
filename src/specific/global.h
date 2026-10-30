@@ -30,6 +30,9 @@ void SeedRandomControl(sint32 seed);
 void S_SoundStopAllSamples(void);
 void S_SoundStopSample(sint32 handle);
 void S_SoundSetMasterVolume(int nVolume);
+sint32 S_SoundSampleIsPlaying(sint32 handle);
+void S_SoundSetPanAndVolume(sint32 handle, sint16 wPan, uint16 newvol);
+void S_SoundSetPitch(sint32 handle, int nPitch);
 
 #ifdef __cplusplus
 }

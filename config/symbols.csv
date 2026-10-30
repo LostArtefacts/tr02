@@ -1507,6 +1507,7 @@ address,size,name,symbol
 0x00465a5c,2,SoundVolume,_SoundVolume
 0x00465a60,2,MusicVolume,_MusicVolume
 0x00465ae0,,Weapons,_Weapons
+0x00466278,,tracksRemoved,_tracksRemoved
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
 0x00466480,8,ScreenSizer,_ScreenSizer
 0x00466488,8,GameSizer,_GameSizer
@@ -1528,7 +1529,7 @@ address,size,name,symbol
 0x0046c2f8,4,XGen_y0,_XGen_y0
 0x0046c2fc,4,XGen_y1,_XGen_y1
 0x0046c300,,GouraudTable,_GouraudTable
-0x0046e300,4,PhdWinTop,_PhdWinTop
+0x0046e300,4,phd_top,_phd_top
 0x0046e308,,PhdSpriteInfo,_PhdSpriteInfo
 0x00470308,4,LsAdder,_LsAdder
 0x0047030c,4,FltWinBottom,_FltWinBottom
@@ -1544,11 +1545,11 @@ address,size,name,symbol
 0x0047803c,2,PhdWinMinY,_PhdWinMinY
 0x00478048,4,PhdFarZ,_PhdFarZ
 0x0047804c,4,FltRhwOPersp,_FltRhwOPersp
-0x00478050,4,PhdWinBottom,_PhdWinBottom
+0x00478050,4,phd_bottom,_phd_bottom
 0x00478054,4,PhdPersp,_PhdPersp
-0x00478058,4,PhdWinLeft,_PhdWinLeft
+0x00478058,4,phd_left,_phd_left
 0x00478060,240000,Info3dBuffer,_Info3dBuffer
-0x004b29e0,2,PhdWinMaxX,_PhdWinMaxX
+0x004b29e0,2,phd_winxmax,_phd_winxmax
 0x004b29e4,4,PhdNearZ,_PhdNearZ
 0x004b29e8,4,FltResZORhw,_FltResZORhw
 0x004b29ec,4,FltFarZ,_FltFarZ
@@ -1559,7 +1560,7 @@ address,size,name,symbol
 0x004b2a00,2,PhdWinMinX,_PhdWinMinX
 0x004b2a04,4,FltPerspONearZ,_FltPerspONearZ
 0x004b2a08,4,FltRhwONearZ,_FltRhwONearZ
-0x004b2a0c,2,PhdWinMaxY,_PhdWinMaxY
+0x004b2a0c,2,phd_winymax,_phd_winymax
 0x004b2a14,4,FltNearZ,_FltNearZ
 0x004b2a18,4,phd_mxptr,_phd_mxptr
 0x004b2a28,128,RandomTable,_RandomTable
@@ -1581,7 +1582,7 @@ address,size,name,symbol
 0x004d6b50,4,FltWinRight,_FltWinRight
 0x004d6b58,,LsVectorView,_LsVectorView
 0x004d6b68,128,WibbleTable,_WibbleTable
-0x004d6be8,4,PhdWinRight,_PhdWinRight
+0x004d6be8,4,phd_right,_phd_right
 0x004d6bec,4,SurfaceCount,_SurfaceCount
 0x004d6bf0,4,Sort3dPtr,_Sort3dPtr
 0x004d6bfc,4,WibbleOffset,_WibbleOffset
@@ -1635,7 +1636,7 @@ address,size,name,symbol
 0x004d7c28,4,LevelItemCount,_LevelItemCount
 0x004d7c2c,4,HealthBarTimer,_HealthBarTimer
 0x004d7c64,4,CameraCount,_CameraCount
-0x004d7c68,,SfxInfos,_SfxInfos
+0x004d7c68,,LaSlot,_LaSlot
 0x004d7e6c,4,MinesDetonated,_MinesDetonated
 0x004d7e78,1,BGND_PictureIsReady,_BGND_PictureIsReady
 0x004d7e80,20,BGND_TexturePageIndexes,_BGND_TexturePageIndexes
@@ -1803,8 +1804,8 @@ address,size,name,symbol
 0x0051d6c0,,TheStrings,_TheStrings
 0x0051e6c0,4,SampleInfoCount,_SampleInfoCount
 0x0051e6c4,4,sound_active,_sound_active
-0x0051e6e0,740,SampleLut,_SampleLut
-0x0051e9c4,4,SampleInfos,_SampleInfos
+0x0051e6e0,740,sample_lut,_sample_lut
+0x0051e9c4,4,sample_infos,_sample_infos
 0x0051e9c8,4,SG_Point,_SG_Point
 0x0051e9e0,,SaveGame,_SaveGame
 0x005206a4,4,SG_Count,_SG_Count

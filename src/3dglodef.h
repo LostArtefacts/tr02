@@ -29,6 +29,12 @@ typedef struct phd_3dpos {
 } PHD_3DPOS;
 
 extern sint32 *phd_mxptr;
+extern sint32 phd_left;
+extern sint32 phd_right;
+extern sint32 phd_top;
+extern sint32 phd_bottom;
+extern sint16 phd_winxmax;
+extern sint16 phd_winymax;
 extern sint32 phd_winwidth;
 extern sint32 phd_winheight;
 

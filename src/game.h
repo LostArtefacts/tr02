@@ -20,6 +20,8 @@
 #include "gameflow.h"
 #include "laraflar.h"
 #include "lara1gun.h"
+#include "sound.h"
+#include "sphere.h"
 #include "specific/specific.h"
 #include "specific/global.h"
 
@@ -34,11 +36,14 @@ extern void (*effect_routines[])(ITEM_INFO *item);
 extern int assault_timer_display, assault_timer_active;
 
 int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
-void SOUND_EndScene(void);
 void FlipMap(void);
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
 void InitialiseHair(void);
 void DrawHair(void);
+void DrawAnimatingItem(ITEM_INFO *item);
+void DrawUnclippedItem(ITEM_INFO *item);
+void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
+void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
 sint32 DoDemoSequence(int level_number);
 
 void SoundEffects(void);
