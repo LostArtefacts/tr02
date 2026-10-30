@@ -102,6 +102,17 @@ void Inv_RemoveAllItems(void)
     inv_keys_current = 0;
 }
 
+void RemoveInventoryText(void)
+{
+    int n;
+
+    for (n = 0; n < IT_NUMBEROF; n++)
+    {
+        T_RemovePrint(Inv_itemText[n]);
+        Inv_itemText[n] = NULL;
+    }
+}
+
 void Inv_RingGetView(RING_INFO *ring, PHD_3DPOS *viewer)
 {
     PHD_ANGLE angles[2];
