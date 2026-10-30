@@ -12,6 +12,7 @@ extern "C" bool ZWriteEnableState;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
 extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
+extern "C" D3DTEXTUREHANDLE CurrentTexSource;
 
 void HWR_ResetColorKey()
 {
@@ -33,6 +34,15 @@ void HWR_ResetZBuffer()
         else
             G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZENABLE, false);
         G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZWRITEENABLE, false);
+    }
+}
+
+void HWR_TexSource(D3DTEXTUREHANDLE tSource)
+{
+    if (tSource != CurrentTexSource)
+    {
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREHANDLE, tSource);
+        CurrentTexSource = tSource;
     }
 }
 
