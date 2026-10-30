@@ -23,6 +23,85 @@ sint32 DoDemoSequence(int level_number)
     return GF_DoLevelSequence(level_number, IL_DEMO);
 }
 
+#include <stdio.h>
+#include "savegame.h"
+
+#define RANDOM_SEED 0xd371f947
+
+void LoadLaraDemoPos(void);
+void LaraCheatGetStuff(void);
+int InitialiseLevel(int level_number, int type);
+sint32 GameLoop(int demo_mode);
+void S_ExitSystem(char *message);
+void S_FadeToBlack(void);
+void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate);
+extern sint16 DumpHeight;
+extern int InvDemoMode;
+extern int demo_loaded;
+extern char **GF_levelfilenames;
+
+sint32 StartDemo(int level_number)
+{
+    TEXTSTRING *txt;
+    START_INFO start, *s;
+    static int demo_level = 0;
+    int return_val = EXIT_TO_TITLE;
+    char buf[64];
+
+    if (level_number < 0 && !gameflow.num_demos)
+        return EXIT_TO_TITLE;
+
+    if (level_number < 0)
+    {
+        if (demo_level >= gameflow.num_demos)
+            demo_level = 0;
+        level_number = GF_valid_demos[demo_level];
+        demo_level++;
+    }
+    else
+        demo_level = level_number;
+
+    s = &savegame.start[level_number];
+    memcpy(&start, s, sizeof(START_INFO));
+    s->available = 1;
+    s->got_pistols = 1;
+    s->pistol_ammo = 1000;
+    s->gun_status = LG_ARMLESS;
+    s->gun_type = LG_PISTOLS;
+
+    SeedRandomDraw(RANDOM_SEED);
+    SeedRandomControl(RANDOM_SEED);
+    title_loaded = 0;
+    if (!InitialiseLevel(level_number, IL_DEMO))
+        return EXITGAME;
+
+    level_complete = 0;
+    if (demo_loaded)
+    {
+        LoadLaraDemoPos();
+        LaraCheatGetStuff();
+        SeedRandomDraw(RANDOM_SEED);
+        SeedRandomControl(RANDOM_SEED);
+        txt = T_Print(0, DumpHeight / 2 - 16, 0, GF_PCStrings[PCSTR_DEMOMODE]);
+        T_FlashText(txt, 1, 20);
+        T_CentreV(txt, 1);
+        T_CentreH(txt, 1);
+        InvDemoMode = 1;
+        return_val = GameLoop(1);
+        InvDemoMode = 0;
+        T_RemovePrint(txt);
+    }
+    else
+    {
+        sprintf(buf, "Level '%s' has no demo data!", GF_levelfilenames[level_number]);
+        S_ExitSystem(buf);
+    }
+
+    memcpy(s, &start, sizeof(START_INFO));
+    S_FadeToBlack();
+    return return_val;
+}
+
 void LoadLaraDemoPos(void)
 {
     sint16 room_number;

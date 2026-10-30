@@ -1928,7 +1928,7 @@ address,size,name,symbol
 0x00521f48,4,GF_TitleFilesStringTable,_GF_TitleFilesStringTable
 0x00521f4c,4,GF_TitleFilesStringBuffer,_GF_TitleFilesStringBuffer
 0x00521f50,4,GF_PCStrings,_GF_PCStrings
-0x00521f54,4,GF_LevelFilesStringTable,_GF_LevelFilesStringTable
+0x00521f54,4,GF_levelfilenames,_GF_levelfilenames
 0x00521f60,,GF_valid_demos,_GF_valid_demos
 0x00521f90,4,GF_Puzzle4StringBuffer,_GF_Puzzle4StringBuffer
 0x00521f94,4,GF_FmvFilesStringTable,_GF_FmvFilesStringTable

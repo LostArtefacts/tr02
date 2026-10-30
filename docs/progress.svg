@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.85% (659)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.15% (588)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">52.93% (660)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">47.07% (587)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="394.77" height="6" x="0" y="0" class="named"/>
-<rect width="352.23" height="6" x="394.77" y="0" class="todo"/>
+<rect width="395.36" height="6" x="0" y="0" class="named"/>
+<rect width="351.64" height="6" x="395.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -256,7 +256,7 @@
 <rect width="12" height="12" x="540" y="45" class="named"><title>0x004167d0 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="45" class="named"><title>0x00416800 TriggerNormalCDTrack (218 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="45" class="named"><title>0x004168e0 DoDemoSequence (89 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="45" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="45" class="named"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="45" class="named"><title>0x00416af0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="45" class="named"><title>0x00416bc0 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="45" class="named"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.54%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.46%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.67%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">65.33%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="258.04" height="6" x="0" y="0" class="named"/>
-<rect width="488.96" height="6" x="258.04" y="0" class="todo"/>
+<rect width="258.98" height="6" x="0" y="0" class="named"/>
+<rect width="488.02" height="6" x="258.98" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.25" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1534,7 +1534,7 @@
 <rect width="16.27" height="16.03" x="413.57" y="157.39" class="todo"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="16.27" height="15.94" x="413.57" y="176.42" class="named"><title>0x0043dd20 SkidooUserControl (438 bytes)</title></rect>
 <rect width="16.27" height="15.81" x="413.57" y="195.36" class="named"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
-<rect width="16.27" height="15.68" x="413.57" y="214.17" class="todo"><title>0x00416940 StartDemo (432 bytes)</title></rect>
+<rect width="16.27" height="15.68" x="413.57" y="214.17" class="named"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="16.27" height="15.68" x="413.57" y="232.85" class="todo"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
 <rect width="16.27" height="15.51" x="413.57" y="251.53" class="todo"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
 <rect width="16.27" height="15.20" x="413.57" y="270.03" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
