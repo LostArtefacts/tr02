@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.32% (428)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.68% (819)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">34.40% (429)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">65.60% (818)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="256.39" height="6" x="0" y="0" class="named"/>
-<rect width="490.61" height="6" x="256.39" y="0" class="todo"/>
+<rect width="256.99" height="6" x="0" y="0" class="named"/>
+<rect width="490.01" height="6" x="256.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -182,7 +182,7 @@
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="30" class="todo"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="30" class="named"><title>0x0040feb0 CreatureTilt (53 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="30" class="todo"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="30" class="named"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="30" class="todo"><title>0x0040ff40 CreatureNeck (78 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="30" class="todo"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="30" class="named"><title>0x00410040 CreatureUnderwater (80 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.10%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.90%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">14.12%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">85.88%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="105.35" height="6" x="0" y="0" class="named"/>
-<rect width="641.65" height="6" x="105.35" y="0" class="todo"/>
+<rect width="105.51" height="6" x="0" y="0" class="named"/>
+<rect width="641.49" height="6" x="105.51" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2133,7 +2133,7 @@
 <rect width="5.01" height="4.74" x="625.79" y="331.89" class="named"><title>0x0044d2d0 HWR_EnableColorKey (74 bytes)</title></rect>
 <rect width="5.01" height="4.74" x="625.79" y="339.62" class="named"><title>0x0044d5f0 HWR_FreeTexturePages (74 bytes)</title></rect>
 <rect width="5.01" height="4.74" x="625.79" y="347.36" class="todo"><title>0x00456c50 SetRegistryStringValue (74 bytes)</title></rect>
-<rect width="5.01" height="4.63" x="625.79" y="355.10" class="todo"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
+<rect width="5.01" height="4.63" x="625.79" y="355.10" class="named"><title>0x0040fef0 CreatureHead (73 bytes)</title></rect>
 <rect width="5.01" height="4.63" x="625.79" y="362.73" class="named"><title>0x00433040 ClearLOT (73 bytes)</title></rect>
 <rect width="5.01" height="4.63" x="625.79" y="370.37" class="named"><title>0x00442de0 LaraBurn (73 bytes)</title></rect>
 <rect width="4.91" height="4.74" x="633.81" y="261.30" class="todo"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
