@@ -106,6 +106,13 @@ extern "C" LONG SetRegistryFloatValue(LPCTSTR lpValueName, double value)
     return SetRegistryStringValue(lpValueName, buffer, length);
 }
 
+extern "C" LONG SetRegistryBinaryValue(LPCTSTR lpValueName, LPBYTE value, DWORD valueSize)
+{
+    if (value)
+        return RegSetValueEx(HKey, lpValueName, 0, REG_BINARY, value, valueSize);
+    return RegDeleteValue(HKey, lpValueName);
+}
+
 void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
 {
     pDest += (nDX + nDY * nDStride);

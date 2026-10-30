@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.12% (812)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">34.64% (432)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">65.20% (813)</tspan> · <tspan class="decompiled">0.24% (3)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">34.56% (431)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="486.42" height="6" x="0" y="0" class="named"/>
-<rect width="1.80" height="6" x="486.42" y="0" class="decompiled"/>
-<rect width="258.78" height="6" x="488.22" y="0" class="todo"/>
+<rect width="487.02" height="6" x="0" y="0" class="named"/>
+<rect width="1.80" height="6" x="487.02" y="0" class="decompiled"/>
+<rect width="258.19" height="6" x="488.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1254,7 +1254,7 @@
 <rect width="12" height="12" x="495" y="345" class="named"><title>0x00456b80 SetRegistryDwordValue (30 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="345" class="named"><title>0x00456ba0 SetRegistryBoolValue (42 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="345" class="named"><title>0x00456bd0 SetRegistryFloatValue (54 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="345" class="todo"><title>0x00456c10 SetRegistryBinaryValue (55 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="345" class="named"><title>0x00456c10 SetRegistryBinaryValue (55 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="345" class="todo"><title>0x00456c50 SetRegistryStringValue (74 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="345" class="todo"><title>0x00456ca0 DeleteRegistryValue (19 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="345" class="todo"><title>0x00456cc0 GetRegistryDwordValue (94 bytes)</title></rect>
@@ -1319,11 +1319,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.42%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.58%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">48.43%</tspan> · <tspan class="decompiled">0.01%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">51.56%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="361.67" height="6" x="0" y="0" class="named"/>
-<rect width="0.10" height="6" x="361.67" y="0" class="decompiled"/>
-<rect width="385.28" height="6" x="361.72" y="0" class="todo"/>
+<rect width="361.79" height="6" x="0" y="0" class="named"/>
+<rect width="0.10" height="6" x="361.79" y="0" class="decompiled"/>
+<rect width="385.16" height="6" x="361.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.07" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2235,7 +2235,7 @@
 <rect width="3.82" height="3.70" x="655.55" y="344.50" class="todo"><title>0x00444720 D3DIsSupported (55 bytes)</title></rect>
 <rect width="3.82" height="3.70" x="655.55" y="351.20" class="named"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>
 <rect width="3.82" height="3.70" x="655.55" y="357.90" class="todo"><title>0x004558a0 S_CDVolume (55 bytes)</title></rect>
-<rect width="3.82" height="3.70" x="655.55" y="364.60" class="todo"><title>0x00456c10 SetRegistryBinaryValue (55 bytes)</title></rect>
+<rect width="3.82" height="3.70" x="655.55" y="364.60" class="named"><title>0x00456c10 SetRegistryBinaryValue (55 bytes)</title></rect>
 <rect width="3.82" height="3.70" x="655.55" y="371.30" class="todo"><title>0x00456fc0 Func456fc0 (55 bytes)</title></rect>
 <rect width="3.80" height="3.60" x="662.37" y="283.95" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
 <rect width="3.80" height="3.60" x="669.17" y="283.95" class="named"><title>0x0042a000 lara_default_col (54 bytes)</title></rect>
