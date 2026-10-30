@@ -190,6 +190,131 @@ void DrawSpriteItem(ITEM_INFO *item)
                  (sint16)(LsAdder + 16 * 256), 0);
 }
 
+#define ROT_X 4
+#define ROT_Y 8
+#define ROT_Z 16
+
+extern sint16 null_rotations[];
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+void phd_RotZ(PHD_ANGLE rz);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unknown);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void phd_PutPolygons_I(sint16 *ptr, int clip);
+void phd_PopMatrix_I(void);
+void phd_PushMatrix_I(void);
+void phd_RotY_I(sint16 ang);
+void phd_RotX_I(sint16 ang);
+void phd_RotZ_I(sint16 ang);
+void InitInterpolate(int frac, int rate);
+void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
+void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
+void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+
+void DrawAnimatingItem(ITEM_INFO *item)
+{
+    int clip, i, poppush;
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation1, *rotation2;
+    sint16 *extra_rotation;
+    sint16 **meshpp;
+    uint32 bit;
+    sint16 *frmptr[2];
+    int rate, frac;
+
+    frac = GetFrames(item, frmptr, &rate);
+    object = &objects[item->object_number];
+    if (object->shadow_size)
+        S_PrintShadow(object->shadow_size, frmptr[0], item, 0);
+
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    if ((clip = S_GetObjectBounds(frmptr[0])))
+    {
+        CalculateObjectLighting(item, frmptr[0]);
+        if (item->data)
+            extra_rotation = (sint16 *)item->data;
+        else
+            extra_rotation = null_rotations;
+
+        meshpp = &meshes[object->mesh_index];
+        bone = bones + object->bone_index;
+        bit = 1;
+
+        if (!frac)
+        {
+            phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
+            rotation1 = frmptr[0] + 9;
+            phd_RotYXZsuperpack(&rotation1, 0);
+            if (bit & item->mesh_bits)
+                phd_PutPolygons(*meshpp, clip);
+            meshpp++;
+
+            for (i = object->nmeshes - 1; i > 0; i--, bone += 4, meshpp++)
+            {
+                poppush = *bone;
+                if (poppush & 1)
+                    phd_PopMatrix();
+                if (poppush & 2)
+                    phd_PushMatrix();
+                phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
+                phd_RotYXZsuperpack(&rotation1, 0);
+                if (poppush & (ROT_X | ROT_Y | ROT_Z))
+                {
+                    if (poppush & ROT_Y)
+                        phd_RotY(*(extra_rotation++));
+                    if (poppush & ROT_X)
+                        phd_RotX(*(extra_rotation++));
+                    if (poppush & ROT_Z)
+                        phd_RotZ(*(extra_rotation++));
+                }
+                bit <<= 1;
+                if (bit & item->mesh_bits)
+                    phd_PutPolygons(*meshpp, clip);
+            }
+        }
+        else
+        {
+            InitInterpolate(frac, rate);
+            phd_TranslateRel_ID((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8), (sint32)*(frmptr[1] + 6), (sint32)*(frmptr[1] + 7), (sint32)*(frmptr[1] + 8));
+            rotation1 = frmptr[0] + 9;
+            rotation2 = frmptr[1] + 9;
+            phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+            if (bit & item->mesh_bits)
+                phd_PutPolygons_I(*meshpp, clip);
+            meshpp++;
+
+            for (i = object->nmeshes - 1; i > 0; i--, bone += 4, meshpp++)
+            {
+                poppush = *bone;
+                if (poppush & 1)
+                    phd_PopMatrix_I();
+                if (poppush & 2)
+                    phd_PushMatrix_I();
+                phd_TranslateRel_I(*(bone + 1), *(bone + 2), *(bone + 3));
+                phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+                if (poppush & (ROT_X | ROT_Y | ROT_Z))
+                {
+                    if (poppush & ROT_Y)
+                        phd_RotY_I(*(extra_rotation++));
+                    if (poppush & ROT_X)
+                        phd_RotX_I(*(extra_rotation++));
+                    if (poppush & ROT_Z)
+                        phd_RotZ_I(*(extra_rotation++));
+                }
+                bit <<= 1;
+                if (bit & item->mesh_bits)
+                    phd_PutPolygons_I(*meshpp, clip);
+            }
+        }
+    }
+    phd_PopMatrix();
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;
@@ -233,8 +358,6 @@ void phd_RotX_I(sint16 ang)
     phd_RotX(ang);
     phd_mxptr = oldm;
 }
-
-void phd_RotZ(PHD_ANGLE rz);
 
 void phd_RotZ_I(sint16 ang)
 {
@@ -439,6 +562,7 @@ void DrawGunFlash(int weapon_type, int clip)
 
 void __cdecl phd_PushUnitMatrix(void);
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
 
 void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame)
 {

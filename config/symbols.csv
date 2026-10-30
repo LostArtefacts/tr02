@@ -1657,6 +1657,7 @@ address,size,name,symbol
 0x004d77a0,4,demo_loaded,_demo_loaded
 0x004d77b0,4,BoundStart,_BoundStart
 0x004d77b4,4,BoundEnd,_BoundEnd
+0x004d77b8,24,null_rotations,_null_rotations
 0x004d77d0,4,assault_timer_display,_assault_timer_display
 0x004d77d4,4,assault_timer_active,_assault_timer_active
 0x004d77d8,4,monks_attack_lara,_monks_attack_lara
