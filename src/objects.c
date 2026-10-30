@@ -24,6 +24,8 @@ void *game_malloc(int size, int type);
 int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
 void S_CDPlay(sint16 track, int mode);
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+void AnimateLara(ITEM_INFO *item);
 
 extern sint16 DeathSlideBounds[12];
 extern PHD_VECTOR DeathSlidePosition;
@@ -35,6 +37,9 @@ extern int flipmap[];
 #define BELL_SWING 1
 #define BOWL_POUR 1
 #define HOT_LIQUID 220
+#define DEATH_SPEED 100
+#define DEATH_ACC 5
+#define DEATH_GRAB 1
 
 extern sint16 final_boss_active;
 
@@ -167,6 +172,89 @@ void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *col
             AddActiveItem(item_number);
         item->status = ACTIVE;
         item->flags |= ONESHOT;
+    }
+}
+
+void ControlDeathSlide(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint32 c, s, x, y, z;
+    sint16 room_number;
+    int lara_on_deathslide;
+    GAME_VECTOR *old;
+
+    item = &items[item_number];
+    if (item->status == ACTIVE)
+    {
+        if (!(item->flags & ONESHOT))
+        {
+            old = (GAME_VECTOR *)item->data;
+            item->pos.x_pos = old->x;
+            item->pos.y_pos = old->y;
+            item->pos.z_pos = old->z;
+            if (old->room_number != item->room_number)
+                ItemNewRoom(item_number, old->room_number);
+            item->status = NOT_ACTIVE;
+            item->current_anim_state = item->goal_anim_state = DEATH_GRAB;
+            item->anim_number = objects[item->object_number].anim_index;
+            item->frame_number = anims[item->anim_number].frame_base;
+            RemoveActiveItem(item_number);
+            return;
+        }
+
+        if (item->current_anim_state == DEATH_GRAB)
+        {
+            AnimateItem(item);
+            return;
+        }
+
+        AnimateItem(item);
+
+        if (item->fallspeed < DEATH_SPEED)
+            item->fallspeed += DEATH_ACC;
+
+        c = phd_cos(item->pos.y_rot);
+        s = phd_sin(item->pos.y_rot);
+
+        item->pos.z_pos += item->fallspeed * c >> W2V_SHIFT;
+        item->pos.x_pos += item->fallspeed * s >> W2V_SHIFT;
+        item->pos.y_pos += item->fallspeed >> 2;
+        room_number = item->room_number;
+        GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        if (room_number != item->room_number)
+            ItemNewRoom(item_number, room_number);
+
+        lara_on_deathslide = (lara_item->current_anim_state == AS_DEATHSLIDE);
+        if (lara_on_deathslide)
+        {
+            lara_item->pos.x_pos = item->pos.x_pos;
+            lara_item->pos.y_pos = item->pos.y_pos;
+            lara_item->pos.z_pos = item->pos.z_pos;
+        }
+
+        z = item->pos.z_pos + (WALL_L * c >> W2V_SHIFT);
+        x = item->pos.x_pos + (WALL_L * s >> W2V_SHIFT);
+        y = item->pos.y_pos + (STEP_L >> 2);
+        floor = GetFloor(x, y, z, &room_number);
+        if (GetHeight(floor, x, y, z) <= y + STEP_L || GetCeiling(floor, x, y, z) >= y - STEP_L)
+        {
+            if (lara_on_deathslide)
+            {
+                lara_item->goal_anim_state = AS_FORWARDJUMP;
+                AnimateLara(lara_item);
+                lara_item->gravity_status = 1;
+                lara_item->speed = item->fallspeed;
+                lara_item->fallspeed = item->fallspeed >> 2;
+            }
+
+            SoundEffect(281, &item->pos, 0);
+            RemoveActiveItem(item_number);
+            item->status = NOT_ACTIVE;
+            item->flags -= ONESHOT;
+        }
+        else
+            SoundEffect(280, &item->pos, 0);
     }
 }
 

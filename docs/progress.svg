@@ -61,10 +61,10 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.79% (359)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.21% (888)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">28.87% (360)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">71.13% (887)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="215.05" height="6" x="0" y="0" class="named"/>
-<rect width="531.95" height="6" x="215.05" y="0" class="todo"/>
+<rect width="215.65" height="6" x="0" y="0" class="named"/>
+<rect width="531.35" height="6" x="215.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -693,7 +693,7 @@
 <rect width="12" height="12" x="345" y="180" class="named"><title>0x00434820 DyingMonk (135 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="180" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="180" class="todo"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="180" class="named"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="named"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="180" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="180" class="named"><title>0x00434e30 InitialiseWindow (117 bytes)</title></rect>
@@ -1318,10 +1318,10 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.94%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">10.26%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">89.74%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="75.18" height="6" x="0" y="0" class="named"/>
-<rect width="671.82" height="6" x="75.18" y="0" class="todo"/>
+<rect width="76.63" height="6" x="0" y="0" class="named"/>
+<rect width="670.37" height="6" x="76.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.57" height="69.33" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1448,7 +1448,7 @@
 <rect width="20.70" height="21.78" x="347.45" y="101.18" class="todo"><title>0x00430fe0 InitialiseLara (701 bytes)</title></rect>
 <rect width="20.70" height="21.64" x="347.45" y="125.96" class="todo"><title>0x0043dff0 SkidooAnimation (697 bytes)</title></rect>
 <rect width="20.70" height="21.32" x="347.45" y="150.61" class="todo"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
-<rect width="20.70" height="20.16" x="347.45" y="174.93" class="todo"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
+<rect width="20.70" height="20.16" x="347.45" y="174.93" class="named"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="20.70" height="19.87" x="347.45" y="198.09" class="todo"><title>0x00418670 DinoControl (647 bytes)</title></rect>
 <rect width="20.70" height="19.77" x="347.45" y="220.96" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="20.70" height="19.56" x="347.45" y="243.73" class="todo"><title>0x004174e0 TigerControl (638 bytes)</title></rect>
