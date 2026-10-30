@@ -1375,6 +1375,65 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
     return 0;
 }
 
+#define LAND_A 31
+#define LAND_F GF(LAND_A, 0)
+#define FASTSPLAT_A 32
+#define FASTSPLAT_F GF(FASTSPLAT_A, 1)
+
+void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    ShiftItem(item, coll);
+    switch (coll->coll_type)
+    {
+    case COLL_FRONT:
+    case COLL_TOPFRONT:
+        if (lara.climb_status && item->speed == 2)
+            return;
+
+        if (coll->mid_floor > 512)
+        {
+            item->goal_anim_state = AS_FASTFALL;
+            item->current_anim_state = AS_FASTFALL;
+            item->frame_number = FASTSPLAT_F;
+            item->anim_number = FASTSPLAT_A;
+        }
+        else if (coll->mid_floor <= 128)
+        {
+            item->goal_anim_state = AS_LAND;
+            item->current_anim_state = AS_LAND;
+            item->frame_number = LAND_F;
+            item->anim_number = LAND_A;
+        }
+        item->speed /= 4;
+        lara.move_angle += -0x8000;
+        if (item->fallspeed <= 0)
+            item->fallspeed = 1;
+        break;
+
+    case COLL_LEFT:
+        item->pos.y_rot += LARA_DEF_ADD_EDGE;
+        break;
+
+    case COLL_RIGHT:
+        item->pos.y_rot -= LARA_DEF_ADD_EDGE;
+        break;
+
+    case COLL_TOP:
+        if (item->fallspeed <= 0)
+            item->fallspeed = 1;
+        break;
+
+    case COLL_CLAMP:
+        item->pos.z_pos -= (phd_cos(coll->facing) * 100) >> W2V_SHIFT;
+        item->pos.x_pos -= (phd_sin(coll->facing) * 100) >> W2V_SHIFT;
+        item->speed = 0;
+        coll->mid_floor = 0;
+        if (item->fallspeed <= 0)
+            item->fallspeed = 16;
+        break;
+    }
+}
+
 void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 {
     ShiftItem(item, coll);
@@ -1514,7 +1573,7 @@ int LaraTestHangOnClimbWall(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
-    int result_r, result_l, shift_l, shift_r;
+    int result_r, result_l, shift_r, shift_l;
 
     result_r = LaraTestClimbPos(item, coll->radius, coll->radius + CLIMB_WIDTHR, -700, STEP_L * 2, &shift_r);
     if (result_r != 1)

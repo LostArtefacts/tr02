@@ -483,7 +483,7 @@ address,size,name,symbol
 0x0042a170,226,lara_slide_slope,_lara_slide_slope
 0x0042a260,103,LaraHitCeiling,_LaraHitCeiling
 0x0042a2d0,127,LaraDeflectEdge,_LaraDeflectEdge
-0x0042a350,310,LaraDeflectEdgeJump,_LaraDeflectEdgeJump
+0x0042a350,372,LaraDeflectEdgeJump,_LaraDeflectEdgeJump
 0x0042a4d0,227,LaraSlideEdgeJump,_LaraSlideEdgeJump
 0x0042a5c0,260,TestWall,_TestWall
 0x0042a6d0,264,LaraTestHangOnClimbWall,_LaraTestHangOnClimbWall
