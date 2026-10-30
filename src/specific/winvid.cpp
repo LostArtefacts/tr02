@@ -535,3 +535,17 @@ extern "C" void WinVidFinish(void)
         HideDDrawGameWindow();
     DDrawRelease();
 }
+
+extern "C" {
+bool WinVidRegisterGameWindowClass(void);
+bool WinVidCreateGameWindow(void);
+bool WinVidGetDisplayAdapters(void);
+BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriverDescription, LPTSTR lpDriverName, LPVOID lpContext);
+}
+
+extern "C" bool WinVidInit(void)
+{
+    AppResultCode = 0;
+    return WinVidRegisterGameWindowClass() && WinVidCreateGameWindow() && WinVidGetDisplayAdapters() && DisplayAdapterList.dwCount && WinVidGetDisplayModes();
+}
+

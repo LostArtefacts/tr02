@@ -1219,7 +1219,7 @@ address,size,name,symbol
 0x00458f78,6,DirectSoundEnumerateA_thunk,_DirectSoundEnumerateA@8
 0x00458f7e,6,DirectSoundCreate_thunk,_DirectSoundCreate@12
 0x00458f84,6,DirectDrawCreate_thunk,_DirectDrawCreate@12
-0x00458f8a,6,Func458f8a,
+0x00458f8a,6,DirectDrawEnumerateA_thunk,_DirectDrawEnumerateA@8
 0x00458f90,6,Func458f90,
 0x00458f96,6,Func458f96,
 0x00458f9c,6,Func458f9c,
