@@ -258,6 +258,105 @@ int TriggerActive(ITEM_INFO *item)
     return ok;
 }
 
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
+{
+    sint32 height, xoff, yoff;
+    ROOM_INFO *r;
+    FLOOR_INFO *f;
+    ITEM_INFO *item;
+    sint16 *data, type, trigger;
+
+    f = floor;
+    while (f->sky_room != NO_ROOM)
+    {
+        r = &room[f->sky_room];
+        f = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+
+    height = f->ceiling << 8;
+
+    if (f->index)
+    {
+        data = &floor_data[f->index];
+        type = *(data++) & DATA_TYPE;
+        if (type == TILT_TYPE)
+        {
+            data++;
+            type = *(data++) & DATA_TYPE;
+        }
+
+        if (type == ROOF_TYPE)
+        {
+            xoff = *data >> 8;
+            yoff = (sint8)*data;
+            if (!IsChunkyCamera || (xoff >= -2 && xoff <= 2 && yoff >= -2 && yoff <= 2))
+            {
+                if (xoff < 0)
+                    height += (z & (WALL_L - 1)) * xoff >> 2;
+                else
+                    height -= ((WALL_L - 1 - z) & (WALL_L - 1)) * xoff >> 2;
+
+                if (yoff >= 0)
+                    height -= (x & (WALL_L - 1)) * yoff >> 2;
+                else
+                    height += ((WALL_L - 1 - x) & (WALL_L - 1)) * yoff >> 2;
+            }
+        }
+    }
+
+    while (floor->pit_room != NO_ROOM)
+    {
+        r = &room[floor->pit_room];
+        floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+
+    if (!floor->index)
+        return height;
+
+    data = &floor_data[floor->index];
+    do
+    {
+        type = *(data++);
+        switch (type & DATA_TYPE)
+        {
+        case DOOR_TYPE:
+        case TILT_TYPE:
+        case ROOF_TYPE:
+            data++;
+            break;
+
+        case LAVA_TYPE:
+        case CLIMB_TYPE:
+            break;
+
+        case TRIGGER_TYPE:
+            data++;
+            do
+            {
+                trigger = *(data++);
+                if (TRIG_BITS(trigger) != TO_OBJECT)
+                {
+                    if (TRIG_BITS(trigger) == TO_CAMERA)
+                        trigger = *(data++);
+                }
+                else
+                {
+                    item = &items[trigger & VALUE_BITS];
+                    if (objects[item->object_number].ceiling)
+                        (*objects[item->object_number].ceiling)(item, x, y, z, &height);
+                }
+            } while (!(trigger & END_BIT));
+            break;
+
+        default:
+            S_ExitSystem("GetCeiling(): Unknown type");
+            break;
+        }
+    } while (!(type & END_BIT));
+
+    return height;
+}
+
 sint16 GetDoor(FLOOR_INFO *floor)
 {
     sint16 *data, type;

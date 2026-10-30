@@ -175,7 +175,7 @@ address,size,name,symbol
 0x004150d0,231,RefreshCamera,_RefreshCamera
 0x004151c0,1680,TestTriggers,_TestTriggers
 0x004158a0,85,TriggerActive,_TriggerActive
-0x00415900,573,GetCeiling,_GetCeiling
+0x00415900,600,GetCeiling,_GetCeiling
 0x00415b60,78,GetDoor,_GetDoor
 0x00415bb0,160,LOS,_LOS
 0x00415c50,747,zLOS,_zLOS
