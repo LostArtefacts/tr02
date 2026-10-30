@@ -1047,7 +1047,7 @@ address,size,name,symbol
 0x0044fd60,192,do_compass_option,_do_compass_option
 0x0044fe20,126,FlashConflicts,_FlashConflicts
 0x0044fea0,64,DefaultConflict,?DefaultConflict@@YAXXZ
-0x0044fee0,1780,do_control_option,_do_control_option
+0x0044fee0,1796,do_control_option,_do_control_option
 0x004505f0,1232,S_ShowControls,_S_ShowControls
 0x00450ac0,150,S_ChangeCtrlText,_S_ChangeCtrlText
 0x00450b60,59,S_RemoveCtrlText,_S_RemoveCtrlText
@@ -1931,6 +1931,7 @@ address,size,name,symbol
 0x0051a22c,4,GpCmdLine,_GpCmdLine
 0x0051a230,4,ScreenShotPcxNumber,_ScreenShotPcxNumber
 0x0051a238,4,KeyCursor,_KeyCursor
+0x0051a23c,4,select_key,_select_key
 0x0051a240,4,iconfig,_iconfig
 0x0051a248,56,ctext,?ctext@@3PAPAUtextstringinfo@@A
 0x0051a280,56,btext,?btext@@3PAPAUtextstringinfo@@A

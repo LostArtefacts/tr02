@@ -3,6 +3,7 @@
 #include "../invdata.h"
 #include "input.h"
 #include <stdio.h>
+#include <dinput.h>
 #include "../savegame.h"
 #include "../title.h"
 #include "../room.h"
@@ -352,6 +353,203 @@ void DefaultConflict(void)
 
 extern "C" int KeyCursor;
 extern "C" void T_SetScale(TEXTSTRING *textString, sint32 scaleH, sint32 scaleV);
+extern "C" int select_key;
+extern "C" void S_ShowControls(void);
+extern "C" void S_ChangeCtrlText(void);
+void S_RemoveCtrlText(void);
+
+#define JOY_KEY 256
+
+void do_control_option(INVENTORY_ITEM *inv_item)
+{
+    sint16 key;
+
+    if (!ControlTextInfo[0])
+    {
+        if (iconfig)
+            ControlTextInfo[0] = T_Print(0, -50, 0, GF_PCStrings[PCSTR_USERKEYS]);
+        else
+            ControlTextInfo[0] = T_Print(0, -50, 0, GF_PCStrings[PCSTR_DEFAULTKEYS]);
+        T_CentreH(ControlTextInfo[0], 1);
+        T_CentreV(ControlTextInfo[0], 1);
+        S_ShowControls();
+        KeyCursor = -1;
+        T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 48, C_BLACK, NULL, 0);
+        T_AddOutline(ControlTextInfo[0], 1, C_BLUE, NULL, 0);
+    }
+
+    switch (select_key)
+    {
+    case 0:
+        if (inputDB & (IN_RIGHT | IN_LEFT))
+        {
+            if (KeyCursor == -1)
+            {
+                iconfig = !iconfig;
+                S_ChangeCtrlText();
+                FlashConflicts();
+            }
+            else
+            {
+                ctext[KeyCursor]->zpos = 16;
+                T_RemoveBackground(ctext[KeyCursor]);
+                T_RemoveOutline(ctext[KeyCursor]);
+                if (KeyCursor <= 6)
+                    KeyCursor += 7;
+                else if (KeyCursor == 14)
+                    KeyCursor = 7;
+                else
+                    KeyCursor -= 7;
+                ctext[KeyCursor]->zpos = 0;
+                T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+            }
+        }
+        else if ((inputDB & IN_DESELECT) || ((inputDB & IN_SELECT) && KeyCursor == -1))
+        {
+            T_RemovePrint(ControlTextInfo[0]);
+            ControlTextInfo[0] = NULL;
+            T_RemovePrint(ControlTextInfo[1]);
+            ControlTextInfo[1] = NULL;
+            S_RemoveCtrlText();
+            DefaultConflict();
+            return;
+        }
+
+        if (iconfig)
+        {
+            if (inputDB & IN_SELECT)
+            {
+                select_key = 1;
+                ctext[KeyCursor]->zpos = 16;
+                T_RemoveBackground(ctext[KeyCursor]);
+                T_RemoveOutline(ctext[KeyCursor]);
+                btext[KeyCursor]->zpos = 0;
+                T_AddBackground(btext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                T_AddOutline(btext[KeyCursor], 1, C_BLUE, NULL, 0);
+            }
+            else if (inputDB & IN_FORWARD)
+            {
+                if (KeyCursor == -1)
+                {
+                    T_RemoveBackground(ControlTextInfo[0]);
+                    T_RemoveOutline(ControlTextInfo[0]);
+                }
+                else
+                {
+                    ctext[KeyCursor]->zpos = 16;
+                    T_RemoveBackground(ctext[KeyCursor]);
+                    T_RemoveOutline(ctext[KeyCursor]);
+                }
+                KeyCursor--;
+                if (KeyCursor < -1)
+                    KeyCursor = 13;
+                if (KeyCursor == -1)
+                {
+                    T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                    T_AddOutline(ControlTextInfo[0], 1, C_BLUE, NULL, 0);
+                }
+                else
+                {
+                    ctext[KeyCursor]->zpos = 0;
+                    T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                    T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+                }
+            }
+            else if (inputDB & IN_BACK)
+            {
+                if (KeyCursor == -1)
+                {
+                    T_RemoveBackground(ControlTextInfo[0]);
+                    T_RemoveOutline(ControlTextInfo[0]);
+                }
+                else
+                {
+                    ctext[KeyCursor]->zpos = 16;
+                    T_RemoveBackground(ctext[KeyCursor]);
+                    T_RemoveOutline(ctext[KeyCursor]);
+                }
+                KeyCursor++;
+                if (KeyCursor > 13)
+                    KeyCursor = -1;
+                if (KeyCursor == -1)
+                {
+                    T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                    T_AddOutline(ControlTextInfo[0], 1, C_BLUE, NULL, 0);
+                }
+                else
+                {
+                    ctext[KeyCursor]->zpos = 0;
+                    T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                    T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+                }
+            }
+        }
+        break;
+    case 1:
+        if (!(inputDB & IN_SELECT))
+            select_key = 2;
+        break;
+    case 2:
+        if (joy_fire)
+        {
+            for (key = 0; key < 32; key++)
+                if ((1 << key) & joy_fire)
+                    break;
+            if (key == 32)
+                key = 0;
+            else
+                key += JOY_KEY;
+        }
+        else
+        {
+            for (key = 0; key < 256; key++)
+                if (rawkey(key))
+                    break;
+            if (key == 256)
+                key = 0;
+        }
+        if (key && kname[key])
+        {
+            if (key == DIK_RETURN || key == DIK_LEFT || key == DIK_RIGHT || key == DIK_UP || key == DIK_DOWN)
+                break;
+            if (key != DIK_ESCAPE)
+            {
+                layout[iconfig][KeyCursor] = key;
+                T_ChangeText(btext[KeyCursor], kname[key]);
+            }
+            btext[KeyCursor]->zpos = 16;
+            T_RemoveBackground(btext[KeyCursor]);
+            T_RemoveOutline(btext[KeyCursor]);
+            ctext[KeyCursor]->zpos = 0;
+            T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+            T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+            select_key = 3;
+            FlashConflicts();
+        }
+        break;
+    case 3:
+        if (layout[iconfig][KeyCursor] & JOY_KEY)
+        {
+            if (!((1 << layout[iconfig][KeyCursor]) & joy_fire))
+                select_key = 0;
+        }
+        else if (!rawkey(layout[iconfig][KeyCursor]))
+        {
+            select_key = 0;
+            if (layout[iconfig][KeyCursor] == DIK_LCONTROL)
+                layout[iconfig][KeyCursor] = DIK_RCONTROL;
+            if (layout[iconfig][KeyCursor] == DIK_LSHIFT)
+                layout[iconfig][KeyCursor] = DIK_RSHIFT;
+            if (layout[iconfig][KeyCursor] == DIK_LALT)
+                layout[iconfig][KeyCursor] = DIK_RALT;
+            FlashConflicts();
+        }
+        break;
+    }
+    input = 0;
+    inputDB = 0;
+}
 
 extern "C" void S_ShowControls(void)
 {
