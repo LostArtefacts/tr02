@@ -35,3 +35,59 @@ void T_InitPrint(void)
     }
     T_numStrings = 0;
 }
+
+extern char T_theStrings[MAX_TEXT_STRINGS * MAX_STRING_SIZE];
+
+sint16 T_GetStringLen(char *string);
+uint32 GetTextScaleH(uint32 scaleH);
+uint32 GetTextScaleV(uint32 scaleV);
+
+TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string)
+{
+    uint32 scaleV, scaleH;
+    int n, length;
+    TEXTSTRING *textString = T_textStrings;
+
+    if (string == NULL)
+        return 0;
+
+    if (T_numStrings >= MAX_TEXT_STRINGS)
+        return 0;
+
+    for (n = 0; n < MAX_TEXT_STRINGS; n++)
+    {
+        if (!(textString->flags & T_ACTIVE))
+            break;
+        textString++;
+    }
+
+    if (n >= MAX_TEXT_STRINGS)
+        return 0;
+
+    length = T_GetStringLen(string);
+    if (length >= MAX_STRING_SIZE)
+        length = MAX_STRING_SIZE - 1;
+
+    textString->string = &T_theStrings[n * MAX_STRING_SIZE];
+    textString->scaleH = 0x10000;
+    textString->scaleV = 0x10000;
+    scaleH = GetTextScaleH(0x10000);
+    scaleV = GetTextScaleV(0x10000);
+    textString->xpos = (sint16)((xpos * scaleH) >> 16);
+    textString->ypos = (sint16)((ypos * scaleV) >> 16);
+    textString->zpos = (sint16)zpos;
+    textString->letterSpacing = 1;
+    textString->wordSpacing = 6;
+    memcpy(textString->string, string, length + 1);
+    textString->flags = T_ACTIVE;
+    textString->textflags = 0;
+    textString->outlflags = 0;
+    textString->bgndflags = 0;
+    textString->bgndSizeX = 0;
+    textString->bgndSizeY = 0;
+    textString->bgndOffX = 0;
+    textString->bgndOffY = 0;
+    textString->bgndOffZ = 0;
+    T_numStrings++;
+    return textString;
+}
