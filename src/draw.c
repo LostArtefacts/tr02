@@ -9,6 +9,21 @@ void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
 void S_CalculateStaticLight(sint16 adder);
 
+#define S_LongMemCpy(d, s, n) memcpy(d, s, (n) * sizeof(sint32))
+
+extern int IM_rate, IM_frac;
+extern sint32 *IMptr;
+extern sint32 IMstack[];
+
+void InitInterpolate(int frac, int rate)
+{
+    IM_frac = frac;
+    IM_rate = rate;
+
+    IMptr = IMstack;
+    S_LongMemCpy(IMstack, phd_mxptr, 12);
+}
+
 void DrawGunFlash(int weapon_type, int clip)
 {
     sint16 light;

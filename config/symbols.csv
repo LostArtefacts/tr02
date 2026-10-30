@@ -1905,6 +1905,8 @@ address,size,name,symbol
 0x005252b0,4,meshes,_meshes
 0x005252b4,4,OutsideCamera,_OutsideCamera
 0x005252b8,4,number_draw_rooms,_number_draw_rooms
+0x005252c0,,IMstack,_IMstack
+0x005258f0,4,IM_frac,_IM_frac
 0x005258f4,4,anims,_anims
 0x00525900,512,BoundRooms,_BoundRooms
 0x00525b00,4,OutsideBottom,_OutsideBottom
@@ -1917,6 +1919,8 @@ address,size,name,symbol
 0x00526178,4,OutsideLeft,_OutsideLeft
 0x0052617c,4,AnimChanges,_AnimChanges
 0x00526180,2,number_rooms,_number_rooms
+0x00526184,4,IM_rate,_IM_rate
+0x00526188,4,IMptr,_IMptr
 0x0052618c,4,room,_room
 0x00526190,4,UnderwaterCamera,_UnderwaterCamera
 0x00526194,4,SunsetTimer,_SunsetTimer
