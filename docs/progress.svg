@@ -61,18 +61,18 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.32% (4)</tspan> · <tspan class="todo">13.59% (170)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.40% (5)</tspan> · <tspan class="todo">13.51% (169)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.32" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="2.39" height="6" x="643.10" y="0" class="nonmatching"/>
-<rect width="101.51" height="6" x="645.49" y="0" class="todo"/>
+<rect width="2.99" height="6" x="643.10" y="0" class="nonmatching"/>
+<rect width="100.91" height="6" x="646.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="named"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="0" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="0" class="nonmatching"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="0" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">1.41%</tspan> · <tspan class="todo">20.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">1.46%</tspan> · <tspan class="todo">20.26%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.09" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="10.52" height="6" x="584.74" y="0" class="nonmatching"/>
-<rect width="151.74" height="6" x="595.26" y="0" class="todo"/>
+<rect width="10.89" height="6" x="584.74" y="0" class="nonmatching"/>
+<rect width="151.37" height="6" x="595.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1842,7 +1842,7 @@
 <rect width="9.23" height="8.94" x="737.77" y="170.09" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="9.29" height="8.88" x="538.18" y="182.02" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
 <rect width="9.29" height="8.88" x="538.18" y="193.90" class="named"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
-<rect width="9.29" height="8.81" x="538.18" y="205.77" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
+<rect width="9.29" height="8.81" x="538.18" y="205.77" class="nonmatching"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="9.29" height="8.81" x="538.18" y="217.58" class="named"><title>0x00409380 InsertObjectGT3_ZBuffered (170 bytes)</title></rect>
 <rect width="9.29" height="8.81" x="538.18" y="229.39" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="9.29" height="8.81" x="538.18" y="241.19" class="named"><title>0x0042e010 LaraCheckForLetGo (170 bytes)</title></rect>

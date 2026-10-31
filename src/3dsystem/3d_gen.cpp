@@ -70,6 +70,33 @@ void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
     *(dest + 1) = pitch;
 }
 
+void phd_RotX(PHD_ANGLE rx)
+{
+    sint32 sx, cx, r0, r1;
+    sint32 *mptr;
+
+    if (rx)
+    {
+        mptr = phd_mxptr;
+        sx = phd_sin(rx);
+        cx = phd_cos(rx);
+        r0 = *(mptr + M01) * cx + *(mptr + M02) * sx;
+        r1 = *(mptr + M02) * cx - *(mptr + M01) * sx;
+        *(mptr + M01) = r0 >> W2V_SHIFT;
+        *(mptr + M02) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M11) * cx + *(mptr + M12) * sx;
+        r1 = *(mptr + M12) * cx - *(mptr + M11) * sx;
+        *(mptr + M11) = r0 >> W2V_SHIFT;
+        *(mptr + M12) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M21) * cx + *(mptr + M22) * sx;
+        r1 = *(mptr + M22) * cx - *(mptr + M21) * sx;
+        *(mptr + M21) = r0 >> W2V_SHIFT;
+        *(mptr + M22) = r1 >> W2V_SHIFT;
+    }
+}
+
 extern "C" void phd_RotZ(PHD_ANGLE rz)
 {
     sint32 sz, cz, r0, r1;
