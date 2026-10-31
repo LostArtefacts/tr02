@@ -21,7 +21,7 @@ extern "C" int demo_loaded;
 extern "C" char LevelFileName[];
 extern "C" char *texture_page_ptrs[];
 
-void AdjustTextureUVs(bool tNew);
+void AdjustTextureUVs(bool reset);
 int LoadLevel(char *filename, int req_level);
 BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped);
 
@@ -139,6 +139,45 @@ extern "C" int LoadRooms(HANDLE file)
     MyReadFile(file, floor_data, sizeof(sint16) * size, &read, NULL);
     return 1;
 }
+extern "C" int UvAdd;
+extern "C" uint8 LabTextureUVFlags[];
+
+#define TexelAdjustMode (*(int *)((char *)&SavedAppSettings + 0x2d))
+#define BilinearFiltering (*((bool *)&SavedAppSettings + 0x23))
+#define NearestAdjustment (*(int *)((char *)&SavedAppSettings + 0x31))
+#define LinearAdjustment (*(int *)((char *)&SavedAppSettings + 0x35))
+
+void AdjustTextureUVs(bool reset)
+{
+    DWORD i;
+    int j, adjust;
+    uint8 flags;
+    uint8 *flag_ptr;
+    uint16 *uv;
+
+    if (reset)
+        UvAdd = 0;
+    adjust = NearestAdjustment;
+    if (SavedAppSettings.RenderMode == RM_Hardware && (TexelAdjustMode == 2 || (TexelAdjustMode == 1 && BilinearFiltering)))
+        adjust = LinearAdjustment;
+    adjust -= UvAdd;
+    flag_ptr = LabTextureUVFlags;
+    for (i = 0; i != LnTextureInfos; i++)
+    {
+        uv = &phdtextinfo[i].u1;
+        flags = *flag_ptr++;
+        for (j = 0; j < 8; j++)
+        {
+            if (flags & 1)
+                uv[j] -= adjust;
+            else
+                uv[j] += adjust;
+            flags >>= 1;
+        }
+    }
+    UvAdd += adjust;
+}
+
 
 typedef struct {
     sint16 mesh_number;
@@ -167,7 +206,6 @@ extern "C" CHANGE_STRUCT *changes;
 extern "C" RANGE_STRUCT *ranges;
 extern "C" sint16 *commands;
 extern "C" sint16 *AnimFrames;
-extern "C" char LabTextureUVFlags[];
 extern "C" char LoadObjectsTooManyTextures[];
 extern "C" void InitialiseObjects(void);
 

@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.04% (13)</tspan> · <tspan class="todo">12.79% (160)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.12% (14)</tspan> · <tspan class="todo">12.71% (159)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.92" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.92" y="0" class="decompiled"/>
-<rect width="7.76" height="6" x="643.70" y="0" class="nonmatching"/>
-<rect width="95.54" height="6" x="651.46" y="0" class="todo"/>
+<rect width="8.36" height="6" x="643.70" y="0" class="nonmatching"/>
+<rect width="94.94" height="6" x="652.06" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1019,7 +1019,7 @@
 <rect width="12" height="12" x="705" y="270" class="named"><title>0x00449980 MyReadFile (73 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="270" class="named"><title>0x004499d0 LoadTexturePages (392 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="named"><title>0x00449b60 LoadRooms (928 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="285" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="285" class="nonmatching"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="285" class="named"><title>0x00449fa0 LoadObjects (1406 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="285" class="named"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="285" class="named"><title>0x0044a660 LoadItems (470 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.66%</tspan> · <tspan class="todo">17.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.70%</tspan> · <tspan class="todo">17.95%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.64" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.64" y="0" class="decompiled"/>
-<rect width="27.33" height="6" x="585.29" y="0" class="nonmatching"/>
-<rect width="134.38" height="6" x="612.62" y="0" class="todo"/>
+<rect width="27.65" height="6" x="585.29" y="0" class="nonmatching"/>
+<rect width="134.06" height="6" x="612.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1887,7 +1887,7 @@
 <rect width="8.74" height="8.05" x="550.47" y="294.42" class="named"><title>0x004486c0 CreateBackBuffer (152 bytes)</title></rect>
 <rect width="8.74" height="8.05" x="550.47" y="305.47" class="named"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
 <rect width="8.74" height="7.98" x="550.47" y="316.52" class="named"><title>0x00421c00 DrawAirBar (151 bytes)</title></rect>
-<rect width="8.74" height="7.98" x="550.47" y="327.50" class="todo"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
+<rect width="8.74" height="7.98" x="550.47" y="327.50" class="nonmatching"><title>0x00449f00 AdjustTextureUVs (151 bytes)</title></rect>
 <rect width="8.74" height="7.91" x="550.47" y="338.47" class="named"><title>0x0040c4f0 S_DrawScreenSprite2d (150 bytes)</title></rect>
 <rect width="8.74" height="7.91" x="550.47" y="349.38" class="named"><title>0x00412510 LaraControlCinematic (150 bytes)</title></rect>
 <rect width="8.74" height="7.91" x="550.47" y="360.28" class="named"><title>0x004166d0 RemoveRoomFlipItems (150 bytes)</title></rect>
