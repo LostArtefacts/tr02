@@ -106,7 +106,7 @@ address,size,name,symbol
 0x0040e780,242,StalkBox,_StalkBox
 0x0040e880,164,EscapeBox,_EscapeBox
 0x0040e930,167,ValidBox,_ValidBox
-0x0040e9e0,1087,CreatureMood,_CreatureMood
+0x0040e9e0,1136,CreatureMood,_CreatureMood
 0x0040ee50,1113,CalculateTarget,_CalculateTarget
 0x0040f2b0,248,CreatureCreature,_CreatureCreature
 0x0040f3b0,139,BadFloor,_BadFloor
