@@ -474,3 +474,58 @@ void DragonControl(sint16 back_number)
     if (back->room_number != item->room_number)
         ItemNewRoom(back_number, item->room_number);
 }
+
+#define DRAGON_BACK 23
+#define NOT_VISIBLE ONESHOT
+
+extern int level_items;
+
+void S_ExitSystem(char *message);
+
+void InitialiseBartoli(sint16 item_number)
+{
+    ITEM_INFO *item, *back, *front;
+    sint16 back_item, front_item;
+
+    item = &items[item_number];
+    item->pos.x_pos -= STEP_L * 2;
+    item->pos.z_pos -= STEP_L * 2;
+
+    back_item = CreateItem();
+    front_item = CreateItem();
+    if (back_item != NO_ITEM && front_item != NO_ITEM)
+    {
+        back = &items[back_item];
+        back->object_number = DRAGON_BACK;
+        back->pos.x_pos = item->pos.x_pos;
+        back->pos.y_pos = item->pos.y_pos;
+        back->pos.z_pos = item->pos.z_pos;
+        back->pos.y_rot = item->pos.y_rot;
+        back->room_number = item->room_number;
+        back->flags = NOT_VISIBLE;
+        back->shade = -1;
+
+        InitialiseItem(back_item);
+        back->mesh_bits = 0x1fffff;
+
+        item->data = (void *)back_item;
+
+        front = &items[front_item];
+        front->object_number = DRAGON_FRONT;
+        front->pos.x_pos = item->pos.x_pos;
+        front->pos.y_pos = item->pos.y_pos;
+        front->pos.z_pos = item->pos.z_pos;
+        front->pos.y_rot = item->pos.y_rot;
+        front->room_number = item->room_number;
+        front->flags = NOT_VISIBLE;
+        front->shade = -1;
+
+        InitialiseItem(front_item);
+
+        back->data = (void *)front_item;
+
+        level_items += 2;
+    }
+    else
+        S_ExitSystem("FATAL: Unable to create dragon");
+}
