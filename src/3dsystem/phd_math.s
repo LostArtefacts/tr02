@@ -46,4 +46,8 @@ atan_done:
     ret
 @phd_atan@8 endp
 
+@phd_cos@4 proc public
+    add ecx, 16384
+@phd_cos@4 endp
+
     end
