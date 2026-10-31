@@ -119,6 +119,23 @@ void MoveCamera(GAME_VECTOR *ideal, int speed)
     }
 }
 
+void ClipCamera(sint32 *x, sint32 *y, sint32 *h, sint32 target_x, sint32 target_y, sint32 target_h,
+    sint32 left, sint32 top, sint32 right, sint32 bottom)
+{
+    if ((right > left) ^ (target_x < left))
+    {
+        *y = target_y + (*y - target_y) * (left - target_x) / (*x - target_x);
+        *h = target_h + (*h - target_h) * (left - target_x) / (*x - target_x);
+        *x = left;
+    }
+    if ((bottom > top && target_y > top && *y < top) || (bottom < top && target_y < top && *y > top))
+    {
+        *x = target_x + (*x - target_x) * (top - target_y) / (*y - target_y);
+        *h = target_h + (*h - target_h) * (top - target_y) / (*y - target_y);
+        *y = top;
+    }
+}
+
 #define SQUARE(A) ((A) * (A))
 #define MIN_SQUARE SQUARE(WALL_L / 3)
 

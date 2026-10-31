@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.73% (1085)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.44% (18)</tspan> · <tspan class="todo">11.19% (140)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.81% (1086)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.44% (18)</tspan> · <tspan class="todo">11.11% (139)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="647.88" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="647.88" y="0" class="decompiled"/>
-<rect width="10.75" height="6" x="652.65" y="0" class="nonmatching"/>
-<rect width="83.60" height="6" x="663.40" y="0" class="todo"/>
+<rect width="648.47" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="648.47" y="0" class="decompiled"/>
+<rect width="10.75" height="6" x="653.25" y="0" class="nonmatching"/>
+<rect width="83" height="6" x="664" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -194,7 +194,7 @@
 <rect width="12" height="12" x="330" y="30" class="named"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="30" class="named"><title>0x00410580 InitialiseCamera (176 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="30" class="named"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="30" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="30" class="named"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="30" class="named"><title>0x00410a90 ShiftCamera (340 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="named"><title>0x00410bf0 GoodPosition (80 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="named"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.30%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.70%</tspan> · <tspan class="todo">15.92%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.36%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.70%</tspan> · <tspan class="todo">15.85%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="592.36" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="592.36" y="0" class="decompiled"/>
-<rect width="35.09" height="6" x="593.01" y="0" class="nonmatching"/>
-<rect width="118.90" height="6" x="628.10" y="0" class="todo"/>
+<rect width="592.82" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="592.82" y="0" class="decompiled"/>
+<rect width="35.09" height="6" x="593.47" y="0" class="nonmatching"/>
+<rect width="118.44" height="6" x="628.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1754,7 +1754,7 @@
 <rect width="10.53" height="10.69" x="512.38" y="143.28" class="todo"><title>0x00417d80 DragonBones (217 bytes)</title></rect>
 <rect width="10.53" height="10.69" x="525.90" y="143.28" class="named"><title>0x004346c0 MiniCopterControl (217 bytes)</title></rect>
 <rect width="10.46" height="10.69" x="539.43" y="143.28" class="named"><title>0x0042a040 lara_col_jumper (216 bytes)</title></rect>
-<rect width="10.40" height="10.69" x="552.89" y="143.28" class="todo"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
+<rect width="10.40" height="10.69" x="552.89" y="143.28" class="named"><title>0x004109b0 ClipCamera (215 bytes)</title></rect>
 <rect width="10.40" height="10.69" x="566.30" y="143.28" class="named"><title>0x004290b0 lara_col_forwardjump (215 bytes)</title></rect>
 <rect width="10.28" height="10.69" x="579.70" y="143.28" class="named"><title>0x0040fdd0 CreatureTurn (213 bytes)</title></rect>
 <rect width="10.28" height="10.69" x="592.98" y="143.28" class="named"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
