@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.13% (1090)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.68% (21)</tspan> · <tspan class="todo">10.55% (132)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.13% (1090)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.76% (22)</tspan> · <tspan class="todo">10.47% (131)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="650.86" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="650.86" y="0" class="decompiled"/>
-<rect width="12.54" height="6" x="655.64" y="0" class="nonmatching"/>
-<rect width="78.82" height="6" x="668.18" y="0" class="todo"/>
+<rect width="13.14" height="6" x="655.64" y="0" class="nonmatching"/>
+<rect width="78.22" height="6" x="668.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1188,7 +1188,7 @@
 <rect width="12" height="12" x="240" y="330" class="named"><title>0x00454b10 GameMain (720 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="330" class="named"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="330" class="named"><title>0x00454ef0 CheckCheatMode (852 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="330" class="todo"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="330" class="nonmatching"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="330" class="named"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="330" class="named"><title>0x004553b0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x00455400 CalcVolume (42 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.71%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.34%</tspan> · <tspan class="todo">14.87%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.71%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.38%</tspan> · <tspan class="todo">14.83%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="595.41" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="595.41" y="0" class="decompiled"/>
-<rect width="39.89" height="6" x="596.06" y="0" class="nonmatching"/>
-<rect width="111.05" height="6" x="635.95" y="0" class="todo"/>
+<rect width="40.16" height="6" x="596.06" y="0" class="nonmatching"/>
+<rect width="110.78" height="6" x="636.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1965,7 +1965,7 @@
 <rect width="7.54" height="7.20" x="604.62" y="216.07" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="7.54" height="7.20" x="615.16" y="216.07" class="named"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
 <rect width="7.54" height="7.20" x="625.70" y="216.07" class="named"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
-<rect width="7.46" height="7.20" x="636.24" y="216.07" class="todo"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
+<rect width="7.46" height="7.20" x="636.24" y="216.07" class="nonmatching"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
 <rect width="7.37" height="7.20" x="646.70" y="216.07" class="named"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="7.37" height="7.20" x="657.07" y="216.07" class="named"><title>0x00427250 GlobalItemReplace (124 bytes)</title></rect>
 <rect width="7.37" height="7.20" x="667.44" y="216.07" class="named"><title>0x00428100 lara_as_stepright (124 bytes)</title></rect>

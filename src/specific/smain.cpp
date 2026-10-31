@@ -408,6 +408,17 @@ extern "C" void CheckCheatMode(void)
     }
 }
 
+extern "C" void S_SaveSettings(void)
+{
+    OpenGameRegistryKey("Game");
+    SetRegistryDwordValue("MusicVolume", Option_Music_Volume);
+    SetRegistryDwordValue("SoundFXVolume", Option_SoundFX_Volume);
+    SetRegistryDwordValue("DetailLevel", detail_level);
+    SetRegistryFloatValue("Sizer", game_sizer);
+    SetRegistryBinaryValue("Layout", (LPBYTE)layout[1], sizeof(layout[1]));
+    CloseGameRegistryKey();
+}
+
 extern "C" void S_LoadSettings(void)
 {
     DWORD value;
