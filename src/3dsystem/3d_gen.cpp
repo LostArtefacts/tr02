@@ -97,6 +97,33 @@ void phd_RotX(PHD_ANGLE rx)
     }
 }
 
+void phd_RotY(PHD_ANGLE ry)
+{
+    sint32 sy, cy, r0, r1;
+    sint32 *mptr;
+
+    if (ry)
+    {
+        mptr = phd_mxptr;
+        sy = phd_sin(ry);
+        cy = phd_cos(ry);
+        r0 = *(mptr + M00) * cy - *(mptr + M02) * sy;
+        r1 = *(mptr + M02) * cy + *(mptr + M00) * sy;
+        *(mptr + M00) = r0 >> W2V_SHIFT;
+        *(mptr + M02) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M10) * cy - *(mptr + M12) * sy;
+        r1 = *(mptr + M12) * cy + *(mptr + M10) * sy;
+        *(mptr + M10) = r0 >> W2V_SHIFT;
+        *(mptr + M12) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M20) * cy - *(mptr + M22) * sy;
+        r1 = *(mptr + M22) * cy + *(mptr + M20) * sy;
+        *(mptr + M20) = r0 >> W2V_SHIFT;
+        *(mptr + M22) = r1 >> W2V_SHIFT;
+    }
+}
+
 extern "C" void phd_RotZ(PHD_ANGLE rz)
 {
     sint32 sz, cz, r0, r1;

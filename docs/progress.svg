@@ -61,21 +61,21 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.13% (1090)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.84% (23)</tspan> · <tspan class="todo">10.39% (130)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.05% (1089)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2% (25)</tspan> · <tspan class="todo">10.31% (129)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="650.86" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="650.86" y="0" class="decompiled"/>
-<rect width="13.73" height="6" x="655.64" y="0" class="nonmatching"/>
-<rect width="77.63" height="6" x="669.37" y="0" class="todo"/>
+<rect width="650.27" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="650.27" y="0" class="decompiled"/>
+<rect width="14.93" height="6" x="655.04" y="0" class="nonmatching"/>
+<rect width="77.03" height="6" x="669.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="named"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="nonmatching"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="0" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="0" class="nonmatching"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="0" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="0" class="nonmatching"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="0" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="named"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.71%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.47%</tspan> · <tspan class="todo">14.74%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.57%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.66%</tspan> · <tspan class="todo">14.69%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="595.41" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="595.41" y="0" class="decompiled"/>
-<rect width="40.87" height="6" x="596.06" y="0" class="nonmatching"/>
-<rect width="110.07" height="6" x="636.93" y="0" class="todo"/>
+<rect width="594.38" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="594.38" y="0" class="decompiled"/>
+<rect width="42.26" height="6" x="595.03" y="0" class="nonmatching"/>
+<rect width="109.71" height="6" x="637.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1524,7 +1524,7 @@
 <rect width="16.48" height="18.12" x="396.68" y="64.51" class="named"><title>0x00424dc0 Inv_GetItemOption (482 bytes)</title></rect>
 <rect width="16.48" height="18.07" x="396.68" y="85.63" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="16.48" height="18.03" x="396.68" y="106.70" class="named"><title>0x00446870 WinVidResizeGameWindow (480 bytes)</title></rect>
-<rect width="16.48" height="17.85" x="396.68" y="127.73" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="16.48" height="17.85" x="396.68" y="127.73" class="nonmatching"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="16.48" height="17.85" x="396.68" y="148.58" class="todo"><title>0x00453560 SE_GraphicsDlgFullScreenModesUpdate (476 bytes)</title></rect>
 <rect width="16.48" height="17.81" x="396.68" y="169.44" class="named"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="16.48" height="17.63" x="396.68" y="190.25" class="named"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
@@ -1849,7 +1849,7 @@
 <rect width="9.29" height="8.81" x="538.21" y="253" class="named"><title>0x0042f1f0 find_target_point (170 bytes)</title></rect>
 <rect width="9.29" height="8.81" x="538.21" y="264.80" class="named"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
 <rect width="9.29" height="8.74" x="538.21" y="276.61" class="todo"><title>0x00454a30 SE_AdvancedDlgUpdate (169 bytes)</title></rect>
-<rect width="9.29" height="8.67" x="538.21" y="288.35" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
+<rect width="9.29" height="8.67" x="538.21" y="288.35" class="nonmatching"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="9.29" height="8.67" x="538.21" y="300.01" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="9.29" height="8.67" x="538.21" y="311.68" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="9.29" height="8.67" x="538.21" y="323.35" class="named"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
