@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.01% (1051)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.35% (192)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.09% (1052)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.27% (191)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="627.58" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="627.58" y="0" class="decompiled"/>
-<rect width="114.65" height="6" x="632.35" y="0" class="todo"/>
+<rect width="628.17" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="628.17" y="0" class="decompiled"/>
+<rect width="114.05" height="6" x="632.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -932,7 +932,7 @@
 <rect width="12" height="12" x="165" y="255" class="named"><title>0x004461f0 WinVidRegisterGameWindowClass (106 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="255" class="named"><title>0x00446260 WinVidGameWindowProc (1542 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="255" class="named"><title>0x00446870 WinVidResizeGameWindow (480 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="255" class="todo"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="255" class="named"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="255" class="named"><title>0x00446b10 WinVidCreateGameWindow (198 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="255" class="todo"><title>0x00446be0 WinVidFreeWindow (28 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="255" class="named"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.74%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">26.17%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.79%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">26.12%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="550.84" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="550.84" y="0" class="decompiled"/>
-<rect width="195.51" height="6" x="551.49" y="0" class="todo"/>
+<rect width="551.24" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="551.24" y="0" class="decompiled"/>
+<rect width="195.10" height="6" x="551.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1806,7 +1806,7 @@
 <rect width="9.75" height="9.66" x="525.44" y="170.09" class="named"><title>0x00452d70 SE_SoundTestStart (189 bytes)</title></rect>
 <rect width="9.75" height="9.66" x="525.44" y="182.75" class="todo"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="9.75" height="9.59" x="525.44" y="195.41" class="named"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
-<rect width="9.75" height="9.59" x="525.44" y="208" class="todo"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
+<rect width="9.75" height="9.59" x="525.44" y="208" class="named"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
 <rect width="9.75" height="9.59" x="525.44" y="220.59" class="named"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>
 <rect width="9.75" height="9.53" x="525.44" y="233.18" class="named"><title>0x0042b520 LaraLandedBad (187 bytes)</title></rect>
 <rect width="9.75" height="9.53" x="525.44" y="245.71" class="named"><title>0x00434160 AlterFloorHeight (187 bytes)</title></rect>

@@ -813,6 +813,40 @@ done:
     return DefWindowProcA(hWnd, Msg, wParam, lParam);
 }
 
+typedef struct {
+    uint8 red;
+    uint8 green;
+    uint8 blue;
+} RGB888;
+
+extern "C" bool WinVidCheckGameWindowPalette(HWND hWnd)
+{
+    HDC hdc;
+    PALETTEENTRY sysPalette[256];
+    RGB888 bufPalette[256];
+    uint8 *ptr;
+    PALETTEENTRY *src;
+    int i;
+
+    hdc = GetDC(hWnd);
+    if (!hdc)
+        return false;
+    GetSystemPaletteEntries(hdc, 0, 256, sysPalette);
+    ReleaseDC(hWnd, hdc);
+    ptr = (uint8 *)bufPalette;
+    src = sysPalette;
+    for (i = 0; i < 256; i++) {
+        *ptr++ = src->peRed;
+        *ptr++ = src->peGreen;
+        *ptr++ = src->peBlue;
+        src++;
+    }
+    bufPalette[8].blue = bufPalette[9].blue = bufPalette[246].blue = 0;
+    bufPalette[8].green = bufPalette[9].green = bufPalette[246].green = 0;
+    bufPalette[8].red = bufPalette[9].red = bufPalette[246].red = 0;
+    return !memcmp(bufPalette, game_palette, sizeof(bufPalette));
+}
+
 extern "C" {
 extern bool IsGameWindowMaximized;
 extern bool IsGameWindowChanging;
