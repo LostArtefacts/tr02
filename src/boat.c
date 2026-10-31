@@ -1,5 +1,4 @@
 #include "game.h"
-#include "box.h"
 #include "specific/init.h"
 
 #define BOAT_GETON 0
@@ -71,6 +70,55 @@ void InitialiseBoat(sint16 item_number)
 #define GONDOLA_FLOATING 1
 #define GONDOLA_CRASH 2
 #define SQUARE(A) ((A) * (A))
+
+int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
+{
+    int geton, dist, x1, x2;
+    sint16 rot;
+    ITEM_INFO *boat;
+
+    if (lara.gun_status != LG_ARMLESS)
+        return 0;
+    boat = &items[item_number];
+    x1 = lara_item->pos.x_pos;
+    x2 = boat->pos.x_pos;
+    dist = (lara_item->pos.z_pos - boat->pos.z_pos) * phd_cos(-boat->pos.y_rot);
+    dist = (dist - (x1 - x2) * phd_sin(-boat->pos.y_rot)) >> W2V_SHIFT;
+    if (dist > 200)
+        return 0;
+    rot = boat->pos.y_rot - lara_item->pos.y_rot;
+    geton = 0;
+    if (lara.water_status == LARA_SURFACE || lara.water_status == LARA_WADE)
+    {
+        if (!(input & IN_ACTION) || lara_item->gravity_status || boat->speed)
+            return 0;
+        if (rot > 0x2000 && rot < 0x6000)
+            geton = 1;
+        else if (rot > -0x6000 && rot < -0x2000)
+            geton = 2;
+    }
+    else if (lara.water_status == LARA_ABOVEWATER)
+    {
+        if (lara_item->fallspeed > 0)
+        {
+            if (rot > -0x6000 && rot < 0x6000 && lara_item->pos.y_pos > boat->pos.y_pos)
+                geton = 3;
+        }
+        else if (lara_item->fallspeed == 0)
+        {
+            if (rot > -0x6000 && rot < 0x6000)
+            {
+                if (x1 == x2 && lara_item->pos.y_pos == boat->pos.y_pos && lara_item->pos.z_pos == boat->pos.z_pos)
+                    geton = 4;
+                else
+                    geton = 3;
+            }
+        }
+    }
+    if (geton && TestBoundsCollide(boat, lara_item, coll->radius))
+        return TestCollision(boat, lara_item) ? geton : 0;
+    return 0;
+}
 
 sint32 TestWaterHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *pos)
 {
