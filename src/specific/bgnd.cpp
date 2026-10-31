@@ -356,3 +356,14 @@ extern "C" void Func444350(void)
     DrawTextureTile(x[2], y[1], x[3] - x[2], y[2] - y[1], BGND_PageHandles[2], 128, 0, 128, 224, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     HWR_EnableZBuffer(true, true);
 }
+
+extern "C" bool BGND_Init(void)
+{
+    int i;
+
+    BGND_PaletteIndex = -1;
+    BGND_PictureIsReady = false;
+    for (i = 0; i < 5; i++)
+        BGND_TexturePageIndexes[i] = -1;
+    return true;
+}
