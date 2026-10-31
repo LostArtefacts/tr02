@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.57% (1083)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.52% (19)</tspan> · <tspan class="todo">11.27% (141)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.73% (1085)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.44% (18)</tspan> · <tspan class="todo">11.19% (140)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="646.68" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="646.68" y="0" class="decompiled"/>
-<rect width="11.35" height="6" x="651.46" y="0" class="nonmatching"/>
-<rect width="84.19" height="6" x="662.81" y="0" class="todo"/>
+<rect width="647.88" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="647.88" y="0" class="decompiled"/>
+<rect width="10.75" height="6" x="652.65" y="0" class="nonmatching"/>
+<rect width="83.60" height="6" x="663.40" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -240,7 +240,7 @@
 <rect width="12" height="12" x="270" y="45" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="45" class="nonmatching"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="45" class="named"><title>0x00414b40 GetFloor (408 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="45" class="todo"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="45" class="named"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="45" class="named"><title>0x00414e50 GetHeight (640 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="45" class="named"><title>0x004150d0 RefreshCamera (231 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="45" class="named"><title>0x004151c0 TestTriggers (1760 bytes)</title></rect>
@@ -248,7 +248,7 @@
 <rect width="12" height="12" x="390" y="45" class="named"><title>0x00415900 GetCeiling (600 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="45" class="named"><title>0x00415b60 GetDoor (78 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="45" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="45" class="nonmatching"><title>0x00415c50 zLOS (747 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="45" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="45" class="named"><title>0x00415f40 xLOS (748 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="45" class="named"><title>0x00416230 ClipTarget (218 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="45" class="todo"><title>0x00416310 ObjectOnLOS (766 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.98%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.91%</tspan> · <tspan class="todo">16.02%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.30%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.70%</tspan> · <tspan class="todo">15.92%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="589.96" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="589.96" y="0" class="decompiled"/>
-<rect width="36.71" height="6" x="590.61" y="0" class="nonmatching"/>
-<rect width="119.68" height="6" x="627.32" y="0" class="todo"/>
+<rect width="592.36" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="592.36" y="0" class="decompiled"/>
+<rect width="35.09" height="6" x="593.01" y="0" class="nonmatching"/>
+<rect width="118.90" height="6" x="628.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1443,7 +1443,7 @@
 <rect width="22.85" height="22.03" x="325.01" y="101.01" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
 <rect width="22.85" height="21.73" x="325.01" y="126.04" class="named"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
 <rect width="22.85" height="21.70" x="325.01" y="150.77" class="named"><title>0x00415f40 xLOS (748 bytes)</title></rect>
-<rect width="22.85" height="21.67" x="325.01" y="175.47" class="nonmatching"><title>0x00415c50 zLOS (747 bytes)</title></rect>
+<rect width="22.85" height="21.67" x="325.01" y="175.47" class="named"><title>0x00415c50 zLOS (747 bytes)</title></rect>
 <rect width="22.85" height="21.53" x="325.01" y="200.13" class="named"><title>0x0042b080 TestLaraVault (743 bytes)</title></rect>
 <rect width="22.85" height="21.30" x="325.01" y="224.67" class="named"><title>0x0043dff0 SkidooAnimation (736 bytes)</title></rect>
 <rect width="22.85" height="21.30" x="325.01" y="248.97" class="named"><title>0x0044bed0 WinPlayFMV (736 bytes)</title></rect>
@@ -1598,7 +1598,7 @@
 <rect width="14.76" height="14.54" x="434.95" y="186.24" class="named"><title>0x0042acb0 LaraTestHangJumpUp (365 bytes)</title></rect>
 <rect width="14.76" height="14.35" x="434.95" y="203.78" class="named"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
 <rect width="14.76" height="14.35" x="434.95" y="221.13" class="named"><title>0x0042fcf0 draw_flare (361 bytes)</title></rect>
-<rect width="14.76" height="14.30" x="434.95" y="238.48" class="todo"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
+<rect width="14.76" height="14.30" x="434.95" y="238.48" class="named"><title>0x00414ce0 GetWaterHeight (360 bytes)</title></rect>
 <rect width="14.76" height="14.30" x="434.95" y="255.78" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
 <rect width="14.76" height="14.25" x="434.95" y="273.09" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
 <rect width="14.76" height="14.25" x="434.95" y="290.34" class="named"><title>0x00423c20 RingIsOpen (359 bytes)</title></rect>
