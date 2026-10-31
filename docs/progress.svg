@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.05% (1089)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2% (25)</tspan> · <tspan class="todo">10.31% (129)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.89% (1087)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2.24% (28)</tspan> · <tspan class="todo">10.23% (128)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="650.27" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="650.27" y="0" class="decompiled"/>
-<rect width="14.93" height="6" x="655.04" y="0" class="nonmatching"/>
-<rect width="77.03" height="6" x="669.97" y="0" class="todo"/>
+<rect width="649.07" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="649.07" y="0" class="decompiled"/>
+<rect width="16.72" height="6" x="653.85" y="0" class="nonmatching"/>
+<rect width="76.43" height="6" x="670.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -76,9 +76,9 @@
 <rect width="12" height="12" x="60" y="0" class="nonmatching"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="0" class="nonmatching"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="0" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="0" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="0" class="named"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="0" class="nonmatching"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="0" class="nonmatching"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="0" class="nonmatching"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="named"><title>0x004019e0 phd_PutPolygons (243 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="0" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="0" class="named"><title>0x00401bd0 calc_background_light (50 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.57%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.66%</tspan> · <tspan class="todo">14.69%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.48%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.88%</tspan> · <tspan class="todo">14.55%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="594.38" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="594.38" y="0" class="decompiled"/>
-<rect width="42.26" height="6" x="595.03" y="0" class="nonmatching"/>
-<rect width="109.71" height="6" x="637.29" y="0" class="todo"/>
+<rect width="593.75" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="593.75" y="0" class="decompiled"/>
+<rect width="43.95" height="6" x="594.40" y="0" class="nonmatching"/>
+<rect width="108.65" height="6" x="638.35" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1519,7 +1519,7 @@
 <rect width="17.37" height="17.78" x="669.32" y="22.62" class="named"><title>0x00438fa0 MouseControl (496 bytes)</title></rect>
 <rect width="17.21" height="17.78" x="689.70" y="22.62" class="named"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
 <rect width="17.09" height="17.78" x="709.91" y="22.62" class="named"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
-<rect width="17.01" height="17.78" x="729.99" y="22.62" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
+<rect width="17.01" height="17.78" x="729.99" y="22.62" class="nonmatching"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="16.48" height="18.12" x="396.68" y="43.40" class="todo"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="16.48" height="18.12" x="396.68" y="64.51" class="named"><title>0x00424dc0 Inv_GetItemOption (482 bytes)</title></rect>
 <rect width="16.48" height="18.07" x="396.68" y="85.63" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
@@ -1837,7 +1837,7 @@
 <rect width="9.30" height="8.94" x="676.42" y="170.09" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="9.30" height="8.94" x="688.72" y="170.09" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="9.30" height="8.94" x="701.02" y="170.09" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
-<rect width="9.23" height="8.94" x="713.32" y="170.09" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
+<rect width="9.23" height="8.94" x="713.32" y="170.09" class="nonmatching"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="9.23" height="8.94" x="725.55" y="170.09" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="9.23" height="8.94" x="737.77" y="170.09" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="9.29" height="8.88" x="538.21" y="182.02" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
@@ -1974,7 +1974,7 @@
 <rect width="7.37" height="7.20" x="698.56" y="216.07" class="named"><title>0x004347a0 InitialiseDyingMonk (124 bytes)</title></rect>
 <rect width="7.37" height="7.20" x="708.93" y="216.07" class="named"><title>0x0043e2d0 SkidooExplode (124 bytes)</title></rect>
 <rect width="7.29" height="7.20" x="719.30" y="216.07" class="named"><title>0x0042bf70 FireM16 (123 bytes)</title></rect>
-<rect width="7.20" height="7.20" x="729.59" y="216.07" class="named"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
+<rect width="7.20" height="7.20" x="729.59" y="216.07" class="nonmatching"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="7.20" height="7.20" x="739.80" y="216.07" class="named"><title>0x00416bf0 Harpoon (122 bytes)</title></rect>
 <rect width="7.03" height="7.38" x="583.37" y="226.27" class="named"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="6.95" height="7.38" x="593.41" y="226.27" class="named"><title>0x004137c0 EffectSpaz (121 bytes)</title></rect>
