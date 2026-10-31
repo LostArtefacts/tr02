@@ -1,3 +1,4 @@
+#include "../specific/global.h"
 #include "../3dglodef.h"
 #include "../specific/winmain.h"
 
@@ -64,6 +65,18 @@ void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
     if ((y > 0 && pitch > 0) || (y < 0 && pitch < 0))
         pitch = -pitch;
     *(dest + 1) = pitch;
+}
+
+extern "C" int phd_TranslateRel(sint32 x, sint32 y, sint32 z)
+{
+    sint32 *mptr = phd_mxptr;
+
+    *(mptr + M03) += *(mptr + M00) * x + *(mptr + M01) * y + *(mptr + M02) * z;
+    *(mptr + M13) += *(mptr + M10) * x + *(mptr + M11) * y + *(mptr + M12) * z;
+    *(mptr + M23) += *(mptr + M20) * x + *(mptr + M21) * y + *(mptr + M22) * z;
+    if ((x = ABS(*(mptr + M03))) > phd_zfar || (y = ABS(*(mptr + M13))) > phd_zfar || (z = ABS(*(mptr + M23))) > phd_zfar)
+        return 0;
+    return 1;
 }
 
 extern "C" sint16 *calc_object_vertices(sint16 *objptr);

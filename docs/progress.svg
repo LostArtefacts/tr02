@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.32% (1044)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">16.04% (201)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.40% (1045)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.96% (200)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="622.40" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="622.40" y="0" class="decompiled"/>
-<rect width="119.83" height="6" x="627.17" y="0" class="todo"/>
+<rect width="623" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="623" y="0" class="decompiled"/>
+<rect width="119.23" height="6" x="627.77" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -76,7 +76,7 @@
 <rect width="12" height="12" x="75" y="0" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="0" class="todo"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="0" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="0" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="0" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="todo"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="named"><title>0x004019e0 phd_PutPolygons (243 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="0" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.55%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.37%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.60%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.32%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="541.93" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="541.93" y="0" class="decompiled"/>
-<rect width="204.42" height="6" x="542.58" y="0" class="todo"/>
+<rect width="542.30" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="542.30" y="0" class="decompiled"/>
+<rect width="204.05" height="6" x="542.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.01" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1837,7 +1837,7 @@
 <rect width="9.32" height="8.93" x="676.28" y="170.02" class="named"><title>0x004261a0 AddRequesterItem (172 bytes)</title></rect>
 <rect width="9.32" height="8.93" x="688.60" y="170.02" class="named"><title>0x00440070 SpiderLeap (172 bytes)</title></rect>
 <rect width="9.32" height="8.93" x="700.93" y="170.02" class="todo"><title>0x00456972 Func456972 (172 bytes)</title></rect>
-<rect width="9.25" height="8.93" x="713.25" y="170.02" class="todo"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
+<rect width="9.25" height="8.93" x="713.25" y="170.02" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="9.25" height="8.93" x="725.50" y="170.02" class="named"><title>0x00414a30 GetChange (171 bytes)</title></rect>
 <rect width="9.25" height="8.93" x="737.75" y="170.02" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="9.30" height="8.88" x="537.80" y="181.95" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
