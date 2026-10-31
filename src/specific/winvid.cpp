@@ -1,4 +1,5 @@
 #include "include.h"
+#pragma inline_depth(3)
 #include "global.h"
 #include "winmain.h"
 
@@ -556,9 +557,60 @@ struct STRING_FLAGGED {
         isPresented = true;
     }
     ~STRING_FLAGGED();
+    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
+    {
+        if (this != &src)
+        {
+            if (!isPresented)
+                lpString = new char[strlen(src.lpString) + 1];
+            strcpy(lpString, src.lpString);
+        }
+        return *this;
+    }
 };
 
-struct DISPLAY_ADAPTER {
+struct DISPLAY_MODE {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+    bool CompareVideoModes(DISPLAY_MODE *mode);
+};
+
+struct DISPLAY_MODE_NODE {
+    DISPLAY_MODE_NODE *next;
+    DISPLAY_MODE_NODE *previous;
+    DISPLAY_MODE body;
+    DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode)
+    {
+        next = nextNode;
+        previous = prevNode;
+    }
+};
+
+struct DISPLAY_MODE_LIST {
+    DISPLAY_MODE_NODE *head;
+    DISPLAY_MODE_NODE *tail;
+    DWORD dwCount;
+    DISPLAY_MODE_LIST();
+    void DisplayModeListDelete(void);
+    DISPLAY_MODE *InsertDisplayModeInListHead(void);
+    DISPLAY_MODE *InsertDisplayModeInListTail(void);
+    DISPLAY_MODE_LIST &operator=(const DISPLAY_MODE_LIST &src)
+    {
+        DISPLAY_MODE_NODE *node;
+
+        if (this != &src)
+        {
+            DisplayModeListDelete();
+            for (node = src.head; node; node = node->next)
+                *InsertDisplayModeInListTail() = node->body;
+        }
+        return *this;
+    }
+};
+
+struct DISPLAY_ADAPTER_INFO {
     LPGUID lpAdapterGuid;
     GUID adapterGuid;
     STRING_FLAGGED driverDescription;
@@ -567,13 +619,25 @@ struct DISPLAY_ADAPTER {
     DDCAPS helCaps;
     GUID deviceGuid;
     D3DDEVICEDESC D3DHWDeviceDesc;
-    DWORD dispModeLists[6];
-    int vgaModes[8];
+    DISPLAY_ADAPTER_INFO();
+};
+
+struct DISPLAY_ADAPTER : DISPLAY_ADAPTER_INFO {
+    DISPLAY_MODE_LIST hwDispModeList;
+    DISPLAY_MODE_LIST swDispModeList;
+    DISPLAY_MODE vgaMode1;
+    DISPLAY_MODE vgaMode2;
     DWORD screenWidth;
     bool hwRenderSupported;
     bool swWindowedSupported;
     bool hwWindowedSupported;
-    DISPLAY_ADAPTER();
+    bool isVgaMode1Presented;
+    bool isVgaMode2Presented;
+    bool perspectiveCorrectSupported;
+    bool ditherSupported;
+    bool zBufferSupported;
+    bool linearFilterSupported;
+    bool shadeRestricted;
 };
 
 typedef struct DISPLAY_ADAPTER_NODE {
@@ -944,14 +1008,6 @@ extern "C" DISPLAY_ADAPTER_NODE *WinVidGetDisplayAdapter(GUID *lpGuid)
     return result;
 }
 
-struct DISPLAY_MODE {
-    int width;
-    int height;
-    int bpp;
-    int vga;
-    bool CompareVideoModes(DISPLAY_MODE *mode);
-};
-
 extern "C" bool WinVidGetDisplayMode(DISPLAY_MODE *dispMode)
 {
     DDSURFACEDESC dsp;
@@ -1075,28 +1131,9 @@ STRING_FLAGGED::~STRING_FLAGGED()
         delete[] lpString;
 }
 
-DISPLAY_ADAPTER::DISPLAY_ADAPTER() : driverDescription(256), driverName(256)
+DISPLAY_ADAPTER_INFO::DISPLAY_ADAPTER_INFO() : driverDescription(256), driverName(256)
 {
 }
-
-struct DISPLAY_MODE_NODE {
-    DISPLAY_MODE_NODE *next;
-    DISPLAY_MODE_NODE *previous;
-    DISPLAY_MODE body;
-    DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode) : next(nextNode), previous(prevNode)
-    {
-    }
-};
-
-struct DISPLAY_MODE_LIST {
-    DISPLAY_MODE_NODE *head;
-    DISPLAY_MODE_NODE *tail;
-    DWORD dwCount;
-    DISPLAY_MODE_LIST();
-    void DisplayModeListDelete(void);
-    DISPLAY_MODE *InsertDisplayModeInListHead(void);
-    DISPLAY_MODE *InsertDisplayModeInListTail(void);
-};
 
 DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
 {
@@ -1105,7 +1142,7 @@ DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
     dwCount = 0;
 }
 
-void DISPLAY_MODE_LIST::DisplayModeListDelete(void)
+inline void DISPLAY_MODE_LIST::DisplayModeListDelete(void)
 {
     DISPLAY_MODE_NODE *node;
     DISPLAY_MODE_NODE *nextNode;
@@ -1132,7 +1169,7 @@ DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListHead(void)
     return &node->body;
 }
 
-DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
+inline DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
 {
     DISPLAY_MODE_NODE *node = new DISPLAY_MODE_NODE(tail, NULL);
 
@@ -1143,4 +1180,22 @@ DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
     tail = node;
     dwCount++;
     return &node->body;
+}
+
+enum WinVidStartResult {
+    ERR_CantInitRenderer = 3
+};
+
+extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
+
+extern "C" void WinVidStart(void)
+{
+    DISPLAY_ADAPTER *preferred;
+
+    if (!SavedAppSettings.PreferredDisplayAdapter)
+        throw ERR_CantInitRenderer;
+    preferred = &((DISPLAY_ADAPTER_NODE *)SavedAppSettings.PreferredDisplayAdapter)->body;
+    CurrentDisplayAdapter = *preferred;
+    if (!DDrawCreate(CurrentDisplayAdapter.lpAdapterGuid))
+        throw ERR_CantInitRenderer;
 }

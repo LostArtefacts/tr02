@@ -937,10 +937,10 @@
 <rect width="12" height="12" x="240" y="255" class="todo"><title>0x00446be0 WinVidFreeWindow (28 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="255" class="named"><title>0x00446c10 WinVidExitMessage (77 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="255" class="named"><title>0x00446c60 WinVidGetDisplayAdapter (72 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="255" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="255" class="named"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="255" class="named"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="255" class="named"><title>0x00447050 DisplayModeListInit (13 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="255" class="named"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="255" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="todo"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="255" class="named"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="named"><title>0x00447110 InsertDisplayModeInListTail (74 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.80%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">24.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">76.04%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">23.87%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="566.22" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="566.22" y="0" class="decompiled"/>
-<rect width="180.13" height="6" x="566.87" y="0" class="todo"/>
+<rect width="568.02" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="568.02" y="0" class="decompiled"/>
+<rect width="178.32" height="6" x="568.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1415,7 +1415,7 @@
 <rect width="24.57" height="24.93" x="270.36" y="200.77" class="named"><title>0x00433410 ExplodingDeath (902 bytes)</title></rect>
 <rect width="24.57" height="24.72" x="270.36" y="228.71" class="named"><title>0x00418e20 SetRoomBounds (895 bytes)</title></rect>
 <rect width="24.57" height="24.50" x="270.36" y="256.43" class="named"><title>0x00419a50 DrawAnimatingItem (888 bytes)</title></rect>
-<rect width="24.57" height="24.38" x="270.36" y="283.93" class="todo"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
+<rect width="24.57" height="24.38" x="270.36" y="283.93" class="named"><title>0x00446cb0 WinVidStart (884 bytes)</title></rect>
 <rect width="24.57" height="24.31" x="270.36" y="311.30" class="named"><title>0x00410630 MoveCamera (882 bytes)</title></rect>
 <rect width="24.57" height="24.25" x="270.36" y="338.62" class="named"><title>0x0042f370 FireWeapon (880 bytes)</title></rect>
 <rect width="24.57" height="24.13" x="270.36" y="365.87" class="named"><title>0x004312a0 InitialiseLaraInventory (876 bytes)</title></rect>
@@ -2294,7 +2294,7 @@
 <rect width="3.52" height="3.55" x="698.23" y="308.36" class="named"><title>0x00431ac0 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="3.52" height="3.55" x="704.75" y="308.36" class="named"><title>0x00435150 OpenThatDoor (50 bytes)</title></rect>
 <rect width="3.52" height="3.55" x="711.27" y="308.36" class="named"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
-<rect width="3.52" height="3.55" x="717.79" y="308.36" class="named"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
+<rect width="3.52" height="3.55" x="717.79" y="308.36" class="todo"><title>0x00447060 DisplayModeListDelete (50 bytes)</title></rect>
 <rect width="3.52" height="3.55" x="724.31" y="308.36" class="named"><title>0x00456080 FreeTexturePage (50 bytes)</title></rect>
 <rect width="3.39" height="3.55" x="730.83" y="308.36" class="named"><title>0x0041b790 phd_RotY_I (49 bytes)</title></rect>
 <rect width="3.39" height="3.55" x="737.22" y="308.36" class="named"><title>0x0041b7d0 phd_RotX_I (49 bytes)</title></rect>
