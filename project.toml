@@ -38,7 +38,7 @@ compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
 pairs = false  # revoked: groups land one per commit with DECOMP_ALLOW_DIFF
 no_comments = true  # no comments, tabs or CRs in src/
-allow_diff = ["calc_roomvert"]  # logically equivalent, registers or term order differ
+allow_diff = ["calc_roomvert", "InsertGT3_Sorted"]  # logically equivalent, registers or term order differ
 
 [reference]
 source = "refs/core"  # Core's 1997 tree

@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.08% (1)</tspan> · <tspan class="todo">13.83% (173)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.16% (2)</tspan> · <tspan class="todo">13.75% (172)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.32" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="0.60" height="6" x="643.10" y="0" class="nonmatching"/>
-<rect width="103.30" height="6" x="643.70" y="0" class="todo"/>
+<rect width="1.19" height="6" x="643.10" y="0" class="nonmatching"/>
+<rect width="102.71" height="6" x="644.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -133,7 +133,7 @@
 <rect width="12" height="12" x="165" y="15" class="todo"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x00409bb0 InsertFlatRect_ZBuffered (457 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="15" class="named"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="15" class="todo"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="15" class="nonmatching"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="todo"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="todo"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="15" class="named"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0.18%</tspan> · <tspan class="todo">21.54%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0.71%</tspan> · <tspan class="todo">21.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.09" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="1.38" height="6" x="584.74" y="0" class="nonmatching"/>
-<rect width="160.88" height="6" x="586.12" y="0" class="todo"/>
+<rect width="5.27" height="6" x="584.74" y="0" class="nonmatching"/>
+<rect width="156.99" height="6" x="590.01" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1349,7 +1349,7 @@
 <rect width="43.98" height="35.89" x="60.94" y="319.21" class="named"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
 <rect width="43.98" height="31.91" x="60.94" y="358.09" class="named"><title>0x00410c40 SmartShift (1921 bytes)</title></rect>
 <rect width="34.41" height="39.11" x="107.92" y="0" class="todo"><title>0x00453770 Func453770 (1845 bytes)</title></rect>
-<rect width="34.41" height="38.03" x="107.92" y="42.11" class="todo"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
+<rect width="34.41" height="38.03" x="107.92" y="42.11" class="nonmatching"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
 <rect width="34.41" height="37.99" x="107.92" y="83.14" class="named"><title>0x0044fee0 do_control_option (1796 bytes)</title></rect>
 <rect width="34.41" height="37.17" x="107.92" y="124.13" class="named"><title>0x004151c0 TestTriggers (1760 bytes)</title></rect>
 <rect width="34.41" height="36.82" x="107.92" y="164.30" class="named"><title>0x0044b770 S_LoadGameFlow (1745 bytes)</title></rect>
