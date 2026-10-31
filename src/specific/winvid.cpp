@@ -1028,6 +1028,29 @@ extern "C" bool WinVidGetDisplayMode(DISPLAY_MODE *dispMode)
     return true;
 }
 
+extern "C" {
+extern int FullScreenBPP;
+extern int FullScreenVGA;
+}
+
+extern "C" bool WinVidGoFullScreen(DISPLAY_MODE *dispMode)
+{
+    DWORD flags;
+
+    *(DISPLAY_MODE *)&FullScreenWidth = *dispMode;
+    if (!ShowDDrawGameWindow(true))
+        return false;
+    flags = 0;
+    if (dispMode->vga == 3)
+        flags = DDSDM_STANDARDVGAMODE;
+    IsGameWindowUpdating = true;
+    if (DX_TRY(DDraw->SetDisplayMode(dispMode->width, dispMode->height, dispMode->bpp, 0, flags)))
+        return false;
+    IsGameWindowUpdating = false;
+    IsGameFullScreen = true;
+    return true;
+}
+
 extern "C" bool WinVidGoWindowed(int width, int height, DISPLAY_MODE *dispMode)
 {
     int maxWidth;
