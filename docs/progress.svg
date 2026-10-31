@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.97% (1088)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.76% (22)</tspan> · <tspan class="todo">10.63% (133)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.13% (1090)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.68% (21)</tspan> · <tspan class="todo">10.55% (132)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="649.67" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="649.67" y="0" class="decompiled"/>
-<rect width="13.14" height="6" x="654.45" y="0" class="nonmatching"/>
-<rect width="79.42" height="6" x="667.58" y="0" class="todo"/>
+<rect width="650.86" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="650.86" y="0" class="decompiled"/>
+<rect width="12.54" height="6" x="655.64" y="0" class="nonmatching"/>
+<rect width="78.82" height="6" x="668.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -283,7 +283,7 @@
 <rect width="12" height="12" x="165" y="60" class="nonmatching"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="60" class="named"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="60" class="nonmatching"><title>0x00419640 PrintObjects (548 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="60" class="todo"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="60" class="named"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="60" class="named"><title>0x004199c0 DrawSpriteItem (131 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="60" class="named"><title>0x00419a50 DrawAnimatingItem (888 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="60" class="named"><title>0x00419dd0 DrawLara (3368 bytes)</title></rect>
@@ -303,7 +303,7 @@
 <rect width="12" height="12" x="465" y="60" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="60" class="named"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="named"><title>0x0041bd10 DrawGunFlash (360 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="60" class="nonmatching"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="60" class="named"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="named"><title>0x0041bf70 GetFrames (146 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="60" class="named"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x0041c090 GetBestFrame (53 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.54%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.41%</tspan> · <tspan class="todo">14.96%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.71%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.34%</tspan> · <tspan class="todo">14.87%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="594.20" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="594.20" y="0" class="decompiled"/>
-<rect width="40.39" height="6" x="594.85" y="0" class="nonmatching"/>
-<rect width="111.75" height="6" x="635.25" y="0" class="todo"/>
+<rect width="595.41" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="595.41" y="0" class="decompiled"/>
+<rect width="39.89" height="6" x="596.06" y="0" class="nonmatching"/>
+<rect width="111.05" height="6" x="635.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1621,7 +1621,7 @@
 <rect width="13.12" height="14.37" x="637.68" y="80.02" class="named"><title>0x00427a60 lara_as_stop (328 bytes)</title></rect>
 <rect width="13.12" height="14.37" x="653.80" y="80.02" class="named"><title>0x004339d0 MovableBlock (328 bytes)</title></rect>
 <rect width="13.12" height="14.37" x="669.91" y="80.02" class="named"><title>0x00433dd0 TestBlockPush (328 bytes)</title></rect>
-<rect width="13.07" height="14.37" x="686.03" y="80.02" class="todo"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
+<rect width="13.07" height="14.37" x="686.03" y="80.02" class="named"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
 <rect width="13.02" height="14.37" x="702.10" y="80.02" class="todo"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12.97" height="14.37" x="718.11" y="80.02" class="nonmatching"><title>0x004219b0 DrawAssaultTimer (325 bytes)</title></rect>
 <rect width="12.92" height="14.37" x="734.08" y="80.02" class="named"><title>0x0044c550 StartGame (324 bytes)</title></rect>
@@ -1722,7 +1722,7 @@
 <rect width="11.28" height="11.29" x="556.34" y="128.99" class="named"><title>0x0042e400 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="11.16" height="11.29" x="570.62" y="128.99" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="10.98" height="11.29" x="584.78" y="128.99" class="named"><title>0x00401ae0 S_InsertRoom (234 bytes)</title></rect>
-<rect width="10.86" height="11.29" x="598.75" y="128.99" class="nonmatching"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
+<rect width="10.86" height="11.29" x="598.75" y="128.99" class="named"><title>0x0041be80 CalculateObjectLighting (232 bytes)</title></rect>
 <rect width="10.86" height="11.29" x="612.61" y="128.99" class="named"><title>0x00447510 DInputEnumDevicesCallback (232 bytes)</title></rect>
 <rect width="10.86" height="11.29" x="626.47" y="128.99" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="10.80" height="11.29" x="640.33" y="128.99" class="named"><title>0x004150d0 RefreshCamera (231 bytes)</title></rect>

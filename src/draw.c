@@ -481,6 +481,52 @@ extern sint32 LsAdder;
 void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r);
 void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale);
 
+#define GLOW 236
+
+void DrawEffect(sint16 fx_num)
+{
+    FX_INFO *fx;
+    OBJECT_INFO *object;
+
+    fx = &effects[fx_num];
+    object = &objects[fx->object_number];
+    if (!object->loaded)
+        return;
+
+    if (fx->object_number == GLOW)
+    {
+        S_DrawSprite(((uint16)fx->pos.x_rot) | (fx->pos.y_rot << 16),
+                     fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos,
+                     objects[GLOW].mesh_index,
+                     fx->shade,
+                     fx->frame_number);
+        return;
+    }
+
+    if (object->nmeshes < 0)
+        S_DrawSprite(SPRITE_ABS | (object->semi_transparent ? SPRITE_SEMITRANS : 0) | SPRITE_SHADE, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, (sint16)(object->mesh_index - fx->frame_number), fx->shade, 0);
+    else
+    {
+        phd_PushMatrix();
+        phd_TranslateAbs(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos);
+        if (*(phd_mxptr + M23) > phd_znear && *(phd_mxptr + M23) < phd_zfar)
+        {
+            phd_RotYXZ(fx->pos.y_rot, fx->pos.x_rot, fx->pos.z_rot);
+            if (object->nmeshes)
+            {
+                S_CalculateStaticLight(fx->shade);
+                phd_PutPolygons(meshes[object->mesh_index], -1);
+            }
+            else
+            {
+                S_CalculateStaticLight(fx->shade);
+                phd_PutPolygons(meshes[fx->frame_number], -1);
+            }
+        }
+        phd_PopMatrix();
+    }
+}
+
 void DrawSpriteItem(ITEM_INFO *item)
 {
     OBJECT_INFO *obj;
