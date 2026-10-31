@@ -17,6 +17,39 @@ int FlashIt(void)
     return flash_state;
 }
 
+#define ASSAULT_NUMBERS 261
+
+int sprintf(char *buffer, const char *format, ...);
+void S_DrawScreenSprite2d(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
+
+void DrawAssaultTimer(void)
+{
+    char buffer[8];
+    char *c;
+    int x;
+    int seconds;
+
+    if (CurrentLevel != LV_GYM || !assault_timer_display)
+        return;
+    seconds = savegame.timer / 30;
+    sprintf(buffer, "%d:%02d.%d", seconds / 60, seconds % 60, (int)(savegame.timer % 30 / 3));
+    x = (phd_winxmax >> 1) - 50;
+    for (c = buffer; *c; c++) {
+        if (*c == ':') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[ASSAULT_NUMBERS].mesh_index + 10), 0x1000, 0);
+            x += 14;
+        } else if (*c == '.') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[ASSAULT_NUMBERS].mesh_index + 11), 0x1000, 0);
+            x += 14;
+        } else {
+            S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(*c + objects[ASSAULT_NUMBERS].mesh_index - '0'), 0x1000, 0);
+            x += 20;
+        }
+    }
+}
+
 extern int OverlayStatus;
 
 void DrawAssaultTimer(void);
