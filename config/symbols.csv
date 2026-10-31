@@ -1768,6 +1768,7 @@ address,size,name,symbol
 0x004d77f8,1,GF_Kill2Complete,_GF_Kill2Complete
 0x004d77fc,1,GF_StartGame,_GF_StartGame
 0x004d7808,256,GF_Description,_GF_Description
+0x004d790c,4,old_game_timer,_old_game_timer
 0x004d7910,4,flash_state,_flash_state
 0x004d7914,4,flash_count,_flash_count
 0x004d7918,4,old_hitpoints,_old_hitpoints

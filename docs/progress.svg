@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.04% (13)</tspan> · <tspan class="todo">12.87% (161)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.04% (13)</tspan> · <tspan class="todo">12.79% (160)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="638.32" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="7.76" height="6" x="643.10" y="0" class="nonmatching"/>
-<rect width="96.14" height="6" x="650.86" y="0" class="todo"/>
+<rect width="638.92" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="638.92" y="0" class="decompiled"/>
+<rect width="7.76" height="6" x="643.70" y="0" class="nonmatching"/>
+<rect width="95.54" height="6" x="651.46" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -391,7 +391,7 @@
 <rect width="12" height="12" x="285" y="90" class="named"><title>0x00421ca0 MakeAmmoString (40 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="named"><title>0x00421cd0 DrawAmmoInfo (336 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="named"><title>0x00421e20 InitialisePickUpDisplay (21 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="90" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="90" class="named"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="90" class="named"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="90" class="named"><title>0x00421fb0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="90" class="named"><title>0x00422030 DrawModeInfo (44 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.66%</tspan> · <tspan class="todo">18.06%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.66%</tspan> · <tspan class="todo">17.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="584.09" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="27.33" height="6" x="584.74" y="0" class="nonmatching"/>
-<rect width="134.93" height="6" x="612.07" y="0" class="todo"/>
+<rect width="584.64" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="584.64" y="0" class="decompiled"/>
+<rect width="27.33" height="6" x="585.29" y="0" class="nonmatching"/>
+<rect width="134.38" height="6" x="612.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1698,7 +1698,7 @@
 <rect width="11.56" height="12.24" x="720.87" y="113.75" class="named"><title>0x0042cb40 undraw_shotgun (260 bytes)</title></rect>
 <rect width="11.56" height="12.24" x="735.44" y="113.75" class="named"><title>0x00444f50 WinVidGetMinMaxInfo (260 bytes)</title></rect>
 <rect width="11.42" height="12.03" x="484.30" y="128.99" class="named"><title>0x004417c0 IcicleControl (254 bytes)</title></rect>
-<rect width="11.42" height="11.97" x="484.30" y="144.02" class="todo"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
+<rect width="11.42" height="11.97" x="484.30" y="144.02" class="named"><title>0x00421e40 DrawPickups (253 bytes)</title></rect>
 <rect width="11.42" height="11.91" x="484.30" y="159" class="named"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
 <rect width="11.42" height="11.91" x="484.30" y="173.91" class="named"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
 <rect width="11.42" height="11.85" x="484.30" y="188.82" class="named"><title>0x004296e0 lara_col_back (251 bytes)</title></rect>

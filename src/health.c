@@ -129,6 +129,43 @@ void InitialisePickUpDisplay(void)
         pickups[i].duration = 0;
 }
 
+static int old_game_timer;
+
+void S_DrawPickup(int sx, int sy, int scale, sint16 sprnum, sint16 shade, uint16 flags);
+
+void DrawPickups(int timed)
+{
+    sint32 sprite_width, time, x, y;
+    DISPLAYPU *pu;
+    int i, count;
+
+    time = savegame.timer - old_game_timer;
+    old_game_timer = savegame.timer;
+
+    if (time > 0 && time < 60) {
+        sprite_width = phd_winwidth / 10;
+        y = phd_winheight - sprite_width;
+        x = phd_winwidth - sprite_width;
+        pu = pickups;
+        count = 0;
+        for (i = 0; i < NUM_PU; i++, pu++, x -= sprite_width) {
+            if (timed)
+                pu->duration -= (sint16)time;
+
+            if (pu->duration > 0) {
+                if (count == 4 || count == 8) {
+                    y += -sprite_width * 2 / 3;
+                    x = phd_winwidth - sprite_width;
+                }
+                S_DrawPickup(x, y, 12288, pu->sprnum, 4096, 0);
+                count++;
+            } else {
+                pu->duration = 0;
+            }
+        }
+    }
+}
+
 #define SECRET_ITEM1 190
 #define SECRET_ITEM2 191
 #define SECRET_ITEM3 192
