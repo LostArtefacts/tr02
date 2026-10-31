@@ -45,6 +45,134 @@ inline uint32 ShadeU(uint32 r, uint32 g, uint32 b)
     return 0xff000000 | (r << 16) | (g << 8) | b;
 }
 
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys, u, v, g;
+} POINT_INFO;
+
+extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output);
+extern "C" int XYGUVClipper(int number, VERTEX_INFO *input);
+extern "C" int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3);
+extern "C" void DrawClippedPoly_Textured(int npoints);
+extern "C" D3DTEXTUREHANDLE HWR_PageHandles[];
+
+extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3)
+{
+    POINT_INFO point[3];
+    int npoints;
+    uint32 shade;
+
+    if ((sint8)(v1->clip & v2->clip & v3->clip))
+        return;
+    if ((sint8)(v1->clip | v2->clip | v3->clip) < 0) {
+        if (!visible_zclip(v1, v2, v3))
+            return;
+        point[0].xv = v1->xv;
+        point[0].yv = v1->yv;
+        point[0].zv = v1->zv;
+        point[0].ooz = v1->ooz;
+        point[0].xs = v1->xs;
+        point[0].ys = v1->ys;
+        point[0].g = (float)v1->g;
+        point[0].u = (float)uv1[0];
+        point[0].v = (float)uv1[1];
+        point[1].xv = v2->xv;
+        point[1].yv = v2->yv;
+        point[1].zv = v2->zv;
+        point[1].ooz = v2->ooz;
+        point[1].xs = v2->xs;
+        point[1].ys = v2->ys;
+        point[1].g = (float)v2->g;
+        point[1].u = (float)uv2[0];
+        point[1].v = (float)uv2[1];
+        point[2].xv = v3->xv;
+        point[2].yv = v3->yv;
+        point[2].zv = v3->zv;
+        point[2].ooz = v3->ooz;
+        point[2].xs = v3->xs;
+        point[2].ys = v3->ys;
+        point[2].g = (float)v3->g;
+        point[2].u = (float)uv3[0];
+        point[2].v = (float)uv3[1];
+        npoints = ZedClipper(3, point, VBuffer);
+        if (!npoints)
+            return;
+    } else {
+        if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) < 0)
+            return;
+        if ((sint8)(v1->clip | v2->clip | v3->clip)) {
+            VBuffer[0].x = v1->xs;
+            VBuffer[0].y = v1->ys;
+            VBuffer[0].rhw = v1->ooz;
+            VBuffer[0].g = (float)v1->g;
+            VBuffer[0].u = uv1[0] * v1->ooz;
+            VBuffer[0].v = uv1[1] * v1->ooz;
+            VBuffer[1].x = v2->xs;
+            VBuffer[1].y = v2->ys;
+            VBuffer[1].rhw = v2->ooz;
+            VBuffer[1].g = (float)v2->g;
+            VBuffer[1].u = uv2[0] * v2->ooz;
+            VBuffer[1].v = uv2[1] * v2->ooz;
+            VBuffer[2].x = v3->xs;
+            VBuffer[2].y = v3->ys;
+            VBuffer[2].rhw = v3->ooz;
+            VBuffer[2].g = (float)v3->g;
+            VBuffer[2].u = uv3[0] * v3->ooz;
+            VBuffer[2].v = uv3[1] * v3->ooz;
+            npoints = 3;
+        } else {
+            VBufferD3D[0].sx = v1->xs;
+            VBufferD3D[0].sy = v1->ys;
+            VBufferD3D[0].sz = FltResZBuf - FltResZORhw * v1->ooz;
+            VBufferD3D[0].rhw = v1->ooz;
+            shade = (0x1fff - v1->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+            if (bBlueEffect)
+                VBufferD3D[0].color = 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade;
+            else
+                VBufferD3D[0].color = 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[0].tu = uv1[0] / 65536.0f;
+            VBufferD3D[0].tv = uv1[1] / 65536.0f;
+            VBufferD3D[1].sx = v2->xs;
+            VBufferD3D[1].sy = v2->ys;
+            VBufferD3D[1].sz = FltResZBuf - FltResZORhw * v2->ooz;
+            VBufferD3D[1].rhw = v2->ooz;
+            shade = (0x1fff - v2->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+            if (bBlueEffect)
+                VBufferD3D[1].color = 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade;
+            else
+                VBufferD3D[1].color = 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[1].tu = uv2[0] / 65536.0f;
+            VBufferD3D[1].tv = uv2[1] / 65536.0f;
+            VBufferD3D[2].sx = v3->xs;
+            VBufferD3D[2].sy = v3->ys;
+            VBufferD3D[2].sz = FltResZBuf - FltResZORhw * v3->ooz;
+            VBufferD3D[2].rhw = v3->ooz;
+            shade = (0x1fff - v3->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+            if (bBlueEffect)
+                VBufferD3D[2].color = 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade;
+            else
+                VBufferD3D[2].color = 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[2].tu = uv3[0] / 65536.0f;
+            VBufferD3D[2].tv = uv3[1] / 65536.0f;
+            HWR_TexSource(HWR_PageHandles[tex->tpage]);
+            HWR_EnableColorKey(tex->drawtype != 0);
+            G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, VBufferD3D, 3, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+            return;
+        }
+    }
+    npoints = XYGUVClipper(npoints, VBuffer);
+    if (!npoints)
+        return;
+    HWR_TexSource(HWR_PageHandles[tex->tpage]);
+    HWR_EnableColorKey(tex->drawtype != 0);
+    DrawClippedPoly_Textured(npoints);
+}
+
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype);
 
 extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
@@ -68,8 +196,6 @@ extern "C" sint16 *InsertObjectGT4_ZBuffered(sint16 *objptr, int number, int sor
     }
     return objptr;
 }
-
-extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3);
 
 extern "C" sint16 *InsertObjectGT3_ZBuffered(sint16 *objptr, int number, int sorttype)
 {
@@ -188,13 +314,6 @@ extern "C" void InsertFlatRect_ZBuffered(int x1, int y1, int x2, int y2, int z, 
     G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, D3DVT_TLVERTEX, VBufferD3D, 4, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
 }
 
-typedef struct {
-    float xv, yv, zv, ooz, xs, ys, u, v, g;
-} POINT_INFO;
-
-extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output);
-extern "C" int XYGUVClipper(int number, VERTEX_INFO *input);
-extern "C" int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3);
 extern "C" void InsertClippedPoly_Textured(int npoints, float zdepth, int drawtype, int tpage);
 
 extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype)
