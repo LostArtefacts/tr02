@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.05% (1089)</tspan> · <tspan class="decompiled">0.72% (9)</tspan> · <tspan class="nonmatching">3.60% (45)</tspan> · <tspan class="todo">8.63% (108)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.05% (1089)</tspan> · <tspan class="decompiled">0.72% (9)</tspan> · <tspan class="nonmatching">3.68% (46)</tspan> · <tspan class="todo">8.55% (107)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="650.27" height="6" x="0" y="0" class="named"/>
 <rect width="5.37" height="6" x="650.27" y="0" class="decompiled"/>
-<rect width="26.87" height="6" x="655.64" y="0" class="nonmatching"/>
-<rect width="64.49" height="6" x="682.51" y="0" class="todo"/>
+<rect width="27.47" height="6" x="655.64" y="0" class="nonmatching"/>
+<rect width="63.89" height="6" x="683.11" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1213,7 +1213,7 @@
 <rect width="12" height="12" x="615" y="330" class="todo"><title>0x00455905 Func455905 (29 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="330" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="330" class="decompiled"><title>0x00455940 Func455940 (73 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="330" class="todo"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="330" class="nonmatching"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="named"><title>0x00455ad0 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="330" class="named"><title>0x00455ba0 SyncSurfacePalettes (174 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="330" class="named"><title>0x00455c50 CreateTexturePalette (135 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.15%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.20%</tspan> · <tspan class="todo">11.31%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.15%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.29%</tspan> · <tspan class="todo">11.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="598.71" height="6" x="0" y="0" class="named"/>
 <rect width="2.51" height="6" x="598.71" y="0" class="decompiled"/>
-<rect width="61.26" height="6" x="601.22" y="0" class="nonmatching"/>
-<rect width="84.51" height="6" x="662.49" y="0" class="todo"/>
+<rect width="61.94" height="6" x="601.22" y="0" class="nonmatching"/>
+<rect width="83.84" height="6" x="663.16" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1643,7 +1643,7 @@
 <rect width="13.43" height="13.19" x="453.12" y="344.55" class="named"><title>0x004411c0 ControlSpikeWall (312 bytes)</title></rect>
 <rect width="13.43" height="13.13" x="453.12" y="360.73" class="named"><title>0x00413df0 TestLaraPosition (311 bytes)</title></rect>
 <rect width="13.43" height="13.13" x="453.12" y="376.87" class="named"><title>0x00429990 lara_col_upjump (311 bytes)</title></rect>
-<rect width="13.21" height="13.35" x="469.56" y="97.40" class="todo"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
+<rect width="13.21" height="13.35" x="469.56" y="97.40" class="nonmatching"><title>0x00455990 CopyBitmapPalette (311 bytes)</title></rect>
 <rect width="13.11" height="13.35" x="485.77" y="97.40" class="named"><title>0x0044a520 LoadSprites (309 bytes)</title></rect>
 <rect width="13.06" height="13.35" x="501.87" y="97.40" class="named"><title>0x00401c10 S_InsertBackground (308 bytes)</title></rect>
 <rect width="13" height="13.35" x="517.93" y="97.40" class="named"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
