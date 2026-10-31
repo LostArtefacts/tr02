@@ -145,7 +145,7 @@ address,size,name,symbol
 0x004125b0,143,InitialisePlayer1,_InitialisePlayer1
 0x00412640,51,InitialiseGenPlayer,_InitialiseGenPlayer
 0x00412680,581,InGameCinematicCamera,_InGameCinematicCamera
-0x004128d0,1660,GetCollisionInfo,_GetCollisionInfo
+0x004128d0,1724,GetCollisionInfo,_GetCollisionInfo
 0x00412f90,47,FindGridShift,_FindGridShift
 0x00412fc0,996,CollideStaticObjects,_CollideStaticObjects
 0x004133b0,200,GetNearByRooms,_GetNearByRooms

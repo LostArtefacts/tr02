@@ -1,5 +1,239 @@
 #include "game.h"
 
+#define BIG_SLOPE 2
+#define LAVA_TYPE 5
+#define DATA_TYPE 0x00ff
+
+extern int height_type;
+
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
+
+void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, sint16 room_number, sint32 objheight)
+{
+    sint32 height, ceiling;
+    sint32 xleft, zleft;
+    sint32 xright, zright;
+    sint32 x, y, z, ytop;
+    sint32 xfront, zfront;
+    FLOOR_INFO *floor;
+    sint16 tilt;
+    long fheight, mheight, lheight, rheight;
+
+    coll->coll_type = COLL_NONE;
+    coll->shift.x = coll->shift.y = coll->shift.z = 0;
+    coll->quadrant = (uint16)(coll->facing + 0x2000) / 0x4000;
+    x = xpos;
+    y = ypos - objheight;
+    ytop = y - 160;
+    z = zpos;
+
+    floor = GetFloor(x, ytop, z, &room_number);
+    height = GetHeight(floor, x, ytop, z);
+    if (height != NO_HEIGHT)
+        height -= ypos;
+    ceiling = GetCeiling(floor, x, ytop, z);
+    if (ceiling != NO_HEIGHT)
+        ceiling -= y;
+    coll->mid_floor = height;
+    coll->mid_ceiling = ceiling;
+    coll->mid_type = height_type;
+    coll->trigger = trigger_index;
+    tilt = GetTiltType(floor, x, lara_item->pos.y_pos, z);
+    coll->tilt_z = tilt >> 8;
+    coll->tilt_x = (signed char)tilt;
+
+    switch (coll->quadrant) {
+    case 0:
+        xfront = (phd_sin(coll->facing) * coll->radius) >> W2V_SHIFT;
+        zfront = coll->radius;
+        xleft = -coll->radius;
+        zleft = coll->radius;
+        xright = coll->radius;
+        zright = coll->radius;
+        break;
+
+    case 1:
+        xfront = coll->radius;
+        zfront = (phd_cos(coll->facing) * coll->radius) >> W2V_SHIFT;
+        xleft = coll->radius;
+        zleft = coll->radius;
+        xright = coll->radius;
+        zright = -coll->radius;
+        break;
+
+    case 2:
+        xfront = (phd_sin(coll->facing) * coll->radius) >> W2V_SHIFT;
+        zfront = -coll->radius;
+        xleft = coll->radius;
+        zleft = -coll->radius;
+        xright = -coll->radius;
+        zright = -coll->radius;
+        break;
+
+    case 3:
+        xfront = -coll->radius;
+        zfront = (phd_cos(coll->facing) * coll->radius) >> W2V_SHIFT;
+        xleft = -coll->radius;
+        zleft = -coll->radius;
+        xright = -coll->radius;
+        zright = coll->radius;
+        break;
+
+    default:
+        xfront = zfront = 0;
+        xleft = zleft = 0;
+        xright = zright = 0;
+        break;
+    }
+
+    x = xpos + xfront;
+    z = zpos + zfront;
+    floor = GetFloor(x, ytop, z, &room_number);
+    height = GetHeight(floor, x, ytop, z);
+    if (height != NO_HEIGHT)
+        height -= ypos;
+    ceiling = GetCeiling(floor, x, ytop, z);
+    if (ceiling != NO_HEIGHT)
+        ceiling -= y;
+    coll->front_floor = height;
+    coll->front_ceiling = ceiling;
+    coll->front_type = height_type;
+    if (coll->slopes_are_walls && coll->front_type == BIG_SLOPE && coll->front_floor < 0)
+        coll->front_floor = -32767;
+    else if (coll->slopes_are_pits && coll->front_type == BIG_SLOPE && coll->front_floor > 0)
+        coll->front_floor = 512;
+    else if (coll->lava_is_pit && coll->front_floor > 0 && trigger_index && (*trigger_index & DATA_TYPE) == LAVA_TYPE)
+        coll->front_floor = 512;
+
+    x = xpos + xleft;
+    z = zpos + zleft;
+    floor = GetFloor(x, ytop, z, &room_number);
+    height = GetHeight(floor, x, ytop, z);
+    if (height != NO_HEIGHT)
+        height -= ypos;
+    ceiling = GetCeiling(floor, x, ytop, z);
+    if (ceiling != NO_HEIGHT)
+        ceiling -= y;
+    coll->left_floor = height;
+    coll->left_ceiling = ceiling;
+    coll->left_type = height_type;
+    if (coll->slopes_are_walls && coll->left_type == BIG_SLOPE && coll->left_floor < 0)
+        coll->left_floor = -32767;
+    else if (coll->slopes_are_pits && coll->left_type == BIG_SLOPE && coll->left_floor > 0)
+        coll->left_floor = 512;
+    else if (coll->lava_is_pit && coll->left_floor > 0 && trigger_index && (*trigger_index & DATA_TYPE) == LAVA_TYPE)
+        coll->left_floor = 512;
+
+    x = xpos + xright;
+    z = zpos + zright;
+    floor = GetFloor(x, ytop, z, &room_number);
+    height = GetHeight(floor, x, ytop, z);
+    if (height != NO_HEIGHT)
+        height -= ypos;
+    ceiling = GetCeiling(floor, x, ytop, z);
+    if (ceiling != NO_HEIGHT)
+        ceiling -= y;
+    coll->right_floor = height;
+    coll->right_ceiling = ceiling;
+    coll->right_type = height_type;
+    if (coll->slopes_are_walls && coll->right_type == BIG_SLOPE && coll->right_floor < 0)
+        coll->right_floor = -32767;
+    else if (coll->slopes_are_pits && coll->right_type == BIG_SLOPE && coll->right_floor > 0)
+        coll->right_floor = 512;
+    else if (coll->lava_is_pit && coll->right_floor > 0 && trigger_index && (*trigger_index & DATA_TYPE) == LAVA_TYPE)
+        coll->right_floor = 512;
+
+    if (CollideStaticObjects(coll, xpos, ypos, zpos, room_number, objheight)) {
+        x = xpos + coll->shift.x;
+        z = zpos + coll->shift.z;
+        floor = GetFloor(x, ypos, z, &room_number);
+        if (GetHeight(floor, x, ypos, z) < ypos - 512 || GetCeiling(floor, x, ypos, z) > y) {
+            coll->shift.x = -coll->shift.x;
+            coll->shift.z = -coll->shift.z;
+        }
+    }
+
+    if (coll->mid_floor == NO_HEIGHT) {
+        coll->shift.x = coll->old.x - xpos;
+        coll->shift.y = coll->old.y - ypos;
+        coll->shift.z = coll->old.z - zpos;
+        coll->coll_type = COLL_FRONT;
+        return;
+    }
+
+    if (coll->mid_floor - coll->mid_ceiling <= 0) {
+        coll->shift.x = coll->old.x - xpos;
+        coll->shift.y = coll->old.y - ypos;
+        coll->shift.z = coll->old.z - zpos;
+        coll->coll_type = COLL_CLAMP;
+        return;
+    }
+
+    if (coll->mid_ceiling >= 0) {
+        coll->shift.y = coll->mid_ceiling;
+        coll->coll_type = COLL_TOP;
+    }
+
+    if (coll->front_floor > coll->bad_pos || coll->front_floor < coll->bad_neg || coll->front_ceiling > coll->bad_ceiling) {
+        switch (coll->quadrant) {
+        case 0:
+        case 2:
+            coll->shift.x = coll->old.x - xpos;
+            coll->shift.z = FindGridShift(zpos + zfront, zpos);
+            break;
+
+        case 1:
+        case 3:
+            coll->shift.x = FindGridShift(xpos + xfront, xpos);
+            coll->shift.z = coll->old.z - zpos;
+            break;
+        }
+        coll->coll_type = COLL_FRONT;
+        return;
+    }
+
+    if (coll->front_ceiling >= coll->bad_ceiling) {
+        coll->shift.x = coll->old.x - xpos;
+        coll->shift.y = coll->old.y - ypos;
+        coll->shift.z = coll->old.z - zpos;
+        coll->coll_type = COLL_TOPFRONT;
+        return;
+    }
+
+    if (coll->left_floor > coll->bad_pos || coll->left_floor < coll->bad_neg) {
+        switch (coll->quadrant) {
+        case 0:
+        case 2:
+            coll->shift.x = FindGridShift(xpos + xleft, xpos + xfront);
+            break;
+
+        case 1:
+        case 3:
+            coll->shift.z = FindGridShift(zpos + zleft, zpos + zfront);
+            break;
+        }
+        coll->coll_type = COLL_LEFT;
+        return;
+    }
+
+    if (coll->right_floor > coll->bad_pos || coll->right_floor < coll->bad_neg) {
+        switch (coll->quadrant) {
+        case 0:
+        case 2:
+            coll->shift.x = FindGridShift(xpos + xright, xpos + xfront);
+            break;
+
+        case 1:
+        case 3:
+            coll->shift.z = FindGridShift(zpos + zright, zpos + zfront);
+            break;
+        }
+        coll->coll_type = COLL_RIGHT;
+    }
+}
+
 sint32 FindGridShift(sint32 src, sint32 dst)
 {
     sint32 srcw, dstw;
@@ -528,10 +762,10 @@ void ItemPushLara(ITEM_INFO *item, ITEM_INFO *laraitem, COLL_INFO *coll, int spa
 
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius)
 {
-    OBJECT_INFO *object;
-    sint32 c, s, rx, rz, x, z;
+    sint32 s, c, rz, z, rx, x;
+    sint32 minx, minz, maxz, maxx;
     sint16 *larabounds, *bounds;
-    sint32 minx, maxx, minz, maxz;
+    OBJECT_INFO *object;
 
     object = &objects[item->object_number];
     bounds = GetBestFrame(item);
