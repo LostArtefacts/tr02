@@ -830,9 +830,41 @@ extern "C" void SE_SoundDlgUpdate(HWND hwndDlg)
     SE_EnableItem(hwndDlg, 1089, isAvailable);
 }
 
+typedef struct SETUP_SOUND_NODE
+{
+    struct SETUP_SOUND_NODE *next;
+    uint8 pad[0x18];
+    LPCSTR description;
+} SETUP_SOUND_NODE;
+
+extern "C" void SE_SoundDlgInit(HWND hwndDlg)
+{
+    HWND combo;
+    WPARAM index;
+    WPARAM selected;
+    SETUP_SOUND_NODE *node;
+    int count;
+
+    combo = GetDlgItem(hwndDlg, 1052);
+    SendMessage(combo, CB_RESETCONTENT, 0, 0);
+    selected = 0;
+    for (node = (SETUP_SOUND_NODE *)SoundAdapterList.head; node; node = !node ? NULL : node->next)
+    {
+        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
+        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
+        if (node == ChangedAppSettings.PreferredSoundAdapter)
+            selected = index;
+    }
+    SendMessage(combo, CB_SETCURSEL, selected, 0);
+    count = SoundAdapterList.count;
+    EnableWindow(combo, count > 1);
+    if (count)
+        SE_SoundAdapterSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
+    SE_SoundDlgUpdate(hwndDlg);
+}
+
 extern "C" {
 extern HWND SoundImageHandle;
-void SE_SoundDlgInit(HWND hwndDlg);
 }
 
 extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
