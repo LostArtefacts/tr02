@@ -1669,6 +1669,7 @@ address,size,name,symbol
 0x00470320,4,phd_centerx,_phd_centerx
 0x00470324,4,phd_centery,_phd_centery
 0x00470328,2,phd_ls_yaw,_phd_ls_yaw
+0x0047032c,4,InsertTrans8,_InsertTrans8
 0x00470330,4,phd_topfloat,_phd_topfloat
 0x00470338,,sort3d_buffer,_sort3d_buffer
 0x00478038,4,phd_leftfloat,_phd_leftfloat

@@ -405,6 +405,104 @@ extern "C" void phd_SetFarZ(sint32 z)
     Func402620();
 }
 
+extern "C" {
+extern sint32 phd_scrwidth;
+extern sint32 PhdScreenHeight;
+extern sint32 PhdViewDistance;
+extern void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
+extern void (*InsertTrans8)(void *vbuf, sint16 shade);
+extern void (*InsertTransQuad)(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
+sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *ins_objectG3(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *ins_objectG4(sint16 *objptr, int number, enum sort_type sort_routine);
+void insert_sprite(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
+void ins_flat_rect(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
+void ins_line(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
+void ins_poly_trans8(void *vbuf, sint16 shade);
+void ins_trans_quad(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
+sint16 *InsertObjectGT3_ZBuffered(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *InsertObjectGT4_ZBuffered(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *InsertObjectG3_ZBuffered(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *InsertObjectG4_ZBuffered(sint16 *objptr, int number, enum sort_type sort_routine);
+void InsertFlatRect_ZBuffered(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
+void InsertLine_ZBuffered(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
+sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *InsertObjectGT4_Sorted(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *InsertObjectG3_Sorted(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, enum sort_type sort_routine);
+void InsertFlatRect_Sorted(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
+void InsertLine_Sorted(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
+void InsertSprite_Sorted(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
+void InsertTrans8_Sorted(void *vbuf, sint16 shade);
+void InsertTransQuad_Sorted(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
+}
+
+extern "C" void phd_InitWindow(sint16 x, sint16 y, int width, int height, int nearz, int farz, sint16 view_angle, int scrwidth, int scrheight)
+{
+    phd_winxmin = x;
+    phd_winymin = y;
+    phd_winxmax = width - 1;
+    phd_winymax = height - 1;
+    phd_winwidth = width;
+    phd_winheight = height;
+    phd_centerx = width / 2;
+    phd_centery = height / 2;
+    phd_znear = nearz << W2V_SHIFT;
+    phd_zfar = farz << W2V_SHIFT;
+    PhdViewDistance = farz;
+    phd_scrwidth = scrwidth;
+    PhdScreenHeight = scrheight;
+    f_centerx = (float)phd_centerx;
+    f_centery = (float)phd_centery;
+    AlterFOV(view_angle * ONE_DEGREE);
+    phd_SetNearZ(phd_znear);
+    phd_SetFarZ(phd_zfar);
+    phd_left = 0;
+    phd_top = 0;
+    phd_right = phd_winxmax;
+    phd_bottom = phd_winymax;
+    phd_mxptr = matrix_stack;
+    GrcDumpWindow.left = phd_winxmin;
+    GrcDumpWindow.top = phd_winymin;
+    GrcDumpWindow.right = phd_winxmin + phd_winwidth;
+    GrcDumpWindow.bottom = phd_winymin + phd_winheight;
+    switch (SavedAppSettings.RenderMode) {
+    case RM_Software:
+        InsertObjectGT3 = ins_objectGT3;
+        InsertObjectGT4 = ins_objectGT4;
+        InsertObjectG3 = ins_objectG3;
+        InsertObjectG4 = ins_objectG4;
+        InsertSprite = insert_sprite;
+        InsertFlatRect = ins_flat_rect;
+        InsertLine = ins_line;
+        InsertTrans8 = ins_poly_trans8;
+        InsertTransQuad = ins_trans_quad;
+        perspective_distance = SavedAppSettings.PerspectiveCorrect ? 0x6000000 : 0x3000000;
+        break;
+    case RM_Hardware:
+        if (SavedAppSettings.ZBuffer) {
+            InsertObjectGT3 = InsertObjectGT3_ZBuffered;
+            InsertObjectGT4 = InsertObjectGT4_ZBuffered;
+            InsertObjectG3 = InsertObjectG3_ZBuffered;
+            InsertObjectG4 = InsertObjectG4_ZBuffered;
+            InsertFlatRect = InsertFlatRect_ZBuffered;
+            InsertLine = InsertLine_ZBuffered;
+        } else {
+            InsertObjectGT3 = InsertObjectGT3_Sorted;
+            InsertObjectGT4 = InsertObjectGT4_Sorted;
+            InsertObjectG3 = InsertObjectG3_Sorted;
+            InsertObjectG4 = InsertObjectG4_Sorted;
+            InsertFlatRect = InsertFlatRect_Sorted;
+            InsertLine = InsertLine_Sorted;
+        }
+        InsertSprite = InsertSprite_Sorted;
+        InsertTrans8 = InsertTrans8_Sorted;
+        InsertTransQuad = InsertTransQuad_Sorted;
+        break;
+    }
+}
+
 typedef struct {
     float xv, yv, zv, ooz, xs, ys;
     sint16 clip, g, u, v;

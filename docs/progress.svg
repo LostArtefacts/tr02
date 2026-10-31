@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.73% (1060)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.63% (183)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.81% (1061)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.55% (182)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="632.95" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="632.95" y="0" class="decompiled"/>
-<rect width="109.27" height="6" x="637.73" y="0" class="todo"/>
+<rect width="633.55" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="633.55" y="0" class="decompiled"/>
+<rect width="108.68" height="6" x="638.32" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -94,7 +94,7 @@
 <rect width="12" height="12" x="345" y="0" class="todo"><title>0x00402620 Func402620 (83 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="named"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="named"><title>0x004026d0 phd_SetFarZ (24 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="0" class="todo"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="0" class="named"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="0" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="0" class="named"><title>0x00402b00 draw_poly_flat (53 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="0" class="named"><title>0x00402b40 draw_poly_trans (53 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.73%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.18%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.91%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="558.24" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="558.24" y="0" class="decompiled"/>
-<rect width="188.11" height="6" x="558.89" y="0" class="todo"/>
+<rect width="559.57" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="559.57" y="0" class="decompiled"/>
+<rect width="186.78" height="6" x="560.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1466,7 +1466,7 @@
 <rect width="21.42" height="18.92" x="350.87" y="306.07" class="todo"><title>0x004524e0 Func4524e0 (627 bytes)</title></rect>
 <rect width="21.42" height="18.81" x="350.87" y="327.98" class="todo"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
 <rect width="21.42" height="18.74" x="350.87" y="349.80" class="named"><title>0x00430110 FlareControl (622 bytes)</title></rect>
-<rect width="21.42" height="18.46" x="350.87" y="371.54" class="todo"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
+<rect width="21.42" height="18.46" x="350.87" y="371.54" class="named"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
 <rect width="20.14" height="19.62" x="375.29" y="0" class="named"><title>0x0044af50 LoadSamples (613 bytes)</title></rect>
 <rect width="20.06" height="19.62" x="398.43" y="0" class="named"><title>0x0042e0c0 LaraTestClimb (611 bytes)</title></rect>
 <rect width="19.80" height="19.62" x="421.49" y="0" class="named"><title>0x00433b20 MovableBlockCollision (604 bytes)</title></rect>
