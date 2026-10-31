@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.48% (1046)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.88% (199)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.56% (1047)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.80% (198)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="623.59" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="623.59" y="0" class="decompiled"/>
-<rect width="118.64" height="6" x="628.36" y="0" class="todo"/>
+<rect width="624.19" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="624.19" y="0" class="decompiled"/>
+<rect width="118.04" height="6" x="628.96" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -74,7 +74,7 @@
 <rect width="12" height="12" x="45" y="0" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="0" class="todo"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="0" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="0" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="named"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.63%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.28%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.77%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.14%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="542.56" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="542.56" y="0" class="decompiled"/>
-<rect width="203.78" height="6" x="543.22" y="0" class="todo"/>
+<rect width="543.59" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="543.59" y="0" class="decompiled"/>
+<rect width="202.75" height="6" x="544.25" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.01" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1524,7 +1524,7 @@
 <rect width="16.51" height="18.12" x="396.11" y="64.50" class="named"><title>0x00424dc0 Inv_GetItemOption (482 bytes)</title></rect>
 <rect width="16.51" height="18.07" x="396.11" y="85.62" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="16.51" height="18.03" x="396.11" y="106.69" class="named"><title>0x00446870 WinVidResizeGameWindow (480 bytes)</title></rect>
-<rect width="16.51" height="17.85" x="396.11" y="127.72" class="todo"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="16.51" height="17.85" x="396.11" y="127.72" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="16.51" height="17.85" x="396.11" y="148.57" class="todo"><title>0x00453560 SE_GraphicsDlgFullScreenModesUpdate (476 bytes)</title></rect>
 <rect width="16.51" height="17.81" x="396.11" y="169.43" class="named"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="16.51" height="17.64" x="396.11" y="190.24" class="named"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>

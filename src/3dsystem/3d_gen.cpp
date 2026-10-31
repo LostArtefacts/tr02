@@ -1,5 +1,6 @@
 #include "../specific/global.h"
 #include "../lara.h"
+#include "../specific/hwrender.h"
 #include "../3dglodef.h"
 #include "../specific/winmain.h"
 
@@ -66,6 +67,71 @@ void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest)
     if ((y > 0 && pitch > 0) || (y < 0 && pitch < 0))
         pitch = -pitch;
     *(dest + 1) = pitch;
+}
+
+extern "C" void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz)
+{
+    sint32 sina, cosa, r0, r1;
+    sint32 *mptr;
+
+    mptr = phd_mxptr;
+    if (ry)
+    {
+        sina = phd_sin(ry);
+        cosa = phd_cos(ry);
+        r0 = *(mptr + M00) * cosa - *(mptr + M02) * sina;
+        r1 = *(mptr + M02) * cosa + *(mptr + M00) * sina;
+        *(mptr + M00) = r0 >> W2V_SHIFT;
+        *(mptr + M02) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M10) * cosa - *(mptr + M12) * sina;
+        r1 = *(mptr + M12) * cosa + *(mptr + M10) * sina;
+        *(mptr + M10) = r0 >> W2V_SHIFT;
+        *(mptr + M12) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M20) * cosa - *(mptr + M22) * sina;
+        r1 = *(mptr + M22) * cosa + *(mptr + M20) * sina;
+        *(mptr + M20) = r0 >> W2V_SHIFT;
+        *(mptr + M22) = r1 >> W2V_SHIFT;
+    }
+    if (rx)
+    {
+        sina = phd_sin(rx);
+        cosa = phd_cos(rx);
+        r0 = *(mptr + M01) * cosa + *(mptr + M02) * sina;
+        r1 = *(mptr + M02) * cosa - *(mptr + M01) * sina;
+        *(mptr + M01) = r0 >> W2V_SHIFT;
+        *(mptr + M02) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M11) * cosa + *(mptr + M12) * sina;
+        r1 = *(mptr + M12) * cosa - *(mptr + M11) * sina;
+        *(mptr + M11) = r0 >> W2V_SHIFT;
+        *(mptr + M12) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M21) * cosa + *(mptr + M22) * sina;
+        r1 = *(mptr + M22) * cosa - *(mptr + M21) * sina;
+        *(mptr + M21) = r0 >> W2V_SHIFT;
+        *(mptr + M22) = r1 >> W2V_SHIFT;
+    }
+    if (rz)
+    {
+        sina = phd_sin(rz);
+        cosa = phd_cos(rz);
+        r0 = *(mptr + M00) * cosa + *(mptr + M01) * sina;
+        r1 = *(mptr + M01) * cosa - *(mptr + M00) * sina;
+        *(mptr + M00) = r0 >> W2V_SHIFT;
+        *(mptr + M01) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M10) * cosa + *(mptr + M11) * sina;
+        r1 = *(mptr + M11) * cosa - *(mptr + M10) * sina;
+        *(mptr + M10) = r0 >> W2V_SHIFT;
+        *(mptr + M11) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M20) * cosa + *(mptr + M21) * sina;
+        r1 = *(mptr + M21) * cosa - *(mptr + M20) * sina;
+        *(mptr + M20) = r0 >> W2V_SHIFT;
+        *(mptr + M21) = r1 >> W2V_SHIFT;
+    }
 }
 
 extern "C" int phd_TranslateRel(sint32 x, sint32 y, sint32 z)
