@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.69% (1072)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">12.31% (154)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.77% (1073)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">12.23% (153)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="640.12" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="640.12" y="0" class="decompiled"/>
-<rect width="10.15" height="6" x="644.89" y="0" class="nonmatching"/>
-<rect width="91.96" height="6" x="655.04" y="0" class="todo"/>
+<rect width="640.71" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="640.71" y="0" class="decompiled"/>
+<rect width="10.15" height="6" x="645.49" y="0" class="nonmatching"/>
+<rect width="91.36" height="6" x="655.64" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1276,7 +1276,7 @@
 <rect width="12" height="12" x="60" y="360" class="todo"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="360" class="decompiled"><title>0x00457470 Func457470 (38 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="360" class="named"><title>0x004574a0 UT_MemBlt (110 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="360" class="todo"><title>0x00457510 phd_PushMatrix (30 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="360" class="named"><title>0x00457510 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="360" class="todo"><title>0x0045752e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="360" class="todo"><title>0x00457564 flatA (97 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="360" class="todo"><title>0x004575c5 transA (314 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.44%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.81%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.44%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.80%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="585.92" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="585.92" y="0" class="decompiled"/>
-<rect width="34.88" height="6" x="586.57" y="0" class="nonmatching"/>
-<rect width="125.55" height="6" x="621.45" y="0" class="todo"/>
+<rect width="585.98" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="585.98" y="0" class="decompiled"/>
+<rect width="34.88" height="6" x="586.63" y="0" class="nonmatching"/>
+<rect width="125.48" height="6" x="621.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2419,7 +2419,7 @@
 <rect width="1.87" height="2.26" x="730.53" y="344.16" class="named"><title>0x0044ca40 GetRandomControl (30 bytes)</title></rect>
 <rect width="1.87" height="2.26" x="735.40" y="344.16" class="named"><title>0x0044ca70 GetRandomDraw (30 bytes)</title></rect>
 <rect width="1.87" height="2.26" x="740.27" y="344.16" class="named"><title>0x00456b80 SetRegistryDwordValue (30 bytes)</title></rect>
-<rect width="1.87" height="2.26" x="745.13" y="344.16" class="todo"><title>0x00457510 phd_PushMatrix (30 bytes)</title></rect>
+<rect width="1.87" height="2.26" x="745.13" y="344.16" class="named"><title>0x00457510 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="2" height="1.96" x="701.34" y="349.42" class="named"><title>0x00428550 lara_as_special (29 bytes)</title></rect>
 <rect width="2" height="1.96" x="701.34" y="354.38" class="named"><title>0x004288f0 extra_as_gongbong (29 bytes)</title></rect>
 <rect width="2" height="1.96" x="701.34" y="359.34" class="todo"><title>0x00455905 Func455905 (29 bytes)</title></rect>
