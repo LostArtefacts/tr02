@@ -250,6 +250,90 @@ extern "C" void S_InsertBackground(sint16 *objptr)
     }
 }
 
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint16 clip, g, u, v;
+} PHD_VBUF;
+
+extern "C" PHD_VBUF PhdVBuf[];
+extern "C" sint32 ZBufferSurface;
+extern "C" sint32 MidSort;
+extern "C" sint32 WibbleOffset;
+extern "C" float FltNearZ;
+extern "C" float FltFarZ;
+extern "C" float FltPersp;
+extern "C" float FltRhwOPersp;
+extern "C" float Data478044;
+
+extern "C" sint16 *calc_roomvert(sint16 *objptr, int far_clip)
+{
+    PHD_VBUF *v;
+    sint32 *mptr;
+    int numvert, zv_int, g;
+    float xv, yv, zv, persp, base_z, xs, ys;
+    sint8 clip;
+
+    if (ZBufferSurface)
+        base_z = 0.0f;
+    else
+        base_z = (float)(MidSort << 22);
+    mptr = phd_mxptr;
+    numvert = *(objptr++);
+    for (v = PhdVBuf; numvert > 0; numvert--, v++, objptr += 6) {
+        v->xv = xv = (float)(mptr[0] * objptr[0] + mptr[1] * objptr[1] + mptr[2] * objptr[2] + mptr[3]);
+        v->yv = yv = (float)(mptr[4] * objptr[0] + mptr[5] * objptr[1] + mptr[6] * objptr[2] + mptr[7]);
+        zv_int = mptr[8] * objptr[0] + mptr[9] * objptr[1] + mptr[10] * objptr[2] + mptr[11];
+        v->zv = zv = (float)zv_int;
+        g = objptr[5];
+        if (shade_effect)
+            g += shade_table[(rand_table[numvert & 0x1f] + WibbleOffset) & 0x1f];
+        if (zv >= FltNearZ) {
+            persp = FltPersp / zv;
+            clip = 0;
+            v->zv += base_z;
+            if (zv_int >= 0x14000000) {
+                clip = far_clip;
+                v->g = 0x1fff;
+                v->zv = FltFarZ;
+                v->ooz = Data478044;
+            } else {
+                if (zv_int > 0xc000000)
+                    v->g = (zv_int >> W2V_SHIFT) + g - 0x3000;
+                else
+                    v->g = g;
+                v->ooz = persp * FltRhwOPersp;
+            }
+            xs = xv * persp + f_centerx;
+            ys = yv * persp + f_centery;
+            if (water_effect && objptr[4] >= 0) {
+                xs += wibble_table[(WibbleOffset + (uint8)ys) & 0x1f];
+                ys += wibble_table[(WibbleOffset + (uint8)xs) & 0x1f];
+            }
+            if (xs < phd_leftfloat)
+                clip++;
+            else if (xs > phd_rightfloat)
+                clip += 2;
+            v->xs = xs;
+            if (ys < phd_topfloat)
+                clip += 4;
+            else if (ys > phd_bottomfloat)
+                clip += 8;
+            ((uint8 *)&v->clip)[0] = clip;
+            v->ys = ys;
+            ((uint8 *)&v->clip)[1] = ~(uint8)(int)(v->zv * 0.000000715255737304688f);
+        } else {
+            ((uint8 *)&v->clip)[0] = 0x80;
+            v->g = g;
+            ((uint8 *)&v->clip)[1] = 0xff;
+        }
+        if (v->g < 0)
+            v->g = 0;
+        else if (v->g > 0x1fff)
+            v->g = 0x1fff;
+    }
+    return objptr;
+}
+
 void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
 {
     sint32 cx;
@@ -502,13 +586,6 @@ extern "C" void phd_InitWindow(sint16 x, sint16 y, int width, int height, int ne
         break;
     }
 }
-
-typedef struct {
-    float xv, yv, zv, ooz, xs, ys;
-    sint16 clip, g, u, v;
-} PHD_VBUF;
-
-extern "C" PHD_VBUF PhdVBuf[];
 
 extern "C" sint16 *calc_background_light(sint16 *objptr)
 {

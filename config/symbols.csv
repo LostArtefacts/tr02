@@ -1674,6 +1674,7 @@ address,size,name,symbol
 0x00470338,,sort3d_buffer,_sort3d_buffer
 0x00478038,4,phd_leftfloat,_phd_leftfloat
 0x0047803c,2,phd_winymin,_phd_winymin
+0x00478044,4,Data478044,_Data478044
 0x00478048,4,phd_zfar,_phd_zfar
 0x0047804c,4,FltRhwOPersp,_FltRhwOPersp
 0x00478050,4,phd_bottom,_phd_bottom

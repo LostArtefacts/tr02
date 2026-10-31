@@ -61,11 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">13.91% (174)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.08% (1)</tspan> · <tspan class="todo">13.83% (173)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.32" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="103.90" height="6" x="643.10" y="0" class="todo"/>
+<rect width="0.60" height="6" x="643.10" y="0" class="nonmatching"/>
+<rect width="103.30" height="6" x="643.70" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -84,7 +85,7 @@
 <rect width="12" height="12" x="195" y="0" class="named"><title>0x00401c10 S_InsertBackground (308 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="0" class="todo"><title>0x00401d50 calc_object_vertices (469 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="0" class="todo"><title>0x00401f30 calc_vertice_light (359 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="0" class="todo"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="0" class="nonmatching"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="0" class="named"><title>0x00402320 phd_RotateLight (199 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="named"><title>0x004023f0 phd_InitPolyList (46 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="0" class="named"><title>0x00402420 phd_SortPolyList (51 bytes)</title></rect>
@@ -1323,11 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">21.72%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0.18%</tspan> · <tspan class="todo">21.54%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.09" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="162.26" height="6" x="584.74" y="0" class="todo"/>
+<rect width="1.38" height="6" x="584.74" y="0" class="nonmatching"/>
+<rect width="160.88" height="6" x="586.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1461,7 +1463,7 @@
 <rect width="21.42" height="19.90" x="350.87" y="193.79" class="named"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
 <rect width="21.42" height="19.51" x="350.87" y="216.69" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="21.42" height="19.37" x="350.87" y="239.20" class="named"><title>0x00414e50 GetHeight (640 bytes)</title></rect>
-<rect width="21.42" height="19.27" x="350.87" y="261.57" class="todo"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
+<rect width="21.42" height="19.27" x="350.87" y="261.57" class="nonmatching"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
 <rect width="21.42" height="19.23" x="350.87" y="283.84" class="named"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
 <rect width="21.42" height="18.92" x="350.87" y="306.07" class="todo"><title>0x004524e0 Func4524e0 (627 bytes)</title></rect>
 <rect width="21.42" height="18.81" x="350.87" y="327.98" class="todo"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
