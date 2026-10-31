@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.33% (1055)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.03% (188)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.41% (1056)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.95% (187)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="629.96" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="629.96" y="0" class="decompiled"/>
-<rect width="112.26" height="6" x="634.74" y="0" class="todo"/>
+<rect width="630.56" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="630.56" y="0" class="decompiled"/>
+<rect width="111.66" height="6" x="635.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -156,7 +156,7 @@
 <rect width="12" height="12" x="525" y="15" class="named"><title>0x0040c8f0 EagleControl (540 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="15" class="named"><title>0x0040cb10 InitialiseBoat (60 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="15" class="named"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="15" class="named"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="15" class="named"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="15" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="named"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.05%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.87%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.15%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="553.12" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="553.12" y="0" class="decompiled"/>
-<rect width="193.23" height="6" x="553.77" y="0" class="todo"/>
+<rect width="553.87" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="553.87" y="0" class="decompiled"/>
+<rect width="192.47" height="6" x="554.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1606,7 +1606,7 @@
 <rect width="14.76" height="14.01" x="434.95" y="359.07" class="named"><title>0x00429e90 lara_col_wade (354 bytes)</title></rect>
 <rect width="14.76" height="13.92" x="434.95" y="376.08" class="todo"><title>0x004576ff gourA (352 bytes)</title></rect>
 <rect width="14.25" height="14.37" x="452.71" y="80.02" class="named"><title>0x0043a330 InitialiseLevel (351 bytes)</title></rect>
-<rect width="14.20" height="14.37" x="469.96" y="80.02" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
+<rect width="14.20" height="14.37" x="469.96" y="80.02" class="named"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
 <rect width="14.10" height="14.37" x="487.16" y="80.02" class="named"><title>0x004327c0 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="13.90" height="14.37" x="504.26" y="80.02" class="named"><title>0x00431710 LaraSurface (344 bytes)</title></rect>
 <rect width="13.81" height="14.37" x="521.16" y="80.02" class="named"><title>0x004232f0 Construct_Inventory (342 bytes)</title></rect>

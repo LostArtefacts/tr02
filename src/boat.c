@@ -1,3 +1,4 @@
+#include "sound.h"
 #include "game.h"
 #include "specific/init.h"
 
@@ -49,6 +50,8 @@ typedef struct {
     int water, pitch;
 } BOAT_INFO;
 
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
 void InitialiseBoat(sint16 item_number)
 {
     ITEM_INFO *boat;
@@ -66,6 +69,7 @@ void InitialiseBoat(sint16 item_number)
 }
 
 #define MOTORBOAT 14
+#define BOAT_ANIM 11
 #define GONDOLA 24
 #define GONDOLA_FLOATING 1
 #define GONDOLA_CRASH 2
@@ -120,11 +124,56 @@ int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
     return 0;
 }
 
+void BoatCollision(sint16 item_number, ITEM_INFO *litem, COLL_INFO *coll)
+{
+    int geton;
+    ITEM_INFO *item;
+
+    if (litem->hit_points < 0 || lara.skidoo != NO_ITEM)
+        return;
+    geton = BoatCheckGeton(item_number, coll);
+    if (!geton)
+    {
+        coll->enable_baddie_push = 1;
+        ObjectCollision(item_number, litem, coll);
+        return;
+    }
+    lara.skidoo = item_number;
+    if (geton == 2)
+        litem->anim_number = objects[BOAT_ANIM].anim_index + BOAT_GETONLW_ANIM;
+    else if (geton == 1)
+        litem->anim_number = objects[BOAT_ANIM].anim_index + BOAT_GETONRW_ANIM;
+    else if (geton == 3)
+        litem->anim_number = objects[BOAT_ANIM].anim_index + BOAT_GETONJ_ANIM;
+    else
+        litem->anim_number = objects[BOAT_ANIM].anim_index + BOAT_GETON_START;
+    lara.water_status = LARA_ABOVEWATER;
+    item = &items[item_number];
+    litem->pos.x_pos = item->pos.x_pos;
+    litem->pos.y_pos = item->pos.y_pos - 5;
+    litem->pos.z_pos = item->pos.z_pos;
+    litem->pos.y_rot = item->pos.y_rot;
+    litem->pos.x_rot = litem->pos.z_rot = 0;
+    litem->gravity_status = 0;
+    litem->speed = 0;
+    litem->fallspeed = 0;
+    litem->frame_number = anims[litem->anim_number].frame_base;
+    litem->current_anim_state = litem->goal_anim_state = BOAT_GETON;
+    if (litem->room_number != item->room_number)
+        ItemNewRoom(lara.item_number, item->room_number);
+    AnimateItem(litem);
+    if (items[item_number].status != ACTIVE)
+    {
+        AddActiveItem(item_number);
+        items[item_number].status = ACTIVE;
+    }
+}
+
 sint32 TestWaterHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *pos)
 {
     FLOOR_INFO *floor;
     sint16 room_number;
-    sint32 c, height, s;
+    sint32 s, c, height;
 
     pos->y = item->pos.y_pos - (z_off * phd_sin(item->pos.x_rot) >> W2V_SHIFT) + (x_off * phd_sin(item->pos.z_rot) >> W2V_SHIFT);
     c = phd_cos(item->pos.y_rot);
@@ -308,7 +357,6 @@ int BoatUserControl(ITEM_INFO *boat)
     return no_turn;
 }
 
-#define BOAT_ANIM 11
 
 void BoatAnimation(ITEM_INFO *boat, int collide)
 {
