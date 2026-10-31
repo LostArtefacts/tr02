@@ -391,6 +391,18 @@ int GetChange(ITEM_INFO *item, ANIM_STRUCT *anim)
 
 sint16 GetDoor(FLOOR_INFO *floor);
 
+void TranslateItem(ITEM_INFO *item, sint32 x, sint32 y, sint32 z)
+{
+    sint32 c;
+    sint32 s;
+
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+    item->pos.x_pos += (c * x + s * z) >> W2V_SHIFT;
+    item->pos.y_pos += y;
+    item->pos.z_pos += (c * z - s * x) >> W2V_SHIFT;
+}
+
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number)
 {
     sint32 x_floor, y_floor;
