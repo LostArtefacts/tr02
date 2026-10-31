@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.56% (1047)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.80% (198)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.64% (1048)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.72% (197)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="624.19" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="624.19" y="0" class="decompiled"/>
-<rect width="118.04" height="6" x="628.96" y="0" class="todo"/>
+<rect width="624.79" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="624.79" y="0" class="decompiled"/>
+<rect width="117.45" height="6" x="629.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -73,7 +73,7 @@
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="todo"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="0" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="0" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="0" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="0" class="todo"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.77%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.14%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.82%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.09%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="543.59" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="543.59" y="0" class="decompiled"/>
-<rect width="202.75" height="6" x="544.25" y="0" class="todo"/>
+<rect width="543.96" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="543.96" y="0" class="decompiled"/>
+<rect width="202.39" height="6" x="544.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.01" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1850,7 +1850,7 @@
 <rect width="9.30" height="8.81" x="537.80" y="264.76" class="named"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
 <rect width="9.30" height="8.74" x="537.80" y="276.57" class="todo"><title>0x00454a30 SE_AdvancedDlgUpdate (169 bytes)</title></rect>
 <rect width="9.30" height="8.67" x="537.80" y="288.31" class="todo"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
-<rect width="9.30" height="8.67" x="537.80" y="299.98" class="todo"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
+<rect width="9.30" height="8.67" x="537.80" y="299.98" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="9.30" height="8.67" x="537.80" y="311.65" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="9.30" height="8.67" x="537.80" y="323.32" class="named"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
 <rect width="9.30" height="8.60" x="537.80" y="334.99" class="named"><title>0x0040bf80 insert_sprite (167 bytes)</title></rect>
