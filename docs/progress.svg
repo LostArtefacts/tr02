@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.89% (1087)</tspan> · <tspan class="decompiled">0.72% (9)</tspan> · <tspan class="nonmatching">3.20% (40)</tspan> · <tspan class="todo">9.19% (115)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.89% (1087)</tspan> · <tspan class="decompiled">0.72% (9)</tspan> · <tspan class="nonmatching">3.28% (41)</tspan> · <tspan class="todo">9.11% (114)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="649.07" height="6" x="0" y="0" class="named"/>
 <rect width="5.37" height="6" x="649.07" y="0" class="decompiled"/>
-<rect width="23.88" height="6" x="654.45" y="0" class="nonmatching"/>
-<rect width="68.67" height="6" x="678.33" y="0" class="todo"/>
+<rect width="24.48" height="6" x="654.45" y="0" class="nonmatching"/>
+<rect width="68.07" height="6" x="678.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1268,7 +1268,7 @@
 <rect width="12" height="12" x="690" y="345" class="named"><title>0x00456e80 GetRegistryStringValue (149 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="345" class="named"><title>0x00456f20 GetRegistryGuidValue (145 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="345" class="named"><title>0x00456fc0 SE_ReleaseBitmapResource (55 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="345" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="345" class="nonmatching"><title>0x00457000 SE_LoadBitmapResource (196 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="360" class="named"><title>0x004570d0 SE_DrawBitmap (100 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="360" class="named"><title>0x00457140 SE_UpdateBitmapPalette (28 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="360" class="named"><title>0x00457160 SE_ChangeBitmapPalette (87 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.92%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">7.90%</tspan> · <tspan class="todo">11.85%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.92%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">7.95%</tspan> · <tspan class="todo">11.79%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="597" height="6" x="0" y="0" class="named"/>
 <rect width="2.51" height="6" x="597" y="0" class="decompiled"/>
-<rect width="58.99" height="6" x="599.50" y="0" class="nonmatching"/>
-<rect width="88.51" height="6" x="658.49" y="0" class="todo"/>
+<rect width="59.41" height="6" x="599.50" y="0" class="nonmatching"/>
+<rect width="88.08" height="6" x="658.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1788,7 +1788,7 @@
 <rect width="10.04" height="9.81" x="512.71" y="367.38" class="named"><title>0x00434eb0 SmashWindow (196 bytes)</title></rect>
 <rect width="10.04" height="9.81" x="512.71" y="380.19" class="named"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
 <rect width="9.74" height="10.11" x="525.75" y="156.98" class="named"><title>0x0044b5d0 S_ReloadLevelGraphics (196 bytes)</title></rect>
-<rect width="9.74" height="10.11" x="538.49" y="156.98" class="todo"><title>0x00457000 Func457000 (196 bytes)</title></rect>
+<rect width="9.74" height="10.11" x="538.49" y="156.98" class="nonmatching"><title>0x00457000 SE_LoadBitmapResource (196 bytes)</title></rect>
 <rect width="9.61" height="10.11" x="551.24" y="156.98" class="named"><title>0x0041ca70 Splash (194 bytes)</title></rect>
 <rect width="9.61" height="10.11" x="563.85" y="156.98" class="named"><title>0x004343e0 InitialiseFinalLevel (194 bytes)</title></rect>
 <rect width="9.55" height="10.11" x="576.46" y="156.98" class="named"><title>0x0042f2a0 AimWeapon (193 bytes)</title></rect>

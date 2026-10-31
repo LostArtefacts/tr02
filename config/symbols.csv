@@ -1198,7 +1198,7 @@ address,size,name,symbol
 0x00456e80,149,GetRegistryStringValue,_GetRegistryStringValue
 0x00456f20,145,GetRegistryGuidValue,_GetRegistryGuidValue
 0x00456fc0,55,SE_ReleaseBitmapResource,?Release@BITMAP_RESOURCE@@QAEXXZ
-0x00457000,196,Func457000,
+0x00457000,196,SE_LoadBitmapResource,?Load@BITMAP_RESOURCE@@QAEXPBD@Z
 0x004570d0,100,SE_DrawBitmap,?Draw@BITMAP_RESOURCE@@QAEXPAXHH@Z
 0x00457140,28,SE_UpdateBitmapPalette,?UpdatePalette@BITMAP_RESOURCE@@QAEXPAX0@Z
 0x00457160,87,SE_ChangeBitmapPalette,?ChangePalette@BITMAP_RESOURCE@@QAEXPAX@Z

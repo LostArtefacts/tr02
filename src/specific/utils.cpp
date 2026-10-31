@@ -331,6 +331,7 @@ public:
     DWORD flags;
 
     void Release(void);
+    void Load(LPCSTR lpName);
     void Draw(HDC hdc, int x, int y);
     void UpdatePalette(HWND hWnd, HWND hSender);
     void ChangePalette(HWND hWnd);
@@ -348,6 +349,43 @@ void BITMAP_RESOURCE::Release(void)
         free(bmpData);
         bmpData = NULL;
     }
+}
+
+void BITMAP_RESOURCE::Load(LPCSTR lpName)
+{
+    struct {
+        WORD palVersion;
+        WORD palNumEntries;
+        PALETTEENTRY palPalEntry[256];
+    } logPalette;
+    RGBQUAD *bmpPalette;
+    LPBYTE bitmap;
+    int i;
+
+    if (hPalette)
+    {
+        DeleteObject(hPalette);
+        hPalette = NULL;
+    }
+    flags = 0;
+    bitmap = (LPBYTE)UT_LoadResource(lpName, RT_BITMAP);
+    bmpInfo = (LPBITMAPINFO)bitmap;
+    if (!bitmap)
+        return;
+    bmpPalette = (RGBQUAD *)(bitmap + sizeof(BITMAPINFOHEADER));
+    bmpData = (LPBYTE)(bmpPalette + 256);
+    *(DWORD *)&logPalette = 0x300 | (256 << 16);
+    for (i = 0; i < 256; i++)
+    {
+        logPalette.palPalEntry[i].peRed = bmpPalette[i].rgbRed;
+        logPalette.palPalEntry[i].peGreen = bmpPalette[i].rgbGreen;
+        logPalette.palPalEntry[i].peBlue = bmpPalette[i].rgbBlue;
+        if (i < 10 || i >= 246)
+            logPalette.palPalEntry[i].peFlags = 0;
+        else
+            logPalette.palPalEntry[i].peFlags = PC_NOCOLLAPSE;
+    }
+    hPalette = CreatePalette((LOGPALETTE *)&logPalette);
 }
 
 void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
