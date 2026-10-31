@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.28% (16)</tspan> · <tspan class="todo">12.55% (157)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">12.47% (156)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.92" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.92" y="0" class="decompiled"/>
-<rect width="9.55" height="6" x="643.70" y="0" class="nonmatching"/>
-<rect width="93.75" height="6" x="653.25" y="0" class="todo"/>
+<rect width="10.15" height="6" x="643.70" y="0" class="nonmatching"/>
+<rect width="93.15" height="6" x="653.85" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -865,7 +865,7 @@
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00443100 GiantYetiControl (760 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="named"><title>0x00443400 YetiControl (1592 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="named"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="225" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="225" class="nonmatching"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="225" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="named"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.62%</tspan> · <tspan class="todo">17.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.98%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.64" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.64" y="0" class="decompiled"/>
-<rect width="34.48" height="6" x="585.29" y="0" class="nonmatching"/>
-<rect width="127.23" height="6" x="619.77" y="0" class="todo"/>
+<rect width="34.88" height="6" x="585.29" y="0" class="nonmatching"/>
+<rect width="126.83" height="6" x="620.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1815,7 +1815,7 @@
 <rect width="9.75" height="9.46" x="525.44" y="258.23" class="named"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="9.75" height="9.39" x="525.44" y="270.69" class="named"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
 <rect width="9.75" height="9.39" x="525.44" y="283.08" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
-<rect width="9.75" height="9.39" x="525.44" y="295.48" class="todo"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
+<rect width="9.75" height="9.39" x="525.44" y="295.48" class="nonmatching"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="9.75" height="9.39" x="525.44" y="307.87" class="named"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="9.75" height="9.32" x="525.44" y="320.26" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="9.75" height="9.32" x="525.44" y="332.58" class="named"><title>0x00432f80 CreateZone (184 bytes)</title></rect>

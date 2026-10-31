@@ -65,6 +65,34 @@ extern "C" void BGND_Make640x480(uint8 *bitmap, RGB888 *palette)
     BGND_PictureIsReady = true;
 }
 
+extern "C" int AddTexturePage8(int nWidth, int nHeight, uint8 *pTexture, int nPalette);
+extern "C" int AddTexturePage16(int nWidth, int nHeight, uint8 *pTexture);
+
+extern "C" int BGND_AddTexture(int tileIndex, uint8 *bitmap, int palIndex, RGB888 *bmpPal)
+{
+    int pageIndex;
+    int i;
+    uint16 *dst;
+    RGB888 *color;
+
+    if (palIndex >= 0) {
+        pageIndex = AddTexturePage8(256, 256, bitmap, palIndex);
+    } else {
+        dst = (uint16 *)&bitmap[256 * 256 * 2];
+        bitmap += 256 * 256;
+        for (i = 256 * 256; i > 0; i--) {
+            color = &bmpPal[*--bitmap];
+            *--dst = 0x8000 | ((color->red >> 3) << 10) | ((color->green >> 3) << 5) | (color->blue >> 3);
+        }
+        pageIndex = AddTexturePage16(256, 256, bitmap);
+    }
+    if (pageIndex >= 0)
+        BGND_TexturePageIndexes[tileIndex] = pageIndex;
+    else
+        BGND_TexturePageIndexes[tileIndex] = -1;
+    return pageIndex;
+}
+
 extern "C" void BGND_GetPageHandles(void)
 {
     DWORD i;
