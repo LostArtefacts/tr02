@@ -64,6 +64,102 @@ extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output)
     return nVertices;
 }
 
+#define CLIP_G(OUT, B, A) \
+    { \
+        OUT.ooz = B->ooz + (A->ooz - B->ooz) * clipper; \
+        OUT.g = B->g + (A->g - B->g) * clipper; \
+    }
+
+static VERTEX_INFO XYG_output[8];
+
+extern "C" int XYGClipper(int number, VERTEX_INFO *input)
+{
+    int i, j;
+    VERTEX_INFO *A, *B;
+    float clipper;
+
+    B = &input[number - 1];
+    for (i = j = 0; i < number; i++) {
+        A = B;
+        B = &input[i];
+        if (A->x < phd_leftfloat) {
+            if (B->x < phd_leftfloat)
+                continue;
+            clipper = (phd_leftfloat - B->x) / (A->x - B->x);
+            CLIP_G(XYG_output[j], B, A);
+            XYG_output[j].x = phd_leftfloat;
+            XYG_output[j++].y = B->y + (A->y - B->y) * clipper;
+        } else if (A->x > phd_rightfloat) {
+            if (B->x > phd_rightfloat)
+                continue;
+            clipper = (phd_rightfloat - B->x) / (A->x - B->x);
+            CLIP_G(XYG_output[j], B, A);
+            XYG_output[j].x = phd_rightfloat;
+            XYG_output[j++].y = B->y + (A->y - B->y) * clipper;
+        }
+        if (B->x < phd_leftfloat) {
+            clipper = (phd_leftfloat - B->x) / (A->x - B->x);
+            CLIP_G(XYG_output[j], B, A);
+            XYG_output[j].x = phd_leftfloat;
+            XYG_output[j++].y = B->y + (A->y - B->y) * clipper;
+        } else if (B->x > phd_rightfloat) {
+            clipper = (phd_rightfloat - B->x) / (A->x - B->x);
+            CLIP_G(XYG_output[j], B, A);
+            XYG_output[j].x = phd_rightfloat;
+            XYG_output[j++].y = B->y + (A->y - B->y) * clipper;
+        } else {
+            XYG_output[j].x = B->x;
+            XYG_output[j].y = B->y;
+            XYG_output[j].ooz = B->ooz;
+            XYG_output[j].g = B->g;
+            j++;
+        }
+    }
+    if (j < 3)
+        return 0;
+    number = j;
+    B = &XYG_output[number - 1];
+    for (i = j = 0; i < number; i++) {
+        A = B;
+        B = &XYG_output[i];
+        if (A->y < phd_topfloat) {
+            if (B->y < phd_topfloat)
+                continue;
+            clipper = (phd_topfloat - B->y) / (A->y - B->y);
+            CLIP_G(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_topfloat;
+        } else if (A->y > phd_bottomfloat) {
+            if (B->y > phd_bottomfloat)
+                continue;
+            clipper = (phd_bottomfloat - B->y) / (A->y - B->y);
+            CLIP_G(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_bottomfloat;
+        }
+        if (B->y < phd_topfloat) {
+            clipper = (phd_topfloat - B->y) / (A->y - B->y);
+            CLIP_G(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_topfloat;
+        } else if (B->y > phd_bottomfloat) {
+            clipper = (phd_bottomfloat - B->y) / (A->y - B->y);
+            CLIP_G(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_bottomfloat;
+        } else {
+            input[j].x = B->x;
+            input[j].y = B->y;
+            input[j].ooz = B->ooz;
+            input[j].g = B->g;
+            j++;
+        }
+    }
+    if (j < 3)
+        return 0;
+    return j;
+}
+
 extern "C" int XYClipper(int number, VERTEX_INFO *input)
 {
     int i, j;
