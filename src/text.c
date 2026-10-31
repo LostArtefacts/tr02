@@ -293,3 +293,15 @@ uint32 GetTextScaleH(uint32 scaleH)
     scaleH = (scaleH >> 8) * (scale >> 8);
     return scaleH;
 }
+
+uint32 GetTextScaleV(uint32 scaleV)
+{
+    uint32 scale;
+    int height;
+
+    height = GetRenderHeight();
+    if (height < 480)
+        height = 480;
+    scale = (height << 16) / 480;
+    return (scaleV >> 8) * (scale >> 8);
+}
