@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.64% (1048)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.72% (197)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.72% (1049)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.64% (196)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="624.79" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="624.79" y="0" class="decompiled"/>
-<rect width="117.45" height="6" x="629.55" y="0" class="todo"/>
+<rect width="625.38" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="625.38" y="0" class="decompiled"/>
+<rect width="116.85" height="6" x="630.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -157,7 +157,7 @@
 <rect width="12" height="12" x="540" y="15" class="named"><title>0x0040cb10 InitialiseBoat (60 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="15" class="todo"><title>0x0040cb50 BoatCheckGeton (368 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ccc0 BoatCollision (350 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="15" class="todo"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="15" class="named"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="15" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="named"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="named"><title>0x0040d270 DoBoatDynamics (75 bytes)</title></rect>
@@ -1325,11 +1325,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.82%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.09%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">72.89%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">27.02%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="543.96" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="543.96" y="0" class="decompiled"/>
-<rect width="202.39" height="6" x="544.61" y="0" class="todo"/>
+<rect width="544.50" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="544.50" y="0" class="decompiled"/>
+<rect width="201.85" height="6" x="545.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="58.01" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1703,7 +1703,7 @@
 <rect width="11.44" height="11.92" x="483.87" y="173.87" class="named"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
 <rect width="11.44" height="11.86" x="483.87" y="188.79" class="named"><title>0x004296e0 lara_col_back (251 bytes)</title></rect>
 <rect width="11.44" height="11.80" x="483.87" y="203.64" class="named"><title>0x00431610 LaraInitialiseMeshes (250 bytes)</title></rect>
-<rect width="11.44" height="11.68" x="483.87" y="218.44" class="todo"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
+<rect width="11.44" height="11.68" x="483.87" y="218.44" class="named"><title>0x0040ce20 TestWaterHeight (248 bytes)</title></rect>
 <rect width="11.44" height="11.68" x="483.87" y="233.12" class="named"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
 <rect width="11.44" height="11.68" x="483.87" y="247.80" class="named"><title>0x0042f9c0 DrawFlareInAir (248 bytes)</title></rect>
 <rect width="11.44" height="11.68" x="483.87" y="262.48" class="named"><title>0x0043d010 SkidooCollision (248 bytes)</title></rect>
