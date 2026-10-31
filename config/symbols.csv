@@ -1587,6 +1587,8 @@ address,size,name,symbol
 0x004663e0,16,birdy_left,_birdy_left
 0x004663f0,16,birdy_right,_birdy_right
 0x00466400,4,BGND_PaletteIndex,_BGND_PaletteIndex
+0x00466408,16,Var466408,_Var466408
+0x00466418,12,Var466418,_Var466418
 0x00466448,32,ClassName,_ClassName
 0x00466468,16,WindowName,_WindowName
 0x00466478,4,JoyNeedCaps,_JoyNeedCaps

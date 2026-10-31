@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.88% (11)</tspan> · <tspan class="todo">13.03% (163)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.96% (12)</tspan> · <tspan class="todo">12.95% (162)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.32" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="6.57" height="6" x="643.10" y="0" class="nonmatching"/>
-<rect width="97.33" height="6" x="649.67" y="0" class="todo"/>
+<rect width="7.17" height="6" x="643.10" y="0" class="nonmatching"/>
+<rect width="96.73" height="6" x="650.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -872,7 +872,7 @@
 <rect width="12" height="12" x="0" y="240" class="todo"><title>0x00443e40 BGND_DrawInGameBackground (544 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="240" class="named"><title>0x00444060 DrawTextureTile (593 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="240" class="named"><title>0x004442c0 BGND_CenterLighting (139 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="240" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="240" class="nonmatching"><title>0x00444350 Func444350 (519 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="240" class="decompiled"><title>0x00444560 Func444560 (13 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="240" class="named"><title>0x00444570 BGND_Free (77 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="240" class="todo"><title>0x004445c0 BGND_Init (48 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.21%</tspan> · <tspan class="todo">18.51%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.36%</tspan> · <tspan class="todo">18.36%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.09" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="24.01" height="6" x="584.74" y="0" class="nonmatching"/>
-<rect width="138.25" height="6" x="608.75" y="0" class="todo"/>
+<rect width="25.13" height="6" x="584.74" y="0" class="nonmatching"/>
+<rect width="137.13" height="6" x="609.87" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1506,7 +1506,7 @@
 <rect width="18.57" height="17.78" x="396.64" y="22.62" class="named"><title>0x0042db10 lara_col_climbstnc (525 bytes)</title></rect>
 <rect width="18.53" height="17.78" x="418.21" y="22.62" class="named"><title>0x004493a0 ApplySettings (524 bytes)</title></rect>
 <rect width="18.45" height="17.78" x="439.74" y="22.62" class="named"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
-<rect width="18.32" height="17.78" x="461.18" y="22.62" class="todo"><title>0x00444350 Func444350 (519 bytes)</title></rect>
+<rect width="18.32" height="17.78" x="461.18" y="22.62" class="nonmatching"><title>0x00444350 Func444350 (519 bytes)</title></rect>
 <rect width="18.28" height="17.78" x="482.50" y="22.62" class="named"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
 <rect width="18.08" height="17.78" x="503.79" y="22.62" class="named"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
 <rect width="18.03" height="17.78" x="524.86" y="22.62" class="named"><title>0x004337a0 ControlBodyPart (512 bytes)</title></rect>
