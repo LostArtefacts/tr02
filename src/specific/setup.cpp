@@ -6,11 +6,11 @@
 extern "C" {
 extern char RegistryKeyName[];
 extern char RegistryKeyFormat[];
-BOOL OpenRegistryKey(LPCTSTR lpSubKey);
+bool OpenRegistryKey(LPCTSTR lpSubKey);
 LONG CloseRegistryKey(void);
 }
 
-extern "C" BOOL OpenGameRegistryKey(LPCTSTR key)
+extern "C" bool OpenGameRegistryKey(LPCTSTR key)
 {
     char buffer[256];
 
@@ -142,6 +142,77 @@ typedef struct
     SETUP_MODE_NODE *tail;
     DWORD count;
 } SETUP_MODE_LIST;
+
+typedef struct
+{
+    void *next;
+    void *previous;
+    GUID *lpGuid;
+    GUID guid;
+} SETUP_LIST_NODE;
+
+extern "C" {
+extern void *PrimaryDisplayAdapter;
+extern void *PrimarySoundAdapter;
+LPCTSTR GuidBinaryToString(GUID *guid);
+void SetRegistryDwordValue(LPCTSTR lpValueName, DWORD value);
+void SetRegistryBoolValue(LPCTSTR lpValueName, bool value);
+void SetRegistryStringValue(LPCTSTR lpValueName, LPCTSTR value, int length);
+void DeleteRegistryValue(LPCTSTR lpValueName);
+}
+
+extern "C" bool Func4524e0(SETUP_APP_SETTINGS *settings)
+{
+    SETUP_MODE_NODE *mode;
+
+    if (!OpenGameRegistryKey("System"))
+        return false;
+    if (settings->PreferredDisplayAdapter && settings->PreferredDisplayAdapter != PrimaryDisplayAdapter)
+        SetRegistryStringValue("PreferredDisplayAdapterGUID", GuidBinaryToString(&((SETUP_LIST_NODE *)settings->PreferredDisplayAdapter)->guid), 37);
+    else
+        DeleteRegistryValue("PreferredDisplayAdapterGUID");
+    if (settings->PreferredSoundAdapter && settings->PreferredSoundAdapter != PrimarySoundAdapter)
+        SetRegistryStringValue("PreferredSoundAdapterGUID", GuidBinaryToString(&((SETUP_LIST_NODE *)settings->PreferredSoundAdapter)->guid), 37);
+    else
+        DeleteRegistryValue("PreferredSoundAdapterGUID");
+    if (settings->PreferredJoystick)
+        SetRegistryStringValue("PreferredJoystickGUID", GuidBinaryToString(&((SETUP_LIST_NODE *)settings->PreferredJoystick)->guid), 37);
+    else
+        DeleteRegistryValue("PreferredJoystickGUID");
+    SetRegistryDwordValue("RenderMode", settings->RenderMode);
+    SetRegistryBoolValue("PerspectiveCorrect", settings->PerspectiveCorrect);
+    SetRegistryBoolValue("Dither", settings->Dither);
+    SetRegistryBoolValue("ZBuffer", settings->ZBuffer);
+    SetRegistryBoolValue("BilinearFiltering", settings->BilinearFiltering);
+    SetRegistryBoolValue("TripleBuffering", settings->TripleBuffering);
+    SetRegistryBoolValue("FullScreen", settings->FullScreen);
+    SetRegistryDwordValue("WindowWidth", settings->WindowWidth);
+    SetRegistryDwordValue("WindowHeight", settings->WindowHeight);
+    SetRegistryDwordValue("AspectMode", settings->AspectMode);
+    SetRegistryDwordValue("NearestAdjustment", settings->NearestAdjustment);
+    SetRegistryDwordValue("LinearAdjustment", settings->LinearAdjustment);
+    SetRegistryBoolValue("DisableFMV", settings->DisableFMV);
+    if (settings->PreferredDisplayAdapter && (mode = (SETUP_MODE_NODE *)settings->VideoMode))
+    {
+        SetRegistryDwordValue("FullScreenWidth", mode->body.width);
+        SetRegistryDwordValue("FullScreenHeight", mode->body.height);
+        SetRegistryDwordValue("FullScreenBPP", mode->body.bpp);
+    }
+    else
+    {
+        DeleteRegistryValue("FullScreenWidth");
+        DeleteRegistryValue("FullScreenHeight");
+        DeleteRegistryValue("FullScreenBPP");
+    }
+    SetRegistryBoolValue("SoundEnabled", settings->SoundEnabled);
+    SetRegistryBoolValue("LaraMic", settings->LaraMic);
+    SetRegistryBoolValue("JoystickEnabled", settings->JoystickEnabled);
+    SetRegistryBoolValue("Disable16BitTextures", settings->Disable16BitTextures);
+    SetRegistryBoolValue("DontSortPrimitives", settings->DontSortPrimitives);
+    SetRegistryDwordValue("TexelAdjustMode", settings->TexelAdjustMode);
+    CloseGameRegistryKey();
+    return true;
+}
 
 #pragma pack(push, 1)
 struct SETUP_ADAPTER_NODE
