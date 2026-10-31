@@ -265,3 +265,212 @@ void DragonBones(sint16 item_number)
         front->mesh_bits = 0xff3fffff;
     }
 }
+
+void DragonControl(sint16 back_number)
+{
+    ITEM_INFO *item, *back;
+    CREATURE_INFO *dragon;
+    sint16 angle, head, item_number;
+    AI_INFO info;
+    int ahead;
+
+    back = &items[back_number];
+    if (back->object_number == DRAGON_FRONT)
+        return;
+
+    item_number = (int)back->data;
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    dragon = (CREATURE_INFO *)item->data;
+    head = angle = 0;
+
+    if (item->hit_points <= 0)
+    {
+        if (item->current_anim_state != DRAGON_DEATH)
+        {
+            item->anim_number = objects[DRAGON_FRONT].anim_index + DRAGON_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = item->goal_anim_state = DRAGON_DEATH;
+            dragon->flags = 0;
+        }
+        else if (dragon->flags >= 0)
+        {
+            CreateBartoliLight(item_number);
+            dragon->flags++;
+            if (dragon->flags == DRAGON_LIVE_TIME)
+                item->goal_anim_state = DRAGON_STOP;
+            if (dragon->flags >= DRAGON_LIVE_TIME + DRAGON_ALMOST_LIVE)
+                item->hit_points = objects[DRAGON_FRONT].hit_points >> 1;
+        }
+        else
+        {
+            if (dragon->flags > -20)
+                AddDynamicLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos,
+                    (GetRandomDraw() * 4 >> 15) + 12 + dragon->flags / 2, (GetRandomDraw() * 4 >> 15) + 10 + dragon->flags / 2);
+            if (dragon->flags == -100)
+                DragonBones(item_number);
+            else if (dragon->flags == -200)
+            {
+                DisableBaddieAI(item_number);
+                KillItem(back_number);
+                back->status = DEACTIVATED;
+                KillItem(item_number);
+                item->status = DEACTIVATED;
+                return;
+            }
+            else if (dragon->flags < -100)
+            {
+                item->pos.y_pos += 10;
+                back->pos.y_pos += 10;
+            }
+            dragon->flags--;
+            return;
+        }
+    }
+    else
+    {
+        CreatureAIInfo(item, &info);
+        CreatureMood(item, &info, VIOLENT);
+        angle = CreatureTurn(item, DRAGON_WALK_TURN);
+
+        ahead = (info.ahead && info.distance > DRAGON_CLOSE_RANGE && info.distance < DRAGON_STOP_RANGE);
+
+        if (item->touch_bits)
+        {
+            lara_item->hit_status = 1;
+            lara_item->hit_points -= DRAGON_TOUCH_DAMAGE;
+        }
+
+        switch (item->current_anim_state)
+        {
+        case DRAGON_STOP:
+            item->pos.y_rot -= angle;
+            if (!ahead)
+            {
+                if (info.distance > DRAGON_STOP_RANGE || !info.ahead)
+                    item->goal_anim_state = DRAGON_WALK;
+                else if (info.ahead && info.distance < DRAGON_CLOSE_RANGE && !dragon->flags)
+                {
+                    dragon->flags = 1;
+                    if (info.angle < 0)
+                        item->goal_anim_state = DRAGON_SWIPELEFT;
+                    else
+                        item->goal_anim_state = DRAGON_SWIPERIGHT;
+                }
+                else if (info.angle < 0)
+                    item->goal_anim_state = DRAGON_TURNLEFT;
+                else
+                    item->goal_anim_state = DRAGON_TURNRIGHT;
+            }
+            else
+                item->goal_anim_state = DRAGON_AIM1;
+            break;
+
+        case DRAGON_SWIPELEFT:
+            if (item->touch_bits & DRAGON_TOUCH_L)
+            {
+                lara_item->hit_status = 1;
+                lara_item->hit_points -= DRAGON_SWIPE_DAMAGE;
+                dragon->flags = 0;
+            }
+            break;
+
+        case DRAGON_SWIPERIGHT:
+            if (item->touch_bits & DRAGON_TOUCH_R)
+            {
+                lara_item->hit_status = 1;
+                lara_item->hit_points -= DRAGON_SWIPE_DAMAGE;
+                dragon->flags = 0;
+            }
+            break;
+
+        case DRAGON_WALK:
+            dragon->flags = 0;
+            if (ahead)
+                item->goal_anim_state = DRAGON_STOP;
+            else if (angle < -DRAGON_NEED_TURN)
+            {
+                if (info.distance < DRAGON_STOP_RANGE && info.ahead)
+                    item->goal_anim_state = DRAGON_STOP;
+                else
+                    item->goal_anim_state = DRAGON_LEFT;
+            }
+            else if (angle > DRAGON_NEED_TURN)
+            {
+                if (info.distance < DRAGON_STOP_RANGE && info.ahead)
+                    item->goal_anim_state = DRAGON_STOP;
+                else
+                    item->goal_anim_state = DRAGON_RIGHT;
+            }
+            break;
+
+        case DRAGON_LEFT:
+            if (angle > -DRAGON_NEED_TURN || ahead)
+                item->goal_anim_state = DRAGON_WALK;
+            break;
+
+        case DRAGON_RIGHT:
+            if (angle < DRAGON_NEED_TURN || ahead)
+                item->goal_anim_state = DRAGON_WALK;
+            break;
+
+        case DRAGON_TURNLEFT:
+            dragon->flags = 0;
+            item->pos.y_rot += -ONE_DEGREE - angle;
+            break;
+
+        case DRAGON_TURNRIGHT:
+            dragon->flags = 0;
+            item->pos.y_rot += ONE_DEGREE - angle;
+            break;
+
+        case DRAGON_AIM1:
+            item->pos.y_rot -= angle;
+            if (info.ahead)
+                head = -info.angle;
+            if (ahead)
+            {
+                dragon->flags = 30;
+                item->goal_anim_state = DRAGON_FIRE1;
+            }
+            else
+            {
+                dragon->flags = 0;
+                item->goal_anim_state = DRAGON_AIM1;
+            }
+            break;
+
+        case DRAGON_FIRE1:
+            item->pos.y_rot -= angle;
+            if (info.ahead)
+                head = -info.angle;
+            SoundEffect(305, &item->pos, 0);
+            if (dragon->flags)
+            {
+                if (info.ahead)
+                    CreatureEffect(item, &dragon_mouth, DragonFire);
+                dragon->flags--;
+            }
+            else
+                item->goal_anim_state = DRAGON_STOP;
+            break;
+        }
+    }
+
+    CreatureHead(item, head);
+    CreatureAnimation(item_number, angle, 0);
+
+    back->current_anim_state = item->current_anim_state;
+    back->anim_number = objects[DRAGON_BACK].anim_index - objects[DRAGON_FRONT].anim_index + item->anim_number;
+    back->frame_number = anims[back->anim_number].frame_base + (item->frame_number - anims[item->anim_number].frame_base);
+    back->pos.x_pos = item->pos.x_pos;
+    back->pos.y_pos = item->pos.y_pos;
+    back->pos.z_pos = item->pos.z_pos;
+    back->pos.x_rot = item->pos.x_rot;
+    back->pos.y_rot = item->pos.y_rot;
+    back->pos.z_rot = item->pos.z_rot;
+    if (back->room_number != item->room_number)
+        ItemNewRoom(back_number, item->room_number);
+}
