@@ -325,7 +325,7 @@ address,size,name,symbol
 0x00421f40,108,AddDisplayPickup,_AddDisplayPickup
 0x00421fb0,122,DisplayModeInfo,_DisplayModeInfo
 0x00422030,44,DrawModeInfo,_DrawModeInfo
-0x00422060,4510,Display_Inventory,_Display_Inventory
+0x00422060,4746,Display_Inventory,_Display_Inventory
 0x004232f0,342,Construct_Inventory,_Construct_Inventory
 0x00423450,137,SelectMeshes,_SelectMeshes
 0x004234e0,129,AnimateInventoryItem,_AnimateInventoryItem
@@ -1485,6 +1485,7 @@ address,size,name,symbol
 0x004642f0,32,GF_CDtracks,_GF_CDtracks
 0x00464310,2,CineTargetAngle,_CineTargetAngle
 0x004644e0,4,OverlayStatus,_OverlayStatus
+0x004644f8,4,inv_nframes,_inv_nframes
 0x00464500,32,req_bgnd_gour1,_req_bgnd_gour1
 0x00464520,24,req_bgnd_gour2,_req_bgnd_gour2
 0x00464538,32,req_main_gour1,_req_main_gour1
