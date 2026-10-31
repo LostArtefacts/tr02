@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.89% (1087)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2.24% (28)</tspan> · <tspan class="todo">10.23% (128)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.89% (1087)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2.32% (29)</tspan> · <tspan class="todo">10.15% (127)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="649.07" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="649.07" y="0" class="decompiled"/>
-<rect width="16.72" height="6" x="653.85" y="0" class="nonmatching"/>
-<rect width="76.43" height="6" x="670.57" y="0" class="todo"/>
+<rect width="17.32" height="6" x="653.85" y="0" class="nonmatching"/>
+<rect width="75.83" height="6" x="671.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -110,7 +110,7 @@
 <rect width="12" height="12" x="570" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="0" class="todo"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="0" class="nonmatching"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="0" class="named"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="0" class="named"><title>0x004059f0 XYGUVClipper (1297 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="0" class="named"><title>0x00405f10 ins_objectGT4 (2652 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.48%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.88%</tspan> · <tspan class="todo">14.55%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.48%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.91%</tspan> · <tspan class="todo">14.51%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="593.75" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="593.75" y="0" class="decompiled"/>
-<rect width="43.95" height="6" x="594.40" y="0" class="nonmatching"/>
-<rect width="108.65" height="6" x="638.35" y="0" class="todo"/>
+<rect width="44.18" height="6" x="594.40" y="0" class="nonmatching"/>
+<rect width="108.42" height="6" x="638.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2015,7 +2015,7 @@
 <rect width="6.46" height="7.02" x="593.34" y="266.89" class="named"><title>0x004270e0 RemoveDrawnItem (111 bytes)</title></rect>
 <rect width="6.46" height="7.02" x="593.34" y="276.91" class="named"><title>0x00456870 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="6.46" height="6.93" x="593.34" y="286.93" class="named"><title>0x004574a0 UT_MemBlt (110 bytes)</title></rect>
-<rect width="6.46" height="6.75" x="593.34" y="296.86" class="todo"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
+<rect width="6.46" height="6.75" x="593.34" y="296.86" class="nonmatching"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
 <rect width="6.46" height="6.75" x="593.34" y="306.61" class="named"><title>0x00421f40 AddDisplayPickup (108 bytes)</title></rect>
 <rect width="6.46" height="6.75" x="593.34" y="316.36" class="named"><title>0x00427300 CreateEffect (108 bytes)</title></rect>
 <rect width="6.46" height="6.66" x="593.34" y="326.11" class="named"><title>0x004322c0 lara_as_swim (107 bytes)</title></rect>

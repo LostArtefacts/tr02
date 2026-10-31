@@ -3,6 +3,16 @@
 extern "C" sint32 *sort3dptr;
 extern "C" sint16 *info3dptr;
 
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint16 clip, g, u, v;
+} PHD_VBUF;
+
+extern "C" int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3)
+{
+    return (vn1->yv * vn3->zv - vn3->yv * vn1->zv) * vn2->xv + (vn3->xv * vn1->zv - vn1->xv * vn3->zv) * vn2->yv + (vn1->xv * vn3->yv - vn3->xv * vn1->yv) * vn2->zv < 0.0f;
+}
+
 typedef struct vertex_info {
     float x, y;
     float ooz;
@@ -163,28 +173,22 @@ extern "C" int XYGUVClipper(int number, VERTEX_INFO *input)
 }
 
 typedef struct {
-    float xv, yv, zv, ooz, xs, ys;
-    sint16 clip, g, u, v;
-} PHD_VBUF;
-
-typedef struct {
     sint16 xs, ys, g;
     float ooz, u, v;
 } OUTPUT_INFO;
 
 extern "C" PHD_VBUF PhdVBuf[];
 extern "C" VERTEX_INFO VBuffer[];
-extern "C" int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3);
 
 extern "C" sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort_routine)
 {
-    PHD_VBUF *vn1, *vn2, *vn3, *vn4;
     PHDTEXTURESTRUCT *tex;
-    VERTEX_INFO *v;
-    POINT_INFO point[4], *p;
-    OUTPUT_INFO *outptr;
-    int i, npoints;
+    PHD_VBUF *vn1, *vn2, *vn3, *vn4;
+    POINT_INFO *p, point[4];
+    int npoints, i;
     float zdepth;
+    OUTPUT_INFO *outptr;
+    VERTEX_INFO *v;
 
     for (; number > 0; number--, objptr += 5) {
         vn1 = &PhdVBuf[objptr[0]];
@@ -409,12 +413,12 @@ extern "C" sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort
 extern "C" sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine)
 {
     VERTEX_INFO *v;
-    int npoints, i;
-    POINT_INFO *p, point[3];
     float zdepth;
+    PHDTEXTURESTRUCT *tex;
+    int npoints, i;
     PHD_VBUF *vn1, *vn2, *vn3;
     OUTPUT_INFO *outptr;
-    PHDTEXTURESTRUCT *tex;
+    POINT_INFO *p, point[3];
 
     for (; number > 0; number--, objptr += 4) {
         vn1 = &PhdVBuf[objptr[0]];
@@ -701,12 +705,12 @@ extern "C" int XYGClipper(int number, VERTEX_INFO *input)
 
 extern "C" sint16 *ins_objectG4(sint16 *objptr, int number, enum sort_type sort_routine)
 {
-    VERTEX_INFO *v;
-    int npoints, i;
-    PHD_VBUF *vn1, *vn4, *vn2, *vn3;
-    sint16 *outptr;
     float zdepth;
+    sint16 *outptr;
+    PHD_VBUF *vn1, *vn4, *vn2, *vn3;
+    int i, npoints;
     POINT_INFO *p, point[4];
+    VERTEX_INFO *v;
 
     outptr = info3dptr;
     for (; number > 0; number--, objptr += 5) {
@@ -804,12 +808,12 @@ extern "C" sint16 *ins_objectG4(sint16 *objptr, int number, enum sort_type sort_
 
 extern "C" sint16 *ins_objectG3(sint16 *objptr, int number, enum sort_type sort_routine)
 {
-    PHD_VBUF *vn1, *vn2, *vn3;
-    POINT_INFO *p, point[3];
     float zdepth;
-    int npoints, i;
-    VERTEX_INFO *v;
     sint16 *outptr;
+    POINT_INFO *p, point[3];
+    VERTEX_INFO *v;
+    int npoints, i;
+    PHD_VBUF *vn1, *vn2, *vn3;
 
     outptr = info3dptr;
     for (; number > 0; number--, objptr += 4) {
