@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.81% (1061)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.55% (182)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.89% (1062)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.47% (181)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="633.55" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="633.55" y="0" class="decompiled"/>
-<rect width="108.68" height="6" x="638.32" y="0" class="todo"/>
+<rect width="634.14" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="634.14" y="0" class="decompiled"/>
+<rect width="108.08" height="6" x="638.92" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -117,7 +117,7 @@
 <rect width="12" height="12" x="690" y="0" class="todo"><title>0x004071f0 XYGClipper (1058 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="0" class="todo"><title>0x00407620 ins_objectG4 (977 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="0" class="todo"><title>0x00407a00 ins_objectG3 (795 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="0" class="todo"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="0" class="named"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="15" class="todo"><title>0x00407ff0 ins_poly_trans8 (1188 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="15" class="named"><title>0x004084a0 ins_trans_quad (211 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="15" class="named"><title>0x00408580 ins_flat_rect (203 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.91%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">75.12%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">24.80%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="559.57" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="559.57" y="0" class="decompiled"/>
-<rect width="186.78" height="6" x="560.22" y="0" class="todo"/>
+<rect width="561.12" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="561.12" y="0" class="decompiled"/>
+<rect width="185.22" height="6" x="561.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1449,7 +1449,7 @@
 <rect width="22.85" height="21.04" x="325.01" y="297.38" class="named"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="22.85" height="20.94" x="325.01" y="321.41" class="named"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
 <rect width="22.85" height="20.87" x="325.01" y="345.35" class="todo"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
-<rect width="22.85" height="20.77" x="325.01" y="369.23" class="todo"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
+<rect width="22.85" height="20.77" x="325.01" y="369.23" class="named"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
 <rect width="21.42" height="22.17" x="350.87" y="0" class="named"><title>0x00433090 ControlMissile (720 bytes)</title></rect>
 <rect width="21.42" height="22.17" x="350.87" y="25.17" class="named"><title>0x00454b10 GameMain (720 bytes)</title></rect>
 <rect width="21.42" height="21.85" x="350.87" y="50.34" class="todo"><title>0x0040c030 S_DrawSprite (711 bytes)</title></rect>
