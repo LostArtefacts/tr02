@@ -703,6 +703,141 @@ void Worker3Control(sint16 item_number)
     }
 }
 
+#define XIAN_LORD 41
+#define XIAN_LORD_STATUE 42
+#define WARRIOR 43
+#define WARRIOR_STATUE 44
+#define ROT_X 4
+#define ROT_Y 8
+#define ROT_Z 16
+
+void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+void phd_RotZ(PHD_ANGLE rz);
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unknown);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void InitInterpolate(int frac, int rate);
+void phd_PutPolygons_I(sint16 *ptr, int clip);
+void phd_PopMatrix_I(void);
+void phd_PushMatrix_I(void);
+void phd_RotY_I(sint16 ang);
+void phd_RotX_I(sint16 ang);
+void phd_RotZ_I(sint16 ang);
+void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
+void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
+void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+
+void DrawXianLord(ITEM_INFO *item)
+{
+    int clip, i, poppush;
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation1, *rotation2;
+    sint16 *extra_rotation;
+    sint16 **meshpp, **jadepp;
+    uint32 bit;
+    sint16 *frmptr[2];
+    int rate, frac;
+
+    frac = GetFrames(item, frmptr, &rate);
+    object = &objects[item->object_number];
+    if (object->shadow_size)
+        S_PrintShadow(object->shadow_size, frmptr[0], item, 0);
+
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    if ((clip = S_GetObjectBounds(frmptr[0])))
+    {
+        CalculateObjectLighting(item, frmptr[0]);
+        extra_rotation = (sint16 *)item->data;
+
+        if (item->object_number == XIAN_LORD)
+        {
+            meshpp = &meshes[objects[XIAN_LORD].mesh_index];
+            jadepp = &meshes[objects[XIAN_LORD_STATUE].mesh_index];
+        }
+        else
+        {
+            meshpp = &meshes[objects[WARRIOR].mesh_index];
+            jadepp = &meshes[objects[WARRIOR_STATUE].mesh_index];
+        }
+
+        bone = bones + object->bone_index;
+        bit = 1;
+
+        if (!frac)
+        {
+            phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
+            rotation1 = frmptr[0] + 9;
+            phd_RotYXZsuperpack(&rotation1, 0);
+            phd_PutPolygons(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+            meshpp++;
+            jadepp++;
+
+            for (i = object->nmeshes - 1; i > 0; i--, bone += 4, meshpp++, jadepp++)
+            {
+                poppush = *bone;
+                if (poppush & 1)
+                    phd_PopMatrix();
+                if (poppush & 2)
+                    phd_PushMatrix();
+                phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
+                phd_RotYXZsuperpack(&rotation1, 0);
+                if (extra_rotation && (poppush & (ROT_X | ROT_Y | ROT_Z)))
+                {
+                    if (poppush & ROT_Y)
+                        phd_RotY(*(extra_rotation++));
+                    if (poppush & ROT_X)
+                        phd_RotX(*(extra_rotation++));
+                    if (poppush & ROT_Z)
+                        phd_RotZ(*(extra_rotation++));
+                }
+                bit <<= 1;
+                phd_PutPolygons(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+            }
+        }
+        else
+        {
+            InitInterpolate(frac, rate);
+            phd_TranslateRel_ID((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8), (sint32)*(frmptr[1] + 6), (sint32)*(frmptr[1] + 7), (sint32)*(frmptr[1] + 8));
+            rotation1 = frmptr[0] + 9;
+            rotation2 = frmptr[1] + 9;
+            phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+            phd_PutPolygons_I(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+            meshpp++;
+            jadepp++;
+
+            for (i = object->nmeshes - 1; i > 0; i--, bone += 4, meshpp++, jadepp++)
+            {
+                poppush = *bone;
+                if (poppush & 1)
+                    phd_PopMatrix_I();
+                if (poppush & 2)
+                    phd_PushMatrix_I();
+                phd_TranslateRel_I(*(bone + 1), *(bone + 2), *(bone + 3));
+                phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+                if (extra_rotation && (poppush & (ROT_X | ROT_Y | ROT_Z)))
+                {
+                    if (poppush & ROT_Y)
+                        phd_RotY_I(*(extra_rotation++));
+                    if (poppush & ROT_X)
+                        phd_RotX_I(*(extra_rotation++));
+                    if (poppush & ROT_Z)
+                        phd_RotZ_I(*(extra_rotation++));
+                }
+                bit <<= 1;
+                phd_PutPolygons_I(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+            }
+        }
+    }
+    phd_PopMatrix();
+}
+
 #define XIAN_TOUCH_RIGHT 0x40000
 #define XIAN_TOUCH_LEFT 0x800
 
@@ -728,7 +863,6 @@ void XianDamage(ITEM_INFO *item, CREATURE_INFO *xian, sint32 damage)
     }
 }
 
-#define XIAN_LORD 41
 #define XIAN_START_ANIM 48
 #define XIAN_START 18
 
@@ -751,7 +885,6 @@ int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
 void DisableBaddieAI(sint16 item_number);
 void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state);
 
-#define XIAN_LORD_STATUE 42
 #define XIAN_STOP 1
 #define XIAN_STOP2 2
 #define XIAN_WALK 3
@@ -1087,8 +1220,6 @@ void WarriorSparkleTrail(ITEM_INFO *item)
     SoundEffect(312, &item->pos, 0);
 }
 
-#define WARRIOR 43
-#define WARRIOR_STATUE 44
 #define WARRIOR_STOP 1
 #define WARRIOR_WALK 2
 #define WARRIOR_AIM1 3

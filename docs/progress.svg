@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.96% (12)</tspan> · <tspan class="todo">12.95% (162)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.04% (13)</tspan> · <tspan class="todo">12.87% (161)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.32" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="7.17" height="6" x="643.10" y="0" class="nonmatching"/>
-<rect width="96.73" height="6" x="650.27" y="0" class="todo"/>
+<rect width="7.76" height="6" x="643.10" y="0" class="nonmatching"/>
+<rect width="96.14" height="6" x="650.86" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -369,7 +369,7 @@
 <rect width="12" height="12" x="705" y="75" class="named"><title>0x0041dbb0 Cult2Control (1072 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="75" class="named"><title>0x0041dfe0 MonkControl (1232 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="75" class="named"><title>0x0041e4b0 Worker3Control (1548 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="90" class="todo"><title>0x0041eac0 DrawXianLord (1015 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="90" class="nonmatching"><title>0x0041eac0 DrawXianLord (1015 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="90" class="named"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="90" class="named"><title>0x0041ef70 InitialiseXianLord (88 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="90" class="named"><title>0x0041efd0 XianLordControl (1496 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.36%</tspan> · <tspan class="todo">18.36%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.66%</tspan> · <tspan class="todo">18.06%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.09" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="25.13" height="6" x="584.74" y="0" class="nonmatching"/>
-<rect width="137.13" height="6" x="609.87" y="0" class="todo"/>
+<rect width="27.33" height="6" x="584.74" y="0" class="nonmatching"/>
+<rect width="134.93" height="6" x="612.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1396,7 +1396,7 @@
 <rect width="27.76" height="26.36" x="211.60" y="363.64" class="named"><title>0x004071f0 XYGClipper (1058 bytes)</title></rect>
 <rect width="24.99" height="28.53" x="242.37" y="0" class="todo"><title>0x00453150 SE_GraphicsDlgProc (1034 bytes)</title></rect>
 <rect width="24.99" height="28.41" x="242.37" y="31.53" class="named"><title>0x0042c5c0 ControlRocket (1030 bytes)</title></rect>
-<rect width="24.99" height="27.95" x="242.37" y="62.94" class="todo"><title>0x0041eac0 DrawXianLord (1015 bytes)</title></rect>
+<rect width="24.99" height="27.95" x="242.37" y="62.94" class="nonmatching"><title>0x0041eac0 DrawXianLord (1015 bytes)</title></rect>
 <rect width="24.99" height="27.86" x="242.37" y="93.90" class="named"><title>0x00436dc0 Worker1Control (1012 bytes)</title></rect>
 <rect width="24.99" height="27.50" x="242.37" y="124.76" class="named"><title>0x0041f650 WarriorControl (1000 bytes)</title></rect>
 <rect width="24.99" height="27.37" x="242.37" y="155.25" class="named"><title>0x00412fc0 CollideStaticObjects (996 bytes)</title></rect>
