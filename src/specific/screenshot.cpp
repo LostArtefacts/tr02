@@ -154,6 +154,20 @@ extern "C" DWORD EncodeLinePCX(BYTE *src, int width, BYTE *dst)
     return total;
 }
 
+extern "C" DWORD EncodePutPCX(BYTE value, BYTE num, BYTE *buffer)
+{
+    if (!num || (char)num > 63)
+        return 0;
+    if (num == 1 && (value & 0xc0) != 0xc0)
+    {
+        buffer[0] = value;
+        return 1;
+    }
+    buffer[0] = num | 0xc0;
+    buffer[1] = value;
+    return 2;
+}
+
 inline bool DX_TRY(HRESULT hr)
 {
     if (SUCCEEDED(hr))
