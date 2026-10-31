@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.13% (1090)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.76% (22)</tspan> · <tspan class="todo">10.47% (131)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.13% (1090)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.84% (23)</tspan> · <tspan class="todo">10.39% (130)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="650.86" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="650.86" y="0" class="decompiled"/>
-<rect width="13.14" height="6" x="655.64" y="0" class="nonmatching"/>
-<rect width="78.22" height="6" x="668.78" y="0" class="todo"/>
+<rect width="13.73" height="6" x="655.64" y="0" class="nonmatching"/>
+<rect width="77.63" height="6" x="669.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -103,7 +103,7 @@
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402bc0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="named"><title>0x00402c00 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="0" class="todo"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="0" class="nonmatching"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="todo"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.71%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.38%</tspan> · <tspan class="todo">14.83%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.71%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.47%</tspan> · <tspan class="todo">14.74%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="595.41" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="595.41" y="0" class="decompiled"/>
-<rect width="40.16" height="6" x="596.06" y="0" class="nonmatching"/>
-<rect width="110.78" height="6" x="636.22" y="0" class="todo"/>
+<rect width="40.87" height="6" x="596.06" y="0" class="nonmatching"/>
+<rect width="110.07" height="6" x="636.93" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1622,7 +1622,7 @@
 <rect width="13.12" height="14.37" x="653.80" y="80.02" class="named"><title>0x004339d0 MovableBlock (328 bytes)</title></rect>
 <rect width="13.12" height="14.37" x="669.91" y="80.02" class="named"><title>0x00433dd0 TestBlockPush (328 bytes)</title></rect>
 <rect width="13.07" height="14.37" x="686.03" y="80.02" class="named"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
-<rect width="13.02" height="14.37" x="702.10" y="80.02" class="todo"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
+<rect width="13.02" height="14.37" x="702.10" y="80.02" class="nonmatching"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12.97" height="14.37" x="718.11" y="80.02" class="nonmatching"><title>0x004219b0 DrawAssaultTimer (325 bytes)</title></rect>
 <rect width="12.92" height="14.37" x="734.08" y="80.02" class="named"><title>0x0044c550 StartGame (324 bytes)</title></rect>
 <rect width="13.45" height="13.76" x="452.75" y="97.40" class="named"><title>0x00427910 lara_as_run (323 bytes)</title></rect>
