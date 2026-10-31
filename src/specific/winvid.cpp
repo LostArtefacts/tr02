@@ -438,6 +438,31 @@ extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACED
     return rc;
 }
 
+extern "C" bool WinVidCopyBitmapToBuffer(LPDIRECTDRAWSURFACE3 surface, BYTE *bitmap)
+{
+    DDSURFACEDESC desc;
+    BYTE *src;
+    BYTE *dst;
+    DWORD width;
+    DWORD i;
+
+    if (!(bool)FAILED(WinVidBufferLock(surface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+    {
+        src = bitmap;
+        dst = (BYTE *)desc.lpSurface;
+        width = desc.dwWidth;
+        for (i = desc.dwHeight; i != 0; i--)
+        {
+            memcpy(dst, src, width);
+            src += width;
+            dst += desc.lPitch;
+        }
+        WinVidBufferUnlock(surface, &desc);
+        return true;
+    }
+    return false;
+}
+
 extern "C" DWORD GetRenderBitDepth(DWORD dwRGBBitCount)
 {
     switch (dwRGBBitCount)
