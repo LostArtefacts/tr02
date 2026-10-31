@@ -1,6 +1,7 @@
 #include "include.h"
 #include "global.h"
 #include "winmain.h"
+#include <stdio.h>
 
 typedef struct {
     BYTE manufacturer;
@@ -28,6 +29,14 @@ extern "C" LPDIRECTDRAWSURFACE PrimaryBufferSurface;
 extern "C" int ScreenShotPcxNumber;
 extern "C" char ScreenShotPcxFormat[];
 
+extern "C" int ScreenShotTgaNumber;
+extern "C" char ScreenShotTgaFormat[];
+extern "C" char TgaFileMode[];
+extern "C" BYTE TgaHeader[];
+extern "C" BYTE *malloc_ptr;
+
+extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
+extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
 extern "C" DWORD CompPCX(BYTE *bitmap, int width, int height, BYTE *palette, BYTE **pcxData);
 extern "C" DWORD EncodePutPCX(BYTE value, BYTE num, BYTE *buffer);
 extern "C" DWORD EncodeLinePCX(BYTE *src, int width, BYTE *dst);
@@ -143,4 +152,70 @@ extern "C" DWORD EncodeLinePCX(BYTE *src, int width, BYTE *dst)
         dst += add;
     }
     return total;
+}
+
+inline bool DX_TRY(HRESULT hr)
+{
+    if (SUCCEEDED(hr))
+        return false;
+    return true;
+}
+
+extern "C" void ScreenShot(LPDIRECTDRAWSURFACE screen)
+{
+    DDSURFACEDESC desc;
+    char fileName[16];
+    FILE *fp;
+    BYTE *surface;
+    short *src;
+    short *line;
+    WORD *dst;
+    DWORD x;
+    DWORD y;
+    DWORD pixel;
+
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    if (DX_TRY(screen->GetSurfaceDesc(&desc)))
+        return;
+    if (desc.ddpfPixelFormat.dwRGBBitCount == 8) {
+        ScreenShotPCX();
+        return;
+    }
+    if (desc.ddpfPixelFormat.dwRGBBitCount != 16)
+        return;
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    if ((bool)FAILED(WinVidBufferLock(screen, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+        return;
+    surface = (BYTE *)desc.lpSurface;
+    sprintf(fileName, ScreenShotTgaFormat, ScreenShotTgaNumber++);
+    fp = fopen(fileName, TgaFileMode);
+    if (fp) {
+        *(WORD *)&TgaHeader[12] = (WORD)desc.dwWidth;
+        *(WORD *)&TgaHeader[14] = (WORD)desc.dwHeight;
+        fwrite(TgaHeader, 18, 1, fp);
+        dst = (WORD *)malloc_ptr;
+        line = (short *)surface + desc.lPitch / 2 * desc.dwHeight;
+        for (y = 0; y < desc.dwHeight; y++) {
+            src = line;
+            for (x = 0; x < desc.dwWidth; x++) {
+                pixel = *src;
+                if (desc.ddpfPixelFormat.dwRBitMask == 0xf800)
+                    *dst = ((((pixel >> 11) & 0x1f) << 5) + ((pixel >> 6) & 0x1f) << 5) + (pixel & 0x1f);
+                else
+                    *dst = (WORD)pixel;
+                dst++;
+                src++;
+            }
+            line -= desc.lPitch / 2;
+        }
+        fwrite(malloc_ptr, desc.dwWidth * desc.dwHeight * 2, 1, fp);
+        fclose(fp);
+        if (++fileName[7] > '9') {
+            fileName[7] = '0';
+            fileName[6]++;
+        }
+    }
+    WinVidBufferUnlock(screen, &desc);
 }

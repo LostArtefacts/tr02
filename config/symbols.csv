@@ -1286,10 +1286,10 @@ address,size,name,symbol
 0x00459b10,164,Func459b10,
 0x00459bc0,32,Func459bc0,
 0x00459be0,16,_set_se_translator,?_set_se_translator@@YAP6AXIPAU_EXCEPTION_POINTERS@@@ZP6AXI0@Z@Z
-0x00459bf0,119,Func459bf0,
-0x00459c70,326,Func459c70,
+0x00459bf0,119,fclose,_fclose
+0x00459c70,326,fwrite,_fwrite
 0x00459dc0,35,Func459dc0,
-0x00459df0,21,Func459df0,
+0x00459df0,21,fopen,_fopen
 0x00459e10,133,strstr,_strstr
 0x00459e90,87,atof,_atof
 0x00459ef0,74,free,_free
@@ -1628,8 +1628,11 @@ address,size,name,symbol
 0x00466f34,36,GameMallocOutOfMemory,_GameMallocOutOfMemory
 0x00466f58,,layout,?layout@@3PAY0O@FA
 0x00466f90,,kname,_kname
+0x00467678,18,TgaHeader,_TgaHeader
 0x004676a4,29,RenderInitFailedFormat,_RenderInitFailedFormat
 0x00467700,13,ScreenShotPcxFormat,_ScreenShotPcxFormat
+0x00467710,3,TgaFileMode,_TgaFileMode
+0x00467714,13,ScreenShotTgaFormat,_ScreenShotTgaFormat
 0x00467724,4,detail_level,_detail_level
 0x0046773c,4,BadKeyString,_BadKeyString
 0x00467790,4,String_Software3d,_String_Software3d
@@ -1937,6 +1940,7 @@ address,size,name,symbol
 0x0051a228,4,GhInstance,_GhInstance
 0x0051a22c,4,GpCmdLine,_GpCmdLine
 0x0051a230,4,ScreenShotPcxNumber,_ScreenShotPcxNumber
+0x0051a234,4,ScreenShotTgaNumber,_ScreenShotTgaNumber
 0x0051a238,4,KeyCursor,_KeyCursor
 0x0051a23c,4,select_key,_select_key
 0x0051a240,4,iconfig,_iconfig
