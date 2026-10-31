@@ -350,6 +350,103 @@ clip:
     InsertClippedPoly_Textured(npoints, zdepth, tex->drawtype + 9, tex->tpage);
 }
 
+extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype)
+{
+    float zdepth;
+    uint32 shade;
+    D3DTLVERTEX *vtx;
+
+    if ((sint8)(v1->clip & v2->clip & v3->clip & v4->clip))
+        return;
+    if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip) < 0) {
+        if (!visible_zclip(v1, v2, v3))
+    return;
+        InsertGT3_Sorted(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3, sorttype);
+        InsertGT3_Sorted(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4, sorttype);
+        return;
+    }
+    if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) < 0)
+        return;
+    if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip)) {
+        InsertGT3_Sorted(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3, sorttype);
+        InsertGT3_Sorted(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4, sorttype);
+        return;
+    }
+    switch (sorttype) {
+    case MID_SORT:
+        zdepth = (v1->zv + v2->zv + v3->zv + v4->zv) * 0.25f;
+        break;
+    case FAR_SORT:
+        zdepth = v1->zv;
+        if (zdepth < v2->zv)
+    zdepth = v2->zv;
+        if (zdepth < v3->zv)
+    zdepth = v3->zv;
+        if (zdepth < v4->zv)
+    zdepth = v4->zv;
+        break;
+    default:
+        zdepth = 1000000000.0f;
+        break;
+    }
+    sort3dptr[0] = (sint32)info3dptr;
+    sort3dptr[1] = (sint32)zdepth;
+    sort3dptr += 2;
+    info3dptr[0] = tex->drawtype + 9;
+    info3dptr[1] = tex->tpage;
+    info3dptr[2] = 4;
+    vtx = HWR_VertexPtr;
+    *(D3DTLVERTEX **)(info3dptr + 3) = vtx;
+    info3dptr += 5;
+    vtx->sx = v1->xs;
+    vtx->sy = v1->ys;
+    vtx->rhw = v1->ooz;
+    shade = (0x1fff - v1->g) >> 4;
+    if (shade > 255)
+        shade = 255;
+    vtx->color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+    vtx->tu = tex->u1 / 65536.0f;
+    vtx->tv = tex->v1 / 65536.0f;
+    vtx++;
+    vtx->sx = v2->xs;
+    vtx->sy = v2->ys;
+    vtx->rhw = v2->ooz;
+    shade = (0x1fff - v2->g) >> 4;
+    if (shade > 255)
+        shade = 255;
+    vtx->color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+    vtx->tu = tex->u2 / 65536.0f;
+    vtx->tv = tex->v2 / 65536.0f;
+    vtx++;
+    vtx->sx = v3->xs;
+    vtx->sy = v3->ys;
+    vtx->rhw = v3->ooz;
+    shade = (0x1fff - v3->g) >> 4;
+    if (shade > 255)
+        shade = 255;
+    vtx->color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+    vtx->tu = tex->u3 / 65536.0f;
+    vtx->tv = tex->v3 / 65536.0f;
+    vtx++;
+    vtx->sx = v4->xs;
+    vtx->sy = v4->ys;
+    vtx->rhw = v4->ooz;
+    shade = (0x1fff - v4->g) >> 4;
+    if (shade > 255)
+        shade = 255;
+    vtx->color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+    vtx->tu = tex->u4 / 65536.0f;
+    vtx->tv = tex->v4 / 65536.0f;
+    if (SavedAppSettings.ZBuffer) {
+        vtx[-3].sz = FltResZBuf - FltResZORhw * v1->ooz;
+        vtx[-2].sz = FltResZBuf - FltResZORhw * v2->ooz;
+        vtx[-1].sz = FltResZBuf - FltResZORhw * v3->ooz;
+        vtx[0].sz = FltResZBuf - FltResZORhw * v4->ooz;
+    }
+    HWR_VertexPtr = vtx + 1;
+    surfacenum++;
+}
+
 extern "C" sint16 *InsertObjectGT4_Sorted(sint16 *objptr, int number, int sorttype)
 {
     while (number) {
