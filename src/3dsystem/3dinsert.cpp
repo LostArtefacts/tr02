@@ -406,6 +406,203 @@ extern "C" sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort
     return objptr;
 }
 
+extern "C" sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine)
+{
+    VERTEX_INFO *v;
+    int npoints, i;
+    POINT_INFO *p, point[3];
+    float zdepth;
+    PHD_VBUF *vn1, *vn2, *vn3;
+    OUTPUT_INFO *outptr;
+    PHDTEXTURESTRUCT *tex;
+
+    for (; number > 0; number--, objptr += 4) {
+        vn1 = &PhdVBuf[objptr[0]];
+        vn2 = &PhdVBuf[objptr[1]];
+        vn3 = &PhdVBuf[objptr[2]];
+        if ((sint8)(vn1->clip & vn2->clip & vn3->clip))
+            continue;
+        if ((sint8)(vn1->clip | vn2->clip | vn3->clip) < 0) {
+            if (!visible_zclip(vn1, vn2, vn3))
+                continue;
+            tex = &phdtextinfo[objptr[3]];
+            p = point;
+            p->xv = vn1->xv;
+            p->yv = vn1->yv;
+            p->zv = vn1->zv;
+            p->ooz = vn1->ooz;
+            p->xs = vn1->xs;
+            p->ys = vn1->ys;
+            p->g = (float)vn1->g;
+            p->u = (float)tex->u1;
+            p->v = (float)tex->v1;
+            p++;
+            p->xv = vn2->xv;
+            p->yv = vn2->yv;
+            p->zv = vn2->zv;
+            p->ooz = vn2->ooz;
+            p->xs = vn2->xs;
+            p->ys = vn2->ys;
+            p->g = (float)vn2->g;
+            p->u = (float)tex->u2;
+            p->v = (float)tex->v2;
+            p++;
+            p->xv = vn3->xv;
+            p->yv = vn3->yv;
+            p->zv = vn3->zv;
+            p->ooz = vn3->ooz;
+            p->xs = vn3->xs;
+            p->ys = vn3->ys;
+            p->g = (float)vn3->g;
+            p->u = (float)tex->u3;
+            p->v = (float)tex->v3;
+            npoints = ZedClipper(3, point, VBuffer);
+            if (npoints)
+                npoints = XYGUVClipper(npoints, VBuffer);
+        } else if ((sint8)(vn1->clip | vn2->clip | vn3->clip)) {
+            if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+                continue;
+            tex = &phdtextinfo[objptr[3]];
+            v = VBuffer;
+            v->x = vn1->xs;
+            v->y = vn1->ys;
+            v->ooz = vn1->ooz;
+            v->g = (float)vn1->g;
+            v->u = tex->u1 * v->ooz;
+            v->v = tex->v1 * v->ooz;
+            v++;
+            v->x = vn2->xs;
+            v->y = vn2->ys;
+            v->ooz = vn2->ooz;
+            v->g = (float)vn2->g;
+            v->u = tex->u2 * v->ooz;
+            v->v = tex->v2 * v->ooz;
+            v++;
+            v->x = vn3->xs;
+            v->y = vn3->ys;
+            v->ooz = vn3->ooz;
+            v->g = (float)vn3->g;
+            v->u = tex->u3 * v->ooz;
+            v->v = tex->v3 * v->ooz;
+            npoints = XYGUVClipper(3, VBuffer);
+        } else {
+            if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+                continue;
+            switch (sort_routine) {
+            case FAR_SORT:
+                zdepth = vn1->zv;
+                if (zdepth < vn2->zv)
+                    zdepth = vn2->zv;
+                if (zdepth < vn3->zv)
+                    zdepth = vn3->zv;
+                break;
+            case MID_SORT:
+                zdepth = (vn1->zv + vn2->zv + vn3->zv) * 0.333333333333333333f;
+                break;
+            default:
+                zdepth = 1000000000.0f;
+            }
+            sort3dptr[0] = (sint32)info3dptr;
+            sort3dptr[1] = (sint32)zdepth;
+            sort3dptr += 2;
+            tex = &phdtextinfo[objptr[3]];
+            if (zdepth < perspective_distance) {
+                info3dptr[0] = tex->drawtype + 2;
+                info3dptr[1] = tex->tpage;
+                info3dptr[2] = 3;
+                outptr = (OUTPUT_INFO *)(info3dptr + 3);
+                outptr[0].xs = (sint16)vn1->xs;
+                outptr[0].ys = (sint16)vn1->ys;
+                outptr[0].g = vn1->g;
+                outptr[0].ooz = vn1->ooz;
+                outptr[0].u = tex->u1 * outptr[0].ooz;
+                outptr[0].v = tex->v1 * outptr[0].ooz;
+                outptr[1].xs = (sint16)vn2->xs;
+                outptr[1].ys = (sint16)vn2->ys;
+                outptr[1].g = vn2->g;
+                outptr[1].ooz = vn2->ooz;
+                outptr[1].u = tex->u2 * outptr[1].ooz;
+                outptr[1].v = tex->v2 * outptr[1].ooz;
+                outptr[2].xs = (sint16)vn3->xs;
+                outptr[2].ys = (sint16)vn3->ys;
+                outptr[2].g = vn3->g;
+                outptr[2].ooz = vn3->ooz;
+                outptr[2].u = tex->u3 * outptr[2].ooz;
+                outptr[2].v = tex->v3 * outptr[2].ooz;
+                info3dptr = (sint16 *)&outptr[3];
+            } else {
+                *(uint32 *)info3dptr = *(uint32 *)&tex->drawtype;
+                info3dptr[2] = 3;
+                info3dptr[3] = (sint16)vn1->xs;
+                info3dptr[4] = (sint16)vn1->ys;
+                info3dptr[5] = vn1->g;
+                info3dptr[6] = tex->u1;
+                info3dptr[7] = tex->v1;
+                info3dptr[8] = (sint16)vn2->xs;
+                info3dptr[9] = (sint16)vn2->ys;
+                info3dptr[10] = vn2->g;
+                info3dptr[11] = tex->u2;
+                info3dptr[12] = tex->v2;
+                info3dptr[13] = (sint16)vn3->xs;
+                info3dptr[14] = (sint16)vn3->ys;
+                info3dptr[15] = vn3->g;
+                info3dptr[16] = tex->u3;
+                info3dptr[17] = tex->v3;
+                info3dptr += 18;
+            }
+            surfacenum++;
+            continue;
+        }
+        if (npoints) {
+            switch (sort_routine) {
+            case FAR_SORT:
+                zdepth = vn1->zv;
+                if (zdepth < vn2->zv)
+                    zdepth = vn2->zv;
+                if (zdepth < vn3->zv)
+                    zdepth = vn3->zv;
+                break;
+            case MID_SORT:
+                zdepth = (vn1->zv + vn2->zv + vn3->zv) * 0.333333333333333333f;
+                break;
+            default:
+                zdepth = 1000000000.0f;
+            }
+            sort3dptr[0] = (sint32)info3dptr;
+            sort3dptr[1] = (sint32)zdepth;
+            sort3dptr += 2;
+            if (zdepth < perspective_distance) {
+                info3dptr[0] = tex->drawtype + 2;
+                info3dptr[1] = tex->tpage;
+                info3dptr[2] = npoints;
+                outptr = (OUTPUT_INFO *)(info3dptr + 3);
+                for (i = 0, v = VBuffer; i < npoints; i++, v++, outptr++) {
+                    outptr->xs = (sint16)v->x;
+                    outptr->ys = (sint16)v->y;
+                    outptr->g = (sint16)v->g;
+                    outptr->ooz = v->ooz;
+                    outptr->u = v->u;
+                    outptr->v = v->v;
+                }
+                info3dptr = (sint16 *)outptr;
+            } else {
+                *(uint32 *)info3dptr = *(uint32 *)&tex->drawtype;
+                info3dptr[2] = npoints;
+                info3dptr += 3;
+                for (i = 0, v = VBuffer; i < npoints; i++, v++, info3dptr += 5) {
+                    info3dptr[0] = (sint16)v->x;
+                    info3dptr[1] = (sint16)v->y;
+                    info3dptr[2] = (sint16)v->g;
+                    info3dptr[3] = (sint16)(v->u / v->ooz);
+                    info3dptr[4] = (sint16)(v->v / v->ooz);
+                }
+            }
+            surfacenum++;
+        }
+    }
+    return objptr;
+}
+
 #define CLIP_G(OUT, B, A) \
     { \
         OUT.ooz = B->ooz + (A->ooz - B->ooz) * clipper; \
