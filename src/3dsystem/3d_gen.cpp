@@ -498,7 +498,15 @@ extern "C" void AlterFOV(PHD_ANGLE fov)
     LfAspectCorrection = aspect / ratio;
 }
 
-extern "C" void Func402620(void);
+extern "C" void Func402620(void)
+{
+    float res;
+
+    res = FltFarZ * FltNearZ * 0.99f / (FltNearZ - FltFarZ);
+    FltResZ = -res;
+    FltResZORhw = FltResZ / RhwFactor;
+    FltResZBuf = 0.005f - res / FltNearZ;
+}
 
 extern "C" void phd_SetNearZ(sint32 z)
 {
