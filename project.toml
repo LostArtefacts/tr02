@@ -38,7 +38,7 @@ compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
 pairs = false  # revoked: groups land one per commit with DECOMP_ALLOW_DIFF
 no_comments = true  # no comments, tabs or CRs in src/
-allow_diff = ["calc_roomvert", "InsertGT3_Sorted", "InsertGT4_Sorted", "ins_poly_trans8", "phd_RotX", "CreateSaveGameInfo", "BoatControl", "ClipRoom", "ScreenShot", "InsertGT3_ZBuffered", "Func402620", "Func444350", "DrawXianLord", "AdjustTextureUVs", "S_GetObjectBounds", "HairControl", "BGND_AddTexture", "TranslateItem", "DragonControl", "DrawAssaultTimer", "PrintObjects", "S_SaveSettings", "xgen_xg", "phd_RotY", "phd_RotYXZ", "phd_RotYXZpack", "phd_TranslateRel", "phd_TranslateAbs", "visible_zclip", "GetCollisionInfo", "ShiftItem", "GetRoomBounds", "SkidooControl", "SkidmanPush", "SkidManControl"]  # logically equivalent, registers or term order differ
+allow_diff = ["calc_roomvert", "InsertGT3_Sorted", "InsertGT4_Sorted", "ins_poly_trans8", "phd_RotX", "CreateSaveGameInfo", "BoatControl", "ClipRoom", "ScreenShot", "InsertGT3_ZBuffered", "Func402620", "Func444350", "DrawXianLord", "AdjustTextureUVs", "S_GetObjectBounds", "HairControl", "BGND_AddTexture", "TranslateItem", "DragonControl", "DrawAssaultTimer", "PrintObjects", "S_SaveSettings", "xgen_xg", "phd_RotY", "phd_RotYXZ", "phd_RotYXZpack", "phd_TranslateRel", "phd_TranslateAbs", "visible_zclip", "GetCollisionInfo", "ShiftItem", "GetRoomBounds", "SkidooControl", "SkidmanPush", "SkidManControl", "ShowEndStatsText"]  # logically equivalent, registers or term order differ
 
 [reference]
 source = "refs/core"  # Core's 1997 tree
