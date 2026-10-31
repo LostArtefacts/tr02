@@ -613,7 +613,20 @@ extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCST
     *isNext = true;
 }
 
-extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg);
+inline void SE_CheckButton(HWND hwndDlg, int id, bool check)
+{
+    CheckDlgButton(hwndDlg, id, check != 0);
+}
+
+extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg)
+{
+    SE_CheckButton(hwndDlg, 1103, ChangedAppSettings.Disable16BitTextures);
+    SE_CheckButton(hwndDlg, 1104, ChangedAppSettings.DontSortPrimitives);
+    SE_CheckButton(hwndDlg, 1111, ChangedAppSettings.DisableFMV);
+    SE_CheckButton(hwndDlg, 1107, ChangedAppSettings.TexelAdjustMode == 0);
+    SE_CheckButton(hwndDlg, 1108, ChangedAppSettings.TexelAdjustMode == 1);
+    SE_CheckButton(hwndDlg, 1109, ChangedAppSettings.TexelAdjustMode == 2);
+}
 
 extern "C" void SE_AdvancedDlgInit(HWND hwndDlg)
 {
