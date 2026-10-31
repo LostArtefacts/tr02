@@ -261,6 +261,101 @@ void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
     }
 }
 
+void S_InsertBackPolygon(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 colour);
+
+extern sint32 Var464180[12][2];
+
+void ClipRoom(ROOM_INFO *r)
+{
+    sint32 ymax, ymin, xmin, xmax;
+    sint32 y, z, *mptr, x;
+    sint32 zv[8], yv[8], xv[8], clip[8];
+    sint32 zdiv, znom;
+    int i, p1, clip_room, p2;
+
+    xv[0] = xv[3] = xv[4] = xv[7] = 1024;
+    yv[0] = yv[1] = yv[2] = yv[3] = r->maxceiling - r->y;
+    zv[0] = zv[1] = zv[4] = zv[5] = 1024;
+    xv[1] = xv[2] = xv[5] = xv[6] = (r->y_size << 10) - 1024;
+    yv[4] = yv[5] = yv[6] = yv[7] = r->minfloor - r->y;
+    zv[2] = zv[3] = zv[6] = zv[7] = (r->x_size << 10) - 1024;
+
+    mptr = phd_mxptr;
+    clip_room = 0;
+    for (i = 0; i < 8; i++) {
+        x = xv[i];
+        y = yv[i];
+        z = zv[i];
+        xv[i] = *(mptr + M00) * x + *(mptr + M01) * y + *(mptr + M02) * z + *(mptr + M03);
+        yv[i] = *(mptr + M10) * x + *(mptr + M11) * y + *(mptr + M12) * z + *(mptr + M13);
+        zv[i] = *(mptr + M20) * x + *(mptr + M21) * y + *(mptr + M22) * z + *(mptr + M23);
+        if (zv[i] > phd_zfar)
+            clip[i] = clip_room = 1;
+        else
+            clip[i] = 0;
+    }
+
+    if (!clip_room)
+        return;
+
+    xmin = ymin = 0x10000000;
+    xmax = ymax = -0x10000000;
+    for (i = 0; i < 12; i++) {
+        p1 = Var464180[i][0];
+        p2 = Var464180[i][1];
+        if (clip[p1] ^ clip[p2]) {
+            zdiv = (zv[p2] - zv[p1]) >> W2V_SHIFT;
+            if (zdiv) {
+                znom = (phd_zfar - zv[p1]) >> W2V_SHIFT;
+                x = xv[p1] + ((((xv[p2] - xv[p1]) >> W2V_SHIFT) * znom / zdiv) << W2V_SHIFT);
+                y = yv[p1] + ((((yv[p2] - yv[p1]) >> W2V_SHIFT) * znom / zdiv) << W2V_SHIFT);
+                if (x < xmin)
+                    xmin = x;
+                if (x > xmax)
+                    xmax = x;
+                if (y < ymin)
+                    ymin = y;
+                if (y > ymax)
+                    ymax = y;
+            } else {
+                if (xv[p1] < xmin)
+                    xmin = xv[p1];
+                if (xv[p2] < xmin)
+                    xmin = xv[p2];
+                if (xv[p1] > xmax)
+                    xmax = xv[p1];
+                if (xv[p2] > xmax)
+                    xmax = xv[p2];
+                if (yv[p1] < ymin)
+                    ymin = yv[p1];
+                if (yv[p2] < ymin)
+                    ymin = yv[p2];
+                if (yv[p1] > ymax)
+                    ymax = yv[p1];
+                if (yv[p2] > ymax)
+                    ymax = yv[p2];
+            }
+        }
+    }
+
+    xmin = phd_centerx + xmin / (phd_zfar / PhdPersp);
+    ymin = phd_centery + ymin / (phd_zfar / PhdPersp);
+    xmax = phd_centerx + xmax / (phd_zfar / PhdPersp);
+    ymax = phd_centery + ymax / (phd_zfar / PhdPersp);
+    if (xmin > phd_right || ymin > phd_bottom || xmax < phd_left || ymax < phd_top)
+        return;
+
+    if (xmin < phd_left)
+        xmin = phd_left;
+    if (ymin < phd_top)
+        ymin = phd_top;
+    if (xmax > phd_right)
+        xmax = phd_right;
+    if (ymax > phd_bottom)
+        ymax = phd_bottom;
+    S_InsertBackPolygon(xmin, ymin, xmax, ymax, 0);
+}
+
 void PrintRooms(sint16 room_number)
 {
     ROOM_INFO *r;
