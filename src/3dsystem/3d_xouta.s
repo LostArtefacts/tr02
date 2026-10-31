@@ -54,4 +54,121 @@ flatA_4:
     ret
 @flatA@12 endp
 
+@transA@12 proc public
+    pusha
+    sub esp, 8
+    sub edx, eax
+    jle transA_8
+    mov dword ptr [esp+4], edx
+    lea esi, _DepthQTable
+    cmp ebx, 32
+    ja transA_8
+    shl ebx, 8
+    add esi, ebx
+    mov ebp, eax
+    shl ebp, 3
+    add ebp, offset _xbuffer+2
+    imul eax, dword ptr _phd_scrwidth
+    add eax, dword ptr _phd_winptr
+    mov dword ptr [esp], eax
+    xor eax, eax
+transA_1:
+    movsx edi, word ptr [ebp+0]
+    test edi, edi
+    jns transA_2
+    xor edi, edi
+transA_2:
+    movsx ecx, word ptr [ebp+4]
+    cmp ecx, dword ptr _phd_winwidth
+    jle transA_3
+    mov ecx, dword ptr _phd_winwidth
+transA_3:
+    sub ecx, edi
+    jle transA_7
+    add edi, dword ptr [esp]
+    test edi, 1
+    je transA_4
+    mov al, byte ptr [edi]
+    mov dl, byte ptr [esi+eax]
+    mov byte ptr [edi], dl
+    dec ecx
+    inc edi
+transA_4:
+    sub ecx, 16
+    js transA_5
+    mov ebx, dword ptr [edi]
+    mov al, bl
+    mov dl, byte ptr [esi+eax]
+    mov al, bh
+    mov dh, byte ptr [esi+eax]
+    bswap ebx
+    mov word ptr [edi], dx
+    mov al, bh
+    mov dl, byte ptr [esi+eax]
+    mov al, bl
+    mov dh, byte ptr [esi+eax]
+    mov word ptr [edi+2], dx
+    add edi, 4
+    mov ebx, dword ptr [edi]
+    mov al, bl
+    mov dl, byte ptr [esi+eax]
+    mov al, bh
+    mov dh, byte ptr [esi+eax]
+    bswap ebx
+    mov word ptr [edi], dx
+    mov al, bh
+    mov dl, byte ptr [esi+eax]
+    mov al, bl
+    mov dh, byte ptr [esi+eax]
+    mov word ptr [edi+2], dx
+    add edi, 4
+    mov ebx, dword ptr [edi]
+    mov al, bl
+    mov dl, byte ptr [esi+eax]
+    mov al, bh
+    mov dh, byte ptr [esi+eax]
+    bswap ebx
+    mov word ptr [edi], dx
+    mov al, bh
+    mov dl, byte ptr [esi+eax]
+    mov al, bl
+    mov dh, byte ptr [esi+eax]
+    mov word ptr [edi+2], dx
+    add edi, 4
+    mov ebx, dword ptr [edi]
+    mov al, bl
+    mov dl, byte ptr [esi+eax]
+    mov al, bh
+    mov dh, byte ptr [esi+eax]
+    bswap ebx
+    mov word ptr [edi], dx
+    mov al, bh
+    mov dl, byte ptr [esi+eax]
+    mov al, bl
+    mov dh, byte ptr [esi+eax]
+    mov word ptr [edi+2], dx
+    add edi, 4
+    jmp transA_4
+transA_5:
+    add ecx, 16
+    jle transA_7
+transA_6:
+    mov al, byte ptr [edi]
+    mov dl, byte ptr [esi+eax]
+    mov byte ptr [edi], dl
+    inc edi
+    dec ecx
+    jne transA_6
+transA_7:
+    mov ebx, dword ptr _phd_scrwidth
+    add ebp, 8
+    add dword ptr [esp], ebx
+    dec dword ptr [esp+4]
+    jne transA_1
+transA_8:
+    add esp, 8
+    popa
+    ret
+@transA@12 endp
+
     end
