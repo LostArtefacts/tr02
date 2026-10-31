@@ -643,6 +643,177 @@ extern "C" bool WinVidRegisterGameWindowClass(void)
 }
 
 extern "C" {
+extern BOOL IsFmvPlaying;
+extern int GameWindowPositionX;
+extern int GameWindowPositionY;
+extern bool IsGameWindowMaximized;
+extern bool IsGameWindowChanging;
+extern bool WinVidNeedToResetBuffers;
+extern LPDIRECTDRAWSURFACE3 RenderBufferSurface;
+extern LPDIRECTDRAWSURFACE3 BackBufferSurface;
+extern LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
+extern LPDIRECTDRAWPALETTE DDrawPalette;
+void UpdateGameResolution(void);
+bool WinVidCheckGameWindowPalette(HWND hWnd);
+}
+
+extern "C" LRESULT CALLBACK WinVidGameWindowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+{
+    HDC hdc;
+    HBRUSH hBrush;
+    int width, height;
+    PAINTSTRUCT paint;
+
+    if (IsFmvPlaying) {
+        switch (Msg) {
+        case WM_DESTROY:
+            IsGameWindowCreated = false;
+            HGameWindow = NULL;
+            PostQuitMessage(0);
+            break;
+        case WM_MOVE:
+            GameWindowPositionX = (int)(short)LOWORD(lParam);
+            GameWindowPositionY = (int)(short)HIWORD(lParam);
+            break;
+        case WM_ACTIVATEAPP:
+            IsGameWindowActive = (wParam != 0);
+            break;
+        case WM_SYSCOMMAND:
+            if (wParam == SC_KEYMENU)
+                return 0;
+            break;
+        }
+        return DefWindowProcA(hWnd, Msg, wParam, lParam);
+    }
+
+    switch (Msg) {
+    case WM_CREATE:
+        IsGameWindowCreated = true;
+        break;
+
+    case WM_MOVE:
+        GameWindowPositionX = (int)(short)LOWORD(lParam);
+        GameWindowPositionY = (int)(short)HIWORD(lParam);
+        break;
+
+    case WM_SIZE:
+        switch (wParam) {
+        case SIZE_RESTORED:
+            IsGameWindowMaximized = false;
+            IsGameWindowMinimized = false;
+            break;
+        case SIZE_MAXIMIZED:
+            IsGameWindowMaximized = true;
+            IsGameWindowMinimized = false;
+            break;
+        case SIZE_MINIMIZED:
+            IsGameWindowMinimized = true;
+        default:
+            goto done;
+        }
+        if (IsGameFullScreen)
+            break;
+        width = (int)(short)LOWORD(lParam);
+        height = (int)(short)HIWORD(lParam);
+        if (width == GameWindowWidth && height == GameWindowHeight)
+            break;
+        GameWindowWidth = width;
+        GameWindowHeight = height;
+        if (IsGameWindowUpdating)
+            break;
+        UpdateGameResolution();
+        break;
+
+    case WM_PAINT:
+        hdc = BeginPaint(hWnd, &paint);
+        if (IsGameFullScreen || !PrimaryBufferSurface || !(SavedAppSettings.RenderMode == RM_Software ? RenderBufferSurface : BackBufferSurface)) {
+            hBrush = (HBRUSH)GetStockObject(BLACK_BRUSH);
+            FillRect(hdc, &paint.rcPaint, hBrush);
+        } else {
+            if (SavedAppSettings.RenderMode == RM_Software && !WinVidCheckGameWindowPalette(hWnd) && RenderBufferSurface)
+                WinVidClearBuffer(RenderBufferSurface, NULL, 0);
+            DX_UpdateFrame(false, NULL);
+        }
+        EndPaint(hWnd, &paint);
+        return 0;
+
+    case WM_ACTIVATE:
+        if (LOWORD(wParam) && DDrawPalette && PrimaryBufferSurface)
+            PrimaryBufferSurface->SetPalette(DDrawPalette);
+        break;
+
+    case WM_DESTROY:
+        IsGameWindowCreated = false;
+        HGameWindow = NULL;
+        PostQuitMessage(0);
+        break;
+
+    case WM_ERASEBKGND:
+        return 1;
+
+    case WM_ACTIVATEAPP:
+        if (wParam && !IsGameWindowActive && SavedAppSettings.RenderMode == RM_Hardware && IsGameFullScreen)
+            WinVidNeedToResetBuffers = true;
+        IsGameWindowActive = (wParam != 0);
+        break;
+
+    case WM_SETCURSOR:
+        if (IsGameFullScreen) {
+            SetCursor(NULL);
+            return 1;
+        }
+        break;
+
+    case WM_GETMINMAXINFO:
+        if (WinVidGetMinMaxInfo((LPMINMAXINFO)lParam))
+            return 0;
+        break;
+
+    case WM_NCPAINT:
+    case WM_NCLBUTTONDOWN:
+    case WM_NCLBUTTONDBLCLK:
+    case WM_NCRBUTTONDOWN:
+    case WM_NCRBUTTONDBLCLK:
+    case WM_NCMBUTTONDOWN:
+    case WM_NCMBUTTONDBLCLK:
+        if (IsGameFullScreen)
+            return 0;
+        break;
+
+    case WM_SYSCOMMAND:
+        if (wParam == SC_KEYMENU)
+            return 0;
+        break;
+
+    case WM_MOVING:
+        if (IsGameFullScreen || IsGameWindowMaximized) {
+            GetWindowRect(hWnd, (LPRECT)lParam);
+            return 1;
+        }
+        break;
+
+    case WM_SIZING:
+        WinVidResizeGameWindow(hWnd, wParam, (LPRECT)lParam);
+        break;
+
+    case WM_ENTERSIZEMOVE:
+        IsGameWindowChanging = true;
+        break;
+
+    case WM_EXITSIZEMOVE:
+        IsGameWindowChanging = false;
+        break;
+
+    case WM_PALETTECHANGED:
+        if (hWnd != (HWND)wParam && !IsGameFullScreen && DDrawPalette)
+            InvalidateRect(hWnd, NULL, FALSE);
+        break;
+    }
+done:
+    return DefWindowProcA(hWnd, Msg, wParam, lParam);
+}
+
+extern "C" {
 extern bool IsGameWindowMaximized;
 extern bool IsGameWindowChanging;
 }
