@@ -511,6 +511,216 @@ void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent)
     CalculateTarget(&creature->target, item, &creature->LOT);
 }
 
+#define MAX_EXPANSION 5
+#define CLIP_LEFT 1
+#define CLIP_RIGHT 2
+#define CLIP_TOP 4
+#define CLIP_BOTTOM 8
+#define SECONDARY_CLIP 16
+#define ALL_CLIP (CLIP_LEFT | CLIP_RIGHT | CLIP_TOP | CLIP_BOTTOM)
+#define BIFF (WALL_L >> 1)
+
+TARGET_TYPE CalculateTarget(PHD_VECTOR *target, ITEM_INFO *item, LOT_INFO *LOT)
+{
+    int box_number, prime_free;
+    BOX_INFO *box;
+    sint32 left, right, top, bottom;
+    sint32 box_left, box_right, box_top, box_bottom;
+
+    left = right = top = bottom = 0;
+
+    UpdateLOT(LOT, MAX_EXPANSION);
+
+    target->x = item->pos.x_pos;
+    target->y = item->pos.y_pos;
+    target->z = item->pos.z_pos;
+
+    box_number = item->box_number;
+    if (box_number == NO_BOX)
+        return NO_TARGET;
+
+    prime_free = ALL_CLIP;
+    do
+    {
+        box = &boxes[box_number];
+
+        if (LOT->fly == NO_FLYING)
+        {
+            if (target->y > box->height)
+                target->y = box->height;
+        }
+        else
+        {
+            if (target->y > box->height - WALL_L)
+                target->y = box->height - WALL_L;
+        }
+
+        box_left = (sint32)box->left << WALL_SHIFT;
+        box_right = ((sint32)box->right << WALL_SHIFT) - 1;
+        box_top = (sint32)box->top << WALL_SHIFT;
+        box_bottom = ((sint32)box->bottom << WALL_SHIFT) - 1;
+
+        if (item->pos.z_pos >= box_left && item->pos.z_pos <= box_right &&
+            item->pos.x_pos >= box_top && item->pos.x_pos <= box_bottom)
+        {
+            left = box_left;
+            right = box_right;
+            top = box_top;
+            bottom = box_bottom;
+        }
+        else
+        {
+            if (item->pos.z_pos < box_left)
+            {
+                if ((prime_free & CLIP_LEFT) && item->pos.x_pos >= box_top && item->pos.x_pos <= box_bottom)
+                {
+                    if (target->z < box_left + BIFF)
+                        target->z = box_left + BIFF;
+                    if (prime_free & SECONDARY_CLIP)
+                        return SECONDARY_TARGET;
+                    if (box_top > top)
+                        top = box_top;
+                    if (box_bottom < bottom)
+                        bottom = box_bottom;
+                    prime_free = CLIP_LEFT;
+                }
+                else if (prime_free != CLIP_LEFT)
+                {
+                    target->z = right - BIFF;
+                    if (prime_free != ALL_CLIP)
+                        return SECONDARY_TARGET;
+                    prime_free |= SECONDARY_CLIP;
+                }
+            }
+            else if (item->pos.z_pos > box_right)
+            {
+                if ((prime_free & CLIP_RIGHT) && item->pos.x_pos >= box_top && item->pos.x_pos <= box_bottom)
+                {
+                    if (target->z > box_right - BIFF)
+                        target->z = box_right - BIFF;
+                    if (prime_free & SECONDARY_CLIP)
+                        return SECONDARY_TARGET;
+                    if (box_top > top)
+                        top = box_top;
+                    if (box_bottom < bottom)
+                        bottom = box_bottom;
+                    prime_free = CLIP_RIGHT;
+                }
+                else if (prime_free != CLIP_RIGHT)
+                {
+                    target->z = left + BIFF;
+                    if (prime_free != ALL_CLIP)
+                        return SECONDARY_TARGET;
+                    prime_free |= SECONDARY_CLIP;
+                }
+            }
+
+            if (item->pos.x_pos < box_top)
+            {
+                if ((prime_free & CLIP_TOP) && item->pos.z_pos >= box_left && item->pos.z_pos <= box_right)
+                {
+                    if (target->x < box_top + BIFF)
+                        target->x = box_top + BIFF;
+                    if (prime_free & SECONDARY_CLIP)
+                        return SECONDARY_TARGET;
+                    if (box_left > left)
+                        left = box_left;
+                    if (box_right < right)
+                        right = box_right;
+                    prime_free = CLIP_TOP;
+                }
+                else if (prime_free != CLIP_TOP)
+                {
+                    target->x = bottom - BIFF;
+                    if (prime_free != ALL_CLIP)
+                        return SECONDARY_TARGET;
+                    prime_free |= SECONDARY_CLIP;
+                }
+            }
+            else if (item->pos.x_pos > box_bottom)
+            {
+                if ((prime_free & CLIP_BOTTOM) && item->pos.z_pos >= box_left && item->pos.z_pos <= box_right)
+                {
+                    if (target->x > box_bottom - BIFF)
+                        target->x = box_bottom - BIFF;
+                    if (prime_free & SECONDARY_CLIP)
+                        return SECONDARY_TARGET;
+                    if (box_left > left)
+                        left = box_left;
+                    if (box_right < right)
+                        right = box_right;
+                    prime_free = CLIP_BOTTOM;
+                }
+                else if (prime_free != CLIP_BOTTOM)
+                {
+                    target->x = top + BIFF;
+                    if (prime_free != ALL_CLIP)
+                        return SECONDARY_TARGET;
+                    prime_free |= SECONDARY_CLIP;
+                }
+            }
+        }
+
+        if (box_number == LOT->target_box)
+        {
+            if (prime_free & (CLIP_LEFT | CLIP_RIGHT))
+                target->z = LOT->target.z;
+            else if (!(prime_free & SECONDARY_CLIP))
+            {
+                if (target->z < box_left + BIFF)
+                    target->z = box_left + BIFF;
+                else if (target->z > box_right - BIFF)
+                    target->z = box_right - BIFF;
+            }
+
+            if (prime_free & (CLIP_TOP | CLIP_BOTTOM))
+                target->x = LOT->target.x;
+            else if (!(prime_free & SECONDARY_CLIP))
+            {
+                if (target->x < box_top + BIFF)
+                    target->x = box_top + BIFF;
+                else if (target->x > box_bottom - BIFF)
+                    target->x = box_bottom - BIFF;
+            }
+
+            target->y = LOT->target.y;
+            return PRIME_TARGET;
+        }
+
+        box_number = LOT->node[box_number].exit_box;
+        if (box_number != NO_BOX && (boxes[box_number].overlap_index & LOT->block_mask))
+            break;
+    }
+    while (box_number != NO_BOX);
+
+    if (prime_free & (CLIP_LEFT | CLIP_RIGHT))
+        target->z = box_left + WALL_L / 2 + (GetRandomControl() * (box_right - box_left - WALL_L) >> 15);
+    else if (!(prime_free & SECONDARY_CLIP))
+    {
+        if (target->z < box_left + BIFF)
+            target->z = box_left + BIFF;
+        else if (target->z > box_right - BIFF)
+            target->z = box_right - BIFF;
+    }
+
+    if (prime_free & (CLIP_TOP | CLIP_BOTTOM))
+        target->x = box_top + WALL_L / 2 + (GetRandomControl() * (box_bottom - box_top - WALL_L) >> 15);
+    else if (!(prime_free & SECONDARY_CLIP))
+    {
+        if (target->x < box_top + BIFF)
+            target->x = box_top + BIFF;
+        else if (target->x > box_bottom - BIFF)
+            target->x = box_bottom - BIFF;
+    }
+
+    if (LOT->fly == NO_FLYING)
+        target->y = box->height;
+    else
+        target->y = box->height - STEP_L * 3 / 2;
+
+    return NO_TARGET;
+}
+
 int CreatureCreature(sint16 item_number)
 {
     sint16 link;

@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.84% (1038)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.08% (1)</tspan> · <tspan class="todo">16.44% (206)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.92% (1039)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.08% (1)</tspan> · <tspan class="todo">16.36% (205)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="618.82" height="6" x="0" y="0" class="named"/>
-<rect width="4.77" height="6" x="618.82" y="0" class="decompiled"/>
-<rect width="0.60" height="6" x="623.59" y="0" class="nonmatching"/>
-<rect width="122.81" height="6" x="624.19" y="0" class="todo"/>
+<rect width="619.42" height="6" x="0" y="0" class="named"/>
+<rect width="4.77" height="6" x="619.42" y="0" class="decompiled"/>
+<rect width="0.60" height="6" x="624.19" y="0" class="nonmatching"/>
+<rect width="122.21" height="6" x="624.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -177,7 +177,7 @@
 <rect width="12" height="12" x="75" y="30" class="named"><title>0x0040e880 EscapeBox (164 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="30" class="named"><title>0x0040e930 ValidBox (167 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="30" class="named"><title>0x0040e9e0 CreatureMood (1136 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="30" class="todo"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="30" class="named"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="30" class="named"><title>0x0040f2b0 CreatureCreature (248 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="30" class="named"><title>0x0040f3b0 BadFloor (139 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="30" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
@@ -1326,12 +1326,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.56%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0.06%</tspan> · <tspan class="todo">30.29%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">69.88%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0.06%</tspan> · <tspan class="todo">29.97%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="519.60" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="519.60" y="0" class="decompiled"/>
-<rect width="0.46" height="6" x="520.25" y="0" class="nonmatching"/>
-<rect width="226.28" height="6" x="520.72" y="0" class="todo"/>
+<rect width="522.01" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="522.01" y="0" class="decompiled"/>
+<rect width="0.46" height="6" x="522.67" y="0" class="nonmatching"/>
+<rect width="223.87" height="6" x="523.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.54" height="72.10" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1385,7 +1385,7 @@
 <rect width="28.29" height="28.06" x="179.20" y="361.94" class="named"><title>0x0040e9e0 CreatureMood (1136 bytes)</title></rect>
 <rect width="27.81" height="28.35" x="210.49" y="0" class="todo"><title>0x00446260 WinVidGameWindowProc (1129 bytes)</title></rect>
 <rect width="27.81" height="28.29" x="210.49" y="31.35" class="named"><title>0x00423e20 RingNotActive (1127 bytes)</title></rect>
-<rect width="27.81" height="27.90" x="210.49" y="62.64" class="todo"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
+<rect width="27.81" height="27.90" x="210.49" y="62.64" class="named"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
 <rect width="27.81" height="27.87" x="210.49" y="93.54" class="named"><title>0x004371c0 Worker2Control (1112 bytes)</title></rect>
 <rect width="27.81" height="27.21" x="210.49" y="124.41" class="todo"><title>0x0043e6b0 SkidooControl (1088 bytes)</title></rect>
 <rect width="27.81" height="27.10" x="210.49" y="154.62" class="todo"><title>0x00408ea0 InsertGT4_ZBuffered (1084 bytes)</title></rect>
