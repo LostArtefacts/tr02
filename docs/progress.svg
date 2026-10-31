@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.41% (1081)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">11.59% (145)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.49% (1082)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">11.51% (144)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="645.49" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="645.49" y="0" class="decompiled"/>
-<rect width="10.15" height="6" x="650.27" y="0" class="nonmatching"/>
-<rect width="86.58" height="6" x="660.42" y="0" class="todo"/>
+<rect width="646.09" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="646.09" y="0" class="decompiled"/>
+<rect width="10.15" height="6" x="650.86" y="0" class="nonmatching"/>
+<rect width="85.99" height="6" x="661.01" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1281,7 +1281,7 @@
 <rect width="12" height="12" x="135" y="360" class="named"><title>0x00457564 flatA (97 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="360" class="named"><title>0x004575c5 transA (314 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="360" class="named"><title>0x004576ff gourA (352 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="360" class="todo"><title>0x0045785f gtmapA (765 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="360" class="named"><title>0x0045785f gtmapA (765 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="360" class="todo"><title>0x00457b5c wgtmapA (833 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="360" class="named"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="360" class="named"><title>0x00457ee8 phd_cos (6 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.72%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.52%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.95%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.30%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="588.06" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="588.06" y="0" class="decompiled"/>
-<rect width="34.88" height="6" x="588.72" y="0" class="nonmatching"/>
-<rect width="123.40" height="6" x="623.60" y="0" class="todo"/>
+<rect width="589.72" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="589.72" y="0" class="decompiled"/>
+<rect width="34.88" height="6" x="590.37" y="0" class="nonmatching"/>
+<rect width="121.74" height="6" x="625.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1438,7 +1438,7 @@
 <rect width="24.09" height="21.40" x="297.93" y="368.60" class="named"><title>0x00413a10 ItemPushLara (774 bytes)</title></rect>
 <rect width="22.85" height="22.36" x="325.01" y="0" class="named"><title>0x00430a10 AnimateLara (768 bytes)</title></rect>
 <rect width="22.85" height="22.29" x="325.01" y="25.36" class="todo"><title>0x00416310 ObjectOnLOS (766 bytes)</title></rect>
-<rect width="22.85" height="22.26" x="325.01" y="50.65" class="todo"><title>0x0045785f gtmapA (765 bytes)</title></rect>
+<rect width="22.85" height="22.26" x="325.01" y="50.65" class="named"><title>0x0045785f gtmapA (765 bytes)</title></rect>
 <rect width="22.85" height="22.09" x="325.01" y="75.91" class="named"><title>0x00443100 GiantYetiControl (760 bytes)</title></rect>
 <rect width="22.85" height="22.03" x="325.01" y="101.01" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
 <rect width="22.85" height="21.73" x="325.01" y="126.04" class="named"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
