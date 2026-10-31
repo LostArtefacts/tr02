@@ -72,4 +72,33 @@ sin_quarter:
     ret
 Func457f09 endp
 
+@phd_sqrt@4 proc public
+    push ebx
+    push ecx
+    push edx
+    mov ebx, 40000000h
+    xor eax, eax
+sqrt_loop:
+    mov edx, eax
+    add eax, ebx
+    shr edx, 1
+    cmp eax, ecx
+    ja sqrt_skip
+    sub ecx, eax
+    mov eax, ebx
+    or eax, edx
+    shr ebx, 2
+    jne sqrt_loop
+    jmp sqrt_done
+sqrt_skip:
+    mov eax, edx
+    shr ebx, 2
+    jne sqrt_loop
+sqrt_done:
+    pop edx
+    pop ecx
+    pop ebx
+    ret
+@phd_sqrt@4 endp
+
     end

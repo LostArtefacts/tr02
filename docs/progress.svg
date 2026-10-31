@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.09% (1077)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">11.91% (149)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.17% (1078)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">11.83% (148)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="643.10" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="643.10" y="0" class="decompiled"/>
-<rect width="10.15" height="6" x="647.88" y="0" class="nonmatching"/>
-<rect width="88.97" height="6" x="658.03" y="0" class="todo"/>
+<rect width="643.70" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="643.70" y="0" class="decompiled"/>
+<rect width="10.15" height="6" x="648.47" y="0" class="nonmatching"/>
+<rect width="88.37" height="6" x="658.63" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1287,7 +1287,7 @@
 <rect width="12" height="12" x="225" y="360" class="named"><title>0x00457ee8 phd_cos (6 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="360" class="named"><title>0x00457eee phd_sin (27 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00457f09 Func457f09 (26 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="360" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="360" class="named"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="360" class="todo"><title>0x00457f50 DirectInputCreateA_thunk (6 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="360" class="todo"><title>0x00458f60 c_dfDIKeyboard (24 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="360" class="todo"><title>0x00458f78 DirectSoundEnumerateA_thunk (6 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.49%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.75%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.50%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.74%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="586.32" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="586.32" y="0" class="decompiled"/>
-<rect width="34.88" height="6" x="586.97" y="0" class="nonmatching"/>
-<rect width="125.14" height="6" x="621.86" y="0" class="todo"/>
+<rect width="586.41" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="586.41" y="0" class="decompiled"/>
+<rect width="34.88" height="6" x="587.07" y="0" class="nonmatching"/>
+<rect width="125.05" height="6" x="621.95" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2337,7 +2337,7 @@
 <rect width="3.32" height="2.95" x="678.12" y="381.11" class="named"><title>0x00440500 T_InitPrint (44 bytes)</title></rect>
 <rect width="3.32" height="2.95" x="678.12" y="387.05" class="named"><title>0x00447f80 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="3.12" height="3.13" x="684.44" y="321.24" class="named"><title>0x004568e0 UT_FindArg (44 bytes)</title></rect>
-<rect width="3.12" height="3.13" x="690.56" y="321.24" class="todo"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
+<rect width="3.12" height="3.13" x="690.56" y="321.24" class="named"><title>0x00457f23 phd_sqrt (44 bytes)</title></rect>
 <rect width="2.99" height="3.13" x="696.69" y="321.24" class="named"><title>0x00428200 lara_as_slide (43 bytes)</title></rect>
 <rect width="2.99" height="3.13" x="702.67" y="321.24" class="named"><title>0x0042bcd0 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="2.99" height="3.13" x="708.66" y="321.24" class="named"><title>0x004406a0 T_FlashText (43 bytes)</title></rect>
