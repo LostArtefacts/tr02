@@ -786,6 +786,39 @@ extern "C" void InsertLine_Sorted(int x1, int y1, int x2, int y2, int z, uint8 c
     surfacenum++;
 }
 
+extern "C" int XYClipper(int number, VERTEX_INFO *input);
+
+extern "C" void InsertTrans8_Sorted(PHD_VBUF *vbuf, sint16 shade)
+{
+    int i, n;
+    sint8 or_clip;
+
+    or_clip = (sint8)vbuf[0].clip | (sint8)vbuf[1].clip | (sint8)vbuf[2].clip | (sint8)vbuf[3].clip | (sint8)vbuf[4].clip | (sint8)vbuf[5].clip | (sint8)vbuf[6].clip | (sint8)vbuf[7].clip;
+    if (or_clip < 0)
+        return;
+    if ((sint8)vbuf[0].clip & (sint8)vbuf[1].clip & (sint8)vbuf[2].clip & (sint8)vbuf[3].clip & (sint8)vbuf[4].clip & (sint8)vbuf[5].clip & (sint8)vbuf[6].clip & (sint8)vbuf[7].clip)
+        return;
+    if ((sint32)((vbuf[2].xs - vbuf[1].xs) * (vbuf[0].ys - vbuf[1].ys) - (vbuf[0].xs - vbuf[1].xs) * (vbuf[2].ys - vbuf[1].ys)) < 0)
+        return;
+    for (i = 0; i < 8; i++)
+    {
+        VBuffer[i].x = vbuf[i].xs;
+        VBuffer[i].y = vbuf[i].ys;
+        VBuffer[i].rhw = RhwFactor / (vbuf[i].zv - 131072);
+    }
+    n = 8;
+    if (or_clip)
+    {
+        phd_leftfloat = (float)phd_winxmin;
+        phd_topfloat = (float)phd_winymin;
+        phd_rightfloat = (float)(phd_winxmin + phd_winwidth);
+        phd_bottomfloat = (float)(phd_winymin + phd_winheight);
+        n = XYClipper(n, VBuffer);
+    }
+    if (n)
+        InsertPoly_Gouraud(n, (vbuf[0].zv + vbuf[1].zv + vbuf[2].zv + vbuf[3].zv + vbuf[4].zv + vbuf[5].zv + vbuf[6].zv + vbuf[7].zv) * 0.125f - 131072, 0, 0, 0, 13);
+}
+
 extern "C" void InsertTransQuad_Sorted(int x, int y, int width, int height, int z)
 {
     D3DTLVERTEX *v;
