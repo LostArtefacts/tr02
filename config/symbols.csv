@@ -1791,6 +1791,7 @@ address,size,name,symbol
 0x004d7954,4,Inv_downArrow1,_Inv_downArrow1
 0x004d7958,4,Inv_downArrow2,_Inv_downArrow2
 0x004d795c,4,inputDB,_inputDB
+0x004d7960,4,oldInputDB,_oldInputDB
 0x004d7968,,IsInventoryActive,_IsInventoryActive
 0x004d7970,32,InventoryExtraData,_InventoryExtraData
 0x004d7990,4,InvDemoMode,_InvDemoMode

@@ -984,6 +984,17 @@ void DrawInventoryItem(INVENTORY_ITEM *inv_item)
     phd_PopMatrix();
 }
 
+extern sint32 oldInputDB;
+
+sint32 GetDebouncedInput(sint32 input)
+{
+    sint32 j;
+
+    j = input ^ (input & oldInputDB);
+    oldInputDB = input;
+    return input & j;
+}
+
 void DoInventoryPicture(void)
 {
     S_CopyBufferToScreen();
