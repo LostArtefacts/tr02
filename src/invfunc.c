@@ -375,6 +375,339 @@ extern INVENTORY_ITEM *inv_keys_list[];
 extern sint16 inv_main_qtys[];
 extern sint16 inv_keys_qtys[];
 
+#define MAP_OPTION 121
+#define MAP_CLOSED 134
+#define GUN_ITEM 135
+#define SHOTGUN_ITEM 136
+#define MAGNUM_ITEM 137
+#define UZI_ITEM 138
+#define HARPOON_ITEM 139
+#define M16_ITEM 140
+#define ROCKET_GUN_ITEM 141
+#define SG_AMMO_ITEM 143
+#define MAG_AMMO_ITEM 144
+#define UZI_AMMO_ITEM 145
+#define HARPOON_AMMO_ITEM 146
+#define M16_AMMO_ITEM 147
+#define ROCKET_AMMO_ITEM 148
+#define MEDI_ITEM 149
+#define BIGMEDI_ITEM 150
+#define FLAREBOX_ITEM 151
+#define FLARE_ITEM 152
+#define GUN_OPTION 157
+#define PUZZLE_ITEM1 174
+#define PUZZLE_ITEM2 175
+#define PUZZLE_ITEM3 176
+#define PUZZLE_ITEM4 177
+#define SECRET_ITEM1 190
+#define SECRET_ITEM2 191
+#define SECRET_ITEM3 192
+#define KEY_ITEM1 193
+#define KEY_ITEM2 194
+#define KEY_ITEM3 195
+#define KEY_ITEM4 196
+#define PICKUP_ITEM1 205
+#define PICKUP_ITEM2 206
+#define FLARE_AMMO_BOX 6
+
+extern INVENTORY_ITEM InvCompassOption, InvPistolOption, InvFlareOption, InvShotgunOption, InvMagnumOption, InvUziOption;
+extern INVENTORY_ITEM InvHarpoonOption, InvM16Option, InvGrenadeOption, InvShotgunAmmoOption, InvMagnumAmmoOption, InvUziAmmoOption;
+extern INVENTORY_ITEM InvHarpoonAmmoOption, InvM16AmmoOption, InvGrenadeAmmoOption, InvSmallMedipackOption, InvLargeMedipackOption;
+extern INVENTORY_ITEM InvPickup1Option, InvPickup2Option, InvPuzzle1Option, InvPuzzle2Option, InvPuzzle3Option, InvPuzzle4Option;
+extern INVENTORY_ITEM InvKey1Option, InvKey2Option, InvKey3Option, InvKey4Option;
+
+void Inv_InsertItem(INVENTORY_ITEM *inv_item);
+int Inv_GetItemOption(int itemNum);
+int Inv_RemoveItem(int itemNum);
+int GlobalItemReplace(int in_objnum, int out_objnum);
+
+int Inv_AddItem(int itemNum)
+{
+    int n, m, found = 0;
+    int itemNumOption;
+    INVENTORY_ITEM *inv_item;
+
+    itemNumOption = Inv_GetItemOption(itemNum);
+    for (n = 0; n < inv_main_objects; n++)
+    {
+        inv_item = inv_main_list[n];
+        if (inv_item->object_number == itemNumOption)
+        {
+            found = 1;
+            break;
+        }
+    }
+    for (m = 0; m < inv_keys_objects; m++)
+    {
+        inv_item = inv_keys_list[m];
+        if (inv_item->object_number == itemNumOption)
+        {
+            found = 2;
+            break;
+        }
+    }
+
+    if (found == 1)
+    {
+        if (itemNum == FLAREBOX_ITEM)
+            inv_main_qtys[n] += FLARE_AMMO_BOX;
+        else
+            inv_main_qtys[n]++;
+        return 1;
+    }
+    else if (found == 2)
+    {
+        inv_keys_qtys[m]++;
+        return 1;
+    }
+    else
+    {
+        switch (itemNum)
+        {
+        case MAP_CLOSED:
+        case MAP_OPTION:
+            Inv_InsertItem(&InvCompassOption);
+            return 1;
+
+        case GUN_ITEM:
+        case GUN_OPTION:
+            Inv_InsertItem(&InvPistolOption);
+            if (lara.last_gun_type == LG_UNARMED)
+                lara.last_gun_type = LG_PISTOLS;
+            return 1;
+
+        case SHOTGUN_ITEM:
+        case SHOTGUN_OPTION:
+            if ((found = Inv_RequestItem(SG_AMMO_ITEM)))
+            {
+                for (n = 0; n < found; n++)
+                {
+                    Inv_RemoveItem(SG_AMMO_ITEM);
+                    lara.shotgun.ammo += 12;
+                }
+            }
+            lara.shotgun.ammo += 12;
+            Inv_InsertItem(&InvShotgunOption);
+            if (lara.last_gun_type == LG_UNARMED)
+                lara.last_gun_type = LG_SHOTGUN;
+            if (!lara.back_gun)
+                lara.back_gun = SHOTGUN;
+            GlobalItemReplace(SHOTGUN_ITEM, SG_AMMO_ITEM);
+            break;
+
+        case MAGNUM_ITEM:
+        case MAGNUM_OPTION:
+            if ((found = Inv_RequestItem(MAG_AMMO_ITEM)))
+            {
+                for (n = 0; n < found; n++)
+                {
+                    Inv_RemoveItem(MAG_AMMO_ITEM);
+                    lara.magnums.ammo += 40;
+                }
+            }
+            GlobalItemReplace(MAGNUM_ITEM, MAG_AMMO_ITEM);
+            lara.magnums.ammo += 40;
+            Inv_InsertItem(&InvMagnumOption);
+            break;
+
+        case UZI_ITEM:
+        case UZI_OPTION:
+            if ((found = Inv_RequestItem(UZI_AMMO_ITEM)))
+            {
+                for (n = 0; n < found; n++)
+                {
+                    Inv_RemoveItem(UZI_AMMO_ITEM);
+                    lara.uzis.ammo += 80;
+                }
+            }
+            GlobalItemReplace(UZI_ITEM, UZI_AMMO_ITEM);
+            lara.uzis.ammo += 80;
+            Inv_InsertItem(&InvUziOption);
+            break;
+
+        case HARPOON_ITEM:
+        case HARPOON_OPTION:
+            if ((found = Inv_RequestItem(HARPOON_AMMO_ITEM)))
+            {
+                for (n = 0; n < found; n++)
+                {
+                    Inv_RemoveItem(HARPOON_AMMO_ITEM);
+                    lara.harpoon.ammo += 3;
+                }
+            }
+            GlobalItemReplace(HARPOON_ITEM, HARPOON_AMMO_ITEM);
+            lara.harpoon.ammo += 3;
+            Inv_InsertItem(&InvHarpoonOption);
+            break;
+
+        case M16_ITEM:
+        case M16_OPTION:
+            if ((found = Inv_RequestItem(M16_AMMO_ITEM)))
+            {
+                for (n = 0; n < found; n++)
+                {
+                    Inv_RemoveItem(M16_AMMO_ITEM);
+                    lara.m16.ammo += 40;
+                }
+            }
+            GlobalItemReplace(M16_ITEM, M16_AMMO_ITEM);
+            lara.m16.ammo += 40;
+            Inv_InsertItem(&InvM16Option);
+            break;
+
+        case ROCKET_GUN_ITEM:
+        case ROCKET_OPTION:
+            if ((found = Inv_RequestItem(ROCKET_AMMO_ITEM)))
+            {
+                for (n = 0; n < found; n++)
+                {
+                    Inv_RemoveItem(ROCKET_AMMO_ITEM);
+                    lara.grenade.ammo += 2;
+                }
+            }
+            GlobalItemReplace(ROCKET_GUN_ITEM, ROCKET_AMMO_ITEM);
+            lara.grenade.ammo += 2;
+            Inv_InsertItem(&InvGrenadeOption);
+            break;
+
+        case SG_AMMO_ITEM:
+        case SG_AMMO_OPTION:
+            if (Inv_RequestItem(SHOTGUN_ITEM))
+                lara.shotgun.ammo += 12;
+            else
+                Inv_InsertItem(&InvShotgunAmmoOption);
+            break;
+
+        case MAG_AMMO_ITEM:
+        case MAG_AMMO_OPTION:
+            if (Inv_RequestItem(MAGNUM_ITEM))
+                lara.magnums.ammo += 40;
+            else
+                Inv_InsertItem(&InvMagnumAmmoOption);
+            break;
+
+        case UZI_AMMO_ITEM:
+        case UZI_AMMO_OPTION:
+            if (Inv_RequestItem(UZI_ITEM))
+                lara.uzis.ammo += 80;
+            else
+                Inv_InsertItem(&InvUziAmmoOption);
+            break;
+
+        case HARPOON_AMMO_ITEM:
+        case HARPOON_AMMO_OPTION:
+            if (Inv_RequestItem(HARPOON_ITEM))
+                lara.harpoon.ammo += 3;
+            else
+                Inv_InsertItem(&InvHarpoonAmmoOption);
+            break;
+
+        case M16_AMMO_ITEM:
+        case M16_AMMO_OPTION:
+            if (Inv_RequestItem(M16_ITEM))
+                lara.m16.ammo += 40;
+            else
+                Inv_InsertItem(&InvM16AmmoOption);
+            break;
+
+        case ROCKET_AMMO_ITEM:
+        case ROCKET_AMMO_OPTION:
+            if (Inv_RequestItem(ROCKET_GUN_ITEM))
+                lara.grenade.ammo += 2;
+            else
+                Inv_InsertItem(&InvGrenadeAmmoOption);
+            break;
+
+        case FLAREBOX_ITEM:
+        case FLAREBOX_OPTION:
+            Inv_InsertItem(&InvFlareOption);
+            for (n = 0; n < FLARE_AMMO_BOX - 1; n++)
+                Inv_AddItem(FLARE_ITEM);
+            return 1;
+
+        case FLARE_ITEM:
+            Inv_InsertItem(&InvFlareOption);
+            return 1;
+
+        case MEDI_ITEM:
+        case MEDI_OPTION:
+            Inv_InsertItem(&InvSmallMedipackOption);
+            return 1;
+
+        case BIGMEDI_ITEM:
+        case BIGMEDI_OPTION:
+            Inv_InsertItem(&InvLargeMedipackOption);
+            return 1;
+
+        case SECRET_ITEM1:
+            savegame.secrets |= 1;
+            return 1;
+
+        case SECRET_ITEM2:
+            savegame.secrets |= 2;
+            return 1;
+
+        case SECRET_ITEM3:
+            savegame.secrets |= 4;
+            return 1;
+
+        case PICKUP_ITEM1:
+        case PICKUP_OPTION1:
+            Inv_InsertItem(&InvPickup1Option);
+            return 1;
+
+        case PICKUP_ITEM2:
+        case PICKUP_OPTION2:
+            Inv_InsertItem(&InvPickup2Option);
+            return 1;
+
+        case PUZZLE_ITEM1:
+        case PUZZLE_OPTION1:
+            Inv_InsertItem(&InvPuzzle1Option);
+            return 1;
+
+        case PUZZLE_ITEM2:
+        case PUZZLE_OPTION2:
+            Inv_InsertItem(&InvPuzzle2Option);
+            return 1;
+
+        case PUZZLE_ITEM3:
+        case PUZZLE_OPTION3:
+            Inv_InsertItem(&InvPuzzle3Option);
+            return 1;
+
+        case PUZZLE_ITEM4:
+        case PUZZLE_OPTION4:
+            Inv_InsertItem(&InvPuzzle4Option);
+            return 1;
+
+        case KEY_ITEM1:
+        case KEY_OPTION1:
+            Inv_InsertItem(&InvKey1Option);
+            return 1;
+
+        case KEY_ITEM2:
+        case KEY_OPTION2:
+            Inv_InsertItem(&InvKey2Option);
+            return 1;
+
+        case KEY_ITEM3:
+        case KEY_OPTION3:
+            Inv_InsertItem(&InvKey3Option);
+            return 1;
+
+        case KEY_ITEM4:
+        case KEY_OPTION4:
+            Inv_InsertItem(&InvKey4Option);
+            return 1;
+
+        default:
+            return 0;
+        }
+    }
+    return 0;
+}
+
 void Inv_InsertItem(INVENTORY_ITEM *inv_item)
 {
     int n, m;
@@ -467,35 +800,6 @@ void Inv_RemoveAllItems(void)
     inv_keys_objects = 0;
     inv_keys_current = 0;
 }
-
-#define GUN_OPTION 157
-#define GUN_ITEM 135
-#define SHOTGUN_ITEM 136
-#define MAGNUM_ITEM 137
-#define UZI_ITEM 138
-#define M16_ITEM 140
-#define ROCKET_GUN_ITEM 141
-#define HARPOON_ITEM 139
-#define SG_AMMO_ITEM 143
-#define MAG_AMMO_ITEM 144
-#define HARPOON_AMMO_ITEM 146
-#define M16_AMMO_ITEM 147
-#define ROCKET_AMMO_ITEM 148
-#define UZI_AMMO_ITEM 145
-#define MEDI_ITEM 149
-#define BIGMEDI_ITEM 150
-#define FLARE_ITEM 151
-#define FLAREBOX_ITEM 152
-#define PUZZLE_ITEM1 174
-#define PUZZLE_ITEM2 175
-#define PUZZLE_ITEM3 176
-#define PUZZLE_ITEM4 177
-#define KEY_ITEM1 193
-#define KEY_ITEM2 194
-#define KEY_ITEM3 195
-#define KEY_ITEM4 196
-#define PICKUP_ITEM1 205
-#define PICKUP_ITEM2 206
 
 int Inv_RemoveItem(int itemNum)
 {

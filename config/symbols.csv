@@ -338,7 +338,7 @@ address,size,name,symbol
 0x00423d90,129,RingIsNotOpen,_RingIsNotOpen
 0x00423e20,1127,RingNotActive,_RingNotActive
 0x00424290,50,RingActive,_RingActive
-0x004242d0,1726,Inv_AddItem,_Inv_AddItem
+0x004242d0,2052,Inv_AddItem,_Inv_AddItem
 0x00424ae0,297,Inv_InsertItem,_Inv_InsertItem
 0x00424c10,119,Inv_RequestItem,_Inv_RequestItem
 0x00424c90,27,Inv_RemoveAllItems,_Inv_RemoveAllItems
