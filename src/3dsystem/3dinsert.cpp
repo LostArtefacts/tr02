@@ -64,6 +64,104 @@ extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output)
     return nVertices;
 }
 
+#define CLIP_GUV(OUT, B, A) \
+    OUT.ooz = B->ooz + (A->ooz - B->ooz) * clipper; \
+    OUT.u = B->u + (A->u - B->u) * clipper; \
+    OUT.v = B->v + (A->v - B->v) * clipper; \
+    OUT.g = B->g + (A->g - B->g) * clipper
+
+static VERTEX_INFO XYGUV_output[8];
+
+extern "C" int XYGUVClipper(int number, VERTEX_INFO *input)
+{
+    VERTEX_INFO *A, *B;
+    int i, j;
+    float clipper;
+
+    B = &input[number - 1];
+    for (i = j = 0; i < number; i++) {
+        A = B;
+        B = &input[i];
+        if (A->x < phd_leftfloat) {
+            if (B->x < phd_leftfloat)
+                continue;
+            clipper = (phd_leftfloat - B->x) / (A->x - B->x);
+            CLIP_GUV(XYGUV_output[j], B, A);
+            XYGUV_output[j].x = phd_leftfloat;
+            XYGUV_output[j++].y = B->y + (A->y - B->y) * clipper;
+        } else if (A->x > phd_rightfloat) {
+            if (B->x > phd_rightfloat)
+                continue;
+            clipper = (phd_rightfloat - B->x) / (A->x - B->x);
+            CLIP_GUV(XYGUV_output[j], B, A);
+            XYGUV_output[j].x = phd_rightfloat;
+            XYGUV_output[j++].y = B->y + (A->y - B->y) * clipper;
+        }
+        if (B->x < phd_leftfloat) {
+            clipper = (phd_leftfloat - B->x) / (A->x - B->x);
+            CLIP_GUV(XYGUV_output[j], B, A);
+            XYGUV_output[j].x = phd_leftfloat;
+            XYGUV_output[j++].y = B->y + (A->y - B->y) * clipper;
+        } else if (B->x > phd_rightfloat) {
+            clipper = (phd_rightfloat - B->x) / (A->x - B->x);
+            CLIP_GUV(XYGUV_output[j], B, A);
+            XYGUV_output[j].x = phd_rightfloat;
+            XYGUV_output[j++].y = B->y + (A->y - B->y) * clipper;
+        } else {
+            XYGUV_output[j].x = B->x;
+            XYGUV_output[j].y = B->y;
+            XYGUV_output[j].g = B->g;
+            XYGUV_output[j].ooz = B->ooz;
+            XYGUV_output[j].u = B->u;
+            XYGUV_output[j++].v = B->v;
+        }
+    }
+    if (j < 3)
+        return 0;
+    number = j;
+    B = &XYGUV_output[number - 1];
+    for (i = j = 0; i < number; i++) {
+        A = B;
+        B = &XYGUV_output[i];
+        if (A->y < phd_topfloat) {
+            if (B->y < phd_topfloat)
+                continue;
+            clipper = (phd_topfloat - B->y) / (A->y - B->y);
+            CLIP_GUV(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_topfloat;
+        } else if (A->y > phd_bottomfloat) {
+            if (B->y > phd_bottomfloat)
+                continue;
+            clipper = (phd_bottomfloat - B->y) / (A->y - B->y);
+            CLIP_GUV(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_bottomfloat;
+        }
+        if (B->y < phd_topfloat) {
+            clipper = (phd_topfloat - B->y) / (A->y - B->y);
+            CLIP_GUV(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_topfloat;
+        } else if (B->y > phd_bottomfloat) {
+            clipper = (phd_bottomfloat - B->y) / (A->y - B->y);
+            CLIP_GUV(input[j], B, A);
+            input[j].x = B->x + (A->x - B->x) * clipper;
+            input[j++].y = phd_bottomfloat;
+        } else {
+            input[j].x = B->x;
+            input[j].y = B->y;
+            input[j].g = B->g;
+            input[j].ooz = B->ooz;
+            input[j].u = B->u;
+            input[j++].v = B->v;
+        }
+    }
+    if (j < 3)
+        return 0;
+    return j;
+}
+
 #define CLIP_G(OUT, B, A) \
     { \
         OUT.ooz = B->ooz + (A->ooz - B->ooz) * clipper; \

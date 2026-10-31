@@ -1727,6 +1727,7 @@ address,size,name,symbol
 0x004d6bfc,4,WibbleOffset,_WibbleOffset
 0x004d6c00,4,water_effect,_water_effect
 0x004d6c04,4,shade_effect,_shade_effect
+0x004d6c08,192,XYGUV_output,_XYGUV_output
 0x004d6cc8,,VBuffer,_VBuffer
 0x004d6ea8,192,XYG_output,_XYG_output
 0x004d6f68,1,bBlueEffect,_bBlueEffect
