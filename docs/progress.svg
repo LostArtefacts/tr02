@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.81% (1086)</tspan> · <tspan class="decompiled">0.72% (9)</tspan> · <tspan class="nonmatching">3.04% (38)</tspan> · <tspan class="todo">9.43% (118)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.81% (1086)</tspan> · <tspan class="decompiled">0.72% (9)</tspan> · <tspan class="nonmatching">3.12% (39)</tspan> · <tspan class="todo">9.35% (117)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="648.47" height="6" x="0" y="0" class="named"/>
 <rect width="5.37" height="6" x="648.47" y="0" class="decompiled"/>
-<rect width="22.69" height="6" x="653.85" y="0" class="nonmatching"/>
-<rect width="70.46" height="6" x="676.54" y="0" class="todo"/>
+<rect width="23.29" height="6" x="653.85" y="0" class="nonmatching"/>
+<rect width="69.86" height="6" x="677.14" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1177,7 +1177,7 @@
 <rect width="12" height="12" x="75" y="330" class="named"><title>0x004543b0 SE_ControlsDlgProc (262 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x004544c0 SE_ControlsJoystickSet (10 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="named"><title>0x004544d0 SE_ControlsDlgUpdate (104 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="330" class="todo"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="named"><title>0x00454600 SE_OptionsDlgProc (138 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="named"><title>0x00454690 SE_OptionsDlgUpdate (564 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="named"><title>0x004548d0 SE_OptionsStrCat (75 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.88%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">7.79%</tspan> · <tspan class="todo">11.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.88%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">7.85%</tspan> · <tspan class="todo">11.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="596.70" height="6" x="0" y="0" class="named"/>
 <rect width="2.51" height="6" x="596.70" y="0" class="decompiled"/>
-<rect width="58.22" height="6" x="599.21" y="0" class="nonmatching"/>
-<rect width="89.58" height="6" x="657.42" y="0" class="todo"/>
+<rect width="58.62" height="6" x="599.21" y="0" class="nonmatching"/>
+<rect width="89.17" height="6" x="657.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1806,7 +1806,7 @@
 <rect width="9.29" height="10.11" x="725.42" y="156.98" class="named"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="9.29" height="10.11" x="737.71" y="156.98" class="named"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="9.73" height="9.66" x="525.75" y="170.09" class="named"><title>0x00452d70 SE_SoundTestStart (189 bytes)</title></rect>
-<rect width="9.73" height="9.66" x="525.75" y="182.75" class="todo"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
+<rect width="9.73" height="9.66" x="525.75" y="182.75" class="nonmatching"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="9.73" height="9.59" x="525.75" y="195.41" class="named"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
 <rect width="9.73" height="9.59" x="525.75" y="208" class="named"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
 <rect width="9.73" height="9.59" x="525.75" y="220.59" class="named"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>

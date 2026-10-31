@@ -932,3 +932,36 @@ extern "C" void SE_ControlsDlgUpdate(HWND hwndDlg)
 
     SE_CheckItem(hwndDlg, 1099, isAvailable, ChangedAppSettings.JoystickEnabled && isAvailable);
 }
+
+typedef struct SETUP_JOYSTICK_NODE
+{
+    struct SETUP_JOYSTICK_NODE *next;
+    uint8 pad[0x18];
+    LPCSTR description;
+} SETUP_JOYSTICK_NODE;
+
+extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
+{
+    HWND combo;
+    WPARAM index;
+    WPARAM selected;
+    SETUP_JOYSTICK_NODE *node;
+    int count;
+
+    combo = GetDlgItem(hwndDlg, 1055);
+    SendMessage(combo, CB_RESETCONTENT, 0, 0);
+    selected = 0;
+    for (node = (SETUP_JOYSTICK_NODE *)JoystickList.head; node; node = !node ? NULL : node->next)
+    {
+        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
+        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
+        if (node == ChangedAppSettings.PreferredJoystick)
+            selected = index;
+    }
+    SendMessage(combo, CB_SETCURSEL, selected, 0);
+    count = JoystickList.count;
+    EnableWindow(combo, count > 0);
+    if (count)
+        SE_ControlsJoystickSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
+    SE_ControlsDlgUpdate(hwndDlg);
+}
