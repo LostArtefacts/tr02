@@ -936,6 +936,137 @@ sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
 void S_ExitSystem(char *message);
 
+#define SKIDOO 13
+#define SKIDOO_DEAD_ANIM 15
+#define PITCH_SHIFT 4
+
+int SkidooControl(void)
+{
+    ITEM_INFO *skidoo;
+    SKIDOO_INFO *skinfo;
+    PHD_VECTOR fl, fr;
+    sint32 hfl, hfr;
+    FLOOR_INFO *floor;
+    sint32 height, collide, drive;
+    sint16 room_number, x_rot, z_rot, bandit_skidoo;
+    int pitch, dead = 0;
+
+    skidoo = &items[lara.skidoo];
+    skinfo = (SKIDOO_INFO *)skidoo->data;
+    collide = SkidooDynamics(skidoo);
+
+    hfl = TestHeight(skidoo, SKIDOO_FRONT, -SKIDOO_SIDE, &fl);
+    hfr = TestHeight(skidoo, SKIDOO_FRONT, SKIDOO_SIDE, &fr);
+
+    room_number = skidoo->room_number;
+    floor = GetFloor(skidoo->pos.x_pos, skidoo->pos.y_pos, skidoo->pos.z_pos, &room_number);
+    height = GetHeight(floor, skidoo->pos.x_pos, skidoo->pos.y_pos, skidoo->pos.z_pos);
+    TestTriggers(trigger_index, 0);
+
+    if (lara_item->hit_points <= 0) {
+        input &= ~(IN_LEFT | IN_RIGHT | IN_BACK | IN_FORWARD);
+        dead = 1;
+    } else if (lara_item->current_anim_state == SKID_LETGO) {
+        dead = 1;
+        collide = 0;
+    }
+
+    if (skidoo->flags & ONESHOT) {
+        drive = 0;
+        collide = 0;
+    } else {
+        switch (lara_item->current_anim_state) {
+        case SKID_GETON:
+        case SKID_GETOFF:
+        case SKID_GETOFFL:
+        case SKID_LETGO:
+            drive = -1;
+            collide = 0;
+            break;
+
+        default:
+            drive = SkidooUserControl(skidoo, height, &pitch);
+        }
+    }
+
+    bandit_skidoo = skinfo->track_mesh & 4;
+    if (drive > 0) {
+        skinfo->track_mesh = ((skinfo->track_mesh & 3) == 1) ? 2 : 1;
+
+        skinfo->pitch += (pitch - skinfo->pitch) >> 2;
+        SoundEffect(155, &skidoo->pos, PITCH_SHIFT + ((0x10000 - (SKIDOO_MAX_SPEED - skinfo->pitch) * 100) << 8));
+    } else {
+        skinfo->track_mesh = 0;
+        if (!drive)
+            SoundEffect(153, &skidoo->pos, 0);
+        skinfo->pitch = 0;
+    }
+    skinfo->track_mesh |= bandit_skidoo;
+
+    skidoo->floor = height;
+
+    skinfo->left_fallspeed = DoDynamics(hfl, skinfo->left_fallspeed, &fl.y);
+    skinfo->right_fallspeed = DoDynamics(hfr, skinfo->right_fallspeed, &fr.y);
+    skidoo->fallspeed = DoDynamics(height, skidoo->fallspeed, &skidoo->pos.y_pos);
+
+    height = fl.y + fr.y >> 1;
+    x_rot = phd_atan(SKIDOO_FRONT, skidoo->pos.y_pos - height);
+    z_rot = phd_atan(SKIDOO_SIDE, height - fl.y);
+
+    skidoo->pos.x_rot += x_rot - skidoo->pos.x_rot >> 1;
+    skidoo->pos.z_rot += z_rot - skidoo->pos.z_rot >> 1;
+
+    if (skidoo->flags & ONESHOT) {
+        if (room_number != skidoo->room_number)
+            ItemNewRoom(lara.skidoo, room_number);
+
+        if (skidoo->pos.y_pos == skidoo->floor)
+            SkidooExplode(skidoo);
+        return 0;
+    }
+
+    SkidooAnimation(skidoo, collide, dead);
+
+    if (room_number != skidoo->room_number) {
+        ItemNewRoom(lara.skidoo, room_number);
+        ItemNewRoom(lara.item_number, room_number);
+    }
+
+    if (lara_item->current_anim_state != SKID_FALLOFF) {
+        lara_item->pos.x_pos = skidoo->pos.x_pos;
+        lara_item->pos.y_pos = skidoo->pos.y_pos;
+        lara_item->pos.z_pos = skidoo->pos.z_pos;
+        lara_item->pos.y_rot = skidoo->pos.y_rot;
+        if (drive >= 0) {
+            lara_item->pos.x_rot = skidoo->pos.x_rot;
+            lara_item->pos.z_rot = skidoo->pos.z_rot;
+        } else
+            lara_item->pos.x_rot = lara_item->pos.z_rot = 0;
+    } else
+        lara_item->pos.x_rot = lara_item->pos.z_rot = 0;
+
+    AnimateItem(lara_item);
+
+    if (!dead && drive >= 0 && bandit_skidoo)
+        SkidooGuns();
+
+    if (!dead) {
+        skidoo->anim_number = objects[SKIDOO].anim_index + (lara_item->anim_number - objects[SKIDOO_ANIM].anim_index);
+        skidoo->frame_number = anims[skidoo->anim_number].frame_base - anims[lara_item->anim_number].frame_base + lara_item->frame_number;
+    } else {
+        skidoo->anim_number = objects[SKIDOO].anim_index + SKIDOO_DEAD_ANIM;
+        skidoo->frame_number = anims[skidoo->anim_number].frame_base;
+    }
+
+    if (skidoo->speed && skidoo->floor == skidoo->pos.y_pos) {
+        DoSnowEffect(skidoo);
+        if (skidoo->speed < 50)
+            DoSnowEffect(skidoo);
+    }
+
+    return SkidooCheckGetOff();
+}
+
 void InitialiseSkidman(sint16 item_number)
 {
     sint16 skidoo_item;
@@ -1071,6 +1202,7 @@ void DrawSkidoo(ITEM_INFO *item)
 
 sint16 *GetBestFrame(ITEM_INFO *item);
 
+#define SKIDOO 13
 void SkidmanPush(ITEM_INFO *item, ITEM_INFO *laraitem, int radius)
 {
     int x, z, rx, rz, c, s;

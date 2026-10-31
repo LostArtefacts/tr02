@@ -717,7 +717,7 @@ address,size,name,symbol
 0x0043e2d0,124,SkidooExplode,_SkidooExplode
 0x0043e350,563,SkidooCheckGetOff,_SkidooCheckGetOff
 0x0043e590,283,SkidooGuns,_SkidooGuns
-0x0043e6b0,1088,SkidooControl,_SkidooControl
+0x0043e6b0,1110,SkidooControl,_SkidooControl
 0x0043eb10,725,DrawSkidoo,_DrawSkidoo
 0x0043edf0,131,InitialiseSkidman,_InitialiseSkidman
 0x0043ee80,994,SkidManControl,_SkidManControl
