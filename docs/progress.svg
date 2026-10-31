@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.09% (1052)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.27% (191)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.17% (1053)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">15.19% (190)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="628.17" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="628.17" y="0" class="decompiled"/>
-<rect width="114.05" height="6" x="632.95" y="0" class="todo"/>
+<rect width="628.77" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="628.77" y="0" class="decompiled"/>
+<rect width="113.45" height="6" x="633.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1003,7 +1003,7 @@
 <rect width="12" height="12" x="480" y="270" class="named"><title>0x004489a0 GetZBufferDepth (43 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="named"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="270" class="named"><title>0x00448a80 CreatePictureBuffer (112 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="270" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="270" class="named"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="270" class="named"><title>0x00448ca0 RestoreLostBuffers (316 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="named"><title>0x00448de0 DX_UpdateFrame (207 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="named"><title>0x00448eb0 DX_DoFlipWait (59 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.79%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">26.12%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">73.92%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">26%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="551.24" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="551.24" y="0" class="decompiled"/>
-<rect width="195.10" height="6" x="551.90" y="0" class="todo"/>
+<rect width="552.15" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="552.15" y="0" class="decompiled"/>
+<rect width="194.19" height="6" x="552.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1550,7 +1550,7 @@
 <rect width="16.41" height="16" x="654.90" y="43.40" class="named"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
 <rect width="16.24" height="16" x="674.32" y="43.40" class="todo"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
 <rect width="15.92" height="16" x="693.55" y="43.40" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
-<rect width="15.88" height="16" x="712.47" y="43.40" class="todo"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
+<rect width="15.88" height="16" x="712.47" y="43.40" class="named"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="15.65" height="16" x="731.35" y="43.40" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
 <rect width="15.82" height="15.78" x="416.13" y="62.39" class="named"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
 <rect width="15.82" height="15.78" x="416.13" y="81.17" class="named"><title>0x0042ae20 LaraTestHangJump (414 bytes)</title></rect>

@@ -285,6 +285,75 @@ extern "C" void CreatePictureBuffer(void)
         throw ERR_CreatePictureBuffer;
 }
 
+extern "C" {
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern int phd_winwidth;
+extern int phd_winheight;
+extern int GameVidWidth;
+extern int GameVidHeight;
+extern int GameWindowPositionX;
+extern int GameWindowWidth;
+extern int GameWindowPositionY;
+extern int GameWindowHeight;
+extern LPDIRECT3DVIEWPORT2 D3DView;
+}
+
+extern "C" void ClearBuffers(DWORD flags, DWORD fillColor)
+{
+    RECT rect;
+    DWORD d3dFlags;
+    D3DRECT d3dRect;
+
+    if (flags & 0x100) {
+        rect.left = phd_winxmin;
+        rect.top = phd_winymin;
+        rect.right = phd_winxmin + phd_winwidth;
+        rect.bottom = phd_winymin + phd_winheight;
+    } else {
+        rect.top = 0;
+        rect.left = 0;
+        rect.right = GameVidWidth;
+        rect.bottom = GameVidHeight;
+    }
+    if (SavedAppSettings.RenderMode == RM_Hardware) {
+        d3dFlags = 0;
+        if (flags & 2)
+            d3dFlags |= D3DCLEAR_TARGET;
+        if (flags & 8)
+            d3dFlags |= D3DCLEAR_ZBUFFER;
+        if (d3dFlags) {
+            d3dRect.x1 = rect.left;
+            d3dRect.x2 = rect.right;
+            d3dRect.y1 = rect.top;
+            d3dRect.y2 = rect.bottom;
+            D3DView->Clear(1, &d3dRect, d3dFlags);
+        }
+    } else if (flags & 2) {
+        WinVidClearBuffer(BackBufferSurface, &rect, fillColor);
+    }
+    if (flags & 1)
+        WinVidClearBuffer(PrimaryBufferSurface, &rect, fillColor);
+    if (flags & 4)
+        WinVidClearBuffer(ThirdBufferSurface, &rect, fillColor);
+    if (flags & 0x10)
+        WinVidClearBuffer(RenderBufferSurface, &rect, fillColor);
+    if (flags & 0x20) {
+        rect.top = 0;
+        rect.left = 0;
+        rect.right = 640;
+        rect.bottom = 480;
+        WinVidClearBuffer(PictureBufferSurface, &rect, fillColor);
+    }
+    if (flags & 0x40) {
+        rect.left = GameWindowPositionX;
+        rect.top = GameWindowPositionY;
+        rect.right = GameWindowPositionX + GameWindowWidth;
+        rect.bottom = GameWindowPositionY + GameWindowHeight;
+        WinVidClearBuffer(PrimaryBufferSurface, &rect, fillColor);
+    }
+}
+
 extern "C" void DX_DoFlipWait(void)
 {
     if (SavedAppSettings.FlipBroken && SavedAppSettings.FullScreen)
