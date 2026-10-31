@@ -235,6 +235,108 @@ struct SETUP_ADAPTER_NODE
 
 extern "C" SETUP_ADAPTER_NODE *DisplayAdapterList;
 
+extern "C" {
+bool GetRegistryGuidValue(LPCTSTR lpValueName, GUID *value, GUID *defaultValue);
+bool GetRegistryDwordValue(LPCTSTR lpValueName, DWORD *pValue, DWORD defaultValue);
+bool GetRegistryBoolValue(LPCTSTR lpValueName, bool *pValue, bool defaultValue);
+bool IsNewRegistryKeyCreated(void);
+void *WinVidGetDisplayAdapter(GUID *lpGuid);
+void *GetSoundAdapter(GUID *lpGuid);
+void *GetJoystick(GUID *lpGuid);
+}
+
+#pragma pack(push, 1)
+typedef struct
+{
+    GUID *lpAdapterGuid;
+    uint8 pad[0x3ce];
+    SETUP_MODE_LIST hwDispModeList;
+    SETUP_MODE_LIST swDispModeList;
+} SETUP_ADAPTER_BODY;
+
+typedef struct
+{
+    void *next;
+    void *previous;
+    SETUP_ADAPTER_BODY body;
+} SETUP_ADAPTER_ITEM;
+#pragma pack(pop)
+
+extern "C" int Func452760(SETUP_APP_SETTINGS *settings)
+{
+    GUID guid;
+    DISPLAY_MODE target;
+    SETUP_MODE_LIST *modeList;
+    SETUP_MODE_NODE *mode;
+    SETUP_ADAPTER_BODY *body;
+
+    if (!OpenGameRegistryKey("System"))
+        return 0;
+    settings->PreferredDisplayAdapter = WinVidGetDisplayAdapter(GetRegistryGuidValue("PreferredDisplayAdapterGUID", &guid, NULL) ? &guid : NULL);
+    settings->PreferredSoundAdapter = GetSoundAdapter(GetRegistryGuidValue("PreferredSoundAdapterGUID", &guid, NULL) ? &guid : NULL);
+    settings->PreferredJoystick = GetJoystick(GetRegistryGuidValue("PreferredJoystickGUID", &guid, NULL) ? &guid : NULL);
+    GetRegistryDwordValue("RenderMode", (DWORD *)&settings->RenderMode, 2);
+    GetRegistryBoolValue("Dither", &settings->Dither, false);
+    GetRegistryBoolValue("ZBuffer", &settings->ZBuffer, true);
+    GetRegistryBoolValue("BilinearFiltering", &settings->BilinearFiltering, true);
+    GetRegistryBoolValue("TripleBuffering", &settings->TripleBuffering, false);
+    GetRegistryBoolValue("FullScreen", &settings->FullScreen, true);
+    GetRegistryDwordValue("WindowWidth", (DWORD *)&settings->WindowWidth, 512);
+    GetRegistryDwordValue("WindowHeight", (DWORD *)&settings->WindowHeight, 384);
+    GetRegistryDwordValue("AspectMode", (DWORD *)&settings->AspectMode, 0);
+    GetRegistryDwordValue("FullScreenWidth", (DWORD *)&target.width, 640);
+    GetRegistryDwordValue("FullScreenHeight", (DWORD *)&target.height, 480);
+    GetRegistryDwordValue("FullScreenBPP", (DWORD *)&target.bpp, 16);
+    GetRegistryBoolValue("SoundEnabled", &settings->SoundEnabled, true);
+    GetRegistryBoolValue("LaraMic", &settings->LaraMic, false);
+    GetRegistryBoolValue("JoystickEnabled", &settings->JoystickEnabled, true);
+    GetRegistryBoolValue("Disable16BitTextures", &settings->Disable16BitTextures, false);
+    GetRegistryBoolValue("DontSortPrimitives", &settings->DontSortPrimitives, false);
+    GetRegistryDwordValue("TexelAdjustMode", (DWORD *)&settings->TexelAdjustMode, 2);
+    GetRegistryDwordValue("NearestAdjustment", (DWORD *)&settings->NearestAdjustment, 16);
+    GetRegistryDwordValue("LinearAdjustment", (DWORD *)&settings->LinearAdjustment, 128);
+    GetRegistryBoolValue("FlipBroken", &settings->FlipBroken, false);
+    GetRegistryBoolValue("DisableFMV", &settings->DisableFMV, false);
+    if (settings->RenderMode <= 0 || settings->RenderMode >= 3)
+        settings->RenderMode = 1;
+    if (settings->AspectMode < 0 || settings->AspectMode >= 3)
+        settings->AspectMode = 0;
+    if (settings->TexelAdjustMode < 0 || settings->TexelAdjustMode > 3)
+        settings->TexelAdjustMode = 2;
+    if (settings->NearestAdjustment < 0)
+        settings->NearestAdjustment = 0;
+    if (settings->NearestAdjustment > 256)
+        settings->NearestAdjustment = 256;
+    if (settings->LinearAdjustment < 0)
+        settings->LinearAdjustment = 0;
+    if (settings->LinearAdjustment > 256)
+        settings->LinearAdjustment = 256;
+    GetRegistryBoolValue("PerspectiveCorrect", &settings->PerspectiveCorrect, settings->RenderMode != 1);
+    body = &((SETUP_ADAPTER_ITEM *)settings->PreferredDisplayAdapter)->body;
+    modeList = &body->hwDispModeList;
+    if (settings->RenderMode != 2)
+        modeList = &body->swDispModeList;
+    if (settings->RenderMode == 1)
+        target.bpp = 8;
+    target.vga = 0;
+    mode = modeList->head;
+    if (mode)
+    {
+        while (mode->body.CompareVideoModes(&target))
+        {
+            mode = mode->next;
+            if (!mode)
+            {
+                mode = modeList->tail;
+                break;
+            }
+        }
+    }
+    settings->VideoMode = mode;
+    CloseGameRegistryKey();
+    return IsNewRegistryKeyCreated() ? 2 : 1;
+}
+
 extern "C" void SE_DefaultGraphicsSettings(void)
 {
     SETUP_ADAPTER_NODE *adapter;
