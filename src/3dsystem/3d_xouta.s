@@ -171,4 +171,148 @@ transA_8:
     ret
 @transA@12 endp
 
+@gourA@12 proc public
+    push ecx
+    push esi
+    push edi
+    push ebp
+    sub esp, 16
+    sub edx, eax
+    jle gourA_7
+    mov dword ptr [esp+4], edx
+    mov ecx, eax
+    shl ecx, 4
+    add ecx, offset _xbuffer
+    mov dword ptr [esp+8], ecx
+    imul eax, dword ptr _phd_scrwidth
+    add eax, dword ptr _phd_winptr
+    mov dword ptr [esp+12], eax
+    movzx ebx, bx
+    shl ebx, 5
+    add ebx, offset _GouraudTable
+    mov dword ptr [esp], ebx
+gourA_1:
+    mov eax, dword ptr [esp+8]
+    movsx ebx, word ptr [eax+10]
+    movsx edi, word ptr [eax+2]
+    cmp edi, ebx
+    jge gourA_6
+    mov ecx, dword ptr [eax+4]
+    mov ebp, ebx
+    mov edx, dword ptr [eax+12]
+    sub edx, ecx
+    sub ebx, edi
+    mov eax, edx
+    sar edx, 31
+    idiv ebx
+    test edi, edi
+    jns gourA_2
+    imul edi, eax
+    sub ecx, edi
+    xor edi, edi
+gourA_2:
+    sub ebp, edi
+    add edi, dword ptr [esp+12]
+    mov edx, eax
+    mov esi, ecx
+    sar eax, 16
+    sar ecx, 16
+    shl edx, 16
+    shl esi, 16
+    add ecx, dword ptr [esp]
+    test edi, 1
+    je gourA_3
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    mov byte ptr [edi], bl
+    adc ecx, eax
+    dec ebp
+    inc edi
+gourA_3:
+    sub ebp, 16
+    js gourA_4
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+2], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+4], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+6], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+8], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+10], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+12], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+14], bx
+    adc ecx, eax
+    add edi, 16
+    jmp gourA_3
+gourA_4:
+    add ebp, 16
+    jle gourA_6
+gourA_5:
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    mov byte ptr [edi], bl
+    adc ecx, eax
+    inc edi
+    dec ebp
+    jne gourA_5
+gourA_6:
+    mov eax, _phd_scrwidth
+    add dword ptr [esp+8], 16
+    add dword ptr [esp+12], eax
+    dec dword ptr [esp+4]
+    jne gourA_1
+gourA_7:
+    add esp, 16
+    pop ebp
+    pop edi
+    pop esi
+    pop ecx
+    ret
+@gourA@12 endp
+
     end
