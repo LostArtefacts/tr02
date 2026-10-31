@@ -36,7 +36,7 @@ manifest = "refs/trx/docs/symbols/tr2-steam.txt"
 progress = true  # every commit redraws docs/progress.svg
 compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
-pairs = true  # or two that only match together: "Decompile A and B"
+pairs = false  # revoked: groups land one per commit with DECOMP_ALLOW_DIFF
 no_comments = true  # no comments, tabs or CRs in src/
 
 [reference]
