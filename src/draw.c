@@ -143,6 +143,60 @@ void DrawRooms(sint16 current_room)
         PrintObjects(draw_rooms[i]);
 }
 
+void GetRoomBounds(void)
+{
+    ROOM_INFO *r;
+    sint16 *door;
+    int i, room_number;
+
+    while (BoundStart != BoundEnd)
+    {
+        room_number = BoundRooms[(BoundStart++) % 128];
+        r = &room[room_number];
+        r->bound_active -= 2;
+        MidSort = ((sint16)r->bound_active >> 8) + 1;
+        if (r->test_left < r->left)
+            r->left = r->test_left;
+        if (r->test_top < r->top)
+            r->top = r->test_top;
+        if (r->test_right > r->right)
+            r->right = r->test_right;
+        if (r->test_bottom > r->bottom)
+            r->bottom = r->test_bottom;
+        if (!(r->bound_active & 1))
+        {
+            draw_rooms[number_draw_rooms++] = room_number;
+            r->bound_active |= 1;
+            if (r->flags & OUTSIDE)
+                OutsideCamera = OUTSIDE;
+        }
+        if (!(r->flags & INSIDE))
+        {
+            if (r->left < OutsideLeft)
+                OutsideLeft = r->left;
+            if (r->right > OutsideRight)
+                OutsideRight = r->right;
+            if (r->top < OutsideTop)
+                OutsideTop = r->top;
+            if (r->bottom > OutsideBottom)
+                OutsideBottom = r->bottom;
+        }
+        phd_PushMatrix();
+        phd_TranslateAbs(r->x, r->y, r->z);
+        if ((door = r->door))
+        {
+            for (i = *(door++); i > 0; i--, door += 15)
+            {
+                room_number = *(door++);
+                if ((sint32)(*(door + 0) * (r->x + *(door + 3) - *(w2v_matrix + M03))) + (sint32)(*(door + 1) * (r->y + *(door + 4) - *(w2v_matrix + M13))) + (sint32)(*(door + 2) * (r->z + *(door + 5) - *(w2v_matrix + M23))) >= 0)
+                    continue;
+                SetRoomBounds(door, room_number, r);
+            }
+        }
+        phd_PopMatrix();
+    }
+}
+
 struct door_vbuf {
     sint32 xv, yv, zv;
 };
@@ -152,12 +206,12 @@ extern sint32 PhdPersp;
 
 void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
 {
-    int i, z_behind, z_toofar;
-    sint32 left, right, top, bottom;
-    sint32 xv, yv, zv, xs, ys;
     sint32 *mptr;
-    ROOM_INFO *r;
     struct door_vbuf *dest, *last;
+    ROOM_INFO *r;
+    sint32 left, right, top, bottom;
+    int i, z_behind, z_toofar;
+    sint32 ys, xv, yv, xs, zv;
 
     r = &room[room_number];
     if (r->left <= parent->test_left && r->right >= parent->test_right && r->top <= parent->test_top && r->bottom >= parent->test_bottom)

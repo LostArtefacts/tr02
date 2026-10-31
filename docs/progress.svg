@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.81% (1086)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2.48% (31)</tspan> · <tspan class="todo">10.07% (126)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.81% (1086)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">2.56% (32)</tspan> · <tspan class="todo">9.99% (125)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="648.47" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="648.47" y="0" class="decompiled"/>
-<rect width="18.51" height="6" x="653.25" y="0" class="nonmatching"/>
-<rect width="75.24" height="6" x="671.76" y="0" class="todo"/>
+<rect width="19.11" height="6" x="653.25" y="0" class="nonmatching"/>
+<rect width="74.64" height="6" x="672.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -278,7 +278,7 @@
 <rect width="12" height="12" x="90" y="60" class="named"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="named"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="60" class="named"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="60" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="60" class="nonmatching"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="60" class="named"><title>0x00418e20 SetRoomBounds (895 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="60" class="nonmatching"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="60" class="named"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.45%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">6.43%</tspan> · <tspan class="todo">14.03%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.45%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">6.56%</tspan> · <tspan class="todo">13.90%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="593.52" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="593.52" y="0" class="decompiled"/>
-<rect width="48.02" height="6" x="594.17" y="0" class="nonmatching"/>
-<rect width="104.81" height="6" x="642.19" y="0" class="todo"/>
+<rect width="49" height="6" x="594.17" y="0" class="nonmatching"/>
+<rect width="103.83" height="6" x="643.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.92" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1536,7 +1536,7 @@
 <rect width="16.48" height="17.02" x="396.75" y="313.09" class="named"><title>0x00409bb0 InsertFlatRect_ZBuffered (457 bytes)</title></rect>
 <rect width="16.48" height="17.02" x="396.75" y="333.11" class="todo"><title>0x00452060 FadeToPal (457 bytes)</title></rect>
 <rect width="16.48" height="16.98" x="396.75" y="353.13" class="named"><title>0x00452f80 SE_ShowSetupDialog (456 bytes)</title></rect>
-<rect width="16.48" height="16.89" x="396.75" y="373.11" class="todo"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
+<rect width="16.48" height="16.89" x="396.75" y="373.11" class="nonmatching"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
 <rect width="17.31" height="16" x="416.23" y="43.40" class="named"><title>0x004361b0 ShotLara (452 bytes)</title></rect>
 <rect width="17.22" height="16" x="436.54" y="43.40" class="named"><title>0x0044c750 LevelStats (450 bytes)</title></rect>
 <rect width="17.17" height="16" x="456.75" y="43.40" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
