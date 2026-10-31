@@ -51,6 +51,8 @@ extern int MidSort;
 extern int OutsideCamera;
 
 void S_LightRoom(ROOM_INFO *r);
+void S_SetupBelowWater(int underwater);
+void S_SetupAboveWater(int underwater);
 void ClipRoom(ROOM_INFO *r);
 
 #define OUTSIDE 8
@@ -61,6 +63,7 @@ extern int BoundRooms[];
 extern int OutsideLeft, OutsideRight, OutsideTop, OutsideBottom;
 
 void GetRoomBounds(void);
+void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent);
 void phd_RotYXZsuperpack(sint16 **pprot, int skip);
 void S_InitialisePolyList(int clear);
 void S_InsertBackground(sint16 *objptr);
@@ -382,6 +385,91 @@ void PrintRooms(sint16 room_number)
             ClipRoom(r);
         S_InsertRoom(r->data, 0);
     }
+}
+
+typedef struct {
+    sint32 x, y, z;
+    PHD_ANGLE y_rot;
+    sint16 shade;
+    sint16 shadeB;
+    sint16 static_number;
+} MESH_INFO;
+
+typedef struct {
+    sint16 mesh_number;
+    uint16 flags;
+    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
+    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
+} STATIC_INFO;
+
+#define STATIC_DRAW 2
+
+extern STATIC_INFO StaticObjects[];
+
+int S_GetObjectBounds(sint16 *bptr);
+void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r);
+void DrawEffect(sint16 fx_num);
+
+void PrintObjects(sint16 room_number)
+{
+    ROOM_INFO *r;
+    MESH_INFO *mesh;
+    ITEM_INFO *item;
+    int i;
+    sint16 clip;
+    sint16 item_number, fx_number;
+
+    r = &room[room_number];
+    if (r->flags & UNDERWATER)
+        S_SetupBelowWater(UnderwaterCamera);
+    else
+        S_SetupAboveWater(UnderwaterCamera);
+
+    MidSort = (sint16)r->bound_active >> 8;
+    r->bound_active = 0;
+
+    phd_PushMatrix();
+    phd_TranslateAbs(r->x, r->y, r->z);
+
+    phd_left = r->left;
+    phd_right = r->right;
+    phd_top = r->top;
+    phd_bottom = r->bottom;
+
+    for (i = 0, mesh = (MESH_INFO *)r->mesh; i < r->num_meshes; i++, mesh++) {
+        if (StaticObjects[mesh->static_number].flags & STATIC_DRAW) {
+            phd_PushMatrix();
+            phd_TranslateAbs(mesh->x, mesh->y, mesh->z);
+            phd_RotY(mesh->y_rot);
+            clip = S_GetObjectBounds(&StaticObjects[mesh->static_number].x_minp);
+            if (clip) {
+                S_CalculateStaticMeshLight(mesh->x, mesh->y, mesh->z, mesh->shade, mesh->shadeB, r);
+                phd_PutPolygons(meshes[StaticObjects[mesh->static_number].mesh_number], clip);
+            }
+            phd_PopMatrix();
+        }
+    }
+
+    phd_left = 0;
+    phd_top = 0;
+    phd_right = phd_winxmax + 1;
+    phd_bottom = phd_winymax + 1;
+
+    for (item_number = r->item_number; item_number != NO_ITEM; item_number = item->next_item) {
+        item = &items[item_number];
+        if (item->status != INVISIBLE)
+            (*objects[item->object_number].draw_routine)(item);
+    }
+
+    for (fx_number = r->fx_number; fx_number != NO_ITEM; fx_number = effects[fx_number].next_fx)
+        DrawEffect(fx_number);
+
+    phd_PopMatrix();
+
+    r->left = phd_winxmax;
+    r->bottom = 0;
+    r->right = 0;
+    r->top = phd_winymax;
 }
 
 #define SPRITE_ABS 0x01000000
