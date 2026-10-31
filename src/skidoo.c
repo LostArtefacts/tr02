@@ -1203,6 +1203,178 @@ void DrawSkidoo(ITEM_INFO *item)
 sint16 *GetBestFrame(ITEM_INFO *item);
 
 #define SKIDOO 13
+#define SKIDMAN 52
+#define PITCH_SHIFT 4
+#define VIOLENT 1
+#define DONT_TARGET (-16384)
+
+#define SMAN_EMPTY 0
+#define SMAN_WAIT 1
+#define SMAN_MOVING 2
+#define SMAN_STARTLEFT 3
+#define SMAN_STARTRIGHT 4
+#define SMAN_LEFT 5
+#define SMAN_RIGHT 6
+#define SMAN_DEATH 7
+
+#define SMAN_SHOT_DAMAGE 10
+#define SMAN_LARA_DAMAGE 50
+#define SMAN_MIN_TURN (SKIDOO_MAX_TURN / 3)
+#define SMAN_TARGET_ANGLE (ONE_DEGREE * 15)
+#define SMAN_WAIT_RANGE SQUARE(WALL_L * 4)
+#define SMAN_DEATH_ANIM 10
+#define SQUARE(A) ((A) * (A))
+
+typedef struct {
+    sint16 zone_number, enemy_zone;
+    sint32 distance, ahead, bite;
+    sint16 angle, enemy_facing;
+} AI_INFO;
+
+int EnableBaddieAI(sint16 item_number, int always);
+void DisableBaddieAI(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+int ShotLara(ITEM_INFO *item, AI_INFO *info, BITE_INFO *gun, sint16 extra_rotation, int damage);
+
+void SkidManControl(sint16 rider_number)
+{
+    ITEM_INFO *item, *rider;
+    CREATURE_INFO *skidman;
+    AI_INFO info;
+    sint16 angle, item_number;
+    int damage;
+
+    rider = &items[rider_number];
+
+    item_number = (int)rider->data;
+    item = &items[item_number];
+
+    if (!item->data) {
+        EnableBaddieAI(item_number, 1);
+        item->status = ACTIVE;
+    }
+    skidman = (CREATURE_INFO *)item->data;
+
+    angle = 0;
+
+    if (item->hit_points <= 0) {
+        if (rider->current_anim_state != SMAN_DEATH) {
+            rider->pos.x_pos = item->pos.x_pos;
+            rider->pos.y_pos = item->pos.y_pos;
+            rider->pos.z_pos = item->pos.z_pos;
+            rider->pos.y_rot = item->pos.y_rot;
+            rider->room_number = item->room_number;
+
+            rider->anim_number = objects[SKIDMAN].anim_index + SMAN_DEATH_ANIM;
+            rider->frame_number = anims[rider->anim_number].frame_base;
+            rider->current_anim_state = SMAN_DEATH;
+
+            if (lara.target == item)
+                lara.target = NULL;
+        } else
+            AnimateItem(rider);
+
+        if (item->current_anim_state == SMAN_MOVING || item->current_anim_state == SMAN_WAIT)
+            item->goal_anim_state = SMAN_WAIT;
+        else
+            item->goal_anim_state = SMAN_MOVING;
+    } else {
+        CreatureAIInfo(item, &info);
+
+        CreatureMood(item, &info, VIOLENT);
+
+        angle = CreatureTurn(item, SKIDOO_MAX_TURN / 2);
+
+        switch (item->current_anim_state) {
+        case SMAN_WAIT:
+            if (skidman->mood == BORED_MOOD)
+                break;
+            else if (ABS(info.angle) < SMAN_TARGET_ANGLE && info.distance < SMAN_WAIT_RANGE)
+                break;
+            item->goal_anim_state = SMAN_MOVING;
+            break;
+
+        case SMAN_MOVING:
+            if (skidman->mood == BORED_MOOD)
+                item->goal_anim_state = SMAN_WAIT;
+            else if (ABS(info.angle) < SMAN_TARGET_ANGLE && info.distance < SMAN_WAIT_RANGE)
+                item->goal_anim_state = SMAN_WAIT;
+            else if (angle < -SMAN_MIN_TURN)
+                item->goal_anim_state = SMAN_STARTLEFT;
+            else if (angle > SMAN_MIN_TURN)
+                item->goal_anim_state = SMAN_STARTRIGHT;
+            break;
+
+        case SMAN_STARTLEFT:
+        case SMAN_LEFT:
+            if (angle < -SMAN_MIN_TURN)
+                item->goal_anim_state = SMAN_LEFT;
+            else
+                item->goal_anim_state = SMAN_MOVING;
+            break;
+
+        case SMAN_STARTRIGHT:
+        case SMAN_RIGHT:
+            if (angle < -SMAN_MIN_TURN)
+                item->goal_anim_state = SMAN_LEFT;
+            else
+                item->goal_anim_state = SMAN_MOVING;
+            break;
+        }
+    }
+
+    if (rider->current_anim_state != SMAN_DEATH) {
+        if (!skidman->flags && ABS(info.angle) < SMAN_TARGET_ANGLE && lara_item->hit_points > 0) {
+            damage = (lara.skidoo != NO_ITEM) ? SMAN_SHOT_DAMAGE : SMAN_LARA_DAMAGE;
+
+            if (ShotLara(item, &info, &left_gun, 0, damage) + ShotLara(item, &info, &right_gun, 0, damage))
+                skidman->flags = 5;
+        }
+
+        if (skidman->flags) {
+            SoundEffect(43, &item->pos, 0);
+            skidman->flags--;
+        }
+    }
+
+    if (item->current_anim_state == SMAN_WAIT) {
+        SoundEffect(153, &item->pos, 0);
+        skidman->head_rotation = 0;
+    } else {
+        skidman->head_rotation = (skidman->head_rotation == 1) ? 2 : 1;
+        DoSnowEffect(item);
+        SoundEffect(155, &item->pos, PITCH_SHIFT + ((0x10000 - (SKIDOO_MAX_SPEED - item->speed) * 100) << 8));
+    }
+
+    CreatureAnimation(item_number, angle, 0);
+
+    if (rider->current_anim_state != SMAN_DEATH) {
+        rider->pos.x_pos = item->pos.x_pos;
+        rider->pos.y_pos = item->pos.y_pos;
+        rider->pos.z_pos = item->pos.z_pos;
+        rider->pos.y_rot = item->pos.y_rot;
+        if (item->room_number != rider->room_number)
+            ItemNewRoom(rider_number, item->room_number);
+
+        rider->anim_number = objects[SKIDMAN].anim_index + (item->anim_number - objects[BANDIT3].anim_index);
+        rider->frame_number = item->frame_number + (anims[rider->anim_number].frame_base - anims[item->anim_number].frame_base);
+    } else if (rider->status == DEACTIVATED && item->speed == 0 && item->fallspeed == 0) {
+        RemoveActiveItem(rider_number);
+        rider->collidable = 0;
+        rider->hit_points = DONT_TARGET;
+        rider->flags |= ONESHOT;
+
+        DisableBaddieAI(item_number);
+        item->object_number = SKIDOO;
+        item->status = DEACTIVATED;
+        InitialiseSkidoo(item_number);
+        *(sint16 *)item->data = 4;
+    }
+}
+
 void SkidmanPush(ITEM_INFO *item, ITEM_INFO *laraitem, int radius)
 {
     int x, z, rx, rz, c, s;

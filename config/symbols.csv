@@ -720,7 +720,7 @@ address,size,name,symbol
 0x0043e6b0,1110,SkidooControl,_SkidooControl
 0x0043eb10,725,DrawSkidoo,_DrawSkidoo
 0x0043edf0,131,InitialiseSkidman,_InitialiseSkidman
-0x0043ee80,994,SkidManControl,_SkidManControl
+0x0043ee80,1020,SkidManControl,_SkidManControl
 0x0043f280,281,SkidmanPush,_SkidmanPush
 0x0043f3a0,129,SkidmanCollision,_SkidmanCollision
 0x0043f430,49,GetRealTrack,_GetRealTrack
