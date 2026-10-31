@@ -965,6 +965,97 @@ extern "C" int XYClipper(int number, VERTEX_INFO *input)
     return j;
 }
 
+extern "C" void ins_poly_trans8(PHD_VBUF *vbuf, sint16 shade)
+{
+    VERTEX_INFO *v;
+    int npoints;
+    PHD_VBUF *vn1, *vn5, *vn3, *vn4, *vn2, *vn6, *vn7, *vn8;
+
+    vn1 = vbuf;
+    vn2 = vbuf + 1;
+    vn3 = vbuf + 2;
+    vn4 = vbuf + 3;
+    vn5 = vbuf + 4;
+    vn6 = vbuf + 5;
+    vn7 = vbuf + 6;
+    vn8 = vbuf + 7;
+    if ((sint8)(vn1->clip & vn2->clip & vn3->clip & vn4->clip & vn5->clip & vn6->clip & vn7->clip & vn8->clip)
+        || (sint8)vn1->clip < 0 || (sint8)vn2->clip < 0 || (sint8)vn3->clip < 0 || (sint8)vn4->clip < 0
+        || (sint8)vn5->clip < 0 || (sint8)vn6->clip < 0 || (sint8)vn7->clip < 0 || (sint8)vn8->clip < 0)
+        return;
+    if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+        return;
+    if (!(sint8)(vn1->clip | vn2->clip | vn3->clip | vn4->clip | vn5->clip | vn6->clip | vn7->clip | vn8->clip)) {
+        sort3dptr[0] = (sint32)info3dptr;
+        sort3dptr[1] = (sint32)((vn1->zv + vn2->zv + vn3->zv + vn4->zv + vn5->zv + vn6->zv + vn7->zv + vn8->zv) * 0.125f);
+        sort3dptr += 2;
+        info3dptr[0] = 7;
+        info3dptr[1] = shade;
+        info3dptr[2] = 8;
+        info3dptr[3] = (sint16)vn1->xs;
+        info3dptr[4] = (sint16)vn1->ys;
+        info3dptr[5] = (sint16)vn2->xs;
+        info3dptr[6] = (sint16)vn2->ys;
+        info3dptr[7] = (sint16)vn3->xs;
+        info3dptr[8] = (sint16)vn3->ys;
+        info3dptr[9] = (sint16)vn4->xs;
+        info3dptr[10] = (sint16)vn4->ys;
+        info3dptr[11] = (sint16)vn5->xs;
+        info3dptr[12] = (sint16)vn5->ys;
+        info3dptr[13] = (sint16)vn6->xs;
+        info3dptr[14] = (sint16)vn6->ys;
+        info3dptr[15] = (sint16)vn7->xs;
+        info3dptr[16] = (sint16)vn7->ys;
+        info3dptr[17] = (sint16)vn8->xs;
+        info3dptr[18] = (sint16)vn8->ys;
+        info3dptr += 19;
+        surfacenum++;
+    } else {
+        phd_leftfloat = phd_topfloat = 0.0f;
+        phd_rightfloat = (float)phd_winxmax;
+        phd_bottomfloat = (float)phd_winymax;
+        v = VBuffer;
+        v->x = vn1->xs;
+        v->y = vn1->ys;
+        v++;
+        v->x = vn2->xs;
+        v->y = vn2->ys;
+        v++;
+        v->x = vn3->xs;
+        v->y = vn3->ys;
+        v++;
+        v->x = vn4->xs;
+        v->y = vn4->ys;
+        v++;
+        v->x = vn5->xs;
+        v->y = vn5->ys;
+        v++;
+        v->x = vn6->xs;
+        v->y = vn6->ys;
+        v++;
+        v->x = vn7->xs;
+        v->y = vn7->ys;
+        v++;
+        v->x = vn8->xs;
+        v->y = vn8->ys;
+        npoints = XYClipper(8, VBuffer);
+        if (npoints) {
+            sort3dptr[0] = (sint32)info3dptr;
+            sort3dptr[1] = (sint32)((vn1->zv + vn2->zv + vn3->zv + vn4->zv + vn5->zv + vn6->zv + vn7->zv + vn8->zv) * 0.125f);
+            sort3dptr += 2;
+            info3dptr[0] = 7;
+            info3dptr[1] = shade;
+            info3dptr[2] = npoints;
+            info3dptr += 3;
+            for (v = VBuffer; npoints > 0; npoints--, info3dptr += 2, v++) {
+                info3dptr[0] = (sint16)v->x;
+                info3dptr[1] = (sint16)v->y;
+            }
+            surfacenum++;
+        }
+    }
+}
+
 extern "C" void ins_trans_quad(sint32 sx, sint32 sy, sint32 w, sint32 h, sint32 z)
 {
     sort3dptr[0] = (sint32)info3dptr;
