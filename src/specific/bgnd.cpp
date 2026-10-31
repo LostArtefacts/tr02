@@ -9,8 +9,8 @@ extern int BGND_TexturePageIndexes[5];
 extern DWORD BGND_PageHandles[5];
 extern sint16 phd_winxmin;
 extern sint16 phd_winymin;
-extern int phd_winwidth;
-extern int phd_winheight;
+extern sint32 phd_winwidth;
+extern sint32 phd_winheight;
 }
 
 extern "C" DWORD GetTexturePageHandle(int nHandle);
@@ -138,6 +138,76 @@ extern "C" void BGND_DrawInGameBlack(void)
 {
     HWR_EnableZBuffer(false, false);
     DrawQuad((float)phd_winxmin, (float)phd_winymin, (float)phd_winwidth, (float)phd_winheight, 0);
+    HWR_EnableZBuffer(true, true);
+}
+
+extern "C" {
+#include "../anim.h"
+extern D3DTEXTUREHANDLE HWR_PageHandles[];
+D3DCOLOR BGND_CenterLighting(int x, int y, int width, int height);
+void DrawTextureTile(int sx, int sy, int width, int height, D3DTEXTUREHANDLE texSource, int tu, int tv, int tWidth, int tHeight, D3DCOLOR color0, D3DCOLOR color1, D3DCOLOR color2, D3DCOLOR color3);
+}
+
+#define MENU_BACKGROUND 223
+
+extern "C" void BGND_DrawInGameBackground(void)
+{
+    sint16 *mesh;
+    int count;
+    PHDTEXTURESTRUCT *tex;
+    D3DTEXTUREHANDLE texSource;
+    int tu;
+    int tv;
+    int tWidth;
+    int tHeight;
+    int width;
+    int height;
+    int x;
+    int y;
+    int x0;
+    int y0;
+    int x1;
+    int y1;
+    D3DCOLOR color0;
+    D3DCOLOR color1;
+    D3DCOLOR color2;
+    D3DCOLOR color3;
+
+    if (!objects[MENU_BACKGROUND].loaded) {
+        BGND_DrawInGameBlack();
+        return;
+    }
+    mesh = meshes[objects[MENU_BACKGROUND].mesh_index];
+    mesh += 5;
+    count = *mesh++;
+    mesh += 3 * count;
+    count = *mesh++;
+    if (count >= 0)
+        mesh += 3 * count;
+    else
+        mesh += count;
+    tex = &phdtextinfo[mesh[5]];
+    texSource = HWR_PageHandles[tex->tpage];
+    tu = tex->u1 >> 8;
+    tv = tex->v1 >> 8;
+    tWidth = (tex->u3 >> 8) + 1 - tu;
+    tHeight = (tex->v3 >> 8) + 1 - tv;
+    width = phd_winwidth;
+    height = phd_winheight;
+    HWR_EnableZBuffer(false, false);
+    for (y = 0; y < 6; y++) {
+        for (x = 0; x < 8; x++) {
+            x0 = phd_winxmin + x * width / 8;
+            y0 = phd_winymin + y * height / 6;
+            x1 = phd_winxmin + (x * width + width) / 8;
+            y1 = phd_winymin + (y * height + height) / 6;
+            color0 = BGND_CenterLighting(x0, y0, width, height);
+            color1 = BGND_CenterLighting(x1, y0, width, height);
+            color2 = BGND_CenterLighting(x0, y1, width, height);
+            color3 = BGND_CenterLighting(x1, y1, width, height);
+            DrawTextureTile(x0, y0, x1 - x0, y1 - y0, texSource, tu, tv, tWidth, tHeight, color0, color1, color2, color3);
+        }
+    }
     HWR_EnableZBuffer(true, true);
 }
 
