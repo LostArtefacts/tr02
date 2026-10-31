@@ -225,6 +225,31 @@ void S_InsertRoom(sint16 *objptr, int outside)
     objptr = ins_room_sprite(objptr + 1, *(objptr));
 }
 
+void HWR_EnableZBuffer(bool tWrite, bool tCompare);
+extern "C" sint16 *calc_background_light(sint16 *objptr);
+
+extern "C" void S_InsertBackground(sint16 *objptr)
+{
+    phd_leftfloat = (float)(phd_winxmin + phd_left);
+    phd_topfloat = (float)(phd_winymin + phd_top);
+    phd_rightfloat = (float)(phd_winxmin + phd_right + 1);
+    phd_bottomfloat = (float)(phd_winymin + phd_bottom + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+    objptr = calc_object_vertices(objptr + 4);
+    if (objptr) {
+        if (SavedAppSettings.RenderMode == RM_Hardware)
+            HWR_EnableZBuffer(false, false);
+        objptr = calc_background_light(objptr);
+        objptr = InsertObjectGT4(objptr + 1, *(objptr), BACK_SORT);
+        objptr = InsertObjectGT3(objptr + 1, *(objptr), BACK_SORT);
+        objptr = InsertObjectG4(objptr + 1, *(objptr), BACK_SORT);
+        objptr = InsertObjectG3(objptr + 1, *(objptr), BACK_SORT);
+        if (SavedAppSettings.RenderMode == RM_Hardware)
+            HWR_EnableZBuffer(true, true);
+    }
+}
+
 void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
 {
     sint32 cx;
