@@ -558,4 +558,298 @@ gtmapA_6:
     ret
 @gtmapA@12 endp
 
+@wgtmapA@12 proc public
+    pusha
+    sub esp, 44
+    sub edx, eax
+    jle wgtmapA_23
+    mov dword ptr [esp+32], edx
+    mov ecx, eax
+    shl ecx, 5
+    add ecx, offset _xbuffer
+    mov dword ptr [esp+28], ecx
+    imul eax, dword ptr _phd_scrwidth
+    add eax, dword ptr _phd_winptr
+    mov dword ptr [esp+40], eax
+    mov dword ptr [esp+36], ebx
+wgtmapA_1:
+    mov esi, dword ptr [esp+28]
+    mov edi, dword ptr [esi]
+    mov ebp, dword ptr [esi+16]
+    sar edi, 16
+    sar ebp, 16
+    cmp ebp, edi
+    jle wgtmapA_22
+    mov ebx, ebp
+    sub ebx, edi
+    mov ecx, dword ptr [esi+4]
+    mov eax, dword ptr [esi+20]
+    sub eax, ecx
+    cdq
+    idiv ebx
+    mov dword ptr [esp+20], ecx
+    mov dword ptr [esp+8], eax
+    mov ecx, dword ptr [esi+8]
+    mov eax, dword ptr [esi+24]
+    sub eax, ecx
+    cdq
+    idiv ebx
+    mov dword ptr [esp+12], ecx
+    mov dword ptr [esp], eax
+    mov ecx, dword ptr [esi+12]
+    mov eax, dword ptr [esi+28]
+    sub eax, ecx
+    cdq
+    idiv ebx
+    mov dword ptr [esp+16], ecx
+    mov dword ptr [esp+4], eax
+    sub ebp, edi
+    add edi, dword ptr [esp+40]
+    mov esi, dword ptr [esp+36]
+    mov dword ptr [esp+24], ebp
+    xor eax, eax
+    xor ebx, ebx
+    mov ecx, dword ptr [esp+12]
+    mov edx, dword ptr [esp+16]
+    mov ebp, dword ptr [esp+20]
+    shl ecx, 16
+    shl edx, 16
+    shl ebp, 16
+    mov cl, byte ptr [esp+2]
+    mov ch, byte ptr [esp+6]
+    mov dh, byte ptr [esp+10]
+    shl dword ptr [esp], 16
+    shl dword ptr [esp+4], 16
+    shl dword ptr [esp+8], 16
+    mov al, byte ptr [esp+14]
+    mov ah, byte ptr [esp+18]
+    mov bh, byte ptr [esp+22]
+wgtmapA_2:
+    sub dword ptr [esp+24], 16
+    js wgtmapA_19
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_3
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi], dl
+wgtmapA_3:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_4
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+1], dl
+wgtmapA_4:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_5
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+2], dl
+wgtmapA_5:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_6
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+3], dl
+wgtmapA_6:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_7
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+4], dl
+wgtmapA_7:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_8
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+5], dl
+wgtmapA_8:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_9
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+6], dl
+wgtmapA_9:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_10
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+7], dl
+wgtmapA_10:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_11
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+8], dl
+wgtmapA_11:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_12
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+9], dl
+wgtmapA_12:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_13
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+10], dl
+wgtmapA_13:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_14
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+11], dl
+wgtmapA_14:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_15
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+12], dl
+wgtmapA_15:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_16
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+13], dl
+wgtmapA_16:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_17
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+14], dl
+wgtmapA_17:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_18
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi+15], dl
+wgtmapA_18:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    add edi, 16
+    jmp wgtmapA_2
+wgtmapA_19:
+    add dword ptr [esp+24], 16
+    jle wgtmapA_22
+wgtmapA_20:
+    mov bl, byte ptr [esi+eax]
+    or bl, bl
+    je wgtmapA_21
+    mov dl, byte ptr _DepthQTable[ebx]
+    mov byte ptr [edi], dl
+wgtmapA_21:
+    add ecx, dword ptr [esp]
+    adc al, cl
+    add edx, dword ptr [esp+4]
+    adc ah, ch
+    add ebp, dword ptr [esp+8]
+    adc bh, dh
+    inc edi
+    dec dword ptr [esp+24]
+    jne wgtmapA_20
+wgtmapA_22:
+    mov eax, _phd_scrwidth
+    add dword ptr [esp+28], 32
+    add dword ptr [esp+40], eax
+    dec dword ptr [esp+32]
+    jne wgtmapA_1
+wgtmapA_23:
+    add esp, 44
+    popa
+    ret
+@wgtmapA@12 endp
+
     end
