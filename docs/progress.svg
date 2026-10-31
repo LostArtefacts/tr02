@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.41% (1056)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.95% (187)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.49% (1057)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.87% (186)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="630.56" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="630.56" y="0" class="decompiled"/>
-<rect width="111.66" height="6" x="635.34" y="0" class="todo"/>
+<rect width="631.16" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="631.16" y="0" class="decompiled"/>
+<rect width="111.06" height="6" x="635.94" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -161,7 +161,7 @@
 <rect width="12" height="12" x="600" y="15" class="named"><title>0x0040cf20 DoBoatShift (449 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="named"><title>0x0040d0f0 DoWakeEffect (372 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="named"><title>0x0040d270 DoBoatDynamics (75 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="15" class="todo"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="15" class="named"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="15" class="named"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="15" class="named"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="15" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.15%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.51%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.41%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="553.87" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="553.87" y="0" class="decompiled"/>
-<rect width="192.47" height="6" x="554.53" y="0" class="todo"/>
+<rect width="556.57" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="556.57" y="0" class="decompiled"/>
+<rect width="189.78" height="6" x="557.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1368,7 +1368,7 @@
 <rect width="31.76" height="29.05" x="145.33" y="329.09" class="todo"><title>0x00417e60 DragonControl (1305 bytes)</title></rect>
 <rect width="31.76" height="28.86" x="145.33" y="361.14" class="todo"><title>0x004059f0 XYGUVClipper (1297 bytes)</title></rect>
 <rect width="28.52" height="31.01" x="180.08" y="0" class="todo"><title>0x0042e740 LaraGun (1256 bytes)</title></rect>
-<rect width="28.52" height="30.72" x="180.08" y="34.01" class="todo"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
+<rect width="28.52" height="30.72" x="180.08" y="34.01" class="named"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
 <rect width="28.52" height="30.58" x="180.08" y="67.73" class="named"><title>0x0041fcc0 GF_InterpretSequence (1240 bytes)</title></rect>
 <rect width="28.52" height="30.55" x="180.08" y="101.31" class="todo"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
 <rect width="28.52" height="30.36" x="180.08" y="134.86" class="named"><title>0x0041dfe0 MonkControl (1232 bytes)</title></rect>

@@ -300,6 +300,117 @@ int DoBoatDynamics(int height, int fallspeed, int *y)
     return fallspeed;
 }
 
+#define BOAT_TIP (BOAT_FRONT + 250)
+
+int DoShift(ITEM_INFO *skidoo, PHD_VECTOR *pos, PHD_VECTOR *old);
+int GetCollisionAnim(ITEM_INFO *skidoo, PHD_VECTOR *moved);
+
+int BoatDynamics(sint16 boat_number)
+{
+    ITEM_INFO *boat;
+    BOAT_INFO *binfo;
+    PHD_VECTOR moved, fl, fr, br, bl, f;
+    PHD_VECTOR old, fl_old, fr_old, bl_old, br_old, f_old;
+    sint32 hfl, hfr, hbr, hbl, hf;
+    sint32 hfr_old, hfl_old, hbr_old, hbl_old, hf_old;
+    FLOOR_INFO *floor;
+    sint32 height, slip, collide;
+    sint16 room_number, rot;
+    int newspeed;
+
+    boat = &items[boat_number];
+    binfo = (BOAT_INFO *)boat->data;
+    boat->pos.z_rot -= binfo->tilt_angle;
+    hfl_old = TestWaterHeight(boat, BOAT_FRONT, -BOAT_SIDE, &fl_old);
+    hfr_old = TestWaterHeight(boat, BOAT_FRONT, BOAT_SIDE, &fr_old);
+    hbl_old = TestWaterHeight(boat, -BOAT_FRONT, -BOAT_SIDE, &bl_old);
+    hbr_old = TestWaterHeight(boat, -BOAT_FRONT, BOAT_SIDE, &br_old);
+    hf_old = TestWaterHeight(boat, BOAT_TIP, 0, &f_old);
+    old.x = boat->pos.x_pos;
+    old.y = boat->pos.y_pos;
+    old.z = boat->pos.z_pos;
+    if (bl_old.y > hbl_old)
+        bl_old.y = hbl_old;
+    if (br_old.y > hbr_old)
+        br_old.y = hbr_old;
+    if (fl_old.y > hfl_old)
+        fl_old.y = hfl_old;
+    if (fr_old.y > hfr_old)
+        fr_old.y = hfr_old;
+    if (f_old.y > hf_old)
+        f_old.y = hf_old;
+    boat->pos.y_rot += binfo->boat_turn + binfo->extra_rotation;
+    binfo->tilt_angle = binfo->boat_turn * 6;
+    boat->pos.z_pos += boat->speed * phd_cos(boat->pos.y_rot) >> W2V_SHIFT;
+    boat->pos.x_pos += boat->speed * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+    slip = BOAT_SIDE_SLIP * phd_sin(boat->pos.z_rot) >> W2V_SHIFT;
+    if (!slip && boat->pos.z_rot)
+        slip = (boat->pos.z_rot > 0) ? 1 : -1;
+    boat->pos.z_pos -= slip * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+    boat->pos.x_pos += slip * phd_cos(boat->pos.y_rot) >> W2V_SHIFT;
+    slip = BOAT_SLIP * phd_sin(boat->pos.x_rot) >> W2V_SHIFT;
+    if (!slip && boat->pos.x_rot)
+        slip = (boat->pos.x_rot > 0) ? 1 : -1;
+    boat->pos.z_pos -= slip * phd_cos(boat->pos.y_rot) >> W2V_SHIFT;
+    boat->pos.x_pos -= slip * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+    moved.x = boat->pos.x_pos;
+    moved.z = boat->pos.z_pos;
+    DoBoatShift(boat_number);
+    rot = 0;
+    hbl = TestWaterHeight(boat, -BOAT_FRONT, -BOAT_SIDE, &bl);
+    if (hbl < bl_old.y - STEP_L / 2)
+        rot = DoShift(boat, &bl, &bl_old);
+    hbr = TestWaterHeight(boat, -BOAT_FRONT, BOAT_SIDE, &br);
+    if (hbr < br_old.y - STEP_L / 2)
+        rot += DoShift(boat, &br, &br_old);
+    hfl = TestWaterHeight(boat, BOAT_FRONT, -BOAT_SIDE, &fl);
+    if (hfl < fl_old.y - STEP_L / 2)
+        rot += DoShift(boat, &fl, &fl_old);
+    hfr = TestWaterHeight(boat, BOAT_FRONT, BOAT_SIDE, &fr);
+    if (hfr < fr_old.y - STEP_L / 2)
+        rot += DoShift(boat, &fr, &fr_old);
+    if (!slip)
+    {
+        hf = TestWaterHeight(boat, BOAT_TIP, 0, &f);
+        if (hf < f_old.y - STEP_L / 2)
+            DoShift(boat, &f, &f_old);
+    }
+    room_number = boat->room_number;
+    floor = GetFloor(boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos, &room_number);
+    height = GetWaterHeight(boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos, room_number);
+    if (height == NO_HEIGHT)
+        height = GetHeight(floor, boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos);
+    if (height < boat->pos.y_pos - STEP_L / 2)
+        DoShift(boat, (PHD_VECTOR *)&boat->pos, &old);
+    binfo->extra_rotation = rot;
+    collide = GetCollisionAnim(boat, &moved);
+    if (slip || collide)
+    {
+        newspeed = (boat->pos.z_pos - old.z) * phd_cos(boat->pos.y_rot) + (boat->pos.x_pos - old.x) * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+        if (lara.skidoo == boat_number && boat->speed > BOAT_MAX_SPEED + BOAT_ACCELERATION && newspeed < boat->speed - 10)
+        {
+            lara_item->hit_points -= (boat->speed - newspeed) >> 1;
+            lara_item->hit_status = 1;
+            SoundEffect(31, &lara_item->pos, 0);
+        }
+        if (slip)
+        {
+            if (boat->speed <= BOAT_MAX_SPEED + 10)
+                boat->speed = newspeed;
+        }
+        else
+        {
+            if (boat->speed > 0 && newspeed < boat->speed)
+                boat->speed = newspeed;
+            else if (boat->speed < 0 && newspeed > boat->speed)
+                boat->speed = newspeed;
+        }
+        if (boat->speed < BOAT_MAX_BACK)
+            boat->speed = BOAT_MAX_BACK;
+    }
+    return collide;
+}
+
 int BoatUserControl(ITEM_INFO *boat)
 {
     int no_turn = 1, max_speed;
