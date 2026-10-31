@@ -2,6 +2,7 @@
 #include "output.h"
 #include "../inventry.h"
 #include "winmain.h"
+#include "input.h"
 #include "display.h"
 #include "time.h"
 #include "../gameflow.h"
@@ -77,6 +78,56 @@ void S_InsertBackPolygon(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y,
     min_y += phd_winymin;
     max_y += phd_winymin;
     InsertFlatRect(min_x, min_y, max_x, max_y, phd_zfar + 1, inv_colours[C_BLACK]);
+}
+
+#include "../items.h"
+
+extern "C" sint16 shadowman[];
+extern "C" char PhdVBuf[];
+extern "C" void (*InsertTrans8)(void *vbuf, sint16 shade);
+extern "C" sint16 *calc_object_vertices(sint16 *objptr);
+
+extern "C" void S_PrintShadow(sint16 size, sint16 *bounds, ITEM_INFO *item)
+{
+    int cx, dx, dx2;
+    int cz, dz, dz2;
+    sint16 *v;
+
+    cx = (bounds[0] + bounds[1]) / 2;
+    cz = (bounds[4] + bounds[5]) / 2;
+    dx = (bounds[1] - bounds[0]) * size / 1024;
+    dz = (bounds[5] - bounds[4]) * size / 1024;
+    dx2 = dx * 2;
+    dz2 = dz * 2;
+    v = shadowman;
+    v[6] = cx - dx;
+    v[8] = cz + dz2;
+    v[9] = cx + dx;
+    v[11] = cz + dz2;
+    v[12] = cx + dx2;
+    v[14] = cz + dz;
+    v[15] = cx + dx2;
+    v[17] = cz - dz;
+    v[18] = cx + dx;
+    v[20] = cz - dz * 2;
+    v[21] = cx - dx;
+    v[23] = cz - dz * 2;
+    v[24] = cx - dx2;
+    v[26] = cz - dz;
+    v[27] = cx - dx2;
+    v[29] = cz + dz;
+    phd_leftfloat = (float)(phd_winxmin + phd_left);
+    phd_topfloat = (float)(phd_winymin + phd_top);
+    phd_rightfloat = (float)(phd_winxmin + phd_right + 1);
+    phd_bottomfloat = (float)(phd_winymin + phd_bottom + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->floor, item->pos.z_pos);
+    phd_RotY(item->pos.y_rot);
+    if (calc_object_vertices(shadowman + 4))
+        InsertTrans8(PhdVBuf, 32);
+    phd_PopMatrix();
 }
 
 void AnimateTextures(int nframes)

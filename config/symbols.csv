@@ -1637,6 +1637,7 @@ address,size,name,symbol
 0x00467710,3,TgaFileMode,_TgaFileMode
 0x00467714,13,ScreenShotTgaFormat,_ScreenShotTgaFormat
 0x00467724,4,detail_level,_detail_level
+0x00467750,,shadowman,_shadowman
 0x0046773c,4,BadKeyString,_BadKeyString
 0x00467790,4,String_Software3d,_String_Software3d
 0x00467794,4,String_Hardware3d,_String_Hardware3d
