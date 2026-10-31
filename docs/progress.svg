@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.85% (1074)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">12.15% (152)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.93% (1075)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.36% (17)</tspan> · <tspan class="todo">12.07% (151)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="641.31" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="641.31" y="0" class="decompiled"/>
-<rect width="10.15" height="6" x="646.09" y="0" class="nonmatching"/>
-<rect width="90.76" height="6" x="656.24" y="0" class="todo"/>
+<rect width="641.91" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="641.91" y="0" class="decompiled"/>
+<rect width="10.15" height="6" x="646.68" y="0" class="nonmatching"/>
+<rect width="90.17" height="6" x="656.83" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1283,7 +1283,7 @@
 <rect width="12" height="12" x="165" y="360" class="todo"><title>0x004576ff gourA (352 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="360" class="todo"><title>0x0045785f gtmapA (765 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="360" class="todo"><title>0x00457b5c wgtmapA (833 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="360" class="todo"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="360" class="named"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="360" class="todo"><title>0x00457ee8 phd_cos (6 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="360" class="todo"><title>0x00457eee phd_sin (27 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00457f09 Func457f09 (26 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.46%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.78%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.48%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">4.67%</tspan> · <tspan class="todo">16.76%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="586.09" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="586.09" y="0" class="decompiled"/>
-<rect width="34.88" height="6" x="586.75" y="0" class="nonmatching"/>
-<rect width="125.37" height="6" x="621.63" y="0" class="todo"/>
+<rect width="586.25" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="586.25" y="0" class="decompiled"/>
+<rect width="34.88" height="6" x="586.90" y="0" class="nonmatching"/>
+<rect width="125.21" height="6" x="621.79" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2157,7 +2157,7 @@
 <rect width="5.08" height="4.61" x="628.76" y="317.86" class="named"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
 <rect width="5.08" height="4.61" x="628.76" y="325.47" class="named"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>
 <rect width="5.08" height="4.61" x="628.76" y="333.08" class="named"><title>0x0044c1b0 WinStopFMV (72 bytes)</title></rect>
-<rect width="5.08" height="4.61" x="628.76" y="340.69" class="todo"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
+<rect width="5.08" height="4.61" x="628.76" y="340.69" class="named"><title>0x00457ea0 phd_atan (72 bytes)</title></rect>
 <rect width="5.08" height="4.50" x="628.76" y="348.30" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
 <rect width="5.08" height="4.50" x="628.76" y="355.80" class="named"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="5.08" height="4.50" x="628.76" y="363.30" class="named"><title>0x004287e0 extra_as_yetikill (71 bytes)</title></rect>

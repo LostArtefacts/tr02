@@ -1659,6 +1659,9 @@ address,size,name,symbol
 0x00467a00,12,Strings_Aspect,_Strings_Aspect
 0x00467b18,6,RegistryKeyFormat,_RegistryKeyFormat
 0x00467d50,29,DialogClassName,_DialogClassName
+0x00467db8,32,phdtan2,phdtan2
+0x00467dd8,,phdtantab,phdtantab
+0x00468ddc,,phdsintab,phdsintab
 0x0046c2f0,4,MidSort,_MidSort
 0x0046c2f4,4,LfAspectCorrection,?LfAspectCorrection@@3MA
 0x0046c2f8,4,xgen_ymin,_xgen_ymin
