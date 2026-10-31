@@ -50,4 +50,26 @@ atan_done:
     add ecx, 16384
 @phd_cos@4 endp
 
+@phd_sin@4 proc public
+    mov eax, ecx
+    and eax, 65535
+    cmp eax, 32768
+    jl Func457f09
+    sub eax, 32768
+    call Func457f09
+    neg eax
+    ret
+@phd_sin@4 endp
+
+Func457f09 proc
+    cmp eax, 16384
+    jle sin_quarter
+    neg eax
+    add eax, 32768
+sin_quarter:
+    shr eax, 4
+    mov ax, phdsintab[eax * 2]
+    ret
+Func457f09 endp
+
     end
