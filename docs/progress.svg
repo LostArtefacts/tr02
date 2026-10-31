@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.48% (6)</tspan> · <tspan class="todo">13.43% (168)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.45% (1069)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0.56% (7)</tspan> · <tspan class="todo">13.35% (167)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.32" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.32" y="0" class="decompiled"/>
-<rect width="3.58" height="6" x="643.10" y="0" class="nonmatching"/>
-<rect width="100.32" height="6" x="646.68" y="0" class="todo"/>
+<rect width="4.18" height="6" x="643.10" y="0" class="nonmatching"/>
+<rect width="99.72" height="6" x="647.28" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -165,7 +165,7 @@
 <rect width="12" height="12" x="645" y="15" class="named"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="15" class="named"><title>0x0040d7a0 BoatUserControl (391 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="15" class="named"><title>0x0040d930 BoatAnimation (361 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="15" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="15" class="nonmatching"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="15" class="named"><title>0x0040e0d0 GondolaControl (179 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="15" class="named"><title>0x0040e190 InitialiseCreature (47 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="15" class="named"><title>0x0040e1c0 CreatureActive (71 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">1.84%</tspan> · <tspan class="todo">19.88%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.19%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">2.30%</tspan> · <tspan class="todo">19.42%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.09" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.09" y="0" class="decompiled"/>
-<rect width="13.75" height="6" x="584.74" y="0" class="nonmatching"/>
-<rect width="148.51" height="6" x="598.49" y="0" class="todo"/>
+<rect width="17.16" height="6" x="584.74" y="0" class="nonmatching"/>
+<rect width="145.10" height="6" x="601.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1359,7 +1359,7 @@
 <rect width="34.41" height="33.70" x="107.92" y="319.74" class="named"><title>0x0044ef90 do_passport_option (1608 bytes)</title></rect>
 <rect width="34.41" height="33.56" x="107.92" y="356.44" class="todo"><title>0x00408710 InsertGT3_ZBuffered (1602 bytes)</title></rect>
 <rect width="31.76" height="36.10" x="145.33" y="0" class="named"><title>0x00443400 YetiControl (1592 bytes)</title></rect>
-<rect width="31.76" height="35.76" x="145.33" y="39.10" class="todo"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
+<rect width="31.76" height="35.76" x="145.33" y="39.10" class="nonmatching"><title>0x0040daa0 BoatControl (1578 bytes)</title></rect>
 <rect width="31.76" height="35.02" x="145.33" y="77.86" class="named"><title>0x0041e4b0 Worker3Control (1548 bytes)</title></rect>
 <rect width="31.76" height="34.88" x="145.33" y="115.89" class="named"><title>0x00446260 WinVidGameWindowProc (1542 bytes)</title></rect>
 <rect width="31.76" height="34.65" x="145.33" y="153.76" class="named"><title>0x0043b570 TrapObjects (1533 bytes)</title></rect>
