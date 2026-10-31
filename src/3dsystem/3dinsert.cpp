@@ -699,14 +699,117 @@ extern "C" int XYGClipper(int number, VERTEX_INFO *input)
     return j;
 }
 
+extern "C" sint16 *ins_objectG4(sint16 *objptr, int number, enum sort_type sort_routine)
+{
+    VERTEX_INFO *v;
+    int npoints, i;
+    PHD_VBUF *vn1, *vn4, *vn2, *vn3;
+    sint16 *outptr;
+    float zdepth;
+    POINT_INFO *p, point[4];
+
+    outptr = info3dptr;
+    for (; number > 0; number--, objptr += 5) {
+        vn1 = &PhdVBuf[objptr[0]];
+        vn2 = &PhdVBuf[objptr[1]];
+        vn3 = &PhdVBuf[objptr[2]];
+        vn4 = &PhdVBuf[objptr[3]];
+        if ((sint8)(vn1->clip & vn2->clip & vn3->clip & vn4->clip))
+            continue;
+        if ((sint8)(vn1->clip | vn2->clip | vn3->clip | vn4->clip) < 0) {
+            if (!visible_zclip(vn1, vn2, vn3))
+                continue;
+            p = point;
+            p->xv = vn1->xv;
+            p->yv = vn1->yv;
+            p->zv = vn1->zv;
+            p->ooz = vn1->ooz;
+            p->xs = vn1->xs;
+            p->ys = vn1->ys;
+            p->g = (float)vn1->g;
+            p++;
+            p->xv = vn2->xv;
+            p->yv = vn2->yv;
+            p->zv = vn2->zv;
+            p->ooz = vn2->ooz;
+            p->xs = vn2->xs;
+            p->ys = vn2->ys;
+            p->g = (float)vn2->g;
+            p++;
+            p->xv = vn3->xv;
+            p->yv = vn3->yv;
+            p->zv = vn3->zv;
+            p->ooz = vn3->ooz;
+            p->xs = vn3->xs;
+            p->ys = vn3->ys;
+            p->g = (float)vn3->g;
+            p++;
+            p->xv = vn4->xv;
+            p->yv = vn4->yv;
+            p->zv = vn4->zv;
+            p->ooz = vn4->ooz;
+            p->xs = vn4->xs;
+            p->ys = vn4->ys;
+            p->g = (float)vn4->g;
+            npoints = ZedClipper(4, point, VBuffer);
+            if (npoints)
+                npoints = XYGClipper(npoints, VBuffer);
+        } else {
+            if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+                continue;
+            v = VBuffer;
+            v->x = vn1->xs;
+            v->y = vn1->ys;
+            v->g = (float)vn1->g;
+            v++;
+            v->x = vn2->xs;
+            v->y = vn2->ys;
+            v->g = (float)vn2->g;
+            v++;
+            v->x = vn3->xs;
+            v->y = vn3->ys;
+            v->g = (float)vn3->g;
+            v++;
+            v->x = vn4->xs;
+            v->y = vn4->ys;
+            v->g = (float)vn4->g;
+            npoints = 4;
+            if ((sint8)(vn1->clip | vn2->clip | vn3->clip | vn4->clip))
+                npoints = XYGClipper(npoints, VBuffer);
+        }
+        if (npoints) {
+            if (sort_routine == MID_SORT)
+                zdepth = (vn1->zv + vn2->zv + vn3->zv + vn4->zv) * 0.25f;
+            else
+                zdepth = 1000000000.0f;
+            sort3dptr[0] = (sint32)outptr;
+            sort3dptr[1] = (sint32)zdepth;
+            sort3dptr += 2;
+            outptr[0] = 6;
+            outptr[1] = objptr[4] & 0xff;
+            outptr[2] = npoints;
+            outptr += 3;
+            for (i = 0, v = VBuffer; i < npoints; i++, v++, outptr += 3) {
+                outptr[0] = (sint16)v->x;
+                outptr[1] = (sint16)v->y;
+                outptr[2] = (sint16)v->g;
+            }
+            surfacenum++;
+        }
+    }
+    info3dptr = outptr;
+    return objptr;
+}
+
+
 extern "C" sint16 *ins_objectG3(sint16 *objptr, int number, enum sort_type sort_routine)
 {
-    int npoints, i;
-    float zdepth;
-    sint16 *outptr;
-    POINT_INFO point[3], *p;
-    VERTEX_INFO *v;
     PHD_VBUF *vn1, *vn2, *vn3;
+    POINT_INFO *p, point[3];
+    float zdepth;
+    int npoints, i;
+    VERTEX_INFO *v;
+    sint16 *outptr;
 
     outptr = info3dptr;
     for (; number > 0; number--, objptr += 4) {
