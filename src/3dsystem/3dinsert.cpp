@@ -258,6 +258,104 @@ extern "C" int XYGClipper(int number, VERTEX_INFO *input)
     return j;
 }
 
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint16 clip, g, u, v;
+} PHD_VBUF;
+
+extern "C" PHD_VBUF PhdVBuf[];
+extern "C" VERTEX_INFO VBuffer[];
+extern "C" int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3);
+
+extern "C" sint16 *ins_objectG3(sint16 *objptr, int number, enum sort_type sort_routine)
+{
+    PHD_VBUF *vn1, *vn2, *vn3;
+    VERTEX_INFO *v;
+    sint16 *outptr;
+    int i, npoints;
+    float zdepth;
+    POINT_INFO point[3], *p;
+
+    outptr = info3dptr;
+    for (; number > 0; number--, objptr += 4) {
+        vn1 = &PhdVBuf[objptr[0]];
+        vn2 = &PhdVBuf[objptr[1]];
+        vn3 = &PhdVBuf[objptr[2]];
+        if ((sint8)(vn1->clip & vn2->clip & vn3->clip))
+            continue;
+        if ((sint8)(vn1->clip | vn2->clip | vn3->clip) < 0) {
+            if (!visible_zclip(vn1, vn2, vn3))
+                continue;
+            p = point;
+            p->xv = vn1->xv;
+            p->yv = vn1->yv;
+            p->zv = vn1->zv;
+            p->ooz = vn1->ooz;
+            p->xs = vn1->xs;
+            p->ys = vn1->ys;
+            p->g = (float)vn1->g;
+            p++;
+            p->xv = vn2->xv;
+            p->yv = vn2->yv;
+            p->zv = vn2->zv;
+            p->ooz = vn2->ooz;
+            p->xs = vn2->xs;
+            p->ys = vn2->ys;
+            p->g = (float)vn2->g;
+            p++;
+            p->xv = vn3->xv;
+            p->yv = vn3->yv;
+            p->zv = vn3->zv;
+            p->ooz = vn3->ooz;
+            p->xs = vn3->xs;
+            p->ys = vn3->ys;
+            p->g = (float)vn3->g;
+            npoints = ZedClipper(3, point, VBuffer);
+            if (npoints)
+                npoints = XYGClipper(npoints, VBuffer);
+        } else {
+            if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+                continue;
+            v = VBuffer;
+            v->x = vn1->xs;
+            v->y = vn1->ys;
+            v->g = (float)vn1->g;
+            v++;
+            v->x = vn2->xs;
+            v->y = vn2->ys;
+            v->g = (float)vn2->g;
+            v++;
+            v->x = vn3->xs;
+            v->y = vn3->ys;
+            v->g = (float)vn3->g;
+            npoints = 3;
+            if ((sint8)(vn1->clip | vn2->clip | vn3->clip))
+                npoints = XYGClipper(npoints, VBuffer);
+        }
+        if (npoints) {
+            if (sort_routine == MID_SORT)
+                zdepth = (vn1->zv + vn2->zv + vn3->zv) * 0.333333333333333333f;
+            else
+                zdepth = 1000000000.0f;
+            sort3dptr[0] = (sint32)outptr;
+            sort3dptr[1] = (sint32)zdepth;
+            sort3dptr += 2;
+            outptr[0] = 6;
+            outptr[1] = objptr[3] & 0xff;
+            outptr[2] = npoints;
+            outptr += 3;
+            for (i = 0, v = VBuffer; i < npoints; i++, v++, outptr += 3) {
+                outptr[0] = (sint16)v->x;
+                outptr[1] = (sint16)v->y;
+                outptr[2] = (sint16)v->g;
+            }
+            surfacenum++;
+        }
+    }
+    info3dptr = outptr;
+    return objptr;
+}
+
 extern "C" int XYClipper(int number, VERTEX_INFO *input)
 {
     int i, j;
