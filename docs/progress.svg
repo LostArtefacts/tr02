@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.12% (14)</tspan> · <tspan class="todo">12.71% (159)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">85.53% (1070)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.20% (15)</tspan> · <tspan class="todo">12.63% (158)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="638.92" height="6" x="0" y="0" class="named"/>
 <rect width="4.78" height="6" x="638.92" y="0" class="decompiled"/>
-<rect width="8.36" height="6" x="643.70" y="0" class="nonmatching"/>
-<rect width="94.94" height="6" x="652.06" y="0" class="todo"/>
+<rect width="8.96" height="6" x="643.70" y="0" class="nonmatching"/>
+<rect width="94.35" height="6" x="652.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1126,7 +1126,7 @@
 <rect width="12" height="12" x="60" y="315" class="named"><title>0x00450cf0 S_ClearScreen (11 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="315" class="named"><title>0x00450d00 S_InitialiseScreen (55 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="315" class="named"><title>0x00450d40 S_OutputPolyList (52 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="315" class="todo"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="315" class="nonmatching"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="315" class="named"><title>0x00450ff0 S_InsertBackPolygon (70 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="315" class="todo"><title>0x00451040 S_PrintShadow (497 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.70%</tspan> · <tspan class="todo">17.95%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">78.26%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">3.88%</tspan> · <tspan class="todo">17.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="584.64" height="6" x="0" y="0" class="named"/>
 <rect width="0.65" height="6" x="584.64" y="0" class="decompiled"/>
-<rect width="27.65" height="6" x="585.29" y="0" class="nonmatching"/>
-<rect width="134.06" height="6" x="612.94" y="0" class="todo"/>
+<rect width="29" height="6" x="585.29" y="0" class="nonmatching"/>
+<rect width="132.71" height="6" x="614.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1466,7 +1466,7 @@
 <rect width="21.42" height="19.27" x="350.87" y="261.57" class="nonmatching"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
 <rect width="21.42" height="19.23" x="350.87" y="283.84" class="named"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
 <rect width="21.42" height="18.92" x="350.87" y="306.07" class="todo"><title>0x004524e0 Func4524e0 (627 bytes)</title></rect>
-<rect width="21.42" height="18.81" x="350.87" y="327.98" class="todo"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
+<rect width="21.42" height="18.81" x="350.87" y="327.98" class="nonmatching"><title>0x00450d80 S_GetObjectBounds (624 bytes)</title></rect>
 <rect width="21.42" height="18.74" x="350.87" y="349.80" class="named"><title>0x00430110 FlareControl (622 bytes)</title></rect>
 <rect width="21.42" height="18.46" x="350.87" y="371.54" class="named"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
 <rect width="20.14" height="19.62" x="375.29" y="0" class="named"><title>0x0044af50 LoadSamples (613 bytes)</title></rect>
