@@ -529,3 +529,73 @@ void InitialiseBartoli(sint16 item_number)
     else
         S_ExitSystem("FATAL: Unable to create dragon");
 }
+
+#define BARTOLI_RANGE (WALL_L * 5)
+#define BOOM_TIME 130
+#define SPHERE_OF_DOOM 209
+#define SPHERE_OF_DOOM2 210
+#define SPHERE_OF_DOOM3 211
+
+int EnableBaddieAI(sint16 item_number, int Always);
+
+void BartoliControl(sint16 item_number)
+{
+    ITEM_INFO *item, *back, *front;
+    int front_item, back_item;
+
+    item = &items[item_number];
+
+    if (item->timer)
+    {
+        item->timer++;
+
+        if (!(item->timer & 7))
+            camera.bounce = item->timer;
+
+        CreateBartoliLight(item_number);
+
+        AnimateItem(item);
+
+        if (item->timer == BOOM_TIME || item->timer == BOOM_TIME + 10 || item->timer == BOOM_TIME + 20)
+        {
+            front_item = CreateItem();
+            if (front_item != NO_ITEM)
+            {
+                front = &items[front_item];
+                if (item->timer == BOOM_TIME)
+                    front->object_number = SPHERE_OF_DOOM;
+                else if (item->timer == BOOM_TIME + 10)
+                    front->object_number = SPHERE_OF_DOOM2;
+                else
+                    front->object_number = SPHERE_OF_DOOM3;
+                front->pos.x_pos = item->pos.x_pos;
+                front->pos.y_pos = item->pos.y_pos + STEP_L;
+                front->pos.z_pos = item->pos.z_pos;
+                front->room_number = item->room_number;
+                front->shade = -1;
+                InitialiseItem((sint16)front_item);
+                AddActiveItem((sint16)front_item);
+                front->status = ACTIVE;
+            }
+        }
+        else if (item->timer >= 30 * 5)
+        {
+            back_item = (int)item->data;
+            back = &items[back_item];
+
+            front_item = (int)back->data;
+            front = &items[front_item];
+
+            front->touch_bits = back->touch_bits = 0;
+            EnableBaddieAI((sint16)front_item, 1);
+            AddActiveItem((sint16)front_item);
+
+            AddActiveItem((sint16)back_item);
+            back->status = ACTIVE;
+
+            KillItem(item_number);
+        }
+    }
+    else if (ABS(lara_item->pos.x_pos - item->pos.x_pos) < BARTOLI_RANGE && ABS(lara_item->pos.z_pos - item->pos.z_pos) < BARTOLI_RANGE)
+        item->timer = 1;
+}

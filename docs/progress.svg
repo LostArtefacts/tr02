@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">86.97% (1088)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.52% (19)</tspan> · <tspan class="todo">10.87% (136)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.05% (1089)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">1.52% (19)</tspan> · <tspan class="todo">10.79% (135)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="649.67" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="649.67" y="0" class="decompiled"/>
-<rect width="11.35" height="6" x="654.45" y="0" class="nonmatching"/>
-<rect width="81.21" height="6" x="665.79" y="0" class="todo"/>
+<rect width="650.27" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="650.27" y="0" class="decompiled"/>
+<rect width="11.35" height="6" x="655.04" y="0" class="nonmatching"/>
+<rect width="80.61" height="6" x="666.39" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -273,7 +273,7 @@
 <rect width="12" height="12" x="15" y="60" class="named"><title>0x00417d80 DragonBones (217 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="60" class="nonmatching"><title>0x00417e60 DragonControl (1348 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="60" class="named"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="60" class="todo"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="60" class="named"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00418670 DinoControl (676 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="60" class="named"><title>0x00418920 DrawPhaseCinematic (55 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="named"><title>0x00418960 DrawPhaseGame (55 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.50%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.09%</tspan> · <tspan class="todo">15.33%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">79.61%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">5.09%</tspan> · <tspan class="todo">15.21%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="593.83" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="593.83" y="0" class="decompiled"/>
-<rect width="38" height="6" x="594.48" y="0" class="nonmatching"/>
-<rect width="114.51" height="6" x="632.49" y="0" class="todo"/>
+<rect width="594.70" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="594.70" y="0" class="decompiled"/>
+<rect width="38" height="6" x="595.36" y="0" class="nonmatching"/>
+<rect width="113.64" height="6" x="633.36" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.93" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1565,7 +1565,7 @@
 <rect width="15.82" height="15.37" x="416.17" y="211.25" class="named"><title>0x00413620 LaraBaddieCollision (405 bytes)</title></rect>
 <rect width="15.82" height="15.37" x="416.17" y="229.62" class="named"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
 <rect width="15.82" height="15.32" x="416.17" y="247.99" class="named"><title>0x0042ee30 LaraTargetInfo (404 bytes)</title></rect>
-<rect width="15.82" height="15.28" x="416.17" y="266.32" class="todo"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
+<rect width="15.82" height="15.28" x="416.17" y="266.32" class="named"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
 <rect width="15.82" height="15.23" x="416.17" y="284.60" class="named"><title>0x00432550 GetWaterDepth (402 bytes)</title></rect>
 <rect width="15.82" height="15.19" x="416.17" y="302.83" class="named"><title>0x00428d00 lara_col_walk (401 bytes)</title></rect>
 <rect width="15.82" height="15.14" x="416.17" y="321.02" class="named"><title>0x004414b0 PropellerControl (400 bytes)</title></rect>
