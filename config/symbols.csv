@@ -201,7 +201,7 @@ address,size,name,symbol
 0x004179e0,171,DragonFire,_DragonFire
 0x00417a90,749,DragonCollision,_DragonCollision
 0x00417d80,217,DragonBones,_DragonBones
-0x00417e60,1305,DragonControl,_DragonControl
+0x00417e60,1348,DragonControl,_DragonControl
 0x004183b0,284,InitialiseBartoli,_InitialiseBartoli
 0x004184d0,403,BartoliControl,_BartoliControl
 0x00418670,676,DinoControl,_DinoControl
@@ -1469,6 +1469,7 @@ address,size,name,symbol
 0x00464120,16,diver_poon,_diver_poon
 0x00464130,16,dog_bite,_dog_bite
 0x00464140,16,tiger_bite,_tiger_bite
+0x00464150,16,dragon_mouth,_dragon_mouth
 0x00464180,96,Var464180,_Var464180
 0x004641e0,16,bigeel_bite,_bigeel_bite
 0x004641f0,4,AssaultBestTime,_AssaultBestTime

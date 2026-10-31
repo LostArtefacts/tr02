@@ -176,3 +176,92 @@ void DragonCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
 
     ItemPushLara(item, laraitem, coll, 1, 0);
 }
+
+typedef struct {
+    sint16 zone_number, enemy_zone;
+    sint32 distance, ahead, bite;
+    sint16 angle, enemy_facing;
+} AI_INFO;
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+void CreatureHead(ITEM_INFO *item, sint16 required);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void DisableBaddieAI(sint16 item_number);
+void DragonBones(sint16 item_number);
+sint16 DragonFire(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number);
+
+#define SQUARE(A) ((A) * (A))
+
+#define DRAGON_EMPTY 0
+#define DRAGON_WALK 1
+#define DRAGON_LEFT 2
+#define DRAGON_RIGHT 3
+#define DRAGON_AIM1 4
+#define DRAGON_FIRE1 5
+#define DRAGON_STOP 6
+#define DRAGON_TURNLEFT 7
+#define DRAGON_TURNRIGHT 8
+#define DRAGON_SWIPELEFT 9
+#define DRAGON_SWIPERIGHT 10
+#define DRAGON_DIE_ANIM 21
+#define DRAGON_LIVE_TIME (30 * 11)
+#define DRAGON_CLOSE_RANGE SQUARE(WALL_L * 3)
+#define DRAGON_STOP_RANGE SQUARE(WALL_L * 6)
+#define DRAGON_WALK_TURN (ONE_DEGREE * 2)
+#define DRAGON_NEED_TURN (ONE_DEGREE * 1)
+#define DRAGON_TOUCH_DAMAGE 10
+#define DRAGON_SWIPE_DAMAGE 250
+#define DRAGON_TOUCH_L 0x7f000000
+#define DRAGON_TOUCH_R 0x0fe
+#define VIOLENT 1
+
+extern BITE_INFO dragon_mouth;
+
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+
+#define DEAD_DRAGON_FRONT 218
+#define DEAD_DRAGON_BACK 219
+
+void DragonBones(sint16 item_number)
+{
+    sint16 bone_back, bone_front;
+    ITEM_INFO *front, *back, *item;
+
+    bone_front = CreateItem();
+    bone_back = CreateItem();
+
+    if (bone_back != NO_ITEM && bone_front != NO_ITEM)
+    {
+        item = &items[item_number];
+
+        back = &items[bone_back];
+        back->object_number = DEAD_DRAGON_BACK;
+        back->pos.x_pos = item->pos.x_pos;
+        back->pos.y_pos = item->pos.y_pos;
+        back->pos.z_pos = item->pos.z_pos;
+        back->pos.x_rot = back->pos.z_rot = 0;
+        back->pos.y_rot = item->pos.y_rot;
+        back->room_number = item->room_number;
+        back->shade = -1;
+
+        InitialiseItem(bone_back);
+
+        front = &items[bone_front];
+        front->object_number = DEAD_DRAGON_FRONT;
+        front->pos.x_pos = item->pos.x_pos;
+        front->pos.y_pos = item->pos.y_pos;
+        front->pos.z_pos = item->pos.z_pos;
+        front->pos.x_rot = front->pos.z_rot = 0;
+        front->pos.y_rot = item->pos.y_rot;
+        front->room_number = item->room_number;
+        front->shade = -1;
+
+        InitialiseItem(bone_front);
+
+        front->mesh_bits = 0xff3fffff;
+    }
+}
