@@ -262,6 +262,30 @@ extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LP
 
 extern "C" JOYSTICK_LIST JoystickList;
 
+extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
+{
+    JOYSTICK_NODE *joystick;
+    JOYSTICK_NODE *node;
+
+    joystick = (JOYSTICK_NODE *)JoystickList.dwCount;
+    if (!joystick)
+        return joystick;
+    joystick = NULL;
+    if (lpGuid) {
+        for (node = JoystickList.head; node; node = node->next) {
+            if (!memcmp(lpGuid, &node->body.joystickGuid, sizeof(GUID))) {
+                joystick = node;
+                break;
+            }
+            if (!node)
+                break;
+        }
+    }
+    if (!joystick)
+        joystick = JoystickList.head;
+    return joystick;
+}
+
 extern "C" bool WinInputInit(void)
 {
     JOYSTICK_NODE *node;
