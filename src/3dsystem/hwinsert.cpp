@@ -763,6 +763,29 @@ extern "C" void InsertFlatRect_Sorted(int x1, int y1, int x2, int y2, int z, int
     surfacenum++;
 }
 
+extern "C" void InsertLine_Sorted(int x1, int y1, int x2, int y2, int z, uint8 color)
+{
+    uint8 *rgb;
+    D3DTLVERTEX *v;
+
+    rgb = (uint8 *)game_palette + color * 3;
+    sort3dptr[0] = (sint32)info3dptr;
+    sort3dptr[1] = z;
+    sort3dptr += 2;
+    info3dptr[0] = 12;
+    info3dptr[1] = 2;
+    v = HWR_VertexPtr;
+    *(D3DTLVERTEX **)(info3dptr + 2) = v;
+    info3dptr += 4;
+    v[0].sx = (float)(x1 + phd_winxmin);
+    v[0].sy = (float)(y1 + phd_winymin);
+    v[1].sx = (float)(x2 + phd_winxmin);
+    v[1].sy = (float)(y2 + phd_winymin);
+    v[0].color = v[1].color = ShadeColor(rgb[0], rgb[1], rgb[2]);
+    HWR_VertexPtr = v + 2;
+    surfacenum++;
+}
+
 extern "C" void InsertTransQuad_Sorted(int x, int y, int width, int height, int z)
 {
     D3DTLVERTEX *v;
