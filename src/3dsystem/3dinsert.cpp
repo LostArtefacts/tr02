@@ -3,6 +3,67 @@
 extern "C" sint32 *sort3dptr;
 extern "C" sint16 *info3dptr;
 
+typedef struct vertex_info {
+    float x, y;
+    float ooz;
+    float u, v, g;
+} VERTEX_INFO;
+
+typedef struct point_info {
+    float xv, yv, zv;
+    float ooz;
+    float xs, ys;
+    float u, v;
+    float g;
+} POINT_INFO;
+
+extern "C" float FltNearZ;
+extern "C" float FltRhwONearZ;
+extern "C" float FltPerspONearZ;
+
+extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output)
+{
+    int nVertices;
+    POINT_INFO *A, *B;
+    VERTEX_INFO *pOut;
+    float clipper, fADiff, fBDiff;
+
+    A = input + number - 1;
+    B = input;
+    pOut = output;
+    nVertices = 0;
+    for (; number--; A = B++) {
+        fADiff = FltNearZ - A->zv;
+        fBDiff = FltNearZ - B->zv;
+        if (((*(long *)&fADiff) | (*(long *)&fBDiff)) < 0) {
+            if (((*(long *)&fADiff) ^ (*(long *)&fBDiff)) < 0) {
+                clipper = fBDiff / (A->zv - B->zv);
+                pOut->x = (B->xv + (A->xv - B->xv) * clipper) * FltPerspONearZ + f_centerx;
+                pOut->y = (B->yv + (A->yv - B->yv) * clipper) * FltPerspONearZ + f_centery;
+                pOut->g = B->g + (A->g - B->g) * clipper;
+                pOut->ooz = FltRhwONearZ;
+                pOut->u = (B->u + (A->u - B->u) * clipper) * FltRhwONearZ;
+                pOut->v = (B->v + (A->v - B->v) * clipper) * FltRhwONearZ;
+                ++pOut;
+                ++nVertices;
+            }
+            if ((*(long *)&fBDiff) < 0) {
+                pOut->x = B->xs;
+                pOut->y = B->ys;
+                pOut->g = B->g;
+                pOut->ooz = B->ooz;
+                pOut->u = B->u * B->ooz;
+                pOut->v = B->v * B->ooz;
+                ++pOut;
+                ++nVertices;
+            }
+        }
+    }
+    if (nVertices < 3)
+        return 0;
+    return nVertices;
+}
+
 extern "C" void ins_trans_quad(sint32 sx, sint32 sy, sint32 w, sint32 h, sint32 z)
 {
     sort3dptr[0] = (sint32)info3dptr;

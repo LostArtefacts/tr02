@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.57% (1058)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.79% (185)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.65% (1059)</tspan> · <tspan class="decompiled">0.64% (8)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">14.71% (184)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="631.76" height="6" x="0" y="0" class="named"/>
-<rect width="4.78" height="6" x="631.76" y="0" class="decompiled"/>
-<rect width="110.47" height="6" x="636.53" y="0" class="todo"/>
+<rect width="632.35" height="6" x="0" y="0" class="named"/>
+<rect width="4.78" height="6" x="632.35" y="0" class="decompiled"/>
+<rect width="109.87" height="6" x="637.13" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -110,7 +110,7 @@
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="0" class="todo"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="0" class="todo"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="0" class="named"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="0" class="todo"><title>0x004059f0 XYGUVClipper (1297 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="0" class="todo"><title>0x00405f10 ins_objectGT4 (2652 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="0" class="todo"><title>0x00406970 ins_objectGT3 (2162 bytes)</title></rect>
@@ -1323,11 +1323,11 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.60%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.32%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">74.69%</tspan> · <tspan class="decompiled">0.09%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">25.22%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="557.23" height="6" x="0" y="0" class="named"/>
-<rect width="0.65" height="6" x="557.23" y="0" class="decompiled"/>
-<rect width="189.11" height="6" x="557.89" y="0" class="todo"/>
+<rect width="557.93" height="6" x="0" y="0" class="named"/>
+<rect width="0.65" height="6" x="557.93" y="0" class="decompiled"/>
+<rect width="188.42" height="6" x="558.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.94" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1625,7 +1625,7 @@
 <rect width="12.92" height="14.37" x="734.08" y="80.02" class="named"><title>0x0044c550 StartGame (324 bytes)</title></rect>
 <rect width="13.46" height="13.76" x="452.71" y="97.40" class="named"><title>0x00427910 lara_as_run (323 bytes)</title></rect>
 <rect width="13.46" height="13.76" x="452.71" y="114.15" class="named"><title>0x00452c20 SE_DefaultGraphicsSettings (323 bytes)</title></rect>
-<rect width="13.46" height="13.60" x="452.71" y="130.91" class="todo"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
+<rect width="13.46" height="13.60" x="452.71" y="130.91" class="named"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
 <rect width="13.46" height="13.60" x="452.71" y="147.51" class="todo"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
 <rect width="13.46" height="13.60" x="452.71" y="164.11" class="named"><title>0x0043d740 DoSnowEffect (320 bytes)</title></rect>
 <rect width="13.46" height="13.50" x="452.71" y="180.71" class="named"><title>0x004251c0 Inv_RingDoMotions (318 bytes)</title></rect>
