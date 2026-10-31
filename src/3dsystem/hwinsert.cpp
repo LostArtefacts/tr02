@@ -251,6 +251,98 @@ extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, i
     surfacenum++;
 }
 
+typedef struct {
+    uint16 tpage;
+    uint16 offset;
+    uint16 width;
+    uint16 height;
+    sint16 x1;
+    sint16 y1;
+    sint16 x2;
+    sint16 y2;
+} PHDSPRITESTRUCT;
+
+extern "C" PHDSPRITESTRUCT PhdSpriteInfo[];
+extern "C" int UvAdd;
+extern "C" int XYGUVClipper(int number, VERTEX_INFO *input);
+extern "C" void InsertClippedPoly_Textured(int npoints, float zdepth, int drawtype, int tpage);
+
+extern "C" void InsertSprite_Sorted(int z, int x1, int y1, int x2, int y2, int sprnum, int shade)
+{
+    float zdepth, rhw, g, u1, v1, u2, v2, uvadd;
+    PHDSPRITESTRUCT *sprite;
+    int npoints;
+    bool blue;
+
+    if (HWR_VertexBufferFull())
+        return;
+    if (x2 <= x1 || y2 <= y1 || x2 <= 0 || y2 <= 0 || x1 >= phd_winxmax || y1 >= phd_winymax)
+        return;
+    x1 += phd_winxmin;
+    x2 += phd_winxmin;
+    y1 += phd_winymin;
+    y2 += phd_winymin;
+    if (z < phd_znear)
+        z = phd_znear;
+    if (z >= phd_zfar)
+        return;
+    zdepth = (float)z;
+    rhw = RhwFactor / zdepth;
+    g = (float)shade;
+    sprite = &PhdSpriteInfo[sprnum];
+    u1 = (float)((sprite->offset << 8) & 0xff00);
+    v1 = (float)(sprite->offset & 0xff00);
+    u2 = u1 + sprite->width;
+    v2 = v1 + sprite->height;
+    uvadd = (float)UvAdd;
+    u1 += uvadd;
+    u2 -= uvadd;
+    v1 += uvadd;
+    v2 -= uvadd;
+    u1 *= rhw;
+    v1 *= rhw;
+    u2 *= rhw;
+    v2 *= rhw;
+    VBuffer[0].x = (float)x1;
+    VBuffer[0].y = (float)y1;
+    VBuffer[0].rhw = rhw;
+    VBuffer[0].g = g;
+    VBuffer[0].u = u1;
+    VBuffer[0].v = v1;
+    VBuffer[1].x = (float)x2;
+    VBuffer[1].y = (float)y1;
+    VBuffer[1].rhw = rhw;
+    VBuffer[1].g = g;
+    VBuffer[1].u = u2;
+    VBuffer[1].v = v1;
+    VBuffer[2].x = (float)x2;
+    VBuffer[2].y = (float)y2;
+    VBuffer[2].rhw = rhw;
+    VBuffer[2].g = g;
+    VBuffer[2].u = u2;
+    VBuffer[2].v = v2;
+    VBuffer[3].x = (float)x1;
+    VBuffer[3].y = (float)y2;
+    VBuffer[3].rhw = rhw;
+    VBuffer[3].g = g;
+    VBuffer[3].u = u1;
+    VBuffer[3].v = v2;
+    npoints = 4;
+    if (x1 < phd_winxmin || x2 > phd_winxmin + phd_winwidth || y1 < phd_winymin || y2 > phd_winymin + phd_winheight) {
+        phd_leftfloat = (float)phd_winxmin;
+        phd_rightfloat = (float)(phd_winxmin + phd_winwidth);
+        phd_topfloat = (float)phd_winymin;
+        phd_bottomfloat = (float)(phd_winymin + phd_winheight);
+        npoints = XYGUVClipper(npoints, VBuffer);
+    }
+    if (npoints) {
+        blue = bBlueEffect;
+        bBlueEffect = false;
+        InsertClippedPoly_Textured(npoints, zdepth, 10, sprite->tpage);
+        bBlueEffect = blue;
+    }
+}
+
 extern "C" void InsertFlatRect_Sorted(int x1, int y1, int x2, int y2, int z, int color)
 {
     uint8 *rgb;
