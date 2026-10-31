@@ -724,7 +724,7 @@ address,size,name,symbol
 0x0043f280,281,SkidmanPush,_SkidmanPush
 0x0043f3a0,129,SkidmanCollision,_SkidmanCollision
 0x0043f430,49,GetRealTrack,_GetRealTrack
-0x0043f470,1156,SoundEffect,_SoundEffect
+0x0043f470,1172,SoundEffect,_SoundEffect
 0x0043f910,94,StopSoundEffect,_StopSoundEffect
 0x0043f970,134,SOUND_EndScene,_SOUND_EndScene
 0x0043fa00,36,SOUND_Stop,_SOUND_Stop
