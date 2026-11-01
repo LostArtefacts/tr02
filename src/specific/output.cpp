@@ -549,6 +549,43 @@ typedef struct {
 extern "C" sint32 number_dynamics;
 extern "C" LIGHT_INFO dynamic[];
 
+extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r)
+{
+    sint32 i;
+    sint32 dx, distance, falloff, dy, dz, radius;
+
+    if (r->lighting)
+        shade += (shadeB - shade) * RoomLightShades[r->lighting] / (WIBBLE_SIZE - 1);
+    for (i = 0; i < number_dynamics; i++)
+    {
+        radius = 1 << dynamic[i].falloff;
+        dx = x - dynamic[i].x;
+        falloff = dynamic[i].falloff;
+        if (dx >= -radius && dx <= radius)
+        {
+            dy = y - dynamic[i].y;
+            if (dy >= -radius && dy <= radius)
+            {
+                dz = z - dynamic[i].z;
+                if (dz >= -radius && dz <= radius)
+                {
+                    distance = dx * dx + dy * dy + dz * dz;
+                    if (distance <= 1 << (falloff * 2))
+                    {
+                        shade -= (1 << dynamic[i].intensity) - (distance >> (falloff * 2 - dynamic[i].intensity));
+                        if (shade < 0)
+                        {
+                            shade = 0;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    S_CalculateStaticLight(shade);
+}
+
 extern "C" void S_LightRoom(ROOM_INFO *r)
 {
     sint32 i, j;

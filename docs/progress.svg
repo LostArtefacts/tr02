@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4% (50)</tspan> · <tspan class="todo">7.67% (96)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4.08% (51)</tspan> · <tspan class="todo">7.59% (95)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="653.85" height="6" x="0" y="0" class="named"/>
 <rect width="5.97" height="6" x="653.85" y="0" class="decompiled"/>
-<rect width="29.86" height="6" x="659.82" y="0" class="nonmatching"/>
-<rect width="57.32" height="6" x="689.68" y="0" class="todo"/>
+<rect width="30.45" height="6" x="659.82" y="0" class="nonmatching"/>
+<rect width="56.73" height="6" x="690.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1131,7 +1131,7 @@
 <rect width="12" height="12" x="135" y="315" class="named"><title>0x00451040 S_PrintShadow (497 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="todo"><title>0x00451240 S_CalculateLight (758 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="315" class="named"><title>0x00451540 S_CalculateStaticLight (49 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="315" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="315" class="nonmatching"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="315" class="named"><title>0x004516b0 S_LightRoom (518 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="315" class="named"><title>0x004518c0 S_DrawHealthBar (460 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="named"><title>0x00451a90 S_DrawAirBar (502 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.51%</tspan> · <tspan class="todo">10.77%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.60%</tspan> · <tspan class="todo">10.68%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="600.42" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="600.42" y="0" class="decompiled"/>
-<rect width="63.59" height="6" x="602.98" y="0" class="nonmatching"/>
-<rect width="80.43" height="6" x="666.57" y="0" class="todo"/>
+<rect width="64.22" height="6" x="602.98" y="0" class="nonmatching"/>
+<rect width="79.80" height="6" x="667.20" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1657,7 +1657,7 @@
 <rect width="12.43" height="13.35" x="643.82" y="97.40" class="named"><title>0x0043fa60 TestCollision (296 bytes)</title></rect>
 <rect width="12.43" height="13.35" x="659.25" y="97.40" class="named"><title>0x0044d0b0 HWR_InitState (296 bytes)</title></rect>
 <rect width="12.38" height="13.35" x="674.68" y="97.40" class="named"><title>0x00429420 lara_col_hang (295 bytes)</title></rect>
-<rect width="12.22" height="13.35" x="690.05" y="97.40" class="todo"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
+<rect width="12.22" height="13.35" x="690.05" y="97.40" class="nonmatching"><title>0x00451580 S_CalculateStaticMeshLight (292 bytes)</title></rect>
 <rect width="12.01" height="13.35" x="705.27" y="97.40" class="named"><title>0x0044d9b0 Key (288 bytes)</title></rect>
 <rect width="11.91" height="13.35" x="720.29" y="97.40" class="named"><title>0x00426d30 KillItem (286 bytes)</title></rect>
 <rect width="11.80" height="13.35" x="735.20" y="97.40" class="named"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
