@@ -264,6 +264,80 @@ void GetSavedGamesList(REQUEST_INFO *req)
     memcpy(RequesterFlags2, SaveGameReqFlags2, MAXIMUM_LEVELS * sizeof(uint32));
 }
 
+#include "winmain.h"
+
+extern "C" char *GetFullPath(char *path);
+extern "C" void *game_malloc(int size, int type);
+extern "C" void S_UnloadLevelFile(void);
+extern "C" void FadeToPal(int nframes, uint8 *pal);
+extern "C" void S_CDPlay(sint16 track, int mode);
+extern "C" int DecompPCX(uint8 *pcx, int pcx_size, uint8 *bitmap, uint8 *palette);
+extern "C" void WinVidCopyBitmapToBuffer(void *surface, uint8 *bitmap);
+extern "C" void BGND_Make640x480(uint8 *bitmap, uint8 *palette);
+extern "C" void CopyBitmapPalette(uint8 *src_palette, uint8 *bitmap, int size, uint8 *dst_palette);
+extern "C" void S_OutputPolyList(void);
+extern "C" int S_DumpScreen(void);
+extern "C" void S_Wait(int nframes, int anykey);
+extern "C" void S_DontDisplayPicture(void);
+extern "C" void *PictureBufferSurface;
+extern "C" uint8 PicPalette[];
+extern "C" bool IsVidModeLock;
+
+extern "C" void DisplayCredits(void)
+{
+    char fileName[64] = "data\\credit0?.pcx";
+    uint8 *pcx[10];
+    DWORD size[10];
+    uint8 palette[768];
+    uint8 *bitmap;
+    HANDLE file;
+    DWORD read;
+    int i;
+
+    S_FadeToBlack();
+    S_UnloadLevelFile();
+    if (!InitialiseLevel(0, 0))
+        return;
+    memcpy(palette, game_palette, 768);
+    memset(game_palette, 0, 768);
+    IsVidModeLock = true;
+    FadeToPal(0, game_palette);
+    for (i = 1; i < 10; i++) {
+        fileName[12] = '0' + i;
+        file = CreateFile(GetFullPath(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        if (file != INVALID_HANDLE_VALUE) {
+            size[i] = GetFileSize(file, NULL);
+            pcx[i] = (uint8 *)game_malloc(size[i], 40);
+            ReadFile(file, pcx[i], 640 * 480, &read, NULL);
+            CloseHandle(file);
+        }
+    }
+    bitmap = (uint8 *)game_malloc(640 * 480, 40);
+    S_CDPlay(52, 0);
+    for (i = 1; i < 10; i++) {
+        DecompPCX(pcx[i], size[i], bitmap, PicPalette);
+        if (SavedAppSettings.RenderMode == RM_Software)
+            WinVidCopyBitmapToBuffer(PictureBufferSurface, bitmap);
+        else
+            BGND_Make640x480(bitmap, PicPalette);
+        CopyBitmapPalette(PicPalette, bitmap, 640 * 480, game_palette);
+        S_InitialisePolyList(0);
+        S_CopyBufferToScreen();
+        S_OutputPolyList();
+        S_DumpScreen();
+        FadeToPal(30, game_palette);
+        S_Wait(450, 0);
+        S_FadeToBlack();
+        S_DontDisplayPicture();
+        if (IsGameToExit)
+            break;
+    }
+    memcpy(game_palette, palette, 768);
+    S_Wait(300, 0);
+    FadeToPal(30, game_palette);
+    IsVidModeLock = false;
+}
+
 int S_FrontEndCheck(void *data, int size)
 {
     int i;
@@ -350,80 +424,6 @@ int S_LoadGame(void *data, int size, int slot)
         return 1;
     }
     return 0;
-}
-
-#include "winmain.h"
-
-extern "C" char *GetFullPath(char *path);
-extern "C" void *game_malloc(int size, int type);
-extern "C" void S_UnloadLevelFile(void);
-extern "C" void FadeToPal(int nframes, uint8 *pal);
-extern "C" void S_CDPlay(sint16 track, int mode);
-extern "C" int DecompPCX(uint8 *pcx, int pcx_size, uint8 *bitmap, uint8 *palette);
-extern "C" void WinVidCopyBitmapToBuffer(void *surface, uint8 *bitmap);
-extern "C" void BGND_Make640x480(uint8 *bitmap, uint8 *palette);
-extern "C" void CopyBitmapPalette(uint8 *src_palette, uint8 *bitmap, int size, uint8 *dst_palette);
-extern "C" void S_OutputPolyList(void);
-extern "C" int S_DumpScreen(void);
-extern "C" void S_Wait(int nframes, int anykey);
-extern "C" void S_DontDisplayPicture(void);
-extern "C" void *PictureBufferSurface;
-extern "C" uint8 PicPalette[];
-extern "C" bool IsVidModeLock;
-
-extern "C" void DisplayCredits(void)
-{
-    char fileName[64] = "data\\credit0?.pcx";
-    uint8 *pcx[10];
-    DWORD size[10];
-    uint8 palette[768];
-    uint8 *bitmap;
-    HANDLE file;
-    DWORD read;
-    int i;
-
-    S_FadeToBlack();
-    S_UnloadLevelFile();
-    if (!InitialiseLevel(0, 0))
-        return;
-    memcpy(palette, game_palette, 768);
-    memset(game_palette, 0, 768);
-    IsVidModeLock = true;
-    FadeToPal(0, game_palette);
-    for (i = 1; i < 10; i++) {
-        fileName[12] = '0' + i;
-        file = CreateFile(GetFullPath(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-        if (file != INVALID_HANDLE_VALUE) {
-            size[i] = GetFileSize(file, NULL);
-            pcx[i] = (uint8 *)game_malloc(size[i], 40);
-            ReadFile(file, pcx[i], 640 * 480, &read, NULL);
-            CloseHandle(file);
-        }
-    }
-    bitmap = (uint8 *)game_malloc(640 * 480, 40);
-    S_CDPlay(52, 0);
-    for (i = 1; i < 10; i++) {
-        DecompPCX(pcx[i], size[i], bitmap, PicPalette);
-        if (SavedAppSettings.RenderMode == RM_Software)
-            WinVidCopyBitmapToBuffer(PictureBufferSurface, bitmap);
-        else
-            BGND_Make640x480(bitmap, PicPalette);
-        CopyBitmapPalette(PicPalette, bitmap, 640 * 480, game_palette);
-        S_InitialisePolyList(0);
-        S_CopyBufferToScreen();
-        S_OutputPolyList();
-        S_DumpScreen();
-        FadeToPal(30, game_palette);
-        S_Wait(450, 0);
-        S_FadeToBlack();
-        S_DontDisplayPicture();
-        if (IsGameToExit)
-            break;
-    }
-    memcpy(game_palette, palette, 768);
-    S_Wait(300, 0);
-    FadeToPal(30, game_palette);
-    IsVidModeLock = false;
 }
 
 #ifdef TR2_EXE
