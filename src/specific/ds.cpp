@@ -172,18 +172,15 @@ extern "C" bool Func448050(void)
     return WinSndInit();
 }
 
-extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext);
-
-extern "C" bool DSoundEnumerate(LPVOID lpContext)
-{
-    if (DX_TRY(DirectSoundEnumerate(DSoundEnumCallback, lpContext)))
-        return false;
-    return true;
-}
-
 struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
+    STRING_FLAGGED(DWORD size);
+    ~STRING_FLAGGED()
+    {
+        if (isPresented)
+            delete[] lpString;
+    }
     STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
     {
         if (this != &src) {
@@ -213,6 +210,50 @@ typedef struct {
     SOUND_ADAPTER_NODE *tail;
     DWORD dwCount;
 } SOUND_ADAPTER_LIST;
+
+extern "C" {
+extern SOUND_ADAPTER_LIST SoundAdapterList;
+extern SOUND_ADAPTER_NODE *PrimarySoundAdapter;
+bool DSoundEnumerate(LPVOID lpContext);
+}
+
+extern "C" bool WinSndInit(void)
+{
+    SOUND_ADAPTER_NODE *node;
+    SOUND_ADAPTER_NODE *nextNode;
+
+    for (node = SoundAdapterList.head; node; node = nextNode)
+    {
+        nextNode = node->next;
+        delete node;
+    }
+    SoundAdapterList.head = NULL;
+    SoundAdapterList.tail = NULL;
+    SoundAdapterList.dwCount = 0;
+    if (!DSoundEnumerate(&SoundAdapterList))
+        return false;
+    PrimarySoundAdapter = NULL;
+    for (node = SoundAdapterList.head; node; node = node->next)
+    {
+        if (!node->body.lpAdapterGuid)
+        {
+            PrimarySoundAdapter = node;
+            break;
+        }
+        if (!node)
+            break;
+    }
+    return true;
+}
+
+extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext);
+
+extern "C" bool DSoundEnumerate(LPVOID lpContext)
+{
+    if (DX_TRY(DirectSoundEnumerate(DSoundEnumCallback, lpContext)))
+        return false;
+    return true;
+}
 
 #pragma pack(push, 1)
 typedef struct {
@@ -318,10 +359,6 @@ extern "C" bool WinSndIsSoundEnabled()
     return IsSoundEnabled;
 }
 
-extern "C" {
-extern SOUND_ADAPTER_LIST SoundAdapterList;
-extern SOUND_ADAPTER_NODE *PrimarySoundAdapter;
-}
 
 extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
 {
