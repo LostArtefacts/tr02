@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 #include "larafire.h"
 #include "savegame.h"
