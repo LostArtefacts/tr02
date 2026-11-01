@@ -336,24 +336,6 @@ extern "C" bool GetRegistryGuidValue(LPCTSTR lpValueName, GUID *value, GUID *def
     return false;
 }
 
-void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
-{
-    pDest += (nDX + nDY * nDStride);
-    pSrc += (nSX + nSY * nSStride);
-    while (nDH--)
-    {
-        memcpy(pDest, pSrc, nDW);
-        pDest += nDStride;
-        pSrc += nSStride;
-    }
-}
-
-extern "C" void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam)
-{
-    if (uMsg == WM_PALETTECHANGED || uMsg == WM_QUERYNEWPALETTE)
-        SendMessage(hWnd, uMsg, wParam, 0);
-}
-
 extern "C" char DialogClassName[];
 extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -391,6 +373,90 @@ public:
         hPalette = NULL;
     }
 };
+
+extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    RECT rect;
+    POINT point;
+    HDC hdc;
+    PAINTSTRUCT paint;
+    char imageName[64];
+    LPCTSTR name;
+    int width, height;
+    BITMAP_RESOURCE *bitmap;
+
+    bitmap = (BITMAP_RESOURCE *)GetWindowLong(hWnd, 8);
+    switch (uMsg)
+    {
+    case WM_CREATE:
+        GetClientRect(hWnd, &rect);
+        point.x = rect.right >> 1;
+        point.y = rect.bottom >> 1;
+        MapWindowPoints(hWnd, GetParent(hWnd), &point, 1);
+        SetWindowLong(hWnd, 0, point.x);
+        SetWindowLong(hWnd, 4, point.y);
+        bitmap = new BITMAP_RESOURCE;
+        SetWindowLong(hWnd, 8, (LONG)bitmap);
+        GetWindowText(hWnd, imageName, sizeof(imageName));
+        if (!imageName[0])
+            return 0;
+        name = imageName;
+        goto center;
+    case WM_DESTROY:
+        if (bitmap)
+        {
+            bitmap->Release();
+            delete bitmap;
+        }
+        break;
+    case WM_PAINT:
+        GetClientRect(hWnd, &rect);
+        hdc = BeginPaint(hWnd, &paint);
+        DrawEdge(hdc, &rect, BDR_RAISEDINNER | BDR_SUNKENOUTER, BF_ADJUST | BF_RECT);
+        bitmap->Draw(hdc, rect.left, rect.top);
+        EndPaint(hWnd, &paint);
+        return 0;
+    case WM_QUERYNEWPALETTE:
+        bitmap->ChangePalette(hWnd);
+        InvalidateRect(hWnd, NULL, FALSE);
+        UpdateWindow(hWnd);
+        return 1;
+    case WM_PALETTECHANGED:
+        bitmap->UpdatePalette(hWnd, (HWND)wParam);
+        InvalidateRect(hWnd, NULL, FALSE);
+        UpdateWindow(hWnd);
+        break;
+    case WM_USER + 1000:
+        name = (LPCTSTR)wParam;
+    center:
+        bitmap->Load(name);
+        width = bitmap->bmpInfo->bmiHeader.biWidth;
+        height = bitmap->bmpInfo->bmiHeader.biHeight;
+        point.x = GetWindowLong(hWnd, 0);
+        point.y = GetWindowLong(hWnd, 4);
+        MoveWindow(hWnd, point.x - (width >> 1) - 2, point.y - (height >> 1) - 2, width + 4, height + 4, TRUE);
+        return 0;
+    }
+    return DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
+extern "C" void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam)
+{
+    if (uMsg == WM_PALETTECHANGED || uMsg == WM_QUERYNEWPALETTE)
+        SendMessage(hWnd, uMsg, wParam, 0);
+}
+
+void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, uint8 *pSrc, int nSX, int nSY, int nSStride)
+{
+    pDest += (nDX + nDY * nDStride);
+    pSrc += (nSX + nSY * nSStride);
+    while (nDH--)
+    {
+        memcpy(pDest, pSrc, nDW);
+        pDest += nDStride;
+        pSrc += nSStride;
+    }
+}
 
 void BITMAP_RESOURCE::Release(void)
 {
@@ -470,72 +536,6 @@ void BITMAP_RESOURCE::ChangePalette(HWND hWnd)
     RealizePalette(hdc);
     SelectPalette(hdc, old, FALSE);
     ReleaseDC(hWnd, hdc);
-}
-
-extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-    RECT rect;
-    POINT point;
-    HDC hdc;
-    PAINTSTRUCT paint;
-    char imageName[64];
-    LPCTSTR name;
-    int width, height;
-    BITMAP_RESOURCE *bitmap;
-
-    bitmap = (BITMAP_RESOURCE *)GetWindowLong(hWnd, 8);
-    switch (uMsg)
-    {
-    case WM_CREATE:
-        GetClientRect(hWnd, &rect);
-        point.x = rect.right >> 1;
-        point.y = rect.bottom >> 1;
-        MapWindowPoints(hWnd, GetParent(hWnd), &point, 1);
-        SetWindowLong(hWnd, 0, point.x);
-        SetWindowLong(hWnd, 4, point.y);
-        bitmap = new BITMAP_RESOURCE;
-        SetWindowLong(hWnd, 8, (LONG)bitmap);
-        GetWindowText(hWnd, imageName, sizeof(imageName));
-        if (!imageName[0])
-            return 0;
-        name = imageName;
-        goto center;
-    case WM_DESTROY:
-        if (bitmap)
-        {
-            bitmap->Release();
-            delete bitmap;
-        }
-        break;
-    case WM_PAINT:
-        GetClientRect(hWnd, &rect);
-        hdc = BeginPaint(hWnd, &paint);
-        DrawEdge(hdc, &rect, BDR_RAISEDINNER | BDR_SUNKENOUTER, BF_ADJUST | BF_RECT);
-        bitmap->Draw(hdc, rect.left, rect.top);
-        EndPaint(hWnd, &paint);
-        return 0;
-    case WM_QUERYNEWPALETTE:
-        bitmap->ChangePalette(hWnd);
-        InvalidateRect(hWnd, NULL, FALSE);
-        UpdateWindow(hWnd);
-        return 1;
-    case WM_PALETTECHANGED:
-        bitmap->UpdatePalette(hWnd, (HWND)wParam);
-        InvalidateRect(hWnd, NULL, FALSE);
-        UpdateWindow(hWnd);
-        break;
-    case WM_USER + 1000:
-        name = (LPCTSTR)wParam;
-    center:
-        bitmap->Load(name);
-        width = bitmap->bmpInfo->bmiHeader.biWidth;
-        height = bitmap->bmpInfo->bmiHeader.biHeight;
-        point.x = GetWindowLong(hWnd, 0);
-        point.y = GetWindowLong(hWnd, 4);
-        MoveWindow(hWnd, point.x - (width >> 1) - 2, point.y - (height >> 1) - 2, width + 4, height + 4, TRUE);
-        return 0;
-    }
-    return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
 #ifdef TR2_EXE
