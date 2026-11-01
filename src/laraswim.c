@@ -1,4 +1,5 @@
 #include "game.h"
+#include "box.h"
 
 #define UW_MAXSPEED (50 * 4)
 #define WATER_FRICTION 6
@@ -236,7 +237,6 @@ void lara_col_uwdeath(ITEM_INFO *item, COLL_INFO *coll)
     LaraSwimCollision(item, coll);
 }
 
-
 #define NO_ROOM 0xff
 #define UNDERWATER 1
 #define SWIM2QSTND_A 192
@@ -409,8 +409,6 @@ void LaraSwimCollision(ITEM_INFO *item, COLL_INFO *coll)
     if (lara.water_status != LARA_CHEAT && !lara.extra_anim)
         LaraTestWaterDepth(item, coll);
 }
-
-#include "box.h"
 
 int CalculateTarget(PHD_VECTOR *target, ITEM_INFO *item, LOT_INFO *LOT);
 
