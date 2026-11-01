@@ -1,5 +1,6 @@
 #include "include.h"
 #include "global.h"
+#include <stdio.h>
 
 typedef struct {
     LPTSTR lpString;
@@ -357,8 +358,6 @@ extern "C" void ClearBuffers(DWORD flags, DWORD fillColor)
 extern "C" {
 extern LPCTSTR ErrorStringTable[];
 }
-
-#include <stdio.h>
 
 extern "C" {
 extern int GameWindowWidth, GameWindowHeight;
