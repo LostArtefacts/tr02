@@ -106,3 +106,87 @@ extern "C" sint16 *ins_room_sprite(sint16 *objptr, int num)
     }
     return objptr;
 }
+
+typedef struct {
+    uint8 index[256];
+} DEPTHQ_ENTRY;
+
+extern "C" DEPTHQ_ENTRY DepthQTable[];
+extern "C" uint8 *texture_page_ptrs[];
+extern "C" sint32 phd_scrwidth;
+extern "C" bool GameVid_IsWindowedVga;
+
+extern "C" void draw_scaled_spriteC(sint16 *inptr)
+{
+    sint32 x1, y1, x2, y2, width, height, u, v, uadd, vadd, skip, i, j, ubase;
+    PHDSPRITESTRUCT *sprite;
+    DEPTHQ_ENTRY *dqptr;
+    uint8 *pixptr, *source, *line, pix;
+
+    x2 = inptr[2];
+    y1 = inptr[1];
+    y2 = inptr[3];
+    x1 = inptr[0];
+    if (x2 <= x1 || y2 <= y1 || x2 <= 0 || y2 <= 0 || x1 >= phd_winxmax || y1 >= phd_winymax)
+        return;
+    dqptr = &DepthQTable[inptr[5] >> 8];
+    sprite = &PhdSpriteInfo[inptr[4]];
+    vadd = ((sprite->height - 64) << 8) / (y2 - y1);
+    uadd = ((sprite->width - 64) << 8) / (x2 - x1);
+    source = texture_page_ptrs[sprite->tpage] + sprite->offset;
+    v = ubase = 0x4000;
+    if (x1 < 0)
+    {
+        ubase -= x1 * uadd;
+        x1 = 0;
+    }
+    if (y1 < 0)
+    {
+        v -= y1 * vadd;
+        y1 = 0;
+    }
+    if (x2 > phd_winxmax)
+        x2 = phd_winxmax + 1;
+    if (y2 > phd_winymax)
+        y2 = phd_winymax + 1;
+    height = y2 - y1;
+    width = x2 - x1;
+    skip = phd_scrwidth - width;
+    pixptr = (uint8 *)&phd_winptr[x1 + phd_scrwidth * (phd_winymin + y1) + phd_winxmin];
+    if (dqptr == &DepthQTable[16] && !GameVid_IsWindowedVga)
+    {
+        for (i = height; i > 0; i--)
+        {
+            line = source + ((v >> 8) & ~0xff);
+            u = ubase;
+            for (j = width; j > 0; j--)
+            {
+                pix = line[u >> 16];
+                if (pix)
+                    *pixptr = pix;
+                u += uadd;
+                pixptr++;
+            }
+            pixptr += skip;
+            v += vadd;
+        }
+    }
+    else
+    {
+        for (i = height; i > 0; i--)
+        {
+            line = source + ((v >> 8) & ~0xff);
+            u = ubase;
+            for (j = width; j > 0; j--)
+            {
+                pix = line[u >> 16];
+                if (pix)
+                    *pixptr = dqptr->index[pix];
+                u += uadd;
+                pixptr++;
+            }
+            pixptr += skip;
+            v += vadd;
+        }
+    }
+}
