@@ -77,6 +77,71 @@ void DrawGameInfo(int timed)
     T_DrawText();
 }
 
+#define LARA_HITPOINTS 1000
+
+extern int HealthBarTimer;
+static int old_hitpoints;
+
+void S_DrawHealthBar(int percent);
+
+void DrawHealthBar(int flash_state)
+{
+    int hitpoints;
+
+    hitpoints = lara_item->hit_points;
+    if (hitpoints < 0)
+        hitpoints = 0;
+    else if (hitpoints > LARA_HITPOINTS)
+        hitpoints = LARA_HITPOINTS;
+
+    if (old_hitpoints != hitpoints)
+    {
+        HealthBarTimer = 40;
+        old_hitpoints = hitpoints;
+    }
+
+    if (HealthBarTimer < 0)
+        HealthBarTimer = 0;
+
+    if (hitpoints <= LARA_HITPOINTS / 4)
+    {
+        if (flash_state)
+            S_DrawHealthBar(hitpoints / 10);
+        else
+            S_DrawHealthBar(0);
+    }
+    else if (HealthBarTimer > 0 || hitpoints <= 0 || lara.gun_status == LG_READY)
+        S_DrawHealthBar(hitpoints / 10);
+}
+
+#define LARA_AIR 1800
+
+void S_DrawAirBar(int percent);
+
+void DrawAirBar(int flash_state)
+{
+    int air;
+
+    if (lara.water_status != LARA_UNDERWATER && lara.water_status != LARA_SURFACE)
+        return;
+
+    air = lara.air;
+    if (air < 0)
+        air = 0;
+    else if (air > LARA_AIR)
+        air = LARA_AIR;
+
+    if (air <= LARA_AIR / 4)
+    {
+        if (flash_state)
+            S_DrawAirBar(air * 100 / LARA_AIR);
+        else
+            S_DrawAirBar(0);
+    }
+    else
+        S_DrawAirBar(air * 100 / LARA_AIR);
+}
+
 void MakeAmmoString(char *string)
 {
     char *c;
@@ -221,71 +286,6 @@ void AddDisplayPickup(sint16 objnum)
             return;
         }
     }
-}
-
-#define LARA_HITPOINTS 1000
-
-extern int HealthBarTimer;
-static int old_hitpoints;
-
-void S_DrawHealthBar(int percent);
-
-void DrawHealthBar(int flash_state)
-{
-    int hitpoints;
-
-    hitpoints = lara_item->hit_points;
-    if (hitpoints < 0)
-        hitpoints = 0;
-    else if (hitpoints > LARA_HITPOINTS)
-        hitpoints = LARA_HITPOINTS;
-
-    if (old_hitpoints != hitpoints)
-    {
-        HealthBarTimer = 40;
-        old_hitpoints = hitpoints;
-    }
-
-    if (HealthBarTimer < 0)
-        HealthBarTimer = 0;
-
-    if (hitpoints <= LARA_HITPOINTS / 4)
-    {
-        if (flash_state)
-            S_DrawHealthBar(hitpoints / 10);
-        else
-            S_DrawHealthBar(0);
-    }
-    else if (HealthBarTimer > 0 || hitpoints <= 0 || lara.gun_status == LG_READY)
-        S_DrawHealthBar(hitpoints / 10);
-}
-
-#define LARA_AIR 1800
-
-void S_DrawAirBar(int percent);
-
-void DrawAirBar(int flash_state)
-{
-    int air;
-
-    if (lara.water_status != LARA_UNDERWATER && lara.water_status != LARA_SURFACE)
-        return;
-
-    air = lara.air;
-    if (air < 0)
-        air = 0;
-    else if (air > LARA_AIR)
-        air = LARA_AIR;
-
-    if (air <= LARA_AIR / 4)
-    {
-        if (flash_state)
-            S_DrawAirBar(air * 100 / LARA_AIR);
-        else
-            S_DrawAirBar(0);
-    }
-    else
-        S_DrawAirBar(air * 100 / LARA_AIR);
 }
 
 extern TEXTSTRING *DisplayModeTextInfo;
