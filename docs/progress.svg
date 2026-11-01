@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">91.22% (1112)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.05% (86)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">91.30% (1113)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">6.97% (85)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="681.43" height="6" x="0" y="0" class="named"/>
-<rect width="12.87" height="6" x="681.43" y="0" class="decompiled"/>
-<rect width="52.70" height="6" x="694.30" y="0" class="nonmatching"/>
+<rect width="682.04" height="6" x="0" y="0" class="named"/>
+<rect width="12.87" height="6" x="682.04" y="0" class="decompiled"/>
+<rect width="52.09" height="6" x="694.91" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -270,7 +270,7 @@
 <rect width="12" height="12" x="735" y="45" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="60" class="named"><title>0x00417a90 DragonCollision (749 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="60" class="named"><title>0x00417d80 DragonBones (217 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="60" class="nonmatching"><title>0x00417e60 DragonControl (1348 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="60" class="named"><title>0x00417e60 DragonControl (1348 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="60" class="named"><title>0x004183b0 InitialiseBartoli (284 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="60" class="named"><title>0x004184d0 BartoliControl (403 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00418670 DinoControl (676 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.40%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">17.17%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.79%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">16.78%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="615.51" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="615.51" y="0" class="decompiled"/>
-<rect width="128.25" height="6" x="618.75" y="0" class="nonmatching"/>
+<rect width="618.42" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="618.42" y="0" class="decompiled"/>
+<rect width="125.33" height="6" x="621.67" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1333,7 +1333,7 @@
 <rect width="31.99" height="29.94" x="145.94" y="217.64" class="named"><title>0x00449fa0 LoadObjects (1406 bytes)</title></rect>
 <rect width="31.99" height="29.50" x="145.94" y="250.59" class="nonmatching"><title>0x0042e740 LaraGun (1387 bytes)</title></rect>
 <rect width="31.99" height="29.33" x="145.94" y="283.08" class="named"><title>0x00436850 Cult3Control (1380 bytes)</title></rect>
-<rect width="31.99" height="28.58" x="145.94" y="315.42" class="nonmatching"><title>0x00417e60 DragonControl (1348 bytes)</title></rect>
+<rect width="31.99" height="28.58" x="145.94" y="315.42" class="named"><title>0x00417e60 DragonControl (1348 bytes)</title></rect>
 <rect width="31.99" height="28" x="145.94" y="347" class="named"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
 <rect width="28.56" height="30.69" x="180.92" y="0" class="named"><title>0x004059f0 XYGUVClipper (1297 bytes)</title></rect>
 <rect width="28.56" height="29.34" x="180.92" y="33.69" class="named"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>

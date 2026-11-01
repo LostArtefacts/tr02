@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "game.h"
 
 #define DRAGON_FRONT 22
