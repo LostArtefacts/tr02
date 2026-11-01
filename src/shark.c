@@ -308,3 +308,8 @@ void SharkControl(sint16 item_number)
     else
         AnimateItem(item);
 }
+
+#ifdef TR2_EXE
+BITE_INFO bara_bite = { 2, -60, 121, 7 };
+BITE_INFO shark_bite = { 17, -22, 344, 12 };
+#endif

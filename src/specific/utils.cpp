@@ -539,6 +539,11 @@ extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wPar
 }
 
 #ifdef TR2_EXE
+const char GuidFormat[21] = {
+    123, 3, 2, 1, 0, 45, 5, 4, 45, 7, 6, 45, 8, 9, 10, 11, 12, 13, 14, 15, 125,
+};
+const char HexDigits[] = "0123456789ABCDEF";
+char DialogClassName[] = "Dude:TombRaiderII:DWWndClass";
 HINSTANCE GhInstance;
 char *GpCmdLine;
 double LdPerformanceDivisor;

@@ -599,3 +599,7 @@ void BartoliControl(sint16 item_number)
     else if (ABS(lara_item->pos.x_pos - item->pos.x_pos) < BARTOLI_RANGE && ABS(lara_item->pos.z_pos - item->pos.z_pos) < BARTOLI_RANGE)
         item->timer = 1;
 }
+
+#ifdef TR2_EXE
+BITE_INFO dragon_mouth = { 35, 171, 1168, 12 };
+#endif

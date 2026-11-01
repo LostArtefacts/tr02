@@ -241,3 +241,7 @@ void BigSpiderControl(sint16 item_number)
 
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR2_EXE
+BITE_INFO spider_bite = { 0, 0, 41, 1 };
+#endif

@@ -1441,5 +1441,7 @@ void SkidmanCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 }
 
 #ifdef TR2_EXE
+BITE_INFO left_gun = { 219, -71, 550, 0 };
+BITE_INFO right_gun = { -235, -71, 550, 0 };
 ITEM_INFO *lara_item;
 #endif

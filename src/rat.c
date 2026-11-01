@@ -124,3 +124,7 @@ void MouseControl(sint16 item_number)
 
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR2_EXE
+BITE_INFO mouse_bite = { 0, 0, 57, 2 };
+#endif

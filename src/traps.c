@@ -1297,5 +1297,11 @@ void ControlLavaBlob(sint16 fx_num)
 }
 
 #ifdef TR2_EXE
+BITE_INFO teeth1a = { -23, 0, -1718, 0 };
+BITE_INFO teeth1b = { 71, 0, -1718, 1 };
+BITE_INFO teeth2a = { -23, 10, -1718, 0 };
+BITE_INFO teeth2b = { 71, 10, -1718, 1 };
+BITE_INFO teeth3a = { -23, -10, -1718, 0 };
+BITE_INFO teeth3b = { 71, -10, -1718, 1 };
 sint32 detonate_all_mines;
 #endif

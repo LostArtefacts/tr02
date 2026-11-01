@@ -284,6 +284,9 @@ void SOUND_Init(void)
 }
 
 #ifdef TR2_EXE
+uint8 tracksRemoved[8] = {
+    2, 19, 20, 26, 255, 0, 0, 0,
+};
 SoundSlot LaSlot[MAX_SLOTS];
 sint16 sample_lut[370];
 SAMPLE_INFO *sample_infos;

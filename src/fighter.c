@@ -1405,5 +1405,12 @@ void WarriorControl(sint16 item_number)
 }
 
 #ifdef TR2_EXE
+BITE_INFO monk_hit = { -23, 16, 265, 14 };
+BITE_INFO work3_hit = { 247, 10, 11, 10 };
+BITE_INFO xian_left_spear = { 0, 0, 920, 11 };
+BITE_INFO xian_right_spear = { 0, 0, 920, 18 };
+BITE_INFO warrior_hit = { 0, 37, 550, 15 };
+BITE_INFO cult2_left = { 0, 0, 0, 5 };
+BITE_INFO cult2_right = { 0, 0, 0, 8 };
 int monks_attack_lara;
 #endif

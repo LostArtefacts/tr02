@@ -1342,6 +1342,7 @@ extern "C" void InsertTransQuad_Sorted(int x, int y, int width, int height, int 
 }
 
 #ifdef TR2_EXE
+float RhwFactor = 33554432.0f;
 float FltResZBuf;
 sint16 phd_winymin;
 float FltResZORhw;

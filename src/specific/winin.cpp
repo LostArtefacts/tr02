@@ -341,6 +341,7 @@ JOYSTICK_LIST JoystickList;
 JOYSTICK CurrentJoystick;
 
 #ifdef TR2_EXE
+int JoyNeedCaps = 1;
 JOYCAPS JoyCaps;
 LPDIRECTINPUT DInput;
 LPDIRECTINPUTDEVICE IDID_SysKeyboard;

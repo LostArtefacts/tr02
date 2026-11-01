@@ -355,3 +355,9 @@ void DrawUnclippedItem(ITEM_INFO *item)
     phd_top = top;
     phd_bottom = bottom;
 }
+
+#ifdef TR2_EXE
+sint16 MovingBlockBounds[12] = {
+    -300, 300, 0, 0, -692, -512, -1820, 1820, -5460, 5460, -1820, 1820,
+};
+#endif

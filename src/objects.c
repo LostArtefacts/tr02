@@ -1085,6 +1085,10 @@ void DetonatorControl(sint16 item_number)
 }
 
 #ifdef TR2_EXE
+sint16 DeathSlideBounds[12] = {
+    -256, 256, -100, 100, 256, 512, 0, 0, -4550, 4550, 0, 0,
+};
+PHD_VECTOR DeathSlidePosition = { 0, 0, 371 };
 sint16 final_boss_active;
 sint16 final_boss[5];
 sint16 final_level_count;

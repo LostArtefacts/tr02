@@ -918,6 +918,42 @@ void WadeSplash(ITEM_INFO *item, int water_height)
 #endif
 
 #ifdef TR2_EXE
+int flipeffect = -1;
+int AssaultBestTime = -1;
+void (*effect_routines[32])(ITEM_INFO *item) = {
+    turn180_effect,
+    floor_shake_effect,
+    lara_normal_effect,
+    LaraBubbles,
+    finish_level_effect,
+    FloodFX,
+    ChandelierFX,
+    RubbleFX,
+    PistonFX,
+    CurtainFX,
+    SetChangeFX,
+    ExplosionFX,
+    lara_hands_free,
+    flip_map_effect,
+    draw_right_gun,
+    draw_left_gun,
+    lara_col_kick,
+    lara_col_kick,
+    swap_meshes_with_meshswap1,
+    swap_meshes_with_meshswap2,
+    swap_meshes_with_meshswap3,
+    invisibility_on,
+    invisibility_off,
+    dynamic_light_on,
+    dynamic_light_off,
+    StatueFX,
+    reset_hair,
+    BoilerFX,
+    AssaultReset,
+    AssaultStop,
+    AssaultStart,
+    AssaultFinished,
+};
 int fliptimer;
 int assault_timer_display;
 int assault_timer_active;

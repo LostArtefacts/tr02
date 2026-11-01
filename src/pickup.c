@@ -729,6 +729,36 @@ void SecretControl(sint16 item_number)
 }
 
 #ifdef TR2_EXE
+sint16 InventoryChosen = -1;
+sint16 PickUpBounds[12] = {
+    -256, 256, -100, 100, -256, 256, -1820, 1820, 0, 0, 0, 0,
+};
+PHD_VECTOR PickUpPosition = { 0, 0, -100 };
+sint16 GongBounds[12] = {
+    -512, 1024, -100, 100, -812, -412, -5460, 5460, 0, 0, 0, 0,
+};
+sint16 PickUpBoundsUW[12] = {
+    -512, 512, -512, 512, -512, 512, -8190, 8190, -8190, 8190, -8190, 8190,
+};
+PHD_VECTOR PickUpPositionUW = { 0, -200, -350 };
+sint16 Switch1Bounds[12] = {
+    -220, 220, 0, 0, 292, 512, -1820, 1820, -5460, 5460, -1820, 1820,
+};
+PHD_VECTOR SmallSwitchPosition = { 0, 0, 362 };
+PHD_VECTOR PushSwitchPosition = { 0, 0, 292 };
+PHD_VECTOR AirlockPosition = { 0, 0, 212 };
+sint16 Switch2Bounds[12] = {
+    -1024, 1024, -1024, 1024, -1024, 512, -14560, 14560, -14560, 14560, -14560, 14560,
+};
+PHD_VECTOR Switch2Position = { 0, 0, 108 };
+sint16 KeyHoleBounds[12] = {
+    -200, 200, 0, 0, 312, 512, -1820, 1820, -5460, 5460, -1820, 1820,
+};
+PHD_VECTOR KeyHolePosition = { 0, 0, 362 };
+sint16 PuzzleHoleBounds[12] = {
+    -200, 200, 0, 0, 312, 512, -1820, 1820, -5460, 5460, -1820, 1820,
+};
+PHD_VECTOR PuzzleHolePosition = { 0, 0, 327 };
 sint32 pup_x;
 sint32 pup_y;
 sint32 pup_z;

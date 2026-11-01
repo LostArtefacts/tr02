@@ -293,5 +293,8 @@ extern "C" bool GameApplySettings(APP_SETTINGS *newSettings)
 }
 
 #ifdef TR2_EXE
+char RendererReinitFailed[] = "Can't reinitialise renderer";
+char ModeInfoFormat[] = "%dx%d";
+char Var4664d8[] = "%dx%dx%d";
 DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
 #endif

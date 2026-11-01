@@ -235,6 +235,12 @@ extern "C" void ScreenShot(LPDIRECTDRAWSURFACE screen)
 }
 
 #ifdef TR2_EXE
+BYTE TgaHeader[18] = {
+    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 1, 0, 1, 16, 0,
+};
+char ScreenShotPcxFormat[] = "tomb%04d.pcx";
+char TgaFileMode[] = "wb";
+char ScreenShotTgaFormat[] = "tomb%04d.tga";
 int ScreenShotPcxNumber;
 int ScreenShotTgaNumber;
 #endif

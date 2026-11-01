@@ -114,6 +114,7 @@ extern "C" int WinGameStart(void)
 }
 
 #ifdef TR2_EXE
+char RenderInitFailedFormat[] = "Render init failed with \"%s\"";
 extern "C" {
 void WinCleanupStub1(void)
 {

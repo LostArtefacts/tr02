@@ -261,3 +261,7 @@ void DiverControl(sint16 item_number)
         item->pos.y_pos = water_level - WALL_L / 2;
     }
 }
+
+#ifdef TR2_EXE
+BITE_INFO diver_poon = { 17, 164, 44, 18 };
+#endif

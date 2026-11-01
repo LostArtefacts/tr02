@@ -152,3 +152,8 @@ void EagleControl(sint16 item_number)
 
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR2_EXE
+BITE_INFO bird_bite = { 15, 46, 21, 6 };
+BITE_INFO crow_bite = { 2, 10, 60, 14 };
+#endif

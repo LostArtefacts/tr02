@@ -333,6 +333,8 @@ void InGameCinematicCamera(void)
 }
 
 #ifdef TR2_EXE
+int cutscene_track = 1;
+int CineTickRate = 32768;
 int CineCurrentFrame;
 int original_room;
 sint16 *cine;

@@ -1421,3 +1421,13 @@ void WinstonControl(sint16 item_number)
 
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR2_EXE
+BITE_INFO cult1_gun = { 3, 331, 56, 10 };
+BITE_INFO cult3_gunl = { -2, 275, 23, 6 };
+BITE_INFO cult3_gunr = { 2, 275, 23, 10 };
+BITE_INFO work1_gun = { 0, 281, 40, 9 };
+BITE_INFO work2_gun = { 0, 308, 32, 9 };
+BITE_INFO bandit_gun = { -2, 150, 19, 17 };
+BITE_INFO bandit2_gun = { -1, 230, 9, 17 };
+#endif

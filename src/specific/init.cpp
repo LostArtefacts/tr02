@@ -96,6 +96,60 @@ void S_SeedRandom(void)
 }
 
 #ifdef TR2_EXE
+sint16 DumpX = 25;
+sint16 DumpY = 25;
+sint16 DumpWidth = 50;
+sint16 DumpHeight;
+char *game_malloc_strings[47] = {
+    "Temp Alloc",
+    "Texture Pages",
+    "Mesh Pointers",
+    "Meshes",
+    "Anims",
+    "Structs",
+    "Ranges",
+    "Commands",
+    "Bones",
+    "Frames",
+    "Room Textures",
+    "Room Infos",
+    "Room Mesh",
+    "Room Door",
+    "Room Floor",
+    "Room Lights",
+    "Room Static Mesh Infos",
+    "Floor Data",
+    "ITEMS!!",
+    "Cameras",
+    "Sound FX",
+    "Boxes",
+    "Overlaps",
+    "GroundZone",
+    "FlyZone",
+    "Animating Texture Ranges",
+    "Cinematic Frames",
+    "LoadDemo Buffer",
+    "SaveDemo Buffer",
+    "Cinematic Effects",
+    "Mummy Head Turn",
+    "Extra Door stuff",
+    "Effects_Array",
+    "Creature Data",
+    "Creature LOT",
+    "Sample Infos",
+    "Samples",
+    "Sample Offsets",
+    "Rolling Ball Stuff",
+    "Skidoo Stuff",
+    "Load Piccy Buffer",
+    "FMV Buffers",
+    "Polygon Buffers",
+    "Order Tables",
+    "CLUTs",
+    "Texture Infos",
+    "Sprite Infos",
+};
+char GameMallocOutOfMemory[36] = "game_malloc(): OUT OF MEMORY %s %d";
 int malloc_size;
 char *malloc_ptr;
 int malloc_used;

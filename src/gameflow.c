@@ -833,6 +833,143 @@ void ShowThis(char *name, int time)
 #endif
 
 #ifdef TR2_EXE
+sint16 GF_NumSecrets = 3;
+sint16 GF_CDtracks[16] = {
+    2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+sint16 CineTargetAngle = 16384;
+INVENTORY_ITEM InvCompassOption = {
+    NULL, 121, 1, 0, 0, 0, 1, 1, 0, 4352, 0, -1536, 0, 0, 0, 0, -170, 0, 320, 0,
+    0xffffffff, 0xffffffff, 0, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPistolOption = {
+    NULL, 157, 12, 0, 0, 11, 1, 1, 0, 3200, 0, 2848, 0, 0, -32768, 0, 38, 0, 352, 0,
+    0xffffffff, 0xffffffff, 1, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvFlareOption = {
+    NULL, 173, 31, 0, 0, 30, 1, 1, 0, 3200, 0, 0, 0, 0, -8192, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 8, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvShotgunOption = {
+    NULL, 158, 13, 0, 0, 12, 1, 1, 0, 3200, 0, 5120, 0, 0, 30720, 0, 0, 0, 228, 0,
+    0xffffffff, 0xffffffff, 2, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvMagnumOption = {
+    NULL, 159, 12, 0, 0, 11, 1, 1, 0, 3200, 0, 3360, 0, 0, -32768, 0, 0, 0, 362, 0,
+    0xffffffff, 0xffffffff, 3, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvUziOption = {
+    NULL, 160, 13, 0, 0, 12, 1, 1, 0, 3200, 0, 2336, 0, 0, -32768, 0, 56, 0, 322, 0,
+    0xffffffff, 0xffffffff, 4, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvHarpoonOption = {
+    NULL, 161, 12, 0, 0, 11, 1, 1, 0, 3200, 0, -736, 0, 0, -19456, 0, 58, 0, 296, 0,
+    0xffffffff, 0xffffffff, 7, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvM16Option = {
+    NULL, 162, 12, 0, 0, 11, 1, 1, 0, 3200, 0, -224, 0, 0, -18432, 0, 84, 0, 296, 0,
+    0xffffffff, 0xffffffff, 5, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvGrenadeOption = {
+    NULL, 163, 12, 0, 0, 11, 1, 1, 0, 3200, 0, -224, 0, 0, 14336, 0, 56, 0, 296, 0,
+    0xffffffff, 0xffffffff, 6, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPistolAmmoOption = {
+    NULL, 164, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 1, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvShotgunAmmoOption = {
+    NULL, 165, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 2, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvMagnumAmmoOption = {
+    NULL, 166, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 3, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvUziAmmoOption = {
+    NULL, 167, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 4, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvHarpoonAmmoOption = {
+    NULL, 168, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 7, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvM16AmmoOption = {
+    NULL, 169, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 5, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvGrenadeAmmoOption = {
+    NULL, 170, 1, 0, 0, 0, 1, 1, 0, 3200, 0, -3808, 0, 0, 0, 0, 0, 0, 296, 0, 0xffffffff,
+    0xffffffff, 6, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvSmallMedipackOption = {
+    NULL, 171, 26, 0, 0, 25, 1, 1, 0, 4032, 0, -7296, 0, 0, -4096, 0, 0, 0, 216, 0,
+    0xffffffff, 0xffffffff, 11, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvLargeMedipackOption = {
+    NULL, 172, 20, 0, 0, 19, 1, 1, 0, 3616, 0, -8160, 0, 0, -4096, 0, 0, 0, 352, 0,
+    0xffffffff, 0xffffffff, 10, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPickup1Option = {
+    NULL, 207, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 111, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPickup2Option = {
+    NULL, 208, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 110, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPuzzle1Option = {
+    NULL, 178, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 108, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPuzzle2Option = {
+    NULL, 179, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 107, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPuzzle3Option = {
+    NULL, 180, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 106, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPuzzle4Option = {
+    NULL, 181, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 105, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvKey1Option = {
+    NULL, 197, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 101, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvKey2Option = {
+    NULL, 198, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 102, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvKey3Option = {
+    NULL, 199, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 103, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvKey4Option = {
+    NULL, 200, 1, 0, 0, 0, 1, 1, 0, 7200, 0, -4352, 0, 0, 0, 0, 0, 0, 256, 0, 0xffffffff,
+    0xffffffff, 104, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPassportOption = {
+    NULL, 133, 30, 0, 0, 14, 1, 1, 0, 4640, 0, -4320, 0, 0, 0, 0, 0, 0, 384, 0, 19, 19, 0,
+    NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvDetailOption = {
+    NULL, 153, 1, 0, 0, 0, 1, 1, 0, 4224, 0, -7232, 0, 0, 0, 0, 16, 0, 444, 0, 0xffffffff,
+    0xffffffff, 1, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvSoundOption = {
+    NULL, 154, 1, 0, 0, 0, 1, 1, 0, 4832, 0, -5408, 0, 0, -3072, 0, -2, 0, 350, 0,
+    0xffffffff, 0xffffffff, 2, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvControlOption = {
+    NULL, 155, 1, 0, 0, 0, 1, 1, 0, 5504, 0, -2560, 5632, 5632, 13312, 0, 46, 0, 508, 0,
+    0xffffffff, 0xffffffff, 3, NULL, { 0, 0, 0, 0 },
+};
+INVENTORY_ITEM InvPhotoOption = {
+    NULL, 122, 1, 0, 0, 0, 1, 1, 0, 4640, 0, -4320, 0, 0, 0, 0, 0, 0, 384, 0, 0xffffffff,
+    0xffffffff, 5, NULL, { 0, 0, 0, 0 },
+};
 sint32 GF_LaraStartAnim;
 sint16 GF_SunsetEnabled;
 sint16 GF_DeadlyWater;

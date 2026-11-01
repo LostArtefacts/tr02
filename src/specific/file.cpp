@@ -1112,6 +1112,23 @@ extern "C" int LoadTexturePages(HANDLE file)
 }
 
 #ifdef TR2_EXE
+char LoadRoomsTooMany[] = "LoadRoom(): Too many rooms";
+char LoadRoomsNoMemory[] = "LoadRoom(): Could not allocate memory for rooms";
+char LoadObjectsTooManyTextures[] = "Too many Textures in level";
+char LoadItemsBadObject[] = "LoadItems(): Bad Object number (%d) on Item %d";
+char LoadItemsNoMemory[] = "LoadItems(): Unable to allocate memory for 'items'";
+char LoadItemsTooMany[] = "LoadItems(): Too Many Items being Loaded!!";
+char LoadBoxesFlyZone[] = "LoadBoxes(): Unable to load 'fly_zone'";
+char LoadBoxesGroundZone[] = "LoadBoxes(): Unable to load 'ground_zone'";
+char LoadBoxesOverlaps[] = "LoadBoxes(): Unable to load box overlaps";
+char LoadBoxesBoxes[] = "LoadBoxes(): Unable to load boxes";
+char DemoExtension[] = "DEM";
+char MainSfxOpenFailed[] = "Could not open MAIN.SFX file";
+char MainSfxFileName[] = "data\\main.sfx";
+char LoadLevelTooNew[] = "FATAL: Level %d (%s) requires a new TOMB2.EXE (version %d) to run";
+char LoadLevelOutOfDate[] = "FATAL: Level %d (%s) is OUT OF DATE (version %d). COPY NEW EDITORS AND REMAKE LEVEL";
+char LoadLevelOpenFailed[] = "LoadLevel(): Could not open %s (level %d)";
+uint8 GouraudTable[256][32];
 uint8 DepthQIndex[256];
 int demo_loaded;
 uint32 GF_ScriptVersion;

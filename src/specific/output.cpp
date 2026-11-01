@@ -922,6 +922,10 @@ extern "C" void FadeWait(void)
 #endif
 
 #ifdef TR2_EXE
+sint16 shadowman[32] = {
+    0, 0, 0, 32767, 1, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0,
+};
 sint32 LsAdder;
 sint32 phd_znear;
 void (*InsertLine)(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);

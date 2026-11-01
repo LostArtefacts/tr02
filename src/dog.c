@@ -337,3 +337,8 @@ void TigerControl(sint16 item_number)
     CreatureHead(item, head);
     CreatureAnimation(item_number, angle, tilt);
 }
+
+#ifdef TR2_EXE
+BITE_INFO dog_bite = { 0, 30, 141, 20 };
+BITE_INFO tiger_bite = { 19, -13, 3, 26 };
+#endif

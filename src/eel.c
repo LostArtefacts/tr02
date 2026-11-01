@@ -149,3 +149,7 @@ void EelControl(sint16 item_number)
     item->data = (void *)pos;
     AnimateItem(item);
 }
+
+#ifdef TR2_EXE
+BITE_INFO bigeel_bite = { 7, 157, 333, 7 };
+#endif

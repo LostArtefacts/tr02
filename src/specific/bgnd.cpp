@@ -369,6 +369,13 @@ extern "C" bool BGND_Init(void)
 }
 
 #ifdef TR2_EXE
+int BGND_PaletteIndex = -1;
+int Var466408[4] = {
+    0, 256, 512, 640,
+};
+int Var466418[3] = {
+    0, 256, 480,
+};
 bool BGND_PictureIsReady;
 int BGND_TexturePageIndexes[5];
 DWORD BGND_PageHandles[5];

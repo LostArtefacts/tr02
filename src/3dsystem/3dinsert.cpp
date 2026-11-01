@@ -1116,6 +1116,7 @@ extern "C" void ins_line(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, c
 }
 
 #ifdef TR2_EXE
+int perspective_distance = 50331648;
 float phd_bottomfloat;
 float phd_leftfloat;
 float FltRhwONearZ;

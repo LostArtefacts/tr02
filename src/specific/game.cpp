@@ -427,6 +427,12 @@ extern "C" void DisplayCredits(void)
 }
 
 #ifdef TR2_EXE
+char TimeFormat[] = "%02d:%02d:%02d";
+sint16 saved_levels[16] = {
+    -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+sint32 rand_1 = -747505337;
+sint32 rand_2 = -747505337;
 uint32 CurrentLevel;
 int level_complete;
 int save_counter;

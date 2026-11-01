@@ -443,3 +443,10 @@ void YetiControl(sint16 item_number)
         CreatureAnimation(item_number, angle, 0);
     }
 }
+
+#ifdef TR2_EXE
+BITE_INFO yeti_biteL = { 12, 101, 19, 13 };
+BITE_INFO yeti_biteR = { 12, 101, 19, 10 };
+BITE_INFO birdy_left = { 0, 224, 0, 19 };
+BITE_INFO birdy_right = { 0, 224, 0, 22 };
+#endif

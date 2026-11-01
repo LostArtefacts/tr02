@@ -1435,6 +1435,8 @@ DISPLAY_ADAPTER_LIST DisplayAdapterList;
 DISPLAY_ADAPTER CurrentDisplayAdapter;
 
 #ifdef TR2_EXE
+char ClassName[32] = "Dude:TombRaiderII:DDWndClass";
+char WindowName[16] = "Tomb Raider II";
 int MinWindowClientHeight;
 LPDIRECTDRAW DDrawInterface;
 bool IsGameWindowChanging;

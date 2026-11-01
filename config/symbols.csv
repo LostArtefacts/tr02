@@ -1494,6 +1494,16 @@ address,size,name,symbol
 0x00464558,24,req_main_gour2,_req_main_gour2
 0x00464590,24,req_sel_gour2,_req_sel_gour2
 0x004645a8,32,req_unsel_gour1,_req_unsel_gour1
+0x004645dc,4,Var4645dc,_Var4645dc
+0x004645e0,8,Var4645e0,_Var4645e0
+0x004645e8,16,Var4645e8,_Var4645e8
+0x004645f8,8,Var4645f8,_Var4645f8
+0x00464600,16,Var464600,_Var464600
+0x00464610,4,Var464610,_Var464610
+0x00464614,4,Var464614,_Var464614
+0x00464618,8,Var464618,_Var464618
+0x00464620,8,Var464620,_Var464620
+0x00464628,8,Var464628,_Var464628
 0x00464718,,is_sound_muslevel,_is_sound_muslevel
 0x004647e0,,is_sound_sfxlevel,_is_sound_sfxlevel
 0x004648a8,,is_sound_muslevellow,_is_sound_muslevellow
@@ -1612,7 +1622,7 @@ address,size,name,symbol
 0x004664b4,28,RendererReinitFailed,_RendererReinitFailed
 0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
 0x004664d8,9,Var4664d8,_Var4664d8
-0x004664e8,4,ErrorStringTable,_ErrorStringTable
+0x004664e8,164,ErrorStringTable,_ErrorStringTable
 0x004668c0,,LoadRoomsTooMany,_LoadRoomsTooMany
 0x004668dc,,LoadRoomsNoMemory,_LoadRoomsNoMemory
 0x0046690c,,LoadObjectsTooManyTextures,_LoadObjectsTooManyTextures
@@ -2055,6 +2065,8 @@ address,size,name,symbol
 0x005207e0,,SaveGameStrings1,_SaveGameStrings1
 0x00520ca0,96,RequesterFlags2,_RequesterFlags2
 0x00520d00,96,RequesterFlags1,_RequesterFlags1
+0x00520d60,1200,Var520d60,_Var520d60
+0x00521220,1200,Var521220,_Var521220
 0x005216e0,,inv_colours,_inv_colours
 0x00521720,,SaveGameStrings2,_SaveGameStrings2
 0x00521be0,96,SaveGameReqFlags2,_SaveGameReqFlags2

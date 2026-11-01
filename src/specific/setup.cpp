@@ -1461,6 +1461,31 @@ extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
 }
 
 #ifdef TR2_EXE
+LPCSTR String_Software3d = "Software (256 Colors)";
+LPCSTR String_Hardware3d = "Hardware 3D Acceleration";
+LPCSTR String_FullScreen = "Full Screen %dx%dx%d";
+LPCSTR String_Windowed = "Windowed %dx%d%s";
+LPCSTR String_ZBuffered = "Z Buffered";
+LPCSTR String_BilinearFiltered = "Bilinear Filtered";
+LPCSTR String_Dithered = "Dithered";
+LPCSTR String_TripleBuffered = "Triple Buffered";
+LPCSTR String_PerspectiveCorrect = "Perspective Correct";
+LPCSTR String_None = "None";
+LPCSTR String_NA = "n/a";
+LPCSTR String_Enabled = "Enabled";
+LPCSTR String_Disabled = "Disabled";
+LPCSTR String_Camera = "Camera";
+LPCSTR SE_PassedText = "PASSED";
+LPCSTR SE_FailedText = "FAILED";
+LPCSTR SE_SettingsOkText = "Current Settings OK";
+char RegistryKeyName[] = "Software\\Core Design\\Tomb Raider II";
+char SetupDialogName[] = "Tomb Raider II";
+LPCSTR Strings_Aspect[3] = {
+    " (4:3)",
+    " (16:9)",
+    RegistryClass,
+};
+char RegistryKeyFormat[] = "%s\\%s";
 char RegistryClass[8];
 SETUP_APP_SETTINGS ChangedAppSettings;
 HWND SE_PropSheetWndHandle;

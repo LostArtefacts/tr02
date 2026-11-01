@@ -98,5 +98,10 @@ void S_FadeOutInventory(int fade)
 }
 
 #ifdef TR2_EXE
+double screen_sizer = 1.0;
+double game_sizer = 1.0;
+int fade_value = 1048576;
+int fade_limit = 1048576;
+int fade_adder = 32768;
 int mode_lock;
 #endif

@@ -1976,6 +1976,84 @@ void ShowEndStatsText(void)
 }
 
 #ifdef TR2_EXE
+SG_COL req_bgnd_gour1[16] = {
+    0x1e00, 0x1e00, 0x1a00, 0x1e00, 0x1e00, 0x1e00, 0x1e00, 0x1a00, 0x1a00, 0x1e00, 0x1e00,
+    0x1e00, 0x1e00, 0x1a00, 0x1e00, 0x1e00,
+};
+SG_COL req_bgnd_gour2[12] = {
+    0x1a00, 0x1800, 0x1e00, 0x2000, 0x2000, 0x1e00, 0x1c00, 0x1c00, 0x1a00, 0, 0, 0,
+};
+SG_COL req_main_gour1[16] = {
+    0x2000, 0x2000, 0x1800, 0x2000, 0x2000, 0x2000, 0x2000, 0x1800, 0x1800, 0x2000, 0x2000,
+    0x2000, 0x2000, 0x1800, 0x2000, 0x2000,
+};
+SG_COL req_main_gour2[12] = {
+    0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0, 0, 0,
+};
+SG_COL req_sel_gour2[12] = {
+    0x2000, 0x1010, 0x2000, 0x1400, 0x2000, 0x1010, 0x2000, 0x1400, 0x2000, 0, 0, 0,
+};
+SG_COL req_unsel_gour1[16] = {
+    0x2000, 0x2000, 0x1a00, 0x2000, 0x2000, 0x2000, 0x2000, 0x1a00, 0x1a00, 0x2000, 0x2000,
+    0x2000, 0x2000, 0x1a00, 0x2000, 0x2000,
+};
+sint16 inv_main_objects = 8;
+sint16 inv_main_qtys[24] = {
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+INVENTORY_ITEM *inv_main_list[23] = {
+    &InvCompassOption,
+    &InvFlareOption,
+    &InvPistolOption,
+    &InvShotgunOption,
+    &InvMagnumOption,
+    &InvUziOption,
+    &InvM16Option,
+    &InvGrenadeOption,
+    &InvHarpoonOption,
+    &InvLargeMedipackOption,
+    &InvSmallMedipackOption,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+};
+sint16 inv_keys_qtys[24] = {
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+INVENTORY_ITEM *inv_keys_list[23] = {
+    &InvPuzzle1Option,
+    &InvPuzzle2Option,
+    &InvPuzzle3Option,
+    &InvPuzzle4Option,
+    &InvKey1Option,
+    &InvKey2Option,
+    &InvKey3Option,
+    &InvKey4Option,
+    &InvPickup1Option,
+    &InvPickup2Option,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+};
 TEXTSTRING *Inv_itemText[IT_NUMBEROF];
 TEXTSTRING *Inv_tagText;
 TEXTSTRING *Inv_upArrow1;

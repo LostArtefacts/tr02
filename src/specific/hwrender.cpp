@@ -324,6 +324,7 @@ bool HWR_Init()
 }
 
 #ifdef TR2_EXE
+int PaletteIndex = -1;
 IDirect3DDevice2 *G_Direct3DDevice;
 D3DTLVERTEX VertexBuffer[MAX_TLVERTICES];
 D3DTEXTUREHANDLE CurrentTexSource;
