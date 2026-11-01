@@ -757,6 +757,443 @@ void gtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
 }
 
 
+void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
+{
+    XBUF_PERSP_FP *dataptr;
+    unsigned char *lineptr, *pixptr;
+    float ooz, uoz, voz, scale;
+    float oozadd32, uozadd32, vozadd32;
+    int start_g, add_g, add_g2;
+    int end_u, end_v;
+    int start_u, start_v;
+    int add_u, add_v;
+    int start_x, end_x;
+    int x;
+    unsigned char texel;
+
+    dataptr = ((XBUF_PERSP_FP *)xbuffer) + ymin;
+    lineptr = (unsigned char *)phd_winptr + (ymin * phd_scrwidth);
+    for (ymax -= ymin; ymax > 0; ymax--, dataptr++, lineptr += phd_scrwidth) {
+        start_x = dataptr->Xleft >> 16;
+        end_x = dataptr->Xright >> 16;
+        x = end_x - start_x;
+        if (x > 32) {
+            start_g = dataptr->Gleft;
+            add_g = (dataptr->Gright - start_g) / x;
+            add_g2 = add_g << 1;
+            scale = 32.0f / x;
+            uoz = dataptr->UOZleft;
+            uozadd32 = (dataptr->UOZright - uoz) * scale;
+            voz = dataptr->VOZleft;
+            vozadd32 = (dataptr->VOZright - voz) * scale;
+            ooz = dataptr->OOZleft;
+            oozadd32 = (dataptr->OOZright - ooz) * scale;
+            scale = 256.0f / ooz;
+            end_u = (int)(uoz * scale);
+            end_v = (int)(voz * scale);
+            pixptr = lineptr + start_x;
+            ooz += oozadd32;
+            scale = 256.0f / ooz;
+            for (; x >= 32; x -= 32) {
+                start_u = end_u;
+                uoz += uozadd32;
+                end_u = (int)(uoz * scale);
+                add_u = (end_u - start_u) >> 5;
+                start_v = end_v;
+                voz += vozadd32;
+                end_v = (int)(voz * scale);
+                add_v = (end_v - start_v) >> 5;
+                ooz += oozadd32;
+                scale = 256.0f / ooz;
+                if ((ABS(add_u) + ABS(add_v)) & SINGLE_MASK) {
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 1) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 2) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 3) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 4) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 5) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 6) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 7) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 8) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 9) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 10) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 11) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 12) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 13) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 14) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 15) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 16) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 17) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 18) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 19) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 20) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 21) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 22) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 23) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 24) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 25) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 26) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 27) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 28) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 29) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 30) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 31) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                } else {
+                    add_u <<= 1;
+                    add_v <<= 1;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 0) = *(pixptr + 1) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 2) = *(pixptr + 3) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 4) = *(pixptr + 5) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 6) = *(pixptr + 7) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 8) = *(pixptr + 9) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 10) = *(pixptr + 11) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 12) = *(pixptr + 13) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 14) = *(pixptr + 15) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 16) = *(pixptr + 17) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 18) = *(pixptr + 19) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 20) = *(pixptr + 21) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 22) = *(pixptr + 23) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 24) = *(pixptr + 25) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 26) = *(pixptr + 27) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 28) = *(pixptr + 29) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        *(pixptr + 30) = *(pixptr + 31) = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                }
+                pixptr += 32;
+            }
+            if (!x)
+                continue;
+            scale = 256.0f / dataptr->OOZright;
+            start_u = end_u;
+            end_u = (int)(dataptr->UOZright * scale);
+            add_u = (end_u - start_u) / x;
+            start_v = end_v;
+            end_v = (int)(dataptr->VOZright * scale);
+            add_v = (end_v - start_v) / x;
+            if ((ABS(add_u) + ABS(add_v)) & SINGLE_MASK) {
+                for (; x > 1; x -= 2, pixptr += 2) {
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        pixptr[0] = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        pixptr[1] = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                }
+            } else {
+                add_u <<= 1;
+                add_v <<= 1;
+                add_g2 = add_g << 1;
+                for (; x > 1; x -= 2, pixptr += 2) {
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        pixptr[0] = pixptr[1] = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                }
+            }
+            if (x) {
+                texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                if (texel)
+                    pixptr[0] = DepthQTable[start_g >> 16].index[texel];
+            }
+        } else {
+            if (x <= 0)
+                continue;
+            start_g = dataptr->Gleft;
+            add_g = (dataptr->Gright - start_g) / x;
+            scale = 256.0f / dataptr->OOZleft;
+            start_u = (int)(dataptr->UOZleft * scale);
+            start_v = (int)(dataptr->VOZleft * scale);
+            scale = 256.0f / dataptr->OOZright;
+            end_u = (int)(dataptr->UOZright * scale);
+            end_v = (int)(dataptr->VOZright * scale);
+            add_u = (end_u - start_u) / x;
+            add_v = (end_v - start_v) / x;
+            pixptr = lineptr + start_x;
+            if ((ABS(add_u) + ABS(add_v)) & SINGLE_MASK) {
+                for (; x > 1; x -= 2, pixptr += 2) {
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        pixptr[0] = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        pixptr[1] = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g;
+                }
+            } else {
+                add_u <<= 1;
+                add_v <<= 1;
+                add_g2 = add_g << 1;
+                for (; x > 1; x -= 2, pixptr += 2) {
+                    texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                    if (texel)
+                        pixptr[0] = pixptr[1] = DepthQTable[start_g >> 16].index[texel];
+                    start_u += add_u;
+                    start_v += add_v;
+                    start_g += add_g2;
+                }
+            }
+            if (x) {
+                texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
+                if (texel)
+                    pixptr[0] = DepthQTable[start_g >> 16].index[texel];
+            }
+        }
+    }
+}
+
+
 void draw_poly_gtmap_persp(sint16 *iptr)
 {
     if (xgen_xguvpersp_fp(iptr + 1))
