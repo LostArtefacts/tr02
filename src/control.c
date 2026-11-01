@@ -390,6 +390,7 @@ int GetChange(ITEM_INFO *item, ANIM_STRUCT *anim)
 
 
 sint16 GetDoor(FLOOR_INFO *floor);
+extern sint16 *floor_data;
 
 void TranslateItem(ITEM_INFO *item, sint32 x, sint32 y, sint32 z)
 {
@@ -477,8 +478,6 @@ FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number)
 #define DOOR_TYPE 1
 #define TILT_TYPE 2
 #define ROOF_TYPE 3
-
-extern sint16 *floor_data;
 
 #define TRIGGER_TYPE 4
 #define LAVA_TYPE 5
