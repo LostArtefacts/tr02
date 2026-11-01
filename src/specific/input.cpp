@@ -1,6 +1,14 @@
 #include "global.h"
 #include <dinput.h>
 #include "input.h"
+#include <ddraw.h>
+#include "../camera.h"
+#include "../gameflow.h"
+#include "../input.h"
+
+extern "C" {
+#include "../lara.h"
+}
 
 int Key(int number)
 {
@@ -48,14 +56,6 @@ int Key(int number)
         return rawkey(DIK_RMENU);
     return 0;
 }
-
-#include <ddraw.h>
-#include "../camera.h"
-#include "../gameflow.h"
-extern "C" {
-#include "../lara.h"
-}
-#include "../input.h"
 
 #define GUN_OPTION 157
 #define SHOTGUN_OPTION 158
