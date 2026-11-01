@@ -76,50 +76,6 @@ extern HWND GraphicsDialogHandle;
 LPCSTR DecodeErrorMessage(DWORD error);
 }
 
-extern "C" bool SE_GraphicsTestStart(void)
-{
-    try
-    {
-        WinVidStart();
-        RenderStart(true);
-    }
-    catch (DWORD error)
-    {
-        SetDlgItemText(GraphicsDialogHandle, 1043, SE_FailedText);
-        SetDlgItemText(GraphicsDialogHandle, 1046, DecodeErrorMessage(error));
-        return false;
-    }
-    SetDlgItemText(GraphicsDialogHandle, 1043, SE_PassedText);
-    SetDlgItemText(GraphicsDialogHandle, 1046, SE_SettingsOkText);
-    return true;
-}
-
-extern "C" void SE_GraphicsTestFinish(void)
-{
-    RenderFinish(true);
-    WinVidFinish();
-    WinVidHideGameWindow();
-}
-
-extern "C" bool SE_GraphicsTestExecute(void)
-{
-    return false;
-}
-
-extern "C" bool SE_GraphicsTest(void)
-{
-    SETUP_APP_SETTINGS saved;
-    bool result = false;
-
-    saved = SavedAppSettings;
-    SavedAppSettings = ChangedAppSettings;
-    if (SE_GraphicsTestStart())
-        result = SE_GraphicsTestExecute();
-    SE_GraphicsTestFinish();
-    SavedAppSettings = saved;
-    return result;
-}
-
 struct DISPLAY_MODE
 {
     int width;
@@ -356,6 +312,50 @@ extern "C" int Func452760(SETUP_APP_SETTINGS *settings)
     settings->VideoMode = mode;
     CloseGameRegistryKey();
     return IsNewRegistryKeyCreated() ? 2 : 1;
+}
+
+extern "C" bool SE_GraphicsTestStart(void)
+{
+    try
+    {
+        WinVidStart();
+        RenderStart(true);
+    }
+    catch (DWORD error)
+    {
+        SetDlgItemText(GraphicsDialogHandle, 1043, SE_FailedText);
+        SetDlgItemText(GraphicsDialogHandle, 1046, DecodeErrorMessage(error));
+        return false;
+    }
+    SetDlgItemText(GraphicsDialogHandle, 1043, SE_PassedText);
+    SetDlgItemText(GraphicsDialogHandle, 1046, SE_SettingsOkText);
+    return true;
+}
+
+extern "C" void SE_GraphicsTestFinish(void)
+{
+    RenderFinish(true);
+    WinVidFinish();
+    WinVidHideGameWindow();
+}
+
+extern "C" bool SE_GraphicsTestExecute(void)
+{
+    return false;
+}
+
+extern "C" bool SE_GraphicsTest(void)
+{
+    SETUP_APP_SETTINGS saved;
+    bool result = false;
+
+    saved = SavedAppSettings;
+    SavedAppSettings = ChangedAppSettings;
+    if (SE_GraphicsTestStart())
+        result = SE_GraphicsTestExecute();
+    SE_GraphicsTestFinish();
+    SavedAppSettings = saved;
+    return result;
 }
 
 extern "C" void SE_DefaultGraphicsSettings(void)
@@ -1030,30 +1030,6 @@ extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
     SE_GraphicsDlgUpdate(hwndDlg);
 }
 
-extern "C" void SE_SoundAdapterSet(HWND hwndDlg, void *adapter)
-{
-    ChangedAppSettings.PreferredSoundAdapter = adapter;
-}
-
-extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick)
-{
-    ChangedAppSettings.PreferredJoystick = joystick;
-}
-
-extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCSTR src)
-{
-    if (!isEnabled)
-        return;
-    if (*isNext)
-    {
-        *(*dst)++ = ',';
-        *(*dst)++ = ' ';
-    }
-    while (*src)
-        *(*dst)++ = *src++;
-    *isNext = true;
-}
-
 extern "C" {
 extern HWND ControlsDialogHandle;
 extern HWND Var51bcf8;
@@ -1062,76 +1038,12 @@ void SE_AdvancedDlgInit(HWND hwndDlg);
 void SE_AdvancedDlgUpdate(HWND hwndDlg);
 }
 
-extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-    bool isChecked;
-
-    switch (uMsg)
-    {
-    case WM_INITDIALOG:
-        ControlsDialogHandle = hwndDlg;
-        Var51bcf8 = GetDlgItem(hwndDlg, 1110);
-        SE_AdvancedDlgInit(hwndDlg);
-        return TRUE;
-    case WM_COMMAND:
-        if (HIWORD(wParam) == BN_CLICKED)
-        {
-            isChecked = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_CHECKED;
-            switch (LOWORD(wParam))
-            {
-            case 1103:
-                ChangedAppSettings.Disable16BitTextures = isChecked;
-                break;
-            case 1104:
-                ChangedAppSettings.DontSortPrimitives = isChecked;
-                break;
-            case 1111:
-                ChangedAppSettings.DisableFMV = isChecked;
-                break;
-            case 1107:
-                ChangedAppSettings.TexelAdjustMode = 0;
-                break;
-            case 1108:
-                ChangedAppSettings.TexelAdjustMode = 1;
-                break;
-            case 1109:
-                ChangedAppSettings.TexelAdjustMode = 2;
-                break;
-            }
-            SE_AdvancedDlgUpdate(hwndDlg);
-        }
-        break;
-    }
-    Func457470(Var51bcf8, uMsg, wParam);
-    return FALSE;
-}
-
 inline void SE_CheckButton(HWND hwndDlg, int id, bool check)
 {
     CheckDlgButton(hwndDlg, id, check != 0);
 }
 
-extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg)
-{
-    SE_CheckButton(hwndDlg, 1103, ChangedAppSettings.Disable16BitTextures);
-    SE_CheckButton(hwndDlg, 1104, ChangedAppSettings.DontSortPrimitives);
-    SE_CheckButton(hwndDlg, 1111, ChangedAppSettings.DisableFMV);
-    SE_CheckButton(hwndDlg, 1107, ChangedAppSettings.TexelAdjustMode == 0);
-    SE_CheckButton(hwndDlg, 1108, ChangedAppSettings.TexelAdjustMode == 1);
-    SE_CheckButton(hwndDlg, 1109, ChangedAppSettings.TexelAdjustMode == 2);
-}
-
-extern "C" void SE_AdvancedDlgInit(HWND hwndDlg)
-{
-    SE_AdvancedDlgUpdate(hwndDlg);
-}
-
 extern "C" char SetupDialogName[];
-
-extern "C" HWND SE_FindSetupDialog(void)
-{
-    return FindWindow(MAKEINTATOM(0x8002), SetupDialogName);
-}
 
 void UT_CenterWindow(HWND hWnd);
 
@@ -1170,6 +1082,259 @@ typedef struct
     int height;
     int bpp;
 } SETUP_VIDEO_MODE;
+
+extern "C" {
+extern HWND ControlsDialogHandle;
+extern HWND ControlsImageHandle;
+void SE_ControlsDlgInit(HWND hwndDlg);
+void SE_ControlsDlgUpdate(HWND hwndDlg);
+void DInputCreate(void);
+void DInputRelease(void);
+void WinInRunControlPanel(HWND hWnd);
+}
+
+typedef struct
+{
+    void *head;
+    void *tail;
+    int count;
+} SETUP_SOUND_LIST;
+
+extern "C" SETUP_SOUND_LIST SoundAdapterList;
+
+typedef struct SETUP_SOUND_NODE
+{
+    struct SETUP_SOUND_NODE *next;
+    uint8 pad[0x18];
+    LPCSTR description;
+} SETUP_SOUND_NODE;
+
+extern "C" {
+extern HWND SoundImageHandle;
+}
+
+extern "C" void SE_SoundAdapterSet(HWND hwndDlg, void *adapter);
+extern "C" void SE_SoundDlgUpdate(HWND hwndDlg);
+extern "C" void SE_SoundDlgInit(HWND hwndDlg);
+
+extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    LRESULT result;
+
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        SoundDialogHandle = hwndDlg;
+        SoundImageHandle = GetDlgItem(hwndDlg, 1074);
+        SE_SoundDlgInit(hwndDlg);
+        return TRUE;
+    case WM_COMMAND:
+        if (HIWORD(wParam) == BN_CLICKED)
+        {
+            result = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
+            switch (LOWORD(wParam))
+            {
+            case 1057:
+                ChangedAppSettings.SoundEnabled = result == BST_CHECKED;
+                break;
+            case 1086:
+                ChangedAppSettings.LaraMic = false;
+                break;
+            case 1087:
+                ChangedAppSettings.LaraMic = true;
+                break;
+            case 1089:
+                if (SE_SoundTest())
+                    PostMessage(SE_PropSheetWndHandle, WM_USER + 113, 5, 0);
+                SendMessage((HWND)lParam, BM_SETCHECK, 0, 0);
+                break;
+            }
+        }
+        else if (HIWORD(wParam) == CBN_SELCHANGE)
+        {
+            result = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
+            result = SendMessage((HWND)lParam, CB_GETITEMDATA, result, 0);
+            if (LOWORD(wParam) == 1052)
+            {
+                SE_SoundAdapterSet(hwndDlg, (void *)result);
+                SE_SoundDlgUpdate(hwndDlg);
+            }
+        }
+        break;
+    }
+    Func457470(SoundImageHandle, uMsg, wParam);
+    return FALSE;
+}
+
+extern "C" void SE_SoundAdapterSet(HWND hwndDlg, void *adapter)
+{
+    ChangedAppSettings.PreferredSoundAdapter = adapter;
+}
+
+extern "C" void SE_SoundDlgUpdate(HWND hwndDlg)
+{
+    int count = SoundAdapterList.count;
+    bool isAvailable = count > 0;
+
+    SE_EnableItem(hwndDlg, 1097, isAvailable);
+    SE_EnableItem(hwndDlg, 1098, isAvailable);
+    SE_CheckItem(hwndDlg, 1057, isAvailable, ChangedAppSettings.SoundEnabled && isAvailable);
+    SE_CheckItem(hwndDlg, 1086, isAvailable, !ChangedAppSettings.LaraMic);
+    SE_CheckItem(hwndDlg, 1087, isAvailable, ChangedAppSettings.LaraMic);
+    SE_EnableItem(hwndDlg, 1089, isAvailable);
+}
+
+extern "C" void SE_SoundDlgInit(HWND hwndDlg)
+{
+    HWND combo;
+    WPARAM index;
+    WPARAM selected;
+    SETUP_SOUND_NODE *node;
+    int count;
+
+    combo = GetDlgItem(hwndDlg, 1052);
+    SendMessage(combo, CB_RESETCONTENT, 0, 0);
+    selected = 0;
+    for (node = (SETUP_SOUND_NODE *)SoundAdapterList.head; node; node = !node ? NULL : node->next)
+    {
+        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
+        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
+        if (node == ChangedAppSettings.PreferredSoundAdapter)
+            selected = index;
+    }
+    SendMessage(combo, CB_SETCURSEL, selected, 0);
+    count = SoundAdapterList.count;
+    EnableWindow(combo, count > 1);
+    if (count)
+        SE_SoundAdapterSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
+    SE_SoundDlgUpdate(hwndDlg);
+}
+
+extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick);
+
+extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    LRESULT result;
+
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        ControlsDialogHandle = hwndDlg;
+        ControlsImageHandle = GetDlgItem(hwndDlg, 1075);
+        SE_ControlsDlgInit(hwndDlg);
+        return TRUE;
+    case WM_COMMAND:
+        if (HIWORD(wParam) == CBN_SELCHANGE)
+        {
+            result = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
+            result = SendMessage((HWND)lParam, CB_GETITEMDATA, result, 0);
+            if (LOWORD(wParam) == 1055)
+            {
+                SE_ControlsJoystickSet(hwndDlg, (void *)result);
+                SE_ControlsDlgUpdate(hwndDlg);
+            }
+        }
+        else if (HIWORD(wParam) == BN_CLICKED)
+        {
+            result = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
+            switch (LOWORD(wParam))
+            {
+            case 1099:
+                ChangedAppSettings.JoystickEnabled = result == BST_CHECKED;
+                break;
+            case 1100:
+                DInputCreate();
+                WinInRunControlPanel(hwndDlg);
+                DInputRelease();
+                break;
+            }
+        }
+        break;
+    }
+    Func457470(ControlsImageHandle, uMsg, wParam);
+    return FALSE;
+}
+
+extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick)
+{
+    ChangedAppSettings.PreferredJoystick = joystick;
+}
+
+typedef struct
+{
+    void *head;
+    void *tail;
+    int count;
+} SETUP_JOYSTICK_LIST;
+
+extern "C" SETUP_JOYSTICK_LIST JoystickList;
+
+extern "C" void SE_ControlsDlgUpdate(HWND hwndDlg)
+{
+    int count = JoystickList.count;
+    bool isAvailable = count > 0;
+
+    SE_CheckItem(hwndDlg, 1099, isAvailable, ChangedAppSettings.JoystickEnabled && isAvailable);
+}
+
+typedef struct SETUP_JOYSTICK_NODE
+{
+    struct SETUP_JOYSTICK_NODE *next;
+    uint8 pad[0x18];
+    LPCSTR description;
+} SETUP_JOYSTICK_NODE;
+
+extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
+{
+    HWND combo;
+    WPARAM index;
+    WPARAM selected;
+    SETUP_JOYSTICK_NODE *node;
+    int count;
+
+    combo = GetDlgItem(hwndDlg, 1055);
+    SendMessage(combo, CB_RESETCONTENT, 0, 0);
+    selected = 0;
+    for (node = (SETUP_JOYSTICK_NODE *)JoystickList.head; node; node = !node ? NULL : node->next)
+    {
+        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
+        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
+        if (node == ChangedAppSettings.PreferredJoystick)
+            selected = index;
+    }
+    SendMessage(combo, CB_SETCURSEL, selected, 0);
+    count = JoystickList.count;
+    EnableWindow(combo, count > 0);
+    if (count)
+        SE_ControlsJoystickSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
+    SE_ControlsDlgUpdate(hwndDlg);
+}
+
+extern "C" void SE_OptionsDlgUpdate(HWND hwndDlg);
+
+extern "C" BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        OptionsDialogHandle = hwndDlg;
+        if (!IsSetupDialogCentered)
+        {
+            UT_CenterWindow(GetParent(hwndDlg));
+            IsSetupDialogCentered = true;
+        }
+        OptionsImageHandle = GetDlgItem(hwndDlg, 1073);
+        return TRUE;
+    case WM_NOTIFY:
+        if (((LPNMHDR)lParam)->code == (UINT)-200)
+            SE_OptionsDlgUpdate(hwndDlg);
+        break;
+    }
+    Func457470(OptionsImageHandle, uMsg, wParam);
+    return FALSE;
+}
+
+extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCSTR src);
 
 extern "C" void SE_OptionsDlgUpdate(HWND hwndDlg)
 {
@@ -1227,237 +1392,82 @@ extern "C" void SE_OptionsDlgUpdate(HWND hwndDlg)
     SetDlgItemText(hwndDlg, 1084, str);
 }
 
-extern "C" BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCSTR src)
 {
-    switch (uMsg)
+    if (!isEnabled)
+        return;
+    if (*isNext)
     {
-    case WM_INITDIALOG:
-        OptionsDialogHandle = hwndDlg;
-        if (!IsSetupDialogCentered)
-        {
-            UT_CenterWindow(GetParent(hwndDlg));
-            IsSetupDialogCentered = true;
-        }
-        OptionsImageHandle = GetDlgItem(hwndDlg, 1073);
-        return TRUE;
-    case WM_NOTIFY:
-        if (((LPNMHDR)lParam)->code == (UINT)-200)
-            SE_OptionsDlgUpdate(hwndDlg);
-        break;
+        *(*dst)++ = ',';
+        *(*dst)++ = ' ';
     }
-    Func457470(OptionsImageHandle, uMsg, wParam);
-    return FALSE;
+    while (*src)
+        *(*dst)++ = *src++;
+    *isNext = true;
 }
 
-extern "C" {
-extern HWND ControlsDialogHandle;
-extern HWND ControlsImageHandle;
-void SE_ControlsDlgInit(HWND hwndDlg);
-void SE_ControlsDlgUpdate(HWND hwndDlg);
-void DInputCreate(void);
-void DInputRelease(void);
-void WinInRunControlPanel(HWND hWnd);
-}
-
-extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    LRESULT result;
+    bool isChecked;
 
     switch (uMsg)
     {
     case WM_INITDIALOG:
         ControlsDialogHandle = hwndDlg;
-        ControlsImageHandle = GetDlgItem(hwndDlg, 1075);
-        SE_ControlsDlgInit(hwndDlg);
-        return TRUE;
-    case WM_COMMAND:
-        if (HIWORD(wParam) == CBN_SELCHANGE)
-        {
-            result = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
-            result = SendMessage((HWND)lParam, CB_GETITEMDATA, result, 0);
-            if (LOWORD(wParam) == 1055)
-            {
-                SE_ControlsJoystickSet(hwndDlg, (void *)result);
-                SE_ControlsDlgUpdate(hwndDlg);
-            }
-        }
-        else if (HIWORD(wParam) == BN_CLICKED)
-        {
-            result = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
-            switch (LOWORD(wParam))
-            {
-            case 1099:
-                ChangedAppSettings.JoystickEnabled = result == BST_CHECKED;
-                break;
-            case 1100:
-                DInputCreate();
-                WinInRunControlPanel(hwndDlg);
-                DInputRelease();
-                break;
-            }
-        }
-        break;
-    }
-    Func457470(ControlsImageHandle, uMsg, wParam);
-    return FALSE;
-}
-
-typedef struct
-{
-    void *head;
-    void *tail;
-    int count;
-} SETUP_SOUND_LIST;
-
-extern "C" SETUP_SOUND_LIST SoundAdapterList;
-
-extern "C" void SE_SoundDlgUpdate(HWND hwndDlg)
-{
-    int count = SoundAdapterList.count;
-    bool isAvailable = count > 0;
-
-    SE_EnableItem(hwndDlg, 1097, isAvailable);
-    SE_EnableItem(hwndDlg, 1098, isAvailable);
-    SE_CheckItem(hwndDlg, 1057, isAvailable, ChangedAppSettings.SoundEnabled && isAvailable);
-    SE_CheckItem(hwndDlg, 1086, isAvailable, !ChangedAppSettings.LaraMic);
-    SE_CheckItem(hwndDlg, 1087, isAvailable, ChangedAppSettings.LaraMic);
-    SE_EnableItem(hwndDlg, 1089, isAvailable);
-}
-
-typedef struct SETUP_SOUND_NODE
-{
-    struct SETUP_SOUND_NODE *next;
-    uint8 pad[0x18];
-    LPCSTR description;
-} SETUP_SOUND_NODE;
-
-extern "C" void SE_SoundDlgInit(HWND hwndDlg)
-{
-    HWND combo;
-    WPARAM index;
-    WPARAM selected;
-    SETUP_SOUND_NODE *node;
-    int count;
-
-    combo = GetDlgItem(hwndDlg, 1052);
-    SendMessage(combo, CB_RESETCONTENT, 0, 0);
-    selected = 0;
-    for (node = (SETUP_SOUND_NODE *)SoundAdapterList.head; node; node = !node ? NULL : node->next)
-    {
-        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
-        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
-        if (node == ChangedAppSettings.PreferredSoundAdapter)
-            selected = index;
-    }
-    SendMessage(combo, CB_SETCURSEL, selected, 0);
-    count = SoundAdapterList.count;
-    EnableWindow(combo, count > 1);
-    if (count)
-        SE_SoundAdapterSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
-    SE_SoundDlgUpdate(hwndDlg);
-}
-
-extern "C" {
-extern HWND SoundImageHandle;
-}
-
-extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-    LRESULT result;
-
-    switch (uMsg)
-    {
-    case WM_INITDIALOG:
-        SoundDialogHandle = hwndDlg;
-        SoundImageHandle = GetDlgItem(hwndDlg, 1074);
-        SE_SoundDlgInit(hwndDlg);
+        Var51bcf8 = GetDlgItem(hwndDlg, 1110);
+        SE_AdvancedDlgInit(hwndDlg);
         return TRUE;
     case WM_COMMAND:
         if (HIWORD(wParam) == BN_CLICKED)
         {
-            result = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
+            isChecked = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_CHECKED;
             switch (LOWORD(wParam))
             {
-            case 1057:
-                ChangedAppSettings.SoundEnabled = result == BST_CHECKED;
+            case 1103:
+                ChangedAppSettings.Disable16BitTextures = isChecked;
                 break;
-            case 1086:
-                ChangedAppSettings.LaraMic = false;
+            case 1104:
+                ChangedAppSettings.DontSortPrimitives = isChecked;
                 break;
-            case 1087:
-                ChangedAppSettings.LaraMic = true;
+            case 1111:
+                ChangedAppSettings.DisableFMV = isChecked;
                 break;
-            case 1089:
-                if (SE_SoundTest())
-                    PostMessage(SE_PropSheetWndHandle, WM_USER + 113, 5, 0);
-                SendMessage((HWND)lParam, BM_SETCHECK, 0, 0);
+            case 1107:
+                ChangedAppSettings.TexelAdjustMode = 0;
+                break;
+            case 1108:
+                ChangedAppSettings.TexelAdjustMode = 1;
+                break;
+            case 1109:
+                ChangedAppSettings.TexelAdjustMode = 2;
                 break;
             }
-        }
-        else if (HIWORD(wParam) == CBN_SELCHANGE)
-        {
-            result = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
-            result = SendMessage((HWND)lParam, CB_GETITEMDATA, result, 0);
-            if (LOWORD(wParam) == 1052)
-            {
-                SE_SoundAdapterSet(hwndDlg, (void *)result);
-                SE_SoundDlgUpdate(hwndDlg);
-            }
+            SE_AdvancedDlgUpdate(hwndDlg);
         }
         break;
     }
-    Func457470(SoundImageHandle, uMsg, wParam);
+    Func457470(Var51bcf8, uMsg, wParam);
     return FALSE;
 }
 
-typedef struct
+extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg)
 {
-    void *head;
-    void *tail;
-    int count;
-} SETUP_JOYSTICK_LIST;
-
-extern "C" SETUP_JOYSTICK_LIST JoystickList;
-
-extern "C" void SE_ControlsDlgUpdate(HWND hwndDlg)
-{
-    int count = JoystickList.count;
-    bool isAvailable = count > 0;
-
-    SE_CheckItem(hwndDlg, 1099, isAvailable, ChangedAppSettings.JoystickEnabled && isAvailable);
+    SE_CheckButton(hwndDlg, 1103, ChangedAppSettings.Disable16BitTextures);
+    SE_CheckButton(hwndDlg, 1104, ChangedAppSettings.DontSortPrimitives);
+    SE_CheckButton(hwndDlg, 1111, ChangedAppSettings.DisableFMV);
+    SE_CheckButton(hwndDlg, 1107, ChangedAppSettings.TexelAdjustMode == 0);
+    SE_CheckButton(hwndDlg, 1108, ChangedAppSettings.TexelAdjustMode == 1);
+    SE_CheckButton(hwndDlg, 1109, ChangedAppSettings.TexelAdjustMode == 2);
 }
 
-typedef struct SETUP_JOYSTICK_NODE
+extern "C" void SE_AdvancedDlgInit(HWND hwndDlg)
 {
-    struct SETUP_JOYSTICK_NODE *next;
-    uint8 pad[0x18];
-    LPCSTR description;
-} SETUP_JOYSTICK_NODE;
+    SE_AdvancedDlgUpdate(hwndDlg);
+}
 
-extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
+extern "C" HWND SE_FindSetupDialog(void)
 {
-    HWND combo;
-    WPARAM index;
-    WPARAM selected;
-    SETUP_JOYSTICK_NODE *node;
-    int count;
-
-    combo = GetDlgItem(hwndDlg, 1055);
-    SendMessage(combo, CB_RESETCONTENT, 0, 0);
-    selected = 0;
-    for (node = (SETUP_JOYSTICK_NODE *)JoystickList.head; node; node = !node ? NULL : node->next)
-    {
-        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
-        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
-        if (node == ChangedAppSettings.PreferredJoystick)
-            selected = index;
-    }
-    SendMessage(combo, CB_SETCURSEL, selected, 0);
-    count = JoystickList.count;
-    EnableWindow(combo, count > 0);
-    if (count)
-        SE_ControlsJoystickSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
-    SE_ControlsDlgUpdate(hwndDlg);
+    return FindWindow(MAKEINTATOM(0x8002), SetupDialogName);
 }
 
 #ifdef TR2_EXE
