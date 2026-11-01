@@ -1562,6 +1562,8 @@ address,size,name,symbol
 0x00465fc0,16,work2_gun,_work2_gun
 0x00465fd0,16,bandit_gun,_bandit_gun
 0x00465fe0,16,bandit2_gun,_bandit2_gun
+0x00465ff0,24,PickUpBounds,_PickUpBounds
+0x00466018,24,GongBounds,_GongBounds
 0x00466058,24,Switch1Bounds,_Switch1Bounds
 0x00466070,12,SmallSwitchPosition,_SmallSwitchPosition
 0x00466080,12,PushSwitchPosition,_PushSwitchPosition
@@ -1814,6 +1816,7 @@ address,size,name,symbol
 0x004d7c48,4,pup_x,_pup_x
 0x004d7c4c,4,pup_y,_pup_y
 0x004d7c50,4,pup_z,_pup_z
+0x004d7c58,12,DetonatorPosition,_DetonatorPosition
 0x004d7c64,4,number_cameras,_number_cameras
 0x004d7c68,,LaSlot,_LaSlot
 0x004d7e6c,4,detonate_all_mines,_detonate_all_mines

@@ -376,6 +376,117 @@ void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     }
 }
 
+#define DETONATOR2 227
+#define GONG_BONGER 225
+#define KEY_OPTION2 198
+#define EXTRA_PLUNGER 1
+#define EXTRA_GONGBONG 5
+
+extern sint16 InventoryChosen;
+extern sint16 PickUpBounds[];
+extern sint16 GongBounds[];
+extern PHD_VECTOR DetonatorPosition;
+int Display_Inventory(int inv_mode);
+int Inv_RemoveItem(int itemNum);
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+
+void DetonatorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item, *gong;
+    sint16 x_rot, y_rot, z_rot;
+    sint16 gong_num;
+
+    if (lara.extra_anim)
+        return;
+
+    item = &items[item_num];
+
+    x_rot = item->pos.x_rot;
+    y_rot = item->pos.y_rot;
+    z_rot = item->pos.z_rot;
+
+    item->pos.y_rot = laraitem->pos.y_rot;
+    item->pos.z_rot = 0;
+    item->pos.x_rot = 0;
+
+    if (item->status == DEACTIVATED || !(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status || laraitem->current_anim_state != AS_STOP)
+        goto normal_collision;
+
+    if (item->object_number == DETONATOR2)
+    {
+        if (!TestLaraPosition(PickUpBounds, item, laraitem))
+            goto normal_collision;
+    }
+    else
+    {
+        if (!TestLaraPosition(GongBounds, item, laraitem))
+            goto normal_collision;
+        item->pos.x_rot = x_rot;
+        item->pos.y_rot = y_rot;
+        item->pos.z_rot = z_rot;
+    }
+
+    if (InventoryChosen == -1)
+        Display_Inventory(INV_KEYS_MODE);
+
+    if (InventoryChosen != KEY_OPTION2)
+        goto normal_collision;
+
+    Inv_RemoveItem(KEY_OPTION2);
+
+    AlignLaraPosition(&DetonatorPosition, item, laraitem);
+
+    laraitem->anim_number = objects[LARA_EXTRA].anim_index;
+    laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+    laraitem->current_anim_state = EXTRA_BREATH;
+    if (item->object_number == DETONATOR2)
+        laraitem->goal_anim_state = EXTRA_PLUNGER;
+    else
+    {
+        laraitem->pos.y_rot += -32768;
+        laraitem->goal_anim_state = EXTRA_GONGBONG;
+    }
+
+    AnimateItem(laraitem);
+
+    lara.extra_anim = 1;
+
+    lara.gun_status = LG_HANDSBUSY;
+
+    if (item->object_number == DETONATOR2)
+    {
+        item->status = ACTIVE;
+        AddActiveItem(item_num);
+    }
+    else
+    {
+        gong_num = CreateItem();
+        if (gong_num != NO_ITEM)
+        {
+            gong = &items[gong_num];
+            gong->object_number = GONG_BONGER;
+            gong->pos.x_pos = laraitem->pos.x_pos;
+            gong->pos.y_pos = laraitem->pos.y_pos;
+            gong->pos.z_pos = laraitem->pos.z_pos;
+            gong->pos.y_rot = laraitem->pos.y_rot;
+            gong->pos.z_rot = 0;
+            gong->pos.x_rot = 0;
+            gong->room_number = laraitem->room_number;
+            InitialiseItem(gong_num);
+            AddActiveItem(gong_num);
+            gong->status = ACTIVE;
+        }
+    }
+    return;
+
+normal_collision:
+    item->pos.x_rot = x_rot;
+    item->pos.y_rot = y_rot;
+    item->pos.z_rot = z_rot;
+    ObjectCollision(item_num, laraitem, coll);
+}
+
 void SwitchControl(sint16 item_number)
 {
     ITEM_INFO *item;
