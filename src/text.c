@@ -340,6 +340,128 @@ void draw_border(sint32 xpos, sint32 ypos, sint32 zpos, sint32 width, sint32 hei
     S_DrawScreenSprite2d(xpos, ypos, zpos, 0x10000, height * 0x2000, (sint16)(objects[BORDERS].mesh_index + 7), 16 << 8, 0);
 }
 
+void S_DrawPickup(int sx, int sy, int scale, sint16 sprnum, sint16 shade, uint16 flags);
+void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, SG_COL *grdptr, uint16 flags);
+
+#define SECRET_ITEM1 190
+#define ALPHABET 255
+
+void T_DrawThisText(TEXTSTRING *textString)
+{
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint32 scaleH;
+    sint32 scaleV;
+    sint32 textWidth;
+    sint32 boxX;
+    sint32 boxY;
+    sint32 boxW;
+    sint32 boxH;
+    sint32 halfW;
+    sint32 halfH;
+    sint32 textHeight;
+    uint32 letter;
+    uint32 sprite;
+    uint8 *string;
+
+    boxW = 0;
+    boxH = 0;
+    scaleH = GetTextScaleH(textString->scaleH);
+    scaleV = GetTextScaleV(textString->scaleV);
+    textHeight = (uint32)(11 * scaleV) >> 16;
+    if (textString->flags & T_FLASH)
+    {
+        textString->flashCount -= (sint16)camera.number_frames;
+        if (textString->flashCount <= -textString->flashRate)
+            textString->flashCount = textString->flashRate;
+        else if (textString->flashCount < 0)
+            return;
+    }
+    x = textString->xpos;
+    string = (uint8 *)textString->string;
+    y = textString->ypos;
+    z = textString->zpos;
+    textWidth = T_GetTextWidth(textString);
+    if (textString->flags & T_CENTRE_H)
+        x += (GetRenderWidth() - textWidth) / 2;
+    else if (textString->flags & T_RIGHTALIGN)
+        x += GetRenderWidth() - textWidth;
+    if (textString->flags & T_CENTRE_V)
+        y += GetRenderHeight() / 2;
+    else if (textString->flags & T_BOTTOMALIGN)
+        y += GetRenderHeight();
+    boxX = x + textString->bgndOffX - ((uint32)(2 * scaleH) >> 16);
+    boxY = y + textString->bgndOffY - ((uint32)(4 * scaleV) >> 16) - textHeight;
+    while (*string)
+    {
+        letter = *string++;
+        if (letter > 18 && letter < 32)
+            continue;
+        if (letter == ' ')
+        {
+            x += (uint32)(textString->wordSpacing * scaleH) >> 16;
+            continue;
+        }
+        if (letter >= 127)
+        {
+            if (letter <= 129)
+            {
+                S_DrawPickup(x + 10, y, 7144, objects[letter + SECRET_ITEM1 - 127].mesh_index, 4096, 0);
+                x += (uint32)(16 * scaleH) >> 16;
+                continue;
+            }
+            if (Func4558e1(letter))
+                continue;
+        }
+        if (letter < 11)
+            sprite = letter + 81;
+        else if (letter <= 18)
+            sprite = letter + 91;
+        else
+            sprite = Func455905(letter);
+        if (letter >= '0' && letter <= '9')
+            x += (uint32)((12 - (sint32)Func455922(sprite)) / 2 * scaleH) >> 16;
+        if (x > 0 && x < GetRenderWidth() && y > 0 && y < GetRenderHeight())
+            S_DrawScreenSprite2d(x, y, z, scaleH, scaleV, (sint16)(objects[ALPHABET].mesh_index + sprite), 4096, textString->textflags);
+        if (letter >= '0' && letter <= '9')
+            x += (uint32)((12 - (12 - (sint32)Func455922(sprite)) / 2) * scaleH) >> 16;
+        else if (scaleH == 0x10000)
+            x += textString->letterSpacing + Func455922(sprite);
+        else
+            x += (uint32)((Func455922(sprite) + textString->letterSpacing) * scaleH) >> 16;
+    }
+    if ((textString->flags & T_ADDBACKGROUND) || (textString->flags & T_ADDOUTLINE))
+    {
+        if (textString->bgndSizeX)
+        {
+            boxX += textWidth / 2;
+            textWidth = textString->bgndSizeX;
+            boxX -= textWidth / 2;
+        }
+        boxW = textWidth + 4;
+        if (textString->bgndSizeY)
+            boxH = textString->bgndSizeY;
+        else
+            boxH = (uint32)(16 * scaleV) >> 16;
+    }
+    if (textString->flags & T_ADDBACKGROUND)
+    {
+        if (textString->bgndGour)
+        {
+            halfW = boxW / 2;
+            halfH = boxH / 2;
+            S_DrawScreenFBox(boxX, boxY, textString->bgndOffZ + z + 2, boxW, boxH, textString->bgndColour, textString->bgndGour, textString->bgndflags);
+        }
+        else
+        {
+            S_DrawScreenFBox(boxX, boxY, textString->bgndOffZ + z + 2, boxW, boxH, textString->bgndColour, 0, textString->bgndflags);
+        }
+    }
+    if (textString->flags & T_ADDOUTLINE)
+        draw_border(boxX, boxY, z, boxW, boxH);
+}
+
 uint32 GetTextScaleH(uint32 scaleH)
 {
     uint32 scale;
