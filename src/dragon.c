@@ -75,6 +75,41 @@ void CreateBartoliLight(sint16 item_number)
     AddDynamicLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, (GetRandomDraw() * 4 >> 15) + 12, (GetRandomDraw() * 4 >> 15) + 10);
 }
 
+#define DRAGON_FIRE 246
+#define DRAGON_FLAME_SPEED 200
+
+void ShootAtLara(FX_INFO *fx);
+
+sint16 DragonFire(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, sint16 room_number)
+{
+    sint16 fx_number;
+    FX_INFO *fx;
+
+    fx_number = CreateEffect(room_number);
+    if (fx_number != NO_ITEM)
+    {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = x;
+        fx->pos.y_pos = y;
+        fx->pos.z_pos = z;
+        fx->room_number = room_number;
+        fx->pos.x_rot = fx->pos.z_rot = 0;
+        fx->pos.y_rot = yrot;
+        fx->speed = DRAGON_FLAME_SPEED;
+        fx->frame_number = GetRandomDraw() * (objects[DRAGON_FIRE].nmeshes + 1) >> 15;
+        fx->object_number = DRAGON_FIRE;
+        fx->shade = 14 * 256;
+        ShootAtLara(fx);
+
+        if (objects[DRAGON_FRONT].loaded)
+            fx->counter = 0x4000;
+        else
+            fx->counter = 20;
+    }
+
+    return (fx_number);
+}
+
 #include "box.h"
 
 #define DRAGON_BACK 23
