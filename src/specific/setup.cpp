@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "global.h"
 #include <commctrl.h>
+#include "ds.h"
 
 extern "C" {
 extern char RegistryKeyName[];
@@ -425,8 +426,6 @@ extern "C" void SE_DefaultGraphicsSettings(void)
     }
     ChangedAppSettings.VideoMode = mode;
 }
-
-#include "ds.h"
 
 void WinSndStart(HWND hWnd);
 LPVOID UT_LoadResource(LPCSTR name, LPCSTR type);
