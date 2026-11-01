@@ -23,6 +23,13 @@ extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
 extern "C" D3DTEXTUREHANDLE CurrentTexSource;
 
+extern "C" void HWR_ResetTexSource(void)
+{
+    CurrentTexSource = 0;
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREHANDLE, 0);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_FLUSHBATCH, 0);
+}
+
 void HWR_ResetColorKey()
 {
     ColorKeyState = false;
