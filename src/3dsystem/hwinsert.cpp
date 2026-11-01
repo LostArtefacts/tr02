@@ -901,6 +901,105 @@ extern "C" sint16 *InsertObjectGT3_Sorted(sint16 *objptr, int number, int sortty
     return objptr;
 }
 
+extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, int blue, int poly_type);
+
+extern "C" sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, int sorttype)
+{
+    PHD_VBUF *vn1, *vn2, *vn3, *vn4;
+    POINT_INFO point[4];
+    PALETTEENTRY *pal;
+    int npoints;
+    float zdepth;
+
+    for (; number; number--, objptr += 5) {
+        if (HWR_VertexBufferFull())
+            return objptr + 5 * number;
+        vn1 = &PhdVBuf[objptr[0]];
+        vn2 = &PhdVBuf[objptr[1]];
+        vn3 = &PhdVBuf[objptr[2]];
+        vn4 = &PhdVBuf[objptr[3]];
+        if ((sint8)(vn1->clip & vn2->clip & vn3->clip & vn4->clip))
+            continue;
+        if ((sint8)(vn1->clip | vn2->clip | vn3->clip | vn4->clip) < 0) {
+            if (!visible_zclip(vn1, vn2, vn3))
+                continue;
+            point[0].xv = vn1->xv;
+            point[0].yv = vn1->yv;
+            point[0].zv = vn1->zv;
+            point[0].ooz = vn1->ooz;
+            point[0].xs = vn1->xs;
+            point[0].ys = vn1->ys;
+            point[0].g = (float)vn1->g;
+            point[1].xv = vn2->xv;
+            point[1].yv = vn2->yv;
+            point[1].zv = vn2->zv;
+            point[1].ooz = vn2->ooz;
+            point[1].xs = vn2->xs;
+            point[1].ys = vn2->ys;
+            point[1].g = (float)vn2->g;
+            point[2].xv = vn3->xv;
+            point[2].yv = vn3->yv;
+            point[2].zv = vn3->zv;
+            point[2].ooz = vn3->ooz;
+            point[2].xs = vn3->xs;
+            point[2].ys = vn3->ys;
+            point[2].g = (float)vn3->g;
+            point[3].xv = vn4->xv;
+            point[3].yv = vn4->yv;
+            point[3].zv = vn4->zv;
+            point[3].ooz = vn4->ooz;
+            point[3].xs = vn4->xs;
+            point[3].ys = vn4->ys;
+            point[3].g = (float)vn4->g;
+            npoints = ZedClipper(4, point, VBuffer);
+            if (!npoints)
+                continue;
+            npoints = XYGClipper(npoints, VBuffer);
+        } else {
+            if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+                continue;
+            VBuffer[0].x = vn1->xs;
+            VBuffer[0].y = vn1->ys;
+            VBuffer[0].rhw = vn1->ooz;
+            VBuffer[0].g = (float)vn1->g;
+            VBuffer[1].x = vn2->xs;
+            VBuffer[1].y = vn2->ys;
+            VBuffer[1].rhw = vn2->ooz;
+            VBuffer[1].g = (float)vn2->g;
+            VBuffer[2].x = vn3->xs;
+            VBuffer[2].y = vn3->ys;
+            VBuffer[2].rhw = vn3->ooz;
+            VBuffer[2].g = (float)vn3->g;
+            VBuffer[3].x = vn4->xs;
+            VBuffer[3].y = vn4->ys;
+            VBuffer[3].rhw = vn4->ooz;
+            VBuffer[3].g = (float)vn4->g;
+            npoints = 4;
+            if (vn1->clip | vn2->clip | vn3->clip | vn4->clip)
+                npoints = XYGClipper(4, VBuffer);
+        }
+        if (npoints) {
+            pal = &GamePalette16[(uint16)objptr[4] >> 8];
+            if (sorttype == MID_SORT) {
+                zdepth = (vn1->zv + vn2->zv + vn3->zv + vn4->zv) * 0.25f;
+                InsertPoly_Gouraud(npoints, zdepth, pal->peRed, pal->peGreen, pal->peBlue, 11);
+            } else if (sorttype == FAR_SORT) {
+                zdepth = vn1->zv;
+                if (vn2->zv > zdepth)
+                    zdepth = vn2->zv;
+                if (vn3->zv > zdepth)
+                    zdepth = vn3->zv;
+                if (vn4->zv > zdepth)
+                    zdepth = vn4->zv;
+                InsertPoly_Gouraud(npoints, zdepth, pal->peRed, pal->peGreen, pal->peBlue, 11);
+            } else {
+                InsertPoly_Gouraud(npoints, 1000000000.0f, pal->peRed, pal->peGreen, pal->peBlue, 11);
+            }
+        }
+    }
+    return objptr;
+}
+
 extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, int blue, int poly_type)
 {
     int i, r, g, b;
