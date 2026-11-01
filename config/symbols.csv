@@ -878,7 +878,7 @@ address,size,name,symbol
 0x00447170,18,Func447170,specific/winin.cpp:_$E1
 0x00447190,14,Func447190,specific/winin.cpp:_$E3
 0x00447220,57,Func447220,specific/winin.cpp:_$E6
-0x00447260,14,Func447260,
+0x00447260,14,Func447260,specific/winin.cpp:_$E8
 0x004472a0,34,DInputCreate,_DInputCreate
 0x004472d0,26,DInputRelease,_DInputRelease
 0x004472f0,90,WinInReadKeyboard,_WinInReadKeyboard
