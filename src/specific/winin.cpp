@@ -122,64 +122,13 @@ extern "C" bool Func447450(void)
 
 extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef);
 
-extern "C" bool DInputEnumDevices(void *joystickList)
-{
-    if (DX_TRY(DInput->EnumDevices(DIDEVTYPE_JOYSTICK, DInputEnumDevicesCallback, joystickList, DIEDFL_ATTACHEDONLY)))
-        return false;
-    return true;
-}
-
 extern "C" HWND HGameWindow;
-
-extern "C" void DInputKeyboardCreate(void)
-{
-    if (DX_TRY(DInput->CreateDevice(GUID_SysKeyboard, &IDID_SysKeyboard, NULL)))
-        throw ERR_CantCreateKeyboardDevice;
-    if (DX_TRY(IDID_SysKeyboard->SetCooperativeLevel(HGameWindow, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
-        throw ERR_CantSetKBCooperativeLevel;
-    if (DX_TRY(IDID_SysKeyboard->SetDataFormat(&c_dfDIKeyboard)))
-        throw ERR_CantSetKBDataFormat;
-    if (DX_TRY(IDID_SysKeyboard->Acquire()))
-        throw ERR_CantAcquireKeyboard;
-}
-
-extern "C" void DInputKeyboardRelease(void)
-{
-    if (IDID_SysKeyboard) {
-        IDID_SysKeyboard->Unacquire();
-        if (IDID_SysKeyboard) {
-            IDID_SysKeyboard->Release();
-            IDID_SysKeyboard = NULL;
-        }
-    }
-}
 
 extern "C" void DInputJoystickRelease(void)
 {
 }
 
-extern "C" void WinInFinish(void)
-{
-    DInputJoystickRelease();
-    DInputKeyboardRelease();
-    DInputRelease();
-}
-
-extern "C" void WinInRunControlPanel(HWND hWnd)
-{
-    if (DInput)
-        DInput->RunControlPanel(hWnd, 0);
-}
-
 extern "C" bool DInputJoystickCreate(void);
-
-void WinInStart(void)
-{
-    if (!DInputCreate())
-        throw ERR_CantCreateDirectInput;
-    DInputKeyboardCreate();
-    DInputJoystickCreate();
-}
 
 struct STRING_FLAGGED {
     LPTSTR lpString;
@@ -250,6 +199,37 @@ struct JOYSTICK_LIST {
     ~JOYSTICK_LIST();
 };
 
+extern "C" JOYSTICK_LIST JoystickList;
+
+extern "C" bool DInputEnumDevices(void *joystickList);
+
+extern "C" bool WinInputInit(void)
+{
+    JOYSTICK_NODE *node;
+    JOYSTICK_NODE *nextNode;
+    bool result;
+
+    for (node = JoystickList.head; node; node = nextNode) {
+        nextNode = node->next;
+        delete node;
+    }
+    JoystickList.head = NULL;
+    JoystickList.tail = NULL;
+    JoystickList.dwCount = 0;
+    if (!DInputCreate())
+        return false;
+    result = DInputEnumDevices(&JoystickList);
+    DInputRelease();
+    return result;
+}
+
+extern "C" bool DInputEnumDevices(void *joystickList)
+{
+    if (DX_TRY(DInput->EnumDevices(DIDEVTYPE_JOYSTICK, DInputEnumDevicesCallback, joystickList, DIEDFL_ATTACHEDONLY)))
+        return false;
+    return true;
+}
+
 extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
 {
     JOYSTICK_LIST *joyList = (JOYSTICK_LIST *)pvRef;
@@ -266,8 +246,6 @@ extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LP
     strcpy(joyNode->body.instanceName.lpString, lpddi->tszInstanceName);
     return DIENUM_CONTINUE;
 }
-
-extern "C" JOYSTICK_LIST JoystickList;
 
 extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
 {
@@ -293,24 +271,27 @@ extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
     return joystick;
 }
 
-extern "C" bool WinInputInit(void)
+extern "C" void DInputKeyboardCreate(void)
 {
-    JOYSTICK_NODE *node;
-    JOYSTICK_NODE *nextNode;
-    bool result;
+    if (DX_TRY(DInput->CreateDevice(GUID_SysKeyboard, &IDID_SysKeyboard, NULL)))
+        throw ERR_CantCreateKeyboardDevice;
+    if (DX_TRY(IDID_SysKeyboard->SetCooperativeLevel(HGameWindow, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
+        throw ERR_CantSetKBCooperativeLevel;
+    if (DX_TRY(IDID_SysKeyboard->SetDataFormat(&c_dfDIKeyboard)))
+        throw ERR_CantSetKBDataFormat;
+    if (DX_TRY(IDID_SysKeyboard->Acquire()))
+        throw ERR_CantAcquireKeyboard;
+}
 
-    for (node = JoystickList.head; node; node = nextNode) {
-        nextNode = node->next;
-        delete node;
+extern "C" void DInputKeyboardRelease(void)
+{
+    if (IDID_SysKeyboard) {
+        IDID_SysKeyboard->Unacquire();
+        if (IDID_SysKeyboard) {
+            IDID_SysKeyboard->Release();
+            IDID_SysKeyboard = NULL;
+        }
     }
-    JoystickList.head = NULL;
-    JoystickList.tail = NULL;
-    JoystickList.dwCount = 0;
-    if (!DInputCreate())
-        return false;
-    result = DInputEnumDevices(&JoystickList);
-    DInputRelease();
-    return result;
 }
 
 extern "C" JOYSTICK CurrentJoystick;
@@ -321,6 +302,27 @@ extern "C" bool DInputJoystickCreate(void)
         return true;
     CurrentJoystick = ((JOYSTICK_NODE *)SavedAppSettings.PreferredJoystick)->body;
     return true;
+}
+
+void WinInStart(void)
+{
+    if (!DInputCreate())
+        throw ERR_CantCreateDirectInput;
+    DInputKeyboardCreate();
+    DInputJoystickCreate();
+}
+
+extern "C" void WinInFinish(void)
+{
+    DInputJoystickRelease();
+    DInputKeyboardRelease();
+    DInputRelease();
+}
+
+extern "C" void WinInRunControlPanel(HWND hWnd)
+{
+    if (DInput)
+        DInput->RunControlPanel(hWnd, 0);
 }
 
 inline JOYSTICK_LIST::~JOYSTICK_LIST()
