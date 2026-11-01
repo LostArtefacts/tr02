@@ -354,6 +354,91 @@ extern "C" void ClearBuffers(DWORD flags, DWORD fillColor)
     }
 }
 
+extern "C" {
+extern LPCTSTR ErrorStringTable[];
+}
+
+#include <stdio.h>
+
+extern "C" {
+extern int GameWindowWidth, GameWindowHeight;
+extern int GameVidWidth, GameVidHeight;
+extern char ModeInfoFormat[];
+void DisplayModeInfo(char *string);
+void GameApplySettings(APP_SETTINGS *newSettings);
+}
+
+extern "C" {
+extern bool NeedToReloadTextures;
+void Direct3DRelease(void);
+void CleanupTextures(void);
+}
+void HWR_FreeTexturePages(void);
+
+extern "C" {
+extern bool IsGameToExit;
+void S_ExitSystem(const char *message);
+bool ApplySettings(APP_SETTINGS *newSettings);
+}
+void HWR_GetAllTextureHandles(void);
+
+extern "C" bool RestoreLostBuffers(void)
+{
+    bool rebuild;
+
+    if (!PrimaryBufferSurface)
+        S_ExitSystem("Oops... no front buffer");
+    rebuild = DX_TRY(DDrawSurfaceRestoreLost(PrimaryBufferSurface, NULL, SavedAppSettings.FullScreen));
+    if ((SavedAppSettings.FullScreen || SavedAppSettings.RenderMode == RM_Hardware) && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(BackBufferSurface, PrimaryBufferSurface, true))))
+        rebuild = true;
+    if (SavedAppSettings.TripleBuffering && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ThirdBufferSurface, PrimaryBufferSurface, true))))
+        rebuild = true;
+    if (SavedAppSettings.RenderMode == RM_Software && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(RenderBufferSurface, NULL, false))))
+        rebuild = true;
+    if (ZBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ZBufferSurface, NULL, false))))
+        rebuild = true;
+    if (PictureBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(PictureBufferSurface, NULL, false))))
+        rebuild = true;
+    if (rebuild && !IsGameToExit) {
+        ApplySettings(&SavedAppSettings);
+        if (SavedAppSettings.RenderMode == RM_Hardware)
+            HWR_GetAllTextureHandles();
+    }
+    return rebuild;
+}
+
+extern "C" {
+extern RECT GameVidRect;
+extern int GameWindowPositionX;
+extern int GameWindowPositionY;
+bool WinVidSpinMessageLoop(bool needWait);
+}
+
+extern "C" bool DX_UpdateFrame(bool needRunMessageLoop, LPRECT rect)
+{
+    LPDIRECTDRAWSURFACE3 surface;
+    RECT dstRect;
+
+    if (!rect)
+        rect = &GameVidRect;
+    RestoreLostBuffers();
+    if (SavedAppSettings.FullScreen) {
+        if (SavedAppSettings.RenderMode == RM_Software)
+            BackBufferSurface->Blt(rect, RenderBufferSurface, rect, DDBLT_WAIT, NULL);
+        PrimaryBufferSurface->Flip(NULL, DDFLIP_WAIT);
+    } else {
+        dstRect.left = GameWindowPositionX + rect->left;
+        dstRect.top = GameWindowPositionY + rect->top;
+        dstRect.right = GameWindowPositionX + rect->right;
+        dstRect.bottom = GameWindowPositionY + rect->bottom;
+        surface = (SavedAppSettings.RenderMode == RM_Software) ? RenderBufferSurface : BackBufferSurface;
+        PrimaryBufferSurface->Blt(&dstRect, surface, rect, DDBLT_WAIT, NULL);
+    }
+    if (needRunMessageLoop)
+        return WinVidSpinMessageLoop(false);
+    return true;
+}
+
 extern "C" void DX_DoFlipWait(void)
 {
     if (SavedAppSettings.FlipBroken && SavedAppSettings.FullScreen)
@@ -537,45 +622,6 @@ void RenderStart(bool isReset)
     NeedToReloadTextures = true;
 }
 
-extern "C" {
-extern LPCTSTR ErrorStringTable[];
-}
-
-extern "C" LPCTSTR DecodeErrorMessage(DWORD errorCode)
-{
-    return ErrorStringTable[errorCode];
-}
-
-#include <stdio.h>
-
-extern "C" {
-extern int GameWindowWidth, GameWindowHeight;
-extern int GameVidWidth, GameVidHeight;
-extern char ModeInfoFormat[];
-void DisplayModeInfo(char *string);
-void GameApplySettings(APP_SETTINGS *newSettings);
-}
-
-extern "C" void UpdateGameResolution(void)
-{
-    APP_SETTINGS newSettings;
-    char modeString[64];
-
-    newSettings = SavedAppSettings;
-    newSettings.WindowWidth = GameWindowWidth;
-    newSettings.WindowHeight = GameWindowHeight;
-    GameApplySettings(&newSettings);
-    sprintf(modeString, ModeInfoFormat, GameVidWidth, GameVidHeight);
-    DisplayModeInfo(modeString);
-}
-
-extern "C" {
-extern bool NeedToReloadTextures;
-void Direct3DRelease(void);
-void CleanupTextures(void);
-}
-void HWR_FreeTexturePages(void);
-
 void RenderFinish(bool needToClearTextures)
 {
     if (SavedAppSettings.RenderMode == RM_Hardware) {
@@ -622,68 +668,22 @@ void RenderFinish(bool needToClearTextures)
         NeedToReloadTextures = false;
 }
 
-extern "C" {
-extern bool IsGameToExit;
-void S_ExitSystem(const char *message);
-bool ApplySettings(APP_SETTINGS *newSettings);
-}
-void HWR_GetAllTextureHandles(void);
-
-extern "C" bool RestoreLostBuffers(void)
+extern "C" void UpdateGameResolution(void)
 {
-    bool rebuild;
+    APP_SETTINGS newSettings;
+    char modeString[64];
 
-    if (!PrimaryBufferSurface)
-        S_ExitSystem("Oops... no front buffer");
-    rebuild = DX_TRY(DDrawSurfaceRestoreLost(PrimaryBufferSurface, NULL, SavedAppSettings.FullScreen));
-    if ((SavedAppSettings.FullScreen || SavedAppSettings.RenderMode == RM_Hardware) && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(BackBufferSurface, PrimaryBufferSurface, true))))
-        rebuild = true;
-    if (SavedAppSettings.TripleBuffering && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ThirdBufferSurface, PrimaryBufferSurface, true))))
-        rebuild = true;
-    if (SavedAppSettings.RenderMode == RM_Software && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(RenderBufferSurface, NULL, false))))
-        rebuild = true;
-    if (ZBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ZBufferSurface, NULL, false))))
-        rebuild = true;
-    if (PictureBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(PictureBufferSurface, NULL, false))))
-        rebuild = true;
-    if (rebuild && !IsGameToExit) {
-        ApplySettings(&SavedAppSettings);
-        if (SavedAppSettings.RenderMode == RM_Hardware)
-            HWR_GetAllTextureHandles();
-    }
-    return rebuild;
+    newSettings = SavedAppSettings;
+    newSettings.WindowWidth = GameWindowWidth;
+    newSettings.WindowHeight = GameWindowHeight;
+    GameApplySettings(&newSettings);
+    sprintf(modeString, ModeInfoFormat, GameVidWidth, GameVidHeight);
+    DisplayModeInfo(modeString);
 }
 
-extern "C" {
-extern RECT GameVidRect;
-extern int GameWindowPositionX;
-extern int GameWindowPositionY;
-bool WinVidSpinMessageLoop(bool needWait);
-}
-
-extern "C" bool DX_UpdateFrame(bool needRunMessageLoop, LPRECT rect)
+extern "C" LPCTSTR DecodeErrorMessage(DWORD errorCode)
 {
-    LPDIRECTDRAWSURFACE3 surface;
-    RECT dstRect;
-
-    if (!rect)
-        rect = &GameVidRect;
-    RestoreLostBuffers();
-    if (SavedAppSettings.FullScreen) {
-        if (SavedAppSettings.RenderMode == RM_Software)
-            BackBufferSurface->Blt(rect, RenderBufferSurface, rect, DDBLT_WAIT, NULL);
-        PrimaryBufferSurface->Flip(NULL, DDFLIP_WAIT);
-    } else {
-        dstRect.left = GameWindowPositionX + rect->left;
-        dstRect.top = GameWindowPositionY + rect->top;
-        dstRect.right = GameWindowPositionX + rect->right;
-        dstRect.bottom = GameWindowPositionY + rect->bottom;
-        surface = (SavedAppSettings.RenderMode == RM_Software) ? RenderBufferSurface : BackBufferSurface;
-        PrimaryBufferSurface->Blt(&dstRect, surface, rect, DDBLT_WAIT, NULL);
-    }
-    if (needRunMessageLoop)
-        return WinVidSpinMessageLoop(false);
-    return true;
+    return ErrorStringTable[errorCode];
 }
 
 #ifdef TR2_EXE
