@@ -728,6 +728,95 @@ extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, i
     surfacenum++;
 }
 
+extern "C" PALETTEENTRY GamePalette16[];
+extern "C" int XYGClipper(int number, VERTEX_INFO *input);
+
+extern "C" sint16 *InsertObjectG3_Sorted(sint16 *objptr, int number, int sorttype)
+{
+    PHD_VBUF *vn1, *vn2, *vn3;
+    POINT_INFO point[3];
+    PALETTEENTRY *pal;
+    int npoints;
+    float zdepth;
+
+    for (; number; number--, objptr += 4) {
+        if (HWR_VertexBufferFull())
+            return objptr + 4 * number;
+        vn1 = &PhdVBuf[objptr[0]];
+        vn2 = &PhdVBuf[objptr[1]];
+        vn3 = &PhdVBuf[objptr[2]];
+        if ((sint8)(vn1->clip & vn2->clip & vn3->clip))
+            continue;
+        if ((sint8)(vn1->clip | vn2->clip | vn3->clip) < 0) {
+            if (!visible_zclip(vn1, vn2, vn3))
+                continue;
+            point[0].xv = vn1->xv;
+            point[0].yv = vn1->yv;
+            point[0].zv = vn1->zv;
+            point[0].ooz = vn1->ooz;
+            point[0].xs = vn1->xs;
+            point[0].ys = vn1->ys;
+            point[0].g = (float)vn1->g;
+            point[1].xv = vn2->xv;
+            point[1].yv = vn2->yv;
+            point[1].zv = vn2->zv;
+            point[1].ooz = vn2->ooz;
+            point[1].xs = vn2->xs;
+            point[1].ys = vn2->ys;
+            point[1].g = (float)vn2->g;
+            point[2].xv = vn3->xv;
+            point[2].yv = vn3->yv;
+            point[2].zv = vn3->zv;
+            point[2].ooz = vn3->ooz;
+            point[2].xs = vn3->xs;
+            point[2].ys = vn3->ys;
+            point[2].g = (float)vn3->g;
+            npoints = ZedClipper(3, point, VBuffer);
+            if (!npoints)
+                continue;
+            npoints = XYGClipper(npoints, VBuffer);
+        } else {
+            if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
+                continue;
+            VBuffer[0].x = vn1->xs;
+            VBuffer[0].y = vn1->ys;
+            VBuffer[0].rhw = vn1->ooz;
+            VBuffer[0].g = (float)vn1->g;
+            VBuffer[1].x = vn2->xs;
+            VBuffer[1].y = vn2->ys;
+            VBuffer[1].rhw = vn2->ooz;
+            VBuffer[1].g = (float)vn2->g;
+            VBuffer[2].x = vn3->xs;
+            VBuffer[2].y = vn3->ys;
+            VBuffer[2].rhw = vn3->ooz;
+            VBuffer[2].g = (float)vn3->g;
+            npoints = 3;
+            if (vn1->clip | vn2->clip | vn3->clip)
+                npoints = XYGClipper(3, VBuffer);
+        }
+        if (npoints) {
+            pal = &GamePalette16[(uint16)objptr[3] >> 8];
+            switch (sorttype) {
+            case MID_SORT:
+                zdepth = (vn1->zv + vn2->zv + vn3->zv) * 0.333333333333333333f;
+                break;
+            case FAR_SORT:
+                zdepth = vn1->zv;
+                if (vn2->zv > zdepth)
+                    zdepth = vn2->zv;
+                if (vn3->zv > zdepth)
+                    zdepth = vn3->zv;
+                break;
+            default:
+                zdepth = 1000000000.0f;
+                break;
+            }
+            InsertPoly_Gouraud(npoints, zdepth, pal->peRed, pal->peGreen, pal->peBlue, 11);
+        }
+    }
+    return objptr;
+}
+
 typedef struct {
     uint16 tpage;
     uint16 offset;
