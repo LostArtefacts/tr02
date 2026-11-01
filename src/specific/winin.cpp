@@ -237,11 +237,18 @@ struct JOYSTICK_NODE {
     }
 };
 
-typedef struct {
+struct JOYSTICK_LIST {
     JOYSTICK_NODE *head;
     JOYSTICK_NODE *tail;
     DWORD dwCount;
-} JOYSTICK_LIST;
+    JOYSTICK_LIST()
+    {
+        head = NULL;
+        tail = NULL;
+        dwCount = 0;
+    }
+    ~JOYSTICK_LIST();
+};
 
 extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
 {
@@ -315,3 +322,20 @@ extern "C" bool DInputJoystickCreate(void)
     CurrentJoystick = ((JOYSTICK_NODE *)SavedAppSettings.PreferredJoystick)->body;
     return true;
 }
+
+inline JOYSTICK_LIST::~JOYSTICK_LIST()
+{
+    JOYSTICK_NODE *node;
+    JOYSTICK_NODE *nextNode;
+
+    for (node = head; node; node = nextNode) {
+        nextNode = node->next;
+        delete node;
+    }
+    head = NULL;
+    tail = NULL;
+    dwCount = 0;
+}
+
+JOYSTICK_LIST JoystickList;
+JOYSTICK CurrentJoystick;
