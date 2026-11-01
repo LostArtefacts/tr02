@@ -1,4 +1,5 @@
 #include "game.h"
+#include "savegame.h"
 
 #define MAX_FLARE_AGE (60 * 30)
 #define FLARE_YOUNG 30
@@ -188,8 +189,6 @@ void set_flare_arm(int frame)
         lara.left_arm.anim_number = anim_base + 4;
     lara.left_arm.frame_base = anims[lara.left_arm.anim_number].frame_ptr;
 }
-
-#include "savegame.h"
 
 #define FL_DRAWGOTIT_F (13 + FL_DRAW_F)
 #define FLAREBOX_ITEM 151
