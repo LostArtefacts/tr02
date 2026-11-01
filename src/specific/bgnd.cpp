@@ -3,6 +3,10 @@
 #include <math.h>
 
 extern "C" {
+#include "../anim.h"
+}
+
+extern "C" {
 extern bool BGND_PictureIsReady;
 void BGND_Free(void);
 extern int BGND_TexturePageIndexes[5];
@@ -142,7 +146,6 @@ extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR
 }
 
 extern "C" {
-#include "../anim.h"
 extern D3DTEXTUREHANDLE HWR_PageHandles[];
 D3DCOLOR BGND_CenterLighting(int x, int y, int width, int height);
 void DrawTextureTile(int sx, int sy, int width, int height, D3DTEXTUREHANDLE texSource, int tu, int tv, int tWidth, int tHeight, D3DCOLOR color0, D3DCOLOR color1, D3DCOLOR color2, D3DCOLOR color3);
