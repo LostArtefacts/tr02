@@ -110,6 +110,13 @@ extern "C" float FltRhwONearZ;
 void HWR_TexSource(D3DTEXTUREHANDLE tSource);
 void HWR_EnableColorKey(bool tEnable);
 
+extern "C" void BGND_DrawInGameBlack(void)
+{
+    HWR_EnableZBuffer(false, false);
+    DrawQuad((float)phd_winxmin, (float)phd_winymin, (float)phd_winwidth, (float)phd_winheight, 0);
+    HWR_EnableZBuffer(true, true);
+}
+
 extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR color)
 {
     D3DTLVERTEX vertex[4];
@@ -132,13 +139,6 @@ extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR
     HWR_TexSource(0);
     HWR_EnableColorKey(false);
     G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, D3DVT_TLVERTEX, vertex, 4, D3DDP_DONOTUPDATEEXTENTS | D3DDP_DONOTCLIP);
-}
-
-extern "C" void BGND_DrawInGameBlack(void)
-{
-    HWR_EnableZBuffer(false, false);
-    DrawQuad((float)phd_winxmin, (float)phd_winymin, (float)phd_winwidth, (float)phd_winheight, 0);
-    HWR_EnableZBuffer(true, true);
 }
 
 extern "C" {
@@ -284,33 +284,6 @@ extern "C" void DrawTextureTile(int sx, int sy, int width, int height, D3DTEXTUR
     G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, D3DVT_TLVERTEX, vertex, 4, D3DDP_DONOTUPDATEEXTENTS | D3DDP_DONOTCLIP);
 }
 
-extern "C" void Func444560(void)
-{
-    BGND_Free();
-    BGND_PictureIsReady = false;
-}
-
-extern "C" int BGND_PaletteIndex;
-extern "C" void SafeFreeTexturePage(int pageIndex);
-extern "C" void SafeFreePalette(int palIndex);
-
-extern "C" void BGND_Free(void)
-{
-    DWORD i;
-
-    for (i = 0; i < 5; i++) {
-        if (BGND_TexturePageIndexes[i] >= 0) {
-            SafeFreeTexturePage(BGND_TexturePageIndexes[i]);
-            BGND_TexturePageIndexes[i] = -1;
-        }
-        BGND_PageHandles[i] = 0;
-    }
-    if (BGND_PaletteIndex >= 0) {
-        SafeFreePalette(BGND_PaletteIndex);
-        BGND_PaletteIndex = -1;
-    }
-}
-
 extern "C" D3DCOLOR BGND_CenterLighting(int x, int y, int width, int height)
 {
     double xDist = (double)(x - (width >> 1)) / (double)width;
@@ -355,6 +328,33 @@ extern "C" void Func444350(void)
     DrawTextureTile(x[1], y[1], x[2] - x[1], y[2] - y[1], BGND_PageHandles[4], 0, 0, 256, 224, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     DrawTextureTile(x[2], y[1], x[3] - x[2], y[2] - y[1], BGND_PageHandles[2], 128, 0, 128, 224, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     HWR_EnableZBuffer(true, true);
+}
+
+extern "C" void Func444560(void)
+{
+    BGND_Free();
+    BGND_PictureIsReady = false;
+}
+
+extern "C" int BGND_PaletteIndex;
+extern "C" void SafeFreeTexturePage(int pageIndex);
+extern "C" void SafeFreePalette(int palIndex);
+
+extern "C" void BGND_Free(void)
+{
+    DWORD i;
+
+    for (i = 0; i < 5; i++) {
+        if (BGND_TexturePageIndexes[i] >= 0) {
+            SafeFreeTexturePage(BGND_TexturePageIndexes[i]);
+            BGND_TexturePageIndexes[i] = -1;
+        }
+        BGND_PageHandles[i] = 0;
+    }
+    if (BGND_PaletteIndex >= 0) {
+        SafeFreePalette(BGND_PaletteIndex);
+        BGND_PaletteIndex = -1;
+    }
 }
 
 extern "C" bool BGND_Init(void)
