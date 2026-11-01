@@ -256,6 +256,73 @@ void ScreenPartialDump(void)
     DX_UpdateFrame(true, &GrcDumpWindow);
 }
 
+#include "include.h"
+
+extern "C" {
+extern bool GameVid_IsVga;
+extern bool GameVid_IsWindowedVga;
+extern LPDIRECTDRAWPALETTE DDrawPalette;
+extern PALETTEENTRY WinVidPalette[256];
+}
+
+void FadeToPal(int nframes, uint8 *pal)
+{
+    int i, j, start, count;
+    PALETTEENTRY fade[256], *entry;
+    uint8 *src;
+
+    if (!GameVid_IsVga)
+        return;
+    if (GameVid_IsWindowedVga)
+    {
+        start = 10;
+        count = 236;
+    }
+    else
+    {
+        start = 0;
+        count = 256;
+    }
+    if (nframes > 1)
+    {
+        entry = &WinVidPalette[start];
+        for (i = start; i < start + count; i++)
+        {
+            fade[i].peRed = entry->peRed;
+            fade[i].peGreen = entry->peGreen;
+            fade[i].peBlue = entry->peBlue;
+            entry++;
+        }
+        for (j = 0; j < nframes + 1; j++)
+        {
+            src = &pal[start * 3];
+            entry = &WinVidPalette[start];
+            for (i = start; i < start + count; i++)
+            {
+                entry->peRed = fade[i].peRed + (*src++ - fade[i].peRed) * j / nframes;
+                entry->peGreen = fade[i].peGreen + (*src++ - fade[i].peGreen) * j / nframes;
+                entry->peBlue = fade[i].peBlue + (*src++ - fade[i].peBlue) * j / nframes;
+                entry++;
+            }
+            DDrawPalette->SetEntries(0, start, count, &WinVidPalette[start]);
+            S_DumpScreen();
+        }
+    }
+    else
+    {
+        entry = &WinVidPalette[start];
+        src = &pal[start * 3];
+        for (i = count; i; i--)
+        {
+            entry->peRed = *src++;
+            entry->peGreen = *src++;
+            entry->peBlue = *src++;
+            entry++;
+        }
+        DDrawPalette->SetEntries(0, start, count, &WinVidPalette[start]);
+    }
+}
+
 void ScreenClear(bool tWindow)
 {
     DWORD dwFlags = SavedAppSettings.RenderMode == RM_Software ? 0x10 : 2;
@@ -264,7 +331,6 @@ void ScreenClear(bool tWindow)
     ClearBuffers(dwFlags, 0);
 }
 
-#include "include.h"
 
 extern "C" uint8 PicPalette[];
 extern "C" LPDIRECTDRAWSURFACE RenderBufferSurface;
