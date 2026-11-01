@@ -1,6 +1,8 @@
+#include <stdio.h>
 #include "game.h"
 #include "box.h"
 #include "sphere.h"
+#include "savegame.h"
 
 #define SMASH_WINDOW 72
 #define BELL 88
@@ -474,8 +476,6 @@ void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm)
     arm->x_rot = curr;
     arm->z_rot = 0;
 }
-
-#include "savegame.h"
 
 int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target);
 void SmashItem(sint16 item_number, int weapon_type);
