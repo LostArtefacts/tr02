@@ -1179,7 +1179,7 @@ address,size,name,symbol
 0x004568e0,44,UT_FindArg,?UT_FindArg@@YAPADPAD@Z
 0x00456910,24,UT_ErrorBox,?UT_ErrorBox@@YAXPADPAX@Z
 0x00456930,66,UT_ErrorBox,?UT_ErrorBox@@YAXHPAX@Z
-0x00456972,172,Func456972,_Func456972
+0x00456972,174,Func456972,_Func456972
 0x00456a20,81,GuidBinaryToString,_GuidBinaryToString
 0x00456a80,170,GuidStringToBinary,_GuidStringToBinary
 0x00456b30,48,OpenRegistryKey,_OpenRegistryKey
@@ -1293,7 +1293,7 @@ address,size,name,symbol
 0x00459e10,133,strstr,_strstr
 0x00459e90,87,atof,_atof
 0x00459ef0,74,free,_free
-0x00459f40,20,Func459f40,
+0x00459f40,20,malloc,_malloc
 0x00459f60,68,Func459f60,
 0x00459fb0,56,Func459fb0,
 0x00459ff0,372,entry,

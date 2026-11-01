@@ -1,6 +1,7 @@
 #include "global.h"
 #include "utils.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 extern double LdPerformanceDivisor;
 extern double LdInitialTimer;
@@ -76,6 +77,54 @@ void UT_ErrorBox(int nID, HWND hWndOwner)
     char buffer[256];
     if (LoadString(GhInstance, nID, buffer, sizeof buffer))
         UT_ErrorBox(buffer, hWndOwner);
+}
+
+extern "C" char *Var5275f8;
+extern "C" char *Var5275fc;
+
+extern "C" bool Func456972(void)
+{
+    HANDLE file;
+    DWORD size;
+    DWORD read;
+    BOOL ok;
+    char *src;
+    char *dst;
+    int i;
+
+    file = CreateFileA("audio\\cdaudio.dat", GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file == INVALID_HANDLE_VALUE)
+        return false;
+    size = GetFileSize(file, NULL);
+    Var5275fc = (char *)malloc(size + 50);
+    if (!Var5275fc)
+        return false;
+    Var5275f8 = Var5275fc + size;
+    ok = ReadFile(file, Var5275fc, size, &read, NULL);
+    CloseHandle(file);
+    if (!ok)
+        return false;
+    src = dst = Var5275fc;
+    for (;;)
+    {
+        src += 3;
+        for (i = 0; i < 2; i++)
+        {
+            memcpy(dst, src, 8);
+            dst[8] = 0;
+            src += 9;
+            dst += 9;
+        }
+        for (;;)
+        {
+            if (src == Var5275f8)
+                return true;
+            if (*(uint16 *)src == 0x0a0d)
+                break;
+            src++;
+        }
+        src += 2;
+    }
 }
 
 extern "C" const char GuidFormat[];
