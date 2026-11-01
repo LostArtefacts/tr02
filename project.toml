@@ -29,6 +29,7 @@ defines = ["TR2_EXE=1"]
 libs = ["dxguid.lib", "dinput.lib", "dsound.lib", "ddraw.lib", "winmm.lib", "user32.lib",
         "comctl32.lib", "advapi32.lib", "gdi32.lib", "winplay.lib", "ole32.lib", "libc.lib",
         "kernel32.lib"]
+import_defs = ["config/winplay.def"]  # winplay.dll's 26 imports, from the original's import table
 
 [symbols]
 manifest = "refs/trx/docs/symbols/tr2-steam.txt"
