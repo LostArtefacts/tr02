@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.98% (12)</tspan> · <tspan class="nonmatching">8.04% (98)</tspan> · <tspan class="todo">0.82% (10)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">1.07% (13)</tspan> · <tspan class="nonmatching">8.04% (98)</tspan> · <tspan class="todo">0.74% (9)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="673.46" height="6" x="0" y="0" class="named"/>
-<rect width="7.35" height="6" x="673.46" y="0" class="decompiled"/>
-<rect width="60.05" height="6" x="680.82" y="0" class="nonmatching"/>
-<rect width="6.13" height="6" x="740.87" y="0" class="todo"/>
+<rect width="7.97" height="6" x="673.46" y="0" class="decompiled"/>
+<rect width="60.05" height="6" x="681.43" y="0" class="nonmatching"/>
+<rect width="5.52" height="6" x="741.48" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -887,7 +887,7 @@
 <rect width="12" height="12" x="225" y="240" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="decompiled"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="decompiled"><title>0x00444a70 Func444a70 (14 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="240" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="240" class="decompiled"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="240" class="todo"><title>0x00444bc0 Func444bc0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="240" class="named"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="named"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.35%</tspan> · <tspan class="nonmatching">18.64%</tspan> · <tspan class="todo">0.09%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.38%</tspan> · <tspan class="nonmatching">18.64%</tspan> · <tspan class="todo">0.06%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.42" height="6" x="0" y="0" class="named"/>
-<rect width="2.63" height="6" x="604.42" y="0" class="decompiled"/>
-<rect width="139.27" height="6" x="607.05" y="0" class="nonmatching"/>
-<rect width="0.68" height="6" x="746.32" y="0" class="todo"/>
+<rect width="2.84" height="6" x="604.42" y="0" class="decompiled"/>
+<rect width="139.27" height="6" x="607.26" y="0" class="nonmatching"/>
+<rect width="0.48" height="6" x="746.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2026,7 +2026,7 @@
 <rect width="5.92" height="5.82" x="636.58" y="237.28" class="named"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="5.82" height="5.82" x="645.50" y="237.28" class="nonmatching"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
 <rect width="5.82" height="5.82" x="654.32" y="237.28" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
-<rect width="5.82" height="5.82" x="663.15" y="237.28" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
+<rect width="5.82" height="5.82" x="663.15" y="237.28" class="decompiled"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
 <rect width="5.73" height="5.82" x="671.97" y="237.28" class="named"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="5.73" height="5.82" x="680.70" y="237.28" class="named"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>
 <rect width="5.73" height="5.82" x="689.43" y="237.28" class="named"><title>0x00456cc0 GetRegistryDwordValue (94 bytes)</title></rect>

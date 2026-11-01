@@ -817,7 +817,7 @@ address,size,name,symbol
 0x00444a30,6,Direct3DInit,_Direct3DInit
 0x00444a50,18,Func444a50,specific/winvid.cpp:_$E1
 0x00444a70,14,Func444a70,specific/winvid.cpp:_$E3
-0x00444b60,95,Func444b60,
+0x00444b60,95,Func444b60,specific/winvid.cpp:_$E6
 0x00444bc0,14,Func444bc0,
 0x00444c80,84,DDrawCreate,_DDrawCreate
 0x00444ce0,51,DDrawRelease,_DDrawRelease
