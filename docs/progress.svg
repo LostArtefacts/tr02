@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">6.56% (80)</tspan> · <tspan class="todo">2.54% (31)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">6.64% (81)</tspan> · <tspan class="todo">2.46% (30)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="672.85" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="672.85" y="0" class="decompiled"/>
-<rect width="49.02" height="6" x="678.98" y="0" class="nonmatching"/>
-<rect width="19" height="6" x="728" y="0" class="todo"/>
+<rect width="49.64" height="6" x="678.98" y="0" class="nonmatching"/>
+<rect width="18.38" height="6" x="728.62" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1200,7 +1200,7 @@
 <rect width="12" height="12" x="420" y="330" class="named"><title>0x00455520 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="named"><title>0x00455540 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="330" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="330" class="nonmatching"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="todo"><title>0x00455600 CD_Cleanup (31 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="330" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.12%</tspan> · <tspan class="todo">4.64%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.14%</tspan> · <tspan class="todo">4.62%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.30" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.30" y="0" class="decompiled"/>
-<rect width="105.49" height="6" x="606.86" y="0" class="nonmatching"/>
-<rect width="34.64" height="6" x="712.36" y="0" class="todo"/>
+<rect width="105.63" height="6" x="606.86" y="0" class="nonmatching"/>
+<rect width="34.51" height="6" x="712.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2161,7 +2161,7 @@
 <rect width="4.28" height="4.21" x="664.06" y="270.11" class="named"><title>0x0043cee0 InitialiseSkidoo (64 bytes)</title></rect>
 <rect width="4.28" height="4.21" x="671.34" y="270.11" class="named"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
 <rect width="4.28" height="4.21" x="678.61" y="270.11" class="named"><title>0x0044fea0 DefaultConflict (64 bytes)</title></rect>
-<rect width="4.28" height="4.21" x="685.89" y="270.11" class="todo"><title>0x00455570 CD_Init (64 bytes)</title></rect>
+<rect width="4.28" height="4.21" x="685.89" y="270.11" class="nonmatching"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="4.28" height="4.21" x="693.16" y="270.11" class="named"><title>0x00456680 TIME_Reset (64 bytes)</title></rect>
 <rect width="4.16" height="4.21" x="700.44" y="270.11" class="named"><title>0x0041d1f0 ControlDingDong (63 bytes)</title></rect>
 <rect width="4.16" height="4.21" x="707.60" y="270.11" class="named"><title>0x004423b0 TrapDoorCeiling (63 bytes)</title></rect>

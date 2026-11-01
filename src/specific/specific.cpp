@@ -80,3 +80,12 @@ sint32 S_SoundSampleIsPlaying(sint32 handle)
         return false;
     return DS_IsChannelPlaying(handle);
 }
+
+extern "C" bool Func456972(void);
+
+extern "C" bool CD_Init(void)
+{
+    if (Func456972() && !mciSendString("open audio\\cdaudio.mp3  type mpegvideo alias T2", NULL, 0, NULL))
+        mciSendString("set T2 time format ms", NULL, 0, NULL);
+    return true;
+}
