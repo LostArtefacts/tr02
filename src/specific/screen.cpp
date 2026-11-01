@@ -368,6 +368,175 @@ extern "C" bool RenderInit(void)
     return true;
 }
 
+struct COLOR_BIT_MASKS {
+    DWORD dwRBitMask;
+    DWORD dwGBitMask;
+    DWORD dwBBitMask;
+    DWORD dwRGBAlphaBitMask;
+    DWORD dwRBitDepth;
+    DWORD dwGBitDepth;
+    DWORD dwBBitDepth;
+    DWORD dwRGBAlphaBitDepth;
+    DWORD dwRBitOffset;
+    DWORD dwGBitOffset;
+    DWORD dwBBitOffset;
+    DWORD dwRGBAlphaBitOffset;
+    void WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat);
+};
+
+typedef struct {
+    DDPIXELFORMAT pixelFormat;
+    COLOR_BIT_MASKS colorBitMasks;
+    DWORD bpp;
+} TEXTURE_FORMAT;
+
+typedef struct {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+} DISPLAY_MODE;
+
+typedef struct DISPLAY_MODE_NODE {
+    struct DISPLAY_MODE_NODE *next;
+    struct DISPLAY_MODE_NODE *previous;
+    DISPLAY_MODE body;
+} DISPLAY_MODE_NODE;
+
+enum {
+    VGA_NoVga,
+    VGA_256Color,
+    VGA_ModeX,
+    VGA_Standard,
+};
+
+extern "C" {
+extern COLOR_BIT_MASKS ColorBitMasks;
+extern TEXTURE_FORMAT TextureFormat;
+extern RECT GameVidRect;
+extern RECT GameVidBufRect;
+extern int GameVidWidth, GameVidHeight;
+extern int GameVidBPP;
+extern bool GameVid_IsFullscreenVga;
+extern bool IsWindowedVGA;
+extern bool Is16bitTextures;
+extern bool NeedToReloadTextures;
+extern sint16 DumpWidth;
+extern sint16 DumpHeight;
+extern LPDIRECTDRAWSURFACE3 BackBufferSurface;
+bool WinVidGoFullScreen(DISPLAY_MODE *dispMode);
+bool WinVidGoWindowed(int width, int height, DISPLAY_MODE *dispMode);
+void WinVidSetMinWindowSize(int width, int height);
+int CalculateWindowWidth(int width, int height);
+int CalculateWindowHeight(int width, int height);
+void CreateScreenBuffers(void);
+void CreatePrimarySurface(void);
+void CreateBackBuffer(void);
+void CreateClipper(void);
+void D3DDeviceCreate(LPDIRECTDRAWSURFACE3 lpBackBuffer);
+void EnumerateTextureFormats(void);
+int S_ReloadLevelGraphics(int tPalDPQ, int tTPages);
+bool ReloadTextures(bool reset);
+}
+void HWR_GetAllTextureHandles(void);
+
+extern "C" void RenderStart(bool isReset)
+{
+    int minWidth;
+    int minHeight;
+    DISPLAY_MODE dispMode;
+    bool is16bitTextures;
+    bool isVgaChanged;
+    bool is16bitChanged;
+    DDPIXELFORMAT pixelFormat;
+
+    if (isReset)
+        NeedToReloadTextures = false;
+    if (SavedAppSettings.FullScreen) {
+        if (!SavedAppSettings.VideoMode)
+            throw ERR_GoFullScreen;
+        dispMode = ((DISPLAY_MODE_NODE *)SavedAppSettings.VideoMode)->body;
+        if (!WinVidGoFullScreen(&dispMode))
+            throw ERR_GoFullScreen;
+        CreateScreenBuffers();
+        GameVidWidth = dispMode.width;
+        GameVidHeight = dispMode.height;
+        GameVidBPP = dispMode.bpp;
+        GameVidBufWidth = dispMode.width;
+        GameVidBufHeight = dispMode.height;
+        GameVid_IsVga = dispMode.vga != VGA_NoVga;
+        GameVid_IsWindowedVga = false;
+        GameVid_IsFullscreenVga = dispMode.vga == VGA_Standard;
+    } else {
+        minWidth = 320;
+        minHeight = CalculateWindowHeight(320, 200);
+        if (minHeight < 200) {
+            minWidth = CalculateWindowWidth(320, 200);
+            minHeight = 200;
+        }
+        WinVidSetMinWindowSize(minWidth, minHeight);
+        if (!WinVidGoWindowed(SavedAppSettings.WindowWidth, SavedAppSettings.WindowHeight, &dispMode))
+            throw ERR_GoWindowed;
+        GameVidWidth = dispMode.width;
+        GameVidHeight = dispMode.height;
+        GameVidBPP = dispMode.bpp;
+        GameVidBufWidth = (dispMode.width + 31) & ~31;
+        GameVidBufHeight = (dispMode.height + 31) & ~31;
+        GameVid_IsVga = dispMode.vga != VGA_NoVga;
+        GameVid_IsWindowedVga = dispMode.vga != VGA_NoVga;
+        GameVid_IsFullscreenVga = false;
+        CreatePrimarySurface();
+        if (SavedAppSettings.RenderMode != RM_Software)
+            CreateBackBuffer();
+        CreateClipper();
+    }
+    memset(&pixelFormat, 0, sizeof(pixelFormat));
+    pixelFormat.dwSize = sizeof(pixelFormat);
+    if (FAILED(PrimaryBufferSurface->GetPixelFormat(&pixelFormat)))
+        throw ERR_GetPixelFormat;
+    ColorBitMasks.WinVidGetColorBitMasks(&pixelFormat);
+    if (GameVid_IsVga)
+        CreateWindowPalette();
+    if (SavedAppSettings.RenderMode != RM_Software && SavedAppSettings.ZBuffer)
+        CreateZBuffer();
+    if (SavedAppSettings.RenderMode == RM_Software) {
+        CreateRenderBuffer();
+        if (!PictureBufferSurface)
+            CreatePictureBuffer();
+    } else {
+        D3DDeviceCreate(BackBufferSurface);
+        EnumerateTextureFormats();
+    }
+    if (NeedToReloadTextures) {
+        is16bitTextures = (int)TextureFormat.bpp >= 16;
+        isVgaChanged = GameVid_IsWindowedVga != IsWindowedVGA;
+        is16bitChanged = is16bitTextures != Is16bitTextures;
+        if (isVgaChanged || is16bitChanged) {
+            S_ReloadLevelGraphics(isVgaChanged, is16bitChanged);
+            IsWindowedVGA = GameVid_IsWindowedVga;
+            Is16bitTextures = is16bitTextures;
+        } else if (SavedAppSettings.RenderMode == RM_Hardware) {
+            ReloadTextures(true);
+            HWR_GetAllTextureHandles();
+        }
+    } else {
+        IsWindowedVGA = GameVid_IsWindowedVga;
+        Is16bitTextures = (int)TextureFormat.bpp >= 16;
+    }
+    GameVidBufRect.left = 0;
+    GameVidBufRect.top = 0;
+    GameVidBufRect.right = GameVidBufWidth;
+    GameVidBufRect.bottom = GameVidBufHeight;
+    GameVidRect.left = 0;
+    GameVidRect.top = 0;
+    GameVidRect.right = GameVidWidth;
+    GameVidRect.bottom = GameVidHeight;
+    DumpWidth = GameVidWidth;
+    DumpHeight = GameVidHeight;
+    setup_screen_size();
+    NeedToReloadTextures = true;
+}
+
 extern "C" {
 extern LPCTSTR ErrorStringTable[];
 }
