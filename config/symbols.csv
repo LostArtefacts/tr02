@@ -1644,8 +1644,8 @@ address,size,name,symbol
 0x00467710,3,TgaFileMode,_TgaFileMode
 0x00467714,13,ScreenShotTgaFormat,_ScreenShotTgaFormat
 0x00467724,4,detail_level,_detail_level
-0x00467750,,shadowman,_shadowman
 0x0046773c,4,BadKeyString,_BadKeyString
+0x00467750,,shadowman,_shadowman
 0x00467790,4,String_Software3d,_String_Software3d
 0x00467794,4,String_Hardware3d,_String_Hardware3d
 0x00467798,4,String_FullScreen,_String_FullScreen
@@ -2150,6 +2150,8 @@ address,size,name,symbol
 0x005263c8,4,Overlaps,_Overlaps
 0x005263cc,4,boxes,_boxes
 0x005263d0,4,number_boxes,_number_boxes
+0x005275f8,4,Var5275f8,_Var5275f8
+0x005275fc,4,Var5275fc,_Var5275fc
 0x005283b0,4,RegCreateKeyExA,__imp__RegCreateKeyExA@36
 0x005283b4,4,RegCloseKey,__imp__RegCloseKey@4
 0x005283b8,4,RegSetValueExA,__imp__RegSetValueExA@24
