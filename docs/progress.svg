@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.79% (95)</tspan> · <tspan class="todo">1.23% (15)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.88% (96)</tspan> · <tspan class="todo">1.15% (14)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="673.46" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="673.46" y="0" class="decompiled"/>
-<rect width="58.22" height="6" x="679.59" y="0" class="nonmatching"/>
-<rect width="9.19" height="6" x="737.81" y="0" class="todo"/>
+<rect width="58.83" height="6" x="679.59" y="0" class="nonmatching"/>
+<rect width="8.58" height="6" x="738.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -105,7 +105,7 @@
 <rect width="12" height="12" x="495" y="0" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="nonmatching"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="0" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="0" class="nonmatching"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="todo"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">15.75%</tspan> · <tspan class="todo">2.99%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">15.94%</tspan> · <tspan class="todo">2.81%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.42" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.42" y="0" class="decompiled"/>
-<rect width="117.67" height="6" x="606.98" y="0" class="nonmatching"/>
-<rect width="22.35" height="6" x="724.65" y="0" class="todo"/>
+<rect width="119.06" height="6" x="606.98" y="0" class="nonmatching"/>
+<rect width="20.95" height="6" x="726.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1430,7 +1430,7 @@
 <rect width="20.62" height="20.32" x="348.49" y="220.43" class="named"><title>0x004174e0 TigerControl (672 bytes)</title></rect>
 <rect width="20.62" height="19.77" x="348.49" y="243.75" class="named"><title>0x0043cc50 SharkControl (656 bytes)</title></rect>
 <rect width="20.62" height="19.73" x="348.49" y="266.52" class="named"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
-<rect width="20.62" height="19.35" x="348.49" y="289.25" class="todo"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
+<rect width="20.62" height="19.35" x="348.49" y="289.25" class="nonmatching"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="20.62" height="19.21" x="348.49" y="311.60" class="named"><title>0x00414e50 GetHeight (640 bytes)</title></rect>
 <rect width="20.62" height="19.11" x="348.49" y="333.82" class="nonmatching"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
 <rect width="20.62" height="19.07" x="348.49" y="355.93" class="named"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
