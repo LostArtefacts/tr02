@@ -136,3 +136,13 @@ extern "C" void S_CDPlay(sint16 track, int mode)
         CD_LoopCounter = 120;
     }
 }
+
+extern "C" void S_CDStop(void)
+{
+    if (cdtrack > 0)
+    {
+        mciSendString("stop T2", NULL, 0, NULL);
+        CD_LoopTrack = NULL;
+        cdtrack = 0;
+    }
+}
