@@ -215,7 +215,68 @@ extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_V
 
 extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
 
-extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex);
+extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex)
+{
+    uint32 shade;
+
+    if ((sint8)(v1->clip & v2->clip & v3->clip & v4->clip))
+        return;
+    if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip) < 0) {
+        if (visible_zclip(v1, v2, v3)) {
+            InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
+            InsertGT3_ZBuffered(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4);
+        }
+    } else if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) >= 0) {
+        if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip)) {
+            InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
+            InsertGT3_ZBuffered(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4);
+        } else {
+            VBufferD3D[0].sx = v1->xs;
+            VBufferD3D[0].sy = v1->ys;
+            VBufferD3D[0].sz = FltResZBuf - FltResZORhw * v1->ooz;
+            VBufferD3D[0].rhw = v1->ooz;
+            shade = (0x1fff - v1->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+                        VBufferD3D[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[0].tu = tex->u1 / 65536.0f;
+            VBufferD3D[0].tv = tex->v1 / 65536.0f;
+            VBufferD3D[1].sx = v2->xs;
+            VBufferD3D[1].sy = v2->ys;
+            VBufferD3D[1].sz = FltResZBuf - FltResZORhw * v2->ooz;
+            VBufferD3D[1].rhw = v2->ooz;
+            shade = (0x1fff - v2->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+                        VBufferD3D[1].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[1].tu = tex->u2 / 65536.0f;
+            VBufferD3D[1].tv = tex->v2 / 65536.0f;
+            VBufferD3D[2].sx = v3->xs;
+            VBufferD3D[2].sy = v3->ys;
+            VBufferD3D[2].sz = FltResZBuf - FltResZORhw * v3->ooz;
+            VBufferD3D[2].rhw = v3->ooz;
+            shade = (0x1fff - v3->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+                        VBufferD3D[2].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[2].tu = tex->u3 / 65536.0f;
+            VBufferD3D[2].tv = tex->v3 / 65536.0f;
+            VBufferD3D[3].sx = v4->xs;
+            VBufferD3D[3].sy = v4->ys;
+            VBufferD3D[3].sz = FltResZBuf - FltResZORhw * v4->ooz;
+            VBufferD3D[3].rhw = v4->ooz;
+            shade = (0x1fff - v4->g) >> 4;
+            if (shade > 255)
+                shade = 255;
+                        VBufferD3D[3].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+            VBufferD3D[3].tu = tex->u4 / 65536.0f;
+            VBufferD3D[3].tv = tex->v4 / 65536.0f;
+            HWR_TexSource(HWR_PageHandles[tex->tpage]);
+            HWR_EnableColorKey(tex->drawtype != 0);
+            G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, VBufferD3D, 4, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        }
+    }
+}
 
 extern "C" sint16 *InsertObjectGT4_ZBuffered(sint16 *objptr, int number, int sorttype)
 {
