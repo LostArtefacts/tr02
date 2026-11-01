@@ -33,6 +33,91 @@ extern "C" void insert_sprite(int z, int x1, int y1, int x2, int y2, int sprnum,
     surfacenum++;
 }
 
+extern "C" sint32 PhdViewDistance;
+extern "C" sint32 PhdPersp;
+
+extern "C" void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 sprnum, sint16 shade, sint16 scale)
+{
+    sint32 xv, yv, zv, zp, x1, y1, x2, y2;
+    PHDSPRITESTRUCT *sprite;
+
+    if (flags & 0x1000000)
+    {
+        x -= w2v_matrix[M03];
+        y -= w2v_matrix[M13];
+        z -= w2v_matrix[M23];
+        if (x < -PhdViewDistance || x > PhdViewDistance || y < -PhdViewDistance || y > PhdViewDistance || z < -PhdViewDistance || z > PhdViewDistance)
+            return;
+        zv = w2v_matrix[M20] * x + w2v_matrix[M21] * y + w2v_matrix[M22] * z;
+        if (zv < phd_znear || zv >= phd_zfar)
+            return;
+        xv = w2v_matrix[M00] * x + w2v_matrix[M01] * y + w2v_matrix[M02] * z;
+        yv = w2v_matrix[M10] * x + w2v_matrix[M11] * y + w2v_matrix[M12] * z;
+    }
+    else if (x | y | z)
+    {
+        zv = phd_mxptr[M20] * x + phd_mxptr[M21] * y + phd_mxptr[M22] * z + phd_mxptr[M23];
+        if (zv < phd_znear || zv > phd_zfar)
+            return;
+        xv = phd_mxptr[M00] * x + phd_mxptr[M01] * y + phd_mxptr[M02] * z + phd_mxptr[M03];
+        yv = phd_mxptr[M10] * x + phd_mxptr[M11] * y + phd_mxptr[M12] * z + phd_mxptr[M13];
+    }
+    else
+    {
+        zv = phd_mxptr[M23];
+        if (zv < phd_znear || zv > phd_zfar)
+            return;
+        xv = phd_mxptr[M03];
+        yv = phd_mxptr[M13];
+    }
+    sprite = &PhdSpriteInfo[sprnum];
+    x1 = sprite->x1;
+    y1 = sprite->y1;
+    x2 = sprite->x2;
+    y2 = sprite->y2;
+    if (flags & 0x4000000)
+    {
+        x1 = (x1 * scale) << 6;
+        y1 = (y1 * scale) << 6;
+        x2 = (x2 * scale) << 6;
+        y2 = (y2 * scale) << 6;
+    }
+    else
+    {
+        x1 <<= W2V_SHIFT;
+        y1 <<= W2V_SHIFT;
+        x2 <<= W2V_SHIFT;
+        y2 <<= W2V_SHIFT;
+    }
+    zp = zv / PhdPersp;
+    x1 = (xv + x1) / zp + phd_centerx;
+    if (x1 >= phd_winwidth)
+        return;
+    y1 = (yv + y1) / zp + phd_centery;
+    if (y1 >= phd_winheight)
+        return;
+    x2 = (xv + x2) / zp + phd_centerx;
+    if (x2 < 0)
+        return;
+    y2 = (yv + y2) / zp + phd_centery;
+    if (y2 < 0)
+        return;
+    if (flags & 0x8000000)
+    {
+        if (zv > 0xc000000)
+        {
+            shade += (zv >> W2V_SHIFT) - 0x3000;
+            if (shade > 0x1fff)
+                return;
+        }
+    }
+    else
+    {
+        shade = 0x1000;
+    }
+    InsertSprite(zv, x1, y1, x2, y2, sprnum, shade);
+}
+
 extern "C" void S_DrawPickup(int sx, int sy, int scale, sint16 sprnum, sint16 shade)
 {
     PHDSPRITESTRUCT *sprite;
