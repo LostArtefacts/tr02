@@ -978,6 +978,12 @@ extern "C" bool WinVidCreateGameWindow(void)
     return true;
 }
 
+extern "C" void WinVidFreeWindow(void)
+{
+    WinVidExitMessage();
+    UnregisterClass(ClassName, GhInstance);
+}
+
 extern "C" bool WinVidInit(void)
 {
     AppResultCode = 0;
