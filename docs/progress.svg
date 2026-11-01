@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.45% (1094)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">3.76% (47)</tspan> · <tspan class="todo">7.99% (100)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">3.76% (47)</tspan> · <tspan class="todo">7.91% (99)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="653.25" height="6" x="0" y="0" class="named"/>
-<rect width="5.97" height="6" x="653.25" y="0" class="decompiled"/>
-<rect width="28.06" height="6" x="659.22" y="0" class="nonmatching"/>
-<rect width="59.71" height="6" x="687.29" y="0" class="todo"/>
+<rect width="653.85" height="6" x="0" y="0" class="named"/>
+<rect width="5.97" height="6" x="653.85" y="0" class="decompiled"/>
+<rect width="28.06" height="6" x="659.82" y="0" class="nonmatching"/>
+<rect width="59.12" height="6" x="687.88" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -989,7 +989,7 @@
 <rect width="12" height="12" x="255" y="270" class="decompiled"><title>0x00448050 Func448050 (5 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="270" class="named"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="270" class="named"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="270" class="todo"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="270" class="named"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="270" class="named"><title>0x00448210 WinSndStart (380 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="270" class="named"><title>0x00448390 DSoundCreate (28 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="270" class="named"><title>0x004483b0 DSoundBufferTest (196 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.31%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.34%</tspan> · <tspan class="todo">11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.34%</tspan> · <tspan class="todo">10.94%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="599.93" height="6" x="0" y="0" class="named"/>
-<rect width="2.56" height="6" x="599.93" y="0" class="decompiled"/>
-<rect width="62.31" height="6" x="602.49" y="0" class="nonmatching"/>
-<rect width="82.19" height="6" x="664.81" y="0" class="todo"/>
+<rect width="600.42" height="6" x="0" y="0" class="named"/>
+<rect width="2.56" height="6" x="600.42" y="0" class="decompiled"/>
+<rect width="62.31" height="6" x="602.98" y="0" class="nonmatching"/>
+<rect width="81.71" height="6" x="665.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1737,7 +1737,7 @@
 <rect width="10.63" height="11.20" x="499.08" y="157.48" class="named"><title>0x00434cc0 BigBowlControl (227 bytes)</title></rect>
 <rect width="10.63" height="11.14" x="499.08" y="171.68" class="named"><title>0x0042a170 lara_slide_slope (226 bytes)</title></rect>
 <rect width="10.63" height="11.14" x="499.08" y="185.82" class="named"><title>0x00445080 WinVidSpinMessageLoop (226 bytes)</title></rect>
-<rect width="10.63" height="11.14" x="499.08" y="199.96" class="todo"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
+<rect width="10.63" height="11.14" x="499.08" y="199.96" class="named"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
 <rect width="10.63" height="11.07" x="499.08" y="214.09" class="named"><title>0x0043cf20 SkidooCheckGeton (225 bytes)</title></rect>
 <rect width="10.63" height="11.01" x="499.08" y="228.17" class="named"><title>0x00442810 FallingCeiling (224 bytes)</title></rect>
 <rect width="10.63" height="10.89" x="499.08" y="242.18" class="named"><title>0x0041cd00 ControlHotLiquid (222 bytes)</title></rect>

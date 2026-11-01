@@ -192,18 +192,24 @@ struct STRING_FLAGGED {
     }
 };
 
-typedef struct {
+struct SOUND_ADAPTER {
     LPGUID lpAdapterGuid;
     GUID adapterGuid;
     STRING_FLAGGED description;
     STRING_FLAGGED module;
-} SOUND_ADAPTER;
+    SOUND_ADAPTER() : description(256), module(256)
+    {
+    }
+};
 
-typedef struct SOUND_ADAPTER_NODE {
-    struct SOUND_ADAPTER_NODE *next;
-    struct SOUND_ADAPTER_NODE *previous;
+struct SOUND_ADAPTER_NODE {
+    SOUND_ADAPTER_NODE *next;
+    SOUND_ADAPTER_NODE *previous;
     SOUND_ADAPTER body;
-} SOUND_ADAPTER_NODE;
+    SOUND_ADAPTER_NODE(SOUND_ADAPTER_NODE *prevNode, SOUND_ADAPTER_NODE *nextNode) : next(nextNode), previous(prevNode)
+    {
+    }
+};
 
 typedef struct {
     SOUND_ADAPTER_NODE *head;
@@ -253,6 +259,32 @@ extern "C" bool DSoundEnumerate(LPVOID lpContext)
     if (DX_TRY(DirectSoundEnumerate(DSoundEnumCallback, lpContext)))
         return false;
     return true;
+}
+
+extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext)
+{
+    SOUND_ADAPTER_LIST *list = (SOUND_ADAPTER_LIST *)lpContext;
+    SOUND_ADAPTER_NODE *node = new SOUND_ADAPTER_NODE(list->tail, NULL);
+
+    if (list->tail)
+        list->tail->next = node;
+    else
+        list->head = node;
+    list->tail = node;
+    list->dwCount++;
+    if (lpGuid)
+    {
+        node->body.adapterGuid = *lpGuid;
+        node->body.lpAdapterGuid = &node->body.adapterGuid;
+    }
+    else
+    {
+        memset(&node->body.adapterGuid, 0, sizeof(GUID));
+        node->body.lpAdapterGuid = NULL;
+    }
+    strcpy(node->body.description.lpString, lpDescription);
+    strcpy(node->body.module.lpString, lpModule);
+    return TRUE;
 }
 
 #pragma pack(push, 1)
