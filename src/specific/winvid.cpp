@@ -1010,6 +1010,8 @@ extern "C" bool WinVidGetDisplayAdapters(void)
             PrimaryDisplayAdapter = node;
             return true;
         }
+        if (!node)
+            break;
     }
     return false;
 }
