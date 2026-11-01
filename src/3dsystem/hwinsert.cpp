@@ -514,29 +514,6 @@ extern "C" sint16 *InsertObjectG3_ZBuffered(sint16 *objptr, int number, int sort
     return objptr;
 }
 
-extern "C" void InsertLine_ZBuffered(int x1, int y1, int x2, int y2, int z, uint8 color)
-{
-    uint8 *rgb;
-    float rhw;
-
-    if (z >= phd_zfar)
-        return;
-    if (z < phd_znear)
-        z = phd_znear;
-    rgb = (uint8 *)game_palette + color * 3;
-    VBufferD3D[0].sx = (float)(phd_winxmin + x1);
-    VBufferD3D[0].sy = (float)(phd_winymin + y1);
-    VBufferD3D[1].sx = (float)(phd_winxmin + x2);
-    VBufferD3D[1].sy = (float)(phd_winymin + y2);
-    rhw = RhwFactor / (float)z;
-    VBufferD3D[0].sz = VBufferD3D[1].sz = FltResZBuf - rhw * FltResZORhw;
-    VBufferD3D[0].rhw = VBufferD3D[1].rhw = rhw;
-    VBufferD3D[0].color = VBufferD3D[1].color = ShadeColor(rgb[0], rgb[1], rgb[2]);
-    HWR_TexSource(0);
-    HWR_EnableColorKey(false);
-    G_Direct3DDevice->DrawPrimitive(D3DPT_LINESTRIP, D3DVT_TLVERTEX, VBufferD3D, 2, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
-}
-
 extern "C" void InsertFlatRect_ZBuffered(int x1, int y1, int x2, int y2, int z, int color)
 {
     uint8 *rgb;
@@ -568,6 +545,29 @@ extern "C" void InsertFlatRect_ZBuffered(int x1, int y1, int x2, int y2, int z, 
     HWR_TexSource(0);
     HWR_EnableColorKey(false);
     G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, D3DVT_TLVERTEX, VBufferD3D, 4, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+}
+
+extern "C" void InsertLine_ZBuffered(int x1, int y1, int x2, int y2, int z, uint8 color)
+{
+    uint8 *rgb;
+    float rhw;
+
+    if (z >= phd_zfar)
+        return;
+    if (z < phd_znear)
+        z = phd_znear;
+    rgb = (uint8 *)game_palette + color * 3;
+    VBufferD3D[0].sx = (float)(phd_winxmin + x1);
+    VBufferD3D[0].sy = (float)(phd_winymin + y1);
+    VBufferD3D[1].sx = (float)(phd_winxmin + x2);
+    VBufferD3D[1].sy = (float)(phd_winymin + y2);
+    rhw = RhwFactor / (float)z;
+    VBufferD3D[0].sz = VBufferD3D[1].sz = FltResZBuf - rhw * FltResZORhw;
+    VBufferD3D[0].rhw = VBufferD3D[1].rhw = rhw;
+    VBufferD3D[0].color = VBufferD3D[1].color = ShadeColor(rgb[0], rgb[1], rgb[2]);
+    HWR_TexSource(0);
+    HWR_EnableColorKey(false);
+    G_Direct3DDevice->DrawPrimitive(D3DPT_LINESTRIP, D3DVT_TLVERTEX, VBufferD3D, 2, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
 }
 
 extern "C" void InsertClippedPoly_Textured(int npoints, float zdepth, int drawtype, int tpage);
