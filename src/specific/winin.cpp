@@ -173,7 +173,7 @@ extern "C" void WinInRunControlPanel(HWND hWnd)
 
 extern "C" bool DInputJoystickCreate(void);
 
-extern "C" void WinInStart(void)
+void WinInStart(void)
 {
     if (!DInputCreate())
         throw ERR_CantCreateDirectInput;

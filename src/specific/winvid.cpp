@@ -1405,7 +1405,7 @@ enum WinVidStartResult {
 
 extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
 
-extern "C" void WinVidStart(void)
+void WinVidStart(void)
 {
     DISPLAY_ADAPTER *preferred;
 

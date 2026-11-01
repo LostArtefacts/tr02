@@ -30,7 +30,7 @@ extern "C" void WinSndFreeAllSamples()
     }
 }
 
-extern "C" bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength)
+bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength)
 {
     DSBUFFERDESC desc;
     void *pBlock;
@@ -336,7 +336,7 @@ bool DSoundCreate(LPGUID lpGuid);
 bool DSoundBufferTest(void);
 }
 
-extern "C" void WinSndStart(HWND hWnd)
+void WinSndStart(HWND hWnd)
 {
     SOUND_ADAPTER *preferred;
 

@@ -440,7 +440,7 @@ bool ReloadTextures(bool reset);
 }
 void HWR_GetAllTextureHandles(void);
 
-extern "C" void RenderStart(bool isReset)
+void RenderStart(bool isReset)
 {
     int minWidth;
     int minHeight;
@@ -576,7 +576,7 @@ void CleanupTextures(void);
 }
 void HWR_FreeTexturePages(void);
 
-extern "C" void RenderFinish(bool needToClearTextures)
+void RenderFinish(bool needToClearTextures)
 {
     if (SavedAppSettings.RenderMode == RM_Hardware) {
         if (needToClearTextures) {

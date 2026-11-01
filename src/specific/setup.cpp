@@ -60,12 +60,12 @@ typedef struct
 extern "C" {
 extern SETUP_APP_SETTINGS SavedAppSettings;
 extern SETUP_APP_SETTINGS ChangedAppSettings;
-void RenderFinish(bool reset);
 void WinVidFinish(void);
 void WinVidHideGameWindow(void);
 }
+void RenderFinish(bool reset);
 
-bool WinVidStart(void);
+void WinVidStart(void);
 void RenderStart(bool reset);
 
 extern "C" {

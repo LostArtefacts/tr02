@@ -31,12 +31,12 @@ extern APP_SETTINGS SavedAppSettings;
 extern int IsFmvPlaying;
 extern bool IsGameToExit;
 void S_CDStop(void);
-void RenderFinish(bool reset);
 char *GetFullPath(char *path);
 void WinPlayFMV(char *path, bool playback);
 void WinStopFMV(bool playback);
 void FmvBackToGame(void);
 }
+void RenderFinish(bool reset);
 
 int FMV_Play(char *szMovieName)
 {

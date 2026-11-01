@@ -7,7 +7,7 @@ extern double LdPerformanceDivisor;
 extern double LdInitialTimer;
 extern DWORD LdwInitialTimer;
 
-extern "C" LPVOID UT_LoadResource(LPCSTR name, LPCSTR type)
+LPVOID UT_LoadResource(LPCSTR name, LPCSTR type)
 {
     HRSRC res = FindResource(GhInstance, name, type);
     if (!res)

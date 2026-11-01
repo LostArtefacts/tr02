@@ -378,7 +378,7 @@ extern "C" char MainSfxFileName[];
 extern "C" char MainSfxOpenFailed[];
 extern "C" bool WinSndIsSoundEnabled(void);
 extern "C" void WinSndFreeAllSamples(void);
-extern "C" bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
+bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
 extern "C" char *GetFullPath(char *path);
 extern "C" void game_free(int size, int type);
 

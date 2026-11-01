@@ -9,12 +9,12 @@ extern "C" {
 extern char StringToShow[128];
 void WinInFinish(void);
 void WinSndFinish(void);
-void RenderFinish(bool reset);
 void WinVidFinish(void);
 void WinVidHideGameWindow(void);
 LPCTSTR DecodeErrorMessage(DWORD errorCode);
 extern char RenderInitFailedFormat[];
 }
+void RenderFinish(bool reset);
 
 void UT_ErrorBox(char *text, void *parent);
 
@@ -38,7 +38,7 @@ extern "C" void WinGameFinish(void)
 }
 
 extern "C" void ShutdownGame(void);
-extern "C" void WinCleanup(void);
+void WinCleanup(void);
 
 extern "C" void S_ExitSystem(char *message)
 {
@@ -84,7 +84,7 @@ void WinVidFreeWindow(void);
 void CD_Cleanup(void);
 }
 
-extern "C" void WinCleanup(void)
+void WinCleanup(void)
 {
     WinCleanupStub1();
     WinCleanupStub2();
@@ -95,7 +95,7 @@ extern "C" void WinCleanup(void)
     CD_Cleanup();
 }
 
-bool WinVidStart(void);
+void WinVidStart(void);
 void RenderStart(bool reset);
 void WinSndStart(HWND hWnd);
 void WinInStart(void);
