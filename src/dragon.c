@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "game.h"
+#include "box.h"
 
 #define DRAGON_FRONT 22
 #define TWINKLE 239
@@ -109,8 +110,6 @@ sint16 DragonFire(sint32 x, sint32 y, sint32 z, sint16 speed, PHD_ANGLE yrot, si
 
     return (fx_number);
 }
-
-#include "box.h"
 
 #define DRAGON_BACK 23
 #define DRAGON_DEATH 11
