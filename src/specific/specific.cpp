@@ -89,3 +89,9 @@ extern "C" bool CD_Init(void)
         mciSendString("set T2 time format ms", NULL, 0, NULL);
     return true;
 }
+
+extern "C" void CD_Cleanup(void)
+{
+    mciSendString("stop T2", NULL, 0, NULL);
+    mciSendString("close T2", NULL, 0, NULL);
+}
