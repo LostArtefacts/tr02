@@ -1977,6 +1977,7 @@ address,size,name,symbol
 0x0051bc7c,4,SE_PropSheetWndHandle,_SE_PropSheetWndHandle
 0x0051bc80,,SE_OldPropSheetWndProc,_SE_OldPropSheetWndProc
 0x0051bc84,4,OptionsImageHandle,_OptionsImageHandle
+0x0051bc88,1,Var51bc88,_Var51bc88
 0x0051bc8c,4,SE_DisplayAdapter,_SE_DisplayAdapter
 0x0051bc90,4,SoundDialogHandle,_SoundDialogHandle
 0x0051bc94,4,SoundImageHandle,_SoundImageHandle

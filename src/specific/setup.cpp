@@ -591,6 +591,142 @@ extern "C" bool SE_ShowSetupDialog(HWND hParent, bool isDefault)
 }
 
 extern "C" {
+extern bool Var51bc88;
+extern SETUP_ADAPTER_NODE *SE_DisplayAdapter;
+extern DISPLAY_MODE SE_FullScreenMode;
+void SE_GraphicsDlgInit(HWND hwndDlg);
+void SE_GraphicsDlgUpdate(HWND hwndDlg);
+void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
+void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter);
+void WinVidSetDisplayAdapter(void *adapter);
+}
+
+void UT_CenterWindow(HWND hWnd);
+
+extern "C" BOOL CALLBACK SE_GraphicsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    bool isCheck;
+    SETUP_MODE_NODE *mode;
+
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        GraphicsDialogHandle = hwndDlg;
+        Var51bc88 = false;
+        if (!IsSetupDialogCentered)
+        {
+            UT_CenterWindow(GetParent(hwndDlg));
+            IsSetupDialogCentered = true;
+        }
+        SE_GraphicsDlgInit(hwndDlg);
+        return TRUE;
+    case WM_DESTROY:
+        GraphicsDialogHandle = NULL;
+        break;
+    case WM_DISPLAYCHANGE:
+        if (!Var51bc88)
+        {
+            if (SE_DisplayAdapter)
+                WinVidSetDisplayAdapter(&SE_DisplayAdapter->lpAdapterGuid);
+            SE_GraphicsDlgUpdate(hwndDlg);
+        }
+        break;
+    case WM_HSCROLL:
+        if ((HWND)lParam == GetDlgItem(hwndDlg, 1034))
+            SE_GraphicsDlgUpdate(hwndDlg);
+        break;
+    case WM_COMMAND:
+        if (HIWORD(wParam) == BN_CLICKED)
+        {
+            isCheck = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_CHECKED;
+            switch (LOWORD(wParam))
+            {
+            case 1045:
+                ChangedAppSettings.RenderMode = 1;
+                SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1047:
+                ChangedAppSettings.RenderMode = 2;
+                SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1015:
+                ChangedAppSettings.PerspectiveCorrect = isCheck;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1058:
+                ChangedAppSettings.Dither = isCheck;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1017:
+                ChangedAppSettings.ZBuffer = isCheck;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1018:
+                ChangedAppSettings.BilinearFiltering = isCheck;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1048:
+                ChangedAppSettings.TripleBuffering = isCheck;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1030:
+                ChangedAppSettings.FullScreen = true;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1031:
+                ChangedAppSettings.FullScreen = false;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1060:
+                ChangedAppSettings.AspectMode = 0;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1061:
+                ChangedAppSettings.AspectMode = 1;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1062:
+                ChangedAppSettings.AspectMode = 2;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1029:
+                Var51bc88 = true;
+                if (SE_GraphicsTest())
+                    PostMessage(SE_PropSheetWndHandle, PSM_PRESSBUTTON, PSBTN_CANCEL, 0);
+                Var51bc88 = false;
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            case 1112:
+                SE_DefaultGraphicsSettings();
+                SE_GraphicsDlgInit(hwndDlg);
+                break;
+            default:
+                SE_GraphicsDlgUpdate(hwndDlg);
+                break;
+            }
+        }
+        else if (HIWORD(wParam) == CBN_SELCHANGE)
+        {
+            mode = (SETUP_MODE_NODE *)SendMessage((HWND)lParam, CB_GETITEMDATA, SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0), 0);
+            if (LOWORD(wParam) == 1000)
+            {
+                ChangedAppSettings.VideoMode = mode;
+                SE_FullScreenMode = mode->body;
+            }
+            else if (LOWORD(wParam) == 1025)
+            {
+                SE_GraphicsAdapterSet(hwndDlg, mode);
+                SE_GraphicsDlgUpdate(hwndDlg);
+            }
+        }
+        break;
+    }
+    return FALSE;
+}
+
+extern "C" {
 extern DISPLAY_MODE SE_FullScreenMode;
 extern char RegistryClass[];
 }
