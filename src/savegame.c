@@ -1,6 +1,7 @@
 #include <windows.h>
 #include "game.h"
 #include "savegame.h"
+#include "box.h"
 
 extern int SG_Count;
 extern char *SG_Point;
@@ -195,8 +196,6 @@ void CreateStartInfo(int level_number)
     start->gun_status = LG_ARMLESS;
 }
 
-#include "box.h"
-
 #define SAVE_CREATURE (1 << 7)
 #define KILLED_ITEM ((sint16)0x8000)
 #define MAX_FLIPMAPS 10
@@ -251,8 +250,6 @@ void DragonBones(sint16 item_number);
 sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
 void LaraBurn(void);
-
-#include "box.h"
 
 #define SAVE_CREATURE (1 << 7)
 #define MAX_FLIPMAPS 10
@@ -647,7 +644,6 @@ void ResetSG(void)
     SG_Point = savegame.buffer;
 }
 
-
 void S_ExitSystem(char *message);
 
 void WriteSG(void *pointer, int size)
@@ -662,7 +658,6 @@ void WriteSG(void *pointer, int size)
     for (; size > 0; size--)
         *(SG_Point++) = *(data++);
 }
-
 
 void ReadSG(void *pointer, int size)
 {
