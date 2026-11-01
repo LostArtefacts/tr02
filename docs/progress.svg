@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.71% (94)</tspan> · <tspan class="todo">1.31% (16)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.79% (95)</tspan> · <tspan class="todo">1.23% (15)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="673.46" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="673.46" y="0" class="decompiled"/>
-<rect width="57.60" height="6" x="679.59" y="0" class="nonmatching"/>
-<rect width="9.80" height="6" x="737.20" y="0" class="todo"/>
+<rect width="58.22" height="6" x="679.59" y="0" class="nonmatching"/>
+<rect width="9.19" height="6" x="737.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1094,7 +1094,7 @@
 <rect width="12" height="12" x="330" y="300" class="named"><title>0x0044d840 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="300" class="named"><title>0x0044d930 S_SeedRandom (127 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="named"><title>0x0044d9b0 Key (288 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="300" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="300" class="nonmatching"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="300" class="named"><title>0x0044e5a0 RenderErrorBox (60 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="named"><title>0x0044e5e0 WinMain (448 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="300" class="named"><title>0x0044e7b0 GameInit (118 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.95%</tspan> · <tspan class="todo">3.79%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">15.75%</tspan> · <tspan class="todo">2.99%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.42" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.42" y="0" class="decompiled"/>
-<rect width="111.70" height="6" x="606.98" y="0" class="nonmatching"/>
-<rect width="28.32" height="6" x="718.68" y="0" class="todo"/>
+<rect width="117.67" height="6" x="606.98" y="0" class="nonmatching"/>
+<rect width="22.35" height="6" x="724.65" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1308,7 +1308,7 @@
 <rect width="57.84" height="41.24" x="0" y="291.35" class="named"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
 <rect width="57.84" height="39.42" x="0" y="335.58" class="named"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>
 <rect width="44.19" height="50.02" x="60.84" y="0" class="named"><title>0x0041ab00 DrawLaraInt (3052 bytes)</title></rect>
-<rect width="44.19" height="45.05" x="60.84" y="53.02" class="todo"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
+<rect width="44.19" height="45.05" x="60.84" y="53.02" class="nonmatching"><title>0x0044dad0 S_UpdateInput (2766 bytes)</title></rect>
 <rect width="44.19" height="43.07" x="60.84" y="101.07" class="named"><title>0x00405f10 ins_objectGT4 (2652 bytes)</title></rect>
 <rect width="44.19" height="41" x="60.84" y="147.14" class="nonmatching"><title>0x00420f00 HairControl (2533 bytes)</title></rect>
 <rect width="44.19" height="36.12" x="60.84" y="191.15" class="named"><title>0x0040f500 CreatureAnimation (2252 bytes)</title></rect>

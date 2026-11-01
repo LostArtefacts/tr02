@@ -1959,6 +1959,8 @@ address,size,name,symbol
 0x0051a1f8,4,input,_input
 0x0051a1fc,1,IsVidModeLock,_IsVidModeLock
 0x0051a200,4,joy_fire,?joy_fire@@3HA
+0x0051a204,4,joy_x,?joy_x@@3HA
+0x0051a208,4,joy_y,?joy_y@@3HA
 0x0051a228,4,GhInstance,_GhInstance
 0x0051a22c,4,GpCmdLine,_GpCmdLine
 0x0051a230,4,ScreenShotPcxNumber,_ScreenShotPcxNumber
