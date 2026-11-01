@@ -178,3 +178,12 @@ extern "C" void S_CDVolume(int volume)
     wsprintf(Var5275f8, "setaudio T2 volume to %u", volume);
     mciSendString(Var5275f8, NULL, 0, NULL);
 }
+
+extern "C" bool Func4558e1(uint32 c);
+
+extern "C" bool Func4558d7(uint32 c)
+{
+    if (c <= 0x81)
+        return false;
+    return Func4558e1(c);
+}

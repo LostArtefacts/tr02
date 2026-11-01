@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.22% (88)</tspan> · <tspan class="todo">1.89% (23)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.30% (89)</tspan> · <tspan class="todo">1.80% (22)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="672.85" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="672.85" y="0" class="decompiled"/>
-<rect width="53.93" height="6" x="678.98" y="0" class="nonmatching"/>
-<rect width="14.09" height="6" x="732.91" y="0" class="todo"/>
+<rect width="54.54" height="6" x="678.98" y="0" class="nonmatching"/>
+<rect width="13.48" height="6" x="733.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1208,7 +1208,7 @@
 <rect width="12" height="12" x="540" y="330" class="nonmatching"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="330" class="nonmatching"><title>0x00455830 S_CDGetLoc (99 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="330" class="nonmatching"><title>0x004558a0 S_CDVolume (55 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="330" class="todo"><title>0x004558d7 Func4558d7 (10 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="330" class="nonmatching"><title>0x004558d7 Func4558d7 (10 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="330" class="todo"><title>0x004558e1 Func4558e1 (36 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="330" class="todo"><title>0x00455905 Func455905 (29 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="330" class="todo"><title>0x00455922 Func455922 (24 bytes)</title></rect>
@@ -1296,8 +1296,8 @@
 <g transform="translate(0 20)">
 <rect width="604.30" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.30" y="0" class="decompiled"/>
-<rect width="106.88" height="6" x="606.86" y="0" class="nonmatching"/>
-<rect width="33.26" height="6" x="713.74" y="0" class="todo"/>
+<rect width="106.91" height="6" x="606.86" y="0" class="nonmatching"/>
+<rect width="33.23" height="6" x="713.77" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2497,7 +2497,7 @@
 <rect width="0.10" height="0.10" x="736.70" y="370.05" class="named"><title>0x004541c0 SE_SoundAdapterSet (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="736.70" y="372.70" class="named"><title>0x004544c0 SE_ControlsJoystickSet (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="736.70" y="375.35" class="named"><title>0x00455510 S_SoundSetMasterVolume (10 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="739.79" y="367.40" class="todo"><title>0x004558d7 Func4558d7 (10 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="739.79" y="367.40" class="nonmatching"><title>0x004558d7 Func4558d7 (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="742.48" y="367.40" class="named"><title>0x00456650 CleanupTextures (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="745.17" y="367.40" class="named"><title>0x0041d9a0 invisibility_on (9 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="747.58" y="367.40" class="named"><title>0x0041d9d0 dynamic_light_on (9 bytes)</title></rect>
