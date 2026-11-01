@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 
 #define CAM_A_CLIMBL (-30 * ONE_DEGREE)
