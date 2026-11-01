@@ -1,4 +1,6 @@
 #include "game.h"
+#include <stdio.h>
+#include "savegame.h"
 
 #define DEMOCOUNT_MAX (30 * 60 * 5)
 
@@ -22,9 +24,6 @@ sint32 DoDemoSequence(int level_number)
         demo_level = level_number;
     return GF_DoLevelSequence(level_number, IL_DEMO);
 }
-
-#include <stdio.h>
-#include "savegame.h"
 
 #define RANDOM_SEED 0xd371f947
 
