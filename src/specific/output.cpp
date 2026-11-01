@@ -375,7 +375,128 @@ extern "C" int DecompPCX(uint8 *pcx, int pcx_size, uint8 *bitmap, uint8 *palette
     return 1;
 }
 
+extern "C" {
+#include "../room.h"
+}
+
+typedef struct {
+    sint32 x, y, z;
+    sint16 intensity, intensity2;
+    sint32 falloff, falloff2;
+} LIGHT_INFO;
+
+extern "C" sint32 number_dynamics;
+extern "C" LIGHT_INFO dynamic[];
+
 extern "C" sint32 LsAdder;
+extern "C" sint32 ls_divider;
+
+extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number)
+{
+    ROOM_INFO *r;
+    LIGHT_INFO *light;
+    sint32 i, brightest, adder, shade, shade1, shade2;
+    sint32 dx, dy, dz, distance, falloff, falloff2, radius, depth;
+    sint32 ls[3];
+    PHD_ANGLE angles[2];
+
+    r = &room[room_number];
+    brightest = 0;
+    if (r->lighting == 0)
+    {
+        light = (LIGHT_INFO *)r->light;
+        for (i = 0; i < r->num_lights; i++, light++)
+        {
+            dx = x - light->x;
+            dy = y - light->y;
+            dz = z - light->z;
+            falloff = (light->falloff * light->falloff) >> 12;
+            distance = (dx * dx + dy * dy + dz * dz) >> 12;
+            shade = falloff * light->intensity / (falloff + distance);
+            if (shade > brightest)
+            {
+                brightest = shade;
+                ls[0] = dx;
+                ls[1] = dy;
+                ls[2] = dz;
+            }
+        }
+    }
+    else
+    {
+        light = (LIGHT_INFO *)r->light;
+        for (i = 0; i < r->num_lights; i++, light++)
+        {
+            dx = x - light->x;
+            dy = y - light->y;
+            dz = z - light->z;
+            distance = (dx * dx + dy * dy + dz * dz) >> 12;
+            falloff = (light->falloff * light->falloff) >> 12;
+            shade1 = falloff * light->intensity / (falloff + distance);
+            falloff2 = (light->falloff2 * light->falloff2) >> 12;
+            shade2 = falloff2 * light->intensity2 / (falloff2 + distance);
+            shade = shade1 + (shade2 - shade1) * RoomLightShades[r->lighting] / (WIBBLE_SIZE - 1);
+            if (shade > brightest)
+            {
+                brightest = shade;
+                ls[0] = dx;
+                ls[1] = dy;
+                ls[2] = dz;
+            }
+        }
+    }
+    adder = brightest;
+    for (i = 0; i < number_dynamics; i++)
+    {
+        radius = 1 << dynamic[i].falloff;
+        dx = x - dynamic[i].x;
+        if (dx >= -radius && dx <= radius)
+        {
+            dy = y - dynamic[i].y;
+            if (dy >= -radius && dy <= radius)
+            {
+                dz = z - dynamic[i].z;
+                if (dz >= -radius && dz <= radius)
+                {
+                    distance = dx * dx + dy * dy + dz * dz;
+                    if (distance <= 1 << (dynamic[i].falloff * 2))
+                    {
+                        shade = (1 << dynamic[i].intensity) - (distance >> (dynamic[i].falloff * 2 - dynamic[i].intensity));
+                        if (shade > brightest)
+                        {
+                            brightest = shade;
+                            ls[0] = dx;
+                            ls[1] = dy;
+                            ls[2] = dz;
+                        }
+                        adder += shade;
+                    }
+                }
+            }
+        }
+    }
+    adder >>= 1;
+    if (adder)
+    {
+        LsAdder = r->ambient - adder;
+        ls_divider = 0x4000000 / adder;
+        phd_GetVectorAngles(ls[0], ls[1], ls[2], angles);
+        phd_RotateLight(angles[1], angles[0]);
+    }
+    else
+    {
+        LsAdder = r->ambient;
+        ls_divider = 0;
+    }
+    depth = phd_mxptr[M23] >> W2V_SHIFT;
+    if (depth > 0x3000)
+    {
+        LsAdder += depth - 0x3000;
+        if (LsAdder > 0x1fff)
+            LsAdder = 0x1fff;
+    }
+}
+
 
 extern "C" void S_CalculateStaticLight(sint16 adder)
 {
@@ -538,16 +659,6 @@ extern "C" void S_InitialisePolyList(BOOL clear_back_buffer)
     phd_InitPolyList();
 }
 
-#include "../room.h"
-
-typedef struct {
-    sint32 x, y, z;
-    sint16 intensity, intensity2;
-    sint32 falloff, falloff2;
-} LIGHT_INFO;
-
-extern "C" sint32 number_dynamics;
-extern "C" LIGHT_INFO dynamic[];
 
 extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r)
 {
