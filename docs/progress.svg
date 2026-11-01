@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">6.73% (82)</tspan> · <tspan class="todo">2.38% (29)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">6.81% (83)</tspan> · <tspan class="todo">2.30% (28)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="672.85" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="672.85" y="0" class="decompiled"/>
-<rect width="50.25" height="6" x="678.98" y="0" class="nonmatching"/>
-<rect width="17.77" height="6" x="729.23" y="0" class="todo"/>
+<rect width="50.86" height="6" x="678.98" y="0" class="nonmatching"/>
+<rect width="17.16" height="6" x="729.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1202,7 +1202,7 @@
 <rect width="12" height="12" x="450" y="330" class="named"><title>0x00455550 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="nonmatching"><title>0x00455570 CD_Init (64 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="nonmatching"><title>0x00455600 CD_Cleanup (31 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="330" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="330" class="nonmatching"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="todo"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="330" class="todo"><title>0x00455760 S_CDStop (48 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="330" class="todo"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.15%</tspan> · <tspan class="todo">4.61%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.18%</tspan> · <tspan class="todo">4.58%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.30" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.30" y="0" class="decompiled"/>
-<rect width="105.70" height="6" x="606.86" y="0" class="nonmatching"/>
-<rect width="34.44" height="6" x="712.56" y="0" class="todo"/>
+<rect width="105.96" height="6" x="606.86" y="0" class="nonmatching"/>
+<rect width="34.18" height="6" x="712.82" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1953,7 +1953,7 @@
 <rect width="6.89" height="6.95" x="691.23" y="208.67" class="named"><title>0x0041c8f0 LaraBubbles (120 bytes)</title></rect>
 <rect width="6.81" height="6.95" x="701.13" y="208.67" class="named"><title>0x00413920 DoorCollision (119 bytes)</title></rect>
 <rect width="6.81" height="6.95" x="710.93" y="208.67" class="named"><title>0x00424c10 Inv_RequestItem (119 bytes)</title></rect>
-<rect width="6.81" height="6.95" x="720.74" y="208.67" class="todo"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
+<rect width="6.81" height="6.95" x="720.74" y="208.67" class="nonmatching"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="6.73" height="6.95" x="730.55" y="208.67" class="named"><title>0x0041db30 Knife (118 bytes)</title></rect>
 <rect width="6.73" height="6.95" x="740.27" y="208.67" class="named"><title>0x00421900 DrawHair (118 bytes)</title></rect>
 <rect width="7.14" height="6.54" x="591.01" y="218.62" class="named"><title>0x00432330 lara_as_glide (118 bytes)</title></rect>

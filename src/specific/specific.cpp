@@ -95,3 +95,23 @@ extern "C" void CD_Cleanup(void)
     mciSendString("stop T2", NULL, 0, NULL);
     mciSendString("close T2", NULL, 0, NULL);
 }
+
+extern "C" char *Var5275f8;
+extern "C" char *Var5275fc;
+extern "C" char *CD_LoopTrack;
+extern "C" int CD_LoopCounter;
+
+extern "C" void S_CDLoop(void)
+{
+    if (!CD_LoopTrack)
+        return;
+    if (++CD_LoopCounter < 150)
+        return;
+    CD_LoopCounter = 0;
+    if (mciSendString("status T2 mode", Var5275f8, 50, NULL))
+        return;
+    if (*(DWORD *)Var5275f8 != 0x706f7473)
+        return;
+    wsprintf(Var5275f8, "play T2 from %s to %s", CD_LoopTrack, CD_LoopTrack + 9);
+    mciSendString(Var5275f8, NULL, 0, NULL);
+}
