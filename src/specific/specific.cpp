@@ -187,3 +187,12 @@ extern "C" bool Func4558d7(uint32 c)
         return false;
     return Func4558e1(c);
 }
+
+extern "C" bool Func4558e1(uint32 c)
+{
+    if (c == 0xa8 || c == 0xb8)
+        return false;
+    if (c >= 0xc0 && c <= 0xff)
+        return false;
+    return true;
+}
