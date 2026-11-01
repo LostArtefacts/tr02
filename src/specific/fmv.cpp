@@ -58,28 +58,6 @@ int FMV_Play(char *szMovieName)
     return IsGameToExit;
 }
 
-int FMV_PlayIntro(char *szMovie1, char *szMovie2)
-{
-    char *path;
-
-    if (!SavedAppSettings.DisableFMV) {
-        IsFmvPlaying = 1;
-        ShowCursor(FALSE);
-        RenderFinish(true);
-        path = GetFullPath(szMovie1);
-        WinPlayFMV(path, true);
-        WinStopFMV(true);
-        path = GetFullPath(szMovie2);
-        WinPlayFMV(path, true);
-        WinStopFMV(true);
-        IsFmvPlaying = 0;
-        if (!IsGameToExit)
-            FmvBackToGame();
-        ShowCursor(TRUE);
-    }
-    return IsGameToExit;
-}
-
 extern "C" {
 extern LPDIRECTDRAW DDraw;
 extern HWND HGameWindow;
@@ -170,6 +148,28 @@ void WinStopFMV(bool playback)
     Player_ShutDownSoundSystem();
     if (playback)
         Player_ReturnPlaybackMode();
+}
+
+int FMV_PlayIntro(char *szMovie1, char *szMovie2)
+{
+    char *path;
+
+    if (!SavedAppSettings.DisableFMV) {
+        IsFmvPlaying = 1;
+        ShowCursor(FALSE);
+        RenderFinish(true);
+        path = GetFullPath(szMovie1);
+        WinPlayFMV(path, true);
+        WinStopFMV(true);
+        path = GetFullPath(szMovie2);
+        WinPlayFMV(path, true);
+        WinStopFMV(true);
+        IsFmvPlaying = 0;
+        if (!IsGameToExit)
+            FmvBackToGame();
+        ShowCursor(TRUE);
+    }
+    return IsGameToExit;
 }
 
 #ifdef TR2_EXE
