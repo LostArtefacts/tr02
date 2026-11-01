@@ -375,6 +375,64 @@ extern "C" int AddTexturePage8(int width, int height, uint8 *pageBuffer, int pal
     return pageIndex;
 }
 
+extern "C" DWORD CalculateCompatibleColor(COLOR_BIT_MASKS *mask, int red, int green, int blue, int alpha);
+
+extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
+{
+    int pageIndex;
+    TEXPAGE_DESC *page;
+    DDSURFACEDESC desc;
+    uint8 *dst;
+    uint8 *line;
+    uint16 *src;
+    uint16 color;
+    DWORD compatible;
+    DWORD i, j;
+    int k;
+    int pitch;
+
+    pageIndex = Func455d80(width, height, NULL);
+    if (pageIndex < 0)
+        return -1;
+    page = &TexturePages[pageIndex];
+    if (DX_FAILED(WinVidBufferLock(page->sysMemSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+        return -1;
+    pitch = desc.lPitch;
+    if (TexturesHaveCompatibleMasks)
+    {
+        dst = (uint8 *)desc.lpSurface;
+        for (i = height; i != 0; i--)
+        {
+            memcpy(dst, pageBuffer, width * 2);
+            pageBuffer += width * 2;
+            dst += pitch;
+        }
+    }
+    else
+    {
+        dst = (uint8 *)desc.lpSurface;
+        src = (uint16 *)pageBuffer;
+        for (i = height; i != 0; i--)
+        {
+            line = dst;
+            for (j = width; j != 0; j--)
+            {
+                color = *src++;
+                compatible = CalculateCompatibleColor(&TextureFormat.colorBitMasks, (color >> 7) & 0xf8, (color >> 2) & 0xf8, (color & 0x1f) << 3, (sint16)color >> 15);
+                for (k = TextureFormat.bpp; k > 0; k -= 8)
+                {
+                    *line++ = (uint8)compatible;
+                    compatible >>= 8;
+                }
+            }
+            dst += pitch;
+        }
+    }
+    WinVidBufferUnlock(page->sysMemSurface, &desc);
+    LoadTexturePage(pageIndex, false);
+    return pageIndex;
+}
+
 extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context);
 
 extern "C" HRESULT CALLBACK EnumTextureFormatsCallback(LPDDSURFACEDESC desc, LPVOID context)

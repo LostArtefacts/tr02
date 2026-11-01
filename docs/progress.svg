@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4.16% (52)</tspan> · <tspan class="todo">7.51% (94)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4.24% (53)</tspan> · <tspan class="todo">7.43% (93)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="653.85" height="6" x="0" y="0" class="named"/>
 <rect width="5.97" height="6" x="653.85" y="0" class="decompiled"/>
-<rect width="31.05" height="6" x="659.82" y="0" class="nonmatching"/>
-<rect width="56.13" height="6" x="690.87" y="0" class="todo"/>
+<rect width="31.65" height="6" x="659.82" y="0" class="nonmatching"/>
+<rect width="55.53" height="6" x="691.47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1234,7 +1234,7 @@
 <rect width="12" height="12" x="180" y="345" class="named"><title>0x004561e0 ReloadTextures (53 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="345" class="named"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="345" class="named"><title>0x00456260 AddTexturePage8 (245 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="345" class="todo"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="345" class="nonmatching"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="345" class="named"><title>0x00456500 EnumTextureFormatsCallback (282 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="345" class="named"><title>0x00456620 EnumerateTextureFormats (37 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="345" class="named"><title>0x00456650 CleanupTextures (10 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.71%</tspan> · <tspan class="todo">10.57%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.82%</tspan> · <tspan class="todo">10.46%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="600.42" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="600.42" y="0" class="decompiled"/>
-<rect width="65.04" height="6" x="602.98" y="0" class="nonmatching"/>
-<rect width="78.98" height="6" x="668.02" y="0" class="todo"/>
+<rect width="65.92" height="6" x="602.98" y="0" class="nonmatching"/>
+<rect width="78.10" height="6" x="668.90" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1560,7 +1560,7 @@
 <rect width="15.80" height="15.69" x="416.59" y="118.68" class="named"><title>0x0042de70 lara_col_climbdown (412 bytes)</title></rect>
 <rect width="15.80" height="15.60" x="416.59" y="137.37" class="named"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="15.80" height="15.51" x="416.59" y="155.96" class="named"><title>0x00414b40 GetFloor (408 bytes)</title></rect>
-<rect width="15.80" height="15.42" x="416.59" y="174.47" class="todo"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
+<rect width="15.80" height="15.42" x="416.59" y="174.47" class="nonmatching"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
 <rect width="15.80" height="15.37" x="416.59" y="192.88" class="nonmatching"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
 <rect width="15.80" height="15.37" x="416.59" y="211.25" class="named"><title>0x00413620 LaraBaddieCollision (405 bytes)</title></rect>
 <rect width="15.80" height="15.37" x="416.59" y="229.62" class="named"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
