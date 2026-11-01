@@ -914,3 +914,9 @@ extern "C" int S_GetObjectBounds(sint16 *bptr)
     }
     return 0;
 }
+
+#ifdef TR2_EXE
+extern "C" void FadeWait(void)
+{
+}
+#endif

@@ -844,3 +844,9 @@ extern "C" sint16 *calc_background_light(sint16 *objptr)
 
     return objptr;
 }
+
+#ifdef TR2_EXE
+extern "C" void S_InsertInvBgnd(sint16 *objptr)
+{
+}
+#endif

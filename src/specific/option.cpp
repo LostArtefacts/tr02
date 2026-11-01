@@ -958,3 +958,9 @@ int GetRenderWidth(void)
 {
     return phd_winwidth;
 }
+
+#ifdef TR2_EXE
+extern "C" void do_gamma_option(INVENTORY_ITEM *inv_item)
+{
+}
+#endif

@@ -910,3 +910,9 @@ void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite)
     GetJointAbsPosition(item, &pos, bite->mesh_num);
     DoBloodSplat(pos.x, pos.y, pos.z, item->speed, item->pos.y_rot, item->room_number);
 }
+
+#ifdef TR2_EXE
+void WadeSplash(ITEM_INFO *item, int water_height)
+{
+}
+#endif

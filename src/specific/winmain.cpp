@@ -112,3 +112,27 @@ extern "C" int WinGameStart(void)
     }
     return 0;
 }
+
+#ifdef TR2_EXE
+extern "C" {
+void WinCleanupStub1(void)
+{
+}
+
+void WinCleanupStub2(void)
+{
+}
+
+void WinCleanupStub3(void)
+{
+}
+
+void WinCleanupStub4(void)
+{
+}
+
+void WinCleanupStub5(void)
+{
+}
+}
+#endif

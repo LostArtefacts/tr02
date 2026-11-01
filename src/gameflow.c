@@ -825,3 +825,9 @@ sint32 GF_DoLevelSequence(int level, int type)
     } while ((option & ~0xff) == LEVELCOMPLETE);
     return option;
 }
+
+#ifdef TR2_EXE
+void ShowThis(char *name, int time)
+{
+}
+#endif

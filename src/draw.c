@@ -1689,3 +1689,9 @@ void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 fall
     dl->intensity = (sint16)intensity;
     dl->falloff = falloff;
 }
+
+#ifdef TR2_EXE
+void DrawDummyItem(ITEM_INFO *item)
+{
+}
+#endif
