@@ -286,6 +286,7 @@ extern "C" void phd_RotYXZpack(sint32 rpack)
 }
 
 extern "C" sint16 *calc_object_vertices(sint16 *objptr);
+extern "C" sint16 *calc_vertice_light(sint16 *objptr);
 
 extern "C" int phd_TranslateRel(sint32 x, sint32 y, sint32 z)
 {
@@ -311,7 +312,6 @@ void phd_TranslateAbs(sint32 x, sint32 y, sint32 z)
     *(mptr + M23) = *(mptr + M20) * x + *(mptr + M21) * y + *(mptr + M22) * z;
 }
 
-extern "C" sint16 *calc_vertice_light(sint16 *objptr);
 extern "C" sint16 *(*InsertObjectG4)(sint16 *objptr, int number, enum sort_type sort_routine);
 extern "C" sint16 *(*InsertObjectG3)(sint16 *objptr, int number, enum sort_type sort_routine);
 
