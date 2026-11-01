@@ -18,6 +18,89 @@ inline bool DX_TRY(HRESULT hr)
     return true;
 }
 
+struct STRING_FLAGGED {
+    LPTSTR lpString;
+    bool isPresented;
+    STRING_FLAGGED(DWORD size);
+    ~STRING_FLAGGED()
+    {
+        if (isPresented)
+            delete[] lpString;
+    }
+    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
+    {
+        if (this != &src) {
+            if (!isPresented)
+                lpString = new char[strlen(src.lpString) + 1];
+            strcpy(lpString, src.lpString);
+        }
+        return *this;
+    }
+};
+
+struct SOUND_ADAPTER {
+    LPGUID lpAdapterGuid;
+    GUID adapterGuid;
+    STRING_FLAGGED description;
+    STRING_FLAGGED module;
+    SOUND_ADAPTER() : description(256), module(256)
+    {
+    }
+};
+
+struct SOUND_ADAPTER_NODE {
+    SOUND_ADAPTER_NODE *next;
+    SOUND_ADAPTER_NODE *previous;
+    SOUND_ADAPTER body;
+    SOUND_ADAPTER_NODE(SOUND_ADAPTER_NODE *prevNode, SOUND_ADAPTER_NODE *nextNode) : next(nextNode), previous(prevNode)
+    {
+    }
+};
+
+struct SOUND_ADAPTER_LIST {
+    SOUND_ADAPTER_NODE *head;
+    SOUND_ADAPTER_NODE *tail;
+    DWORD dwCount;
+    SOUND_ADAPTER_LIST()
+    {
+        head = NULL;
+        tail = NULL;
+        dwCount = 0;
+    }
+    ~SOUND_ADAPTER_LIST();
+};
+
+extern "C" {
+extern SOUND_ADAPTER_LIST SoundAdapterList;
+extern SOUND_ADAPTER_NODE *PrimarySoundAdapter;
+bool DSoundEnumerate(LPVOID lpContext);
+}
+
+extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
+{
+    SOUND_ADAPTER_NODE *node;
+    SOUND_ADAPTER_NODE *result;
+
+    result = NULL;
+    for (node = SoundAdapterList.head; node; node = node->next)
+    {
+        if (lpGuid && !memcmp(&node->body.adapterGuid, lpGuid, sizeof(GUID)))
+        {
+            result = node;
+            break;
+        }
+        if (!node)
+            break;
+    }
+    if (!result)
+    {
+        result = PrimarySoundAdapter;
+        if (!result)
+            result = NULL;
+    }
+    return result;
+}
+
 extern "C" void WinSndFreeAllSamples()
 {
     if (IsSoundEnabled) {
@@ -170,64 +253,6 @@ extern "C" bool WinSndInit(void);
 extern "C" bool Func448050(void)
 {
     return WinSndInit();
-}
-
-struct STRING_FLAGGED {
-    LPTSTR lpString;
-    bool isPresented;
-    STRING_FLAGGED(DWORD size);
-    ~STRING_FLAGGED()
-    {
-        if (isPresented)
-            delete[] lpString;
-    }
-    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
-    {
-        if (this != &src) {
-            if (!isPresented)
-                lpString = new char[strlen(src.lpString) + 1];
-            strcpy(lpString, src.lpString);
-        }
-        return *this;
-    }
-};
-
-struct SOUND_ADAPTER {
-    LPGUID lpAdapterGuid;
-    GUID adapterGuid;
-    STRING_FLAGGED description;
-    STRING_FLAGGED module;
-    SOUND_ADAPTER() : description(256), module(256)
-    {
-    }
-};
-
-struct SOUND_ADAPTER_NODE {
-    SOUND_ADAPTER_NODE *next;
-    SOUND_ADAPTER_NODE *previous;
-    SOUND_ADAPTER body;
-    SOUND_ADAPTER_NODE(SOUND_ADAPTER_NODE *prevNode, SOUND_ADAPTER_NODE *nextNode) : next(nextNode), previous(prevNode)
-    {
-    }
-};
-
-struct SOUND_ADAPTER_LIST {
-    SOUND_ADAPTER_NODE *head;
-    SOUND_ADAPTER_NODE *tail;
-    DWORD dwCount;
-    SOUND_ADAPTER_LIST()
-    {
-        head = NULL;
-        tail = NULL;
-        dwCount = 0;
-    }
-    ~SOUND_ADAPTER_LIST();
-};
-
-extern "C" {
-extern SOUND_ADAPTER_LIST SoundAdapterList;
-extern SOUND_ADAPTER_NODE *PrimarySoundAdapter;
-bool DSoundEnumerate(LPVOID lpContext);
 }
 
 extern "C" bool WinSndInit(void)
@@ -407,31 +432,6 @@ extern "C" bool WinSndIsSoundEnabled()
     return IsSoundEnabled;
 }
 
-
-extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
-{
-    SOUND_ADAPTER_NODE *node;
-    SOUND_ADAPTER_NODE *result;
-
-    result = NULL;
-    for (node = SoundAdapterList.head; node; node = node->next)
-    {
-        if (lpGuid && !memcmp(&node->body.adapterGuid, lpGuid, sizeof(GUID)))
-        {
-            result = node;
-            break;
-        }
-        if (!node)
-            break;
-    }
-    if (!result)
-    {
-        result = PrimarySoundAdapter;
-        if (!result)
-            result = NULL;
-    }
-    return result;
-}
 
 inline SOUND_ADAPTER_LIST::~SOUND_ADAPTER_LIST()
 {
