@@ -1234,7 +1234,7 @@ typedef struct {
 int EnableBaddieAI(sint16 item_number, int always);
 void DisableBaddieAI(sint16 item_number);
 void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
-void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *, AI_INFO *, int);
 sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
 int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
 int ShotLara(ITEM_INFO *item, AI_INFO *info, BITE_INFO *gun, sint16 extra_rotation, int damage);
