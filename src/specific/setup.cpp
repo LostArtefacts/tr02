@@ -590,7 +590,86 @@ extern "C" bool SE_ShowSetupDialog(HWND hParent, bool isDefault)
     return true;
 }
 
-extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
+extern "C" {
+extern DISPLAY_MODE SE_FullScreenMode;
+extern char RegistryClass[];
+}
+
+extern "C" void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg)
+{
+    HWND combo;
+    WPARAM index, selectedIndex;
+    SETUP_MODE_LIST *modeList;
+    SETUP_MODE_NODE *mode, *selected;
+    SETUP_ADAPTER_NODE *adapter;
+    LPCTSTR colorString;
+    char buf[256];
+
+    combo = GetDlgItem(hwndDlg, 1000);
+    SendMessage(combo, CB_RESETCONTENT, 0, 0);
+    adapter = (SETUP_ADAPTER_NODE *)ChangedAppSettings.PreferredDisplayAdapter;
+    if (ChangedAppSettings.RenderMode == 2)
+        modeList = &adapter->hwDispModeList;
+    else
+        modeList = &adapter->swDispModeList;
+    if (ChangedAppSettings.RenderMode == 1)
+        SE_FullScreenMode.bpp = 8;
+    SE_FullScreenMode.vga = 0;
+    mode = modeList->head;
+    if (!mode) {
+        selected = NULL;
+    } else {
+        while (mode->body.CompareVideoModes(&SE_FullScreenMode)) {
+            mode = mode->next;
+            if (!mode) {
+                mode = modeList->tail;
+                break;
+            }
+        }
+        selected = mode;
+    }
+    if (modeList->count) {
+        selectedIndex = 0;
+        colorString = NULL;
+        for (mode = modeList->head; mode; mode = mode->next) {
+            switch (mode->body.vga) {
+            case 1:
+                colorString = "256 Color";
+                break;
+            case 0:
+                if (mode->body.bpp == 16)
+                    colorString = "High Color";
+                else if (mode->body.bpp == 24)
+                    colorString = "True Color";
+                else if (mode->body.bpp == 32)
+                    colorString = "True Color";
+                break;
+            case 2:
+                colorString = "Mode X";
+                break;
+            case 3:
+                colorString = "Standard VGA";
+                break;
+            default:
+                colorString = RegistryClass;
+                break;
+            }
+            sprintf(buf, "%dx%d %s", mode->body.width, mode->body.height, colorString);
+            index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)buf);
+            SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)mode);
+            if (mode == selected)
+                selectedIndex = index;
+            if (!mode)
+                break;
+        }
+        SendMessage(combo, CB_SETCURSEL, selectedIndex, 0);
+        selected = (SETUP_MODE_NODE *)SendMessage(combo, CB_GETITEMDATA, selectedIndex, 0);
+        ChangedAppSettings.VideoMode = selected;
+        if (selected)
+            SE_FullScreenMode = selected->body;
+    }
+    EnableWindow(combo, (int)modeList->count > 1);
+}
 
 extern "C" void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter)
 {
