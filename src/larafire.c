@@ -42,6 +42,233 @@ int WeaponObject(int weapon_type);
 
 extern sint16 HoldStates[14];
 
+#define FLAREBOX_ITEM 151
+#define GUN_ITEM 135
+
+extern WEAPON_INFO weapons[];
+
+int Inv_RequestItem(int itemNum);
+void CreateFlare(int thrown);
+void undraw_flare_meshes(void);
+void draw_pistols(int weapon_type);
+void undraw_pistols(int weapon_type);
+void draw_shotgun(int weapon_type);
+void undraw_shotgun(int weapon_type);
+void draw_flare(void);
+void undraw_flare(void);
+void PistolHandler(int weapon_type);
+void RifleHandler(int weapon_type);
+int CheckForHoldingState(int state);
+void DoFlareInHand(int flare_age);
+void set_flare_arm(int frame);
+void InitialiseNewWeapon(void);
+
+void LaraGun(void)
+{
+    AMMO_INFO *ammo;
+
+    if (lara.left_arm.flash_gun > 0)
+        lara.left_arm.flash_gun--;
+    if (lara.right_arm.flash_gun > 0)
+        lara.right_arm.flash_gun--;
+
+    if (lara_item->hit_points <= 0)
+        lara.gun_status = LG_ARMLESS;
+    else if (lara.gun_status == LG_ARMLESS) {
+        if (input & IN_DRAW)
+            lara.request_gun_type = lara.last_gun_type;
+        else if (input & IN_F) {
+            if (lara.gun_type == LG_FLARE)
+                lara.gun_status = LG_UNDRAW;
+            else if (Inv_RequestItem(FLAREBOX_ITEM))
+                lara.request_gun_type = LG_FLARE;
+        }
+
+        if (lara.request_gun_type != lara.gun_type || (input & IN_DRAW)) {
+            if (lara.request_gun_type == LG_FLARE
+                || (lara.skidoo == NO_ITEM
+                    && (lara.request_gun_type == LG_HARPOON || lara.water_status == LARA_ABOVEWATER
+                        || (lara.water_status == LARA_WADE
+                            && lara.water_surface_dist > -weapons[lara.gun_type].gun_height)))) {
+                if (lara.gun_type == LG_FLARE) {
+                    CreateFlare(0);
+                    undraw_flare_meshes();
+                    lara.flare_control_left = 0;
+                }
+                lara.gun_type = lara.request_gun_type;
+                InitialiseNewWeapon();
+                lara.gun_status = LG_DRAW;
+                lara.left_arm.frame_number = lara.right_arm.frame_number = 0;
+            } else {
+                lara.last_gun_type = lara.request_gun_type;
+                if (lara.gun_type == LG_FLARE)
+                    lara.request_gun_type = LG_FLARE;
+                else
+                    lara.gun_type = lara.request_gun_type;
+            }
+        }
+    } else if (lara.gun_status == LG_READY) {
+        if ((input & IN_F) && Inv_RequestItem(FLAREBOX_ITEM))
+            lara.request_gun_type = LG_FLARE;
+
+        if ((input & IN_DRAW) || lara.request_gun_type != lara.gun_type)
+            lara.gun_status = LG_UNDRAW;
+        else if (lara.gun_type != LG_HARPOON && lara.water_status != LARA_ABOVEWATER
+            && (lara.water_status != LARA_WADE
+                || lara.water_surface_dist < -weapons[lara.gun_type].gun_height))
+            lara.gun_status = LG_UNDRAW;
+    }
+
+    switch (lara.gun_status) {
+    case LG_DRAW:
+        if (lara.gun_type != LG_FLARE && lara.gun_type != LG_UNARMED)
+            lara.last_gun_type = lara.gun_type;
+        switch (lara.gun_type) {
+        case LG_PISTOLS:
+        case LG_MAGNUMS:
+        case LG_UZIS:
+            if (camera.type != CINEMATIC_CAMERA && camera.type != LOOK_CAMERA)
+                camera.type = COMBAT_CAMERA;
+            draw_pistols(lara.gun_type);
+            break;
+
+        case LG_SHOTGUN:
+        case LG_M16:
+        case LG_GRENADE:
+        case LG_HARPOON:
+            if (camera.type != CINEMATIC_CAMERA && camera.type != LOOK_CAMERA)
+                camera.type = COMBAT_CAMERA;
+            draw_shotgun(lara.gun_type);
+            break;
+
+        case LG_FLARE:
+            draw_flare();
+            break;
+
+        default:
+            lara.gun_status = LG_ARMLESS;
+            break;
+        }
+        break;
+
+    case LG_UNDRAW:
+        lara.mesh_ptrs[HEAD] = meshes[objects[LARA].mesh_index + HEAD];
+        switch (lara.gun_type) {
+        case LG_PISTOLS:
+        case LG_MAGNUMS:
+        case LG_UZIS:
+            undraw_pistols(lara.gun_type);
+            break;
+
+        case LG_SHOTGUN:
+        case LG_M16:
+        case LG_GRENADE:
+        case LG_HARPOON:
+            undraw_shotgun(lara.gun_type);
+            break;
+
+        case LG_FLARE:
+            undraw_flare();
+            break;
+
+        default:
+            break;
+        }
+        break;
+
+    case LG_SPECIAL:
+        draw_flare();
+        break;
+
+    case LG_READY:
+        if (lara.pistols.ammo && (input & IN_ACTION))
+            lara.mesh_ptrs[HEAD] = meshes[objects[UZI].mesh_index + HEAD];
+        else
+            lara.mesh_ptrs[HEAD] = meshes[objects[LARA].mesh_index + HEAD];
+
+        if (camera.type != CINEMATIC_CAMERA && camera.type != LOOK_CAMERA)
+            camera.type = COMBAT_CAMERA;
+
+        if (input & IN_ACTION) {
+            switch (lara.gun_type) {
+            case LG_SHOTGUN:
+                ammo = &lara.shotgun;
+                break;
+            case LG_MAGNUMS:
+                ammo = &lara.magnums;
+                break;
+            case LG_UZIS:
+                ammo = &lara.uzis;
+                break;
+            case LG_GRENADE:
+                ammo = &lara.grenade;
+                break;
+            case LG_HARPOON:
+                ammo = &lara.harpoon;
+                break;
+            case LG_M16:
+                ammo = &lara.m16;
+                break;
+            default:
+                ammo = &lara.pistols;
+                break;
+            }
+
+            if (ammo->ammo <= 0) {
+                ammo->ammo = 0;
+                SoundEffect(48, &lara_item->pos, 0);
+                if (Inv_RequestItem(GUN_ITEM))
+                    lara.request_gun_type = LG_PISTOLS;
+                else
+                    lara.request_gun_type = LG_UNARMED;
+                break;
+            }
+        }
+
+        switch (lara.gun_type) {
+        case LG_PISTOLS:
+        case LG_MAGNUMS:
+        case LG_UZIS:
+            PistolHandler(lara.gun_type);
+            break;
+
+        case LG_SHOTGUN:
+        case LG_M16:
+        case LG_GRENADE:
+        case LG_HARPOON:
+            RifleHandler(lara.gun_type);
+            break;
+        }
+        break;
+
+    case LG_ARMLESS:
+        if (lara.gun_type == LG_FLARE) {
+            if (lara.skidoo != NO_ITEM || CheckForHoldingState(lara_item->current_anim_state)) {
+                if (!lara.flare_control_left) {
+                    lara.left_arm.frame_number = FL_2HOLD_F;
+                    lara.flare_control_left = 1;
+                } else if (lara.left_arm.frame_number != FL_HOLD_F) {
+                    lara.left_arm.frame_number++;
+                    if (lara.left_arm.frame_number == FL_END_F)
+                        lara.left_arm.frame_number = FL_HOLD_F;
+                }
+            } else
+                lara.flare_control_left = 0;
+            goto flare_in_hand;
+        }
+        break;
+
+    case LG_HANDSBUSY:
+        if (lara.gun_type == LG_FLARE) {
+            lara.flare_control_left = (lara.skidoo != NO_ITEM || CheckForHoldingState(lara_item->current_anim_state));
+        flare_in_hand:
+            DoFlareInHand(lara.flare_age);
+            set_flare_arm(lara.left_arm.frame_number);
+        }
+        break;
+    }
+}
+
 int CheckForHoldingState(int state)
 {
     sint16 *holds = HoldStates;
