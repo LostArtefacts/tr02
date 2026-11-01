@@ -12,23 +12,6 @@ extern "C" char GameMallocOutOfMemory[];
 extern "C" char StringToShow[];
 extern "C" void S_ExitSystem(char *message);
 
-void *game_malloc(int size, int type)
-{
-    char *ptr;
-
-    size = (size + 3) & ~3;
-    if (size <= malloc_free) {
-        ptr = malloc_ptr;
-        malloc_free -= size;
-        malloc_used += size;
-        malloc_ptr += size;
-        return ptr;
-    }
-    wsprintfA(StringToShow, GameMallocOutOfMemory, game_malloc_strings[type], size);
-    S_ExitSystem(StringToShow);
-    return NULL;
-}
-
 extern "C" void game_free(int size);
 
 extern "C" sint16 DumpX, DumpY, DumpWidth, DumpHeight;
@@ -57,6 +40,23 @@ void init_game_malloc(void)
     malloc_ptr = malloc_buffer;
     malloc_free = malloc_size;
     malloc_used = 0;
+}
+
+void *game_malloc(int size, int type)
+{
+    char *ptr;
+
+    size = (size + 3) & ~3;
+    if (size <= malloc_free) {
+        ptr = malloc_ptr;
+        malloc_free -= size;
+        malloc_used += size;
+        malloc_ptr += size;
+        return ptr;
+    }
+    wsprintfA(StringToShow, GameMallocOutOfMemory, game_malloc_strings[type], size);
+    S_ExitSystem(StringToShow);
+    return NULL;
 }
 
 extern "C" void game_free(int size)
