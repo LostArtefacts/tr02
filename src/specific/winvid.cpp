@@ -653,11 +653,18 @@ typedef struct DISPLAY_ADAPTER_NODE {
     DISPLAY_ADAPTER body;
 } DISPLAY_ADAPTER_NODE;
 
-typedef struct {
+struct DISPLAY_ADAPTER_LIST {
     DISPLAY_ADAPTER_NODE *head;
     DISPLAY_ADAPTER_NODE *tail;
     DWORD dwCount;
-} DISPLAY_ADAPTER_LIST;
+    DISPLAY_ADAPTER_LIST()
+    {
+        head = NULL;
+        tail = NULL;
+        dwCount = 0;
+    }
+    ~DISPLAY_ADAPTER_LIST();
+};
 
 extern "C" {
 extern DISPLAY_ADAPTER_LIST DisplayAdapterList;
@@ -1029,6 +1036,7 @@ extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterLis
 
 extern "C" void Enumerate3DDevices(DISPLAY_ADAPTER *adapter);
 
+#pragma inline_depth(2)
 extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriverDescription, LPTSTR lpDriverName, LPVOID lpContext)
 {
     DDCAPS driverCaps;
@@ -1080,6 +1088,7 @@ extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriver
     return TRUE;
 }
 
+#pragma inline_depth(3)
 extern "C" DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
 
 extern "C" DISPLAY_ADAPTER_NODE *WinVidGetDisplayAdapter(GUID *lpGuid)
@@ -1247,11 +1256,11 @@ void COLOR_BIT_MASKS::WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat)
     BitMaskGetNumberOfBits(dwRGBAlphaBitMask, &dwRGBAlphaBitDepth, &dwRGBAlphaBitOffset);
 }
 
-DISPLAY_ADAPTER_INFO::DISPLAY_ADAPTER_INFO() : driverDescription(256), driverName(256)
+inline DISPLAY_ADAPTER_INFO::DISPLAY_ADAPTER_INFO() : driverDescription(256), driverName(256)
 {
 }
 
-DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
+inline DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
 {
     head = NULL;
     tail = NULL;
@@ -1407,3 +1416,20 @@ extern "C" void WinVidStart(void)
     if (!DDrawCreate(CurrentDisplayAdapter.lpAdapterGuid))
         throw ERR_CantInitRenderer;
 }
+
+inline DISPLAY_ADAPTER_LIST::~DISPLAY_ADAPTER_LIST()
+{
+    DISPLAY_ADAPTER_NODE *node;
+    DISPLAY_ADAPTER_NODE *nextNode;
+
+    for (node = head; node; node = nextNode) {
+        nextNode = node->next;
+        delete node;
+    }
+    head = NULL;
+    tail = NULL;
+    dwCount = 0;
+}
+
+DISPLAY_ADAPTER_LIST DisplayAdapterList;
+DISPLAY_ADAPTER CurrentDisplayAdapter;

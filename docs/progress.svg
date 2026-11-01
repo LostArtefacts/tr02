@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">8.04% (98)</tspan> · <tspan class="todo">0.98% (12)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">0.90% (11)</tspan> · <tspan class="nonmatching">8.04% (98)</tspan> · <tspan class="todo">0.90% (11)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="673.46" height="6" x="0" y="0" class="named"/>
-<rect width="6.13" height="6" x="673.46" y="0" class="decompiled"/>
-<rect width="60.05" height="6" x="679.59" y="0" class="nonmatching"/>
-<rect width="7.35" height="6" x="739.65" y="0" class="todo"/>
+<rect width="6.74" height="6" x="673.46" y="0" class="decompiled"/>
+<rect width="60.05" height="6" x="680.21" y="0" class="nonmatching"/>
+<rect width="6.74" height="6" x="740.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -885,7 +885,7 @@
 <rect width="12" height="12" x="195" y="240" class="named"><title>0x00444820 D3DDeviceCreate (440 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="named"><title>0x004449e0 Direct3DRelease (80 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="240" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="240" class="todo"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="240" class="decompiled"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="todo"><title>0x00444a70 Func444a70 (14 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="240" class="todo"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="240" class="todo"><title>0x00444bc0 Func444bc0 (14 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">18.64%</tspan> · <tspan class="todo">0.10%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.35%</tspan> · <tspan class="nonmatching">18.64%</tspan> · <tspan class="todo">0.10%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.42" height="6" x="0" y="0" class="named"/>
-<rect width="2.56" height="6" x="604.42" y="0" class="decompiled"/>
-<rect width="139.27" height="6" x="606.98" y="0" class="nonmatching"/>
-<rect width="0.75" height="6" x="746.25" y="0" class="todo"/>
+<rect width="2.60" height="6" x="604.42" y="0" class="decompiled"/>
+<rect width="139.27" height="6" x="607.02" y="0" class="nonmatching"/>
+<rect width="0.71" height="6" x="746.29" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2453,7 +2453,7 @@
 <rect width="0.82" height="1.08" x="722.51" y="358.04" class="named"><title>0x00447030 WinVidFinish (19 bytes)</title></rect>
 <rect width="0.82" height="1.08" x="722.51" y="362.12" class="named"><title>0x0044c530 S_IntroFMV (19 bytes)</title></rect>
 <rect width="0.82" height="1.08" x="722.51" y="366.20" class="named"><title>0x00456ca0 DeleteRegistryValue (19 bytes)</title></rect>
-<rect width="0.82" height="0.86" x="722.51" y="370.27" class="todo"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
+<rect width="0.82" height="0.86" x="722.51" y="370.27" class="decompiled"><title>0x00444a50 Func444a50 (18 bytes)</title></rect>
 <rect width="0.82" height="0.86" x="722.51" y="374.14" class="named"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
 <rect width="1.06" height="0.64" x="726.33" y="353.97" class="todo"><title>0x00447170 Func447170 (18 bytes)</title></rect>
 <rect width="1.06" height="0.64" x="730.39" y="353.97" class="todo"><title>0x00447b40 Func447b40 (18 bytes)</title></rect>

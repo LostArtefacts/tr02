@@ -815,7 +815,7 @@ address,size,name,symbol
 0x00444820,440,D3DDeviceCreate,_D3DDeviceCreate
 0x004449e0,80,Direct3DRelease,_Direct3DRelease
 0x00444a30,6,Direct3DInit,_Direct3DInit
-0x00444a50,18,Func444a50,
+0x00444a50,18,Func444a50,specific/winvid.cpp:_$E1
 0x00444a70,14,Func444a70,
 0x00444b60,95,Func444b60,
 0x00444bc0,14,Func444bc0,
@@ -1261,7 +1261,7 @@ address,size,name,symbol
 0x00459190,30,Func459190,
 0x004591b0,71,_CxxThrowException,__CxxThrowException@8
 0x00459200,126,Func459200,
-0x00459280,21,Func459280,
+0x00459280,21,atexit,_atexit
 0x004592e0,14,operator_delete,??3@YAXPAX@Z
 0x004592f0,16,operator_new,??2@YAPAXI@Z
 0x00459300,45,Func459300,
