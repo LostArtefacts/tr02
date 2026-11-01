@@ -206,3 +206,13 @@ extern "C" uint32 Func455905(uint32 c)
         return T_remapASCII[c - 32];
     return Var44b226[c - 0xa8];
 }
+
+extern "C" uint8 T_textSpacing[];
+extern "C" uint8 Var44b27e[];
+
+extern "C" uint32 Func455922(uint32 c)
+{
+    if (c >= 0x6e)
+        return Var44b27e[c - 0x6e];
+    return T_textSpacing[c];
+}
