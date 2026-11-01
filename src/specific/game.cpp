@@ -5,6 +5,7 @@
 #include "../savegame.h"
 #include "../gameflow.h"
 #include "file.h"
+#include "winmain.h"
 
 extern "C" sint32 rand_1;
 extern "C" sint32 rand_2;
@@ -263,8 +264,6 @@ void GetSavedGamesList(REQUEST_INFO *req)
     memcpy(RequesterFlags1, SaveGameReqFlags1, MAXIMUM_LEVELS * sizeof(uint32));
     memcpy(RequesterFlags2, SaveGameReqFlags2, MAXIMUM_LEVELS * sizeof(uint32));
 }
-
-#include "winmain.h"
 
 extern "C" char *GetFullPath(char *path);
 extern "C" void *game_malloc(int size, int type);
