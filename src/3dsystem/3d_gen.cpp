@@ -1,11 +1,30 @@
+#define STRICT
+#include <windows.h>
+#include <windowsx.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <math.h>
+#include <mmsystem.h>
+#include <process.h>
+#include <time.h>
+#include <memory.h>
+#include <string.h>
+#include <assert.h>
+#include <crtdbg.h>
+#include <ddraw.h>
+#include <d3d.h>
+#include <dinput.h>
+#include <dsound.h>
 #include "../specific/global.h"
 #include "../lara.h"
 #include "../specific/hwrender.h"
-#include "../specific/output.h"
 #include "../3dglodef.h"
 #include "../specific/winmain.h"
+#include "../effects.h"
 
 extern float LfAspectCorrection;
+extern "C" sint32 *sort3dptr;
 
 void phd_GenerateW2V(PHD_3DPOS *viewpos)
 {
@@ -124,6 +143,26 @@ void phd_RotY(PHD_ANGLE ry)
     }
 }
 
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint16 clip, g, u, v;
+} PHD_VBUF;
+
+extern "C" PHD_VBUF PhdVBuf[];
+extern "C" sint32 ZBufferSurface;
+extern "C" sint32 MidSort;
+extern "C" sint32 WibbleOffset;
+extern "C" float FltNearZ;
+extern "C" float FltFarZ;
+extern "C" float FltPersp;
+extern "C" float FltRhwOPersp;
+extern "C" float Data478044;
+
+void HWR_EnableZBuffer(bool tWrite, bool tCompare);
+
+extern "C" sint32 LsAdder;
+extern "C" sint32 ls_divider;
+
 extern "C" void phd_RotZ(PHD_ANGLE rz)
 {
     sint32 sz, cz, r0, r1;
@@ -150,6 +189,9 @@ extern "C" void phd_RotZ(PHD_ANGLE rz)
         *(mptr + M21) = r1 >> W2V_SHIFT;
     }
 }
+
+extern "C" sint16 *(*InsertObjectG4)(sint16 *objptr, int number, enum sort_type sort_routine);
+extern "C" sint16 *(*InsertObjectG3)(sint16 *objptr, int number, enum sort_type sort_routine);
 
 extern "C" void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz)
 {
@@ -285,6 +327,7 @@ extern "C" void phd_RotYXZpack(sint32 rpack)
     }
 }
 
+extern "C" sint16 *info3dptr;
 extern "C" sint16 *calc_object_vertices(sint16 *objptr);
 extern "C" sint16 *calc_vertice_light(sint16 *objptr);
 
@@ -311,9 +354,6 @@ void phd_TranslateAbs(sint32 x, sint32 y, sint32 z)
     *(mptr + M13) = *(mptr + M10) * x + *(mptr + M11) * y + *(mptr + M12) * z;
     *(mptr + M23) = *(mptr + M20) * x + *(mptr + M21) * y + *(mptr + M22) * z;
 }
-
-extern "C" sint16 *(*InsertObjectG4)(sint16 *objptr, int number, enum sort_type sort_routine);
-extern "C" sint16 *(*InsertObjectG3)(sint16 *objptr, int number, enum sort_type sort_routine);
 
 extern "C" void phd_PutPolygons(sint16 *objptr, int clipstatus)
 {
@@ -349,21 +389,6 @@ void S_InsertRoom(sint16 *objptr, int outside)
     objptr = ins_room_sprite(objptr + 1, *(objptr));
 }
 
-typedef struct {
-    float xv, yv, zv, ooz, xs, ys;
-    sint16 clip, g, u, v;
-} PHD_VBUF;
-
-extern "C" PHD_VBUF PhdVBuf[];
-extern "C" sint32 ZBufferSurface;
-extern "C" sint32 MidSort;
-extern "C" sint32 WibbleOffset;
-extern "C" float FltNearZ;
-extern "C" float FltFarZ;
-extern "C" float FltPersp;
-extern "C" float FltRhwOPersp;
-extern "C" float Data478044;
-
 extern "C" sint16 *calc_background_light(sint16 *objptr)
 {
     int numvert, i;
@@ -381,8 +406,6 @@ extern "C" sint16 *calc_background_light(sint16 *objptr)
 
     return objptr;
 }
-
-void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
 extern "C" void S_InsertBackground(sint16 *objptr)
 {
@@ -462,9 +485,6 @@ extern "C" sint16 *calc_object_vertices(sint16 *objptr)
         return NULL;
     return objptr;
 }
-
-extern "C" sint32 LsAdder;
-extern "C" sint32 ls_divider;
 
 extern "C" sint16 *calc_vertice_light(sint16 *objptr)
 {
@@ -602,8 +622,6 @@ void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
     ls_vector_view.z = (*(mptr + M20) * ls_world.x + *(mptr + M21) * ls_world.y + *(mptr + M22) * ls_world.z) >> W2V_SHIFT;
 }
 
-extern "C" sint32 *sort3dptr;
-extern "C" sint16 *info3dptr;
 extern "C" sint16 info3d_buffer[];
 void HWR_InitVertexList();
 

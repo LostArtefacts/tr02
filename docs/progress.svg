@@ -61,21 +61,21 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.48% (1103)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.79% (95)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.81% (1107)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.47% (91)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="675.92" height="6" x="0" y="0" class="named"/>
-<rect width="12.87" height="6" x="675.92" y="0" class="decompiled"/>
-<rect width="58.22" height="6" x="688.78" y="0" class="nonmatching"/>
+<rect width="678.37" height="6" x="0" y="0" class="named"/>
+<rect width="12.87" height="6" x="678.37" y="0" class="decompiled"/>
+<rect width="55.76" height="6" x="691.24" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="named"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x00401250 phd_GetVectorAngles (120 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="0" class="nonmatching"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="0" class="nonmatching"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="0" class="named"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="0" class="named"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="0" class="nonmatching"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="0" class="nonmatching"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="0" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="0" class="named"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="named"><title>0x004018b0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="named"><title>0x00401960 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="named"><title>0x004019e0 phd_PutPolygons (243 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.11%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">18.46%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.48%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">18.08%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="605.87" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="605.87" y="0" class="decompiled"/>
-<rect width="137.89" height="6" x="609.11" y="0" class="nonmatching"/>
+<rect width="608.68" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="608.68" y="0" class="decompiled"/>
+<rect width="135.08" height="6" x="611.92" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1486,12 +1486,12 @@
 <rect width="17.43" height="16.74" x="413.78" y="22.03" class="named"><title>0x00432920 LaraWaterCurrent (492 bytes)</title></rect>
 <rect width="17.43" height="16.74" x="434.21" y="22.03" class="nonmatching"><title>0x00453560 SE_GraphicsDlgFullScreenModesUpdate (492 bytes)</title></rect>
 <rect width="17.31" height="16.74" x="454.64" y="22.03" class="named"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
-<rect width="17.22" height="16.74" x="474.95" y="22.03" class="nonmatching"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
+<rect width="17.22" height="16.74" x="474.95" y="22.03" class="named"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="17.01" height="16.74" x="495.17" y="22.03" class="nonmatching"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="17.01" height="16.74" x="515.18" y="22.03" class="named"><title>0x00424dc0 Inv_GetItemOption (482 bytes)</title></rect>
 <rect width="16.97" height="16.74" x="535.20" y="22.03" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="16.93" height="16.74" x="555.17" y="22.03" class="named"><title>0x00446870 WinVidResizeGameWindow (480 bytes)</title></rect>
-<rect width="16.77" height="16.74" x="575.10" y="22.03" class="nonmatching"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="16.77" height="16.74" x="575.10" y="22.03" class="named"><title>0x004014e0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="16.72" height="16.74" x="594.87" y="22.03" class="named"><title>0x004103a0 GetBaddieTarget (475 bytes)</title></rect>
 <rect width="16.56" height="16.74" x="614.59" y="22.03" class="named"><title>0x0042fac0 CreateFlare (471 bytes)</title></rect>
 <rect width="16.52" height="16.74" x="634.15" y="22.03" class="named"><title>0x00426320 ShowGymStatsText (470 bytes)</title></rect>
@@ -1808,14 +1808,14 @@
 <rect width="8.97" height="8.71" x="572.09" y="164.13" class="named"><title>0x004179e0 DragonFire (171 bytes)</title></rect>
 <rect width="8.97" height="8.71" x="584.06" y="164.13" class="named"><title>0x00421b50 DrawHealthBar (171 bytes)</title></rect>
 <rect width="8.97" height="8.71" x="596.03" y="164.13" class="named"><title>0x00452260 S_CopyScreenToBuffer (171 bytes)</title></rect>
-<rect width="8.90" height="8.71" x="608.01" y="164.13" class="nonmatching"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
+<rect width="8.90" height="8.71" x="608.01" y="164.13" class="named"><title>0x004012d0 phd_RotX (170 bytes)</title></rect>
 <rect width="8.90" height="8.71" x="619.91" y="164.13" class="named"><title>0x00409380 InsertObjectGT3_ZBuffered (170 bytes)</title></rect>
 <rect width="8.90" height="8.71" x="631.81" y="164.13" class="named"><title>0x00426010 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="8.90" height="8.71" x="643.72" y="164.13" class="named"><title>0x0042e010 LaraCheckForLetGo (170 bytes)</title></rect>
 <rect width="8.90" height="8.71" x="655.62" y="164.13" class="named"><title>0x0042f1f0 find_target_point (170 bytes)</title></rect>
 <rect width="8.90" height="8.71" x="667.52" y="164.13" class="named"><title>0x00456a80 GuidStringToBinary (170 bytes)</title></rect>
 <rect width="8.83" height="8.71" x="679.42" y="164.13" class="nonmatching"><title>0x00454a30 SE_AdvancedDlgUpdate (169 bytes)</title></rect>
-<rect width="8.76" height="8.71" x="691.26" y="164.13" class="nonmatching"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
+<rect width="8.76" height="8.71" x="691.26" y="164.13" class="named"><title>0x00401380 phd_RotY (168 bytes)</title></rect>
 <rect width="8.76" height="8.71" x="703.02" y="164.13" class="named"><title>0x00401430 phd_RotZ (168 bytes)</title></rect>
 <rect width="8.76" height="8.71" x="714.78" y="164.13" class="named"><title>0x0040ff90 CreatureFloat (168 bytes)</title></rect>
 <rect width="8.76" height="8.71" x="726.54" y="164.13" class="named"><title>0x0041eec0 XianDamage (168 bytes)</title></rect>
