@@ -388,6 +388,63 @@ extern "C" float FltPersp;
 extern "C" float FltRhwOPersp;
 extern "C" float Data478044;
 
+extern "C" sint16 *calc_object_vertices(sint16 *objptr)
+{
+    PHD_VBUF *dest;
+    sint8 totclip, clipflag;
+    float f_mid_sort;
+    sint32 *mptr;
+    int numvert;
+    float zv, xv, xs, ys, yv, persp;
+
+    if (SavedAppSettings.ZBuffer)
+        f_mid_sort = 0.0f;
+    else
+        f_mid_sort = (float)(MidSort << (W2V_SHIFT + 8));
+    mptr = phd_mxptr;
+    totclip = -1;
+    objptr++;
+    numvert = *objptr++;
+    for (dest = PhdVBuf; numvert > 0; numvert--, dest++, objptr += 3) {
+        xv = (float)(*(mptr + M00) * objptr[0] + *(mptr + M01) * objptr[1] + *(mptr + M02) * objptr[2] + *(mptr + M03));
+        dest->xv = xv;
+        yv = (float)(*(mptr + M10) * objptr[0] + *(mptr + M11) * objptr[1] + *(mptr + M12) * objptr[2] + *(mptr + M13));
+        dest->yv = yv;
+        zv = (float)(*(mptr + M20) * objptr[0] + *(mptr + M21) * objptr[1] + *(mptr + M22) * objptr[2] + *(mptr + M23));
+        if (zv >= FltNearZ) {
+            if (zv >= FltFarZ) {
+                zv = FltFarZ;
+                dest->zv = zv;
+            } else {
+                dest->zv = f_mid_sort + zv;
+            }
+            persp = FltPersp / zv;
+            clipflag = 0;
+            xs = xv * persp + f_centerx;
+            ys = yv * persp + f_centery;
+            dest->xs = xs;
+            dest->ys = ys;
+            dest->ooz = persp * FltRhwOPersp;
+            if (xs < phd_leftfloat)
+                clipflag = 1;
+            else if (xs > phd_rightfloat)
+                clipflag = 2;
+            if (ys < phd_topfloat)
+                clipflag += 4;
+            else if (ys > phd_bottomfloat)
+                clipflag += 8;
+        } else {
+            dest->zv = zv;
+            clipflag = -128;
+        }
+        *(sint8 *)&dest->clip = clipflag;
+        totclip &= clipflag;
+    }
+    if (totclip)
+        return NULL;
+    return objptr;
+}
+
 extern "C" sint32 LsAdder;
 extern "C" sint32 ls_divider;
 
