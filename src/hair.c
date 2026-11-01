@@ -312,3 +312,9 @@ void DrawHair(void)
         phd_PopMatrix();
     }
 }
+
+#ifdef TR2_EXE
+int first_hair;
+PHD_VECTOR hvel[HAIR_SEGMENTS + 1];
+PHD_3DPOS hair[HAIR_SEGMENTS + 1];
+#endif

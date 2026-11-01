@@ -322,3 +322,16 @@ bool HWR_Init()
 
     return true;
 }
+
+#ifdef TR2_EXE
+IDirect3DDevice2 *G_Direct3DDevice;
+D3DTLVERTEX VertexBuffer[MAX_TLVERTICES];
+D3DTEXTUREHANDLE CurrentTexSource;
+DWORD HWR_PageHandles[32];
+D3DTLVERTEX *HWR_VertexPtr;
+bool ZEnableState;
+D3DRENDERSTATETYPE AlphaBlendEnabler;
+bool ColorKeyState;
+bool ZWriteEnableState;
+int LanTextureHandle[32];
+#endif

@@ -964,3 +964,25 @@ extern "C" void do_gamma_option(INVENTORY_ITEM *inv_item)
 {
 }
 #endif
+
+#ifdef TR2_EXE
+TEXTSTRING *Inv_levelText;
+TEXTSTRING *Inv_ringText;
+sint32 inputDB;
+sint32 idelay;
+sint32 idcount;
+sint16 item_data;
+int SavedGames;
+int conflict[14];
+int joy_fire;
+int KeyCursor;
+int select_key;
+int iconfig;
+TEXTSTRING *ctext[14];
+TEXTSTRING *btext[14];
+TEXTSTRING *PassportTextInfo;
+sint32 passport_mode;
+TEXTSTRING *dtext[5];
+TEXTSTRING *sa_text[4];
+TEXTSTRING *ControlTextInfo[2];
+#endif

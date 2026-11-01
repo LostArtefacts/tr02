@@ -672,3 +672,12 @@ void ReadSG(void *pointer, int size)
     for (; size > 0; size--)
         *(data++) = *(SG_Point++);
 }
+
+#ifdef TR2_EXE
+int level_items;
+sint16 *Meshes;
+char *SG_Point;
+SAVEGAME_INFO savegame;
+int SG_Count;
+sint16 *AnimFrames;
+#endif

@@ -291,3 +291,7 @@ extern "C" bool GameApplySettings(APP_SETTINGS *newSettings)
     }
     return result;
 }
+
+#ifdef TR2_EXE
+DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
+#endif

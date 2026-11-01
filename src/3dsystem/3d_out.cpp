@@ -1205,3 +1205,11 @@ void draw_poly_wgtmap_persp(sint16 *iptr)
     if (xgen_xguvpersp_fp(iptr + 1))
         wgtmap_persp32_fp(xgen_ymin, xgen_ymax, (unsigned char *)texture_page_ptrs[*(iptr)]);
 }
+
+#ifdef TR2_EXE
+char *phd_winptr;
+DEPTHQ_ENTRY DepthQTable[32];
+sint32 phd_scrwidth;
+XBUF_PERSP xbuffer[1200];
+char *texture_page_ptrs[32];
+#endif

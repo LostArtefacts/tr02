@@ -1433,3 +1433,39 @@ inline DISPLAY_ADAPTER_LIST::~DISPLAY_ADAPTER_LIST()
 
 DISPLAY_ADAPTER_LIST DisplayAdapterList;
 DISPLAY_ADAPTER CurrentDisplayAdapter;
+
+#ifdef TR2_EXE
+int MinWindowClientHeight;
+LPDIRECTDRAW DDrawInterface;
+bool IsGameWindowChanging;
+int MaxWindowHeight;
+LPDIRECTDRAW2 DDraw;
+bool IsGameWindowCreated;
+bool IsGameWindowUpdating;
+bool IsDDrawGameWindowShow;
+int MinWindowClientWidth;
+bool IsGameWindowShow;
+bool IsMinWindowSizeSet;
+int MaxWindowClientWidth;
+int GameWindowWidth;
+bool IsMinMaxInfoSpecial;
+bool IsGameFullScreen;
+bool IsGameWindowMaximized;
+HWND HGameWindow;
+int LockedBufferCount;
+int MaxWindowClientHeight;
+bool IsMessageLoopClosed;
+int MaxWindowWidth;
+bool IsMaxWindowSizeSet;
+int AppResultCode;
+int FullScreenWidth;
+int FullScreenHeight;
+bool IsGameToExit;
+int GameWindow_Y;
+int GameWindow_X;
+bool IsGameWindowMinimized;
+int MinWindowWidth;
+int MinWindowHeight;
+bool IsGameWindowActive;
+int MessageLoopCounter;
+#endif

@@ -233,3 +233,8 @@ extern "C" void ScreenShot(LPDIRECTDRAWSURFACE screen)
     }
     WinVidBufferUnlock(screen, &desc);
 }
+
+#ifdef TR2_EXE
+int ScreenShotPcxNumber;
+int ScreenShotTgaNumber;
+#endif

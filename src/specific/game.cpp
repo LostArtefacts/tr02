@@ -425,3 +425,12 @@ extern "C" void DisplayCredits(void)
     FadeToPal(30, game_palette);
     IsVidModeLock = false;
 }
+
+#ifdef TR2_EXE
+uint32 CurrentLevel;
+int level_complete;
+int save_counter;
+int GameMode;
+uint32 SaveGameReqFlags2[24];
+uint32 SaveGameReqFlags1[24];
+#endif

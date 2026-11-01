@@ -537,3 +537,15 @@ extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wPar
     }
     return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
+
+#ifdef TR2_EXE
+HINSTANCE GhInstance;
+char *GpCmdLine;
+double LdPerformanceDivisor;
+double LdInitialTimer;
+DWORD LdwInitialTimer;
+char GuidString[40];
+HKEY HKey;
+DWORD RegKeyDisposition;
+char *Var5275fc;
+#endif

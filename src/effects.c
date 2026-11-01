@@ -916,3 +916,11 @@ void WadeSplash(ITEM_INFO *item, int water_height)
 {
 }
 #endif
+
+#ifdef TR2_EXE
+int fliptimer;
+int assault_timer_display;
+int assault_timer_active;
+FX_INFO *effects;
+sint16 **meshes;
+#endif

@@ -1695,3 +1695,32 @@ void DrawDummyItem(ITEM_INFO *item)
 {
 }
 #endif
+
+#ifdef TR2_EXE
+sint32 phd_top;
+sint32 phd_bottom;
+sint32 PhdPersp;
+sint32 phd_left;
+sint16 phd_winxmax;
+sint16 phd_winymax;
+sint32 phd_right;
+int BoundStart;
+int BoundEnd;
+sint16 null_rotations[12];
+int OutsideCamera;
+int number_draw_rooms;
+sint32 IMstack[384];
+struct door_vbuf vbufdoor[4];
+int IM_frac;
+ANIM_STRUCT *anims;
+int BoundRooms[128];
+int OutsideBottom;
+int OutsideLeft;
+int IM_rate;
+sint32 *IMptr;
+ROOM_INFO *room;
+int UnderwaterCamera;
+int OutsideRight;
+sint16 interpolated_bounds[6];
+int OutsideTop;
+#endif

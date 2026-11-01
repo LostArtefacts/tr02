@@ -486,3 +486,9 @@ uint32 GetTextScaleV(uint32 scaleV)
     scale = (height << 16) / 480;
     return (scaleV >> 8) * (scale >> 8);
 }
+
+#ifdef TR2_EXE
+TEXTSTRING T_textStrings[MAX_TEXT_STRINGS];
+sint16 T_numStrings;
+char T_theStrings[MAX_TEXT_STRINGS * MAX_STRING_SIZE];
+#endif

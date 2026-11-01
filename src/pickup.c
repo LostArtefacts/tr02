@@ -727,3 +727,10 @@ void SecretControl(sint16 item_number)
     items[item_number].status = INVISIBLE;
     RemoveDrawnItem(item_number);
 }
+
+#ifdef TR2_EXE
+sint32 pup_x;
+sint32 pup_y;
+sint32 pup_z;
+PHD_VECTOR DetonatorPosition;
+#endif

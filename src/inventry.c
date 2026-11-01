@@ -1043,3 +1043,15 @@ void DoInventoryBackground(void)
     S_InsertInvBgnd(meshes[objects[MENU_BACKGROUND].mesh_index]);
     phd_PopMatrix();
 }
+
+#ifdef TR2_EXE
+sint32 NoInputCounter;
+sint32 IsResetFlag;
+sint32 StopInventory;
+sint16 inv_main_current;
+sint16 inv_keys_objects;
+sint16 inv_keys_current;
+sint16 InvOptionCurrent;
+sint32 oldInputDB;
+sint16 IsInventoryActive;
+#endif

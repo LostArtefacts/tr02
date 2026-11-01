@@ -339,3 +339,9 @@ inline JOYSTICK_LIST::~JOYSTICK_LIST()
 
 JOYSTICK_LIST JoystickList;
 JOYSTICK CurrentJoystick;
+
+#ifdef TR2_EXE
+JOYCAPS JoyCaps;
+LPDIRECTINPUT DInput;
+LPDIRECTINPUTDEVICE IDID_SysKeyboard;
+#endif

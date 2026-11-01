@@ -238,3 +238,11 @@ extern "C" uint32 Func455922(uint32 c)
         return Var44b27e[c - 0x6e];
     return T_textSpacing[c];
 }
+
+#ifdef TR2_EXE
+int LnMasterVolume;
+char *CD_LoopTrack;
+int CD_LoopCounter;
+int sound_active;
+char *Var5275f8;
+#endif

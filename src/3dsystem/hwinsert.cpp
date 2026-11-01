@@ -1340,3 +1340,17 @@ extern "C" void InsertTransQuad_Sorted(int x, int y, int width, int height, int 
     HWR_VertexPtr = v + 4;
     surfacenum++;
 }
+
+#ifdef TR2_EXE
+float FltResZBuf;
+sint16 phd_winymin;
+float FltResZORhw;
+sint16 phd_winxmin;
+sint32 phd_winwidth;
+PHDTEXTURESTRUCT phdtextinfo[2048];
+PHD_VBUF PhdVBuf[1500];
+VERTEX_INFO VBuffer[20];
+bool bBlueEffect;
+D3DTLVERTEX VBufferD3D[32];
+PALETTEENTRY GamePalette16[256];
+#endif

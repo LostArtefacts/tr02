@@ -1295,3 +1295,7 @@ void ControlLavaBlob(sint16 fx_num)
     else if (room_number != fx->room_number)
         EffectNewRoom(fx_num, room_number);
 }
+
+#ifdef TR2_EXE
+sint32 detonate_all_mines;
+#endif

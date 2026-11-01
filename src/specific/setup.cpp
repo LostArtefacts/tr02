@@ -1459,3 +1459,24 @@ extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
         SE_ControlsJoystickSet(hwndDlg, (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0));
     SE_ControlsDlgUpdate(hwndDlg);
 }
+
+#ifdef TR2_EXE
+char RegistryClass[8];
+SETUP_APP_SETTINGS ChangedAppSettings;
+HWND SE_PropSheetWndHandle;
+WNDPROC SE_OldPropSheetWndProc;
+HWND OptionsImageHandle;
+bool Var51bc88;
+SETUP_ADAPTER_NODE *SE_DisplayAdapter;
+HWND SoundDialogHandle;
+HWND SoundImageHandle;
+HWND ControlsImageHandle;
+HWND GraphicsDialogHandle;
+DISPLAY_MODE SE_FullScreenMode;
+SETUP_APP_SETTINGS SavedAppSettings;
+HWND OptionsDialogHandle;
+bool IsSetupDialogCentered;
+HWND ControlsDialogHandle;
+HWND Var51bcf8;
+bool initOnce;
+#endif

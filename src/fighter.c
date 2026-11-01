@@ -1403,3 +1403,7 @@ void WarriorControl(sint16 item_number)
     CreatureNeck(item, neck);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR2_EXE
+int monks_attack_lara;
+#endif

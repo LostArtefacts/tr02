@@ -37,3 +37,8 @@ int Sync(void)
     LdSync = dCounter;
     return nFrames;
 }
+
+#ifdef TR2_EXE
+double LdSync;
+double LdFreq;
+#endif

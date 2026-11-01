@@ -952,3 +952,8 @@ int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_AN
     else
         return 0;
 }
+
+#ifdef TR2_EXE
+int height_type;
+sint16 draw_rooms[100];
+#endif

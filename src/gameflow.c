@@ -831,3 +831,16 @@ void ShowThis(char *name, int time)
 {
 }
 #endif
+
+#ifdef TR2_EXE
+sint32 GF_LaraStartAnim;
+sint16 GF_SunsetEnabled;
+sint16 GF_DeadlyWater;
+sint16 GF_NoFloor;
+sint16 GF_RemoveWeapons;
+sint16 GF_RemoveAmmo;
+char GF_Kill2Complete;
+char GF_StartGame;
+char GF_SecretInvItems[27];
+char GF_Add2InvItems[27];
+#endif

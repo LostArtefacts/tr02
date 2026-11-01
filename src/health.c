@@ -321,3 +321,10 @@ void DrawModeInfo(void)
         DisplayModeTextInfo = NULL;
     }
 }
+
+#ifdef TR2_EXE
+TEXTSTRING *AmmoTextInfo;
+TEXTSTRING *DisplayModeTextInfo;
+int DisplayModeInfoTimer;
+int HealthBarTimer;
+#endif

@@ -1651,3 +1651,8 @@ void GetCarriedItems(void)
         }
     }
 }
+
+#ifdef TR2_EXE
+OBJECT_INFO objects[265];
+sint32 *bones;
+#endif

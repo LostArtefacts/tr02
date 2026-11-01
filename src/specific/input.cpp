@@ -560,3 +560,9 @@ int S_UpdateInput()
     input = linput;
     return IsGameToExit;
 }
+
+#ifdef TR2_EXE
+unsigned char keymap[256];
+int joy_x;
+int joy_y;
+#endif

@@ -212,3 +212,9 @@ extern "C" BOOL Direct3DInit(void)
 {
     return TRUE;
 }
+
+#ifdef TR2_EXE
+LPDIRECT3D2 D3D;
+LPDIRECT3DVIEWPORT2 D3DView;
+LPDIRECT3DMATERIAL2 D3DMaterial;
+#endif

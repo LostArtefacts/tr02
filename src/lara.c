@@ -2956,3 +2956,8 @@ void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2,
     }
     phd_PopMatrix();
 }
+
+#ifdef TR2_EXE
+sint32 input;
+LARA_INFO lara;
+#endif

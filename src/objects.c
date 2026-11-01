@@ -1083,3 +1083,11 @@ void DetonatorControl(sint16 item_number)
     if (item->status == DEACTIVATED)
         RemoveActiveItem(item_number);
 }
+
+#ifdef TR2_EXE
+sint16 final_boss_active;
+sint16 final_boss[5];
+sint16 final_level_count;
+sint16 final_boss_count;
+ITEM_INFO *items;
+#endif

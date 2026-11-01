@@ -920,3 +920,19 @@ extern "C" void FadeWait(void)
 {
 }
 #endif
+
+#ifdef TR2_EXE
+sint32 LsAdder;
+sint32 phd_znear;
+void (*InsertLine)(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
+sint32 water_effect;
+sint32 shade_effect;
+uint8 PicPalette[768];
+int RoomLightShades[4];
+bool WinVidNeedToResetBuffers;
+int wet;
+bool Var51bc30;
+LIGHT_INFO dynamic[10];
+sint32 number_dynamics;
+int SunsetTimer;
+#endif

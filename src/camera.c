@@ -756,3 +756,8 @@ void CalculateCamera(void)
 
     IsChunkyCamera = 0;
 }
+
+#ifdef TR2_EXE
+int IsChunkyCamera;
+CAMERA_INFO camera;
+#endif

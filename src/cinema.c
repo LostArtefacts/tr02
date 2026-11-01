@@ -331,3 +331,12 @@ void InGameCinematicCamera(void)
         camera.mike_pos.y = camera.pos.y;
     }
 }
+
+#ifdef TR2_EXE
+int CineCurrentFrame;
+int original_room;
+sint16 *cine;
+PHD_3DPOS cinematic_pos;
+sint16 CineLevelID;
+sint16 cine_frame;
+#endif

@@ -246,3 +246,8 @@ void ClearLOT(LOT_INFO *LOT)
         node->search_number = 0;
     }
 }
+
+#ifdef TR2_EXE
+int slots_used;
+CREATURE_INFO *baddie_slots;
+#endif

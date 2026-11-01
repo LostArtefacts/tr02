@@ -96,3 +96,7 @@ void S_FadeOutInventory(int fade)
         fade_adder = -32768;
     }
 }
+
+#ifdef TR2_EXE
+int mode_lock;
+#endif

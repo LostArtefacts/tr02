@@ -275,3 +275,10 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
         }
     }
 }
+
+#ifdef TR2_EXE
+PHDSPRITESTRUCT PhdSpriteInfo[512];
+void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
+sint32 w2v_matrix[12];
+sint32 PhdViewDistance;
+#endif

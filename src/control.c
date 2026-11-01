@@ -1557,3 +1557,14 @@ void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type)
         }
     }
 }
+
+#ifdef TR2_EXE
+int number_los_rooms;
+sint16 *floor_data;
+sint16 *commands;
+sint16 cd_flags[64];
+int flip_status;
+int flipmap[10];
+sint16 *trigger_index;
+int los_rooms[20];
+#endif

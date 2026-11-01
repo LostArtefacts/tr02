@@ -438,3 +438,18 @@ extern "C" void S_LoadSettings(void)
     else
         S_CDVolume(0);
 }
+
+#ifdef TR2_EXE
+int InventoryExtraData[8];
+int GameMainReset;
+char *malloc_buffer;
+bool IsVidModeLock;
+int HiRes;
+int cheat_turn;
+sint16 cheat_as;
+sint16 cheat_angle;
+int cheat_flare;
+char StringToShow[128];
+int title_loaded;
+int cheat_mode;
+#endif

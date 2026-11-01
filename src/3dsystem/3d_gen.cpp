@@ -850,3 +850,41 @@ extern "C" void S_InsertInvBgnd(sint16 *objptr)
 {
 }
 #endif
+
+#ifdef TR2_EXE
+float FltResZ;
+void (*InsertTransQuad)(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
+sint32 phd_winheight;
+sint32 phd_centerx;
+sint32 phd_centery;
+PHD_ANGLE phd_ls_yaw;
+void (*InsertTrans8)(void *vbuf, sint16 shade);
+float phd_topfloat;
+sint32 sort3d_buffer[4000][2];
+float Data478044;
+sint32 phd_zfar;
+float FltRhwOPersp;
+void (*InsertFlatRect)(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
+sint16 info3d_buffer[120000];
+float FltFarZ;
+float f_centerx;
+float f_centery;
+sint32 PhdScreenHeight;
+float FltPerspONearZ;
+float FltNearZ;
+sint32 *phd_mxptr;
+sint16 *(*InsertObjectGT3)(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 *(*InsertObjectGT4)(sint16 *objptr, int number, enum sort_type sort_routine);
+sint32 rand_table[32];
+float FltPersp;
+PHD_ANGLE phd_ls_pitch;
+sint16 *(*InsertObjectG4)(sint16 *objptr, int number, enum sort_type sort_routine);
+sint16 shade_table[32];
+sint16 *(*InsertObjectG3)(sint16 *objptr, int number, enum sort_type sort_routine);
+sint32 matrix_stack[480];
+sint32 ls_divider;
+PHD_VECTOR ls_vector_view;
+float wibble_table[32];
+sint32 WibbleOffset;
+RECT GrcDumpWindow;
+#endif

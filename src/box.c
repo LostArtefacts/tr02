@@ -1401,3 +1401,9 @@ void GetBaddieTarget(sint16 item_number, int goody)
     if (distance < best_distance + TARGET_TOLERANCE)
         creature->enemy = best;
 }
+
+#ifdef TR2_EXE
+sint16 *ground_zone[4][2];
+sint16 *fly_zone[2];
+uint16 *Overlaps;
+#endif

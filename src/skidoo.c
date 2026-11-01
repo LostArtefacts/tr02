@@ -1439,3 +1439,7 @@ void SkidmanCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         laraitem->hit_points -= 100;
     }
 }
+
+#ifdef TR2_EXE
+ITEM_INFO *lara_item;
+#endif

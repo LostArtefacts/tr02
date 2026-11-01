@@ -449,3 +449,14 @@ inline SOUND_ADAPTER_LIST::~SOUND_ADAPTER_LIST()
 
 SOUND_ADAPTER_LIST SoundAdapterList;
 SOUND_ADAPTER CurrentSoundAdapter;
+
+#ifdef TR2_EXE
+int SampleFreqs[256];
+LPDIRECTSOUNDBUFFER SampleBuffers[256];
+bool IsSoundEnabled;
+LPDIRECTSOUND DSound;
+int ChannelSamples[32];
+LPDIRECTSOUNDBUFFER ChannelBuffers[32];
+int Var4d8e98;
+SOUND_ADAPTER_NODE *PrimarySoundAdapter;
+#endif

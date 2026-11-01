@@ -171,3 +171,10 @@ void WinStopFMV(bool playback)
     if (playback)
         Player_ReturnPlaybackMode();
 }
+
+#ifdef TR2_EXE
+int IsFmvPlaying;
+void *MovieContext;
+void *FmvContext;
+void *FmvSoundContext;
+#endif

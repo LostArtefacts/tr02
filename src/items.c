@@ -405,3 +405,12 @@ void ClearBodyBag(void)
     }
     body_bag = NO_ITEM;
 }
+
+#ifdef TR2_EXE
+int IsDemoLevelType;
+sint16 next_fx_free;
+sint16 next_item_free;
+sint16 next_item_active;
+sint16 next_fx_active;
+sint16 body_bag;
+#endif

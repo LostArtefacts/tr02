@@ -367,3 +367,9 @@ extern "C" bool BGND_Init(void)
         BGND_TexturePageIndexes[i] = -1;
     return true;
 }
+
+#ifdef TR2_EXE
+bool BGND_PictureIsReady;
+int BGND_TexturePageIndexes[5];
+DWORD BGND_PageHandles[5];
+#endif

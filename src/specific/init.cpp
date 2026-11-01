@@ -94,3 +94,11 @@ void S_SeedRandom(void)
     SeedRandomControl(tptr->tm_sec + (tptr->tm_min * 57) + (tptr->tm_hour * 3543));
     SeedRandomDraw(tptr->tm_sec + (tptr->tm_min * 43) + (tptr->tm_hour * 3477));
 }
+
+#ifdef TR2_EXE
+int malloc_size;
+char *malloc_ptr;
+int malloc_used;
+int malloc_free;
+int wibble_light[WIBBLE_SIZE][32];
+#endif

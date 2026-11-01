@@ -135,3 +135,9 @@ void GetDemoInput(void)
     if (input != -1)
         democount++;
 }
+
+#ifdef TR2_EXE
+int InvDemoMode;
+uint32 *demoptr;
+int democount;
+#endif

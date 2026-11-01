@@ -282,3 +282,9 @@ void SOUND_Init(void)
         LaSlot[nSlot].nSampleInfo = -1;
     sound_active = 1;
 }
+
+#ifdef TR2_EXE
+SoundSlot LaSlot[MAX_SLOTS];
+sint16 sample_lut[370];
+SAMPLE_INFO *sample_infos;
+#endif

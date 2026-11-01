@@ -492,3 +492,11 @@ extern "C" bool InitTextures(void)
     memset(TexturePalettes, 0, sizeof(TexturePalettes));
     return true;
 }
+
+#ifdef TR2_EXE
+TEXPAGE_DESC TexturePages[MAX_TEXTURE_PAGES];
+TEXTURE_FORMAT TextureFormat;
+bool TexturesAlphaChannel;
+bool TexturesHaveCompatibleMasks;
+LPDIRECTDRAWPALETTE TexturePalettes[MAX_PALETTES];
+#endif

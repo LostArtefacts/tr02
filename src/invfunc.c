@@ -1974,3 +1974,21 @@ void ShowEndStatsText(void)
         end_stats_mode = 1;
     }
 }
+
+#ifdef TR2_EXE
+TEXTSTRING *Inv_itemText[IT_NUMBEROF];
+TEXTSTRING *Inv_tagText;
+TEXTSTRING *Inv_upArrow1;
+TEXTSTRING *Inv_upArrow2;
+TEXTSTRING *Inv_downArrow1;
+TEXTSTRING *Inv_downArrow2;
+REQUEST_INFO StatsRequester;
+uint32 best_assault_times[NUM_ASS_TIMES];
+uint32 best_assault_finish[NUM_ASS_TIMES];
+uint32 finishes;
+char SaveGameStrings1[24][50];
+uint32 RequesterFlags2[24];
+uint32 RequesterFlags1[24];
+SG_COL inv_colours[32];
+char SaveGameStrings2[24][50];
+#endif

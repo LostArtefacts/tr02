@@ -1114,3 +1114,13 @@ extern "C" void ins_line(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, c
     info3dptr += 6;
     surfacenum++;
 }
+
+#ifdef TR2_EXE
+float phd_bottomfloat;
+float phd_leftfloat;
+float FltRhwONearZ;
+sint16 *info3dptr;
+float phd_rightfloat;
+sint32 surfacenum;
+sint32 *sort3dptr;
+#endif

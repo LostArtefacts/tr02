@@ -685,3 +685,32 @@ extern "C" bool DX_UpdateFrame(bool needRunMessageLoop, LPRECT rect)
         return WinVidSpinMessageLoop(false);
     return true;
 }
+
+#ifdef TR2_EXE
+int GameWindowHeight;
+int GameWindowPositionX;
+int GameWindowPositionY;
+LPDIRECTDRAWSURFACE3 RenderBufferSurface;
+LPDIRECTDRAWCLIPPER DDrawClipper;
+PALETTEENTRY WinVidPalette[256];
+LPDIRECTDRAWSURFACE3 ThirdBufferSurface;
+LPDIRECTDRAWSURFACE3 PictureBufferSurface;
+LPDIRECTDRAWSURFACE3 ZBufferSurface;
+LPDIRECTDRAWPALETTE DDrawPalette;
+LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
+COLOR_BIT_MASKS ColorBitMasks;
+RECT GameVidBufRect;
+RECT GameVidRect;
+int GameVidWidth;
+int GameVidHeight;
+int GameVidBPP;
+int GameVidBufWidth;
+int GameVidBufHeight;
+bool GameVid_IsVga;
+bool GameVid_IsWindowedVga;
+bool GameVid_IsFullscreenVga;
+bool IsWindowedVGA;
+bool Is16bitTextures;
+bool NeedToReloadTextures;
+LPDIRECTDRAWSURFACE3 BackBufferSurface;
+#endif
