@@ -1409,7 +1409,7 @@ address,size,name,symbol
 0x0045ff40,32,Func45ff40,
 0x0045ff60,32,Func45ff60,
 0x0045ff80,27,Func45ff80,
-0x0045ffa0,153,Func45ffa0,
+0x0045ffa0,153,atol,_atol
 0x00460040,254,_strncpy,
 0x00460140,489,Func460140,
 0x00460330,50,Func460330,

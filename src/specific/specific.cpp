@@ -160,3 +160,13 @@ extern "C" int StartSyncedAudio(int num)
     wsprintf(Var5275f8, "play T2 from %s to %s", entry, entry + 9);
     return !mciSendString(Var5275f8, NULL, 0, NULL);
 }
+
+extern "C" int S_CDGetLoc(void)
+{
+    long pos;
+
+    if (mciSendString("status T2 position", Var5275f8, 50, NULL))
+        return 0;
+    pos = atol(Var5275f8);
+    return (DWORD)(pos - atol(Var5275fc + (GetRealTrack((uint16)cdtrack) - 1) * 18)) * 3 / 40;
+}
