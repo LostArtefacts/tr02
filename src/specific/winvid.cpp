@@ -654,6 +654,9 @@ typedef struct DISPLAY_ADAPTER_NODE {
     struct DISPLAY_ADAPTER_NODE *next;
     struct DISPLAY_ADAPTER_NODE *previous;
     DISPLAY_ADAPTER body;
+    DISPLAY_ADAPTER_NODE(DISPLAY_ADAPTER_NODE *prevNode, DISPLAY_ADAPTER_NODE *nextNode) : next(nextNode), previous(prevNode)
+    {
+    }
 } DISPLAY_ADAPTER_NODE;
 
 typedef struct {
@@ -1022,6 +1025,55 @@ extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterLis
     if (DX_TRY(DirectDrawEnumerate(EnumDisplayAdaptersCallback, displayAdapterList)))
         return false;
     return true;
+}
+
+extern "C" void Enumerate3DDevices(DISPLAY_ADAPTER *adapter);
+
+extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriverDescription, LPTSTR lpDriverName, LPVOID lpContext)
+{
+    DDCAPS driverCaps;
+    DDCAPS helCaps;
+    DISPLAY_ADAPTER_NODE *node;
+    DISPLAY_ADAPTER_LIST *list;
+    DISPLAY_ADAPTER *adapter;
+
+    list = (DISPLAY_ADAPTER_LIST *)lpContext;
+    if (DDrawCreate(lpGUID)) {
+        memset(&driverCaps, 0, sizeof(driverCaps));
+        memset(&helCaps, 0, sizeof(helCaps));
+        driverCaps.dwSize = sizeof(DDCAPS);
+        helCaps.dwSize = sizeof(DDCAPS);
+        if (!DX_TRY(DDraw->GetCaps(&driverCaps, &helCaps))) {
+            node = new DISPLAY_ADAPTER_NODE(list->tail, NULL);
+            if (list->tail)
+                list->tail->next = node;
+            else
+                list->head = node;
+            list->dwCount++;
+            list->tail = node;
+            adapter = &node->body;
+            if (lpGUID) {
+                adapter->adapterGuid = *lpGUID;
+                adapter->lpAdapterGuid = &adapter->adapterGuid;
+            } else {
+                memset(&adapter->adapterGuid, 0, sizeof(GUID));
+                adapter->lpAdapterGuid = NULL;
+            }
+            strcpy(adapter->driverDescription.lpString, lpDriverDescription);
+            strcpy(adapter->driverName.lpString, lpDriverName);
+            adapter->driverCaps = driverCaps;
+            adapter->helCaps = helCaps;
+            adapter->swWindowedSupported = false;
+            adapter->hwWindowedSupported = false;
+            adapter->isVgaMode1Presented = false;
+            adapter->isVgaMode2Presented = false;
+            adapter->screenWidth = 0;
+            adapter->hwRenderSupported = false;
+            Enumerate3DDevices(adapter);
+        }
+        DDrawRelease();
+    }
+    return TRUE;
 }
 
 extern "C" DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
