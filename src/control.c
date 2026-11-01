@@ -1359,6 +1359,80 @@ int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target, FLOOR_INFO *floor)
     return 1;
 }
 
+#define SMASH_WINDOW 72
+#define BELL 88
+
+int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    int i, j, failure;
+    sint32 dx, dy, dz, dist, along, side;
+    sint16 item_number;
+    sint16 *bounds, *zext, *xext;
+    ITEM_INFO *item;
+
+    dx = target->x - start->x;
+    dy = target->y - start->y;
+    dz = target->z - start->z;
+    for (i = 0; i < number_los_rooms; i++) {
+        item_number = room[los_rooms[i]].item_number;
+        while (item_number != NO_ITEM) {
+            item = &items[item_number];
+            if (item->status != DEACTIVATED && (item->object_number == SMASH_WINDOW || item->object_number == BELL)) {
+                bounds = GetBoundsAccurate(item);
+                if (((uint16)(item->pos.y_rot + 0x2000) / 0x4000) & 1) {
+                    zext = &bounds[0];
+                    xext = &bounds[4];
+                } else {
+                    zext = &bounds[4];
+                    xext = &bounds[0];
+                }
+                failure = 0;
+                if (ABS(dz) > ABS(dx)) {
+                    dist = item->pos.z_pos + zext[0] - start->z;
+                    for (j = 0; j < 2; j++) {
+                        if ((dist & 0x80000000) == (dz & 0x80000000)) {
+                            along = dy * dist / dz;
+                            if (along > item->pos.y_pos + bounds[2] - start->y && along < item->pos.y_pos + bounds[3] - start->y) {
+                                side = dx * dist / dz;
+                                if (side < item->pos.x_pos + xext[0] - start->x)
+                                    failure |= 1;
+                                else if (side > item->pos.x_pos + xext[1] - start->x)
+                                    failure |= 2;
+                                else
+                                    return item_number;
+                            }
+                        }
+                        dist = item->pos.z_pos + zext[1] - start->z;
+                    }
+                    if (failure == 3)
+                        return item_number;
+                } else {
+                    dist = item->pos.x_pos + xext[0] - start->x;
+                    for (j = 0; j < 2; j++) {
+                        if ((dist & 0x80000000) == (dx & 0x80000000)) {
+                            along = dy * dist / dx;
+                            if (along > item->pos.y_pos + bounds[2] - start->y && along < item->pos.y_pos + bounds[3] - start->y) {
+                                side = dz * dist / dx;
+                                if (side < item->pos.z_pos + zext[0] - start->z)
+                                    failure |= 1;
+                                else if (side > item->pos.z_pos + zext[1] - start->z)
+                                    failure |= 2;
+                                else
+                                    return item_number;
+                            }
+                        }
+                        dist = item->pos.x_pos + xext[1] - start->x;
+                    }
+                    if (failure == 3)
+                        return item_number;
+                }
+            }
+            item_number = item->next_item;
+        }
+    }
+    return NO_ITEM;
+}
+
 extern sint16 number_rooms;
 void RemoveRoomFlipItems(ROOM_INFO *r);
 void AddRoomFlipItems(ROOM_INFO *r);
