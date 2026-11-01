@@ -348,8 +348,40 @@ void S_InsertRoom(sint16 *objptr, int outside)
     objptr = ins_room_sprite(objptr + 1, *(objptr));
 }
 
+typedef struct {
+    float xv, yv, zv, ooz, xs, ys;
+    sint16 clip, g, u, v;
+} PHD_VBUF;
+
+extern "C" PHD_VBUF PhdVBuf[];
+extern "C" sint32 ZBufferSurface;
+extern "C" sint32 MidSort;
+extern "C" sint32 WibbleOffset;
+extern "C" float FltNearZ;
+extern "C" float FltFarZ;
+extern "C" float FltPersp;
+extern "C" float FltRhwOPersp;
+extern "C" float Data478044;
+
+extern "C" sint16 *calc_background_light(sint16 *objptr)
+{
+    int numvert, i;
+
+    numvert = *(objptr++);
+    if (numvert > 0)
+        objptr += numvert * 3;
+    else if (numvert < 0) {
+        numvert = -numvert;
+        objptr += numvert;
+    }
+
+    for (i = 0; i < numvert; i++)
+        PhdVBuf[i].g = 0xfff;
+
+    return objptr;
+}
+
 void HWR_EnableZBuffer(bool tWrite, bool tCompare);
-extern "C" sint16 *calc_background_light(sint16 *objptr);
 
 extern "C" void S_InsertBackground(sint16 *objptr)
 {
@@ -372,21 +404,6 @@ extern "C" void S_InsertBackground(sint16 *objptr)
             HWR_EnableZBuffer(true, true);
     }
 }
-
-typedef struct {
-    float xv, yv, zv, ooz, xs, ys;
-    sint16 clip, g, u, v;
-} PHD_VBUF;
-
-extern "C" PHD_VBUF PhdVBuf[];
-extern "C" sint32 ZBufferSurface;
-extern "C" sint32 MidSort;
-extern "C" sint32 WibbleOffset;
-extern "C" float FltNearZ;
-extern "C" float FltFarZ;
-extern "C" float FltPersp;
-extern "C" float FltRhwOPersp;
-extern "C" float Data478044;
 
 extern "C" sint16 *calc_object_vertices(sint16 *objptr)
 {
@@ -825,24 +842,6 @@ extern "C" void phd_InitWindow(sint16 x, sint16 y, int width, int height, int ne
         InsertTransQuad = InsertTransQuad_Sorted;
         break;
     }
-}
-
-extern "C" sint16 *calc_background_light(sint16 *objptr)
-{
-    int numvert, i;
-
-    numvert = *(objptr++);
-    if (numvert > 0)
-        objptr += numvert * 3;
-    else if (numvert < 0) {
-        numvert = -numvert;
-        objptr += numvert;
-    }
-
-    for (i = 0; i < numvert; i++)
-        PhdVBuf[i].g = 0xfff;
-
-    return objptr;
 }
 
 #ifdef TR2_EXE
