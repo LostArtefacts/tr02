@@ -1098,8 +1098,8 @@ address,size,name,symbol
 0x00453150,1034,SE_GraphicsDlgProc,_SE_GraphicsDlgProc@16
 0x00453560,476,SE_GraphicsDlgFullScreenModesUpdate,_SE_GraphicsDlgFullScreenModesUpdate
 0x00453750,23,SE_GraphicsAdapterSet,_SE_GraphicsAdapterSet
-0x00453770,1845,Func453770,
-0x00453eb0,380,Func453eb0,
+0x00453770,1845,SE_GraphicsDlgUpdate,_SE_GraphicsDlgUpdate
+0x00453eb0,380,SE_GraphicsDlgInit,_SE_GraphicsDlgInit
 0x00454030,385,SE_SoundDlgProc,_SE_SoundDlgProc@16
 0x004541c0,10,SE_SoundAdapterSet,_SE_SoundAdapterSet
 0x004541d0,283,SE_SoundDlgUpdate,_SE_SoundDlgUpdate

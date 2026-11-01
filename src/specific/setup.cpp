@@ -220,7 +220,9 @@ struct SETUP_ADAPTER_NODE
     SETUP_ADAPTER_NODE *next;
     SETUP_ADAPTER_NODE *previous;
     GUID *lpAdapterGuid;
-    uint8 pad0[0x3ce];
+    GUID adapterGuid;
+    LPSTR driverDescription;
+    uint8 pad0[0x3ba];
     SETUP_MODE_LIST hwDispModeList;
     SETUP_MODE_LIST swDispModeList;
     uint8 pad1[0x24];
@@ -233,7 +235,14 @@ struct SETUP_ADAPTER_NODE
 };
 #pragma pack(pop)
 
-extern "C" SETUP_ADAPTER_NODE *DisplayAdapterList;
+typedef struct
+{
+    SETUP_ADAPTER_NODE *head;
+    SETUP_ADAPTER_NODE *tail;
+    DWORD count;
+} SETUP_ADAPTER_LIST;
+
+extern "C" SETUP_ADAPTER_LIST DisplayAdapterList;
 
 extern "C" {
 bool GetRegistryGuidValue(LPCTSTR lpValueName, GUID *value, GUID *defaultValue);
@@ -348,7 +357,7 @@ extern "C" void SE_DefaultGraphicsSettings(void)
 
     hwAdapter = NULL;
     swAdapter = NULL;
-    for (adapter = DisplayAdapterList; adapter; adapter = adapter->next)
+    for (adapter = DisplayAdapterList.head; adapter; adapter = adapter->next)
     {
         if (!adapter->lpAdapterGuid)
             swAdapter = adapter;
@@ -587,6 +596,65 @@ extern "C" void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter)
 {
     ChangedAppSettings.PreferredDisplayAdapter = adapter;
     SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
+}
+
+extern "C" {
+extern SETUP_ADAPTER_NODE *SE_DisplayAdapter;
+extern DISPLAY_MODE SE_FullScreenMode;
+void WinVidSetDisplayAdapter(void *adapter);
+void SE_GraphicsDlgUpdate(HWND hwndDlg);
+}
+
+extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
+{
+    HWND combo;
+    HWND slider;
+    WPARAM index;
+    WPARAM selected;
+    SETUP_ADAPTER_NODE *node;
+    GUID **body;
+    void *adapter;
+    int count;
+
+    combo = GetDlgItem(hwndDlg, 1025);
+    SendMessage(combo, CB_RESETCONTENT, 0, 0);
+    selected = 0;
+    SE_DisplayAdapter = NULL;
+    for (node = DisplayAdapterList.head; node; node = node->next)
+    {
+        body = &node->lpAdapterGuid;
+        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->driverDescription);
+        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
+        if (node == ChangedAppSettings.PreferredDisplayAdapter)
+            selected = index;
+        if (!*body)
+            SE_DisplayAdapter = node;
+        WinVidSetDisplayAdapter(body);
+        if (!node)
+            break;
+    }
+    SendMessage(combo, CB_SETCURSEL, selected, 0);
+    count = DisplayAdapterList.count;
+    EnableWindow(combo, count > 0);
+    if (count)
+    {
+        adapter = (void *)SendMessage(combo, CB_GETITEMDATA, selected, 0);
+        if (ChangedAppSettings.VideoMode)
+        {
+            SE_FullScreenMode = ((SETUP_MODE_NODE *)ChangedAppSettings.VideoMode)->body;
+        }
+        else
+        {
+            SE_FullScreenMode.bpp = 0;
+            SE_FullScreenMode.width = 640;
+            SE_FullScreenMode.height = 480;
+            SE_FullScreenMode.vga = 0;
+        }
+        SE_GraphicsAdapterSet(hwndDlg, adapter);
+    }
+    slider = GetDlgItem(hwndDlg, 1034);
+    SendMessage(slider, TBM_SETPOS, TRUE, (ChangedAppSettings.WindowWidth - 320) >> 5);
+    SE_GraphicsDlgUpdate(hwndDlg);
 }
 
 extern "C" void SE_SoundAdapterSet(HWND hwndDlg, void *adapter)
