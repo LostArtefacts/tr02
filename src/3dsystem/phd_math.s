@@ -61,7 +61,7 @@ atan_done:
     ret
 @phd_sin@4 endp
 
-Func457f09 proc
+Func457f09 proc public
     cmp eax, 16384
     jle sin_quarter
     neg eax

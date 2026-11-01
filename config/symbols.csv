@@ -1216,7 +1216,7 @@ address,size,name,symbol
 0x00457ea0,72,phd_atan,@phd_atan@8
 0x00457ee8,6,phd_cos,@phd_cos@4
 0x00457eee,27,phd_sin,@phd_sin@4
-0x00457f09,26,Func457f09,
+0x00457f09,26,Func457f09,Func457f09
 0x00457f23,44,phd_sqrt,@phd_sqrt@4
 0x00457f50,6,DirectInputCreateA_thunk,_DirectInputCreateA@16
 0x00458f60,24,c_dfDIKeyboard,_c_dfDIKeyboard
