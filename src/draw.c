@@ -318,6 +318,30 @@ void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
     }
 }
 
+typedef struct {
+    sint32 x, y, z;
+    PHD_ANGLE y_rot;
+    sint16 shade;
+    sint16 shadeB;
+    sint16 static_number;
+} MESH_INFO;
+
+typedef struct {
+    sint16 mesh_number;
+    uint16 flags;
+    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
+    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
+} STATIC_INFO;
+
+#define STATIC_DRAW 2
+
+extern STATIC_INFO StaticObjects[];
+
+int S_GetObjectBounds(sint16 *bptr);
+void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r);
+void DrawEffect(sint16 fx_num);
+void InitInterpolate(int frac, int rate);
+
 void S_InsertBackPolygon(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 colour);
 
 extern sint32 Var464180[12][2];
@@ -440,29 +464,6 @@ void PrintRooms(sint16 room_number)
         S_InsertRoom(r->data, 0);
     }
 }
-
-typedef struct {
-    sint32 x, y, z;
-    PHD_ANGLE y_rot;
-    sint16 shade;
-    sint16 shadeB;
-    sint16 static_number;
-} MESH_INFO;
-
-typedef struct {
-    sint16 mesh_number;
-    uint16 flags;
-    sint16 x_minp, x_maxp, y_minp, y_maxp, z_minp, z_maxp;
-    sint16 x_minc, x_maxc, y_minc, y_maxc, z_minc, z_maxc;
-} STATIC_INFO;
-
-#define STATIC_DRAW 2
-
-extern STATIC_INFO StaticObjects[];
-
-int S_GetObjectBounds(sint16 *bptr);
-void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r);
-void DrawEffect(sint16 fx_num);
 
 void PrintObjects(sint16 room_number)
 {
@@ -611,7 +612,6 @@ void phd_PushMatrix_I(void);
 void phd_RotY_I(sint16 ang);
 void phd_RotX_I(sint16 ang);
 void phd_RotZ_I(sint16 ang);
-void InitInterpolate(int frac, int rate);
 void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
 void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
 void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);

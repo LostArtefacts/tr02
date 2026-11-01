@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.81% (1107)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.47% (91)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.89% (1108)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.38% (90)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="678.37" height="6" x="0" y="0" class="named"/>
-<rect width="12.87" height="6" x="678.37" y="0" class="decompiled"/>
-<rect width="55.76" height="6" x="691.24" y="0" class="nonmatching"/>
+<rect width="678.98" height="6" x="0" y="0" class="named"/>
+<rect width="12.87" height="6" x="678.98" y="0" class="decompiled"/>
+<rect width="55.15" height="6" x="691.85" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -279,7 +279,7 @@
 <rect width="12" height="12" x="120" y="60" class="named"><title>0x004189a0 DrawRooms (688 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="nonmatching"><title>0x00418c50 GetRoomBounds (454 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="60" class="named"><title>0x00418e20 SetRoomBounds (895 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="60" class="nonmatching"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="60" class="named"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="60" class="named"><title>0x00419580 PrintRooms (192 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="60" class="nonmatching"><title>0x00419640 PrintObjects (548 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="60" class="named"><title>0x00419870 DrawEffect (327 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.48%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">18.08%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.77%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">17.80%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="608.68" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="608.68" y="0" class="decompiled"/>
-<rect width="135.08" height="6" x="611.92" y="0" class="nonmatching"/>
+<rect width="610.79" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="610.79" y="0" class="decompiled"/>
+<rect width="132.97" height="6" x="614.03" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1368,7 +1368,7 @@
 <rect width="25" height="26.27" x="243.24" y="149.61" class="named"><title>0x0041f650 WarriorControl (1000 bytes)</title></rect>
 <rect width="25" height="26.16" x="243.24" y="178.89" class="named"><title>0x00412fc0 CollideStaticObjects (996 bytes)</title></rect>
 <rect width="25" height="25.92" x="243.24" y="208.04" class="named"><title>0x00435190 InitialiseDoor (988 bytes)</title></rect>
-<rect width="25" height="25.63" x="243.24" y="236.96" class="nonmatching"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
+<rect width="25" height="25.63" x="243.24" y="236.96" class="named"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
 <rect width="25" height="25.63" x="243.24" y="265.59" class="nonmatching"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
 <rect width="25" height="25.60" x="243.24" y="294.22" class="named"><title>0x00407620 ins_objectG4 (977 bytes)</title></rect>
 <rect width="25" height="24.66" x="243.24" y="322.82" class="nonmatching"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
