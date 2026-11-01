@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.55% (92)</tspan> · <tspan class="todo">1.56% (19)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.63% (93)</tspan> · <tspan class="todo">1.48% (18)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="672.85" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="672.85" y="0" class="decompiled"/>
-<rect width="56.38" height="6" x="678.98" y="0" class="nonmatching"/>
-<rect width="11.64" height="6" x="735.36" y="0" class="todo"/>
+<rect width="56.99" height="6" x="678.98" y="0" class="nonmatching"/>
+<rect width="11.03" height="6" x="735.97" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -819,7 +819,7 @@
 <rect width="12" height="12" x="705" y="210" class="named"><title>0x004407d0 T_CentreV (30 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="210" class="named"><title>0x004407f0 T_RightAlign (30 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="210" class="named"><title>0x00440810 T_BottomAlign (30 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="225" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="225" class="nonmatching"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="225" class="named"><title>0x00440940 T_RemovePrint (37 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="225" class="named"><title>0x00440970 T_GetStringLen (36 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="225" class="named"><title>0x004409a0 T_DrawText (39 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.34%</tspan> · <tspan class="todo">4.42%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.41%</tspan> · <tspan class="todo">4.35%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.30" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.30" y="0" class="decompiled"/>
-<rect width="107.10" height="6" x="606.86" y="0" class="nonmatching"/>
-<rect width="33.04" height="6" x="713.96" y="0" class="todo"/>
+<rect width="107.67" height="6" x="606.86" y="0" class="nonmatching"/>
+<rect width="32.47" height="6" x="714.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1655,7 +1655,7 @@
 <rect width="11.93" height="11.61" x="602.56" y="110" class="named"><title>0x004424a0 Pendulum (266 bytes)</title></rect>
 <rect width="11.87" height="11.61" x="617.49" y="110" class="named"><title>0x004419f0 KillerStatueControl (265 bytes)</title></rect>
 <rect width="11.82" height="11.61" x="632.36" y="110" class="named"><title>0x0042a6d0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
-<rect width="11.76" height="11.61" x="647.18" y="110" class="todo"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
+<rect width="11.76" height="11.61" x="647.18" y="110" class="nonmatching"><title>0x00440830 T_GetTextWidth (263 bytes)</title></rect>
 <rect width="11.71" height="11.61" x="661.94" y="110" class="named"><title>0x00416c70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="11.71" height="11.61" x="676.64" y="110" class="named"><title>0x0043dee0 SkidooCheckGetOffOK (262 bytes)</title></rect>
 <rect width="11.71" height="11.61" x="691.35" y="110" class="named"><title>0x004543b0 SE_ControlsDlgProc (262 bytes)</title></rect>

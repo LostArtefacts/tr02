@@ -217,6 +217,65 @@ void T_BottomAlign(TEXTSTRING *textString, sint16 ok)
         textString->flags &= ~T_BOTTOMALIGN;
 }
 
+uint8 Func4558d7(uint32 c);
+uint8 Func4558e1(uint32 c);
+uint32 Func455905(uint32 c);
+uint32 Func455922(uint32 c);
+
+sint32 T_GetTextWidth(TEXTSTRING *textString)
+{
+    uint32 scaleH;
+    uint32 width;
+    uint32 letter;
+    uint8 *string;
+
+    scaleH = GetTextScaleH(textString->scaleH);
+    GetTextScaleV(textString->scaleV);
+    width = 0;
+    string = (uint8 *)textString->string;
+    while (*string)
+    {
+        letter = *string++;
+        if (Func4558d7(letter))
+            continue;
+        if (letter > 10 && letter < 32)
+            continue;
+        if (letter == ' ')
+        {
+            if (scaleH == 0x10000)
+                width += textString->wordSpacing;
+            else
+                width += (textString->wordSpacing * scaleH) >> 16;
+            continue;
+        }
+        if (letter >= 127 && Func4558e1(letter))
+        {
+            if (scaleH == 0x10000)
+                width += 16;
+            else
+                width += (16 * scaleH) >> 16;
+            continue;
+        }
+        if (letter < 11)
+            letter += 81;
+        else if (letter < 16)
+            letter += 91;
+        else
+            letter = Func455905(letter);
+        if (letter >= '0' && letter <= '9')
+        {
+            width += (12 * scaleH) >> 16;
+            continue;
+        }
+        letter = Func455922(letter);
+        if (scaleH == 0x10000)
+            width += textString->letterSpacing + letter;
+        else
+            width += ((letter + textString->letterSpacing) * scaleH) >> 16;
+    }
+    return (width - textString->letterSpacing) & 0xfffe;
+}
+
 int T_RemovePrint(TEXTSTRING *textString)
 {
     if (!textString)
