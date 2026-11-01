@@ -291,7 +291,31 @@ extern "C" void FreeTexturePages(void)
     }
 }
 
-extern "C" bool LoadTexturePage(int pageIndex, bool reset);
+extern "C" HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank);
+
+extern "C" bool LoadTexturePage(int pageIndex, bool reset)
+{
+    bool rc;
+    TEXPAGE_DESC *page;
+    LPDIRECT3DTEXTURE2 texture;
+
+    if (pageIndex < 0)
+        return false;
+    page = &TexturePages[pageIndex];
+    if (reset || !page->vidMemSurface || DX_TRY(DDrawSurfaceRestoreLost(page->vidMemSurface, NULL, false)))
+    {
+        TexturePageReleaseVidMemSurface(page);
+        if (!TexturePageInit(page))
+            return false;
+    }
+    DDrawSurfaceRestoreLost(page->sysMemSurface, NULL, false);
+    texture = Create3DTexture(page->sysMemSurface);
+    if (!texture)
+        return false;
+    rc = !DX_TRY(page->texture3d->Load(texture));
+    texture->Release();
+    return rc;
+}
 
 extern "C" bool ReloadTextures(bool reset)
 {

@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">3.84% (48)</tspan> · <tspan class="todo">7.83% (98)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">3.92% (49)</tspan> · <tspan class="todo">7.75% (97)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="653.85" height="6" x="0" y="0" class="named"/>
 <rect width="5.97" height="6" x="653.85" y="0" class="decompiled"/>
-<rect width="28.66" height="6" x="659.82" y="0" class="nonmatching"/>
-<rect width="58.52" height="6" x="688.48" y="0" class="todo"/>
+<rect width="29.26" height="6" x="659.82" y="0" class="nonmatching"/>
+<rect width="57.92" height="6" x="689.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1230,7 +1230,7 @@
 <rect width="12" height="12" x="120" y="345" class="named"><title>0x00456080 FreeTexturePage (50 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="345" class="named"><title>0x004560c0 TexturePageReleaseVidMemSurface (59 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="345" class="named"><title>0x00456100 FreeTexturePages (38 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="345" class="todo"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="345" class="nonmatching"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="345" class="named"><title>0x004561e0 ReloadTextures (53 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="345" class="named"><title>0x00456220 GetTexturePageHandle (62 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="345" class="named"><title>0x00456260 AddTexturePage8 (245 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.39%</tspan> · <tspan class="todo">10.89%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.44%</tspan> · <tspan class="todo">10.84%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="600.42" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="600.42" y="0" class="decompiled"/>
-<rect width="62.66" height="6" x="602.98" y="0" class="nonmatching"/>
-<rect width="81.36" height="6" x="665.64" y="0" class="todo"/>
+<rect width="63.01" height="6" x="602.98" y="0" class="nonmatching"/>
+<rect width="81.01" height="6" x="665.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1864,7 +1864,7 @@
 <rect width="8.87" height="8.70" x="586.67" y="182.02" class="named"><title>0x00425610 Remove_Requester (163 bytes)</title></rect>
 <rect width="8.87" height="8.70" x="598.54" y="182.02" class="named"><title>0x00428b30 extra_as_finalanim (163 bytes)</title></rect>
 <rect width="8.87" height="8.70" x="610.42" y="182.02" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
-<rect width="8.80" height="8.70" x="622.29" y="182.02" class="todo"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
+<rect width="8.80" height="8.70" x="622.29" y="182.02" class="nonmatching"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
 <rect width="8.73" height="8.70" x="634.09" y="182.02" class="named"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
 <rect width="8.73" height="8.70" x="645.82" y="182.02" class="nonmatching"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="8.73" height="8.70" x="657.55" y="182.02" class="named"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
