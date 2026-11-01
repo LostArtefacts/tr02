@@ -388,6 +388,58 @@ extern "C" float FltPersp;
 extern "C" float FltRhwOPersp;
 extern "C" float Data478044;
 
+extern "C" sint32 LsAdder;
+extern "C" sint32 ls_divider;
+
+extern "C" sint16 *calc_vertice_light(sint16 *objptr)
+{
+    int numvert;
+    sint32 shade, xv, yv, zv;
+    sint32 *mptr;
+    PHD_VBUF *dest;
+
+    numvert = *objptr++;
+    if (numvert > 0) {
+        if (ls_divider) {
+            mptr = phd_mxptr;
+            xv = (*(mptr + M00) * ls_vector_view.x + *(mptr + M10) * ls_vector_view.y + *(mptr + M20) * ls_vector_view.z) / ls_divider;
+            yv = (*(mptr + M01) * ls_vector_view.x + *(mptr + M11) * ls_vector_view.y + *(mptr + M21) * ls_vector_view.z) / ls_divider;
+            zv = (*(mptr + M02) * ls_vector_view.x + *(mptr + M12) * ls_vector_view.y + *(mptr + M22) * ls_vector_view.z) / ls_divider;
+            for (dest = PhdVBuf; numvert > 0; numvert--, dest++) {
+                shade = ((objptr[0] * xv + objptr[1] * yv + objptr[2] * zv) >> 16) + LsAdder;
+                if (shade < 0)
+                    shade = 0;
+                else if (shade > 0x1fff)
+                    shade = 0x1fff;
+                dest->g = (sint16)shade;
+                objptr += 3;
+            }
+            return objptr;
+        } else {
+            shade = LsAdder;
+            if (shade < 0)
+                shade = 0;
+            else if (shade > 0x1fff)
+                shade = 0x1fff;
+            objptr += numvert * 3;
+            for (dest = PhdVBuf; numvert > 0; numvert--, dest++)
+                dest->g = (sint16)shade;
+            return objptr;
+        }
+    } else if (numvert < 0) {
+        numvert = -numvert;
+        for (dest = PhdVBuf; numvert > 0; numvert--, dest++) {
+            shade = *objptr++ + LsAdder;
+            if (shade < 0)
+                shade = 0;
+            else if (shade > 0x1fff)
+                shade = 0x1fff;
+            dest->g = (sint16)shade;
+        }
+    }
+    return objptr;
+}
+
 extern "C" sint16 *calc_roomvert(sint16 *objptr, int far_clip)
 {
     PHD_VBUF *v;
