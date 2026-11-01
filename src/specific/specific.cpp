@@ -170,3 +170,11 @@ extern "C" int S_CDGetLoc(void)
     pos = atol(Var5275f8);
     return (DWORD)(pos - atol(Var5275fc + (GetRealTrack((uint16)cdtrack) - 1) * 18)) * 3 / 40;
 }
+
+extern "C" void S_CDVolume(int volume)
+{
+    if (volume)
+        volume = (volume - 5) * 4;
+    wsprintf(Var5275f8, "setaudio T2 volume to %u", volume);
+    mciSendString(Var5275f8, NULL, 0, NULL);
+}
