@@ -199,6 +199,101 @@ void FireHarpoon(void)
 
 #define ROCKET 248
 
+#define UNDERWATER 1
+#define SMASH_WINDOW 72
+
+sint16 *GetBestFrame(ITEM_INFO *item);
+void SmashWindow(sint16 item_number);
+void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number);
+
+void ControlHarpoonBolt(sint16 item_number)
+{
+    ITEM_INFO *item, *target;
+    sint16 target_number, room_number;
+    sint32 old_x, sx, s, c, ox, sz, old_z, oz, rx, x, rz, z;
+    sint16 *bounds;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+
+    old_z = item->pos.z_pos;
+    old_x = item->pos.x_pos;
+
+    if (!(room[item->room_number].flags & UNDERWATER))
+        item->fallspeed += 3;
+    item->pos.y_pos += item->fallspeed;
+
+    item->pos.z_pos += item->speed * phd_cos(item->pos.y_rot) >> W2V_SHIFT;
+    item->pos.x_pos += item->speed * phd_sin(item->pos.y_rot) >> W2V_SHIFT;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+
+    for (target_number = room[item->room_number].item_number; target_number != NO_ITEM; target_number = target->next_item)
+    {
+        target = &items[target_number];
+        if (target == lara_item || !target->collidable)
+            continue;
+
+        if (target->object_number == SMASH_WINDOW || (target->status != INVISIBLE && objects[target->object_number].collision))
+        {
+            bounds = GetBestFrame(target);
+            if (item->pos.y_pos < target->pos.y_pos + bounds[2] || item->pos.y_pos > target->pos.y_pos + bounds[3])
+                continue;
+
+            c = phd_cos(target->pos.y_rot);
+            s = phd_sin(target->pos.y_rot);
+
+            x = item->pos.x_pos - target->pos.x_pos;
+            z = item->pos.z_pos - target->pos.z_pos;
+            rx = (c * x - s * z) >> W2V_SHIFT;
+
+            ox = old_x - target->pos.x_pos;
+            oz = old_z - target->pos.z_pos;
+            sx = (c * ox - s * oz) >> W2V_SHIFT;
+
+            if ((rx < bounds[0] && sx < bounds[0]) || (rx > bounds[1] && sx > bounds[1]))
+                continue;
+
+            rz = (c * z + s * x) >> W2V_SHIFT;
+            sz = (c * oz + s * ox) >> W2V_SHIFT;
+
+            if ((rz < bounds[4] && sz < bounds[4]) || (rz > bounds[5] && sz > bounds[5]))
+                continue;
+
+            if (target->object_number == SMASH_WINDOW)
+                SmashWindow(target_number);
+            else
+            {
+                if (objects[target->object_number].intelligent)
+                {
+                    DoLotsOfBlood(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 0, 0, item->room_number, 5);
+                    HitTarget(target, NULL, weapons[LG_HARPOON].damage);
+                    savegame.ammo_hit++;
+                }
+                KillItem(item_number);
+                return;
+            }
+        }
+    }
+
+    if (item->pos.y_pos >= item->floor || item->pos.y_pos <= GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos))
+    {
+        KillItem(item_number);
+        return;
+    }
+
+    if (room[item->room_number].flags & UNDERWATER)
+        CreateBubble(&item->pos, item->room_number);
+}
+
+#define ROCKET 248
+
 void FireRocket(void)
 {
     sint16 item_number;
@@ -239,7 +334,6 @@ void FireRocket(void)
     }
 }
 
-#define SMASH_WINDOW 72
 #define EXPLOSION1 229
 #define DRAGON_FRONT 22
 #define BIG_YETI 46
@@ -253,14 +347,14 @@ void CreatureDie(sint16 item_number, int explode);
 
 void ControlRocket(sint16 item_number)
 {
-    FLOOR_INFO *floor;
-    sint16 *bounds;
-    ITEM_INFO *item, *target;
+    sint32 sz, rz, explode, c, s, sx, speed, x, z, oz, rx, ox, radius;
     sint16 room_number, target_number;
-    sint16 fx_number;
-    sint32 old_x, old_y, old_z;
+    ITEM_INFO *item, *target;
     FX_INFO *fx;
-    sint32 speed, c, s, x, z, rx, rz, ox, oz, sx, sz, explode, radius;
+    sint16 *bounds;
+    sint32 old_x, old_z, old_y;
+    FLOOR_INFO *floor;
+    sint16 fx_number;
 
     item = &items[item_number];
 
