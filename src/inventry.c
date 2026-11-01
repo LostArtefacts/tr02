@@ -2,6 +2,7 @@
 
 #include "inventry.h"
 #include "specific/display.h"
+#include "savegame.h"
 
 #define TITLE_RING_OBJECTS 4
 #define OPTION_RING_OBJECTS 3
@@ -17,8 +18,6 @@ extern sint16 InvOptionObjectsCount, InvOptionCurrent;
 extern INVENTORY_ITEM *inv_main_list[];
 extern INVENTORY_ITEM *InvOptionList[];
 extern int GymInvOpenEnabled;
-
-#include "savegame.h"
 
 typedef struct imotion_info {
     sint16 count;
@@ -829,8 +828,6 @@ sint32 AnimateInventoryItem(INVENTORY_ITEM *inv_item)
     SelectMeshes(inv_item);
     return 0;
 }
-
-#include "savegame.h"
 
 #define ALPHABET 255
 #define SHAPE_SPRITE 1
