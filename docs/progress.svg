@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.63% (93)</tspan> · <tspan class="todo">1.48% (18)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.71% (94)</tspan> · <tspan class="todo">1.39% (17)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="672.85" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="672.85" y="0" class="decompiled"/>
-<rect width="56.99" height="6" x="678.98" y="0" class="nonmatching"/>
-<rect width="11.03" height="6" x="735.97" y="0" class="todo"/>
+<rect width="57.60" height="6" x="678.98" y="0" class="nonmatching"/>
+<rect width="10.42" height="6" x="736.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -923,7 +923,7 @@
 <rect width="12" height="12" x="15" y="255" class="named"><title>0x00445970 WinVidSetDisplayAdapter (213 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="255" class="named"><title>0x00445a50 CompareVideoModes (69 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="255" class="named"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="255" class="todo"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="255" class="nonmatching"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="255" class="named"><title>0x00445ec0 WinVidInit (64 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="255" class="nonmatching"><title>0x00445f00 WinVidGetDisplayAdapters (175 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="255" class="named"><title>0x00445fb0 FlaggedStringDelete (19 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.41%</tspan> · <tspan class="todo">4.35%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.69%</tspan> · <tspan class="todo">4.07%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.30" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.30" y="0" class="decompiled"/>
-<rect width="107.67" height="6" x="606.86" y="0" class="nonmatching"/>
-<rect width="32.47" height="6" x="714.53" y="0" class="todo"/>
+<rect width="109.71" height="6" x="606.86" y="0" class="nonmatching"/>
+<rect width="30.43" height="6" x="716.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1373,7 +1373,7 @@
 <rect width="25" height="25.63" x="243.24" y="236.96" class="nonmatching"><title>0x004191a0 ClipRoom (978 bytes)</title></rect>
 <rect width="25" height="25.63" x="243.24" y="265.59" class="todo"><title>0x00440b60 T_DrawThisText (978 bytes)</title></rect>
 <rect width="25" height="25.60" x="243.24" y="294.22" class="named"><title>0x00407620 ins_objectG4 (977 bytes)</title></rect>
-<rect width="25" height="24.66" x="243.24" y="322.82" class="todo"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
+<rect width="25" height="24.66" x="243.24" y="322.82" class="nonmatching"><title>0x00445b00 EnumDisplayModesCallback (945 bytes)</title></rect>
 <rect width="25" height="24.52" x="243.24" y="350.48" class="named"><title>0x00417130 DogControl (940 bytes)</title></rect>
 <rect width="24.52" height="24.88" x="271.25" y="0" class="named"><title>0x00416d80 DiverControl (936 bytes)</title></rect>
 <rect width="24.52" height="24.79" x="271.25" y="27.88" class="nonmatching"><title>0x00448f00 RenderStart (933 bytes)</title></rect>

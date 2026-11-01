@@ -587,11 +587,7 @@ struct DISPLAY_MODE_NODE {
     DISPLAY_MODE_NODE *next;
     DISPLAY_MODE_NODE *previous;
     DISPLAY_MODE body;
-    DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode)
-    {
-        next = nextNode;
-        previous = prevNode;
-    }
+    DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode);
 };
 
 struct DISPLAY_MODE_LIST {
@@ -606,6 +602,7 @@ struct DISPLAY_MODE_LIST {
     void DisplayModeListDelete(void);
     DISPLAY_MODE *InsertDisplayModeInListHead(void);
     DISPLAY_MODE *InsertDisplayModeInListTail(void);
+    void InsertDisplayModeInListSorted(DISPLAY_MODE *mode);
     DISPLAY_MODE_LIST &operator=(const DISPLAY_MODE_LIST &src)
     {
         DISPLAY_MODE_NODE *node;
@@ -1273,6 +1270,98 @@ inline void DISPLAY_MODE_LIST::DisplayModeListDelete(void)
     head = NULL;
     tail = NULL;
     dwCount = 0;
+}
+
+enum VGA_MODE {
+    VGA_NoVga,
+    VGA_256Color,
+    VGA_ModeX,
+    VGA_Standard
+};
+
+inline void DISPLAY_MODE_LIST::InsertDisplayModeInListSorted(DISPLAY_MODE *mode)
+{
+    DISPLAY_MODE_NODE *node;
+    DISPLAY_MODE_NODE *newNode;
+    DISPLAY_MODE_NODE *prev;
+
+    if (!head) {
+        *InsertDisplayModeInListHead() = *mode;
+        return;
+    }
+    for (node = head; node; node = node->next) {
+        if (mode->CompareVideoModes(&node->body)) {
+            prev = node->previous;
+            newNode = new DISPLAY_MODE_NODE(prev, node);
+            newNode->body = *mode;
+            if (prev)
+                prev->next = newNode;
+            else
+                head = newNode;
+            node->previous = newNode;
+            return;
+        }
+    }
+    *InsertDisplayModeInListTail() = *mode;
+}
+
+extern "C" HRESULT WINAPI EnumDisplayModesCallback(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext)
+{
+    DISPLAY_ADAPTER *adapter = (DISPLAY_ADAPTER *)lpContext;
+    DISPLAY_MODE videoMode;
+    int vgaMode;
+    DWORD renderBitDepth;
+    DWORD width;
+    DWORD height;
+    DWORD bpp;
+    bool swRendererSupported;
+
+    if (!(lpDDSurfaceDesc->dwFlags & DDSD_HEIGHT) || !(lpDDSurfaceDesc->dwFlags & DDSD_WIDTH) || !(lpDDSurfaceDesc->dwFlags & DDSD_PIXELFORMAT) || !(lpDDSurfaceDesc->ddpfPixelFormat.dwFlags & DDPF_RGB))
+        return DDENUMRET_OK;
+    width = lpDDSurfaceDesc->dwWidth;
+    height = lpDDSurfaceDesc->dwHeight;
+    bpp = lpDDSurfaceDesc->ddpfPixelFormat.dwRGBBitCount;
+    swRendererSupported = (lpDDSurfaceDesc->ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED8) && bpp == 8;
+    if (swRendererSupported) {
+        if (lpDDSurfaceDesc->ddsCaps.dwCaps & DDSCAPS_MODEX)
+            vgaMode = VGA_ModeX;
+        else if (lpDDSurfaceDesc->ddsCaps.dwCaps & DDSCAPS_STANDARDVGAMODE)
+            vgaMode = VGA_Standard;
+        else
+            vgaMode = VGA_256Color;
+        if (width == 320 && height == 200 && (!adapter->isVgaMode1Presented || vgaMode < adapter->vgaMode1.vga)) {
+            adapter->vgaMode1.width = 320;
+            adapter->vgaMode1.height = 200;
+            adapter->vgaMode1.bpp = bpp;
+            adapter->vgaMode1.vga = vgaMode;
+            adapter->isVgaMode1Presented = true;
+        }
+        if (width == 640 && height == 480 && (!adapter->isVgaMode2Presented || vgaMode < adapter->vgaMode2.vga)) {
+            adapter->vgaMode2.width = 640;
+            adapter->vgaMode2.height = 480;
+            adapter->vgaMode2.bpp = bpp;
+            adapter->vgaMode2.vga = vgaMode;
+            adapter->isVgaMode2Presented = true;
+        }
+    } else {
+        vgaMode = VGA_NoVga;
+    }
+    videoMode.width = width;
+    videoMode.height = height;
+    videoMode.bpp = bpp;
+    videoMode.vga = vgaMode;
+    renderBitDepth = GetRenderBitDepth(bpp);
+    if (adapter->hwRenderSupported && (adapter->D3DHWDeviceDesc.dwDeviceRenderBitDepth & renderBitDepth))
+        adapter->hwDispModeList.InsertDisplayModeInListSorted(&videoMode);
+    if (swRendererSupported)
+        adapter->swDispModeList.InsertDisplayModeInListSorted(&videoMode);
+    return DDENUMRET_OK;
+}
+
+inline DISPLAY_MODE_NODE::DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode)
+{
+    next = nextNode;
+    previous = prevNode;
 }
 
 DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListHead(void)
