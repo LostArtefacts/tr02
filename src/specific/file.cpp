@@ -10,6 +10,10 @@
 #include "hwrender.h"
 #include "winmain.h"
 
+extern "C" {
+#include "../room.h"
+}
+
 extern "C" int LnTextureInfos;
 extern "C" int democount;
 extern "C" uint32 *demoptr;
@@ -91,9 +95,6 @@ extern "C" int LoadTexturePages(HANDLE file)
 }
 
 extern "C" char StringToShow[];
-extern "C" {
-#include "../room.h"
-}
 
 extern "C" char LoadRoomsTooMany[];
 extern "C" char LoadRoomsNoMemory[];
