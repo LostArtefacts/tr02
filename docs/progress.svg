@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">3.92% (49)</tspan> · <tspan class="todo">7.75% (97)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.53% (1095)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4% (50)</tspan> · <tspan class="todo">7.67% (96)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="653.85" height="6" x="0" y="0" class="named"/>
 <rect width="5.97" height="6" x="653.85" y="0" class="decompiled"/>
-<rect width="29.26" height="6" x="659.82" y="0" class="nonmatching"/>
-<rect width="57.92" height="6" x="689.08" y="0" class="todo"/>
+<rect width="29.86" height="6" x="659.82" y="0" class="nonmatching"/>
+<rect width="57.32" height="6" x="689.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1181,7 +1181,7 @@
 <rect width="12" height="12" x="135" y="330" class="named"><title>0x00454600 SE_OptionsDlgProc (138 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="named"><title>0x00454690 SE_OptionsDlgUpdate (564 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="named"><title>0x004548d0 SE_OptionsStrCat (75 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="330" class="todo"><title>0x00454920 SE_AdvancedDlgProc (268 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="330" class="nonmatching"><title>0x00454920 SE_AdvancedDlgProc (268 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="nonmatching"><title>0x00454a30 SE_AdvancedDlgUpdate (169 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="330" class="named"><title>0x00454ae0 SE_AdvancedDlgInit (14 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="330" class="named"><title>0x00454af0 SE_FindSetupDialog (17 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.44%</tspan> · <tspan class="todo">10.84%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.38%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">8.51%</tspan> · <tspan class="todo">10.77%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="600.42" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="600.42" y="0" class="decompiled"/>
-<rect width="63.01" height="6" x="602.98" y="0" class="nonmatching"/>
-<rect width="81.01" height="6" x="665.99" y="0" class="todo"/>
+<rect width="63.59" height="6" x="602.98" y="0" class="nonmatching"/>
+<rect width="80.43" height="6" x="666.57" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1680,7 +1680,7 @@
 <rect width="12.12" height="12.17" x="469.56" y="362.72" class="named"><title>0x0044ee80 do_inventory_options (269 bytes)</title></rect>
 <rect width="12.12" height="12.11" x="469.56" y="377.89" class="named"><title>0x00427f00 lara_as_compress (268 bytes)</title></rect>
 <rect width="11.99" height="12.24" x="484.67" y="113.75" class="named"><title>0x00435c30 CopterControl (268 bytes)</title></rect>
-<rect width="11.99" height="12.24" x="499.67" y="113.75" class="todo"><title>0x00454920 SE_AdvancedDlgProc (268 bytes)</title></rect>
+<rect width="11.99" height="12.24" x="499.67" y="113.75" class="nonmatching"><title>0x00454920 SE_AdvancedDlgProc (268 bytes)</title></rect>
 <rect width="11.94" height="12.24" x="514.66" y="113.75" class="named"><title>0x00442ff0 ControlLavaBlob (267 bytes)</title></rect>
 <rect width="11.94" height="12.24" x="529.59" y="113.75" class="named"><title>0x00445860 WinVidGoWindowed (267 bytes)</title></rect>
 <rect width="11.88" height="12.24" x="544.53" y="113.75" class="named"><title>0x00423b10 InitColours (266 bytes)</title></rect>

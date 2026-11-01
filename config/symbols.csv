@@ -1987,6 +1987,7 @@ address,size,name,symbol
 0x0051bcec,4,OptionsDialogHandle,_OptionsDialogHandle
 0x0051bcf0,1,IsSetupDialogCentered,_IsSetupDialogCentered
 0x0051bcf4,4,ControlsDialogHandle,_ControlsDialogHandle
+0x0051bcf8,4,Var51bcf8,_Var51bcf8
 0x0051bcfc,1,initOnce,_initOnce
 0x0051bd00,4,cheat_turn,_cheat_turn
 0x0051bd04,2,cheat_as,_cheat_as

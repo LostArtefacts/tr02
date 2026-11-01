@@ -613,6 +613,58 @@ extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCST
     *isNext = true;
 }
 
+extern "C" {
+extern HWND ControlsDialogHandle;
+extern HWND Var51bcf8;
+void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam);
+void SE_AdvancedDlgInit(HWND hwndDlg);
+void SE_AdvancedDlgUpdate(HWND hwndDlg);
+}
+
+extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    bool isChecked;
+
+    switch (uMsg)
+    {
+    case WM_INITDIALOG:
+        ControlsDialogHandle = hwndDlg;
+        Var51bcf8 = GetDlgItem(hwndDlg, 1110);
+        SE_AdvancedDlgInit(hwndDlg);
+        return TRUE;
+    case WM_COMMAND:
+        if (HIWORD(wParam) == BN_CLICKED)
+        {
+            isChecked = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_CHECKED;
+            switch (LOWORD(wParam))
+            {
+            case 1103:
+                ChangedAppSettings.Disable16BitTextures = isChecked;
+                break;
+            case 1104:
+                ChangedAppSettings.DontSortPrimitives = isChecked;
+                break;
+            case 1111:
+                ChangedAppSettings.DisableFMV = isChecked;
+                break;
+            case 1107:
+                ChangedAppSettings.TexelAdjustMode = 0;
+                break;
+            case 1108:
+                ChangedAppSettings.TexelAdjustMode = 1;
+                break;
+            case 1109:
+                ChangedAppSettings.TexelAdjustMode = 2;
+                break;
+            }
+            SE_AdvancedDlgUpdate(hwndDlg);
+        }
+        break;
+    }
+    Func457470(Var51bcf8, uMsg, wParam);
+    return FALSE;
+}
+
 inline void SE_CheckButton(HWND hwndDlg, int id, bool check)
 {
     CheckDlgButton(hwndDlg, id, check != 0);
