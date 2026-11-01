@@ -507,6 +507,56 @@ clip:
     InsertClippedPoly_Textured(npoints, zdepth, tex->drawtype + 9, tex->tpage);
 }
 
+extern "C" void InsertClippedPoly_Textured(int vtx_count, float z, int poly_type, int tex_page)
+{
+    uint32 shade;
+    bool zbuf;
+    float k, tu, tv;
+    D3DTLVERTEX *vtx;
+    int i;
+    VERTEX_INFO *vbuf;
+
+    sort3dptr[0] = (sint32)info3dptr;
+    sort3dptr[1] = (sint32)z;
+    sort3dptr += 2;
+    info3dptr[0] = poly_type;
+    info3dptr[1] = tex_page;
+    info3dptr[2] = vtx_count;
+    vtx = HWR_VertexPtr;
+    *(D3DTLVERTEX **)(info3dptr + 3) = vtx;
+    info3dptr += 5;
+    zbuf = SavedAppSettings.ZBuffer;
+    vbuf = VBuffer;
+    for (i = vtx_count; i; i--) {
+        vtx->sx = vbuf->x;
+        vtx->sy = vbuf->y;
+        if (zbuf)
+            vtx->sz = FltResZBuf - FltResZORhw * vbuf->rhw;
+        vtx->rhw = vbuf->rhw;
+        shade = (0x1fff - (int)vbuf->g) >> 4;
+        if (shade > 255)
+            shade = 255;
+        vtx->color = ShadeU(shade, shade, shade);
+        k = 1.0f / 65536.0f / vbuf->rhw;
+        tu = vbuf->u * k;
+        tv = k * vbuf->v;
+        if (tu < 0.0f)
+            tu = 0.0f;
+        else if (tu > 1.0f)
+            tu = 1.0f;
+        if (tv < 0.0f)
+            tv = 0.0f;
+        else if (tv > 1.0f)
+            tv = 1.0f;
+        vtx->tv = tv;
+        vtx->tu = tu;
+        vbuf++;
+        vtx++;
+    }
+    HWR_VertexPtr = vtx;
+    surfacenum++;
+}
+
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype)
 {
     float zdepth;
