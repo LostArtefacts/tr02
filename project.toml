@@ -30,6 +30,7 @@ libs = ["dxguid.lib", "dinput.lib", "dsound.lib", "ddraw.lib", "winmm.lib", "use
         "comctl32.lib", "advapi32.lib", "gdi32.lib", "winplay.lib", "ole32.lib", "libc.lib",
         "kernel32.lib"]
 import_defs = ["config/winplay.def"]  # winplay.dll's 26 imports, from the original's import table
+link_bin = 'C:\msvc5\bin'  # VC5 RTM's link 5.00: its own .idata, so the sections land where the original's do (that was link 5.02)
 
 [symbols]
 manifest = "refs/trx/docs/symbols/tr2-steam.txt"
