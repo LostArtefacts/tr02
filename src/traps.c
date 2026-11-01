@@ -946,6 +946,50 @@ void TeethTrap(sint16 item_number)
     AnimateItem(item);
 }
 
+void FallingCeiling(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    item = &items[item_number];
+
+    if (item->current_anim_state == TRAP_SET)
+    {
+        item->goal_anim_state = TRAP_ACTIVATE;
+        item->gravity_status = 1;
+    }
+    else if (item->current_anim_state == TRAP_ACTIVATE)
+    {
+        if (item->touch_bits)
+        {
+            lara_item->hit_points -= FALLING_CEILING_DAMAGE;
+            lara_item->hit_status = 1;
+        }
+    }
+
+    AnimateItem(item);
+    if (item->status == DEACTIVATED)
+    {
+        RemoveActiveItem(item_number);
+        return;
+    }
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+
+    if (item->current_anim_state == TRAP_ACTIVATE && item->pos.y_pos >= item->floor)
+    {
+        item->goal_anim_state = TRAP_WORKING;
+        item->pos.y_pos = item->floor;
+        item->fallspeed = 0;
+        item->gravity_status = 0;
+    }
+}
+
 void DartEmitterControl(sint16 item_num)
 {
     ITEM_INFO *item, *dart;
@@ -1061,50 +1105,6 @@ void DartEffectControl(sint16 fx_num)
         fx->frame_number--;
         if (fx->frame_number <= objects[fx->object_number].nmeshes)
             KillEffect(fx_num);
-    }
-}
-
-void FallingCeiling(sint16 item_number)
-{
-    ITEM_INFO *item;
-    FLOOR_INFO *floor;
-    sint16 room_number;
-
-    item = &items[item_number];
-
-    if (item->current_anim_state == TRAP_SET)
-    {
-        item->goal_anim_state = TRAP_ACTIVATE;
-        item->gravity_status = 1;
-    }
-    else if (item->current_anim_state == TRAP_ACTIVATE)
-    {
-        if (item->touch_bits)
-        {
-            lara_item->hit_points -= FALLING_CEILING_DAMAGE;
-            lara_item->hit_status = 1;
-        }
-    }
-
-    AnimateItem(item);
-    if (item->status == DEACTIVATED)
-    {
-        RemoveActiveItem(item_number);
-        return;
-    }
-
-    room_number = item->room_number;
-    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
-    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
-    if (room_number != item->room_number)
-        ItemNewRoom(item_number, room_number);
-
-    if (item->current_anim_state == TRAP_ACTIVATE && item->pos.y_pos >= item->floor)
-    {
-        item->goal_anim_state = TRAP_WORKING;
-        item->pos.y_pos = item->floor;
-        item->fallspeed = 0;
-        item->gravity_status = 0;
     }
 }
 
