@@ -1067,33 +1067,6 @@ int SkidooControl(void)
     return SkidooCheckGetOff();
 }
 
-void InitialiseSkidman(sint16 item_number)
-{
-    sint16 skidoo_item;
-    ITEM_INFO *item, *skidoo;
-
-    skidoo_item = CreateItem();
-    if (skidoo_item != NO_ITEM) {
-        item = &items[item_number];
-        skidoo = &items[skidoo_item];
-        skidoo->object_number = BANDIT3;
-        skidoo->pos.x_pos = item->pos.x_pos;
-        skidoo->pos.y_pos = item->pos.y_pos;
-        skidoo->pos.z_pos = item->pos.z_pos;
-        skidoo->pos.y_rot = item->pos.y_rot;
-        skidoo->room_number = item->room_number;
-        skidoo->flags = NOT_VISIBLE;
-        skidoo->shade = -1;
-
-        InitialiseItem(skidoo_item);
-
-        item->data = (void *)skidoo_item;
-
-        level_items++;
-    } else
-        S_ExitSystem("FATAL: Cannot create SKIDOO for SKIDMAN");
-}
-
 #define SKID_TRACK 91
 
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
@@ -1198,6 +1171,33 @@ void DrawSkidoo(ITEM_INFO *item)
         }
     }
     phd_PopMatrix();
+}
+
+void InitialiseSkidman(sint16 item_number)
+{
+    sint16 skidoo_item;
+    ITEM_INFO *item, *skidoo;
+
+    skidoo_item = CreateItem();
+    if (skidoo_item != NO_ITEM) {
+        item = &items[item_number];
+        skidoo = &items[skidoo_item];
+        skidoo->object_number = BANDIT3;
+        skidoo->pos.x_pos = item->pos.x_pos;
+        skidoo->pos.y_pos = item->pos.y_pos;
+        skidoo->pos.z_pos = item->pos.z_pos;
+        skidoo->pos.y_rot = item->pos.y_rot;
+        skidoo->room_number = item->room_number;
+        skidoo->flags = NOT_VISIBLE;
+        skidoo->shade = -1;
+
+        InitialiseItem(skidoo_item);
+
+        item->data = (void *)skidoo_item;
+
+        level_items++;
+    } else
+        S_ExitSystem("FATAL: Cannot create SKIDOO for SKIDMAN");
 }
 
 sint16 *GetBestFrame(ITEM_INFO *item);
