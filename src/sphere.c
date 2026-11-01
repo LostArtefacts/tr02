@@ -1,4 +1,5 @@
 #include "game.h"
+#include "box.h"
 
 int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem)
 {
@@ -195,4 +196,15 @@ void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint)
     vec->y = (*(phd_mxptr + M13) >> W2V_SHIFT) + item->pos.y_pos;
     vec->z = (*(phd_mxptr + M23) >> W2V_SHIFT) + item->pos.z_pos;
     phd_PopMatrix();
+}
+
+void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite)
+{
+    PHD_VECTOR pos;
+
+    pos.x = bite->x;
+    pos.y = bite->y;
+    pos.z = bite->z;
+    GetJointAbsPosition(item, &pos, bite->mesh_num);
+    DoBloodSplat(pos.x, pos.y, pos.z, item->speed, item->pos.y_rot, item->room_number);
 }
