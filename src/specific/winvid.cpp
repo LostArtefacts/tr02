@@ -654,9 +654,6 @@ typedef struct DISPLAY_ADAPTER_NODE {
     struct DISPLAY_ADAPTER_NODE *next;
     struct DISPLAY_ADAPTER_NODE *previous;
     DISPLAY_ADAPTER body;
-    DISPLAY_ADAPTER_NODE(DISPLAY_ADAPTER_NODE *prevNode, DISPLAY_ADAPTER_NODE *nextNode) : next(nextNode), previous(prevNode)
-    {
-    }
 } DISPLAY_ADAPTER_NODE;
 
 typedef struct {
@@ -1044,7 +1041,11 @@ extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriver
         driverCaps.dwSize = sizeof(DDCAPS);
         helCaps.dwSize = sizeof(DDCAPS);
         if (!DX_TRY(DDraw->GetCaps(&driverCaps, &helCaps))) {
-            node = new DISPLAY_ADAPTER_NODE(list->tail, NULL);
+            node = new DISPLAY_ADAPTER_NODE;
+            if (node) {
+                node->next = NULL;
+                node->previous = list->tail;
+            }
             if (list->tail)
                 list->tail->next = node;
             else
