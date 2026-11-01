@@ -146,3 +146,17 @@ extern "C" void S_CDStop(void)
         cdtrack = 0;
     }
 }
+
+extern "C" int StartSyncedAudio(int num)
+{
+    int track;
+    char *entry;
+
+    cdtrack = num;
+    track = GetRealTrack(num);
+    if (mciSendString("set T2 time format ms", NULL, 0, NULL))
+        return 0;
+    entry = Var5275fc + (track - 1) * 18;
+    wsprintf(Var5275f8, "play T2 from %s to %s", entry, entry + 9);
+    return !mciSendString(Var5275f8, NULL, 0, NULL);
+}

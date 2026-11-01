@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">6.97% (85)</tspan> · <tspan class="todo">2.13% (26)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.07% (1098)</tspan> · <tspan class="decompiled">0.82% (10)</tspan> · <tspan class="nonmatching">7.05% (86)</tspan> · <tspan class="todo">2.05% (25)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="672.85" height="6" x="0" y="0" class="named"/>
 <rect width="6.13" height="6" x="672.85" y="0" class="decompiled"/>
-<rect width="52.09" height="6" x="678.98" y="0" class="nonmatching"/>
-<rect width="15.93" height="6" x="731.07" y="0" class="todo"/>
+<rect width="52.70" height="6" x="678.98" y="0" class="nonmatching"/>
+<rect width="15.32" height="6" x="731.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1205,7 +1205,7 @@
 <rect width="12" height="12" x="495" y="330" class="nonmatching"><title>0x00455640 S_CDLoop (119 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="nonmatching"><title>0x004556e0 S_CDPlay (112 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="330" class="nonmatching"><title>0x00455760 S_CDStop (48 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="330" class="todo"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="330" class="nonmatching"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="330" class="todo"><title>0x00455830 S_CDGetLoc (99 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="330" class="todo"><title>0x004558a0 S_CDVolume (55 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="330" class="todo"><title>0x004558d7 Func4558d7 (10 bytes)</title></rect>
@@ -1292,12 +1292,12 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.23%</tspan> · <tspan class="todo">4.53%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.90%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.26%</tspan> · <tspan class="todo">4.50%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.30" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="604.30" y="0" class="decompiled"/>
-<rect width="106.30" height="6" x="606.86" y="0" class="nonmatching"/>
-<rect width="33.84" height="6" x="713.16" y="0" class="todo"/>
+<rect width="106.55" height="6" x="606.86" y="0" class="nonmatching"/>
+<rect width="33.59" height="6" x="713.41" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1965,7 +1965,7 @@
 <rect width="6.97" height="6.54" x="651.60" y="218.62" class="named"><title>0x00420e80 InitialiseHair (116 bytes)</title></rect>
 <rect width="6.97" height="6.54" x="661.57" y="218.62" class="named"><title>0x0044be50 FMV_Play (116 bytes)</title></rect>
 <rect width="6.88" height="6.54" x="671.54" y="218.62" class="named"><title>0x00444d20 GameWindowCalculateSizeFromClient (115 bytes)</title></rect>
-<rect width="6.88" height="6.54" x="681.42" y="218.62" class="todo"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
+<rect width="6.88" height="6.54" x="681.42" y="218.62" class="nonmatching"><title>0x004557a0 StartSyncedAudio (115 bytes)</title></rect>
 <rect width="6.80" height="6.54" x="691.30" y="218.62" class="named"><title>0x004011d0 phd_LookAt (114 bytes)</title></rect>
 <rect width="6.80" height="6.54" x="701.10" y="218.62" class="named"><title>0x0041c7d0 Richochet (114 bytes)</title></rect>
 <rect width="6.80" height="6.54" x="710.90" y="218.62" class="named"><title>0x00427770 LookLeftRight (114 bytes)</title></rect>
