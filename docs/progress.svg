@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.37% (1093)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4.72% (59)</tspan> · <tspan class="todo">7.11% (89)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.45% (1094)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">4.72% (59)</tspan> · <tspan class="todo">7.03% (88)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="652.65" height="6" x="0" y="0" class="named"/>
-<rect width="5.97" height="6" x="652.65" y="0" class="decompiled"/>
-<rect width="35.23" height="6" x="658.63" y="0" class="nonmatching"/>
-<rect width="53.14" height="6" x="693.86" y="0" class="todo"/>
+<rect width="653.25" height="6" x="0" y="0" class="named"/>
+<rect width="5.97" height="6" x="653.25" y="0" class="decompiled"/>
+<rect width="35.23" height="6" x="659.22" y="0" class="nonmatching"/>
+<rect width="52.55" height="6" x="694.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1273,7 +1273,7 @@
 <rect width="12" height="12" x="15" y="360" class="named"><title>0x00457140 SE_UpdateBitmapPalette (28 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="360" class="named"><title>0x00457160 SE_ChangeBitmapPalette (87 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="360" class="named"><title>0x004571c0 SE_RegisterSetupWindowClass (97 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="360" class="todo"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="360" class="named"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="360" class="decompiled"><title>0x00457470 Func457470 (38 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="360" class="named"><title>0x004574a0 UT_MemBlt (110 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="360" class="named"><title>0x00457510 phd_PushMatrix (30 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.35%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">9.55%</tspan> · <tspan class="todo">9.75%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.52%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">9.55%</tspan> · <tspan class="todo">9.59%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="600.24" height="6" x="0" y="0" class="named"/>
-<rect width="2.56" height="6" x="600.24" y="0" class="decompiled"/>
-<rect width="71.35" height="6" x="602.80" y="0" class="nonmatching"/>
-<rect width="72.85" height="6" x="674.15" y="0" class="todo"/>
+<rect width="601.47" height="6" x="0" y="0" class="named"/>
+<rect width="2.56" height="6" x="601.47" y="0" class="decompiled"/>
+<rect width="71.35" height="6" x="604.03" y="0" class="nonmatching"/>
+<rect width="71.62" height="6" x="675.38" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.85" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1481,7 +1481,7 @@
 <rect width="18.90" height="19.61" x="578.45" y="0" class="named"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
 <rect width="18.52" height="19.61" x="600.35" y="0" class="todo"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
 <rect width="18.49" height="19.61" x="621.87" y="0" class="named"><title>0x004496c0 GameApplySettings (570 bytes)</title></rect>
-<rect width="18.49" height="19.61" x="643.36" y="0" class="todo"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
+<rect width="18.49" height="19.61" x="643.36" y="0" class="named"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
 <rect width="18.41" height="19.61" x="664.84" y="0" class="named"><title>0x00433f20 TestBlockPull (568 bytes)</title></rect>
 <rect width="18.26" height="19.61" x="686.26" y="0" class="named"><title>0x004388f0 KeyHoleCollision (564 bytes)</title></rect>
 <rect width="18.26" height="19.61" x="707.52" y="0" class="named"><title>0x00454690 SE_OptionsDlgUpdate (564 bytes)</title></rect>
