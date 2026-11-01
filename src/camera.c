@@ -1,3 +1,5 @@
+#include <windows.h>
+#include <windowsx.h>
 #include "game.h"
 #include "box.h"
 

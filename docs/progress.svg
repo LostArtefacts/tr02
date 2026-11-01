@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">91.14% (1111)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.14% (87)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">91.22% (1112)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.05% (86)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="680.82" height="6" x="0" y="0" class="named"/>
-<rect width="12.87" height="6" x="680.82" y="0" class="decompiled"/>
-<rect width="53.31" height="6" x="693.69" y="0" class="nonmatching"/>
+<rect width="681.43" height="6" x="0" y="0" class="named"/>
+<rect width="12.87" height="6" x="681.43" y="0" class="decompiled"/>
+<rect width="52.70" height="6" x="694.30" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -200,7 +200,7 @@
 <rect width="12" height="12" x="435" y="30" class="named"><title>0x004113d0 ChaseCamera (237 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="named"><title>0x004114c0 ShiftClamp (414 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="30" class="named"><title>0x00411660 CombatCamera (398 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="30" class="nonmatching"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="30" class="named"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="named"><title>0x004119e0 FixedCamera (153 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="named"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="30" class="named"><title>0x00411f30 SetCutsceneTrack (10 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.26%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">17.31%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.40%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">17.17%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="614.47" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="614.47" y="0" class="decompiled"/>
-<rect width="129.29" height="6" x="617.71" y="0" class="nonmatching"/>
+<rect width="615.51" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="615.51" y="0" class="decompiled"/>
+<rect width="128.25" height="6" x="618.75" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1487,7 +1487,7 @@
 <rect width="17.43" height="16.74" x="434.21" y="22.03" class="nonmatching"><title>0x00453560 SE_GraphicsDlgFullScreenModesUpdate (492 bytes)</title></rect>
 <rect width="17.31" height="16.74" x="454.64" y="22.03" class="named"><title>0x0041fa40 GF_LoadScriptFile (489 bytes)</title></rect>
 <rect width="17.22" height="16.74" x="474.95" y="22.03" class="named"><title>0x004016c0 phd_RotYXZpack (487 bytes)</title></rect>
-<rect width="17.01" height="16.74" x="495.17" y="22.03" class="nonmatching"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
+<rect width="17.01" height="16.74" x="495.17" y="22.03" class="named"><title>0x004117f0 LookCamera (482 bytes)</title></rect>
 <rect width="17.01" height="16.74" x="515.18" y="22.03" class="named"><title>0x00424dc0 Inv_GetItemOption (482 bytes)</title></rect>
 <rect width="16.97" height="16.74" x="535.20" y="22.03" class="named"><title>0x0041c2c0 EelControl (481 bytes)</title></rect>
 <rect width="16.93" height="16.74" x="555.17" y="22.03" class="named"><title>0x00446870 WinVidResizeGameWindow (480 bytes)</title></rect>
