@@ -3,6 +3,7 @@
 [game]
 name = "tomb2"
 title = "Tomb Raider II"
+progress_exclude = ["*_thunk", "c_dfDIKeyboard"]  # import thunks the linker writes, and data
 window_title = "Tomb Raider II"
 dir = "orig/tomb2"
 exe = "Tomb2.exe"
