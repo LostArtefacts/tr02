@@ -1138,10 +1138,10 @@ address,size,name,symbol
 0x004557a0,115,StartSyncedAudio,_StartSyncedAudio
 0x00455830,99,S_CDGetLoc,_S_CDGetLoc
 0x004558a0,55,S_CDVolume,_S_CDVolume
-0x004558d7,10,Func4558d7,
-0x004558e1,36,Func4558e1,
-0x00455905,29,Func455905,
-0x00455922,24,Func455922,
+0x004558d7,10,Func4558d7,_Func4558d7
+0x004558e1,36,Func4558e1,_Func4558e1
+0x00455905,29,Func455905,_Func455905
+0x00455922,24,Func455922,_Func455922
 0x00455940,73,Func455940,_Func455940
 0x00455990,311,CopyBitmapPalette,_CopyBitmapPalette
 0x00455ad0,200,SWR_FindNearestPaletteEntry,_SWR_FindNearestPaletteEntry
@@ -1179,7 +1179,7 @@ address,size,name,symbol
 0x004568e0,44,UT_FindArg,?UT_FindArg@@YAPADPAD@Z
 0x00456910,24,UT_ErrorBox,?UT_ErrorBox@@YAXPADPAX@Z
 0x00456930,66,UT_ErrorBox,?UT_ErrorBox@@YAXHPAX@Z
-0x00456972,172,Func456972,
+0x00456972,172,Func456972,_Func456972
 0x00456a20,81,GuidBinaryToString,_GuidBinaryToString
 0x00456a80,170,GuidStringToBinary,_GuidStringToBinary
 0x00456b30,48,OpenRegistryKey,_OpenRegistryKey
