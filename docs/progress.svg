@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">1.64% (20)</tspan> · <tspan class="nonmatching">8.20% (100)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">8.12% (99)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="673.46" height="6" x="0" y="0" class="named"/>
-<rect width="12.26" height="6" x="673.46" y="0" class="decompiled"/>
-<rect width="61.28" height="6" x="685.72" y="0" class="nonmatching"/>
+<rect width="12.87" height="6" x="673.46" y="0" class="decompiled"/>
+<rect width="60.67" height="6" x="686.33" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -91,7 +91,7 @@
 <rect width="12" height="12" x="300" y="0" class="named"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="0" class="named"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="0" class="nonmatching"><title>0x00402620 Func402620 (83 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="0" class="decompiled"><title>0x00402620 Func402620 (83 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="named"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="named"><title>0x004026d0 phd_SetFarZ (24 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="0" class="named"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.41%</tspan> · <tspan class="nonmatching">18.68%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">18.65%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.42" height="6" x="0" y="0" class="named"/>
-<rect width="3.07" height="6" x="604.42" y="0" class="decompiled"/>
-<rect width="139.51" height="6" x="607.49" y="0" class="nonmatching"/>
+<rect width="3.25" height="6" x="604.42" y="0" class="decompiled"/>
+<rect width="139.33" height="6" x="607.67" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2068,7 +2068,7 @@
 <rect width="5.19" height="5.41" x="618.23" y="254.72" class="named"><title>0x004285a0 lara_as_fastdive (84 bytes)</title></rect>
 <rect width="5.19" height="5.41" x="618.23" y="263.12" class="named"><title>0x0043d650 DoDynamics (84 bytes)</title></rect>
 <rect width="5.19" height="5.41" x="618.23" y="271.53" class="named"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
-<rect width="5.19" height="5.31" x="618.23" y="279.93" class="nonmatching"><title>0x00402620 Func402620 (83 bytes)</title></rect>
+<rect width="5.19" height="5.31" x="618.23" y="279.93" class="decompiled"><title>0x00402620 Func402620 (83 bytes)</title></rect>
 <rect width="5.19" height="5.31" x="618.23" y="288.24" class="named"><title>0x00432460 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="5.19" height="5.31" x="618.23" y="296.55" class="named"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
 <rect width="5.19" height="5.31" x="618.23" y="304.85" class="named"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>
