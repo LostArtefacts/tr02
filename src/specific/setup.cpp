@@ -261,6 +261,18 @@ typedef struct
     uint8 pad[0x3ce];
     SETUP_MODE_LIST hwDispModeList;
     SETUP_MODE_LIST swDispModeList;
+    DISPLAY_MODE vgaMode1;
+    DISPLAY_MODE vgaMode2;
+    DWORD screenWidth;
+    bool hwRenderSupported;
+    bool swWindowedSupported;
+    bool hwWindowedSupported;
+    bool isVgaMode1Presented;
+    bool isVgaMode2Presented;
+    bool perspectiveCorrectSupported;
+    bool ditherSupported;
+    bool zBufferSupported;
+    bool linearFilterSupported;
 } SETUP_ADAPTER_BODY;
 
 typedef struct
@@ -813,6 +825,152 @@ extern "C" void SE_GraphicsAdapterSet(HWND hwndDlg, void *adapter)
     SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
 }
 
+inline void SE_EnableItem(HWND hwndDlg, int id, bool enable)
+{
+    EnableWindow(GetDlgItem(hwndDlg, id), enable);
+}
+
+inline void SE_CheckItem(HWND hwndDlg, int id, bool enable, bool check)
+{
+    HWND item = GetDlgItem(hwndDlg, id);
+    EnableWindow(item, enable);
+    SendMessage(item, BM_SETCHECK, check, 0);
+}
+
+inline bool IsModeListEmpty(SETUP_MODE_LIST *list)
+{
+    return list->count == 0;
+}
+
+extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
+{
+    SETUP_ADAPTER_BODY *body;
+    HWND sizeItem;
+    bool swAvailable, hwAvailable, swFullScreen, hwFullScreen;
+    bool perspective, dither, zbuffer, bilinear, triple;
+    bool windowed, fullscreen, modeList, manyModes, windowSize, render;
+    char buf[16];
+
+    body = &((SETUP_ADAPTER_ITEM *)ChangedAppSettings.PreferredDisplayAdapter)->body;
+    swFullScreen = !IsModeListEmpty(&body->swDispModeList);
+    swAvailable = swFullScreen || body->swWindowedSupported;
+    hwFullScreen = !IsModeListEmpty(&body->hwDispModeList);
+    hwAvailable = hwFullScreen || body->hwWindowedSupported;
+    if ((ChangedAppSettings.RenderMode == 1 && !swAvailable) || (ChangedAppSettings.RenderMode == 2 && !hwAvailable))
+        ChangedAppSettings.RenderMode = 0;
+    if (ChangedAppSettings.RenderMode == 0)
+    {
+        if (hwAvailable)
+            ChangedAppSettings.RenderMode = 2;
+        else if (swAvailable)
+            ChangedAppSettings.RenderMode = 1;
+        SE_GraphicsDlgFullScreenModesUpdate(hwndDlg);
+    }
+    switch (ChangedAppSettings.RenderMode)
+    {
+    case 1:
+        perspective = true;
+        dither = false;
+        zbuffer = false;
+        bilinear = false;
+        windowed = body->swWindowedSupported;
+        fullscreen = swFullScreen;
+        manyModes = body->swDispModeList.count > 1;
+        triple = true;
+        break;
+    case 2:
+        perspective = body->perspectiveCorrectSupported;
+        dither = body->ditherSupported;
+        zbuffer = body->zBufferSupported;
+        bilinear = body->linearFilterSupported;
+        windowed = body->hwWindowedSupported;
+        fullscreen = hwFullScreen;
+        manyModes = body->hwDispModeList.count > 1;
+        triple = true;
+        break;
+    default:
+        perspective = false;
+        dither = false;
+        zbuffer = false;
+        bilinear = false;
+        windowed = false;
+        fullscreen = false;
+        triple = false;
+        break;
+    }
+    if (!windowed)
+        ChangedAppSettings.FullScreen = true;
+    else if (!fullscreen)
+        ChangedAppSettings.FullScreen = false;
+    if (!ChangedAppSettings.FullScreen)
+        triple = false;
+    if (!perspective)
+        ChangedAppSettings.PerspectiveCorrect = false;
+    if (!dither)
+        ChangedAppSettings.Dither = false;
+    if (!zbuffer)
+        ChangedAppSettings.ZBuffer = false;
+    if (!bilinear)
+        ChangedAppSettings.BilinearFiltering = false;
+    if (!triple)
+        ChangedAppSettings.TripleBuffering = false;
+
+    render = ChangedAppSettings.RenderMode != 0;
+    SE_EnableItem(hwndDlg, 1049, render);
+    SE_CheckItem(hwndDlg, 1045, swAvailable, ChangedAppSettings.RenderMode == 1);
+    SE_CheckItem(hwndDlg, 1047, hwAvailable, ChangedAppSettings.RenderMode == 2);
+    SE_CheckItem(hwndDlg, 1015, perspective, ChangedAppSettings.PerspectiveCorrect);
+    SE_CheckItem(hwndDlg, 1058, dither, ChangedAppSettings.Dither);
+    SE_CheckItem(hwndDlg, 1048, triple, ChangedAppSettings.TripleBuffering);
+    SE_CheckItem(hwndDlg, 1017, zbuffer, ChangedAppSettings.ZBuffer);
+    SE_CheckItem(hwndDlg, 1018, bilinear, ChangedAppSettings.BilinearFiltering);
+    SE_EnableItem(hwndDlg, 1050, windowed || fullscreen);
+    SE_CheckItem(hwndDlg, 1031, windowed, !ChangedAppSettings.FullScreen && windowed);
+    SE_CheckItem(hwndDlg, 1030, fullscreen, ChangedAppSettings.FullScreen && fullscreen);
+    modeList = ChangedAppSettings.RenderMode != 0 && ChangedAppSettings.FullScreen;
+    SE_EnableItem(hwndDlg, 1038, modeList);
+    SE_EnableItem(hwndDlg, 1000, modeList && manyModes);
+
+    sizeItem = GetDlgItem(hwndDlg, 1034);
+    windowSize = !ChangedAppSettings.FullScreen && body->screenWidth;
+    SE_EnableItem(hwndDlg, 1037, windowSize);
+    EnableWindow(sizeItem, windowSize);
+    SE_EnableItem(hwndDlg, 1039, windowSize);
+    SE_EnableItem(hwndDlg, 1040, windowSize);
+    SE_EnableItem(hwndDlg, 1035, windowSize);
+    SE_CheckItem(hwndDlg, 1060, windowSize, ChangedAppSettings.AspectMode == 0);
+    SE_CheckItem(hwndDlg, 1061, windowSize, ChangedAppSettings.AspectMode == 1);
+    SE_CheckItem(hwndDlg, 1062, windowSize, ChangedAppSettings.AspectMode == 2);
+    if (body->screenWidth)
+    {
+        SendMessage(sizeItem, TBM_SETRANGE, TRUE, MAKELONG(0, (body->screenWidth - 320) >> 5));
+        ChangedAppSettings.WindowWidth = (SendMessage(sizeItem, TBM_GETPOS, 0, 0) + 10) << 5;
+        switch (ChangedAppSettings.AspectMode)
+        {
+        case 0:
+            ChangedAppSettings.WindowHeight = ChangedAppSettings.WindowWidth * 3 >> 2;
+            break;
+        case 1:
+            ChangedAppSettings.WindowHeight = ChangedAppSettings.WindowWidth * 9 >> 4;
+            break;
+        case 2:
+            ChangedAppSettings.WindowHeight = ChangedAppSettings.WindowWidth * SavedAppSettings.WindowHeight / SavedAppSettings.WindowHeight;
+            break;
+        }
+        sprintf(buf, "%dx%d", ChangedAppSettings.WindowWidth, ChangedAppSettings.WindowHeight);
+    }
+    else
+    {
+        buf[0] = 0;
+    }
+    SetDlgItemText(hwndDlg, 1035, buf);
+    render = ChangedAppSettings.RenderMode != 0;
+    SE_EnableItem(hwndDlg, 1051, render);
+    SE_EnableItem(hwndDlg, 1044, render);
+    SE_EnableItem(hwndDlg, 1029, render);
+    SE_EnableItem(hwndDlg, 1043, render);
+}
+
 extern "C" {
 extern SETUP_ADAPTER_NODE *SE_DisplayAdapter;
 extern DISPLAY_MODE SE_FullScreenMode;
@@ -1152,18 +1310,6 @@ typedef struct
 } SETUP_SOUND_LIST;
 
 extern "C" SETUP_SOUND_LIST SoundAdapterList;
-
-inline void SE_EnableItem(HWND hwndDlg, int id, bool enable)
-{
-    EnableWindow(GetDlgItem(hwndDlg, id), enable);
-}
-
-inline void SE_CheckItem(HWND hwndDlg, int id, bool enable, bool check)
-{
-    HWND item = GetDlgItem(hwndDlg, id);
-    EnableWindow(item, enable);
-    SendMessage(item, BM_SETCHECK, check, 0);
-}
 
 extern "C" void SE_SoundDlgUpdate(HWND hwndDlg)
 {
