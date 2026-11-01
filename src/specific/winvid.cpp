@@ -569,6 +569,12 @@ struct STRING_FLAGGED {
     }
 };
 
+inline STRING_FLAGGED::~STRING_FLAGGED()
+{
+    if (isPresented)
+        delete[] lpString;
+}
+
 struct DISPLAY_MODE {
     int width;
     int height;
@@ -593,6 +599,10 @@ struct DISPLAY_MODE_LIST {
     DISPLAY_MODE_NODE *tail;
     DWORD dwCount;
     DISPLAY_MODE_LIST();
+    ~DISPLAY_MODE_LIST()
+    {
+        DisplayModeListDelete();
+    }
     void DisplayModeListDelete(void);
     DISPLAY_MODE *InsertDisplayModeInListHead(void);
     DISPLAY_MODE *InsertDisplayModeInListTail(void);
@@ -974,6 +984,37 @@ extern "C" bool WinVidInit(void)
     return WinVidRegisterGameWindowClass() && WinVidCreateGameWindow() && WinVidGetDisplayAdapters() && DisplayAdapterList.dwCount && WinVidGetDisplayModes();
 }
 
+extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterList);
+extern "C" DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
+
+#pragma inline_depth(4)
+extern "C" bool WinVidGetDisplayAdapters(void)
+{
+    DISPLAY_ADAPTER_NODE *node;
+    DISPLAY_ADAPTER_NODE *nextNode;
+
+    for (node = DisplayAdapterList.head; node; node = nextNode)
+    {
+        nextNode = node->next;
+        delete node;
+    }
+    DisplayAdapterList.head = NULL;
+    DisplayAdapterList.tail = NULL;
+    DisplayAdapterList.dwCount = 0;
+    if (!EnumerateDisplayAdapters(&DisplayAdapterList))
+        return false;
+    for (node = DisplayAdapterList.head; node; node = node->next)
+    {
+        if (!node->body.lpAdapterGuid)
+        {
+            PrimaryDisplayAdapter = node;
+            return true;
+        }
+    }
+    return false;
+}
+
+#pragma inline_depth(3)
 extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterList)
 {
     if (DX_TRY(DirectDrawEnumerate(EnumDisplayAdaptersCallback, displayAdapterList)))
@@ -1146,12 +1187,6 @@ void COLOR_BIT_MASKS::WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat)
     BitMaskGetNumberOfBits(dwGBitMask, &dwGBitDepth, &dwGBitOffset);
     BitMaskGetNumberOfBits(dwBBitMask, &dwBBitDepth, &dwBBitOffset);
     BitMaskGetNumberOfBits(dwRGBAlphaBitMask, &dwRGBAlphaBitDepth, &dwRGBAlphaBitOffset);
-}
-
-STRING_FLAGGED::~STRING_FLAGGED()
-{
-    if (isPresented)
-        delete[] lpString;
 }
 
 DISPLAY_ADAPTER_INFO::DISPLAY_ADAPTER_INFO() : driverDescription(256), driverName(256)
