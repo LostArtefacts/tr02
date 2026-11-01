@@ -965,6 +965,8 @@ address,size,name,symbol
 0x0044af50,613,LoadSamples,_LoadSamples
 0x0044b1c0,54,ChangeFileNameExtension,_ChangeFileNameExtension
 0x0044b200,38,GetFullPath,_GetFullPath
+0x0044b226,,Var44b226,_Var44b226
+0x0044b27e,,Var44b27e,_Var44b27e
 0x0044b310,586,LoadLevel,?LoadLevel@@YAHPADH@Z
 0x0044b560,24,S_LoadLevelFile,_S_LoadLevelFile
 0x0044b580,42,S_UnloadLevelFile,_S_UnloadLevelFile
@@ -1584,6 +1586,8 @@ address,size,name,symbol
 0x00466240,16,right_gun,_right_gun
 0x00466278,,tracksRemoved,_tracksRemoved
 0x00466280,16,spider_bite,_spider_bite
+0x00466290,,T_textSpacing,_T_textSpacing
+0x00466300,,T_remapASCII,_T_remapASCII
 0x00466360,16,teeth1a,_teeth1a
 0x00466370,16,teeth1b,_teeth1b
 0x00466380,16,teeth2a,_teeth2a

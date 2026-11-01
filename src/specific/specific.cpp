@@ -196,3 +196,13 @@ extern "C" bool Func4558e1(uint32 c)
         return false;
     return true;
 }
+
+extern "C" uint8 T_remapASCII[];
+extern "C" uint8 Var44b226[];
+
+extern "C" uint32 Func455905(uint32 c)
+{
+    if (Func4558e1(c))
+        return T_remapASCII[c - 32];
+    return Var44b226[c - 0xa8];
+}
