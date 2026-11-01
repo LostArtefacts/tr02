@@ -1563,7 +1563,10 @@ address,size,name,symbol
 0x00465fd0,16,bandit_gun,_bandit_gun
 0x00465fe0,16,bandit2_gun,_bandit2_gun
 0x00465ff0,24,PickUpBounds,_PickUpBounds
+0x00466008,12,PickUpPosition,_PickUpPosition
 0x00466018,24,GongBounds,_GongBounds
+0x00466030,24,PickUpBoundsUW,_PickUpBoundsUW
+0x00466048,12,PickUpPositionUW,_PickUpPositionUW
 0x00466058,24,Switch1Bounds,_Switch1Bounds
 0x00466070,12,SmallSwitchPosition,_SmallSwitchPosition
 0x00466080,12,PushSwitchPosition,_PushSwitchPosition

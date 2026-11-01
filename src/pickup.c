@@ -1,4 +1,5 @@
 #include "game.h"
+#include "savegame.h"
 
 enum switch_states { SS_OFF, SS_ON };
 
@@ -6,6 +7,156 @@ int MoveLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
 void AnimateLara(ITEM_INFO *item);
 extern sint16 Switch2Bounds[];
 extern PHD_VECTOR Switch2Position;
+
+#define FLARE_ITEM 152
+#define SECRET1 190
+#define SECRET2 191
+#define SECRET3 192
+
+extern sint16 PickUpBounds[];
+extern PHD_VECTOR PickUpPosition;
+extern sint16 PickUpBoundsUW[];
+extern PHD_VECTOR PickUpPositionUW;
+extern uint32 CurrentLevel;
+void AddDisplayPickup(sint16 objnum);
+int Inv_AddItem(int itemNum);
+void GF_ModifyInventory(int level, int type);
+void RemoveDrawnItem(sint16 item_num);
+void InitialiseNewWeapon(void);
+void draw_flare_meshes(void);
+
+void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+    sint16 x_rot, y_rot, z_rot;
+
+    item = &items[item_num];
+    y_rot = item->pos.y_rot;
+    z_rot = item->pos.z_rot;
+    x_rot = item->pos.x_rot;
+    item->pos.y_rot = laraitem->pos.y_rot;
+    item->pos.z_rot = 0;
+
+    if (lara.water_status == LARA_ABOVEWATER || lara.water_status == LARA_WADE)
+    {
+        item->pos.x_rot = 0;
+        if (!TestLaraPosition(PickUpBounds, item, laraitem))
+            goto restore;
+        if (laraitem->current_anim_state == AS_PICKUP)
+        {
+            if (laraitem->frame_number == anims[135].frame_base + 42 && item->object_number != FLARE_ITEM)
+            {
+                AddDisplayPickup(item->object_number);
+                Inv_AddItem(item->object_number);
+                if ((item->object_number == SECRET1 || item->object_number == SECRET2 || item->object_number == SECRET3)
+                    && (savegame.secrets & 1) + ((savegame.secrets >> 1) & 1) + ((savegame.secrets >> 2) & 1) >= 3)
+                    GF_ModifyInventory(CurrentLevel, 1);
+                item->status = INVISIBLE;
+                RemoveDrawnItem(item_num);
+            }
+            return;
+        }
+        if (laraitem->current_anim_state == AS_FLAREPICKUP)
+        {
+            if (laraitem->frame_number == anims[204].frame_base + 58 && item->object_number == FLARE_ITEM && lara.gun_type != LG_FLARE)
+            {
+                lara.request_gun_type = LG_FLARE;
+                lara.gun_type = LG_FLARE;
+                InitialiseNewWeapon();
+                lara.gun_status = LG_SPECIAL;
+                lara.flare_age = (sint32)item->data & 0x7fff;
+                KillItem(item_num);
+            }
+            return;
+        }
+        if ((input & IN_ACTION) && !laraitem->gravity_status && laraitem->current_anim_state == AS_STOP && lara.gun_status == LG_ARMLESS
+            && (lara.gun_type != LG_FLARE || item->object_number != FLARE_ITEM))
+        {
+            if (item->object_number == FLARE_ITEM)
+            {
+                laraitem->goal_anim_state = AS_FLAREPICKUP;
+                do
+                    AnimateLara(laraitem);
+                while (laraitem->current_anim_state != AS_FLAREPICKUP);
+                laraitem->goal_anim_state = AS_STOP;
+                lara.gun_status = LG_HANDSBUSY;
+            }
+            else
+            {
+                AlignLaraPosition(&PickUpPosition, item, laraitem);
+                laraitem->goal_anim_state = AS_PICKUP;
+                do
+                    AnimateLara(laraitem);
+                while (laraitem->current_anim_state != AS_PICKUP);
+                laraitem->goal_anim_state = AS_STOP;
+                lara.gun_status = LG_HANDSBUSY;
+            }
+            return;
+        }
+    }
+    else if (lara.water_status == LARA_UNDERWATER)
+    {
+        item->pos.x_rot = -4550;
+        if (!TestLaraPosition(PickUpBoundsUW, item, laraitem))
+            goto restore;
+        if (laraitem->current_anim_state == AS_PICKUP)
+        {
+            if (laraitem->frame_number == anims[130].frame_base + 18 && item->object_number != FLARE_ITEM)
+            {
+                AddDisplayPickup(item->object_number);
+                Inv_AddItem(item->object_number);
+                if ((item->object_number == SECRET1 || item->object_number == SECRET2 || item->object_number == SECRET3)
+                    && (savegame.secrets & 1) + ((savegame.secrets >> 1) & 1) + ((savegame.secrets >> 2) & 1) >= 3)
+                    GF_ModifyInventory(CurrentLevel, 1);
+                item->status = INVISIBLE;
+                RemoveDrawnItem(item_num);
+            }
+            return;
+        }
+        if (laraitem->current_anim_state == AS_FLAREPICKUP)
+        {
+            if (laraitem->frame_number == anims[206].frame_base + 20 && item->object_number == FLARE_ITEM && lara.gun_type != LG_FLARE)
+            {
+                lara.request_gun_type = LG_FLARE;
+                lara.gun_type = LG_FLARE;
+                InitialiseNewWeapon();
+                lara.gun_status = LG_SPECIAL;
+                lara.flare_age = (sint32)item->data & 0x7fff;
+                draw_flare_meshes();
+                KillItem(item_num);
+            }
+            return;
+        }
+        if ((input & IN_ACTION) && laraitem->current_anim_state == AS_TREAD && lara.gun_status == LG_ARMLESS
+            && (lara.gun_type != LG_FLARE || item->object_number != FLARE_ITEM))
+        {
+            if (MoveLaraPosition(&PickUpPositionUW, item, laraitem))
+            {
+                if (item->object_number == FLARE_ITEM)
+                {
+                    laraitem->fallspeed = 0;
+                    laraitem->current_anim_state = AS_FLAREPICKUP;
+                    laraitem->anim_number = 206;
+                    laraitem->goal_anim_state = AS_TREAD;
+                    laraitem->frame_number = anims[206].frame_base;
+                }
+                else
+                {
+                    laraitem->goal_anim_state = AS_PICKUP;
+                    do
+                        AnimateLara(laraitem);
+                    while (laraitem->current_anim_state != AS_PICKUP);
+                    laraitem->goal_anim_state = AS_TREAD;
+                }
+            }
+            return;
+        }
+    }
+restore:
+    item->pos.x_rot = x_rot;
+    item->pos.y_rot = y_rot;
+    item->pos.z_rot = z_rot;
+}
 
 #define SMALL_SWITCH 93
 #define PUSH_SWITCH 103

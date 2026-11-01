@@ -61,12 +61,12 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.77% (1098)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">6% (75)</tspan> · <tspan class="todo">5.44% (68)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">87.77% (1098)</tspan> · <tspan class="decompiled">0.80% (10)</tspan> · <tspan class="nonmatching">6.08% (76)</tspan> · <tspan class="todo">5.36% (67)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="655.64" height="6" x="0" y="0" class="named"/>
 <rect width="5.97" height="6" x="655.64" y="0" class="decompiled"/>
-<rect width="44.78" height="6" x="661.61" y="0" class="nonmatching"/>
-<rect width="40.60" height="6" x="706.40" y="0" class="todo"/>
+<rect width="45.38" height="6" x="661.61" y="0" class="nonmatching"/>
+<rect width="40.01" height="6" x="706.99" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -740,7 +740,7 @@
 <rect width="12" height="12" x="270" y="195" class="named"><title>0x00437620 BanditControl (826 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="195" class="named"><title>0x00437960 Bandit2Control (1084 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="195" class="named"><title>0x00437da0 WinstonControl (370 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="195" class="todo"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="195" class="nonmatching"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="195" class="named"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="195" class="named"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="195" class="nonmatching"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
@@ -1324,12 +1324,12 @@
 </g>
 <g transform="translate(0 561)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.85%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">13.70%</tspan> · <tspan class="todo">5.11%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.85%</tspan> · <tspan class="decompiled">0.34%</tspan> · <tspan class="nonmatching">14.03%</tspan> · <tspan class="todo">4.78%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="603.95" height="6" x="0" y="0" class="named"/>
 <rect width="2.56" height="6" x="603.95" y="0" class="decompiled"/>
-<rect width="102.33" height="6" x="606.52" y="0" class="nonmatching"/>
-<rect width="38.16" height="6" x="708.84" y="0" class="todo"/>
+<rect width="104.81" height="6" x="606.52" y="0" class="nonmatching"/>
+<rect width="35.67" height="6" x="711.33" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.81" height="71.47" x="0" y="0" class="todo"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1380,7 +1380,7 @@
 <rect width="28.54" height="28.92" x="180.82" y="266.43" class="named"><title>0x0043d880 SkidooDynamics (1182 bytes)</title></rect>
 <rect width="28.54" height="28.89" x="180.82" y="298.35" class="named"><title>0x0044f8c0 do_sound_option (1181 bytes)</title></rect>
 <rect width="28.54" height="28.65" x="180.82" y="330.24" class="named"><title>0x0043f470 SoundEffect (1172 bytes)</title></rect>
-<rect width="28.54" height="28.11" x="180.82" y="361.89" class="todo"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
+<rect width="28.54" height="28.11" x="180.82" y="361.89" class="nonmatching"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
 <rect width="27.74" height="28.48" x="212.36" y="0" class="named"><title>0x0040e9e0 CreatureMood (1136 bytes)</title></rect>
 <rect width="27.74" height="28.23" x="212.36" y="31.48" class="named"><title>0x00423e20 RingNotActive (1127 bytes)</title></rect>
 <rect width="27.74" height="27.84" x="212.36" y="62.70" class="named"><title>0x0040ee50 CalculateTarget (1113 bytes)</title></rect>
