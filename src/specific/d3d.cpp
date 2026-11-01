@@ -6,6 +6,7 @@ extern LPDIRECTDRAW2 DDraw;
 extern LPDIRECT3D2 D3D;
 bool D3DCreate(void);
 void D3DRelease(void);
+bool D3DIsSupported(LPD3DDEVICEDESC desc, bool hardware);
 HRESULT WINAPI Enum3DDevicesCallback(GUID *lpGuid, LPTSTR lpDeviceDescription, LPTSTR lpDeviceName, LPD3DDEVICEDESC lpD3DHWDeviceDesc, LPD3DDEVICEDESC lpD3DHELDeviceDesc, LPVOID lpContext);
 }
 
@@ -39,21 +40,6 @@ extern "C" void D3DRelease(void)
         D3D->Release();
         D3D = NULL;
     }
-}
-
-extern "C" bool D3DIsSupported(LPD3DDEVICEDESC desc, bool hardware)
-{
-    if (!(desc->dwFlags & D3DDD_COLORMODEL))
-        return false;
-    if (!(desc->dcmColorModel & D3DCOLOR_RGB))
-        return false;
-    if (!(desc->dwFlags & D3DDD_TRICAPS))
-        return false;
-    if (!(desc->dpcTriCaps.dwShadeCaps & D3DPSHADECAPS_COLORGOURAUDRGB))
-        return false;
-    if (!(desc->dpcTriCaps.dwTextureBlendCaps & D3DPTBLENDCAPS_MODULATE))
-        return false;
-    return true;
 }
 
 extern "C" {
@@ -120,6 +106,21 @@ extern "C" HRESULT WINAPI Enum3DDevicesCallback(GUID *lpGuid, LPTSTR lpDeviceDes
         adapter->shadeRestricted = !(lpD3DHWDeviceDesc->dpcTriCaps.dwShadeCaps & (D3DPSHADECAPS_ALPHAGOURAUDBLEND | D3DPSHADECAPS_ALPHAFLATBLEND));
     }
     return D3DENUMRET_OK;
+}
+
+extern "C" bool D3DIsSupported(LPD3DDEVICEDESC desc, bool hardware)
+{
+    if (!(desc->dwFlags & D3DDD_COLORMODEL))
+        return false;
+    if (!(desc->dcmColorModel & D3DCOLOR_RGB))
+        return false;
+    if (!(desc->dwFlags & D3DDD_TRICAPS))
+        return false;
+    if (!(desc->dpcTriCaps.dwShadeCaps & D3DPSHADECAPS_COLORGOURAUDRGB))
+        return false;
+    if (!(desc->dpcTriCaps.dwTextureBlendCaps & D3DPTBLENDCAPS_MODULATE))
+        return false;
+    return true;
 }
 
 extern "C" {
