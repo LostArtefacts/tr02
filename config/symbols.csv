@@ -872,7 +872,7 @@ address,size,name,symbol
 0x00447030,19,WinVidFinish,_WinVidFinish
 0x00447050,13,DisplayModeListInit,??0DISPLAY_MODE_LIST@@QAE@XZ
 0x00447060,50,DisplayModeListDelete,?DisplayModeListDelete@DISPLAY_MODE_LIST@@QAEXXZ
-0x004470a0,18,InsertDisplayMode,_InsertDisplayMode
+0x004470a0,18,InsertDisplayMode,??0DISPLAY_MODE_NODE@@QAE@PAU0@0@Z
 0x004470c0,72,InsertDisplayModeInListHead,?InsertDisplayModeInListHead@DISPLAY_MODE_LIST@@QAEPAUDISPLAY_MODE@@XZ
 0x00447110,74,InsertDisplayModeInListTail,?InsertDisplayModeInListTail@DISPLAY_MODE_LIST@@QAEPAUDISPLAY_MODE@@XZ
 0x00447170,18,Func447170,
