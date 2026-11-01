@@ -211,11 +211,18 @@ struct SOUND_ADAPTER_NODE {
     }
 };
 
-typedef struct {
+struct SOUND_ADAPTER_LIST {
     SOUND_ADAPTER_NODE *head;
     SOUND_ADAPTER_NODE *tail;
     DWORD dwCount;
-} SOUND_ADAPTER_LIST;
+    SOUND_ADAPTER_LIST()
+    {
+        head = NULL;
+        tail = NULL;
+        dwCount = 0;
+    }
+    ~SOUND_ADAPTER_LIST();
+};
 
 extern "C" {
 extern SOUND_ADAPTER_LIST SoundAdapterList;
@@ -425,3 +432,20 @@ extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
     }
     return result;
 }
+
+inline SOUND_ADAPTER_LIST::~SOUND_ADAPTER_LIST()
+{
+    SOUND_ADAPTER_NODE *node;
+    SOUND_ADAPTER_NODE *nextNode;
+
+    for (node = head; node; node = nextNode) {
+        nextNode = node->next;
+        delete node;
+    }
+    head = NULL;
+    tail = NULL;
+    dwCount = 0;
+}
+
+SOUND_ADAPTER_LIST SoundAdapterList;
+SOUND_ADAPTER CurrentSoundAdapter;
