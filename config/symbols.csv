@@ -865,7 +865,7 @@ address,size,name,symbol
 0x00446870,480,WinVidResizeGameWindow,_WinVidResizeGameWindow
 0x00446a50,188,WinVidCheckGameWindowPalette,_WinVidCheckGameWindowPalette
 0x00446b10,198,WinVidCreateGameWindow,_WinVidCreateGameWindow
-0x00446be0,28,WinVidFreeWindow,_WinVidFreeWindow
+0x00446be0,34,WinVidFreeWindow,_WinVidFreeWindow
 0x00446c10,77,WinVidExitMessage,_WinVidExitMessage
 0x00446c60,72,WinVidGetDisplayAdapter,_WinVidGetDisplayAdapter
 0x00446cb0,884,WinVidStart,_WinVidStart ?WinVidStart@@YA_NXZ ?WinVidStart@@YAXXZ
