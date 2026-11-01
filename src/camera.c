@@ -516,6 +516,48 @@ void CombatCamera(ITEM_INFO *item)
     MoveCamera(&ideal, camera.speed);
 }
 
+void LookCamera(ITEM_INFO *item)
+{
+    sint32 distance;
+    GAME_VECTOR ideal, old;
+
+    old.z = camera.target.z;
+    old.x = camera.target.x;
+
+    camera.target.z = item->pos.z_pos;
+    camera.target.x = item->pos.x_pos;
+
+    camera.target_angle = lara.head_y_rot + lara.torso_y_rot + item->pos.y_rot;
+    camera.target_elevation = item->pos.x_rot + lara.head_x_rot + lara.torso_x_rot;
+    camera.target_distance = WALL_L * 3 / 2;
+
+    distance = camera.target_distance * phd_cos(camera.target_elevation) >> W2V_SHIFT;
+
+    camera.shift = -STEP_L * 2 * phd_sin(camera.target_elevation) >> W2V_SHIFT;
+    camera.target.z += camera.shift * phd_cos(item->pos.y_rot) >> W2V_SHIFT;
+    camera.target.x += camera.shift * phd_sin(item->pos.y_rot) >> W2V_SHIFT;
+
+    if (!GoodPosition(camera.target.x, camera.target.y, camera.target.z, camera.target.room_number))
+    {
+        camera.target.x = item->pos.x_pos;
+        camera.target.z = item->pos.z_pos;
+    }
+
+    camera.target.y += ShiftClamp(&camera.target, STEP_L + 50);
+
+    ideal.x = camera.target.x - (distance * phd_sin(camera.target_angle) >> W2V_SHIFT);
+    ideal.y = camera.target.y + (camera.target_distance * phd_sin(camera.target_elevation) >> W2V_SHIFT);
+    ideal.z = camera.target.z - (distance * phd_cos(camera.target_angle) >> W2V_SHIFT);
+    ideal.room_number = camera.pos.room_number;
+
+    SmartShift(&ideal, ClipCamera);
+
+    camera.target.z = old.z + (camera.target.z - old.z) / camera.speed;
+    camera.target.x = old.x + (camera.target.x - old.x) / camera.speed;
+
+    MoveCamera(&ideal, camera.speed);
+}
+
 void FixedCamera(void)
 {
     GAME_VECTOR ideal;
@@ -558,11 +600,11 @@ void LookCamera(ITEM_INFO *item);
 
 void CalculateCamera(void)
 {
+    sint16 *bounds, change, angle, tilt;
     FLOOR_INFO *floor;
     ITEM_INFO *item;
-    sint32 shift, fixed_camera, y;
     OBJECT_INFO *object;
-    sint16 *bounds, angle, tilt, change;
+    sint32 shift, fixed_camera, y;
 
     if (room[camera.pos.room_number].flags & UNDERWATER)
     {
