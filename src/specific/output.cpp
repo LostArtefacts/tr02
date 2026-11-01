@@ -6,6 +6,8 @@
 #include "display.h"
 #include "time.h"
 #include "../gameflow.h"
+#include "../items.h"
+#include "include.h"
 
 extern "C" void Func444560(void);
 extern "C" void HWR_InitState(void);
@@ -79,8 +81,6 @@ void S_InsertBackPolygon(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y,
     max_y += phd_winymin;
     InsertFlatRect(min_x, min_y, max_x, max_y, phd_zfar + 1, inv_colours[C_BLACK]);
 }
-
-#include "../items.h"
 
 extern "C" sint16 shadowman[];
 extern "C" char PhdVBuf[];
@@ -256,8 +256,6 @@ void ScreenPartialDump(void)
     DX_UpdateFrame(true, &GrcDumpWindow);
 }
 
-#include "include.h"
-
 extern "C" {
 extern bool GameVid_IsVga;
 extern bool GameVid_IsWindowedVga;
@@ -330,7 +328,6 @@ void ScreenClear(bool tWindow)
         dwFlags |= 0x100;
     ClearBuffers(dwFlags, 0);
 }
-
 
 extern "C" uint8 PicPalette[];
 extern "C" LPDIRECTDRAWSURFACE RenderBufferSurface;
@@ -563,7 +560,6 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
     }
 }
 
-
 extern "C" void S_CalculateStaticLight(sint16 adder)
 {
     sint32 depth;
@@ -724,7 +720,6 @@ extern "C" void S_InitialisePolyList(BOOL clear_back_buffer)
     }
     phd_InitPolyList();
 }
-
 
 extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r)
 {
