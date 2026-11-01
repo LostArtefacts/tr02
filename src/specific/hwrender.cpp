@@ -23,6 +23,88 @@ extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
 extern "C" D3DTEXTUREHANDLE CurrentTexSource;
 
+typedef struct {
+    LPTSTR lpString;
+    bool isPresented;
+} STRING_FLAGGED;
+
+typedef struct {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+} DISPLAY_MODE;
+
+typedef struct {
+    void *head;
+    void *tail;
+    DWORD dwCount;
+} DISPLAY_MODE_LIST;
+
+typedef struct {
+    LPGUID lpAdapterGuid;
+    GUID adapterGuid;
+    STRING_FLAGGED driverDescription;
+    STRING_FLAGGED driverName;
+    DDCAPS driverCaps;
+    DDCAPS helCaps;
+    GUID deviceGuid;
+    D3DDEVICEDESC D3DHWDeviceDesc;
+    DISPLAY_MODE_LIST hwDispModeList;
+    DISPLAY_MODE_LIST swDispModeList;
+    DISPLAY_MODE vgaMode1;
+    DISPLAY_MODE vgaMode2;
+    DWORD screenWidth;
+    bool hwRenderSupported;
+    bool swWindowedSupported;
+    bool hwWindowedSupported;
+    bool isVgaMode1Presented;
+    bool isVgaMode2Presented;
+    bool perspectiveCorrectSupported;
+    bool ditherSupported;
+    bool zBufferSupported;
+    bool linearFilterSupported;
+    bool shadeRestricted;
+} DISPLAY_ADAPTER;
+
+typedef struct {
+    APP_SETTINGS base;
+    bool BilinearFiltering;
+} APP_SETTINGS_EXT;
+
+extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
+extern "C" D3DRENDERSTATETYPE AlphaBlendEnabler;
+extern "C" void HWR_ResetTexSource(void);
+void HWR_ResetColorKey();
+void HWR_ResetZBuffer();
+
+extern "C" void HWR_InitState(void)
+{
+    DWORD filter;
+
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_FILLMODE, D3DFILL_SOLID);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_SHADEMODE, D3DSHADE_GOURAUD);
+    filter = ((APP_SETTINGS_EXT *)&SavedAppSettings)->BilinearFiltering ? D3DFILTER_LINEAR : D3DFILTER_NEAREST;
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREMAG, filter);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREMIN, filter);
+    if (CurrentDisplayAdapter.D3DHWDeviceDesc.dpcTriCaps.dwTextureBlendCaps & D3DPTBLENDCAPS_MODULATEALPHA)
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREMAPBLEND, D3DTBLEND_MODULATEALPHA);
+    else
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREMAPBLEND, D3DTBLEND_MODULATE);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_CULLMODE, D3DCULL_NONE);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_TEXTUREPERSPECTIVE, SavedAppSettings.PerspectiveCorrect);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_DITHERENABLE, SavedAppSettings.Dither);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZENABLE, SavedAppSettings.ZBuffer);
+    if (SavedAppSettings.ZBuffer && !ZBufferSurface)
+        G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZFUNC, D3DCMP_LESSEQUAL);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_SRCBLEND, D3DBLEND_SRCALPHA);
+    G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_DESTBLEND, D3DBLEND_INVSRCALPHA);
+    AlphaBlendEnabler = CurrentDisplayAdapter.shadeRestricted ? D3DRENDERSTATE_STIPPLEDALPHA : D3DRENDERSTATE_ALPHABLENDENABLE;
+    HWR_ResetTexSource();
+    HWR_ResetColorKey();
+    HWR_ResetZBuffer();
+}
+
 extern "C" void HWR_ResetTexSource(void)
 {
     CurrentTexSource = 0;
@@ -108,7 +190,6 @@ void HWR_EndScene()
 
 extern "C" sint32 surfacenum;
 extern "C" sint32 sort3d_buffer[][2];
-extern "C" D3DRENDERSTATETYPE AlphaBlendEnabler;
 
 extern "C" void HWR_DrawPolyList(void)
 {
