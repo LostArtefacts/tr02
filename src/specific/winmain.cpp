@@ -26,29 +26,6 @@ extern "C" void RenderErrorBox(int errorCode)
     UT_ErrorBox(text, NULL);
 }
 
-extern "C" void WinGameFinish(void)
-{
-    WinInFinish();
-    WinSndFinish();
-    RenderFinish(true);
-    WinVidFinish();
-    WinVidHideGameWindow();
-    if (*StringToShow)
-        MessageBoxA(NULL, StringToShow, NULL, MB_ICONWARNING);
-}
-
-extern "C" void ShutdownGame(void);
-void WinCleanup(void);
-
-extern "C" void S_ExitSystem(char *message)
-{
-    ShutdownGame();
-    strcpy(StringToShow, message);
-    WinGameFinish();
-    WinCleanup();
-    exit(1);
-}
-
 extern "C" {
 bool CD_Init(void);
 bool WinVidInit(void);
@@ -113,8 +90,32 @@ extern "C" int WinGameStart(void)
     return 0;
 }
 
+extern "C" void WinGameFinish(void)
+{
+    WinInFinish();
+    WinSndFinish();
+    RenderFinish(true);
+    WinVidFinish();
+    WinVidHideGameWindow();
+    if (*StringToShow)
+        MessageBoxA(NULL, StringToShow, NULL, MB_ICONWARNING);
+}
+
+extern "C" void ShutdownGame(void);
+void WinCleanup(void);
+
+extern "C" void S_ExitSystem(char *message)
+{
+    ShutdownGame();
+    strcpy(StringToShow, message);
+    WinGameFinish();
+    WinCleanup();
+    exit(1);
+}
+
 #ifdef TR2_EXE
 char RenderInitFailedFormat[] = "Render init failed with \"%s\"";
+
 extern "C" {
 void WinCleanupStub1(void)
 {
@@ -136,4 +137,5 @@ void WinCleanupStub5(void)
 {
 }
 }
+
 #endif
