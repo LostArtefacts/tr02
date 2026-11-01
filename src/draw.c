@@ -1392,6 +1392,48 @@ void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip)
     phd_mxptr = oldm;
 }
 
+void phd_RotYXZpack(sint32 rots);
+
+void phd_RotYXZsuperpack(sint16 **pprot, int skip)
+{
+    uint16 *prot;
+    uint16 packed;
+
+    for (; skip; skip--)
+    {
+        prot = (uint16 *)*pprot;
+        if (*prot & 0xc000)
+            *pprot += 1;
+        else
+            *pprot += 2;
+    }
+
+    prot = (uint16 *)*pprot;
+    packed = *prot;
+    switch (packed >> 14)
+    {
+    case 0:
+        phd_RotYXZpack(((uint32)packed << 16) + *(prot + 1));
+        *pprot += 2;
+        break;
+
+    case 1:
+        phd_RotX(packed << 6);
+        *pprot += 1;
+        break;
+
+    case 2:
+        phd_RotY(packed << 6);
+        *pprot += 1;
+        break;
+
+    default:
+        phd_RotZ(packed << 6);
+        *pprot += 1;
+        break;
+    }
+}
+
 void InterpolateMatrix(void);
 
 void phd_PutPolygons_I(sint16 *ptr, int clip)
