@@ -2,6 +2,13 @@
 #include "../gameflow.h"
 #include "../savegame.h"
 
+extern "C" {
+#include "../items.h"
+#include "../larafire.h"
+#include "../lara.h"
+#include "../laraanim.h"
+}
+
 extern sint16 layout[2][14];
 
 extern "C" {
@@ -255,13 +262,6 @@ extern "C" int TitleSequence(void)
         }
     }
     return EXITGAME;
-}
-
-extern "C" {
-#include "../items.h"
-#include "../larafire.h"
-#include "../lara.h"
-#include "../laraanim.h"
 }
 
 #define SHOTGUN_ITEM 136
