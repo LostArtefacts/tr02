@@ -61,12 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">1.56% (19)</tspan> · <tspan class="nonmatching">8.20% (100)</tspan> · <tspan class="todo">0.08% (1)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.16% (1099)</tspan> · <tspan class="decompiled">1.64% (20)</tspan> · <tspan class="nonmatching">8.20% (100)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="673.46" height="6" x="0" y="0" class="named"/>
-<rect width="11.64" height="6" x="673.46" y="0" class="decompiled"/>
-<rect width="61.28" height="6" x="685.11" y="0" class="nonmatching"/>
-<rect width="0.61" height="6" x="746.39" y="0" class="todo"/>
+<rect width="12.26" height="6" x="673.46" y="0" class="decompiled"/>
+<rect width="61.28" height="6" x="685.72" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -975,7 +974,7 @@
 <rect width="12" height="12" x="45" y="270" class="decompiled"><title>0x00447b40 Func447b40 (18 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="270" class="decompiled"><title>0x00447b60 Func447b60 (14 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="nonmatching"><title>0x00447bf0 Func447bf0 (57 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="270" class="todo"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="270" class="decompiled"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="named"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="named"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="270" class="named"><title>0x00447cf0 WinSndMakeSample (270 bytes)</title></rect>
@@ -1295,9 +1294,8 @@
 <text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">80.91%</tspan> · <tspan class="decompiled">0.41%</tspan> · <tspan class="nonmatching">18.68%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
 <rect width="604.42" height="6" x="0" y="0" class="named"/>
-<rect width="3.04" height="6" x="604.42" y="0" class="decompiled"/>
-<rect width="139.51" height="6" x="607.46" y="0" class="nonmatching"/>
-<rect width="0.10" height="6" x="746.97" y="0" class="todo"/>
+<rect width="3.07" height="6" x="604.42" y="0" class="decompiled"/>
+<rect width="139.51" height="6" x="607.49" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -2474,7 +2472,7 @@
 <rect width="0.25" height="0.54" x="743.51" y="357.60" class="decompiled"><title>0x00447190 Func447190 (14 bytes)</title></rect>
 <rect width="0.25" height="0.54" x="746.75" y="357.60" class="decompiled"><title>0x00447260 Func447260 (14 bytes)</title></rect>
 <rect width="0.35" height="0.42" x="730.07" y="361.14" class="decompiled"><title>0x00447b60 Func447b60 (14 bytes)</title></rect>
-<rect width="0.35" height="0.42" x="730.07" y="364.56" class="todo"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
+<rect width="0.35" height="0.42" x="730.07" y="364.56" class="decompiled"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
 <rect width="0.35" height="0.42" x="730.07" y="367.98" class="named"><title>0x0044c520 S_PlayFMV (14 bytes)</title></rect>
 <rect width="0.35" height="0.42" x="730.07" y="371.40" class="named"><title>0x00454ae0 SE_AdvancedDlgInit (14 bytes)</title></rect>
 <rect width="0.35" height="0.18" x="730.07" y="374.82" class="decompiled"><title>0x00444560 Func444560 (13 bytes)</title></rect>
