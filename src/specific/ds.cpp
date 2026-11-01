@@ -386,6 +386,15 @@ extern "C" bool DSoundBufferTest(void)
     return true;
 }
 
+extern "C" void WinSndFinish(void)
+{
+    WinSndFreeAllSamples();
+    if (DSound) {
+        DSound->Release();
+        DSound = NULL;
+    }
+}
+
 extern "C" bool WinSndIsSoundEnabled()
 {
     return IsSoundEnabled;

@@ -923,7 +923,7 @@ address,size,name,symbol
 0x00448210,380,WinSndStart,_WinSndStart ?WinSndStart@@YAXPAX@Z
 0x00448390,28,DSoundCreate,_DSoundCreate
 0x004483b0,196,DSoundBufferTest,_DSoundBufferTest
-0x00448480,36,WinSndFinish,_WinSndFinish
+0x00448480,42,WinSndFinish,_WinSndFinish
 0x004484b0,6,WinSndIsSoundEnabled,_WinSndIsSoundEnabled
 0x004484e0,315,CreateScreenBuffers,_CreateScreenBuffers
 0x00448620,148,CreatePrimarySurface,_CreatePrimarySurface
