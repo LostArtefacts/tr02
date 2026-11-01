@@ -1915,6 +1915,7 @@ address,size,name,symbol
 0x004d9345,1,NeedToReloadTextures,_NeedToReloadTextures
 0x004d9348,4,BackBufferSurface,_BackBufferSurface
 0x004d9350,4,HwrTexturePagesCount,_HwrTexturePagesCount
+0x004d9358,,Var4d9358,_Var4d9358
 0x004d93e0,,LabTextureUVFlags,_LabTextureUVFlags
 0x004d9be0,4,ReadFileBytesCounter,_ReadFileBytesCounter
 0x004d9be4,4,LevelFilePalettesOffset,_LevelFilePalettesOffset

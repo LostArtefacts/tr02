@@ -800,6 +800,14 @@ extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
     file_name[1] = 0;
 }
 
+extern "C" char Var4d9358[];
+
+extern "C" char *GetFullPath(char *path)
+{
+    wsprintf(Var4d9358, "%s", path);
+    return Var4d9358;
+}
+
 extern "C" uint8 GamePalette16[];
 
 extern "C" int LoadPalettes(HANDLE file)
