@@ -115,3 +115,24 @@ extern "C" void S_CDLoop(void)
     wsprintf(Var5275f8, "play T2 from %s to %s", CD_LoopTrack, CD_LoopTrack + 9);
     mciSendString(Var5275f8, NULL, 0, NULL);
 }
+
+extern "C" sint16 cdtrack;
+extern "C" sint16 Option_Music_Volume;
+extern "C" int GetRealTrack(int track);
+
+extern "C" void S_CDPlay(sint16 track, int mode)
+{
+    char *entry;
+
+    if (!Option_Music_Volume)
+        return;
+    cdtrack = track;
+    entry = Var5275fc + (GetRealTrack(track) - 1) * 18;
+    wsprintf(Var5275f8, "play T2 from %s to %s", entry, entry + 9);
+    mciSendString(Var5275f8, NULL, 0, NULL);
+    if (mode)
+    {
+        CD_LoopTrack = entry;
+        CD_LoopCounter = 120;
+    }
+}
