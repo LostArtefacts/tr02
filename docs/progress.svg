@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">90.98% (1109)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.30% (89)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">91.06% (1110)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">7.22% (88)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="679.59" height="6" x="0" y="0" class="named"/>
-<rect width="12.87" height="6" x="679.59" y="0" class="decompiled"/>
-<rect width="54.54" height="6" x="692.46" y="0" class="nonmatching"/>
+<rect width="680.21" height="6" x="0" y="0" class="named"/>
+<rect width="12.87" height="6" x="680.21" y="0" class="decompiled"/>
+<rect width="53.93" height="6" x="693.07" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -754,7 +754,7 @@
 <rect width="12" height="12" x="495" y="195" class="named"><title>0x00439190 InitialiseStartInfo (98 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="195" class="named"><title>0x00439200 ModifyStartInfo (219 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="195" class="named"><title>0x004392e0 CreateStartInfo (513 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="195" class="nonmatching"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="195" class="named"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="195" class="named"><title>0x00439a20 ExtractSaveGameInfo (2140 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="195" class="named"><title>0x0043a280 ResetSG (21 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="195" class="named"><title>0x0043a2a0 WriteSG (76 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">81.78%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">17.78%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">82.16%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">17.40%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="610.91" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="610.91" y="0" class="decompiled"/>
-<rect width="132.85" height="6" x="614.15" y="0" class="nonmatching"/>
+<rect width="613.76" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="613.76" y="0" class="decompiled"/>
+<rect width="129.99" height="6" x="617.01" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1334,7 +1334,7 @@
 <rect width="31.99" height="29.50" x="145.94" y="250.59" class="nonmatching"><title>0x0042e740 LaraGun (1387 bytes)</title></rect>
 <rect width="31.99" height="29.33" x="145.94" y="283.08" class="named"><title>0x00436850 Cult3Control (1380 bytes)</title></rect>
 <rect width="31.99" height="28.58" x="145.94" y="315.42" class="nonmatching"><title>0x00417e60 DragonControl (1348 bytes)</title></rect>
-<rect width="31.99" height="28" x="145.94" y="347" class="nonmatching"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
+<rect width="31.99" height="28" x="145.94" y="347" class="named"><title>0x004394f0 CreateSaveGameInfo (1323 bytes)</title></rect>
 <rect width="28.56" height="30.69" x="180.92" y="0" class="named"><title>0x004059f0 XYGUVClipper (1297 bytes)</title></rect>
 <rect width="28.56" height="29.34" x="180.92" y="33.69" class="named"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
 <rect width="28.56" height="29.21" x="180.92" y="66.03" class="named"><title>0x0041fcc0 GF_InterpretSequence (1240 bytes)</title></rect>
