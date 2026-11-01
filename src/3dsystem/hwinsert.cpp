@@ -173,6 +173,44 @@ extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PH
     DrawClippedPoly_Textured(npoints);
 }
 
+extern "C" void DrawClippedPoly_Textured(int vtx_count)
+{
+    int i;
+    uint32 shade;
+    float k, tu, tv;
+    VERTEX_INFO *vbuf;
+    D3DTLVERTEX *vtx;
+
+    vbuf = VBuffer;
+    vtx = VBufferD3D;
+    for (i = vtx_count; i; i--) {
+        vtx->sx = vbuf->x;
+        vtx->sy = vbuf->y;
+        vtx->sz = FltResZBuf - FltResZORhw * vbuf->rhw;
+        vtx->rhw = vbuf->rhw;
+        shade = (0x1fff - (int)vbuf->g) >> 4;
+        if (shade > 255)
+            shade = 255;
+        vtx->color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+        k = 1.0f / 65536.0f / vbuf->rhw;
+        tu = vbuf->u * k;
+        tv = k * vbuf->v;
+        if (tu < 0.0f)
+            tu = 0.0f;
+        else if (tu > 1.0f)
+            tu = 1.0f;
+        if (tv < 0.0f)
+            tv = 0.0f;
+        else if (tv > 1.0f)
+            tv = 1.0f;
+        vtx->tv = tv;
+        vtx->tu = tu;
+        vbuf++;
+        vtx++;
+    }
+    G_Direct3DDevice->DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, VBufferD3D, vtx_count, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+}
+
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype);
 
 extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
