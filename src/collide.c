@@ -1,4 +1,5 @@
 #include "game.h"
+#include "box.h"
 
 #define BIG_SLOPE 2
 #define LAVA_TYPE 5
@@ -533,7 +534,7 @@ sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
 
 extern sint16 InventoryChosen;
 
-void EffectSpaz(ITEM_INFO *laraitem, COLL_INFO *coll);
+void EffectSpaz(ITEM_INFO *, COLL_INFO *);
 
 void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll)
 {
