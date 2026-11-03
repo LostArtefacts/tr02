@@ -2,6 +2,7 @@
 #include "global.h"
 #include "init.h"
 #include "output.h"
+#include "../3dsystem/3d_gen.h"
 #include <time.h>
 #include "winmain.h"
 #include <math.h>

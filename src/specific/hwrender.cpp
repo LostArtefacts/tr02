@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "global.h"
 #include "winmain.h"
+#include "texture.h"
 #include "hwrender.h"
 #include "input.h"
 #include "include.h"
@@ -13,14 +14,8 @@ extern "C" bool ZEnableState;
 extern "C" bool ZWriteEnableState;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
 extern "C" DWORD HWR_PageHandles[32];
-extern "C" DWORD GetTexturePageHandle(int nHandle);
-extern "C" void SafeFreeTexturePage(int nHandle);
-extern "C" void SafeFreePalette(int nHandle);
 extern "C" int PaletteIndex;
 extern "C" D3DTLVERTEX *HWR_VertexPtr;
-extern "C" int CreateTexturePalette(uint8 *pPalette);
-extern "C" int AddTexturePage8(int nWidth, int nHeight, uint8 *pTexture, int nPalette);
-extern "C" int AddTexturePage16(int nWidth, int nHeight, uint8 *pTexture);
 extern "C" bool ColorKeyState;
 extern "C" bool TexturesAlphaChannel;
 extern "C" D3DTEXTUREHANDLE CurrentTexSource;
@@ -254,7 +249,7 @@ void HWR_LoadTexturePages(int nPages, uint8 *pImage, uint8 *pPalette)
 
     int nPage, nHandle;
     if (pPalette)
-        PaletteIndex = CreateTexturePalette(pPalette);
+        PaletteIndex = CreateTexturePalette((RGB888 *)pPalette);
 
     for (nPage = 0; nPage < nPages; ++nPage)
     {

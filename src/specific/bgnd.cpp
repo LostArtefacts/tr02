@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "global.h"
 #include "winmain.h"
+#include "texture.h"
 #include <math.h>
 #include "init.h"
 #include "utils.h"
@@ -21,15 +22,8 @@ extern sint32 phd_winwidth;
 extern sint32 phd_winheight;
 }
 
-extern "C" DWORD GetTexturePageHandle(int nHandle);
 extern "C" void DrawQuad(float sx, float sy, float width, float height, D3DCOLOR color);
 void HWR_EnableZBuffer(bool tWrite, bool tCompare);
-
-typedef struct {
-    uint8 red;
-    uint8 green;
-    uint8 blue;
-} RGB888;
 
 typedef struct {
     uint8 pad[0x50];
@@ -41,7 +35,6 @@ extern BGND_TEXTURE_FORMAT TextureFormat;
 extern int BGND_PaletteIndex;
 void *game_malloc(int size, int type);
 void game_free(int size, int type);
-int CreateTexturePalette(RGB888 *pal);
 int BGND_AddTexture(int tileIndex, uint8 *bitmap, int palIndex, RGB888 *bmpPal);
 void BGND_GetPageHandles(void);
 }
@@ -73,8 +66,6 @@ extern "C" void BGND_Make640x480(uint8 *bitmap, RGB888 *palette)
     BGND_PictureIsReady = true;
 }
 
-extern "C" int AddTexturePage8(int nWidth, int nHeight, uint8 *pTexture, int nPalette);
-extern "C" int AddTexturePage16(int nWidth, int nHeight, uint8 *pTexture);
 
 extern "C" int BGND_AddTexture(int tileIndex, uint8 *bitmap, int palIndex, RGB888 *bmpPal)
 {
@@ -344,8 +335,6 @@ extern "C" void Func444560(void)
 }
 
 extern "C" int BGND_PaletteIndex;
-extern "C" void SafeFreeTexturePage(int pageIndex);
-extern "C" void SafeFreePalette(int palIndex);
 
 extern "C" void BGND_Free(void)
 {

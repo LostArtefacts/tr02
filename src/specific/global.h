@@ -12,6 +12,9 @@ extern "C" {
 
 #include "../types.h"
 
+#define Zero(thing) memset(&(thing), 0, sizeof(thing))
+#define ArraySize(a) (sizeof(a) / sizeof((a)[0]))
+
 #ifdef __cplusplus
 extern RECT GrcDumpWindow;
 extern HINSTANCE GhInstance;

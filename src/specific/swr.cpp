@@ -1,5 +1,6 @@
 #include "standard.h"
 #include "global.h"
+#include "texture.h"
 
 inline bool DX_TRY(HRESULT hr)
 {
@@ -24,13 +25,6 @@ extern "C" HRESULT Func455940(void)
     phd_PrintPolyList(desc.lpSurface);
     return WinVidBufferUnlock(RenderBufferSurface, &desc);
 }
-
-typedef struct
-{
-    uint8 red;
-    uint8 green;
-    uint8 blue;
-} RGB888;
 
 extern "C" sint32 sort3d_buffer[][2];
 extern "C" void do_quickysorty(int left, int right);

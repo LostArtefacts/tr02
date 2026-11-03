@@ -1,4 +1,5 @@
 #include "game.h"
+#include "3dsystem/3d_gen.h"
 #include "invdata.h"
 #include "inventry.h"
 #include "specific/display.h"
@@ -1003,7 +1004,6 @@ void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
 void phd_GenerateW2V(PHD_3DPOS *viewpos);
 void phd_RotateLight(sint16 pitch, sint16 yaw);
 void phd_RotYXZsuperpack(sint16 **pprot, int skip);
-void S_InsertInvBgnd(sint16 *objptr);
 extern sint32 ls_divider;
 
 static int bz = 12288;

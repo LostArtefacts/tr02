@@ -1,19 +1,6 @@
 #include "include.h"
 #include "global.h"
-
-#define MAX_PALETTES 16
-#define MAX_TEXTURE_PAGES 32
-
-typedef struct {
-    LPDIRECTDRAWSURFACE3 sysMemSurface;
-    LPDIRECTDRAWSURFACE3 vidMemSurface;
-    LPDIRECTDRAWPALETTE palette;
-    LPDIRECT3DTEXTURE2 texture3d;
-    D3DTEXTUREHANDLE texHandle;
-    int width;
-    int height;
-    DWORD status;
-} TEXPAGE_DESC;
+#include "texture.h"
 
 struct COLOR_BIT_MASKS {
     DWORD dwRBitMask;
@@ -44,22 +31,11 @@ typedef struct {
 
 extern "C" {
 extern TEXTURE_APP_SETTINGS SavedAppSettings;
-extern TEXPAGE_DESC TexturePages[MAX_TEXTURE_PAGES];
-extern LPDIRECTDRAWPALETTE TexturePalettes[MAX_PALETTES];
 extern TEXTURE_FORMAT TextureFormat;
-extern bool TexturesAlphaChannel;
-extern bool TexturesHaveCompatibleMasks;
 }
-
-typedef struct {
-    uint8 red;
-    uint8 green;
-    uint8 blue;
-} RGB888;
 
 extern "C" LPDIRECTDRAW2 DDraw;
 
-extern "C" int GetFreePaletteIndex(void);
 
 extern "C" int CreateTexturePalette(RGB888 *pal)
 {
@@ -111,7 +87,6 @@ extern "C" void Func455d50(void)
     }
 }
 
-extern "C" int GetFreeTexturePageIndex(void);
 extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page);
 extern "C" bool TexturePageInit(TEXPAGE_DESC *page);
 
@@ -242,7 +217,6 @@ extern "C" LPDIRECT3DTEXTURE2 Create3DTexture(LPDIRECTDRAWSURFACE3 surface)
     return texture;
 }
 
-extern "C" void FreeTexturePage(int pageIndex);
 
 extern "C" void SafeFreeTexturePage(int pageIndex)
 {

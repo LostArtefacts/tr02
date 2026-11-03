@@ -9,10 +9,6 @@ typedef struct {
 } PHD_VBUF;
 
 typedef struct {
-    uint8 red, green, blue;
-} RGB888;
-
-typedef struct {
     float x, y, rhw, u, v, g;
 } VERTEX_INFO;
 
@@ -28,7 +24,7 @@ extern "C" D3DTLVERTEX *HWR_VertexPtr;
 extern "C" float RhwFactor;
 extern "C" float FltResZBuf;
 extern "C" float FltResZORhw;
-extern "C" RGB888 game_palette[];
+extern "C" uint8 game_palette[];
 extern "C" sint32 *sort3dptr;
 extern "C" sint16 *info3dptr;
 extern "C" D3DTLVERTEX VBufferD3D[];
