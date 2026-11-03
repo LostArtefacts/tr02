@@ -336,23 +336,6 @@ extern "C" bool GetRegistryGuidValue(LPCTSTR lpValueName, GUID *value, GUID *def
     return false;
 }
 
-extern "C" char DialogClassName[];
-extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-
-extern "C" bool SE_RegisterSetupWindowClass(void)
-{
-    WNDCLASS wc;
-
-    memset(&wc, 0, sizeof(wc));
-    wc.style = CS_HREDRAW | CS_VREDRAW;
-    wc.lpfnWndProc = SE_SetupWindowProc;
-    wc.hInstance = GhInstance;
-    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wc.lpszClassName = DialogClassName;
-    wc.cbWndExtra = 12;
-    return RegisterClass(&wc) ? true : false;
-}
-
 class BITMAP_RESOURCE
 {
 public:
@@ -373,6 +356,103 @@ public:
         hPalette = NULL;
     }
 };
+
+void BITMAP_RESOURCE::Release(void)
+{
+    if (hPalette)
+    {
+        DeleteObject(hPalette);
+        hPalette = NULL;
+    }
+    if ((flags & 1) && bmpData)
+    {
+        free(bmpData);
+        bmpData = NULL;
+    }
+}
+
+void BITMAP_RESOURCE::Load(LPCSTR lpName)
+{
+    struct {
+        WORD palVersion;
+        WORD palNumEntries;
+        PALETTEENTRY palPalEntry[256];
+    } logPalette;
+    RGBQUAD *bmpPalette;
+    LPBYTE bitmap;
+    int i;
+
+    if (hPalette)
+    {
+        DeleteObject(hPalette);
+        hPalette = NULL;
+    }
+    flags = 0;
+    bitmap = (LPBYTE)UT_LoadResource(lpName, RT_BITMAP);
+    bmpInfo = (LPBITMAPINFO)bitmap;
+    if (!bitmap)
+        return;
+    bmpPalette = (RGBQUAD *)(bitmap + sizeof(BITMAPINFOHEADER));
+    bmpData = (LPBYTE)(bmpPalette + 256);
+    *(DWORD *)&logPalette = 0x300 | (256 << 16);
+    for (i = 0; i < 256; i++)
+    {
+        logPalette.palPalEntry[i].peRed = bmpPalette[i].rgbRed;
+        logPalette.palPalEntry[i].peGreen = bmpPalette[i].rgbGreen;
+        logPalette.palPalEntry[i].peBlue = bmpPalette[i].rgbBlue;
+        if (i < 10 || i >= 246)
+            logPalette.palPalEntry[i].peFlags = 0;
+        else
+            logPalette.palPalEntry[i].peFlags = PC_NOCOLLAPSE;
+    }
+    hPalette = CreatePalette((LOGPALETTE *)&logPalette);
+}
+
+void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
+{
+    if (!hPalette)
+        return;
+    LPBITMAPINFO info = bmpInfo;
+    HPALETTE old = SelectPalette(hdc, hPalette, FALSE);
+    RealizePalette(hdc);
+    SetDIBitsToDevice(hdc, x, y, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, 0, 0, info->bmiHeader.biHeight, bmpData, bmpInfo, DIB_RGB_COLORS);
+    SelectPalette(hdc, old, FALSE);
+}
+
+void BITMAP_RESOURCE::UpdatePalette(HWND hWnd, HWND hSender)
+{
+    if (hPalette && hSender != hWnd)
+        ChangePalette(hWnd);
+}
+
+void BITMAP_RESOURCE::ChangePalette(HWND hWnd)
+{
+    if (!hPalette)
+        return;
+    HDC hdc = GetDC(hWnd);
+    HPALETTE old = SelectPalette(hdc, hPalette, FALSE);
+    UnrealizeObject(hPalette);
+    RealizePalette(hdc);
+    SelectPalette(hdc, old, FALSE);
+    ReleaseDC(hWnd, hdc);
+}
+
+extern "C" char DialogClassName[];
+extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+extern "C" bool SE_RegisterSetupWindowClass(void)
+{
+    WNDCLASS wc;
+
+    memset(&wc, 0, sizeof(wc));
+    wc.style = CS_HREDRAW | CS_VREDRAW;
+    wc.lpfnWndProc = SE_SetupWindowProc;
+    wc.hInstance = GhInstance;
+    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wc.lpszClassName = DialogClassName;
+    wc.cbWndExtra = 12;
+    return RegisterClass(&wc) ? true : false;
+}
 
 extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -456,86 +536,6 @@ void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, u
         pDest += nDStride;
         pSrc += nSStride;
     }
-}
-
-void BITMAP_RESOURCE::Release(void)
-{
-    if (hPalette)
-    {
-        DeleteObject(hPalette);
-        hPalette = NULL;
-    }
-    if ((flags & 1) && bmpData)
-    {
-        free(bmpData);
-        bmpData = NULL;
-    }
-}
-
-void BITMAP_RESOURCE::Load(LPCSTR lpName)
-{
-    struct {
-        WORD palVersion;
-        WORD palNumEntries;
-        PALETTEENTRY palPalEntry[256];
-    } logPalette;
-    RGBQUAD *bmpPalette;
-    LPBYTE bitmap;
-    int i;
-
-    if (hPalette)
-    {
-        DeleteObject(hPalette);
-        hPalette = NULL;
-    }
-    flags = 0;
-    bitmap = (LPBYTE)UT_LoadResource(lpName, RT_BITMAP);
-    bmpInfo = (LPBITMAPINFO)bitmap;
-    if (!bitmap)
-        return;
-    bmpPalette = (RGBQUAD *)(bitmap + sizeof(BITMAPINFOHEADER));
-    bmpData = (LPBYTE)(bmpPalette + 256);
-    *(DWORD *)&logPalette = 0x300 | (256 << 16);
-    for (i = 0; i < 256; i++)
-    {
-        logPalette.palPalEntry[i].peRed = bmpPalette[i].rgbRed;
-        logPalette.palPalEntry[i].peGreen = bmpPalette[i].rgbGreen;
-        logPalette.palPalEntry[i].peBlue = bmpPalette[i].rgbBlue;
-        if (i < 10 || i >= 246)
-            logPalette.palPalEntry[i].peFlags = 0;
-        else
-            logPalette.palPalEntry[i].peFlags = PC_NOCOLLAPSE;
-    }
-    hPalette = CreatePalette((LOGPALETTE *)&logPalette);
-}
-
-void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
-{
-    if (!hPalette)
-        return;
-    LPBITMAPINFO info = bmpInfo;
-    HPALETTE old = SelectPalette(hdc, hPalette, FALSE);
-    RealizePalette(hdc);
-    SetDIBitsToDevice(hdc, x, y, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, 0, 0, info->bmiHeader.biHeight, bmpData, bmpInfo, DIB_RGB_COLORS);
-    SelectPalette(hdc, old, FALSE);
-}
-
-void BITMAP_RESOURCE::UpdatePalette(HWND hWnd, HWND hSender)
-{
-    if (hPalette && hSender != hWnd)
-        ChangePalette(hWnd);
-}
-
-void BITMAP_RESOURCE::ChangePalette(HWND hWnd)
-{
-    if (!hPalette)
-        return;
-    HDC hdc = GetDC(hWnd);
-    HPALETTE old = SelectPalette(hdc, hPalette, FALSE);
-    UnrealizeObject(hPalette);
-    RealizePalette(hdc);
-    SelectPalette(hdc, old, FALSE);
-    ReleaseDC(hWnd, hdc);
 }
 
 #ifdef TR2_EXE
