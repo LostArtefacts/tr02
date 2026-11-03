@@ -61,11 +61,11 @@
 </g>
 <g transform="translate(0 116)">
 <text x="0" y="7.50">Tomb Raider II progress according to the physical function order:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">91.47% (1115)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">6.81% (83)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">92.12% (1123)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">6.15% (75)</tspan> · <tspan class="todo">0% (0)</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="683.27" height="6" x="0" y="0" class="named"/>
-<rect width="12.87" height="6" x="683.27" y="0" class="decompiled"/>
-<rect width="50.86" height="6" x="696.14" y="0" class="nonmatching"/>
+<rect width="688.17" height="6" x="0" y="0" class="named"/>
+<rect width="12.87" height="6" x="688.17" y="0" class="decompiled"/>
+<rect width="45.96" height="6" x="701.04" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -123,27 +123,27 @@
 <rect width="12" height="12" x="30" y="15" class="named"><title>0x00408580 ins_flat_rect (203 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="15" class="named"><title>0x00408650 ins_line (181 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="15" class="nonmatching"><title>0x00408710 InsertGT3_ZBuffered (1602 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="15" class="nonmatching"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="15" class="named"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="15" class="nonmatching"><title>0x00408ea0 InsertGT4_ZBuffered (1084 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="15" class="named"><title>0x004092e0 InsertObjectGT4_ZBuffered (145 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="15" class="named"><title>0x00409380 InsertObjectGT3_ZBuffered (170 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="15" class="nonmatching"><title>0x00409430 InsertObjectG4_ZBuffered (924 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="15" class="named"><title>0x00409430 InsertObjectG4_ZBuffered (924 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="15" class="named"><title>0x004097d0 DrawPoly_Gouraud (247 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="15" class="nonmatching"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="15" class="named"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x00409bb0 InsertFlatRect_ZBuffered (457 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="15" class="named"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="15" class="nonmatching"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="nonmatching"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="15" class="nonmatching"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="15" class="named"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="15" class="named"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="named"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="15" class="nonmatching"><title>0x0040ad90 InsertObjectG4_Sorted (1083 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="15" class="named"><title>0x0040ad90 InsertObjectG4_Sorted (1083 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="15" class="named"><title>0x0040b1d0 InsertPoly_Gouraud (373 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="15" class="nonmatching"><title>0x0040b350 InsertObjectG3_Sorted (835 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="15" class="named"><title>0x0040b350 InsertObjectG3_Sorted (835 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="15" class="named"><title>0x0040b6a0 InsertSprite_Sorted (839 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="15" class="named"><title>0x0040b9f0 InsertFlatRect_Sorted (383 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="15" class="named"><title>0x0040bb70 InsertLine_Sorted (299 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="15" class="nonmatching"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="15" class="named"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="15" class="named"><title>0x0040be40 InsertTransQuad_Sorted (317 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="15" class="named"><title>0x0040bf80 insert_sprite (167 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="15" class="nonmatching"><title>0x0040c030 S_DrawSprite (711 bytes)</title></rect>
@@ -864,7 +864,7 @@
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00443100 GiantYetiControl (760 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="named"><title>0x00443400 YetiControl (1592 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="named"><title>0x00443a40 BGND_Make640x480 (440 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="225" class="nonmatching"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="225" class="named"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00443cc0 BGND_GetPageHandles (50 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="225" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="named"><title>0x00443d60 DrawQuad (220 bytes)</title></rect>
@@ -1291,11 +1291,11 @@
 </g>
 <g transform="translate(0 546)">
 <text x="0" y="7.50">Tomb Raider II progress according to the function sizes:</text>
-<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">83.08%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">16.48%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
+<text class="todo" style="font-size: 12px; " x="747" y="9"><tspan text-anchor="end"><tspan class="named">84.74%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">14.83%</tspan> · <tspan class="todo">0%</tspan></tspan></text>
 <g transform="translate(0 20)">
-<rect width="620.63" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="620.63" y="0" class="decompiled"/>
-<rect width="123.12" height="6" x="623.88" y="0" class="nonmatching"/>
+<rect width="632.98" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="632.98" y="0" class="decompiled"/>
+<rect width="110.78" height="6" x="636.22" y="0" class="nonmatching"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="57.84" height="68.63" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
@@ -1338,7 +1338,7 @@
 <rect width="28.56" height="30.69" x="180.92" y="0" class="named"><title>0x004059f0 XYGUVClipper (1297 bytes)</title></rect>
 <rect width="28.56" height="29.34" x="180.92" y="33.69" class="named"><title>0x0040d2c0 BoatDynamics (1245 bytes)</title></rect>
 <rect width="28.56" height="29.21" x="180.92" y="66.03" class="named"><title>0x0041fcc0 GF_InterpretSequence (1240 bytes)</title></rect>
-<rect width="28.56" height="29.18" x="180.92" y="98.23" class="nonmatching"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
+<rect width="28.56" height="29.18" x="180.92" y="98.23" class="named"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
 <rect width="28.56" height="29" x="180.92" y="130.42" class="named"><title>0x0041dfe0 MonkControl (1232 bytes)</title></rect>
 <rect width="28.56" height="29" x="180.92" y="162.42" class="named"><title>0x004505f0 S_ShowControls (1232 bytes)</title></rect>
 <rect width="28.56" height="27.99" x="180.92" y="194.42" class="named"><title>0x00411a80 CalculateCamera (1193 bytes)</title></rect>
@@ -1354,7 +1354,7 @@
 <rect width="27.76" height="26.58" x="212.48" y="119.60" class="nonmatching"><title>0x0043e6b0 SkidooControl (1110 bytes)</title></rect>
 <rect width="27.76" height="25.89" x="212.48" y="149.19" class="nonmatching"><title>0x00408ea0 InsertGT4_ZBuffered (1084 bytes)</title></rect>
 <rect width="27.76" height="25.89" x="212.48" y="178.07" class="named"><title>0x00437960 Bandit2Control (1084 bytes)</title></rect>
-<rect width="27.76" height="25.86" x="212.48" y="206.96" class="nonmatching"><title>0x0040ad90 InsertObjectG4_Sorted (1083 bytes)</title></rect>
+<rect width="27.76" height="25.86" x="212.48" y="206.96" class="named"><title>0x0040ad90 InsertObjectG4_Sorted (1083 bytes)</title></rect>
 <rect width="27.76" height="25.57" x="212.48" y="235.82" class="named"><title>0x0041dbb0 Cult2Control (1072 bytes)</title></rect>
 <rect width="27.76" height="25.57" x="212.48" y="264.39" class="named"><title>0x00423570 DrawInventoryItem (1072 bytes)</title></rect>
 <rect width="27.76" height="25.57" x="212.48" y="292.96" class="named"><title>0x004363d0 Cult1Control (1072 bytes)</title></rect>
@@ -1377,7 +1377,7 @@
 <rect width="24.52" height="24.79" x="271.25" y="27.88" class="nonmatching"><title>0x00448f00 RenderStart (933 bytes)</title></rect>
 <rect width="24.52" height="24.76" x="271.25" y="55.67" class="named"><title>0x0042cc50 AnimateShotgun (932 bytes)</title></rect>
 <rect width="24.52" height="24.64" x="271.25" y="83.43" class="named"><title>0x00449b60 LoadRooms (928 bytes)</title></rect>
-<rect width="24.52" height="24.52" x="271.25" y="111.08" class="nonmatching"><title>0x00409430 InsertObjectG4_ZBuffered (924 bytes)</title></rect>
+<rect width="24.52" height="24.52" x="271.25" y="111.08" class="named"><title>0x00409430 InsertObjectG4_ZBuffered (924 bytes)</title></rect>
 <rect width="24.52" height="24.37" x="271.25" y="138.60" class="named"><title>0x00426500 ShowStatsText (919 bytes)</title></rect>
 <rect width="24.52" height="24.14" x="271.25" y="165.97" class="named"><title>0x0042b5e0 GetLaraJointAbsPosition (911 bytes)</title></rect>
 <rect width="24.52" height="23.87" x="271.25" y="193.11" class="named"><title>0x00433410 ExplodingDeath (902 bytes)</title></rect>
@@ -1394,7 +1394,7 @@
 <rect width="22.36" height="24.12" x="298.77" y="111.41" class="named"><title>0x0040b6a0 InsertSprite_Sorted (839 bytes)</title></rect>
 <rect width="22.36" height="24.12" x="298.77" y="138.53" class="named"><title>0x00441c20 RollingBallControl (839 bytes)</title></rect>
 <rect width="22.36" height="24.02" x="298.77" y="165.65" class="named"><title>0x0042c180 ControlHarpoonBolt (836 bytes)</title></rect>
-<rect width="22.36" height="23.99" x="298.77" y="192.67" class="nonmatching"><title>0x0040b350 InsertObjectG3_Sorted (835 bytes)</title></rect>
+<rect width="22.36" height="23.99" x="298.77" y="192.67" class="named"><title>0x0040b350 InsertObjectG3_Sorted (835 bytes)</title></rect>
 <rect width="22.36" height="23.99" x="298.77" y="219.66" class="named"><title>0x00414370 ControlPhase (835 bytes)</title></rect>
 <rect width="22.36" height="23.92" x="298.77" y="246.65" class="named"><title>0x00457b5c wgtmapA (833 bytes)</title></rect>
 <rect width="22.36" height="23.70" x="298.77" y="273.57" class="named"><title>0x00437620 BanditControl (826 bytes)</title></rect>
@@ -1416,7 +1416,7 @@
 <rect width="21.36" height="21.57" x="324.13" y="304.54" class="named"><title>0x0044f5e0 do_detail_option (730 bytes)</title></rect>
 <rect width="21.36" height="21.50" x="324.13" y="329.11" class="named"><title>0x0043fb90 GetSpheres (728 bytes)</title></rect>
 <rect width="21.36" height="21.40" x="324.13" y="353.60" class="named"><title>0x0043eb10 DrawSkidoo (725 bytes)</title></rect>
-<rect width="20.62" height="22.09" x="348.49" y="0" class="nonmatching"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
+<rect width="20.62" height="22.09" x="348.49" y="0" class="named"><title>0x004098d0 InsertObjectG3_ZBuffered (723 bytes)</title></rect>
 <rect width="20.62" height="21.99" x="348.49" y="25.09" class="named"><title>0x00407d20 XYClipper (720 bytes)</title></rect>
 <rect width="20.62" height="21.99" x="348.49" y="50.08" class="named"><title>0x00433090 ControlMissile (720 bytes)</title></rect>
 <rect width="20.62" height="21.99" x="348.49" y="75.07" class="named"><title>0x00454b10 GameMain (720 bytes)</title></rect>
@@ -1527,7 +1527,7 @@
 <rect width="14.95" height="15.73" x="413.78" y="174.81" class="named"><title>0x0043fe70 GetJointAbsPosition (410 bytes)</title></rect>
 <rect width="14.95" height="15.63" x="413.78" y="193.54" class="named"><title>0x00414b40 GetFloor (408 bytes)</title></rect>
 <rect width="14.95" height="15.54" x="413.78" y="212.17" class="nonmatching"><title>0x00456360 AddTexturePage16 (406 bytes)</title></rect>
-<rect width="14.95" height="15.50" x="413.78" y="230.71" class="nonmatching"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
+<rect width="14.95" height="15.50" x="413.78" y="230.71" class="named"><title>0x0040bca0 InsertTrans8_Sorted (405 bytes)</title></rect>
 <rect width="14.95" height="15.50" x="413.78" y="249.21" class="named"><title>0x00413620 LaraBaddieCollision (405 bytes)</title></rect>
 <rect width="14.95" height="15.50" x="413.78" y="267.71" class="named"><title>0x00427560 LaraAboveWater (405 bytes)</title></rect>
 <rect width="14.95" height="15.45" x="413.78" y="286.20" class="named"><title>0x0042ee30 LaraTargetInfo (404 bytes)</title></rect>
@@ -1594,7 +1594,7 @@
 <rect width="12.96" height="13.59" x="514.66" y="78.09" class="named"><title>0x00427910 lara_as_run (323 bytes)</title></rect>
 <rect width="12.96" height="13.59" x="530.61" y="78.09" class="named"><title>0x00452c20 SE_DefaultGraphicsSettings (323 bytes)</title></rect>
 <rect width="12.81" height="13.59" x="546.57" y="78.09" class="named"><title>0x004058b0 ZedClipper (320 bytes)</title></rect>
-<rect width="12.81" height="13.59" x="562.38" y="78.09" class="nonmatching"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
+<rect width="12.81" height="13.59" x="562.38" y="78.09" class="named"><title>0x00408d60 DrawClippedPoly_Textured (320 bytes)</title></rect>
 <rect width="12.81" height="13.59" x="578.19" y="78.09" class="named"><title>0x0043d740 DoSnowEffect (320 bytes)</title></rect>
 <rect width="12.71" height="13.59" x="593.99" y="78.09" class="named"><title>0x004251c0 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="12.71" height="13.59" x="609.70" y="78.09" class="named"><title>0x004428f0 DartEmitterControl (318 bytes)</title></rect>
@@ -1781,7 +1781,7 @@
 <rect width="9.18" height="9.52" x="523.82" y="290.89" class="named"><title>0x00430ed0 LaraCheatGetStuff (186 bytes)</title></rect>
 <rect width="9.18" height="9.45" x="523.82" y="303.41" class="named"><title>0x00431a00 lara_as_surftread (185 bytes)</title></rect>
 <rect width="9.18" height="9.45" x="523.82" y="315.87" class="named"><title>0x00436040 GunHit (185 bytes)</title></rect>
-<rect width="9.18" height="9.45" x="523.82" y="328.32" class="nonmatching"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
+<rect width="9.18" height="9.45" x="523.82" y="328.32" class="named"><title>0x00443c00 BGND_AddTexture (185 bytes)</title></rect>
 <rect width="9.18" height="9.45" x="523.82" y="340.77" class="named"><title>0x00444760 D3DSetViewport (185 bytes)</title></rect>
 <rect width="9.18" height="9.39" x="523.82" y="353.23" class="named"><title>0x0040f440 CreatureDie (184 bytes)</title></rect>
 <rect width="9.18" height="9.39" x="523.82" y="365.61" class="named"><title>0x00432f80 CreateZone (184 bytes)</title></rect>

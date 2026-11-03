@@ -1,19 +1,29 @@
-#include "../specific/include.h"
+#include "../specific/standard.h"
 #include "../3dglodef.h"
 #include "../specific/winmain.h"
+#include "../specific/output.h"
 
 typedef struct {
     float xv, yv, zv, ooz, xs, ys;
     sint16 clip, g, u, v;
 } PHD_VBUF;
 
-extern "C" PHD_VBUF PhdVBuf[];
-extern "C" PHDTEXTURESTRUCT phdtextinfo[];
-
 typedef struct {
     uint8 red, green, blue;
 } RGB888;
 
+typedef struct {
+    float x, y, rhw, u, v, g;
+} VERTEX_INFO;
+
+bool HWR_VertexBufferFull();
+void HWR_TexSource(D3DTEXTUREHANDLE tSource);
+void HWR_EnableColorKey(bool tEnable);
+
+extern IDirect3DDevice2 *G_Direct3DDevice;
+
+extern "C" PHD_VBUF PhdVBuf[];
+extern "C" PHDTEXTURESTRUCT phdtextinfo[];
 extern "C" D3DTLVERTEX *HWR_VertexPtr;
 extern "C" float RhwFactor;
 extern "C" float FltResZBuf;
@@ -21,17 +31,7 @@ extern "C" float FltResZORhw;
 extern "C" RGB888 game_palette[];
 extern "C" sint32 *sort3dptr;
 extern "C" sint16 *info3dptr;
-
-bool HWR_VertexBufferFull();
-void HWR_TexSource(D3DTEXTUREHANDLE tSource);
-void HWR_EnableColorKey(bool tEnable);
-
 extern "C" D3DTLVERTEX VBufferD3D[];
-
-typedef struct {
-    float x, y, rhw, u, v, g;
-} VERTEX_INFO;
-
 extern "C" VERTEX_INFO VBuffer[];
 
 inline uint32 ShadeU(uint32 r, uint32 g, uint32 b)
@@ -97,7 +97,7 @@ extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PH
         if (!npoints)
             return;
     } else {
-        if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) < 0)
+        if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) < 0)
             return;
         if ((sint8)(v1->clip | v2->clip | v3->clip)) {
             VBuffer[0].x = v1->xs;
@@ -226,7 +226,7 @@ extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PH
             InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
             InsertGT3_ZBuffered(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4);
         }
-    } else if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) >= 0) {
+    } else if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) >= 0) {
         if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip)) {
             InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
             InsertGT3_ZBuffered(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4);
@@ -355,6 +355,7 @@ inline int ZClip4(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3, PHD_VBUF *vn4)
     return ZedClipper(4, point, VBuffer);
 }
 
+extern "C" int XYGClipper(int number, VERTEX_INFO *input);
 extern "C" sint16 *InsertObjectG4_ZBuffered(sint16 *objptr, int number, int sorttype)
 {
     PHD_VBUF *vn1, *vn2, *vn3, *vn4;
@@ -401,7 +402,7 @@ extern "C" sint16 *InsertObjectG4_ZBuffered(sint16 *objptr, int number, int sort
                 npoints = XYGClipper(4, VBuffer);
         }
         if (npoints) {
-            pal = &GamePalette16[(uint8)(objptr[4] >> 8)];
+            pal = (PALETTEENTRY *)((char *)GamePalette16 + ((objptr[4] >> 6) & 0x3fc));
             DrawPoly_Gouraud(npoints, pal->peRed, pal->peGreen, pal->peBlue);
         }
     }
@@ -478,9 +479,12 @@ inline int ZClip3(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3)
     return ZedClipper(3, point, VBuffer);
 }
 
+void HWR_EnableZBuffer(bool tWrite, bool tCompare);
+void HWR_InitVertexList();
+
 extern "C" sint16 *InsertObjectG3_ZBuffered(sint16 *objptr, int number, int sorttype)
 {
-    PHD_VBUF *vn1, *vn2, *vn3;
+    PHD_VBUF *vn2, *vn3, *vn1;
     PALETTEENTRY *pal;
     int npoints;
 
@@ -519,7 +523,7 @@ extern "C" sint16 *InsertObjectG3_ZBuffered(sint16 *objptr, int number, int sort
                 npoints = XYGClipper(3, VBuffer);
         }
         if (npoints) {
-            pal = &GamePalette16[(uint8)(objptr[3] >> 8)];
+            pal = (PALETTEENTRY *)((char *)GamePalette16 + ((objptr[3] >> 6) & 0x3fc));
             DrawPoly_Gouraud(npoints, pal->peRed, pal->peGreen, pal->peBlue);
         }
     }
@@ -629,7 +633,7 @@ extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTE
             goto clip;
         return;
     } else {
-        if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) < 0)
+        if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) < 0)
             return;
         if ((sint8)(v1->clip | v2->clip | v3->clip)) {
             VBuffer[0].x = v1->xs;
@@ -766,7 +770,7 @@ extern "C" void InsertClippedPoly_Textured(int vtx_count, float z, int poly_type
         shade = (0x1fff - (int)vbuf->g) >> 4;
         if (shade > 255)
             shade = 255;
-        vtx->color = ShadeU(shade, shade, shade);
+        vtx->color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
         k = 1.0f / 65536.0f / vbuf->rhw;
         tu = vbuf->u * k;
         tv = k * vbuf->v;
@@ -802,7 +806,7 @@ extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_V
         InsertGT3_Sorted(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4, sorttype);
         return;
     }
-    if ((sint32)((v3->xs - v2->xs) * (v1->ys - v2->ys) - (v3->ys - v2->ys) * (v1->xs - v2->xs)) < 0)
+    if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) < 0)
         return;
     if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip)) {
         InsertGT3_Sorted(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3, sorttype);
@@ -917,7 +921,7 @@ extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, i
 
 extern "C" sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, int sorttype)
 {
-    PHD_VBUF *vn1, *vn2, *vn3, *vn4;
+    PHD_VBUF *vn1, *vn4, *vn2, *vn3;
     PALETTEENTRY *pal;
     int npoints;
     float zdepth;
@@ -935,9 +939,8 @@ extern "C" sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, int sorttyp
             if (!visible_zclip(vn1, vn2, vn3))
                 continue;
             npoints = ZClip4(vn1, vn2, vn3, vn4);
-            if (!npoints)
-                continue;
-            npoints = XYGClipper(npoints, VBuffer);
+            if (npoints)
+                npoints = XYGClipper(npoints, VBuffer);
         } else {
             if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
                 continue;
@@ -962,11 +965,12 @@ extern "C" sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, int sorttyp
                 npoints = XYGClipper(4, VBuffer);
         }
         if (npoints) {
-            pal = &GamePalette16[(uint8)(objptr[4] >> 8)];
-            if (sorttype == MID_SORT) {
+            pal = (PALETTEENTRY *)((char *)GamePalette16 + ((objptr[4] >> 6) & 0x3fc));
+            switch (sorttype) {
+            case MID_SORT:
                 zdepth = (vn1->zv + vn2->zv + vn3->zv + vn4->zv) * 0.25f;
-                InsertPoly_Gouraud(npoints, zdepth, pal->peRed, pal->peGreen, pal->peBlue, 11);
-            } else if (sorttype == FAR_SORT) {
+                break;
+            case FAR_SORT:
                 zdepth = vn1->zv;
                 if (vn2->zv > zdepth)
                     zdepth = vn2->zv;
@@ -974,10 +978,12 @@ extern "C" sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, int sorttyp
                     zdepth = vn3->zv;
                 if (vn4->zv > zdepth)
                     zdepth = vn4->zv;
-                InsertPoly_Gouraud(npoints, zdepth, pal->peRed, pal->peGreen, pal->peBlue, 11);
-            } else {
-                InsertPoly_Gouraud(npoints, 1000000000.0f, pal->peRed, pal->peGreen, pal->peBlue, 11);
+                break;
+            default:
+                zdepth = 1000000000.0f;
+                break;
             }
+            InsertPoly_Gouraud(npoints, zdepth, pal->peRed, pal->peGreen, pal->peBlue, 11);
         }
     }
     return objptr;
@@ -1028,17 +1034,15 @@ extern "C" void InsertPoly_Gouraud(int vtx_count, float z, int red, int green, i
     surfacenum++;
 }
 
-extern "C" PALETTEENTRY GamePalette16[];
-extern "C" int XYGClipper(int number, VERTEX_INFO *input);
 
 extern "C" sint16 *InsertObjectG3_Sorted(sint16 *objptr, int number, int sorttype)
 {
-    PHD_VBUF *vn1, *vn2, *vn3;
     PALETTEENTRY *pal;
+    PHD_VBUF *vn1, *vn2, *vn3;
     int npoints;
     float zdepth;
 
-    for (; number--; objptr += 4) {
+    for (; number; number--, objptr += 4) {
         if (HWR_VertexBufferFull())
             return objptr + 4 * number;
         vn1 = &PhdVBuf[objptr[0]];
@@ -1050,9 +1054,8 @@ extern "C" sint16 *InsertObjectG3_Sorted(sint16 *objptr, int number, int sorttyp
             if (!visible_zclip(vn1, vn2, vn3))
                 continue;
             npoints = ZClip3(vn1, vn2, vn3);
-            if (!npoints)
-                continue;
-            npoints = XYGClipper(npoints, VBuffer);
+            if (npoints)
+                npoints = XYGClipper(npoints, VBuffer);
         } else {
             if ((sint32)((vn3->xs - vn2->xs) * (vn1->ys - vn2->ys) - (vn3->ys - vn2->ys) * (vn1->xs - vn2->xs)) < 0)
                 continue;
@@ -1066,14 +1069,14 @@ extern "C" sint16 *InsertObjectG3_Sorted(sint16 *objptr, int number, int sorttyp
             VBuffer[1].g = (float)vn2->g;
             VBuffer[2].x = vn3->xs;
             VBuffer[2].y = vn3->ys;
-            VBuffer[2].rhw = vn3->ooz;
+            VBuffer[2].rhw = vn2->ooz;
             VBuffer[2].g = (float)vn3->g;
             npoints = 3;
             if ((sint8)(vn1->clip | vn2->clip | vn3->clip))
                 npoints = XYGClipper(3, VBuffer);
         }
         if (npoints) {
-            pal = &GamePalette16[(uint8)(objptr[3] >> 8)];
+            pal = (PALETTEENTRY *)((char *)GamePalette16 + ((objptr[3] >> 6) & 0x3fc));
             switch (sorttype) {
             case MID_SORT:
                 zdepth = (vn1->zv + vn2->zv + vn3->zv) * 0.333333333333333333f;
@@ -1248,12 +1251,12 @@ extern "C" void InsertTrans8_Sorted(PHD_VBUF *vbuf, sint16 shade)
     int i, n;
     sint8 or_clip;
 
-    or_clip = (sint8)vbuf[0].clip | (sint8)vbuf[1].clip | (sint8)vbuf[2].clip | (sint8)vbuf[3].clip | (sint8)vbuf[4].clip | (sint8)vbuf[5].clip | (sint8)vbuf[6].clip | (sint8)vbuf[7].clip;
+    or_clip = (sint8)vbuf[7].clip | (sint8)vbuf[6].clip | (sint8)vbuf[5].clip | (sint8)vbuf[4].clip | (sint8)vbuf[3].clip | (sint8)vbuf[2].clip | (sint8)vbuf[1].clip | (sint8)vbuf[0].clip;
     if (or_clip < 0)
         return;
-    if ((sint8)vbuf[0].clip & (sint8)vbuf[1].clip & (sint8)vbuf[2].clip & (sint8)vbuf[3].clip & (sint8)vbuf[4].clip & (sint8)vbuf[5].clip & (sint8)vbuf[6].clip & (sint8)vbuf[7].clip)
+    if ((sint8)vbuf[7].clip & (sint8)vbuf[6].clip & (sint8)vbuf[5].clip & (sint8)vbuf[4].clip & (sint8)vbuf[3].clip & (sint8)vbuf[2].clip & (sint8)vbuf[1].clip & (sint8)vbuf[0].clip)
         return;
-    if ((sint32)((vbuf[2].xs - vbuf[1].xs) * (vbuf[0].ys - vbuf[1].ys) - (vbuf[0].xs - vbuf[1].xs) * (vbuf[2].ys - vbuf[1].ys)) < 0)
+    if ((sint32)((vbuf[2].xs - vbuf[1].xs) * (vbuf[0].ys - vbuf[1].ys) - (vbuf[2].ys - vbuf[1].ys) * (vbuf[0].xs - vbuf[1].xs)) < 0)
         return;
     for (i = 0; i < 8; i++)
     {
@@ -1271,7 +1274,7 @@ extern "C" void InsertTrans8_Sorted(PHD_VBUF *vbuf, sint16 shade)
         n = XYClipper(n, VBuffer);
     }
     if (n)
-        InsertPoly_Gouraud(n, (vbuf[0].zv + vbuf[1].zv + vbuf[2].zv + vbuf[3].zv + vbuf[4].zv + vbuf[5].zv + vbuf[6].zv + vbuf[7].zv) * 0.125f - 131072, 0, 0, 0, 13);
+        InsertPoly_Gouraud(n, (vbuf[7].zv + vbuf[6].zv + vbuf[5].zv + vbuf[4].zv + vbuf[3].zv + vbuf[2].zv + vbuf[1].zv + vbuf[0].zv) * 0.125f - 131072, 0, 0, 0, 13);
 }
 
 extern "C" void InsertTransQuad_Sorted(int x, int y, int width, int height, int z)

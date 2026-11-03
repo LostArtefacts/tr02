@@ -1,5 +1,4 @@
 #include "game.h"
-#include "larafire.h"
 
 #define FLARE_FIRE 235
 #define GUN_FLASH 240
@@ -342,7 +341,7 @@ void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint
 void DrawEffect(sint16 fx_num);
 void InitInterpolate(int frac, int rate);
 
-void S_InsertBackPolygon(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 colour);
+void S_InsertBackPolygon(sint32 x1, sint32 y1, sint32 x2, sint32 y2, int colour);
 
 extern sint32 Var464180[12][2];
 

@@ -1,5 +1,5 @@
-#include <windows.h>
 #include "game.h"
+#include <windows.h>
 
 #define CAM_A_CLIMBL (-30 * ONE_DEGREE)
 #define CAM_E_CLIMBL (-15 * ONE_DEGREE)

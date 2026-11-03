@@ -1,3 +1,5 @@
+#include "../specific/standard.h"
+#include "../specific/global.h"
 #include "../3dglodef.h"
 
 typedef struct {

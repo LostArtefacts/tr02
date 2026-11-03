@@ -1,4 +1,5 @@
 #include "game.h"
+#include "invdata.h"
 #include "savegame.h"
 
 extern sint16 GF_SunsetEnabled;

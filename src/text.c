@@ -1,5 +1,4 @@
 #include "game.h"
-#include "text.h"
 
 #define MAX_TEXT_STRINGS 64
 #define MAX_STRING_SIZE 64

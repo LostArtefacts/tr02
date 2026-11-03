@@ -1,13 +1,16 @@
+#include "standard.h"
 #include "global.h"
-#include "../3dglodef.h"
-#include "../invdata.h"
 #include "input.h"
+#include "../invdata.h"
+#include "../inventry.h"
+#include "../gameflow.h"
+#include "../title.h"
+#include "../sound.h"
+#include "../savegame.h"
+#include "../3dglodef.h"
 #include <stdio.h>
 #include <dinput.h>
-#include "../savegame.h"
-#include "../title.h"
 #include "../room.h"
-#include "../sound.h"
 
 extern "C" sint16 Option_SoundFX_Volume;
 extern "C" sint16 Option_Music_Volume;

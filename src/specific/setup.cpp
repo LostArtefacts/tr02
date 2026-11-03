@@ -1,7 +1,8 @@
 // cflags: /GX
+#include "include.h"
+#include <commctrl.h>
 #include <stdio.h>
 #include "global.h"
-#include <commctrl.h>
 #include "ds.h"
 
 extern "C" {

@@ -1,5 +1,5 @@
+#include "standard.h"
 #include "global.h"
-#include "time.h"
 
 extern double LdSync, LdFreq;
 

@@ -1,12 +1,12 @@
 #include "game.h"
 #include "savegame.h"
+#include "specific/init.h"
 
 #define NUMBER_OBJECTS 265
 #define DEFAULT_RADIUS 10
 #define DONT_TARGET (-16384)
 #define NO_ROOM 0xff
 
-#include "specific/init.h"
 
 #define FINAL_LEVEL 262
 #define GFT_TITLEFILE 0

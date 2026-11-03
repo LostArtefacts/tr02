@@ -1,4 +1,4 @@
-#include <ddraw.h>
+#include "standard.h"
 #include "global.h"
 
 inline bool DX_TRY(HRESULT hr)

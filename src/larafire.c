@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "game.h"
+#include <stdio.h>
 #include "box.h"
 #include "sphere.h"
 #include "savegame.h"
@@ -425,6 +425,8 @@ void LaraGetNewTarget(WEAPON_INFO *winfo)
 }
 
 void SmashWindow(sint16 item_number);
+
+sint16 *GetBestFrame(ITEM_INFO *);
 
 void find_target_point(ITEM_INFO *item, GAME_VECTOR *target)
 {

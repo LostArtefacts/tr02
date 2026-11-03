@@ -1,10 +1,19 @@
+#include "standard.h"
 #include "global.h"
-#include <stdio.h>
-#include "../title.h"
-#include "../invdata.h"
-#include "../savegame.h"
-#include "../gameflow.h"
+#include "frontend.h"
 #include "file.h"
+#include "input.h"
+#include "output.h"
+#include "display.h"
+#include "../invdata.h"
+#include "../inventry.h"
+#include "../gameflow.h"
+#include "../savegame.h"
+#include "../title.h"
+#include "../camera.h"
+#include "../lara.h"
+#include "../sound.h"
+#include <stdio.h>
 #include "winmain.h"
 
 extern "C" sint32 rand_1;

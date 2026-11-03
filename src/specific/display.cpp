@@ -1,6 +1,9 @@
+#include "standard.h"
 #include "global.h"
+#include "winmain.h"
 #include "output.h"
 #include "display.h"
+#include "../camera.h"
 #include "../inventry.h"
 
 extern int fade_value;

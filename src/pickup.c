@@ -1,5 +1,5 @@
-#include <windows.h>
 #include "game.h"
+#include <windows.h>
 #include "savegame.h"
 
 enum switch_states { SS_OFF, SS_ON };

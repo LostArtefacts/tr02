@@ -1,7 +1,12 @@
-#include <windows.h>
-#include <dsound.h>
+#include "standard.h"
 #include "global.h"
 #include "ds.h"
+#include "../sound.h"
+#include <math.h>
+#include <process.h>
+#include "winmain.h"
+#include <windows.h>
+#include <dsound.h>
 
 extern "C" int LnMasterVolume;
 

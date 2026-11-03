@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <string.h>
 #include "game.h"
 #include "invdata.h"
+#include <string.h>
+#include <stdio.h>
 #include "inventry.h"
 #include "savegame.h"
 

@@ -1,7 +1,10 @@
+#include "standard.h"
 #include "global.h"
 #include "init.h"
 #include "output.h"
 #include <time.h>
+#include "winmain.h"
+#include <math.h>
 
 extern "C" char *malloc_ptr;
 extern "C" int malloc_size;

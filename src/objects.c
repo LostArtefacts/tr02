@@ -1,5 +1,5 @@
-#include <string.h>
 #include "game.h"
+#include <string.h>
 #include "box.h"
 #include "savegame.h"
 

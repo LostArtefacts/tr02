@@ -1,5 +1,5 @@
 #include "game.h"
-
+#include "invdata.h"
 #include "inventry.h"
 #include "specific/display.h"
 #include "savegame.h"

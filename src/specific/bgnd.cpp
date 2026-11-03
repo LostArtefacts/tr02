@@ -1,7 +1,11 @@
-#include "include.h"
+#include "standard.h"
 #include "global.h"
+#include "winmain.h"
 #include <math.h>
-
+#include "init.h"
+#include "utils.h"
+#include "hwrender.h"
+#include "include.h"
 extern "C" {
 #include "../anim.h"
 }

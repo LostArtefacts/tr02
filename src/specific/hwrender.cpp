@@ -1,7 +1,9 @@
-#include "include.h"
+#include "standard.h"
 #include "global.h"
-#include "hwrender.h"
 #include "winmain.h"
+#include "hwrender.h"
+#include "input.h"
+#include "include.h"
 
 #define MAX_TLVERTICES 8192
 

@@ -1,5 +1,4 @@
 #include "include.h"
-#include "global.h"
 
 extern "C" {
 extern LPDIRECTDRAW2 DDraw;
