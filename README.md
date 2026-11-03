@@ -1,135 +1,121 @@
 # tr02
 
 A matching decompilation of Tomb Raider II (Core Design, 1997), the
-Windows version, built and verified on Linux through Wine.
+Steam Windows release, built and verified on Linux through Wine.
 
-The goal is C and C++ source that compiles, with the original
-toolchain, into a binary that is byte-for-byte identical to the
-original executable.
-
-This repository contains no game code or data. You need your own copy of
-the game, see [`orig/README.md`](orig/README.md).
-
-## Sources
-
-This is not a clean-room project. Three references are used for names,
-structures and logic:
-
-- Core's own TR2 source tree, from 1997. It is a working tree, which
-  went on towards Tomb Raider III, not the released build.
-- [TRX](https://github.com/LostArtefacts/TRX), whose symbol manifest
-  `docs/symbols/tr2-steam.txt` names the target's functions and
-  globals, with types.
-- [TR2Main](https://github.com/Arsunt/TR2Main), a decompilation that
-  hooks into this executable, function by function.
+The goal is C and C++ source that compiles into the original machine
+code. During development, a DLL replaces recovered functions in a copy
+of the original executable, so they can be exercised in the game.
 
 ![Progress](docs/progress.svg)
 
-`just progress` renders it: every game function, by address and as a
-treemap by size, coloured by whether it is decompiled and matching.
+## Sources
+
+This is not a clean-room project. The references are:
+
+- `refs/core`: Core's 1997 source tree, which continued towards Tomb
+  Raider III. `BACKUP` is generally closer to the released TR2 code.
+- [TRX](https://github.com/LostArtefacts/TRX): the target's function and
+  global names, addresses and types in `docs/symbols/tr2-steam.txt`.
+- [TR2Main](https://github.com/Arsunt/TR2Main): a decompilation that hooks
+  into the same executable, function by function.
+
+Ghidra provides disassembly and pseudocode for the original executable.
 
 ## Target
 
 The Steam release's `Tomb2.exe`, linked 1997-12-10, a patch after the
-October retail release. TRX's manifest is for this build.
+October retail release. TRX's Steam manifest targets this build.
 
-- 32-bit PE, image base `0x400000`, entry point `0x459ff0`, `.text` is
-  0x61dba bytes
-- `.data` is 0xc3514 bytes in memory but only 0x8400 on disk, so most of
-  it is zero-initialized globals
-- Imports `DINPUT`, `DSOUND`, `DDRAW`, `WINMM`, `USER32`, `COMCTL32`,
-  `ADVAPI32`, `GDI32`, `winplay` (Eidos' FMV player, shipped as
-  `WINPLAY.DLL`) and `KERNEL32`, in the order of `TOMBRAID.DSP`'s
-  libraries
+| Property | Value |
+| --- | --- |
+| Format | 32-bit PE |
+| Image base | `0x400000` |
+| Entry point | `0x459ff0` |
+| Text size | `0x61dba` bytes |
+| Data size | `0xc3514` in memory, `0x8400` on disk |
+| Game code | `0x401000`–`0x459030` |
 
-The game code comes first, at `0x401000`–`0x459030`. It ends with
-`3DSYSTEM`'s hand-written assembly (`phd_PushMatrix` to `phd_sqrt`),
-and the statically linked C library follows.
-Ghidra finds 1247 functions in the game code, 338,304 bytes; with
-TRX's manifest all but 123 of them have names.
+The game ends with `3DSYSTEM`'s hand-written assembly, from
+`phd_PushMatrix` through `phd_sqrt`; the statically linked C library
+follows. Imports include DirectInput, DirectSound, DirectDraw, WinMM,
+Windows system libraries and Eidos' `WINPLAY.DLL` FMV player.
 
-```sh
-just analyze    # writes build/functions_tomb2.csv, seeds config/symbols.csv
-just manifest   # names its rows from TRX's manifest
-```
+Game files are not distributed. Supply a copy at `orig/tomb2`; see
+[`orig/README.md`](orig/README.md).
 
 ## Toolchain
 
-Visual C++ 5.0 with the DirectX 5 SDK:
+Visual C++ 5.0 SP3 with the DirectX 5 SDK, run under Wine.
 
-- The executable has no Rich header, and its linker version is 5.02:
-  Visual C++ 5.0 (Visual Studio 97), whose own linker is 5.00, after
-  an update. The compiler, `cl` 11.00.7022, matches the game's code.
-- Core's `TOMBRAID.DSP` is a Developer Studio 5.00 project.
-- The DirectX 5 SDK is from July 1997. The game uses `IDirect3D2` and
-  `IDirectDrawSurface3`, which DirectX 5 introduced.
-
-Its release configuration compiles with `/G5 /Zp1 /W3 /O2`: Pentium
-scheduling, byte-packed structures and speed optimizations. The DSP
-builds 78 C files (`GAME`) and 33 C++ files (`SPECIFIC`, `3DSYSTEM`).
-The shared headers declare their functions `extern "C"`, so most
-symbols are undecorated C names (`_Name`).
-
-The Wine prefix needs (bring your own copies, see
-[`orig/README.md`](orig/README.md)):
-
-| Directory | Holds |
+| Component | Version or configuration |
 | --- | --- |
-| `C:\msvc5` | Visual C++ 5.0's `bin`, `include` and `lib` |
-| `C:\dx5` | the DirectX 5 SDK's `include` and `lib` (`just dxsdk`) |
+| Compiler driver (`cl.exe`) | 11.00.7022 |
+| C frontend (`c1.dll`) | 11.00.7113 |
+| C++ frontend (`c1xx.dll`) | 11.00.7303 |
+| Optimizer (`c2.exe`) | 11.00.7303 |
+| DLL linker | 5.10.7303, VC5 SP3 |
+| Standalone linker | 5.00.7022, VC5 RTM |
+| DirectX SDK | DirectX 5, July 1997 |
+| Release flags | `/G5 /Zp1 /W3 /O2` |
+
+The original has no Rich header and reports linker version 5.02.
+`TOMBRAID.DSP` is a Visual C++ 5.00 project; its release flags select
+Pentium scheduling, byte-packed structures and speed optimizations.
+The compiler reproduces the original code. The standalone build uses
+the RTM linker for its import-section layout; this is distinct from
+identifying the original linker's exact build.
+
+Core's project contains C game modules and C++ platform/rendering
+modules. Shared headers use `extern "C"`, so most function symbols have
+C decoration such as `_Name`. Build configuration lives in `project.toml`.
+
+## Setup
+
+Clone with submodules, or run `git submodule update --init`.
+Requirements: Python 3.11+, `just`, Wine, Ghidra and Java 21. Running the
+game headlessly also needs Xvfb, xdotool and ImageMagick.
+
+Place local reference directories or symlinks at `refs/core`, `refs/trx`
+and `refs/tr2main`. Initialize the prefix with
+`WINEPREFIX="$PWD/.wine" wineboot -i` and supply these directories:
+
+| Wine path | Contents |
+| --- | --- |
+| `C:\msvc5sp3` | VC5 SP3 `bin`, `include` and `lib` |
+| `C:\msvc5` | VC5 RTM tools used by the standalone linker |
+| `C:\dx5` | DirectX 5 SDK `include` and `lib` |
+
+Game files, references, `.wine/` and `build/` are ignored by Git.
+See `orig/README.md` for toolchain media and supporting DLLs.
+Set `GHIDRA` if its installation is outside the configured search paths.
 
 ## Workflow
 
-Everything runs headless. `just` lists the recipes. The tools are a
-git submodule, [tr-decomp-tools](tools/README.md), shared with the
-other Tomb Raider games; after a clone, `just tools-init hooks`.
+| Command | Purpose |
+| --- | --- |
+| `just analyze` | Analyze the original and record function sizes |
+| `just manifest` | Apply names and types from TRX's symbol manifest |
+| `just decompile ADDRESS` | Export Ghidra pseudocode |
+| `just fn NAME` | Look up a function in the reference source |
+| `just compare [NAME]` | Build and check byte parity; optionally show a function diff |
+| `just progress` | Rebuild the progress chart |
+| `just game` | Prepare the game with the replacement DLL |
+| `just run wait:10 key:Return wait:2 shot:menu` | Run under Wine and capture a screenshot |
+| `just exe` | Link the standalone executable |
+| `just compare-exe` | Compare the standalone executable with the original |
 
-1. Analyze the original (`just analyze`, then `just manifest`).
-   Headless Ghidra imports it, creates the functions that
-   `config/symbols.csv` lists but the analysis missed (those only
-   reached through pointer tables) and exports the function list.
-   New functions are added to `config/symbols.csv` as `FuncXXXXXX`, and
-   the manifest names them.
-2. Write the function in `src/`, one file per module of the original:
-   `.c` where Core's is C, `.cpp` where it is C++, four-space
-   indented and without comments. `just decompile [ADDR...]` writes
-   Ghidra's pseudocode to `build/decomp/<address>.c`.
-3. Record the function and every function and global it uses in
-   [`config/symbols.csv`](config/symbols.csv): address, size, name and
-   the decorated symbol (`_Name` for C, `@Name@8` for `__fastcall`,
-   `_Name@8` for `__stdcall`).
-4. Compare (`just compare`): builds with VC5 under Wine and checks
-   each function against the original byte for byte, relocations
-   resolved through `symbols.csv`. `just compare SYMBOL` shows a
-   disassembly diff.
-5. Play (`just run`): the compiled functions go into a DLL that the
-   patched executable loads, which overwrites each original function
-   with a jump to its new one, so the game runs the new code whether it
-   matches yet or not. Steps drive it and take screenshots, e.g.
-   `just run wait:10 key:Return wait:2 shot:menu` writes
-   `build/shots/menu.png`.
+Write recovered functions in `src/`, following the original module
+layout. Record addresses and decorated symbols in `config/symbols.csv`:
+`_Name` for C, `@Name@8` for `__fastcall`, `_Name@8` for `__stdcall`.
+The DLL's generated hook table redirects compiled functions, while other
+symbols resolve to the original executable's addresses.
 
-## Rules
+Use one newly recovered function per commit, with a subject such as
+`Decompile NAME (0xADDRESS)`. Keep byte parity and the progress chart
+current; intentional differences are listed in `hooks.allow_diff` in
+`project.toml`.
 
-The git hooks enforce them (`just hooks` turns them on after a clone):
-
-- **Byte parity.** Every function in `src/` matches the original byte
-  for byte at every commit: `just compare` reports no `DIFF`. A
-  function that doesn't match yet stays out of the tree.
-- **One function per commit.** A commit makes at most one more
-  function match, and its subject is then `Decompile NAME (0xADDRESS)`,
-  with the name and address from `config/symbols.csv`, such as
-  `Decompile lara_hands_free (0x41d760)`. Headers, names and tools go
-  in commits of their own, whose subjects don't start with
-  `Decompile `.
-- **Progress in every commit.** The pre-commit hook redraws
-  `docs/progress.svg` and adds it, so the image always shows the
-  commit's own state.
-- **Messages.** A subject of at most 50 characters and body lines of
-  at most 72, a plain imperative subject without a `type:` prefix, and
-  no trailers.
-
-`src/` and `config/` may have no unstaged changes when committing, as
-the hook builds and compares the working tree. `git commit --no-verify`
-skips the hooks, which is only for fixing history, not for adding a
-function that doesn't match.
+The build tools are a submodule of
+[decomp-tools](https://github.com/LostArtefacts/decomp-tools), shared with
+other Tomb Raider decompilations. `just` lists all available commands.
