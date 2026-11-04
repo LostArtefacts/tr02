@@ -12,6 +12,20 @@ bool OpenRegistryKey(LPCTSTR lpSubKey);
 LONG CloseRegistryKey(void);
 }
 
+struct DISPLAY_MODE
+{
+    int width;
+    int height;
+    int bpp;
+    int vga;
+    DISPLAY_MODE() {}
+    bool CompareVideoModes(DISPLAY_MODE *mode);
+};
+
+#ifdef TR2_EXE
+DISPLAY_MODE SE_FullScreenMode;
+#endif
+
 extern "C" bool OpenGameRegistryKey(LPCTSTR key)
 {
     char buffer[256];
@@ -77,15 +91,6 @@ extern LPCSTR SE_SettingsOkText;
 extern HWND GraphicsDialogHandle;
 LPCSTR DecodeErrorMessage(DWORD error);
 }
-
-struct DISPLAY_MODE
-{
-    int width;
-    int height;
-    int bpp;
-    int vga;
-    bool CompareVideoModes(DISPLAY_MODE *mode);
-};
 
 struct SETUP_MODE_NODE
 {
@@ -1507,7 +1512,6 @@ HWND SoundDialogHandle;
 HWND SoundImageHandle;
 HWND ControlsImageHandle;
 HWND GraphicsDialogHandle;
-DISPLAY_MODE SE_FullScreenMode;
 SETUP_APP_SETTINGS SavedAppSettings;
 HWND OptionsDialogHandle;
 bool IsSetupDialogCentered;
