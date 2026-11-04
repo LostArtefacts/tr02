@@ -143,6 +143,21 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(address, size), self.original.read(address, size)
         )
 
+    def test_floating_point_initializers_retain_their_complete_allocation(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x4695E0, 20), self.original.read(0x4695E0, 20)
+        )
+        mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
+        for name, address in {
+            "__fltused": 0x4695E0,
+            "__ldused": 0x4695E4,
+            "__FPinit": 0x4695E8,
+            "__FPmtinit": 0x4695EC,
+            "__FPmtterm": 0x4695F0,
+        }.items():
+            with self.subTest(name=name):
+                self.assertEqual(mapping[name][0], address)
+
     def test_runtime_relocations_preserve_negative_and_end_pointer_addends(
         self,
     ) -> None:

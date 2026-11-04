@@ -52,6 +52,50 @@ def recover_vftable_prefixes(
             prefix.candidates[address - 4] += count
 
 
+def recover_crt_sections(
+    chunks: list[Chunk],
+    parsed: dict[str, coff.Object],
+    ours: ce.PE,
+    original: ce.PE,
+) -> None:
+    sections: dict[tuple[str, int], list[Chunk]] = {}
+    for chunk in chunks:
+        if chunk.path.startswith("build/obj_crt/"):
+            sections.setdefault((chunk.path, chunk.section), []).append(chunk)
+    for (path, number), members in sections.items():
+        obj = parsed[path]
+        section = obj.sections[number - 1]
+        payload = section.data
+        base = members[0].old - members[0].offset
+        current = ours.read(base, len(payload))
+        if not payload or len(current) != len(payload):
+            raise ValueError(("Truncated CRT initialized section", path, number))
+        candidates = {
+            address - member.offset
+            for member in members
+            for address in member.candidates
+        }
+        expected_section = ".rdata" if members[0].readonly else ".data"
+        matches: list[int] = []
+        for address in candidates:
+            if original.section_of(address) != expected_section:
+                continue
+            relocated = bytearray(current)
+            for off, index, kind in section.relocs:
+                if kind == coff.DIR32 and obj.symbols[index].section == number:
+                    value = struct.unpack_from("<I", relocated, off)[0]
+                    struct.pack_into(
+                        "<I", relocated, off, (value + address - base) & 0xFFFFFFFF
+                    )
+            if original.read(address, len(payload)) == relocated:
+                matches.append(address)
+        if len(matches) != 1:
+            continue
+        for member in members:
+            if not member.candidates:
+                member.candidates[matches[0] + member.offset] += 1
+
+
 def prepare() -> None:
     ours = ce.PE("build/layout/linked.exe")
     orig = ce.PE(ce.ORIGINAL)
@@ -245,6 +289,7 @@ def prepare() -> None:
             add_pair(old, new)
     # The complete-object locator occupies vftable[-1] in the VC5 RTTI ABI.
     recover_vftable_prefixes(chunks, parsed)
+    recover_crt_sections(chunks, parsed, ours, orig)
     # Propagate table and exception metadata references from placed allocations.
     for iteration in range(5):
         for chunk in chunks:

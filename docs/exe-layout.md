@@ -39,6 +39,9 @@ linker remains available through `customize=False`.
    string/constant contents; propagate references through data tables. Keep
    the RTTI complete-object locator immediately before its vftable, as required
    by the VC5 ABI, so its references recover the remaining RTTI allocations.
+   Recover intact CRT data sections from confirmed interior allocations only
+   when the entire linked payload matches, rebasing recorded self references.
+   This retains the floating-point initializer block and both ctype pointers.
    Recover C++ constructor-table slots by their compiled function pointers,
    independently of the input objects' order. `src/exe/fullscreen.cpp` owns
    the fullscreen mode object and emits its empty constructor's initializer
@@ -97,8 +100,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 30,154 bytes (95.80% to 96.70%). Headers, `.rdata`, `.idata` and `.rsrc`
-are byte-identical; `.text` is 92.56% and initialized `.data` is 99.06%.
+38,299 to 30,120 bytes (95.80% to 96.70%). Headers, `.rdata`, `.idata` and `.rsrc`
+are byte-identical; `.text` is 92.56% and initialized `.data` is 99.16%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -114,7 +117,7 @@ Some oversized game functions still displace neighbors, recorded in
 
 The entire CRT address range, including padding, the import thunk and the
 final game-generated exception thunks, is byte-identical. Remaining data
-work includes 21 allocations without a recovered destination (125 bytes
+work includes 14 allocations without a recovered destination (97 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
 `gtmap_persp32_fp` now matches all 4,038 bytes at its original address.
 Restoring signed UV shifts in its first five pixels, ordering one independent
