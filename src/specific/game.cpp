@@ -140,7 +140,6 @@ extern "C" void S_OutputPolyList(void);
 extern "C" int S_DumpScreen(void);
 extern "C" void S_DontDisplayPicture(void);
 
-extern "C" char TimeFormat[];
 extern "C" int HiRes;
 extern "C" void S_CDPlay(sint16 track, int mode);
 extern "C" void TempVideoAdjust(int hires, double sizer);
@@ -166,7 +165,7 @@ extern "C" int LevelStats(int level_number)
     h = s / 3600;
     m = (s / 60) % 60;
     s = s % 60;
-    sprintf(string, TimeFormat, h, m, s);
+    sprintf(string, "%02d:%02d:%02d", h, m, s);
     S_CDPlay(gameflow.stats_track, 0);
     TempVideoAdjust(HiRes, 1.0);
     FadeToPal(30, game_palette);
@@ -435,7 +434,6 @@ int S_LoadGame(void *data, int size, int slot)
 }
 
 #ifdef TR2_EXE
-char TimeFormat[] = "%02d:%02d:%02d";
 sint16 saved_levels[16] = {
     -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };

@@ -975,8 +975,6 @@ extern "C" {
 char Var520d60[MAX_REQLINES][50];
 char Var521220[MAX_REQLINES][50];
 }
-sint16 Option_SoundFX_Volume = 165;
-sint16 Option_Music_Volume = 255;
 sint16 layout[2][14] = {
     { 200, 208, 203, 205, 211, 209, 54, 184, 157, 57, 53, 82, 207, 1 },
     { 72, 80, 75, 77, 71, 73, 79, 78, 156, 81, 74, 82, 76, 83 },

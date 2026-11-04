@@ -1565,6 +1565,7 @@ address,size,name,symbol
 0x00465838,,SaveGameRequester,_SaveGameRequester
 0x00465a50,2,InventoryChosen,_InventoryChosen
 0x00465a54,,Inventory_Mode,_Inventory_Mode
+0x00465a58,2,Option_Detail_Level,_Option_Detail_Level
 0x00465a5c,2,Option_SoundFX_Volume,_Option_SoundFX_Volume
 0x00465a60,2,Option_Music_Volume,_Option_Music_Volume
 0x00465a64,4,bz,_bz

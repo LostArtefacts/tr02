@@ -730,7 +730,6 @@ void SecretControl(sint16 item_number)
 }
 
 #ifdef TR2_EXE
-sint16 InventoryChosen = -1;
 sint16 PickUpBounds[12] = {
     -256, 256, -100, 100, -256, 256, -1820, 1820, 0, 0, 0, 0,
 };

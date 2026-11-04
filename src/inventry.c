@@ -1006,6 +1006,14 @@ void phd_RotateLight(sint16 pitch, sint16 yaw);
 void phd_RotYXZsuperpack(sint16 **pprot, int skip);
 extern sint32 ls_divider;
 
+#ifdef TR2_EXE
+sint16 InventoryChosen = -1;
+sint32 Inventory_Mode = 1;
+sint16 Option_Detail_Level = 255;
+sint16 Option_SoundFX_Volume = 165;
+sint16 Option_Music_Volume = 255;
+#endif
+
 static int bz = 12288;
 
 void DoInventoryBackground(void)
@@ -1046,7 +1054,6 @@ extern INVENTORY_ITEM InvPassportOption;
 extern INVENTORY_ITEM InvControlOption;
 extern INVENTORY_ITEM InvSoundOption;
 extern INVENTORY_ITEM InvPhotoOption;
-sint32 Inventory_Mode = 1;
 sint32 NoInputCounter;
 sint32 IsResetFlag;
 sint32 StopInventory;
