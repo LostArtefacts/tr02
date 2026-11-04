@@ -374,7 +374,7 @@ void DetonatorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
             gong->pos.y_pos = laraitem->pos.y_pos;
             gong->pos.z_pos = laraitem->pos.z_pos;
             gong->pos.y_rot = laraitem->pos.y_rot;
-            gong->pos.z_rot = 0;
+            laraitem->pos.z_rot = 0;
             gong->pos.x_rot = 0;
             gong->room_number = laraitem->room_number;
             InitialiseItem(gong_num);
