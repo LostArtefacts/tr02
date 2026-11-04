@@ -12,7 +12,32 @@ sys.path.insert(0, str(ROOT / "tools"))
 sys.path.insert(0, str(ROOT))
 
 import coff
-from config.layout.game import Piece, exception_order
+from config.layout.game import Piece, assembly_sections, exception_order
+
+
+class AssemblySectionTests(unittest.TestCase):
+    def make_object(self, definitions: dict[str, tuple[int, int]]) -> coff.Object:
+        directory = TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        path = str(Path(directory.name) / "patch.obj")
+        coff.write_object(
+            path,
+            [(".text", coff.TEXT, b"\x90\xc3", []),
+             (".data", coff.RDATA, b"text", [])],
+            definitions, [], {},
+        )
+        return coff.Object(path)
+
+    def test_one_function_per_code_section(self) -> None:
+        self.assertEqual(assembly_sections(self.make_object({"_entry": (1, 0)})), {1})
+
+    def test_multiple_functions_cannot_share_a_placement(self) -> None:
+        with self.assertRaisesRegex(ValueError, "one entry point"):
+            assembly_sections(self.make_object({"_one": (1, 0), "_two": (1, 1)}))
+
+    def test_entry_point_must_start_the_section(self) -> None:
+        with self.assertRaisesRegex(ValueError, "one entry point"):
+            assembly_sections(self.make_object({"_entry": (1, 1)}))
 
 
 class ExceptionOrderTests(unittest.TestCase):

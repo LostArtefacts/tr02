@@ -17,6 +17,11 @@ linker remains available through `customize=False`.
    following gap; the placement pass records their displaced neighbors.
    Order compiler exception sections by their owning functions' original
    addresses, independently of the split source objects' link order.
+   Standalone Steam patches in `src/exe/*.s` use symbolic MASM instructions.
+   Each populated code section must expose one mapped entry point at its
+   start. Promote these sections to function COMDATs in the same `.text`
+   group as VC5's output, preserving their instructions and relocations.
+   The hook DLL retains the recovered C implementations of these patches.
 2. Recover game globals from named symbols and references in matching
    functions. Bind zero initialized game state at its original addresses.
    Private locals use recovered references or the small explicit address

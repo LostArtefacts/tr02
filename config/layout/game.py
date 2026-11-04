@@ -23,6 +23,20 @@ class Piece:
     data: bytes
 
 
+def assembly_sections(obj: coff.Object) -> set[int]:
+    sections: set[int] = set()
+    for number, section in enumerate(obj.sections, 1):
+        if not section.flags & coff.CODE or not section.data:
+            continue
+        functions = [
+            symbol for symbol in obj.externals() if symbol.section == number
+        ]
+        if len(functions) != 1 or functions[0].value:
+            raise ValueError(("Assembly section needs one entry point", number))
+        sections.add(number)
+    return sections
+
+
 def exception_order(
     objects: dict[str, coff.Object], pieces: list[Piece]
 ) -> dict[str, dict[int, bytes]]:
@@ -92,6 +106,7 @@ def place(objects: list[str]) -> list[str]:
     }
     pieces: list[Piece] = []
     parsed: dict[str, coff.Object] = {}
+    native: dict[str, set[int]] = {}
     unknown: list[tuple[str, int, list[str]]] = []
     selected: set[str] = set()
     for path in ordered:
@@ -99,11 +114,13 @@ def place(objects: list[str]) -> list[str]:
         parsed[path] = obj
         src = paths.get(Path(path).stem, "")
         rel = str(Path(src).relative_to("src")) if src else ""
+        if rel.startswith("exe/") and src.lower().endswith(build.ASM_EXTS):
+            native[path] = assembly_sections(obj)
         for secnum, section in enumerate(obj.sections, 1):
             if (
                 not section.flags & coff.CODE
                 or not len(section.data)
-                or not section.flags & 0x1000
+                or not (section.flags & 0x1000 or secnum in native.get(path, set()))
             ):
                 continue
             candidates = [
@@ -147,6 +164,8 @@ def place(objects: list[str]) -> list[str]:
                     None,
                 )
             if hit is None:
+                if secnum in native.get(path, set()):
+                    raise ValueError(("Unmapped assembly entry point", path, secnum))
                 unknown.append((path, secnum, [s.name for i, s in candidates]))
                 continue
             i, sym, addr, size = hit
@@ -292,6 +311,26 @@ def place(objects: list[str]) -> list[str]:
         obj = coff.Object(path)
         for secnum in range(1, nsec + 1):
             at = 20 + (secnum - 1) * 40
+            if secnum in native.get(path, set()):
+                name = b".text\0\0\0"
+                headers[at : at + 8] = name
+                flags = struct.unpack_from("<I", headers, at + 36)[0]
+                struct.pack_into("<I", headers, at + 36, flags | 0x1000)
+                found = False
+                for index, sym in enumerate(obj.symbols):
+                    if (
+                        sym
+                        and sym.section == secnum
+                        and sym.storage == 3
+                        and sym.name == obj.sections[secnum - 1].name
+                    ):
+                        found = symtab[index * 18 + 17] == 1
+                        if not found:
+                            break
+                        symtab[index * 18 : index * 18 + 8] = name
+                        symtab[(index + 1) * 18 + 14] = 2
+                if not found:
+                    raise ValueError(("Assembly section auxiliary record", path, secnum))
             if secnum in exception_names.get(path, {}):
                 name = exception_names[path][secnum]
                 headers[at : at + 8] = name

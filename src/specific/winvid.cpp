@@ -983,11 +983,13 @@ extern "C" bool WinVidCreateGameWindow(void)
     return true;
 }
 
+#ifndef TR2_EXE
 extern "C" void WinVidFreeWindow(void)
 {
     WinVidExitMessage();
     UnregisterClass(ClassName, GhInstance);
 }
+#endif
 
 extern "C" bool WinVidInit(void)
 {
