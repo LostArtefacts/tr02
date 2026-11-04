@@ -88,24 +88,29 @@ sint32 S_SoundSampleIsPlaying(sint32 handle)
 
 extern "C" bool Func456972(void);
 
+#ifndef TR2_EXE
 extern "C" bool CD_Init(void)
 {
     if (Func456972() && !mciSendString("open audio\\cdaudio.mp3  type mpegvideo alias T2", NULL, 0, NULL))
         mciSendString("set T2 time format ms", NULL, 0, NULL);
     return true;
 }
+#endif
 
+#ifndef TR2_EXE
 extern "C" void CD_Cleanup(void)
 {
     mciSendString("stop T2", NULL, 0, NULL);
     mciSendString("close T2", NULL, 0, NULL);
 }
+#endif
 
 extern "C" char *Var5275f8;
 extern "C" char *Var5275fc;
 extern "C" char *CD_LoopTrack;
 extern "C" int CD_LoopCounter;
 
+#ifndef TR2_EXE
 extern "C" void S_CDLoop(void)
 {
     if (!CD_LoopTrack)
@@ -120,11 +125,13 @@ extern "C" void S_CDLoop(void)
     wsprintf(Var5275f8, "play T2 from %s to %s", CD_LoopTrack, CD_LoopTrack + 9);
     mciSendString(Var5275f8, NULL, 0, NULL);
 }
+#endif
 
 extern "C" sint16 cdtrack;
 extern "C" sint16 Option_Music_Volume;
 extern "C" int GetRealTrack(int track);
 
+#ifndef TR2_EXE
 extern "C" void S_CDPlay(sint16 track, int mode)
 {
     char *entry;
@@ -141,7 +148,9 @@ extern "C" void S_CDPlay(sint16 track, int mode)
         CD_LoopCounter = 120;
     }
 }
+#endif
 
+#ifndef TR2_EXE
 extern "C" void S_CDStop(void)
 {
     if (cdtrack > 0)
@@ -151,7 +160,9 @@ extern "C" void S_CDStop(void)
         cdtrack = 0;
     }
 }
+#endif
 
+#ifndef TR2_EXE
 extern "C" int StartSyncedAudio(int num)
 {
     int track;
@@ -165,7 +176,9 @@ extern "C" int StartSyncedAudio(int num)
     wsprintf(Var5275f8, "play T2 from %s to %s", entry, entry + 9);
     return !mciSendString(Var5275f8, NULL, 0, NULL);
 }
+#endif
 
+#ifndef TR2_EXE
 extern "C" int S_CDGetLoc(void)
 {
     long pos;
@@ -175,6 +188,7 @@ extern "C" int S_CDGetLoc(void)
     pos = atol(Var5275f8);
     return (DWORD)(pos - atol(Var5275fc + (GetRealTrack((uint16)cdtrack) - 1) * 18)) * 3 / 40;
 }
+#endif
 
 extern "C" void S_CDVolume(int volume)
 {

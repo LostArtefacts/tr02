@@ -82,6 +82,7 @@ void UT_ErrorBox(int nID, HWND hWndOwner)
 extern "C" char *Var5275f8;
 extern "C" char *Var5275fc;
 
+#ifndef TR2_EXE
 extern "C" bool Func456972(void)
 {
     HANDLE file;
@@ -126,6 +127,11 @@ extern "C" bool Func456972(void)
         src += 2;
     }
 }
+#endif
+
+#ifdef TR2_EXE
+extern "C" char AudioIndexPath[] = "audio\\cdaudio.dat";
+#endif
 
 extern "C" const char GuidFormat[];
 extern "C" const char HexDigits[];

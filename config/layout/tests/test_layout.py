@@ -87,6 +87,13 @@ class ExecutableTests(unittest.TestCase):
                     self.ours.read(address, size), self.original.read(address, size)
                 )
 
+    def test_steam_cd_playback_and_index_patches_match_original(self) -> None:
+        for address, size in ((0x455570, 0x330), (0x456972, 174)):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
+
     def test_recovered_runtime_state_retains_original_addresses(self) -> None:
         mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
         for name, address in {

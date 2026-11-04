@@ -1652,6 +1652,7 @@ address,size,name,symbol
 0x00466a60,,MainSfxOpenFailed,_MainSfxOpenFailed
 0x00466a80,,MainSfxFileName,_MainSfxFileName
 0x00466a90,7,CDPathFormat,_CDPathFormat
+0x00466a9c,18,AudioIndexPath,_AudioIndexPath
 0x00466a98,4,CDRootPath,_CDRootPath
 0x00466ab0,,LoadLevelTooNew,_LoadLevelTooNew
 0x00466af4,,LoadLevelOutOfDate,_LoadLevelOutOfDate

@@ -12,7 +12,12 @@ sys.path.insert(0, str(ROOT / "tools"))
 sys.path.insert(0, str(ROOT))
 
 import coff
-from config.layout.game import Piece, assembly_sections, exception_order
+from config.layout.game import (
+    Piece,
+    assembly_sections,
+    assembly_symbol_order,
+    exception_order,
+)
 
 
 class AssemblySectionTests(unittest.TestCase):
@@ -29,15 +34,48 @@ class AssemblySectionTests(unittest.TestCase):
         return coff.Object(path)
 
     def test_one_function_per_code_section(self) -> None:
-        self.assertEqual(assembly_sections(self.make_object({"_entry": (1, 0)})), {1})
+        self.assertEqual(
+            assembly_sections(self.make_object({"_entry": (1, 0)}), {"_entry": (0x1000, 2)}),
+            {1},
+        )
 
-    def test_multiple_functions_cannot_share_a_placement(self) -> None:
-        with self.assertRaisesRegex(ValueError, "one entry point"):
-            assembly_sections(self.make_object({"_one": (1, 0), "_two": (1, 1)}))
+    def test_shared_entries_cannot_change_their_relative_addresses(self) -> None:
+        with self.assertRaisesRegex(ValueError, "entry point layout"):
+            assembly_sections(
+                self.make_object({"_one": (1, 0), "_two": (1, 1)}),
+                {"_one": (0x1000, 1), "_two": (0x1002, 1)},
+            )
+
+    def test_shared_patch_entries_keep_their_relative_addresses(self) -> None:
+        self.assertEqual(
+            assembly_sections(
+                self.make_object({"_one": (1, 0), "_two": (1, 1)}),
+                {"_one": (0x1000, 1), "_two": (0x1001, 1)},
+            ),
+            {1},
+        )
 
     def test_entry_point_must_start_the_section(self) -> None:
         with self.assertRaisesRegex(ValueError, "one entry point"):
-            assembly_sections(self.make_object({"_entry": (1, 1)}))
+            assembly_sections(self.make_object({"_entry": (1, 1)}), {"_entry": (0x1000, 1)})
+
+    def test_entry_precedes_private_data_in_the_comdat_symbol_table(self) -> None:
+        obj = self.make_object({"_string": (1, 1), "_entry": (1, 0)})
+        obj.symbols[0].storage = 3
+        symbols = bytearray(36)
+        symbols[:8] = b"_string\0"
+        symbols[18:26] = b"_entry\0\0"
+        self.assertEqual(assembly_symbol_order(obj, {1}, symbols), {0: 1, 1: 0})
+        self.assertEqual(symbols[:8], b"_entry\0\0")
+        self.assertEqual(symbols[18:26], b"_string\0")
+
+    def test_symbol_reordering_rejects_auxiliary_records(self) -> None:
+        obj = self.make_object({"_string": (1, 1), "_entry": (1, 0)})
+        obj.symbols[0].storage = 3
+        symbols = bytearray(36)
+        symbols[17] = 1
+        with self.assertRaisesRegex(ValueError, "entry auxiliary record"):
+            assembly_symbol_order(obj, {1}, symbols)
 
 
 class ExceptionOrderTests(unittest.TestCase):

@@ -23,7 +23,9 @@ class Piece:
     data: bytes
 
 
-def assembly_sections(obj: coff.Object) -> set[int]:
+def assembly_sections(
+    obj: coff.Object, symbols: dict[str, tuple[int, int]]
+) -> set[int]:
     sections: set[int] = set()
     for number, section in enumerate(obj.sections, 1):
         if not section.flags & coff.CODE or not section.data:
@@ -31,10 +33,48 @@ def assembly_sections(obj: coff.Object) -> set[int]:
         functions = [
             symbol for symbol in obj.externals() if symbol.section == number
         ]
-        if len(functions) != 1 or functions[0].value:
+        entries = [symbol for symbol in functions if symbol.value == 0]
+        if len(entries) != 1:
             raise ValueError(("Assembly section needs one entry point", number))
+        entry = entries[0]
+        if entry.name not in symbols or any(
+            symbol.name not in symbols
+            or symbols[symbol.name][0] - symbols[entry.name][0] != symbol.value
+            for symbol in functions
+        ):
+            raise ValueError(("Assembly entry point layout", number))
         sections.add(number)
     return sections
+
+
+def assembly_symbol_order(
+    obj: coff.Object, sections: set[int], symbols: bytearray
+) -> dict[int, int]:
+    indices: dict[int, int] = {}
+    for number in sections:
+        entries = [
+            index
+            for index, symbol in enumerate(obj.symbols)
+            if symbol
+            and symbol.section == number
+            and symbol.name != obj.sections[number - 1].name
+        ]
+        entry = next(
+            index for index in entries
+            if obj.symbols[index].storage == 2 and obj.symbols[index].value == 0
+        )
+        first = entries[0]
+        if first == entry:
+            continue
+        if any(symbols[index * 18 + 17] for index in (first, entry)):
+            raise ValueError(("Assembly entry auxiliary record", number))
+        symbols[first * 18 : (first + 1) * 18], symbols[entry * 18 : (entry + 1) * 18] = (
+            symbols[entry * 18 : (entry + 1) * 18],
+            symbols[first * 18 : (first + 1) * 18],
+        )
+        indices[first] = entry
+        indices[entry] = first
+    return indices
 
 
 def exception_order(
@@ -115,7 +155,7 @@ def place(objects: list[str]) -> list[str]:
         src = paths.get(Path(path).stem, "")
         rel = str(Path(src).relative_to("src")) if src else ""
         if rel.startswith("exe/") and src.lower().endswith(build.ASM_EXTS):
-            native[path] = assembly_sections(obj)
+            native[path] = assembly_sections(obj, symbols)
         for secnum, section in enumerate(obj.sections, 1):
             if (
                 not section.flags & coff.CODE
@@ -309,6 +349,7 @@ def place(objects: list[str]) -> list[str]:
         struct.pack_into("<I", strtab, 0, len(strtab))
         body = bytearray()
         obj = coff.Object(path)
+        indices = assembly_symbol_order(obj, native.get(path, set()), symtab)
         for secnum in range(1, nsec + 1):
             at = 20 + (secnum - 1) * 40
             if secnum in native.get(path, set()):
@@ -371,7 +412,12 @@ def place(objects: list[str]) -> list[str]:
                 body += data
             if nrel:
                 struct.pack_into("<I", headers, at + 24, len(headers) + len(body))
-                body += raw[reloff : reloff + nrel * 10]
+                relocs = bytearray(raw[reloff : reloff + nrel * 10])
+                for index in range(nrel):
+                    target = struct.unpack_from("<I", relocs, index * 10 + 4)[0]
+                    if target in indices:
+                        struct.pack_into("<I", relocs, index * 10 + 4, indices[target])
+                body += relocs
             if nline:
                 struct.pack_into("<I", headers, at + 28, len(headers) + len(body))
                 body += raw[lineoff : lineoff + nline * 6]
