@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 19,614 bytes (95.80% to 97.85%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 95.11%.
+38,299 to 17,981 bytes (95.80% to 98.03%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 95.51%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -130,8 +130,7 @@ sit in the original data section, eliminating `0x16d0` bytes of private state.
 
 Most remaining code differences are in functions already listed in
 `hooks.allow_diff`. The largest raw function differences are
-`S_UpdateInput` (2,457), and `SE_GraphicsDlgUpdate` (1,633, including its
-displacement). These counts compare each function at its mapped address.
+`S_UpdateInput` (2,457). These counts compare each function at its mapped address.
 Some oversized game functions still displace neighbors, recorded in
 `build/layout/code-moved.json`.
 
@@ -171,3 +170,10 @@ explicit encoding; the remaining patch instructions assemble normally.
 TOMB21's surviving game objects are mainly PlayStation LNK objects. Their
 debug records help establish header relationships and declarations; the
 standalone PE link uses the current Win32 COFF objects and VC5 runtime members.
+
+The graphics-settings handler and UI update now match all 1,034 and 1,845
+bytes at their original addresses. Restoring the reference control-result
+temporaries, common update path and combo-box switch removes four displaced
+functions. The UI update retains signed list-count comparisons, a cached
+maximum width and the shared enable flag. Both advanced-settings routines
+also match their original instruction and checkbox conversion sequences.

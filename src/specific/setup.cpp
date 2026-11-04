@@ -840,12 +840,13 @@ inline bool IsModeListEmpty(SETUP_MODE_LIST *list)
 
 extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
 {
-    SETUP_ADAPTER_BODY *body;
-    HWND sizeItem;
-    bool swAvailable, hwAvailable, swFullScreen, hwFullScreen;
+    bool swFullScreen, hwFullScreen;
+    bool swAvailable, hwAvailable;
+    bool windowed, fullscreen, manyModes;
     bool perspective, dither, zbuffer, bilinear, triple;
-    bool windowed, fullscreen, modeList, manyModes, windowSize, render;
     char buf[16];
+    HWND sizeItem;
+    SETUP_ADAPTER_BODY *body;
 
     body = &((SETUP_ADAPTER_ITEM *)ChangedAppSettings.PreferredDisplayAdapter)->body;
     swFullScreen = !IsModeListEmpty(&body->swDispModeList);
@@ -864,6 +865,16 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
     }
     switch (ChangedAppSettings.RenderMode)
     {
+    default:
+        perspective = false;
+        dither = false;
+        zbuffer = false;
+        bilinear = false;
+        windowed = false;
+        fullscreen = false;
+        triple = false;
+        break;
+
     case 1:
         perspective = true;
         dither = false;
@@ -871,7 +882,7 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
         bilinear = false;
         windowed = body->swWindowedSupported;
         fullscreen = swFullScreen;
-        manyModes = body->swDispModeList.count > 1;
+        manyModes = (int)body->swDispModeList.count > 1;
         triple = true;
         break;
     case 2:
@@ -881,17 +892,8 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
         bilinear = body->linearFilterSupported;
         windowed = body->hwWindowedSupported;
         fullscreen = hwFullScreen;
-        manyModes = body->hwDispModeList.count > 1;
+        manyModes = (int)body->hwDispModeList.count > 1;
         triple = true;
-        break;
-    default:
-        perspective = false;
-        dither = false;
-        zbuffer = false;
-        bilinear = false;
-        windowed = false;
-        fullscreen = false;
-        triple = false;
         break;
     }
     if (!windowed)
@@ -911,8 +913,7 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
     if (!triple)
         ChangedAppSettings.TripleBuffering = false;
 
-    render = ChangedAppSettings.RenderMode != 0;
-    SE_EnableItem(hwndDlg, 1049, render);
+    SE_EnableItem(hwndDlg, 1049, ChangedAppSettings.RenderMode != 0);
     SE_CheckItem(hwndDlg, 1045, swAvailable, ChangedAppSettings.RenderMode == 1);
     SE_CheckItem(hwndDlg, 1047, hwAvailable, ChangedAppSettings.RenderMode == 2);
     SE_CheckItem(hwndDlg, 1015, perspective, ChangedAppSettings.PerspectiveCorrect);
@@ -923,24 +924,28 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
     SE_EnableItem(hwndDlg, 1050, windowed || fullscreen);
     SE_CheckItem(hwndDlg, 1031, windowed, !ChangedAppSettings.FullScreen && windowed);
     SE_CheckItem(hwndDlg, 1030, fullscreen, ChangedAppSettings.FullScreen && fullscreen);
-    modeList = ChangedAppSettings.RenderMode != 0 && ChangedAppSettings.FullScreen;
-    SE_EnableItem(hwndDlg, 1038, modeList);
-    SE_EnableItem(hwndDlg, 1000, modeList && manyModes);
+    bool enable = ChangedAppSettings.RenderMode != 0 && ChangedAppSettings.FullScreen;
+    SE_EnableItem(hwndDlg, 1038, enable);
+    SE_EnableItem(hwndDlg, 1000, enable && manyModes);
 
+    int width = body->screenWidth;
     sizeItem = GetDlgItem(hwndDlg, 1034);
-    windowSize = !ChangedAppSettings.FullScreen && body->screenWidth;
-    SE_EnableItem(hwndDlg, 1037, windowSize);
-    EnableWindow(sizeItem, windowSize);
-    SE_EnableItem(hwndDlg, 1039, windowSize);
-    SE_EnableItem(hwndDlg, 1040, windowSize);
-    SE_EnableItem(hwndDlg, 1035, windowSize);
-    SE_CheckItem(hwndDlg, 1060, windowSize, ChangedAppSettings.AspectMode == 0);
-    SE_CheckItem(hwndDlg, 1061, windowSize, ChangedAppSettings.AspectMode == 1);
-    SE_CheckItem(hwndDlg, 1062, windowSize, ChangedAppSettings.AspectMode == 2);
-    if (body->screenWidth)
+    enable = !ChangedAppSettings.FullScreen && width;
+    SE_EnableItem(hwndDlg, 1037, enable);
+    EnableWindow(sizeItem, enable);
+    SE_EnableItem(hwndDlg, 1039, enable);
+    SE_EnableItem(hwndDlg, 1040, enable);
+    SE_EnableItem(hwndDlg, 1035, enable);
+    SE_CheckItem(hwndDlg, 1060, enable, ChangedAppSettings.AspectMode == 0);
+    SE_CheckItem(hwndDlg, 1061, enable, ChangedAppSettings.AspectMode == 1);
+    SE_CheckItem(hwndDlg, 1062, enable, ChangedAppSettings.AspectMode == 2);
+    if (width)
     {
-        SendMessage(sizeItem, TBM_SETRANGE, TRUE, MAKELONG(0, (body->screenWidth - 320) >> 5));
-        ChangedAppSettings.WindowWidth = (SendMessage(sizeItem, TBM_GETPOS, 0, 0) + 10) << 5;
+        width -= 320;
+        width >>= 5;
+        SendMessage(sizeItem, TBM_SETRANGE, TRUE, MAKELONG(0, width));
+        int position = (int)SendMessage(sizeItem, TBM_GETPOS, 0, 0);
+        ChangedAppSettings.WindowWidth = (position << 5) + 320;
         switch (ChangedAppSettings.AspectMode)
         {
         case 0:
@@ -960,11 +965,11 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
         buf[0] = 0;
     }
     SetDlgItemText(hwndDlg, 1035, buf);
-    render = ChangedAppSettings.RenderMode != 0;
-    SE_EnableItem(hwndDlg, 1051, render);
-    SE_EnableItem(hwndDlg, 1044, render);
-    SE_EnableItem(hwndDlg, 1029, render);
-    SE_EnableItem(hwndDlg, 1043, render);
+    enable = ChangedAppSettings.RenderMode != 0;
+    SE_EnableItem(hwndDlg, 1051, enable);
+    SE_EnableItem(hwndDlg, 1044, enable);
+    SE_EnableItem(hwndDlg, 1029, enable);
+    SE_EnableItem(hwndDlg, 1043, enable);
 }
 
 extern "C" {
