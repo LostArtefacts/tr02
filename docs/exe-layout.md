@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 21,015 bytes (95.80% to 97.70%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 94.76%.
+38,299 to 20,808 bytes (95.80% to 97.72%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 94.81%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings

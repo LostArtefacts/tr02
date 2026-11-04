@@ -1430,8 +1430,6 @@ extern "C" void SE_OptionsStrCat(LPSTR *dst, bool isEnabled, bool *isNext, LPCST
 
 extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    bool isChecked;
-
     switch (uMsg)
     {
     case WM_INITDIALOG:
@@ -1442,7 +1440,8 @@ extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
     case WM_COMMAND:
         if (HIWORD(wParam) == BN_CLICKED)
         {
-            isChecked = SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_CHECKED;
+            int state = (int)SendMessage((HWND)lParam, BM_GETCHECK, 0, 0);
+            bool isChecked = state == BST_CHECKED;
             switch (LOWORD(wParam))
             {
             case 1103:
