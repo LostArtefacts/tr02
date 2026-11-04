@@ -34,6 +34,7 @@ extern "C" void CopyBitmapPalette(RGB888 *srcPal, uint8 *srcBitmap, int bitmapSi
     int i;
     HDC hdc;
     RGB888 *src;
+    RGB888 *dst;
     PALETTEENTRY sys[20];
 
     for (i = 0; i < 256; i++)
@@ -48,25 +49,28 @@ extern "C" void CopyBitmapPalette(RGB888 *srcPal, uint8 *srcBitmap, int bitmapSi
     GetSystemPaletteEntries(hdc, 0, 10, sys);
     GetSystemPaletteEntries(hdc, 246, 10, sys + 10);
     ReleaseDC(NULL, hdc);
-    for (i = 0; i < 8; i++)
+    dst = destPal;
+    for (i = 0; i < 8; i++, dst++)
     {
-        destPal[i].red = sys[i].peRed;
-        destPal[i].green = sys[i].peGreen;
-        destPal[i].blue = sys[i].peBlue;
+        dst->red = sys[i].peRed;
+        dst->green = sys[i].peGreen;
+        dst->blue = sys[i].peBlue;
     }
     destPal[8].red = destPal[9].red = destPal[246].red = destPal[8].green = destPal[9].green = destPal[246].green = destPal[8].blue = destPal[9].blue = destPal[246].blue = 0;
-    for (i = 0; i < 9; i++)
+    dst = destPal + 247;
+    for (i = 0; i < 9; i++, dst++)
     {
-        destPal[i + 247].red = sys[i + 11].peRed;
-        destPal[i + 247].green = sys[i + 11].peGreen;
-        destPal[i + 247].blue = sys[i + 11].peBlue;
+        dst->red = sys[i + 11].peRed;
+        dst->green = sys[i + 11].peGreen;
+        dst->blue = sys[i + 11].peBlue;
     }
-    for (i = 0; i < 236; i++)
+    dst = destPal + 10;
+    for (i = 0; i < 236; i++, dst++)
     {
         src = &srcPal[sort3d_buffer[i][0]];
-        destPal[i + 10].red = src->red;
-        destPal[i + 10].green = src->green;
-        destPal[i + 10].blue = src->blue;
+        dst->red = src->red;
+        dst->green = src->green;
+        dst->blue = src->blue;
     }
 }
 
