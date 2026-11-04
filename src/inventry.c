@@ -1046,15 +1046,6 @@ extern INVENTORY_ITEM InvPassportOption;
 extern INVENTORY_ITEM InvControlOption;
 extern INVENTORY_ITEM InvSoundOption;
 extern INVENTORY_ITEM InvPhotoOption;
-sint32 inv_nframes = 2;
-sint16 InvOptionObjectsCount = 4;
-INVENTORY_ITEM *InvOptionList[4] = {
-    &InvPassportOption,
-    &InvControlOption,
-    &InvSoundOption,
-    &InvPhotoOption,
-};
-int GymInvOpenEnabled = 1;
 sint32 Inventory_Mode = 1;
 sint32 NoInputCounter;
 sint32 IsResetFlag;
