@@ -32,9 +32,9 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     sint16 x_rot, y_rot, z_rot;
 
     item = &items[item_num];
+    x_rot = item->pos.x_rot;
     y_rot = item->pos.y_rot;
     z_rot = item->pos.z_rot;
-    x_rot = item->pos.x_rot;
     item->pos.y_rot = laraitem->pos.y_rot;
     item->pos.z_rot = 0;
 
@@ -42,7 +42,12 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     {
         item->pos.x_rot = 0;
         if (!TestLaraPosition(PickUpBounds, item, laraitem))
-            goto restore;
+        {
+            item->pos.x_rot = x_rot;
+            item->pos.y_rot = y_rot;
+            item->pos.z_rot = z_rot;
+            return;
+        }
         if (laraitem->current_anim_state == AS_PICKUP)
         {
             if (laraitem->frame_number == anims[135].frame_base + 42 && item->object_number != FLARE_ITEM)
@@ -99,7 +104,12 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     {
         item->pos.x_rot = -4550;
         if (!TestLaraPosition(PickUpBoundsUW, item, laraitem))
-            goto restore;
+        {
+            item->pos.x_rot = x_rot;
+            item->pos.y_rot = y_rot;
+            item->pos.z_rot = z_rot;
+            return;
+        }
         if (laraitem->current_anim_state == AS_PICKUP)
         {
             if (laraitem->frame_number == anims[130].frame_base + 18 && item->object_number != FLARE_ITEM)
@@ -138,8 +148,8 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
                     laraitem->fallspeed = 0;
                     laraitem->current_anim_state = AS_FLAREPICKUP;
                     laraitem->anim_number = 206;
-                    laraitem->goal_anim_state = AS_TREAD;
                     laraitem->frame_number = anims[206].frame_base;
+                    laraitem->goal_anim_state = AS_TREAD;
                 }
                 else
                 {
@@ -153,7 +163,6 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
             return;
         }
     }
-restore:
     item->pos.x_rot = x_rot;
     item->pos.y_rot = y_rot;
     item->pos.z_rot = z_rot;

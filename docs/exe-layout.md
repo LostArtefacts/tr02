@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 13,215 bytes (95.80% to 98.55%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.70%.
+38,299 to 12,103 bytes (95.80% to 98.67%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.98%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -210,3 +210,8 @@ and surface-lock boolean conversion reproduces the surviving capture code.
 Boat control matches all 1,578 bytes at `0x40daa0`. Caching the rider
 pointer while transferring the animation frame preserves the original
 frame-table loads and register lifetimes.
+
+Pickup collision matches all 1,152 bytes at `0x437f20`. Rotations are
+captured in their original order and restored directly on each failed
+position test. Underwater flare pickup assigns the animation frame before
+the goal state, retaining the original loads and stores.
