@@ -13,7 +13,8 @@ int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 r
 
 void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, sint16 room_number, sint32 objheight)
 {
-    sint32 height, ceiling;
+    sint32 midHeight, frontHeight, leftHeight, rightHeight;
+    sint32 ceiling;
     sint32 xleft, zleft;
     sint32 xright, zright;
     sint32 x, y, z, ytop;
@@ -30,13 +31,13 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
     z = zpos;
 
     floor = GetFloor(x, ytop, z, &room_number);
-    height = GetHeight(floor, x, ytop, z);
-    if (height != NO_HEIGHT)
-        height -= ypos;
+    midHeight = GetHeight(floor, x, ytop, z);
+    if (midHeight != NO_HEIGHT)
+        midHeight -= ypos;
     ceiling = GetCeiling(floor, x, ytop, z);
     if (ceiling != NO_HEIGHT)
         ceiling -= y;
-    coll->mid_floor = height;
+    coll->mid_floor = midHeight;
     coll->mid_ceiling = ceiling;
     coll->mid_type = height_type;
     coll->trigger = trigger_index;
@@ -91,13 +92,13 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
     x = xpos + xfront;
     z = zpos + zfront;
     floor = GetFloor(x, ytop, z, &room_number);
-    height = GetHeight(floor, x, ytop, z);
-    if (height != NO_HEIGHT)
-        height -= ypos;
+    frontHeight = GetHeight(floor, x, ytop, z);
+    if (frontHeight != NO_HEIGHT)
+        frontHeight -= ypos;
     ceiling = GetCeiling(floor, x, ytop, z);
     if (ceiling != NO_HEIGHT)
         ceiling -= y;
-    coll->front_floor = height;
+    coll->front_floor = frontHeight;
     coll->front_ceiling = ceiling;
     coll->front_type = height_type;
     if (coll->slopes_are_walls && coll->front_type == BIG_SLOPE && coll->front_floor < 0)
@@ -110,13 +111,13 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
     x = xpos + xleft;
     z = zpos + zleft;
     floor = GetFloor(x, ytop, z, &room_number);
-    height = GetHeight(floor, x, ytop, z);
-    if (height != NO_HEIGHT)
-        height -= ypos;
+    leftHeight = GetHeight(floor, x, ytop, z);
+    if (leftHeight != NO_HEIGHT)
+        leftHeight -= ypos;
     ceiling = GetCeiling(floor, x, ytop, z);
     if (ceiling != NO_HEIGHT)
         ceiling -= y;
-    coll->left_floor = height;
+    coll->left_floor = leftHeight;
     coll->left_ceiling = ceiling;
     coll->left_type = height_type;
     if (coll->slopes_are_walls && coll->left_type == BIG_SLOPE && coll->left_floor < 0)
@@ -129,13 +130,13 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
     x = xpos + xright;
     z = zpos + zright;
     floor = GetFloor(x, ytop, z, &room_number);
-    height = GetHeight(floor, x, ytop, z);
-    if (height != NO_HEIGHT)
-        height -= ypos;
+    rightHeight = GetHeight(floor, x, ytop, z);
+    if (rightHeight != NO_HEIGHT)
+        rightHeight -= ypos;
     ceiling = GetCeiling(floor, x, ytop, z);
     if (ceiling != NO_HEIGHT)
         ceiling -= y;
-    coll->right_floor = height;
+    coll->right_floor = rightHeight;
     coll->right_ceiling = ceiling;
     coll->right_type = height_type;
     if (coll->slopes_are_walls && coll->right_type == BIG_SLOPE && coll->right_floor < 0)
@@ -149,7 +150,10 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
         x = xpos + coll->shift.x;
         z = zpos + coll->shift.z;
         floor = GetFloor(x, ypos, z, &room_number);
-        if (GetHeight(floor, x, ypos, z) < ypos - 512 || GetCeiling(floor, x, ypos, z) > y) {
+        if (GetHeight(floor, x, ypos, z) < ypos - 512) {
+            coll->shift.x = -coll->shift.x;
+            coll->shift.z = -coll->shift.z;
+        } else if (GetCeiling(floor, x, ypos, z) > ypos - objheight) {
             coll->shift.x = -coll->shift.x;
             coll->shift.z = -coll->shift.z;
         }

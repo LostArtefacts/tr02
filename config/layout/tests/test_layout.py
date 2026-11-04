@@ -136,6 +136,11 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x437F20, 1152), self.original.read(0x437F20, 1152)
         )
 
+    def test_collision_queries_match_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x4128D0, 1724), self.original.read(0x4128D0, 1724)
+        )
+
     def test_render_startup_matches_original(self) -> None:
         self.assertEqual(
             self.ours.read(0x448F00, 933), self.original.read(0x448F00, 933)
