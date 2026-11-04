@@ -7,6 +7,7 @@ import re
 import struct
 import coff
 import compare_exe as ce
+from . import runtime
 
 
 @dataclass
@@ -54,22 +55,17 @@ def recover_bss(
                     externals[sym.name] = (path, index)
     bindings: dict[tuple[str, int], int] = {}
     sections: dict[tuple[str, int], int] = {}
-    for block in blocks:
-        obj = parsed[block.path]
-        sec = obj.sections[block.section - 1]
-        mask = {off + j for off, _, _ in sec.relocs for j in range(4)}
-        expected = original.read(block.address, len(block.data))
-        if len(expected) != len(block.data) or any(
-            a != b and i not in mask
-            for i, (a, b) in enumerate(zip(block.data, expected))
-        ):
-            continue
+    data_sections: dict[tuple[str, int], set[int]] = {}
+
+    def references(owner: str, number: int, expected: bytes) -> None:
+        obj = parsed[owner]
+        sec = obj.sections[number - 1]
         for off, index, kind in sec.relocs:
             if kind != coff.DIR32:
                 continue
             sym = obj.symbols[index]
             assert sym
-            path = block.path
+            path = owner
             if sym.section == 0 and sym.storage == 2:
                 if sym.name not in externals:
                     continue
@@ -80,16 +76,61 @@ def recover_bss(
             bss = (
                 sym.section > 0 and parsed[path].sections[sym.section - 1].flags & 0x80
             )
-            if not common and not bss:
-                continue
             addend = struct.unpack_from("<I", sec.data, off)[0]
             address = (struct.unpack_from("<I", expected, off)[0] - addend) & 0xFFFFFFFF
+            if not common and not bss:
+                if sym.section <= 0:
+                    continue
+                data_section = parsed[path].sections[sym.section - 1]
+                if not data_section.flags & 0x40 or data_section.flags & coff.CODE:
+                    continue
+                base = address - sym.value
+                section_name = original.section_of(base)
+                if section_name not in (".data", ".rdata"):
+                    continue
+                va, size, _, raw_size = original.sections[section_name]
+                if base + len(data_section.data) > va + min(size, raw_size):
+                    continue
+                payload = original.read(base, len(data_section.data))
+                mask = {at + j for at, _, _ in data_section.relocs for j in range(4)}
+                if len(payload) == len(data_section.data) and all(
+                    a == b or i in mask
+                    for i, (a, b) in enumerate(zip(data_section.data, payload))
+                ):
+                    data_sections.setdefault((path, sym.section), set()).add(base)
+                continue
             key = (path, sym.section if bss else index)
             table = sections if bss else bindings
             value = address - sym.value if bss else address
             if key in table and table[key] != value:
                 raise ValueError(f"Conflicting CRT BSS binding: {path}:{sym.name}")
             table[key] = value
+
+    for block in blocks:
+        sec = parsed[block.path].sections[block.section - 1]
+        mask = {off + j for off, _, _ in sec.relocs for j in range(4)}
+        expected = original.read(block.address, len(block.data))
+        if len(expected) == len(block.data) and all(
+            a == b or i in mask for i, (a, b) in enumerate(zip(block.data, expected))
+        ):
+            references(block.path, block.section, expected)
+    visited: set[tuple[str, int]] = set()
+    while pending := [
+        key
+        for key, addresses in data_sections.items()
+        if len(addresses) == 1 and key not in visited
+    ]:
+        for key in pending:
+            path, number = key
+            address = next(iter(data_sections[key]))
+            visited.add(key)
+            references(
+                path,
+                number,
+                original.read(address, len(parsed[path].sections[number - 1].data)),
+            )
+    if any(len(data_sections[key]) != 1 for key in visited):
+        raise ValueError("Ambiguous initialized runtime section used for BSS recovery")
     for (path, number), address in sections.items():
         sec = parsed[path].sections[number - 1]
         data_va, data_size, _, raw_size = original.sections[".data"]
@@ -138,6 +179,7 @@ def merge() -> tuple[list[str], str]:
     )
     out = Path("build/obj_crt")
     out.mkdir(exist_ok=True)
+    recovered_mbctype = runtime.mbctype()
     known: dict[str, int] = {}
     for addr, size, name, syms in ce.read_symbols():
         for sym in syms:
@@ -163,6 +205,8 @@ def merge() -> tuple[list[str], str]:
         path = str(out / name)
         Path(path).write_bytes(files[name])
         obj = coff.Object(path)
+        if name == "mbctype.obj":
+            runtime.replace_code(obj, recovered_mbctype, ("__setmbcp", "_setSBCS"))
         parsed[path] = obj
         for secnum, sec in enumerate(obj.sections, 1):
             if not sec.flags & coff.CODE or not len(sec.data):
@@ -402,6 +446,17 @@ def merge() -> tuple[list[str], str]:
             records += struct.pack("<IIIhHBB", 0, off, sym.value, sym.section, 0, 2, 0)
             nsym += 1
         for n, sec in enumerate(obj.sections):
+            referenced_data = not sec.flags & coff.CODE and any(
+                obj.symbols[index].section == n + 1 for index in promote.get(path, {})
+            )
+            if referenced_data and sec.flags & 0x1000:
+                # Scope tables must survive removal of their associative code
+                # COMDAT parent: the merged code still references these tables.
+                at = 20 + n * 40
+                struct.pack_into("<I", raw, at + 36, sec.flags & ~0x1000)
+                for index, symbol in enumerate(obj.symbols):
+                    if symbol and symbol.section == n + 1 and symbol.name == sec.name:
+                        struct.pack_into("<HB", records, (index + 1) * 18 + 12, 0, 0)
             bound_bss = sec.flags & 0x80 and any(
                 (path, i) in bss_bindings and sym and sym.section == n + 1
                 for i, sym in enumerate(obj.symbols)
@@ -418,10 +473,7 @@ def merge() -> tuple[list[str], str]:
     merged = str(out / "merged.obj")
     coff.write_object(
         merged,
-        [
-            (".text$c", coff.TEXT, bytes(code), relocs),
-            (".rdata$z", coff.RDATA, bytes(0x88), []),
-        ],
+        [(".text$c", coff.TEXT, bytes(code), relocs)],
         defined,
         sorted(undefined - defined.keys() - absolute.keys()),
         absolute,

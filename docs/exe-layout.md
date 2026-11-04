@@ -26,6 +26,11 @@ linker remains available through `customize=False`.
    matching the target. Retain the original `__allshl` helper even when the
    current game objects do not reference it. Preserve compiler NOP padding
    and linker INT3 padding according to the input sections.
+   Compile the recovered `_setmbcp` and `setSBCS` routines in
+   `config/runtime/mbctype.c`, binding their relocations to the archive's
+   globals and private helpers. The target predates SP3's `__ismbcodepage`
+   flag. Both routines match its instructions exactly with relocations masked.
+   Keep associative exception scope tables when removing their code sections.
 4. Link with relocation records and anchors for live initialized allocations.
    Include the GUID data contributed by DirectX import libraries. Recover
    allocation destinations from symbols, matching references and compiled
@@ -39,13 +44,15 @@ resources already used by the ordinary build. Emitted game and runtime code
 comes from the newly compiled objects and the configured VC5 libraries.
 Initialized variable contents come from the linked compiler payloads.
 
-Matching runtime instructions also recover original BSS section and common
-symbol addresses. Conflicting references, allocations outside the original
-data section and bindings over nonzero initialized contents are rejected.
-Unrecovered runtime state uses an additional `.crt_bss` section. This consumes
-virtual memory and has no file payload.
-The original five sections retain their addresses, sizes and file offsets.
-The result remains a fixed-base executable.
+Matching runtime instructions and initialized pointer tables recover original
+BSS section and common symbol addresses. Conflicting references, allocations
+outside the original data section and bindings over nonzero initialized
+contents are rejected. All current runtime state has recovered destinations;
+the output needs no additional section. The linker retains a `.crt_bss`
+fallback for unrecovered state in future builds.
+The original five sections retain their addresses, sizes, file offsets and
+characteristics. Headers are byte-identical. The result remains a fixed-base
+executable.
 
 ## Checks
 
@@ -69,17 +76,19 @@ python3 -m unittest discover -s config/layout/tests -v
 ```
 
 The tests include the 96% whole-file threshold, import slot identities and
-separate IAT tokens, section layout, recovered and private runtime state,
-and negative relocation and BSS recovery checks. The
+separate IAT tokens, section layout, recovered runtime state,
+runtime code placement, exception scope tables and negative relocation,
+runtime replacement and BSS recovery checks. The
 function-level comparison remains `just compare`.
 
 ## Remaining parity
 
-The November 4 runtime/layout pass reduced whole-file differences from 38,299
-to 35,668 bytes (95.80% to 96.09%). `.idata` and `.rsrc` are byte-identical;
-`.text` is 91.25%, `.rdata` 92.13% and initialized `.data` 98.91%.
-The runtime recovers 111 BSS symbol bindings; private state occupies `0x101c`
-virtual bytes, down from `0x16d0`.
+The November 4 runtime/layout passes reduced whole-file differences from
+38,299 to 34,002 bytes (95.80% to 96.28%). Headers, `.idata` and `.rsrc` are
+byte-identical; `.text` is 91.64%, `.rdata` 94.16% and initialized `.data`
+98.96%. All 210 selected CRT code blocks match with relocations masked and
+sit at their original addresses. All 114 recovered runtime state bindings
+sit in the original data section, eliminating `0x16d0` bytes of private state.
 
 Most remaining code differences are in functions already listed in
 `hooks.allow_diff`. The largest raw function differences are
@@ -89,12 +98,13 @@ displacement). These counts compare each function at its mapped address.
 Some oversized game functions still displace neighbors, recorded in
 `build/layout/code-moved.json`.
 
-The CRT's `mbctype.obj` still differs from both available runtime versions.
-Its oversized SP3 `__setmbcp` displaces several neighboring runtime functions.
-Remaining data work includes 36 allocations without a recovered destination
-(344 bytes of constants and metadata), recorded in
-`build/layout/data-unplaced.json`. The extra runtime section also accounts
-for the remaining PE header size differences.
+The CRT range retains 49 differing bytes, including initializer boundary
+relocations. The original constructor array includes an additional no-op
+initializer at `0x444c60`, absent from the current game objects. Remaining
+data work includes 35 allocations without a recovered destination (336 bytes
+of constants and metadata), recorded in `build/layout/data-unplaced.json`.
+The mapper and input experiments have not yet produced complete function
+matches; their search variants remain outside `src/`.
 
 TOMB21's surviving game objects are mainly PlayStation LNK objects. Their
 debug records help establish header relationships and declarations; the

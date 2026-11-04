@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import struct
 import sys
 import unittest
@@ -86,9 +87,37 @@ class ExecutableTests(unittest.TestCase):
             "__mbctype": 0x51C570,
             "__crtheap": 0x527504,
             "___onexitbegin": 0x527510,
+            "__bufin": 0x5263E0,
         }.items():
             with self.subTest(symbol=name):
                 self.assertEqual(mapping[name][0], address)
+
+    def test_runtime_blocks_match_and_retain_original_addresses(self) -> None:
+        blocks = json.loads((ROOT / "build/layout/crt-code.json").read_text())
+        for block in blocks:
+            with self.subTest(path=block["path"], section=block["section"]):
+                self.assertTrue(block["matched"])
+                self.assertEqual(0x459030 + block["offset"], block["original"])
+
+    def test_runtime_exception_scope_tables_survive_code_merging(self) -> None:
+        for site in (
+            0x459FF6,
+            0x45BA86,
+            0x45BBF6,
+            0x45BD76,
+            0x45BF86,
+            0x45C086,
+            0x45C116,
+        ):
+            with self.subTest(site=hex(site)):
+                self.assertEqual(self.ours.read(site, 4), self.original.read(site, 4))
+
+    def test_runtime_relocations_preserve_negative_and_end_pointer_addends(
+        self,
+    ) -> None:
+        for site in (0x45C70D, 0x45C7A1, 0x45CCFE, 0x4604AA):
+            with self.subTest(site=hex(site)):
+                self.assertEqual(self.ours.read(site, 4), self.original.read(site, 4))
 
     def test_import_abi_includes_all_original_slots(self) -> None:
         self.assertEqual(self.ours.imports(), self.original.imports())
@@ -106,13 +135,12 @@ class ExecutableTests(unittest.TestCase):
             with self.subTest(section=name):
                 self.assertEqual(self.ours.sections[name], self.original.sections[name])
 
-    def test_private_runtime_state_is_zero_initialized_and_mapped(self) -> None:
-        address, size, _, raw_size = self.ours.sections[".crt_bss"]
-        self.assertEqual(raw_size, 0)
-        self.assertGreaterEqual(
-            address, self.original.base + self.original.sizeof_image
-        )
-        self.assertLessEqual(address + size, self.ours.base + self.ours.sizeof_image)
+    def test_headers_match_original(self) -> None:
+        self.assertEqual(self.ours.data[:0x400], self.original.data[:0x400])
+
+    def test_runtime_state_needs_no_additional_section(self) -> None:
+        self.assertEqual(self.ours.order, self.original.order)
+        self.assertEqual(self.ours.sizeof_image, self.original.sizeof_image)
         self.assertEqual(self.ours.directory(5), (0, 0))
 
 

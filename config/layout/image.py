@@ -61,6 +61,7 @@ def finish() -> None:
                 0
             ]
     paths = sorted({entry["path"] for entry in anchors})
+    paths.append("build/obj_crt/merged.obj")
     paths.extend(
         "build/obj_placed/" + Path(p).name
         for p in Path("build/layout/objects.txt").read_text().splitlines()
@@ -113,6 +114,7 @@ def finish() -> None:
     # The extra CRT state is private to the recompiled runtime, outside game globals.
     old_bss_start = mapping["_layout_game_bss_end"][0]
     old_bss_end = ours.sections[".data"][0] + ours.sections[".data"][1]
+    private_bss_size = old_bss_end - old_bss_start
     extra_base = original.base + original.sizeof_image
 
     def translate(address: int) -> int:
@@ -281,6 +283,14 @@ def finish() -> None:
     # file payload, so the source code and assets determine every output file byte.
     for number, name in enumerate(ours.order):
         header = ours.opt + ours.optsz + number * 40
+        if name in original.sections:
+            original_header = (
+                original.opt + original.optsz + original.order.index(name) * 40
+            )
+            characteristics = struct.unpack_from(
+                "<I", original.data, original_header + 36
+            )[0]
+            struct.pack_into("<I", newdata, header + 36, characteristics)
         if name == ".data":
             struct.pack_into("<I", newdata, header + 8, original.sections[".data"][1])
         elif name == ".idata":
@@ -290,13 +300,20 @@ def finish() -> None:
         elif name == ".rsrc":
             struct.pack_into("<I", newdata, header + 12, rsrc_new - ours.base)
         elif name == ".reloc":
-            size = old_bss_end - old_bss_start
+            if not private_bss_size:
+                if number != len(ours.order) - 1:
+                    raise ValueError(
+                        "Only a trailing relocation section can be removed"
+                    )
+                newdata[header : header + 40] = bytes(40)
+                struct.pack_into("<H", newdata, ours.pe + 6, len(ours.order) - 1)
+                continue
             struct.pack_into(
                 "<8sIIIIIIHHI",
                 newdata,
                 header,
                 b".crt_bss",
-                size,
+                private_bss_size,
                 extra_base - ours.base,
                 0,
                 0,
