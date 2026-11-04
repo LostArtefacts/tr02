@@ -1,0 +1,48 @@
+#ifndef INIT_RESULT_H
+#define INIT_RESULT_H
+
+enum InitResult {
+    INIT_OK,
+    INIT_ERR_PreferredAdapterNotFound,
+    INIT_ERR_CantCreateWindow,
+    INIT_ERR_CantCreateDirectDraw,
+    INIT_ERR_CantInitRenderer,
+    INIT_ERR_CantCreateDirectInput,
+    INIT_ERR_CantCreateKeyboardDevice,
+    INIT_ERR_CantSetKBCooperativeLevel,
+    INIT_ERR_CantSetKBDataFormat,
+    INIT_ERR_CantAcquireKeyboard,
+    INIT_ERR_CantSetDSCooperativeLevel,
+    INIT_ERR_DD_SetExclusiveMode,
+    INIT_ERR_DD_ClearExclusiveMode,
+    INIT_ERR_SetDisplayMode,
+    INIT_ERR_CreateScreenBuffers,
+    INIT_ERR_GetBackBuffer,
+    INIT_ERR_CreatePalette,
+    INIT_ERR_SetPalette,
+    INIT_ERR_CreatePrimarySurface,
+    INIT_ERR_CreateBackBuffer,
+    INIT_ERR_CreateClipper,
+    INIT_ERR_SetClipperHWnd,
+    INIT_ERR_SetClipper,
+    INIT_ERR_CreateZBuffer,
+    INIT_ERR_AttachZBuffer,
+    INIT_ERR_CreateRenderBuffer,
+    INIT_ERR_CreatePictureBuffer,
+    INIT_ERR_D3D_Create,
+    INIT_ERR_CreateDevice,
+    INIT_ERR_CreateViewport,
+    INIT_ERR_AddViewport,
+    INIT_ERR_SetViewport2,
+    INIT_ERR_SetCurrentViewport,
+    INIT_ERR_ClearRenderBuffer,
+    INIT_ERR_UpdateRenderInfo,
+    INIT_ERR_GetThirdBuffer,
+    INIT_ERR_GoFullScreen,
+    INIT_ERR_GoWindowed,
+    INIT_ERR_WrongBitDepth,
+    INIT_ERR_GetPixelFormat,
+    INIT_ERR_GetDisplayMode
+};
+
+#endif

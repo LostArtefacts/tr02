@@ -29,6 +29,29 @@ class Chunk:
     new: int | None = None
 
 
+def recover_vftable_prefixes(
+    chunks: list[Chunk], parsed: dict[str, coff.Object]
+) -> None:
+    by_section = {(c.path, c.section, c.offset): c for c in chunks}
+    for table in chunks:
+        if not table.readonly or not any(n.startswith("??_7") for n in table.names):
+            continue
+        prefix = by_section.get((table.path, table.section, table.offset - 4))
+        if prefix is None or prefix.size != 4 or prefix.names:
+            continue
+        obj = parsed[table.path]
+        section = obj.sections[table.section - 1]
+        if not any(
+            off == prefix.offset
+            and kind == coff.DIR32
+            and obj.symbols[index].name.startswith("??_R4")
+            for off, index, kind in section.relocs
+        ):
+            continue
+        for address, count in table.candidates.items():
+            prefix.candidates[address - 4] += count
+
+
 def prepare() -> None:
     ours = ce.PE("build/layout/linked.exe")
     orig = ce.PE(ce.ORIGINAL)
@@ -220,6 +243,8 @@ def prepare() -> None:
             old = struct.unpack("<I", ours.read(site, 4))[0]
             new = struct.unpack("<I", orig.read(site, 4))[0]
             add_pair(old, new)
+    # The complete-object locator occupies vftable[-1] in the VC5 RTTI ABI.
+    recover_vftable_prefixes(chunks, parsed)
     # Propagate table and exception metadata references from placed allocations.
     for iteration in range(5):
         for chunk in chunks:

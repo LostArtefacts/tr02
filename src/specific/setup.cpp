@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "global.h"
 #include "ds.h"
+#include "init_result.h"
 
 extern "C" {
 extern char RegistryKeyName[];
@@ -331,7 +332,7 @@ extern "C" bool SE_GraphicsTestStart(void)
         WinVidStart();
         RenderStart(true);
     }
-    catch (DWORD error)
+    catch (InitResult error)
     {
         SetDlgItemText(GraphicsDialogHandle, 1043, SE_FailedText);
         SetDlgItemText(GraphicsDialogHandle, 1046, DecodeErrorMessage(error));
@@ -454,7 +455,7 @@ extern "C" bool SE_SoundTestStart(void)
     {
         WinSndStart(SoundDialogHandle);
     }
-    catch (...)
+    catch (InitResult)
     {
         return false;
     }

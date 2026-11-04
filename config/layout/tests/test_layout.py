@@ -125,6 +125,24 @@ class ExecutableTests(unittest.TestCase):
             with self.subTest(site=hex(site)):
                 self.assertEqual(self.ours.read(site, 4), self.original.read(site, 4))
 
+    def test_game_exception_thunks_and_catch_tables_match_original(self) -> None:
+        for address, size in (
+            (0x44E940, 16),
+            (0x462D50, 0x6A),
+            (0x4638C8, 0x70),
+            (0x463958, 0x58),
+        ):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
+
+    def test_readonly_data_matches_original(self) -> None:
+        address, size, _, _ = self.original.sections[".rdata"]
+        self.assertEqual(
+            self.ours.read(address, size), self.original.read(address, size)
+        )
+
     def test_runtime_relocations_preserve_negative_and_end_pointer_addends(
         self,
     ) -> None:

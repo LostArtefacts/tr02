@@ -4,6 +4,7 @@
 #include "winmain.h"
 #include <stdlib.h>
 #include <eh.h>
+#include "se_exception.h"
 
 extern "C" {
 extern int AppResultCode;
@@ -27,15 +28,6 @@ extern "C" void Func44e920(unsigned int code, EXCEPTION_POINTERS *pointers);
 char *UT_FindArg(char *arg);
 void UT_ErrorBox(int id, void *parent);
 void UT_ErrorBox(char *text, void *parent);
-
-class SE_Exception {
-public:
-    SE_Exception(unsigned int code) : code(code) {}
-    ~SE_Exception() {}
-
-private:
-    unsigned int code;
-};
 
 extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {

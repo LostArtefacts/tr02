@@ -15,6 +15,8 @@ linker remains available through `customize=False`.
    aliases, order function sections by `config/symbols.csv`, and fill unused
    code slots with alignment padding. Oversized functions can consume the
    following gap; the placement pass records their displaced neighbors.
+   Order compiler exception sections by their owning functions' original
+   addresses, independently of the split source objects' link order.
 2. Recover game globals from named symbols and references in matching
    functions. Bind zero initialized game state at its original addresses.
    Private locals use recovered references or the small explicit address
@@ -34,11 +36,17 @@ linker remains available through `customize=False`.
 4. Link with relocation records and anchors for live initialized allocations.
    Include the GUID data contributed by DirectX import libraries. Recover
    allocation destinations from symbols, matching references and compiled
-   string/constant contents; propagate references through data tables.
+   string/constant contents; propagate references through data tables. Keep
+   the RTTI complete-object locator immediately before its vftable, as required
+   by the VC5 ABI, so its references recover the remaining RTTI allocations.
    Recover C++ constructor-table slots by their compiled function pointers,
    independently of the input objects' order. `src/exe/fullscreen.cpp` owns
    the fullscreen mode object and emits its empty constructor's initializer
-   and return stub at `0x444c60` and `0x444c70`.
+   and return stub at `0x444c60` and `0x444c70`. The shared `InitResult`
+   definition supplies the original typed catches; `SE_Exception` retains its
+   original empty copy constructor at `0x44e940` and its metadata reference.
+   The window unit retains `<math.h>` from the original include bundle to
+   preserve code generation after sharing the enum.
 5. Place the compiled allocations, apply address relocations, serialize the
    recovered import ABI, and update resource directory metadata. Synchronize
    the final link map with the emitted image.
@@ -82,15 +90,16 @@ python3 -m unittest discover -s config/layout/tests -v
 The tests include the 96% whole-file threshold, import slot identities and
 separate IAT tokens, section layout, recovered runtime state,
 runtime code placement, exception scope tables and negative relocation,
-runtime replacement and BSS recovery checks. The
+runtime replacement, BSS recovery, exception ownership, typed catch metadata
+and RTTI locator/vftable adjacency checks. The
 function-level comparison remains `just compare`.
 
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 30,347 bytes (95.80% to 96.68%). Headers, `.idata` and `.rsrc` are
-byte-identical; `.text` is 92.54%, `.rdata` 94.51% and initialized `.data`
-99.07%. All 210 selected CRT code blocks are byte-identical, including their
+38,299 to 30,154 bytes (95.80% to 96.70%). Headers, `.rdata`, `.idata` and `.rsrc`
+are byte-identical; `.text` is 92.56% and initialized `.data` is 99.06%.
+All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
 sit in the original data section, eliminating `0x16d0` bytes of private state.
@@ -103,9 +112,9 @@ displacement). These counts compare each function at its mapped address.
 Some oversized game functions still displace neighbors, recorded in
 `build/layout/code-moved.json`.
 
-The CRT address range retains 42 differing bytes in the final game-generated
-exception thunks; the selected CRT members have no differing bytes. Remaining
-data work includes 33 allocations without a recovered destination (328 bytes
+The entire CRT address range, including padding, the import thunk and the
+final game-generated exception thunks, is byte-identical. Remaining data
+work includes 21 allocations without a recovered destination (125 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
 `gtmap_persp32_fp` now matches all 4,038 bytes at its original address.
 Restoring signed UV shifts in its first five pixels, ordering one independent

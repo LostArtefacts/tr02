@@ -1,6 +1,7 @@
 #include "include.h"
 #include <dinput.h>
 #include "global.h"
+#include "init_result.h"
 
 typedef struct {
     void *PreferredDisplayAdapter;
@@ -27,19 +28,6 @@ extern HINSTANCE GhInstance;
 extern LPDIRECTINPUT DInput;
 extern LPDIRECTINPUTDEVICE IDID_SysKeyboard;
 }
-
-enum InitResult {
-    ERR_OK,
-    ERR_PreferredAdapterNotFound,
-    ERR_CantCreateWindow,
-    ERR_CantCreateDirectDraw,
-    ERR_CantInitRenderer,
-    ERR_CantCreateDirectInput,
-    ERR_CantCreateKeyboardDevice,
-    ERR_CantSetKBCooperativeLevel,
-    ERR_CantSetKBDataFormat,
-    ERR_CantAcquireKeyboard,
-};
 
 inline bool DX_TRY(HRESULT hr)
 {
@@ -274,13 +262,13 @@ extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
 extern "C" void DInputKeyboardCreate(void)
 {
     if (DX_TRY(DInput->CreateDevice(GUID_SysKeyboard, &IDID_SysKeyboard, NULL)))
-        throw ERR_CantCreateKeyboardDevice;
+        throw INIT_ERR_CantCreateKeyboardDevice;
     if (DX_TRY(IDID_SysKeyboard->SetCooperativeLevel(HGameWindow, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
-        throw ERR_CantSetKBCooperativeLevel;
+        throw INIT_ERR_CantSetKBCooperativeLevel;
     if (DX_TRY(IDID_SysKeyboard->SetDataFormat(&c_dfDIKeyboard)))
-        throw ERR_CantSetKBDataFormat;
+        throw INIT_ERR_CantSetKBDataFormat;
     if (DX_TRY(IDID_SysKeyboard->Acquire()))
-        throw ERR_CantAcquireKeyboard;
+        throw INIT_ERR_CantAcquireKeyboard;
 }
 
 extern "C" void DInputKeyboardRelease(void)
@@ -307,7 +295,7 @@ extern "C" bool DInputJoystickCreate(void)
 void WinInStart(void)
 {
     if (!DInputCreate())
-        throw ERR_CantCreateDirectInput;
+        throw INIT_ERR_CantCreateDirectInput;
     DInputKeyboardCreate();
     DInputJoystickCreate();
 }

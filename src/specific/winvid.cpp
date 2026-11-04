@@ -1,4 +1,6 @@
 #include "include.h"
+#include <math.h>
+#include "init_result.h"
 #pragma inline_depth(3)
 #include "global.h"
 #include "winmain.h"
@@ -1393,10 +1395,6 @@ inline DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
     return &node->body;
 }
 
-enum InitResult {
-    ERR_CantInitRenderer = 3
-};
-
 extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
 
 void WinVidStart(void)
@@ -1404,11 +1402,11 @@ void WinVidStart(void)
     DISPLAY_ADAPTER *preferred;
 
     if (!SavedAppSettings.PreferredDisplayAdapter)
-        throw ERR_CantInitRenderer;
+        throw INIT_ERR_CantCreateDirectDraw;
     preferred = &((DISPLAY_ADAPTER_NODE *)SavedAppSettings.PreferredDisplayAdapter)->body;
     CurrentDisplayAdapter = *preferred;
     if (!DDrawCreate(CurrentDisplayAdapter.lpAdapterGuid))
-        throw ERR_CantInitRenderer;
+        throw INIT_ERR_CantCreateDirectDraw;
 }
 
 inline DISPLAY_ADAPTER_LIST::~DISPLAY_ADAPTER_LIST()

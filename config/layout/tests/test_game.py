@@ -1,0 +1,73 @@
+"""Exception helpers follow their owning functions across object boundaries."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from tempfile import TemporaryDirectory
+import sys
+import unittest
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT))
+
+import coff
+from config.layout.game import Piece, exception_order
+
+
+class ExceptionOrderTests(unittest.TestCase):
+    def setUp(self) -> None:
+        directory = TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.directory = Path(directory.name)
+
+    def make_object(
+        self, name: str, address: int, second_owner: bool = False
+    ) -> tuple[str, coff.Object, list[Piece]]:
+        path = str(self.directory / name)
+        code = b"\x68" + bytes(4) + b"\xc3"
+        coff.write_object(
+            path,
+            [
+                (".text$mn", coff.TEXT, code, [(1, "_handler", coff.DIR32)]),
+                (".text$x", coff.TEXT, b"\xc3", []),
+                (
+                    ".text$mn" if second_owner else ".rdata",
+                    coff.TEXT if second_owner else coff.RDATA,
+                    bytes(4),
+                    [(0, "_handler", coff.DIR32)],
+                ),
+            ],
+            {"_owner": (1, 0), "_handler": (2, 0)},
+            [],
+            {},
+        )
+        pieces = [Piece(path, 1, 0, "_owner", address, len(code), code)]
+        if second_owner:
+            pieces.append(Piece(path, 3, 0, "_other", address + 16, 4, bytes(4)))
+        return path, coff.Object(path), pieces
+
+    def test_owner_addresses_override_object_order(self) -> None:
+        later, later_obj, later_pieces = self.make_object("a.obj", 0x2000)
+        earlier, earlier_obj, earlier_pieces = self.make_object("z.obj", 0x1000)
+        self.assertEqual(
+            exception_order(
+                {later: later_obj, earlier: earlier_obj},
+                later_pieces + earlier_pieces,
+            ),
+            {earlier: {2: b".text$x0"}, later: {2: b".text$x1"}},
+        )
+
+    def test_metadata_reference_cannot_replace_missing_function_owner(self) -> None:
+        path, obj, _ = self.make_object("orphan.obj", 0x1000)
+        with self.assertRaisesRegex(ValueError, "Exception section owner"):
+            exception_order({path: obj}, [])
+
+    def test_conflicting_function_owners_are_rejected(self) -> None:
+        path, obj, pieces = self.make_object("ambiguous.obj", 0x1000, True)
+        with self.assertRaisesRegex(ValueError, "Exception section owner"):
+            exception_order({path: obj}, pieces)
+
+
+if __name__ == "__main__":
+    unittest.main()

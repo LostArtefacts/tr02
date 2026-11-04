@@ -3,6 +3,7 @@
 #include "global.h"
 #include "ds.h"
 #include "../camera.h"
+#include "init_result.h"
 
 extern "C" LPDIRECTSOUND DSound;
 extern "C" LPDIRECTSOUNDBUFFER SampleBuffers[256];
@@ -348,10 +349,6 @@ typedef struct {
 } APP_SETTINGS_PART;
 #pragma pack(pop)
 
-enum InitResult {
-    ERR_CantSetDSCooperativeLevel = 10
-};
-
 extern "C" {
 extern APP_SETTINGS_PART SavedAppSettings;
 extern SOUND_ADAPTER CurrentSoundAdapter;
@@ -379,7 +376,7 @@ void WinSndStart(HWND hWnd)
     if (!hWnd)
         hWnd = HGameWindow;
     if (DX_TRY(DSound->SetCooperativeLevel(hWnd, DSSCL_EXCLUSIVE)))
-        throw ERR_CantSetDSCooperativeLevel;
+        throw INIT_ERR_CantSetDSCooperativeLevel;
     DSoundBufferTest();
     IsSoundEnabled = true;
 }

@@ -23,6 +23,35 @@ class Piece:
     data: bytes
 
 
+def exception_order(
+    objects: dict[str, coff.Object], pieces: list[Piece]
+) -> dict[str, dict[int, bytes]]:
+    owners = {(piece.path, piece.section): piece.address for piece in pieces}
+    handlers: list[tuple[int, str, int]] = []
+    for path, obj in objects.items():
+        for number, section in enumerate(obj.sections, 1):
+            if section.name != ".text$x" or not section.data:
+                continue
+            parents = {
+                owners[path, parent]
+                for parent, code in enumerate(obj.sections, 1)
+                if (path, parent) in owners
+                and any(
+                    obj.symbols[index].section == number
+                    for _, index, _ in code.relocs
+                )
+            }
+            if len(parents) != 1:
+                raise ValueError(("Exception section owner", path, number, parents))
+            handlers.append((parents.pop(), path, number))
+    if len(handlers) > 16:
+        raise ValueError(("Too many exception sections", len(handlers)))
+    names: dict[str, dict[int, bytes]] = {}
+    for index, (_, path, number) in enumerate(sorted(handlers)):
+        names.setdefault(path, {})[number] = f".text$x{index:x}".encode()
+    return names
+
+
 def place(objects: list[str]) -> list[str]:
     symbols = compare.read_symbols()
     extras: dict[str, dict[str, int]] = {
@@ -47,8 +76,14 @@ def place(objects: list[str]) -> list[str]:
         "specific_screen": {"_$E2": 0x4484C0, "_$E1": 0x4484D0},
         "specific_setup": {"_$E2": 0x452460, "_$E1": 0x452470},
         "exe_fullscreen": {"_$E2": 0x444C60, "_$E1": 0x444C70},
-        "specific_winmain2": {"??1SE_Exception@@QAE@XZ": 0x44E7A0},
-        "specific_winmain3": {"??1SE_Exception@@QAE@XZ": 0x44E7A0},
+        "specific_winmain2": {
+            "??1SE_Exception@@QAE@XZ": 0x44E7A0,
+            "??0SE_Exception@@QAE@AAV0@@Z": 0x44E940,
+        },
+        "specific_winmain3": {
+            "??1SE_Exception@@QAE@XZ": 0x44E7A0,
+            "??0SE_Exception@@QAE@AAV0@@Z": 0x44E940,
+        },
     }
 
     ordered = build.link_order(objects, build.read_symbols(), "median")
@@ -56,10 +91,12 @@ def place(objects: list[str]) -> list[str]:
         str(Path(obj).stem): src for src, obj in build.sources(build.EXE)
     }
     pieces: list[Piece] = []
+    parsed: dict[str, coff.Object] = {}
     unknown: list[tuple[str, int, list[str]]] = []
     selected: set[str] = set()
     for path in ordered:
         obj = coff.Object(path)
+        parsed[path] = obj
         src = paths.get(Path(path).stem, "")
         rel = str(Path(src).relative_to("src")) if src else ""
         for secnum, section in enumerate(obj.sections, 1):
@@ -172,6 +209,7 @@ def place(objects: list[str]) -> list[str]:
     for piece in unique:
         groups.setdefault(piece.address, []).append(piece)
     unique = [max(group, key=lambda p: len(p.data)) for group in groups.values()]
+    exception_names = exception_order(parsed, unique)
 
     removed: dict[str, set[int]] = {}
     aliases: dict[str, list[tuple[str, int]]] = {}
@@ -254,6 +292,16 @@ def place(objects: list[str]) -> list[str]:
         obj = coff.Object(path)
         for secnum in range(1, nsec + 1):
             at = 20 + (secnum - 1) * 40
+            if secnum in exception_names.get(path, {}):
+                name = exception_names[path][secnum]
+                headers[at : at + 8] = name
+                for index, sym in enumerate(obj.symbols):
+                    if (
+                        sym
+                        and sym.section == secnum
+                        and sym.name == obj.sections[secnum - 1].name
+                    ):
+                        symtab[index * 18 : index * 18 + 8] = name
             size, dataoff, reloff, lineoff, nrel, nline = struct.unpack_from(
                 "<IIIIHH", raw, at + 16
             )

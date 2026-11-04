@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "init_result.h"
 
 extern "C" {
 extern char StringToShow[128];
@@ -84,7 +85,7 @@ extern "C" int WinGameStart(void)
         RenderStart(true);
         WinSndStart(NULL);
         WinInStart();
-    } catch (int error) {
+    } catch (InitResult error) {
         return error;
     }
     return 0;

@@ -1,4 +1,5 @@
 #include "include.h"
+#include "init_result.h"
 
 extern "C" {
 extern LPDIRECTDRAW2 DDraw;
@@ -152,40 +153,31 @@ extern "C" bool D3DSetViewport(void)
     return true;
 }
 
-enum InitResult {
-    ERR_D3D_Create = 27,
-    ERR_CreateDevice,
-    ERR_CreateViewport,
-    ERR_AddViewport,
-    ERR_SetViewport2,
-    ERR_SetCurrentViewport,
-};
-
 extern "C" void D3DDeviceCreate(LPDIRECTDRAWSURFACE3 lpBackBuffer)
 {
     D3DMATERIAL matData;
     D3DMATERIALHANDLE matHandle;
 
     if (!D3DCreate())
-        throw ERR_D3D_Create;
+        throw INIT_ERR_D3D_Create;
     if (DX_TRY(D3D->CreateDevice(IID_IDirect3DHALDevice, (LPDIRECTDRAWSURFACE)lpBackBuffer, &G_Direct3DDevice)))
-        throw ERR_CreateDevice;
+        throw INIT_ERR_CreateDevice;
     if (DX_TRY(D3D->CreateViewport(&D3DView, NULL)))
-        throw ERR_CreateViewport;
+        throw INIT_ERR_CreateViewport;
     if (DX_TRY(G_Direct3DDevice->AddViewport(D3DView)))
-        throw ERR_AddViewport;
+        throw INIT_ERR_AddViewport;
     if (!D3DSetViewport())
-        throw ERR_SetViewport2;
+        throw INIT_ERR_SetViewport2;
     if (DX_TRY(D3D->CreateMaterial(&D3DMaterial, NULL)))
-        throw ERR_CreateViewport;
+        throw INIT_ERR_CreateViewport;
     memset(&matData, 0, sizeof(matData));
     matData.dwSize = sizeof(matData);
     if (DX_TRY(D3DMaterial->SetMaterial(&matData)))
-        throw ERR_CreateViewport;
+        throw INIT_ERR_CreateViewport;
     if (DX_TRY(D3DMaterial->GetHandle(G_Direct3DDevice, &matHandle)))
-        throw ERR_CreateViewport;
+        throw INIT_ERR_CreateViewport;
     if (DX_TRY(D3DView->SetBackground(matHandle)))
-        throw ERR_CreateViewport;
+        throw INIT_ERR_CreateViewport;
 }
 
 extern "C" void Direct3DRelease(void)

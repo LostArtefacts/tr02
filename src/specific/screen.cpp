@@ -2,6 +2,7 @@
 #include "include.h"
 #include "global.h"
 #include <stdio.h>
+#include "init_result.h"
 
 struct DISPLAY_MODE {
     int width;
@@ -92,49 +93,6 @@ extern APP_SETTINGS SavedAppSettings;
 extern LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
 }
 
-enum InitResult {
-    ERR_OK,
-    ERR_PreferredAdapterNotFound,
-    ERR_CantCreateWindow,
-    ERR_CantCreateDirectDraw,
-    ERR_CantInitRenderer,
-    ERR_CantCreateDirectInput,
-    ERR_CantCreateKeyboardDevice,
-    ERR_CantSetKBCooperativeLevel,
-    ERR_CantSetKBDataFormat,
-    ERR_CantAcquireKeyboard,
-    ERR_CantSetDSCooperativeLevel,
-    ERR_DD_SetExclusiveMode,
-    ERR_DD_ClearExclusiveMode,
-    ERR_SetDisplayMode,
-    ERR_CreateScreenBuffers,
-    ERR_GetBackBuffer,
-    ERR_CreatePalette,
-    ERR_SetPalette,
-    ERR_CreatePrimarySurface,
-    ERR_CreateBackBuffer,
-    ERR_CreateClipper,
-    ERR_SetClipperHWnd,
-    ERR_SetClipper,
-    ERR_CreateZBuffer,
-    ERR_AttachZBuffer,
-    ERR_CreateRenderBuffer,
-    ERR_CreatePictureBuffer,
-    ERR_D3D_Create,
-    ERR_CreateDevice,
-    ERR_CreateViewport,
-    ERR_AddViewport,
-    ERR_SetViewport2,
-    ERR_SetCurrentViewport,
-    ERR_ClearRenderBuffer,
-    ERR_UpdateRenderInfo,
-    ERR_GetThirdBuffer,
-    ERR_GoFullScreen,
-    ERR_GoWindowed,
-    ERR_WrongBitDepth,
-    ERR_GetPixelFormat,
-};
-
 inline bool DX_TRY(HRESULT hr)
 {
     if (SUCCEEDED(hr))
@@ -180,16 +138,16 @@ extern "C" void CreateScreenBuffers(void)
         dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_FLIP | DDSCAPS_COMPLEX | DDSCAPS_3DDEVICE;
     dsp.dwBackBufferCount = SavedAppSettings.TripleBuffering + 1;
     if (DX_TRY(DDrawSurfaceCreate(&dsp, &PrimaryBufferSurface)))
-        throw ERR_CreateScreenBuffers;
+        throw INIT_ERR_CreateScreenBuffers;
     WinVidClearBuffer(PrimaryBufferSurface, NULL, 0);
     caps.dwCaps = DDSCAPS_BACKBUFFER;
     if (DX_TRY(PrimaryBufferSurface->GetAttachedSurface(&caps, &BackBufferSurface)))
-        throw ERR_GetBackBuffer;
+        throw INIT_ERR_GetBackBuffer;
     WinVidClearBuffer(BackBufferSurface, NULL, 0);
     if (SavedAppSettings.TripleBuffering) {
         caps.dwCaps = DDSCAPS_FLIP;
         if (DX_TRY(BackBufferSurface->GetAttachedSurface(&caps, &ThirdBufferSurface)))
-            throw ERR_GetThirdBuffer;
+            throw INIT_ERR_GetThirdBuffer;
         WinVidClearBuffer(ThirdBufferSurface, NULL, 0);
     }
 }
@@ -199,13 +157,13 @@ extern "C" void CreatePrimarySurface(void)
     DDSURFACEDESC dsp;
 
     if ((GameVid_IsVga && SavedAppSettings.RenderMode == RM_Hardware) || (!GameVid_IsVga && SavedAppSettings.RenderMode == RM_Software))
-        throw ERR_WrongBitDepth;
+        throw INIT_ERR_WrongBitDepth;
     memset(&dsp, 0, sizeof(dsp));
     dsp.dwSize = sizeof(dsp);
     dsp.dwFlags = DDSD_CAPS;
     dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
     if (DX_TRY(DDrawSurfaceCreate(&dsp, &PrimaryBufferSurface)))
-        throw ERR_CreatePrimarySurface;
+        throw INIT_ERR_CreatePrimarySurface;
 }
 
 extern "C" void CreateBackBuffer(void)
@@ -224,18 +182,18 @@ extern "C" void CreateBackBuffer(void)
         break;
     }
     if (DX_TRY(DDrawSurfaceCreate(&dsp, &BackBufferSurface)))
-        throw ERR_CreateBackBuffer;
+        throw INIT_ERR_CreateBackBuffer;
     WinVidClearBuffer(BackBufferSurface, NULL, 0);
 }
 
 extern "C" void CreateClipper(void)
 {
     if (DX_TRY(DDraw->CreateClipper(0, &DDrawClipper, NULL)))
-        throw ERR_CreateClipper;
+        throw INIT_ERR_CreateClipper;
     if (DX_TRY(DDrawClipper->SetHWnd(0, HGameWindow)))
-        throw ERR_SetClipperHWnd;
+        throw INIT_ERR_SetClipperHWnd;
     if (DX_TRY(PrimaryBufferSurface->SetClipper(DDrawClipper)))
-        throw ERR_SetClipper;
+        throw INIT_ERR_SetClipper;
 }
 
 extern "C" void CreateWindowPalette(void)
@@ -257,9 +215,9 @@ extern "C" void CreateWindowPalette(void)
         flags = DDPCAPS_8BIT | DDPCAPS_ALLOW256;
     }
     if (DX_TRY(DDraw->CreatePalette(flags, WinVidPalette, &DDrawPalette, NULL)))
-        throw ERR_CreatePalette;
+        throw INIT_ERR_CreatePalette;
     if (DX_TRY(PrimaryBufferSurface->SetPalette(DDrawPalette)))
-        throw ERR_SetPalette;
+        throw INIT_ERR_SetPalette;
 }
 
 extern "C" void CreateZBuffer(void)
@@ -275,9 +233,9 @@ extern "C" void CreateZBuffer(void)
         dsp.dwHeight = GameVidBufHeight;
         dsp.dwZBufferBitDepth = GetZBufferDepth();
         if (DX_TRY(DDrawSurfaceCreate(&dsp, &ZBufferSurface)))
-            throw ERR_CreateZBuffer;
+            throw INIT_ERR_CreateZBuffer;
         if (DX_TRY(BackBufferSurface->AddAttachedSurface(ZBufferSurface)))
-            throw ERR_AttachZBuffer;
+            throw INIT_ERR_AttachZBuffer;
     }
 }
 
@@ -305,9 +263,9 @@ extern "C" void CreateRenderBuffer(void)
     dsp.dwWidth = GameVidBufWidth;
     dsp.dwHeight = GameVidBufHeight;
     if (DX_TRY(DDrawSurfaceCreate(&dsp, &RenderBufferSurface)))
-        throw ERR_CreateRenderBuffer;
+        throw INIT_ERR_CreateRenderBuffer;
     if (!WinVidClearBuffer(RenderBufferSurface, NULL, 0))
-        throw ERR_ClearRenderBuffer;
+        throw INIT_ERR_ClearRenderBuffer;
 }
 
 extern "C" void CreatePictureBuffer(void)
@@ -321,7 +279,7 @@ extern "C" void CreatePictureBuffer(void)
     dsp.dwWidth = 640;
     dsp.dwHeight = 480;
     if (DX_TRY(DDrawSurfaceCreate(&dsp, &PictureBufferSurface)))
-        throw ERR_CreatePictureBuffer;
+        throw INIT_ERR_CreatePictureBuffer;
 }
 
 extern "C" {
@@ -556,10 +514,10 @@ void RenderStart(bool isReset)
         NeedToReloadTextures = false;
     if (SavedAppSettings.FullScreen) {
         if (!SavedAppSettings.VideoMode)
-            throw ERR_GoFullScreen;
+            throw INIT_ERR_GoFullScreen;
         dispMode = ((DISPLAY_MODE_NODE *)SavedAppSettings.VideoMode)->body;
         if (!WinVidGoFullScreen(&dispMode))
-            throw ERR_GoFullScreen;
+            throw INIT_ERR_GoFullScreen;
         CreateScreenBuffers();
         GameVidWidth = dispMode.width;
         GameVidHeight = dispMode.height;
@@ -578,7 +536,7 @@ void RenderStart(bool isReset)
         }
         WinVidSetMinWindowSize(minWidth, minHeight);
         if (!WinVidGoWindowed(SavedAppSettings.WindowWidth, SavedAppSettings.WindowHeight, &dispMode))
-            throw ERR_GoWindowed;
+            throw INIT_ERR_GoWindowed;
         GameVidWidth = dispMode.width;
         GameVidHeight = dispMode.height;
         GameVidBPP = dispMode.bpp;
@@ -595,7 +553,7 @@ void RenderStart(bool isReset)
     memset(&pixelFormat, 0, sizeof(pixelFormat));
     pixelFormat.dwSize = sizeof(pixelFormat);
     if (FAILED(PrimaryBufferSurface->GetPixelFormat(&pixelFormat)))
-        throw ERR_GetPixelFormat;
+        throw INIT_ERR_GetPixelFormat;
     ColorBitMasks.WinVidGetColorBitMasks(&pixelFormat);
     if (GameVid_IsVga)
         CreateWindowPalette();
@@ -779,7 +737,7 @@ extern "C" void FmvBackToGame(void)
 
     try {
         RenderStart(true);
-    } catch (...) {
+    } catch (InitResult) {
         RenderFinish(true);
         SavedAppSettings.TripleBuffering = false;
         SavedAppSettings.PreferredDisplayAdapter = PrimaryDisplayAdapter;
@@ -803,7 +761,7 @@ extern "C" void FmvBackToGame(void)
         SavedAppSettings.VideoMode = mode;
         try {
             RenderStart(true);
-        } catch (...) {
+        } catch (InitResult) {
             S_ExitSystem("Can't reinitialise renderer");
         }
     }
