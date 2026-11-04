@@ -138,10 +138,14 @@ extern "C" DWORD EncodePutPCX(BYTE value, BYTE num, BYTE *buffer)
 {
     if (!num || (char)num > 63)
         return 0;
-    if (num == 1 && (value & 0xc0) != 0xc0)
+    if (num == 1)
     {
-        buffer[0] = value;
-        return 1;
+        BYTE code = value & 0xc0;
+        if ((char)code != (char)0xc0)
+        {
+            buffer[0] = value;
+            return 1;
+        }
     }
     buffer[0] = num | 0xc0;
     buffer[1] = value;
