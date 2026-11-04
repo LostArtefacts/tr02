@@ -306,18 +306,20 @@ extern "C" void Func444350(void)
 {
     int x[4];
     int y[4];
-    int i;
+    int i, width, height;
 
     if (!BGND_PictureIsReady) {
         BGND_DrawInGameBackground();
         return;
     }
     BGND_GetPageHandles();
+    width = phd_winwidth;
+    height = phd_winheight;
     for (i = 0; i < 3; i++) {
-        x[i] = phd_winxmin + phd_winwidth * Var466408[i] / 640;
-        y[i] = phd_winymin + phd_winheight * Var466418[i] / 480;
+        x[i] = Var466408[i] * width / 640 + phd_winxmin;
+        y[i] = Var466418[i] * height / 480 + phd_winymin;
     }
-    x[3] = phd_winxmin + phd_winwidth * Var466408[3] / 640;
+    x[3] = Var466408[3] * width / 640 + phd_winxmin;
     HWR_EnableZBuffer(false, false);
     DrawTextureTile(x[0], y[0], x[1] - x[0], y[1] - y[0], BGND_PageHandles[0], 0, 0, 256, 256, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     DrawTextureTile(x[1], y[0], x[2] - x[1], y[1] - y[0], BGND_PageHandles[1], 0, 0, 256, 256, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
@@ -327,7 +329,6 @@ extern "C" void Func444350(void)
     DrawTextureTile(x[2], y[1], x[3] - x[2], y[2] - y[1], BGND_PageHandles[2], 128, 0, 128, 224, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     HWR_EnableZBuffer(true, true);
 }
-
 extern "C" void Func444560(void)
 {
     BGND_Free();
