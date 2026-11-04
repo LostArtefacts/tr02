@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 13,628 bytes (95.80% to 98.51%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.60%.
+38,299 to 13,242 bytes (95.80% to 98.55%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.70%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -202,3 +202,7 @@ original temporary lifetimes and range-check register allocation.
 Background drawing matches all 519 bytes at `0x444350`. Its window width
 and height are cached before scaling the tile coordinates, as in the
 surviving source, rather than read independently in each expression.
+
+Screenshot capture matches all 501 bytes at `0x44ec80`. Restoring the
+indexed source pixels, signed-short output pointer, separate RGB components
+and surface-lock boolean conversion reproduces the surviving capture code.
