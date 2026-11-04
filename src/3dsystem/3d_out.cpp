@@ -1,6 +1,7 @@
 // cflags: /Op /Oa
 #include <windows.h>
 #include <process.h>
+#include <math.h>
 #include "../3dglodef.h"
 
 typedef struct xbuf_x {
@@ -805,9 +806,9 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                 voz += vozadd32;
                 end_v = (int)(voz * scale);
                 add_v = (end_v - start_v) >> 5;
-                ooz += oozadd32;
-                scale = 256.0f / ooz;
                 if ((ABS(add_u) + ABS(add_v)) & SINGLE_MASK) {
+                    ooz += oozadd32;
+                    scale = 256.0f / ooz;
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
                         *(pixptr) = DepthQTable[start_g >> 16].index[texel];
@@ -901,9 +902,9 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
                         *(pixptr + 15) = DepthQTable[start_g >> 16].index[texel];
+                    start_g += add_g;
                     start_u += add_u;
                     start_v += add_v;
-                    start_g += add_g;
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
                         *(pixptr + 16) = DepthQTable[start_g >> 16].index[texel];
@@ -1001,6 +1002,8 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                     start_v += add_v;
                     start_g += add_g;
                 } else {
+                    ooz += oozadd32;
+                    scale = 256.0f / ooz;
                     add_u <<= 1;
                     add_v <<= 1;
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
@@ -1103,7 +1106,7 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                 pixptr += 32;
             }
             if (!x)
-                continue;
+                goto NextRow;
             scale = 256.0f / dataptr->OOZright;
             start_u = end_u;
             end_u = (int)(dataptr->UOZright * scale);
@@ -1129,7 +1132,6 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
             } else {
                 add_u <<= 1;
                 add_v <<= 1;
-                add_g2 = add_g << 1;
                 for (; x > 1; x -= 2, pixptr += 2) {
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
@@ -1146,7 +1148,7 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
             }
         } else {
             if (x <= 0)
-                continue;
+                goto NextRow;
             start_g = dataptr->Gleft;
             add_g = (dataptr->Gright - start_g) / x;
             scale = 256.0f / dataptr->OOZleft;
@@ -1155,34 +1157,34 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
             scale = 256.0f / dataptr->OOZright;
             end_u = (int)(dataptr->UOZright * scale);
             end_v = (int)(dataptr->VOZright * scale);
-            add_u = (end_u - start_u) / x;
-            add_v = (end_v - start_v) / x;
+            add_v = (end_u - start_u) / x;
+            add_u = (end_v - start_v) / x;
             pixptr = lineptr + start_x;
-            if ((ABS(add_u) + ABS(add_v)) & SINGLE_MASK) {
+            if ((ABS(add_v) + ABS(add_u)) & SINGLE_MASK) {
                 for (; x > 1; x -= 2, pixptr += 2) {
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
                         pixptr[0] = DepthQTable[start_g >> 16].index[texel];
-                    start_u += add_u;
-                    start_v += add_v;
+                    start_u += add_v;
+                    start_v += add_u;
                     start_g += add_g;
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
                         pixptr[1] = DepthQTable[start_g >> 16].index[texel];
-                    start_u += add_u;
-                    start_v += add_v;
+                    start_u += add_v;
+                    start_v += add_u;
                     start_g += add_g;
                 }
             } else {
-                add_u <<= 1;
                 add_v <<= 1;
+                add_u <<= 1;
                 add_g2 = add_g << 1;
                 for (; x > 1; x -= 2, pixptr += 2) {
                     texel = *(tptr + ((start_v >> 16) << 8) + (start_u >> 16));
                     if (texel)
                         pixptr[0] = pixptr[1] = DepthQTable[start_g >> 16].index[texel];
-                    start_u += add_u;
-                    start_v += add_v;
+                    start_u += add_v;
+                    start_v += add_u;
                     start_g += add_g2;
                 }
             }
@@ -1192,6 +1194,8 @@ void wgtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                     pixptr[0] = DepthQTable[start_g >> 16].index[texel];
             }
         }
+NextRow:
+        ;
     }
 }
 

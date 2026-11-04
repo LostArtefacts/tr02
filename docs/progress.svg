@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.24" height="12" x="0" y="0" class="named"><title>1136 · 93.04%</title></rect>
-<rect width="3.99" height="12" x="197.24" y="0" class="decompiled"><title>23 · 1.88%</title></rect>
-<rect width="10.42" height="12" x="201.24" y="0" class="nonmatching"><title>60 · 4.91%</title></rect>
+<rect width="197.42" height="12" x="0" y="0" class="named"><title>1137 · 93.12%</title></rect>
+<rect width="3.99" height="12" x="197.42" y="0" class="decompiled"><title>23 · 1.88%</title></rect>
+<rect width="10.24" height="12" x="201.41" y="0" class="nonmatching"><title>59 · 4.83%</title></rect>
 <rect width="0.35" height="12" x="211.65" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
-<text text-anchor="end" x="402" y="7.50">94.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="7"><tspan class="named">1136</tspan> · <tspan class="decompiled">23</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">2</tspan></text>
+<text text-anchor="end" x="402" y="7.50">95.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="7"><tspan class="named">1137</tspan> · <tspan class="decompiled">23</tspan> · <tspan class="nonmatching">59</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="184.65" height="12" x="0" y="0" class="named"><title>301 KB · 87.10%</title></rect>
-<rect width="0.99" height="12" x="184.65" y="0" class="decompiled"><title>2 KB · 0.47%</title></rect>
-<rect width="26.27" height="12" x="185.64" y="0" class="nonmatching"><title>43 KB · 12.39%</title></rect>
+<rect width="187.90" height="12" x="0" y="0" class="named"><title>307 KB · 88.63%</title></rect>
+<rect width="0.99" height="12" x="187.90" y="0" class="decompiled"><title>2 KB · 0.47%</title></rect>
+<rect width="23.01" height="12" x="188.89" y="0" class="nonmatching"><title>38 KB · 10.85%</title></rect>
 <rect width="0.10" height="12" x="211.91" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
-<text text-anchor="end" x="402" y="24.50">87.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="24"><tspan class="named">301 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">43 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
+<text text-anchor="end" x="402" y="24.50">89.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="24"><tspan class="named">307 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">38 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="212" height="12" x="0" y="0" class="named"><title>36 KB · 100%</title></rect>
@@ -131,7 +131,7 @@
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="named"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="0" class="named"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="0" class="nonmatching"><title>0x00405840 visible_zclip (108 bytes)</title></rect>
@@ -1319,7 +1319,7 @@
 <g transform="translate(0 552)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <g transform="translate(0 20)">
-<rect width="49.58" height="60.01" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
+<rect width="49.58" height="60.01" x="0" y="0" class="named"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="49.58" height="53.59" x="0" y="63.01" class="named"><title>0x00422060 Display_Inventory (4746 bytes)</title></rect>
 <rect width="49.58" height="46.92" x="0" y="119.60" class="named"><title>0x0043a530 BaddyObjects (4155 bytes)</title></rect>
 <rect width="49.58" height="45.60" x="0" y="169.52" class="named"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
