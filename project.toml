@@ -16,6 +16,7 @@ project = "tomb2"
 search = ["~/data.local/work/ghidra_*"]
 
 [build]
+hook = "config/exe_layout.py"
 # TOMBRAID.DSP's release flags, without /Zi /Fr /YX /FD
 cflags = ["/G5", "/Zp1", "/W3", "/O2", "/DNDEBUG", "/DWIN32", "/D_WINDOWS"]
 crlf = true  # Core's sources had DOS line endings
@@ -24,6 +25,7 @@ include = ['C:\dx5\include', 'C:\msvc5sp3\include']
 lib = ['C:\dx5\lib', 'C:\msvc5sp3\lib']
 
 [exe]
+cflags = ["/Gy"]
 defines = ["TR2_EXE=1"]
 # The original's import order is TOMBRAID.DSP's library order.
 libs = ["dxguid.lib", "dinput.lib", "dsound.lib", "ddraw.lib", "winmm.lib", "user32.lib",

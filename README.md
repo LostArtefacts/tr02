@@ -119,3 +119,7 @@ current; intentional differences are listed in `hooks.allow_diff` in
 The build tools are a submodule of
 [decomp-tools](https://github.com/LostArtefacts/decomp-tools), shared with
 other Tomb Raider decompilations. `just` lists all available commands.
+
+The standalone build uses the recovered code, data and import layout through
+[`config/exe_layout.py`](config/exe_layout.py). See
+[`docs/exe-layout.md`](docs/exe-layout.md) for the link passes and validation.
