@@ -1888,10 +1888,7 @@ address,size,name,symbol
 0x004d834c,4,MaxWindowWidth,_MaxWindowWidth
 0x004d8350,1,IsMaxWindowSizeSet,_IsMaxWindowSizeSet
 0x004d8354,4,AppResultCode,_AppResultCode
-0x004d8358,4,FullScreenWidth,_FullScreenWidth
-0x004d835c,4,FullScreenHeight,_FullScreenHeight
-0x004d8360,4,FullScreenBPP,_FullScreenBPP
-0x004d8364,4,FullScreenVGA,_FullScreenVGA
+0x004d8358,16,FullScreenMode,_FullScreenMode
 0x004d8368,1,IsGameToExit,_IsGameToExit
 0x004d836c,4,GameWindow_Y,_GameWindow_Y
 0x004d8370,4,GameWindow_X,_GameWindow_X

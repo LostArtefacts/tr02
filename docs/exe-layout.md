@@ -35,6 +35,10 @@ linker remains available through `customize=False`.
    Include the GUID data contributed by DirectX import libraries. Recover
    allocation destinations from symbols, matching references and compiled
    string/constant contents; propagate references through data tables.
+   Recover C++ constructor-table slots by their compiled function pointers,
+   independently of the input objects' order. `src/exe/fullscreen.cpp` owns
+   the fullscreen mode object and emits its empty constructor's initializer
+   and return stub at `0x444c60` and `0x444c70`.
 5. Place the compiled allocations, apply address relocations, serialize the
    recovered import ABI, and update resource directory metadata. Synchronize
    the final link map with the emitted image.
@@ -84,10 +88,11 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout passes reduced whole-file differences from
-38,299 to 34,002 bytes (95.80% to 96.28%). Headers, `.idata` and `.rsrc` are
-byte-identical; `.text` is 91.64%, `.rdata` 94.16% and initialized `.data`
-98.96%. All 210 selected CRT code blocks match with relocations masked and
-sit at their original addresses. All 114 recovered runtime state bindings
+38,299 to 33,950 bytes (95.80% to 96.28%). Headers, `.idata` and `.rsrc` are
+byte-identical; `.text` is 91.65%, `.rdata` 94.16% and initialized `.data`
+99.07%. All 210 selected CRT code blocks are byte-identical, including their
+relocated operands, and sit at their original addresses. The constructor
+table is byte-identical. All 114 recovered runtime state bindings
 sit in the original data section, eliminating `0x16d0` bytes of private state.
 
 Most remaining code differences are in functions already listed in
@@ -98,9 +103,8 @@ displacement). These counts compare each function at its mapped address.
 Some oversized game functions still displace neighbors, recorded in
 `build/layout/code-moved.json`.
 
-The CRT range retains 49 differing bytes, including initializer boundary
-relocations. The original constructor array includes an additional no-op
-initializer at `0x444c60`, absent from the current game objects. Remaining
+The CRT address range retains 42 differing bytes in the final game-generated
+exception thunks; the selected CRT members have no differing bytes. Remaining
 data work includes 35 allocations without a recovered destination (336 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
 The mapper and input experiments have not yet produced complete function

@@ -9,7 +9,10 @@ import json
 import re
 import struct
 from unittest.mock import patch
-import build, coff, compare, compare_exe as ce
+import build
+import coff
+import compare
+import compare_exe as ce
 from .validation import require_coverage
 
 
@@ -77,6 +80,17 @@ def prepare() -> None:
                         chunk.candidates[address] += 100
             if sec.name.startswith(".CRT$"):
                 chunk.candidates[chunk.old] += 100
+            if sec.name == ".CRT$XCU" and chunk.size == 4:
+                pointer = ours.read(chunk.old, 4)
+                va, vsize, rawptr, rawsize = orig.sections[".data"]
+                table = orig.read(va, min(vsize, rawsize))
+                hits = [
+                    va + offset
+                    for offset in range(0, len(table) - 3, 4)
+                    if table[offset : offset + 4] == pointer
+                ]
+                if len(hits) == 1:
+                    chunk.candidates[hits[0]] += 200
             chunks.append(chunk)
     # DirectX import libraries contribute GUID objects outside the game and CRT
     # inputs. Their public symbols identify the live allocations in the map.

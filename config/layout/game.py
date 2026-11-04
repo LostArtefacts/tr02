@@ -46,6 +46,7 @@ def place(objects: list[str]) -> list[str]:
         },
         "specific_screen": {"_$E2": 0x4484C0, "_$E1": 0x4484D0},
         "specific_setup": {"_$E2": 0x452460, "_$E1": 0x452470},
+        "exe_fullscreen": {"_$E2": 0x444C60, "_$E1": 0x444C70},
         "specific_winmain2": {"??1SE_Exception@@QAE@XZ": 0x44E7A0},
         "specific_winmain3": {"??1SE_Exception@@QAE@XZ": 0x44E7A0},
     }

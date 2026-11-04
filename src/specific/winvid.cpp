@@ -3,6 +3,16 @@
 #include "global.h"
 #include "winmain.h"
 
+struct DISPLAY_MODE {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+    bool CompareVideoModes(DISPLAY_MODE *mode);
+};
+
+extern "C" DISPLAY_MODE FullScreenMode;
+
 #define AM_4_3 0
 #define AM_16_9 1
 
@@ -15,8 +25,6 @@ extern bool IsMinWindowSizeSet;
 extern bool IsMaxWindowSizeSet;
 extern int GameWindowWidth;
 extern int GameWindowHeight;
-extern int FullScreenWidth;
-extern int FullScreenHeight;
 extern int MinWindowClientWidth;
 extern int MinWindowClientHeight;
 extern int MinWindowWidth;
@@ -116,12 +124,12 @@ extern "C" bool WinVidGetMinMaxInfo(LPMINMAXINFO info)
 
     if (IsGameFullScreen)
     {
-        info->ptMaxTrackSize.x = FullScreenWidth;
-        info->ptMaxTrackSize.y = FullScreenHeight;
-        info->ptMinTrackSize.x = FullScreenWidth;
-        info->ptMinTrackSize.y = FullScreenHeight;
-        info->ptMaxSize.x = FullScreenWidth;
-        info->ptMaxSize.y = FullScreenHeight;
+        info->ptMaxTrackSize.x = FullScreenMode.width;
+        info->ptMaxTrackSize.y = FullScreenMode.height;
+        info->ptMinTrackSize.x = FullScreenMode.width;
+        info->ptMinTrackSize.y = FullScreenMode.height;
+        info->ptMaxSize.x = FullScreenMode.width;
+        info->ptMaxSize.y = FullScreenMode.height;
         return true;
     }
 
@@ -163,8 +171,8 @@ extern "C" void WinVidResizeGameWindow(HWND hWnd, int edge, LPRECT rect)
     if (IsGameFullScreen) {
         rect->left = 0;
         rect->top = 0;
-        rect->right = FullScreenWidth;
-        rect->bottom = FullScreenHeight;
+        rect->right = FullScreenMode.width;
+        rect->bottom = FullScreenMode.height;
         return;
     }
     isShiftPressed = GetAsyncKeyState(VK_SHIFT) < 0;
@@ -314,7 +322,6 @@ extern "C" {
 extern bool IsDDrawGameWindowShow;
 extern LPDIRECTDRAW DDrawInterface;
 extern LPDIRECTDRAW2 DDraw;
-bool HideDDrawGameWindow(void);
 }
 
 extern "C" void DDrawRelease(void)
@@ -522,6 +529,7 @@ extern "C" void BitMaskGetNumberOfBits(DWORD bitMask, DWORD *bitDepth, DWORD *bi
     }
 }
 
+extern "C" bool WinVidRegisterGameWindowClass(void);
 extern "C" DWORD CalculateCompatibleColor(COLOR_BIT_MASKS *mask, int red, int green, int blue, int alpha)
 {
     return (red >> (8 - mask->dwRBitDepth) << mask->dwRBitOffset) | (green >> (8 - mask->dwGBitDepth) << mask->dwGBitOffset) | (blue >> (8 - mask->dwBBitDepth) << mask->dwBBitOffset) | (alpha >> (8 - mask->dwRGBAlphaBitDepth) << mask->dwRGBAlphaBitOffset);
@@ -574,14 +582,6 @@ inline STRING_FLAGGED::~STRING_FLAGGED()
     if (isPresented)
         delete[] lpString;
 }
-
-struct DISPLAY_MODE {
-    int width;
-    int height;
-    int bpp;
-    int vga;
-    bool CompareVideoModes(DISPLAY_MODE *mode);
-};
 
 struct DISPLAY_MODE_NODE {
     DISPLAY_MODE_NODE *next;
@@ -722,7 +722,6 @@ extern "C" void WinVidFinish(void)
 }
 
 extern "C" {
-bool WinVidRegisterGameWindowClass(void);
 bool WinVidCreateGameWindow(void);
 bool WinVidGetDisplayAdapters(void);
 BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriverDescription, LPTSTR lpDriverName, LPVOID lpContext);
@@ -1136,16 +1135,11 @@ extern "C" bool WinVidGetDisplayMode(DISPLAY_MODE *dispMode)
     return true;
 }
 
-extern "C" {
-extern int FullScreenBPP;
-extern int FullScreenVGA;
-}
-
 extern "C" bool WinVidGoFullScreen(DISPLAY_MODE *dispMode)
 {
     DWORD flags;
 
-    *(DISPLAY_MODE *)&FullScreenWidth = *dispMode;
+    FullScreenMode = *dispMode;
     if (!ShowDDrawGameWindow(true))
         return false;
     flags = 0;
@@ -1460,8 +1454,6 @@ bool IsMessageLoopClosed;
 int MaxWindowWidth;
 bool IsMaxWindowSizeSet;
 int AppResultCode;
-int FullScreenWidth;
-int FullScreenHeight;
 bool IsGameToExit;
 int GameWindow_Y;
 int GameWindow_X;

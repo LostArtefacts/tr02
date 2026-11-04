@@ -98,6 +98,19 @@ class ExecutableTests(unittest.TestCase):
             with self.subTest(path=block["path"], section=block["section"]):
                 self.assertTrue(block["matched"])
                 self.assertEqual(0x459030 + block["offset"], block["original"])
+                self.assertEqual(
+                    self.ours.read(block["original"], block["size"]),
+                    self.original.read(block["original"], block["size"]),
+                )
+
+    def test_fullscreen_initializer_and_constructor_table_match_original(self) -> None:
+        for address, size in ((0x444C60, 32), (0x464000, 0x58)):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
+        mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
+        self.assertEqual(mapping["_FullScreenMode"][0], 0x4D8358)
 
     def test_runtime_exception_scope_tables_survive_code_merging(self) -> None:
         for site in (
