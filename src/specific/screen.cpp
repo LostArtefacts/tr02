@@ -23,6 +23,7 @@ typedef struct {
     DISPLAY_MODE_NODE *head;
     DISPLAY_MODE_NODE *tail;
     DWORD dwCount;
+    DISPLAY_MODE &operator[](void *position) { return ((DISPLAY_MODE_NODE *)position)->body; }
 } DISPLAY_MODE_LIST;
 
 #pragma pack(push, 1)
@@ -55,6 +56,8 @@ typedef struct {
     DDCAPS helCaps;
     GUID deviceGuid;
     D3DDEVICEDESC D3DHWDeviceDesc;
+    DISPLAY_MODE_LIST hwDispModeList;
+    DISPLAY_MODE_LIST swDispModeList;
 } DISPLAY_ADAPTER;
 
 extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
@@ -500,6 +503,29 @@ bool ReloadTextures(bool reset);
 }
 void HWR_GetAllTextureHandles(void);
 
+struct RENDER_INFO {
+    DISPLAY_MODE_LIST *modeList;
+    void *currentMode;
+    struct { int width, height, bpp, vga; } fullScreenMode;
+    COLOR_BIT_MASKS colorBitMasks;
+    RECT bufferRect;
+    RECT renderRect;
+    int width;
+    int height;
+    int bpp;
+    int bufferWidth;
+    int bufferHeight;
+    int uvAdd;
+    bool paletted;
+    bool windowedPaletted;
+    bool standardVga;
+    bool usingWindowedPalette;
+    bool using16BitTextures;
+    bool started;
+};
+
+extern "C" RENDER_INFO GameRenderInfo;
+
 void RenderStart(bool isReset)
 {
     int minWidth;
@@ -511,22 +537,23 @@ void RenderStart(bool isReset)
     DDPIXELFORMAT pixelFormat;
 
     if (isReset)
-        NeedToReloadTextures = false;
+        GameRenderInfo.started = false;
     if (SavedAppSettings.FullScreen) {
         if (!SavedAppSettings.VideoMode)
             throw INIT_ERR_GoFullScreen;
-        dispMode = ((DISPLAY_MODE_NODE *)SavedAppSettings.VideoMode)->body;
+        if (SavedAppSettings.RenderMode == RM_Hardware)
+            dispMode = CurrentDisplayAdapter.hwDispModeList[SavedAppSettings.VideoMode];
+        else
+            dispMode = CurrentDisplayAdapter.swDispModeList[SavedAppSettings.VideoMode];
         if (!WinVidGoFullScreen(&dispMode))
             throw INIT_ERR_GoFullScreen;
         CreateScreenBuffers();
-        GameVidWidth = dispMode.width;
-        GameVidHeight = dispMode.height;
-        GameVidBPP = dispMode.bpp;
-        GameVidBufWidth = dispMode.width;
-        GameVidBufHeight = dispMode.height;
-        GameVid_IsVga = dispMode.vga != VGA_NoVga;
-        GameVid_IsWindowedVga = false;
-        GameVid_IsFullscreenVga = dispMode.vga == VGA_Standard;
+        GameRenderInfo.width = GameRenderInfo.bufferWidth = dispMode.width;
+        GameRenderInfo.height = GameRenderInfo.bufferHeight = dispMode.height;
+        GameRenderInfo.bpp = dispMode.bpp;
+        GameRenderInfo.paletted = dispMode.vga != VGA_NoVga;
+        GameRenderInfo.windowedPaletted = false;
+        GameRenderInfo.standardVga = dispMode.vga == VGA_Standard;
     } else {
         minWidth = 320;
         minHeight = CalculateWindowHeight(320, 200);
@@ -537,14 +564,14 @@ void RenderStart(bool isReset)
         WinVidSetMinWindowSize(minWidth, minHeight);
         if (!WinVidGoWindowed(SavedAppSettings.WindowWidth, SavedAppSettings.WindowHeight, &dispMode))
             throw INIT_ERR_GoWindowed;
-        GameVidWidth = dispMode.width;
-        GameVidHeight = dispMode.height;
-        GameVidBPP = dispMode.bpp;
-        GameVidBufWidth = (dispMode.width + 31) & ~31;
-        GameVidBufHeight = (dispMode.height + 31) & ~31;
-        GameVid_IsVga = dispMode.vga != VGA_NoVga;
-        GameVid_IsWindowedVga = dispMode.vga != VGA_NoVga;
-        GameVid_IsFullscreenVga = false;
+        GameRenderInfo.width = dispMode.width;
+        GameRenderInfo.height = dispMode.height;
+        GameRenderInfo.bufferWidth = (GameRenderInfo.width + 31) & ~31;
+        GameRenderInfo.bufferHeight = (GameRenderInfo.height + 31) & ~31;
+        GameRenderInfo.bpp = dispMode.bpp;
+        GameRenderInfo.paletted = dispMode.vga != VGA_NoVga;
+        GameRenderInfo.windowedPaletted = dispMode.vga != VGA_NoVga;
+        GameRenderInfo.standardVga = false;
         CreatePrimarySurface();
         if (SavedAppSettings.RenderMode != RM_Software)
             CreateBackBuffer();
@@ -552,10 +579,10 @@ void RenderStart(bool isReset)
     }
     memset(&pixelFormat, 0, sizeof(pixelFormat));
     pixelFormat.dwSize = sizeof(pixelFormat);
-    if (FAILED(PrimaryBufferSurface->GetPixelFormat(&pixelFormat)))
+    if (DX_TRY(PrimaryBufferSurface->GetPixelFormat(&pixelFormat)))
         throw INIT_ERR_GetPixelFormat;
-    ColorBitMasks.WinVidGetColorBitMasks(&pixelFormat);
-    if (GameVid_IsVga)
+    GameRenderInfo.colorBitMasks.WinVidGetColorBitMasks(&pixelFormat);
+    if (GameRenderInfo.paletted)
         CreateWindowPalette();
     if (SavedAppSettings.RenderMode != RM_Software && SavedAppSettings.ZBuffer)
         CreateZBuffer();
@@ -567,34 +594,34 @@ void RenderStart(bool isReset)
         D3DDeviceCreate(BackBufferSurface);
         EnumerateTextureFormats();
     }
-    if (NeedToReloadTextures) {
+    if (!GameRenderInfo.started) {
+        GameRenderInfo.usingWindowedPalette = GameRenderInfo.windowedPaletted;
+        GameRenderInfo.using16BitTextures = (int)TextureFormat.bpp >= 16;
+    } else {
         is16bitTextures = (int)TextureFormat.bpp >= 16;
-        isVgaChanged = GameVid_IsWindowedVga != IsWindowedVGA;
-        is16bitChanged = is16bitTextures != Is16bitTextures;
+        isVgaChanged = GameRenderInfo.windowedPaletted != GameRenderInfo.usingWindowedPalette;
+        is16bitChanged = is16bitTextures != GameRenderInfo.using16BitTextures;
         if (isVgaChanged || is16bitChanged) {
             S_ReloadLevelGraphics(isVgaChanged, is16bitChanged);
-            IsWindowedVGA = GameVid_IsWindowedVga;
-            Is16bitTextures = is16bitTextures;
+            GameRenderInfo.usingWindowedPalette = GameRenderInfo.windowedPaletted;
+            GameRenderInfo.using16BitTextures = is16bitTextures;
         } else if (SavedAppSettings.RenderMode == RM_Hardware) {
             ReloadTextures(true);
             HWR_GetAllTextureHandles();
         }
-    } else {
-        IsWindowedVGA = GameVid_IsWindowedVga;
-        Is16bitTextures = (int)TextureFormat.bpp >= 16;
     }
-    GameVidBufRect.left = 0;
-    GameVidBufRect.top = 0;
-    GameVidBufRect.right = GameVidBufWidth;
-    GameVidBufRect.bottom = GameVidBufHeight;
-    GameVidRect.left = 0;
-    GameVidRect.top = 0;
-    GameVidRect.right = GameVidWidth;
-    GameVidRect.bottom = GameVidHeight;
-    DumpWidth = GameVidWidth;
-    DumpHeight = GameVidHeight;
+    GameRenderInfo.bufferRect.left = 0;
+    GameRenderInfo.bufferRect.top = 0;
+    GameRenderInfo.bufferRect.right = GameRenderInfo.bufferWidth;
+    GameRenderInfo.bufferRect.bottom = GameRenderInfo.bufferHeight;
+    GameRenderInfo.renderRect.left = 0;
+    GameRenderInfo.renderRect.top = 0;
+    GameRenderInfo.renderRect.right = GameRenderInfo.width;
+    GameRenderInfo.renderRect.bottom = GameRenderInfo.height;
+    DumpWidth = GameRenderInfo.width;
+    DumpHeight = GameRenderInfo.height;
     setup_screen_size();
-    NeedToReloadTextures = true;
+    GameRenderInfo.started = true;
 }
 
 void RenderFinish(bool needToClearTextures)
@@ -894,6 +921,7 @@ LPDIRECTDRAWSURFACE3 PictureBufferSurface;
 LPDIRECTDRAWSURFACE3 ZBufferSurface;
 LPDIRECTDRAWPALETTE DDrawPalette;
 LPDIRECTDRAWSURFACE3 PrimaryBufferSurface;
+RENDER_INFO GameRenderInfo;
 COLOR_BIT_MASKS ColorBitMasks;
 RECT GameVidBufRect;
 RECT GameVidRect;

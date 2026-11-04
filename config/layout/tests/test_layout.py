@@ -111,6 +111,11 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x44DAD0, 2766), self.original.read(0x44DAD0, 2766)
         )
 
+    def test_render_startup_matches_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x448F00, 933), self.original.read(0x448F00, 933)
+        )
+
     def test_retained_game_defaults_match_original(self) -> None:
         for address, size in (
             (0x466B78, 4),

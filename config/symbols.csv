@@ -1943,6 +1943,7 @@ address,size,name,symbol
 0x004d92b0,4,ZBufferSurface,_ZBufferSurface
 0x004d92b4,,DDrawPalette,_DDrawPalette
 0x004d92b8,4,PrimaryBufferSurface,_PrimaryBufferSurface
+0x004d92c0,,GameRenderInfo,_GameRenderInfo
 0x004d92c8,16,Var4d92c8,_Var4d92c8
 0x004d92d8,,ColorBitMasks,_ColorBitMasks
 0x004d9308,,GameVidBufRect,_GameVidBufRect
