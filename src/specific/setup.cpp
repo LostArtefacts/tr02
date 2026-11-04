@@ -20,6 +20,7 @@ struct DISPLAY_MODE
     int bpp;
     int vga;
     DISPLAY_MODE() {}
+    DISPLAY_MODE(int w, int h, int b, int v) : width(w), height(h), bpp(b), vga(v) {}
     bool CompareVideoModes(DISPLAY_MODE *mode);
 };
 
@@ -218,11 +219,18 @@ struct SETUP_ADAPTER_NODE
 };
 #pragma pack(pop)
 
-typedef struct
+struct SETUP_ADAPTER_BODY;
+typedef struct SETUP_ADAPTER_LIST
 {
     SETUP_ADAPTER_NODE *head;
     SETUP_ADAPTER_NODE *tail;
     DWORD count;
+    SETUP_ADAPTER_BODY &operator[](void *position);
+    void *GetNext(void *position) {
+        SETUP_ADAPTER_NODE *node = (SETUP_ADAPTER_NODE *)position;
+        if (node) node = node->next;
+        return node;
+    }
 } SETUP_ADAPTER_LIST;
 
 extern "C" SETUP_ADAPTER_LIST DisplayAdapterList;
@@ -238,10 +246,12 @@ void *GetJoystick(GUID *lpGuid);
 }
 
 #pragma pack(push, 1)
-typedef struct
+typedef struct SETUP_ADAPTER_BODY
 {
     GUID *lpAdapterGuid;
-    uint8 pad[0x3ce];
+    GUID adapterGuid;
+    LPSTR driverDescription;
+    uint8 pad[0x3ba];
     SETUP_MODE_LIST hwDispModeList;
     SETUP_MODE_LIST swDispModeList;
     DISPLAY_MODE vgaMode1;
@@ -978,14 +988,14 @@ void WinVidSetDisplayAdapter(void *adapter);
 void SE_GraphicsDlgUpdate(HWND hwndDlg);
 }
 
+inline SETUP_ADAPTER_BODY &SETUP_ADAPTER_LIST::operator[](void *position) {return ((SETUP_ADAPTER_ITEM *)position)->body;}
+
 extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
 {
     HWND combo;
     HWND slider;
     WPARAM index;
     WPARAM selected;
-    SETUP_ADAPTER_NODE *node;
-    GUID **body;
     void *adapter;
     int count;
 
@@ -993,18 +1003,16 @@ extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
     SendMessage(combo, CB_RESETCONTENT, 0, 0);
     selected = 0;
     SE_DisplayAdapter = NULL;
-    for (node = DisplayAdapterList.head; node; node = node->next)
+    for (void *position = DisplayAdapterList.head; position; position = DisplayAdapterList.GetNext(position))
     {
-        body = &node->lpAdapterGuid;
-        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->driverDescription);
-        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
-        if (node == ChangedAppSettings.PreferredDisplayAdapter)
+        SETUP_ADAPTER_BODY &view = DisplayAdapterList[position];
+        index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)(char *)view.driverDescription);
+        SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)position);
+        if (position == ChangedAppSettings.PreferredDisplayAdapter)
             selected = index;
-        if (!*body)
-            SE_DisplayAdapter = node;
-        WinVidSetDisplayAdapter(body);
-        if (!node)
-            break;
+        if (!view.lpAdapterGuid)
+            SE_DisplayAdapter = (SETUP_ADAPTER_NODE *)position;
+        WinVidSetDisplayAdapter(&view);
     }
     SendMessage(combo, CB_SETCURSEL, selected, 0);
     count = DisplayAdapterList.count;
@@ -1018,10 +1026,7 @@ extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
         }
         else
         {
-            SE_FullScreenMode.bpp = 0;
-            SE_FullScreenMode.width = 640;
-            SE_FullScreenMode.height = 480;
-            SE_FullScreenMode.vga = 0;
+            SE_FullScreenMode = DISPLAY_MODE(640, 480, 0, 0);
         }
         SE_GraphicsAdapterSet(hwndDlg, adapter);
     }
