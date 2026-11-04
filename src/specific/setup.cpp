@@ -1189,6 +1189,14 @@ extern "C" void SE_SoundDlgUpdate(HWND hwndDlg)
     SE_EnableItem(hwndDlg, 1089, isAvailable);
 }
 
+inline SETUP_SOUND_NODE *GetNextSoundAdapter(SETUP_SOUND_NODE *pos)
+{
+    SETUP_SOUND_NODE *pNode = pos;
+    if (pNode)
+        pNode = pNode->next;
+    return pNode;
+}
+
 extern "C" void SE_SoundDlgInit(HWND hwndDlg)
 {
     HWND combo;
@@ -1200,7 +1208,7 @@ extern "C" void SE_SoundDlgInit(HWND hwndDlg)
     combo = GetDlgItem(hwndDlg, 1052);
     SendMessage(combo, CB_RESETCONTENT, 0, 0);
     selected = 0;
-    for (node = (SETUP_SOUND_NODE *)SoundAdapterList.head; node; node = !node ? NULL : node->next)
+    for (node = (SETUP_SOUND_NODE *)SoundAdapterList.head; node; node = GetNextSoundAdapter(node))
     {
         index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
         SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
