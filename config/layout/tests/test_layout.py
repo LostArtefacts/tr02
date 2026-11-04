@@ -137,6 +137,11 @@ class ExecutableTests(unittest.TestCase):
                     self.ours.read(address, size), self.original.read(address, size)
                 )
 
+    def test_graphics_dialog_message_handler_matches_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x453150, 1034), self.original.read(0x453150, 1034)
+        )
+
     def test_recovered_runtime_state_retains_original_addresses(self) -> None:
         mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
         for name, address in {
