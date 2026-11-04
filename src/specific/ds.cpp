@@ -22,7 +22,12 @@ inline bool DX_TRY(HRESULT hr)
 struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
-    STRING_FLAGGED(DWORD size);
+    STRING_FLAGGED(DWORD size)
+    {
+        lpString = new char[size];
+        *lpString = 0;
+        isPresented = true;
+    }
     ~STRING_FLAGGED()
     {
         if (isPresented)
@@ -39,6 +44,8 @@ struct STRING_FLAGGED {
     }
 };
 
+#pragma inline_depth(2)
+
 struct SOUND_ADAPTER {
     LPGUID lpAdapterGuid;
     GUID adapterGuid;
@@ -48,6 +55,8 @@ struct SOUND_ADAPTER {
     {
     }
 };
+
+#pragma inline_depth(8)
 
 struct SOUND_ADAPTER_NODE {
     SOUND_ADAPTER_NODE *next;
