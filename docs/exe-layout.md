@@ -121,7 +121,7 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 13,242 bytes (95.80% to 98.55%). Headers, `.rdata`, initialized
+38,299 to 13,215 bytes (95.80% to 98.55%). Headers, `.rdata`, initialized
 `.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.70%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
@@ -206,3 +206,7 @@ surviving source, rather than read independently in each expression.
 Screenshot capture matches all 501 bytes at `0x44ec80`. Restoring the
 indexed source pixels, signed-short output pointer, separate RGB components
 and surface-lock boolean conversion reproduces the surviving capture code.
+
+Boat control matches all 1,578 bytes at `0x40daa0`. Caching the rider
+pointer while transferring the animation frame preserves the original
+frame-table loads and register lifetimes.

@@ -126,6 +126,11 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x44EC80, 501), self.original.read(0x44EC80, 501)
         )
 
+    def test_boat_control_matches_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x40DAA0, 1578), self.original.read(0x40DAA0, 1578)
+        )
+
     def test_render_startup_matches_original(self) -> None:
         self.assertEqual(
             self.ours.read(0x448F00, 933), self.original.read(0x448F00, 933)

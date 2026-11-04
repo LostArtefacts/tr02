@@ -608,7 +608,10 @@ void BoatControl(sint16 item_number)
         AnimateItem(lara_item);
         if (lara_item->hit_points > 0) {
             boat->anim_number = objects[MOTORBOAT].anim_index + (lara_item->anim_number - objects[BOAT_ANIM].anim_index);
-            boat->frame_number = anims[boat->anim_number].frame_base + (lara_item->frame_number - anims[lara_item->anim_number].frame_base);
+            {
+                ITEM_INFO *rider = lara_item;
+                boat->frame_number = anims[boat->anim_number].frame_base + (rider->frame_number - anims[rider->anim_number].frame_base);
+            }
         }
         camera.target_elevation = -20 * ONE_DEGREE;
         camera.target_distance = WALL_L * 2;
