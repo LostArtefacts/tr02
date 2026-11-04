@@ -75,6 +75,8 @@ void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
 void S_CalculateStaticLight(sint16 adder);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+
 void DrawFlareInAir(ITEM_INFO *item)
 {
     int clip, rate;

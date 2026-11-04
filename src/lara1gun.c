@@ -207,6 +207,8 @@ void SmashWindow(sint16 item_number);
 void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage);
 void CreateBubble(PHD_3DPOS *pos, sint16 room_number);
 
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
 void ControlHarpoonBolt(sint16 item_number)
 {
     ITEM_INFO *item, *target;
@@ -339,7 +341,6 @@ void FireRocket(void)
 #define BIG_YETI 46
 #define ROCKET_BLAST_RADIUS 512
 
-sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 sint16 *GetBestFrame(ITEM_INFO *item);
 void SmashWindow(sint16 item_number);
 void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage);

@@ -172,7 +172,7 @@ void S_SetupAboveWater(int underwater)
 {
     water_effect = underwater;
     shade_effect = 0;
-    bBlueEffect = bool(underwater);
+    bBlueEffect = underwater != 0;
 }
 
 extern "C" char *GetFullPath(char *path);
@@ -595,7 +595,7 @@ extern "C" void S_DrawHealthBar(int percent)
     bar = percent * 100 / 100;
     bBlueEffect = false;
     z = phd_znear + 50;
-    colour = inv_colours[C_BLACK];
+    colour = (char)inv_colours[C_BLACK];
     InsertLine(6, 7, 109, 7, z, colour);
     InsertLine(6, 8, 109, 8, z, colour);
     InsertLine(6, 9, 109, 9, z, colour);
@@ -604,20 +604,20 @@ extern "C" void S_DrawHealthBar(int percent)
     InsertLine(6, 12, 109, 12, z, colour);
     InsertLine(6, 13, 109, 13, z, colour);
     z = phd_znear + 40;
-    colour = inv_colours[C_GREY];
+    colour = (char)inv_colours[C_GREY];
     InsertLine(6, 14, 110, 14, z, colour);
     InsertLine(110, 6, 110, 14, z, colour);
     z = phd_znear + 30;
-    colour = inv_colours[C_WHITE];
+    colour = (char)inv_colours[C_WHITE];
     InsertLine(6, 6, 110, 6, z, colour);
     InsertLine(6, 14, 6, 6, z, colour);
     if (bar)
     {
         z = phd_znear + 20;
         x = bar + 8;
-        colour = inv_colours[C_ORANGE];
+        colour = (char)inv_colours[C_ORANGE];
         InsertLine(8, 9, x, 9, z, colour);
-        colour = inv_colours[C_RED];
+        colour = (char)inv_colours[C_RED];
         InsertLine(8, 8, x, 8, z, colour);
         InsertLine(8, 10, x, 10, z, colour);
         InsertLine(8, 11, x, 11, z, colour);
@@ -638,7 +638,7 @@ extern "C" void S_DrawAirBar(int percent)
     bar = percent * 100 / 100;
     bBlueEffect = false;
     z = phd_znear + 50;
-    colour = inv_colours[C_BLACK];
+    colour = (char)inv_colours[C_BLACK];
     InsertLine(x0 - 2, 7, x0 + 101, 7, z, colour);
     InsertLine(x0 - 2, 8, x0 + 101, 8, z, colour);
     InsertLine(x0 - 2, 9, x0 + 101, 9, z, colour);
@@ -647,19 +647,19 @@ extern "C" void S_DrawAirBar(int percent)
     InsertLine(x0 - 2, 12, x0 + 101, 12, z, colour);
     InsertLine(x0 - 2, 13, x0 + 101, 13, z, colour);
     z = phd_znear + 40;
-    colour = inv_colours[C_GREY];
+    colour = (char)inv_colours[C_GREY];
     InsertLine(x0 - 2, 14, x0 + 102, 14, z, colour);
     InsertLine(x0 + 102, 6, x0 + 102, 14, z, colour);
     z = phd_znear + 30;
-    colour = inv_colours[C_WHITE];
+    colour = (char)inv_colours[C_WHITE];
     InsertLine(x0 - 2, 6, x0 + 102, 6, z, colour);
     InsertLine(x0 - 2, 14, x0 - 2, 6, z, colour);
     if (percent > 0)
     {
         z = phd_znear + 20;
-        colour = inv_colours[C_WHITE];
+        colour = (char)inv_colours[C_WHITE];
         InsertLine(x0, 9, x0 + bar, 9, z, colour);
-        colour = inv_colours[C_BLUE];
+        colour = (char)inv_colours[C_BLUE];
         InsertLine(x0, 8, x0 + bar, 8, z, colour);
         InsertLine(x0, 10, x0 + bar, 10, z, colour);
         InsertLine(x0, 11, x0 + bar, 11, z, colour);
@@ -755,7 +755,7 @@ extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 
             }
         }
     }
-    S_CalculateStaticLight(shade);
+    S_CalculateStaticLight((sint16)shade);
 }
 
 extern "C" void S_LightRoom(ROOM_INFO *r)

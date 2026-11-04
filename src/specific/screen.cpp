@@ -719,12 +719,14 @@ extern "C" bool ApplySettings(APP_SETTINGS *newSettings)
     try {
         RenderStart(false);
     } catch (InitResult error) {
+        (void)error;
         *(bool *)&newSettings = false;
         RenderFinish(false);
         SavedAppSettings = oldSettings;
         try {
             RenderStart(false);
         } catch (InitResult error) {
+            (void)error;
             RenderFinish(false);
             SavedAppSettings.TripleBuffering = false;
             SavedAppSettings.PreferredDisplayAdapter = PrimaryDisplayAdapter;
@@ -749,6 +751,7 @@ extern "C" bool ApplySettings(APP_SETTINGS *newSettings)
             try {
                 RenderStart(false);
             } catch (InitResult error) {
+                (void)error;
                 S_ExitSystem("Can't reinitialise renderer");
             }
         }

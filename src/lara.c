@@ -1911,7 +1911,7 @@ void lara_col_jumper(ITEM_INFO *item, COLL_INFO *coll)
         item->frame_number = FASTFALL_F + 1;
         item->anim_number = FASTFALL_A;
         item->speed /= 4;
-        lara.move_angle -= 0x8000;
+        lara.move_angle = (PHD_ANGLE)(lara.move_angle - 0x8000);
         if (item->fallspeed <= 0)
             item->fallspeed = 1;
     }
@@ -2101,6 +2101,8 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
 int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down)
 {
     int x, y, z;
@@ -2240,6 +2242,8 @@ int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 #define NO_BAD_NEG NO_HEIGHT
 #define STOPHANG_A 28
 #define STOPHANG_F GF(STOPHANG_A, 9)
+
+void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint);
 
 void LaraHangTest(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -2767,6 +2771,10 @@ int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
 void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2, int frac, int rate);
 void phd_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
+
+void __cdecl phd_PushUnitMatrix(void);
+
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
 
 void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint)
 {

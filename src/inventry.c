@@ -171,6 +171,10 @@ void Inv_RingMotionItemSelect(RING_INFO *ring, INVENTORY_ITEM *inv_item);
 void Inv_RingMotionItemDeselect(RING_INFO *ring, INVENTORY_ITEM *inv_item);
 void Construct_Inventory(void);
 
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+
+int S_DumpScreen(void);
+
 sint32 Display_Inventory(sint32 inventory_mode)
 {
     int demo_needed = 0;

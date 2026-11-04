@@ -255,7 +255,7 @@ void Splash(ITEM_INFO *item)
             fx->pos.x_pos = item->pos.x_pos;
             fx->pos.y_pos = wh;
             fx->pos.z_pos = item->pos.z_pos;
-            fx->pos.y_rot = -32768 + 2 * GetRandomDraw();
+            fx->pos.y_rot = (PHD_ANGLE)(-32768 + 2 * GetRandomDraw());
             fx->speed = GetRandomDraw() / 256;
             fx->frame_number = 0;
             fx->object_number = SPLASH1;
@@ -385,7 +385,7 @@ void WaterFall(sint16 item_number)
             fx->pos.z_pos = item->pos.z_pos + (GetRandomDraw() - 0x4000) * WALL_L / 0x7fff;
             fx->pos.y_pos = item->pos.y_pos;
             fx->speed = 0;
-            fx->shade = LsAdder;
+            fx->shade = (sint16)LsAdder;
             fx->frame_number = 0;
             fx->object_number = SPLASH1;
         }
@@ -891,8 +891,8 @@ void (*effect_routines[32])(ITEM_INFO *item) = {
     flip_map_effect,
     draw_right_gun,
     draw_left_gun,
-    lara_col_kick,
-    lara_col_kick,
+    (void (*)(ITEM_INFO *))lara_col_kick,
+    (void (*)(ITEM_INFO *))lara_col_kick,
     swap_meshes_with_meshswap1,
     swap_meshes_with_meshswap2,
     swap_meshes_with_meshswap3,

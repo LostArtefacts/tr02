@@ -825,6 +825,8 @@ void CreatureDie(sint16 item_number, int explode)
 #define SHARK 25
 #define UNDERWATER 1
 
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
 int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt)
 {
     sint32 shift_z, radius, shift_x, top;

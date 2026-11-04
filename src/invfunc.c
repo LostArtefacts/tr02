@@ -85,6 +85,10 @@ extern TEXTSTRING *Inv_tagText, *Inv_ringText;
 extern TEXTSTRING *Inv_upArrow1, *Inv_upArrow2;
 extern TEXTSTRING *Inv_downArrow1, *Inv_downArrow2;
 
+void T_RightAlign(TEXTSTRING *textString, sint16 ok);
+
+void T_BottomAlign(TEXTSTRING *textString, sint16 ok);
+
 void RingIsOpen(RING_INFO *ring)
 {
     if (Inventory_Mode == INV_TITLE_MODE)
@@ -1398,7 +1402,7 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
             T_BottomAlign(req->heading1text, 1);
             if (backgrounds)
             {
-                T_AddBackground(req->heading1text, req->pixwidth - 4, 0, 0, 0, 8, C_BLACK, req_main_gour1, 2);
+                T_AddBackground(req->heading1text, (sint16)(req->pixwidth - 4), 0, 0, 0, 8, C_BLACK, req_main_gour1, 2);
                 T_AddOutline(req->heading1text, 1, C_ORANGE, req_main_gour2, 0);
             }
         }
@@ -1417,7 +1421,7 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
             T_BottomAlign(req->heading2text, 1);
             if (backgrounds)
             {
-                T_AddBackground(req->heading2text, req->pixwidth - 4, 0, 0, 0, 8, C_BLACK, req_main_gour1, 2);
+                T_AddBackground(req->heading2text, (sint16)(req->pixwidth - 4), 0, 0, 0, 8, C_BLACK, req_main_gour1, 2);
                 T_AddOutline(req->heading2text, 1, C_ORANGE, req_main_gour2, 0);
             }
         }
@@ -1432,7 +1436,7 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
         req->backgroundtext = T_Print(req->xpos, lineoneoff - req->line_height - 12, 0, " ");
         T_CentreH(req->backgroundtext, 1);
         T_BottomAlign(req->backgroundtext, 1);
-        T_AddBackground(req->backgroundtext, req->pixwidth, linesheight + req->line_height + 12, 0, 0, 48, C_BLACK, req_bgnd_gour1, 1);
+        T_AddBackground(req->backgroundtext, req->pixwidth, (sint16)(linesheight + req->line_height + 12), 0, 0, 48, C_BLACK, req_bgnd_gour1, 1);
         T_AddOutline(req->backgroundtext, 1, C_BLUE, req_bgnd_gour2, 0);
     }
 
@@ -1481,7 +1485,7 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
             }
             else
             {
-                T_AddBackground(req->texts1[n], req->pixwidth - 12, 0, 0, 0, 16, C_BLACK, req_unsel_gour1, 1);
+                T_AddBackground(req->texts1[n], (sint16)(req->pixwidth - 12), 0, 0, 0, 16, C_BLACK, req_unsel_gour1, 1);
                 T_AddOutline(req->texts1[n], 1, C_ORANGE, req_sel_gour2, 0);
             }
             if (req->itemtexts1_flags[n + req->line_offset] & R_LEFTALIGN)

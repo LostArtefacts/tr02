@@ -58,6 +58,8 @@ void phd_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
 
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+
 int GetSpheres(ITEM_INFO *item, SPHERE *ptr, int WorldSpace)
 {
     int i, poppush;

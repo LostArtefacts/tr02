@@ -293,6 +293,8 @@ int Inv_RemoveItem(int itemNum);
 sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
 
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
 void DetonatorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item, *gong;

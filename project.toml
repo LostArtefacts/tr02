@@ -18,7 +18,7 @@ search = ["~/data.local/work/ghidra_*"]
 [build]
 hook = "config/exe_layout.py"
 # TOMBRAID.DSP's release flags, without /Zi /Fr /YX /FD
-cflags = ["/G5", "/Zp1", "/W3", "/O2", "/DNDEBUG", "/DWIN32", "/D_WINDOWS"]
+cflags = ["/G5", "/Zp1", "/W3", "/WX", "/O2", "/DNDEBUG", "/DWIN32", "/D_WINDOWS"]
 crlf = true  # Core's sources had DOS line endings
 bin = 'C:\msvc5sp3\bin'  # Visual C++ 5.0 with Service Pack 3
 include = ['C:\dx5\include', 'C:\msvc5sp3\include']

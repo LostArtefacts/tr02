@@ -847,7 +847,7 @@ void XianDamage(ITEM_INFO *item, CREATURE_INFO *xian, sint32 damage)
 {
     if (!(xian->flags & 1) && (item->touch_bits & XIAN_TOUCH_RIGHT))
     {
-        lara_item->hit_points -= damage;
+        lara_item->hit_points -= (sint16)damage;
         lara_item->hit_status = 1;
         CreatureEffect(item, &xian_right_spear, DoBloodSplat);
         xian->flags |= 1;
@@ -855,7 +855,7 @@ void XianDamage(ITEM_INFO *item, CREATURE_INFO *xian, sint32 damage)
     }
     if (!(xian->flags & 2) && (item->touch_bits & XIAN_TOUCH_LEFT))
     {
-        lara_item->hit_points -= damage;
+        lara_item->hit_points -= (sint16)damage;
         lara_item->hit_status = 1;
         CreatureEffect(item, &xian_left_spear, DoBloodSplat);
         xian->flags |= 2;

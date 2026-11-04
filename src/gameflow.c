@@ -1,6 +1,7 @@
 #include "game.h"
 #include "invdata.h"
 #include "savegame.h"
+#include <stdio.h>
 
 extern sint16 GF_SunsetEnabled;
 extern INVENTORY_ITEM InvCompassOption, InvPistolOption, InvFlareOption, InvShotgunOption;

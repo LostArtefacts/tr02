@@ -353,6 +353,8 @@ int LaraTestClimb(int x, int y, int z, int xfront, int zfront, int item_height, 
 #define CLIMB_SHIFT 70
 #define CLIMB_HANG 900
 
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
 int LaraTestClimb(int x, int y, int z, int xfront, int zfront, int item_height, sint16 item_room, int *shift)
 {
     sint16 room_number;

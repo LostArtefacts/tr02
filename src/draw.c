@@ -1417,17 +1417,17 @@ void phd_RotYXZsuperpack(sint16 **pprot, int skip)
         break;
 
     case 1:
-        phd_RotX(packed << 6);
+        phd_RotX((PHD_ANGLE)(packed << 6));
         *pprot += 1;
         break;
 
     case 2:
-        phd_RotY(packed << 6);
+        phd_RotY((PHD_ANGLE)(packed << 6));
         *pprot += 1;
         break;
 
     default:
-        phd_RotZ(packed << 6);
+        phd_RotZ((PHD_ANGLE)(packed << 6));
         *pprot += 1;
         break;
     }

@@ -215,7 +215,7 @@ void AdjustTextureUVs(bool reset)
         adjust = LinearAdjustment;
     adjust -= UvAdd;
     flag_ptr = LabTextureUVFlags;
-    for (i = 0; i != LnTextureInfos; i++)
+    for (i = 0; i != (DWORD)LnTextureInfos; i++)
     {
         uv = &phdtextinfo[i].u1;
         flags = *flag_ptr++;

@@ -45,6 +45,8 @@ extern sint32 PhdPersp;
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, sint16 roll);
 
+sint32 GetCeiling(FLOOR_INFO *, sint32, sint32, sint32);
+
 void MoveCamera(GAME_VECTOR *ideal, int speed)
 {
     sint32 height, ceiling, shake;

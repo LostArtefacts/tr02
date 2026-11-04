@@ -293,7 +293,7 @@ extern "C" void CheckCheatMode(void)
 {
     int i;
 
-    if (!CurrentLevel || CurrentLevel == gameflow.num_levels - gameflow.num_demos - 1)
+    if (!CurrentLevel || CurrentLevel == (DWORD)(gameflow.num_levels - gameflow.num_demos - 1))
         return;
     cheat_as = lara_item->current_anim_state;
     switch (cheat_mode)

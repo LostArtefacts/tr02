@@ -190,6 +190,8 @@ int TestBlockMovable(ITEM_INFO *item, int blokhite)
 extern int height_type;
 int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
 
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+
 int TestBlockPush(ITEM_INFO *item, int blokhite, uint16 quadrant)
 {
     COLL_INFO scoll;

@@ -20,7 +20,6 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
     sint32 xfront, zfront;
     FLOOR_INFO *floor;
     sint16 tilt;
-    long fheight, mheight, lheight, rheight;
 
     coll->coll_type = COLL_NONE;
     coll->shift.x = coll->shift.y = coll->shift.z = 0;

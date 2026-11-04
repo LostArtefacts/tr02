@@ -121,6 +121,10 @@ void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
 extern sint32 LsAdder;
 
+void __cdecl phd_PushUnitMatrix(void);
+
+int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+
 int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage)
 {
     int i, poppush;

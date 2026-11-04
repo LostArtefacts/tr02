@@ -196,7 +196,7 @@ extern "C" void ScreenShot(LPDIRECTDRAWSURFACE screen)
             for (x = 0; x < desc.dwWidth; x++) {
                 pixel = *src;
                 if (desc.ddpfPixelFormat.dwRBitMask == 0xf800)
-                    *dst = ((((pixel >> 11) & 0x1f) << 5) + ((pixel >> 6) & 0x1f) << 5) + (pixel & 0x1f);
+                    *dst = (WORD)(((((pixel >> 11) & 0x1f) << 5) + ((pixel >> 6) & 0x1f) << 5) + (pixel & 0x1f));
                 else
                     *dst = (WORD)pixel;
                 dst++;

@@ -254,7 +254,7 @@ void PropellerControl(sint16 item_number)
         {
             lara_item->hit_points -= PROPELLER_DAMAGE;
             lara_item->hit_status = 1;
-            DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, (sint16)(GetRandomDraw() >> 10), item->pos.y_rot + 0x4000, lara_item->room_number, 3);
+            DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, (sint16)(GetRandomDraw() >> 10), (PHD_ANGLE)(item->pos.y_rot + 0x4000), lara_item->room_number, 3);
             if (item->object_number == PROPELLER2)
                 SoundEffect(207, &item->pos, 0);
         }
@@ -728,7 +728,7 @@ void SpikeCollision(sint16 item_num, ITEM_INFO *litem, COLL_INFO *coll)
         x = litem->pos.x_pos + (GetRandomControl() - 0x4000) / 256;
         z = litem->pos.z_pos + (GetRandomControl() - 0x4000) / 256;
         y = litem->pos.y_pos - GetRandomControl() / 64;
-        DoBloodSplat(x, y, z, 20, GetRandomControl(), item->room_number);
+        DoBloodSplat(x, y, z, 20, (PHD_ANGLE)GetRandomControl(), item->room_number);
     }
 
     if (litem->hit_points <= 0)
@@ -1260,7 +1260,7 @@ void LavaSpray(sint16 item_number)
         fx->pos.x_pos = item->pos.x_pos;
         fx->pos.y_pos = item->pos.y_pos;
         fx->pos.z_pos = item->pos.z_pos;
-        fx->pos.y_rot = -32768 + 2 * GetRandomControl();
+        fx->pos.y_rot = (PHD_ANGLE)(-32768 + 2 * GetRandomControl());
         fx->speed = (sint16)GetRandomControl() >> 10;
         fx->fallspeed = -GetRandomControl() / 200;
         fx->frame_number = -4 * GetRandomControl() / 0x7fff;

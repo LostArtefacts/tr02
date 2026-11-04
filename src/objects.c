@@ -588,6 +588,8 @@ void OpenThatDoor(DOORPOS_DATA *d)
     }
 }
 
+sint16 GetDoor(FLOOR_INFO *);
+
 void InitialiseDoor(sint16 item_number)
 {
     int dx, dy;
