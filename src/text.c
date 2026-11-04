@@ -221,6 +221,7 @@ uint8 Func4558e1(uint32 c);
 uint32 Func455905(uint32 c);
 uint32 Func455922(uint32 c);
 
+#ifndef TR2_EXE
 sint32 T_GetTextWidth(TEXTSTRING *textString)
 {
     uint32 scaleH;
@@ -274,6 +275,7 @@ sint32 T_GetTextWidth(TEXTSTRING *textString)
     }
     return (width - textString->letterSpacing) & 0xfffe;
 }
+#endif
 
 int T_RemovePrint(TEXTSTRING *textString)
 {
@@ -345,6 +347,7 @@ void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32
 #define SECRET_ITEM1 190
 #define ALPHABET 255
 
+#ifndef TR2_EXE
 void T_DrawThisText(TEXTSTRING *textString)
 {
     sint32 x;
@@ -460,6 +463,7 @@ void T_DrawThisText(TEXTSTRING *textString)
     if (textString->flags & T_ADDOUTLINE)
         draw_border(boxX, boxY, z, boxW, boxH);
 }
+#endif
 
 uint32 GetTextScaleH(uint32 scaleH)
 {

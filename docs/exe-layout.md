@@ -114,8 +114,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 28,601 bytes (95.80% to 96.87%). Headers, `.rdata`, `.idata` and `.rsrc`
-are byte-identical; `.text` is 92.88% and initialized `.data` is 99.83%.
+38,299 to 26,437 bytes (95.80% to 97.10%). Headers, `.rdata`, `.idata` and `.rsrc`
+are byte-identical; `.text` is 93.41% and initialized `.data` is 99.90%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -131,7 +131,7 @@ Some oversized game functions still displace neighbors, recorded in
 
 The entire CRT address range, including padding, the import thunk and the
 final game-generated exception thunks, is byte-identical. Remaining data
-work includes 12 allocations without a recovered destination (77 bytes
+work includes 11 allocations without a recovered destination (52 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
 The current joystick and sound-adapter initializers each match all 57 bytes
 at `0x447220` and `0x447bf0`. Their member-string constructors inline while
@@ -143,11 +143,18 @@ header reproduce VC5's operand ordering. The transparent mapper and input
 experiments have not yet produced complete function matches; their search
 variants remain outside `src/`.
 
-The standalone window cleanup, sound cleanup, path handling, seven CD playback
+The standalone window cleanup, sound cleanup, path handling, eight CD playback
 routines and audio-index loader reproduce the Steam patches as symbolic
 assembly. The entire playback block at `0x455570` through `0x45589f` matches,
-including its embedded command strings and padding. The C implementations
+including its embedded command strings and padding. CD volume handling at
+`0x4558a0` through `0x4558d6` matches as well. The C implementations
 remain available for the hook DLL.
+
+The standalone text routines and their glyph helpers retain ECX arguments,
+ECX results and carry-flag predicates. The CD volume patch also retains the
+redundant scale bits in its index-free SIB addressing byte. MASM cannot spell
+that addressing form, so the single `mov edi, [esp+24h]` instruction has an
+explicit encoding; the remaining patch instructions assemble normally.
 
 TOMB21's surviving game objects are mainly PlayStation LNK objects. Their
 debug records help establish header relationships and declarations; the

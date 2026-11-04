@@ -190,6 +190,7 @@ extern "C" int S_CDGetLoc(void)
 }
 #endif
 
+#ifndef TR2_EXE
 extern "C" void S_CDVolume(int volume)
 {
     if (volume)
@@ -197,16 +198,20 @@ extern "C" void S_CDVolume(int volume)
     wsprintf(Var5275f8, "setaudio T2 volume to %u", volume);
     mciSendString(Var5275f8, NULL, 0, NULL);
 }
+#endif
 
 extern "C" bool Func4558e1(uint32 c);
 
+#ifndef TR2_EXE
 extern "C" bool Func4558d7(uint32 c)
 {
     if (c <= 0x81)
         return false;
     return Func4558e1(c);
 }
+#endif
 
+#ifndef TR2_EXE
 extern "C" bool Func4558e1(uint32 c)
 {
     if (c == 0xa8 || c == 0xb8)
@@ -215,6 +220,7 @@ extern "C" bool Func4558e1(uint32 c)
         return false;
     return true;
 }
+#endif
 
 extern "C" uint8 T_remapASCII[];
 extern "C" uint8 Var44b226[];
@@ -231,12 +237,14 @@ uint8 Var44b226[88] = {
 };
 #endif
 
+#ifndef TR2_EXE
 extern "C" uint32 Func455905(uint32 c)
 {
     if (Func4558e1(c))
         return T_remapASCII[c - 32];
     return Var44b226[c - 0xa8];
 }
+#endif
 
 extern "C" uint8 T_textSpacing[];
 extern "C" uint8 Var44b27e[];
@@ -251,12 +259,14 @@ uint8 Var44b27e[66] = {
 };
 #endif
 
+#ifndef TR2_EXE
 extern "C" uint32 Func455922(uint32 c)
 {
     if (c >= 0x6e)
         return Var44b27e[c - 0x6e];
     return T_textSpacing[c];
 }
+#endif
 
 #ifdef TR2_EXE
 int LnMasterVolume;

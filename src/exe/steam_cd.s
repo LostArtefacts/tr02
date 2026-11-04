@@ -286,4 +286,34 @@ location_failed:
     ret
 _S_CDGetLoc endp
 
+    rept 13
+    nop
+    endm
+
+_S_CDVolume proc public
+    pushad
+volume_argument:
+    db 08bh, 07ch, (3 shl 6) or (4 shl 3) or 4, 24h
+    test edi, edi
+    je short volume_format
+    sub edi, 5
+    shl edi, 2
+volume_format:
+    push edi
+    push offset cd_volume
+    mov eax, _Var5275f8
+    push eax
+    call dword ptr [__imp__wsprintfA]
+    add esp, 12
+    xor eax, eax
+    push eax
+    push eax
+    push eax
+    mov eax, _Var5275f8
+    push eax
+    call dword ptr [__imp__mciSendStringA@16]
+    popad
+    ret
+_S_CDVolume endp
+
     end

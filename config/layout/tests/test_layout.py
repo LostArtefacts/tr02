@@ -88,7 +88,14 @@ class ExecutableTests(unittest.TestCase):
                 )
 
     def test_steam_cd_playback_and_index_patches_match_original(self) -> None:
-        for address, size in ((0x455570, 0x330), (0x456972, 174)):
+        for address, size in ((0x455570, 0x367), (0x456972, 174)):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
+
+    def test_steam_text_callers_and_register_helpers_match_original(self) -> None:
+        for address, size in ((0x440830, 263), (0x440B60, 978), (0x4558D7, 99)):
             with self.subTest(address=hex(address)):
                 self.assertEqual(
                     self.ours.read(address, size), self.original.read(address, size)
