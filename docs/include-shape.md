@@ -21,6 +21,65 @@ reconstruct its transitive declarations or their order.
 
 ## Remaining header graph work
 
+### TOMB21 header recovery follow-up
+
+The baseline for this pass was 1145/1220 matching functions (75 nonmatches). The
+following header changes were built and compared against that full baseline;
+regressions were reverted rather than retained as speculative improvements.
+
+| Experiment | Matching functions | New matches | Retained |
+| --- | ---: | ---: | --- |
+| Separate the six scalar typedefs into `typedefs.h` | 1118 | 0 | No |
+| Restore platform types before the game type chain | 1119 | 0 | No |
+| Centralize `GetCeiling` / `GetDoor` prototypes | 1130 | 0 | No |
+| Include the full platform type header through `standard.h` | 1140 | 0 | No |
+| Restore missing matrix prototypes in reference order | 1119 | 0 | No |
+| Recover `PCX_HEADER` in `specific/stypes.h` for the screenshot encoder | 1145 | 0 | Yes |
+
+The retained PCX definition uses the reference's tagged structure and field
+names, replacing the screenshot encoder's private duplicate. Its 128-byte
+layout and the encoder's compiled output are preserved. Moving the decoder in
+`specific/output.cpp` onto this header also changed `S_PrintShadow`'s generated
+code, so the decoder retains its local definition for now. This is a recovered
+type owner, not an increase in function matches.
+
+TOMB21's game object files inspected here are Sony PlayStation LNK version 2
+objects, not Windows COFF. Their debug filename records corroborate the game
+header dependencies, but cannot establish the Windows compiler's declaration
+order or ABI. The reference chain is `game.h -> specific/stypes.h ->
+3dsystem/3dglodef.h -> typedefs.h`, with `game.h` also including `types.h`.
+Recovering that graph wholesale currently loses matches; smaller changes need
+to account for the declarations already visible at each point.
+
+### Warning cleanup and PCX encoder match
+
+The following cleanup removes the standalone build's 61 compiler diagnostics
+and leaves both DLL and EXE builds warning-free at `/W3 /WX`:
+
+- Declare previously implicit functions before their first use, using the
+  implemented return and parameter types. Keep these declarations local to the
+  translation units; moving them into shared headers previously lost matches.
+- Move `GetCeiling`'s late declaration in `lara1gun.c` before its first call.
+- Make intentional narrowing and signed/unsigned comparisons explicit; replace
+  the implicit integer-to-bool conversion with a comparison against zero.
+- Remove unused collision-height locals and explicitly discard unused exception
+  objects while retaining their declaration scope.
+- Explicitly cast the two empty collision-handler entries in the effect table
+  to its one-argument callback type.
+
+The full DLL comparison retains every previous match and adds `EncodePutPCX`:
+1146/1220 functions, 294609 matching bytes, 74 nonmatches. A byte-sized local
+for the masked PCX tag, tested only for a single-byte run, recovers VC5's
+original register allocation. The signed byte comparison preserves the
+existing tag test. This function has been removed from `hooks.allow_diff`.
+
+Additional isolated searches of the declaration orders in `CopyBitmapPalette`
+and `LoadTexturePage` found no further matches; those sources were retained.
+The EXE comparison tool now closes its input files, so the layout tests also
+pass with Python warnings treated as errors. The inline font tables at
+`0x44b226` and `0x44b27e` have their recovered 88-byte and 66-byte sizes in the
+symbol manifest, eliminating the progress report's missing-size warnings.
+
 - Original game C units generally include `game.h`, which reaches platform types, rendering types, and the game types/module headers. Our `game.h` reaches a different split of those declarations. For example, restoring `box.c` to `game.h` alone leaves `CREATURE_INFO` undeclared.
 - Original platform/rendering units generally begin with `standard.h`, followed by `global.h` and module headers. The new `standard.h` centralizes the Windows, DirectX and CRT includes; the unused `specific/stypes.h` addition was removed.
 - Renderer interfaces still need target-specific recovery: `texture.h`, `drawprimitive.h`, `hwinsert.h`, `3d_gen.h`, and `picture.h` are the most common missing interfaces. Some reference-only headers describe TR3 features and must not be assumed to belong to TR2.
