@@ -74,14 +74,32 @@ class ExecutableTests(unittest.TestCase):
         self.ours = compare_exe.PE(ROOT / "build/tomb2.exe")
         self.original = compare_exe.PE(ROOT / "build/orig/tomb2.exe")
 
-    def test_whole_file_parity_reaches_95_percent(self) -> None:
+    def test_whole_file_parity_reaches_96_percent(self) -> None:
         denominator = max(len(self.ours.data), len(self.original.data))
         identical = compare_exe.same(self.ours.data, self.original.data)
-        self.assertGreaterEqual(identical / denominator, 0.95)
+        self.assertGreaterEqual(identical / denominator, 0.96)
+
+    def test_recovered_runtime_state_retains_original_addresses(self) -> None:
+        mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
+        for name, address in {
+            "___fastflag": 0x51C298,
+            "__mbctype": 0x51C570,
+            "__crtheap": 0x527504,
+            "___onexitbegin": 0x527510,
+        }.items():
+            with self.subTest(symbol=name):
+                self.assertEqual(mapping[name][0], address)
 
     def test_import_abi_includes_all_original_slots(self) -> None:
         self.assertEqual(self.ours.imports(), self.original.imports())
         self.assertEqual(self.ours.directory(12), self.original.directory(12))
+
+    def test_import_address_table_preserves_separate_lookup_tokens(self) -> None:
+        rva, size = self.original.directory(12)
+        self.assertEqual(
+            self.ours.read(self.ours.base + rva, size),
+            self.original.read(self.original.base + rva, size),
+        )
 
     def test_original_sections_retain_addresses_and_file_offsets(self) -> None:
         for name in self.original.order:

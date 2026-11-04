@@ -16,12 +16,12 @@ class Block:
     address: int
     data: bytes
     offset: int = 0
+    padding: int = 0x90
 
 
-def merge() -> tuple[list[str], str]:
-    original = ce.PE(ce.ORIGINAL)
-    ourmap = ce.read_map("build/layout/preliminary.map")
-    raw = Path(".wine/drive_c/msvc5sp3/lib/LIBC.LIB").read_bytes()
+def archive_members(path: Path) -> dict[str, bytes]:
+    """Read long and short member names from a Microsoft COFF archive."""
+    raw = path.read_bytes()
     longnames = b""
     files: dict[str, bytes] = {}
     pos = 8
@@ -39,6 +39,93 @@ def merge() -> tuple[list[str], str]:
         elif name not in ["/", "//"]:
             files[name.rstrip("/").lower()] = data
         pos += 60 + length + (length & 1)
+    return files
+
+
+def recover_bss(
+    parsed: dict[str, coff.Object], blocks: list[Block], original: ce.PE
+) -> dict[tuple[str, int], int]:
+    """Recover whole BSS sections and common symbols from matching CRT code."""
+    externals: dict[str, tuple[str, int]] = {}
+    for path, obj in parsed.items():
+        for index, sym in enumerate(obj.symbols):
+            if sym and sym.storage == 2 and (sym.section > 0 or sym.value > 0):
+                if sym.section > 0 or sym.name not in externals:
+                    externals[sym.name] = (path, index)
+    bindings: dict[tuple[str, int], int] = {}
+    sections: dict[tuple[str, int], int] = {}
+    for block in blocks:
+        obj = parsed[block.path]
+        sec = obj.sections[block.section - 1]
+        mask = {off + j for off, _, _ in sec.relocs for j in range(4)}
+        expected = original.read(block.address, len(block.data))
+        if len(expected) != len(block.data) or any(
+            a != b and i not in mask
+            for i, (a, b) in enumerate(zip(block.data, expected))
+        ):
+            continue
+        for off, index, kind in sec.relocs:
+            if kind != coff.DIR32:
+                continue
+            sym = obj.symbols[index]
+            assert sym
+            path = block.path
+            if sym.section == 0 and sym.storage == 2:
+                if sym.name not in externals:
+                    continue
+                path, index = externals[sym.name]
+                sym = parsed[path].symbols[index]
+                assert sym
+            common = sym.section == 0 and sym.storage == 2 and sym.value > 0
+            bss = (
+                sym.section > 0 and parsed[path].sections[sym.section - 1].flags & 0x80
+            )
+            if not common and not bss:
+                continue
+            addend = struct.unpack_from("<I", sec.data, off)[0]
+            address = (struct.unpack_from("<I", expected, off)[0] - addend) & 0xFFFFFFFF
+            key = (path, sym.section if bss else index)
+            table = sections if bss else bindings
+            value = address - sym.value if bss else address
+            if key in table and table[key] != value:
+                raise ValueError(f"Conflicting CRT BSS binding: {path}:{sym.name}")
+            table[key] = value
+    for (path, number), address in sections.items():
+        sec = parsed[path].sections[number - 1]
+        data_va, data_size, _, raw_size = original.sections[".data"]
+        if not data_va <= address or address + len(sec.data) > data_va + data_size:
+            raise ValueError(f"CRT BSS section outside original data: {path}:{number}")
+        initialized = max(0, min(len(sec.data), data_va + raw_size - address))
+        if any(original.read(address, initialized)):
+            raise ValueError(f"CRT BSS overlaps initialized contents: {path}:{number}")
+        for index, sym in enumerate(parsed[path].symbols):
+            if sym and sym.section == number:
+                bindings[(path, index)] = address + sym.value
+    for (path, index), address in bindings.items():
+        sym = parsed[path].symbols[index]
+        assert sym
+        if sym.section == 0:
+            data_va, data_size, _, raw_size = original.sections[".data"]
+            if not data_va <= address or address + sym.value > data_va + data_size:
+                raise ValueError(f"CRT common outside original data: {sym.name}")
+            initialized = max(0, min(sym.value, data_va + raw_size - address))
+            if any(original.read(address, initialized)):
+                raise ValueError(
+                    f"CRT common overlaps initialized contents: {sym.name}"
+                )
+    return bindings
+
+
+def merge() -> tuple[list[str], str]:
+    original = ce.PE(ce.ORIGINAL)
+    ourmap = ce.read_map("build/layout/preliminary.map")
+    # The original retained this helper; current game code no longer selects it.
+    ourmap["__allshl"] = (0x460BC0, "libc:llshl.obj")
+    files = archive_members(Path(".wine/drive_c/msvc5sp3/lib/LIBC.LIB"))
+    rtm = archive_members(Path(".wine/drive_c/msvc5/lib/LIBC.LIB"))
+    # These two RTM members match the target; their SP3 replacements do not.
+    for name in ("output.obj", "gmtime.obj"):
+        files[name] = rtm[name]
     objects = sorted(
         set(
             obj.split(":", 1)[1].lower()
@@ -112,7 +199,9 @@ def merge() -> tuple[list[str], str]:
             address = (
                 hits[0]
                 if len(hits) == 1
-                else next(iter(anchors)) if len(anchors) == 1 else None
+                else next(iter(anchors))
+                if len(anchors) == 1
+                else None
             )
             if name == "mbctype.obj" and secnum == 3:
                 address = 0x45E710
@@ -127,9 +216,11 @@ def merge() -> tuple[list[str], str]:
             )
             while len(data) > floor and data[-1] in (0x90, 0xCC):
                 data = data[:-1]
-            blocks.append(Block(path, secnum, address, data))
+            padding = 0x90 if sec.data[len(data) :].startswith(b"\x90") else 0xCC
+            blocks.append(Block(path, secnum, address, data, padding=padding))
     if unknown:
         raise ValueError(("Unplaced CRT", unknown))
+    bss_bindings = recover_bss(parsed, blocks, original)
     by_addr: dict[int, list[Block]] = {}
     for block in blocks:
         by_addr.setdefault(block.address, []).append(block)
@@ -140,7 +231,8 @@ def merge() -> tuple[list[str], str]:
     for idx, block in enumerate(unique):
         cursor = origin + len(code)
         if cursor < block.address:
-            code += b"\xcc" * (block.address - cursor)
+            padding = unique[idx - 1].padding if idx else 0x90
+            code += bytes([padding]) * (block.address - cursor)
         if cursor > block.address:
             print(
                 "CRT OVERFLOW",
@@ -191,6 +283,17 @@ def merge() -> tuple[list[str], str]:
         for i, sym in enumerate(obj.symbols):
             if not sym:
                 continue
+            if (path, i) in bss_bindings:
+                name = (
+                    sym.name
+                    if sym.storage == 2
+                    else "_layout_crt_data_" + Path(path).stem + "_" + str(i)
+                )
+                names[(path, i)] = name
+                address = bss_bindings[(path, i)]
+                if name in absolute and absolute[name] != address:
+                    raise ValueError(f"Conflicting CRT absolute symbol: {name}")
+                absolute[name] = address
             if (
                 sym.section > 0
                 and obj.sections[sym.section - 1].flags & coff.CODE
@@ -214,6 +317,11 @@ def merge() -> tuple[list[str], str]:
         if name in defined
     }
     Path("build/layout/crt-symbols.json").write_text(json.dumps(provenance, indent=2))
+    Path("build/layout/crt-bss.json").write_text(
+        json.dumps(
+            {names[key]: address for key, address in bss_bindings.items()}, indent=2
+        )
+    )
 
     def target_name(path: str, index: int) -> str:
         obj = parsed[path]
@@ -255,6 +363,14 @@ def merge() -> tuple[list[str], str]:
         for i, sym in enumerate(obj.symbols):
             if not sym:
                 continue
+            if (path, i) in bss_bindings:
+                name = names[(path, i)]
+                off = len(strings)
+                strings += name.encode() + b"\0"
+                struct.pack_into("<II", records, i * 18, 0, off)
+                struct.pack_into("<Ih", records, i * 18 + 8, 0, 0)
+                records[i * 18 + 16] = 2
+                continue
             if (
                 sym.section == 0
                 and sym.storage == 2
@@ -286,7 +402,11 @@ def merge() -> tuple[list[str], str]:
             records += struct.pack("<IIIhHBB", 0, off, sym.value, sym.section, 0, 2, 0)
             nsym += 1
         for n, sec in enumerate(obj.sections):
-            if sec.flags & coff.CODE:
+            bound_bss = sec.flags & 0x80 and any(
+                (path, i) in bss_bindings and sym and sym.section == n + 1
+                for i, sym in enumerate(obj.symbols)
+            )
+            if sec.flags & coff.CODE or bound_bss:
                 at = 20 + n * 40
                 struct.pack_into("<IIIIHH", raw, at + 16, 0, 0, 0, 0, 0, 0)
                 raw[at : at + 8] = b".drectve"

@@ -47,6 +47,10 @@ def finish() -> None:
             )
             absolute_bindings[name] = entries[idx]
 
+    runtime_bindings = json.loads(Path("build/layout/crt-bss.json").read_text())
+    absolute_names.update(runtime_bindings)
+    absolute_bindings.update(runtime_bindings)
+
     addends: dict[int, int] = {}
     fixed: set[int] = set()
     anchors = json.loads(Path("build/layout/data-anchors.json").read_text())
@@ -230,7 +234,12 @@ def finish() -> None:
             struct.pack_into(
                 "<I", idata, original.base + (oft or ft) + n * 4 - idata_va, token
             )
-            struct.pack_into("<I", idata, original.base + ft + n * 4 - idata_va, token)
+            iat_token = struct.unpack(
+                "<I", original.read(original.base + ft + n * 4, 4)
+            )[0]
+            struct.pack_into(
+                "<I", idata, original.base + ft + n * 4 - idata_va, iat_token
+            )
             if not token:
                 break
             if token & 0x80000000 == 0:
