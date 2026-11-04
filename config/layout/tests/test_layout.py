@@ -143,7 +143,7 @@ class ExecutableTests(unittest.TestCase):
                 )
 
     def test_graphics_dialog_message_handler_matches_original(self) -> None:
-        for address, size in ((0x453150, 1034), (0x453770, 1845)):
+        for address, size in ((0x453150, 1034), (0x453560, 492), (0x453770, 1845)):
             with self.subTest(address=hex(address)):
                 self.assertEqual(
                     self.ours.read(address, size), self.original.read(address, size)
