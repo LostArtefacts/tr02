@@ -106,7 +106,7 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 29,910 bytes (95.80% to 96.72%). Headers, `.rdata`, `.idata` and `.rsrc`
+38,299 to 29,861 bytes (95.80% to 96.73%). Headers, `.rdata`, `.idata` and `.rsrc`
 are byte-identical; `.text` is 92.56% and initialized `.data` is 99.78%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
@@ -125,7 +125,10 @@ The entire CRT address range, including padding, the import thunk and the
 final game-generated exception thunks, is byte-identical. Remaining data
 work includes 13 allocations without a recovered destination (93 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
-`gtmap_persp32_fp` now matches all 4,038 bytes at its original address.
+The current joystick initializer now matches all 57 bytes at `0x447220`.
+Its member-string constructors inline while node destruction retains the
+original inlining depth. `gtmap_persp32_fp` matches all 4,038 bytes at its
+original address.
 Restoring signed UV shifts in its first five pixels, ordering one independent
 lighting update, and including the Windows/process headers before the renderer
 header reproduce VC5's operand ordering. The transparent mapper and input

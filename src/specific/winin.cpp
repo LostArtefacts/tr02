@@ -121,7 +121,12 @@ extern "C" bool DInputJoystickCreate(void);
 struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
-    STRING_FLAGGED(DWORD size);
+    STRING_FLAGGED(DWORD size)
+    {
+        lpString = new char[size];
+        *lpString = 0;
+        isPresented = true;
+    }
     ~STRING_FLAGGED()
     {
         if (isPresented)
@@ -138,12 +143,7 @@ struct STRING_FLAGGED {
     }
 };
 
-STRING_FLAGGED::STRING_FLAGGED(DWORD size)
-{
-    lpString = new char[size];
-    *lpString = 0;
-    isPresented = true;
-}
+#pragma inline_depth(2)
 
 struct JOYSTICK {
     LPGUID lpJoystickGuid;
@@ -164,6 +164,8 @@ struct JOYSTICK {
         }
     }
 };
+
+#pragma inline_depth(8)
 
 struct JOYSTICK_NODE {
     JOYSTICK_NODE *next;
