@@ -744,7 +744,7 @@ extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 
                     distance = dx * dx + dy * dy + dz * dz;
                     if (distance <= 1 << (falloff * 2))
                     {
-                        shade -= (1 << dynamic[i].intensity) - (distance >> (falloff * 2 - dynamic[i].intensity));
+                        shade -= (1 << dynamic[i].intensity) - (distance >> (dynamic[i].falloff * 2 - dynamic[i].intensity));
                         if (shade < 0)
                         {
                             shade = 0;
@@ -757,7 +757,6 @@ extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 
     }
     S_CalculateStaticLight((sint16)shade);
 }
-
 extern "C" void S_LightRoom(ROOM_INFO *r)
 {
     sint32 i, j;

@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 13,964 bytes (95.80% to 98.47%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.52%.
+38,299 to 13,766 bytes (95.80% to 98.49%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.57%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -193,3 +193,8 @@ per-field bindings used by other translation units. The zero-initialized
 binding pass maps both views to the same original storage. Retaining this
 record, the chained dimension assignments and the original renderer/list
 selection reproduces the compiler's aliasing and instruction order.
+
+Static-mesh dynamic lighting matches all 292 bytes at `0x451580`.
+The attenuation expression reads the light's falloff field again while
+retaining the cached falloff for the distance limit. This preserves the
+original temporary lifetimes and range-check register allocation.
