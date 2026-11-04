@@ -44,17 +44,17 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider II · Tomb2.exe</text>
 <g transform="translate(0 30)">
-<rect width="189.59" height="12" x="130" y="1.50" class="named"/>
-<rect width="12.08" height="12" x="319.59" y="1.50" class="nonmatching"/>
+<rect width="189.92" height="12" x="130" y="1.50" class="named"/>
+<rect width="11.75" height="12" x="319.92" y="1.50" class="nonmatching"/>
 <rect width="0.33" height="12" x="331.67" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">1146/1221 · +73 nonmatching</text>
-<rect width="172.08" height="12" x="130" y="18.50" class="named"/>
-<rect width="29.83" height="12" x="302.08" y="18.50" class="nonmatching"/>
+<text text-anchor="end" x="382" y="7.50">94.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">1148/1221 · +71 nonmatching</text>
+<rect width="172.30" height="12" x="130" y="18.50" class="named"/>
+<rect width="29.61" height="12" x="302.30" y="18.50" class="nonmatching"/>
 <rect width="0.10" height="12" x="331.91" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
-<text text-anchor="end" x="382" y="24.50">85.2%</text>
+<text text-anchor="end" x="382" y="24.50">85.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">295k/346k · +51k nonmatching</text>
 <rect width="187.14" height="12" x="130" y="35.50" class="named"/>
 <rect width="14.86" height="12" x="317.14" y="35.50" class="todo"/>
@@ -75,15 +75,15 @@
 <rect width="8.52" height="12" x="323.48" y="86.50" class="todo"/>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <text text-anchor="end" x="382" y="92.50">95.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="92">874k/913k · 38491 bytes differ</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="92">874k/913k · 38489 bytes differ</text>
 </g>
 <g transform="translate(0 145)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">92.14% (1125)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">5.98% (73)</tspan> · <tspan class="todo">0.16% (2)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">92.30% (1127)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">5.81% (71)</tspan> · <tspan class="todo">0.16% (2)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="688.27" height="6" x="0" y="0" class="named"/>
-<rect width="12.85" height="6" x="688.27" y="0" class="decompiled"/>
-<rect width="44.66" height="6" x="701.12" y="0" class="nonmatching"/>
+<rect width="689.49" height="6" x="0" y="0" class="named"/>
+<rect width="12.85" height="6" x="689.49" y="0" class="decompiled"/>
+<rect width="43.44" height="6" x="702.34" y="0" class="nonmatching"/>
 <rect width="1.22" height="6" x="745.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
@@ -1193,11 +1193,11 @@
 <rect width="12" height="12" x="45" y="330" class="named"><title>0x00454030 SE_SoundDlgProc (385 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="330" class="named"><title>0x004541c0 SE_SoundAdapterSet (10 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="330" class="named"><title>0x004541d0 SE_SoundDlgUpdate (283 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="330" class="nonmatching"><title>0x004542f0 SE_SoundDlgInit (190 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="330" class="named"><title>0x004542f0 SE_SoundDlgInit (190 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="named"><title>0x004543b0 SE_ControlsDlgProc (262 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="330" class="named"><title>0x004544c0 SE_ControlsJoystickSet (10 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="named"><title>0x004544d0 SE_ControlsDlgUpdate (104 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="330" class="nonmatching"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="330" class="named"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="named"><title>0x00454600 SE_OptionsDlgProc (138 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="330" class="named"><title>0x00454690 SE_OptionsDlgUpdate (564 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="named"><title>0x004548d0 SE_OptionsStrCat (75 bytes)</title></rect>
@@ -1312,11 +1312,11 @@
 </g>
 <g transform="translate(0 575)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">84.75%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">14.77%</tspan> · <tspan class="todo">0.04%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">84.86%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">14.66%</tspan> · <tspan class="todo">0.04%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="633.10" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="633.10" y="0" class="decompiled"/>
-<rect width="110.33" height="6" x="636.34" y="0" class="nonmatching"/>
+<rect width="633.92" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="633.92" y="0" class="decompiled"/>
+<rect width="109.51" height="6" x="637.16" y="0" class="nonmatching"/>
 <rect width="0.33" height="6" x="746.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
@@ -1788,13 +1788,13 @@
 <rect width="9.46" height="9.56" x="688.04" y="151.31" class="named"><title>0x00434970 DeathSlideCollision (191 bytes)</title></rect>
 <rect width="9.39" height="9.56" x="700.49" y="151.31" class="named"><title>0x00429800 lara_col_stepright (190 bytes)</title></rect>
 <rect width="9.39" height="9.56" x="712.89" y="151.31" class="named"><title>0x0042a7e0 LaraTestClimbStance (190 bytes)</title></rect>
-<rect width="9.39" height="9.56" x="725.28" y="151.31" class="nonmatching"><title>0x004542f0 SE_SoundDlgInit (190 bytes)</title></rect>
+<rect width="9.39" height="9.56" x="725.28" y="151.31" class="named"><title>0x004542f0 SE_SoundDlgInit (190 bytes)</title></rect>
 <rect width="9.33" height="9.56" x="737.67" y="151.31" class="named"><title>0x004348b0 ControlGongBonger (189 bytes)</title></rect>
 <rect width="9.16" height="9.74" x="523.60" y="163.87" class="named"><title>0x00438e30 SwitchTrigger (189 bytes)</title></rect>
 <rect width="9.16" height="9.74" x="523.60" y="176.61" class="named"><title>0x00442750 TeethTrap (189 bytes)</title></rect>
 <rect width="9.16" height="9.74" x="523.60" y="189.35" class="named"><title>0x00444660 Enum3DDevicesCallback (189 bytes)</title></rect>
 <rect width="9.16" height="9.74" x="523.60" y="202.09" class="named"><title>0x00452d70 SE_SoundTestStart (189 bytes)</title></rect>
-<rect width="9.16" height="9.74" x="523.60" y="214.83" class="nonmatching"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
+<rect width="9.16" height="9.74" x="523.60" y="214.83" class="named"><title>0x00454540 SE_ControlsDlgInit (189 bytes)</title></rect>
 <rect width="9.16" height="9.67" x="523.60" y="227.57" class="named"><title>0x00428970 extra_as_pulldagger (188 bytes)</title></rect>
 <rect width="9.16" height="9.67" x="523.60" y="240.24" class="named"><title>0x00446a50 WinVidCheckGameWindowPalette (188 bytes)</title></rect>
 <rect width="9.16" height="9.67" x="523.60" y="252.91" class="named"><title>0x004488e0 CreateZBuffer (188 bytes)</title></rect>

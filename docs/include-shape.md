@@ -80,6 +80,19 @@ pass with Python warnings treated as errors. The inline font tables at
 `0x44b226` and `0x44b27e` have their recovered 88-byte and 66-byte sizes in the
 symbol manifest, eliminating the progress report's missing-size warnings.
 
+### Continued matching pass
+
+`S_SaveSettings` now matches after giving the detail-level registry value an
+explicit `DWORD` local. `SE_SoundDlgInit` and `SE_ControlsDlgInit` now match
+after recovering the null-safe inline advance-and-return structure from
+Core's `List::GetNext`. The equivalent ternary in each loop produced a branch
+to the loop test instead of directly to its exit. The local helpers retain the
+current partial device types and leave the surrounding declarations intact.
+
+The full comparison is now 1149/1220 functions and 295113 matching bytes, with
+71 nonmatches and no lost matches. All three functions have been removed from
+`hooks.allow_diff`.
+
 - Original game C units generally include `game.h`, which reaches platform types, rendering types, and the game types/module headers. Our `game.h` reaches a different split of those declarations. For example, restoring `box.c` to `game.h` alone leaves `CREATURE_INFO` undeclared.
 - Original platform/rendering units generally begin with `standard.h`, followed by `global.h` and module headers. The new `standard.h` centralizes the Windows, DirectX and CRT includes; the unused `specific/stypes.h` addition was removed.
 - Renderer interfaces still need target-specific recovery: `texture.h`, `drawprimitive.h`, `hwinsert.h`, `3d_gen.h`, and `picture.h` are the most common missing interfaces. Some reference-only headers describe TR3 features and must not be assumed to belong to TR2.

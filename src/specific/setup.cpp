@@ -1297,6 +1297,14 @@ typedef struct SETUP_JOYSTICK_NODE
     LPCSTR description;
 } SETUP_JOYSTICK_NODE;
 
+inline SETUP_JOYSTICK_NODE *GetNextJoystick(SETUP_JOYSTICK_NODE *pos)
+{
+    SETUP_JOYSTICK_NODE *pNode = pos;
+    if (pNode)
+        pNode = pNode->next;
+    return pNode;
+}
+
 extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
 {
     HWND combo;
@@ -1308,7 +1316,7 @@ extern "C" void SE_ControlsDlgInit(HWND hwndDlg)
     combo = GetDlgItem(hwndDlg, 1055);
     SendMessage(combo, CB_RESETCONTENT, 0, 0);
     selected = 0;
-    for (node = (SETUP_JOYSTICK_NODE *)JoystickList.head; node; node = !node ? NULL : node->next)
+    for (node = (SETUP_JOYSTICK_NODE *)JoystickList.head; node; node = GetNextJoystick(node))
     {
         index = SendMessage(combo, CB_ADDSTRING, 0, (LPARAM)node->description);
         SendMessage(combo, CB_SETITEMDATA, index, (LPARAM)node);
