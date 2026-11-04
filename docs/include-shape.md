@@ -95,11 +95,20 @@ surviving source show. `InsertClippedPoly_Textured` uses the reference's
 decrement-in-condition loop. `phd_RotYXZsuperpack` uses the reference's 32-bit
 combined rotation and shared advance for the single-axis cases.
 
-The full comparison is now 1152/1220 functions and 296273 matching bytes, with
-68 nonmatches and no lost matches. All six functions have been removed from
-`hooks.allow_diff`. The standalone image is 95.80% identical, with 38368
-differing bytes. Further UV-adjustment and edge-buffer ordering experiments
-found no additional matches and were not applied.
+The palette pass recovers `BITMAP_RESOURCE::Load` using the reference's
+257-DWORD palette buffer and `PALETTEENTRY` view. `CopyBitmapPalette` now uses
+an explicit destination cursor through its three palette ranges.
+`ShowEndStatsText` names the three extracted secret-bit values before summing
+them, recovering the original register allocation without changing the count.
+
+The full comparison is now 1155/1220 functions and 297841 matching bytes, with
+65 nonmatches and no lost matches. All nine functions have been removed from
+`hooks.allow_diff`. Further UV-adjustment, edge-buffer ordering, lighting,
+display-adapter inlining, and skidoo expression experiments found no additional
+matches worth retaining. The reference form of `visible_zclip` regressed
+existing renderer matches and was not applied.
+The standalone image remains 95.80% identical, with 38299 differing bytes;
+both builds are warning-free and all 14 layout tests pass.
 
 - Original game C units generally include `game.h`, which reaches platform types, rendering types, and the game types/module headers. Our `game.h` reaches a different split of those declarations. For example, restoring `box.c` to `game.h` alone leaves `CREATURE_INFO` undeclared.
 - Original platform/rendering units generally begin with `standard.h`, followed by `global.h` and module headers. The new `standard.h` centralizes the Windows, DirectX and CRT includes; the unused `specific/stypes.h` addition was removed.

@@ -1933,7 +1933,10 @@ void ShowEndStatsText(void)
         numsecrets = num = 0;
         for (i = 1; i < totallevels - 2; i++)
         {
-            numsecrets += (savegame.start[i].secrets_found & 1) + ((savegame.start[i].secrets_found & 2) >> 1) + ((savegame.start[i].secrets_found & 4) >> 2);
+            int firstSecret = (savegame.start[i].secrets_found >> 0) & 1;
+            int secondSecret = (savegame.start[i].secrets_found >> 1) & 1;
+            int thirdSecret = (savegame.start[i].secrets_found >> 2) & 1;
+            numsecrets += firstSecret + secondSecret + thirdSecret;
             num += 3;
         }
         sprintf(str, "%d %s %d", numsecrets, GF_GameStrings[76], num);
