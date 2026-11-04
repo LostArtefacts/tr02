@@ -2,6 +2,26 @@
 #include "global.h"
 #include <stdio.h>
 
+struct DISPLAY_MODE {
+    int width;
+    int height;
+    int bpp;
+    int vga;
+    DISPLAY_MODE() {}
+};
+
+typedef struct DISPLAY_MODE_NODE {
+    struct DISPLAY_MODE_NODE *next;
+    struct DISPLAY_MODE_NODE *previous;
+    DISPLAY_MODE body;
+} DISPLAY_MODE_NODE;
+
+#ifdef TR2_EXE
+extern "C" {
+DISPLAY_MODE Var4d92c8;
+}
+#endif
+
 typedef struct {
     LPTSTR lpString;
     bool isPresented;
@@ -473,19 +493,6 @@ typedef struct {
     COLOR_BIT_MASKS colorBitMasks;
     DWORD bpp;
 } TEXTURE_FORMAT;
-
-typedef struct {
-    int width;
-    int height;
-    int bpp;
-    int vga;
-} DISPLAY_MODE;
-
-typedef struct DISPLAY_MODE_NODE {
-    struct DISPLAY_MODE_NODE *next;
-    struct DISPLAY_MODE_NODE *previous;
-    DISPLAY_MODE body;
-} DISPLAY_MODE_NODE;
 
 enum {
     VGA_NoVga,
