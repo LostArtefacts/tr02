@@ -373,39 +373,31 @@ void BITMAP_RESOURCE::Release(void)
 
 void BITMAP_RESOURCE::Load(LPCSTR lpName)
 {
-    struct {
-        WORD palVersion;
-        WORD palNumEntries;
-        PALETTEENTRY palPalEntry[256];
-    } logPalette;
-    RGBQUAD *bmpPalette;
-    LPBYTE bitmap;
-    int i;
-
     if (hPalette)
     {
         DeleteObject(hPalette);
         hPalette = NULL;
     }
     flags = 0;
-    bitmap = (LPBYTE)UT_LoadResource(lpName, RT_BITMAP);
-    bmpInfo = (LPBITMAPINFO)bitmap;
-    if (!bitmap)
+    bmpInfo = (LPBITMAPINFO)UT_LoadResource(lpName, RT_BITMAP);
+    if (!bmpInfo)
         return;
-    bmpPalette = (RGBQUAD *)(bitmap + sizeof(BITMAPINFOHEADER));
-    bmpData = (LPBYTE)(bmpPalette + 256);
-    *(DWORD *)&logPalette = 0x300 | (256 << 16);
-    for (i = 0; i < 256; i++)
+    RGBQUAD *pColorTable = bmpInfo->bmiColors;
+    bmpData = (LPBYTE)(pColorTable + 256);
+    DWORD adwLogPalette[257];
+    adwLogPalette[0] = 0x01000300;
+    PALETTEENTRY *pPE = (PALETTEENTRY *)(adwLogPalette + 1);
+    for (int i = 0; i < 256; i++)
     {
-        logPalette.palPalEntry[i].peRed = bmpPalette[i].rgbRed;
-        logPalette.palPalEntry[i].peGreen = bmpPalette[i].rgbGreen;
-        logPalette.palPalEntry[i].peBlue = bmpPalette[i].rgbBlue;
-        if (i < 10 || i >= 246)
-            logPalette.palPalEntry[i].peFlags = 0;
+        pPE[i].peRed = pColorTable[i].rgbRed;
+        pPE[i].peGreen = pColorTable[i].rgbGreen;
+        pPE[i].peBlue = pColorTable[i].rgbBlue;
+        if (i >= 10 && i < 246)
+            pPE[i].peFlags = PC_NOCOLLAPSE;
         else
-            logPalette.palPalEntry[i].peFlags = PC_NOCOLLAPSE;
+            pPE[i].peFlags = 0;
     }
-    hPalette = CreatePalette((LOGPALETTE *)&logPalette);
+    hPalette = CreatePalette((LOGPALETTE *)adwLogPalette);
 }
 
 void BITMAP_RESOURCE::Draw(HDC hdc, int x, int y)
