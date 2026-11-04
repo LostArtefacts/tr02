@@ -22,9 +22,12 @@ struct DISPLAY_MODE
     bool CompareVideoModes(DISPLAY_MODE *mode);
 };
 
+extern "C" {
+extern DISPLAY_MODE SE_FullScreenMode;
 #ifdef TR2_EXE
 DISPLAY_MODE SE_FullScreenMode;
 #endif
+}
 
 extern "C" bool OpenGameRegistryKey(LPCTSTR key)
 {
@@ -610,7 +613,6 @@ extern "C" bool SE_ShowSetupDialog(HWND hParent, bool isDefault)
 extern "C" {
 extern bool Var51bc88;
 extern SETUP_ADAPTER_NODE *SE_DisplayAdapter;
-extern DISPLAY_MODE SE_FullScreenMode;
 void SE_GraphicsDlgInit(HWND hwndDlg);
 void SE_GraphicsDlgUpdate(HWND hwndDlg);
 void SE_GraphicsDlgFullScreenModesUpdate(HWND hwndDlg);
@@ -744,7 +746,6 @@ extern "C" BOOL CALLBACK SE_GraphicsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
 }
 
 extern "C" {
-extern DISPLAY_MODE SE_FullScreenMode;
 extern char RegistryClass[];
 }
 
@@ -978,7 +979,6 @@ extern "C" void SE_GraphicsDlgUpdate(HWND hwndDlg)
 
 extern "C" {
 extern SETUP_ADAPTER_NODE *SE_DisplayAdapter;
-extern DISPLAY_MODE SE_FullScreenMode;
 void WinVidSetDisplayAdapter(void *adapter);
 void SE_GraphicsDlgUpdate(HWND hwndDlg);
 }
