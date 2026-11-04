@@ -146,6 +146,11 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x419640, 548), self.original.read(0x419640, 548)
         )
 
+    def test_xian_lord_drawing_matches_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x41EAC0, 1015), self.original.read(0x41EAC0, 1015)
+        )
+
     def test_render_startup_matches_original(self) -> None:
         self.assertEqual(
             self.ours.read(0x448F00, 933), self.original.read(0x448F00, 933)

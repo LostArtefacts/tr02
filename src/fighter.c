@@ -775,7 +775,10 @@ void DrawXianLord(ITEM_INFO *item)
             phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
             rotation1 = frmptr[0] + 9;
             phd_RotYXZsuperpack(&rotation1, 0);
-            phd_PutPolygons(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+            if (bit & item->mesh_bits)
+                phd_PutPolygons(*meshpp, clip);
+            else
+                phd_PutPolygons(*jadepp, clip);
             meshpp++;
             jadepp++;
 
@@ -798,7 +801,10 @@ void DrawXianLord(ITEM_INFO *item)
                         phd_RotZ(*(extra_rotation++));
                 }
                 bit <<= 1;
-                phd_PutPolygons(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+                if (bit & item->mesh_bits)
+                    phd_PutPolygons(*meshpp, clip);
+                else
+                    phd_PutPolygons(*jadepp, clip);
             }
         }
         else
@@ -808,7 +814,10 @@ void DrawXianLord(ITEM_INFO *item)
             rotation1 = frmptr[0] + 9;
             rotation2 = frmptr[1] + 9;
             phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
-            phd_PutPolygons_I(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+            if (bit & item->mesh_bits)
+                phd_PutPolygons_I(*meshpp, clip);
+            else
+                phd_PutPolygons_I(*jadepp, clip);
             meshpp++;
             jadepp++;
 
@@ -831,7 +840,10 @@ void DrawXianLord(ITEM_INFO *item)
                         phd_RotZ_I(*(extra_rotation++));
                 }
                 bit <<= 1;
-                phd_PutPolygons_I(*((bit & item->mesh_bits) ? meshpp : jadepp), clip);
+                if (bit & item->mesh_bits)
+                    phd_PutPolygons_I(*meshpp, clip);
+                else
+                    phd_PutPolygons_I(*jadepp, clip);
             }
         }
     }

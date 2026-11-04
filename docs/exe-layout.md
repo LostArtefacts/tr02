@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 10,560 bytes (95.80% to 98.84%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 97.37%.
+38,299 to 9,949 bytes (95.80% to 98.91%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 97.52%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -230,3 +230,7 @@ the next link. Room bounds are reset in their original assignment order.
 `0x43eb00`. Its original 1,110-byte symbol entry omitted the final four
 reachable map entries. Function comparison and placement now cover the
 complete table through `0x43eb09`.
+
+Xian warrior drawing matches all 1,015 bytes at `0x41eac0`. Both animation
+paths retain separate normal-mesh and jade-mesh polygon calls, reproducing
+the original branch structure and temporary lifetimes.
