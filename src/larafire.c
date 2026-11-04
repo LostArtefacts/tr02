@@ -663,8 +663,3 @@ int WeaponObject(int weapon_type)
     }
 }
 
-#ifdef TR2_EXE
-sint16 HoldStates[14] = {
-    0, 2, 4, 6, 7, 16, 20, 22, 21, 65, 39, 40, 41, -1,
-};
-#endif
