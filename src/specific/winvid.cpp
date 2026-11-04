@@ -1399,7 +1399,7 @@ inline DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
     return &node->body;
 }
 
-enum WinVidStartResult {
+enum InitResult {
     ERR_CantInitRenderer = 3
 };
 
