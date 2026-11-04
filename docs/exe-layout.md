@@ -87,9 +87,9 @@ function-level comparison remains `just compare`.
 
 ## Remaining parity
 
-The November 4 runtime/layout passes reduced whole-file differences from
-38,299 to 33,950 bytes (95.80% to 96.28%). Headers, `.idata` and `.rsrc` are
-byte-identical; `.text` is 91.65%, `.rdata` 94.16% and initialized `.data`
+The November 4 runtime/layout and mapper passes reduced whole-file differences from
+38,299 to 30,347 bytes (95.80% to 96.68%). Headers, `.idata` and `.rsrc` are
+byte-identical; `.text` is 92.54%, `.rdata` 94.51% and initialized `.data`
 99.07%. All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -97,7 +97,7 @@ sit in the original data section, eliminating `0x16d0` bytes of private state.
 
 Most remaining code differences are in functions already listed in
 `hooks.allow_diff`. The largest raw function differences are
-`wgtmap_persp32_fp` (5,158 bytes), `gtmap_persp32_fp` (3,581),
+`wgtmap_persp32_fp` (5,157 bytes),
 `S_UpdateInput` (2,457), and `SE_GraphicsDlgUpdate` (1,633, including its
 displacement). These counts compare each function at its mapped address.
 Some oversized game functions still displace neighbors, recorded in
@@ -105,10 +105,14 @@ Some oversized game functions still displace neighbors, recorded in
 
 The CRT address range retains 42 differing bytes in the final game-generated
 exception thunks; the selected CRT members have no differing bytes. Remaining
-data work includes 35 allocations without a recovered destination (336 bytes
+data work includes 33 allocations without a recovered destination (328 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
-The mapper and input experiments have not yet produced complete function
-matches; their search variants remain outside `src/`.
+`gtmap_persp32_fp` now matches all 4,038 bytes at its original address.
+Restoring signed UV shifts in its first five pixels, ordering one independent
+lighting update, and including the Windows/process headers before the renderer
+header reproduce VC5's operand ordering. The transparent mapper and input
+experiments have not yet produced complete function matches; their search
+variants remain outside `src/`.
 
 TOMB21's surviving game objects are mainly PlayStation LNK objects. Their
 debug records help establish header relationships and declarations; the

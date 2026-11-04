@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="191.15" height="12" x="0" y="0" class="named"><title>1133 · 92.79%</title></rect>
-<rect width="3.54" height="12" x="191.15" y="0" class="decompiled"><title>21 · 1.72%</title></rect>
-<rect width="10.97" height="12" x="194.70" y="0" class="nonmatching"><title>65 · 5.32%</title></rect>
+<rect width="191.32" height="12" x="0" y="0" class="named"><title>1134 · 92.87%</title></rect>
+<rect width="3.54" height="12" x="191.32" y="0" class="decompiled"><title>21 · 1.72%</title></rect>
+<rect width="10.80" height="12" x="194.86" y="0" class="nonmatching"><title>64 · 5.24%</title></rect>
 <rect width="0.34" height="12" x="205.66" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
-<text text-anchor="end" x="396" y="7.50">94.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="7"><tspan class="named">1133</tspan> · <tspan class="decompiled">21</tspan> · <tspan class="nonmatching">65</tspan> · <tspan class="todo">2</tspan></text>
+<text text-anchor="end" x="396" y="7.50">94.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="7"><tspan class="named">1134</tspan> · <tspan class="decompiled">21</tspan> · <tspan class="nonmatching">64</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="176.44" height="12" x="0" y="0" class="named"><title>296 KB · 85.65%</title></rect>
-<rect width="0.89" height="12" x="176.44" y="0" class="decompiled"><title>2 KB · 0.43%</title></rect>
-<rect width="28.57" height="12" x="177.33" y="0" class="nonmatching"><title>48 KB · 13.87%</title></rect>
+<rect width="178.84" height="12" x="0" y="0" class="named"><title>300 KB · 86.82%</title></rect>
+<rect width="0.89" height="12" x="178.84" y="0" class="decompiled"><title>2 KB · 0.43%</title></rect>
+<rect width="26.17" height="12" x="179.74" y="0" class="nonmatching"><title>44 KB · 12.70%</title></rect>
 <rect width="0.10" height="12" x="205.91" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
-<text text-anchor="end" x="396" y="24.50">86.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="24"><tspan class="named">296 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">48 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
+<text text-anchor="end" x="396" y="24.50">87.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="24"><tspan class="named">300 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">44 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="206" height="12" x="0" y="0" class="named"><title>36 KB · 100%</title></rect>
@@ -70,25 +70,25 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="41"><tspan class="named">36 KB</tspan> · 198 functions</text>
 <text text-anchor="start" x="0" y="58.50">Executable code</text>
 <g transform="translate(130 52.50)">
-<rect width="188.79" height="12" x="0" y="0" class="named"><title>367 KB · 91.65%</title></rect>
-<rect width="17.21" height="12" x="188.79" y="0" class="todo"><title>33 KB · 8.35%</title></rect>
+<rect width="190.64" height="12" x="0" y="0" class="named"><title>371 KB · 92.54%</title></rect>
+<rect width="15.36" height="12" x="190.64" y="0" class="todo"><title>30 KB · 7.46%</title></rect>
 </g>
-<text text-anchor="end" x="396" y="58.50">91.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="58"><tspan class="named">367 KB</tspan> · <tspan class="todo">33 KB</tspan> · 5 KB not in symbols.csv</text>
+<text text-anchor="end" x="396" y="58.50">92.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="58"><tspan class="named">371 KB</tspan> · <tspan class="todo">30 KB</tspan> · 5 KB not in symbols.csv</text>
 <text text-anchor="start" x="0" y="75.50">Executable data</text>
 <g transform="translate(130 69.50)">
-<rect width="203.38" height="12" x="0" y="0" class="named"><title>36 KB · 98.73%</title></rect>
-<rect width="2.62" height="12" x="203.38" y="0" class="todo"><title>463 bytes · 1.27%</title></rect>
+<rect width="203.43" height="12" x="0" y="0" class="named"><title>36 KB · 98.75%</title></rect>
+<rect width="2.57" height="12" x="203.43" y="0" class="todo"><title>454 bytes · 1.25%</title></rect>
 </g>
-<text text-anchor="end" x="396" y="75.50">98.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="75"><tspan class="named">36 KB</tspan> · <tspan class="todo">463 bytes</tspan> · 705/705 globals placed · 26 unmapped</text>
+<text text-anchor="end" x="396" y="75.50">98.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="75"><tspan class="named">36 KB</tspan> · <tspan class="todo">454 bytes</tspan> · 705/705 globals placed · 26 unmapped</text>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <g transform="translate(130 86.50)">
-<rect width="198.34" height="12" x="0" y="0" class="named"><title>879 KB · 96.28%</title></rect>
-<rect width="7.66" height="12" x="198.34" y="0" class="todo"><title>34 KB · 3.72%</title></rect>
+<rect width="199.15" height="12" x="0" y="0" class="named"><title>883 KB · 96.68%</title></rect>
+<rect width="6.85" height="12" x="199.15" y="0" class="todo"><title>30 KB · 3.32%</title></rect>
 </g>
-<text text-anchor="end" x="396" y="92.50">96.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="92"><tspan class="named">879 KB</tspan> · <tspan class="todo">34 KB</tspan></text>
+<text text-anchor="end" x="396" y="92.50">96.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="411" y="92"><tspan class="named">883 KB</tspan> · <tspan class="todo">30 KB</tspan></text>
 </g>
 <g transform="translate(0 145)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -130,7 +130,7 @@
 <rect width="12" height="12" x="510" y="0" class="nonmatching"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="nonmatching"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="0" class="nonmatching"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="0" class="named"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x00405800 draw_poly_wgtmap_persp (55 bytes)</title></rect>
@@ -1322,7 +1322,7 @@
 <rect width="49.58" height="60.01" x="0" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="49.58" height="53.59" x="0" y="63.01" class="named"><title>0x00422060 Display_Inventory (4746 bytes)</title></rect>
 <rect width="49.58" height="46.92" x="0" y="119.60" class="named"><title>0x0043a530 BaddyObjects (4155 bytes)</title></rect>
-<rect width="49.58" height="45.60" x="0" y="169.52" class="nonmatching"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
+<rect width="49.58" height="45.60" x="0" y="169.52" class="named"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="49.58" height="37.99" x="0" y="218.11" class="named"><title>0x00419dd0 DrawLara (3368 bytes)</title></rect>
 <rect width="49.58" height="37.02" x="0" y="259.10" class="named"><title>0x004201a0 GF_ModifyInventory (3283 bytes)</title></rect>
 <rect width="49.58" height="35.48" x="0" y="299.13" class="named"><title>0x0043bb70 ObjectObjects (3148 bytes)</title></rect>

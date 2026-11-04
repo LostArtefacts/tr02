@@ -1,4 +1,6 @@
 // cflags: /Op
+#include <windows.h>
+#include <process.h>
 #include "../3dglodef.h"
 
 typedef struct xbuf_x {
@@ -509,23 +511,23 @@ void gtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                 ooz += oozadd32;
                 scale = 256.0f / ooz;
                 if ((ABS(add_u) + ABS(add_v)) & SINGLE_MASK) {
-                    *(pixptr) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 8) & 0xFF00) + (start_u >> 16))];
+                    *(pixptr) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
                     start_u += add_u;
                     start_v += add_v;
                     start_g += add_g;
-                    *(pixptr + 1) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 8) & 0xFF00) + (start_u >> 16))];
+                    *(pixptr + 1) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
                     start_u += add_u;
                     start_v += add_v;
                     start_g += add_g;
-                    *(pixptr + 2) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 8) & 0xFF00) + (start_u >> 16))];
+                    *(pixptr + 2) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
                     start_u += add_u;
                     start_v += add_v;
                     start_g += add_g;
-                    *(pixptr + 3) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 8) & 0xFF00) + (start_u >> 16))];
+                    *(pixptr + 3) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
                     start_u += add_u;
                     start_v += add_v;
                     start_g += add_g;
-                    *(pixptr + 4) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 8) & 0xFF00) + (start_u >> 16))];
+                    *(pixptr + 4) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
                     start_u += add_u;
                     start_v += add_v;
                     start_g += add_g;
@@ -570,9 +572,9 @@ void gtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr)
                     start_v += add_v;
                     start_g += add_g;
                     *(pixptr + 15) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
+                    start_g += add_g;
                     start_u += add_u;
                     start_v += add_v;
-                    start_g += add_g;
                     *(pixptr + 16) = DepthQTable[start_g >> 16].index[*(tptr + ((start_v >> 16) << 8) + (start_u >> 16))];
                     start_u += add_u;
                     start_v += add_v;
