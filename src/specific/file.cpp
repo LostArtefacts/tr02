@@ -1113,6 +1113,12 @@ extern "C" int S_LoadGameFlow(char *filename)
 }
 
 #ifdef TR2_EXE
+extern "C" {
+char *SampleModeNames[] = {"WAIT_SOUND", "RESTART_SOUND", "AMBIENT_SOUND", "eh?"};
+char CDPathFormat[] = "%c:\\%s";
+char CDRootPath[] = "A:\\";
+}
+
 char LoadRoomsTooMany[] = "LoadRoom(): Too many rooms";
 char LoadRoomsNoMemory[] = "LoadRoom(): Could not allocate memory for rooms";
 char LoadObjectsTooManyTextures[] = "Too many Textures in level";

@@ -16,7 +16,36 @@ sys.path.insert(0, str(ROOT))
 
 import coff
 import compare_exe as ce
-from config.layout.data import Chunk, recover_crt_sections, recover_vftable_prefixes
+from config.layout.data import (
+    Chunk,
+    fixed_reference,
+    recover_crt_sections,
+    recover_vftable_prefixes,
+)
+
+
+class ReferenceOwnershipTests(unittest.TestCase):
+    def test_fixed_state_is_not_an_initialized_allocation_hint(self) -> None:
+        obj = Mock(spec=coff.Object)
+        obj.sections = [
+            coff.Section(".data", bytes(16), [], coff.RDATA),
+            coff.Section(".bss", bytes(16), [], 0x80),
+        ]
+        obj.symbols = [
+            coff.Symbol("_absolute", 0x46C2F0, coff.SYM_ABSOLUTE, 2),
+            coff.Symbol("_local_state", 0, 2, 3),
+            coff.Symbol("_external_state", 0, coff.SYM_UNDEFINED, 2),
+            coff.Symbol("_common_state", 4, coff.SYM_UNDEFINED, 2),
+            coff.Symbol("_initialized", 0, 1, 2),
+        ]
+        for index in range(4):
+            with self.subTest(symbol=obj.symbols[index].name):
+                self.assertTrue(
+                    fixed_reference(cast(coff.Object, obj), index, {"_external_state"})
+                )
+        self.assertFalse(
+            fixed_reference(cast(coff.Object, obj), 4, {"_external_state"})
+        )
 
 
 class VftablePrefixTests(unittest.TestCase):

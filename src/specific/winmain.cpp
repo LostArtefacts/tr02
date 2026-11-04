@@ -118,6 +118,12 @@ extern "C" void S_ExitSystem(char *message)
 char RenderInitFailedFormat[] = "Render init failed with \"%s\"";
 
 extern "C" {
+char LszVersion[] = "Prerelease Dec 10 1997";
+char LszVersionRegisteredTo[] = "Public Release";
+char LszReleaseCode[] = "0000";
+char LszCopyrightMessage[] = "Copyright (c) 1997 Core Design Ltd.";
+char *LaszCoderNames[] = {"Andrew", "Gavin", "Jason"};
+
 void WinCleanupStub1(void)
 {
 }

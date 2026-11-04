@@ -29,6 +29,23 @@ class Chunk:
     new: int | None = None
 
 
+def fixed_reference(obj: coff.Object, index: int, fixed_names: set[str]) -> bool:
+    symbol = obj.symbols[index]
+    return (
+        symbol.section == coff.SYM_ABSOLUTE
+        or symbol.name in fixed_names
+        or (
+            symbol.section == coff.SYM_UNDEFINED
+            and symbol.storage == coff.CLASS_EXTERNAL
+            and symbol.value > 0
+        )
+        or (
+            symbol.section > 0
+            and bool(obj.sections[symbol.section - 1].flags & 0x80)
+        )
+    )
+
+
 def recover_vftable_prefixes(
     chunks: list[Chunk], parsed: dict[str, coff.Object]
 ) -> None:
@@ -101,6 +118,14 @@ def prepare() -> None:
     orig = ce.PE(ce.ORIGINAL)
     ourmap = ce.read_map("build/layout/linked.map")
     known = compare.read_symbols()
+    fixed_names: set[str] = set()
+    for path, entries in json.loads(Path("build/layout/bss.json").read_text()).items():
+        obj = coff.Object(path)
+        fixed_names.update(
+            obj.symbols[int(index)].name
+            for index in entries
+            if obj.symbols[int(index)].storage == coff.CLASS_EXTERNAL
+        )
     chunks: list[Chunk] = []
     metadata = json.loads(Path("build/layout/data-anchors.json").read_text())
     parsed: dict[str, coff.Object] = {}
@@ -248,7 +273,7 @@ def prepare() -> None:
             original, size = known[key]
             sec = obj.sections[sym.section - 1]
             for off, index, kind in sec.relocs:
-                if kind != coff.DIR32:
+                if kind != coff.DIR32 or fixed_reference(obj, index, fixed_names):
                     continue
                 addend = struct.unpack_from("<I", sec.data, off)[0]
                 old = struct.unpack("<I", ours.read(actual + off - sym.value, 4))[0]
@@ -262,7 +287,11 @@ def prepare() -> None:
         begin, end = block["offset"], block["offset"] + block["size"]
         original = block["original"]
         for off, index, kind in crt.sections[0].relocs:
-            if kind != coff.DIR32 or not begin <= off < end:
+            if (
+                kind != coff.DIR32
+                or not begin <= off < end
+                or fixed_reference(crt, index, fixed_names)
+            ):
                 continue
             addend = struct.unpack_from("<I", crt.sections[0].data, off)[0]
             old = struct.unpack("<I", ours.read(crtbase + off, 4))[0]
@@ -302,6 +331,7 @@ def prepare() -> None:
                 if (
                     kind != coff.DIR32
                     or not chunk.offset <= off < chunk.offset + chunk.size
+                    or fixed_reference(obj, index, fixed_names)
                 ):
                     continue
                 at = off - chunk.offset

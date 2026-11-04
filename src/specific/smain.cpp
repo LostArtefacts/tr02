@@ -441,6 +441,10 @@ extern "C" void S_LoadSettings(void)
 }
 
 #ifdef TR2_EXE
+extern "C" {
+char String_Hires[] = "Hires";
+}
+
 int InventoryExtraData[8];
 int GameMainReset;
 char *malloc_buffer;

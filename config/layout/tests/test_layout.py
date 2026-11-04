@@ -158,6 +158,24 @@ class ExecutableTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertEqual(mapping[name][0], address)
 
+    def test_retained_release_and_diagnostic_data_match_original(self) -> None:
+        for address, size in (
+            (0x466880, 0x40),
+            (0x466A90, 0x0C),
+            (0x467610, 0x64),
+            (0x46768C, 0x18),
+            (0x467BB8, 6),
+            (0x467D20, 0x30),
+            (0x467D70, 0x30),
+        ):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
+        mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
+        self.assertEqual(mapping["__amblksiz"][0], 0x469A50)
+        self.assertEqual(self.ours.read(0x469A50, 4), self.original.read(0x469A50, 4))
+
     def test_runtime_relocations_preserve_negative_and_end_pointer_addends(
         self,
     ) -> None:

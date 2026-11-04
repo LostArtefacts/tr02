@@ -531,6 +531,13 @@ void UT_MemBlt(uint8 *pDest, int nDX, int nDY, int nDW, int nDH, int nDStride, u
 }
 
 #ifdef TR2_EXE
+extern "C" {
+char *DateMonthNames[] = {
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+};
+}
+
 const char GuidFormat[21] = {
     123, 3, 2, 1, 0, 45, 5, 4, 45, 7, 6, 45, 8, 9, 10, 11, 12, 13, 14, 15, 125,
 };

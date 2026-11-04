@@ -1637,6 +1637,7 @@ address,size,name,symbol
 0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
 0x004664d8,9,Var4664d8,_Var4664d8
 0x004664e8,164,ErrorStringTable,_ErrorStringTable
+0x00466880,16,SampleModeNames,_SampleModeNames
 0x004668c0,,LoadRoomsTooMany,_LoadRoomsTooMany
 0x004668dc,,LoadRoomsNoMemory,_LoadRoomsNoMemory
 0x0046690c,,LoadObjectsTooManyTextures,_LoadObjectsTooManyTextures
@@ -1650,6 +1651,8 @@ address,size,name,symbol
 0x00466a5c,4,DemoExtension,_DemoExtension
 0x00466a60,,MainSfxOpenFailed,_MainSfxOpenFailed
 0x00466a80,,MainSfxFileName,_MainSfxFileName
+0x00466a90,7,CDPathFormat,_CDPathFormat
+0x00466a98,4,CDRootPath,_CDRootPath
 0x00466ab0,,LoadLevelTooNew,_LoadLevelTooNew
 0x00466af4,,LoadLevelOutOfDate,_LoadLevelOutOfDate
 0x00466b48,,LoadLevelOpenFailed,_LoadLevelOpenFailed
@@ -1666,6 +1669,11 @@ address,size,name,symbol
 0x00466f34,36,GameMallocOutOfMemory,_GameMallocOutOfMemory
 0x00466f58,,layout,?layout@@3PAY0O@FA
 0x00466f90,,kname,_kname
+0x00467610,23,LszVersion,_LszVersion
+0x00467628,15,LszVersionRegisteredTo,_LszVersionRegisteredTo
+0x00467638,5,LszReleaseCode,_LszReleaseCode
+0x00467640,36,LszCopyrightMessage,_LszCopyrightMessage
+0x00467668,12,LaszCoderNames,_LaszCoderNames
 0x00467678,18,TgaHeader,_TgaHeader
 0x004676a4,29,RenderInitFailedFormat,_RenderInitFailedFormat
 0x00467700,13,ScreenShotPcxFormat,_ScreenShotPcxFormat
@@ -1695,10 +1703,13 @@ address,size,name,symbol
 0x00467808,15,SetupDialogName,_SetupDialogName
 0x00467a00,12,Strings_Aspect,_Strings_Aspect
 0x00467b18,6,RegistryKeyFormat,_RegistryKeyFormat
+0x00467bb8,6,String_Hires,_String_Hires
+0x00467d20,48,DateMonthNames,_DateMonthNames
 0x00467d50,29,DialogClassName,_DialogClassName
 0x00467db8,32,phdtan2,phdtan2
 0x00467dd8,4100,phdtantab,phdtantab
 0x00468ddc,2052,phdsintab,phdsintab
+0x00469a50,4,_amblksiz,__amblksiz
 0x0046c2f0,4,MidSort,_MidSort
 0x0046c2f4,4,LfAspectCorrection,?LfAspectCorrection@@3MA
 0x0046c2f8,4,xgen_ymin,_xgen_ymin

@@ -20,7 +20,9 @@ linker remains available through `customize=False`.
 2. Recover game globals from named symbols and references in matching
    functions. Bind zero initialized game state at its original addresses.
    Private locals use recovered references or the small explicit address
-   tables in the project linker.
+   tables in the project linker. Fixed, common and BSS references cannot
+   supply initialized allocation hints, even when a temporary linked data
+   section overlaps the original state addresses.
 3. Make a preliminary link to select the required VC5 runtime archive members.
    Relink their compiled code in recovered order. Archive member code is
    identified by symbols and instruction content with relocations masked.
@@ -50,6 +52,10 @@ linker remains available through `customize=False`.
    original empty copy constructor at `0x44e940` and its metadata reference.
    The window unit retains `<math.h>` from the original include bundle to
    preserve code generation after sharing the enum.
+   Retained release strings, coder names, sample-mode names, CD path formats,
+   the old Hires registry label and the month-name table come from C
+   initializers in their owning source files. The version identity keeps
+   the original release's `Dec 10 1997` date independently of the rebuild date.
 5. Place the compiled allocations, apply address relocations, serialize the
    recovered import ABI, and update resource directory metadata. Synchronize
    the final link map with the emitted image.
@@ -100,8 +106,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 30,120 bytes (95.80% to 96.70%). Headers, `.rdata`, `.idata` and `.rsrc`
-are byte-identical; `.text` is 92.56% and initialized `.data` is 99.16%.
+38,299 to 29,910 bytes (95.80% to 96.72%). Headers, `.rdata`, `.idata` and `.rsrc`
+are byte-identical; `.text` is 92.56% and initialized `.data` is 99.78%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -117,7 +123,7 @@ Some oversized game functions still displace neighbors, recorded in
 
 The entire CRT address range, including padding, the import thunk and the
 final game-generated exception thunks, is byte-identical. Remaining data
-work includes 14 allocations without a recovered destination (97 bytes
+work includes 13 allocations without a recovered destination (93 bytes
 of constants and metadata), recorded in `build/layout/data-unplaced.json`.
 `gtmap_persp32_fp` now matches all 4,038 bytes at its original address.
 Restoring signed UV shifts in its first five pixels, ordering one independent
