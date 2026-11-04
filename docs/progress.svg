@@ -44,14 +44,14 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider II · Tomb2.exe</text>
 <g transform="translate(0 30)">
-<rect width="189.43" height="12" x="130" y="1.50" class="named"/>
-<rect width="12.24" height="12" x="319.43" y="1.50" class="nonmatching"/>
+<rect width="189.59" height="12" x="130" y="1.50" class="named"/>
+<rect width="12.08" height="12" x="319.59" y="1.50" class="nonmatching"/>
 <rect width="0.33" height="12" x="331.67" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">93.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">1145/1221 · +74 nonmatching</text>
-<rect width="172" height="12" x="130" y="18.50" class="named"/>
-<rect width="29.91" height="12" x="302" y="18.50" class="nonmatching"/>
+<text text-anchor="end" x="382" y="7.50">93.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">1146/1221 · +73 nonmatching</text>
+<rect width="172.08" height="12" x="130" y="18.50" class="named"/>
+<rect width="29.83" height="12" x="302.08" y="18.50" class="nonmatching"/>
 <rect width="0.10" height="12" x="331.91" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">85.2%</text>
@@ -61,29 +61,29 @@
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <text text-anchor="end" x="382" y="41.50">92.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="41">33k/36k · 198 functions</text>
-<rect width="182.88" height="12" x="130" y="52.50" class="named"/>
-<rect width="19.12" height="12" x="312.88" y="52.50" class="todo"/>
+<rect width="182.91" height="12" x="130" y="52.50" class="named"/>
+<rect width="19.09" height="12" x="312.91" y="52.50" class="todo"/>
 <text text-anchor="start" x="0" y="58.50">Executable code</text>
-<text text-anchor="end" x="382" y="58.50">90.5%</text>
+<text text-anchor="end" x="382" y="58.50">90.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="58">363k/401k · 5k not in symbols.csv</text>
 <rect width="198.77" height="12" x="130" y="69.50" class="named"/>
 <rect width="3.23" height="12" x="328.77" y="69.50" class="todo"/>
 <text text-anchor="start" x="0" y="75.50">Executable data</text>
 <text text-anchor="end" x="382" y="75.50">98.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="75">36k/36k · 706/706 globals in place · 28 not in the map</text>
-<rect width="193.47" height="12" x="130" y="86.50" class="named"/>
-<rect width="8.53" height="12" x="323.47" y="86.50" class="todo"/>
+<rect width="193.48" height="12" x="130" y="86.50" class="named"/>
+<rect width="8.52" height="12" x="323.48" y="86.50" class="todo"/>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <text text-anchor="end" x="382" y="92.50">95.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="92">874k/913k · 38556 bytes differ</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="92">874k/913k · 38491 bytes differ</text>
 </g>
 <g transform="translate(0 145)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">92.06% (1124)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">6.06% (74)</tspan> · <tspan class="todo">0.16% (2)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">92.14% (1125)</tspan> · <tspan class="decompiled">1.72% (21)</tspan> · <tspan class="nonmatching">5.98% (73)</tspan> · <tspan class="todo">0.16% (2)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="687.66" height="6" x="0" y="0" class="named"/>
-<rect width="12.85" height="6" x="687.66" y="0" class="decompiled"/>
-<rect width="45.27" height="6" x="700.50" y="0" class="nonmatching"/>
+<rect width="688.27" height="6" x="0" y="0" class="named"/>
+<rect width="12.85" height="6" x="688.27" y="0" class="decompiled"/>
+<rect width="44.66" height="6" x="701.12" y="0" class="nonmatching"/>
 <rect width="1.22" height="6" x="745.78" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
@@ -1208,7 +1208,7 @@
 <rect width="12" height="12" x="270" y="330" class="named"><title>0x00454b10 GameMain (720 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="330" class="named"><title>0x00454de0 TitleSequence (272 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="330" class="named"><title>0x00454ef0 CheckCheatMode (852 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="330" class="nonmatching"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="330" class="named"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x004552d0 S_LoadSettings (219 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="330" class="named"><title>0x004553b0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="330" class="named"><title>0x00455400 CalcVolume (42 bytes)</title></rect>
@@ -1312,11 +1312,11 @@
 </g>
 <g transform="translate(0 575)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">84.72%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">14.81%</tspan> · <tspan class="todo">0.04%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">84.75%</tspan> · <tspan class="decompiled">0.43%</tspan> · <tspan class="nonmatching">14.77%</tspan> · <tspan class="todo">0.04%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="632.83" height="6" x="0" y="0" class="named"/>
-<rect width="3.25" height="6" x="632.83" y="0" class="decompiled"/>
-<rect width="110.60" height="6" x="636.07" y="0" class="nonmatching"/>
+<rect width="633.10" height="6" x="0" y="0" class="named"/>
+<rect width="3.25" height="6" x="633.10" y="0" class="decompiled"/>
+<rect width="110.33" height="6" x="636.34" y="0" class="nonmatching"/>
 <rect width="0.33" height="6" x="746.67" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
@@ -1953,7 +1953,7 @@
 <rect width="7.34" height="6.99" x="580.32" y="279.13" class="named"><title>0x00434db0 BellControl (126 bytes)</title></rect>
 <rect width="7.34" height="6.99" x="580.32" y="289.12" class="named"><title>0x0044fe20 FlashConflicts (126 bytes)</title></rect>
 <rect width="7.34" height="6.99" x="580.32" y="299.11" class="named"><title>0x00451fb0 S_SyncPictureBufferPalette (126 bytes)</title></rect>
-<rect width="7.34" height="6.91" x="580.32" y="309.10" class="nonmatching"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
+<rect width="7.34" height="6.91" x="580.32" y="309.10" class="named"><title>0x00455250 S_SaveSettings (125 bytes)</title></rect>
 <rect width="7.34" height="6.83" x="580.32" y="319.01" class="named"><title>0x0041c010 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="7.34" height="6.83" x="580.32" y="328.84" class="named"><title>0x00427250 GlobalItemReplace (124 bytes)</title></rect>
 <rect width="7.34" height="6.83" x="580.32" y="338.68" class="named"><title>0x00428100 lara_as_stepright (124 bytes)</title></rect>

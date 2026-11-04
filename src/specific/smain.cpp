@@ -413,7 +413,8 @@ extern "C" void S_SaveSettings(void)
     OpenGameRegistryKey("Game");
     SetRegistryDwordValue("MusicVolume", Option_Music_Volume);
     SetRegistryDwordValue("SoundFXVolume", Option_SoundFX_Volume);
-    SetRegistryDwordValue("DetailLevel", detail_level);
+    DWORD detailLevel = detail_level;
+    SetRegistryDwordValue("DetailLevel", detailLevel);
     SetRegistryFloatValue("Sizer", game_sizer);
     SetRegistryBinaryValue("Layout", (LPBYTE)layout[1], sizeof(layout[1]));
     CloseGameRegistryKey();
