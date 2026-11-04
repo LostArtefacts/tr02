@@ -757,7 +757,7 @@ extern "C" void InsertClippedPoly_Textured(int vtx_count, float z, int poly_type
     info3dptr += 5;
     zbuf = SavedAppSettings.ZBuffer;
     vbuf = VBuffer;
-    for (i = vtx_count; i; i--) {
+    for (i = vtx_count; i--;) {
         vtx->sx = vbuf->x;
         vtx->sy = vbuf->y;
         if (zbuf)
