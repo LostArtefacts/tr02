@@ -364,7 +364,6 @@ typedef struct uvgp_info {
     float voz;
 } UVGP_INFO;
 
-#pragma optimize("a", off)
 int xgen_xguvpersp_fp(sint16 *iptr)
 {
     UVGP_INFO *ptr1, *ptr2;
@@ -452,8 +451,6 @@ int xgen_xguvpersp_fp(sint16 *iptr)
     xgen_ymax = max_y;
     return (1);
 }
-#pragma optimize("a", on)
-
 
 #define SINGLE_MASK 0xffff8000
 

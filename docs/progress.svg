@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.07" height="12" x="0" y="0" class="named"><title>1135 · 92.96%</title></rect>
-<rect width="3.99" height="12" x="197.07" y="0" class="decompiled"><title>23 · 1.88%</title></rect>
-<rect width="10.59" height="12" x="201.06" y="0" class="nonmatching"><title>61 · 5%</title></rect>
+<rect width="197.24" height="12" x="0" y="0" class="named"><title>1136 · 93.04%</title></rect>
+<rect width="3.99" height="12" x="197.24" y="0" class="decompiled"><title>23 · 1.88%</title></rect>
+<rect width="10.42" height="12" x="201.24" y="0" class="nonmatching"><title>60 · 4.91%</title></rect>
 <rect width="0.35" height="12" x="211.65" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
-<text text-anchor="end" x="402" y="7.50">94.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="7"><tspan class="named">1135</tspan> · <tspan class="decompiled">23</tspan> · <tspan class="nonmatching">61</tspan> · <tspan class="todo">2</tspan></text>
+<text text-anchor="end" x="402" y="7.50">94.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="7"><tspan class="named">1136</tspan> · <tspan class="decompiled">23</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="184.25" height="12" x="0" y="0" class="named"><title>301 KB · 86.91%</title></rect>
-<rect width="0.99" height="12" x="184.25" y="0" class="decompiled"><title>2 KB · 0.47%</title></rect>
-<rect width="26.66" height="12" x="185.24" y="0" class="nonmatching"><title>44 KB · 12.58%</title></rect>
+<rect width="184.65" height="12" x="0" y="0" class="named"><title>301 KB · 87.10%</title></rect>
+<rect width="0.99" height="12" x="184.65" y="0" class="decompiled"><title>2 KB · 0.47%</title></rect>
+<rect width="26.27" height="12" x="185.64" y="0" class="nonmatching"><title>43 KB · 12.39%</title></rect>
 <rect width="0.10" height="12" x="211.91" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
-<text text-anchor="end" x="402" y="24.50">87.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="24"><tspan class="named">301 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">44 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
+<text text-anchor="end" x="402" y="24.50">87.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="417" y="24"><tspan class="named">301 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">43 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="212" height="12" x="0" y="0" class="named"><title>36 KB · 100%</title></rect>
@@ -129,7 +129,7 @@
 <rect width="12" height="12" x="495" y="0" class="named"><title>0x00402c40 xgen_x (210 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="named"><title>0x00402d20 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x00402e70 xgen_xguv (537 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="0" class="nonmatching"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="0" class="named"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00403320 gtmap_persp32_fp (4038 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="nonmatching"><title>0x004042f0 wgtmap_persp32_fp (5316 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x004057c0 draw_poly_gtmap_persp (55 bytes)</title></rect>
@@ -1449,7 +1449,7 @@
 <rect width="19.40" height="19.39" x="286.02" y="330.68" class="named"><title>0x004174e0 TigerControl (672 bytes)</title></rect>
 <rect width="19.40" height="18.93" x="286.02" y="353.07" class="named"><title>0x0043cc50 SharkControl (656 bytes)</title></rect>
 <rect width="18.13" height="20.22" x="308.42" y="0" class="named"><title>0x00434a30 ControlDeathSlide (655 bytes)</title></rect>
-<rect width="18.13" height="19.89" x="308.42" y="23.22" class="nonmatching"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
+<rect width="18.13" height="19.89" x="308.42" y="23.22" class="named"><title>0x00403090 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="18.13" height="19.76" x="308.42" y="46.11" class="named"><title>0x00414e50 GetHeight (640 bytes)</title></rect>
 <rect width="18.13" height="19.67" x="308.42" y="68.87" class="nonmatching"><title>0x004020a0 calc_roomvert (637 bytes)</title></rect>
 <rect width="18.13" height="19.64" x="308.42" y="91.54" class="named"><title>0x0043d3d0 DoShift (636 bytes)</title></rect>
