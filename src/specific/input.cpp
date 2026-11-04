@@ -78,6 +78,8 @@ struct DISPLAY_MODE {
     int height;
     int bpp;
     int vga;
+    DISPLAY_MODE() {}
+    DISPLAY_MODE(int w, int h, int b, int v) : width(w), height(h), bpp(b), vga(v) {}
     bool CompareVideoModes(DISPLAY_MODE *mode);
 };
 
@@ -91,6 +93,29 @@ typedef struct {
     DISPLAY_MODE_NODE *head;
     DISPLAY_MODE_NODE *tail;
     DWORD dwCount;
+    void *GetPrev(void *position) {
+        DISPLAY_MODE_NODE *node = (DISPLAY_MODE_NODE *)position;
+        if (node) node = node->previous;
+        return node;
+    }
+    void *GetNext(void *position) {
+        DISPLAY_MODE_NODE *node = (DISPLAY_MODE_NODE *)position;
+        if (node) node = node->next;
+        return node;
+    }
+    DISPLAY_MODE &operator[](void *position) {return ((DISPLAY_MODE_NODE *)position)->body;}
+    void *Find(DISPLAY_MODE &value)
+    {
+        DISPLAY_MODE_NODE *node = head;
+        if (!node)
+            return NULL;
+        do {
+            if (!node->body.CompareVideoModes(&value))
+                return node;
+            node = node->next;
+        } while (node);
+        return tail;
+    }
 } DISPLAY_MODE_LIST;
 
 typedef struct {
@@ -167,9 +192,7 @@ int S_UpdateInput()
     bool tApply;
     int width;
     int height;
-    DISPLAY_MODE_NODE *mode;
     DISPLAY_MODE_LIST *modeList;
-    DISPLAY_MODE targetMode;
     APP_SETTINGS newSettings;
     static int medi_used = 0;
     static bool tDebounceF3 = false;
@@ -361,24 +384,7 @@ int S_UpdateInput()
                     if (!IsModeListEmpty(modeList))
                     {
                         newSettings.RenderMode = RM_Hardware;
-                        targetMode.width = GameVidWidth;
-                        targetMode.height = GameVidHeight;
-                        targetMode.bpp = 16;
-                        targetMode.vga = 0;
-                        mode = modeList->head;
-                        if (mode)
-                        {
-                            while (mode->body.CompareVideoModes(&targetMode))
-                            {
-                                mode = mode->next;
-                                if (!mode)
-                                {
-                                    mode = modeList->tail;
-                                    break;
-                                }
-                            }
-                        }
-                        newSettings.VideoMode = mode;
+                        newSettings.VideoMode = (DISPLAY_MODE_NODE *)CurrentDisplayAdapter.hwDispModeList.Find(DISPLAY_MODE(GameVidWidth, GameVidHeight, 16, 0));
                         newSettings.FullScreen = true;
                         tApply = true;
                     }
@@ -389,24 +395,7 @@ int S_UpdateInput()
                     if (!IsModeListEmpty(modeList))
                     {
                         newSettings.RenderMode = RM_Software;
-                        targetMode.width = GameVidWidth;
-                        targetMode.height = GameVidHeight;
-                        targetMode.bpp = 8;
-                        targetMode.vga = 0;
-                        mode = modeList->head;
-                        if (mode)
-                        {
-                            while (mode->body.CompareVideoModes(&targetMode))
-                            {
-                                mode = mode->next;
-                                if (!mode)
-                                {
-                                    mode = modeList->tail;
-                                    break;
-                                }
-                            }
-                        }
-                        newSettings.VideoMode = mode;
+                        newSettings.VideoMode = (DISPLAY_MODE_NODE *)CurrentDisplayAdapter.swDispModeList.Find(DISPLAY_MODE(GameVidWidth, GameVidHeight, 8, 0));
                         newSettings.FullScreen = true;
                         tApply = true;
                     }
@@ -424,24 +413,7 @@ int S_UpdateInput()
                     modeList = &CurrentDisplayAdapter.swDispModeList;
                 if (!IsModeListEmpty(modeList))
                 {
-                    targetMode.width = GameVidWidth;
-                    targetMode.height = GameVidHeight;
-                    targetMode.bpp = GameVidBPP;
-                    targetMode.vga = 0;
-                    mode = modeList->head;
-                    if (mode)
-                    {
-                        while (mode->body.CompareVideoModes(&targetMode))
-                        {
-                            mode = mode->next;
-                            if (!mode)
-                            {
-                                mode = modeList->tail;
-                                break;
-                            }
-                        }
-                    }
-                    newSettings.VideoMode = mode;
+                    newSettings.VideoMode = (DISPLAY_MODE_NODE *)modeList->Find(DISPLAY_MODE(GameVidWidth, GameVidHeight, GameVidBPP, 0));
                     tApply = true;
                 }
             }
@@ -471,59 +443,57 @@ int S_UpdateInput()
     {
         if (rawkey(DIK_F1) && SavedAppSettings.FullScreen)
         {
-            mode = SavedAppSettings.VideoMode;
+            void *position;
             if (SavedAppSettings.RenderMode == RM_Hardware)
             {
-                for (;;)
+                DISPLAY_MODE &currentMode = CurrentDisplayAdapter.hwDispModeList[SavedAppSettings.VideoMode];
+                position = SavedAppSettings.VideoMode;
+                while ((position = CurrentDisplayAdapter.hwDispModeList.GetPrev(position)))
                 {
-                    if (mode)
-                        mode = mode->previous;
-                    if (!mode)
-                        break;
+                    DISPLAY_MODE &candidate = CurrentDisplayAdapter.hwDispModeList[position];
                     if (tShift)
                     {
-                        if (mode->body.width == SavedAppSettings.VideoMode->body.width && mode->body.height == SavedAppSettings.VideoMode->body.height && mode->body.vga == SavedAppSettings.VideoMode->body.vga && mode->body.bpp < SavedAppSettings.VideoMode->body.bpp)
+                        if (candidate.width == currentMode.width && candidate.height == currentMode.height && candidate.vga == currentMode.vga && candidate.bpp < currentMode.bpp)
                             break;
                     }
-                    else if (mode->body.vga == SavedAppSettings.VideoMode->body.vga && mode->body.bpp == SavedAppSettings.VideoMode->body.bpp)
+                    else if (candidate.vga == currentMode.vga && candidate.bpp == currentMode.bpp)
                         break;
                 }
             }
-            else if (mode)
-                mode = mode->previous;
-            if (mode)
+            else
+                position = CurrentDisplayAdapter.swDispModeList.GetPrev(SavedAppSettings.VideoMode);
+            if (position)
             {
                 newSettings = SavedAppSettings;
-                newSettings.VideoMode = mode;
+                newSettings.VideoMode = (DISPLAY_MODE_NODE *)position;
                 GameApplySettings(&newSettings);
             }
         }
         if (rawkey(DIK_F2) && SavedAppSettings.FullScreen)
         {
-            mode = SavedAppSettings.VideoMode;
+            void *position;
             if (SavedAppSettings.RenderMode == RM_Hardware)
             {
-                for (;;)
+                DISPLAY_MODE &currentMode = CurrentDisplayAdapter.hwDispModeList[SavedAppSettings.VideoMode];
+                position = SavedAppSettings.VideoMode;
+                while ((position = CurrentDisplayAdapter.hwDispModeList.GetNext(position)))
                 {
-                    if (mode)
-                        mode = mode->next;
-                    if (!mode)
-                        break;
+                    DISPLAY_MODE &candidate = CurrentDisplayAdapter.hwDispModeList[position];
                     if (tShift)
                     {
-                        if (mode->body.width == SavedAppSettings.VideoMode->body.width && mode->body.height == SavedAppSettings.VideoMode->body.height && mode->body.vga == SavedAppSettings.VideoMode->body.vga && mode->body.bpp > SavedAppSettings.VideoMode->body.bpp)
+                        if (candidate.width == currentMode.width && candidate.height == currentMode.height && candidate.vga == currentMode.vga && candidate.bpp > currentMode.bpp)
                             break;
                     }
-                    else if (mode->body.vga == SavedAppSettings.VideoMode->body.vga && mode->body.bpp == SavedAppSettings.VideoMode->body.bpp)
+                    else if (candidate.vga == currentMode.vga && candidate.bpp == currentMode.bpp)
                         break;
                 }
             }
-            else if (mode)
-                mode = mode->next;
-            if (mode)
+            else
+                position = CurrentDisplayAdapter.swDispModeList.GetNext(SavedAppSettings.VideoMode);
+            if (position)
             {
                 newSettings = SavedAppSettings;
-                newSettings.VideoMode = mode;
+                newSettings.VideoMode = (DISPLAY_MODE_NODE *)position;
                 GameApplySettings(&newSettings);
             }
         }

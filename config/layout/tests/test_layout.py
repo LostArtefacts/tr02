@@ -106,6 +106,11 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x4042F0, 5316), self.original.read(0x4042F0, 5316)
         )
 
+    def test_input_mode_switching_matches_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x44DAD0, 2766), self.original.read(0x44DAD0, 2766)
+        )
+
     def test_retained_game_defaults_match_original(self) -> None:
         for address, size in (
             (0x466B78, 4),

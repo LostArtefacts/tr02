@@ -121,16 +121,15 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 17,981 bytes (95.80% to 98.03%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 95.51%.
+38,299 to 15,524 bytes (95.80% to 98.30%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 96.13%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
 sit in the original data section, eliminating `0x16d0` bytes of private state.
 
 Most remaining code differences are in functions already listed in
-`hooks.allow_diff`. The largest raw function differences are
-`S_UpdateInput` (2,457). These counts compare each function at its mapped address.
+`hooks.allow_diff`. The remaining differences are in game rendering, collision and platform routines.
 Some oversized game functions still displace neighbors, recorded in
 `build/layout/code-moved.json`.
 
@@ -152,7 +151,9 @@ floating-point updates in both sampling branches and the short-span UV
 temporaries reproduces its instruction order. Removing a redundant tail
 shade-step assignment retains the original stack slot. The same `/Oa` setting
 also matches `xgen_xg` and `xgen_xguvpersp_fp`, preserving all previous matches.
-Input search variants remain outside `src/`.
+`S_UpdateInput` now matches all 2,766 bytes. Its mode searches retain the
+original constructor temporaries, and the previous/next loops retain the
+position iterators and current/candidate mode references.
 
 The standalone window cleanup, sound cleanup, path handling, eight CD playback
 routines and audio-index loader reproduce the Steam patches as symbolic
