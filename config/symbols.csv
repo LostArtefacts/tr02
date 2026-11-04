@@ -965,8 +965,8 @@ address,size,name,symbol
 0x0044af50,613,LoadSamples,_LoadSamples
 0x0044b1c0,54,ChangeFileNameExtension,_ChangeFileNameExtension
 0x0044b200,38,GetFullPath,_GetFullPath
-0x0044b226,,Var44b226,_Var44b226
-0x0044b27e,,Var44b27e,_Var44b27e
+0x0044b226,88,Var44b226,_Var44b226
+0x0044b27e,66,Var44b27e,_Var44b27e
 0x0044b310,586,LoadLevel,?LoadLevel@@YAHPADH@Z
 0x0044b560,24,S_LoadLevelFile,_S_LoadLevelFile
 0x0044b580,42,S_UnloadLevelFile,_S_UnloadLevelFile
@@ -1632,6 +1632,7 @@ address,size,name,symbol
 0x00466490,4,fade_value,?fade_value@@3HA
 0x00466494,4,fade_limit,?fade_limit@@3HA
 0x00466498,4,fade_adder,?fade_adder@@3HA
+0x0046649c,24,Var46649c,_Var46649c
 0x004664b4,28,RendererReinitFailed,_RendererReinitFailed
 0x004664d0,6,ModeInfoFormat,_ModeInfoFormat
 0x004664d8,9,Var4664d8,_Var4664d8
