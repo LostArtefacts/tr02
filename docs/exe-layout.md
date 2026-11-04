@@ -225,3 +225,8 @@ Room-object drawing matches all 548 bytes at `0x419640`. Static meshes use
 the original signed countdown, items and effects share the list index, and
 the item-array binding is refreshed after each draw callback before reading
 the next link. Room bounds are reset in their original assignment order.
+
+`SkidooControl` spans 1,114 bytes, including the ten-byte case map at
+`0x43eb00`. Its original 1,110-byte symbol entry omitted the final four
+reachable map entries. Function comparison and placement now cover the
+complete table through `0x43eb09`.
