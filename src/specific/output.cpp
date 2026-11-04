@@ -935,3 +935,11 @@ LIGHT_INFO dynamic[10];
 sint32 number_dynamics;
 int SunsetTimer;
 #endif
+
+#ifdef TR2_EXE
+extern "C" {
+int GnR = 0xc0;
+int GnG = 0xc0;
+int GnB = 0xc0;
+}
+#endif

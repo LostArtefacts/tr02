@@ -160,3 +160,9 @@ int malloc_used;
 int malloc_free;
 int wibble_light[WIBBLE_SIZE][32];
 #endif
+
+#ifdef TR2_EXE
+extern "C" {
+sint16 GameSetupScreenSize[2] = {320, 200};
+}
+#endif

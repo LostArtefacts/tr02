@@ -446,3 +446,9 @@ int GameMode;
 uint32 SaveGameReqFlags2[24];
 uint32 SaveGameReqFlags1[24];
 #endif
+
+#ifdef TR2_EXE
+extern "C" {
+uint32 StartLevel = 1;
+}
+#endif

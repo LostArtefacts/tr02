@@ -1275,3 +1275,9 @@ TEXTSTRING *dtext[5];
 TEXTSTRING *sa_text[4];
 TEXTSTRING *ControlTextInfo[2];
 #endif
+
+#ifdef TR2_EXE
+extern "C" {
+sint16 normal_pitch = 0x1700;
+}
+#endif

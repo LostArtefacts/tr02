@@ -29,6 +29,62 @@ class Chunk:
     new: int | None = None
 
 
+def recover_unused_pointers(
+    chunks: list[Chunk],
+    parsed: dict[str, coff.Object],
+    ours: ce.PE,
+    original: ce.PE,
+    occupied: dict[int, Chunk],
+) -> list[Chunk]:
+    groups: dict[bytes, list[Chunk]] = {}
+    for chunk in chunks:
+        if chunk.new is not None or chunk.size != 4 or chunk.readonly:
+            continue
+        if not chunk.path.startswith("build/obj_crt/"):
+            continue
+        section = parsed[chunk.path].sections[chunk.section - 1]
+        if not any(
+            off == chunk.offset and kind == coff.DIR32
+            for off, _, kind in section.relocs
+        ):
+            continue
+        payload = ours.read(chunk.old, 4)
+        if original.section_of(int.from_bytes(payload, "little")) != ".text":
+            continue
+        referenced = False
+        for path, obj in parsed.items():
+            for section in obj.sections:
+                for off, index, kind in section.relocs:
+                    symbol = obj.symbols[index]
+                    if symbol.name in chunk.names:
+                        referenced = True
+                    if path == chunk.path and symbol.section == chunk.section:
+                        addend = struct.unpack_from("<I", section.data, off)[0]
+                        if chunk.offset <= symbol.value + addend < chunk.offset + 4:
+                            referenced = True
+        if not referenced:
+            groups.setdefault(payload, []).append(chunk)
+    recovered: list[Chunk] = []
+    va, vsize, rawptr, rawsize = original.sections[".data"]
+    data = original.data[rawptr : rawptr + min(vsize, rawsize)]
+    for payload, group in groups.items():
+        hits = [
+            va + offset
+            for offset in range(0, len(data) - 3, 4)
+            if data[offset : offset + 4] == payload
+            and not any(va + offset + index in occupied for index in range(4))
+        ]
+        if len(hits) != len(group):
+            continue
+        for chunk, address in zip(sorted(group, key=lambda c: c.old), hits):
+            chunk.new = address
+            chunk.candidates[address] += 1
+            for index in range(4):
+                occupied[address + index] = chunk
+            recovered.append(chunk)
+    return recovered
+
+
 def fixed_reference(obj: coff.Object, index: int, fixed_names: set[str]) -> bool:
     symbol = obj.symbols[index]
     return (
@@ -474,6 +530,7 @@ def prepare() -> None:
                 occupied[x] = chunk
             placed.append(chunk)
             break
+    placed.extend(recover_unused_pointers(chunks, parsed, ours, orig, occupied))
     unplaced = [c for c in chunks if c.new is None]
     print(
         "DATA CHUNKS",

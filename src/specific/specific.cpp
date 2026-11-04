@@ -275,3 +275,9 @@ int CD_LoopCounter;
 int sound_active;
 char *Var5275f8;
 #endif
+
+#ifdef TR2_EXE
+extern "C" {
+char AudioDeviceType[] = "waveaudio";
+}
+#endif

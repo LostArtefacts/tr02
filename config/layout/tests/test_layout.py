@@ -106,6 +106,30 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x4042F0, 5316), self.original.read(0x4042F0, 5316)
         )
 
+    def test_retained_game_defaults_match_original(self) -> None:
+        for address, size in (
+            (0x466B78, 4),
+            (0x466BE0, 4),
+            (0x467728, 2),
+            (0x467740, 12),
+            (0x467D16, 10),
+            (0x46981C, 12),
+        ):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
+
+    def test_retained_crt_exception_filter_pointers_match_original(self) -> None:
+        for address in (0x469618, 0x469658):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(self.ours.read(address, 4), self.original.read(address, 4))
+
+    def test_initialized_data_is_byte_identical(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x464000, 0x8400), self.original.read(0x464000, 0x8400)
+        )
+
     def test_recovered_runtime_state_retains_original_addresses(self) -> None:
         mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
         for name, address in {

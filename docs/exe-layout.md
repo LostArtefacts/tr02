@@ -64,6 +64,13 @@ linker remains available through `customize=False`.
    the old Hires registry label and the month-name table come from C
    initializers in their owning source files. The version identity keeps
    the original release's `Dec 10 1997` date independently of the rebuild date.
+   The original initial level, setup screen dimensions, normal sample pitch,
+   RGB defaults and retained audio device type also have C initializers.
+   Three unreferenced runtime words retain their release initializers;
+   their semantic names remain unresolved. Unreferenced CRT function-pointer
+   allocations can fill an equal number of identical remaining target slots
+   in compiled allocation order. References or extra possible slots prevent
+   this recovery, so named or observable state still requires an identity.
 5. Place the compiled allocations, apply address relocations, serialize the
    recovered import ABI, and update resource directory metadata. Synchronize
    the final link map with the emitted image.
@@ -114,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 21,218 bytes (95.80% to 97.68%). Headers, `.rdata`, `.idata` and `.rsrc`
-are byte-identical; `.text` is 94.72% and initialized `.data` is 99.90%.
+38,299 to 21,183 bytes (95.80% to 97.68%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 94.72%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -130,8 +137,9 @@ Some oversized game functions still displace neighbors, recorded in
 
 The entire CRT address range, including padding, the import thunk and the
 final game-generated exception thunks, is byte-identical. Remaining data
-work includes 10 allocations without a recovered destination (48 bytes
-of constants and metadata), recorded in `build/layout/data-unplaced.json`.
+work retains eight constant allocations without confirmed identities (40 bytes),
+recorded in `build/layout/data-unplaced.json`. Their fallback placements already
+match the original `.rdata` contents. All remaining byte differences are code.
 The current joystick and sound-adapter initializers each match all 57 bytes
 at `0x447220` and `0x447bf0`. Their member-string constructors inline while
 node destruction retains the original inlining depth. `gtmap_persp32_fp` matches all 4,038 bytes at its

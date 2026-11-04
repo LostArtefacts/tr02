@@ -20,8 +20,55 @@ from config.layout.data import (
     Chunk,
     fixed_reference,
     recover_crt_sections,
+    recover_unused_pointers,
     recover_vftable_prefixes,
 )
+
+
+class UnusedPointerTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.payload = struct.pack("<I", 0x401000)
+        self.ours = Mock(spec=ce.PE)
+        self.ours.read.return_value = self.payload
+        self.original = Mock(spec=ce.PE)
+        self.original.section_of.return_value = ".text"
+        self.original.data = self.payload + bytes(4) + self.payload
+        self.original.sections = {".data": (0x460000, 12, 0, 12)}
+        self.chunks: list[Chunk] = []
+        self.objects: dict[str, coff.Object] = {}
+        for index in range(2):
+            path = f"build/obj_crt/filter{index}.obj"
+            name = f"_filter{index}"
+            obj = Mock(spec=coff.Object)
+            obj.sections = [
+                coff.Section(".data", bytes(4), [(0, 1, coff.DIR32)], coff.RDATA)
+            ]
+            obj.symbols = [
+                coff.Symbol(name, 0, 1, 2),
+                coff.Symbol("_handler", 0, 0, 2),
+            ]
+            self.objects[path] = cast(coff.Object, obj)
+            self.chunks.append(Chunk(0x470000 + index * 4, 4, [name], path, 1, 0, False))
+
+    def recover(self) -> list[Chunk]:
+        return recover_unused_pointers(
+            self.chunks, self.objects, self.ours, self.original, {}
+        )
+
+    def test_indistinguishable_unused_pointers_fill_their_remaining_slots(self) -> None:
+        self.assertEqual(self.recover(), self.chunks)
+        self.assertEqual([chunk.new for chunk in self.chunks], [0x460000, 0x460008])
+
+    def test_extra_possible_destination_keeps_identity_ambiguous(self) -> None:
+        self.original.data += self.payload
+        self.original.sections[".data"] = (0x460000, 16, 0, 16)
+        self.assertEqual(self.recover(), [])
+
+    def test_referenced_pointer_needs_an_identity_binding(self) -> None:
+        self.objects[self.chunks[0].path].sections.append(
+            coff.Section(".text", bytes(4), [(0, 0, coff.DIR32)], coff.TEXT)
+        )
+        self.assertEqual(self.recover(), [])
 
 
 class ReferenceOwnershipTests(unittest.TestCase):
