@@ -89,9 +89,17 @@ Core's `List::GetNext`. The equivalent ternary in each loop produced a branch
 to the loop test instead of directly to its exit. The local helpers retain the
 current partial device types and leave the surrounding declarations intact.
 
-The full comparison is now 1149/1220 functions and 295113 matching bytes, with
-71 nonmatches and no lost matches. All three functions have been removed from
-`hooks.allow_diff`.
+The next pass also recovered three matches. `DetonatorCollision` clears Lara's
+roll when spawning the gong bonger, as both the original executable and the
+surviving source show. `InsertClippedPoly_Textured` uses the reference's
+decrement-in-condition loop. `phd_RotYXZsuperpack` uses the reference's 32-bit
+combined rotation and shared advance for the single-axis cases.
+
+The full comparison is now 1152/1220 functions and 296273 matching bytes, with
+68 nonmatches and no lost matches. All six functions have been removed from
+`hooks.allow_diff`. The standalone image is 95.80% identical, with 38368
+differing bytes. Further UV-adjustment and edge-buffer ordering experiments
+found no additional matches and were not applied.
 
 - Original game C units generally include `game.h`, which reaches platform types, rendering types, and the game types/module headers. Our `game.h` reaches a different split of those declarations. For example, restoring `box.c` to `game.h` alone leaves `CREATURE_INFO` undeclared.
 - Original platform/rendering units generally begin with `standard.h`, followed by `global.h` and module headers. The new `standard.h` centralizes the Windows, DirectX and CRT includes; the unused `specific/stypes.h` addition was removed.

@@ -1396,41 +1396,37 @@ void phd_RotYXZpack(sint32 rots);
 void phd_RotYXZsuperpack(sint16 **pprot, int skip)
 {
     uint16 *prot;
-    uint16 packed;
+    sint32 packed;
 
-    for (; skip; skip--)
+    while (skip)
     {
         prot = (uint16 *)*pprot;
-        if (*prot & 0xc000)
+        if (*prot & (3 << 14))
             *pprot += 1;
         else
             *pprot += 2;
+        skip--;
     }
 
     prot = (uint16 *)*pprot;
-    packed = *prot;
-    switch (packed >> 14)
+    switch (*prot >> 14)
     {
     case 0:
-        phd_RotYXZpack(((uint32)packed << 16) + *(prot + 1));
+        packed = ((uint32)*prot << 16) + *(prot + 1);
+        phd_RotYXZpack(packed);
         *pprot += 2;
-        break;
-
+        return;
     case 1:
-        phd_RotX((PHD_ANGLE)(packed << 6));
-        *pprot += 1;
+        phd_RotX((PHD_ANGLE)((*prot & 1023) << 6));
         break;
-
     case 2:
-        phd_RotY((PHD_ANGLE)(packed << 6));
-        *pprot += 1;
+        phd_RotY((PHD_ANGLE)((*prot & 1023) << 6));
         break;
-
     default:
-        phd_RotZ((PHD_ANGLE)(packed << 6));
-        *pprot += 1;
+        phd_RotZ((PHD_ANGLE)((*prot & 1023) << 6));
         break;
     }
+    *pprot += 1;
 }
 
 void InterpolateMatrix(void);

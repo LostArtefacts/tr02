@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="186.45" height="12" x="0" y="0" class="named"><title>1127 · 92.30%</title></rect>
-<rect width="3.47" height="12" x="186.45" y="0" class="decompiled"><title>21 · 1.72%</title></rect>
-<rect width="11.75" height="12" x="189.92" y="0" class="nonmatching"><title>71 · 5.81%</title></rect>
+<rect width="186.95" height="12" x="0" y="0" class="named"><title>1130 · 92.55%</title></rect>
+<rect width="3.47" height="12" x="186.95" y="0" class="decompiled"><title>21 · 1.72%</title></rect>
+<rect width="11.25" height="12" x="190.42" y="0" class="nonmatching"><title>68 · 5.57%</title></rect>
 <rect width="0.33" height="12" x="201.67" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">94.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">1127</tspan> · <tspan class="decompiled">21</tspan> · <tspan class="nonmatching">71</tspan> · <tspan class="todo">2</tspan></text>
+<text text-anchor="end" x="382" y="7.50">94.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">1130</tspan> · <tspan class="decompiled">21</tspan> · <tspan class="nonmatching">68</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="171.42" height="12" x="0" y="0" class="named"><title>294 KB · 84.86%</title></rect>
-<rect width="0.88" height="12" x="171.42" y="0" class="decompiled"><title>2 KB · 0.43%</title></rect>
-<rect width="29.61" height="12" x="172.30" y="0" class="nonmatching"><title>51 KB · 14.66%</title></rect>
+<rect width="172.10" height="12" x="0" y="0" class="named"><title>295 KB · 85.20%</title></rect>
+<rect width="0.88" height="12" x="172.10" y="0" class="decompiled"><title>2 KB · 0.43%</title></rect>
+<rect width="28.94" height="12" x="172.98" y="0" class="nonmatching"><title>50 KB · 14.32%</title></rect>
 <rect width="0.10" height="12" x="201.91" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="24.50">85.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">294 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">51 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
+<text text-anchor="end" x="382" y="24.50">85.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">295 KB</tspan> · <tspan class="decompiled">2 KB</tspan> · <tspan class="nonmatching">50 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="187.14" height="12" x="0" y="0" class="named"><title>33 KB · 92.64%</title></rect>
@@ -71,8 +71,8 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="41"><tspan class="named">33 KB</tspan> · <tspan class="todo">3 KB</tspan> · 198 functions</text>
 <text text-anchor="start" x="0" y="58.50">Executable code</text>
 <g transform="translate(130 52.50)">
-<rect width="182.91" height="12" x="0" y="0" class="named"><title>363 KB · 90.55%</title></rect>
-<rect width="19.09" height="12" x="182.91" y="0" class="todo"><title>38 KB · 9.45%</title></rect>
+<rect width="182.97" height="12" x="0" y="0" class="named"><title>363 KB · 90.58%</title></rect>
+<rect width="19.03" height="12" x="182.97" y="0" class="todo"><title>38 KB · 9.42%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="58.50">90.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="58"><tspan class="named">363 KB</tspan> · <tspan class="todo">38 KB</tspan> · 5 KB not in symbols.csv</text>
@@ -85,11 +85,11 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="75"><tspan class="named">36 KB</tspan> · <tspan class="todo">1 KB</tspan> · 706/706 globals in place · 28 not in the map</text>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <g transform="translate(130 86.50)">
-<rect width="193.48" height="12" x="0" y="0" class="named"><title>874 KB · 95.78%</title></rect>
-<rect width="8.52" height="12" x="193.48" y="0" class="todo"><title>38 KB · 4.22%</title></rect>
+<rect width="193.51" height="12" x="0" y="0" class="named"><title>875 KB · 95.80%</title></rect>
+<rect width="8.49" height="12" x="193.51" y="0" class="todo"><title>38 KB · 4.20%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="92.50">95.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="92"><tspan class="named">874 KB</tspan> · <tspan class="todo">38 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="92"><tspan class="named">875 KB</tspan> · <tspan class="todo">38 KB</tspan></text>
 </g>
 <g transform="translate(0 145)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -159,7 +159,7 @@
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x00409bb0 InsertFlatRect_ZBuffered (457 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="15" class="named"><title>0x00409d80 InsertLine_ZBuffered (307 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="15" class="nonmatching"><title>0x00409ec0 InsertGT3_Sorted (1798 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="15" class="nonmatching"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="15" class="named"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="named"><title>0x0040a780 InsertGT4_Sorted (1239 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="15" class="named"><title>0x0040ac60 InsertObjectGT4_Sorted (140 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="named"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
@@ -323,7 +323,7 @@
 <rect width="12" height="12" x="390" y="60" class="named"><title>0x0041b8a0 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="60" class="named"><title>0x0041b8f0 phd_RotYXZ_I (65 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="60" class="named"><title>0x0041b940 phd_RotYXZsuperpack_I (61 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="60" class="nonmatching"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="60" class="named"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="named"><title>0x0041ba30 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="60" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="60" class="named"><title>0x0041bc10 InterpolateArmMatrix (252 bytes)</title></rect>
@@ -768,7 +768,7 @@
 <rect width="12" height="12" x="315" y="195" class="nonmatching"><title>0x00437f20 PickUpCollision (1152 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="195" class="named"><title>0x004383a0 SwitchCollision (522 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="195" class="named"><title>0x004385b0 SwitchCollision2 (252 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="195" class="nonmatching"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="195" class="named"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="195" class="named"><title>0x004388f0 KeyHoleCollision (564 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="195" class="named"><title>0x00438b30 PuzzleHoleCollision (692 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="195" class="named"><title>0x00438df0 SwitchControl (57 bytes)</title></rect>
@@ -1468,7 +1468,7 @@
 <rect width="18.13" height="18.10" x="308.42" y="353.90" class="named"><title>0x0044b310 LoadLevel (586 bytes)</title></rect>
 <rect width="17.59" height="18.59" x="329.55" y="0" class="named"><title>0x0042e4f0 LaraTestClimbUpPos (584 bytes)</title></rect>
 <rect width="17.59" height="18.50" x="329.55" y="21.59" class="named"><title>0x00412680 InGameCinematicCamera (581 bytes)</title></rect>
-<rect width="17.59" height="18.18" x="329.55" y="43.09" class="nonmatching"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
+<rect width="17.59" height="18.18" x="329.55" y="43.09" class="named"><title>0x004386b0 DetonatorCollision (571 bytes)</title></rect>
 <rect width="17.59" height="18.15" x="329.55" y="64.26" class="named"><title>0x004496c0 GameApplySettings (570 bytes)</title></rect>
 <rect width="17.59" height="18.15" x="329.55" y="85.41" class="named"><title>0x00457230 SE_SetupWindowProc (570 bytes)</title></rect>
 <rect width="17.59" height="18.08" x="329.55" y="106.56" class="named"><title>0x00433f20 TestBlockPull (568 bytes)</title></rect>
@@ -1538,7 +1538,7 @@
 <rect width="15.75" height="15.46" x="639.02" y="0" class="named"><title>0x00426e90 InitialiseItem (435 bytes)</title></rect>
 <rect width="15.64" height="15.46" x="657.77" y="0" class="named"><title>0x00416940 StartDemo (432 bytes)</title></rect>
 <rect width="15.64" height="15.46" x="676.41" y="0" class="named"><title>0x00432bc0 EnableBaddieAI (432 bytes)</title></rect>
-<rect width="15.50" height="15.46" x="695.05" y="0" class="nonmatching"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
+<rect width="15.50" height="15.46" x="695.05" y="0" class="named"><title>0x0040a5d0 InsertClippedPoly_Textured (428 bytes)</title></rect>
 <rect width="15.24" height="15.46" x="713.55" y="0" class="named"><title>0x0041ba60 InterpolateMatrix (421 bytes)</title></rect>
 <rect width="15.21" height="15.46" x="731.79" y="0" class="named"><title>0x00448af0 ClearBuffers (420 bytes)</title></rect>
 <rect width="15.29" height="15.20" x="389.56" y="18.46" class="named"><title>0x00402960 draw_poly_line (415 bytes)</title></rect>
@@ -1854,7 +1854,7 @@
 <rect width="9.51" height="9.60" x="663.27" y="124.38" class="named"><title>0x004423f0 OnTrapDoor (163 bytes)</title></rect>
 <rect width="9.45" height="9.60" x="675.77" y="124.38" class="nonmatching"><title>0x00456130 LoadTexturePage (162 bytes)</title></rect>
 <rect width="9.39" height="9.60" x="688.22" y="124.38" class="named"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
-<rect width="9.39" height="9.60" x="700.61" y="124.38" class="nonmatching"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
+<rect width="9.39" height="9.60" x="700.61" y="124.38" class="named"><title>0x0041b980 phd_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="9.39" height="9.60" x="713" y="124.38" class="named"><title>0x004489d0 CreateRenderBuffer (161 bytes)</title></rect>
 <rect width="9.33" height="9.60" x="725.39" y="124.38" class="named"><title>0x00415bb0 LOS (160 bytes)</title></rect>
 <rect width="9.27" height="9.60" x="737.73" y="124.38" class="named"><title>0x0040acf0 InsertObjectGT3_Sorted (159 bytes)</title></rect>
