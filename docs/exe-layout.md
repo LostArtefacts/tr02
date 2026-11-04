@@ -121,8 +121,8 @@ function-level comparison remains `just compare`.
 ## Remaining parity
 
 The November 4 runtime/layout and mapper passes reduced whole-file differences from
-38,299 to 10,938 bytes (95.80% to 98.80%). Headers, `.rdata`, initialized
-`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 97.27%.
+38,299 to 10,560 bytes (95.80% to 98.84%). Headers, `.rdata`, initialized
+`.data`, `.idata` and `.rsrc` are byte-identical; `.text` is 97.37%.
 All 210 selected CRT code blocks are byte-identical, including their
 relocated operands, and sit at their original addresses. The constructor
 table is byte-identical. All 114 recovered runtime state bindings
@@ -220,3 +220,8 @@ Collision queries match all 1,724 bytes at `0x4128d0`. Floor and ceiling
 checks retain their separate reversal branches, and the floor probes keep
 independent height temporaries. Existing collision-helper matches remain
 intact in the same translation unit.
+
+Room-object drawing matches all 548 bytes at `0x419640`. Static meshes use
+the original signed countdown, items and effects share the list index, and
+the item-array binding is refreshed after each draw callback before reading
+the next link. Room bounds are reset in their original assignment order.

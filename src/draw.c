@@ -469,9 +469,9 @@ void PrintObjects(sint16 room_number)
     ROOM_INFO *r;
     MESH_INFO *mesh;
     ITEM_INFO *item;
-    int i;
+    sint16 i;
     sint16 clip;
-    sint16 item_number, fx_number;
+    sint16 item_number;
 
     r = &room[room_number];
     if (r->flags & UNDERWATER)
@@ -490,7 +490,8 @@ void PrintObjects(sint16 room_number)
     phd_top = r->top;
     phd_bottom = r->bottom;
 
-    for (i = 0, mesh = (MESH_INFO *)r->mesh; i < r->num_meshes; i++, mesh++) {
+    mesh = (MESH_INFO *)r->mesh;
+    for (i = r->num_meshes; i > 0; i--, mesh++) {
         if (StaticObjects[mesh->static_number].flags & STATIC_DRAW) {
             phd_PushMatrix();
             phd_TranslateAbs(mesh->x, mesh->y, mesh->z);
@@ -509,21 +510,24 @@ void PrintObjects(sint16 room_number)
     phd_right = phd_winxmax + 1;
     phd_bottom = phd_winymax + 1;
 
-    for (item_number = r->item_number; item_number != NO_ITEM; item_number = item->next_item) {
-        item = &items[item_number];
+    item_number = r->item_number;
+    while (item_number != NO_ITEM) {
+        ITEM_INFO *itemArray = items;
+        item = &itemArray[item_number];
         if (item->status != INVISIBLE)
             (*objects[item->object_number].draw_routine)(item);
+        itemArray = items;
+        item_number = itemArray[item_number].next_item;
     }
 
-    for (fx_number = r->fx_number; fx_number != NO_ITEM; fx_number = effects[fx_number].next_fx)
-        DrawEffect(fx_number);
+    for (item_number = r->fx_number; item_number != NO_ITEM; item_number = effects[item_number].next_fx)
+        DrawEffect(item_number);
 
     phd_PopMatrix();
 
     r->left = phd_winxmax;
-    r->bottom = 0;
-    r->right = 0;
     r->top = phd_winymax;
+    r->right = r->bottom = 0;
 }
 
 #define SPRITE_ABS 0x01000000
