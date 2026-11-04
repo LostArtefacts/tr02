@@ -1474,9 +1474,9 @@ extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
 
 extern "C" void SE_AdvancedDlgUpdate(HWND hwndDlg)
 {
-    SE_CheckButton(hwndDlg, 1103, ChangedAppSettings.Disable16BitTextures);
-    SE_CheckButton(hwndDlg, 1104, ChangedAppSettings.DontSortPrimitives);
-    SE_CheckButton(hwndDlg, 1111, ChangedAppSettings.DisableFMV);
+    CheckDlgButton(hwndDlg, 1103, (ChangedAppSettings.Disable16BitTextures) ? TRUE : FALSE);
+    CheckDlgButton(hwndDlg, 1104, (ChangedAppSettings.DontSortPrimitives) ? TRUE : FALSE);
+    CheckDlgButton(hwndDlg, 1111, (ChangedAppSettings.DisableFMV) ? TRUE : FALSE);
     SE_CheckButton(hwndDlg, 1107, ChangedAppSettings.TexelAdjustMode == 0);
     SE_CheckButton(hwndDlg, 1108, ChangedAppSettings.TexelAdjustMode == 1);
     SE_CheckButton(hwndDlg, 1109, ChangedAppSettings.TexelAdjustMode == 2);

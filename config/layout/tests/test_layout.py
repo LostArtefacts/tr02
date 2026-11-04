@@ -130,6 +130,11 @@ class ExecutableTests(unittest.TestCase):
             self.ours.read(0x464000, 0x8400), self.original.read(0x464000, 0x8400)
         )
 
+    def test_advanced_dialog_checkboxes_match_original(self) -> None:
+        self.assertEqual(
+            self.ours.read(0x454A30, 169), self.original.read(0x454A30, 169)
+        )
+
     def test_recovered_runtime_state_retains_original_addresses(self) -> None:
         mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))
         for name, address in {
