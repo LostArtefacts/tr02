@@ -1558,7 +1558,9 @@ void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type)
 }
 
 #ifdef TR2_EXE
-int OverlayStatus = 1;
+sint16 cdtrack = -1;
+int animation_rate = 32768;
+int flipeffect = -1;
 int number_los_rooms;
 sint16 *floor_data;
 sint16 *commands;

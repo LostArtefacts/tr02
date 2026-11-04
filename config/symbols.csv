@@ -1465,8 +1465,10 @@ address,size,name,symbol
 0x00464090,16,bird_bite,_bird_bite
 0x004640a0,16,crow_bite,_crow_bite
 0x004640b0,4,cutscene_track,_cutscene_track
+0x004640b4,4,cutscene_play,_cutscene_play
 0x004640b8,4,CineTickRate,_CineTickRate
 0x004640bc,2,cdtrack,_cdtrack
+0x004640c0,4,animation_rate,_animation_rate
 0x004640c4,4,flipeffect,_flipeffect
 0x00464120,16,diver_poon,_diver_poon
 0x00464130,16,dog_bite,_dog_bite

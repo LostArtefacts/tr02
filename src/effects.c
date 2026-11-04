@@ -873,7 +873,6 @@ void WadeSplash(ITEM_INFO *item, int water_height)
 #endif
 
 #ifdef TR2_EXE
-int flipeffect = -1;
 int AssaultBestTime = -1;
 void (*effect_routines[32])(ITEM_INFO *item) = {
     turn180_effect,

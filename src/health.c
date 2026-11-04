@@ -324,6 +324,7 @@ void DrawModeInfo(void)
 }
 
 #ifdef TR2_EXE
+int OverlayStatus = 1;
 TEXTSTRING *AmmoTextInfo;
 TEXTSTRING *DisplayModeTextInfo;
 int DisplayModeInfoTimer;
