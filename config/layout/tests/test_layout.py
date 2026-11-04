@@ -80,8 +80,12 @@ class ExecutableTests(unittest.TestCase):
         identical = compare_exe.same(self.ours.data, self.original.data)
         self.assertGreaterEqual(identical / denominator, 0.96)
 
-    def test_steam_window_cleanup_patch_matches_original(self) -> None:
-        self.assertEqual(self.ours.read(0x446BE0, 34), self.original.read(0x446BE0, 34))
+    def test_steam_cleanup_and_path_patches_match_original(self) -> None:
+        for address, size in ((0x446BE0, 34), (0x448480, 42), (0x44B200, 38)):
+            with self.subTest(address=hex(address)):
+                self.assertEqual(
+                    self.ours.read(address, size), self.original.read(address, size)
+                )
 
     def test_recovered_runtime_state_retains_original_addresses(self) -> None:
         mapping = compare_exe.read_map(str(ROOT / "build/tomb2_exe.map"))

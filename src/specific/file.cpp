@@ -773,11 +773,13 @@ extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
 
 extern "C" char Var4d9358[];
 
+#ifndef TR2_EXE
 extern "C" char *GetFullPath(char *path)
 {
     wsprintf(Var4d9358, "%s", path);
     return Var4d9358;
 }
+#endif
 
 extern "C" DWORD LevelFilePalettesOffset, LevelFileTexPagesOffset, LevelFileDepthQOffset;
 extern "C" char LoadLevelOpenFailed[];
@@ -1117,6 +1119,7 @@ extern "C" {
 char *SampleModeNames[] = {"WAIT_SOUND", "RESTART_SOUND", "AMBIENT_SOUND", "eh?"};
 char CDPathFormat[] = "%c:\\%s";
 char CDRootPath[] = "A:\\";
+char DriveLetter;
 }
 
 char LoadRoomsTooMany[] = "LoadRoom(): Too many rooms";

@@ -424,6 +424,7 @@ extern "C" bool DSoundBufferTest(void)
     return true;
 }
 
+#ifndef TR2_EXE
 extern "C" void WinSndFinish(void)
 {
     WinSndFreeAllSamples();
@@ -432,6 +433,7 @@ extern "C" void WinSndFinish(void)
         DSound = NULL;
     }
 }
+#endif
 
 extern "C" bool WinSndIsSoundEnabled()
 {
