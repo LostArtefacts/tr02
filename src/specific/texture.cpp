@@ -276,16 +276,22 @@ extern "C" bool LoadTexturePage(int pageIndex, bool reset)
     if (pageIndex < 0)
         return false;
     page = &TexturePages[pageIndex];
-    if (reset || !page->vidMemSurface)
+    if (!reset)
+    {
+        if (!page->vidMemSurface)
+            goto texture_reset;
+        if (SUCCEEDED(DDrawSurfaceRestoreLost(page->vidMemSurface, NULL, false)))
+            goto texture_restored;
         reset = true;
-    else if (FAILED(DDrawSurfaceRestoreLost(page->vidMemSurface, NULL, false)))
-        reset = true;
+    }
     if (reset)
     {
+texture_reset:
         TexturePageReleaseVidMemSurface(page);
         if (!TexturePageInit(page))
             return false;
     }
+texture_restored:
     DDrawSurfaceRestoreLost(page->sysMemSurface, NULL, false);
     texture = Create3DTexture(page->sysMemSurface);
     if (!texture)
