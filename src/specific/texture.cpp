@@ -389,7 +389,7 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
         for (i = height; i != 0; i--)
         {
             line = dst;
-            for (j = width; j != 0; j--)
+            for (j = width; j--;)
             {
                 color = *src++;
                 compatible = CalculateCompatibleColor(&TextureFormat.colorBitMasks, (color >> 7) & 0xf8, (color >> 2) & 0xf8, (color & 0x1f) << 3, (sint16)color >> 15);
