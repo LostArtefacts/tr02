@@ -945,6 +945,9 @@ void S_ExitSystem(char *message);
 int SkidooControl(void)
 {
     ITEM_INFO *skidoo;
+    sint16 lara_anim_number;
+    sint16 skidoo_anim_number;
+    ITEM_INFO *rider;
     SKIDOO_INFO *skinfo;
     PHD_VECTOR fl, fr;
     sint32 hfl, hfr;
@@ -1054,7 +1057,10 @@ int SkidooControl(void)
 
     if (!dead) {
         skidoo->anim_number = objects[SKIDOO].anim_index + (lara_item->anim_number - objects[SKIDOO_ANIM].anim_index);
-        skidoo->frame_number = anims[skidoo->anim_number].frame_base - anims[lara_item->anim_number].frame_base + lara_item->frame_number;
+        rider = lara_item;
+        lara_anim_number = rider->anim_number;
+        skidoo_anim_number = skidoo->anim_number;
+        skidoo->frame_number = anims[skidoo_anim_number].frame_base - anims[lara_anim_number].frame_base + rider->frame_number;
     } else {
         skidoo->anim_number = objects[SKIDOO].anim_index + SKIDOO_DEAD_ANIM;
         skidoo->frame_number = anims[skidoo->anim_number].frame_base;
@@ -1071,7 +1077,7 @@ int SkidooControl(void)
 
 #define SKID_TRACK 91
 
-int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+int GetFrames(ITEM_INFO *, sint16 *[], int *);
 int S_GetObjectBounds(sint16 *bptr);
 void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
