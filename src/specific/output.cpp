@@ -523,7 +523,7 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
                 if (dz >= -radius && dz <= radius)
                 {
                     distance = dx * dx + dy * dy + dz * dz;
-                    if (distance <= 1 << (dynamic[i].falloff * 2))
+                    if (distance <= 1 << (dynamic[i].falloff << 1))
                     {
                         shade = (1 << dynamic[i].intensity) - (distance >> (dynamic[i].falloff * 2 - dynamic[i].intensity));
                         if (shade > brightest)
