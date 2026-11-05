@@ -4,6 +4,7 @@
 #include "ds.h"
 #include "../camera.h"
 #include "init_result.h"
+#include "template.h"
 
 extern "C" LPDIRECTSOUND DSound;
 extern "C" LPDIRECTSOUNDBUFFER SampleBuffers[256];
@@ -19,66 +20,11 @@ inline bool DX_TRY(HRESULT hr)
     return true;
 }
 
-struct STRING_FLAGGED {
-    LPTSTR lpString;
-    bool isPresented;
-    STRING_FLAGGED(DWORD size)
-    {
-        lpString = new char[size];
-        *lpString = 0;
-        isPresented = true;
-    }
-    ~STRING_FLAGGED()
-    {
-        if (isPresented)
-            delete[] lpString;
-    }
-    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
-    {
-        if (this != &src) {
-            if (!isPresented)
-                lpString = new char[strlen(src.lpString) + 1];
-            strcpy(lpString, src.lpString);
-        }
-        return *this;
-    }
+struct SOUND_ADAPTER : GENERIC_ADAPTER {
 };
 
-#pragma inline_depth(2)
-
-struct SOUND_ADAPTER {
-    LPGUID lpAdapterGuid;
-    GUID adapterGuid;
-    STRING_FLAGGED description;
-    STRING_FLAGGED module;
-    SOUND_ADAPTER() : description(256), module(256)
-    {
-    }
-};
-
-#pragma inline_depth(8)
-
-struct SOUND_ADAPTER_NODE {
-    SOUND_ADAPTER_NODE *next;
-    SOUND_ADAPTER_NODE *previous;
-    SOUND_ADAPTER body;
-    SOUND_ADAPTER_NODE(SOUND_ADAPTER_NODE *prevNode, SOUND_ADAPTER_NODE *nextNode) : next(nextNode), previous(prevNode)
-    {
-    }
-};
-
-struct SOUND_ADAPTER_LIST {
-    SOUND_ADAPTER_NODE *head;
-    SOUND_ADAPTER_NODE *tail;
-    DWORD dwCount;
-    SOUND_ADAPTER_LIST()
-    {
-        head = NULL;
-        tail = NULL;
-        dwCount = 0;
-    }
-    ~SOUND_ADAPTER_LIST();
-};
+typedef LIST<SOUND_ADAPTER> SOUND_ADAPTER_LIST;
+typedef LIST<SOUND_ADAPTER>::NODE SOUND_ADAPTER_NODE;
 
 extern "C" {
 extern SOUND_ADAPTER_LIST SoundAdapterList;
@@ -268,28 +214,18 @@ extern "C" bool Func448050(void)
 extern "C" bool WinSndInit(void)
 {
     SOUND_ADAPTER_NODE *node;
-    SOUND_ADAPTER_NODE *nextNode;
 
-    for (node = SoundAdapterList.head; node; node = nextNode)
-    {
-        nextNode = node->next;
-        delete node;
-    }
-    SoundAdapterList.head = NULL;
-    SoundAdapterList.tail = NULL;
-    SoundAdapterList.dwCount = 0;
+    SoundAdapterList.RemoveAll();
     if (!DSoundEnumerate(&SoundAdapterList))
         return false;
     PrimarySoundAdapter = NULL;
-    for (node = SoundAdapterList.head; node; node = node->next)
+    for (node = SoundAdapterList.GetHead(); node; node = SoundAdapterList.GetNext(node))
     {
-        if (!node->body.lpAdapterGuid)
+        if (!SoundAdapterList[node].lpAdapterGuid)
         {
             PrimarySoundAdapter = node;
-            break;
+            return true;
         }
-        if (!node)
-            break;
     }
     return true;
 }
@@ -306,26 +242,11 @@ extern "C" bool DSoundEnumerate(LPVOID lpContext)
 extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext)
 {
     SOUND_ADAPTER_LIST *list = (SOUND_ADAPTER_LIST *)lpContext;
-    SOUND_ADAPTER_NODE *node = new SOUND_ADAPTER_NODE(list->tail, NULL);
+    SOUND_ADAPTER &adapter = list->NewTail();
 
-    if (list->tail)
-        list->tail->next = node;
-    else
-        list->head = node;
-    list->tail = node;
-    list->dwCount++;
-    if (lpGuid)
-    {
-        node->body.adapterGuid = *lpGuid;
-        node->body.lpAdapterGuid = &node->body.adapterGuid;
-    }
-    else
-    {
-        memset(&node->body.adapterGuid, 0, sizeof(GUID));
-        node->body.lpAdapterGuid = NULL;
-    }
-    strcpy(node->body.description.lpString, lpDescription);
-    strcpy(node->body.module.lpString, lpModule);
+    adapter.SetGuid(lpGuid);
+    strcpy(adapter.description, lpDescription);
+    strcpy(adapter.name, lpModule);
     return TRUE;
 }
 
@@ -440,20 +361,6 @@ extern "C" bool WinSndIsSoundEnabled()
     return IsSoundEnabled;
 }
 
-
-inline SOUND_ADAPTER_LIST::~SOUND_ADAPTER_LIST()
-{
-    SOUND_ADAPTER_NODE *node;
-    SOUND_ADAPTER_NODE *nextNode;
-
-    for (node = head; node; node = nextNode) {
-        nextNode = node->next;
-        delete node;
-    }
-    head = NULL;
-    tail = NULL;
-    dwCount = 0;
-}
 
 SOUND_ADAPTER_LIST SoundAdapterList;
 SOUND_ADAPTER CurrentSoundAdapter;
