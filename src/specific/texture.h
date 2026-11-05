@@ -40,7 +40,7 @@ int GetFreePaletteIndex(void);
 void FreePalette(int palIndex);
 void SafeFreePalette(int palIndex);
 void FreeTexturePalettes(void);
-int Func455d80(int width, int height, LPDIRECTDRAWPALETTE palette);
+int CreateTexturePage(int width, int height, LPDIRECTDRAWPALETTE palette);
 int GetFreeTexturePageIndex(void);
 void SafeFreeTexturePage(int pageIndex);
 void FreeTexturePage(int pageIndex);

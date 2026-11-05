@@ -90,7 +90,7 @@ extern "C" void FreeTexturePalettes(void)
 extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page);
 extern "C" bool TexturePageInit(TEXPAGE_DESC *page);
 
-extern "C" int Func455d80(int width, int height, LPDIRECTDRAWPALETTE palette)
+extern "C" int CreateTexturePage(int width, int height, LPDIRECTDRAWPALETTE palette)
 {
     int pageIndex = GetFreeTexturePageIndex();
     if (pageIndex < 0)
@@ -340,7 +340,7 @@ extern "C" int AddTexturePage8(int width, int height, uint8 *pageBuffer, int pal
     int pitch;
     if (palIndex < 0)
         return -1;
-    pageIndex = Func455d80(width, height, TexturePalettes[palIndex]);
+    pageIndex = CreateTexturePage(width, height, TexturePalettes[palIndex]);
     if (pageIndex < 0)
         return -1;
     page = &TexturePages[pageIndex];
@@ -374,7 +374,7 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
     int k;
     int pitch;
 
-    pageIndex = Func455d80(width, height, NULL);
+    pageIndex = CreateTexturePage(width, height, NULL);
     if (pageIndex < 0)
         return -1;
     page = &TexturePages[pageIndex];
