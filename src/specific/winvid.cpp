@@ -1029,7 +1029,6 @@ extern "C" bool WinVidGetDisplayAdapters(void)
     return false;
 }
 
-#pragma inline_depth(3)
 extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterList)
 {
     if (DX_TRY(DirectDrawEnumerate(EnumDisplayAdaptersCallback, displayAdapterList)))
