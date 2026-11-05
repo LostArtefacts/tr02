@@ -362,7 +362,6 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
     DDSURFACEDESC desc;
     uint8 *dst;
     uint8 *line;
-    uint16 *src;
     uint16 color;
     DWORD compatible;
     DWORD i, j;
@@ -389,13 +388,13 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
     else
     {
         dst = (uint8 *)desc.lpSurface;
-        src = (uint16 *)pageBuffer;
         for (i = height; i != 0; i--)
         {
             line = dst;
             for (j = width; j--;)
             {
-                color = *src++;
+                color = *(uint16 *)pageBuffer;
+                pageBuffer += 2;
                 compatible = CalculateCompatibleColor(&TextureFormat.colorBitMasks, (color >> 7) & 0xf8, (color >> 2) & 0xf8, (color & 0x1f) << 3, (sint16)color >> 15);
                 for (k = TextureFormat.bpp; k > 0; k -= 8)
                 {
