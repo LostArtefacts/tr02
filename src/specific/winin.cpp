@@ -2,6 +2,7 @@
 #include <dinput.h>
 #include "global.h"
 #include "init_result.h"
+#include "template.h"
 
 typedef struct {
     void *PreferredDisplayAdapter;
@@ -118,76 +119,11 @@ extern "C" void DInputJoystickRelease(void)
 
 extern "C" bool DInputJoystickCreate(void);
 
-struct STRING_FLAGGED {
-    LPTSTR lpString;
-    bool isPresented;
-    STRING_FLAGGED(DWORD size)
-    {
-        lpString = new char[size];
-        *lpString = 0;
-        isPresented = true;
-    }
-    ~STRING_FLAGGED()
-    {
-        if (isPresented)
-            delete[] lpString;
-    }
-    STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
-    {
-        if (this != &src) {
-            if (!isPresented)
-                lpString = new char[strlen(src.lpString) + 1];
-            strcpy(lpString, src.lpString);
-        }
-        return *this;
-    }
+struct JOYSTICK : GENERIC_ADAPTER {
 };
 
-#pragma inline_depth(2)
-
-struct JOYSTICK {
-    LPGUID lpJoystickGuid;
-    GUID joystickGuid;
-    STRING_FLAGGED productName;
-    STRING_FLAGGED instanceName;
-    JOYSTICK() : productName(256), instanceName(256)
-    {
-    }
-    void SetGuid(const GUID *guid)
-    {
-        if (guid) {
-            joystickGuid = *guid;
-            lpJoystickGuid = &joystickGuid;
-        } else {
-            memset(&joystickGuid, 0, sizeof(GUID));
-            lpJoystickGuid = NULL;
-        }
-    }
-};
-
-#pragma inline_depth(8)
-
-struct JOYSTICK_NODE {
-    JOYSTICK_NODE *next;
-    JOYSTICK_NODE *previous;
-    JOYSTICK body;
-    JOYSTICK_NODE(JOYSTICK_NODE *prev) : next(NULL), previous(prev)
-    {
-    }
-};
-
-struct JOYSTICK_LIST {
-    JOYSTICK_NODE *head;
-    JOYSTICK_NODE *tail;
-    DWORD dwCount;
-    JOYSTICK_LIST()
-    {
-        head = NULL;
-        tail = NULL;
-        dwCount = 0;
-    }
-    ~JOYSTICK_LIST();
-};
+typedef LIST<JOYSTICK> JOYSTICK_LIST;
+typedef LIST<JOYSTICK>::NODE JOYSTICK_NODE;
 
 extern "C" JOYSTICK_LIST JoystickList;
 
@@ -195,17 +131,9 @@ extern "C" bool DInputEnumDevices(void *joystickList);
 
 extern "C" bool WinInputInit(void)
 {
-    JOYSTICK_NODE *node;
-    JOYSTICK_NODE *nextNode;
     bool result;
 
-    for (node = JoystickList.head; node; node = nextNode) {
-        nextNode = node->next;
-        delete node;
-    }
-    JoystickList.head = NULL;
-    JoystickList.tail = NULL;
-    JoystickList.dwCount = 0;
+    JoystickList.RemoveAll();
     if (!DInputCreate())
         return false;
     result = DInputEnumDevices(&JoystickList);
@@ -223,17 +151,11 @@ extern "C" bool DInputEnumDevices(void *joystickList)
 extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
 {
     JOYSTICK_LIST *joyList = (JOYSTICK_LIST *)pvRef;
-    JOYSTICK_NODE *joyNode = new JOYSTICK_NODE(joyList->tail);
+    JOYSTICK &joystick = joyList->NewTail();
 
-    if (joyList->tail)
-        joyList->tail->next = joyNode;
-    else
-        joyList->head = joyNode;
-    joyList->tail = joyNode;
-    joyList->dwCount++;
-    joyNode->body.SetGuid(&lpddi->guidInstance);
-    strcpy(joyNode->body.productName.lpString, lpddi->tszProductName);
-    strcpy(joyNode->body.instanceName.lpString, lpddi->tszInstanceName);
+    joystick.SetGuid(&lpddi->guidInstance);
+    strcpy(joystick.description, lpddi->tszProductName);
+    strcpy(joystick.name, lpddi->tszInstanceName);
     return DIENUM_CONTINUE;
 }
 
@@ -247,13 +169,11 @@ extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
         return joystick;
     joystick = NULL;
     if (lpGuid) {
-        for (node = JoystickList.head; node; node = node->next) {
-            if (!memcmp(lpGuid, &node->body.joystickGuid, sizeof(GUID))) {
+        for (node = JoystickList.GetHead(); node; node = JoystickList.GetNext(node)) {
+            if (!memcmp(lpGuid, &JoystickList[node].adapterGuid, sizeof(GUID))) {
                 joystick = node;
                 break;
             }
-            if (!node)
-                break;
         }
     }
     if (!joystick)
@@ -313,20 +233,6 @@ extern "C" void WinInRunControlPanel(HWND hWnd)
 {
     if (DInput)
         DInput->RunControlPanel(hWnd, 0);
-}
-
-inline JOYSTICK_LIST::~JOYSTICK_LIST()
-{
-    JOYSTICK_NODE *node;
-    JOYSTICK_NODE *nextNode;
-
-    for (node = head; node; node = nextNode) {
-        nextNode = node->next;
-        delete node;
-    }
-    head = NULL;
-    tail = NULL;
-    dwCount = 0;
 }
 
 JOYSTICK_LIST JoystickList;
