@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="268.21" height="12" x="0" y="0" class="named"><title>1178 · 96.48%</title></rect>
-<rect width="2.50" height="12" x="268.21" y="0" class="decompiled"><title>11 · 0.90%</title></rect>
+<rect width="268.44" height="12" x="0" y="0" class="named"><title>1179 · 96.56%</title></rect>
+<rect width="2.28" height="12" x="268.44" y="0" class="decompiled"><title>10 · 0.82%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1178</tspan> · <tspan class="decompiled">11</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1179</tspan> · <tspan class="decompiled">10</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="267.25" height="12" x="0" y="0" class="named"><title>333 KB · 96.13%</title></rect>
-<rect width="1.01" height="12" x="267.25" y="0" class="decompiled"><title>1 KB · 0.36%</title></rect>
+<rect width="267.26" height="12" x="0" y="0" class="named"><title>333 KB · 96.14%</title></rect>
+<rect width="1" height="12" x="267.26" y="0" class="decompiled"><title>1 KB · 0.36%</title></rect>
 <rect width="9.62" height="12" x="268.26" y="0" class="nonmatching"><title>12 KB · 3.46%</title></rect>
 <rect width="0.12" height="12" x="277.88" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
@@ -996,7 +996,7 @@
 <rect width="12" height="12" x="15" y="270" class="named"><title>0x00447ac0 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="named"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="270" class="named"><title>0x00447b40 InitSoundAdapterListGlobal (18 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="270" class="decompiled"><title>0x00447b60 Func447b60 (14 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="270" class="named"><title>0x00447b60 RegisterSoundAdapterListDestructor (14 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="decompiled"><title>0x00447bf0 Func447bf0 (57 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="270" class="decompiled"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="named"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>
@@ -2493,7 +2493,7 @@
 <rect width="2.33" height="3.31" x="723.33" y="337.27" class="named"><title>0x00444bc0 RegisterCurrentDisplayAdapterDestructor (14 bytes)</title></rect>
 <rect width="2.33" height="3.31" x="728.66" y="337.27" class="named"><title>0x00447190 RegisterJoystickListDestructor (14 bytes)</title></rect>
 <rect width="2.33" height="3.31" x="734" y="337.27" class="named"><title>0x00447260 RegisterCurrentJoystickDestructor (14 bytes)</title></rect>
-<rect width="2.33" height="3.31" x="739.33" y="337.27" class="decompiled"><title>0x00447b60 Func447b60 (14 bytes)</title></rect>
+<rect width="2.33" height="3.31" x="739.33" y="337.27" class="named"><title>0x00447b60 RegisterSoundAdapterListDestructor (14 bytes)</title></rect>
 <rect width="2.33" height="3.31" x="744.67" y="337.27" class="decompiled"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
 <rect width="3.27" height="2.36" x="712.48" y="343.57" class="named"><title>0x0044c520 S_PlayFMV (14 bytes)</title></rect>
 <rect width="3.27" height="2.36" x="712.48" y="348.94" class="named"><title>0x00454ae0 SE_AdvancedDlgInit (14 bytes)</title></rect>
