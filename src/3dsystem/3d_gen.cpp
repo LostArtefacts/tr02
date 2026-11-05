@@ -490,6 +490,11 @@ extern "C" sint16 *calc_object_vertices(sint16 *objptr)
     return objptr;
 }
 
+extern "C" void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
+extern "C" void (*InsertTransQuad)(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
+extern "C" sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine);
+extern "C" sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort_routine);
+
 extern "C" sint16 *calc_vertice_light(sint16 *objptr)
 {
     int numvert;
@@ -773,11 +778,7 @@ extern "C" {
 extern sint32 phd_scrwidth;
 extern sint32 PhdScreenHeight;
 extern sint32 PhdViewDistance;
-extern void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
 extern void (*InsertTrans8)(void *vbuf, sint16 shade);
-extern void (*InsertTransQuad)(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
-sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine);
-sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort_routine);
 sint16 *ins_objectG3(sint16 *objptr, int number, enum sort_type sort_routine);
 sint16 *ins_objectG4(sint16 *objptr, int number, enum sort_type sort_routine);
 void insert_sprite(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
