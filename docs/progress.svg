@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="269.80" height="12" x="0" y="0" class="named"><title>1185 · 97.05%</title></rect>
-<rect width="0.91" height="12" x="269.80" y="0" class="decompiled"><title>4 · 0.33%</title></rect>
+<rect width="270.03" height="12" x="0" y="0" class="named"><title>1186 · 97.13%</title></rect>
+<rect width="0.68" height="12" x="270.03" y="0" class="decompiled"><title>3 · 0.25%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1185</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1186</tspan> · <tspan class="decompiled">3</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="268.09" height="12" x="0" y="0" class="named"><title>334 KB · 96.44%</title></rect>
-<rect width="0.17" height="12" x="268.09" y="0" class="decompiled"><title>208 bytes · 0.06%</title></rect>
+<rect width="268.12" height="12" x="0" y="0" class="named"><title>334 KB · 96.45%</title></rect>
+<rect width="0.14" height="12" x="268.12" y="0" class="decompiled"><title>170 bytes · 0.05%</title></rect>
 <rect width="9.62" height="12" x="268.26" y="0" class="nonmatching"><title>12 KB · 3.46%</title></rect>
 <rect width="0.12" height="12" x="277.88" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="24.50">96.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="24"><tspan class="named">334 KB</tspan> · <tspan class="decompiled">208 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="24"><tspan class="named">334 KB</tspan> · <tspan class="decompiled">170 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">154 bytes</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="278" height="12" x="0" y="0" class="named"><title>36 KB · 100%</title></rect>
@@ -1245,7 +1245,7 @@
 <rect width="12" height="12" x="0" y="345" class="named"><title>0x00455ce0 GetFreePaletteIndex (28 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="345" class="named"><title>0x00455d00 FreePalette (35 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="345" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="345" class="decompiled"><title>0x00455d50 Func455d50 (38 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="345" class="named"><title>0x00455d50 FreeTexturePalettes (38 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="345" class="decompiled"><title>0x00455d80 Func455d80 (106 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="345" class="named"><title>0x00455df0 GetFreeTexturePageIndex (28 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="345" class="named"><title>0x00455e10 CreateTexturePageSurface (152 bytes)</title></rect>
@@ -2351,7 +2351,7 @@
 <rect width="4.62" height="4.61" x="719.52" y="282.44" class="nonmatching"><title>0x0044b200 GetFullPath (38 bytes)</title></rect>
 <rect width="4.62" height="4.61" x="727.14" y="282.44" class="named"><title>0x00452230 ScreenClear (38 bytes)</title></rect>
 <rect width="4.62" height="4.61" x="734.76" y="282.44" class="named"><title>0x00455430 CalcPan (38 bytes)</title></rect>
-<rect width="4.62" height="4.61" x="742.38" y="282.44" class="decompiled"><title>0x00455d50 Func455d50 (38 bytes)</title></rect>
+<rect width="4.62" height="4.61" x="742.38" y="282.44" class="named"><title>0x00455d50 FreeTexturePalettes (38 bytes)</title></rect>
 <rect width="4.36" height="4.87" x="657.48" y="290.05" class="named"><title>0x00456100 FreeTexturePages (38 bytes)</title></rect>
 <rect width="4.36" height="4.87" x="657.48" y="297.92" class="decompiled"><title>0x00457470 Func457470 (38 bytes)</title></rect>
 <rect width="4.36" height="4.75" x="657.48" y="305.79" class="named"><title>0x00425460 Inv_RingMotionCameraPos (37 bytes)</title></rect>

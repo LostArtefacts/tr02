@@ -78,7 +78,7 @@ extern "C" void SafeFreePalette(int palIndex)
         FreePalette(palIndex);
 }
 
-extern "C" void Func455d50(void)
+extern "C" void FreeTexturePalettes(void)
 {
     for (DWORD i = 0; i < MAX_PALETTES; i++)
     {
@@ -466,7 +466,7 @@ extern "C" void EnumerateTextureFormats(void)
 extern "C" void CleanupTextures(void)
 {
     FreeTexturePages();
-    Func455d50();
+    FreeTexturePalettes();
 }
 
 extern "C" bool InitTextures(void)

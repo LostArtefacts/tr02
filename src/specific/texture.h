@@ -39,7 +39,7 @@ int CreateTexturePalette(RGB888 *pal);
 int GetFreePaletteIndex(void);
 void FreePalette(int palIndex);
 void SafeFreePalette(int palIndex);
-void Func455d50(void);
+void FreeTexturePalettes(void);
 int Func455d80(int width, int height, LPDIRECTDRAWPALETTE palette);
 int GetFreeTexturePageIndex(void);
 void SafeFreeTexturePage(int pageIndex);

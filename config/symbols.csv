@@ -1152,7 +1152,7 @@ address,size,name,symbol
 0x00455ce0,28,GetFreePaletteIndex,_GetFreePaletteIndex
 0x00455d00,35,FreePalette,_FreePalette
 0x00455d30,18,SafeFreePalette,_SafeFreePalette
-0x00455d50,38,Func455d50,_Func455d50
+0x00455d50,38,FreeTexturePalettes,_FreeTexturePalettes
 0x00455d80,106,Func455d80,_Func455d80
 0x00455df0,28,GetFreeTexturePageIndex,_GetFreeTexturePageIndex
 0x00455e10,152,CreateTexturePageSurface,_CreateTexturePageSurface
