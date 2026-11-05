@@ -883,8 +883,8 @@ extern "C" int S_GetObjectBounds(sint16 *bptr)
             zv = *(mptr + M20) * *(vertptr + 0) + *(mptr + M21) * *(vertptr + 1) + *(mptr + M22) * *(vertptr + 2) + *(mptr + M23);
             if (zv > phd_znear && zv < phd_zfar)
             {
-                numz++;
                 zv /= PhdPersp;
+                numz++;
                 coord = (*(mptr + M00) * *(vertptr + 0) + *(mptr + M01) * *(vertptr + 1) + *(mptr + M02) * *(vertptr + 2) + *(mptr + M03)) / zv;
                 if (coord < minx)
                     minx = coord;
