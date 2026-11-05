@@ -569,7 +569,7 @@ extern "C" void InsertLine_ZBuffered(int x1, int y1, int x2, int y2, int z, uint
 
     if (z >= phd_zfar)
         return;
-    if (z < phd_znear)
+    else if (z < phd_znear)
         z = phd_znear;
     rgb = (uint8 *)game_palette + color * 3;
     VBufferD3D[0].sx = (float)(phd_winxmin + x1);
@@ -631,92 +631,91 @@ extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTE
         if (npoints)
             goto clip;
         return;
+    }
+    if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) < 0)
+        return;
+    if ((sint8)(v1->clip | v2->clip | v3->clip)) {
+        VBuffer[0].x = v1->xs;
+        VBuffer[0].y = v1->ys;
+        VBuffer[0].rhw = v1->ooz;
+        VBuffer[0].g = (float)v1->g;
+        VBuffer[0].u = uv1[0] * v1->ooz;
+        VBuffer[0].v = uv1[1] * v1->ooz;
+        VBuffer[1].x = v2->xs;
+        VBuffer[1].y = v2->ys;
+        VBuffer[1].rhw = v2->ooz;
+        VBuffer[1].g = (float)v2->g;
+        VBuffer[1].u = uv2[0] * v2->ooz;
+        VBuffer[1].v = uv2[1] * v2->ooz;
+        VBuffer[2].x = v3->xs;
+        VBuffer[2].y = v3->ys;
+        VBuffer[2].rhw = v3->ooz;
+        VBuffer[2].g = (float)v3->g;
+        VBuffer[2].u = uv3[0] * v3->ooz;
+        VBuffer[2].v = uv3[1] * v3->ooz;
+        npoints = 3;
     } else {
-        if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) < 0)
-            return;
-        if ((sint8)(v1->clip | v2->clip | v3->clip)) {
-            VBuffer[0].x = v1->xs;
-            VBuffer[0].y = v1->ys;
-            VBuffer[0].rhw = v1->ooz;
-            VBuffer[0].g = (float)v1->g;
-            VBuffer[0].u = uv1[0] * v1->ooz;
-            VBuffer[0].v = uv1[1] * v1->ooz;
-            VBuffer[1].x = v2->xs;
-            VBuffer[1].y = v2->ys;
-            VBuffer[1].rhw = v2->ooz;
-            VBuffer[1].g = (float)v2->g;
-            VBuffer[1].u = uv2[0] * v2->ooz;
-            VBuffer[1].v = uv2[1] * v2->ooz;
-            VBuffer[2].x = v3->xs;
-            VBuffer[2].y = v3->ys;
-            VBuffer[2].rhw = v3->ooz;
-            VBuffer[2].g = (float)v3->g;
-            VBuffer[2].u = uv3[0] * v3->ooz;
-            VBuffer[2].v = uv3[1] * v3->ooz;
-            npoints = 3;
-        } else {
-            switch (sorttype) {
-            case MID_SORT:
-                zdepth = (v1->zv + v2->zv + v3->zv) * 0.333333333333333333f;
-                break;
-            case FAR_SORT:
-                zdepth = v1->zv;
-                if (v2->zv > zdepth)
-                    zdepth = v2->zv;
-                if (v3->zv > zdepth)
-                    zdepth = v3->zv;
-                break;
-            default:
-                zdepth = 1000000000.0f;
-                break;
-            }
-            sort3dptr[0] = (sint32)info3dptr;
-            sort3dptr[1] = (sint32)zdepth;
-            sort3dptr += 2;
-            info3dptr[0] = tex->drawtype + 9;
-            info3dptr[1] = tex->tpage;
-            info3dptr[2] = 3;
-            vtx = HWR_VertexPtr;
-            *(D3DTLVERTEX **)(info3dptr + 3) = vtx;
-            info3dptr += 5;
-            vtx[0].sx = v1->xs;
-            vtx[0].sy = v1->ys;
-            vtx[0].rhw = v1->ooz;
-            shade = (0x1fff - v1->g) >> 4;
-            if (shade > 255)
-                shade = 255;
-            vtx[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
-            vtx[0].tu = uv1[0] / 65536.0f;
-            vtx[0].tv = uv1[1] / 65536.0f;
-            vtx++;
-            vtx[0].sx = v2->xs;
-            vtx[0].sy = v2->ys;
-            vtx[0].rhw = v2->ooz;
-            shade = (0x1fff - v2->g) >> 4;
-            if (shade > 255)
-                shade = 255;
-            vtx[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
-            vtx[0].tu = uv2[0] / 65536.0f;
-            vtx[0].tv = uv2[1] / 65536.0f;
-            vtx++;
-            vtx[0].sx = v3->xs;
-            vtx[0].sy = v3->ys;
-            vtx[0].rhw = v3->ooz;
-            shade = (0x1fff - v3->g) >> 4;
-            if (shade > 255)
-                shade = 255;
-            vtx[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
-            vtx[0].tu = uv3[0] / 65536.0f;
-            vtx[0].tv = uv3[1] / 65536.0f;
-            if (SavedAppSettings.ZBuffer) {
-                vtx[-2].sz = FltResZBuf - FltResZORhw * v1->ooz;
-                vtx[-1].sz = FltResZBuf - FltResZORhw * v2->ooz;
-                vtx[0].sz = FltResZBuf - FltResZORhw * v3->ooz;
-            }
-            HWR_VertexPtr = vtx + 1;
-            surfacenum++;
-            return;
+        switch (sorttype) {
+        case MID_SORT:
+            zdepth = (v1->zv + v2->zv + v3->zv) * 0.333333333333333333f;
+            break;
+        case FAR_SORT:
+            zdepth = v1->zv;
+            if (v2->zv > zdepth)
+                zdepth = v2->zv;
+            if (v3->zv > zdepth)
+                zdepth = v3->zv;
+            break;
+        default:
+            zdepth = 1000000000.0f;
+            break;
         }
+        sort3dptr[0] = (sint32)info3dptr;
+        sort3dptr[1] = (sint32)zdepth;
+        sort3dptr += 2;
+        info3dptr[0] = tex->drawtype + 9;
+        info3dptr[1] = tex->tpage;
+        info3dptr[2] = 3;
+        vtx = HWR_VertexPtr;
+        *(D3DTLVERTEX **)(info3dptr + 3) = vtx;
+        info3dptr += 5;
+        vtx[0].sx = v1->xs;
+        vtx[0].sy = v1->ys;
+        vtx[0].rhw = v1->ooz;
+        shade = (0x1fff - v1->g) >> 4;
+        if (shade > 255)
+            shade = 255;
+        vtx[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+        vtx[0].tu = uv1[0] / 65536.0f;
+        vtx[0].tv = uv1[1] / 65536.0f;
+        vtx++;
+        vtx[0].sx = v2->xs;
+        vtx[0].sy = v2->ys;
+        vtx[0].rhw = v2->ooz;
+        shade = (0x1fff - v2->g) >> 4;
+        if (shade > 255)
+            shade = 255;
+        vtx[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+        vtx[0].tu = uv2[0] / 65536.0f;
+        vtx[0].tv = uv2[1] / 65536.0f;
+        vtx++;
+        vtx[0].sx = v3->xs;
+        vtx[0].sy = v3->ys;
+        vtx[0].rhw = v3->ooz;
+        shade = (0x1fff - v3->g) >> 4;
+        if (shade > 255)
+            shade = 255;
+        vtx[0].color = bBlueEffect ? 0xff000000 | (((shade * 128) >> 8) << 16) | (((shade * 224) >> 8) << 8) | shade : 0xff000000 | (shade << 16) | (shade << 8) | shade;
+        vtx[0].tu = uv3[0] / 65536.0f;
+        vtx[0].tv = uv3[1] / 65536.0f;
+        if (SavedAppSettings.ZBuffer) {
+            vtx[-2].sz = FltResZBuf - FltResZORhw * v1->ooz;
+            vtx[-1].sz = FltResZBuf - FltResZORhw * v2->ooz;
+            vtx[0].sz = FltResZBuf - FltResZORhw * v3->ooz;
+        }
+        HWR_VertexPtr = vtx + 1;
+        surfacenum++;
+        return;
     }
 clip:
     npoints = XYGUVClipper(npoints, VBuffer);
