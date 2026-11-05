@@ -245,8 +245,8 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
     {
         for (; y2 > 0; y2--)
         {
-            line = source + ((v >> 8) & ~0xff);
             u = ubase;
+            line = source + ((v >> 8) & ~0xff);
             for (j = x2; j > 0; j--)
             {
                 pix = line[u >> 16];
@@ -263,8 +263,8 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
     {
         for (; y2 > 0; y2--)
         {
-            line = source + ((v >> 8) & ~0xff);
             u = ubase;
+            line = source + ((v >> 8) & ~0xff);
             for (j = x2; j > 0; j--)
             {
                 pix = line[u >> 16];
