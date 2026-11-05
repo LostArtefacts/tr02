@@ -440,10 +440,10 @@ extern "C" sint16 *calc_object_vertices(sint16 *objptr)
 {
     PHD_VBUF *dest;
     sint8 totclip, clipflag;
-    float f_mid_sort;
-    sint32 *mptr;
     int numvert;
-    float zv, xv, xs, ys, yv, persp;
+    sint32 *mptr;
+    float yv, xv, zv, ys, xs, persp;
+    float f_mid_sort;
 
     if (SavedAppSettings.ZBuffer)
         f_mid_sort = 0.0f;
