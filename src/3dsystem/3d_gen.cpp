@@ -745,7 +745,7 @@ extern "C" void AlterFOV(PHD_ANGLE fov)
     LfAspectCorrection = aspect / ratio;
 }
 
-extern "C" void Func402620(void)
+extern "C" void phd_UpdateZBufferCoefficients(void)
 {
     float res;
 
@@ -761,14 +761,14 @@ extern "C" void phd_SetNearZ(sint32 z)
     FltNearZ = (float)z;
     FltRhwONearZ = RhwFactor / FltNearZ;
     FltPerspONearZ = FltPersp / FltNearZ;
-    Func402620();
+    phd_UpdateZBufferCoefficients();
 }
 
 extern "C" void phd_SetFarZ(sint32 z)
 {
     phd_zfar = z;
     FltFarZ = (float)z;
-    Func402620();
+    phd_UpdateZBufferCoefficients();
 }
 
 extern "C" {

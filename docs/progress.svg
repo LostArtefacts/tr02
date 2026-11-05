@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="265.25" height="12" x="0" y="0" class="named"><title>1165 · 95.41%</title></rect>
-<rect width="5.46" height="12" x="265.25" y="0" class="decompiled"><title>24 · 1.97%</title></rect>
+<rect width="265.48" height="12" x="0" y="0" class="named"><title>1166 · 95.50%</title></rect>
+<rect width="5.24" height="12" x="265.48" y="0" class="decompiled"><title>23 · 1.88%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1165</tspan> · <tspan class="decompiled">24</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1166</tspan> · <tspan class="decompiled">23</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="266.54" height="12" x="0" y="0" class="named"><title>332 KB · 95.88%</title></rect>
-<rect width="1.72" height="12" x="266.54" y="0" class="decompiled"><title>2 KB · 0.62%</title></rect>
+<rect width="266.61" height="12" x="0" y="0" class="named"><title>332 KB · 95.90%</title></rect>
+<rect width="1.65" height="12" x="266.61" y="0" class="decompiled"><title>2 KB · 0.59%</title></rect>
 <rect width="9.62" height="12" x="268.26" y="0" class="nonmatching"><title>12 KB · 3.46%</title></rect>
 <rect width="0.12" height="12" x="277.88" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
@@ -115,7 +115,7 @@
 <rect width="12" height="12" x="300" y="0" class="named"><title>0x00402460 do_quickysorty (197 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="named"><title>0x00402530 phd_PrintPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="0" class="named"><title>0x00402570 AlterFOV (161 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="0" class="decompiled"><title>0x00402620 Func402620 (83 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="0" class="named"><title>0x00402620 phd_UpdateZBufferCoefficients (83 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="named"><title>0x00402680 phd_SetNearZ (66 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="named"><title>0x004026d0 phd_SetFarZ (24 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="0" class="named"><title>0x004026f0 phd_InitWindow (614 bytes)</title></rect>
@@ -2089,7 +2089,7 @@
 <rect width="6.75" height="6.97" x="578.52" y="325.34" class="named"><title>0x004285a0 lara_as_fastdive (84 bytes)</title></rect>
 <rect width="6.75" height="6.97" x="578.52" y="335.30" class="named"><title>0x0043d650 DoDynamics (84 bytes)</title></rect>
 <rect width="6.75" height="6.97" x="578.52" y="345.27" class="named"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
-<rect width="6.75" height="6.88" x="578.52" y="355.23" class="decompiled"><title>0x00402620 Func402620 (83 bytes)</title></rect>
+<rect width="6.75" height="6.88" x="578.52" y="355.23" class="named"><title>0x00402620 phd_UpdateZBufferCoefficients (83 bytes)</title></rect>
 <rect width="6.75" height="6.88" x="578.52" y="365.12" class="named"><title>0x00432460 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="6.71" height="6.92" x="588.27" y="203.77" class="named"><title>0x00432b10 InitialiseLOTarray (83 bytes)</title></rect>
 <rect width="6.71" height="6.92" x="597.98" y="203.77" class="named"><title>0x00445aa0 WinVidGetDisplayModes (83 bytes)</title></rect>

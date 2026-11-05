@@ -22,7 +22,7 @@ address,size,name,symbol
 0x00402460,197,do_quickysorty,_do_quickysorty
 0x00402530,54,phd_PrintPolyList,_phd_PrintPolyList
 0x00402570,161,AlterFOV,_AlterFOV
-0x00402620,83,Func402620,_Func402620
+0x00402620,83,phd_UpdateZBufferCoefficients,_phd_UpdateZBufferCoefficients
 0x00402680,66,phd_SetNearZ,_phd_SetNearZ
 0x004026d0,24,phd_SetFarZ,_phd_SetFarZ
 0x004026f0,614,phd_InitWindow,_phd_InitWindow
