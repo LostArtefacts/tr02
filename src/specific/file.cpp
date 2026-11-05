@@ -222,10 +222,11 @@ void AdjustTextureUVs(bool reset)
         for (j = 0; j < 8; j++)
         {
             if (flags & 1)
-                uv[j] -= adjust;
+                *uv -= adjust;
             else
-                uv[j] += adjust;
+                *uv += adjust;
             flags >>= 1;
+            uv++;
         }
     }
     UvAdd += adjust;
