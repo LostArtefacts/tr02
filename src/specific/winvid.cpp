@@ -1135,28 +1135,30 @@ extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriver
     DISPLAY_ADAPTER_LIST *list;
 
     list = (DISPLAY_ADAPTER_LIST *)lpContext;
-    if (DDrawCreate(lpGUID)) {
-        memset(&driverCaps, 0, sizeof(driverCaps));
-        memset(&helCaps, 0, sizeof(helCaps));
-        driverCaps.dwSize = sizeof(DDCAPS);
-        helCaps.dwSize = sizeof(DDCAPS);
-        if (!DX_TRY(DDraw->GetCaps(&driverCaps, &helCaps))) {
-            DISPLAY_ADAPTER &adapter = list->NewTail();
-            adapter.SetGuid(lpGUID);
-            strcpy(adapter.driverDescription, lpDriverDescription);
-            strcpy(adapter.driverName, lpDriverName);
-            adapter.driverCaps = driverCaps;
-            adapter.helCaps = helCaps;
-            adapter.swWindowedSupported = false;
-            adapter.hwWindowedSupported = false;
-            adapter.isVgaMode1Presented = false;
-            adapter.isVgaMode2Presented = false;
-            adapter.screenWidth = 0;
-            adapter.hwRenderSupported = false;
-            Enumerate3DDevices(&adapter);
-        }
+    if (!DDrawCreate(lpGUID))
+        return TRUE;
+    memset(&driverCaps, 0, sizeof(driverCaps));
+    driverCaps.dwSize = sizeof(DDCAPS);
+    memset(&helCaps, 0, sizeof(helCaps));
+    helCaps.dwSize = sizeof(DDCAPS);
+    if (DX_TRY(DDraw->GetCaps(&driverCaps, &helCaps))) {
         DDrawRelease();
+        return TRUE;
     }
+    DISPLAY_ADAPTER &adapter = list->NewTail();
+    adapter.SetGuid(lpGUID);
+    strcpy(adapter.driverDescription, lpDriverDescription);
+    strcpy(adapter.driverName, lpDriverName);
+    adapter.driverCaps = driverCaps;
+    adapter.helCaps = helCaps;
+    adapter.swWindowedSupported = false;
+    adapter.hwWindowedSupported = false;
+    adapter.isVgaMode1Presented = false;
+    adapter.isVgaMode2Presented = false;
+    adapter.screenWidth = 0;
+    adapter.hwRenderSupported = false;
+    Enumerate3DDevices(&adapter);
+    DDrawRelease();
     return TRUE;
 }
 
