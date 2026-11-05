@@ -10,7 +10,7 @@
 #include "../items.h"
 #include "include.h"
 
-extern "C" void Func444560(void);
+extern "C" void BGND_UnloadPicture(void);
 extern "C" void HWR_InitState(void);
 extern "C" void ClearBuffers(DWORD dwClrFlags, DWORD dwColour);
 
@@ -244,7 +244,7 @@ extern "C" void S_AnimateTextures(int nframes)
 void S_DontDisplayPicture(void)
 {
     if (SavedAppSettings.RenderMode == RM_Hardware)
-        Func444560();
+        BGND_UnloadPicture();
 }
 
 void ScreenDump(void)

@@ -329,7 +329,7 @@ extern "C" void BGND_Draw(void)
     DrawTextureTile(x[2], y[1], x[3] - x[2], y[2] - y[1], BGND_PageHandles[2], 128, 0, 128, 224, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     HWR_EnableZBuffer(true, true);
 }
-extern "C" void Func444560(void)
+extern "C" void BGND_UnloadPicture(void)
 {
     BGND_Free();
     BGND_PictureIsReady = false;
