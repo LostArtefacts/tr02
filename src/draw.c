@@ -1,3 +1,4 @@
+#include "3dglodef.h"
 #include "game.h"
 
 #define FLARE_FIRE 235
