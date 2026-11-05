@@ -701,10 +701,10 @@ template <class T> struct LIST {
                 prev = node->previous;
                 newNode = new NODE(prev, node);
                 newNode->body = item;
-                if (prev)
-                    prev->next = newNode;
-                else
+                if (!prev)
                     head = newNode;
+                else
+                    prev->next = newNode;
                 node->previous = newNode;
                 return;
             }
