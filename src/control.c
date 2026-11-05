@@ -1426,7 +1426,7 @@ int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target)
                         return item_number;
                 }
             }
-            item_number = item->next_item;
+            item_number = items[item_number].next_item;
         }
     }
     return NO_ITEM;
