@@ -276,7 +276,7 @@ typedef struct
 } SETUP_ADAPTER_ITEM;
 #pragma pack(pop)
 
-extern "C" int Func452760(SETUP_APP_SETTINGS *settings)
+extern "C" int SE_ReadAppSettings(SETUP_APP_SETTINGS *settings)
 {
     GUID guid;
     DISPLAY_MODE target;

@@ -1084,7 +1084,7 @@ address,size,name,symbol
 0x00452480,78,OpenGameRegistryKey,_OpenGameRegistryKey
 0x004524d0,5,CloseGameRegistryKey,_CloseGameRegistryKey
 0x004524e0,627,Func4524e0,_Func4524e0
-0x00452760,859,Func452760,_Func452760
+0x00452760,859,SE_ReadAppSettings,_SE_ReadAppSettings
 0x00452ac0,207,SE_GraphicsTestStart,_SE_GraphicsTestStart
 0x00452b90,20,SE_GraphicsTestFinish,_SE_GraphicsTestFinish
 0x00452bb0,3,SE_GraphicsTestExecute,_SE_GraphicsTestExecute

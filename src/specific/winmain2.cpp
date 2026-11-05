@@ -14,7 +14,7 @@ HWND WinVidFindGameWindow(void);
 HWND SE_FindSetupDialog(void);
 void _cexit(void);
 int GameInit(bool setup);
-int Func452760(APP_SETTINGS *settings);
+int SE_ReadAppSettings(APP_SETTINGS *settings);
 bool SE_ShowSetupDialog(HWND parent, bool firstRun);
 void Func4524e0(APP_SETTINGS *settings);
 int WinGameStart(void);
@@ -53,7 +53,7 @@ extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPST
         setup = UT_FindArg("setup") != NULL;
         initStatus = GameInit(setup);
         if (initStatus == 1) {
-            settingsStatus = Func452760(&SavedAppSettings);
+            settingsStatus = SE_ReadAppSettings(&SavedAppSettings);
             firstRun = settingsStatus == 2;
             if (settingsStatus == 0) {
                 *(volatile bool *)&hInstance = true;
