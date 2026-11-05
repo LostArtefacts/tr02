@@ -33,7 +33,7 @@ typedef struct room_info {
     sint16 num_lights;
     sint16 num_meshes;
     sint16 left, right, top, bottom;
-    uint16 bound_active;
+    sint16 bound_active;
     sint16 test_left, test_right, test_top, test_bottom;
     sint16 item_number;
     sint16 fx_number;
