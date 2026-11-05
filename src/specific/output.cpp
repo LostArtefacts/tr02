@@ -901,10 +901,10 @@ extern "C" int S_GetObjectBounds(sint16 *bptr)
         maxx += phd_centerx;
         miny += phd_centery;
         maxy += phd_centery;
-        if (numz < 8 || minx < 0 || miny < 0 || maxx > phd_winxmax || maxy > phd_winymax)
-            return -1;
         if (!numz || minx > phd_right || miny > phd_bottom || maxx < phd_left || maxy < phd_top)
             return 0;
+        if (numz < 8 || minx < 0 || miny < 0 || maxx > phd_winxmax || maxy > phd_winymax)
+            return -1;
         return 1;
     }
     return 0;
