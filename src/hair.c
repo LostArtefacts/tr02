@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 
 #define HAIR_SEGMENTS 6
