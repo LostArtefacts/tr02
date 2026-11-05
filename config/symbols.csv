@@ -311,7 +311,7 @@ address,size,name,symbol
 0x0041fcc0,1240,GF_InterpretSequence,_GF_InterpretSequence
 0x004201a0,3283,GF_ModifyInventory,_GF_ModifyInventory
 0x00420e80,116,InitialiseHair,_InitialiseHair
-0x00420f00,2533,HairControl,_HairControl
+0x00420f00,2556,HairControl,_HairControl
 0x00421900,118,DrawHair,_DrawHair
 0x00421980,45,FlashIt,_FlashIt
 0x004219b0,325,DrawAssaultTimer,_DrawAssaultTimer
