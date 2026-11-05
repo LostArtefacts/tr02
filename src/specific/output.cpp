@@ -1,3 +1,4 @@
+#include <dinput.h>
 #include "global.h"
 #include "output.h"
 #include "../inventry.h"
