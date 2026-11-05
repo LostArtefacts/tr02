@@ -462,7 +462,6 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
     sint32 i, brightest, adder, shade, shade1, shade2;
     sint32 dx, dy, dz, distance, falloff, falloff2, radius, depth;
     sint32 ls[3];
-    PHD_ANGLE angles[2];
 
     brightest = 0;
     r = &room[room_number];
@@ -542,6 +541,8 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
     adder >>= 1;
     if (adder)
     {
+        PHD_ANGLE angles[2];
+
         LsAdder = r->ambient - adder;
         ls_divider = 0x4000000 / adder;
         phd_GetVectorAngles(ls[0], ls[1], ls[2], angles);
