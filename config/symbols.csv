@@ -802,7 +802,7 @@ address,size,name,symbol
 0x00443e40,544,BGND_DrawInGameBackground,_BGND_DrawInGameBackground
 0x00444060,593,DrawTextureTile,_DrawTextureTile
 0x004442c0,139,BGND_CenterLighting,_BGND_CenterLighting
-0x00444350,519,Func444350,_Func444350
+0x00444350,519,BGND_Draw,_BGND_Draw
 0x00444560,13,Func444560,_Func444560
 0x00444570,77,BGND_Free,_BGND_Free
 0x004445c0,48,BGND_Init,_BGND_Init

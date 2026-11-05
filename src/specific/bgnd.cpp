@@ -302,7 +302,7 @@ void BGND_DrawInGameBackground(void);
 void DrawTextureTile(int sx, int sy, int width, int height, DWORD texSource, int tu, int tv, int t_width, int t_height, D3DCOLOR color0, D3DCOLOR color1, D3DCOLOR color2, D3DCOLOR color3);
 }
 
-extern "C" void Func444350(void)
+extern "C" void BGND_Draw(void)
 {
     int x[4];
     int y[4];

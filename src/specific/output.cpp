@@ -335,7 +335,7 @@ extern "C" LPDIRECTDRAWSURFACE RenderBufferSurface;
 extern "C" LPDIRECTDRAWSURFACE PictureBufferSurface;
 extern "C" RECT GameVidRect;
 extern "C" void S_SyncPictureBufferPalette(void);
-extern "C" void Func444350(void);
+extern "C" void BGND_Draw(void);
 extern "C" uint8 DepthQIndex[256];
 extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
 extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
@@ -381,7 +381,7 @@ extern "C" void S_CopyBufferToScreen(void)
         RenderBufferSurface->Blt(&GameVidRect, PictureBufferSurface, NULL, DDBLT_WAIT, NULL);
     }
     else
-        Func444350();
+        BGND_Draw();
 }
 
 typedef struct {
