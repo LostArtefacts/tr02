@@ -875,7 +875,7 @@ address,size,name,symbol
 0x004470a0,18,InsertDisplayMode,??0NODE@?$LIST@UDISPLAY_MODE@@@@QAE@PAU01@0@Z
 0x004470c0,72,InsertDisplayModeInListHead,?NewHead@?$LIST@UDISPLAY_MODE@@@@QAEAAUDISPLAY_MODE@@XZ
 0x00447110,74,InsertDisplayModeInListTail,?NewTail@?$LIST@UDISPLAY_MODE@@@@QAEAAUDISPLAY_MODE@@XZ
-0x00447170,18,Func447170,specific/winin.cpp:_$E1
+0x00447170,18,InitJoystickListGlobal,specific/winin.cpp:_$E1
 0x00447190,14,Func447190,specific/winin.cpp:_$E3
 0x00447220,57,Func447220,specific/winin.cpp:_$E6
 0x00447260,14,Func447260,specific/winin.cpp:_$E8

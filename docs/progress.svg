@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="266.84" height="12" x="0" y="0" class="named"><title>1172 · 95.99%</title></rect>
-<rect width="3.87" height="12" x="266.84" y="0" class="decompiled"><title>17 · 1.39%</title></rect>
+<rect width="267.07" height="12" x="0" y="0" class="named"><title>1173 · 96.07%</title></rect>
+<rect width="3.64" height="12" x="267.07" y="0" class="decompiled"><title>16 · 1.31%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1172</tspan> · <tspan class="decompiled">17</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1173</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="267.15" height="12" x="0" y="0" class="named"><title>333 KB · 96.10%</title></rect>
-<rect width="1.11" height="12" x="267.15" y="0" class="decompiled"><title>1 KB · 0.40%</title></rect>
+<rect width="267.17" height="12" x="0" y="0" class="named"><title>333 KB · 96.10%</title></rect>
+<rect width="1.09" height="12" x="267.17" y="0" class="decompiled"><title>1 KB · 0.39%</title></rect>
 <rect width="9.62" height="12" x="268.26" y="0" class="nonmatching"><title>12 KB · 3.46%</title></rect>
 <rect width="0.12" height="12" x="277.88" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
@@ -968,7 +968,7 @@
 <rect width="12" height="12" x="345" y="255" class="named"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="255" class="named"><title>0x004470c0 InsertDisplayModeInListHead (72 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="named"><title>0x00447110 InsertDisplayModeInListTail (74 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="255" class="decompiled"><title>0x00447170 Func447170 (18 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="255" class="named"><title>0x00447170 InitJoystickListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="255" class="decompiled"><title>0x00447190 Func447190 (14 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="255" class="decompiled"><title>0x00447220 Func447220 (57 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="255" class="decompiled"><title>0x00447260 Func447260 (14 bytes)</title></rect>
@@ -2475,7 +2475,7 @@
 <rect width="3.27" height="3.25" x="731.53" y="325.39" class="named"><title>0x00456ca0 DeleteRegistryValue (19 bytes)</title></rect>
 <rect width="3.10" height="3.25" x="737.80" y="325.39" class="named"><title>0x00444a50 InitDisplayAdapterListGlobal (18 bytes)</title></rect>
 <rect width="3.10" height="3.25" x="743.90" y="325.39" class="named"><title>0x004470a0 InsertDisplayMode (18 bytes)</title></rect>
-<rect width="3.03" height="3.32" x="706.45" y="331.65" class="decompiled"><title>0x00447170 Func447170 (18 bytes)</title></rect>
+<rect width="3.03" height="3.32" x="706.45" y="331.65" class="named"><title>0x00447170 InitJoystickListGlobal (18 bytes)</title></rect>
 <rect width="3.03" height="3.32" x="706.45" y="337.97" class="decompiled"><title>0x00447b40 Func447b40 (18 bytes)</title></rect>
 <rect width="3.03" height="3.32" x="706.45" y="344.29" class="named"><title>0x00455d30 SafeFreePalette (18 bytes)</title></rect>
 <rect width="3.03" height="3.14" x="706.45" y="350.62" class="named"><title>0x00445060 WinVidFindGameWindow (17 bytes)</title></rect>
