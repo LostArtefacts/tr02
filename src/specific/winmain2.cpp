@@ -24,7 +24,7 @@ BOOL GameMain(void);
 }
 
 void WinCleanup(void);
-extern "C" void Func44e920(unsigned int code, EXCEPTION_POINTERS *pointers);
+extern "C" void SE_TranslateException(unsigned int code, EXCEPTION_POINTERS *pointers);
 char *UT_FindArg(char *arg);
 void UT_ErrorBox(int id, void *parent);
 void UT_ErrorBox(char *text, void *parent);
@@ -48,7 +48,7 @@ extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPST
         return 0;
     }
     try {
-        _set_se_translator(Func44e920);
+        _set_se_translator(SE_TranslateException);
         *(volatile bool *)&hInstance = false;
         setup = UT_FindArg("setup") != NULL;
         initStatus = GameInit(setup);
