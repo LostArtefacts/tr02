@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="268.44" height="12" x="0" y="0" class="named"><title>1179 · 96.56%</title></rect>
-<rect width="2.28" height="12" x="268.44" y="0" class="decompiled"><title>10 · 0.82%</title></rect>
+<rect width="268.67" height="12" x="0" y="0" class="named"><title>1180 · 96.64%</title></rect>
+<rect width="2.05" height="12" x="268.67" y="0" class="decompiled"><title>9 · 0.74%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1179</tspan> · <tspan class="decompiled">10</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1180</tspan> · <tspan class="decompiled">9</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="267.26" height="12" x="0" y="0" class="named"><title>333 KB · 96.14%</title></rect>
-<rect width="1" height="12" x="267.26" y="0" class="decompiled"><title>1 KB · 0.36%</title></rect>
+<rect width="267.31" height="12" x="0" y="0" class="named"><title>333 KB · 96.15%</title></rect>
+<rect width="0.95" height="12" x="267.31" y="0" class="decompiled"><title>1 KB · 0.34%</title></rect>
 <rect width="9.62" height="12" x="268.26" y="0" class="nonmatching"><title>12 KB · 3.46%</title></rect>
 <rect width="0.12" height="12" x="277.88" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
@@ -997,7 +997,7 @@
 <rect width="12" height="12" x="30" y="270" class="named"><title>0x00447b00 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="270" class="named"><title>0x00447b40 InitSoundAdapterListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="270" class="named"><title>0x00447b60 RegisterSoundAdapterListDestructor (14 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="270" class="decompiled"><title>0x00447bf0 Func447bf0 (57 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="270" class="named"><title>0x00447bf0 InitCurrentSoundAdapterGlobal (57 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="270" class="decompiled"><title>0x00447c30 Func447c30 (14 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="named"><title>0x00447c70 GetSoundAdapter (72 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="named"><title>0x00447cc0 WinSndFreeAllSamples (46 bytes)</title></rect>
@@ -2219,7 +2219,7 @@
 <rect width="5.85" height="5.45" x="723.44" y="240.97" class="named"><title>0x00440f80 GetTextScaleV (57 bytes)</title></rect>
 <rect width="5.85" height="5.45" x="732.29" y="240.97" class="named"><title>0x00447220 InitCurrentJoystickGlobal (57 bytes)</title></rect>
 <rect width="5.85" height="5.45" x="741.15" y="240.97" class="named"><title>0x00447a80 TempVideoRemove (57 bytes)</title></rect>
-<rect width="5.78" height="5.52" x="615.98" y="249.42" class="decompiled"><title>0x00447bf0 Func447bf0 (57 bytes)</title></rect>
+<rect width="5.78" height="5.52" x="615.98" y="249.42" class="named"><title>0x00447bf0 InitCurrentSoundAdapterGlobal (57 bytes)</title></rect>
 <rect width="5.78" height="5.52" x="615.98" y="257.93" class="named"><title>0x00447f40 WinSndGetFreeChannelIndex (57 bytes)</title></rect>
 <rect width="5.78" height="5.52" x="615.98" y="266.45" class="named"><title>0x0044e8e0 WinGameFinish (57 bytes)</title></rect>
 <rect width="5.78" height="5.52" x="615.98" y="274.96" class="named"><title>0x004554b0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
