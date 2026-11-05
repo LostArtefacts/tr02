@@ -1,3 +1,5 @@
+#include <ddraw.h>
+#include <malloc.h>
 #include "game.h"
 #include "box.h"
 #include "specific/init.h"
