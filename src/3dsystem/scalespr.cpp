@@ -206,7 +206,7 @@ extern "C" bool GameVid_IsWindowedVga;
 
 extern "C" void draw_scaled_spriteC(sint16 *inptr)
 {
-    sint32 x1, y1, x2, y2, width, height, u, v, uadd, vadd, skip, i, j, ubase;
+    sint32 x1, y1, x2, y2, u, v, uadd, vadd, skip, j, ubase;
     PHDSPRITESTRUCT *sprite;
     DEPTHQ_ENTRY *dqptr;
     uint8 *pixptr, *source, *line, pix;
@@ -237,17 +237,17 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
         x2 = phd_winxmax + 1;
     if (y2 > phd_winymax)
         y2 = phd_winymax + 1;
-    height = y2 - y1;
-    width = x2 - x1;
-    skip = phd_scrwidth - width;
-    pixptr = (uint8 *)&phd_winptr[x1 + phd_scrwidth * (phd_winymin + y1) + phd_winxmin];
+    x2 -= x1;
+    y2 -= y1;
+    pixptr = (uint8 *)phd_winptr + (y1 + phd_winymin) * phd_scrwidth + (x1 + phd_winxmin);
+    skip = phd_scrwidth - x2;
     if (dqptr == &DepthQTable[16] && !GameVid_IsWindowedVga)
     {
-        for (i = height; i > 0; i--)
+        for (; y2 > 0; y2--)
         {
             line = source + ((v >> 8) & ~0xff);
             u = ubase;
-            for (j = width; j > 0; j--)
+            for (j = x2; j > 0; j--)
             {
                 pix = line[u >> 16];
                 if (pix)
@@ -261,11 +261,11 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
     }
     else
     {
-        for (i = height; i > 0; i--)
+        for (; y2 > 0; y2--)
         {
             line = source + ((v >> 8) & ~0xff);
             u = ubase;
-            for (j = width; j > 0; j--)
+            for (j = x2; j > 0; j--)
             {
                 pix = line[u >> 16];
                 if (pix)
