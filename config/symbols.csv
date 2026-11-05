@@ -905,7 +905,7 @@ address,size,name,symbol
 0x00447b40,18,InitSoundAdapterListGlobal,specific/ds.cpp:_$E1
 0x00447b60,14,RegisterSoundAdapterListDestructor,specific/ds.cpp:_$E3
 0x00447bf0,57,InitCurrentSoundAdapterGlobal,specific/ds.cpp:_$E6
-0x00447c30,14,Func447c30,specific/ds.cpp:_$E8
+0x00447c30,14,RegisterCurrentSoundAdapterDestructor,specific/ds.cpp:_$E8
 0x00447c70,72,GetSoundAdapter,_GetSoundAdapter
 0x00447cc0,46,WinSndFreeAllSamples,_WinSndFreeAllSamples
 0x00447cf0,270,WinSndMakeSample,_WinSndMakeSample ?WinSndMakeSample@@YA_NHPAUtWAVEFORMATEX@@PAXK@Z
