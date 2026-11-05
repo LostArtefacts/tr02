@@ -1,7 +1,9 @@
 #include "../specific/standard.h"
+#include <locale.h>
+#include "../3dglodef.h"
 #include "../specific/global.h"
 #include "../specific/time.h"
-#include "../3dglodef.h"
+#include "../specific/init_result.h"
 
 typedef struct {
     uint16 tpage;
@@ -245,8 +247,8 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
     {
         for (; y2 > 0; y2--)
         {
-            u = ubase;
             line = source + ((v >> 8) & ~0xff);
+            u = ubase;
             for (j = x2; j > 0; j--)
             {
                 pix = line[u >> 16];
@@ -263,8 +265,8 @@ extern "C" void draw_scaled_spriteC(sint16 *inptr)
     {
         for (; y2 > 0; y2--)
         {
-            u = ubase;
             line = source + ((v >> 8) & ~0xff);
+            u = ubase;
             for (j = x2; j > 0; j--)
             {
                 pix = line[u >> 16];
