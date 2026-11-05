@@ -33,7 +33,7 @@ bool WinVidInit(void);
 BOOL Direct3DInit(void);
 bool RenderInit(void);
 bool InitTextures(void);
-bool Func448050(void);
+bool DS_Init(void);
 bool DI_Init(void);
 bool BGND_Init(void);
 }
@@ -47,7 +47,7 @@ extern "C" int GameInit(bool skipCDInit)
     if (!skipCDInit && !CD_Init())
         return 2;
     UT_InitAccurateTimer();
-    if (WinVidInit() && Direct3DInit() && RenderInit() && InitTextures() && Func448050() && DI_Init() && TIME_Init() && HWR_Init() && BGND_Init())
+    if (WinVidInit() && Direct3DInit() && RenderInit() && InitTextures() && DS_Init() && DI_Init() && TIME_Init() && HWR_Init() && BGND_Init())
         return 1;
     return 0;
 }

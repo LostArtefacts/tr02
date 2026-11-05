@@ -46,13 +46,13 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="268.89" height="12" x="0" y="0" class="named"><title>1181 · 96.72%</title></rect>
-<rect width="1.82" height="12" x="268.89" y="0" class="decompiled"><title>8 · 0.66%</title></rect>
+<rect width="269.12" height="12" x="0" y="0" class="named"><title>1182 · 96.81%</title></rect>
+<rect width="1.59" height="12" x="269.12" y="0" class="decompiled"><title>7 · 0.57%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1181</tspan> · <tspan class="decompiled">8</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1182</tspan> · <tspan class="decompiled">7</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="267.32" height="12" x="0" y="0" class="named"><title>333 KB · 96.16%</title></rect>
@@ -1009,7 +1009,7 @@
 <rect width="12" height="12" x="210" y="270" class="named"><title>0x00447fb0 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="270" class="named"><title>0x00447ff0 DS_StopSample (47 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="270" class="named"><title>0x00448020 DS_StopAllSamples (45 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="270" class="decompiled"><title>0x00448050 Func448050 (5 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="270" class="named"><title>0x00448050 DS_Init (5 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="270" class="named"><title>0x00448060 WinSndInit (156 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="270" class="named"><title>0x00448100 DSoundEnumerate (26 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="270" class="named"><title>0x00448120 DSoundEnumCallback (226 bytes)</title></rect>
@@ -2533,7 +2533,7 @@
 <rect width="1.48" height="1.87" x="734.81" y="370.13" class="named"><title>0x0041d9f0 reset_hair (5 bytes)</title></rect>
 <rect width="2.35" height="1.08" x="739.29" y="360.05" class="named"><title>0x004239c0 DoInventoryPicture (5 bytes)</title></rect>
 <rect width="2.35" height="1.08" x="744.65" y="360.05" class="named"><title>0x00447450 DI_Init (5 bytes)</title></rect>
-<rect width="2.35" height="1.08" x="739.29" y="364.12" class="decompiled"><title>0x00448050 Func448050 (5 bytes)</title></rect>
+<rect width="2.35" height="1.08" x="739.29" y="364.12" class="named"><title>0x00448050 DS_Init (5 bytes)</title></rect>
 <rect width="2.35" height="1.08" x="744.65" y="364.12" class="named"><title>0x004524d0 CloseGameRegistryKey (5 bytes)</title></rect>
 <rect width="2.93" height="1" x="739.29" y="368.20" class="named"><title>0x00452e30 SE_SoundTestFinish (5 bytes)</title></rect>
 <rect width="2.93" height="1" x="739.29" y="371" class="named"><title>0x00448ef0 RenderInit (3 bytes)</title></rect>

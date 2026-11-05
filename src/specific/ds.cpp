@@ -206,7 +206,7 @@ void DS_StopAllSamples()
 
 extern "C" bool WinSndInit(void);
 
-extern "C" bool Func448050(void)
+extern "C" bool DS_Init(void)
 {
     return WinSndInit();
 }
