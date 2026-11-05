@@ -47,9 +47,12 @@ typedef struct {
 
 extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output);
 extern "C" int XYGUVClipper(int number, VERTEX_INFO *input);
+extern "C" int XYGClipper(int number, VERTEX_INFO *input);
 extern "C" int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3);
 extern "C" void DrawClippedPoly_Textured(int npoints);
 extern "C" D3DTEXTUREHANDLE HWR_PageHandles[];
+
+extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
 
 extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3)
 {
@@ -90,7 +93,8 @@ extern "C" void InsertGT3_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PH
         point[2].u = (float)uv3[0];
         point[2].v = (float)uv3[1];
         npoints = ZedClipper(3, point, VBuffer);
-        if (!npoints)
+        if (npoints) {
+        } else
             return;
     } else {
         if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) < 0)
@@ -209,9 +213,7 @@ extern "C" void DrawClippedPoly_Textured(int vtx_count)
 
 extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex, int sorttype);
 
-extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
-
-extern "C" PALETTEENTRY GamePalette16[];
+extern "C" void DrawPoly_Gouraud(int vtx_count, int red, int green, int blue);
 
 extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex)
 {
@@ -224,7 +226,9 @@ extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PH
             InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
             InsertGT3_ZBuffered(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4);
         }
-    } else if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) >= 0) {
+        return;
+    }
+    if ((sint32)((double)(v3->xs - v2->xs) * (double)(v1->ys - v2->ys) - (double)(v3->ys - v2->ys) * (double)(v1->xs - v2->xs)) >= 0) {
         if ((sint8)(v1->clip | v2->clip | v3->clip | v4->clip)) {
             InsertGT3_ZBuffered(v1, v2, v3, tex, &tex->u1, &tex->u2, &tex->u3);
             InsertGT3_ZBuffered(v1, v3, v4, tex, &tex->u1, &tex->u3, &tex->u4);
@@ -313,9 +317,7 @@ extern "C" sint16 *InsertObjectGT3_ZBuffered(sint16 *objptr, int number, int sor
     return objptr;
 }
 
-extern "C" int XYGClipper(int number, VERTEX_INFO *input);
-
-extern "C" void DrawPoly_Gouraud(int vtx_count, int red, int green, int blue);
+extern "C" PALETTEENTRY GamePalette16[];
 
 inline int ZClip4(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3, PHD_VBUF *vn4)
 {
