@@ -211,6 +211,8 @@ extern "C" void InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_V
 
 extern "C" void InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *tex, uint16 *uv1, uint16 *uv2, uint16 *uv3, int sorttype);
 
+extern "C" PALETTEENTRY GamePalette16[];
+
 extern "C" void InsertGT4_ZBuffered(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *tex)
 {
     uint32 shade;
@@ -311,7 +313,6 @@ extern "C" sint16 *InsertObjectGT3_ZBuffered(sint16 *objptr, int number, int sor
     return objptr;
 }
 
-extern "C" PALETTEENTRY GamePalette16[];
 extern "C" int XYGClipper(int number, VERTEX_INFO *input);
 
 extern "C" void DrawPoly_Gouraud(int vtx_count, int red, int green, int blue);
