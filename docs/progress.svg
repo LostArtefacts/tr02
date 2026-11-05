@@ -70,8 +70,8 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="41"><tspan class="named">36 KB</tspan> · 198 functions</text>
 <text text-anchor="start" x="0" y="58.50">Executable code</text>
 <g transform="translate(130 52.50)">
-<rect width="277.59" height="12" x="0" y="0" class="named"><title>400 KB · 99.85%</title></rect>
-<rect width="0.41" height="12" x="277.59" y="0" class="todo"><title>1 KB · 0.15%</title></rect>
+<rect width="277.60" height="12" x="0" y="0" class="named"><title>400 KB · 99.86%</title></rect>
+<rect width="0.40" height="12" x="277.60" y="0" class="todo"><title>1 KB · 0.14%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="58.50">99.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="58"><tspan class="named">400 KB</tspan> · <tspan class="todo">1 KB</tspan> · 5 KB not in symbols.csv</text>

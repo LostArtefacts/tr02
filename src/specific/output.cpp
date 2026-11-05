@@ -464,8 +464,8 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
     sint32 ls[3];
     PHD_ANGLE angles[2];
 
-    r = &room[room_number];
     brightest = 0;
+    r = &room[room_number];
     if (r->lighting == 0)
     {
         light = (LIGHT_INFO *)r->light;
