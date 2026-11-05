@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="266.39" height="12" x="0" y="0" class="named"><title>1170 · 95.82%</title></rect>
-<rect width="4.33" height="12" x="266.39" y="0" class="decompiled"><title>19 · 1.56%</title></rect>
+<rect width="266.62" height="12" x="0" y="0" class="named"><title>1171 · 95.90%</title></rect>
+<rect width="4.10" height="12" x="266.62" y="0" class="decompiled"><title>18 · 1.47%</title></rect>
 <rect width="6.83" height="12" x="270.71" y="0" class="nonmatching"><title>30 · 2.46%</title></rect>
 <rect width="0.46" height="12" x="277.54" y="0" class="todo"><title>2 · 0.16%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1170</tspan> · <tspan class="decompiled">19</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="7"><tspan class="named">1171</tspan> · <tspan class="decompiled">18</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="267.06" height="12" x="0" y="0" class="named"><title>332 KB · 96.07%</title></rect>
-<rect width="1.20" height="12" x="267.06" y="0" class="decompiled"><title>1 KB · 0.43%</title></rect>
+<rect width="267.14" height="12" x="0" y="0" class="named"><title>332 KB · 96.09%</title></rect>
+<rect width="1.12" height="12" x="267.14" y="0" class="decompiled"><title>1 KB · 0.40%</title></rect>
 <rect width="9.62" height="12" x="268.26" y="0" class="nonmatching"><title>12 KB · 3.46%</title></rect>
 <rect width="0.12" height="12" x="277.88" y="0" class="todo"><title>154 bytes · 0.04%</title></rect>
 </g>
@@ -910,7 +910,7 @@
 <rect width="12" height="12" x="225" y="240" class="named"><title>0x00444a30 Direct3DInit (6 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="named"><title>0x00444a50 InitDisplayAdapterListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="named"><title>0x00444a70 RegisterDisplayAdapterListDestructor (14 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="240" class="decompiled"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="240" class="named"><title>0x00444b60 InitCurrentDisplayAdapterGlobal (95 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="240" class="decompiled"><title>0x00444bc0 Func444bc0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="240" class="named"><title>0x00444c80 DDrawCreate (84 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="named"><title>0x00444ce0 DDrawRelease (51 bytes)</title></rect>
@@ -2044,7 +2044,7 @@
 <rect width="7.25" height="7.41" x="588.96" y="193.36" class="named"><title>0x004567c0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="7.17" height="7.41" x="599.21" y="193.36" class="named"><title>0x00414ae0 TranslateItem (95 bytes)</title></rect>
 <rect width="7.17" height="7.41" x="609.38" y="193.36" class="named"><title>0x00443d00 BGND_DrawInGameBlack (95 bytes)</title></rect>
-<rect width="7.17" height="7.41" x="619.56" y="193.36" class="decompiled"><title>0x00444b60 Func444b60 (95 bytes)</title></rect>
+<rect width="7.17" height="7.41" x="619.56" y="193.36" class="named"><title>0x00444b60 InitCurrentDisplayAdapterGlobal (95 bytes)</title></rect>
 <rect width="7.10" height="7.41" x="629.73" y="193.36" class="named"><title>0x004318e0 lara_as_surfback (94 bytes)</title></rect>
 <rect width="7.10" height="7.41" x="639.83" y="193.36" class="named"><title>0x0043f910 StopSoundEffect (94 bytes)</title></rect>
 <rect width="7.10" height="7.41" x="649.93" y="193.36" class="named"><title>0x00456cc0 GetRegistryDwordValue (94 bytes)</title></rect>
