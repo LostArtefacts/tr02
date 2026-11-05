@@ -70,8 +70,8 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="41"><tspan class="named">36 KB</tspan> · 198 functions</text>
 <text text-anchor="start" x="0" y="58.50">Executable code</text>
 <g transform="translate(130 52.50)">
-<rect width="277.61" height="12" x="0" y="0" class="named"><title>400 KB · 99.86%</title></rect>
-<rect width="0.39" height="12" x="277.61" y="0" class="todo"><title>1 KB · 0.14%</title></rect>
+<rect width="277.64" height="12" x="0" y="0" class="named"><title>400 KB · 99.87%</title></rect>
+<rect width="0.36" height="12" x="277.64" y="0" class="todo"><title>1 KB · 0.13%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="58.50">99.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="58"><tspan class="named">400 KB</tspan> · <tspan class="todo">1 KB</tspan> · 5 KB not in symbols.csv</text>
@@ -83,8 +83,8 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="75"><tspan class="named">36 KB</tspan> · 727/727 globals placed · 25 unmapped</text>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <g transform="translate(130 86.50)">
-<rect width="277.83" height="12" x="0" y="0" class="named"><title>912 KB · 99.94%</title></rect>
-<rect width="0.17" height="12" x="277.83" y="0" class="todo"><title>1 KB · 0.06%</title></rect>
+<rect width="277.84" height="12" x="0" y="0" class="named"><title>912 KB · 99.94%</title></rect>
+<rect width="0.16" height="12" x="277.84" y="0" class="todo"><title>1 KB · 0.06%</title></rect>
 </g>
 <text text-anchor="end" x="468" y="92.50">99.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="483" y="92"><tspan class="named">912 KB</tspan> · <tspan class="todo">1 KB</tspan></text>

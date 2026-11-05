@@ -975,7 +975,7 @@ extern "C" void ins_poly_trans8(PHD_VBUF *vbuf, sint16 shade)
 {
     int npoints;
     VERTEX_INFO *v;
-    PHD_VBUF *vn1, *vn5, *vn3, *vn2, *vn7, *vn4, *vn8, *vn6;
+    PHD_VBUF *vn1, *vn3, *vn5, *vn2, *vn7, *vn4, *vn8, *vn6;
 
     vn1 = vbuf;
     vn2 = vbuf + 1;
