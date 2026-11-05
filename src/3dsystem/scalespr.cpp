@@ -1,5 +1,6 @@
 #include "../specific/standard.h"
 #include "../specific/global.h"
+#include "../specific/time.h"
 #include "../3dglodef.h"
 
 typedef struct {
@@ -56,15 +57,7 @@ extern "C" void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 
         xv = w2v_matrix[M00] * x + w2v_matrix[M01] * y + w2v_matrix[M02] * z;
         yv = w2v_matrix[M10] * x + w2v_matrix[M11] * y + w2v_matrix[M12] * z;
     }
-    else if (x | y | z)
-    {
-        zv = phd_mxptr[M20] * x + phd_mxptr[M21] * y + phd_mxptr[M22] * z + phd_mxptr[M23];
-        if (zv < phd_znear || zv > phd_zfar)
-            return;
-        xv = phd_mxptr[M00] * x + phd_mxptr[M01] * y + phd_mxptr[M02] * z + phd_mxptr[M03];
-        yv = phd_mxptr[M10] * x + phd_mxptr[M11] * y + phd_mxptr[M12] * z + phd_mxptr[M13];
-    }
-    else
+    else if (!(x | y | z))
     {
         zv = phd_mxptr[M23];
         if (zv < phd_znear || zv > phd_zfar)
@@ -72,6 +65,15 @@ extern "C" void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 
         xv = phd_mxptr[M03];
         yv = phd_mxptr[M13];
     }
+    else
+    {
+        zv = phd_mxptr[M20] * x + phd_mxptr[M21] * y + phd_mxptr[M22] * z + phd_mxptr[M23];
+        if (zv < phd_znear || zv > phd_zfar)
+            return;
+        xv = phd_mxptr[M00] * x + phd_mxptr[M01] * y + phd_mxptr[M02] * z + phd_mxptr[M03];
+        yv = phd_mxptr[M10] * x + phd_mxptr[M11] * y + phd_mxptr[M12] * z + phd_mxptr[M13];
+    }
+    zp = zv / PhdPersp;
     sprite = &PhdSpriteInfo[sprnum];
     x1 = sprite->x1;
     y1 = sprite->y1;
@@ -91,7 +93,6 @@ extern "C" void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 
         x2 <<= W2V_SHIFT;
         y2 <<= W2V_SHIFT;
     }
-    zp = zv / PhdPersp;
     x1 = (xv + x1) / zp + phd_centerx;
     if (x1 >= phd_winwidth)
         return;
