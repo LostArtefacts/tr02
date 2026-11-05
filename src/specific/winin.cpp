@@ -104,7 +104,7 @@ extern "C" DWORD WinInReadJoystick(int *x, int *y)
 
 extern "C" bool WinInputInit(void);
 
-extern "C" bool Func447450(void)
+extern "C" bool DI_Init(void)
 {
     return WinInputInit();
 }
