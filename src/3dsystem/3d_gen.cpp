@@ -498,7 +498,7 @@ extern "C" sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort
 
 extern "C" sint16 *calc_vertice_light(sint16 *objptr)
 {
-    int numvert;
+    int numvert, i;
     sint32 shade, xv, yv, zv;
     sint32 *mptr;
     PHD_VBUF *dest;
@@ -510,16 +510,14 @@ extern "C" sint16 *calc_vertice_light(sint16 *objptr)
             xv = (*(mptr + M00) * ls_vector_view.x + *(mptr + M10) * ls_vector_view.y + *(mptr + M20) * ls_vector_view.z) / ls_divider;
             yv = (*(mptr + M01) * ls_vector_view.x + *(mptr + M11) * ls_vector_view.y + *(mptr + M21) * ls_vector_view.z) / ls_divider;
             zv = (*(mptr + M02) * ls_vector_view.x + *(mptr + M12) * ls_vector_view.y + *(mptr + M22) * ls_vector_view.z) / ls_divider;
-            for (dest = PhdVBuf; numvert > 0; numvert--, dest++) {
+            for (dest = PhdVBuf; numvert > 0; numvert--, dest++, objptr += 3) {
                 shade = ((objptr[0] * xv + objptr[1] * yv + objptr[2] * zv) >> 16) + LsAdder;
                 if (shade < 0)
                     shade = 0;
                 else if (shade > 0x1fff)
                     shade = 0x1fff;
                 dest->g = (sint16)shade;
-                objptr += 3;
             }
-            return objptr;
         } else {
             shade = LsAdder;
             if (shade < 0)
@@ -527,13 +525,11 @@ extern "C" sint16 *calc_vertice_light(sint16 *objptr)
             else if (shade > 0x1fff)
                 shade = 0x1fff;
             objptr += numvert * 3;
-            for (dest = PhdVBuf; numvert > 0; numvert--, dest++)
+            for (dest = PhdVBuf, i = numvert; i--; dest++)
                 dest->g = (sint16)shade;
-            return objptr;
         }
     } else if (numvert < 0) {
-        numvert = -numvert;
-        for (dest = PhdVBuf; numvert > 0; numvert--, dest++) {
+        for (dest = PhdVBuf; numvert < 0; numvert++, dest++) {
             shade = *objptr++ + LsAdder;
             if (shade < 0)
                 shade = 0;
@@ -616,9 +612,9 @@ extern "C" sint16 *calc_roomvert(sint16 *objptr, int far_clip)
 
 void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw)
 {
-    sint32 cx;
     PHD_VECTOR ls_world;
     sint32 *mptr;
+    sint32 cx;
 
     phd_ls_yaw = yaw;
     phd_ls_pitch = pitch;
