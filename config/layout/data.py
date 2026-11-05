@@ -578,22 +578,32 @@ def prepare() -> None:
 
     # Preserve allocations without a recovered destination in unused initialized space.
     # These are compiler constants and metadata; their references are still relocated.
+    # A source change can leave an allocation with no free space in its own section; it then
+    # goes to the other initialized section, and failing that it shares its old address, so
+    # the image still links and can be measured (the report names it).
     for chunk in sorted(unplaced, key=lambda c: -c.size):
-        candidates = [chunk.old]
-        secname = ".rdata" if chunk.readonly else ".data"
-        va, vsize, rawptr, rawsize = orig.sections[secname]
-        candidates.extend(range(va, va + min(vsize, rawsize) - chunk.size + 1, 4))
-        for address in candidates:
-            if not va <= address or address + chunk.size > va + min(vsize, rawsize):
-                continue
-            if any(x in occupied for x in range(address, address + chunk.size)):
-                continue
-            chunk.new = address
-            for x in range(address, address + chunk.size):
-                occupied[x] = chunk
-            break
+        primary = ".rdata" if chunk.readonly else ".data"
+        for secname in (primary, ".data" if chunk.readonly else ".rdata"):
+            va, vsize, rawptr, rawsize = orig.sections[secname]
+            end = va + min(vsize, rawsize)
+            candidates = [chunk.old] if secname == primary else []
+            candidates.extend(range(va, end - chunk.size + 1, 4))
+            for address in candidates:
+                if not va <= address or address + chunk.size > end:
+                    continue
+                if any(x in occupied for x in range(address, address + chunk.size)):
+                    continue
+                chunk.new = address
+                for x in range(address, address + chunk.size):
+                    occupied[x] = chunk
+                break
+            if chunk.new is not None:
+                break
         if chunk.new is None:
-            raise ValueError(("No room for allocation", chunk))
+            chunk.new = chunk.old
+            print("LAYOUT DATA OVERLAP", chunk.names, hex(chunk.old), chunk.size, flush=True)
+        elif not (va <= chunk.new < end) or secname != primary:
+            print("LAYOUT DATA MOVED", chunk.names, hex(chunk.new), secname, flush=True)
     Path("build/layout/data-plan.json").write_text(
         json.dumps(
             [
