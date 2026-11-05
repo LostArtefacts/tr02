@@ -433,6 +433,9 @@ extern "C" void S_InsertBackground(sint16 *objptr)
     }
 }
 
+extern "C" void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
+extern "C" sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine);
+
 extern "C" sint16 *calc_object_vertices(sint16 *objptr)
 {
     PHD_VBUF *dest;
@@ -490,9 +493,7 @@ extern "C" sint16 *calc_object_vertices(sint16 *objptr)
     return objptr;
 }
 
-extern "C" void (*InsertSprite)(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
 extern "C" void (*InsertTransQuad)(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
-extern "C" sint16 *ins_objectGT3(sint16 *objptr, int number, enum sort_type sort_routine);
 extern "C" sint16 *ins_objectGT4(sint16 *objptr, int number, enum sort_type sort_routine);
 
 extern "C" sint16 *calc_vertice_light(sint16 *objptr)
