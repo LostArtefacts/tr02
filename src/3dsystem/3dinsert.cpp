@@ -973,9 +973,9 @@ extern "C" int XYClipper(int number, VERTEX_INFO *input)
 
 extern "C" void ins_poly_trans8(PHD_VBUF *vbuf, sint16 shade)
 {
-    VERTEX_INFO *v;
     int npoints;
-    PHD_VBUF *vn1, *vn5, *vn3, *vn4, *vn2, *vn6, *vn7, *vn8;
+    VERTEX_INFO *v;
+    PHD_VBUF *vn1, *vn5, *vn3, *vn2, *vn7, *vn4, *vn8, *vn6;
 
     vn1 = vbuf;
     vn2 = vbuf + 1;
