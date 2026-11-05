@@ -283,21 +283,6 @@ def place(objects: list[str]) -> list[str]:
                     raise ValueError(("different alias", alias.name, chosen.name))
                 removed.setdefault(alias.path, set()).add(alias.section)
                 aliases.setdefault(chosen.path, []).append((alias.name, chosen.section))
-    # The inline list destructor and its implementation are identical functions.
-    path = "build/obj_exe/specific_winvid.obj"
-    obj = coff.Object(path)
-    dtor = next(s for s in obj.externals() if s.name == "??1DISPLAY_MODE_LIST@@QAE@XZ")
-    impl = next(
-        s
-        for s in obj.externals()
-        if s.name == "?DisplayModeListDelete@DISPLAY_MODE_LIST@@QAEXXZ"
-    )
-    assert obj.sections[dtor.section - 1].data == obj.sections[impl.section - 1].data
-    assert (
-        obj.sections[dtor.section - 1].relocs == obj.sections[impl.section - 1].relocs
-    )
-    removed.setdefault(path, set()).add(dtor.section)
-    aliases.setdefault(path, []).append((dtor.name, impl.section))
 
     cursor = 0x401000
     pads: dict[str, dict[int, bytes]] = {}

@@ -10,7 +10,7 @@ struct DISPLAY_MODE {
     int bpp;
     int vga;
     DISPLAY_MODE() {}
-    bool CompareVideoModes(DISPLAY_MODE *mode);
+    bool operator<(DISPLAY_MODE &mode);
 };
 
 typedef struct DISPLAY_MODE_NODE {
@@ -724,7 +724,7 @@ extern "C" bool ApplySettings(APP_SETTINGS *newSettings)
             modeList = &PrimaryDisplayAdapter->swDispModeList;
             mode = modeList->head;
             if (mode) {
-                while (mode->body.CompareVideoModes(&targetMode)) {
+                while (mode->body < targetMode) {
                     mode = mode->next;
                     if (!mode) {
                         mode = modeList->tail;
@@ -777,7 +777,7 @@ extern "C" void FmvBackToGame(void)
         modeList = &PrimaryDisplayAdapter->swDispModeList;
         mode = modeList->head;
         if (mode) {
-            while (mode->body.CompareVideoModes(&targetMode)) {
+            while (mode->body < targetMode) {
                 mode = mode->next;
                 if (!mode) {
                     mode = modeList->tail;

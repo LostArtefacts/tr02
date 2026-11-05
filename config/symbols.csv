@@ -851,7 +851,7 @@ address,size,name,symbol
 0x004457d0,136,WinVidGoFullScreen,_WinVidGoFullScreen
 0x00445860,267,WinVidGoWindowed,_WinVidGoWindowed
 0x00445970,213,WinVidSetDisplayAdapter,_WinVidSetDisplayAdapter
-0x00445a50,69,CompareVideoModes,?CompareVideoModes@DISPLAY_MODE@@QAE_NPAU1@@Z
+0x00445a50,69,CompareVideoModes,??MDISPLAY_MODE@@QAE_NAAU0@@Z
 0x00445aa0,83,WinVidGetDisplayModes,_WinVidGetDisplayModes
 0x00445b00,945,EnumDisplayModesCallback,_EnumDisplayModesCallback@8
 0x00445ec0,64,WinVidInit,_WinVidInit
@@ -870,11 +870,11 @@ address,size,name,symbol
 0x00446c60,72,WinVidGetDisplayAdapter,_WinVidGetDisplayAdapter
 0x00446cb0,884,WinVidStart,_WinVidStart ?WinVidStart@@YA_NXZ ?WinVidStart@@YAXXZ
 0x00447030,19,WinVidFinish,_WinVidFinish
-0x00447050,13,DisplayModeListInit,??0DISPLAY_MODE_LIST@@QAE@XZ
-0x00447060,50,DisplayModeListDelete,?DisplayModeListDelete@DISPLAY_MODE_LIST@@QAEXXZ
-0x004470a0,18,InsertDisplayMode,??0DISPLAY_MODE_NODE@@QAE@PAU0@0@Z
-0x004470c0,72,InsertDisplayModeInListHead,?InsertDisplayModeInListHead@DISPLAY_MODE_LIST@@QAEPAUDISPLAY_MODE@@XZ
-0x00447110,74,InsertDisplayModeInListTail,?InsertDisplayModeInListTail@DISPLAY_MODE_LIST@@QAEPAUDISPLAY_MODE@@XZ
+0x00447050,13,DisplayModeListInit,??0?$LIST@UDISPLAY_MODE@@@@QAE@XZ
+0x00447060,50,DisplayModeListDelete,?RemoveAll@?$LIST@UDISPLAY_MODE@@@@QAEXXZ
+0x004470a0,18,InsertDisplayMode,??0NODE@?$LIST@UDISPLAY_MODE@@@@QAE@PAU01@0@Z
+0x004470c0,72,InsertDisplayModeInListHead,?NewHead@?$LIST@UDISPLAY_MODE@@@@QAEAAUDISPLAY_MODE@@XZ
+0x00447110,74,InsertDisplayModeInListTail,?NewTail@?$LIST@UDISPLAY_MODE@@@@QAEAAUDISPLAY_MODE@@XZ
 0x00447170,18,Func447170,specific/winin.cpp:_$E1
 0x00447190,14,Func447190,specific/winin.cpp:_$E3
 0x00447220,57,Func447220,specific/winin.cpp:_$E6

@@ -1,7 +1,6 @@
 #include "include.h"
 #include <math.h>
 #include "init_result.h"
-#pragma inline_depth(3)
 #include "global.h"
 #include "winmain.h"
 
@@ -10,7 +9,20 @@ struct DISPLAY_MODE {
     int height;
     int bpp;
     int vga;
-    bool CompareVideoModes(DISPLAY_MODE *mode);
+    DISPLAY_MODE()
+    {
+    }
+    DISPLAY_MODE(int w, int h, int b, int v) : width(w), height(h), bpp(b), vga(v)
+    {
+    }
+    void Set(int w, int h, int b, int v)
+    {
+        width = w;
+        height = h;
+        bpp = b;
+        vga = v;
+    }
+    bool operator<(DISPLAY_MODE &mode);
 };
 
 extern "C" DISPLAY_MODE FullScreenMode;
@@ -560,13 +572,17 @@ extern "C" bool HideDDrawGameWindow(void)
 struct STRING_FLAGGED {
     LPTSTR lpString;
     bool isPresented;
-    STRING_FLAGGED(DWORD size)
+    STRING_FLAGGED(DWORD size = 256)
     {
         lpString = new char[size];
         *lpString = 0;
         isPresented = true;
     }
     ~STRING_FLAGGED();
+    operator LPTSTR()
+    {
+        return lpString;
+    }
     STRING_FLAGGED &operator=(const STRING_FLAGGED &src)
     {
         if (this != &src)
@@ -585,53 +601,154 @@ inline STRING_FLAGGED::~STRING_FLAGGED()
         delete[] lpString;
 }
 
-struct DISPLAY_MODE_NODE {
-    DISPLAY_MODE_NODE *next;
-    DISPLAY_MODE_NODE *previous;
-    DISPLAY_MODE body;
-    DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode);
-};
-
-struct DISPLAY_MODE_LIST {
-    DISPLAY_MODE_NODE *head;
-    DISPLAY_MODE_NODE *tail;
-    DWORD dwCount;
-    DISPLAY_MODE_LIST();
-    ~DISPLAY_MODE_LIST()
-    {
-        DisplayModeListDelete();
-    }
-    void DisplayModeListDelete(void);
-    DISPLAY_MODE *InsertDisplayModeInListHead(void);
-    DISPLAY_MODE *InsertDisplayModeInListTail(void);
-    void InsertDisplayModeInListSorted(DISPLAY_MODE *mode);
-    DISPLAY_MODE_LIST &operator=(const DISPLAY_MODE_LIST &src)
-    {
-        DISPLAY_MODE_NODE *node;
-
-        if (this != &src)
+template <class T> struct LIST {
+    struct NODE {
+        NODE *next;
+        NODE *previous;
+        T body;
+        NODE(NODE *prevNode, NODE *nextNode) : next(nextNode), previous(prevNode)
         {
-            DisplayModeListDelete();
+        }
+    };
+    NODE *head;
+    NODE *tail;
+    DWORD dwCount;
+    LIST()
+    {
+        head = NULL;
+        tail = NULL;
+        dwCount = 0;
+    }
+    ~LIST()
+    {
+        RemoveAll();
+    }
+    void RemoveAll()
+    {
+        NODE *node;
+        NODE *nextNode;
+
+        for (node = head; node; node = nextNode) {
+            nextNode = node->next;
+            delete node;
+        }
+        head = NULL;
+        tail = NULL;
+        dwCount = 0;
+    }
+    T &NewHead()
+    {
+        NODE *node = new NODE(NULL, head);
+
+        if (head)
+            head->previous = node;
+        else
+            tail = node;
+        head = node;
+        dwCount++;
+        return node->body;
+    }
+    T &NewTail()
+    {
+        NODE *node = new NODE(tail, NULL);
+
+        if (tail)
+            tail->next = node;
+        else
+            head = node;
+        tail = node;
+        dwCount++;
+        return node->body;
+    }
+    void AddHead(T &item)
+    {
+        NewHead() = item;
+    }
+    void AddTail(T &item)
+    {
+        NewTail() = item;
+    }
+    NODE *GetHead()
+    {
+        return head;
+    }
+    NODE *GetNext(NODE *node)
+    {
+        if (node)
+            node = node->next;
+        return node;
+    }
+    T &operator[](NODE *node)
+    {
+        return node->body;
+    }
+    DWORD GetCount()
+    {
+        return dwCount;
+    }
+    void Insert(T &item)
+    {
+        NODE *node;
+        NODE *newNode;
+        NODE *prev;
+
+        if (!head) {
+            AddHead(item);
+            return;
+        }
+        for (node = head; node; node = node->next) {
+            if (item < node->body) {
+                prev = node->previous;
+                newNode = new NODE(prev, node);
+                newNode->body = item;
+                if (prev)
+                    prev->next = newNode;
+                else
+                    head = newNode;
+                node->previous = newNode;
+                return;
+            }
+        }
+        AddTail(item);
+    }
+    LIST &operator=(LIST &src)
+    {
+        NODE *node;
+
+        if (this != &src) {
+            RemoveAll();
             for (node = src.head; node; node = node->next)
-                *InsertDisplayModeInListTail() = node->body;
+                NewTail() = node->body;
         }
         return *this;
     }
 };
+
+typedef LIST<DISPLAY_MODE> DISPLAY_MODE_LIST;
+typedef LIST<DISPLAY_MODE>::NODE DISPLAY_MODE_NODE;
 
 struct DISPLAY_ADAPTER_INFO {
     LPGUID lpAdapterGuid;
     GUID adapterGuid;
     STRING_FLAGGED driverDescription;
     STRING_FLAGGED driverName;
+    void SetGuid(GUID *lpGuid)
+    {
+        if (lpGuid) {
+            adapterGuid = *lpGuid;
+            lpAdapterGuid = &adapterGuid;
+        } else {
+            memset(&adapterGuid, 0, sizeof(GUID));
+            lpAdapterGuid = NULL;
+        }
+    }
+};
+
+struct DISPLAY_ADAPTER : DISPLAY_ADAPTER_INFO {
     DDCAPS driverCaps;
     DDCAPS helCaps;
     GUID deviceGuid;
     D3DDEVICEDESC D3DHWDeviceDesc;
-    DISPLAY_ADAPTER_INFO();
-};
-
-struct DISPLAY_ADAPTER : DISPLAY_ADAPTER_INFO {
     DISPLAY_MODE_LIST hwDispModeList;
     DISPLAY_MODE_LIST swDispModeList;
     DISPLAY_MODE vgaMode1;
@@ -649,24 +766,8 @@ struct DISPLAY_ADAPTER : DISPLAY_ADAPTER_INFO {
     bool shadeRestricted;
 };
 
-typedef struct DISPLAY_ADAPTER_NODE {
-    struct DISPLAY_ADAPTER_NODE *next;
-    struct DISPLAY_ADAPTER_NODE *previous;
-    DISPLAY_ADAPTER body;
-} DISPLAY_ADAPTER_NODE;
-
-struct DISPLAY_ADAPTER_LIST {
-    DISPLAY_ADAPTER_NODE *head;
-    DISPLAY_ADAPTER_NODE *tail;
-    DWORD dwCount;
-    DISPLAY_ADAPTER_LIST()
-    {
-        head = NULL;
-        tail = NULL;
-        dwCount = 0;
-    }
-    ~DISPLAY_ADAPTER_LIST();
-};
+typedef LIST<DISPLAY_ADAPTER> DISPLAY_ADAPTER_LIST;
+typedef LIST<DISPLAY_ADAPTER>::NODE DISPLAY_ADAPTER_NODE;
 
 extern "C" {
 extern DISPLAY_ADAPTER_LIST DisplayAdapterList;
@@ -1000,31 +1101,20 @@ extern "C" bool WinVidInit(void)
 extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterList);
 extern "C" DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
 
-#pragma inline_depth(4)
 extern "C" bool WinVidGetDisplayAdapters(void)
 {
     DISPLAY_ADAPTER_NODE *node;
-    DISPLAY_ADAPTER_NODE *nextNode;
 
-    for (node = DisplayAdapterList.head; node; node = nextNode)
-    {
-        nextNode = node->next;
-        delete node;
-    }
-    DisplayAdapterList.head = NULL;
-    DisplayAdapterList.tail = NULL;
-    DisplayAdapterList.dwCount = 0;
+    DisplayAdapterList.RemoveAll();
     if (!EnumerateDisplayAdapters(&DisplayAdapterList))
         return false;
-    for (node = DisplayAdapterList.head; node; node = node->next)
+    for (node = DisplayAdapterList.GetHead(); node; node = DisplayAdapterList.GetNext(node))
     {
-        if (!node->body.lpAdapterGuid)
+        if (!DisplayAdapterList[node].lpAdapterGuid)
         {
             PrimaryDisplayAdapter = node;
             return true;
         }
-        if (!node)
-            break;
     }
     return false;
 }
@@ -1038,14 +1128,11 @@ extern "C" bool EnumerateDisplayAdapters(DISPLAY_ADAPTER_LIST *displayAdapterLis
 
 extern "C" void Enumerate3DDevices(DISPLAY_ADAPTER *adapter);
 
-#pragma inline_depth(2)
 extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriverDescription, LPTSTR lpDriverName, LPVOID lpContext)
 {
     DDCAPS driverCaps;
     DDCAPS helCaps;
-    DISPLAY_ADAPTER_NODE *node;
     DISPLAY_ADAPTER_LIST *list;
-    DISPLAY_ADAPTER *adapter;
 
     list = (DISPLAY_ADAPTER_LIST *)lpContext;
     if (DDrawCreate(lpGUID)) {
@@ -1054,43 +1141,25 @@ extern "C" BOOL WINAPI EnumDisplayAdaptersCallback(GUID *lpGUID, LPTSTR lpDriver
         driverCaps.dwSize = sizeof(DDCAPS);
         helCaps.dwSize = sizeof(DDCAPS);
         if (!DX_TRY(DDraw->GetCaps(&driverCaps, &helCaps))) {
-            node = new DISPLAY_ADAPTER_NODE;
-            if (node) {
-                node->next = NULL;
-                node->previous = list->tail;
-            }
-            if (list->tail)
-                list->tail->next = node;
-            else
-                list->head = node;
-            list->dwCount++;
-            list->tail = node;
-            adapter = &node->body;
-            if (lpGUID) {
-                adapter->adapterGuid = *lpGUID;
-                adapter->lpAdapterGuid = &adapter->adapterGuid;
-            } else {
-                memset(&adapter->adapterGuid, 0, sizeof(GUID));
-                adapter->lpAdapterGuid = NULL;
-            }
-            strcpy(adapter->driverDescription.lpString, lpDriverDescription);
-            strcpy(adapter->driverName.lpString, lpDriverName);
-            adapter->driverCaps = driverCaps;
-            adapter->helCaps = helCaps;
-            adapter->swWindowedSupported = false;
-            adapter->hwWindowedSupported = false;
-            adapter->isVgaMode1Presented = false;
-            adapter->isVgaMode2Presented = false;
-            adapter->screenWidth = 0;
-            adapter->hwRenderSupported = false;
-            Enumerate3DDevices(adapter);
+            DISPLAY_ADAPTER &adapter = list->NewTail();
+            adapter.SetGuid(lpGUID);
+            strcpy(adapter.driverDescription, lpDriverDescription);
+            strcpy(adapter.driverName, lpDriverName);
+            adapter.driverCaps = driverCaps;
+            adapter.helCaps = helCaps;
+            adapter.swWindowedSupported = false;
+            adapter.hwWindowedSupported = false;
+            adapter.isVgaMode1Presented = false;
+            adapter.isVgaMode2Presented = false;
+            adapter.screenWidth = 0;
+            adapter.hwRenderSupported = false;
+            Enumerate3DDevices(&adapter);
         }
         DDrawRelease();
     }
     return TRUE;
 }
 
-#pragma inline_depth(3)
 extern "C" DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
 
 extern "C" DISPLAY_ADAPTER_NODE *WinVidGetDisplayAdapter(GUID *lpGuid)
@@ -1223,18 +1292,18 @@ extern "C" void WinVidSetDisplayAdapter(DISPLAY_ADAPTER *dispAdapter)
     dispAdapter->screenWidth = width;
 }
 
-bool DISPLAY_MODE::CompareVideoModes(DISPLAY_MODE *mode)
+bool DISPLAY_MODE::operator<(DISPLAY_MODE &mode)
 {
     int square1 = width * height;
-    int square2 = mode->width * mode->height;
+    int square2 = mode.width * mode.height;
 
     if (square1 < square2)
         return true;
     if (square1 == square2) {
-        if (bpp < mode->bpp)
+        if (bpp < mode.bpp)
             return true;
-        if (bpp == mode->bpp) {
-            if (vga < mode->vga)
+        if (bpp == mode.bpp) {
+            if (vga < mode.vga)
                 return true;
         }
     }
@@ -1253,31 +1322,6 @@ void COLOR_BIT_MASKS::WinVidGetColorBitMasks(LPDDPIXELFORMAT pixelFormat)
     BitMaskGetNumberOfBits(dwRGBAlphaBitMask, &dwRGBAlphaBitDepth, &dwRGBAlphaBitOffset);
 }
 
-inline DISPLAY_ADAPTER_INFO::DISPLAY_ADAPTER_INFO() : driverDescription(256), driverName(256)
-{
-}
-
-inline DISPLAY_MODE_LIST::DISPLAY_MODE_LIST()
-{
-    head = NULL;
-    tail = NULL;
-    dwCount = 0;
-}
-
-inline void DISPLAY_MODE_LIST::DisplayModeListDelete(void)
-{
-    DISPLAY_MODE_NODE *node;
-    DISPLAY_MODE_NODE *nextNode;
-
-    for (node = head; node; node = nextNode) {
-        nextNode = node->next;
-        delete node;
-    }
-    head = NULL;
-    tail = NULL;
-    dwCount = 0;
-}
-
 enum VGA_MODE {
     VGA_NoVga,
     VGA_256Color,
@@ -1285,36 +1329,9 @@ enum VGA_MODE {
     VGA_Standard
 };
 
-inline void DISPLAY_MODE_LIST::InsertDisplayModeInListSorted(DISPLAY_MODE *mode)
-{
-    DISPLAY_MODE_NODE *node;
-    DISPLAY_MODE_NODE *newNode;
-    DISPLAY_MODE_NODE *prev;
-
-    if (!head) {
-        *InsertDisplayModeInListHead() = *mode;
-        return;
-    }
-    for (node = head; node; node = node->next) {
-        if (mode->CompareVideoModes(&node->body)) {
-            prev = node->previous;
-            newNode = new DISPLAY_MODE_NODE(prev, node);
-            newNode->body = *mode;
-            if (prev)
-                prev->next = newNode;
-            else
-                head = newNode;
-            node->previous = newNode;
-            return;
-        }
-    }
-    *InsertDisplayModeInListTail() = *mode;
-}
-
 extern "C" HRESULT WINAPI EnumDisplayModesCallback(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext)
 {
     DISPLAY_ADAPTER *adapter = (DISPLAY_ADAPTER *)lpContext;
-    DISPLAY_MODE videoMode;
     int vgaMode;
     DWORD renderBitDepth;
     DWORD width;
@@ -1336,64 +1353,23 @@ extern "C" HRESULT WINAPI EnumDisplayModesCallback(LPDDSURFACEDESC lpDDSurfaceDe
         else
             vgaMode = VGA_256Color;
         if (width == 320 && height == 200 && (!adapter->isVgaMode1Presented || vgaMode < adapter->vgaMode1.vga)) {
-            adapter->vgaMode1.width = 320;
-            adapter->vgaMode1.height = 200;
-            adapter->vgaMode1.bpp = bpp;
-            adapter->vgaMode1.vga = vgaMode;
+            adapter->vgaMode1.Set(width, height, bpp, vgaMode);
             adapter->isVgaMode1Presented = true;
         }
         if (width == 640 && height == 480 && (!adapter->isVgaMode2Presented || vgaMode < adapter->vgaMode2.vga)) {
-            adapter->vgaMode2.width = 640;
-            adapter->vgaMode2.height = 480;
-            adapter->vgaMode2.bpp = bpp;
-            adapter->vgaMode2.vga = vgaMode;
+            adapter->vgaMode2.Set(width, height, bpp, vgaMode);
             adapter->isVgaMode2Presented = true;
         }
     } else {
         vgaMode = VGA_NoVga;
     }
-    videoMode.width = width;
-    videoMode.height = height;
-    videoMode.bpp = bpp;
-    videoMode.vga = vgaMode;
+    DISPLAY_MODE videoMode(width, height, bpp, vgaMode);
     renderBitDepth = GetRenderBitDepth(bpp);
     if (adapter->hwRenderSupported && (adapter->D3DHWDeviceDesc.dwDeviceRenderBitDepth & renderBitDepth))
-        adapter->hwDispModeList.InsertDisplayModeInListSorted(&videoMode);
+        adapter->hwDispModeList.Insert(videoMode);
     if (swRendererSupported)
-        adapter->swDispModeList.InsertDisplayModeInListSorted(&videoMode);
+        adapter->swDispModeList.Insert(videoMode);
     return DDENUMRET_OK;
-}
-
-inline DISPLAY_MODE_NODE::DISPLAY_MODE_NODE(DISPLAY_MODE_NODE *prevNode, DISPLAY_MODE_NODE *nextNode)
-{
-    next = nextNode;
-    previous = prevNode;
-}
-
-DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListHead(void)
-{
-    DISPLAY_MODE_NODE *node = new DISPLAY_MODE_NODE(NULL, head);
-
-    if (head)
-        head->previous = node;
-    else
-        tail = node;
-    head = node;
-    dwCount++;
-    return &node->body;
-}
-
-inline DISPLAY_MODE *DISPLAY_MODE_LIST::InsertDisplayModeInListTail(void)
-{
-    DISPLAY_MODE_NODE *node = new DISPLAY_MODE_NODE(tail, NULL);
-
-    if (tail)
-        tail->next = node;
-    else
-        head = node;
-    tail = node;
-    dwCount++;
-    return &node->body;
 }
 
 extern "C" DISPLAY_ADAPTER CurrentDisplayAdapter;
@@ -1408,20 +1384,6 @@ void WinVidStart(void)
     CurrentDisplayAdapter = *preferred;
     if (!DDrawCreate(CurrentDisplayAdapter.lpAdapterGuid))
         throw INIT_ERR_CantCreateDirectDraw;
-}
-
-inline DISPLAY_ADAPTER_LIST::~DISPLAY_ADAPTER_LIST()
-{
-    DISPLAY_ADAPTER_NODE *node;
-    DISPLAY_ADAPTER_NODE *nextNode;
-
-    for (node = head; node; node = nextNode) {
-        nextNode = node->next;
-        delete node;
-    }
-    head = NULL;
-    tail = NULL;
-    dwCount = 0;
 }
 
 DISPLAY_ADAPTER_LIST DisplayAdapterList;

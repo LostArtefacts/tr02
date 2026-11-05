@@ -21,7 +21,7 @@ struct DISPLAY_MODE
     int vga;
     DISPLAY_MODE() {}
     DISPLAY_MODE(int w, int h, int b, int v) : width(w), height(h), bpp(b), vga(v) {}
-    bool CompareVideoModes(DISPLAY_MODE *mode);
+    bool operator<(DISPLAY_MODE &mode);
 };
 
 extern "C" {
@@ -120,7 +120,7 @@ typedef struct
         SETUP_MODE_NODE *node = head;
         if (!node) return NULL;
         do {
-            if (!node->body.CompareVideoModes(&value)) return node;
+            if (!(node->body < value)) return node;
             node = node->next;
         } while (node);
         return tail;
@@ -336,7 +336,7 @@ extern "C" int Func452760(SETUP_APP_SETTINGS *settings)
     mode = modeList->head;
     if (mode)
     {
-        while (mode->body.CompareVideoModes(&target))
+        while (mode->body < target)
         {
             mode = mode->next;
             if (!mode)
@@ -451,7 +451,7 @@ extern "C" void SE_DefaultGraphicsSettings(void)
         ChangedAppSettings.VideoMode = mode;
         return;
     }
-    while (mode->body.CompareVideoModes(&target))
+    while (mode->body < target)
     {
         mode = mode->next;
         if (!mode)

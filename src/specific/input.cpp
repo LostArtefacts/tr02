@@ -80,7 +80,7 @@ struct DISPLAY_MODE {
     int vga;
     DISPLAY_MODE() {}
     DISPLAY_MODE(int w, int h, int b, int v) : width(w), height(h), bpp(b), vga(v) {}
-    bool CompareVideoModes(DISPLAY_MODE *mode);
+    bool operator<(DISPLAY_MODE &mode);
 };
 
 typedef struct DISPLAY_MODE_NODE {
@@ -110,7 +110,7 @@ typedef struct {
         if (!node)
             return NULL;
         do {
-            if (!node->body.CompareVideoModes(&value))
+            if (!(node->body < value))
                 return node;
             node = node->next;
         } while (node);
