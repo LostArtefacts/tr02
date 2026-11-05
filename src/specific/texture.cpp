@@ -276,7 +276,11 @@ extern "C" bool LoadTexturePage(int pageIndex, bool reset)
     if (pageIndex < 0)
         return false;
     page = &TexturePages[pageIndex];
-    if (reset || !page->vidMemSurface || DX_TRY(DDrawSurfaceRestoreLost(page->vidMemSurface, NULL, false)))
+    if (reset || !page->vidMemSurface)
+        reset = true;
+    else if (FAILED(DDrawSurfaceRestoreLost(page->vidMemSurface, NULL, false)))
+        reset = true;
+    if (reset)
     {
         TexturePageReleaseVidMemSurface(page);
         if (!TexturePageInit(page))
