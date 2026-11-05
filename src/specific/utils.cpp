@@ -518,7 +518,7 @@ extern "C" LRESULT CALLBACK SE_SetupWindowProc(HWND hWnd, UINT uMsg, WPARAM wPar
     return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
-extern "C" void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam)
+extern "C" void SE_PassMessageToImage(HWND hWnd, UINT uMsg, WPARAM wParam)
 {
     if (uMsg == WM_PALETTECHANGED || uMsg == WM_QUERYNEWPALETTE)
         SendMessage(hWnd, uMsg, wParam, 0);

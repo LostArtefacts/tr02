@@ -1038,7 +1038,7 @@ extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
 extern "C" {
 extern HWND ControlsDialogHandle;
 extern HWND Var51bcf8;
-void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam);
+void SE_PassMessageToImage(HWND hWnd, UINT uMsg, WPARAM wParam);
 void SE_AdvancedDlgInit(HWND hwndDlg);
 void SE_AdvancedDlgUpdate(HWND hwndDlg);
 }
@@ -1056,7 +1056,7 @@ extern "C" {
 extern bool IsSetupDialogCentered;
 extern HWND OptionsDialogHandle;
 extern HWND OptionsImageHandle;
-void Func457470(HWND hWnd, UINT uMsg, WPARAM wParam);
+void SE_PassMessageToImage(HWND hWnd, UINT uMsg, WPARAM wParam);
 extern LPCSTR String_Software3d;
 extern LPCSTR String_Hardware3d;
 extern LPCSTR String_FullScreen;
@@ -1167,7 +1167,7 @@ extern "C" BOOL CALLBACK SE_SoundDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam,
         }
         break;
     }
-    Func457470(SoundImageHandle, uMsg, wParam);
+    SE_PassMessageToImage(SoundImageHandle, uMsg, wParam);
     return FALSE;
 }
 
@@ -1264,7 +1264,7 @@ extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
         }
         break;
     }
-    Func457470(ControlsImageHandle, uMsg, wParam);
+    SE_PassMessageToImage(ControlsImageHandle, uMsg, wParam);
     return FALSE;
 }
 
@@ -1351,7 +1351,7 @@ extern "C" BOOL CALLBACK SE_OptionsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPara
             SE_OptionsDlgUpdate(hwndDlg);
         break;
     }
-    Func457470(OptionsImageHandle, uMsg, wParam);
+    SE_PassMessageToImage(OptionsImageHandle, uMsg, wParam);
     return FALSE;
 }
 
@@ -1466,7 +1466,7 @@ extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
         }
         break;
     }
-    Func457470(Var51bcf8, uMsg, wParam);
+    SE_PassMessageToImage(Var51bcf8, uMsg, wParam);
     return FALSE;
 }
 

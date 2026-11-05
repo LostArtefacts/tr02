@@ -1206,7 +1206,7 @@ address,size,name,symbol
 0x00457160,87,SE_ChangeBitmapPalette,?ChangePalette@BITMAP_RESOURCE@@QAEXPAX@Z
 0x004571c0,97,SE_RegisterSetupWindowClass,_SE_RegisterSetupWindowClass
 0x00457230,570,SE_SetupWindowProc,_SE_SetupWindowProc@16
-0x00457470,38,Func457470,_Func457470
+0x00457470,38,SE_PassMessageToImage,_SE_PassMessageToImage
 0x004574a0,110,UT_MemBlt,?UT_MemBlt@@YAXPAEHHHHH0HHH@Z
 0x00457510,30,phd_PushMatrix,_phd_PushMatrix
 0x0045752e,51,phd_PushUnitMatrix,_phd_PushUnitMatrix
