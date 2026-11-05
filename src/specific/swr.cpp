@@ -14,7 +14,7 @@ HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, LPDDSURFACEDESC desc);
 void phd_PrintPolyList(void *ptr);
 }
 
-extern "C" HRESULT Func455940(void)
+extern "C" HRESULT SWR_DrawPolyList(void)
 {
     DDSURFACEDESC desc;
     HRESULT result;

@@ -1144,7 +1144,7 @@ address,size,name,symbol
 0x004558e1,36,Func4558e1,_Func4558e1
 0x00455905,29,Func455905,_Func455905
 0x00455922,24,Func455922,_Func455922
-0x00455940,73,Func455940,_Func455940
+0x00455940,73,SWR_DrawPolyList,_SWR_DrawPolyList
 0x00455990,311,CopyBitmapPalette,_CopyBitmapPalette
 0x00455ad0,200,SWR_FindNearestPaletteEntry,_SWR_FindNearestPaletteEntry
 0x00455ba0,174,SyncSurfacePalettes,_SyncSurfacePalettes

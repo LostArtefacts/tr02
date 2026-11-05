@@ -55,7 +55,7 @@ void S_InitialiseScreen(int type)
 
 extern "C" void phd_SortPolyList(void);
 extern "C" void HWR_DrawPolyList(void);
-extern "C" void Func455940(void);
+extern "C" void SWR_DrawPolyList(void);
 void HWR_EndScene();
 
 extern "C" void S_OutputPolyList(void)
@@ -63,7 +63,7 @@ extern "C" void S_OutputPolyList(void)
     if (SavedAppSettings.RenderMode == RM_Software)
     {
         phd_SortPolyList();
-        Func455940();
+        SWR_DrawPolyList();
     }
     else
     {
