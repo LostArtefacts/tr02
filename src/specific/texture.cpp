@@ -377,7 +377,7 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
         dst = (uint8 *)desc.lpSurface;
         for (i = height; i != 0; i--)
         {
-            memcpy(dst, pageBuffer, width * 2);
+            memcpy(dst, pageBuffer, width << 1);
             pageBuffer += width * 2;
             dst += pitch;
         }
