@@ -859,7 +859,7 @@ address,size,name,symbol
 0x00445fb0,19,FlaggedStringDelete,??1STRING_FLAGGED@@QAE@XZ
 0x00445fd0,26,EnumerateDisplayAdapters,_EnumerateDisplayAdapters
 0x00445ff0,446,EnumDisplayAdaptersCallback,_EnumDisplayAdaptersCallback@16
-0x004461b0,53,FlaggedStringsCreate,??0DISPLAY_ADAPTER_INFO@@QAE@XZ
+0x004461b0,53,FlaggedStringsCreate,??0GENERIC_ADAPTER@@QAE@XZ
 0x004461f0,106,WinVidRegisterGameWindowClass,_WinVidRegisterGameWindowClass
 0x00446260,1542,WinVidGameWindowProc,_WinVidGameWindowProc@16
 0x00446870,480,WinVidResizeGameWindow,_WinVidResizeGameWindow

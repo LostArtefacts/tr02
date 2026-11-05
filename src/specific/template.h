@@ -10,6 +10,11 @@ struct STRING_FLAGGED {
         *lpString = 0;
         isPresented = true;
     }
+    STRING_FLAGGED(LPTSTR string)
+    {
+        lpString = string;
+        isPresented = false;
+    }
     ~STRING_FLAGGED();
     operator LPTSTR()
     {
@@ -103,15 +108,29 @@ template <class T> struct LIST {
     {
         return head;
     }
+    NODE *GetTail()
+    {
+        return tail;
+    }
     NODE *GetNext(NODE *node)
     {
         if (node)
             node = node->next;
         return node;
     }
+    NODE *GetPrev(NODE *node)
+    {
+        if (node)
+            node = node->previous;
+        return node;
+    }
     T &operator[](NODE *node)
     {
         return node->body;
+    }
+    bool IsEmpty()
+    {
+        return dwCount == 0;
     }
     DWORD GetCount()
     {
