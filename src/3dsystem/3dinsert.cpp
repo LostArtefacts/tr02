@@ -1,3 +1,5 @@
+#include <math.h>
+#include <direct.h>
 #include "../3dglodef.h"
 
 extern "C" sint32 *sort3dptr;
