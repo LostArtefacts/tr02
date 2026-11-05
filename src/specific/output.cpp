@@ -498,7 +498,8 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
             shade1 = falloff * light->intensity / (falloff + distance);
             falloff2 = (light->falloff2 * light->falloff2) >> 12;
             shade2 = falloff2 * light->intensity2 / (falloff2 + distance);
-            shade = shade1 + (shade2 - shade1) * RoomLightShades[r->lighting] / (WIBBLE_SIZE - 1);
+            shade1 += (shade2 - shade1) * RoomLightShades[r->lighting] / (WIBBLE_SIZE - 1);
+            shade = shade1;
             if (shade > brightest)
             {
                 brightest = shade;
