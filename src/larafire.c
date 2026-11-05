@@ -243,14 +243,14 @@ void LaraGun(void)
                 }
             } else
                 lara.flare_control_left = 0;
-            goto flare_in_hand;
+            DoFlareInHand(lara.flare_age);
+            set_flare_arm(lara.left_arm.frame_number);
         }
         break;
 
     case LG_HANDSBUSY:
         if (lara.gun_type == LG_FLARE) {
             lara.flare_control_left = (lara.skidoo != NO_ITEM || CheckForHoldingState(lara_item->current_anim_state));
-        flare_in_hand:
             DoFlareInHand(lara.flare_age);
             set_flare_arm(lara.left_arm.frame_number);
         }
