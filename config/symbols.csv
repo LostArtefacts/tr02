@@ -818,7 +818,7 @@ address,size,name,symbol
 0x00444a50,18,InitDisplayAdapterListGlobal,specific/winvid.cpp:_$E1
 0x00444a70,14,RegisterDisplayAdapterListDestructor,specific/winvid.cpp:_$E3
 0x00444b60,95,InitCurrentDisplayAdapterGlobal,specific/winvid.cpp:_$E6
-0x00444bc0,14,Func444bc0,specific/winvid.cpp:_$E8
+0x00444bc0,14,RegisterCurrentDisplayAdapterDestructor,specific/winvid.cpp:_$E8
 0x00444c80,84,DDrawCreate,_DDrawCreate
 0x00444ce0,51,DDrawRelease,_DDrawRelease
 0x00444d20,115,GameWindowCalculateSizeFromClient,_GameWindowCalculateSizeFromClient
