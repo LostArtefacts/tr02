@@ -10,6 +10,10 @@
 #include <time.h>
 #include <memory.h>
 #include <string.h>
+#include <io.h>
+#include <conio.h>
+#include <direct.h>
+#include <sys/stat.h>
 #include <assert.h>
 #include <crtdbg.h>
 #include <ddraw.h>
