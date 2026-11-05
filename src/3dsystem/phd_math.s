@@ -50,14 +50,14 @@ atan_done:
     mov eax, ecx
     and eax, 65535
     cmp eax, 32768
-    jl Func457f09
+    jl phd_sin_half_turn
     sub eax, 32768
-    call Func457f09
+    call phd_sin_half_turn
     neg eax
     ret
 @phd_sin@4 endp
 
-Func457f09 proc public
+phd_sin_half_turn proc public
     cmp eax, 16384
     jle sin_quarter
     neg eax
@@ -66,7 +66,7 @@ sin_quarter:
     shr eax, 4
     mov ax, phdsintab[eax * 2]
     ret
-Func457f09 endp
+phd_sin_half_turn endp
 
 @phd_sqrt@4 proc public
     push ebx
