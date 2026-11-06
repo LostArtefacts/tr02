@@ -671,7 +671,7 @@ extern "C" void S_DrawAirBar(int percent)
 }
 
 extern "C" bool WinVidNeedToResetBuffers;
-extern "C" bool Var51bc30;
+extern "C" bool ForceClearBackBuffer;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
 extern "C" void RestoreLostBuffers(void);
 extern "C" void WinVidSpinMessageLoop(bool blocking);
@@ -713,7 +713,7 @@ extern "C" void S_InitialisePolyList(BOOL clear_back_buffer)
     else
     {
         flags = 0x100;
-        if (clear_back_buffer || Var51bc30)
+        if (clear_back_buffer || ForceClearBackBuffer)
             flags = 0x102;
         if (SavedAppSettings.ZBuffer && ZBufferSurface)
             flags |= 8;
@@ -932,7 +932,7 @@ uint8 PicPalette[768];
 int RoomLightShades[4];
 bool WinVidNeedToResetBuffers;
 int wet;
-bool Var51bc30;
+bool ForceClearBackBuffer;
 LIGHT_INFO dynamic[10];
 sint32 number_dynamics;
 int SunsetTimer;

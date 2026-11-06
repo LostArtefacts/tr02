@@ -38,7 +38,7 @@ typedef struct {
 
 #ifdef TR2_EXE
 extern "C" {
-DISPLAY_MODE Var4d92c8;
+DISPLAY_MODE RetainedDisplayMode;
 }
 #endif
 

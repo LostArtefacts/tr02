@@ -296,8 +296,8 @@ extern "C" D3DCOLOR BGND_CenterLighting(int x, int y, int width, int height)
 }
 
 extern "C" {
-extern int Var466408[4];
-extern int Var466418[3];
+extern int BGND_TileX[4];
+extern int BGND_TileY[3];
 void BGND_DrawInGameBackground(void);
 void DrawTextureTile(int sx, int sy, int width, int height, DWORD texSource, int tu, int tv, int t_width, int t_height, D3DCOLOR color0, D3DCOLOR color1, D3DCOLOR color2, D3DCOLOR color3);
 }
@@ -316,10 +316,10 @@ extern "C" void BGND_Draw(void)
     width = phd_winwidth;
     height = phd_winheight;
     for (i = 0; i < 3; i++) {
-        x[i] = Var466408[i] * width / 640 + phd_winxmin;
-        y[i] = Var466418[i] * height / 480 + phd_winymin;
+        x[i] = BGND_TileX[i] * width / 640 + phd_winxmin;
+        y[i] = BGND_TileY[i] * height / 480 + phd_winymin;
     }
-    x[3] = Var466408[3] * width / 640 + phd_winxmin;
+    x[3] = BGND_TileX[3] * width / 640 + phd_winxmin;
     HWR_EnableZBuffer(false, false);
     DrawTextureTile(x[0], y[0], x[1] - x[0], y[1] - y[0], BGND_PageHandles[0], 0, 0, 256, 256, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
     DrawTextureTile(x[1], y[0], x[2] - x[1], y[1] - y[0], BGND_PageHandles[1], 0, 0, 256, 256, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
@@ -367,10 +367,10 @@ extern "C" bool BGND_Init(void)
 
 #ifdef TR2_EXE
 int BGND_PaletteIndex = -1;
-int Var466408[4] = {
+int BGND_TileX[4] = {
     0, 256, 512, 640,
 };
-int Var466418[3] = {
+int BGND_TileY[3] = {
     0, 256, 480,
 };
 bool BGND_PictureIsReady;

@@ -1,9 +1,9 @@
     .386
     .model flat
 
-    extern _Func4558e1:proc
-    extern _Func455905:proc
-    extern _Func455922:proc
+    extern _T_IsNonCyrillicChar:proc
+    extern _T_GetGlyphIndex:proc
+    extern _T_GetGlyphSpacing:proc
     extern _GetRenderHeight:proc
     extern _GetRenderWidth:proc
     extern _GetTextScaleH:proc
@@ -186,7 +186,7 @@ draw_skip:
 draw_extended_glyph:
     push ecx
     mov ecx, esi
-    call _Func4558e1
+    call _T_IsNonCyrillicChar
     pop ecx
     jb short draw_skip
 draw_glyph:
@@ -200,7 +200,7 @@ draw_small_glyph:
     jbe short draw_digit_left
     push ecx
     mov ecx, esi
-    call _Func455905
+    call _T_GetGlyphIndex
     mov ebp, ecx
     pop ecx
 draw_digit_left:
@@ -209,7 +209,7 @@ draw_digit_left:
     cmp esi, 039h
     ja short draw_visible
     mov ecx, ebp
-    call _Func455922
+    call _T_GetGlyphSpacing
     mov eax, 0ch
     sub eax, ecx
     cdq
@@ -264,7 +264,7 @@ draw_digit_right:
     cmp esi, 039h
     ja short draw_letter_spacing
     mov ecx, ebp
-    call _Func455922
+    call _T_GetGlyphSpacing
     mov edx, ecx
     mov eax, 0ch
     mov ecx, eax
@@ -282,7 +282,7 @@ draw_letter_spacing:
     movsx eax, word ptr [ebx+LETTER_SPACING]
     push ecx
     mov ecx, ebp
-    call _Func455922
+    call _T_GetGlyphSpacing
     mov edx, ecx
     pop ecx
     add eax, edi
@@ -290,7 +290,7 @@ draw_letter_spacing:
     jmp short draw_next
 draw_scaled_spacing:
     mov ecx, ebp
-    call _Func455922
+    call _T_GetGlyphSpacing
     movsx edx, word ptr [ebx+LETTER_SPACING]
     add ecx, edx
     imul ecx, eax

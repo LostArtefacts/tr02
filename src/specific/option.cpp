@@ -972,8 +972,8 @@ extern "C" void do_gamma_option(INVENTORY_ITEM *inv_item)
 extern "C" char SaveGameStrings1[][50];
 extern "C" char SaveGameStrings2[][50];
 extern "C" {
-char Var520d60[MAX_REQLINES][50];
-char Var521220[MAX_REQLINES][50];
+char LoadGameStrings2[MAX_REQLINES][50];
+char LoadGameStrings1[MAX_REQLINES][50];
 }
 sint16 layout[2][14] = {
     { 200, 208, 203, 205, 211, 209, 54, 184, 157, 57, 53, 82, 207, 1 },

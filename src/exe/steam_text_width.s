@@ -1,10 +1,10 @@
     .386
     .model flat
 
-    extern _Func4558d7:proc
-    extern _Func4558e1:proc
-    extern _Func455905:proc
-    extern _Func455922:proc
+    extern _T_IsExtendedNonCyrillicChar:proc
+    extern _T_IsNonCyrillicChar:proc
+    extern _T_GetGlyphIndex:proc
+    extern _T_GetGlyphSpacing:proc
     extern _GetTextScaleH:proc
     extern _GetTextScaleV:proc
 
@@ -38,7 +38,7 @@ _T_GetTextWidth proc public
 width_letter:
     and ecx, 0ffh
     inc edx
-    call _Func4558d7
+    call _T_IsExtendedNonCyrillicChar
     nop
     jb near ptr width_next
     cmp ecx, 0ah
@@ -64,7 +64,7 @@ width_control_end:
 width_pickup:
     cmp ecx, 07fh
     jb short width_glyph
-    call _Func4558e1
+    call _T_IsNonCyrillicChar
     jae short width_glyph
     cmp esi, 010000h
     jne short width_scaled_pickup
@@ -85,7 +85,7 @@ width_small_glyph:
     add ecx, 05bh
     jmp short width_digit
 width_remap_glyph:
-    call _Func455905
+    call _T_GetGlyphIndex
     nop
     nop
 width_digit:
@@ -97,7 +97,7 @@ width_digit:
     shl ecx, 02h
     jmp short width_shift
 width_spacing:
-    call _Func455922
+    call _T_GetGlyphSpacing
     nop
     nop
     movsx ebx, word ptr [edi+LETTER_SPACING]

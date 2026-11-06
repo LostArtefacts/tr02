@@ -2,8 +2,8 @@
     .model flat
 
     extern _AudioIndexPath:byte
-    extern _Var5275f8:dword
-    extern _Var5275fc:dword
+    extern _CD_CommandBuffer:dword
+    extern _CD_AudioIndex:dword
     extern _malloc:proc
     extern __imp__CreateFileA@28:dword
     extern __imp__GetFileSize@8:dword
@@ -12,7 +12,7 @@
 
     .code
 
-_Func456972 proc public
+_CD_LoadAudioIndex proc public
     sub esp, 4
     xor ebx, ebx
     push ebx
@@ -37,14 +37,14 @@ _Func456972 proc public
     test eax, eax
 allocation_result:
     je short index_failed
-    mov _Var5275fc, eax
+    mov _CD_AudioIndex, eax
     push ebx
     lea ecx, [esp+4]
     push ecx
     push edi
     push eax
     add eax, edi
-    mov _Var5275f8, eax
+    mov _CD_CommandBuffer, eax
     push esi
     call dword ptr [__imp__ReadFile@20]
     mov ebx, eax
@@ -52,7 +52,7 @@ allocation_result:
     call dword ptr [__imp__CloseHandle@4]
     test ebx, ebx
     je short index_failed
-    mov esi, _Var5275fc
+    mov esi, _CD_AudioIndex
     mov edi, esi
 index_entry:
     xor eax, eax
@@ -71,7 +71,7 @@ index_field:
     inc eax
     jmp short index_field
 index_line_end:
-    cmp esi, _Var5275f8
+    cmp esi, _CD_CommandBuffer
     je short index_success
     mov cx, [esi]
     cmp cx, 0a0dh
@@ -90,6 +90,6 @@ index_failed:
 index_done:
     add esp, 4
     ret
-_Func456972 endp
+_CD_LoadAudioIndex endp
 
     end

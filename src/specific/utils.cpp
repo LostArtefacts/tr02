@@ -79,11 +79,11 @@ void UT_ErrorBox(int nID, HWND hWndOwner)
         UT_ErrorBox(buffer, hWndOwner);
 }
 
-extern "C" char *Var5275f8;
-extern "C" char *Var5275fc;
+extern "C" char *CD_CommandBuffer;
+extern "C" char *CD_AudioIndex;
 
 #ifndef TR2_EXE
-extern "C" bool Func456972(void)
+extern "C" bool CD_LoadAudioIndex(void)
 {
     HANDLE file;
     DWORD size;
@@ -97,15 +97,15 @@ extern "C" bool Func456972(void)
     if (file == INVALID_HANDLE_VALUE)
         return false;
     size = GetFileSize(file, NULL);
-    Var5275fc = (char *)malloc(size + 50);
-    if (!Var5275fc)
+    CD_AudioIndex = (char *)malloc(size + 50);
+    if (!CD_AudioIndex)
         return false;
-    Var5275f8 = Var5275fc + size;
-    ok = ReadFile(file, Var5275fc, size, &read, NULL);
+    CD_CommandBuffer = CD_AudioIndex + size;
+    ok = ReadFile(file, CD_AudioIndex, size, &read, NULL);
     CloseHandle(file);
     if (!ok)
         return false;
-    src = dst = Var5275fc;
+    src = dst = CD_AudioIndex;
     for (;;)
     {
         src += 3;
@@ -118,7 +118,7 @@ extern "C" bool Func456972(void)
         }
         for (;;)
         {
-            if (src == Var5275f8)
+            if (src == CD_CommandBuffer)
                 return true;
             if (*(uint16 *)src == 0x0a0d)
                 break;
@@ -557,5 +557,5 @@ DWORD LdwInitialTimer;
 char GuidString[40];
 HKEY HKey;
 DWORD RegKeyDisposition;
-char *Var5275fc;
+char *CD_AudioIndex;
 #endif

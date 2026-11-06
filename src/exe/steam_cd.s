@@ -1,11 +1,11 @@
     .386
     .model flat
 
-    extern _Func456972:proc
+    extern _CD_LoadAudioIndex:proc
     extern _GetRealTrack:proc
     extern _atol:proc
-    extern _Var5275f8:dword
-    extern _Var5275fc:dword
+    extern _CD_CommandBuffer:dword
+    extern _CD_AudioIndex:dword
     extern _CD_LoopTrack:dword
     extern _CD_LoopCounter:dword
     extern _Option_Music_Volume:word
@@ -20,7 +20,7 @@ _CD_Init proc public
     push edi
     push ecx
     push ebx
-    call _Func456972
+    call _CD_LoadAudioIndex
     test al, al
     je short init_done
     mov esi, __imp__mciSendStringA@16
@@ -90,7 +90,7 @@ _S_CDLoop proc public
     mov _CD_LoopCounter, 0
     push 0
     push 50
-    mov edi, _Var5275f8
+    mov edi, _CD_CommandBuffer
     push edi
     push offset cd_mode
     call dword ptr [__imp__mciSendStringA@16]
@@ -103,7 +103,7 @@ _S_CDLoop proc public
     push edi
     push esi
     push offset cd_play
-    mov edi, _Var5275f8
+    mov edi, _CD_CommandBuffer
     push edi
     call dword ptr [__imp__wsprintfA]
     add esp, 16
@@ -140,14 +140,14 @@ _S_CDPlay proc public
     dec eax
     lea eax, [eax+eax*8]
     shl eax, 1
-    mov esi, _Var5275fc
+    mov esi, _CD_AudioIndex
     add esi, eax
     mov ebx, esi
     add esi, 9
     push esi
     push ebx
     push offset cd_play
-    mov edi, _Var5275f8
+    mov edi, _CD_CommandBuffer
     push edi
     call dword ptr [__imp__wsprintfA]
     add esp, 16
@@ -212,14 +212,14 @@ _StartSyncedAudio proc public
     dec ebx
     lea ebx, [ebx+ebx*8]
     shl ebx, 1
-    mov esi, _Var5275fc
+    mov esi, _CD_AudioIndex
     add esi, ebx
     mov ebx, esi
     add esi, 9
     push esi
     push ebx
     push offset cd_play
-    mov edi, _Var5275f8
+    mov edi, _CD_CommandBuffer
     push edi
     call dword ptr [__imp__wsprintfA]
     add esp, 16
@@ -251,7 +251,7 @@ cd_volume db "setaudio T2 volume to %u",0
 _S_CDGetLoc proc public
     push 0
     push 50
-    mov edi, _Var5275f8
+    mov edi, _CD_CommandBuffer
     push edi
     push offset cd_position
     call dword ptr [__imp__mciSendStringA@16]
@@ -269,7 +269,7 @@ _S_CDGetLoc proc public
     dec eax
     lea eax, [eax+eax*8]
     shl eax, 1
-    mov edx, _Var5275fc
+    mov edx, _CD_AudioIndex
     lea eax, [edx+eax]
     push eax
     call _atol
@@ -301,7 +301,7 @@ volume_argument:
 volume_format:
     push edi
     push offset cd_volume
-    mov eax, _Var5275f8
+    mov eax, _CD_CommandBuffer
     push eax
     call dword ptr [__imp__wsprintfA]
     add esp, 12
@@ -309,7 +309,7 @@ volume_format:
     push eax
     push eax
     push eax
-    mov eax, _Var5275f8
+    mov eax, _CD_CommandBuffer
     push eax
     call dword ptr [__imp__mciSendStringA@16]
     popad

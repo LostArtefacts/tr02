@@ -282,7 +282,7 @@ typedef struct {
 extern "C" {
 extern APP_SETTINGS_PART SavedAppSettings;
 extern SOUND_ADAPTER CurrentSoundAdapter;
-extern int Var4d8e98;
+extern int UnusedSoundStartupState;
 extern HWND HGameWindow;
 bool DSoundCreate(LPGUID lpGuid);
 bool DSoundBufferTest(void);
@@ -294,7 +294,7 @@ void WinSndStart(HWND hWnd)
 
     memset(SampleBuffers, 0, sizeof(SampleBuffers));
     memset(ChannelBuffers, 0, sizeof(ChannelBuffers));
-    Var4d8e98 = 0;
+    UnusedSoundStartupState = 0;
     camera.mike_at_lara = SavedAppSettings.LaraMic;
     IsSoundEnabled = false;
     if (!SavedAppSettings.SoundEnabled || !SavedAppSettings.PreferredSoundAdapter)
@@ -372,6 +372,6 @@ bool IsSoundEnabled;
 LPDIRECTSOUND DSound;
 int ChannelSamples[32];
 LPDIRECTSOUNDBUFFER ChannelBuffers[32];
-int Var4d8e98;
+int UnusedSoundStartupState;
 SOUND_ADAPTER_NODE *PrimarySoundAdapter;
 #endif

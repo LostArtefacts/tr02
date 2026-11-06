@@ -1,20 +1,20 @@
     .386
     .model flat
 
-    extern _Var44b226:byte
-    extern _Var44b27e:byte
+    extern _T_CyrillicASCIIMap:byte
+    extern _T_CyrillicSpacing:byte
     extern _T_remapASCII:byte
     extern _T_textSpacing:byte
 
     .code
 
-_Func4558d7 proc public
+_T_IsExtendedNonCyrillicChar proc public
     cmp ecx, 81h
-    ja short _Func4558e1
+    ja short _T_IsNonCyrillicChar
     jmp short glyph_remapped
-_Func4558d7 endp
+_T_IsExtendedNonCyrillicChar endp
 
-_Func4558e1 proc public
+_T_IsNonCyrillicChar proc public
     cmp ecx, 0a8h
     je short glyph_remapped
     cmp ecx, 0b8h
@@ -29,28 +29,28 @@ glyph_remapped::
 glyph_standard:
     stc
     ret
-_Func4558e1 endp
+_T_IsNonCyrillicChar endp
 
-_Func455905 proc public
-    call _Func4558e1
+_T_GetGlyphIndex proc public
+    call _T_IsNonCyrillicChar
     jc short remap_standard
     sub ecx, 0a8h
-    movzx ecx, byte ptr [_Var44b226+ecx]
+    movzx ecx, byte ptr [_T_CyrillicASCIIMap+ecx]
     ret
 remap_standard:
     movzx ecx, byte ptr [_T_remapASCII+ecx-32]
     ret
-_Func455905 endp
+_T_GetGlyphIndex endp
 
-_Func455922 proc public
+_T_GetGlyphSpacing proc public
     cmp ecx, 6eh
     jb short spacing_standard
     sub ecx, 6eh
-    movzx ecx, byte ptr [_Var44b27e+ecx]
+    movzx ecx, byte ptr [_T_CyrillicSpacing+ecx]
     ret
 spacing_standard:
     movzx ecx, byte ptr [_T_textSpacing+ecx]
     ret
-_Func455922 endp
+_T_GetGlyphSpacing endp
 
     end

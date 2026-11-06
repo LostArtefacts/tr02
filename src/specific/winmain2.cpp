@@ -16,7 +16,7 @@ void _cexit(void);
 int GameInit(bool setup);
 int SE_ReadAppSettings(APP_SETTINGS *settings);
 bool SE_ShowSetupDialog(HWND parent, bool firstRun);
-void Func4524e0(APP_SETTINGS *settings);
+void SE_WriteAppSettings(APP_SETTINGS *settings);
 int WinGameStart(void);
 void WinGameFinish(void);
 void RenderErrorBox(int errorCode);
@@ -61,7 +61,7 @@ extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPST
                 if (!SE_ShowSetupDialog(NULL, firstRun)) {
                     *(volatile bool *)&hInstance = true;
                 } else {
-                    Func4524e0(&SavedAppSettings);
+                    SE_WriteAppSettings(&SavedAppSettings);
                     if (setup)
                         *(volatile bool *)&hInstance = true;
                 }
@@ -73,7 +73,7 @@ extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPST
                     IsGameToExit = false;
                     GameMain();
                     WinGameFinish();
-                    Func4524e0(&SavedAppSettings);
+                    SE_WriteAppSettings(&SavedAppSettings);
                     *(volatile bool *)&hInstance = true;
                 } else {
                     WinGameFinish();
@@ -81,7 +81,7 @@ extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPST
                     if (!SE_ShowSetupDialog(NULL, false))
                         *(volatile bool *)&hInstance = true;
                     else
-                        Func4524e0(&SavedAppSettings);
+                        SE_WriteAppSettings(&SavedAppSettings);
                 }
             }
         } else if (initStatus == 0) {

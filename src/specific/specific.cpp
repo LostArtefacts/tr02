@@ -86,12 +86,12 @@ sint32 S_SoundSampleIsPlaying(sint32 handle)
     return DS_IsChannelPlaying(handle);
 }
 
-extern "C" bool Func456972(void);
+extern "C" bool CD_LoadAudioIndex(void);
 
 #ifndef TR2_EXE
 extern "C" bool CD_Init(void)
 {
-    if (Func456972() && !mciSendString("open audio\\cdaudio.mp3  type mpegvideo alias T2", NULL, 0, NULL))
+    if (CD_LoadAudioIndex() && !mciSendString("open audio\\cdaudio.mp3  type mpegvideo alias T2", NULL, 0, NULL))
         mciSendString("set T2 time format ms", NULL, 0, NULL);
     return true;
 }
@@ -105,8 +105,8 @@ extern "C" void CD_Cleanup(void)
 }
 #endif
 
-extern "C" char *Var5275f8;
-extern "C" char *Var5275fc;
+extern "C" char *CD_CommandBuffer;
+extern "C" char *CD_AudioIndex;
 extern "C" char *CD_LoopTrack;
 extern "C" int CD_LoopCounter;
 
@@ -118,12 +118,12 @@ extern "C" void S_CDLoop(void)
     if (++CD_LoopCounter < 150)
         return;
     CD_LoopCounter = 0;
-    if (mciSendString("status T2 mode", Var5275f8, 50, NULL))
+    if (mciSendString("status T2 mode", CD_CommandBuffer, 50, NULL))
         return;
-    if (*(DWORD *)Var5275f8 != 0x706f7473)
+    if (*(DWORD *)CD_CommandBuffer != 0x706f7473)
         return;
-    wsprintf(Var5275f8, "play T2 from %s to %s", CD_LoopTrack, CD_LoopTrack + 9);
-    mciSendString(Var5275f8, NULL, 0, NULL);
+    wsprintf(CD_CommandBuffer, "play T2 from %s to %s", CD_LoopTrack, CD_LoopTrack + 9);
+    mciSendString(CD_CommandBuffer, NULL, 0, NULL);
 }
 #endif
 
@@ -139,9 +139,9 @@ extern "C" void S_CDPlay(sint16 track, int mode)
     if (!Option_Music_Volume)
         return;
     cdtrack = track;
-    entry = Var5275fc + (GetRealTrack(track) - 1) * 18;
-    wsprintf(Var5275f8, "play T2 from %s to %s", entry, entry + 9);
-    mciSendString(Var5275f8, NULL, 0, NULL);
+    entry = CD_AudioIndex + (GetRealTrack(track) - 1) * 18;
+    wsprintf(CD_CommandBuffer, "play T2 from %s to %s", entry, entry + 9);
+    mciSendString(CD_CommandBuffer, NULL, 0, NULL);
     if (mode)
     {
         CD_LoopTrack = entry;
@@ -172,9 +172,9 @@ extern "C" int StartSyncedAudio(int num)
     track = GetRealTrack(num);
     if (mciSendString("set T2 time format ms", NULL, 0, NULL))
         return 0;
-    entry = Var5275fc + (track - 1) * 18;
-    wsprintf(Var5275f8, "play T2 from %s to %s", entry, entry + 9);
-    return !mciSendString(Var5275f8, NULL, 0, NULL);
+    entry = CD_AudioIndex + (track - 1) * 18;
+    wsprintf(CD_CommandBuffer, "play T2 from %s to %s", entry, entry + 9);
+    return !mciSendString(CD_CommandBuffer, NULL, 0, NULL);
 }
 #endif
 
@@ -183,10 +183,10 @@ extern "C" int S_CDGetLoc(void)
 {
     long pos;
 
-    if (mciSendString("status T2 position", Var5275f8, 50, NULL))
+    if (mciSendString("status T2 position", CD_CommandBuffer, 50, NULL))
         return 0;
-    pos = atol(Var5275f8);
-    return (DWORD)(pos - atol(Var5275fc + (GetRealTrack((uint16)cdtrack) - 1) * 18)) * 3 / 40;
+    pos = atol(CD_CommandBuffer);
+    return (DWORD)(pos - atol(CD_AudioIndex + (GetRealTrack((uint16)cdtrack) - 1) * 18)) * 3 / 40;
 }
 #endif
 
@@ -195,24 +195,24 @@ extern "C" void S_CDVolume(int volume)
 {
     if (volume)
         volume = (volume - 5) * 4;
-    wsprintf(Var5275f8, "setaudio T2 volume to %u", volume);
-    mciSendString(Var5275f8, NULL, 0, NULL);
+    wsprintf(CD_CommandBuffer, "setaudio T2 volume to %u", volume);
+    mciSendString(CD_CommandBuffer, NULL, 0, NULL);
 }
 #endif
 
-extern "C" bool Func4558e1(uint32 c);
+extern "C" bool T_IsNonCyrillicChar(uint32 c);
 
 #ifndef TR2_EXE
-extern "C" bool Func4558d7(uint32 c)
+extern "C" bool T_IsExtendedNonCyrillicChar(uint32 c)
 {
     if (c <= 0x81)
         return false;
-    return Func4558e1(c);
+    return T_IsNonCyrillicChar(c);
 }
 #endif
 
 #ifndef TR2_EXE
-extern "C" bool Func4558e1(uint32 c)
+extern "C" bool T_IsNonCyrillicChar(uint32 c)
 {
     if (c == 0xa8 || c == 0xb8)
         return false;
@@ -223,9 +223,9 @@ extern "C" bool Func4558e1(uint32 c)
 #endif
 
 extern "C" uint8 T_remapASCII[];
-extern "C" uint8 Var44b226[];
+extern "C" uint8 T_CyrillicASCIIMap[];
 #ifdef TR2_EXE
-uint8 Var44b226[88] = {
+uint8 T_CyrillicASCIIMap[88] = {
     0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x95, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x6e, 0x6f, 0x70, 0x71, 0x72, 0x73, 0x75, 0x76, 0x77, 0x78, 0x79, 0x7a,
@@ -238,18 +238,18 @@ uint8 Var44b226[88] = {
 #endif
 
 #ifndef TR2_EXE
-extern "C" uint32 Func455905(uint32 c)
+extern "C" uint32 T_GetGlyphIndex(uint32 c)
 {
-    if (Func4558e1(c))
+    if (T_IsNonCyrillicChar(c))
         return T_remapASCII[c - 32];
-    return Var44b226[c - 0xa8];
+    return T_CyrillicASCIIMap[c - 0xa8];
 }
 #endif
 
 extern "C" uint8 T_textSpacing[];
-extern "C" uint8 Var44b27e[];
+extern "C" uint8 T_CyrillicSpacing[];
 #ifdef TR2_EXE
-uint8 Var44b27e[66] = {
+uint8 T_CyrillicSpacing[66] = {
     0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f,
     0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f,
     0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f, 0x0f,
@@ -260,10 +260,10 @@ uint8 Var44b27e[66] = {
 #endif
 
 #ifndef TR2_EXE
-extern "C" uint32 Func455922(uint32 c)
+extern "C" uint32 T_GetGlyphSpacing(uint32 c)
 {
     if (c >= 0x6e)
-        return Var44b27e[c - 0x6e];
+        return T_CyrillicSpacing[c - 0x6e];
     return T_textSpacing[c];
 }
 #endif
@@ -273,7 +273,7 @@ int LnMasterVolume;
 char *CD_LoopTrack;
 int CD_LoopCounter;
 int sound_active;
-char *Var5275f8;
+char *CD_CommandBuffer;
 #endif
 
 #ifdef TR2_EXE

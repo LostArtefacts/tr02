@@ -716,7 +716,7 @@ void phd_RotZ(PHD_ANGLE rz);
 int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
 void phd_RotYXZsuperpack(sint16 **pprot, int skip);
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
-void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unknown);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unused);
 int S_GetObjectBounds(sint16 *bptr);
 void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
 void InitInterpolate(int frac, int rate);

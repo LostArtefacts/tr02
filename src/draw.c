@@ -344,7 +344,7 @@ void InitInterpolate(int frac, int rate);
 
 void S_InsertBackPolygon(sint32 x1, sint32 y1, sint32 x2, sint32 y2, int colour);
 
-extern sint32 Var464180[12][2];
+extern sint32 RoomBoundingBoxEdges[12][2];
 
 void ClipRoom(ROOM_INFO *r)
 {
@@ -382,8 +382,8 @@ void ClipRoom(ROOM_INFO *r)
     xmin = ymin = 0x10000000;
     xmax = ymax = -0x10000000;
     for (i = 0; i < 12; i++) {
-        p1 = Var464180[i][0];
-        p2 = Var464180[i][1];
+        p1 = RoomBoundingBoxEdges[i][0];
+        p2 = RoomBoundingBoxEdges[i][1];
         if (clip[p1] ^ clip[p2]) {
             zdiv = (zv[p2] - zv[p1]) >> W2V_SHIFT;
             if (zdiv) {
@@ -607,7 +607,7 @@ extern sint16 null_rotations[];
 
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
 void phd_RotZ(PHD_ANGLE rz);
-void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unknown);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unused);
 int S_GetObjectBounds(sint16 *bptr);
 void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
 void phd_PutPolygons_I(sint16 *ptr, int clip);
@@ -1697,7 +1697,7 @@ void DrawDummyItem(ITEM_INFO *item)
 #endif
 
 #ifdef TR2_EXE
-sint32 Var464180[12][2] = {
+sint32 RoomBoundingBoxEdges[12][2] = {
     { 0, 1 },
     { 1, 2 },
     { 2, 3 },

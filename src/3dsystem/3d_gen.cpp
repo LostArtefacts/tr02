@@ -160,7 +160,7 @@ extern "C" float FltNearZ;
 extern "C" float FltFarZ;
 extern "C" float FltPersp;
 extern "C" float FltRhwOPersp;
-extern "C" float Data478044;
+extern "C" float f_oneozfar;
 
 void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
@@ -571,7 +571,7 @@ extern "C" sint16 *calc_roomvert(sint16 *objptr, int far_clip)
                 clip = far_clip;
                 v->g = 0x1fff;
                 v->zv = FltFarZ;
-                v->ooz = Data478044;
+                v->ooz = f_oneozfar;
             } else {
                 if (zv_int > 0xc000000)
                     v->g = (zv_int >> W2V_SHIFT) + g - 0x3000;
@@ -882,7 +882,7 @@ PHD_ANGLE phd_ls_yaw;
 void (*InsertTrans8)(void *vbuf, sint16 shade);
 float phd_topfloat;
 sint32 sort3d_buffer[4000][2];
-float Data478044;
+float f_oneozfar;
 sint32 phd_zfar;
 float FltRhwOPersp;
 void (*InsertFlatRect)(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);

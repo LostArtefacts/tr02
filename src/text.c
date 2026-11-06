@@ -217,10 +217,10 @@ void T_BottomAlign(TEXTSTRING *textString, sint16 ok)
         textString->flags &= ~T_BOTTOMALIGN;
 }
 
-uint8 Func4558d7(uint32 c);
-uint8 Func4558e1(uint32 c);
-uint32 Func455905(uint32 c);
-uint32 Func455922(uint32 c);
+uint8 T_IsExtendedNonCyrillicChar(uint32 c);
+uint8 T_IsNonCyrillicChar(uint32 c);
+uint32 T_GetGlyphIndex(uint32 c);
+uint32 T_GetGlyphSpacing(uint32 c);
 
 #ifndef TR2_EXE
 sint32 T_GetTextWidth(TEXTSTRING *textString)
@@ -237,7 +237,7 @@ sint32 T_GetTextWidth(TEXTSTRING *textString)
     while (*string)
     {
         letter = *string++;
-        if (Func4558d7(letter))
+        if (T_IsExtendedNonCyrillicChar(letter))
             continue;
         if (letter > 10 && letter < 32)
             continue;
@@ -249,7 +249,7 @@ sint32 T_GetTextWidth(TEXTSTRING *textString)
                 width += (textString->wordSpacing * scaleH) >> 16;
             continue;
         }
-        if (letter >= 127 && Func4558e1(letter))
+        if (letter >= 127 && T_IsNonCyrillicChar(letter))
         {
             if (scaleH == 0x10000)
                 width += 16;
@@ -262,13 +262,13 @@ sint32 T_GetTextWidth(TEXTSTRING *textString)
         else if (letter < 16)
             letter += 91;
         else
-            letter = Func455905(letter);
+            letter = T_GetGlyphIndex(letter);
         if (letter >= '0' && letter <= '9')
         {
             width += (12 * scaleH) >> 16;
             continue;
         }
-        letter = Func455922(letter);
+        letter = T_GetGlyphSpacing(letter);
         if (scaleH == 0x10000)
             width += textString->letterSpacing + letter;
         else
@@ -414,7 +414,7 @@ void T_DrawThisText(TEXTSTRING *textString)
                 x += (uint32)(16 * scaleH) >> 16;
                 continue;
             }
-            if (Func4558e1(letter))
+            if (T_IsNonCyrillicChar(letter))
                 continue;
         }
         if (letter < 11)
@@ -422,17 +422,17 @@ void T_DrawThisText(TEXTSTRING *textString)
         else if (letter <= 18)
             sprite = letter + 91;
         else
-            sprite = Func455905(letter);
+            sprite = T_GetGlyphIndex(letter);
         if (letter >= '0' && letter <= '9')
-            x += (uint32)((12 - (sint32)Func455922(sprite)) / 2 * scaleH) >> 16;
+            x += (uint32)((12 - (sint32)T_GetGlyphSpacing(sprite)) / 2 * scaleH) >> 16;
         if (x > 0 && x < GetRenderWidth() && y > 0 && y < GetRenderHeight())
             S_DrawScreenSprite2d(x, y, z, scaleH, scaleV, (sint16)(objects[ALPHABET].mesh_index + sprite), 4096, textString->textflags);
         if (letter >= '0' && letter <= '9')
-            x += (uint32)((12 - (12 - (sint32)Func455922(sprite)) / 2) * scaleH) >> 16;
+            x += (uint32)((12 - (12 - (sint32)T_GetGlyphSpacing(sprite)) / 2) * scaleH) >> 16;
         else if (scaleH == 0x10000)
-            x += textString->letterSpacing + Func455922(sprite);
+            x += textString->letterSpacing + T_GetGlyphSpacing(sprite);
         else
-            x += (uint32)((Func455922(sprite) + textString->letterSpacing) * scaleH) >> 16;
+            x += (uint32)((T_GetGlyphSpacing(sprite) + textString->letterSpacing) * scaleH) >> 16;
     }
     if ((textString->flags & T_ADDBACKGROUND) || (textString->flags & T_ADDOUTLINE))
     {

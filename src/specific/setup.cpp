@@ -145,7 +145,7 @@ void SetRegistryStringValue(LPCTSTR lpValueName, LPCTSTR value, int length);
 void DeleteRegistryValue(LPCTSTR lpValueName);
 }
 
-extern "C" bool Func4524e0(SETUP_APP_SETTINGS *settings)
+extern "C" bool SE_WriteAppSettings(SETUP_APP_SETTINGS *settings)
 {
     SETUP_MODE_NODE *mode;
 
@@ -638,7 +638,7 @@ extern "C" bool SE_ShowSetupDialog(HWND hParent, bool isDefault)
 }
 
 extern "C" {
-extern bool Var51bc88;
+extern bool IsGraphicsTestActive;
 extern SETUP_ADAPTER_NODE *SE_DisplayAdapter;
 void SE_GraphicsDlgInit(HWND hwndDlg);
 void SE_GraphicsDlgUpdate(HWND hwndDlg);
@@ -656,7 +656,7 @@ extern "C" BOOL CALLBACK SE_GraphicsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
     {
     case WM_INITDIALOG:
         GraphicsDialogHandle = hwndDlg;
-        Var51bc88 = false;
+        IsGraphicsTestActive = false;
         if (!IsSetupDialogCentered)
         {
             UT_CenterWindow(GetParent(hwndDlg));
@@ -668,7 +668,7 @@ extern "C" BOOL CALLBACK SE_GraphicsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
         GraphicsDialogHandle = NULL;
         break;
     case WM_DISPLAYCHANGE:
-        if (!Var51bc88)
+        if (!IsGraphicsTestActive)
         {
             if (SE_DisplayAdapter)
                 WinVidSetDisplayAdapter(&SE_DisplayAdapter->lpAdapterGuid);
@@ -716,10 +716,10 @@ extern "C" BOOL CALLBACK SE_GraphicsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
                 ChangedAppSettings.FullScreen = false;
                 break;
             case 1029:
-                Var51bc88 = true;
+                IsGraphicsTestActive = true;
                 if (SE_GraphicsTest())
                     PostMessage(SE_PropSheetWndHandle, PSM_PRESSBUTTON, PSBTN_CANCEL, 0);
-                Var51bc88 = false;
+                IsGraphicsTestActive = false;
                 break;
             case 1060:
                 ChangedAppSettings.AspectMode = 0;
@@ -1037,7 +1037,7 @@ extern "C" void SE_GraphicsDlgInit(HWND hwndDlg)
 
 extern "C" {
 extern HWND ControlsDialogHandle;
-extern HWND Var51bcf8;
+extern HWND AdvancedDialogImageHandle;
 void SE_PassMessageToImage(HWND hWnd, UINT uMsg, WPARAM wParam);
 void SE_AdvancedDlgInit(HWND hwndDlg);
 void SE_AdvancedDlgUpdate(HWND hwndDlg);
@@ -1433,7 +1433,7 @@ extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
     {
     case WM_INITDIALOG:
         ControlsDialogHandle = hwndDlg;
-        Var51bcf8 = GetDlgItem(hwndDlg, 1110);
+        AdvancedDialogImageHandle = GetDlgItem(hwndDlg, 1110);
         SE_AdvancedDlgInit(hwndDlg);
         return TRUE;
     case WM_COMMAND:
@@ -1466,7 +1466,7 @@ extern "C" BOOL CALLBACK SE_AdvancedDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
         }
         break;
     }
-    SE_PassMessageToImage(Var51bcf8, uMsg, wParam);
+    SE_PassMessageToImage(AdvancedDialogImageHandle, uMsg, wParam);
     return FALSE;
 }
 
@@ -1521,7 +1521,7 @@ SETUP_APP_SETTINGS ChangedAppSettings;
 HWND SE_PropSheetWndHandle;
 WNDPROC SE_OldPropSheetWndProc;
 HWND OptionsImageHandle;
-bool Var51bc88;
+bool IsGraphicsTestActive;
 SETUP_ADAPTER_NODE *SE_DisplayAdapter;
 HWND SoundDialogHandle;
 HWND SoundImageHandle;
@@ -1531,6 +1531,6 @@ SETUP_APP_SETTINGS SavedAppSettings;
 HWND OptionsDialogHandle;
 bool IsSetupDialogCentered;
 HWND ControlsDialogHandle;
-HWND Var51bcf8;
+HWND AdvancedDialogImageHandle;
 bool initOnce;
 #endif

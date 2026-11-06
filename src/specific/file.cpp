@@ -45,7 +45,7 @@ BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *
 
 typedef struct {
     BYTE pixelFormat[32];
-    BYTE unknown[48];
+    BYTE colorBitMasks[48];
     int bpp;
 } TEXTURE_FORMAT;
 
@@ -772,13 +772,13 @@ extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
     file_name[1] = 0;
 }
 
-extern "C" char Var4d9358[];
+extern "C" char FullPathBuffer[];
 
 #ifndef TR2_EXE
 extern "C" char *GetFullPath(char *path)
 {
-    wsprintf(Var4d9358, "%s", path);
-    return Var4d9358;
+    wsprintf(FullPathBuffer, "%s", path);
+    return FullPathBuffer;
 }
 #endif
 
@@ -1147,7 +1147,7 @@ char GF_Description[256];
 int number_cameras;
 int UvAdd;
 int HwrTexturePagesCount;
-char Var4d9358[136];
+char FullPathBuffer[136];
 uint8 LabTextureUVFlags[2048];
 DWORD ReadFileBytesCounter;
 DWORD LevelFilePalettesOffset;
