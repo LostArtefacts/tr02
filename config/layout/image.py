@@ -11,15 +11,26 @@ import compare_exe as ce
 from .validation import require_payload, require_unchanged
 
 
-def finish() -> None:
+def finish(shift: int = 0, output: str = "build/tomb2.exe",
+          map_output: str = "build/tomb2_exe.map", expand: bool = False) -> None:
+    """`shift`, for an expanded feature build, is however far the actual
+    growth of .text pushed .data's (and so .rdata's and the recovered
+    bss's) start address along: it's usually 0, .text's own growth
+    being absorbed by section alignment before it reaches that far.
+    `expand` leaves `.text` free to grow (an expanded build's whole
+    point), as long as it still starts where it always did; a vanilla
+    build still has to match the original exactly."""
     ours = ce.PE("build/layout/linked.exe")
     original = ce.PE(ce.ORIGINAL)
     mapping = ce.read_map("build/layout/linked.map")
-    for name in (".text", ".rdata", ".data"):
-        if ours.sections[name][0] != original.sections[name][0]:
-            raise ValueError(f"The linked {name} section left its recovered address")
-    if ours.sections[".text"][1] != original.sections[".text"][1]:
+    if ours.sections[".text"][0] != original.sections[".text"][0]:
+        raise ValueError("The linked .text section left its recovered address")
+    if not expand and ours.sections[".text"][1] != original.sections[".text"][1]:
         raise ValueError("The linked code exceeded its recovered layout")
+    for name in (".rdata", ".data"):
+        want = original.sections[name][0] + shift
+        if ours.sections[name][0] != want:
+            raise ValueError(f"The linked {name} section left its recovered address")
     plan = json.loads(Path("build/layout/data-plan.json").read_text())
     plan.sort(key=lambda c: c["old"])
     starts = [c["old"] for c in plan]
@@ -27,6 +38,9 @@ def finish() -> None:
     # Globals explicitly fixed by the linker must remain fixed even when their
     # addresses happen to fall inside another allocation's previous position.
     bss = json.loads(Path("build/layout/bss.json").read_text())
+    if shift:
+        bss = {path: {idx: address + shift for idx, address in entries.items()}
+              for path, entries in bss.items()}
     absolute_names: set[str] = set()
     absolute_bindings: dict[str, int] = {}
     for path, entries in bss.items():
@@ -141,7 +155,7 @@ def finish() -> None:
     for path, entries in bss.items():
         obj = coff.Object(path)
         for idx, address in entries.items():
-            if address < 0x46C2D0:
+            if address < 0x46C2D0 + shift:
                 sym = obj.symbols[int(idx)]
                 assert sym
                 off = ours.offset(address)
@@ -347,7 +361,7 @@ def finish() -> None:
         "<I", newdata, ours.opt + 12, (old_bss_end - old_bss_start + 0x1FF) & ~0x1FF
     )
     newdata = newdata[: rsrc_ptr + rsrc_raw]
-    output = Path("build/tomb2.exe")
+    output = Path(output)
     output.write_bytes(newdata)
     # Keep the map's symbol addresses synchronized with physical placement.
     maptext = Path("build/layout/linked.map").read_text(encoding="latin-1")
@@ -387,7 +401,7 @@ def finish() -> None:
             result.append(
                 f" {section:04x}:{offset:08x}       {name} {address:08x}   000_globals.obj"
             )
-    Path("build/tomb2_exe.map").write_text("\n".join(result) + "\n", encoding="latin-1")
+    Path(map_output).write_text("\n".join(result) + "\n", encoding="latin-1")
     print(
         "FINISHED",
         len(newdata),

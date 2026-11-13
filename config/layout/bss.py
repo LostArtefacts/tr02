@@ -91,13 +91,28 @@ def recover() -> None:
     print("MAPPED", sum(len(x) for x in result.values()))
 
 
-def place(paths: list[str]) -> list[str]:
+def place(paths: list[str], shift: int = 0, expand: bool = False) -> list[str]:
+    """`shift`, for an expanded feature build whose code outgrew its
+    original slot, moves every recovered global's binding down by
+    however far the game code grew: everything from the original's
+    first global onward follows it by the same amount.
+
+    `expand` also tolerates a BSS section this can't fully recover: a
+    feature's C twin takes a different path through a file like
+    3d_gen.cpp that still owns globals (phd_mxptr, matrix_stack) the
+    recovery matches through other, unaffected functions in it, but a
+    changed function can turn what used to be a matched reference red,
+    losing the match the recovery needs. Rather than wipe the raw bytes
+    of a section it only partly recovered, leaving the rest as nothing
+    (0x46C2D0 is wrong anyway, past an expanded build's growth), it
+    leaves that section's globals as ordinary BSS for the linker to
+    place and resolve itself."""
     mapping: dict[str, dict[str, int]] = json.loads(
         Path("build/layout/bss.json").read_text()
     )
     defined: dict[str, tuple[int, int]] = {}
     absolute: dict[str, int] = {}
-    base = 0x46C2D0
+    base = 0x46C2D0 + shift
     for path in paths:
         raw = bytearray(Path(path).read_bytes())
         obj = coff.Object(path)
@@ -106,8 +121,11 @@ def place(paths: list[str]) -> list[str]:
         old_end = symptr + nsym * 18
         strings = bytearray(raw[old_end:])
         records = bytearray(raw[symptr:old_end])
+        covered: set[int] = set()
         for index, value in mapping.get(old, {}).items():
+            value += shift
             i = int(index)
+            covered.add(i)
             sym = obj.symbols[i]
             assert sym
             name = sym.name
@@ -125,19 +143,31 @@ def place(paths: list[str]) -> list[str]:
             else:
                 absolute[name] = value
         for n, sec in enumerate(obj.sections):
-            if sec.flags & 0x80:
-                at = 20 + n * 40
-                struct.pack_into("<IIIIHH", raw, at + 16, 0, 0, 0, 0, 0, 0)
-                raw[at : at + 8] = b".drectve"
-                struct.pack_into("<I", raw, at + 36, 0x100A00)
+            if not sec.flags & 0x80:
+                continue
+            if expand:
+                owned = {
+                    i for i, sym in enumerate(obj.symbols)
+                    if sym and sym.section == n + 1 and sym.storage == 2
+                }
+                if not owned <= covered:
+                    continue
+            at = 20 + n * 40
+            struct.pack_into("<IIIIHH", raw, at + 16, 0, 0, 0, 0, 0, 0)
+            raw[at : at + 8] = b".drectve"
+            struct.pack_into("<I", raw, at + 36, 0x100A00)
         struct.pack_into("<I", strings, 0, len(strings))
         Path(path).write_bytes(raw[:symptr] + records + strings)
     absolute["_layout_bss_base"] = base
     defined["_layout_game_bss_start"] = (1, 0)
-    defined["_layout_game_bss_end"] = (1, 0x527600 - base)
+    defined["_layout_game_bss_end"] = (1, 0x527600 - 0x46C2D0)
     out = "build/obj_placed/000_globals.obj"
     # The rest of the CRT's private zero initialized state follows this range.
     coff.write_object(
-        out, [(".bss", 0xC0300080, bytes(0x527600 - base), [])], defined, [], absolute
+        out,
+        [(".bss", 0xC0300080, bytes(0x527600 - 0x46C2D0), [])],
+        defined,
+        [],
+        absolute,
     )
     return [out, *paths]

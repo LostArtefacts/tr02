@@ -106,7 +106,7 @@ def exception_order(
     return names
 
 
-def place(objects: list[str]) -> list[str]:
+def place(objects: list[str]) -> tuple[list[str], int]:
     symbols = compare.read_symbols()
     extras: dict[str, dict[str, int]] = {
         "specific_winvid": {
@@ -278,7 +278,7 @@ def place(objects: list[str]) -> list[str]:
             if alias is not chosen:
                 if (
                     alias.data != chosen.data
-                    and alias.path != "build/obj_exe/exe_forward.obj"
+                    and Path(alias.path).name != "exe_forward.obj"
                 ):
                     raise ValueError(("different alias", alias.name, chosen.name))
                 removed.setdefault(alias.path, set()).add(alias.section)
@@ -423,4 +423,4 @@ def place(objects: list[str]) -> list[str]:
         output.write_bytes(headers + body + symtab + strtab)
         newobjs.append(str(output))
     Path("build/layout/order.txt").write_text("\n".join(order) + "\n")
-    return newobjs
+    return newobjs, cursor

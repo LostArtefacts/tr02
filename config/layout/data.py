@@ -169,7 +169,7 @@ def recover_crt_sections(
                 member.candidates[matches[0] + member.offset] += 1
 
 
-def prepare() -> None:
+def prepare(shift: int = 0) -> None:
     ours = ce.PE("build/layout/linked.exe")
     orig = ce.PE(ce.ORIGINAL)
     ourmap = ce.read_map("build/layout/linked.map")
@@ -368,9 +368,9 @@ def prepare() -> None:
                 relocations.append(ours.base + page + (entry & 0xFFF))
         position += length
     for site in relocations:
-        if 0x462D50 <= site < 0x462DBA:
+        if 0x462D50 + shift <= site < 0x462DBA + shift:
             old = struct.unpack("<I", ours.read(site, 4))[0]
-            new = struct.unpack("<I", orig.read(site, 4))[0]
+            new = struct.unpack("<I", orig.read(site - shift, 4))[0]
             add_pair(old, new)
     # The complete-object locator occupies vftable[-1] in the VC5 RTTI ABI.
     recover_vftable_prefixes(chunks, parsed)

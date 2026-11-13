@@ -157,7 +157,9 @@ def recover_bss(
     return bindings
 
 
-def merge() -> tuple[list[str], str]:
+def merge(shift: int = 0, expand: bool = False) -> tuple[list[str], str]:
+    """`shift` moves every CRT global this recovers down by however far
+    the game code grew, the same amount `bss.place` applies."""
     original = ce.PE(ce.ORIGINAL)
     ourmap = ce.read_map("build/layout/preliminary.map")
     # The original retained this helper; current game code no longer selects it.
@@ -189,6 +191,7 @@ def merge() -> tuple[list[str], str]:
     parsed: dict[str, coff.Object] = {}
     blocks: list[Block] = []
     unknown: list[tuple[str, int, list[str]]] = []
+    unplaced: set[tuple[str, int]] = set()
     aliases_outside: dict[str, int] = {"__fpclear": 0x42A120}
     manual: dict[tuple[str, int], int] = {
         ("hooks.obj", 3): 0x45C080,
@@ -251,6 +254,13 @@ def merge() -> tuple[list[str], str]:
                 address = 0x45E710
             address = manual.get((name, secnum), address)
             if address is None:
+                if expand:
+                    # A feature's C twin can pull in CRT code the
+                    # original never needed (no recovered address to
+                    # match): leave it for the ordinary linker instead
+                    # of forcing it into the recovered layout.
+                    unplaced.add((path, secnum))
+                    continue
                 unknown.append((name, secnum, [s.name for s in live]))
                 continue
             data = sec.data
@@ -265,6 +275,8 @@ def merge() -> tuple[list[str], str]:
     if unknown:
         raise ValueError(("Unplaced CRT", unknown))
     bss_bindings = recover_bss(parsed, blocks, original)
+    if shift:
+        bss_bindings = {key: address + shift for key, address in bss_bindings.items()}
     by_addr: dict[int, list[Block]] = {}
     for block in blocks:
         by_addr.setdefault(block.address, []).append(block)
@@ -427,6 +439,7 @@ def merge() -> tuple[list[str], str]:
                 sym.section > 0
                 and obj.sections[sym.section - 1].flags & coff.CODE
                 and not sym.name.startswith(".")
+                and (path, sym.section) not in unplaced
             ):
                 name = names[(path, i)]
                 off = len(strings)
@@ -461,7 +474,7 @@ def merge() -> tuple[list[str], str]:
                 (path, i) in bss_bindings and sym and sym.section == n + 1
                 for i, sym in enumerate(obj.symbols)
             )
-            if sec.flags & coff.CODE or bound_bss:
+            if (sec.flags & coff.CODE or bound_bss) and (path, n + 1) not in unplaced:
                 at = 20 + n * 40
                 struct.pack_into("<IIIIHH", raw, at + 16, 0, 0, 0, 0, 0, 0)
                 raw[at : at + 8] = b".drectve"
