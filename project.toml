@@ -35,6 +35,8 @@ libs = ["dxguid.lib", "dinput.lib", "dsound.lib", "ddraw.lib", "winmm.lib", "use
         "kernel32.lib"]
 import_defs = ["config/winplay.def"]  # winplay.dll's 26 imports, from the original's import table
 link_bin = 'C:\msvc5\bin'  # VC5 RTM's link 5.00: its own .idata, so the sections land where the original's do (that was link 5.02)
+features = { c_asm = "FEAT_C_ASM" }  # FEAT=c_asm: the C versions of the original's hand-written assembly
+feature_excludes = { c_asm = ["src/3dsystem/phd_math.s", "src/3dsystem/3d_gen_a.s", "src/3dsystem/3d_xouta.s"] }
 
 [symbols]
 manifest = "refs/trx/docs/symbols/tr2-steam.txt"

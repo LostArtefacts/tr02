@@ -10,7 +10,11 @@ from layout import link
 
 
 def link_exe(objects: list[str], exe_objects: list[str], feats: list[str]) -> None:
-    if objects != exe_objects or feats:
+    if feats:
+        build = sys.modules.get("build") or sys.modules["__main__"]
+        build.link_exe(objects, exe_objects, tuple(feats), customize=False)
+        return
+    if objects != exe_objects:
         raise ValueError(
             "The recovered standalone layout requires the vanilla VC5 objects"
         )
