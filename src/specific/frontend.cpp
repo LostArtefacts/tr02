@@ -60,13 +60,13 @@ void S_FadeToBlack(void)
     ScreenDump();
 }
 
-void S_Wait(int frames, int anykey)
+void S_Wait(int nframes, int anykey)
 {
     int npassed;
 
     if (anykey)
     {
-        while (frames > 0)
+        while (nframes > 0)
         {
             if (!input)
                 break;
@@ -74,10 +74,10 @@ void S_Wait(int frames, int anykey)
             do
                 npassed = Sync();
             while (!npassed);
-            frames -= npassed;
+            nframes -= npassed;
         }
     }
-    while (frames > 0)
+    while (nframes > 0)
     {
         S_UpdateInput();
         if (anykey && input)
@@ -85,7 +85,7 @@ void S_Wait(int frames, int anykey)
         do
             npassed = Sync();
         while (!npassed);
-        frames -= npassed;
+        nframes -= npassed;
     }
 }
 

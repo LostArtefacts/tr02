@@ -162,7 +162,7 @@ void Inv_RingCalcAdders(RING_INFO *ring, sint16 rotation_duration);
 void Inv_RingDoMotions(RING_INFO *ring);
 void Inv_RingRotateLeft(RING_INFO *ring);
 void Inv_RingRotateRight(RING_INFO *ring);
-void Inv_RingMotionSetup(RING_INFO *ring, sint16 status, sint16 status_target, sint16 frames);
+void Inv_RingMotionSetup(RING_INFO *ring, sint16 status, sint16 status_target, sint16 count);
 void Inv_RingMotionRadius(RING_INFO *ring, sint16 target);
 void Inv_RingMotionRotation(RING_INFO *ring, sint16 rotation, sint16 target);
 void Inv_RingMotionCameraPos(RING_INFO *ring, sint16 target);
