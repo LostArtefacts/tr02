@@ -1223,7 +1223,7 @@ extern "C" void SE_SoundDlgInit(HWND hwndDlg)
     SE_SoundDlgUpdate(hwndDlg);
 }
 
-extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick);
+extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *node);
 
 extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -1268,9 +1268,9 @@ extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
     return FALSE;
 }
 
-extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *joystick)
+extern "C" void SE_ControlsJoystickSet(HWND hwndDlg, void *node)
 {
-    ChangedAppSettings.PreferredJoystick = joystick;
+    ChangedAppSettings.PreferredJoystick = node;
 }
 
 typedef struct

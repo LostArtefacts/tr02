@@ -151,34 +151,34 @@ extern "C" bool DInputEnumDevices(void *joystickList)
 extern "C" BOOL CALLBACK DInputEnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
 {
     JOYSTICK_LIST *joyList = (JOYSTICK_LIST *)pvRef;
-    JOYSTICK &joystick = joyList->NewTail();
+    JOYSTICK &device = joyList->NewTail();
 
-    joystick.SetGuid(&lpddi->guidInstance);
-    strcpy(joystick.description, lpddi->tszProductName);
-    strcpy(joystick.name, lpddi->tszInstanceName);
+    device.SetGuid(&lpddi->guidInstance);
+    strcpy(device.description, lpddi->tszProductName);
+    strcpy(device.name, lpddi->tszInstanceName);
     return DIENUM_CONTINUE;
 }
 
 extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
 {
-    JOYSTICK_NODE *joystick;
+    JOYSTICK_NODE *found;
     JOYSTICK_NODE *node;
 
-    joystick = (JOYSTICK_NODE *)JoystickList.dwCount;
-    if (!joystick)
-        return joystick;
-    joystick = NULL;
+    found = (JOYSTICK_NODE *)JoystickList.dwCount;
+    if (!found)
+        return found;
+    found = NULL;
     if (lpGuid) {
         for (node = JoystickList.GetHead(); node; node = JoystickList.GetNext(node)) {
             if (!memcmp(lpGuid, &JoystickList[node].adapterGuid, sizeof(GUID))) {
-                joystick = node;
+                found = node;
                 break;
             }
         }
     }
-    if (!joystick)
-        joystick = JoystickList.head;
-    return joystick;
+    if (!found)
+        found = JoystickList.head;
+    return found;
 }
 
 extern "C" void DI_StartKeyboard(void)
