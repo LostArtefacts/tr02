@@ -255,7 +255,7 @@ void HWR_LoadTexturePages(int nPages, uint8 *pImage, uint8 *pPalette)
     {
         if (pPalette)
         {
-            nHandle = AddTexturePage8(256, 256, pImage, PaletteIndex);
+            nHandle = DXTextureAddPal(256, 256, pImage, PaletteIndex);
             pImage += 0x10000;
         }
         else

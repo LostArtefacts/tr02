@@ -36,7 +36,7 @@ void WinPlayFMV(char *path, bool playback);
 void WinStopFMV(bool playback);
 void FmvBackToGame(void);
 }
-void RenderFinish(bool reset);
+void WinFreeDX(bool reset);
 
 int FMV_Play(char *szMovieName)
 {
@@ -46,7 +46,7 @@ int FMV_Play(char *szMovieName)
         IsFmvPlaying = 1;
         S_CDStop();
         ShowCursor(FALSE);
-        RenderFinish(true);
+        WinFreeDX(true);
         path = GetFullPath(szMovieName);
         WinPlayFMV(path, true);
         WinStopFMV(true);
@@ -157,7 +157,7 @@ int FMV_PlayIntro(char *szMovie1, char *szMovie2)
     if (!SavedAppSettings.DisableFMV) {
         IsFmvPlaying = 1;
         ShowCursor(FALSE);
-        RenderFinish(true);
+        WinFreeDX(true);
         path = GetFullPath(szMovie1);
         WinPlayFMV(path, true);
         WinStopFMV(true);

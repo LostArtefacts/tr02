@@ -30,7 +30,7 @@ int LoadLevel(char *filename, int req_level);
 BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped);
 
 extern "C" DWORD ReadFileBytesCounter;
-extern "C" void WinVidSpinMessageLoop(bool tWait);
+extern "C" void DD_SpinMessageLoop(bool tWait);
 
 BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped)
 {
@@ -38,7 +38,7 @@ BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *
     if (ReadFileBytesCounter > 16384)
     {
         ReadFileBytesCounter = 0;
-        WinVidSpinMessageLoop(false);
+        DD_SpinMessageLoop(false);
     }
     return ReadFile(hFile, pBuffer, nNumberOfBytesToRead, pNumberOfBytesRead, pOverlapped);
 }
@@ -658,16 +658,16 @@ int LoadDemo(HANDLE file)
 }
 
 extern "C" char DemoExtension[];
-extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext);
+extern "C" void build_ext(char *file_name, char *file_ext);
 
-extern "C" void LoadDemoExternal(char *level_name)
+extern "C" void LoadDemFile(char *level_name)
 {
     char file_name[80];
     HANDLE file;
     DWORD read;
 
     strcpy(file_name, level_name);
-    ChangeFileNameExtension(file_name, DemoExtension);
+    build_ext(file_name, DemoExtension);
     file = CreateFileA(file_name, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (file != INVALID_HANDLE_VALUE) {
         MyReadFile(file, demoptr, 36000, &read, NULL);
@@ -682,8 +682,8 @@ extern "C" char StringToShow[];
 extern "C" char MainSfxFileName[];
 extern "C" char MainSfxOpenFailed[];
 extern "C" bool WinSndIsSoundEnabled(void);
-extern "C" void WinSndFreeAllSamples(void);
-bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
+extern "C" void DS_FreeAllSamples(void);
+bool DS_MakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
 extern "C" char *GetFullPath(char *path);
 extern "C" void game_free(int size, int type);
 
@@ -705,7 +705,7 @@ extern "C" int LoadSamples(HANDLE file)
     if (!WinSndIsSoundEnabled())
         return 1;
 
-    WinSndFreeAllSamples();
+    DS_FreeAllSamples();
 
     MyReadFile(file, sample_lut, sizeof(sint16) * 370, &read, NULL);
     MyReadFile(file, &SampleInfoCount, sizeof(int), &read, NULL);
@@ -747,7 +747,7 @@ extern "C" int LoadSamples(HANDLE file)
         {
             pWaveData = (char *)game_malloc(dwStoredLength, 36);
             MyReadFile(sfx, pWaveData, dwStoredLength, &read, NULL);
-            if (!WinSndMakeSample(required, pWF, pWaveData, dwWaveLength))
+            if (!DS_MakeSample(required, pWF, pWaveData, dwWaveLength))
                 return 0;
             game_free(dwStoredLength, 36);
             required++;
@@ -761,7 +761,7 @@ extern "C" int LoadSamples(HANDLE file)
     return 1;
 }
 
-extern "C" void ChangeFileNameExtension(char *file_name, char *file_ext)
+extern "C" void build_ext(char *file_name, char *file_ext)
 {
     while (*file_name != '.' && *file_name)
         file_name++;
@@ -795,7 +795,7 @@ extern "C" int LoadSprites(HANDLE file);
 extern "C" int LoadBoxes(HANDLE file);
 extern "C" int LoadItems(HANDLE file);
 extern "C" int LoadDepthQ(HANDLE file);
-extern "C" void LoadDemoExternal(char *level_name);
+extern "C" void LoadDemFile(char *level_name);
 
 int LoadLevel(char *filename, int req_level)
 {
@@ -863,7 +863,7 @@ int LoadLevel(char *filename, int req_level)
     if (!LoadSamples(file))
         return 0;
 
-    LoadDemoExternal(filename);
+    LoadDemFile(filename);
     CloseHandle(file);
     return 1;
 }

@@ -120,9 +120,9 @@ extern LPDIRECTDRAWSURFACE3 ZBufferSurface;
 extern LPDIRECTDRAWPALETTE DDrawPalette;
 extern PALETTEENTRY WinVidPalette[256];
 extern bool GameVid_IsWindowedVga;
-HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface);
-bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
-HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank);
+HRESULT DD_CreateSurface(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface);
+bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
+HRESULT DD_EnsureSurfaceAvailable(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank);
 DWORD GetZBufferDepth(void);
 }
 
@@ -140,18 +140,18 @@ extern "C" void CreateScreenBuffers(void)
     if (SavedAppSettings.RenderMode != RM_Software)
         dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_FLIP | DDSCAPS_COMPLEX | DDSCAPS_3DDEVICE;
     dsp.dwBackBufferCount = SavedAppSettings.TripleBuffering + 1;
-    if (DX_TRY(DDrawSurfaceCreate(&dsp, &PrimaryBufferSurface)))
+    if (DX_TRY(DD_CreateSurface(&dsp, &PrimaryBufferSurface)))
         throw INIT_ERR_CreateScreenBuffers;
-    WinVidClearBuffer(PrimaryBufferSurface, NULL, 0);
+    DD_ClearSurface(PrimaryBufferSurface, NULL, 0);
     caps.dwCaps = DDSCAPS_BACKBUFFER;
     if (DX_TRY(PrimaryBufferSurface->GetAttachedSurface(&caps, &BackBufferSurface)))
         throw INIT_ERR_GetBackBuffer;
-    WinVidClearBuffer(BackBufferSurface, NULL, 0);
+    DD_ClearSurface(BackBufferSurface, NULL, 0);
     if (SavedAppSettings.TripleBuffering) {
         caps.dwCaps = DDSCAPS_FLIP;
         if (DX_TRY(BackBufferSurface->GetAttachedSurface(&caps, &ThirdBufferSurface)))
             throw INIT_ERR_GetThirdBuffer;
-        WinVidClearBuffer(ThirdBufferSurface, NULL, 0);
+        DD_ClearSurface(ThirdBufferSurface, NULL, 0);
     }
 }
 
@@ -165,7 +165,7 @@ extern "C" void CreatePrimarySurface(void)
     dsp.dwSize = sizeof(dsp);
     dsp.dwFlags = DDSD_CAPS;
     dsp.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE;
-    if (DX_TRY(DDrawSurfaceCreate(&dsp, &PrimaryBufferSurface)))
+    if (DX_TRY(DD_CreateSurface(&dsp, &PrimaryBufferSurface)))
         throw INIT_ERR_CreatePrimarySurface;
 }
 
@@ -184,9 +184,9 @@ extern "C" void CreateBackBuffer(void)
         dsp.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_VIDEOMEMORY | DDSCAPS_3DDEVICE;
         break;
     }
-    if (DX_TRY(DDrawSurfaceCreate(&dsp, &BackBufferSurface)))
+    if (DX_TRY(DD_CreateSurface(&dsp, &BackBufferSurface)))
         throw INIT_ERR_CreateBackBuffer;
-    WinVidClearBuffer(BackBufferSurface, NULL, 0);
+    DD_ClearSurface(BackBufferSurface, NULL, 0);
 }
 
 extern "C" void CreateClipper(void)
@@ -235,7 +235,7 @@ extern "C" void CreateZBuffer(void)
         dsp.dwWidth = GameVidBufWidth;
         dsp.dwHeight = GameVidBufHeight;
         dsp.dwZBufferBitDepth = GetZBufferDepth();
-        if (DX_TRY(DDrawSurfaceCreate(&dsp, &ZBufferSurface)))
+        if (DX_TRY(DD_CreateSurface(&dsp, &ZBufferSurface)))
             throw INIT_ERR_CreateZBuffer;
         if (DX_TRY(BackBufferSurface->AddAttachedSurface(ZBufferSurface)))
             throw INIT_ERR_AttachZBuffer;
@@ -265,9 +265,9 @@ extern "C" void CreateRenderBuffer(void)
     dsp.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
     dsp.dwWidth = GameVidBufWidth;
     dsp.dwHeight = GameVidBufHeight;
-    if (DX_TRY(DDrawSurfaceCreate(&dsp, &RenderBufferSurface)))
+    if (DX_TRY(DD_CreateSurface(&dsp, &RenderBufferSurface)))
         throw INIT_ERR_CreateRenderBuffer;
-    if (!WinVidClearBuffer(RenderBufferSurface, NULL, 0))
+    if (!DD_ClearSurface(RenderBufferSurface, NULL, 0))
         throw INIT_ERR_ClearRenderBuffer;
 }
 
@@ -281,7 +281,7 @@ extern "C" void CreatePictureBuffer(void)
     dsp.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
     dsp.dwWidth = 640;
     dsp.dwHeight = 480;
-    if (DX_TRY(DDrawSurfaceCreate(&dsp, &PictureBufferSurface)))
+    if (DX_TRY(DD_CreateSurface(&dsp, &PictureBufferSurface)))
         throw INIT_ERR_CreatePictureBuffer;
 }
 
@@ -330,27 +330,27 @@ extern "C" void ClearBuffers(DWORD flags, DWORD fillColor)
             D3DView->Clear(1, &d3dRect, d3dFlags);
         }
     } else if (flags & 2) {
-        WinVidClearBuffer(BackBufferSurface, &rect, fillColor);
+        DD_ClearSurface(BackBufferSurface, &rect, fillColor);
     }
     if (flags & 1)
-        WinVidClearBuffer(PrimaryBufferSurface, &rect, fillColor);
+        DD_ClearSurface(PrimaryBufferSurface, &rect, fillColor);
     if (flags & 4)
-        WinVidClearBuffer(ThirdBufferSurface, &rect, fillColor);
+        DD_ClearSurface(ThirdBufferSurface, &rect, fillColor);
     if (flags & 0x10)
-        WinVidClearBuffer(RenderBufferSurface, &rect, fillColor);
+        DD_ClearSurface(RenderBufferSurface, &rect, fillColor);
     if (flags & 0x20) {
         rect.top = 0;
         rect.left = 0;
         rect.right = 640;
         rect.bottom = 480;
-        WinVidClearBuffer(PictureBufferSurface, &rect, fillColor);
+        DD_ClearSurface(PictureBufferSurface, &rect, fillColor);
     }
     if (flags & 0x40) {
         rect.left = GameWindowPositionX;
         rect.top = GameWindowPositionY;
         rect.right = GameWindowPositionX + GameWindowWidth;
         rect.bottom = GameWindowPositionY + GameWindowHeight;
-        WinVidClearBuffer(PrimaryBufferSurface, &rect, fillColor);
+        DD_ClearSurface(PrimaryBufferSurface, &rect, fillColor);
     }
 }
 
@@ -379,16 +379,16 @@ extern "C" bool RestoreLostBuffers(void)
 
     if (!PrimaryBufferSurface)
         S_ExitSystem("Oops... no front buffer");
-    rebuild = DX_TRY(DDrawSurfaceRestoreLost(PrimaryBufferSurface, NULL, SavedAppSettings.FullScreen));
-    if ((SavedAppSettings.FullScreen || SavedAppSettings.RenderMode == RM_Hardware) && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(BackBufferSurface, PrimaryBufferSurface, true))))
+    rebuild = DX_TRY(DD_EnsureSurfaceAvailable(PrimaryBufferSurface, NULL, SavedAppSettings.FullScreen));
+    if ((SavedAppSettings.FullScreen || SavedAppSettings.RenderMode == RM_Hardware) && (rebuild || DX_TRY(DD_EnsureSurfaceAvailable(BackBufferSurface, PrimaryBufferSurface, true))))
         rebuild = true;
-    if (SavedAppSettings.TripleBuffering && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ThirdBufferSurface, PrimaryBufferSurface, true))))
+    if (SavedAppSettings.TripleBuffering && (rebuild || DX_TRY(DD_EnsureSurfaceAvailable(ThirdBufferSurface, PrimaryBufferSurface, true))))
         rebuild = true;
-    if (SavedAppSettings.RenderMode == RM_Software && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(RenderBufferSurface, NULL, false))))
+    if (SavedAppSettings.RenderMode == RM_Software && (rebuild || DX_TRY(DD_EnsureSurfaceAvailable(RenderBufferSurface, NULL, false))))
         rebuild = true;
-    if (ZBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(ZBufferSurface, NULL, false))))
+    if (ZBufferSurface && (rebuild || DX_TRY(DD_EnsureSurfaceAvailable(ZBufferSurface, NULL, false))))
         rebuild = true;
-    if (PictureBufferSurface && (rebuild || DX_TRY(DDrawSurfaceRestoreLost(PictureBufferSurface, NULL, false))))
+    if (PictureBufferSurface && (rebuild || DX_TRY(DD_EnsureSurfaceAvailable(PictureBufferSurface, NULL, false))))
         rebuild = true;
     if (rebuild && !IsGameToExit) {
         ApplySettings(&SavedAppSettings);
@@ -402,7 +402,7 @@ extern "C" {
 extern RECT GameVidRect;
 extern int GameWindowPositionX;
 extern int GameWindowPositionY;
-bool WinVidSpinMessageLoop(bool needWait);
+bool DD_SpinMessageLoop(bool needWait);
 }
 
 extern "C" bool DX_UpdateFrame(bool needRunMessageLoop, LPRECT rect)
@@ -426,7 +426,7 @@ extern "C" bool DX_UpdateFrame(bool needRunMessageLoop, LPRECT rect)
         PrimaryBufferSurface->Blt(&dstRect, surface, rect, DDBLT_WAIT, NULL);
     }
     if (needRunMessageLoop)
-        return WinVidSpinMessageLoop(false);
+        return DD_SpinMessageLoop(false);
     return true;
 }
 
@@ -624,7 +624,7 @@ void RenderStart(bool isReset)
     GameRenderInfo.started = true;
 }
 
-void RenderFinish(bool needToClearTextures)
+void WinFreeDX(bool needToClearTextures)
 {
     if (SavedAppSettings.RenderMode == RM_Hardware) {
         if (needToClearTextures) {
@@ -676,7 +676,7 @@ extern DISPLAY_ADAPTER_NODE *PrimaryDisplayAdapter;
 }
 
 void RenderStart(bool reset);
-void RenderFinish(bool reset);
+void WinFreeDX(bool reset);
 void S_ExitSystem(char *message);
 
 extern "C" {
@@ -695,7 +695,7 @@ extern "C" bool ApplySettings(APP_SETTINGS *newSettings)
     char modeString[64];
     APP_SETTINGS oldSettings;
 
-    RenderFinish(false);
+    WinFreeDX(false);
     oldSettings = SavedAppSettings;
     if (newSettings != &SavedAppSettings) {
         SavedAppSettings = *newSettings;
@@ -706,13 +706,13 @@ extern "C" bool ApplySettings(APP_SETTINGS *newSettings)
     } catch (InitResult error) {
         (void)error;
         *(bool *)&newSettings = false;
-        RenderFinish(false);
+        WinFreeDX(false);
         SavedAppSettings = oldSettings;
         try {
             RenderStart(false);
         } catch (InitResult error) {
             (void)error;
-            RenderFinish(false);
+            WinFreeDX(false);
             SavedAppSettings.TripleBuffering = false;
             SavedAppSettings.PreferredDisplayAdapter = PrimaryDisplayAdapter;
             SavedAppSettings.FullScreen = true;
@@ -765,7 +765,7 @@ extern "C" void FmvBackToGame(void)
     try {
         RenderStart(true);
     } catch (InitResult) {
-        RenderFinish(true);
+        WinFreeDX(true);
         SavedAppSettings.TripleBuffering = false;
         SavedAppSettings.PreferredDisplayAdapter = PrimaryDisplayAdapter;
         SavedAppSettings.FullScreen = true;

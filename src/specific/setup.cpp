@@ -84,7 +84,7 @@ extern SETUP_APP_SETTINGS ChangedAppSettings;
 void WinVidFinish(void);
 void WinVidHideGameWindow(void);
 }
-void RenderFinish(bool reset);
+void WinFreeDX(bool reset);
 
 void WinVidStart(void);
 void RenderStart(bool reset);
@@ -371,7 +371,7 @@ extern "C" bool SE_GraphicsTestStart(void)
 
 extern "C" void SE_GraphicsTestFinish(void)
 {
-    RenderFinish(true);
+    WinFreeDX(true);
     WinVidFinish();
     WinVidHideGameWindow();
 }
@@ -465,7 +465,7 @@ extern "C" void SE_DefaultGraphicsSettings(void)
 
 void WinSndStart(HWND hWnd);
 LPVOID UT_LoadResource(LPCSTR name, LPCSTR type);
-bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
+bool DS_MakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength);
 
 extern "C" {
 extern HWND SoundDialogHandle;
@@ -488,7 +488,7 @@ extern "C" bool SE_SoundTestStart(void)
     waveFile = (uint8 *)UT_LoadResource(MAKEINTRESOURCE(163), "WAVE");
     format = *(WAVEFORMATEX *)&waveFile[0x14];
     format.cbSize = 0;
-    return WinSndMakeSample(0, &format, &waveFile[0x2c], *(DWORD *)&waveFile[0x28]) ? true : false;
+    return DS_MakeSample(0, &format, &waveFile[0x2c], *(DWORD *)&waveFile[0x28]) ? true : false;
 }
 
 extern "C" void SE_SoundTestFinish(void)
@@ -1093,7 +1093,7 @@ extern HWND ControlsDialogHandle;
 extern HWND ControlsImageHandle;
 void SE_ControlsDlgInit(HWND hwndDlg);
 void SE_ControlsDlgUpdate(HWND hwndDlg);
-void DInputCreate(void);
+void DI_Create(void);
 void DInputRelease(void);
 void WinInRunControlPanel(HWND hWnd);
 }
@@ -1256,7 +1256,7 @@ extern "C" BOOL CALLBACK SE_ControlsDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
                 ChangedAppSettings.JoystickEnabled = result == BST_CHECKED;
                 break;
             case 1100:
-                DInputCreate();
+                DI_Create();
                 WinInRunControlPanel(hwndDlg);
                 DInputRelease();
                 break;

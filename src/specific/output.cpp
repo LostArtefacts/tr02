@@ -337,8 +337,8 @@ extern "C" RECT GameVidRect;
 extern "C" void S_SyncPictureBufferPalette(void);
 extern "C" void BGND_Draw(void);
 extern "C" uint8 DepthQIndex[256];
-extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
-extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
+extern "C" HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
+extern "C" HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
 
 inline bool DX_TRY(HRESULT hr)
 {
@@ -354,7 +354,7 @@ extern "C" void S_CopyScreenToBuffer(void)
     if (SavedAppSettings.RenderMode == RM_Software)
     {
         PictureBufferSurface->Blt(NULL, RenderBufferSurface, &GameVidRect, DDBLT_WAIT, NULL);
-        if (!DX_TRY(WinVidBufferLock(PictureBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+        if (!DX_TRY(DD_LockSurface(PictureBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
         {
             ptr = (uint8 *)desc.lpSurface;
             for (y = 0; y < 480; y++)
@@ -366,7 +366,7 @@ extern "C" void S_CopyScreenToBuffer(void)
                 }
                 ptr += desc.lPitch - 640;
             }
-            WinVidBufferUnlock(PictureBufferSurface, &desc);
+            DD_UnlockSurface(PictureBufferSurface, &desc);
         }
         memcpy(PicPalette, game_palette, 0x300);
     }
@@ -573,18 +573,18 @@ extern "C" void S_CalculateStaticLight(sint16 adder)
         LsAdder += depth - 0x3000;
 }
 
-extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
-extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
+extern "C" HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
+extern "C" HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
 extern "C" void SyncSurfacePalettes(void *srcData, int width, int height, int srcPitch, uint8 *srcPalette, void *dstData, int dstPitch, uint8 *dstPalette, bool preserveBlack);
 
 extern "C" void S_SyncPictureBufferPalette(void)
 {
     DDSURFACEDESC desc;
 
-    if (PictureBufferSurface == NULL || DX_TRY(WinVidBufferLock(PictureBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+    if (PictureBufferSurface == NULL || DX_TRY(DD_LockSurface(PictureBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
         return;
     SyncSurfacePalettes(desc.lpSurface, 640, 480, desc.lPitch, PicPalette, desc.lpSurface, desc.lPitch, game_palette, true);
-    WinVidBufferUnlock(PictureBufferSurface, &desc);
+    DD_UnlockSurface(PictureBufferSurface, &desc);
     memcpy(PicPalette, game_palette, 768);
 }
 
@@ -674,7 +674,7 @@ extern "C" bool WinVidNeedToResetBuffers;
 extern "C" bool ForceClearBackBuffer;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
 extern "C" void RestoreLostBuffers(void);
-extern "C" void WinVidSpinMessageLoop(bool blocking);
+extern "C" void DD_SpinMessageLoop(bool blocking);
 extern "C" void DX_DoFlipWait(void);
 extern "C" void phd_InitPolyList(void);
 void HWR_BeginScene(void);
@@ -687,7 +687,7 @@ extern "C" void S_InitialisePolyList(BOOL clear_back_buffer)
     if (WinVidNeedToResetBuffers)
     {
         RestoreLostBuffers();
-        WinVidSpinMessageLoop(false);
+        DD_SpinMessageLoop(false);
         flags = 0;
         if (*((bool *)&SavedAppSettings + 0x25))
         {

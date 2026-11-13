@@ -165,9 +165,9 @@ extern int GameVidWidth;
 extern int GameVidHeight;
 extern int GameVidBPP;
 extern int perspective_distance;
-bool WinVidSpinMessageLoop(bool needWait);
-void WinInReadKeyboard(LPVOID lpInputData);
-DWORD WinInReadJoystick(int *x, int *y);
+bool DD_SpinMessageLoop(bool needWait);
+void DI_ReadKeyboard(LPVOID lpInputData);
+DWORD DI_ReadJoystick(int *x, int *y);
 int Inv_RequestItem(int itemNum);
 void UseItem(sint16 object_num);
 void ScreenShot(LPDIRECTDRAWSURFACE screen);
@@ -201,9 +201,9 @@ int S_UpdateInput()
     static bool tDebounceF8 = false;
     static bool tDebounceF11 = false;
 
-    WinVidSpinMessageLoop(false);
-    WinInReadKeyboard(keymap);
-    joy_fire = WinInReadJoystick(&joy_x, &joy_y);
+    DD_SpinMessageLoop(false);
+    DI_ReadKeyboard(keymap);
+    joy_fire = DI_ReadJoystick(&joy_x, &joy_y);
     linput = 0;
     if (joy_x < -JOY_SENSITIVITY)
         linput |= IN_LEFT;

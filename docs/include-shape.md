@@ -92,7 +92,7 @@ current partial device types and leave the surrounding declarations intact.
 The next pass also recovered three matches. `DetonatorCollision` clears Lara's
 roll when spawning the gong bonger, as both the original executable and the
 surviving source show. `InsertClippedPoly_Textured` uses the reference's
-decrement-in-condition loop. `phd_RotYXZsuperpack` uses the reference's 32-bit
+decrement-in-condition loop. `gar_RotYXZsuperpack` uses the reference's 32-bit
 combined rotation and shared advance for the single-axis cases.
 
 The palette pass recovers `BITMAP_RESOURCE::Load` using the reference's

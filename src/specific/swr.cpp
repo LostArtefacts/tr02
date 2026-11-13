@@ -9,8 +9,8 @@ inline bool DX_TRY(HRESULT hr)
 
 extern "C" {
 extern LPDIRECTDRAWSURFACE RenderBufferSurface;
-HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, LPDDSURFACEDESC desc, DWORD flags);
-HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, LPDDSURFACEDESC desc);
+HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE surface, LPDDSURFACEDESC desc, DWORD flags);
+HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE surface, LPDDSURFACEDESC desc);
 void phd_PrintPolyList(void *ptr);
 }
 
@@ -19,11 +19,11 @@ extern "C" HRESULT SWR_DrawPolyList(void)
     DDSURFACEDESC desc;
     HRESULT result;
 
-    result = WinVidBufferLock(RenderBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT);
+    result = DD_LockSurface(RenderBufferSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT);
     if (DX_TRY(result))
         return result;
     phd_PrintPolyList(desc.lpSurface);
-    return WinVidBufferUnlock(RenderBufferSurface, &desc);
+    return DD_UnlockSurface(RenderBufferSurface, &desc);
 }
 
 extern "C" sint32 sort3d_buffer[][2];

@@ -11,7 +11,7 @@ address,size,name,symbol
 0x00401960,122,phd_TranslateAbs,_phd_TranslateAbs
 0x004019e0,243,phd_PutPolygons,_phd_PutPolygons
 0x00401ae0,234,S_InsertRoom,_S_InsertRoom
-0x00401bd0,50,calc_background_light,_calc_background_light
+0x00401bd0,50,calc_back_light,_calc_back_light
 0x00401c10,308,S_InsertBackground,_S_InsertBackground
 0x00401d50,469,calc_object_vertices,_calc_object_vertices
 0x00401f30,359,calc_vertice_light,_calc_vertice_light
@@ -22,8 +22,8 @@ address,size,name,symbol
 0x00402460,197,do_quickysorty,_do_quickysorty
 0x00402530,54,phd_PrintPolyList,_phd_PrintPolyList
 0x00402570,161,AlterFOV,_AlterFOV
-0x00402620,83,phd_UpdateZBufferCoefficients,_phd_UpdateZBufferCoefficients
-0x00402680,66,phd_SetNearZ,_phd_SetNearZ
+0x00402620,83,SetupZRange,_SetupZRange
+0x00402680,66,SetZNear,_SetZNear
 0x004026d0,24,phd_SetFarZ,_phd_SetFarZ
 0x004026f0,614,phd_InitWindow,_phd_InitWindow
 0x00402960,415,draw_poly_line,_draw_poly_line
@@ -74,7 +74,7 @@ address,size,name,symbol
 0x0040b6a0,839,InsertSprite_Sorted,_InsertSprite_Sorted
 0x0040b9f0,383,InsertFlatRect_Sorted,_InsertFlatRect_Sorted
 0x0040bb70,299,InsertLine_Sorted,_InsertLine_Sorted
-0x0040bca0,405,InsertTrans8_Sorted,_InsertTrans8_Sorted
+0x0040bca0,405,HWI_InsertTrans8_Sorted,_HWI_InsertTrans8_Sorted
 0x0040be40,317,InsertTransQuad_Sorted,_InsertTransQuad_Sorted
 0x0040bf80,167,insert_sprite,_insert_sprite
 0x0040c030,711,S_DrawSprite,_S_DrawSprite
@@ -227,8 +227,8 @@ address,size,name,symbol
 0x0041b850,65,phd_TranslateRel_I,_phd_TranslateRel_I
 0x0041b8a0,71,phd_TranslateRel_ID,_phd_TranslateRel_ID
 0x0041b8f0,65,phd_RotYXZ_I,_phd_RotYXZ_I
-0x0041b940,61,phd_RotYXZsuperpack_I,_phd_RotYXZsuperpack_I
-0x0041b980,161,phd_RotYXZsuperpack,_phd_RotYXZsuperpack
+0x0041b940,61,gar_RotYXZsuperpack_I,_gar_RotYXZsuperpack_I
+0x0041b980,161,gar_RotYXZsuperpack,_gar_RotYXZsuperpack
 0x0041ba30,42,phd_PutPolygons_I,_phd_PutPolygons_I
 0x0041ba60,421,InterpolateMatrix,_InterpolateMatrix
 0x0041bc10,252,InterpolateArmMatrix,_InterpolateArmMatrix
@@ -363,8 +363,8 @@ address,size,name,symbol
 0x00425580,130,Init_Requester,_Init_Requester
 0x00425610,163,Remove_Requester,_Remove_Requester
 0x004256c0,27,ReqItemCentreAlign,_ReqItemCentreAlign
-0x004256e0,84,ReqItemLeftAlign,_ReqItemLeftAlign
-0x00425740,86,ReqItemRightAlign,_ReqItemRightAlign
+0x004256e0,84,ReqItemLeftalign,_ReqItemLeftalign
+0x00425740,86,ReqItemRightalign,_ReqItemRightalign
 0x004257a0,2150,Display_Requester,_Display_Requester
 0x00426010,170,SetRequesterHeading,_SetRequesterHeading
 0x004260c0,19,RemoveAllReqItems,_RemoveAllReqItems
@@ -512,7 +512,7 @@ address,size,name,symbol
 0x0042c9d0,358,draw_shotgun,_draw_shotgun
 0x0042cb40,260,undraw_shotgun,_undraw_shotgun
 0x0042cc50,932,AnimateShotgun,_AnimateShotgun
-0x0042d000,79,set_pistol_arm,_set_pistol_arm
+0x0042d000,79,set_arm_info,_set_arm_info
 0x0042d050,124,draw_pistols,_draw_pistols
 0x0042d0d0,549,undraw_pistols,_undraw_pistols
 0x0042d300,92,ready_pistols,_ready_pistols
@@ -831,17 +831,17 @@ address,size,name,symbol
 0x00444f20,40,CalculateWindowHeight,_CalculateWindowHeight
 0x00444f50,260,WinVidGetMinMaxInfo,_WinVidGetMinMaxInfo
 0x00445060,17,WinVidFindGameWindow,_WinVidFindGameWindow
-0x00445080,226,WinVidSpinMessageLoop,_WinVidSpinMessageLoop
+0x00445080,226,DD_SpinMessageLoop,_DD_SpinMessageLoop
 0x00445170,67,WinVidShowGameWindow,_WinVidShowGameWindow
 0x004451c0,58,WinVidHideGameWindow,_WinVidHideGameWindow
 0x00445200,53,WinVidSetGameWindowSize,_WinVidSetGameWindowSize
 0x00445240,167,ShowDDrawGameWindow,_ShowDDrawGameWindow
 0x004452f0,135,HideDDrawGameWindow,_HideDDrawGameWindow
-0x00445380,68,DDrawSurfaceCreate,_DDrawSurfaceCreate
-0x004453d0,70,DDrawSurfaceRestoreLost,_DDrawSurfaceRestoreLost
-0x00445420,77,WinVidClearBuffer,_WinVidClearBuffer
-0x00445470,61,WinVidBufferLock,_WinVidBufferLock
-0x004454b0,37,WinVidBufferUnlock,_WinVidBufferUnlock
+0x00445380,68,DD_CreateSurface,_DD_CreateSurface
+0x004453d0,70,DD_EnsureSurfaceAvailable,_DD_EnsureSurfaceAvailable
+0x00445420,77,DD_ClearSurface,_DD_ClearSurface
+0x00445470,61,DD_LockSurface,_DD_LockSurface
+0x004454b0,37,DD_UnlockSurface,_DD_UnlockSurface
 0x004454e0,144,WinVidCopyBitmapToBuffer,_WinVidCopyBitmapToBuffer
 0x00445570,136,GetRenderBitDepth,_GetRenderBitDepth
 0x00445600,113,WinVidGetColorBitMasks,?WinVidGetColorBitMasks@COLOR_BIT_MASKS@@QAEXPAU_DDPIXELFORMAT@@@Z
@@ -879,20 +879,20 @@ address,size,name,symbol
 0x00447190,14,RegisterJoystickListDestructor,specific/winin.cpp:_$E3
 0x00447220,57,InitCurrentJoystickGlobal,specific/winin.cpp:_$E6
 0x00447260,14,RegisterCurrentJoystickDestructor,specific/winin.cpp:_$E8
-0x004472a0,34,DInputCreate,_DInputCreate
+0x004472a0,34,DI_Create,_DI_Create
 0x004472d0,26,DInputRelease,_DInputRelease
-0x004472f0,90,WinInReadKeyboard,_WinInReadKeyboard
-0x00447350,243,WinInReadJoystick,_WinInReadJoystick
+0x004472f0,90,DI_ReadKeyboard,_DI_ReadKeyboard
+0x00447350,243,DI_ReadJoystick,_DI_ReadJoystick
 0x00447450,5,DI_Init,_DI_Init
 0x00447460,127,WinInputInit,_WinInputInit
 0x004474e0,36,DInputEnumDevices,_DInputEnumDevices
 0x00447510,232,DInputEnumDevicesCallback,_DInputEnumDevicesCallback@8
 0x00447600,31,FlaggedStringCreate,??0STRING_FLAGGED@@QAE@K@Z
 0x00447620,78,GetJoystick,_GetJoystick
-0x00447670,201,DInputKeyboardCreate,_DInputKeyboardCreate
+0x00447670,201,DI_StartKeyboard,_DI_StartKeyboard
 0x00447740,41,DInputKeyboardRelease,_DInputKeyboardRelease
 0x00447770,228,DInputJoystickCreate,_DInputJoystickCreate
-0x00447860,45,WinInStart,_WinInStart ?WinInStart@@YAXXZ
+0x00447860,45,DI_Start,_DI_Start ?DI_Start@@YAXXZ
 0x00447890,15,WinInFinish,_WinInFinish
 0x004478a0,23,WinInRunControlPanel,_WinInRunControlPanel
 0x004478c0,98,IncreaseScreenSize,_IncreaseScreenSize
@@ -907,21 +907,21 @@ address,size,name,symbol
 0x00447bf0,57,InitCurrentSoundAdapterGlobal,specific/ds.cpp:_$E6
 0x00447c30,14,RegisterCurrentSoundAdapterDestructor,specific/ds.cpp:_$E8
 0x00447c70,72,GetSoundAdapter,_GetSoundAdapter
-0x00447cc0,46,WinSndFreeAllSamples,_WinSndFreeAllSamples
-0x00447cf0,270,WinSndMakeSample,_WinSndMakeSample ?WinSndMakeSample@@YA_NHPAUtWAVEFORMATEX@@PAXK@Z
+0x00447cc0,46,DS_FreeAllSamples,_DS_FreeAllSamples
+0x00447cf0,270,DS_MakeSample,_DS_MakeSample ?DS_MakeSample@@YA_NHPAUtWAVEFORMATEX@@PAXK@Z
 0x00447e00,69,DS_IsChannelPlaying,?DS_IsChannelPlaying@@YA_NH@Z
 0x00447e50,231,DS_StartSample,?DS_StartSample@@YAHHHHHK@Z
-0x00447f40,57,WinSndGetFreeChannelIndex,_WinSndGetFreeChannelIndex
+0x00447f40,57,DS_GetFreeChannel,_DS_GetFreeChannel
 0x00447f80,44,DS_AdjustVolumeAndPan,?DS_AdjustVolumeAndPan@@YAXHHH@Z
 0x00447fb0,49,DS_AdjustPitch,?DS_AdjustPitch@@YAXHH@Z
 0x00447ff0,47,DS_StopSample,?DS_StopSample@@YAXH@Z
 0x00448020,45,DS_StopAllSamples,?DS_StopAllSamples@@YAXXZ
 0x00448050,5,DS_Init,_DS_Init
-0x00448060,156,WinSndInit,_WinSndInit
-0x00448100,26,DSoundEnumerate,_DSoundEnumerate
-0x00448120,226,DSoundEnumCallback,_DSoundEnumCallback@16
+0x00448060,156,DS_MakeAdapterList,_DS_MakeAdapterList
+0x00448100,26,DS_EnumerateDevices,_DS_EnumerateDevices
+0x00448120,226,DS_EnumCallback,_DS_EnumCallback@16
 0x00448210,380,WinSndStart,_WinSndStart ?WinSndStart@@YAXPAX@Z
-0x00448390,28,DSoundCreate,_DSoundCreate
+0x00448390,28,DS_Create,_DS_Create
 0x004483b0,196,DSoundBufferTest,_DSoundBufferTest
 0x00448480,42,WinSndFinish,_WinSndFinish
 0x004484b0,6,WinSndIsSoundEnabled,_WinSndIsSoundEnabled
@@ -940,7 +940,7 @@ address,size,name,symbol
 0x00448eb0,59,DX_DoFlipWait,_DX_DoFlipWait
 0x00448ef0,3,RenderInit,_RenderInit
 0x00448f00,933,RenderStart,_RenderStart ?RenderStart@@YAX_N@Z
-0x004492b0,230,RenderFinish,_RenderFinish ?RenderFinish@@YAX_N@Z
+0x004492b0,230,WinFreeDX,_WinFreeDX ?WinFreeDX@@YAX_N@Z
 0x004493a0,524,ApplySettings,_ApplySettings
 0x004495b0,272,FmvBackToGame,_FmvBackToGame
 0x004496c0,570,GameApplySettings,_GameApplySettings
@@ -961,9 +961,9 @@ address,size,name,symbol
 0x0044ad40,85,LoadAnimatedTextures,_LoadAnimatedTextures
 0x0044ada0,121,LoadCinematic,?LoadCinematic@@YAHPAX@Z
 0x0044ae20,138,LoadDemo,?LoadDemo@@YAHPAX@Z
-0x0044aeb0,154,LoadDemoExternal,_LoadDemoExternal
+0x0044aeb0,154,LoadDemFile,_LoadDemFile
 0x0044af50,613,LoadSamples,_LoadSamples
-0x0044b1c0,54,ChangeFileNameExtension,_ChangeFileNameExtension
+0x0044b1c0,54,build_ext,_build_ext
 0x0044b200,38,GetFullPath,_GetFullPath
 0x0044b226,88,T_CyrillicASCIIMap,_T_CyrillicASCIIMap
 0x0044b27e,66,T_CyrillicSpacing,_T_CyrillicSpacing
@@ -1155,7 +1155,7 @@ address,size,name,symbol
 0x00455d50,38,FreeTexturePalettes,_FreeTexturePalettes
 0x00455d80,106,CreateTexturePage,_CreateTexturePage
 0x00455df0,28,GetFreeTexturePageIndex,_GetFreeTexturePageIndex
-0x00455e10,152,CreateTexturePageSurface,_CreateTexturePageSurface
+0x00455e10,152,DXTextureMakeSystemSurface,_DXTextureMakeSystemSurface
 0x00455eb0,372,TexturePageInit,_TexturePageInit
 0x00456030,37,Create3DTexture,_Create3DTexture
 0x00456060,32,SafeFreeTexturePage,_SafeFreeTexturePage
@@ -1165,7 +1165,7 @@ address,size,name,symbol
 0x00456130,162,LoadTexturePage,_LoadTexturePage
 0x004561e0,53,ReloadTextures,_ReloadTextures
 0x00456220,62,GetTexturePageHandle,_GetTexturePageHandle
-0x00456260,245,AddTexturePage8,_AddTexturePage8
+0x00456260,245,DXTextureAddPal,_DXTextureAddPal
 0x00456360,406,AddTexturePage16,_AddTexturePage16
 0x00456500,282,EnumTextureFormatsCallback,_EnumTextureFormatsCallback@8
 0x00456620,37,EnumerateTextureFormats,_EnumerateTextureFormats

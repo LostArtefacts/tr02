@@ -15,8 +15,8 @@ extern "C" char TgaFileMode[];
 extern "C" BYTE TgaHeader[];
 extern "C" BYTE *malloc_ptr;
 
-extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
-extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
+extern "C" HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
+extern "C" HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc);
 extern "C" DWORD CompPCX(BYTE *bitmap, int width, int height, BYTE *palette, BYTE **pcxData);
 extern "C" DWORD EncodePutPCX(BYTE value, BYTE num, BYTE *buffer);
 extern "C" DWORD EncodeLinePCX(BYTE *src, int width, BYTE *dst);
@@ -180,7 +180,7 @@ extern "C" void ScreenShot(LPDIRECTDRAWSURFACE screen)
         return;
     memset(&desc, 0, sizeof(desc));
     desc.dwSize = sizeof(desc);
-    if (!(bool)FAILED(WinVidBufferLock(screen, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT))) {
+    if (!(bool)FAILED(DD_LockSurface(screen, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT))) {
         line = (short *)desc.lpSurface;
         sprintf(fileName, ScreenShotTgaFormat, ScreenShotTgaNumber++);
         fp = fopen(fileName, TgaFileMode);
@@ -212,7 +212,7 @@ extern "C" void ScreenShot(LPDIRECTDRAWSURFACE screen)
                 ++fileName[6];
             }
         }
-        WinVidBufferUnlock(screen, &desc);
+        DD_UnlockSurface(screen, &desc);
     }
 }
 #ifdef TR2_EXE

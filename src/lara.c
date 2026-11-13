@@ -2769,7 +2769,7 @@ int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll)
 
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
 void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2, int frac, int rate);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 
 void __cdecl phd_PushUnitMatrix(void);
@@ -2833,10 +2833,10 @@ void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint)
     rotation = frame + 9;
 
     phd_TranslateRel((sint32)*(frame + 6), (sint32)*(frame + 7), (sint32)*(frame + 8));
-    phd_RotYXZsuperpack(&rotation, 0);
+    gar_RotYXZsuperpack(&rotation, 0);
 
     phd_TranslateRel(*(bone + 1 + 24), *(bone + 2 + 24), *(bone + 3 + 24));
-    phd_RotYXZsuperpack(&rotation, 6);
+    gar_RotYXZsuperpack(&rotation, 6);
     phd_RotYXZ(lara.torso_y_rot, lara.torso_x_rot, lara.torso_z_rot);
 
     fire_arms = LG_UNARMED;
@@ -2850,13 +2850,13 @@ void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint)
             rotation = lara.left_arm.frame_base + (lara.left_arm.frame_number - anims[lara.left_arm.anim_number].frame_base) * (anims[lara.left_arm.anim_number].interpolation >> 8) + 9;
         else
             rotation = frame + 9;
-        phd_RotYXZsuperpack(&rotation, 11);
+        gar_RotYXZsuperpack(&rotation, 11);
 
         phd_TranslateRel(*(bone + 1 + 44), *(bone + 2 + 44), *(bone + 3 + 44));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         phd_TranslateRel(*(bone + 1 + 48), *(bone + 2 + 48), *(bone + 3 + 48));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         phd_TranslateRel(vec->x, vec->y, vec->z);
         vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
@@ -2867,13 +2867,13 @@ void GetLaraJointAbsPosition(PHD_VECTOR *vec, int joint)
     {
         phd_TranslateRel(*(bone + 1 + 28), *(bone + 2 + 28), *(bone + 3 + 28));
         rotation = lara.right_arm.frame_base + lara.right_arm.frame_number * (anims[lara.right_arm.anim_number].interpolation >> 8) + 9;
-        phd_RotYXZsuperpack(&rotation, 8);
+        gar_RotYXZsuperpack(&rotation, 8);
 
         phd_TranslateRel(*(bone + 1 + 32), *(bone + 2 + 32), *(bone + 3 + 32));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         phd_TranslateRel(*(bone + 1 + 36), *(bone + 2 + 36), *(bone + 3 + 36));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         phd_TranslateRel(vec->x, vec->y, vec->z);
         vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
@@ -2887,7 +2887,7 @@ void InitInterpolate(int frac, int rate);
 void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
 void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
 void phd_RotYXZ_I(sint16 y, sint16 x, sint16 z);
-void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+void gar_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
 void InterpolateMatrix(void);
 
 void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2, int frac, int rate)
@@ -2913,10 +2913,10 @@ void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2,
 
     InitInterpolate(frac, rate);
     phd_TranslateRel_ID((sint32)*(frame1 + 6), (sint32)*(frame1 + 7), (sint32)*(frame1 + 8), (sint32)*(frame2 + 6), (sint32)*(frame2 + 7), (sint32)*(frame2 + 8));
-    phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+    gar_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
 
     phd_TranslateRel_I(*(bone + 1 + 24), *(bone + 2 + 24), *(bone + 3 + 24));
-    phd_RotYXZsuperpack_I(&rotation1, &rotation2, 6);
+    gar_RotYXZsuperpack_I(&rotation1, &rotation2, 6);
     phd_RotYXZ_I(lara.torso_y_rot, lara.torso_x_rot, lara.torso_z_rot);
 
     fire_arms = LG_UNARMED;
@@ -2931,13 +2931,13 @@ void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2,
             rotation1 = lara.left_arm.frame_base + (lara.left_arm.frame_number - anims[lara.left_arm.anim_number].frame_base) * (anims[lara.left_arm.anim_number].interpolation >> 8) + 9;
         else
             rotation1 = frame1 + 9;
-        phd_RotYXZsuperpack(&rotation1, 11);
+        gar_RotYXZsuperpack(&rotation1, 11);
 
         phd_TranslateRel(*(bone + 1 + 44), *(bone + 2 + 44), *(bone + 3 + 44));
-        phd_RotYXZsuperpack(&rotation1, 0);
+        gar_RotYXZsuperpack(&rotation1, 0);
 
         phd_TranslateRel(*(bone + 1 + 48), *(bone + 2 + 48), *(bone + 3 + 48));
-        phd_RotYXZsuperpack(&rotation1, 0);
+        gar_RotYXZsuperpack(&rotation1, 0);
 
         phd_TranslateRel(vec->x, vec->y, vec->z);
         vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;
@@ -2949,13 +2949,13 @@ void GetLJAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2,
         InterpolateMatrix();
         phd_TranslateRel(*(bone + 1 + 28), *(bone + 2 + 28), *(bone + 3 + 28));
         rotation1 = lara.right_arm.frame_base + lara.right_arm.frame_number * (anims[lara.right_arm.anim_number].interpolation >> 8) + 9;
-        phd_RotYXZsuperpack(&rotation1, 8);
+        gar_RotYXZsuperpack(&rotation1, 8);
 
         phd_TranslateRel(*(bone + 1 + 32), *(bone + 2 + 32), *(bone + 3 + 32));
-        phd_RotYXZsuperpack(&rotation1, 0);
+        gar_RotYXZsuperpack(&rotation1, 0);
 
         phd_TranslateRel(*(bone + 1 + 36), *(bone + 2 + 36), *(bone + 3 + 36));
-        phd_RotYXZsuperpack(&rotation1, 0);
+        gar_RotYXZsuperpack(&rotation1, 0);
 
         phd_TranslateRel(vec->x, vec->y, vec->z);
         vec->x = (*(phd_mxptr + M03) >> W2V_SHIFT) + item->pos.x_pos;

@@ -116,7 +116,7 @@ void ShootAtLara(FX_INFO *fx)
 
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 sint16 *GetBestFrame(ITEM_INFO *item);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
 extern sint32 LsAdder;
@@ -148,7 +148,7 @@ int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage)
     phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
     phd_TranslateRel(*(frame + 6), *(frame + 7), *(frame + 8));
     rotation = frame + 9;
-    phd_RotYXZsuperpack(&rotation, 0);
+    gar_RotYXZsuperpack(&rotation, 0);
     bone = bones + object->bone_index;
     extra_rotation = (sint16 *)item->data;
     bit = 1;
@@ -180,7 +180,7 @@ int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage)
         if (poppush & 2)
             phd_PushMatrix();
         phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
         if (poppush & (ROT_X | ROT_Y | ROT_Z))
         {
             if (poppush & ROT_Y)

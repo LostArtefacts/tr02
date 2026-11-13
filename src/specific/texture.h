@@ -48,7 +48,7 @@ void FreeTexturePages(void);
 bool LoadTexturePage(int pageIndex, bool reset);
 bool ReloadTextures(bool reset);
 D3DTEXTUREHANDLE GetTexturePageHandle(int pageIndex);
-int AddTexturePage8(int width, int height, uint8 *pageBuffer, int palIndex);
+int DXTextureAddPal(int width, int height, uint8 *pageBuffer, int palIndex);
 int AddTexturePage16(int width, int height, uint8 *pageBuffer);
 void EnumerateTextureFormats(void);
 void CleanupTextures(void);

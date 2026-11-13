@@ -393,7 +393,7 @@ void S_InsertRoom(sint16 *objptr, int outside)
     objptr = ins_room_sprite(objptr + 1, *(objptr));
 }
 
-extern "C" sint16 *calc_background_light(sint16 *objptr)
+extern "C" sint16 *calc_back_light(sint16 *objptr)
 {
     int numvert, i;
 
@@ -423,7 +423,7 @@ extern "C" void S_InsertBackground(sint16 *objptr)
     if (objptr) {
         if (SavedAppSettings.RenderMode == RM_Hardware)
             HWR_EnableZBuffer(false, false);
-        objptr = calc_background_light(objptr);
+        objptr = calc_back_light(objptr);
         objptr = InsertObjectGT4(objptr + 1, *(objptr), BACK_SORT);
         objptr = InsertObjectGT3(objptr + 1, *(objptr), BACK_SORT);
         objptr = InsertObjectG4(objptr + 1, *(objptr), BACK_SORT);
@@ -745,7 +745,7 @@ extern "C" void AlterFOV(PHD_ANGLE fov)
     LfAspectCorrection = aspect / ratio;
 }
 
-extern "C" void phd_UpdateZBufferCoefficients(void)
+extern "C" void SetupZRange(void)
 {
     float res;
 
@@ -755,20 +755,20 @@ extern "C" void phd_UpdateZBufferCoefficients(void)
     FltResZORhw = FltResZ / RhwFactor;
 }
 
-extern "C" void phd_SetNearZ(sint32 z)
+extern "C" void SetZNear(sint32 z)
 {
     phd_znear = z;
     FltNearZ = (float)z;
     FltRhwONearZ = RhwFactor / FltNearZ;
     FltPerspONearZ = FltPersp / FltNearZ;
-    phd_UpdateZBufferCoefficients();
+    SetupZRange();
 }
 
 extern "C" void phd_SetFarZ(sint32 z)
 {
     phd_zfar = z;
     FltFarZ = (float)z;
-    phd_UpdateZBufferCoefficients();
+    SetupZRange();
 }
 
 extern "C" {
@@ -796,7 +796,7 @@ sint16 *InsertObjectG4_Sorted(sint16 *objptr, int number, enum sort_type sort_ro
 void InsertFlatRect_Sorted(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
 void InsertLine_Sorted(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
 void InsertSprite_Sorted(int z, int x1, int y1, int x2, int y2, int sprnum, int shade);
-void InsertTrans8_Sorted(void *vbuf, sint16 shade);
+void HWI_InsertTrans8_Sorted(void *vbuf, sint16 shade);
 void InsertTransQuad_Sorted(sint32 x, sint32 y, sint32 w, sint32 h, sint32 z);
 }
 
@@ -818,7 +818,7 @@ extern "C" void phd_InitWindow(sint16 x, sint16 y, int width, int height, int ne
     f_centerx = (float)phd_centerx;
     f_centery = (float)phd_centery;
     AlterFOV(view_angle * ONE_DEGREE);
-    phd_SetNearZ(phd_znear);
+    SetZNear(phd_znear);
     phd_SetFarZ(phd_zfar);
     phd_left = 0;
     phd_top = 0;
@@ -859,7 +859,7 @@ extern "C" void phd_InitWindow(sint16 x, sint16 y, int width, int height, int ne
             InsertLine = InsertLine_Sorted;
         }
         InsertSprite = InsertSprite_Sorted;
-        InsertTrans8 = InsertTrans8_Sorted;
+        InsertTrans8 = HWI_InsertTrans8_Sorted;
         InsertTransQuad = InsertTransQuad_Sorted;
         break;
     }

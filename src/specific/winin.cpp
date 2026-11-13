@@ -37,7 +37,7 @@ inline bool DX_TRY(HRESULT hr)
     return true;
 }
 
-extern "C" bool DInputCreate(void)
+extern "C" bool DI_Create(void)
 {
     if (DX_TRY(DirectInputCreate(GhInstance, DIRECTINPUT_VERSION, &DInput, NULL)))
         return false;
@@ -52,7 +52,7 @@ extern "C" void DInputRelease(void)
     }
 }
 
-extern "C" void WinInReadKeyboard(LPVOID lpInputData)
+extern "C" void DI_ReadKeyboard(LPVOID lpInputData)
 {
     HRESULT hr = IDID_SysKeyboard->GetDeviceState(256, lpInputData);
 
@@ -68,7 +68,7 @@ extern int JoyNeedCaps;
 extern JOYCAPS JoyCaps;
 }
 
-extern "C" DWORD WinInReadJoystick(int *x, int *y)
+extern "C" DWORD DI_ReadJoystick(int *x, int *y)
 {
     JOYINFOEX joy;
 
@@ -134,7 +134,7 @@ extern "C" bool WinInputInit(void)
     bool result;
 
     JoystickList.RemoveAll();
-    if (!DInputCreate())
+    if (!DI_Create())
         return false;
     result = DInputEnumDevices(&JoystickList);
     DInputRelease();
@@ -181,7 +181,7 @@ extern "C" JOYSTICK_NODE *GetJoystick(GUID *lpGuid)
     return joystick;
 }
 
-extern "C" void DInputKeyboardCreate(void)
+extern "C" void DI_StartKeyboard(void)
 {
     if (DX_TRY(DInput->CreateDevice(GUID_SysKeyboard, &IDID_SysKeyboard, NULL)))
         throw INIT_ERR_CantCreateKeyboardDevice;
@@ -214,11 +214,11 @@ extern "C" bool DInputJoystickCreate(void)
     return true;
 }
 
-void WinInStart(void)
+void DI_Start(void)
 {
-    if (!DInputCreate())
+    if (!DI_Create())
         throw INIT_ERR_CantCreateDirectInput;
-    DInputKeyboardCreate();
+    DI_StartKeyboard();
     DInputJoystickCreate();
 }
 

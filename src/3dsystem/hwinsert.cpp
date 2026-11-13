@@ -1244,7 +1244,7 @@ extern "C" void InsertLine_Sorted(int x1, int y1, int x2, int y2, int z, uint8 c
 
 extern "C" int XYClipper(int number, VERTEX_INFO *input);
 
-extern "C" void InsertTrans8_Sorted(PHD_VBUF *vbuf, sint16 shade)
+extern "C" void HWI_InsertTrans8_Sorted(PHD_VBUF *vbuf, sint16 shade)
 {
     int i, n;
     sint8 or_clip;

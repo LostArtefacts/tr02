@@ -54,7 +54,7 @@ int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem)
 
 void __cdecl phd_PushUnitMatrix(void);
 sint16 *GetBestFrame(ITEM_INFO *item);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
 
@@ -94,7 +94,7 @@ int GetSpheres(ITEM_INFO *item, SPHERE *ptr, int WorldSpace)
     frame = GetBestFrame(item);
     phd_TranslateRel((sint32)frame[6], (sint32)frame[7], (sint32)frame[8]);
     rotation = frame + 9;
-    phd_RotYXZsuperpack(&rotation, 0);
+    gar_RotYXZsuperpack(&rotation, 0);
 
     object = &objects[item->object_number];
     meshpp = &meshes[object->mesh_index];
@@ -120,7 +120,7 @@ int GetSpheres(ITEM_INFO *item, SPHERE *ptr, int WorldSpace)
             phd_PushMatrix();
 
         phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         if ((poppush & (ROT_X | ROT_Y | ROT_Z)) && extra_rotation)
         {
@@ -167,7 +167,7 @@ void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint)
     phd_TranslateRel((sint32)frame[6], (sint32)frame[7], (sint32)frame[8]);
 
     rotation = frame + 9;
-    phd_RotYXZsuperpack(&rotation, 0);
+    gar_RotYXZsuperpack(&rotation, 0);
 
     bone = bones + object->bone_index;
 
@@ -181,7 +181,7 @@ void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *vec, int joint)
             phd_PushMatrix();
 
         phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         if (poppush & (ROT_X | ROT_Y | ROT_Z))
         {

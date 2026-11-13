@@ -1336,7 +1336,7 @@ void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
 uint32 GetTextScaleH(uint32 scaleH);
 sint32 T_GetTextWidth(TEXTSTRING *textString);
 
-void ReqItemLeftAlign(REQUEST_INFO *req, TEXTSTRING *txt)
+void ReqItemLeftalign(REQUEST_INFO *req, TEXTSTRING *txt)
 {
     int x;
     uint32 scaleH = GetTextScaleH(txt->scaleH);
@@ -1349,7 +1349,7 @@ void ReqItemLeftAlign(REQUEST_INFO *req, TEXTSTRING *txt)
     }
 }
 
-void ReqItemRightAlign(REQUEST_INFO *req, TEXTSTRING *txt)
+void ReqItemRightalign(REQUEST_INFO *req, TEXTSTRING *txt)
 {
     int x;
     uint32 scaleH = GetTextScaleH(txt->scaleH);
@@ -1407,9 +1407,9 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
             }
         }
         if (req->heading1_flags & R_LEFTALIGN)
-            ReqItemLeftAlign(req, req->heading1text);
+            ReqItemLeftalign(req, req->heading1text);
         if (req->heading1_flags & R_RIGHTALIGN)
-            ReqItemRightAlign(req, req->heading1text);
+            ReqItemRightalign(req, req->heading1text);
     }
 
     if (req->heading2_flags & R_USE)
@@ -1426,9 +1426,9 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
             }
         }
         if (req->heading2_flags & R_LEFTALIGN)
-            ReqItemLeftAlign(req, req->heading2text);
+            ReqItemLeftalign(req, req->heading2text);
         if (req->heading2_flags & R_RIGHTALIGN)
-            ReqItemRightAlign(req, req->heading2text);
+            ReqItemRightalign(req, req->heading2text);
     }
 
     if (backgrounds && !req->backgroundtext && (req->background_flags & R_USE))
@@ -1489,9 +1489,9 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
                 T_AddOutline(req->texts1[n], 1, C_ORANGE, req_sel_gour2, 0);
             }
             if (req->itemtexts1_flags[n + req->line_offset] & R_LEFTALIGN)
-                ReqItemLeftAlign(req, req->texts1[n]);
+                ReqItemLeftalign(req, req->texts1[n]);
             else if (req->itemtexts1_flags[n + req->line_offset] & R_RIGHTALIGN)
-                ReqItemRightAlign(req, req->texts1[n]);
+                ReqItemRightalign(req, req->texts1[n]);
             else
                 ReqItemCentreAlign(req, req->texts1[n]);
         }
@@ -1512,9 +1512,9 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
                 T_BottomAlign(req->texts2[n], 1);
             }
             if (req->itemtexts2_flags[n + req->line_offset] & R_LEFTALIGN)
-                ReqItemLeftAlign(req, req->texts2[n]);
+                ReqItemLeftalign(req, req->texts2[n]);
             else if (req->itemtexts2_flags[n + req->line_offset] & R_RIGHTALIGN)
-                ReqItemRightAlign(req, req->texts2[n]);
+                ReqItemRightalign(req, req->texts2[n]);
             else
                 ReqItemCentreAlign(req, req->texts2[n]);
         }
@@ -1534,17 +1534,17 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
             if (req->texts1[n] && (req->itemtexts1_flags[n + req->line_offset] & R_USE))
                 T_ChangeText(req->texts1[n], req->itemtexts1 + (n + req->line_offset) * req->itemtextlen);
             if (req->itemtexts1_flags[n + req->line_offset] & R_LEFTALIGN)
-                ReqItemLeftAlign(req, req->texts1[n]);
+                ReqItemLeftalign(req, req->texts1[n]);
             else if (req->itemtexts1_flags[n + req->line_offset] & R_RIGHTALIGN)
-                ReqItemRightAlign(req, req->texts1[n]);
+                ReqItemRightalign(req, req->texts1[n]);
             else
                 ReqItemCentreAlign(req, req->texts1[n]);
             if (req->texts2[n] && (req->itemtexts2_flags[n + req->line_offset] & R_USE))
                 T_ChangeText(req->texts2[n], req->itemtexts2 + (n + req->line_offset) * req->itemtextlen);
             if (req->itemtexts2_flags[n + req->line_offset] & R_LEFTALIGN)
-                ReqItemLeftAlign(req, req->texts2[n]);
+                ReqItemLeftalign(req, req->texts2[n]);
             else if (req->itemtexts2_flags[n + req->line_offset] & R_RIGHTALIGN)
-                ReqItemRightAlign(req, req->texts2[n]);
+                ReqItemRightalign(req, req->texts2[n]);
             else
                 ReqItemCentreAlign(req, req->texts2[n]);
         }

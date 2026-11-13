@@ -32,7 +32,7 @@ void InitialiseHair(void)
 
 void __cdecl phd_PushUnitMatrix(void);
 sint16 *GetBestFrame(ITEM_INFO *item);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
 
@@ -86,7 +86,7 @@ void HairControl(int in_cutscene)
     rotation = frame + 9;
     bone = bones + object->bone_index;
     phd_TranslateRel((sint32)*(frame + 6), (sint32)*(frame + 7), (sint32)*(frame + 8));
-    phd_RotYXZsuperpack(&rotation, 0);
+    gar_RotYXZsuperpack(&rotation, 0);
 
     phd_PushMatrix();
     objptr = lara.mesh_ptrs[HIPS];
@@ -105,10 +105,10 @@ void HairControl(int in_cutscene)
     {
         rotation = lara.right_arm.frame_base
             + lara.right_arm.frame_number * (anims[lara.right_arm.anim_number].interpolation >> 8) + 9;
-        phd_RotYXZsuperpack(&rotation, 7);
+        gar_RotYXZsuperpack(&rotation, 7);
     }
     else
-        phd_RotYXZsuperpack(&rotation, 6);
+        gar_RotYXZsuperpack(&rotation, 6);
     phd_RotYXZ(lara.torso_y_rot, lara.torso_x_rot, lara.torso_z_rot);
 
     phd_PushMatrix();
@@ -122,7 +122,7 @@ void HairControl(int in_cutscene)
 
     phd_PushMatrix();
     phd_TranslateRel(*(bone + 1 + 28), *(bone + 2 + 28), *(bone + 3 + 28));
-    phd_RotYXZsuperpack(&rotation, 0);
+    gar_RotYXZsuperpack(&rotation, 0);
     objptr = lara.mesh_ptrs[UARM_R];
     phd_TranslateRel(*objptr, *(objptr + 1), *(objptr + 2));
     sphere[3].x = *(phd_mxptr + M03) >> W2V_SHIFT;
@@ -133,7 +133,7 @@ void HairControl(int in_cutscene)
 
     phd_PushMatrix();
     phd_TranslateRel(*(bone + 1 + 40), *(bone + 2 + 40), *(bone + 3 + 40));
-    phd_RotYXZsuperpack(&rotation, 2);
+    gar_RotYXZsuperpack(&rotation, 2);
     objptr = lara.mesh_ptrs[UARM_R];
     phd_TranslateRel(*objptr, *(objptr + 1), *(objptr + 2));
     sphere[4].x = *(phd_mxptr + M03) >> W2V_SHIFT;
@@ -143,7 +143,7 @@ void HairControl(int in_cutscene)
     phd_PopMatrix();
 
     phd_TranslateRel(*(bone + 1 + 52), *(bone + 2 + 52), *(bone + 3 + 52));
-    phd_RotYXZsuperpack(&rotation, 2);
+    gar_RotYXZsuperpack(&rotation, 2);
     phd_RotYXZ(lara.head_y_rot, lara.head_x_rot, lara.head_z_rot);
 
     phd_PushMatrix();

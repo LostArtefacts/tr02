@@ -852,7 +852,7 @@ extern sint32 PhdPersp;
 
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 int S_GetObjectBounds(sint16 *bptr);
 void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale);
 void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
@@ -941,7 +941,7 @@ void DrawInventoryItem(INVENTORY_ITEM *inv_item)
     {
         phd_TranslateRel((sint32)*(frame + 6), (sint32)*(frame + 7), (sint32)*(frame + 8));
         rotation = frame + 9;
-        phd_RotYXZsuperpack(&rotation, 0);
+        gar_RotYXZsuperpack(&rotation, 0);
 
         mesh = object->mesh_index;
         bone = bones + object->bone_index;
@@ -962,7 +962,7 @@ void DrawInventoryItem(INVENTORY_ITEM *inv_item)
                 phd_PushMatrix();
 
             phd_TranslateRel(*(bone), *(bone + 1), *(bone + 2));
-            phd_RotYXZsuperpack(&rotation, 0);
+            gar_RotYXZsuperpack(&rotation, 0);
 
             if (inv_item->object_number == MAP_OPTION)
             {
@@ -1007,7 +1007,7 @@ void DoInventoryPicture(void)
 void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
 void phd_GenerateW2V(PHD_3DPOS *viewpos);
 void phd_RotateLight(sint16 pitch, sint16 yaw);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 extern sint32 ls_divider;
 
 #ifdef TR2_EXE
@@ -1047,7 +1047,7 @@ void DoInventoryBackground(void)
     phd_TranslateAbs(0, bz, 0);
     phd_RotYXZ(0, 0x4000, (sint16)0x8000);
     frame = anims[objects[MENU_BACKGROUND].anim_index].frame_ptr + 9;
-    phd_RotYXZsuperpack(&frame, 0);
+    gar_RotYXZsuperpack(&frame, 0);
     phd_RotYXZ((sint16)0x8000, 0, 0);
     S_InsertInvBgnd(meshes[objects[MENU_BACKGROUND].mesh_index]);
     phd_PopMatrix();

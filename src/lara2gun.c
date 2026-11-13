@@ -4,7 +4,7 @@
 #define DRAW2_F 13
 #define RECOIL_F 24
 
-void set_pistol_arm(LARA_ARM *arm, int frame)
+void set_arm_info(LARA_ARM *arm, int frame)
 {
     int anim_base;
 
@@ -42,8 +42,8 @@ void draw_pistols(int weapon_type)
         ready_pistols(weapon_type);
         ani = 0;
     }
-    set_pistol_arm(&lara.right_arm, ani);
-    set_pistol_arm(&lara.left_arm, ani);
+    set_arm_info(&lara.right_arm, ani);
+    set_arm_info(&lara.left_arm, ani);
 }
 
 void undraw_pistol_mesh_left(int weapon_type);
@@ -76,7 +76,7 @@ void undraw_pistols(int weapon_type)
             SoundEffect(7, &lara_item->pos, 0);
         }
     }
-    set_pistol_arm(&lara.left_arm, anil);
+    set_arm_info(&lara.left_arm, anil);
 
     anir = lara.right_arm.frame_number;
     if (anir >= RECOIL_F)
@@ -101,7 +101,7 @@ void undraw_pistols(int weapon_type)
             SoundEffect(7, &lara_item->pos, 0);
         }
     }
-    set_pistol_arm(&lara.right_arm, anir);
+    set_arm_info(&lara.right_arm, anir);
 
     if (anil == DRAW1_F && anir == DRAW1_F)
     {
@@ -281,7 +281,7 @@ void AnimatePistols(int weapon_type)
             uzi_right = 0;
         }
     }
-    set_pistol_arm(&lara.right_arm, anir);
+    set_arm_info(&lara.right_arm, anir);
 
     anil = lara.left_arm.frame_number;
     if (lara.left_arm.lock || ((input & IN_ACTION) && !lara.target))
@@ -334,5 +334,5 @@ void AnimatePistols(int weapon_type)
             uzi_left = 0;
         }
     }
-    set_pistol_arm(&lara.left_arm, anil);
+    set_arm_info(&lara.left_arm, anil);
 }

@@ -1,13 +1,13 @@
     .386
     .model flat
 
-    extern _WinSndFreeAllSamples:proc
+    extern _DS_FreeAllSamples:proc
     extern _DSound:dword
 
     .code
 
 _WinSndFinish proc public
-    call _WinSndFreeAllSamples
+    call _DS_FreeAllSamples
     jmp near ptr release_sound
     nop
     nop

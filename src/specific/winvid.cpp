@@ -261,7 +261,7 @@ extern "C" HWND WinVidFindGameWindow(void)
     return FindWindow(ClassName, WindowName);
 }
 
-extern "C" bool WinVidSpinMessageLoop(bool needWait)
+extern "C" bool DD_SpinMessageLoop(bool needWait)
 {
     MSG msg;
 
@@ -397,10 +397,10 @@ extern "C" bool ShowDDrawGameWindow(bool active)
 
 extern "C" {
 extern int LockedBufferCount;
-bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
+bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor);
 }
 
-extern "C" HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface)
+extern "C" HRESULT DD_CreateSurface(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 *surface)
 {
     LPDIRECTDRAWSURFACE subSurface;
     HRESULT rc;
@@ -413,7 +413,7 @@ extern "C" HRESULT DDrawSurfaceCreate(LPDDSURFACEDESC dsp, LPDIRECTDRAWSURFACE3 
     return rc;
 }
 
-extern "C" HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank)
+extern "C" HRESULT DD_EnsureSurfaceAvailable(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank)
 {
     HRESULT rc;
 
@@ -422,12 +422,12 @@ extern "C" HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRE
     {
         rc = (surface2 ? surface2 : surface1)->Restore();
         if (blank && SUCCEEDED(rc))
-            WinVidClearBuffer(surface1, NULL, 0);
+            DD_ClearSurface(surface1, NULL, 0);
     }
     return rc;
 }
 
-extern "C" bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor)
+extern "C" bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWORD fillColor)
 {
     DDBLTFX blt;
 
@@ -439,7 +439,7 @@ extern "C" bool WinVidClearBuffer(LPDIRECTDRAWSURFACE3 surface, LPRECT rect, DWO
     return true;
 }
 
-extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc, DWORD flags)
+extern "C" HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc, DWORD flags)
 {
     HRESULT rc;
 
@@ -451,7 +451,7 @@ extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDES
     return rc;
 }
 
-extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc)
+extern "C" HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc)
 {
     HRESULT rc;
 
@@ -469,7 +469,7 @@ extern "C" bool WinVidCopyBitmapToBuffer(LPDIRECTDRAWSURFACE3 surface, BYTE *bit
     DWORD width;
     DWORD i;
 
-    if (!(bool)FAILED(WinVidBufferLock(surface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+    if (!(bool)FAILED(DD_LockSurface(surface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
     {
         src = bitmap;
         dst = (BYTE *)desc.lpSurface;
@@ -480,7 +480,7 @@ extern "C" bool WinVidCopyBitmapToBuffer(LPDIRECTDRAWSURFACE3 surface, BYTE *bit
             src += width;
             dst += desc.lPitch;
         }
-        WinVidBufferUnlock(surface, &desc);
+        DD_UnlockSurface(surface, &desc);
         return true;
     }
     return false;
@@ -640,7 +640,7 @@ extern "C" void WinVidExitMessage(void)
     if (HGameWindow && IsWindow(HGameWindow))
     {
         PostMessage(HGameWindow, WM_CLOSE, 0, 0);
-        while (WinVidSpinMessageLoop(false))
+        while (DD_SpinMessageLoop(false))
             ;
         HGameWindow = NULL;
     }
@@ -765,7 +765,7 @@ extern "C" LRESULT CALLBACK WinVidGameWindowProc(HWND hWnd, UINT Msg, WPARAM wPa
             FillRect(hdc, &paint.rcPaint, hBrush);
         } else {
             if (SavedAppSettings.RenderMode == RM_Software && !WinVidCheckGameWindowPalette(hWnd) && RenderBufferSurface)
-                WinVidClearBuffer(RenderBufferSurface, NULL, 0);
+                DD_ClearSurface(RenderBufferSurface, NULL, 0);
             DX_UpdateFrame(false, NULL);
         }
         EndPaint(hWnd, &paint);

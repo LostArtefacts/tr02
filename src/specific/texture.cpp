@@ -87,7 +87,7 @@ extern "C" void FreeTexturePalettes(void)
     }
 }
 
-extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page);
+extern "C" bool DXTextureMakeSystemSurface(TEXPAGE_DESC *page);
 extern "C" bool TexturePageInit(TEXPAGE_DESC *page);
 
 extern "C" int CreateTexturePage(int width, int height, LPDIRECTDRAWPALETTE palette)
@@ -101,7 +101,7 @@ extern "C" int CreateTexturePage(int width, int height, LPDIRECTDRAWPALETTE pale
     page->width = width;
     page->height = height;
     page->palette = palette;
-    if (!CreateTexturePageSurface(page))
+    if (!DXTextureMakeSystemSurface(page))
         return -1;
     TexturePageInit(page);
     return pageIndex;
@@ -117,7 +117,7 @@ extern "C" int GetFreeTexturePageIndex(void)
     return -1;
 }
 
-extern "C" HRESULT DDrawSurfaceCreate(DDSURFACEDESC *desc, LPDIRECTDRAWSURFACE3 *surface);
+extern "C" HRESULT DD_CreateSurface(DDSURFACEDESC *desc, LPDIRECTDRAWSURFACE3 *surface);
 
 inline bool DX_TRY(HRESULT hr)
 {
@@ -126,7 +126,7 @@ inline bool DX_TRY(HRESULT hr)
     return true;
 }
 
-extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page)
+extern "C" bool DXTextureMakeSystemSurface(TEXPAGE_DESC *page)
 {
     DDSURFACEDESC desc;
     memset(&desc, 0, sizeof(desc));
@@ -136,7 +136,7 @@ extern "C" bool CreateTexturePageSurface(TEXPAGE_DESC *page)
     desc.dwWidth = page->width;
     desc.dwHeight = page->height;
     desc.ddpfPixelFormat = TextureFormat.pixelFormat;
-    if (DX_TRY(DDrawSurfaceCreate(&desc, &page->sysMemSurface)))
+    if (DX_TRY(DD_CreateSurface(&desc, &page->sysMemSurface)))
         return false;
     if (page->palette && DX_TRY(page->sysMemSurface->SetPalette(page->palette)))
         return false;
@@ -156,7 +156,7 @@ extern "C" bool TexturePageInit(TEXPAGE_DESC *page)
     desc.dwWidth = page->width;
     desc.dwHeight = page->height;
     desc.ddpfPixelFormat = TextureFormat.pixelFormat;
-    if (DX_TRY(DDrawSurfaceCreate(&desc, &page->vidMemSurface)))
+    if (DX_TRY(DD_CreateSurface(&desc, &page->vidMemSurface)))
         return false;
     if (page->palette)
     {
@@ -265,7 +265,7 @@ extern "C" void FreeTexturePages(void)
     }
 }
 
-extern "C" HRESULT DDrawSurfaceRestoreLost(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank);
+extern "C" HRESULT DD_EnsureSurfaceAvailable(LPDIRECTDRAWSURFACE3 surface1, LPDIRECTDRAWSURFACE3 surface2, bool blank);
 
 extern "C" bool LoadTexturePage(int pageIndex, bool reset)
 {
@@ -280,7 +280,7 @@ extern "C" bool LoadTexturePage(int pageIndex, bool reset)
     {
         if (!page->vidMemSurface)
             goto texture_reset;
-        if (SUCCEEDED(DDrawSurfaceRestoreLost(page->vidMemSurface, NULL, false)))
+        if (SUCCEEDED(DD_EnsureSurfaceAvailable(page->vidMemSurface, NULL, false)))
             goto texture_restored;
         reset = true;
     }
@@ -292,7 +292,7 @@ texture_reset:
             return false;
     }
 texture_restored:
-    DDrawSurfaceRestoreLost(page->sysMemSurface, NULL, false);
+    DD_EnsureSurfaceAvailable(page->sysMemSurface, NULL, false);
     texture = Create3DTexture(page->sysMemSurface);
     if (!texture)
         return false;
@@ -322,15 +322,15 @@ extern "C" D3DTEXTUREHANDLE GetTexturePageHandle(int pageIndex)
     return page->texHandle;
 }
 
-extern "C" HRESULT WinVidBufferLock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc, DWORD flags);
-extern "C" HRESULT WinVidBufferUnlock(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc);
+extern "C" HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc, DWORD flags);
+extern "C" HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 surface, LPDDSURFACEDESC desc);
 
 inline bool DX_FAILED(HRESULT hr)
 {
     return FAILED(hr);
 }
 
-extern "C" int AddTexturePage8(int width, int height, uint8 *pageBuffer, int palIndex)
+extern "C" int DXTextureAddPal(int width, int height, uint8 *pageBuffer, int palIndex)
 {
     int pageIndex;
     TEXPAGE_DESC *page;
@@ -344,7 +344,7 @@ extern "C" int AddTexturePage8(int width, int height, uint8 *pageBuffer, int pal
     if (pageIndex < 0)
         return -1;
     page = &TexturePages[pageIndex];
-    if (DX_FAILED(WinVidBufferLock(page->sysMemSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+    if (DX_FAILED(DD_LockSurface(page->sysMemSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
         return -1;
     dst = (uint8 *)desc.lpSurface;
     pitch = desc.lPitch;
@@ -354,7 +354,7 @@ extern "C" int AddTexturePage8(int width, int height, uint8 *pageBuffer, int pal
         pageBuffer += width;
         dst += pitch;
     }
-    WinVidBufferUnlock(page->sysMemSurface, &desc);
+    DD_UnlockSurface(page->sysMemSurface, &desc);
     LoadTexturePage(pageIndex, false);
     return pageIndex;
 }
@@ -378,7 +378,7 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
     if (pageIndex < 0)
         return -1;
     page = &TexturePages[pageIndex];
-    if (DX_FAILED(WinVidBufferLock(page->sysMemSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
+    if (DX_FAILED(DD_LockSurface(page->sysMemSurface, &desc, DDLOCK_WRITEONLY | DDLOCK_WAIT)))
         return -1;
     pitch = desc.lPitch;
     if (TexturesHaveCompatibleMasks)
@@ -411,7 +411,7 @@ extern "C" int AddTexturePage16(int width, int height, uint8 *pageBuffer)
             dst += pitch;
         }
     }
-    WinVidBufferUnlock(page->sysMemSurface, &desc);
+    DD_UnlockSurface(page->sysMemSurface, &desc);
     LoadTexturePage(pageIndex, false);
     return pageIndex;
 }

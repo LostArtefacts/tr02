@@ -29,7 +29,7 @@ typedef LIST<SOUND_ADAPTER>::NODE SOUND_ADAPTER_NODE;
 extern "C" {
 extern SOUND_ADAPTER_LIST SoundAdapterList;
 extern SOUND_ADAPTER_NODE *PrimarySoundAdapter;
-bool DSoundEnumerate(LPVOID lpContext);
+bool DS_EnumerateDevices(LPVOID lpContext);
 }
 
 extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
@@ -57,7 +57,7 @@ extern "C" SOUND_ADAPTER_NODE *GetSoundAdapter(GUID *lpGuid)
     return result;
 }
 
-extern "C" void WinSndFreeAllSamples()
+extern "C" void DS_FreeAllSamples()
 {
     if (IsSoundEnabled) {
         for (int i = 0; i < ArraySize(SampleBuffers); ++i) {
@@ -69,7 +69,7 @@ extern "C" void WinSndFreeAllSamples()
     }
 }
 
-bool WinSndMakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength)
+bool DS_MakeSample(int nSample, WAVEFORMATEX *pWF, void *pWaveData, DWORD dwWaveLength)
 {
     DSBUFFERDESC desc;
     void *pBlock;
@@ -112,7 +112,7 @@ bool DS_IsChannelPlaying(int nChannel)
     return false;
 }
 
-extern "C" int WinSndGetFreeChannelIndex();
+extern "C" int DS_GetFreeChannel();
 
 int DS_StartSample(int nSample, int nVolume, int nPitch, int nPan, DWORD dwFlags)
 {
@@ -120,7 +120,7 @@ int DS_StartSample(int nSample, int nVolume, int nPitch, int nPan, DWORD dwFlags
     int nFrequency;
     LPDIRECTSOUNDBUFFER pOrigBuffer, pBuffer;
 
-    nChannel = WinSndGetFreeChannelIndex();
+    nChannel = DS_GetFreeChannel();
     if (nChannel < 0)
         return -1;
     pOrigBuffer = SampleBuffers[nSample];
@@ -136,7 +136,7 @@ int DS_StartSample(int nSample, int nVolume, int nPitch, int nPan, DWORD dwFlags
     return nChannel;
 }
 
-extern "C" int WinSndGetFreeChannelIndex()
+extern "C" int DS_GetFreeChannel()
 {
     int nChannel;
 
@@ -204,19 +204,19 @@ void DS_StopAllSamples()
     }
 }
 
-extern "C" bool WinSndInit(void);
+extern "C" bool DS_MakeAdapterList(void);
 
 extern "C" bool DS_Init(void)
 {
-    return WinSndInit();
+    return DS_MakeAdapterList();
 }
 
-extern "C" bool WinSndInit(void)
+extern "C" bool DS_MakeAdapterList(void)
 {
     SOUND_ADAPTER_NODE *node;
 
     SoundAdapterList.RemoveAll();
-    if (!DSoundEnumerate(&SoundAdapterList))
+    if (!DS_EnumerateDevices(&SoundAdapterList))
         return false;
     PrimarySoundAdapter = NULL;
     for (node = SoundAdapterList.GetHead(); node; node = SoundAdapterList.GetNext(node))
@@ -230,16 +230,16 @@ extern "C" bool WinSndInit(void)
     return true;
 }
 
-extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext);
+extern "C" BOOL CALLBACK DS_EnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext);
 
-extern "C" bool DSoundEnumerate(LPVOID lpContext)
+extern "C" bool DS_EnumerateDevices(LPVOID lpContext)
 {
-    if (DX_TRY(DirectSoundEnumerate(DSoundEnumCallback, lpContext)))
+    if (DX_TRY(DirectSoundEnumerate(DS_EnumCallback, lpContext)))
         return false;
     return true;
 }
 
-extern "C" BOOL CALLBACK DSoundEnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext)
+extern "C" BOOL CALLBACK DS_EnumCallback(LPGUID lpGuid, LPCSTR lpDescription, LPCSTR lpModule, LPVOID lpContext)
 {
     SOUND_ADAPTER_LIST *list = (SOUND_ADAPTER_LIST *)lpContext;
     SOUND_ADAPTER &adapter = list->NewTail();
@@ -284,7 +284,7 @@ extern APP_SETTINGS_PART SavedAppSettings;
 extern SOUND_ADAPTER CurrentSoundAdapter;
 extern int UnusedSoundStartupState;
 extern HWND HGameWindow;
-bool DSoundCreate(LPGUID lpGuid);
+bool DS_Create(LPGUID lpGuid);
 bool DSoundBufferTest(void);
 }
 
@@ -301,7 +301,7 @@ void WinSndStart(HWND hWnd)
         return;
     preferred = &SavedAppSettings.PreferredSoundAdapter->body;
     CurrentSoundAdapter = *preferred;
-    if (!DSoundCreate(CurrentSoundAdapter.lpAdapterGuid))
+    if (!DS_Create(CurrentSoundAdapter.lpAdapterGuid))
         return;
     if (!hWnd)
         hWnd = HGameWindow;
@@ -311,7 +311,7 @@ void WinSndStart(HWND hWnd)
     IsSoundEnabled = true;
 }
 
-extern "C" bool DSoundCreate(LPGUID lpGuid)
+extern "C" bool DS_Create(LPGUID lpGuid)
 {
     if (DX_TRY(DirectSoundCreate(lpGuid, &DSound, NULL)))
         return false;
@@ -348,7 +348,7 @@ extern "C" bool DSoundBufferTest(void)
 #ifndef TR2_EXE
 extern "C" void WinSndFinish(void)
 {
-    WinSndFreeAllSamples();
+    DS_FreeAllSamples();
     if (DSound) {
         DSound->Release();
         DSound = NULL;

@@ -75,7 +75,7 @@ extern "C" int BGND_AddTexture(int tileIndex, uint8 *bitmap, int palIndex, RGB88
     RGB888 *color;
 
     if (palIndex >= 0) {
-        pageIndex = AddTexturePage8(256, 256, bitmap, palIndex);
+        pageIndex = DXTextureAddPal(256, 256, bitmap, palIndex);
     } else {
         dst = (uint16 *)&bitmap[256 * 256 * 2];
         bitmap += 256 * 256;

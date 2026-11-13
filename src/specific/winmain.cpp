@@ -15,7 +15,7 @@ void WinVidHideGameWindow(void);
 LPCTSTR DecodeErrorMessage(DWORD errorCode);
 extern char RenderInitFailedFormat[];
 }
-void RenderFinish(bool reset);
+void WinFreeDX(bool reset);
 
 void UT_ErrorBox(char *text, void *parent);
 
@@ -76,7 +76,7 @@ void WinCleanup(void)
 void WinVidStart(void);
 void RenderStart(bool reset);
 void WinSndStart(HWND hWnd);
-void WinInStart(void);
+void DI_Start(void);
 
 extern "C" int WinGameStart(void)
 {
@@ -84,7 +84,7 @@ extern "C" int WinGameStart(void)
         WinVidStart();
         RenderStart(true);
         WinSndStart(NULL);
-        WinInStart();
+        DI_Start();
     } catch (InitResult error) {
         return error;
     }
@@ -95,7 +95,7 @@ extern "C" void WinGameFinish(void)
 {
     WinInFinish();
     WinSndFinish();
-    RenderFinish(true);
+    WinFreeDX(true);
     WinVidFinish();
     WinVidHideGameWindow();
     if (*StringToShow)

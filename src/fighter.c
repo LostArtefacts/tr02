@@ -714,7 +714,7 @@ void Worker3Control(sint16 item_number)
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
 int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
-void phd_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
 void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr, int unused);
 int S_GetObjectBounds(sint16 *bptr);
@@ -728,7 +728,7 @@ void phd_RotX_I(sint16 ang);
 void phd_RotZ_I(sint16 ang);
 void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
 void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
-void phd_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+void gar_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
 
 void DrawXianLord(ITEM_INFO *item)
 {
@@ -774,7 +774,7 @@ void DrawXianLord(ITEM_INFO *item)
         {
             phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
             rotation1 = frmptr[0] + 9;
-            phd_RotYXZsuperpack(&rotation1, 0);
+            gar_RotYXZsuperpack(&rotation1, 0);
             if (bit & item->mesh_bits)
                 phd_PutPolygons(*meshpp, clip);
             else
@@ -790,7 +790,7 @@ void DrawXianLord(ITEM_INFO *item)
                 if (poppush & 2)
                     phd_PushMatrix();
                 phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
-                phd_RotYXZsuperpack(&rotation1, 0);
+                gar_RotYXZsuperpack(&rotation1, 0);
                 if (extra_rotation && (poppush & (ROT_X | ROT_Y | ROT_Z)))
                 {
                     if (poppush & ROT_Y)
@@ -813,7 +813,7 @@ void DrawXianLord(ITEM_INFO *item)
             phd_TranslateRel_ID((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8), (sint32)*(frmptr[1] + 6), (sint32)*(frmptr[1] + 7), (sint32)*(frmptr[1] + 8));
             rotation1 = frmptr[0] + 9;
             rotation2 = frmptr[1] + 9;
-            phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+            gar_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
             if (bit & item->mesh_bits)
                 phd_PutPolygons_I(*meshpp, clip);
             else
@@ -829,7 +829,7 @@ void DrawXianLord(ITEM_INFO *item)
                 if (poppush & 2)
                     phd_PushMatrix_I();
                 phd_TranslateRel_I(*(bone + 1), *(bone + 2), *(bone + 3));
-                phd_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+                gar_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
                 if (extra_rotation && (poppush & (ROT_X | ROT_Y | ROT_Z)))
                 {
                     if (poppush & ROT_Y)
