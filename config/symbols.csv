@@ -1918,7 +1918,7 @@ address,size,name,symbol
 0x004d8380,1,IsGameWindowActive,_IsGameWindowActive
 0x004d8384,4,nReEntry,_nReEntry
 0x004d8388,,CurrentJoystick,_CurrentJoystick
-0x004d83a8,404,JoyCaps,_JoyCaps
+0x004d83a8,404,joystick,_joystick
 0x004d8540,,JoystickList,_JoystickList
 0x004d854c,,DInput,_DInput
 0x004d8550,,IDID_SysKeyboard,_IDID_SysKeyboard

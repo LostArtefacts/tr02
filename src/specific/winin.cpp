@@ -65,7 +65,7 @@ extern "C" void DI_ReadKeyboard(LPVOID lpInputData)
 extern "C" {
 extern APP_SETTINGS SavedAppSettings;
 extern int no_joy;
-extern JOYCAPS JoyCaps;
+extern JOYCAPS joystick;
 }
 
 extern "C" DWORD DI_ReadJoystick(int *x, int *y)
@@ -88,7 +88,7 @@ extern "C" DWORD DI_ReadJoystick(int *x, int *y)
     }
 
     if (no_joy) {
-        if (joyGetDevCaps(0, &JoyCaps, sizeof(JOYCAPS)) == JOYERR_NOERROR) {
+        if (joyGetDevCaps(0, &joystick, sizeof(JOYCAPS)) == JOYERR_NOERROR) {
             no_joy = 0;
         } else {
             *y = 0;
@@ -97,8 +97,8 @@ extern "C" DWORD DI_ReadJoystick(int *x, int *y)
         }
     }
 
-    *x = 32 * joy.dwXpos / (JoyCaps.wXmax - JoyCaps.wXmin) - 16;
-    *y = 32 * joy.dwYpos / (JoyCaps.wYmax - JoyCaps.wYmin) - 16;
+    *x = 32 * joy.dwXpos / (joystick.wXmax - joystick.wXmin) - 16;
+    *y = 32 * joy.dwYpos / (joystick.wYmax - joystick.wYmin) - 16;
     return joy.dwButtons;
 }
 
@@ -240,7 +240,7 @@ JOYSTICK CurrentJoystick;
 
 #ifdef TR2_EXE
 int no_joy = 1;
-JOYCAPS JoyCaps;
+JOYCAPS joystick;
 LPDIRECTINPUT DInput;
 LPDIRECTINPUTDEVICE IDID_SysKeyboard;
 #endif
