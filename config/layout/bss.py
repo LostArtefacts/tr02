@@ -110,19 +110,22 @@ def place(paths: list[str], shift: int = 0, expand: bool = False) -> list[str]:
     mapping: dict[str, dict[str, int]] = json.loads(
         Path("build/layout/bss.json").read_text()
     )
+    # recover() keys each object by where the build compiled it: a
+    # feature build compiles into its own build/obj_<features>, not
+    # build/obj_exe, so match the placed copies by file name instead.
+    by_name = {Path(key).name: entries for key, entries in mapping.items()}
     defined: dict[str, tuple[int, int]] = {}
     absolute: dict[str, int] = {}
     base = 0x46C2D0 + shift
     for path in paths:
         raw = bytearray(Path(path).read_bytes())
         obj = coff.Object(path)
-        old = "build/obj_exe/" + Path(path).name
         symptr, nsym = struct.unpack_from("<II", raw, 8)
         old_end = symptr + nsym * 18
         strings = bytearray(raw[old_end:])
         records = bytearray(raw[symptr:old_end])
         covered: set[int] = set()
-        for index, value in mapping.get(old, {}).items():
+        for index, value in by_name.get(Path(path).name, {}).items():
             value += shift
             i = int(index)
             covered.add(i)
