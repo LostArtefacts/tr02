@@ -48,7 +48,7 @@ int DrawPhaseGame(void)
 #define INSIDE 64
 
 extern int mid_sort;
-extern int OutsideCamera;
+extern int outside;
 
 void S_LightRoom(ROOM_INFO *r);
 void S_SetupBelowWater(int underwater);
@@ -89,8 +89,8 @@ void DrawRooms(sint16 current_room)
     bound_end = 1;
     number_draw_rooms = 0;
 
-    OutsideCamera = r->flags & OUTSIDE;
-    if (OutsideCamera) {
+    outside = r->flags & OUTSIDE;
+    if (outside) {
         outside_left = outside_top = 0;
         outside_right = phd_winxmax;
         outside_bottom = phd_winymax;
@@ -104,7 +104,7 @@ void DrawRooms(sint16 current_room)
     GetRoomBounds();
 
     mid_sort = 0;
-    if (OutsideCamera) {
+    if (outside) {
         phd_left = outside_left;
         phd_right = outside_right;
         phd_top = outside_top;
@@ -120,7 +120,7 @@ void DrawRooms(sint16 current_room)
             phd_PopMatrix();
         } else {
             S_InitialisePolyList(1);
-            OutsideCamera = -1;
+            outside = -1;
         }
     } else
         S_InitialisePolyList(0);
@@ -168,7 +168,7 @@ void GetRoomBounds(void)
             draw_rooms[number_draw_rooms++] = room_number;
             r->bound_active |= 1;
             if (r->flags & OUTSIDE)
-                OutsideCamera = OUTSIDE;
+                outside = OUTSIDE;
         }
         if (!(r->flags & INSIDE))
         {
@@ -456,10 +456,10 @@ void PrintRooms(sint16 room_number)
     phd_bottom = r->bottom;
 
     S_LightRoom(r);
-    if (OutsideCamera > 0 && !(r->flags & INSIDE)) {
+    if (outside > 0 && !(r->flags & INSIDE)) {
         S_InsertRoom(r->data, 1);
     } else {
-        if (OutsideCamera >= 0)
+        if (outside >= 0)
             ClipRoom(r);
         S_InsertRoom(r->data, 0);
     }
@@ -1722,7 +1722,7 @@ sint32 phd_right;
 int bound_start;
 int bound_end;
 sint16 null_rotations[12];
-int OutsideCamera;
+int outside;
 int number_draw_rooms;
 sint32 IMstack[384];
 struct door_vbuf vbufdoor[4];

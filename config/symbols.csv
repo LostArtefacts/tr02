@@ -2157,7 +2157,7 @@ address,size,name,symbol
 0x005251b0,4,frames,_frames
 0x005251c0,,dynamic,_dynamic
 0x005252b0,4,meshes,_meshes
-0x005252b4,4,OutsideCamera,_OutsideCamera
+0x005252b4,4,outside,_outside
 0x005252b8,4,number_draw_rooms,_number_draw_rooms
 0x005252c0,,IMstack,_IMstack
 0x005258c0,48,vbufdoor,_vbufdoor
