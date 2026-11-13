@@ -909,3 +909,32 @@ float wibble_table[32];
 sint32 WibbleOffset;
 RECT GrcDumpWindow;
 #endif
+
+#if FEAT_C_ASM
+extern "C" void __cdecl phd_PushMatrix(void)
+{
+    sint32 *mptr;
+    int i;
+
+    mptr = phd_mxptr;
+    for (i = 0; i < 12; i++)
+        mptr[i + 12] = mptr[i];
+    phd_mxptr = mptr + 12;
+}
+
+extern "C" void __cdecl phd_PushUnitMatrix(void)
+{
+    sint32 *mptr;
+
+    mptr = phd_mxptr += 12;
+    mptr[M00] = W2V_SCALE;
+    mptr[M01] = 0;
+    mptr[M02] = 0;
+    mptr[M10] = 0;
+    mptr[M11] = W2V_SCALE;
+    mptr[M12] = 0;
+    mptr[M20] = 0;
+    mptr[M21] = 0;
+    mptr[M22] = W2V_SCALE;
+}
+#endif
