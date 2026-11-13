@@ -12,10 +12,10 @@ void S_SetupAboveWater(int underwater);
 
 extern int HiRes;
 extern sint16 IsInventoryActive;
-extern sint16 InventoryChosen;
-extern int InventoryExtraData[];
+extern sint16 Inventory_Chosen;
+extern int Inventory_ExtraData[];
 extern sint16 inv_main_objects, inv_main_current;
-extern sint16 InvOptionObjectsCount, InvOptionCurrent;
+extern sint16 inv_option_objects, InvOptionCurrent;
 extern INVENTORY_ITEM *inv_main_list[];
 extern INVENTORY_ITEM *InvOptionList[];
 extern int GymInvOpenEnabled;
@@ -115,13 +115,13 @@ typedef struct ring_info {
 #define BIGMEDI_OPTION 172
 #define FLAREBOX_OPTION 173
 
-extern TEXTSTRING *AmmoTextInfo;
+extern TEXTSTRING *ammotext;
 extern sint32 inv_nframes;
-extern sint32 InvDemoMode;
-extern sint32 NoInputCounter;
-extern sint32 IsResetFlag;
+extern sint32 Inventory_DemoMode;
+extern sint32 noinput_count;
+extern sint32 reset_flag;
 extern sint32 StopInventory;
-extern sint32 LsAdder;
+extern sint32 ls_adder;
 extern sint32 inputDB;
 extern sint16 cdtrack;
 extern sint16 Option_Music_Volume;
@@ -189,12 +189,12 @@ sint32 Display_Inventory(sint32 inventory_mode)
     RING_INFO ring = {0};
 
     if (inventory_mode == INV_KEYS_MODE && !inv_keys_objects) {
-        InventoryChosen = -1;
+        Inventory_Chosen = -1;
         return 0;
     }
 
-    T_RemovePrint(AmmoTextInfo);
-    AmmoTextInfo = NULL;
+    T_RemovePrint(ammotext);
+    ammotext = NULL;
     AlterFOV(GAME_FOV * ONE_DEGREE);
     Inventory_Mode = inventory_mode;
     inv_nframes = 2;
@@ -214,7 +214,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
     case INV_SAVE_MODE:
     case INV_LOAD_MODE:
     case INV_TITLE_MODE:
-        Inv_RingInit(&ring, OPTION_RING, InvOptionList, InvOptionObjectsCount, InvOptionCurrent, &imo);
+        Inv_RingInit(&ring, OPTION_RING, InvOptionList, inv_option_objects, InvOptionCurrent, &imo);
         break;
     case INV_KEYS_MODE:
         Inv_RingInit(&ring, KEYS_RING, inv_keys_list, inv_keys_objects, inv_main_current, &imo);
@@ -223,7 +223,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
         if (inv_main_objects)
             Inv_RingInit(&ring, MAIN_RING, inv_main_list, inv_main_objects, inv_main_current, &imo);
         else
-            Inv_RingInit(&ring, OPTION_RING, InvOptionList, InvOptionObjectsCount, InvOptionCurrent, &imo);
+            Inv_RingInit(&ring, OPTION_RING, InvOptionList, inv_option_objects, InvOptionCurrent, &imo);
         break;
     }
 
@@ -237,7 +237,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
         Inv_RingCalcAdders(&ring, ROTATE_DURATION);
         S_UpdateInput();
 
-        if (InvDemoMode) {
+        if (Inventory_DemoMode) {
             if (input)
                 return gameflow.on_demo_interrupt;
             GetDemoInput();
@@ -245,20 +245,20 @@ sint32 Display_Inventory(sint32 inventory_mode)
                 return gameflow.on_demo_end;
         } else {
             if (input)
-                NoInputCounter = 0;
+                noinput_count = 0;
         }
 
         inputDB = GetDebouncedInput(input);
 
         if (Inventory_Mode == INV_TITLE_MODE && !input && !inputDB) {
             if (gameflow.num_demos || gameflow.noinput_timeout) {
-                NoInputCounter++;
-                if (NoInputCounter > gameflow.noinput_time)
-                    IsResetFlag = demo_needed = 1;
+                noinput_count++;
+                if (noinput_count > gameflow.noinput_time)
+                    reset_flag = demo_needed = 1;
             }
         } else {
-            NoInputCounter = 0;
-            IsResetFlag = 0;
+            noinput_count = 0;
+            reset_flag = 0;
         }
 
         if (StopInventory)
@@ -302,7 +302,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
             if (n == ring.current_object) {
                 for (frm = 0; frm < inv_nframes; frm++) {
                     if (ring.rotating) {
-                        LsAdder = LOW_LIGHT;
+                        ls_adder = LOW_LIGHT;
                         if (inv_item->y_rot != 0) {
                             if (inv_item->y_rot < 0)
                                 inv_item->y_rot += 0x200;
@@ -310,7 +310,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
                                 inv_item->y_rot -= 0x200;
                         }
                     } else if (imo.status == RNG_SELECTED || imo.status == RNG_DESELECTING || imo.status == RNG_SELECTING || imo.status == RNG_DESELECT || imo.status == RNG_CLOSING_ITEM) {
-                        LsAdder = HIGH_LIGHT;
+                        ls_adder = HIGH_LIGHT;
                         if (inv_item->y_rot != inv_item->y_rot_sel) {
                             tempSint32 = inv_item->y_rot_sel - inv_item->y_rot;
                             if (tempSint32 > 0 && tempSint32 < 0x8000)
@@ -320,7 +320,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
                             inv_item->y_rot &= 0xfc00;
                         }
                     } else if (ring.number_of_objects == 1 || !(input & IN_LEFT || input & IN_RIGHT)) {
-                        LsAdder = HIGH_LIGHT;
+                        ls_adder = HIGH_LIGHT;
                         inv_item->y_rot += 0x100;
                     }
                 }
@@ -328,7 +328,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
                 if ((imo.status == RNG_OPEN || imo.status == RNG_SELECTING || imo.status == RNG_SELECTED || imo.status == RNG_DESELECTING || imo.status == RNG_DESELECT || imo.status == RNG_CLOSING_ITEM) && !ring.rotating && !(input & IN_LEFT || input & IN_RIGHT))
                     RingNotActive(inv_item);
             } else {
-                LsAdder = LOW_LIGHT;
+                ls_adder = LOW_LIGHT;
                 for (frm = 0; frm < inv_nframes; frm++) {
                     if (inv_item->y_rot != 0) {
                         if (inv_item->y_rot < 0)
@@ -382,10 +382,10 @@ sint32 Display_Inventory(sint32 inventory_mode)
                     break;
                 }
 
-                if (IsResetFlag || (inputDB & EXIT_INVENTORY)) {
-                    if (IsResetFlag || Inventory_Mode != INV_TITLE_MODE) {
+                if (reset_flag || (inputDB & EXIT_INVENTORY)) {
+                    if (reset_flag || Inventory_Mode != INV_TITLE_MODE) {
                         SoundEffect(112, NULL, SFX_ALWAYS);
-                        InventoryChosen = -1;
+                        Inventory_Chosen = -1;
                         if (ring.type == MAIN_RING)
                             inv_main_current = ring.current_object;
                         else
@@ -484,7 +484,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
                         input = 0;
                         inputDB = 0;
                     } else if (ring.type == MAIN_RING) {
-                        if (InvOptionObjectsCount && !gameflow.lockout_optionring) {
+                        if (inv_option_objects && !gameflow.lockout_optionring) {
                             Inv_RingMotionSetup(&ring, RNG_CLOSING, RNG_MAIN2OPTION, RINGSWITCH_FRAMES / 2);
                             Inv_RingMotionRadius(&ring, 0);
                             Inv_RingMotionRotation(&ring, CLOSE_ROTATION, (sint16)(ring.ringpos.y_rot - CLOSE_ROTATION));
@@ -505,7 +505,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
                 ring.list = InvOptionList;
                 ring.type = OPTION_RING;
                 inv_main_current = ring.current_object;
-                ring.number_of_objects = InvOptionObjectsCount;
+                ring.number_of_objects = inv_option_objects;
                 ring.current_object = InvOptionCurrent;
                 Inv_RingCalcAdders(&ring, ROTATE_DURATION);
                 Inv_RingMotionRotation(&ring, OPEN_ROTATION, (sint16)(0xc000 - ring.current_object * ring.angle_adder));
@@ -518,7 +518,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
                 imo.camera_pitch_target = 0;
                 ring.camera_pitch = -(sint16)imo.misc;
                 imo.camera_pitch_rate = imo.misc / (RINGSWITCH_FRAMES / 2);
-                InvOptionObjectsCount = ring.number_of_objects;
+                inv_option_objects = ring.number_of_objects;
                 InvOptionCurrent = ring.current_object;
                 ring.list = inv_main_list;
                 ring.type = MAIN_RING;
@@ -613,7 +613,7 @@ sint32 Display_Inventory(sint32 inventory_mode)
 
                     if (inputDB & IN_SELECT) {
                         inv_item->sprlist = NULL;
-                        InventoryChosen = inv_item->object_number;
+                        Inventory_Chosen = inv_item->object_number;
                         if (ring.type == MAIN_RING)
                             inv_main_current = ring.current_object;
                         else
@@ -652,26 +652,26 @@ sint32 Display_Inventory(sint32 inventory_mode)
     S_FinishInventory();
     IsInventoryActive = 0;
 
-    if (IsResetFlag)
+    if (reset_flag)
         return EXIT_TO_TITLE;
 
     if (demo_needed)
         return STARTDEMO;
 
-    if (InventoryChosen == -1) {
+    if (Inventory_Chosen == -1) {
         if (inventory_mode != INV_TITLE_MODE && Option_Music_Volume)
             S_CDVolume(Option_Music_Volume * 25 + 5);
         return 0;
     }
 
-    switch (InventoryChosen) {
+    switch (Inventory_Chosen) {
     case PASSPORT_OPTION:
-        if (InventoryExtraData[0] == 1 && Option_Music_Volume)
+        if (Inventory_ExtraData[0] == 1 && Option_Music_Volume)
             S_CDVolume(Option_Music_Volume * 25 + 5);
         return 1;
     case PHOTO_OPTION:
         if (gameflow.gym_enabled) {
-            InventoryExtraData[1] = 0;
+            Inventory_ExtraData[1] = 0;
             return 1;
         }
         break;
@@ -729,19 +729,19 @@ void Construct_Inventory(void)
     phd_bottom = phd_winymax;
 
     IsInventoryActive = 1;
-    InventoryChosen = 0;
+    Inventory_Chosen = 0;
     for (n = 0; n < 8; n++)
-        InventoryExtraData[n] = 0;
+        Inventory_ExtraData[n] = 0;
 
     if (Inventory_Mode == INV_TITLE_MODE)
     {
         if (gameflow.gym_enabled)
-            InvOptionObjectsCount = TITLE_RING_OBJECTS;
+            inv_option_objects = TITLE_RING_OBJECTS;
         else
-            InvOptionObjectsCount = TITLE_RING_OBJECTS - 1;
+            inv_option_objects = TITLE_RING_OBJECTS - 1;
     }
     else
-        InvOptionObjectsCount = OPTION_RING_OBJECTS;
+        inv_option_objects = OPTION_RING_OBJECTS;
 
     for (n = 0; n < inv_main_objects; n++)
     {
@@ -753,7 +753,7 @@ void Construct_Inventory(void)
         inv_item->y_rot = 0;
     }
 
-    for (n = 0; n < InvOptionObjectsCount; n++)
+    for (n = 0; n < inv_option_objects; n++)
     {
         inv_item = InvOptionList[n];
         inv_item->current_frame = 0;
@@ -848,7 +848,7 @@ typedef struct {
 } STATIC_INFO;
 
 extern STATIC_INFO StaticObjects[];
-extern sint32 PhdPersp;
+extern sint32 phd_persp;
 
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
@@ -903,7 +903,7 @@ void DrawInventoryItem(INVENTORY_ITEM *inv_item)
         zv = *(phd_mxptr + M23);
         xv = *(phd_mxptr + M03);
         yv = *(phd_mxptr + M13);
-        zp = zv / PhdPersp;
+        zp = zv / phd_persp;
         sx = (sint32)(xv / zp + phd_centerx);
         sy = (sint32)(yv / zp + phd_centery);
         while ((isprite = *isprite_list++))
@@ -1011,7 +1011,7 @@ void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 extern sint32 ls_divider;
 
 #ifdef TR2_EXE
-sint16 InventoryChosen = -1;
+sint16 Inventory_Chosen = -1;
 sint32 Inventory_Mode = 1;
 sint16 Option_Detail_Level = 255;
 sint16 Option_SoundFX_Volume = 165;
@@ -1058,8 +1058,8 @@ extern INVENTORY_ITEM InvPassportOption;
 extern INVENTORY_ITEM InvControlOption;
 extern INVENTORY_ITEM InvSoundOption;
 extern INVENTORY_ITEM InvPhotoOption;
-sint32 NoInputCounter;
-sint32 IsResetFlag;
+sint32 noinput_count;
+sint32 reset_flag;
 sint32 StopInventory;
 sint16 inv_main_current;
 sint16 inv_keys_objects;

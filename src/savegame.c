@@ -3,8 +3,8 @@
 #include "savegame.h"
 #include "box.h"
 
-extern int SG_Count;
-extern char *SG_Point;
+extern int SGcount;
+extern char *SGpoint;
 
 void ModifyStartInfo(int level_number);
 
@@ -225,7 +225,7 @@ extern int flipmap[];
 extern sint16 cd_flags[];
 extern int monks_attack_lara;
 extern int level_items;
-extern sint16 *Meshes;
+extern sint16 *mesh_base;
 extern sint16 *AnimFrames;
 extern sint16 body_bag;
 extern int flipeffect;
@@ -274,7 +274,7 @@ extern int flipmap[];
 extern sint16 cd_flags[];
 extern int monks_attack_lara;
 extern int level_items;
-extern sint16 *Meshes;
+extern sint16 *mesh_base;
 extern sint16 *AnimFrames;
 
 void ResetSG(void);
@@ -376,14 +376,14 @@ void CreateSaveGameInfo(void)
     }
 
     for (i = 0; i < 15; i++)
-        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] - (long)Meshes);
+        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] - (long)mesh_base);
     lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base - (long)AnimFrames);
     lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base - (long)AnimFrames);
 
     WriteSG(&lara, sizeof(LARA_INFO));
 
     for (i = 0; i < 15; i++)
-        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)Meshes);
+        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)mesh_base);
     lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)AnimFrames);
     lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)AnimFrames);
 
@@ -540,7 +540,7 @@ void ExtractSaveGameInfo(void)
                     ReadSG(&creature->mood, sizeof(MOOD_TYPE));
                 }
                 else
-                    SG_Point += sizeof(sint16) * 4 + sizeof(MOOD_TYPE);
+                    SGpoint += sizeof(sint16) * 4 + sizeof(MOOD_TYPE);
             }
             else if (obj->intelligent)
             {
@@ -593,7 +593,7 @@ void ExtractSaveGameInfo(void)
     lara.spaz_effect = NULL;
 
     for (i = 0; i < 15; i++)
-        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)Meshes);
+        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)mesh_base);
     lara.target = NULL;
     lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)AnimFrames);
     lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)AnimFrames);
@@ -640,8 +640,8 @@ void ExtractSaveGameInfo(void)
 
 void ResetSG(void)
 {
-    SG_Count = 0;
-    SG_Point = savegame.buffer;
+    SGcount = 0;
+    SGpoint = savegame.buffer;
 }
 
 void S_ExitSystem(char *message);
@@ -650,30 +650,30 @@ void WriteSG(void *pointer, int size)
 {
     char *data;
 
-    SG_Count += size;
-    if (SG_Count >= MAX_SAVEGAME_BUFFER)
+    SGcount += size;
+    if (SGcount >= MAX_SAVEGAME_BUFFER)
         S_ExitSystem("FATAL: Savegame is too big to fit in buffer");
 
     data = pointer;
     for (; size > 0; size--)
-        *(SG_Point++) = *(data++);
+        *(SGpoint++) = *(data++);
 }
 
 void ReadSG(void *pointer, int size)
 {
     char *data;
 
-    SG_Count += size;
+    SGcount += size;
     data = pointer;
     for (; size > 0; size--)
-        *(data++) = *(SG_Point++);
+        *(data++) = *(SGpoint++);
 }
 
 #ifdef TR2_EXE
 int level_items;
-sint16 *Meshes;
-char *SG_Point;
+sint16 *mesh_base;
+char *SGpoint;
 SAVEGAME_INFO savegame;
-int SG_Count;
+int SGcount;
 sint16 *AnimFrames;
 #endif

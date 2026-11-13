@@ -238,7 +238,7 @@ void DoBoatShift(int boat_number)
 
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 
-extern sint32 LsAdder;
+extern sint32 ls_adder;
 
 void DoWakeEffect(ITEM_INFO *boat)
 {
@@ -272,7 +272,7 @@ void DoWakeEffect(ITEM_INFO *boat)
                 fx->fallspeed = GetRandomDraw() * (ABS(boat->speed) - 64) >> 15;
             else
                 fx->fallspeed = 0;
-            fx->shade = LsAdder - 0x300;
+            fx->shade = ls_adder - 0x300;
             if (fx->shade < 0)
                 fx->shade = 0;
         }

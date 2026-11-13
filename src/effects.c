@@ -23,7 +23,7 @@ void EffectNewRoom(sint16 fx_num, sint16 room_number);
 sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 
-extern sint32 LsAdder;
+extern sint32 ls_adder;
 void AddDynamicLight(sint32 x, sint32 y, sint32 z, sint32 intensity, sint32 falloff);
 
 void ShootAtLara(FX_INFO *fx);
@@ -385,7 +385,7 @@ void WaterFall(sint16 item_number)
             fx->pos.z_pos = item->pos.z_pos + (GetRandomDraw() - 0x4000) * WALL_L / 0x7fff;
             fx->pos.y_pos = item->pos.y_pos;
             fx->speed = 0;
-            fx->shade = (sint16)LsAdder;
+            fx->shade = (sint16)ls_adder;
             fx->frame_number = 0;
             fx->object_number = SPLASH1;
         }

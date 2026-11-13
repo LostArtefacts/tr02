@@ -535,7 +535,7 @@ sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
 
 #define TARGET_DIST (WALL_L * 4)
 
-extern sint16 InventoryChosen;
+extern sint16 Inventory_Chosen;
 
 void EffectSpaz(ITEM_INFO *, COLL_INFO *);
 
@@ -592,7 +592,7 @@ void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll)
         EffectSpaz(laraitem, coll);
     if (lara.hit_direction == -1)
         lara.hit_frame = 0;
-    InventoryChosen = -1;
+    Inventory_Chosen = -1;
 }
 
 void EffectSpaz(ITEM_INFO *laraitem, COLL_INFO *coll)

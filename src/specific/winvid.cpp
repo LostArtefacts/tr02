@@ -245,9 +245,9 @@ extern "C" void WinVidResizeGameWindow(HWND hWnd, int edge, LPRECT rect)
 extern "C" {
 extern char ClassName[];
 extern char WindowName[];
-extern int MessageLoopCounter;
+extern int nReEntry;
 extern bool IsMessageLoopClosed;
-extern bool IsGameToExit;
+extern bool GtWindowClosed;
 extern bool IsGameWindowActive;
 extern bool IsGameWindowMinimized;
 extern bool IsGameWindowShow;
@@ -265,10 +265,10 @@ extern "C" bool DD_SpinMessageLoop(bool needWait)
 {
     MSG msg;
 
-    ++MessageLoopCounter;
+    ++nReEntry;
     if (IsMessageLoopClosed)
     {
-        --MessageLoopCounter;
+        --nReEntry;
         return false;
     }
 
@@ -285,8 +285,8 @@ extern "C" bool DD_SpinMessageLoop(bool needWait)
             {
                 IsMessageLoopClosed = true;
                 AppResultCode = msg.wParam;
-                IsGameToExit = true;
-                --MessageLoopCounter;
+                GtWindowClosed = true;
+                --nReEntry;
                 StopInventory = 1;
                 return false;
             }
@@ -299,7 +299,7 @@ extern "C" bool DD_SpinMessageLoop(bool needWait)
         }
     }
 
-    --MessageLoopCounter;
+    --nReEntry;
     return true;
 }
 
@@ -1246,12 +1246,12 @@ bool IsMessageLoopClosed;
 int MaxWindowWidth;
 bool IsMaxWindowSizeSet;
 int AppResultCode;
-bool IsGameToExit;
+bool GtWindowClosed;
 int GameWindow_Y;
 int GameWindow_X;
 bool IsGameWindowMinimized;
 int MinWindowWidth;
 int MinWindowHeight;
 bool IsGameWindowActive;
-int MessageLoopCounter;
+int nReEntry;
 #endif

@@ -414,7 +414,7 @@ int GetCollisionAnim(ITEM_INFO *skidoo, PHD_VECTOR *moved)
 
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 
-extern sint32 LsAdder;
+extern sint32 ls_adder;
 
 void DoSnowEffect(ITEM_INFO *skidoo)
 {
@@ -444,7 +444,7 @@ void DoSnowEffect(ITEM_INFO *skidoo)
 
         *(phd_mxptr + M23) = 0;
         S_CalculateLight(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, fx->room_number);
-        fx->shade = LsAdder - 0x200;
+        fx->shade = ls_adder - 0x200;
         if (fx->shade < 0)
             fx->shade = 0;
     }

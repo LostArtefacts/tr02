@@ -190,7 +190,7 @@ void RingIsNotOpen(RING_INFO *ring)
 extern char **GF_Puzzle1Strings, **GF_Puzzle2Strings, **GF_Puzzle3Strings, **GF_Puzzle4Strings;
 extern char **GF_Pickup1Strings, **GF_Pickup2Strings;
 extern char **GF_Key1Strings, **GF_Key2Strings, **GF_Key3Strings, **GF_Key4Strings;
-extern int HealthBarTimer;
+extern int health_bar_timer;
 
 int FlashIt(void);
 void DrawHealthBar(int flash_state);
@@ -335,7 +335,7 @@ void RingNotActive(INVENTORY_ITEM *inv_item)
 
     case MEDI_OPTION:
     case BIGMEDI_OPTION:
-        HealthBarTimer = 40;
+        health_bar_timer = 40;
         DrawHealthBar(FlashIt());
     case PUZZLE_OPTION1:
     case PUZZLE_OPTION2:
@@ -1368,7 +1368,7 @@ extern SG_COL req_main_gour1[];
 extern SG_COL req_main_gour2[];
 extern SG_COL req_sel_gour2[];
 extern SG_COL req_unsel_gour1[];
-extern TEXTSTRING *PassportTextInfo;
+extern TEXTSTRING *passport_text1;
 extern sint32 input;
 
 sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
@@ -1588,7 +1588,7 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
     }
     else if (inputDB & SELECT_ITEM)
     {
-        if (!strncmp(req->texts1[req->selected - req->line_offset]->string, GF_PCStrings[15], 12) && !strcmp(PassportTextInfo->string, GF_GameStrings[4]))
+        if (!strncmp(req->texts1[req->selected - req->line_offset]->string, GF_PCStrings[15], 12) && !strcmp(passport_text1->string, GF_GameStrings[4]))
         {
             input = 0;
             return 0;

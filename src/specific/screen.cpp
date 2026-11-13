@@ -367,7 +367,7 @@ void CleanupTextures(void);
 void HWR_FreeTexturePages(void);
 
 extern "C" {
-extern bool IsGameToExit;
+extern bool GtWindowClosed;
 void S_ExitSystem(const char *message);
 bool ApplySettings(APP_SETTINGS *newSettings);
 }
@@ -390,7 +390,7 @@ extern "C" bool RestoreLostBuffers(void)
         rebuild = true;
     if (PictureBufferSurface && (rebuild || DX_TRY(DD_EnsureSurfaceAvailable(PictureBufferSurface, NULL, false))))
         rebuild = true;
-    if (rebuild && !IsGameToExit) {
+    if (rebuild && !GtWindowClosed) {
         ApplySettings(&SavedAppSettings);
         if (SavedAppSettings.RenderMode == RM_Hardware)
             HWR_GetAllTextureHandles();

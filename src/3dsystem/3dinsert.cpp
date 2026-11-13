@@ -29,7 +29,7 @@ typedef struct point_info {
     float g;
 } POINT_INFO;
 
-extern "C" float FltNearZ;
+extern "C" float f_znear;
 extern "C" float FltRhwONearZ;
 extern "C" float FltPerspONearZ;
 
@@ -45,8 +45,8 @@ extern "C" int ZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output)
     pOut = output;
     nVertices = 0;
     for (; number--; A = B++) {
-        fADiff = FltNearZ - A->zv;
-        fBDiff = FltNearZ - B->zv;
+        fADiff = f_znear - A->zv;
+        fBDiff = f_znear - B->zv;
         if (((*(long *)&fADiff) | (*(long *)&fBDiff)) < 0) {
             if (((*(long *)&fADiff) ^ (*(long *)&fBDiff)) < 0) {
                 clipper = fBDiff / (A->zv - B->zv);

@@ -212,7 +212,7 @@ extern "C" void BGND_DrawInGameBackground(void)
 extern "C" {
 extern int UvAdd;
 extern float RhwFactor;
-extern float FltFarZ;
+extern float f_zfar;
 }
 
 extern "C" void DrawTextureTile(int sx, int sy, int width, int height, D3DTEXTUREHANDLE texSource, int tu, int tv, int tWidth, int tHeight, D3DCOLOR color0, D3DCOLOR color1, D3DCOLOR color2, D3DCOLOR color3)
@@ -244,7 +244,7 @@ extern "C" void DrawTextureTile(int sx, int sy, int width, int height, D3DTEXTUR
     tu1 -= uvAdjust;
     tv1 -= uvAdjust;
     sz = 0.995f;
-    rhw = RhwFactor / FltFarZ;
+    rhw = RhwFactor / f_zfar;
     vertex[0].sx = sx0;
     vertex[0].sy = sy0;
     vertex[0].sz = sz;

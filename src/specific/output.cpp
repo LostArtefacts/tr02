@@ -220,7 +220,7 @@ extern "C" void S_DisplayPicture(char *file_name, int is_title)
 #define SUNSET_TIME (20 * 60 * 60)
 
 extern "C" int WibbleOffset;
-extern "C" int RoomLightShades[4];
+extern "C" int light_level[4];
 extern "C" sint16 GF_SunsetEnabled;
 extern "C" int SunsetTimer;
 extern "C" sint32 GetRandomDraw(void);
@@ -228,15 +228,15 @@ extern "C" sint32 GetRandomDraw(void);
 extern "C" void S_AnimateTextures(int nframes)
 {
     WibbleOffset = (WibbleOffset + nframes / 2) & (WIBBLE_SIZE - 1);
-    RoomLightShades[1] = GetRandomDraw() & (WIBBLE_SIZE - 1);
-    RoomLightShades[2] = (phd_sin(WibbleOffset * 65536 / WIBBLE_SIZE) + (1 << W2V_SHIFT)) * (WIBBLE_SIZE - 1) >> (W2V_SHIFT + 1);
+    light_level[1] = GetRandomDraw() & (WIBBLE_SIZE - 1);
+    light_level[2] = (phd_sin(WibbleOffset * 65536 / WIBBLE_SIZE) + (1 << W2V_SHIFT)) * (WIBBLE_SIZE - 1) >> (W2V_SHIFT + 1);
     if (GF_SunsetEnabled)
     {
         SunsetTimer += nframes;
         if (SunsetTimer < SUNSET_TIME)
-            RoomLightShades[3] = SunsetTimer * (WIBBLE_SIZE - 1) / SUNSET_TIME;
+            light_level[3] = SunsetTimer * (WIBBLE_SIZE - 1) / SUNSET_TIME;
         else
-            RoomLightShades[3] = WIBBLE_SIZE - 1;
+            light_level[3] = WIBBLE_SIZE - 1;
     }
     AnimateTextures(nframes);
 }
@@ -452,7 +452,7 @@ typedef struct {
 extern "C" sint32 number_dynamics;
 extern "C" LIGHT_INFO dynamic[];
 
-extern "C" sint32 LsAdder;
+extern "C" sint32 ls_adder;
 extern "C" sint32 ls_divider;
 
 extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number)
@@ -498,7 +498,7 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
             shade1 = falloff * light->intensity / (falloff + distance);
             falloff2 = (light->falloff2 * light->falloff2) >> 12;
             shade2 = falloff2 * light->intensity2 / (falloff2 + distance);
-            shade1 += (shade2 - shade1) * RoomLightShades[r->lighting] / (WIBBLE_SIZE - 1);
+            shade1 += (shade2 - shade1) * light_level[r->lighting] / (WIBBLE_SIZE - 1);
             shade = shade1;
             if (shade > brightest)
             {
@@ -544,22 +544,22 @@ extern "C" void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_numbe
     {
         PHD_ANGLE angles[2];
 
-        LsAdder = r->ambient - adder;
+        ls_adder = r->ambient - adder;
         ls_divider = 0x4000000 / adder;
         phd_GetVectorAngles(ls[0], ls[1], ls[2], angles);
         phd_RotateLight(angles[1], angles[0]);
     }
     else
     {
-        LsAdder = r->ambient;
+        ls_adder = r->ambient;
         ls_divider = 0;
     }
     depth = phd_mxptr[M23] >> W2V_SHIFT;
     if (depth > 0x3000)
     {
-        LsAdder += depth - 0x3000;
-        if (LsAdder > 0x1fff)
-            LsAdder = 0x1fff;
+        ls_adder += depth - 0x3000;
+        if (ls_adder > 0x1fff)
+            ls_adder = 0x1fff;
     }
 }
 
@@ -567,10 +567,10 @@ extern "C" void S_CalculateStaticLight(sint16 adder)
 {
     sint32 depth;
 
-    LsAdder = adder - 0x1000;
+    ls_adder = adder - 0x1000;
     depth = phd_mxptr[M23] >> W2V_SHIFT;
     if (depth > 0x3000)
-        LsAdder += depth - 0x3000;
+        ls_adder += depth - 0x3000;
 }
 
 extern "C" HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE surface, DDSURFACEDESC *desc, DWORD flags);
@@ -730,7 +730,7 @@ extern "C" void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 
     sint32 dx, distance, falloff, dy, dz, radius;
 
     if (r->lighting)
-        shade += (shadeB - shade) * RoomLightShades[r->lighting] / (WIBBLE_SIZE - 1);
+        shade += (shadeB - shade) * light_level[r->lighting] / (WIBBLE_SIZE - 1);
     for (i = 0; i < number_dynamics; i++)
     {
         radius = 1 << dynamic[i].falloff;
@@ -781,7 +781,7 @@ extern "C" void S_LightRoom(ROOM_INFO *r)
     }
     else
     {
-        wibble = wibble_light[RoomLightShades[r->lighting]];
+        wibble = wibble_light[light_level[r->lighting]];
         objptr = r->data;
         for (i = *(objptr++); i > 0; i--, objptr += 6)
             objptr[5] = objptr[3] + wibble[objptr[4] & 0x1f];
@@ -832,7 +832,7 @@ extern "C" void S_LightRoom(ROOM_INFO *r)
     }
 }
 
-extern "C" sint32 PhdPersp;
+extern "C" sint32 phd_persp;
 
 extern "C" int S_GetObjectBounds(sint16 *bptr)
 {
@@ -885,7 +885,7 @@ extern "C" int S_GetObjectBounds(sint16 *bptr)
             zv = *(mptr + M20) * *(vertptr + 0) + *(mptr + M21) * *(vertptr + 1) + *(mptr + M22) * *(vertptr + 2) + *(mptr + M23);
             if (zv > phd_znear && zv < phd_zfar)
             {
-                zv /= PhdPersp;
+                zv /= phd_persp;
                 numz++;
                 coord = (*(mptr + M00) * *(vertptr + 0) + *(mptr + M01) * *(vertptr + 1) + *(mptr + M02) * *(vertptr + 2) + *(mptr + M03)) / zv;
                 if (coord < minx)
@@ -923,13 +923,13 @@ sint16 shadowman[32] = {
     0, 0, 0, 32767, 1, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0,
 };
-sint32 LsAdder;
+sint32 ls_adder;
 sint32 phd_znear;
 void (*InsertLine)(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
 sint32 water_effect;
 sint32 shade_effect;
 uint8 PicPalette[768];
-int RoomLightShades[4];
+int light_level[4];
 bool WinVidNeedToResetBuffers;
 int wet;
 bool ForceClearBackBuffer;

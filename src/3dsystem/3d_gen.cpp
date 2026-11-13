@@ -154,17 +154,17 @@ typedef struct {
 
 extern "C" PHD_VBUF PhdVBuf[];
 extern "C" sint32 ZBufferSurface;
-extern "C" sint32 MidSort;
+extern "C" sint32 mid_sort;
 extern "C" sint32 WibbleOffset;
-extern "C" float FltNearZ;
-extern "C" float FltFarZ;
-extern "C" float FltPersp;
+extern "C" float f_znear;
+extern "C" float f_zfar;
+extern "C" float f_persp;
 extern "C" float FltRhwOPersp;
 extern "C" float f_oneozfar;
 
 void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
-extern "C" sint32 LsAdder;
+extern "C" sint32 ls_adder;
 extern "C" sint32 ls_divider;
 
 extern "C" void phd_RotZ(PHD_ANGLE rz)
@@ -448,7 +448,7 @@ extern "C" sint16 *calc_object_vertices(sint16 *objptr)
     if (SavedAppSettings.ZBuffer)
         f_mid_sort = 0.0f;
     else
-        f_mid_sort = (float)(MidSort << (W2V_SHIFT + 8));
+        f_mid_sort = (float)(mid_sort << (W2V_SHIFT + 8));
     mptr = phd_mxptr;
     totclip = -1;
     objptr++;
@@ -459,14 +459,14 @@ extern "C" sint16 *calc_object_vertices(sint16 *objptr)
         yv = (float)(*(mptr + M10) * objptr[0] + *(mptr + M11) * objptr[1] + *(mptr + M12) * objptr[2] + *(mptr + M13));
         dest->yv = yv;
         zv = (float)(*(mptr + M20) * objptr[0] + *(mptr + M21) * objptr[1] + *(mptr + M22) * objptr[2] + *(mptr + M23));
-        if (zv >= FltNearZ) {
-            if (zv >= FltFarZ) {
-                zv = FltFarZ;
+        if (zv >= f_znear) {
+            if (zv >= f_zfar) {
+                zv = f_zfar;
                 dest->zv = zv;
             } else {
                 dest->zv = f_mid_sort + zv;
             }
-            persp = FltPersp / zv;
+            persp = f_persp / zv;
             clipflag = 0;
             xs = xv * persp + f_centerx;
             ys = yv * persp + f_centery;
@@ -511,7 +511,7 @@ extern "C" sint16 *calc_vertice_light(sint16 *objptr)
             yv = (*(mptr + M01) * ls_vector_view.x + *(mptr + M11) * ls_vector_view.y + *(mptr + M21) * ls_vector_view.z) / ls_divider;
             zv = (*(mptr + M02) * ls_vector_view.x + *(mptr + M12) * ls_vector_view.y + *(mptr + M22) * ls_vector_view.z) / ls_divider;
             for (dest = PhdVBuf; numvert > 0; numvert--, dest++, objptr += 3) {
-                shade = ((objptr[0] * xv + objptr[1] * yv + objptr[2] * zv) >> 16) + LsAdder;
+                shade = ((objptr[0] * xv + objptr[1] * yv + objptr[2] * zv) >> 16) + ls_adder;
                 if (shade < 0)
                     shade = 0;
                 else if (shade > 0x1fff)
@@ -519,7 +519,7 @@ extern "C" sint16 *calc_vertice_light(sint16 *objptr)
                 dest->g = (sint16)shade;
             }
         } else {
-            shade = LsAdder;
+            shade = ls_adder;
             if (shade < 0)
                 shade = 0;
             else if (shade > 0x1fff)
@@ -530,7 +530,7 @@ extern "C" sint16 *calc_vertice_light(sint16 *objptr)
         }
     } else if (numvert < 0) {
         for (dest = PhdVBuf; numvert < 0; numvert++, dest++) {
-            shade = *objptr++ + LsAdder;
+            shade = *objptr++ + ls_adder;
             if (shade < 0)
                 shade = 0;
             else if (shade > 0x1fff)
@@ -552,7 +552,7 @@ extern "C" sint16 *calc_roomvert(sint16 *objptr, int far_clip)
     if (ZBufferSurface)
         base_z = 0.0f;
     else
-        base_z = (float)(MidSort << 22);
+        base_z = (float)(mid_sort << 22);
     mptr = phd_mxptr;
     numvert = *(objptr++);
     for (v = PhdVBuf; numvert > 0; numvert--, v++, objptr += 6) {
@@ -563,14 +563,14 @@ extern "C" sint16 *calc_roomvert(sint16 *objptr, int far_clip)
         g = objptr[5];
         if (shade_effect)
             g += shade_table[(rand_table[numvert & 0x1f] + WibbleOffset) & 0x1f];
-        if (zv >= FltNearZ) {
-            persp = FltPersp / zv;
+        if (zv >= f_znear) {
+            persp = f_persp / zv;
             clip = 0;
             v->zv += base_z;
             if (zv_int >= 0x14000000) {
                 clip = far_clip;
                 v->g = 0x1fff;
-                v->zv = FltFarZ;
+                v->zv = f_zfar;
                 v->ooz = f_oneozfar;
             } else {
                 if (zv_int > 0xc000000)
@@ -709,8 +709,8 @@ void phd_PrintPolyList(void *ptr)
     }
 }
 
-extern "C" float FltNearZ;
-extern "C" float FltFarZ;
+extern "C" float f_znear;
+extern "C" float f_zfar;
 extern "C" float FltResZ;
 extern "C" float FltResZORhw;
 extern "C" float FltResZBuf;
@@ -718,9 +718,9 @@ extern "C" float RhwFactor;
 
 extern "C" float FltRhwONearZ;
 extern "C" float FltPerspONearZ;
-extern "C" float FltPersp;
+extern "C" float f_persp;
 extern "C" float FltRhwOPersp;
-extern "C" sint32 PhdPersp;
+extern "C" sint32 phd_persp;
 
 typedef struct {
     APP_SETTINGS base;
@@ -734,10 +734,10 @@ extern "C" void AlterFOV(PHD_ANGLE fov)
     float aspect, ratio;
 
     fov /= 2;
-    PhdPersp = ((phd_winwidth / 2) * phd_cos(fov)) / phd_sin(fov);
-    FltPersp = (float)PhdPersp;
-    FltRhwOPersp = RhwFactor / FltPersp;
-    FltPerspONearZ = FltPersp / FltNearZ;
+    phd_persp = ((phd_winwidth / 2) * phd_cos(fov)) / phd_sin(fov);
+    f_persp = (float)phd_persp;
+    FltRhwOPersp = RhwFactor / f_persp;
+    FltPerspONearZ = f_persp / f_znear;
     ratio = (float)phd_winwidth / (float)phd_winheight;
     aspect = 4.0f / 3.0f;
     if (!((APP_SETTINGS_EXT *)&SavedAppSettings)->FullScreen && SavedAppSettings.AspectMode == 1)
@@ -749,8 +749,8 @@ extern "C" void SetupZRange(void)
 {
     float res;
 
-    res = FltFarZ * FltNearZ * 0.99f / (FltNearZ - FltFarZ);
-    FltResZBuf = -(res / FltNearZ) + 0.005f;
+    res = f_zfar * f_znear * 0.99f / (f_znear - f_zfar);
+    FltResZBuf = -(res / f_znear) + 0.005f;
     FltResZ = -res;
     FltResZORhw = FltResZ / RhwFactor;
 }
@@ -758,16 +758,16 @@ extern "C" void SetupZRange(void)
 extern "C" void SetZNear(sint32 z)
 {
     phd_znear = z;
-    FltNearZ = (float)z;
-    FltRhwONearZ = RhwFactor / FltNearZ;
-    FltPerspONearZ = FltPersp / FltNearZ;
+    f_znear = (float)z;
+    FltRhwONearZ = RhwFactor / f_znear;
+    FltPerspONearZ = f_persp / f_znear;
     SetupZRange();
 }
 
 extern "C" void phd_SetFarZ(sint32 z)
 {
     phd_zfar = z;
-    FltFarZ = (float)z;
+    f_zfar = (float)z;
     SetupZRange();
 }
 
@@ -887,17 +887,17 @@ sint32 phd_zfar;
 float FltRhwOPersp;
 void (*InsertFlatRect)(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
 sint16 info3d_buffer[120000];
-float FltFarZ;
+float f_zfar;
 float f_centerx;
 float f_centery;
 sint32 PhdScreenHeight;
 float FltPerspONearZ;
-float FltNearZ;
+float f_znear;
 sint32 *phd_mxptr;
 sint16 *(*InsertObjectGT3)(sint16 *objptr, int number, enum sort_type sort_routine);
 sint16 *(*InsertObjectGT4)(sint16 *objptr, int number, enum sort_type sort_routine);
 sint32 rand_table[32];
-float FltPersp;
+float f_persp;
 PHD_ANGLE phd_ls_pitch;
 sint16 *(*InsertObjectG4)(sint16 *objptr, int number, enum sort_type sort_routine);
 sint16 shade_table[32];

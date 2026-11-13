@@ -29,15 +29,15 @@ void AdjustTextureUVs(bool reset);
 int LoadLevel(char *filename, int req_level);
 BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped);
 
-extern "C" DWORD ReadFileBytesCounter;
+extern "C" DWORD nBytesRead;
 extern "C" void DD_SpinMessageLoop(bool tWait);
 
 BOOL MyReadFile(HANDLE hFile, void *pBuffer, DWORD nNumberOfBytesToRead, DWORD *pNumberOfBytesRead, OVERLAPPED *pOverlapped)
 {
-    ReadFileBytesCounter += nNumberOfBytesToRead;
-    if (ReadFileBytesCounter > 16384)
+    nBytesRead += nNumberOfBytesToRead;
+    if (nBytesRead > 16384)
     {
-        ReadFileBytesCounter = 0;
+        nBytesRead = 0;
         DD_SpinMessageLoop(false);
     }
     return ReadFile(hFile, pBuffer, nNumberOfBytesToRead, pNumberOfBytesRead, pOverlapped);
@@ -94,7 +94,7 @@ extern "C" int LoadTexturePages(HANDLE file)
     return 1;
 }
 
-extern "C" char StringToShow[];
+extern "C" char exit_message[];
 
 extern "C" char LoadRoomsTooMany[];
 extern "C" char LoadRoomsNoMemory[];
@@ -125,13 +125,13 @@ extern "C" int LoadRooms(HANDLE file)
     MyReadFile(file, &number_rooms, sizeof(number_rooms), &read, NULL);
     if (number_rooms < 0 || number_rooms > 1024)
     {
-        lstrcpy(StringToShow, LoadRoomsTooMany);
+        lstrcpy(exit_message, LoadRoomsTooMany);
         return 0;
     }
     room = (ROOM_INFO *)game_malloc(number_rooms * sizeof(ROOM_INFO), ROOM_INFOS);
     if (room == NULL)
     {
-        lstrcpy(StringToShow, LoadRoomsNoMemory);
+        lstrcpy(exit_message, LoadRoomsNoMemory);
         return 0;
     }
     for (i = 0, r = room; i < number_rooms; i++, r++)
@@ -254,7 +254,7 @@ typedef struct {
     sint16 link_frame_num;
 } RANGE_STRUCT;
 
-extern "C" sint16 *Meshes;
+extern "C" sint16 *mesh_base;
 extern "C" CHANGE_STRUCT *changes;
 extern "C" RANGE_STRUCT *ranges;
 extern "C" sint16 *commands;
@@ -271,13 +271,13 @@ extern "C" int LoadObjects(HANDLE file)
     char flags;
 
     MyReadFile(file, &size, sizeof(sint32), &read, NULL);
-    Meshes = (sint16 *)game_malloc(size * sizeof(sint16), MESHES);
-    MyReadFile(file, Meshes, sizeof(sint16) * size, &read, NULL);
+    mesh_base = (sint16 *)game_malloc(size * sizeof(sint16), MESHES);
+    MyReadFile(file, mesh_base, sizeof(sint16) * size, &read, NULL);
     MyReadFile(file, &number, sizeof(sint32), &read, NULL);
     meshes = (sint16 **)game_malloc(number * sizeof(sint16 *), MESH_POINTERS);
     MyReadFile(file, meshes, sizeof(sint16 *) * number, &read, NULL);
     for (i = 0; i < number; i++)
-        meshes[i] = Meshes + (int)meshes[i] / 2;
+        meshes[i] = mesh_base + (int)meshes[i] / 2;
     MyReadFile(file, &number_anims, sizeof(sint32), &read, NULL);
     anims = (ANIM_STRUCT *)game_malloc(number_anims * sizeof(ANIM_STRUCT), ANIMS);
     MyReadFile(file, anims, sizeof(ANIM_STRUCT) * number_anims, &read, NULL);
@@ -323,7 +323,7 @@ extern "C" int LoadObjects(HANDLE file)
     MyReadFile(file, &number, sizeof(sint32), &read, NULL);
     if (number > 2048)
     {
-        lstrcpy(StringToShow, LoadObjectsTooManyTextures);
+        lstrcpy(exit_message, LoadObjectsTooManyTextures);
         return 0;
     }
     MyReadFile(file, phdtextinfo, sizeof(PHDTEXTURESTRUCT) * number, &read, NULL);
@@ -394,7 +394,7 @@ extern "C" int LoadSprites(HANDLE file)
 
 #define NUMBER_ITEMS 256
 
-extern "C" char StringToShow[];
+extern "C" char exit_message[];
 extern "C" char LoadItemsBadObject[];
 extern "C" char LoadItemsNoMemory[];
 extern "C" char LoadItemsTooMany[];
@@ -414,13 +414,13 @@ extern "C" int LoadItems(HANDLE file)
         return 1;
     if (number_items > NUMBER_ITEMS)
     {
-        lstrcpy(StringToShow, LoadItemsTooMany);
+        lstrcpy(exit_message, LoadItemsTooMany);
         return 0;
     }
     items = (ITEM_INFO *)game_malloc(sizeof(ITEM_INFO) * NUMBER_ITEMS, ITEMS);
     if (items == NULL)
     {
-        lstrcpy(StringToShow, LoadItemsNoMemory);
+        lstrcpy(exit_message, LoadItemsNoMemory);
         return 0;
     }
     level_items = number_items;
@@ -439,7 +439,7 @@ extern "C" int LoadItems(HANDLE file)
         MyReadFile(file, &item->flags, sizeof(sint16), &read, NULL);
         if (item->object_number < 0 || item->object_number >= NUMBER_OBJECTS)
         {
-            wsprintf(StringToShow, LoadItemsBadObject, item->object_number, i);
+            wsprintf(exit_message, LoadItemsBadObject, item->object_number, i);
             return 0;
         }
         InitialiseItem(i);
@@ -569,7 +569,7 @@ extern "C" int LoadBoxes(HANDLE file)
     MyReadFile(file, boxes, sizeof(BOX_INFO) * number_boxes, &read, NULL);
     if (read != sizeof(BOX_INFO) * number_boxes)
     {
-        lstrcpy(StringToShow, LoadBoxesBoxes);
+        lstrcpy(exit_message, LoadBoxesBoxes);
         return 0;
     }
     MyReadFile(file, &number_overlaps, sizeof(sint32), &read, NULL);
@@ -577,7 +577,7 @@ extern "C" int LoadBoxes(HANDLE file)
     MyReadFile(file, Overlaps, sizeof(uint16) * number_overlaps, &read, NULL);
     if (read != sizeof(uint16) * number_overlaps)
     {
-        lstrcpy(StringToShow, LoadBoxesOverlaps);
+        lstrcpy(exit_message, LoadBoxesOverlaps);
         return 0;
     }
     for (i = 0; i < 2; i++)
@@ -594,7 +594,7 @@ extern "C" int LoadBoxes(HANDLE file)
                 MyReadFile(file, ground_zone[j][i], sizeof(sint16) * number_boxes, &read, NULL);
                 if (read != sizeof(sint16) * number_boxes)
                 {
-                    lstrcpy(StringToShow, LoadBoxesGroundZone);
+                    lstrcpy(exit_message, LoadBoxesGroundZone);
                     return 0;
                 }
             }
@@ -603,7 +603,7 @@ extern "C" int LoadBoxes(HANDLE file)
         MyReadFile(file, fly_zone[i], sizeof(sint16) * number_boxes, &read, NULL);
         if (read != sizeof(sint16) * number_boxes)
         {
-            lstrcpy(StringToShow, LoadBoxesFlyZone);
+            lstrcpy(exit_message, LoadBoxesFlyZone);
             return 0;
         }
     }
@@ -677,8 +677,8 @@ extern "C" void LoadDemFile(char *level_name)
 }
 
 extern "C" int sound_active;
-extern "C" int SampleInfoCount;
-extern "C" char StringToShow[];
+extern "C" int num_sample_infos;
+extern "C" char exit_message[];
 extern "C" char MainSfxFileName[];
 extern "C" char MainSfxOpenFailed[];
 extern "C" bool WinSndIsSoundEnabled(void);
@@ -708,12 +708,12 @@ extern "C" int LoadSamples(HANDLE file)
     DS_FreeAllSamples();
 
     MyReadFile(file, sample_lut, sizeof(sint16) * 370, &read, NULL);
-    MyReadFile(file, &SampleInfoCount, sizeof(int), &read, NULL);
-    if (!SampleInfoCount)
+    MyReadFile(file, &num_sample_infos, sizeof(int), &read, NULL);
+    if (!num_sample_infos)
         return 0;
 
-    sample_infos = (SAMPLE_INFO *)game_malloc(sizeof(SAMPLE_INFO) * SampleInfoCount, 35);
-    MyReadFile(file, sample_infos, sizeof(SAMPLE_INFO) * SampleInfoCount, &read, NULL);
+    sample_infos = (SAMPLE_INFO *)game_malloc(sizeof(SAMPLE_INFO) * num_sample_infos, 35);
+    MyReadFile(file, sample_infos, sizeof(SAMPLE_INFO) * num_sample_infos, &read, NULL);
 
     MyReadFile(file, &nSamples, sizeof(int), &read, NULL);
     if (!nSamples)
@@ -724,7 +724,7 @@ extern "C" int LoadSamples(HANDLE file)
     sfx = CreateFile(GetFullPath(MainSfxFileName), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (sfx == INVALID_HANDLE_VALUE)
     {
-        wsprintf(StringToShow, MainSfxOpenFailed);
+        wsprintf(exit_message, MainSfxOpenFailed);
         return 0;
     }
 
@@ -812,7 +812,7 @@ int LoadLevel(char *filename, int req_level)
     file = CreateFile(filename, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN, NULL);
     if (file == INVALID_HANDLE_VALUE)
     {
-        wsprintf(StringToShow, LoadLevelOpenFailed, filename, req_level);
+        wsprintf(exit_message, LoadLevelOpenFailed, filename, req_level);
         return 0;
     }
 
@@ -820,9 +820,9 @@ int LoadLevel(char *filename, int req_level)
     if (version != 45)
     {
         if (version < 45)
-            wsprintf(StringToShow, LoadLevelOutOfDate, req_level, filename, version);
+            wsprintf(exit_message, LoadLevelOutOfDate, req_level, filename, version);
         else
-            wsprintf(StringToShow, LoadLevelTooNew, req_level, filename, version);
+            wsprintf(exit_message, LoadLevelTooNew, req_level, filename, version);
         return 0;
     }
 
@@ -1149,7 +1149,7 @@ int UvAdd;
 int HwrTexturePagesCount;
 char FullPathBuffer[136];
 uint8 LabTextureUVFlags[2048];
-DWORD ReadFileBytesCounter;
+DWORD nBytesRead;
 DWORD LevelFilePalettesOffset;
 DWORD LevelFileTexPagesOffset;
 sint16 LGF_offsets[200];
@@ -1159,7 +1159,7 @@ DWORD LevelFileDepthQOffset;
 uint8 water_palette[768];
 sint16 *aranges;
 uint8 game_palette[768];
-int SampleInfoCount;
+int num_sample_infos;
 char **GF_Puzzle1Strings;
 char **GF_cutscenefilenames;
 GAMEFLOW_INFO gameflow;

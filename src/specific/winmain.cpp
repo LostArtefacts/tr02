@@ -7,7 +7,7 @@
 #include "init_result.h"
 
 extern "C" {
-extern char StringToShow[128];
+extern char exit_message[128];
 void WinInFinish(void);
 void WinSndFinish(void);
 void WinVidFinish(void);
@@ -98,8 +98,8 @@ extern "C" void WinGameFinish(void)
     WinFreeDX(true);
     WinVidFinish();
     WinVidHideGameWindow();
-    if (*StringToShow)
-        MessageBoxA(NULL, StringToShow, NULL, MB_ICONWARNING);
+    if (*exit_message)
+        MessageBoxA(NULL, exit_message, NULL, MB_ICONWARNING);
 }
 
 extern "C" void ShutdownGame(void);
@@ -108,7 +108,7 @@ void WinCleanup(void);
 extern "C" void S_ExitSystem(char *message)
 {
     ShutdownGame();
-    strcpy(StringToShow, message);
+    strcpy(exit_message, message);
     WinGameFinish();
     WinCleanup();
     exit(1);

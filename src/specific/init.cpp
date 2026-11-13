@@ -13,7 +13,7 @@ extern "C" int malloc_free, malloc_used;
 extern "C" void init_game_malloc(void);
 extern "C" extern "C" char *game_malloc_strings[];
 extern "C" char GameMallocOutOfMemory[];
-extern "C" char StringToShow[];
+extern "C" char exit_message[];
 extern "C" void S_ExitSystem(char *message);
 
 extern "C" void game_free(int size);
@@ -58,8 +58,8 @@ void *game_malloc(int size, int type)
         malloc_ptr += size;
         return ptr;
     }
-    wsprintfA(StringToShow, GameMallocOutOfMemory, game_malloc_strings[type], size);
-    S_ExitSystem(StringToShow);
+    wsprintfA(exit_message, GameMallocOutOfMemory, game_malloc_strings[type], size);
+    S_ExitSystem(exit_message);
     return NULL;
 }
 

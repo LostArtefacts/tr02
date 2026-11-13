@@ -27,7 +27,7 @@ int S_LoadLevelFile(char *fname, int level_number, int type);
 void GetCarriedItems(void);
 
 extern int IsDemoLevelType;
-extern int HealthBarTimer;
+extern int health_bar_timer;
 extern char **GF_levelfilenames;
 extern char **GF_cutscenefilenames;
 extern char **GF_titlefilenames;
@@ -73,7 +73,7 @@ int InitialiseLevel(int level_number, int type)
     T_InitPrint();
     InitialisePickUpDisplay();
     S_InitialiseScreen(type);
-    HealthBarTimer = 100;
+    health_bar_timer = 100;
     SOUND_Stop();
 
     if (type == IL_SAVED)
@@ -102,7 +102,7 @@ int InitialiseLevel(int level_number, int type)
 extern int flipmap[];
 extern sint16 cd_flags[];
 extern int SunsetTimer;
-extern TEXTSTRING *AmmoTextInfo;
+extern TEXTSTRING *ammotext;
 extern sint32 detonate_all_mines;
 extern int monks_attack_lara;
 
@@ -118,7 +118,7 @@ void InitialiseGameFlags(void)
     for (i = 0; i < NUMBER_OBJECTS; i++)
         objects[i].loaded = 0;
     SunsetTimer = 0;
-    AmmoTextInfo = NULL;
+    ammotext = NULL;
     level_complete = 0;
     flipeffect = -1;
     detonate_all_mines = 0;

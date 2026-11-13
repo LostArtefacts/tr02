@@ -119,7 +119,7 @@ sint16 *GetBestFrame(ITEM_INFO *item);
 void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 void phd_RotZ(PHD_ANGLE rz);
-extern sint32 LsAdder;
+extern sint32 ls_adder;
 
 void __cdecl phd_PushUnitMatrix(void);
 
@@ -168,7 +168,7 @@ int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage)
             fx->counter = damage;
             fx->frame_number = object->mesh_index;
             fx->object_number = BODY_PART;
-            fx->shade = LsAdder - 0x300;
+            fx->shade = ls_adder - 0x300;
         }
         item->mesh_bits -= bit;
     }
@@ -207,7 +207,7 @@ int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage)
                 fx->counter = damage;
                 fx->frame_number = object->mesh_index + i;
                 fx->object_number = BODY_PART;
-                fx->shade = LsAdder - 0x300;
+                fx->shade = ls_adder - 0x300;
             }
             item->mesh_bits -= bit;
         }

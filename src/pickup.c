@@ -293,7 +293,7 @@ void SwitchCollision2(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 #define EXTRA_PLUNGER 1
 #define EXTRA_GONGBONG 5
 
-extern sint16 InventoryChosen;
+extern sint16 Inventory_Chosen;
 extern sint16 PickUpBounds[];
 extern sint16 GongBounds[];
 extern PHD_VECTOR DetonatorPosition;
@@ -340,10 +340,10 @@ void DetonatorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         item->pos.z_rot = z_rot;
     }
 
-    if (InventoryChosen == -1)
+    if (Inventory_Chosen == -1)
         Display_Inventory(INV_KEYS_MODE);
 
-    if (InventoryChosen != KEY_OPTION2)
+    if (Inventory_Chosen != KEY_OPTION2)
         goto normal_collision;
 
     Inv_RemoveItem(KEY_OPTION2);
@@ -409,7 +409,7 @@ normal_collision:
 #define KEY_HOLE3 203
 #define KEY_HOLE4 204
 
-extern sint16 InventoryChosen;
+extern sint16 Inventory_Chosen;
 extern sint16 inv_keys_objects;
 extern sint32 pup_x, pup_y, pup_z;
 extern sint16 KeyHoleBounds[];
@@ -425,7 +425,7 @@ void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     if (laraitem->current_anim_state == AS_STOP)
     {
         item = &items[item_num];
-        if ((InventoryChosen == -1 && !(input & IN_ACTION)) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
+        if ((Inventory_Chosen == -1 && !(input & IN_ACTION)) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
             return;
 
         if (!TestLaraPosition(KeyHoleBounds, item, laraitem))
@@ -442,12 +442,12 @@ void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
             return;
         }
 
-        if (InventoryChosen == -1)
+        if (Inventory_Chosen == -1)
         {
             Display_Inventory(INV_KEYS_MODE);
-            if (InventoryChosen == -1 && inv_keys_objects)
+            if (Inventory_Chosen == -1 && inv_keys_objects)
                 return;
-            if (InventoryChosen != -1)
+            if (Inventory_Chosen != -1)
                 pup_y = laraitem->pos.y_pos - 1;
         }
         else
@@ -456,35 +456,35 @@ void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         switch (item->object_number)
         {
         case KEY_HOLE1:
-            if (InventoryChosen != KEY_OPTION1)
+            if (Inventory_Chosen != KEY_OPTION1)
                 break;
             Inv_RemoveItem(KEY_OPTION1);
             correct = 1;
             break;
 
         case KEY_HOLE2:
-            if (InventoryChosen != KEY_OPTION2)
+            if (Inventory_Chosen != KEY_OPTION2)
                 break;
             Inv_RemoveItem(KEY_OPTION2);
             correct = 1;
             break;
 
         case KEY_HOLE3:
-            if (InventoryChosen != KEY_OPTION3)
+            if (Inventory_Chosen != KEY_OPTION3)
                 break;
             Inv_RemoveItem(KEY_OPTION3);
             correct = 1;
             break;
 
         case KEY_HOLE4:
-            if (InventoryChosen != KEY_OPTION4)
+            if (Inventory_Chosen != KEY_OPTION4)
                 break;
             Inv_RemoveItem(KEY_OPTION4);
             correct = 1;
             break;
         }
 
-        InventoryChosen = -1;
+        Inventory_Chosen = -1;
         if (!correct)
         {
             if (laraitem->pos.x_pos != pup_x || laraitem->pos.y_pos != pup_y || laraitem->pos.z_pos != pup_z)
@@ -538,7 +538,7 @@ void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     item = &items[item_num];
     if (laraitem->current_anim_state == AS_STOP)
     {
-        if ((InventoryChosen == -1 && !(input & IN_ACTION)) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
+        if ((Inventory_Chosen == -1 && !(input & IN_ACTION)) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
             return;
 
         if (!TestLaraPosition(PuzzleHoleBounds, item, laraitem))
@@ -554,12 +554,12 @@ void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
             }
             return;
         }
-        if (InventoryChosen == -1)
+        if (Inventory_Chosen == -1)
         {
             Display_Inventory(INV_KEYS_MODE);
-            if (InventoryChosen == -1 && inv_keys_objects)
+            if (Inventory_Chosen == -1 && inv_keys_objects)
                 return;
-            if (InventoryChosen != -1)
+            if (Inventory_Chosen != -1)
                 pup_y = laraitem->pos.y_pos - 1;
         }
         else
@@ -568,35 +568,35 @@ void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         switch (item->object_number)
         {
         case PUZZLE_HOLE1:
-            if (InventoryChosen != PUZZLE_OPTION1)
+            if (Inventory_Chosen != PUZZLE_OPTION1)
                 break;
             Inv_RemoveItem(PUZZLE_OPTION1);
             correct = 1;
             break;
 
         case PUZZLE_HOLE2:
-            if (InventoryChosen != PUZZLE_OPTION2)
+            if (Inventory_Chosen != PUZZLE_OPTION2)
                 break;
             Inv_RemoveItem(PUZZLE_OPTION2);
             correct = 1;
             break;
 
         case PUZZLE_HOLE3:
-            if (InventoryChosen != PUZZLE_OPTION3)
+            if (Inventory_Chosen != PUZZLE_OPTION3)
                 break;
             Inv_RemoveItem(PUZZLE_OPTION3);
             correct = 1;
             break;
 
         case PUZZLE_HOLE4:
-            if (InventoryChosen != PUZZLE_OPTION4)
+            if (Inventory_Chosen != PUZZLE_OPTION4)
                 break;
             Inv_RemoveItem(PUZZLE_OPTION4);
             correct = 1;
             break;
         }
 
-        InventoryChosen = -1;
+        Inventory_Chosen = -1;
         if (!correct)
         {
             if (laraitem->pos.x_pos != pup_x || laraitem->pos.y_pos != pup_y || laraitem->pos.z_pos != pup_z)

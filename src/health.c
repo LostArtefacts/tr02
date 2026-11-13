@@ -51,7 +51,7 @@ void DrawAssaultTimer(void)
     }
 }
 
-extern int OverlayStatus;
+extern int overlay_flag;
 
 void DrawAssaultTimer(void);
 void DrawHealthBar(int flash_state);
@@ -67,7 +67,7 @@ void DrawGameInfo(int timed)
 
     DrawAmmoInfo();
     DrawModeInfo();
-    if (OverlayStatus > 0)
+    if (overlay_flag > 0)
     {
         flash_state = FlashIt();
         DrawHealthBar(flash_state);
@@ -80,7 +80,7 @@ void DrawGameInfo(int timed)
 
 #define LARA_HITPOINTS 1000
 
-extern int HealthBarTimer;
+extern int health_bar_timer;
 static int old_hitpoints;
 
 void S_DrawHealthBar(int percent);
@@ -97,12 +97,12 @@ void DrawHealthBar(int flash_state)
 
     if (old_hitpoints != hitpoints)
     {
-        HealthBarTimer = 40;
+        health_bar_timer = 40;
         old_hitpoints = hitpoints;
     }
 
-    if (HealthBarTimer < 0)
-        HealthBarTimer = 0;
+    if (health_bar_timer < 0)
+        health_bar_timer = 0;
 
     if (hitpoints <= LARA_HITPOINTS / 4)
     {
@@ -111,7 +111,7 @@ void DrawHealthBar(int flash_state)
         else
             S_DrawHealthBar(0);
     }
-    else if (HealthBarTimer > 0 || hitpoints <= 0 || lara.gun_status == LG_READY)
+    else if (health_bar_timer > 0 || hitpoints <= 0 || lara.gun_status == LG_READY)
         S_DrawHealthBar(hitpoints / 10);
 }
 
@@ -160,19 +160,19 @@ void MakeAmmoString(char *string)
 
 __declspec(dllimport) int __cdecl wsprintfA(char *, const char *, ...);
 void T_RightAlign(TEXTSTRING *textString, sint16 ok);
-extern TEXTSTRING *AmmoTextInfo;
+extern TEXTSTRING *ammotext;
 
 void DrawAmmoInfo(void)
 {
     char ammostring[80];
 
     ammostring[0] = 0;
-    if (lara.gun_status != LG_READY || OverlayStatus <= 0 || savegame.bonus_flag)
+    if (lara.gun_status != LG_READY || overlay_flag <= 0 || savegame.bonus_flag)
     {
-        if (AmmoTextInfo)
+        if (ammotext)
         {
-            T_RemovePrint(AmmoTextInfo);
-            AmmoTextInfo = NULL;
+            T_RemovePrint(ammotext);
+            ammotext = NULL;
         }
         return;
     }
@@ -202,12 +202,12 @@ void DrawAmmoInfo(void)
         return;
     }
     MakeAmmoString(ammostring);
-    if (AmmoTextInfo)
-        T_ChangeText(AmmoTextInfo, ammostring);
+    if (ammotext)
+        T_ChangeText(ammotext, ammostring);
     else
     {
-        AmmoTextInfo = T_Print(-10, 35, 0, ammostring);
-        T_RightAlign(AmmoTextInfo, 1);
+        ammotext = T_Print(-10, 35, 0, ammostring);
+        T_RightAlign(ammotext, 1);
     }
 }
 
@@ -289,8 +289,8 @@ void AddDisplayPickup(sint16 objnum)
     }
 }
 
-extern TEXTSTRING *DisplayModeTextInfo;
-extern int DisplayModeInfoTimer;
+extern TEXTSTRING *LpModeTS;
+extern int LnModeTSLife;
 
 void T_RightAlign(TEXTSTRING *textString, sint16 ok);
 void T_BottomAlign(TEXTSTRING *textString, sint16 ok);
@@ -299,34 +299,34 @@ void DisplayModeInfo(char *string)
 {
     if (!string)
     {
-        T_RemovePrint(DisplayModeTextInfo);
-        DisplayModeTextInfo = NULL;
+        T_RemovePrint(LpModeTS);
+        LpModeTS = NULL;
         return;
     }
-    if (DisplayModeTextInfo)
-        T_ChangeText(DisplayModeTextInfo, string);
+    if (LpModeTS)
+        T_ChangeText(LpModeTS, string);
     else
     {
-        DisplayModeTextInfo = T_Print(-16, -16, 0, string);
-        T_RightAlign(DisplayModeTextInfo, 1);
-        T_BottomAlign(DisplayModeTextInfo, 1);
+        LpModeTS = T_Print(-16, -16, 0, string);
+        T_RightAlign(LpModeTS, 1);
+        T_BottomAlign(LpModeTS, 1);
     }
-    DisplayModeInfoTimer = 75;
+    LnModeTSLife = 75;
 }
 
 void DrawModeInfo(void)
 {
-    if (DisplayModeTextInfo && --DisplayModeInfoTimer == 0)
+    if (LpModeTS && --LnModeTSLife == 0)
     {
-        T_RemovePrint(DisplayModeTextInfo);
-        DisplayModeTextInfo = NULL;
+        T_RemovePrint(LpModeTS);
+        LpModeTS = NULL;
     }
 }
 
 #ifdef TR2_EXE
-int OverlayStatus = 1;
-TEXTSTRING *AmmoTextInfo;
-TEXTSTRING *DisplayModeTextInfo;
-int DisplayModeInfoTimer;
-int HealthBarTimer;
+int overlay_flag = 1;
+TEXTSTRING *ammotext;
+TEXTSTRING *LpModeTS;
+int LnModeTSLife;
+int health_bar_timer;
 #endif

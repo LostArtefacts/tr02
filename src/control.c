@@ -26,11 +26,11 @@ extern RANGE_STRUCT *ranges;
 
 static int framecount = 0;
 
-extern int IsResetFlag;
-extern int NoInputCounter;
-extern int OverlayStatus;
-extern int InventoryExtraData[];
-extern int HealthBarTimer;
+extern int reset_flag;
+extern int noinput_count;
+extern int overlay_flag;
+extern int Inventory_ExtraData[];
+extern int health_bar_timer;
 extern sint16 cdtrack;
 extern sint32 number_dynamics;
 extern sint16 next_item_active;
@@ -68,7 +68,7 @@ sint32 ControlPhase(sint32 nframes, int demo_mode)
 
         S_UpdateInput();
 
-        if (IsResetFlag)
+        if (reset_flag)
             return EXIT_TO_TITLE;
 
         if (demo_mode)
@@ -86,16 +86,16 @@ sint32 ControlPhase(sint32 nframes, int demo_mode)
         else if (gameflow.noinput_timeout)
         {
             if (input)
-                NoInputCounter = 0;
+                noinput_count = 0;
             else
             {
-                NoInputCounter++;
-                if (NoInputCounter > gameflow.noinput_time)
+                noinput_count++;
+                if (noinput_count > gameflow.noinput_time)
                     return STARTDEMO;
             }
         }
 
-        if (lara.death_count > DEATH_WAIT || (lara.death_count > 2 * 30 && input) || OverlayStatus == 2)
+        if (lara.death_count > DEATH_WAIT || (lara.death_count > 2 * 30 && input) || overlay_flag == 2)
         {
             if (demo_mode)
                 return gameflow.ondeath_demo_mode;
@@ -103,38 +103,38 @@ sint32 ControlPhase(sint32 nframes, int demo_mode)
             if (CurrentLevel == LV_GYM)
                 return EXIT_TO_TITLE;
 
-            if (OverlayStatus == 2)
+            if (overlay_flag == 2)
             {
-                OverlayStatus = 1;
+                overlay_flag = 1;
                 return_val = Display_Inventory(INV_DEATH_MODE);
                 if (return_val)
                     return return_val;
             }
             else
-                OverlayStatus = 2;
+                overlay_flag = 2;
         }
 
-        if ((input & IN_OPTION || input & IN_LOAD || input & IN_SAVE || OverlayStatus <= 0) && !lara.death_count && !lara.extra_anim)
+        if ((input & IN_OPTION || input & IN_LOAD || input & IN_SAVE || overlay_flag <= 0) && !lara.death_count && !lara.extra_anim)
         {
-            if (OverlayStatus <= 0)
+            if (overlay_flag <= 0)
             {
-                if (OverlayStatus == -1)
+                if (overlay_flag == -1)
                     return_val = Display_Inventory(INV_LOAD_MODE);
-                else if (OverlayStatus == -2)
+                else if (overlay_flag == -2)
                     return_val = Display_Inventory(INV_SAVE_MODE);
                 else
                     return_val = Display_Inventory(INV_GAME_MODE);
 
-                OverlayStatus = 1;
+                overlay_flag = 1;
                 if (return_val)
                 {
-                    if (InventoryExtraData[0] == 1)
+                    if (Inventory_ExtraData[0] == 1)
                     {
                         if (CurrentLevel == LV_GYM)
                             return STARTGAME | LV_FIRSTLEVEL;
 
                         CreateSaveGameInfo();
-                        S_SaveGame(&savegame, sizeof(SAVEGAME_INFO), InventoryExtraData[1]);
+                        S_SaveGame(&savegame, sizeof(SAVEGAME_INFO), Inventory_ExtraData[1]);
                         S_SaveSettings();
                     }
                     else
@@ -146,14 +146,14 @@ sint32 ControlPhase(sint32 nframes, int demo_mode)
                 if (!gameflow.loadsave_disabled)
                 {
                     if (input & IN_LOAD)
-                        OverlayStatus = -1;
+                        overlay_flag = -1;
                     else if (input & IN_SAVE)
-                        OverlayStatus = -2;
+                        overlay_flag = -2;
                     else
-                        OverlayStatus = 0;
+                        overlay_flag = 0;
                 }
                 else
-                    OverlayStatus = 0;
+                    overlay_flag = 0;
             }
         }
 
@@ -182,7 +182,7 @@ sint32 ControlPhase(sint32 nframes, int demo_mode)
         CalculateCamera();
         SoundEffects();
 
-        HealthBarTimer--;
+        health_bar_timer--;
 
         if (CurrentLevel != LV_GYM || assault_timer_active)
             savegame.timer++;

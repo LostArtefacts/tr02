@@ -328,7 +328,7 @@ INVENTORY_ITEM *inv_keys_list[23] = {
     NULL,
     NULL,
 };
-sint16 InvOptionObjectsCount = 4;
+sint16 inv_option_objects = 4;
 INVENTORY_ITEM *InvOptionList[4] = {
     &InvPassportOption,
     &InvControlOption,

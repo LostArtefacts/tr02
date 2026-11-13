@@ -40,7 +40,7 @@ void InitialiseCamera(void)
 #define GROUND_SHIFT (STEP_L)
 
 extern int IsChunkyCamera;
-extern sint32 PhdPersp;
+extern sint32 phd_persp;
 
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, sint16 roll);
@@ -117,8 +117,8 @@ void MoveCamera(GAME_VECTOR *ideal, int speed)
     else
     {
         camera.actual_angle = phd_atan(camera.target.z - camera.pos.z, camera.target.x - camera.pos.x);
-        camera.mike_pos.x = camera.pos.x + ((PhdPersp * phd_sin(camera.actual_angle)) >> W2V_SHIFT);
-        camera.mike_pos.z = camera.pos.z + ((PhdPersp * phd_cos(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.x = camera.pos.x + ((phd_persp * phd_sin(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.z = camera.pos.z + ((phd_persp * phd_cos(camera.actual_angle)) >> W2V_SHIFT);
         camera.mike_pos.y = camera.pos.y;
     }
 }

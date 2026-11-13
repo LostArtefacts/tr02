@@ -39,7 +39,7 @@ extern "C" void insert_sprite(int z, int x1, int y1, int x2, int y2, int sprnum,
 }
 
 extern "C" sint32 PhdViewDistance;
-extern "C" sint32 PhdPersp;
+extern "C" sint32 phd_persp;
 
 extern "C" void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 sprnum, sint16 shade, sint16 scale)
 {
@@ -75,7 +75,7 @@ extern "C" void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 
         xv = phd_mxptr[M00] * x + phd_mxptr[M01] * y + phd_mxptr[M02] * z + phd_mxptr[M03];
         yv = phd_mxptr[M10] * x + phd_mxptr[M11] * y + phd_mxptr[M12] * z + phd_mxptr[M13];
     }
-    zp = zv / PhdPersp;
+    zp = zv / phd_persp;
     sprite = &PhdSpriteInfo[sprnum];
     x1 = sprite->x1;
     y1 = sprite->y1;
@@ -144,7 +144,7 @@ typedef struct {
 } PHD_VBUF;
 
 extern "C" PHD_VBUF PhdVBuf[];
-extern "C" sint32 PhdPersp;
+extern "C" sint32 phd_persp;
 
 extern "C" sint16 *ins_room_sprite(sint16 *objptr, int num)
 {
@@ -156,7 +156,7 @@ extern "C" sint16 *ins_room_sprite(sint16 *objptr, int num)
         vn = &PhdVBuf[*objptr];
         if (vn->clip < 0)
             continue;
-        zv = (sint32)vn->zv / PhdPersp;
+        zv = (sint32)vn->zv / phd_persp;
         sptr = &PhdSpriteInfo[objptr[1]];
         x1 = (sint32)((vn->xv + (sptr->x1 << W2V_SHIFT)) / zv + phd_centerx);
         y1 = (sint32)((vn->yv + (sptr->y1 << W2V_SHIFT)) / zv + phd_centery);

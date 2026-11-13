@@ -113,9 +113,9 @@ extern "C" void T_BottomAlign(TEXTSTRING *textString, sint16 ok);
 extern "C" TEXTSTRING *Inv_levelText;
 extern "C" TEXTSTRING *Inv_tagText;
 extern "C" TEXTSTRING *Inv_ringText;
-extern "C" TEXTSTRING *PassportTextInfo;
+extern "C" TEXTSTRING *passport_text1;
 extern "C" sint32 passport_mode;
-extern "C" sint32 InventoryExtraData[];
+extern "C" sint32 Inventory_ExtraData[];
 extern "C" int SavedGames;
 extern "C" REQUEST_INFO SaveGameRequester;
 extern "C" void SetRequesterHeading(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2);
@@ -155,7 +155,7 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
             if (select)
             {
                 if (select > 0)
-                    InventoryExtraData[1] = select - 1;
+                    Inventory_ExtraData[1] = select - 1;
                 passport_mode = 0;
             }
             else if (inputDB & IN_RIGHT)
@@ -172,11 +172,11 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
                 inputDB = IN_RIGHT;
             else
             {
-                if (!PassportTextInfo)
+                if (!passport_text1)
                 {
-                    PassportTextInfo = T_Print(0, -16, 0, GF_GameStrings[GT_LOADGAME]);
-                    T_BottomAlign(PassportTextInfo, 1);
-                    T_CentreH(PassportTextInfo, 1);
+                    passport_text1 = T_Print(0, -16, 0, GF_GameStrings[GT_LOADGAME]);
+                    T_BottomAlign(passport_text1, 1);
+                    T_CentreH(passport_text1, 1);
                 }
                 T_RemovePrint(Inv_levelText);
                 Inv_levelText = NULL;
@@ -215,7 +215,7 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
             if (select)
             {
                 if (select > 0)
-                    InventoryExtraData[1] = select - 1;
+                    Inventory_ExtraData[1] = select - 1;
                 passport_mode = 0;
             }
             else if (inputDB & (IN_LEFT | IN_RIGHT))
@@ -240,14 +240,14 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
             }
             else
             {
-                if (!PassportTextInfo)
+                if (!passport_text1)
                 {
                     if (Inventory_Mode == INV_TITLE_MODE || CurrentLevel == LV_GYM)
-                        PassportTextInfo = T_Print(0, -16, 0, GF_GameStrings[GT_STARTGAME]);
+                        passport_text1 = T_Print(0, -16, 0, GF_GameStrings[GT_STARTGAME]);
                     else
-                        PassportTextInfo = T_Print(0, -16, 0, GF_GameStrings[GT_SAVEGAME]);
-                    T_BottomAlign(PassportTextInfo, 1);
-                    T_CentreH(PassportTextInfo, 1);
+                        passport_text1 = T_Print(0, -16, 0, GF_GameStrings[GT_SAVEGAME]);
+                    T_BottomAlign(passport_text1, 1);
+                    T_CentreH(passport_text1, 1);
                 }
                 if (Inventory_Mode == INV_TITLE_MODE || CurrentLevel == LV_GYM)
                 {
@@ -267,7 +267,7 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
                         inputDB = 0;
                     }
                     else if (inputDB & SELECT_ITEM)
-                        InventoryExtraData[1] = LV_FIRSTLEVEL;
+                        Inventory_ExtraData[1] = LV_FIRSTLEVEL;
                 }
                 else
                 {
@@ -289,16 +289,16 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
         }
         break;
     case 2:
-        if (!PassportTextInfo)
+        if (!passport_text1)
         {
             if (Inventory_Mode == INV_TITLE_MODE)
-                PassportTextInfo = T_Print(0, -16, 0, GF_GameStrings[GT_EXITGAME]);
+                passport_text1 = T_Print(0, -16, 0, GF_GameStrings[GT_EXITGAME]);
             else if (!gameflow.demoversion)
-                PassportTextInfo = T_Print(0, -16, 0, GF_GameStrings[GT_EXIT2TITLE]);
+                passport_text1 = T_Print(0, -16, 0, GF_GameStrings[GT_EXIT2TITLE]);
             else
-                PassportTextInfo = T_Print(0, -16, 0, GF_GameStrings[GT_EXITDEMO]);
-            T_BottomAlign(PassportTextInfo, 1);
-            T_CentreH(PassportTextInfo, 1);
+                passport_text1 = T_Print(0, -16, 0, GF_GameStrings[GT_EXITDEMO]);
+            T_BottomAlign(passport_text1, 1);
+            T_CentreH(passport_text1, 1);
         }
         break;
     }
@@ -315,8 +315,8 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
                     inv_item->goal_frame = inv_item->open_frame + 5;
                 else
                 {
-                    T_RemovePrint(PassportTextInfo);
-                    PassportTextInfo = NULL;
+                    T_RemovePrint(passport_text1);
+                    passport_text1 = NULL;
                 }
             }
             else
@@ -326,8 +326,8 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
                 else
                 {
                     SoundEffect(115, NULL, SFX_ALWAYS);
-                    T_RemovePrint(PassportTextInfo);
-                    PassportTextInfo = NULL;
+                    T_RemovePrint(passport_text1);
+                    passport_text1 = NULL;
                 }
             }
             input = 0;
@@ -344,8 +344,8 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
         else
         {
             SoundEffect(115, NULL, SFX_ALWAYS);
-            T_RemovePrint(PassportTextInfo);
-            PassportTextInfo = NULL;
+            T_RemovePrint(passport_text1);
+            passport_text1 = NULL;
         }
         input = 0;
         inputDB = 0;
@@ -370,14 +370,14 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
                 inv_item->goal_frame = 0;
                 inv_item->anim_direction = -1;
             }
-            T_RemovePrint(PassportTextInfo);
-            PassportTextInfo = NULL;
+            T_RemovePrint(passport_text1);
+            passport_text1 = NULL;
         }
     }
 
     if (inputDB & SELECT_ITEM)
     {
-        InventoryExtraData[0] = page;
+        Inventory_ExtraData[0] = page;
         if (page == 2)
         {
             inv_item->goal_frame = inv_item->frames_total - 1;
@@ -388,8 +388,8 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
             inv_item->goal_frame = 0;
             inv_item->anim_direction = -1;
         }
-        T_RemovePrint(PassportTextInfo);
-        PassportTextInfo = NULL;
+        T_RemovePrint(passport_text1);
+        passport_text1 = NULL;
     }
 }
 
@@ -641,7 +641,7 @@ void DefaultConflict(void)
     }
 }
 
-extern "C" int KeyCursor;
+extern "C" int keychange;
 extern "C" void T_SetScale(TEXTSTRING *textString, sint32 scaleH, sint32 scaleV);
 extern "C" int select_key;
 extern "C" void S_ShowControls(void);
@@ -663,7 +663,7 @@ void do_control_option(INVENTORY_ITEM *inv_item)
         T_CentreH(ControlTextInfo[0], 1);
         T_CentreV(ControlTextInfo[0], 1);
         S_ShowControls();
-        KeyCursor = -1;
+        keychange = -1;
         T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 48, C_BLACK, NULL, 0);
         T_AddOutline(ControlTextInfo[0], 1, C_BLUE, NULL, 0);
     }
@@ -673,7 +673,7 @@ void do_control_option(INVENTORY_ITEM *inv_item)
     case 0:
         if (inputDB & (IN_RIGHT | IN_LEFT))
         {
-            if (KeyCursor == -1)
+            if (keychange == -1)
             {
                 iconfig = !iconfig;
                 S_ChangeCtrlText();
@@ -681,21 +681,21 @@ void do_control_option(INVENTORY_ITEM *inv_item)
             }
             else
             {
-                ctext[KeyCursor]->zpos = 16;
-                T_RemoveBackground(ctext[KeyCursor]);
-                T_RemoveOutline(ctext[KeyCursor]);
-                if (KeyCursor <= 6)
-                    KeyCursor += 7;
-                else if (KeyCursor == 14)
-                    KeyCursor = 7;
+                ctext[keychange]->zpos = 16;
+                T_RemoveBackground(ctext[keychange]);
+                T_RemoveOutline(ctext[keychange]);
+                if (keychange <= 6)
+                    keychange += 7;
+                else if (keychange == 14)
+                    keychange = 7;
                 else
-                    KeyCursor -= 7;
-                ctext[KeyCursor]->zpos = 0;
-                T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
-                T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+                    keychange -= 7;
+                ctext[keychange]->zpos = 0;
+                T_AddBackground(ctext[keychange], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                T_AddOutline(ctext[keychange], 1, C_BLUE, NULL, 0);
             }
         }
-        else if ((inputDB & IN_DESELECT) || ((inputDB & IN_SELECT) && KeyCursor == -1))
+        else if ((inputDB & IN_DESELECT) || ((inputDB & IN_SELECT) && keychange == -1))
         {
             T_RemovePrint(ControlTextInfo[0]);
             ControlTextInfo[0] = NULL;
@@ -711,67 +711,67 @@ void do_control_option(INVENTORY_ITEM *inv_item)
             if (inputDB & IN_SELECT)
             {
                 select_key = 1;
-                ctext[KeyCursor]->zpos = 16;
-                T_RemoveBackground(ctext[KeyCursor]);
-                T_RemoveOutline(ctext[KeyCursor]);
-                btext[KeyCursor]->zpos = 0;
-                T_AddBackground(btext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
-                T_AddOutline(btext[KeyCursor], 1, C_BLUE, NULL, 0);
+                ctext[keychange]->zpos = 16;
+                T_RemoveBackground(ctext[keychange]);
+                T_RemoveOutline(ctext[keychange]);
+                btext[keychange]->zpos = 0;
+                T_AddBackground(btext[keychange], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                T_AddOutline(btext[keychange], 1, C_BLUE, NULL, 0);
             }
             else if (inputDB & IN_FORWARD)
             {
-                if (KeyCursor == -1)
+                if (keychange == -1)
                 {
                     T_RemoveBackground(ControlTextInfo[0]);
                     T_RemoveOutline(ControlTextInfo[0]);
                 }
                 else
                 {
-                    ctext[KeyCursor]->zpos = 16;
-                    T_RemoveBackground(ctext[KeyCursor]);
-                    T_RemoveOutline(ctext[KeyCursor]);
+                    ctext[keychange]->zpos = 16;
+                    T_RemoveBackground(ctext[keychange]);
+                    T_RemoveOutline(ctext[keychange]);
                 }
-                KeyCursor--;
-                if (KeyCursor < -1)
-                    KeyCursor = 13;
-                if (KeyCursor == -1)
+                keychange--;
+                if (keychange < -1)
+                    keychange = 13;
+                if (keychange == -1)
                 {
                     T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
                     T_AddOutline(ControlTextInfo[0], 1, C_BLUE, NULL, 0);
                 }
                 else
                 {
-                    ctext[KeyCursor]->zpos = 0;
-                    T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
-                    T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+                    ctext[keychange]->zpos = 0;
+                    T_AddBackground(ctext[keychange], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                    T_AddOutline(ctext[keychange], 1, C_BLUE, NULL, 0);
                 }
             }
             else if (inputDB & IN_BACK)
             {
-                if (KeyCursor == -1)
+                if (keychange == -1)
                 {
                     T_RemoveBackground(ControlTextInfo[0]);
                     T_RemoveOutline(ControlTextInfo[0]);
                 }
                 else
                 {
-                    ctext[KeyCursor]->zpos = 16;
-                    T_RemoveBackground(ctext[KeyCursor]);
-                    T_RemoveOutline(ctext[KeyCursor]);
+                    ctext[keychange]->zpos = 16;
+                    T_RemoveBackground(ctext[keychange]);
+                    T_RemoveOutline(ctext[keychange]);
                 }
-                KeyCursor++;
-                if (KeyCursor > 13)
-                    KeyCursor = -1;
-                if (KeyCursor == -1)
+                keychange++;
+                if (keychange > 13)
+                    keychange = -1;
+                if (keychange == -1)
                 {
                     T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
                     T_AddOutline(ControlTextInfo[0], 1, C_BLUE, NULL, 0);
                 }
                 else
                 {
-                    ctext[KeyCursor]->zpos = 0;
-                    T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
-                    T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+                    ctext[keychange]->zpos = 0;
+                    T_AddBackground(ctext[keychange], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+                    T_AddOutline(ctext[keychange], 1, C_BLUE, NULL, 0);
                 }
             }
         }
@@ -805,34 +805,34 @@ void do_control_option(INVENTORY_ITEM *inv_item)
                 break;
             if (key != DIK_ESCAPE)
             {
-                layout[iconfig][KeyCursor] = key;
-                T_ChangeText(btext[KeyCursor], kname[key]);
+                layout[iconfig][keychange] = key;
+                T_ChangeText(btext[keychange], kname[key]);
             }
-            btext[KeyCursor]->zpos = 16;
-            T_RemoveBackground(btext[KeyCursor]);
-            T_RemoveOutline(btext[KeyCursor]);
-            ctext[KeyCursor]->zpos = 0;
-            T_AddBackground(ctext[KeyCursor], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
-            T_AddOutline(ctext[KeyCursor], 1, C_BLUE, NULL, 0);
+            btext[keychange]->zpos = 16;
+            T_RemoveBackground(btext[keychange]);
+            T_RemoveOutline(btext[keychange]);
+            ctext[keychange]->zpos = 0;
+            T_AddBackground(ctext[keychange], 0, 0, 0, 0, 0, C_BLACK, NULL, 0);
+            T_AddOutline(ctext[keychange], 1, C_BLUE, NULL, 0);
             select_key = 3;
             FlashConflicts();
         }
         break;
     case 3:
-        if (layout[iconfig][KeyCursor] & JOY_KEY)
+        if (layout[iconfig][keychange] & JOY_KEY)
         {
-            if (!((1 << layout[iconfig][KeyCursor]) & joy_fire))
+            if (!((1 << layout[iconfig][keychange]) & joy_fire))
                 select_key = 0;
         }
-        else if (!rawkey(layout[iconfig][KeyCursor]))
+        else if (!rawkey(layout[iconfig][keychange]))
         {
             select_key = 0;
-            if (layout[iconfig][KeyCursor] == DIK_LCONTROL)
-                layout[iconfig][KeyCursor] = DIK_RCONTROL;
-            if (layout[iconfig][KeyCursor] == DIK_LSHIFT)
-                layout[iconfig][KeyCursor] = DIK_RSHIFT;
-            if (layout[iconfig][KeyCursor] == DIK_LALT)
-                layout[iconfig][KeyCursor] = DIK_RALT;
+            if (layout[iconfig][keychange] == DIK_LCONTROL)
+                layout[iconfig][keychange] = DIK_RCONTROL;
+            if (layout[iconfig][keychange] == DIK_LSHIFT)
+                layout[iconfig][keychange] = DIK_RSHIFT;
+            if (layout[iconfig][keychange] == DIK_LALT)
+                layout[iconfig][keychange] = DIK_RALT;
             FlashConflicts();
         }
         break;
@@ -875,7 +875,7 @@ extern "C" void S_ShowControls(void)
         btext[13] = T_Print(vpos, 65, 16, kname[key[13]]);
         for (i = 0; i < NUM_CONTROLS; i++)
             T_CentreV(btext[i], 1);
-        KeyCursor = 0;
+        keychange = 0;
     }
     if (!ctext[0])
     {
@@ -1264,12 +1264,12 @@ sint16 item_data;
 int SavedGames;
 int conflict[14];
 int joy_fire;
-int KeyCursor;
+int keychange;
 int select_key;
 int iconfig;
 TEXTSTRING *ctext[14];
 TEXTSTRING *btext[14];
-TEXTSTRING *PassportTextInfo;
+TEXTSTRING *passport_text1;
 sint32 passport_mode;
 TEXTSTRING *dtext[5];
 TEXTSTRING *sa_text[4];

@@ -29,7 +29,7 @@ typedef struct {
 extern "C" {
 extern APP_SETTINGS SavedAppSettings;
 extern int IsFmvPlaying;
-extern bool IsGameToExit;
+extern bool GtWindowClosed;
 void S_CDStop(void);
 char *GetFullPath(char *path);
 void WinPlayFMV(char *path, bool playback);
@@ -51,11 +51,11 @@ int FMV_Play(char *szMovieName)
         WinPlayFMV(path, true);
         WinStopFMV(true);
         IsFmvPlaying = 0;
-        if (!IsGameToExit)
+        if (!GtWindowClosed)
             FmvBackToGame();
         ShowCursor(TRUE);
     }
-    return IsGameToExit;
+    return GtWindowClosed;
 }
 
 extern "C" {
@@ -165,11 +165,11 @@ int FMV_PlayIntro(char *szMovie1, char *szMovie2)
         WinPlayFMV(path, true);
         WinStopFMV(true);
         IsFmvPlaying = 0;
-        if (!IsGameToExit)
+        if (!GtWindowClosed)
             FmvBackToGame();
         ShowCursor(TRUE);
     }
-    return IsGameToExit;
+    return GtWindowClosed;
 }
 
 #ifdef TR2_EXE

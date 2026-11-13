@@ -26,8 +26,8 @@ extern "C" sint16 saved_levels[];
 extern "C" uint32 CurrentLevel;
 extern "C" int title_loaded;
 extern "C" int level_complete;
-extern "C" sint16 InventoryChosen;
-extern "C" int InventoryExtraData[];
+extern "C" sint16 Inventory_Chosen;
+extern "C" int Inventory_ExtraData[];
 extern "C" SAVEGAME_INFO savegame;
 extern "C" void ModifyStartInfo(int level_number);
 extern "C" void InitialiseLevelFlags(void);
@@ -37,10 +37,10 @@ extern "C" void S_FadeToBlack(void);
 extern "C" void S_FadeInInventory(int fade);
 extern "C" int S_LoadGame(void *data, int size, int slot);
 
-extern "C" int OverlayStatus;
-extern "C" int NoInputCounter;
+extern "C" int overlay_flag;
+extern "C" int noinput_count;
 extern "C" int GameMode;
-extern "C" bool IsGameToExit;
+extern "C" bool GtWindowClosed;
 extern "C" sint16 Option_Music_Volume;
 extern "C" void InitialiseCamera(void);
 extern "C" sint32 ControlPhase(sint32 nframes, int demo_mode);
@@ -82,15 +82,15 @@ extern "C" sint32 StartGame(int level_number, int type)
         return LEVELCOMPLETE | CurrentLevel;
     }
     S_FadeToBlack();
-    if (!InventoryChosen)
+    if (!Inventory_Chosen)
         return EXIT_TO_TITLE;
-    if (InventoryExtraData[0] == 0) {
-        S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), InventoryExtraData[1]);
-        return STARTSAVEDGAME | InventoryExtraData[1];
+    if (Inventory_ExtraData[0] == 0) {
+        S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), Inventory_ExtraData[1]);
+        return STARTSAVEDGAME | Inventory_ExtraData[1];
     }
-    if (InventoryExtraData[0] == 1) {
+    if (Inventory_ExtraData[0] == 1) {
         if (gameflow.play_any_level)
-            return STARTGAME | (InventoryExtraData[1] + 1);
+            return STARTGAME | (Inventory_ExtraData[1] + 1);
         return STARTGAME | LV_FIRSTLEVEL;
     }
     return EXIT_TO_TITLE;
@@ -101,14 +101,14 @@ extern "C" sint32 GameLoop(int demo_mode)
     sint32 result;
     int nframes;
 
-    OverlayStatus = 1;
+    overlay_flag = 1;
     InitialiseCamera();
-    NoInputCounter = 0;
+    noinput_count = 0;
     GameMode = demo_mode ? 2 : 1;
     result = ControlPhase(1, demo_mode);
     while (!result) {
         nframes = DrawPhaseGame();
-        if (IsGameToExit)
+        if (GtWindowClosed)
             result = EXITGAME;
         else
             result = ControlPhase(nframes, demo_mode);
@@ -128,7 +128,7 @@ sint32 LevelCompleteSequence(int level_number)
 
 extern "C" sint32 input;
 extern "C" sint32 inputDB;
-extern "C" int IsResetFlag;
+extern "C" int reset_flag;
 extern "C" void T_InitPrint(void);
 extern "C" void T_DrawText(void);
 extern "C" int S_UpdateInput(void);
@@ -177,7 +177,7 @@ extern "C" int LevelStats(int level_number)
         S_InitialisePolyList(0);
         S_CopyBufferToScreen();
         S_UpdateInput();
-        if (IsResetFlag)
+        if (reset_flag)
             input = IN_SELECT;
         inputDB = GetDebouncedInput(input);
         ShowStatsText(string, 0);
@@ -213,7 +213,7 @@ extern "C" int GameStats(int level_number)
         S_InitialisePolyList(0);
         S_CopyBufferToScreen();
         S_UpdateInput();
-        if (IsResetFlag)
+        if (reset_flag)
             input = IN_SELECT;
         inputDB = GetDebouncedInput(input);
         ShowEndStatsText();
@@ -336,7 +336,7 @@ extern "C" void DisplayCredits(void)
         S_Wait(450, 0);
         S_FadeToBlack();
         S_DontDisplayPicture();
-        if (IsGameToExit)
+        if (GtWindowClosed)
             break;
     }
     memcpy(game_palette, palette, 768);

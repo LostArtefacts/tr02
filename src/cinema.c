@@ -284,7 +284,7 @@ void InitialiseGenPlayer(sint16 item_num)
 }
 
 extern PHD_3DPOS cinematic_pos;
-extern sint32 PhdPersp;
+extern sint32 phd_persp;
 
 void InGameCinematicCamera(void)
 {
@@ -326,8 +326,8 @@ void InGameCinematicCamera(void)
         camera.mike_pos.z = lara_item->pos.z_pos;
     } else {
         camera.actual_angle = phd_atan(camera.target.z - camera.pos.z, camera.target.x - camera.pos.x);
-        camera.mike_pos.x = camera.pos.x + ((PhdPersp * phd_sin(camera.actual_angle)) >> W2V_SHIFT);
-        camera.mike_pos.z = camera.pos.z + ((PhdPersp * phd_cos(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.x = camera.pos.x + ((phd_persp * phd_sin(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.z = camera.pos.z + ((phd_persp * phd_cos(camera.actual_angle)) >> W2V_SHIFT);
         camera.mike_pos.y = camera.pos.y;
     }
 }

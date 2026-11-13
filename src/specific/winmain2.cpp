@@ -9,7 +9,7 @@
 extern "C" {
 extern int AppResultCode;
 extern int StopInventory;
-extern bool IsGameToExit;
+extern bool GtWindowClosed;
 HWND WinVidFindGameWindow(void);
 HWND SE_FindSetupDialog(void);
 void _cexit(void);
@@ -70,7 +70,7 @@ extern "C" int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPST
                 rc = WinGameStart();
                 if (!rc) {
                     StopInventory = 0;
-                    IsGameToExit = false;
+                    GtWindowClosed = false;
                     GameMain();
                     WinGameFinish();
                     SE_WriteAppSettings(&SavedAppSettings);

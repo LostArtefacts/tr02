@@ -158,7 +158,7 @@ extern APP_SETTINGS SavedAppSettings;
 extern DISPLAY_ADAPTER CurrentDisplayAdapter;
 extern LPDIRECTDRAWSURFACE PrimaryBufferSurface;
 extern int IsFmvPlaying;
-extern bool IsGameToExit;
+extern bool GtWindowClosed;
 extern bool IsVidModeLock;
 extern sint16 IsInventoryActive;
 extern int GameVidWidth;
@@ -252,7 +252,7 @@ int S_UpdateInput()
     if (IsFmvPlaying)
     {
         input = linput;
-        return IsGameToExit;
+        return GtWindowClosed;
     }
     if (rawkey(DIK_1) && Inv_RequestItem(GUN_OPTION))
         lara.request_gun_type = LG_PISTOLS;
@@ -528,7 +528,7 @@ int S_UpdateInput()
             linput |= IN_LOAD;
     }
     input = linput;
-    return IsGameToExit;
+    return GtWindowClosed;
 }
 
 #ifdef TR2_EXE

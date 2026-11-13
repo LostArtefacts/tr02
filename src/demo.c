@@ -35,7 +35,7 @@ void S_ExitSystem(char *message);
 void S_FadeToBlack(void);
 void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate);
 extern sint16 DumpHeight;
-extern int InvDemoMode;
+extern int Inventory_DemoMode;
 extern int demo_loaded;
 extern char **GF_levelfilenames;
 
@@ -85,9 +85,9 @@ sint32 StartDemo(int level_number)
         T_FlashText(txt, 1, 20);
         T_CentreV(txt, 1);
         T_CentreH(txt, 1);
-        InvDemoMode = 1;
+        Inventory_DemoMode = 1;
         return_val = GameLoop(1);
-        InvDemoMode = 0;
+        Inventory_DemoMode = 0;
         T_RemovePrint(txt);
     }
     else
@@ -136,7 +136,7 @@ void GetDemoInput(void)
 }
 
 #ifdef TR2_EXE
-int InvDemoMode;
+int Inventory_DemoMode;
 uint32 *demoptr;
 int democount;
 #endif

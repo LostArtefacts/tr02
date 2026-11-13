@@ -40,11 +40,11 @@ void S_CDVolume(int volume);
 #define PHOTO_OPTION 122
 
 extern "C" {
-extern int NoInputCounter;
+extern int noinput_count;
 extern int title_loaded;
-extern int IsResetFlag;
-extern sint16 InventoryChosen;
-extern int InventoryExtraData[];
+extern int reset_flag;
+extern sint16 Inventory_Chosen;
+extern int Inventory_ExtraData[];
 extern SAVEGAME_INFO savegame;
 void T_InitPrint(void);
 void TempVideoAdjust(int hires, double sizer);
@@ -65,10 +65,10 @@ extern int HiRes;
 extern int GameMainReset;
 extern double screen_sizer;
 extern char *malloc_buffer;
-extern char StringToShow[128];
+extern char exit_message[128];
 extern bool IsVidModeLock;
 extern uint8 game_palette[];
-extern bool IsGameToExit;
+extern bool GtWindowClosed;
 extern bool GF_StartGame;
 int S_InitialiseSystem(void);
 int GF_LoadScriptFile(char *fname);
@@ -115,7 +115,7 @@ extern "C" BOOL GameMain(void)
     malloc_buffer = (char *)GlobalAlloc(GMEM_FIXED, 0x380000);
     if (!malloc_buffer)
     {
-        lstrcpy(StringToShow, "GameMain: could not allocate malloc_buffer");
+        lstrcpy(exit_message, "GameMain: could not allocate malloc_buffer");
         return FALSE;
     }
     HiRes = 0;
@@ -133,11 +133,11 @@ extern "C" BOOL GameMain(void)
     S_DontDisplayPicture();
     IsVidModeLock = false;
     frontend = GF_DoFrontEndSequence();
-    if (IsGameToExit)
+    if (GtWindowClosed)
         return TRUE;
     if (frontend == 1)
     {
-        lstrcpy(StringToShow, "GameMain: failed in GF_DoFrontEndSequence()");
+        lstrcpy(exit_message, "GameMain: failed in GF_DoFrontEndSequence()");
         return FALSE;
     }
     S_FadeToBlack();
@@ -157,7 +157,7 @@ extern "C" BOOL GameMain(void)
             {
                 if (param > gameflow.num_levels)
                 {
-                    wsprintf(StringToShow, "GameMain: STARTGAME with invalid level number (%d)", param);
+                    wsprintf(exit_message, "GameMain: STARTGAME with invalid level number (%d)", param);
                     return FALSE;
                 }
                 option = GF_DoLevelSequence(param, IL_NORMAL);
@@ -169,7 +169,7 @@ extern "C" BOOL GameMain(void)
             level = savegame.current_level;
             if (level > gameflow.num_levels)
             {
-                wsprintf(StringToShow, "GameMain: STARTSAVEDGAME with invalid level number (%d)", level);
+                wsprintf(exit_message, "GameMain: STARTSAVEDGAME with invalid level number (%d)", level);
                 return FALSE;
             }
             option = GF_DoLevelSequence(level, IL_SAVED);
@@ -200,7 +200,7 @@ extern "C" BOOL GameMain(void)
                 option = gameflow.title_replace;
                 if (option < 0 || option == EXIT_TO_TITLE)
                 {
-                    lstrcpy(StringToShow, "GameMain Failed: Title disabled & no replacement");
+                    lstrcpy(exit_message, "GameMain Failed: Title disabled & no replacement");
                     return FALSE;
                 }
             }
@@ -224,7 +224,7 @@ extern "C" int TitleSequence(void)
 {
     T_InitPrint();
     TempVideoAdjust(1, 1.0);
-    NoInputCounter = 0;
+    noinput_count = 0;
     if (!title_loaded)
     {
         if (!InitialiseLevel(0, 0))
@@ -238,26 +238,26 @@ extern "C" int TitleSequence(void)
     S_FadeToBlack();
     S_DontDisplayPicture();
     S_CDStop();
-    if (IsResetFlag)
+    if (reset_flag)
     {
-        IsResetFlag = 0;
+        reset_flag = 0;
         return STARTDEMO;
     }
-    if (InventoryChosen == PHOTO_OPTION)
+    if (Inventory_Chosen == PHOTO_OPTION)
         return 0;
-    if (InventoryChosen == PASSPORT_OPTION)
+    if (Inventory_Chosen == PASSPORT_OPTION)
     {
-        if (InventoryExtraData[0] == 0)
+        if (Inventory_ExtraData[0] == 0)
         {
             Inv_RemoveAllItems();
-            S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), InventoryExtraData[1]);
-            return InventoryExtraData[1] | STARTSAVEDGAME;
+            S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), Inventory_ExtraData[1]);
+            return Inventory_ExtraData[1] | STARTSAVEDGAME;
         }
-        if (InventoryExtraData[0] == 1)
+        if (Inventory_ExtraData[0] == 1)
         {
             InitialiseStartInfo();
             if (gameflow.play_any_level)
-                return InventoryExtraData[1] + 1;
+                return Inventory_ExtraData[1] + 1;
             return 1;
         }
     }
@@ -445,7 +445,7 @@ extern "C" {
 char String_Hires[] = "Hires";
 }
 
-int InventoryExtraData[8];
+int Inventory_ExtraData[8];
 int GameMainReset;
 char *malloc_buffer;
 bool IsVidModeLock;
@@ -454,7 +454,7 @@ int cheat_turn;
 sint16 cheat_as;
 sint16 cheat_angle;
 int cheat_flare;
-char StringToShow[128];
+char exit_message[128];
 int title_loaded;
 int cheat_mode;
 #endif

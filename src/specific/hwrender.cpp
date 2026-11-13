@@ -10,8 +10,8 @@
 
 extern "C" D3DTLVERTEX VertexBuffer[MAX_TLVERTICES];
 extern "C" int LanTextureHandle[32];
-extern "C" bool ZEnableState;
-extern "C" bool ZWriteEnableState;
+extern "C" bool GtZBufferCompareEnabled;
+extern "C" bool GtZBufferWriteEnabled;
 extern "C" LPDIRECTDRAWSURFACE ZBufferSurface;
 extern "C" DWORD HWR_PageHandles[32];
 extern "C" int PaletteIndex;
@@ -120,8 +120,8 @@ void HWR_ResetColorKey()
 
 void HWR_ResetZBuffer()
 {
-    ZWriteEnableState = false;
-    ZEnableState = false;
+    GtZBufferWriteEnabled = false;
+    GtZBufferCompareEnabled = false;
     if (SavedAppSettings.ZBuffer)
     {
         if (ZBufferSurface)
@@ -157,18 +157,18 @@ void HWR_EnableZBuffer(bool tWrite, bool tCompare)
 {
     if (SavedAppSettings.ZBuffer)
     {
-        if (tWrite != ZWriteEnableState)
+        if (tWrite != GtZBufferWriteEnabled)
         {
             G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZWRITEENABLE, tWrite);
-            ZWriteEnableState = tWrite;
+            GtZBufferWriteEnabled = tWrite;
         }
-        if (tCompare != ZEnableState)
+        if (tCompare != GtZBufferCompareEnabled)
         {
             if (ZBufferSurface)
                 G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZFUNC, tCompare ? D3DCMP_LESSEQUAL : D3DCMP_ALWAYS);
             else
                 G_Direct3DDevice->SetRenderState(D3DRENDERSTATE_ZENABLE, tCompare);
-            ZEnableState = tCompare;
+            GtZBufferCompareEnabled = tCompare;
         }
     }
 }
@@ -327,9 +327,9 @@ D3DTLVERTEX VertexBuffer[MAX_TLVERTICES];
 D3DTEXTUREHANDLE CurrentTexSource;
 DWORD HWR_PageHandles[32];
 D3DTLVERTEX *HWR_VertexPtr;
-bool ZEnableState;
+bool GtZBufferCompareEnabled;
 D3DRENDERSTATETYPE AlphaBlendEnabler;
 bool ColorKeyState;
-bool ZWriteEnableState;
+bool GtZBufferWriteEnabled;
 int LanTextureHandle[32];
 #endif

@@ -15,7 +15,7 @@ extern int IM_rate, IM_frac;
 extern sint32 *IMptr;
 extern sint32 IMstack[];
 
-extern int UnderwaterCamera;
+extern int camera_underwater;
 
 void DrawRooms(sint16 current_room);
 void S_OutputPolyList(void);
@@ -24,7 +24,7 @@ void S_AnimateTextures(int nframes);
 
 int DrawPhaseCinematic(void)
 {
-    UnderwaterCamera = 0;
+    camera_underwater = 0;
     DrawRooms(camera.pos.room_number);
     S_OutputPolyList();
     camera.number_frames = S_DumpScreen();
@@ -47,7 +47,7 @@ int DrawPhaseGame(void)
 #define UNDERWATER 1
 #define INSIDE 64
 
-extern int MidSort;
+extern int mid_sort;
 extern int OutsideCamera;
 
 void S_LightRoom(ROOM_INFO *r);
@@ -58,9 +58,9 @@ void ClipRoom(ROOM_INFO *r);
 #define OUTSIDE 8
 #define HORIZON 254
 
-extern int BoundStart, BoundEnd;
+extern int bound_start, bound_end;
 extern int BoundRooms[];
-extern int OutsideLeft, OutsideRight, OutsideTop, OutsideBottom;
+extern int outside_left, outside_right, outside_top, outside_bottom;
 
 void GetRoomBounds(void);
 void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent);
@@ -85,32 +85,32 @@ void DrawRooms(sint16 current_room)
 
     r->bound_active = 2;
     BoundRooms[0] = current_room;
-    BoundStart = 0;
-    BoundEnd = 1;
+    bound_start = 0;
+    bound_end = 1;
     number_draw_rooms = 0;
 
     OutsideCamera = r->flags & OUTSIDE;
     if (OutsideCamera) {
-        OutsideLeft = OutsideTop = 0;
-        OutsideRight = phd_winxmax;
-        OutsideBottom = phd_winymax;
+        outside_left = outside_top = 0;
+        outside_right = phd_winxmax;
+        outside_bottom = phd_winymax;
     } else {
-        OutsideLeft = phd_winxmax;
-        OutsideTop = phd_winymax;
-        OutsideRight = OutsideBottom = 0;
+        outside_left = phd_winxmax;
+        outside_top = phd_winymax;
+        outside_right = outside_bottom = 0;
     }
-    UnderwaterCamera = r->flags & UNDERWATER;
+    camera_underwater = r->flags & UNDERWATER;
 
     GetRoomBounds();
 
-    MidSort = 0;
+    mid_sort = 0;
     if (OutsideCamera) {
-        phd_left = OutsideLeft;
-        phd_right = OutsideRight;
-        phd_top = OutsideTop;
-        phd_bottom = OutsideBottom;
+        phd_left = outside_left;
+        phd_right = outside_right;
+        phd_top = outside_top;
+        phd_bottom = outside_bottom;
         if (objects[HORIZON].loaded) {
-            S_SetupAboveWater(UnderwaterCamera);
+            S_SetupAboveWater(camera_underwater);
             phd_PushMatrix();
             *(phd_mxptr + M03) = *(phd_mxptr + M13) = *(phd_mxptr + M23) = 0;
             frame = anims[objects[HORIZON].anim_index].frame_ptr + 9;
@@ -127,12 +127,12 @@ void DrawRooms(sint16 current_room)
 
     if (objects[LARA].loaded && !(lara_item->flags & ONESHOT)) {
         if (room[lara_item->room_number].flags & UNDERWATER)
-            S_SetupBelowWater(UnderwaterCamera);
+            S_SetupBelowWater(camera_underwater);
         else
-            S_SetupAboveWater(UnderwaterCamera);
-        MidSort = (sint16)room[lara_item->room_number].bound_active >> 8;
-        if (MidSort)
-            MidSort--;
+            S_SetupAboveWater(camera_underwater);
+        mid_sort = (sint16)room[lara_item->room_number].bound_active >> 8;
+        if (mid_sort)
+            mid_sort--;
         DrawLara(lara_item);
     }
 
@@ -149,12 +149,12 @@ void GetRoomBounds(void)
     sint16 *door;
     int i, room_number;
 
-    while (BoundStart != BoundEnd)
+    while (bound_start != bound_end)
     {
-        room_number = BoundRooms[(BoundStart++) % 128];
+        room_number = BoundRooms[(bound_start++) % 128];
         r = &room[room_number];
         r->bound_active -= 2;
-        MidSort = ((sint16)r->bound_active >> 8) + 1;
+        mid_sort = ((sint16)r->bound_active >> 8) + 1;
         if (r->test_left < r->left)
             r->left = r->test_left;
         if (r->test_top < r->top)
@@ -172,14 +172,14 @@ void GetRoomBounds(void)
         }
         if (!(r->flags & INSIDE))
         {
-            if (r->left < OutsideLeft)
-                OutsideLeft = r->left;
-            if (r->right > OutsideRight)
-                OutsideRight = r->right;
-            if (r->top < OutsideTop)
-                OutsideTop = r->top;
-            if (r->bottom > OutsideBottom)
-                OutsideBottom = r->bottom;
+            if (r->left < outside_left)
+                outside_left = r->left;
+            if (r->right > outside_right)
+                outside_right = r->right;
+            if (r->top < outside_top)
+                outside_top = r->top;
+            if (r->bottom > outside_bottom)
+                outside_bottom = r->bottom;
         }
         phd_PushMatrix();
         phd_TranslateAbs(r->x, r->y, r->z);
@@ -202,7 +202,7 @@ struct door_vbuf {
 };
 
 extern struct door_vbuf vbufdoor[4];
-extern sint32 PhdPersp;
+extern sint32 phd_persp;
 
 void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
 {
@@ -236,7 +236,7 @@ void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
             if (zv > phd_zfar)
                 z_toofar++;
 
-            zv /= PhdPersp;
+            zv /= phd_persp;
             if (zv) {
                 xs = xv / zv + phd_centerx;
                 ys = yv / zv + phd_centery;
@@ -308,9 +308,9 @@ void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
         if (bottom > r->test_bottom)
             r->test_bottom = (sint16)bottom;
     } else {
-        BoundRooms[(BoundEnd++) % 128] = room_number;
+        BoundRooms[(bound_end++) % 128] = room_number;
         r->bound_active |= 2;
-        r->bound_active += (sint16)(MidSort << 8);
+        r->bound_active += (sint16)(mid_sort << 8);
         r->test_left = (sint16)left;
         r->test_right = (sint16)right;
         r->test_top = (sint16)top;
@@ -419,10 +419,10 @@ void ClipRoom(ROOM_INFO *r)
         }
     }
 
-    xmin = phd_centerx + xmin / (phd_zfar / PhdPersp);
-    ymin = phd_centery + ymin / (phd_zfar / PhdPersp);
-    xmax = phd_centerx + xmax / (phd_zfar / PhdPersp);
-    ymax = phd_centery + ymax / (phd_zfar / PhdPersp);
+    xmin = phd_centerx + xmin / (phd_zfar / phd_persp);
+    ymin = phd_centery + ymin / (phd_zfar / phd_persp);
+    xmax = phd_centerx + xmax / (phd_zfar / phd_persp);
+    ymax = phd_centery + ymax / (phd_zfar / phd_persp);
     if (xmin > phd_right || ymin > phd_bottom || xmax < phd_left || ymax < phd_top)
         return;
 
@@ -443,11 +443,11 @@ void PrintRooms(sint16 room_number)
 
     r = &room[room_number];
     if (r->flags & UNDERWATER)
-        S_SetupBelowWater(UnderwaterCamera);
+        S_SetupBelowWater(camera_underwater);
     else
-        S_SetupAboveWater(UnderwaterCamera);
+        S_SetupAboveWater(camera_underwater);
 
-    MidSort = (sint16)r->bound_active >> 8;
+    mid_sort = (sint16)r->bound_active >> 8;
 
     phd_TranslateAbs(r->x, r->y, r->z);
     phd_left = r->left;
@@ -476,11 +476,11 @@ void PrintObjects(sint16 room_number)
 
     r = &room[room_number];
     if (r->flags & UNDERWATER)
-        S_SetupBelowWater(UnderwaterCamera);
+        S_SetupBelowWater(camera_underwater);
     else
-        S_SetupAboveWater(UnderwaterCamera);
+        S_SetupAboveWater(camera_underwater);
 
-    MidSort = (sint16)r->bound_active >> 8;
+    mid_sort = (sint16)r->bound_active >> 8;
     r->bound_active = 0;
 
     phd_PushMatrix();
@@ -535,7 +535,7 @@ void PrintObjects(sint16 room_number)
 #define SPRITE_SEMITRANS 0x02000000
 #define SPRITE_SHADE 0x08000000
 
-extern sint32 LsAdder;
+extern sint32 ls_adder;
 
 void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *r);
 void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale);
@@ -596,7 +596,7 @@ void DrawSpriteItem(ITEM_INFO *item)
     S_DrawSprite(SPRITE_ABS | (obj->semi_transparent ? SPRITE_SEMITRANS : 0) | SPRITE_SHADE,
                  item->pos.x_pos, item->pos.y_pos, item->pos.z_pos,
                  (sint16)(obj->mesh_index - item->frame_number),
-                 (sint16)(LsAdder + 16 * 256), 0);
+                 (sint16)(ls_adder + 16 * 256), 0);
 }
 
 #define ROT_X 4
@@ -1711,16 +1711,16 @@ sint32 RoomBoundingBoxEdges[12][2] = {
     { 2, 6 },
     { 3, 7 },
 };
-int MidSort;
+int mid_sort;
 sint32 phd_top;
 sint32 phd_bottom;
-sint32 PhdPersp;
+sint32 phd_persp;
 sint32 phd_left;
 sint16 phd_winxmax;
 sint16 phd_winymax;
 sint32 phd_right;
-int BoundStart;
-int BoundEnd;
+int bound_start;
+int bound_end;
 sint16 null_rotations[12];
 int OutsideCamera;
 int number_draw_rooms;
@@ -1729,13 +1729,13 @@ struct door_vbuf vbufdoor[4];
 int IM_frac;
 ANIM_STRUCT *anims;
 int BoundRooms[128];
-int OutsideBottom;
-int OutsideLeft;
+int outside_bottom;
+int outside_left;
 int IM_rate;
 sint32 *IMptr;
 ROOM_INFO *room;
-int UnderwaterCamera;
-int OutsideRight;
+int camera_underwater;
+int outside_right;
 sint16 interpolated_bounds[6];
-int OutsideTop;
+int outside_top;
 #endif
