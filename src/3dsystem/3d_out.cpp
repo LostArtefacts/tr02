@@ -41,7 +41,7 @@ typedef struct x_info {
 extern "C" XBUF_PERSP xbuffer[];
 
 extern "C" void __fastcall flatA(int min_y, int max_y, char color);
-extern "C" void __fastcall transA(int min_y, int max_y, char color);
+extern "C" void __fastcall transA(int min_y, int max_y, int shade);
 extern "C" void draw_poly_trans(sint16 *iptr);
 extern "C" void __fastcall gourA(int min_y, int max_y, sint16 colbase);
 extern "C" int xgen_xg(sint16 *iptr);
@@ -67,12 +67,16 @@ void draw_poly_flat(sint16 *iptr)
 
     if (xgen_x(iptr + 1)) {
         colour = *iptr;
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, colour
             call flatA
         }
+#else
+        flatA(xgen_ymin, xgen_ymax, colour);
+#endif
     }
 }
 
@@ -82,12 +86,16 @@ void draw_poly_trans(sint16 *iptr)
 
     if (xgen_x(iptr + 1)) {
         colour = *iptr;
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, colour
             call transA
         }
+#else
+        transA(xgen_ymin, xgen_ymax, colour);
+#endif
     }
 }
 
@@ -97,12 +105,16 @@ void draw_poly_gouraud(sint16 *iptr)
 
     if (xgen_xg(iptr + 1)) {
         colour = *iptr;
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, colour
             call gourA
         }
+#else
+        gourA(xgen_ymin, xgen_ymax, colour);
+#endif
     }
 }
 
@@ -112,12 +124,16 @@ void draw_poly_gtmap(sint16 *iptr)
 
     if (xgen_xguv(iptr + 1)) {
         texture = texture_page_ptrs[*(iptr)];
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, texture
             call gtmapA
         }
+#else
+        gtmapA(xgen_ymin, xgen_ymax, texture);
+#endif
     }
 }
 
@@ -127,12 +143,16 @@ void draw_poly_wgtmap(sint16 *iptr)
 
     if (xgen_xguv(iptr + 1)) {
         texture = texture_page_ptrs[*(iptr)];
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, texture
             call wgtmapA
         }
+#else
+        wgtmapA(xgen_ymin, xgen_ymax, texture);
+#endif
     }
 }
 
@@ -1218,4 +1238,157 @@ DEPTHQ_ENTRY DepthQTable[32];
 sint32 phd_scrwidth;
 XBUF_PERSP xbuffer[1200];
 char *texture_page_ptrs[32];
+#endif
+
+#if FEAT_C_ASM
+#include <string.h>
+
+extern "C" uint8 GouraudTable[256][32];
+
+extern "C" void __fastcall flatA(int min_y, int max_y, char color)
+{
+    XBUF_X *xptr;
+    char *lineptr;
+    int rows, xl, xr;
+
+    rows = max_y - min_y;
+    if (rows <= 0)
+        return;
+    xptr = (XBUF_X *)xbuffer + min_y;
+    lineptr = phd_winptr + min_y * phd_scrwidth;
+    for (; rows; rows--, xptr++, lineptr += phd_scrwidth) {
+        xl = xptr->Xleft >> 16;
+        xr = xptr->Xright >> 16;
+        if (xr > xl)
+            memset(lineptr + xl, color, xr - xl);
+    }
+}
+
+extern "C" void __fastcall transA(int min_y, int max_y, int shade)
+{
+    XBUF_X *xptr;
+    uint8 *lineptr, *pixptr, *table;
+    int rows, xl, xr;
+
+    rows = max_y - min_y;
+    if (rows <= 0 || (uint32)shade > 32)
+        return;
+    table = DepthQTable[shade].index;
+    xptr = (XBUF_X *)xbuffer + min_y;
+    lineptr = (uint8 *)phd_winptr + min_y * phd_scrwidth;
+    for (; rows; rows--, xptr++, lineptr += phd_scrwidth) {
+        xl = xptr->Xleft >> 16;
+        if (xl < 0)
+            xl = 0;
+        xr = xptr->Xright >> 16;
+        if (xr > phd_winwidth)
+            xr = phd_winwidth;
+        for (pixptr = lineptr + xl; xl < xr; xl++, pixptr++)
+            *pixptr = table[*pixptr];
+    }
+}
+
+extern "C" void __fastcall gourA(int min_y, int max_y, sint16 colbase)
+{
+    XBUF_XG *xptr;
+    uint8 *lineptr, *pixptr, *table;
+    int rows, xl, xr, g, gadd, n;
+    uint32 frac, fracadd, sum;
+
+    rows = max_y - min_y;
+    if (rows <= 0)
+        return;
+    table = GouraudTable[(uint16)colbase];
+    xptr = (XBUF_XG *)xbuffer + min_y;
+    lineptr = (uint8 *)phd_winptr + min_y * phd_scrwidth;
+    for (; rows; rows--, xptr++, lineptr += phd_scrwidth) {
+        xl = xptr->Xleft >> 16;
+        xr = xptr->Xright >> 16;
+        if (xl >= xr)
+            continue;
+        g = xptr->Gleft;
+        gadd = (xptr->Gright - g) / (xr - xl);
+        if (xl < 0) {
+            g -= xl * gadd;
+            xl = 0;
+        }
+        pixptr = lineptr + xl;
+        frac = (uint32)g << 16;
+        fracadd = (uint32)gadd << 16;
+        g >>= 16;
+        gadd >>= 16;
+        for (n = xr - xl; n > 0; n--) {
+            *pixptr++ = table[g];
+            sum = frac + fracadd;
+            g += gadd + (sum < frac);
+            frac = sum;
+        }
+    }
+}
+
+extern "C" void __fastcall gtmapA(int min_y, int max_y, char *tptr)
+{
+    XBUF_XGUV *xptr;
+    uint8 *lineptr, *pixptr;
+    int rows, xl, xr, n, g, u, v, gadd, uadd, vadd;
+
+    rows = max_y - min_y;
+    if (rows <= 0)
+        return;
+    xptr = (XBUF_XGUV *)xbuffer + min_y;
+    lineptr = (uint8 *)phd_winptr + min_y * phd_scrwidth;
+    for (; rows; rows--, xptr++, lineptr += phd_scrwidth) {
+        xl = xptr->Xleft >> 16;
+        xr = xptr->Xright >> 16;
+        if (xr <= xl)
+            continue;
+        n = xr - xl;
+        g = xptr->Gleft;
+        u = xptr->Uleft;
+        v = xptr->Vleft;
+        gadd = (xptr->Gright - g) / n;
+        uadd = (xptr->Uright - u) / n;
+        vadd = (xptr->Vright - v) / n;
+        for (pixptr = lineptr + xl; n; n--, pixptr++) {
+            *pixptr = DepthQTable[(g >> 16) & 0xff].index[(uint8)tptr[((v >> 8) & 0xff00) | ((u >> 16) & 0xff)]];
+            g += gadd;
+            u += uadd;
+            v += vadd;
+        }
+    }
+}
+
+extern "C" void __fastcall wgtmapA(int min_y, int max_y, char *tptr)
+{
+    XBUF_XGUV *xptr;
+    uint8 *lineptr, *pixptr, texel;
+    int rows, xl, xr, n, g, u, v, gadd, uadd, vadd;
+
+    rows = max_y - min_y;
+    if (rows <= 0)
+        return;
+    xptr = (XBUF_XGUV *)xbuffer + min_y;
+    lineptr = (uint8 *)phd_winptr + min_y * phd_scrwidth;
+    for (; rows; rows--, xptr++, lineptr += phd_scrwidth) {
+        xl = xptr->Xleft >> 16;
+        xr = xptr->Xright >> 16;
+        if (xr <= xl)
+            continue;
+        n = xr - xl;
+        g = xptr->Gleft;
+        u = xptr->Uleft;
+        v = xptr->Vleft;
+        gadd = (xptr->Gright - g) / n;
+        uadd = (xptr->Uright - u) / n;
+        vadd = (xptr->Vright - v) / n;
+        for (pixptr = lineptr + xl; n; n--, pixptr++) {
+            texel = tptr[((v >> 8) & 0xff00) | ((u >> 16) & 0xff)];
+            if (texel)
+                *pixptr = DepthQTable[(g >> 16) & 0xff].index[texel];
+            g += gadd;
+            u += uadd;
+            v += vadd;
+        }
+    }
+}
 #endif
