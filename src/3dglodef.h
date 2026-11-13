@@ -109,7 +109,7 @@ void phd_RotX(PHD_ANGLE rx);
 void phd_RotY(PHD_ANGLE ry);
 void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
 void phd_PutPolygons(sint16 *objptr, int clipstatus);
-void S_InsertRoom(sint16 *objptr, int outside);
+void S_InsertRoom(sint16 *objptr, int is_outside);
 sint16 *calc_roomvert(sint16 *objptr, int far_clip);
 void phd_RotateLight(PHD_ANGLE pitch, PHD_ANGLE yaw);
 void phd_PrintPolyList(void *ptr);

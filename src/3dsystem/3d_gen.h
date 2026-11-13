@@ -8,7 +8,7 @@ extern "C" {
 #endif
 
 void S_InsertBackground(sint16 *objptr);
-void S_InsertRoom(sint16 *objptr, int outside);
+void S_InsertRoom(sint16 *objptr, int is_outside);
 void S_InsertInvBgnd(sint16 *objptr);
 
 #ifdef __cplusplus
