@@ -2154,7 +2154,7 @@ address,size,name,symbol
 0x00521fdc,4,number_sound_effects,_number_sound_effects
 0x00521fe0,4,sound_effects,_sound_effects
 0x00522000,,objects,_objects
-0x005251b0,4,AnimFrames,_AnimFrames
+0x005251b0,4,frames,_frames
 0x005251c0,,dynamic,_dynamic
 0x005252b0,4,meshes,_meshes
 0x005252b4,4,OutsideCamera,_OutsideCamera

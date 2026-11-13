@@ -226,7 +226,7 @@ extern sint16 cd_flags[];
 extern int monks_attack_lara;
 extern int level_items;
 extern sint16 *mesh_base;
-extern sint16 *AnimFrames;
+extern sint16 *frames;
 extern sint16 body_bag;
 extern int flipeffect;
 extern int fliptimer;
@@ -275,7 +275,7 @@ extern sint16 cd_flags[];
 extern int monks_attack_lara;
 extern int level_items;
 extern sint16 *mesh_base;
-extern sint16 *AnimFrames;
+extern sint16 *frames;
 
 void ResetSG(void);
 void WriteSG(void *pointer, int size);
@@ -377,15 +377,15 @@ void CreateSaveGameInfo(void)
 
     for (i = 0; i < 15; i++)
         lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] - (long)mesh_base);
-    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base - (long)AnimFrames);
-    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base - (long)AnimFrames);
+    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base - (long)frames);
+    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base - (long)frames);
 
     WriteSG(&lara, sizeof(LARA_INFO));
 
     for (i = 0; i < 15; i++)
         lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)mesh_base);
-    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)AnimFrames);
-    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)AnimFrames);
+    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)frames);
+    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)frames);
 
     if (lara.weapon_item != NO_ITEM)
     {
@@ -595,8 +595,8 @@ void ExtractSaveGameInfo(void)
     for (i = 0; i < 15; i++)
         lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)mesh_base);
     lara.target = NULL;
-    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)AnimFrames);
-    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)AnimFrames);
+    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)frames);
+    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)frames);
 
     if (lara.weapon_item != NO_ITEM)
     {
@@ -675,5 +675,5 @@ sint16 *mesh_base;
 char *SGpoint;
 SAVEGAME_INFO savegame;
 int SGcount;
-sint16 *AnimFrames;
+sint16 *frames;
 #endif

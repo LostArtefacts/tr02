@@ -258,7 +258,7 @@ extern "C" sint16 *mesh_base;
 extern "C" CHANGE_STRUCT *changes;
 extern "C" RANGE_STRUCT *ranges;
 extern "C" sint16 *commands;
-extern "C" sint16 *AnimFrames;
+extern "C" sint16 *frames;
 extern "C" char LoadObjectsTooManyTextures[];
 extern "C" void InitialiseObjects(void);
 
@@ -294,10 +294,10 @@ extern "C" int LoadObjects(HANDLE file)
     bones = (sint32 *)game_malloc(size * sizeof(sint32), BONES);
     MyReadFile(file, bones, sizeof(sint32) * size, &read, NULL);
     MyReadFile(file, &size, sizeof(sint32), &read, NULL);
-    AnimFrames = (sint16 *)game_malloc(size * sizeof(sint16), FRAMES);
-    MyReadFile(file, AnimFrames, sizeof(sint16) * size, &read, NULL);
+    frames = (sint16 *)game_malloc(size * sizeof(sint16), FRAMES);
+    MyReadFile(file, frames, sizeof(sint16) * size, &read, NULL);
     for (i = 0; i < number_anims; i++)
-        anims[i].frame_ptr = (sint16 *)((long)anims[i].frame_ptr + (long)AnimFrames);
+        anims[i].frame_ptr = (sint16 *)((long)anims[i].frame_ptr + (long)frames);
     MyReadFile(file, &number, sizeof(sint32), &read, NULL);
     for (i = 0; i < number; i++)
     {
@@ -306,7 +306,7 @@ extern "C" int LoadObjects(HANDLE file)
         MyReadFile(file, &objects[j].mesh_index, sizeof(sint16), &read, NULL);
         MyReadFile(file, &objects[j].bone_index, sizeof(sint32), &read, NULL);
         MyReadFile(file, &size, sizeof(sint32), &read, NULL);
-        objects[j].frame_base = (sint16 *)((long)size + (long)AnimFrames);
+        objects[j].frame_base = (sint16 *)((long)size + (long)frames);
         MyReadFile(file, &objects[j].anim_index, sizeof(sint16), &read, NULL);
         objects[j].loaded = 1;
     }
